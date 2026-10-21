@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vade Arena</title>
+<style>
+  :root {
+    --bg:#FAFAF7; --surface:#FFFFFF; --surface-2:#F2F2EE; --border:#E2E2DC;
+    --text:#16181D; --muted:#5D6470; --primary:#3D5BD9; --on-primary:#FFFFFF;
+    --success:#167A49; --danger:#B8321F; --xp:#8A6300; --streak:#AD4F00; --juiz:#6B4FC8;
+    --success-bg:#E4F4EB; --danger-bg:#FBE7E3; --xp-bg:#FBF0D6; --primary-bg:#E6EBFC;
+    --law:#22252B; --radius:14px;
+    --mono:ui-monospace,"JetBrains Mono","Cascadia Code",Consolas,monospace;
+    --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0E1116; --surface:#161B22; --surface-2:#1F2630; --border:#2A3340;
+      --text:#E8ECF2; --muted:#9AA6B6; --primary:#6C8CFF; --on-primary:#0E1116;
+      --success:#34C47C; --danger:#FF6B5E; --xp:#F5B700; --streak:#FF8A2B; --juiz:#B49BFF;
+      --success-bg:#12291E; --danger-bg:#331814; --xp-bg:#2E2508; --primary-bg:#18213D; --law:#D9DEE7;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0E1116; --surface:#161B22; --surface-2:#1F2630; --border:#2A3340;
+    --text:#E8ECF2; --muted:#9AA6B6; --primary:#6C8CFF; --on-primary:#0E1116;
+    --success:#34C47C; --danger:#FF6B5E; --xp:#F5B700; --streak:#FF8A2B; --juiz:#B49BFF;
+    --success-bg:#12291E; --danger-bg:#331814; --xp-bg:#2E2508; --primary-bg:#18213D; --law:#D9DEE7;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; background:var(--bg); color:var(--text); }
+  body { font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  button { font:inherit; cursor:pointer; color:inherit; }
+  button:focus-visible, a:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
+  a { color:var(--primary); }
+  .muted { color:var(--muted); } .mono { font-family:var(--mono); }
+  main { max-width:1040px; margin:0 auto; padding:16px 16px 80px; }
+
+  /* ---------- topo */
+  .top { position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--bg) 88%, transparent);
+         backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
+  .top-in { max-width:1040px; margin:0 auto; padding:10px 16px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
+  .brand { font-weight:800; letter-spacing:-.02em; font-size:1.1rem; display:flex; gap:6px; align-items:center; }
+  .brand small { font-weight:600; color:var(--muted); }
+  nav.tabs { display:flex; gap:4px; background:var(--surface-2); padding:4px; border-radius:12px; }
+  nav.tabs button, nav.tabs a { border:0; background:none; padding:7px 12px; border-radius:9px; font-weight:600;
+                                color:var(--muted); text-decoration:none; font-size:.92rem; }
+  nav.tabs [aria-current="page"] { background:var(--surface); color:var(--text); box-shadow:0 1px 2px rgba(0,0,0,.12); }
+  .hud { margin-left:auto; display:flex; gap:12px; align-items:center; }
+  .lvl { display:flex; gap:8px; align-items:center; }
+  .lvl-badge { width:34px; height:34px; border-radius:10px; display:grid; place-items:center; font-weight:800;
+               background:var(--primary); color:var(--on-primary); font-variant-numeric:tabular-nums; }
+  .lvl-info { min-width:120px; } .lvl-info b { display:block; font-size:.82rem; line-height:1.2; }
+  .xpbar { height:6px; background:var(--surface-2); border-radius:99px; overflow:hidden; margin-top:4px; }
+  .xpbar > i { display:block; height:100%; background:var(--xp); width:0; transition:width .8s cubic-bezier(.2,.8,.2,1); }
+  .streak { font-weight:800; color:var(--streak); display:flex; align-items:center; gap:4px; font-variant-numeric:tabular-nums; }
+  .streak.off { color:var(--muted); filter:grayscale(1); }
+  @media (max-width:640px) { .lvl-info { display:none; } .hud { margin-left:0; } }
+
+  /* ---------- blocos */
+  h1 { font-size:1.6rem; letter-spacing:-.02em; margin:8px 0 4px; }
+  h2 { font-size:1.15rem; margin:0 0 10px; letter-spacing:-.01em; }
+  .sub { color:var(--muted); margin:0 0 18px; }
+  .grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; min-width:0; }
+  .card.click { cursor:pointer; transition:transform .15s, border-color .15s; text-align:left; width:100%; }
+  .card.click:hover { transform:translateY(-2px); border-color:var(--primary); }
+  .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(130px,1fr)); gap:10px; }
+  .stat { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px; }
+  .stat b { display:block; font-size:1.45rem; font-variant-numeric:tabular-nums; letter-spacing:-.02em; }
+  .stat small { color:var(--muted); }
+  .chip { display:inline-flex; align-items:center; gap:4px; font-size:.75rem; font-weight:700; padding:2px 8px;
+          border-radius:99px; background:var(--surface-2); color:var(--muted); border:1px solid var(--border); }
+  .chip.banca { background:var(--primary-bg); color:var(--primary); border-color:transparent; }
+  .chip.advogado { background:var(--primary-bg); color:var(--primary); border-color:transparent; }
+  .chip.promotor { background:var(--danger-bg); color:var(--danger); border-color:transparent; }
+  .chip.juiz { background:color-mix(in srgb, var(--juiz) 16%, transparent); color:var(--juiz); border-color:transparent; }
+  .btn { border:1px solid var(--border); background:var(--surface-2); padding:10px 16px; border-radius:11px; font-weight:700; }
+  .btn.primary { background:var(--primary); border-color:var(--primary); color:var(--on-primary); }
+  .btn.ghost { background:none; }
+  .btn:disabled { opacity:.5; cursor:not-allowed; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  .spacer { flex:1; }
+  .levels { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:8px; margin-top:12px; }
+  .lvbtn { border:1px solid var(--border); background:var(--surface-2); border-radius:11px; padding:9px 10px; text-align:left; }
+  .lvbtn:hover:not(:disabled) { border-color:var(--primary); }
+  .lvbtn b { display:block; font-size:.9rem; } .lvbtn small { color:var(--muted); font-size:.75rem; }
+  .lvbtn:disabled { opacity:.45; cursor:not-allowed; }
+  .empty { text-align:center; padding:28px; color:var(--muted); }
+
+  /* ---------- prova */
+  .examhead { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
+  .timer { font-family:var(--mono); font-weight:800; font-size:1.25rem; padding:6px 12px; border-radius:10px;
+           background:var(--surface-2); font-variant-numeric:tabular-nums; }
+  .timer.warn { color:var(--danger); background:var(--danger-bg); animation:pulse 1s infinite; }
+  @keyframes pulse { 50% { opacity:.6; } }
+  .dots { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0 16px; }
+  .dot { width:28px; height:28px; border-radius:8px; border:1px solid var(--border); background:var(--surface);
+         font-size:.72rem; font-weight:700; color:var(--muted); font-variant-numeric:tabular-nums; }
+  .dot.ans { background:var(--primary-bg); color:var(--primary); border-color:transparent; }
+  .dot.cur { outline:2px solid var(--primary); outline-offset:1px; }
+  .qcard { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px; }
+  .qmeta { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
+  .enun { font-family:var(--serif); font-size:1.13rem; line-height:1.7; color:var(--law); margin:0 0 18px; max-width:68ch; }
+  .ce { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+  .cebtn { padding:16px; border-radius:12px; border:2px solid var(--border); background:var(--surface-2); font-weight:800; font-size:1.05rem; }
+  .cebtn.c[aria-pressed="true"] { border-color:var(--success); background:var(--success-bg); color:var(--success); }
+  .cebtn.e[aria-pressed="true"] { border-color:var(--danger); background:var(--danger-bg); color:var(--danger); }
+  .alts { display:grid; gap:8px; }
+  .alt { display:flex; gap:12px; align-items:flex-start; text-align:left; padding:12px 14px; border-radius:12px;
+         border:2px solid var(--border); background:var(--surface); }
+  .alt .k { flex:none; width:28px; height:28px; border-radius:8px; display:grid; place-items:center; font-weight:800;
+            background:var(--surface-2); }
+  .alt[aria-pressed="true"] { border-color:var(--primary); background:var(--primary-bg); }
+  .alt[aria-pressed="true"] .k { background:var(--primary); color:var(--on-primary); }
+  .hint { font-size:.8rem; color:var(--muted); margin-top:12px; }
+  kbd { font-family:var(--mono); font-size:.75rem; border:1px solid var(--border); border-bottom-width:2px; border-radius:5px; padding:0 5px; }
+
+  /* ---------- resultado */
+  .verdict { display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:center; }
+  @media (max-width:640px) { .verdict { grid-template-columns:1fr; justify-items:center; text-align:center; } }
+  .ring { width:150px; height:150px; border-radius:50%; display:grid; place-items:center; position:relative;
+          background:conic-gradient(var(--ring-color, var(--primary)) calc(var(--p, 0) * 1%), var(--surface-2) 0); }
+  .ring::after { content:""; position:absolute; inset:12px; border-radius:50%; background:var(--surface); }
+  .ring span { position:relative; z-index:1; font-size:1.9rem; font-weight:800; font-variant-numeric:tabular-nums; }
+  .stamp { display:inline-block; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:6px 14px;
+           border:3px solid currentColor; border-radius:10px; transform:rotate(-6deg); font-size:1.25rem;
+           animation:stamp .45s cubic-bezier(.2,1.6,.4,1) both; }
+  .verdict .stamp { margin:4px 0 0 6px; }
+  .stamp.ok { color:var(--success); } .stamp.no { color:var(--danger); } .stamp.mid { color:var(--xp); }
+  @keyframes stamp { from { transform:rotate(-6deg) scale(2.2); opacity:0; } to { transform:rotate(-6deg) scale(1); opacity:1; } }
+  .xpgain { font-size:1.4rem; font-weight:900; color:var(--xp); font-variant-numeric:tabular-nums; }
+  .toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:var(--text); color:var(--bg);
+           padding:12px 18px; border-radius:12px; font-weight:800; z-index:20; box-shadow:0 8px 30px rgba(0,0,0,.3);
+           animation:rise .4s ease both; max-width:calc(100% - 32px); text-align:center; }
+  @keyframes rise { from { transform:translate(-50%, 20px); opacity:0; } }
+  .areas { display:grid; gap:8px; }
+  .abar { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 10px; font-size:.88rem; }
+  .abar .b { grid-column:1/-1; height:6px; background:var(--surface-2); border-radius:6px; overflow:hidden; }
+  .abar .b > i { display:block; height:100%; background:var(--primary); }
+  .review { display:grid; gap:12px; margin-top:12px; }
+  .rv { border-left:4px solid var(--border); }
+  .rv.certa { border-left-color:var(--success); } .rv.errada { border-left-color:var(--danger); } .rv.branco { border-left-color:var(--muted); }
+  .rv .enun { font-size:1rem; margin-bottom:10px; }
+  .tag-ok { color:var(--success); font-weight:800; } .tag-no { color:var(--danger); font-weight:800; }
+  .law { margin:10px 0 0; padding:10px 12px; border-radius:10px; background:var(--surface-2); font-family:var(--serif);
+         color:var(--law); font-size:.95rem; }
+  .law .ref { display:block; font-family:var(--mono); font-size:.75rem; color:var(--primary); margin-bottom:4px; }
+  .trap { margin-top:8px; padding:8px 12px; border-radius:10px; background:var(--xp-bg); font-size:.9rem; }
+  .trap b { color:var(--xp); }
+  .altlist { margin:6px 0 0; padding:0; list-style:none; font-size:.92rem; }
+  .altlist li { padding:3px 0; } .altlist .is-gab { color:var(--success); font-weight:700; } .altlist .is-mine { text-decoration:underline; }
+  details.more summary { cursor:pointer; color:var(--primary); font-weight:600; margin-top:8px; }
+
+  /* ---------- casos */
+  .dossie { position:relative; overflow:hidden; }
+  .dossie::before { content:""; position:absolute; inset:0 auto 0 0; width:5px; background:var(--role, var(--primary)); }
+  .dossie h3 { margin:8px 0 6px; font-size:1.05rem; }
+  .dossie p { margin:0 0 10px; color:var(--muted); font-size:.9rem; }
+  .meters { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0 16px; }
+  .meter small { color:var(--muted); font-weight:700; font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; }
+  .meter .val { font-weight:800; font-variant-numeric:tabular-nums; }
+  .mbar { height:8px; border-radius:99px; background:var(--surface-2); overflow:hidden; margin-top:4px; position:relative; }
+  .mbar > i { position:absolute; top:0; bottom:0; left:50%; transition:all .5s cubic-bezier(.2,.8,.2,1); }
+  .mbar > i.pos { background:var(--success); } .mbar > i.neg { background:var(--danger); }
+  .scene-local { font-family:var(--mono); font-size:.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
+  .bubbles { display:grid; gap:12px; margin:14px 0 18px; }
+  .bubble { display:grid; grid-template-columns:auto 1fr; gap:12px; animation:fadein .35s ease both; }
+  .bubble:nth-child(2) { animation-delay:.12s; } .bubble:nth-child(3) { animation-delay:.24s; }
+  @keyframes fadein { from { opacity:0; transform:translateY(6px); } }
+  .avatar { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-weight:800; font-size:.85rem;
+            background:var(--surface-2); color:var(--av, var(--text)); border:1px solid var(--border); }
+  .bubble .who b { font-size:.9rem; } .bubble .who small { color:var(--muted); font-size:.78rem; }
+  .bubble .say { margin-top:2px; font-size:1rem; }
+  .bubble.narr { grid-template-columns:1fr; } .bubble.narr .say { font-style:italic; color:var(--muted); }
+  .question { font-weight:800; font-size:1.05rem; margin:4px 0 10px; }
+  .choices { display:grid; gap:8px; }
+  .choice { text-align:left; padding:14px 16px; border-radius:12px; border:2px solid var(--border); background:var(--surface);
+            display:flex; gap:12px; align-items:flex-start; }
+  .choice:hover:not(:disabled) { border-color:var(--primary); }
+  .choice .k { flex:none; width:26px; height:26px; border-radius:8px; display:grid; place-items:center; font-weight:800;
+               background:var(--surface-2); font-size:.85rem; }
+  .choice:disabled { cursor:default; opacity:.55; } .choice.picked { opacity:1; border-color:var(--primary); background:var(--primary-bg); }
+  .feedback { margin-top:14px; padding:16px; border-radius:var(--radius); border:1px solid var(--border); background:var(--surface);
+              animation:fadein .3s ease both; }
+  .eff { display:inline-flex; gap:4px; font-weight:800; font-size:.85rem; padding:2px 8px; border-radius:99px; }
+  .eff.pos { color:var(--success); background:var(--success-bg); } .eff.neg { color:var(--danger); background:var(--danger-bg); }
+  .eff.zero { color:var(--muted); background:var(--surface-2); }
+  .best { color:var(--xp); font-weight:800; font-size:.85rem; }
+  .final { text-align:center; padding:28px 18px; }
+  .final .stamp { font-size:1.6rem; margin:6px 0 14px; }
+  .final p { max-width:60ch; margin:0 auto 14px; font-family:var(--serif); font-size:1.08rem; color:var(--law); }
+
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="top-in">
+    <div class="brand">⚖️ Vade <small>Arena</small></div>
+    <nav class="tabs" aria-label="Seções">
+      <button data-tab="inicio">Início</button>
+      <button data-tab="simulados">Simulados</button>
+      <button data-tab="casos">Casos</button>
+      <a href="/acervo">Acervo</a>
+    </nav>
+    <div class="hud" aria-live="polite">
+      <div class="streak off" id="streak" title="Sequência de dias">🔥 <span>0</span></div>
+      <div class="lvl">
+        <div class="lvl-badge" id="lvl">1</div>
+        <div class="lvl-info"><b id="lvl-title">Estagiário(a)</b>
+          <div class="xpbar" title="XP até o próximo nível"><i id="xpbar"></i></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+<main id="view"></main>
+
+<script>
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const fmt = (n) => Number(n || 0).toLocaleString("pt-BR");
+const pct = (x) => Math.round((x || 0) * 100) + "%";
+const AREAS = {"constitucional":"Constitucional","administrativo":"Administrativo","civil":"Civil","penal":"Penal",
+  "penal-especial":"Legislação penal especial","protecao-de-dados":"Proteção de dados"};
+const ROLE = {advogado:{nome:"Advogado(a)", cor:"var(--primary)", ic:"💼"}, promotor:{nome:"Promotor(a)", cor:"var(--danger)", ic:"🏛️"}, juiz:{nome:"Juiz(a)", cor:"var(--juiz)", ic:"⚖️"}};
+const LV = {basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite"};
+const COR = {primary:"var(--primary)", danger:"var(--danger)", xp:"var(--xp)", success:"var(--success)", muted:"var(--muted)"};
+
+function el(tag, props = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === "style" && typeof v === "object") {
+      // Object.assign ignora variáveis CSS (--p, --role…): elas exigem setProperty
+      for (const [prop, val] of Object.entries(v)) {
+        if (prop.startsWith("--")) e.style.setProperty(prop, val); else e.style[prop] = val;
+      }
+    }
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (k === "class") e.className = v;
+    else if (k in e) e[k] = v; else e.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k !== null && k !== undefined && k !== false) e.append(k);
+  return e;
+}
+async function api(path, body) {
+  const opt = body === undefined ? {} : {method:"POST", headers:{"Content-Type":"application/json","X-Vade":"1"}, body:JSON.stringify(body)};
+  const r = await fetch(path, opt);
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(data.erro || r.statusText);
+  return data;
+}
+function toast(msg) {
+  const t = el("div", {class:"toast", role:"status", textContent:msg});
+  document.body.append(t); setTimeout(() => t.remove(), 3200);
+}
+function show(...nodes) { const v = $("#view"); v.replaceChildren(...nodes); window.scrollTo({top:0}); }
+function setTab(name) {
+  document.querySelectorAll("nav.tabs [data-tab]").forEach(b => {
+    if (b.dataset.tab === name) b.setAttribute("aria-current", "page"); else b.removeAttribute("aria-current");
+  });
+}
+function initials(name) {
+  return name.split(" ").filter(w => !/^(dr|dra)\.?$/i.test(w)).slice(0, 2).map(w => w[0]).join("").toUpperCase();
+}
+function lawBox(f) {
+  const ref = (f.norma ? f.norma + " · " : "") + (f.rotulo || f.chave.split("#")[1]) + (f.rubrica ? " — " + f.rubrica : "");
+  return el("blockquote", {class:"law"}, el("span", {class:"ref", textContent:ref}), f.texto || ("“" + f.trecho + "”"));
+}
+
+// ---------------------------------------------------------------- HUD
+let perfil = null;
+async function loadProfile() {
+  perfil = await api("/api/arena/perfil");
+  $("#lvl").textContent = perfil.nivel;
+  $("#lvl-title").textContent = perfil.titulo;
+  $("#xpbar").style.width = Math.min(100, 100 * perfil.xp_nivel_atual / Math.max(1, perfil.xp_proximo_nivel)) + "%";
+  $("#streak span").textContent = perfil.streak;
+  $("#streak").classList.toggle("off", !perfil.jogou_hoje);
+  $("#streak").title = perfil.jogou_hoje ? `Sequência de ${perfil.streak} dia(s)` : "Jogue hoje para manter a sequência";
+  return perfil;
+}
+function celebrate(progresso, xp) {
+  if (!progresso) return;
+  if (progresso.subiu_de_nivel) toast(`⬆️ Nível ${progresso.nivel}! Agora você é ${progresso.titulo}.`);
+  else toast(`+${fmt(xp)} XP · 🔥 ${progresso.streak} dia(s) de sequência`);
+  loadProfile();
+}
+
+// ---------------------------------------------------------------- INÍCIO
+async function viewInicio() {
+  setTab("inicio");
+  const [p, casos] = await Promise.all([loadProfile(), api("/api/arena/casos")]);
+  const proximo = casos.find(c => !c.melhor) || casos[0];
+  const acerto = p.questoes.respostas ? p.questoes.acertos / p.questoes.respostas : 0;
+  show(
+    el("h1", {textContent:`Olá, ${p.titulo}.`}),
+    el("p", {class:"sub", textContent: p.jogou_hoje ? "Você já treinou hoje. Que tal mais uma rodada?" : "Uma rodada rápida mantém sua sequência viva."}),
+    el("div", {class:"grid"},
+      el("button", {class:"card click", onclick:() => startExam("policial-cebraspe", "basico")},
+        el("div", {class:"row"}, el("span", {class:"chip banca", textContent:"CEBRASPE"}), el("span", {class:"chip", textContent:"🟢 Treino · 10 itens"})),
+        el("h2", {style:{marginTop:"10px"}, textContent:"Simulado rápido"}),
+        el("p", {class:"muted", style:{margin:0}, textContent:"Certo ou errado no estilo das carreiras policiais. Cada erro anula um acerto."})),
+      proximo && el("button", {class:"card click dossie", style:{"--role":ROLE[proximo.papel].cor}, onclick:() => startCase(proximo.id)},
+        el("div", {class:"row"}, el("span", {class:"chip " + proximo.papel, textContent:ROLE[proximo.papel].ic + " " + proximo.papel_nome}), el("span", {class:"chip", textContent:LV[proximo.nivel]})),
+        el("h2", {style:{marginTop:"10px"}, textContent:proximo.melhor ? "Rejogar: " + proximo.titulo : "Caso do dia: " + proximo.titulo}),
+        el("p", {class:"muted", style:{margin:0}, textContent:proximo.sinopse}))),
+    el("h2", {style:{marginTop:"26px"}, textContent:"Seu desempenho"}),
+    el("div", {class:"stats"},
+      stat(fmt(p.xp), "XP total"), stat(p.nivel, "nível"), stat(p.streak_max, "maior sequência"),
+      stat(fmt(p.simulados.jogadas), "simulados"), stat(fmt(p.simulados.sucessos || 0), "metas batidas"),
+      stat(fmt(p.casos.jogadas), "casos jogados"), stat(fmt(p.questoes.respostas), "questões respondidas"),
+      stat(p.questoes.respostas ? pct(acerto) : "—", "taxa de acerto")),
+    el("h2", {style:{marginTop:"26px"}, textContent:"Últimas partidas"}),
+    p.recentes.length ? el("div", {class:"card"}, ...p.recentes.map(r => el("div", {class:"row", style:{padding:"8px 0", borderTop:"1px solid var(--border)"}},
+        el("span", {textContent: r.tipo === "simulado" ? "📝" : (ROLE[r.resumo.papel] || ROLE.advogado).ic}),
+        el("span", {textContent: r.tipo === "simulado" ? `${r.resumo.concurso} · ${r.resumo.nivel_nome}` : r.resumo.titulo}),
+        el("span", {class:"spacer"}),
+        el("span", {class:r.sucesso ? "tag-ok" : "muted", textContent: r.tipo === "simulado" ? pct(r.nota) : r.resumo.carimbo}),
+        el("span", {class:"xpgain", style:{fontSize:".9rem"}, textContent:`+${r.xp} XP`}))))
+      : el("div", {class:"card empty", textContent:"Nenhuma partida ainda. Comece por um simulado rápido ou pelo caso do dia."}));
+}
+function stat(v, label) { return el("div", {class:"stat"}, el("b", {textContent:v}), el("small", {textContent:label})); }
+
+// ---------------------------------------------------------------- SIMULADOS
+async function viewSimulados() {
+  setTab("simulados");
+  const {niveis, concursos} = await api("/api/arena/concursos");
+  const order = ["basico", "intermediario", "avancado", "especialista"];
+  show(
+    el("h1", {textContent:"Simulados"}),
+    el("p", {class:"sub", textContent:"Estrutura de concursos reais (banca, formato e regra de pontuação) com questões originais, todas fundamentadas no texto vigente da lei."}),
+    el("div", {class:"grid"}, ...concursos.map(c => el("div", {class:"card"},
+      el("div", {class:"row"}, el("span", {class:"chip banca", textContent:c.banca}),
+        el("span", {class:"chip", textContent:c.formato === "certo_errado" ? "Certo / Errado" : `${c.alternativas} alternativas`})),
+      el("h2", {style:{margin:"10px 0 2px"}, textContent:c.nome}),
+      el("div", {class:"muted", style:{fontSize:".85rem"}, textContent:c.exemplos.join(" · ")}),
+      el("p", {class:"muted", style:{fontSize:".85rem", margin:"8px 0 0"}, textContent:c.regra_descricao}),
+      el("div", {class:"levels"}, ...order.map(lv => {
+        const cfg = niveis[lv];
+        const locked = c.nivel_minimo && order.indexOf(lv) < order.indexOf(c.nivel_minimo);
+        const n = Math.min(cfg.questoes, c.questoes_no_banco);
+        const min = Math.round(n * c.segundos_por_questao * cfg.fator_tempo / 60);
+        return el("button", {class:"lvbtn", disabled:locked, title:locked ? "Este concurso começa no nível Difícil" : "",
+            onclick:() => startExam(c.id, lv)},
+          el("b", {textContent:`${cfg.icone} ${cfg.nome}`}),
+          el("small", {textContent: locked ? "🔒 bloqueado" : `${n} questões · ${min} min · meta ${pct(c.meta_fixa ?? cfg.meta)}`}));
+      }))))));
+}
+
+let prova = null, timerId = null;
+async function startExam(concurso, nivel) {
+  try {
+    const s = await api("/api/arena/simulado/iniciar", {concurso, nivel});
+    prova = {s, i:0, respostas:{}, fim:Date.now() + s.tempo_limite_s * 1000};
+    clearInterval(timerId);
+    timerId = setInterval(tick, 500);
+    renderQuestion();
+  } catch (e) { toast(e.message); }
+}
+function tick() {
+  if (!prova) return clearInterval(timerId);
+  const left = Math.max(0, Math.round((prova.fim - Date.now()) / 1000));
+  const t = $("#timer");
+  if (t) { t.textContent = `${String(Math.floor(left / 60)).padStart(2, "0")}:${String(left % 60).padStart(2, "0")}`; t.classList.toggle("warn", left <= 60); }
+  if (left === 0) { toast("⏰ Tempo esgotado! Entregando a prova."); submitExam(true); }
+}
+function answer(qid, v) {
+  prova.respostas[qid] = prova.respostas[qid] === v ? null : v;
+  renderQuestion();
+}
+function renderQuestion() {
+  const {s, i} = prova;
+  const q = s.questoes[i];
+  const mine = prova.respostas[q.id];
+  const answered = Object.values(prova.respostas).filter(Boolean).length;
+  let body;
+  if (q.formato === "certo_errado") {
+    body = el("div", {class:"ce"},
+      el("button", {class:"cebtn c", "aria-pressed":String(mine === "C"), onclick:() => answer(q.id, "C"), textContent:"✓ Certo"}),
+      el("button", {class:"cebtn e", "aria-pressed":String(mine === "E"), onclick:() => answer(q.id, "E"), textContent:"✗ Errado"}));
+  } else {
+    body = el("div", {class:"alts"}, ...Object.entries(q.alternativas).map(([k, txt]) =>
+      el("button", {class:"alt", "aria-pressed":String(mine === k), onclick:() => answer(q.id, k)}, el("span", {class:"k", textContent:k}), el("span", {textContent:txt}))));
+  }
+  show(
+    el("div", {class:"examhead"},
+      el("div", {}, el("div", {style:{fontWeight:800}, textContent:`${s.concurso} · ${s.nivel_icone} ${s.nivel_nome}`}),
+        el("div", {class:"muted", style:{fontSize:".82rem"}, textContent:`${s.banca} · ${s.regra}`})),
+      el("span", {class:"spacer"}),
+      el("span", {class:"muted", textContent:`${answered}/${s.questoes.length} respondidas`}),
+      el("div", {class:"timer", id:"timer", "aria-label":"tempo restante", textContent:"--:--"})),
+    el("div", {class:"dots", role:"navigation", "aria-label":"questões"}, ...s.questoes.map((x, j) =>
+      el("button", {class:"dot" + (prova.respostas[x.id] ? " ans" : "") + (j === i ? " cur" : ""), textContent:j + 1,
+        "aria-label":`questão ${j + 1}`, onclick:() => { prova.i = j; renderQuestion(); }}))),
+    el("div", {class:"qcard"},
+      el("div", {class:"qmeta"}, el("span", {class:"chip", textContent:`Questão ${q.n}`}), el("span", {class:"chip", textContent:AREAS[q.area] || q.area}),
+        el("span", {class:"chip", textContent:q.tema})),
+      el("p", {class:"enun", textContent:q.enunciado}), body,
+      el("div", {class:"hint"}, "Atalhos: ",
+        ...(q.formato === "certo_errado" ? [el("kbd", {textContent:"C"}), " certo · ", el("kbd", {textContent:"E"}), " errado · "]
+                                        : [el("kbd", {textContent:"A"}), "–", el("kbd", {textContent:Object.keys(q.alternativas).slice(-1)[0]}), " alternativas · "]),
+        el("kbd", {textContent:"←"}), " ", el("kbd", {textContent:"→"}), " navegar · clique de novo para deixar em branco")),
+    el("div", {class:"row", style:{marginTop:"14px"}},
+      el("button", {class:"btn", disabled:i === 0, onclick:() => { prova.i--; renderQuestion(); }, textContent:"← Anterior"}),
+      el("button", {class:"btn", disabled:i === s.questoes.length - 1, onclick:() => { prova.i++; renderQuestion(); }, textContent:"Próxima →"}),
+      el("span", {class:"spacer"}),
+      el("button", {class:"btn ghost", onclick:() => { if (confirm("Abandonar este simulado? As respostas serão perdidas.")) { prova = null; viewSimulados(); } }, textContent:"Sair"}),
+      el("button", {class:"btn primary", onclick:() => submitExam(false), textContent:"Entregar prova"})));
+  tick();
+}
+async function submitExam(auto) {
+  if (!prova) return;
+  const blanks = prova.s.questoes.filter(q => !prova.respostas[q.id]).length;
+  if (!auto && blanks && !confirm(`Há ${blanks} questão(ões) em branco. Entregar mesmo assim?`)) return;
+  clearInterval(timerId);
+  const s = prova.s, respostas = prova.respostas;
+  prova = null;
+  try { renderResult(await api("/api/arena/simulado/entregar", {sessao:s.sessao, respostas})); }
+  catch (e) { toast(e.message); viewSimulados(); }
+}
+function renderResult(r) {
+  const ok = r.aprovado;
+  const ring = el("div", {class:"ring", style:{"--p":Math.round(r.nota * 100), "--ring-color":ok ? "var(--success)" : "var(--danger)"}}, el("span", {textContent:pct(r.nota)}));
+  show(
+    el("div", {class:"card verdict"}, ring,
+      el("div", {},
+        el("div", {class:"stamp " + (ok ? "ok" : "no"), textContent:ok ? "Meta batida" : (r.tempo_esgotado ? "Tempo esgotado" : "Ainda não")}),
+        el("h1", {style:{marginTop:"12px"}, textContent:`${r.concurso} · ${r.nivel_nome}`}),
+        el("p", {class:"muted", style:{margin:"0 0 6px"}, textContent:
+          `${r.acertos} acerto(s), ${r.erros} erro(s), ${r.brancos} em branco · meta ${pct(r.meta)}` +
+          (r.regra === "cebraspe" ? ` · ${r.pontos} ponto(s) líquido(s) (cada erro anula um acerto)` : "")}),
+        el("div", {class:"row"}, el("span", {class:"xpgain", textContent:`+${fmt(r.xp)} XP`}),
+          r.melhor_combo > 1 && el("span", {class:"chip", textContent:`🔥 combo ×${r.melhor_combo}`}),
+          el("span", {class:"chip", textContent:`⏱ ${Math.floor(r.tempo_gasto_s / 60)} min ${r.tempo_gasto_s % 60} s`})))),
+    el("div", {class:"grid", style:{marginTop:"14px"}},
+      el("div", {class:"card"}, el("h2", {textContent:"Por área"}), el("div", {class:"areas"}, ...Object.entries(r.por_area).map(([a, v]) =>
+        el("div", {class:"abar"}, el("span", {textContent:AREAS[a] || a}), el("b", {textContent:`${v.acertos}/${v.total}`}),
+          el("div", {class:"b"}, el("i", {style:{width:(100 * v.acertos / v.total) + "%"}})))))),
+      el("div", {class:"card"}, el("h2", {textContent:"Próximo passo"}),
+        el("p", {class:"muted", textContent: ok ? "Meta batida. Suba a dificuldade para ganhar mais XP." : "Revise as explicações abaixo e tente de novo: questões que você ainda não viu entram primeiro."}),
+        el("div", {class:"row"}, el("button", {class:"btn primary", onclick:viewSimulados, textContent:"Novo simulado"}), el("button", {class:"btn", onclick:viewInicio, textContent:"Início"})))),
+    el("h2", {style:{marginTop:"22px"}, textContent:"Correção comentada"}),
+    el("div", {class:"review"}, ...r.questoes.map(reviewCard)));
+  celebrate(r.progresso, r.xp);
+}
+function reviewCard(q) {
+  const label = q.status === "certa" ? el("span", {class:"tag-ok", textContent:"✓ Acertou"})
+              : q.status === "errada" ? el("span", {class:"tag-no", textContent:"✗ Errou"}) : el("span", {class:"muted", textContent:"— Em branco"});
+  const fmtAns = (v) => v === "C" && !q.alternativas ? "Certo" : v === "E" && !q.alternativas ? "Errado" : v;
+  return el("div", {class:"card rv " + q.status},
+    el("div", {class:"row"}, el("span", {class:"chip", textContent:`Questão ${q.n}`}), el("span", {class:"chip", textContent:q.tema}), el("span", {class:"spacer"}), label),
+    el("p", {class:"enun", style:{marginTop:"10px"}, textContent:q.enunciado}),
+    q.alternativas && el("ul", {class:"altlist"}, ...Object.entries(q.alternativas).map(([k, t]) =>
+      el("li", {class:(k === q.gabarito ? "is-gab " : "") + (k === q.resposta ? "is-mine" : ""), textContent:`${k}) ${t}`}))),
+    el("div", {style:{fontSize:".9rem"}}, el("b", {textContent:"Gabarito: "}), fmtAns(q.gabarito),
+      q.resposta ? ` · sua resposta: ${fmtAns(q.resposta)}` : ""),
+    el("p", {style:{margin:"8px 0 0"}, textContent:q.explicacao}),
+    q.pegadinha && el("div", {class:"trap"}, el("b", {textContent:"Pegadinha: "}), q.pegadinha),
+    el("details", {class:"more", open:q.status !== "certa"}, el("summary", {textContent:"Ver o texto da lei"}), ...q.fundamentos.map(lawBox)));
+}
+
+// ---------------------------------------------------------------- CASOS
+async function viewCasos() {
+  setTab("casos");
+  const casos = await api("/api/arena/casos");
+  show(
+    el("h1", {textContent:"Casos"}),
+    el("p", {class:"sub", textContent:"Vasconcelos & Duarte Advocacia. Você decide como advogado, promotor ou juiz. Cada escolha mexe no seu Argumento (técnica) e na sua Credibilidade (como a sala o enxerga)."}),
+    el("div", {class:"grid"}, ...casos.map(c => el("button", {class:"card click dossie", style:{"--role":ROLE[c.papel].cor}, onclick:() => startCase(c.id)},
+      el("div", {class:"row"}, el("span", {class:"chip " + c.papel, textContent:`${ROLE[c.papel].ic} ${c.papel_nome}`}), el("span", {class:"chip", textContent:LV[c.nivel]})),
+      el("h3", {textContent:c.titulo}), el("p", {textContent:c.sinopse}),
+      el("div", {class:"row", style:{fontSize:".82rem"}}, el("span", {class:"muted", textContent:`${c.cenas} cenas`}), el("span", {class:"spacer"}),
+        c.melhor !== null && c.melhor !== undefined ? el("span", {class:"best", textContent:`melhor: ${pct(c.melhor)}`}) : el("span", {class:"muted", textContent:"não jogado"}))))));
+}
+let caso = null, continuar = null;
+async function startCase(id) {
+  setTab("casos");
+  try { caso = await api("/api/arena/caso/iniciar", {caso:id}); renderScene(caso, null); }
+  catch (e) { toast(e.message); }
+}
+function meter(label, v) {
+  const w = Math.min(50, Math.abs(v) * 4);
+  return el("div", {class:"meter"}, el("div", {class:"row"}, el("small", {textContent:label}), el("span", {class:"spacer"}), el("span", {class:"val", textContent:(v > 0 ? "+" : "") + v})),
+    el("div", {class:"mbar"}, el("i", {class:v >= 0 ? "pos" : "neg", style:v >= 0 ? {left:"50%", width:w + "%"} : {left:(50 - w) + "%", width:w + "%"}})));
+}
+function renderScene(sc, picked) {
+  const head = el("div", {class:"row"},
+    el("span", {class:"chip " + sc.caso.papel, textContent:`${ROLE[sc.caso.papel].ic} ${sc.caso.papel_nome}`}),
+    el("span", {class:"chip", textContent:`Cena ${sc.etapa} de ${sc.etapas}`}), el("span", {class:"spacer"}),
+    el("button", {class:"btn ghost", onclick:viewCasos, textContent:"Sair do caso"}));
+  const choices = el("div", {class:"choices"}, ...sc.escolhas.map(c =>
+    el("button", {class:"choice" + (picked === c.indice ? " picked" : ""), disabled:picked !== null, onclick:() => choose(sc, c.indice)},
+      el("span", {class:"k", textContent:c.indice + 1}), el("span", {textContent:c.texto}))));
+  show(head,
+    el("h1", {textContent:sc.caso.titulo}),
+    el("div", {class:"meters"}, meter("Argumento", sc.medidores.argumento), meter("Credibilidade", sc.medidores.credibilidade)),
+    el("div", {class:"card"},
+      el("div", {class:"scene-local", textContent:sc.local}),
+      el("div", {class:"bubbles"}, ...sc.falas.map(f => f.quem
+        ? el("div", {class:"bubble"}, el("div", {class:"avatar", style:{"--av":COR[f.cor] || "var(--text)"}, textContent:initials(f.quem)}),
+            el("div", {}, el("div", {class:"who"}, el("b", {textContent:f.quem}), " ", el("small", {textContent:f.cargo})), el("div", {class:"say", textContent:f.texto})))
+        : el("div", {class:"bubble narr"}, el("div", {class:"say", textContent:f.texto})))),
+      el("div", {class:"question", textContent:sc.pergunta}), choices,
+      picked === null && el("div", {class:"hint"}, "Atalhos: ", el("kbd", {textContent:"1"}), " ", el("kbd", {textContent:"2"}), " ", el("kbd", {textContent:"3"})),
+      el("div", {id:"fb"})));
+}
+async function choose(sc, idx) {
+  if (!caso || caso.sessao !== sc.sessao || caso._busy) return;
+  caso._busy = true;
+  try {
+    const r = await api("/api/arena/caso/escolher", {sessao:sc.sessao, indice:idx});
+    renderScene({...sc, medidores:r.medidores}, idx);
+    const eff = (n, label) => el("span", {class:"eff " + (n > 0 ? "pos" : n < 0 ? "neg" : "zero"), textContent:`${n > 0 ? "+" : ""}${n} ${label}`});
+    const go = r.final ? () => { continuar = null; renderFinal(r); }
+                       : () => { continuar = null; caso = r.proxima; renderScene(r.proxima, null); };
+    const next = el("button", {class:"btn primary", onclick:go, textContent:r.final ? "Ver o desfecho →" : "Continuar →"});
+    $("#fb").replaceChildren(el("div", {class:"feedback"},
+      el("div", {class:"row"}, eff(r.efeito.argumento, "Argumento"), eff(r.efeito.credibilidade, "Credibilidade"), r.melhor_escolha && el("span", {class:"best", textContent:"★ Melhor jogada"})),
+      el("p", {style:{margin:"10px 0"}, textContent:r.feedback}),
+      ...r.fundamentos.map(lawBox),
+      el("div", {class:"row", style:{marginTop:"12px"}}, el("span", {class:"spacer"}), next)));
+    next.scrollIntoView({block:"nearest", behavior:"smooth"});
+    next.focus({preventScroll:true});
+    continuar = go;  // Enter/Espaço avançam mesmo se o botão perder o foco
+    caso = r.final ? null : {...caso, _busy:false, _next:r.proxima};
+  } catch (e) { toast(e.message); if (caso) caso._busy = false; }
+}
+function renderFinal(r) {
+  const f = r.final;
+  const cls = {otimo:"ok", medio:"mid", ruim:"no"}[f.faixa] || "mid";
+  show(el("div", {class:"card final"},
+    el("div", {class:"muted", textContent:"Desfecho"}),
+    el("div", {class:"stamp " + cls, textContent:f.carimbo}),
+    el("h1", {textContent:f.titulo}),
+    el("p", {textContent:f.texto}),
+    el("div", {class:"row", style:{justifyContent:"center"}},
+      el("span", {class:"chip", textContent:`Argumento ${f.argumento > 0 ? "+" : ""}${f.argumento}`}),
+      el("span", {class:"chip", textContent:`Credibilidade ${f.credibilidade > 0 ? "+" : ""}${f.credibilidade}`}),
+      el("span", {class:"chip", textContent:`Aproveitamento ${pct(f.aproveitamento)}`})),
+    el("div", {class:"xpgain", style:{margin:"14px 0"}, textContent:`+${fmt(f.xp)} XP`}),
+    el("div", {class:"row", style:{justifyContent:"center"}},
+      el("button", {class:"btn primary", onclick:viewCasos, textContent:"Outros casos"}),
+      el("button", {class:"btn", onclick:viewInicio, textContent:"Início"}))));
+  celebrate(r.progresso, f.xp);
+}
+
+// ---------------------------------------------------------------- teclado e navegação
+document.addEventListener("keydown", (ev) => {
+  if (ev.ctrlKey || ev.metaKey || ev.altKey || /input|textarea/i.test(ev.target.tagName)) return;
+  const k = ev.key.toUpperCase();
+  if (prova) {
+    const q = prova.s.questoes[prova.i];
+    if (q.formato === "certo_errado" && (k === "C" || k === "E")) answer(q.id, k);
+    else if (q.formato === "multipla" && q.alternativas[k]) answer(q.id, k);
+    else if (ev.key === "ArrowRight" && prova.i < prova.s.questoes.length - 1) { prova.i++; renderQuestion(); }
+    else if (ev.key === "ArrowLeft" && prova.i > 0) { prova.i--; renderQuestion(); }
+    return;
+  }
+  if (continuar && (ev.key === "Enter" || ev.key === " ")) { ev.preventDefault(); continuar(); return; }
+  if (caso && !caso._busy && !caso._next && /^[1-9]$/.test(ev.key)) {
+    const opt = caso.escolhas && caso.escolhas[Number(ev.key) - 1];
+    if (opt) choose(caso, opt.indice);
+  }
+});
+const routes = {inicio:viewInicio, simulados:viewSimulados, casos:viewCasos};
+function navigate(tab) {
+  if (prova && !confirm("Sair do simulado em andamento?")) return false;
+  prova = null; caso = null; continuar = null; clearInterval(timerId);
+  (routes[tab] || viewInicio)().catch(e => toast(e.message));
+  return true;
+}
+document.querySelectorAll("nav.tabs [data-tab]").forEach(b => b.addEventListener("click", () => {
+  if (location.hash.slice(1) === b.dataset.tab) navigate(b.dataset.tab);
+  else location.hash = b.dataset.tab;  // dispara hashchange → navigate
+}));
+window.addEventListener("hashchange", () => navigate(location.hash.slice(1)));
+loadProfile().catch(() => {});  // HUD (nível, XP, sequência) em qualquer aba de entrada
+(routes[location.hash.slice(1)] || viewInicio)().catch(e => show(el("div", {class:"card empty", textContent:"Não consegui falar com o servidor: " + e.message})));
+</script>
+</body>
+</html>

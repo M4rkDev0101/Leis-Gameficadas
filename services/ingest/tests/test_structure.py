@@ -164,6 +164,23 @@ class TestDivisions(unittest.TestCase):
         self.assertEqual(a["art-3"].rubrica, "Lei penal no tempo")
 
 
+class TestInnerRubrics(unittest.TestCase):
+    def test_rubrics_before_paragraphs_and_incisos(self):
+        body = ("**Homicídio simples**\n\n**Art. 121.** Matar alguém:\n\nPena - reclusão, de seis a vinte anos.\n\n"
+                "Caso de diminuição de pena\n\n**§ 1º** Se o agente comete o crime impelido por motivo de relevante valor.\n\n"
+                "**Homicídio qualificado**\n\n**§ 2º** Se o homicídio é cometido:\n\nI - mediante paga;\n\n"
+                "**Feminicídio** *(Nome jurídico acrescido pela Lei nº 13.104, de 9/3/2015)*\n\nVI - *(Revogado)*\n\n"
+                "**Art. 14.** Diz-se o crime:\n\nCrime consumado\n\nI - consumado, quando nele se reúnem todos os elementos;\n\n"
+                "V valorização da diversidade\n\n**Art. 15.** O agente.")
+        u = {x.path: x for x in parse_body(body).root.walk()}
+        self.assertEqual(u["art-121"].text, "Matar alguém:")  # a rubrica não gruda no caput
+        self.assertEqual(u["art-121/par-1"].rubrica, "Caso de diminuição de pena")
+        self.assertEqual(u["art-121/par-2"].rubrica, "Homicídio qualificado")
+        self.assertEqual(u["art-121/par-2/inc-vi"].rubrica, "Feminicídio")  # sem a nota editorial
+        self.assertEqual(u["art-14/inc-i"].rubrica, "Crime consumado")
+        self.assertIsNone(u["art-15"].rubrica)  # "V valorização…" não é rubrica (começa com romano)
+
+
 class TestHelpers(unittest.TestCase):
     def test_roman(self):
         self.assertEqual(roman_to_int("LXXIII"), 73)

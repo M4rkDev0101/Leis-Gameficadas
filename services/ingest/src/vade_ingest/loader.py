@@ -31,6 +31,8 @@ class ImportReport:
 
 
 SCHEMA_VERSION = 2
+# Suba ao mudar o resultado do parser (structure/precedent/quality/classify): força reprocessamento.
+PARSER_VERSION = "2026.10.21-2"
 
 
 def in_scope(path: str, prefixes: list[str]) -> bool:
@@ -56,7 +58,19 @@ class Catalog:
             # primeiro DELETE em cascata corrompe o FTS ("database disk image is malformed")
             self.db.execute("INSERT INTO dispositivo_fts(dispositivo_fts) VALUES ('rebuild')")
         self.db.execute(f"PRAGMA user_version = {SCHEMA_VERSION}")
+        self._check_parser_version()
         self.db.commit()
+
+    def _check_parser_version(self) -> None:
+        """Parser melhorou → o mesmo arquivo do acervo gera dispositivos diferentes. Sem isso, só os
+        arquivos que mudaram no GitHub seriam reprocessados e o resto ficaria com o parse antigo."""
+        stored = self.get("versao_parser")
+        if stored == PARSER_VERSION:
+            return
+        if stored is not None or self.db.execute("SELECT 1 FROM norma LIMIT 1").fetchone():
+            self.db.execute("UPDATE norma SET content_hash = ''")
+            self.db.execute("DELETE FROM kv WHERE chave = 'ultimo_commit'")  # próxima sync lista o recorte
+        self.set("versao_parser", PARSER_VERSION)
 
     def _migrate(self) -> bool:
         """Migrações de catálogos criados por versões anteriores (``PRAGMA user_version``).

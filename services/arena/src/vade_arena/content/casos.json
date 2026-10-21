@@ -1,0 +1,484 @@
+{
+  "_sobre": "Casos narrativos originais (personagens e escritório fictícios). Cada escolha altera os medidores 'argumento' (qualidade técnica) e 'credibilidade' (como juiz, júri e partes o enxergam) e é fundamentada em dispositivos do catálogo. A soma define o final.",
+  "elenco": {
+    "helena":  {"nome": "Helena Vasconcelos", "cargo": "Sócia-gestora da Vasconcelos & Duarte", "cor": "primary"},
+    "rafael":  {"nome": "Rafael Duarte", "cargo": "Sócio sênior, o melhor litigante da cidade", "cor": "xp"},
+    "lacerda": {"nome": "Dr. Otávio Lacerda", "cargo": "Promotor de Justiça", "cor": "danger"},
+    "beatriz": {"nome": "Dra. Beatriz Monteiro", "cargo": "Juíza de Direito", "cor": "muted"},
+    "silvia":  {"nome": "Dra. Sílvia Prado", "cargo": "Defensora constituída", "cor": "success"},
+    "lucas":   {"nome": "Lucas Ferreira", "cargo": "Cliente, 19 anos", "cor": "muted"},
+    "ana":     {"nome": "Ana Ribeiro", "cargo": "Vítima, 27 anos", "cor": "muted"},
+    "marina":  {"nome": "Marina Couto", "cargo": "Cliente, paciente da Clínica Sorriso", "cor": "muted"},
+    "narrador": {"nome": "", "cargo": "", "cor": "muted"}
+  },
+  "casos": [
+    {
+      "id": "celular-augusta",
+      "papel": "advogado",
+      "titulo": "O celular da Rua Augusta",
+      "nivel": "intermediario",
+      "area": "penal",
+      "sinopse": "Seu primeiro caso criminal na Vasconcelos & Duarte. O cliente está preso por roubo de celular, mas a história dele não fecha com a denúncia. Você tem 48 horas.",
+      "inicio": "c1",
+      "cenas": {
+        "c1": {
+          "local": "Vasconcelos & Duarte · 23º andar · 8h12",
+          "falas": [
+            {"quem": "helena", "texto": "Lucas Ferreira, 19 anos, preso em flagrante por roubo majorado de celular. A família pagou nossos honorários e eu dei o caso a você. Não me faça me arrepender."},
+            {"quem": "rafael", "texto": "Regra número um: o cliente sempre mente para o advogado. A pergunta é só sobre o quê."}
+          ],
+          "pergunta": "Na primeira conversa com Lucas, no parlatório, qual é o seu foco?",
+          "escolhas": [
+            {"texto": "Reconstruir os fatos minuto a minuto: houve violência ou ameaça contra a vítima?",
+             "efeito": {"argumento": 2, "credibilidade": 1},
+             "feedback": "Pergunta certa. Roubo exige violência ou grave ameaça; sem isso, a subtração é furto. Lucas jura que pegou o celular da mesa do bar e correu, sem encostar em ninguém.",
+             "fundamentos": [{"chave": "CP#art-157", "trecho": "mediante grave ameaça ou violência a pessoa"}, {"chave": "CP#art-155", "trecho": "Subtrair, para si ou para outrem, coisa alheia móvel"}],
+             "proxima": "c2"},
+            {"texto": "Aconselhar Lucas a confessar tudo na audiência, para conseguir a pena mínima.",
+             "efeito": {"argumento": -1, "credibilidade": 0},
+             "feedback": "Cedo demais. Sem conhecer os fatos você nem sabe qual crime ele cometeu. Confissão pode virar atenuante depois, mas a estratégia vem antes.",
+             "fundamentos": [],
+             "proxima": "c2"},
+            {"texto": "Prometer a Lucas que ele sai absolvido até sexta.",
+             "efeito": {"argumento": 0, "credibilidade": -2},
+             "feedback": "Rafael ouviu do corredor: 'Nunca prometa o que não controla.' A família vai cobrar essa promessa.",
+             "fundamentos": [],
+             "proxima": "c2"}
+          ]
+        },
+        "c2": {
+          "local": "Sala de reuniões · 14h",
+          "falas": [
+            {"quem": "rafael", "texto": "A denúncia diz roubo com aumento de pena por ser celular. Você acha que é furto. Ótimo. Agora me diga quanto isso vale para o Lucas."},
+            {"quem": "narrador", "texto": "Você abre o Código Penal atualizado. O furto de celular mudou recentemente."}
+          ],
+          "pergunta": "Qual tese você leva para a defesa?",
+          "escolhas": [
+            {"texto": "Desclassificação para furto qualificado de celular (art. 155, § 6º, II): 4 a 10 anos, contra 6 a 10 anos do roubo, mais o aumento de 1/3 até metade.",
+             "efeito": {"argumento": 3, "credibilidade": 1},
+             "feedback": "Precisa e honesta. Desde a alteração recente, furtar celular não é furto simples, e saber disso é o que separa o júnior do sênior. Mesmo assim, o ganho é real: sai a pena do roubo com a majorante do inciso IX.",
+             "fundamentos": [{"chave": "CP#art-155/par-6/inc-ii", "trecho": "de aparelho de telefonia celular"}, {"chave": "CP#art-157/par-2/inc-ix", "trecho": "se a subtração for de aparelho de telefonia celular"}],
+             "proxima": "c3"},
+            {"texto": "Desclassificação para furto simples: 1 a 6 anos.",
+             "efeito": {"argumento": -1, "credibilidade": 0},
+             "feedback": "Rafael sorri de canto: 'Leu o código da faculdade?' O furto de celular agora tem pena própria no § 6º. A juíza vai corrigir você em plenário.",
+             "fundamentos": [{"chave": "CP#art-155/par-6/inc-ii", "trecho": "de aparelho de telefonia celular"}],
+             "proxima": "c3"},
+            {"texto": "Legítima defesa: Lucas teria sido provocado no bar.",
+             "efeito": {"argumento": -3, "credibilidade": -1},
+             "feedback": "Legítima defesa repele injusta agressão. Ninguém agrediu Lucas, ele pegou um celular. A tese não para em pé.",
+             "fundamentos": [{"chave": "CP#art-25", "trecho": "repele injusta agressão, atual ou iminente"}],
+             "proxima": "c3"}
+          ]
+        },
+        "c3": {
+          "local": "Fórum Criminal · Sala 4 · Audiência de instrução",
+          "falas": [
+            {"quem": "lacerda", "texto": "A testemunha afirmou na delegacia que o réu empurrou a vítima para tomar o aparelho. Empurrão é violência, Excelência."},
+            {"quem": "beatriz", "texto": "Doutor, a defesa tem a palavra para as perguntas."}
+          ],
+          "pergunta": "Como você trata a testemunha?",
+          "escolhas": [
+            {"texto": "Perguntas curtas e precisas: onde ela estava, se viu o celular sair da mesa, quando chegou ao local.",
+             "efeito": {"argumento": 2, "credibilidade": 2},
+             "feedback": "A testemunha admite que chegou depois e 'ouviu dizer' do empurrão. O depoimento perde força, e você não precisou levantar a voz.",
+             "fundamentos": [{"chave": "CF#art-5/inc-lv", "trecho": "são assegurados o contraditório e ampla defesa"}],
+             "proxima": "c4"},
+            {"texto": "Acusar a testemunha de mentir e pedir a prisão dela por falso testemunho.",
+             "efeito": {"argumento": 0, "credibilidade": -2},
+             "feedback": "A juíza Beatriz o adverte. Você pode ter razão no mérito, mas perdeu a sala.",
+             "fundamentos": [],
+             "proxima": "c4"},
+            {"texto": "Não perguntar nada e guardar tudo para as alegações finais.",
+             "efeito": {"argumento": -1, "credibilidade": 0},
+             "feedback": "A contradição que você não explorou na audiência fica sem registro. Nas alegações, vira sua palavra contra o depoimento.",
+             "fundamentos": [],
+             "proxima": "c4"}
+          ]
+        },
+        "c4": {
+          "local": "Fórum Criminal · Alegações finais orais",
+          "falas": [
+            {"quem": "rafael", "texto": "(mensagem no seu celular) Feche com a lei, não com emoção. Juíza Monteiro odeia teatro."}
+          ],
+          "pergunta": "Qual é o seu pedido final?",
+          "escolhas": [
+            {"texto": "Desclassificação para o art. 155, § 6º, II, afastada a majorante do roubo; subsidiariamente, pena no mínimo legal, com a primariedade de Lucas.",
+             "efeito": {"argumento": 3, "credibilidade": 2},
+             "feedback": "Pedido principal sólido e pedido subsidiário realista. É assim que se fecha uma defesa.",
+             "fundamentos": [{"chave": "CP#art-155/par-6/inc-ii", "trecho": "de aparelho de telefonia celular"}],
+             "proxima": null},
+            {"texto": "Absolvição por insuficiência de provas, sem pedido subsidiário.",
+             "efeito": {"argumento": 0, "credibilidade": 0},
+             "feedback": "A subtração foi filmada. Apostar tudo na absolvição deixa a juíza sem uma saída intermediária para escolher.",
+             "fundamentos": [{"chave": "CF#art-5/inc-lvii", "trecho": "ninguém será considerado culpado"}],
+             "proxima": null},
+            {"texto": "Pedir clemência: Lucas é jovem e merece uma segunda chance.",
+             "efeito": {"argumento": -1, "credibilidade": 1},
+             "feedback": "Humaniza o cliente, mas não é pedido jurídico. Sentença se ganha com tese.",
+             "fundamentos": [],
+             "proxima": null}
+          ]
+        }
+      },
+      "finais": [
+        {"min": 9, "carimbo": "DESCLASSIFICADO", "titulo": "Furto, não roubo",
+         "texto": "A juíza acolhe a desclassificação para o art. 155, § 6º, II. Afasta a violência e a majorante do roubo. Helena passa pela sua mesa: 'Bom trabalho.' Vindo dela, é uma promoção.", "xp": 120},
+        {"min": 3, "carimbo": "PARCIAL", "titulo": "Vitória pela metade",
+         "texto": "A sentença afasta a violência, mas a fundamentação da defesa deixou lacunas. Rafael: 'Ganhou o caso, não ganhou o respeito da sala. Ainda.'", "xp": 70},
+        {"min": -99, "carimbo": "CONDENADO", "titulo": "Roubo majorado mantido",
+         "texto": "Lucas é condenado por roubo majorado. Helena chama você à sala dela. Cabe recurso, mas desta vez não será você quem vai assinar.", "xp": 30}
+      ]
+    },
+    {
+      "id": "protetiva-urgente",
+      "papel": "promotor",
+      "titulo": "Medida protetiva urgente",
+      "nivel": "intermediario",
+      "area": "penal-especial",
+      "sinopse": "Você é o promotor de plantão. Ana foi ameaçada pelo ex-namorado, que também destruiu o notebook dela, e a defesa diz que nem cabe Lei Maria da Penha. O juiz decide em uma hora.",
+      "inicio": "p1",
+      "cenas": {
+        "p1": {
+          "local": "Promotoria de Violência Doméstica · Plantão · 22h40",
+          "falas": [
+            {"quem": "ana", "texto": "A gente namorou dois anos, mas nunca morou junto. Ele disse que se eu não voltasse ia 'acabar comigo'. Quebrou meu notebook, que é meu instrumento de trabalho."},
+            {"quem": "silvia", "texto": "Doutor, sem coabitação não há violência doméstica. Isso é, no máximo, ameaça comum no Juizado."}
+          ],
+          "pergunta": "Como você responde à tese da defesa?",
+          "escolhas": [
+            {"texto": "Relação íntima de afeto configura violência doméstica independentemente de coabitação (art. 5º, III), entendimento consolidado na Súmula 600 do STJ.",
+             "efeito": {"argumento": 3, "credibilidade": 1},
+             "feedback": "Exato. A lei e a súmula dizem a mesma coisa: o que importa é o vínculo afetivo, não o endereço.",
+             "fundamentos": [{"chave": "LMP#art-5/inc-iii", "trecho": "independentemente de coabitação"}, {"chave": "STJ600#enunciado", "trecho": "não se exige a coabitação entre autor e vítima"}],
+             "proxima": "p2"},
+            {"texto": "Concordar e remeter o caso ao Juizado Especial.",
+             "efeito": {"argumento": -3, "credibilidade": -1},
+             "feedback": "Você acaba de entregar a tese da defesa. A coabitação não é requisito, e Ana fica sem a proteção da lei.",
+             "fundamentos": [{"chave": "LMP#art-5/inc-iii", "trecho": "independentemente de coabitação"}],
+             "proxima": "p2"},
+            {"texto": "Argumentar que namoro de dois anos equivale a união estável.",
+             "efeito": {"argumento": 0, "credibilidade": 0},
+             "feedback": "Você chega ao lugar certo pelo caminho errado. Não precisa provar união estável: basta a relação íntima de afeto.",
+             "fundamentos": [{"chave": "LMP#art-5/inc-iii", "trecho": "em qualquer relação íntima de afeto"}],
+             "proxima": "p2"}
+          ]
+        },
+        "p2": {
+          "local": "Promotoria · Redação do requerimento",
+          "falas": [
+            {"quem": "narrador", "texto": "Você precisa enquadrar as condutas nas formas de violência da lei."}
+          ],
+          "pergunta": "Como você descreve as condutas de Bruno?",
+          "escolhas": [
+            {"texto": "Violência psicológica (ameaças) e violência patrimonial (destruição do notebook, instrumento de trabalho).",
+             "efeito": {"argumento": 3, "credibilidade": 1},
+             "feedback": "Enquadramento completo. A destruição de instrumento de trabalho está literalmente na violência patrimonial.",
+             "fundamentos": [{"chave": "LMP#art-7/inc-ii", "trecho": "a violência psicológica"}, {"chave": "LMP#art-7/inc-iv", "trecho": "destruição parcial ou total de seus objetos, instrumentos de trabalho"}],
+             "proxima": "p3"},
+            {"texto": "Apenas violência física, que é a mais grave.",
+             "efeito": {"argumento": -2, "credibilidade": 0},
+             "feedback": "Não houve agressão física. Enquadrar errado enfraquece o pedido e abre espaço para a defesa.",
+             "fundamentos": [{"chave": "LMP#art-7/inc-i", "trecho": "a violência física"}],
+             "proxima": "p3"},
+            {"texto": "Violência moral, porque ele a xingou por mensagem.",
+             "efeito": {"argumento": 1, "credibilidade": 0},
+             "feedback": "Pode até ser cumulável, mas você deixou de fora o principal: a ameaça e o dano patrimonial.",
+             "fundamentos": [{"chave": "LMP#art-7/inc-v", "trecho": "a violência moral"}],
+             "proxima": "p3"}
+          ]
+        },
+        "p3": {
+          "local": "Audiência de custódia · Sala 2",
+          "falas": [
+            {"quem": "silvia", "texto": "Excelência, a defesa propõe transação penal. O réu é primário e a pena da ameaça é baixa."},
+            {"quem": "beatriz", "texto": "Ministério Público?"}
+          ],
+          "pergunta": "Sua manifestação:",
+          "escolhas": [
+            {"texto": "Impossível: nos crimes com violência doméstica contra a mulher não se aplica a Lei 9.099/1995, independentemente da pena (art. 41), nem a transação penal (Súmula 536 do STJ).",
+             "efeito": {"argumento": 3, "credibilidade": 2},
+             "feedback": "Resposta de manual. A juíza indefere a transação em uma frase.",
+             "fundamentos": [{"chave": "LMP#art-41", "trecho": "não se aplica a Lei nº 9.099"}, {"chave": "STJ536#enunciado", "trecho": "a transação penal não se aplicam"}],
+             "proxima": "p4"},
+            {"texto": "Aceitar a transação, desde que ele pague cestas básicas.",
+             "efeito": {"argumento": -3, "credibilidade": -2},
+             "feedback": "A lei veda exatamente isso. A juíza Beatriz chega a reler o art. 41 em voz alta.",
+             "fundamentos": [{"chave": "LMP#art-41", "trecho": "não se aplica a Lei nº 9.099"}],
+             "proxima": "p4"},
+            {"texto": "Pedir que a decisão fique para depois da medida protetiva.",
+             "efeito": {"argumento": 0, "credibilidade": -1},
+             "feedback": "Adiar uma questão que a lei já resolve passa insegurança. Use a regra certa na hora.",
+             "fundamentos": [],
+             "proxima": "p4"}
+          ]
+        },
+        "p4": {
+          "local": "Audiência de custódia · Decisão sobre as medidas",
+          "falas": [
+            {"quem": "ana", "texto": "(baixinho) Ele já apareceu no meu trabalho duas vezes depois da primeira medida."}
+          ],
+          "pergunta": "Que medidas você requer?",
+          "escolhas": [
+            {"texto": "Proibição de aproximação e de contato e, como houve descumprimento anterior, monitoração eletrônica com dispositivo de alerta para Ana.",
+             "efeito": {"argumento": 3, "credibilidade": 2},
+             "feedback": "Pedido proporcional e bem fundamentado. O descumprimento anterior dá prioridade à monitoração eletrônica, e um indeferimento exigiria fundamentação expressa do juiz.",
+             "fundamentos": [{"chave": "LMP#art-22/inc-viii", "trecho": "monitoração eletrônica"}, {"chave": "LMP#art-22/par-6", "trecho": "houver descumprimento de medidas protetivas anteriormente impostas"}],
+             "proxima": null},
+            {"texto": "Só a proibição de contato; monitoração seria exagero.",
+             "efeito": {"argumento": 0, "credibilidade": 0},
+             "feedback": "Você ignorou o descumprimento relatado por Ana, que é justamente o gatilho legal da monitoração.",
+             "fundamentos": [{"chave": "LMP#art-22/par-6", "trecho": "descumprimento de medidas protetivas anteriormente impostas"}],
+             "proxima": null},
+            {"texto": "Nenhuma medida agora; esperar o fim do processo.",
+             "efeito": {"argumento": -3, "credibilidade": -2},
+             "feedback": "Medida protetiva é de urgência justamente porque não pode esperar o processo.",
+             "fundamentos": [{"chave": "LMP#art-22", "trecho": "o juiz poderá aplicar, de imediato, ao agressor"}],
+             "proxima": null}
+          ]
+        }
+      },
+      "finais": [
+        {"min": 10, "carimbo": "DEFERIDO", "titulo": "Ana está protegida",
+         "texto": "Medidas deferidas, monitoração instalada no mesmo dia, transação negada. Na saída, Ana agradece em silêncio. É para isso que existe a Promotoria.", "xp": 130},
+        {"min": 4, "carimbo": "PARCIAL", "titulo": "Proteção incompleta",
+         "texto": "Parte das medidas foi deferida, mas lacunas no requerimento deixaram Ana mais exposta do que precisava.", "xp": 70},
+        {"min": -99, "carimbo": "INDEFERIDO", "titulo": "A lei não chegou até Ana",
+         "texto": "O caso foi tratado como ameaça comum. Dias depois, o Dr. Lacerda pede para revisar o seu requerimento linha a linha.", "xp": 30}
+      ]
+    },
+    {
+      "id": "usuario-ou-traficante",
+      "papel": "juiz",
+      "titulo": "Usuário ou traficante?",
+      "nivel": "avancado",
+      "area": "penal-especial",
+      "sinopse": "Você é o juiz. Um rapaz de 22 anos foi preso com 12 porções de maconha e R$ 80. A acusação pede tráfico e a defesa, porte para consumo. A sentença é sua.",
+      "inicio": "j1",
+      "cenas": {
+        "j1": {
+          "local": "2ª Vara Criminal · Gabinete",
+          "falas": [
+            {"quem": "lacerda", "texto": "Doze porções embaladas, dinheiro trocado, ponto conhecido de venda. Tráfico, Excelência."},
+            {"quem": "silvia", "texto": "Doze porções pequenas, nenhuma balança, nenhuma anotação. Ele é usuário e diz que comprou para o fim de semana."}
+          ],
+          "pergunta": "Como você decide se a droga era para consumo pessoal?",
+          "escolhas": [
+            {"texto": "Pelos critérios do art. 28, § 2º, em conjunto: natureza e quantidade, local e condições da ação, circunstâncias sociais e pessoais, conduta e antecedentes.",
+             "efeito": {"argumento": 3, "credibilidade": 2},
+             "feedback": "É o método da lei: nenhum critério decide sozinho. Lembre também que, para a cannabis, o STF fixou em 2024 (Tema 506) a presunção relativa de uso pessoal para até 40 g ou seis plantas-fêmeas.",
+             "fundamentos": [{"chave": "LD#art-28/par-2", "trecho": "o juiz atenderá à natureza e à quantidade da substância apreendida, ao local e às condições em que se desenvolveu a ação"}],
+             "proxima": "j2"},
+            {"texto": "Só pela quantidade: doze porções é tráfico.",
+             "efeito": {"argumento": -2, "credibilidade": -1},
+             "feedback": "A quantidade é um critério entre vários. Decidir só por ela é a crítica clássica dos tribunais superiores a sentenças de tráfico.",
+             "fundamentos": [{"chave": "LD#art-28/par-2", "trecho": "às circunstâncias sociais e pessoais, bem como à conduta e aos antecedentes do agente"}],
+             "proxima": "j2"},
+            {"texto": "Pelo local: quem está em ponto de venda é traficante.",
+             "efeito": {"argumento": -2, "credibilidade": -1},
+             "feedback": "Usuários também compram em pontos de venda. O local pesa, mas não decide sozinho.",
+             "fundamentos": [{"chave": "LD#art-28/par-2", "trecho": "ao local e às condições em que se desenvolveu a ação"}],
+             "proxima": "j2"}
+          ]
+        },
+        "j2": {
+          "local": "Gabinete · Análise das provas",
+          "falas": [
+            {"quem": "narrador", "texto": "No celular apreendido há uma única mensagem: 'tem disponível?'. Não houve perícia, campana nem testemunha de venda."}
+          ],
+          "pergunta": "Que peso você dá à mensagem?",
+          "escolhas": [
+            {"texto": "Indício fraco e ambíguo: pode ter sido enviada por quem compra. Sozinha, não prova a mercancia.",
+             "efeito": {"argumento": 3, "credibilidade": 1},
+             "feedback": "Valoração cuidadosa. Na dúvida sobre a destinação, a presunção de inocência orienta a decisão.",
+             "fundamentos": [{"chave": "CF#art-5/inc-lvii", "trecho": "ninguém será considerado culpado até o trânsito em julgado"}],
+             "proxima": "j3"},
+            {"texto": "Prova cabal de tráfico.",
+             "efeito": {"argumento": -2, "credibilidade": -1},
+             "feedback": "Uma mensagem ambígua, sem contexto nem perícia, dificilmente sustenta sozinha uma condenação de 5 a 15 anos.",
+             "fundamentos": [{"chave": "LD#art-33/pena", "trecho": "reclusão de 5 (cinco) a 15 (quinze) anos"}],
+             "proxima": "j3"},
+            {"texto": "Desconsiderar a mensagem, porque o celular foi acessado sem ordem judicial.",
+             "efeito": {"argumento": 1, "credibilidade": 0},
+             "feedback": "É uma discussão válida, e o acesso sem autorização pode gerar nulidade. Mas os autos não dizem como o acesso ocorreu: você decidiu sem base.",
+             "fundamentos": [],
+             "proxima": "j3"}
+          ]
+        },
+        "j3": {
+          "local": "Gabinete · Hipótese de condenação por tráfico",
+          "falas": [
+            {"quem": "lacerda", "texto": "Mesmo que Vossa Excelência reconheça o tráfico privilegiado, a lei veda a conversão em restritivas de direitos."}
+          ],
+          "pergunta": "Se houvesse condenação por tráfico, réu primário e de bons antecedentes, como você trataria o § 4º?",
+          "escolhas": [
+            {"texto": "Reconheceria o privilégio (redução de 1/6 a 2/3) e admitiria a conversão: a vedação foi declarada inconstitucional pelo STF e suspensa pelo Senado (Resolução 5/2012).",
+             "efeito": {"argumento": 3, "credibilidade": 2},
+             "feedback": "Você separou a letra da lei do direito vigente na prática. Nível de magistratura.",
+             "fundamentos": [{"chave": "LD#art-33/par-4", "trecho": "as penas poderão ser reduzidas de um sexto a dois terços"}],
+             "proxima": "j4"},
+            {"texto": "Aplicaria a vedação literal: lei é lei.",
+             "efeito": {"argumento": -2, "credibilidade": 0},
+             "feedback": "O texto ainda está lá, mas a vedação perdeu eficácia. A sentença seria reformada no tribunal.",
+             "fundamentos": [{"chave": "LD#art-33/par-4", "trecho": "vedada a conversão em penas restritivas de direitos"}],
+             "proxima": "j4"},
+            {"texto": "Negaria o privilégio porque o réu estava em ponto de venda.",
+             "efeito": {"argumento": -1, "credibilidade": -1},
+             "feedback": "Os requisitos do § 4º são primariedade, bons antecedentes, não se dedicar a atividades criminosas e não integrar organização criminosa. Estar no local, sozinho, não afasta nenhum deles.",
+             "fundamentos": [{"chave": "LD#art-33/par-4", "trecho": "não se dedique às atividades criminosas nem integre organização criminosa"}],
+             "proxima": "j4"}
+          ]
+        },
+        "j4": {
+          "local": "Sala de audiências · Leitura da sentença",
+          "falas": [
+            {"quem": "narrador", "texto": "Todos se levantam. É hora de decidir."}
+          ],
+          "pergunta": "Dispositivo da sentença:",
+          "escolhas": [
+            {"texto": "Desclassifico para o art. 28 (porte para consumo pessoal) e aplico advertência e medida educativa de comparecimento a curso.",
+             "efeito": {"argumento": 3, "credibilidade": 2},
+             "feedback": "Coerente com tudo o que você valorou: provas frágeis de mercancia, critérios do § 2º apontando para uso. As medidas estão no rol do art. 28.",
+             "fundamentos": [{"chave": "LD#art-28/inc-i", "trecho": "advertência sobre os efeitos das drogas"}, {"chave": "LD#art-28/inc-iii", "trecho": "medida educativa de comparecimento a programa ou curso educativo"}],
+             "proxima": null},
+            {"texto": "Condeno por tráfico a 5 anos em regime fechado.",
+             "efeito": {"argumento": -3, "credibilidade": -2},
+             "feedback": "A sentença contradiz sua própria análise das provas. É o tipo de decisão que o tribunal reforma.",
+             "fundamentos": [{"chave": "LD#art-33/pena", "trecho": "reclusão de 5 (cinco) a 15 (quinze) anos"}],
+             "proxima": null},
+            {"texto": "Desclassifico para o art. 28 e aplico 6 meses de detenção.",
+             "efeito": {"argumento": -1, "credibilidade": 0},
+             "feedback": "Tese certa, pena errada: o art. 28 não prevê pena privativa de liberdade.",
+             "fundamentos": [{"chave": "LD#art-28", "trecho": "será submetido às seguintes penas"}],
+             "proxima": null}
+          ]
+        }
+      },
+      "finais": [
+        {"min": 10, "carimbo": "SENTENÇA MANTIDA", "titulo": "Decisão irretocável",
+         "texto": "O Ministério Público recorre, mas o Tribunal mantém a sua sentença por unanimidade e cita a sua fundamentação no acórdão.", "xp": 160},
+        {"min": 4, "carimbo": "REFORMA PARCIAL", "titulo": "Bom juízo, fundamentação a lapidar",
+         "texto": "O Tribunal mantém o resultado, mas corrige trechos da fundamentação.", "xp": 90},
+        {"min": -99, "carimbo": "REFORMADA", "titulo": "Sentença reformada",
+         "texto": "A Câmara Criminal reforma a decisão e aponta falhas na valoração da prova. Faz parte da carreira: releia o art. 28, § 2º.", "xp": 40}
+      ]
+    },
+    {
+      "id": "vazamento-clinica",
+      "papel": "advogado",
+      "titulo": "O vazamento da Clínica Sorriso",
+      "nivel": "basico",
+      "area": "protecao-de-dados",
+      "sinopse": "O prontuário de Marina vazou num grupo de mensagens. A clínica diz que 'foi um hacker' e que não deve nada. Helena quer esse caso: é o primeiro grande caso de LGPD do escritório.",
+      "inicio": "d1",
+      "cenas": {
+        "d1": {
+          "local": "Vasconcelos & Duarte · Sala de vidro",
+          "falas": [
+            {"quem": "marina", "texto": "Meu diagnóstico estava num print, com meu nome. Meu chefe viu. A clínica nem me avisou; descobri por uma amiga."},
+            {"quem": "helena", "texto": "Primeiro passo: que tipo de dado é esse, juridicamente?"}
+          ],
+          "pergunta": "Sua resposta para Helena:",
+          "escolhas": [
+            {"texto": "Dado pessoal sensível: é dado referente à saúde vinculado a uma pessoa natural.",
+             "efeito": {"argumento": 3, "credibilidade": 1},
+             "feedback": "Correto, e isso muda tudo. Dados sensíveis têm regime mais rigoroso de tratamento.",
+             "fundamentos": [{"chave": "LGPD#art-5/inc-ii", "trecho": "dado referente à saúde ou à vida sexual"}],
+             "proxima": "d2"},
+            {"texto": "Dado pessoal comum, como nome e endereço.",
+             "efeito": {"argumento": -2, "credibilidade": -1},
+             "feedback": "Diagnóstico é dado de saúde, portanto sensível (art. 5º, II). Errar a classificação enfraquece toda a tese.",
+             "fundamentos": [{"chave": "LGPD#art-5/inc-ii", "trecho": "dado pessoal sensível"}],
+             "proxima": "d2"},
+            {"texto": "Dado anonimizado, porque estava num print.",
+             "efeito": {"argumento": -3, "credibilidade": -1},
+             "feedback": "Tinha o nome de Marina: não há nada de anônimo nisso.",
+             "fundamentos": [{"chave": "LGPD#art-5/inc-i", "trecho": "informação relacionada a pessoa natural identificada ou identificável"}],
+             "proxima": "d2"}
+          ]
+        },
+        "d2": {
+          "local": "Reunião com a advogada da clínica",
+          "falas": [
+            {"quem": "silvia", "texto": "Minha cliente foi vítima de um ataque. Não havia obrigação de avisar ninguém enquanto investigávamos."}
+          ],
+          "pergunta": "O que você aponta?",
+          "escolhas": [
+            {"texto": "A LGPD obriga o controlador a comunicar à ANPD e ao titular o incidente que possa causar risco ou dano relevante. A clínica não comunicou.",
+             "efeito": {"argumento": 3, "credibilidade": 2},
+             "feedback": "Ponto forte: a omissão na comunicação é uma violação autônoma da lei, independentemente do ataque.",
+             "fundamentos": [{"chave": "LGPD#art-48", "trecho": "O controlador deverá comunicar à autoridade nacional e ao titular a ocorrência de incidente de segurança"}],
+             "proxima": "d3"},
+            {"texto": "Concordar que, sendo ataque hacker, a clínica não tem responsabilidade.",
+             "efeito": {"argumento": -3, "credibilidade": -1},
+             "feedback": "Você acaba de aceitar a defesa da outra parte. O ataque não apaga o dever de segurança nem o de comunicar o incidente.",
+             "fundamentos": [{"chave": "LGPD#art-48", "trecho": "ocorrência de incidente de segurança"}],
+             "proxima": "d3"},
+            {"texto": "Ameaçar levar o caso à imprensa se não houver acordo hoje.",
+             "efeito": {"argumento": 0, "credibilidade": -2},
+             "feedback": "Pressão sem fundamento jurídico vira problema ético para o escritório. Helena não gosta disso.",
+             "fundamentos": [],
+             "proxima": "d3"}
+          ]
+        },
+        "d3": {
+          "local": "Redação da petição inicial",
+          "falas": [
+            {"quem": "rafael", "texto": "Responsabilidade é onde o caso se ganha ou se perde. Quem você vai colocar no polo passivo, e com qual fundamento?"}
+          ],
+          "pergunta": "Qual fundamento de responsabilidade você usa?",
+          "escolhas": [
+            {"texto": "Art. 42 da LGPD: o controlador (a clínica) que causa dano, em violação à legislação de proteção de dados, é obrigado a repará-lo; pedir dano moral e o reconhecimento da falha de segurança.",
+             "efeito": {"argumento": 3, "credibilidade": 1},
+             "feedback": "Fundamento específico e correto. O Código Civil ajuda de forma complementar (arts. 186 e 927).",
+             "fundamentos": [{"chave": "LGPD#art-42", "trecho": "é obrigado a repará-lo"}, {"chave": "CC#art-927", "trecho": "fica obrigado a repará-lo"}],
+             "proxima": "d4"},
+            {"texto": "Processar só o hacker desconhecido.",
+             "efeito": {"argumento": -2, "credibilidade": 0},
+             "feedback": "Réu incerto, sem patrimônio conhecido. Enquanto isso, quem tinha o dever de proteger os dados fica de fora.",
+             "fundamentos": [],
+             "proxima": "d4"},
+            {"texto": "Pedir indenização com base apenas no art. 186 do Código Civil.",
+             "efeito": {"argumento": 1, "credibilidade": 0},
+             "feedback": "Não está errado, mas você abriu mão da lei específica, que é mais forte no seu caso.",
+             "fundamentos": [{"chave": "CC#art-186", "trecho": "violar direito e causar dano a outrem, ainda que exclusivamente moral"}],
+             "proxima": "d4"}
+          ]
+        },
+        "d4": {
+          "local": "Audiência de conciliação",
+          "falas": [
+            {"quem": "silvia", "texto": "A clínica oferece um pedido formal de desculpas e um valor simbólico, se a cliente desistir de tudo."},
+            {"quem": "marina", "texto": "(para você) Eu só quero que isso não aconteça com mais ninguém… e que meus dados sumam de lá."}
+          ],
+          "pergunta": "O que você propõe?",
+          "escolhas": [
+            {"texto": "Acordo com indenização adequada, eliminação dos dados tratados com consentimento de Marina e compromisso de medidas de segurança, por escrito.",
+             "efeito": {"argumento": 3, "credibilidade": 2},
+             "feedback": "Você ouviu a cliente e traduziu o desejo dela em direitos: a eliminação de dados é direito do titular na LGPD.",
+             "fundamentos": [{"chave": "LGPD#art-18/inc-vi", "trecho": "eliminação dos dados pessoais tratados com o consentimento do titular"}],
+             "proxima": null},
+            {"texto": "Aceitar o valor simbólico para encerrar logo.",
+             "efeito": {"argumento": -1, "credibilidade": -1},
+             "feedback": "Rápido, mas Marina sai sem o que realmente pediu.",
+             "fundamentos": [],
+             "proxima": null},
+            {"texto": "Recusar qualquer acordo e pedir o valor máximo.",
+             "efeito": {"argumento": 0, "credibilidade": 0},
+             "feedback": "Legítimo, mas você não perguntou o que a cliente queria. O processo vai levar anos.",
+             "fundamentos": [],
+             "proxima": null}
+          ]
+        }
+      },
+      "finais": [
+        {"min": 10, "carimbo": "ACORDO", "titulo": "Caso exemplar",
+         "texto": "Acordo homologado: indenização, eliminação dos dados e um plano de segurança auditado. Helena usa o caso na reunião de sócios.", "xp": 110},
+        {"min": 4, "carimbo": "PARCIAL", "titulo": "Bom resultado, sem brilho",
+         "texto": "Marina é indenizada, mas pontos importantes ficaram de fora do acordo.", "xp": 60},
+        {"min": -99, "carimbo": "IMPROCEDENTE", "titulo": "A tese não se sustentou",
+         "texto": "Erros de enquadramento custaram o caso. Rafael deixa um post-it na sua mesa: 'Art. 5º, II. Comece por aí.'", "xp": 25}
+      ]
+    }
+  ]
+}

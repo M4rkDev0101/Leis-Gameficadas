@@ -1,0 +1,16 @@
+[project]
+name = "vade-arena"
+version = "0.1.0"
+description = "Arena do Vade: simulados no formato de concursos reais e casos de advogado, promotor e juiz"
+requires-python = ">=3.11"
+dependencies = ["vade-ingest", "vade-learning"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+vade_arena = ["content/*.json", "web/*.html"]

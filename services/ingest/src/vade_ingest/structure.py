@@ -241,6 +241,8 @@ class _Builder:
         u = Unit(kind, label, key, text=clean, notes=notes, line=line)
         u.revoked = _is_revoked(clean, notes)
         u.vetoed = not clean and any(n.kind == "veto" for n in notes)
+        if self.pending_rubrica:  # "Homicídio qualificado" antes do § 2º, "Tentativa" antes do inciso II…
+            u.rubrica, self.pending_rubrica = self.pending_rubrica, None
         self.last = u
         return u
 
@@ -249,8 +251,6 @@ class _Builder:
         num, suf = m["num"], m["suf"]
         label = f"Art. {num}" + ("º" if num.isdigit() and int(num) < 10 else "") + (f"-{suf}" if suf else "")
         u = self._new("artigo", label, f"art-{_slug_num(num, suf)}", m["rest"], line)
-        if self.pending_rubrica:
-            u.rubrica, self.pending_rubrica = self.pending_rubrica, None
         self.container().children.append(u)
         self.article = u
 
@@ -419,7 +419,7 @@ def parse_body(body: str) -> ParsedBody:
 
         if b.article is None and not b.root.children:
             if _is_rubrica_candidate(stripped) and _next_is_article(lines, i):
-                b.pending_rubrica = _strip_md(stripped)  # rubrica do primeiro artigo
+                b.pending_rubrica = extract_notes(stripped)[0]  # rubrica do primeiro artigo
             else:
                 preamble.append(_strip_md(stripped))
             continue
@@ -456,9 +456,9 @@ def parse_body(body: str) -> ParsedBody:
                 b.add_pena(m["rest"], lineno)
                 continue
 
-        # rubrica candidata: linha curta, sem pontuação final, seguida de artigo
-        if _is_rubrica_candidate(stripped) and _next_is_article(lines, i):
-            b.pending_rubrica = _strip_md(stripped)
+        # rubrica candidata: linha curta, sem pontuação final, seguida de artigo, § ou inciso
+        if _is_rubrica_candidate(stripped) and _next_is_dispositivo(lines, i, b.article is not None):
+            b.pending_rubrica = extract_notes(stripped)[0]
             continue
 
         b.add_text(stripped, lineno)
@@ -480,7 +480,7 @@ def _is_rubrica_candidate(s: str) -> bool:
         and not re.search(r"[.;:,]$", clean)
         and not clean[:1].islower()  # continuação de linha quebrada
         and not clean.startswith(("§", "("))
-        and not re.match(r"^[IVXLCDM]+", clean)  # inciso sem travessão
+        and not re.match(r"^[IVXLCDM]+\b", clean)  # inciso sem travessão
         and not _ART_RE.match(s.replace("**", ""))
     )
 
@@ -490,5 +490,23 @@ def _next_is_article(lines: list[str], i: int) -> bool:
         s = lines[i].strip()
         if s:
             return bool(_ART_RE.match(s.replace("**", "")))
+        i += 1
+    return False
+
+
+def _next_is_dispositivo(lines: list[str], i: int, inside_article: bool) -> bool:
+    """Próxima linha não vazia abre artigo, ou (dentro de um artigo) parágrafo ou inciso."""
+    while i < len(lines):
+        s = lines[i].strip()
+        if s:
+            probe = s.replace("**", "")
+            if _ART_RE.match(probe):
+                return True
+            if not inside_article:
+                return False
+            if _PAR_RE.match(probe) or _PAR_UNICO_RE.match(probe):
+                return True
+            m = _INC_RE.match(probe)
+            return bool(m and roman_to_int(m["num"]) is not None)
         i += 1
     return False

@@ -4,6 +4,7 @@ import shutil
 import subprocess
 import tempfile
 import unittest
+import unittest.mock
 from pathlib import Path
 
 from vade_ingest.loader import Catalog
@@ -146,6 +147,17 @@ class TestCatalog(unittest.TestCase):
         self.assertEqual(self.cat.db.execute("PRAGMA integrity_check").fetchone()[0], "ok")
         self.cat.db.execute("INSERT INTO dispositivo_fts(dispositivo_fts) VALUES ('integrity-check')")
         self.assertTrue(self.cat.search('"legitima"'))
+
+    def test_parser_upgrade_forces_reprocessing(self):
+        from vade_ingest import loader
+        self.cat.sync(FsSource(self.root))
+        self.cat.close()
+        with unittest.mock.patch.object(loader, "PARSER_VERSION", "versao-futura"):
+            self.cat = Catalog(self.tmp / "c.sqlite")
+            self.assertEqual(set(self.cat.hashes().values()), {""})
+            r = self.cat.sync(FsSource(self.root))
+            self.assertEqual((r.updated, r.unchanged), (3, 0))  # arquivos iguais, parse novo
+            self.assertEqual(self.cat.get("versao_parser"), "versao-futura")
 
     def test_natural_keys_survive_reimport(self):
         self.cat.sync(FsSource(self.root))

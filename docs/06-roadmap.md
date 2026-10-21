@@ -10,6 +10,7 @@ MVP). As durações são estimativas para essa equipe.
 - [x] Núcleo de aprendizagem: FSRS-5, XP, níveis, streak, ligas, moedas, dificuldade (21 testes)
 - [x] Esquemas SQLite (catálogo, usuários, eventos mensais)
 - [x] Botão "Verificar atualização" + painel local + atualização incremental testada contra o GitHub real
+- [x] Arena: simulados no formato de 4 concursos reais × 4 dificuldades e casos narrativos (advogado, promotor, juiz), com validação do conteúdo contra a lei vigente
 - [ ] Monorepo, CI (lint, testes, vetores de paridade), ambientes dev/staging
 - [ ] API de catálogo e de estudo (FastAPI) sobre os arquivos SQLite
 - [ ] Design system (tokens + componentes base) e protótipo navegável

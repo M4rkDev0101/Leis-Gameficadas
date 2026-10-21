@@ -5,14 +5,45 @@ estruturada + revisão espaçada (FSRS) + questões no estilo das bancas + gamif
 IA ancorado no texto legal. O conteúdo vem do acervo aberto [ctresb/leis](https://github.com/ctresb/leis)
 (MIT, ~1,06 milhão de normas em Markdown com cabeçalho YAML).
 
-## Estado atual (Fase 0: fundação)
+## Jogar
+
+```bash
+git clone --filter=blob:none --no-checkout https://github.com/ctresb/leis.git acervo
+```
+
+```bash
+python jogar.py --repo acervo --db catalogo.sqlite
+```
+
+Abre http://127.0.0.1:8765 com três áreas:
+
+- **Simulados**: estrutura de concursos reais (carreiras policiais/CEBRASPE, tribunais/FGV-FCC-VUNESP,
+  OAB 1ª fase/FGV, Magistratura e MP) em quatro dificuldades (🟢 Treino, 🟡 Padrão, 🔴 Difícil,
+  ⚫ Elite). Cronômetro, regra de pontuação da banca (no CEBRASPE, cada erro anula um acerto),
+  correção comentada com o texto vigente da lei, desempenho por área e XP.
+- **Casos**: você é **advogado(a), promotor(a) ou juiz(a)** na Vasconcelos & Duarte Advocacia. Cada
+  decisão mexe no seu *Argumento* e na sua *Credibilidade*, cita o artigo que a justifica e leva a
+  desfechos diferentes (desclassificação, condenação, sentença mantida, acordo…).
+- **Acervo** (`/acervo`): o painel com o botão **Verificar atualização**. Escolha um recorte (o
+  atalho "Essencial federal" cobre o que os simulados e casos citam) e importe. Sem catálogo, o jogo
+  funciona do mesmo jeito, só mostrando o trecho da lei guardado na questão.
+
+Nível, título (de Estagiário(a) a Ministro(a)), XP e sequência de dias ficam em `jogador.sqlite`.
+
+> As questões e os casos são **originais**: reproduzem o formato e a regra de cada banca, mas não
+> copiam provas, que são protegidas por direito autoral. Cada questão cita o dispositivo que a
+> fundamenta, e `python jogar.py validar --db catalogo.sqlite` confere se o trecho citado ainda está
+> no texto vigente (pega questão desatualizada quando a lei muda).
+
+## Estado atual
 
 | Parte | Situação |
 | --- | --- |
 | [`docs/`](docs) | análise do acervo, arquitetura, funcionalidades, dados, pipeline, roadmap, riscos, tecnologias, design system |
-| [`services/ingest`](services/ingest) | ✅ importador (parser estrutural, precedentes, qualidade, classificação, SQLite + FTS) e **painel com o botão "Verificar atualização"** (47 testes) |
+| [`services/arena`](services/arena) | ✅ jogo: 4 modelos de concurso × 4 dificuldades, 70 questões, 4 casos (advogado, promotor, juiz), perfil do jogador (16 testes) |
+| [`services/ingest`](services/ingest) | ✅ importador (parser estrutural, precedentes, qualidade, classificação, SQLite + FTS) e painel com o botão "Verificar atualização" (49 testes) |
 | [`services/learning`](services/learning) | ✅ núcleo de aprendizagem: FSRS-5, XP/níveis/streak/ligas/moedas, dificuldade dinâmica (21 testes) |
-| [`db/sqlite`](db/sqlite) | ✅ esquema de usuários/progresso/gamificação e eventos mensais em SQLite (4 testes) |
+| [`db/sqlite`](db/sqlite) | ✅ esquema multiusuário de progresso/gamificação e eventos mensais (4 testes) |
 | `services/api`, `apps/web`, `packages/*` | próximos (ver [roadmap](docs/06-roadmap.md)) |
 
 ## Documentação
@@ -27,9 +58,13 @@ IA ancorado no texto legal. O conteúdo vem do acervo aberto [ctresb/leis](https
 8. [Tecnologias](docs/08-tecnologias.md): escolhas justificadas
 9. [Design system](docs/09-design-system.md): identidade, tokens, componentes, movimento
 
-## Rodando
+## Testes
 
 Requisitos: Python 3.11+ e git. Sem dependências externas.
+
+```bash
+cd services/arena && PYTHONPATH="src;../ingest/src;../learning/src" python -m unittest discover -s tests
+```
 
 ```bash
 cd services/ingest && PYTHONPATH=src python -m unittest discover -s tests
@@ -43,42 +78,28 @@ cd services/learning && PYTHONPATH=src python -m unittest discover -s tests
 python -m unittest discover -s db/sqlite
 ```
 
-### Painel com o botão "Verificar atualização"
+No Linux e no macOS, o separador do `PYTHONPATH` é `:` em vez de `;`.
 
-O acervo de leis muda a cada poucos minutos. O painel verifica em ~0,5 s se há commits novos, mostra
-quantos arquivos mudaram e quantos caem no seu recorte, e atualiza só esses
+## Painel do acervo pela linha de comando
+
+O acervo de leis muda a cada poucos minutos. A verificação leva ~0,5 s, mostra quantos arquivos
+mudaram e quantos caem no seu recorte, e a atualização baixa só esses
 ([detalhes](docs/05-pipeline-importacao.md#58-botão-verificar-atualização-o-acervo-muda-a-cada-poucos-minutos)).
 
-1. Clone parcial do acervo (sem checkout: funciona também no Windows, onde o checkout completo
-   falha por nomes de arquivo inválidos):
-
 ```bash
-git clone --filter=blob:none --no-checkout https://github.com/ctresb/leis.git acervo
-```
-
-2. Abra o painel e acesse http://127.0.0.1:8765 (escolha o recorte, clique em **Verificar
-   atualização** e depois em **Importar/Atualizar**):
-
-```bash
-cd services/ingest && PYTHONPATH=src python -m vade_ingest serve --repo ../../acervo --db catalogo.sqlite
-```
-
-Pela linha de comando, sem o painel:
-
-```bash
-cd services/ingest && PYTHONPATH=src python -m vade_ingest recorte --repo ../../acervo --db catalogo.sqlite constituicao.md federal/decretos-lei jurisprudencia/stj/sumulas
+cd services/ingest && PYTHONPATH=src python -m vade_ingest recorte --repo ../../acervo --db ../../catalogo.sqlite constituicao.md federal/decretos-lei jurisprudencia/stj/sumulas
 ```
 
 ```bash
-cd services/ingest && PYTHONPATH=src python -m vade_ingest verificar --repo ../../acervo --db catalogo.sqlite
+cd services/ingest && PYTHONPATH=src python -m vade_ingest verificar --repo ../../acervo --db ../../catalogo.sqlite
 ```
 
 ```bash
-cd services/ingest && PYTHONPATH=src python -m vade_ingest atualizar --repo ../../acervo --db catalogo.sqlite
+cd services/ingest && PYTHONPATH=src python -m vade_ingest atualizar --repo ../../acervo --db ../../catalogo.sqlite
 ```
 
 ```bash
-cd services/ingest && PYTHONPATH=src python -m vade_ingest search --db catalogo.sqlite "legitima defesa"
+cd services/ingest && PYTHONPATH=src python -m vade_ingest search --db ../../catalogo.sqlite "legitima defesa"
 ```
 
 > Os textos têm caráter informativo e não substituem a publicação oficial. Confira sempre a fonte

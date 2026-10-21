@@ -100,3 +100,4 @@ Desempenho: ~150 normas/s numa thread, incluindo o download dos blobs. O acervo 
 | Sem editais | plano de estudos | módulo de editais com extração por IA e revisão humana |
 | Sem doutrina/comentários | "Comentários" | conteúdo IA ancorado + curadoria + comunidade moderada |
 | OCR ruim | geração de conteúdo | faixa de qualidade; reprocessar OCR a partir de `arquivo:` (PDF original) |
+| **Lei 14.133/2021 (Licitações) sem texto integral**: o único arquivo é a promulgação das partes vetadas (artigos só entre aspas) | lei muito cobrada fica sem artigos | detectar "norma do catálogo de estudo com 0 artigos próprios" e alertar; usar o texto compilado do Planalto como fonte complementar; avisar o mantenedor do acervo |
