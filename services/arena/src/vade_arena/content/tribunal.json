@@ -195,6 +195,51 @@
       "cargo": "",
       "visual": null,
       "voz": 0
+    },
+    "valadares": {
+      "nome": "Dr. Renato Valadares",
+      "cargo": "Promotor de Justiça",
+      "voz": 235,
+      "visual": {
+        "pele": "#FFDBAC",
+        "cabelo": "topete",
+        "corCabelo": "#5a5a5a",
+        "roupa": "terno",
+        "corRoupa": "#2c3e70",
+        "gravata": "#7a1f1f",
+        "oculos": true,
+        "barba": false
+      }
+    },
+    "henrique": {
+      "nome": "Henrique Altavista",
+      "cargo": "Dono da Construtora Altavista",
+      "voz": 205,
+      "visual": {
+        "pele": "#F1C27D",
+        "cabelo": "curto",
+        "corCabelo": "#cfcfcf",
+        "roupa": "terno",
+        "corRoupa": "#111111",
+        "gravata": "#c9a227",
+        "oculos": false,
+        "barba": true
+      }
+    },
+    "sofia": {
+      "nome": "Sofia Duarte",
+      "cargo": "Filha de Rafael · 9 anos",
+      "voz": 560,
+      "visual": {
+        "pele": "#F1C27D",
+        "cabelo": "rabo",
+        "corCabelo": "#3b2414",
+        "roupa": "casual",
+        "corRoupa": "#e84393",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      }
     }
   },
   "episodios": [

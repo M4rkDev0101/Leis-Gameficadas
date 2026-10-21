@@ -1,0 +1,755 @@
+{
+  "ato": "ato2",
+  "personagens": {
+    "heitor":   {"nome": "Dr. Heitor Campos", "cargo": "Juiz de Direito · Vara Cível e Juizado", "voz": 220, "visual": {"pele": "#C68642", "cabelo": "curto", "corCabelo": "#9e9e9e", "roupa": "toga", "corRoupa": "#111111", "gravata": null, "oculos": true, "barba": true}},
+    "yara":     {"nome": "Dra. Yara Lopes", "cargo": "Juíza do Trabalho", "voz": 450, "visual": {"pele": "#5C3A1E", "cabelo": "cacheado", "corCabelo": "#111111", "roupa": "toga", "corRoupa": "#111111", "gravata": null, "oculos": false, "barba": false}},
+    "livia":    {"nome": "Dra. Lívia Sampaio", "cargo": "Advogada · Brandão & Associados", "voz": 490, "visual": {"pele": "#FFDBAC", "cabelo": "rabo", "corCabelo": "#c9a227", "roupa": "terno", "corRoupa": "#3d3d3d", "gravata": "#c9a227", "oculos": false, "barba": false}},
+    "cida":     {"nome": "Aparecida Souza", "cargo": "Autora · aposentada", "voz": 420, "visual": {"pele": "#8D5524", "cabelo": "cacheado", "corCabelo": "#cfcfcf", "roupa": "casual", "corRoupa": "#16a085", "gravata": null, "oculos": true, "barba": false}},
+    "fabricio": {"nome": "Fabrício Lins", "cargo": "Gerente da MegaLar", "voz": 300, "visual": {"pele": "#F1C27D", "cabelo": "topete", "corCabelo": "#3b2414", "roupa": "blazer", "corRoupa": "#1f5aa6", "gravata": "#F5B700", "oculos": false, "barba": false}},
+    "bruna":    {"nome": "Bruna Teles", "cargo": "Autora · professora", "voz": 470, "visual": {"pele": "#C68642", "cabelo": "longo", "corCabelo": "#2a1a10", "roupa": "casual", "corRoupa": "#c0392b", "gravata": null, "oculos": false, "barba": false}},
+    "otavio":   {"nome": "Dr. Otávio Leme", "cargo": "Encarregado de dados da Clínica Vida+", "voz": 280, "visual": {"pele": "#FFDBAC", "cabelo": "curto", "corCabelo": "#7b4a24", "roupa": "avental", "corRoupa": "#ffffff", "gravata": "#1e5a4a", "oculos": true, "barba": false}},
+    "katia":    {"nome": "Kátia Reis", "cargo": "Recepcionista", "voz": 510, "visual": {"pele": "#E0AC69", "cabelo": "coque", "corCabelo": "#3b2414", "roupa": "farda", "corRoupa": "#1e5a4a", "gravata": null, "oculos": false, "barba": false}},
+    "ze":       {"nome": "José Carlos Ribeiro", "cargo": "Reclamante · armador", "voz": 270, "visual": {"pele": "#8D5524", "cabelo": "careca", "corCabelo": "#111111", "roupa": "casual", "corRoupa": "#7f8c8d", "gravata": null, "oculos": false, "barba": true}},
+    "marta":    {"nome": "Eng. Marta Queiroz", "cargo": "Ex-técnica de segurança do trabalho", "voz": 440, "visual": {"pele": "#F1C27D", "cabelo": "curto", "corCabelo": "#a0522d", "roupa": "blazer", "corRoupa": "#b9770e", "gravata": null, "oculos": true, "barba": false}},
+    "sergio":   {"nome": "Sérgio Paiva", "cargo": "Preposto da Prisma Mão de Obra", "voz": 250, "visual": {"pele": "#E0AC69", "cabelo": "topete", "corCabelo": "#111111", "roupa": "terno", "corRoupa": "#5d6d7e", "gravata": "#7a1f1f", "oculos": false, "barba": false}},
+    "larissa":  {"nome": "Larissa Amaral", "cargo": "Autora · mãe do Theo", "voz": 480, "visual": {"pele": "#F1C27D", "cabelo": "longo", "corCabelo": "#111111", "roupa": "blazer", "corRoupa": "#8e44ad", "gravata": null, "oculos": false, "barba": false}},
+    "diego":    {"nome": "Diego Moraes", "cargo": "Réu · pai do Theo", "voz": 310, "visual": {"pele": "#FFDBAC", "cabelo": "topete", "corCabelo": "#c9a227", "roupa": "casual", "corRoupa": "#111111", "gravata": null, "oculos": false, "barba": true}},
+    "caio":     {"nome": "Caio Prates", "cargo": "Autor · 18 anos", "voz": 380, "visual": {"pele": "#5C3A1E", "cabelo": "curto", "corCabelo": "#111111", "roupa": "casual", "corRoupa": "#2980b9", "gravata": null, "oculos": false, "barba": false}},
+    "silas":    {"nome": "Eng. Silas Prado", "cargo": "Engenheiro da Construtora Altavista", "voz": 240, "visual": {"pele": "#F1C27D", "cabelo": "careca", "corCabelo": "#5a5a5a", "roupa": "terno", "corRoupa": "#1f2a44", "gravata": "#c9a227", "oculos": true, "barba": false}},
+    "guarda":   {"nome": "Agente Penal Dirceu", "cargo": "Agente penitenciário", "voz": 230, "visual": {"pele": "#C68642", "cabelo": "curto", "corCabelo": "#111111", "roupa": "farda", "corRoupa": "#2c3e50", "gravata": null, "oculos": false, "barba": true}}
+  },
+  "episodios": [
+    {
+      "id": "a2-geladeira", "ato": "ato2", "ordem": 1, "numero": 7,
+      "titulo": "A Geladeira que Esquentava", "papel": "advogado", "nivel": "intermediario",
+      "sinopse": "Primeiro caso com a carteira da OAB. A geladeira de Dona Cida quebrou com a insulina dentro, e a loja diz que a culpa é dela. Bem-vindo(a) ao Juizado.",
+      "placas": {"acusacao": "Parte ré"},
+      "posicoes": {"voce": "defesa", "livia": "acusacao", "heitor": "juiz", "fabricio": "testemunha", "cida": "defesa", "helena": "escritorio"},
+      "provas": [
+        {"id": "nota", "tipo": "prova", "icone": "🧾", "nome": "Nota fiscal", "descricao": "Geladeira Frost 400L comprada na MegaLar em 2 de março por R$ 3.290,00."},
+        {"id": "os", "tipo": "prova", "icone": "🛠️", "nome": "Ordem de serviço nº 5521", "descricao": "Aberta pela própria MegaLar em 22 de março: 'Cliente relata que o aparelho não gela.' Status: aguardando peça há 47 dias."},
+        {"id": "laudo", "tipo": "prova", "icone": "🔧", "nome": "Laudo da assistência técnica", "descricao": "Assinado pelo técnico da loja: 'Falha no compressor. Defeito de fabricação. Instalação adequada.'"},
+        {"id": "receita", "tipo": "prova", "icone": "💉", "nome": "Receita de insulina", "descricao": "Dona Cida é diabética e usa insulina, que precisa ficar refrigerada. Perdeu três canetas quando a geladeira parou."},
+        {"id": "cdc18", "tipo": "lei", "icone": "📜", "nome": "CDC, art. 18 — Vício do produto", "chave": "CDC#art-18", "trecho": "respondem solidariamente pelos vícios de qualidade ou quantidade"},
+        {"id": "cdc18p1", "tipo": "lei", "icone": "📜", "nome": "CDC, art. 18, § 1º — Prazo de 30 dias", "chave": "CDC#art-18/par-1", "trecho": "Não sendo o vício sanado no prazo máximo de trinta dias"},
+        {"id": "cdc18p3", "tipo": "lei", "icone": "📜", "nome": "CDC, art. 18, § 3º — Produto essencial", "chave": "CDC#art-18/par-3", "trecho": "sempre que, em razão da extensão do vício"},
+        {"id": "cdc26", "tipo": "lei", "icone": "📜", "nome": "CDC, art. 26, § 2º, I — Reclamação obsta a decadência", "chave": "CDC#art-26/par-2/inc-i", "trecho": "a reclamação comprovadamente formulada pelo consumidor perante o fornecedor"},
+        {"id": "cdc6", "tipo": "lei", "icone": "📜", "nome": "CDC, art. 6º, VIII — Inversão do ônus da prova", "chave": "CDC#art-6/inc-viii", "trecho": "inclusive com a inversão do ônus da prova, a seu favor"}
+      ],
+      "inicio": "g1",
+      "cenas": {
+        "g1": {"tipo": "titulo", "texto": "Ato II · Caso 7", "subtitulo": "A Geladeira que Esquentava", "proxima": "g2"},
+        "g2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "narrador", "t": "Seis meses depois. Rafael continua preso, sem julgamento. O escritório perdeu metade dos clientes."},
+          {"q": "helena", "e": "triste", "t": "Os grandes clientes foram embora. Ninguém quer advogado de escritório 'investigado pela Federal'."},
+          {"q": "helena", "e": "confiante", "t": "Então vamos viver dos pequenos. E você acabou de ser aprovado(a) na OAB. Parabéns, doutor(a): agora assina sozinho(a)."},
+          {"q": "cida", "e": "triste", "t": "Doutor(a), a geladeira parou com a minha insulina dentro. A loja diz que eu instalei errado e que já passou o prazo."},
+          {"q": "voce", "e": "pensativo", "t": "Produto durável: o prazo para reclamar de vício aparente é de noventa dias. Quando a senhora reclamou?"},
+          {"q": "cida", "e": "pensativo", "t": "Vinte dias depois de comprar. Eles levaram a geladeira e nunca mais devolveram."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["nota", "receita", "cdc18", "cdc18p1", "cdc18p3", "cdc26", "cdc6"]}
+        ], "proxima": "g3"},
+        "g3": {"tipo": "investigar", "local": "loja", "titulo": "MegaLar · Shopping Centro",
+          "intro": [{"q": "narrador", "t": "Ar-condicionado gelado, música alta e um cartaz enorme oferecendo garantia estendida."}],
+          "pontos": [
+            {"id": "balcao", "nome": "Balcão da assistência técnica", "x": 41, "y": 44, "w": 12, "h": 10, "falas": [
+              {"q": "voce", "e": "apontando", "t": "Uma cópia da ordem de serviço nº 5521, aberta pela própria loja em 22 de março. A reclamação foi feita vinte dias depois da compra!", "recebe": ["os"]}]},
+            {"id": "monitor", "nome": "Monitor do sistema", "x": 52, "y": 39, "w": 8, "h": 9, "falas": [
+              {"q": "voce", "e": "chocado", "t": "O laudo do técnico da própria MegaLar está na tela: 'Falha no compressor. Defeito de fabricação. Instalação adequada.'", "recebe": ["laudo"]}]},
+            {"id": "cartaz", "nome": "Cartaz da garantia estendida", "x": 70, "y": 12, "w": 18, "h": 20, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "'Garantia estendida: só R$ 299!' Como se o consumidor não tivesse garantia nenhuma sem pagar a mais. A lei já garante o direito de reclamar."}]},
+            {"id": "geladeiras", "nome": "Geladeiras em exposição", "x": 6, "y": 24, "w": 22, "h": 50, "falas": [
+              {"q": "voce", "e": "normal", "t": "O mesmo modelo da Dona Cida, a R$ 3.290. Uma etiqueta: 'Recall do compressor: consulte o fabricante'."}]}
+          ],
+          "conversas": [
+            {"q": "fabricio", "titulo": "Falar com o gerente", "falas": [
+              {"q": "fabricio", "e": "confiante", "t": "Doutor(a), loja não conserta defeito de fábrica. Isso é com o fabricante. A gente só vende."},
+              {"q": "voce", "e": "pensativo", "t": "(Ele vai repetir isso na audiência. Preciso de uma norma para responder.)"}]}
+          ],
+          "requer": ["os", "laudo"],
+          "proxima": "g4"},
+        "g4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Juizado Especial Cível. Autora: Aparecida Souza. Ré: MegaLar Comércio. Tentada a conciliação, sem acordo.", "fx": "martelo"},
+          {"q": "livia", "e": "confiante", "t": "Dra. Lívia Sampaio, pela ré. Excelência, o caso é simples: prazo vencido e mau uso. Ouvimos o gerente."},
+          {"q": "voce", "e": "pensativo", "t": "(Brandão & Associados… num processo de geladeira?)"}
+        ], "proxima": "g5"},
+        "g5": {"tipo": "depoimento", "testemunha": "fabricio", "titulo": "A versão da MegaLar",
+          "intro": [{"q": "fabricio", "e": "confiante", "t": "A MegaLar respeita o consumidor. Mas tudo tem limite."}],
+          "afirmacoes": [
+            {"t": "A geladeira foi vendida em perfeito estado, testada na loja.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Testada por quem?"}, {"q": "fabricio", "e": "nervoso", "t": "Pelo… procedimento padrão. Ligamos na tomada."}]},
+            {"t": "A cliente só reclamou quatro meses depois, com o prazo de garantia já vencido.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Quatro meses? O senhor tem certeza da data?"}, {"q": "fabricio", "e": "confiante", "t": "Absoluta. Foi quando ela apareceu gritando na loja."}]},
+            {"t": "E o defeito foi mau uso: ela colocou a geladeira colada no fogão.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Quem constatou isso?"}, {"q": "fabricio", "e": "nervoso", "t": "É o que sempre acontece nesses casos."}]}
+          ],
+          "contradicao": {"afirmacao": 1, "provas": ["os"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Quatro meses? A ordem de serviço nº 5521, aberta pela própria MegaLar, é de 22 de março. Vinte dias depois da compra!"},
+            {"q": "fabricio", "e": "chocado", "t": "Essa… essa OS foi só um registro interno!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "Reclamação comprovada perante o fornecedor obsta a decadência até a resposta negativa. E a loja nunca respondeu: está 'aguardando peça' há 47 dias."},
+            {"q": "heitor", "e": "pensativo", "t": "Anotado. O prazo de reclamação foi respeitado."}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz esta afirmação, doutor(a)."}],
+          "proxima": "g6"},
+        "g6": {"tipo": "depoimento", "testemunha": "fabricio", "titulo": "O 'mau uso'",
+          "intro": [{"q": "fabricio", "e": "nervoso", "t": "Tá, ela reclamou cedo. Mas a culpa continua sendo dela."}],
+          "afirmacoes": [
+            {"t": "O compressor queimou porque a geladeira estava encostada no fogão.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Algum técnico foi à casa dela?"}, {"q": "fabricio", "e": "nervoso", "t": "Não precisou. A gente conhece o padrão."}]},
+            {"t": "Nossa assistência sempre trabalha com total transparência.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Então o laudo da assistência pode ser juntado aos autos?"}, {"q": "fabricio", "e": "nervoso", "t": "O laudo… é documento interno também."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["laudo"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "O laudo do técnico da própria MegaLar diz: 'Falha no compressor. Defeito de fabricação. Instalação adequada.'"},
+            {"q": "fabricio", "e": "chocado", "t": "QUEM deixou esse laudo sair da loja?!", "fx": "tremor"},
+            {"q": "livia", "e": "nervoso", "t": "…"}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Isso não responde a esta afirmação, doutor(a)."}],
+          "proxima": "g7"},
+        "g7": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "livia", "e": "confiante", "t": "Mesmo que haja defeito de fabricação, a ré é apenas uma loja. Quem fabrica é quem responde. Peço a exclusão da MegaLar do processo."}
+        ], "pergunta": "Que norma faz a loja responder junto com o fabricante pelo vício do produto?",
+          "provas": ["cdc18"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Art. 18 do CDC: os fornecedores respondem SOLIDARIAMENTE pelos vícios de qualidade. A consumidora pode cobrar de quem lhe vendeu. A loja que acerte as contas com o fabricante depois."},
+            {"q": "heitor", "e": "normal", "t": "Rejeito o pedido de exclusão. A MegaLar permanece no polo passivo."}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Esse dispositivo não trata da responsabilidade do comerciante."}],
+          "proxima": "g8"},
+        "g8": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Doutor(a), o que exatamente a autora pede?"},
+          {"q": "cida", "e": "triste", "t": "(baixinho) Eu só queria a minha geladeira… estou guardando a insulina na casa da vizinha."}
+        ], "pergunta": "Qual pedido atende melhor Dona Cida?",
+          "opcoes": [
+            {"t": "Que a loja tenha mais trinta dias para consertar.", "certa": false,
+             "falas": [{"q": "cida", "e": "chocado", "t": "Mais trinta dias?! Já se passaram quarenta e sete!"}, {"q": "heitor", "e": "pensativo", "t": "O prazo legal para sanar o vício já se esgotou, doutor(a)."}]},
+            {"t": "Restituição imediata dos R$ 3.290 corrigidos, mais as perdas e danos (as canetas de insulina perdidas). O prazo de 30 dias venceu e a geladeira é produto essencial.", "certa": true,
+             "fundamentos": [{"chave": "CDC#art-18/par-1/inc-ii", "trecho": "a restituição imediata da quantia paga, monetariamente atualizada, sem prejuízo de eventuais perdas e danos"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "O vício não foi sanado em trinta dias. A consumidora escolhe: quer a restituição imediata da quantia paga, corrigida, sem prejuízo das perdas e danos pelas canetas de insulina."}]},
+            {"t": "Só o abatimento de 10% no preço.", "certa": false,
+             "falas": [{"q": "cida", "e": "triste", "t": "Abatimento de uma geladeira que não gela, doutor(a)?"}]}
+          ],
+          "proxima": "g9"},
+        "g9": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Julgo procedente: restituição de R$ 3.290,00 corrigidos e R$ 480,00 pela insulina perdida. Defiro a inversão do ônus da prova: a consumidora é hipossuficiente e a alegação, verossímil.", "fx": "martelo"},
+          {"q": "cida", "e": "feliz", "t": "Ai, doutor(a)! Vou comprar uma geladeira em outra loja. E vou contar pra todo o meu grupo da igreja!"},
+          {"q": "livia", "e": "confiante", "t": "(guardando os papéis) O Dr. Brandão pediu que eu observasse o seu trabalho. Ele vai gostar do relatório. Ou não."},
+          {"q": "voce", "e": "pensativo", "t": "(Brandão mandou alguém me observar num caso de geladeira. Ele está prestando atenção em mim.)"}
+        ], "fundamentos": [{"chave": "CDC#art-6/inc-viii", "trecho": "inclusive com a inversão do ônus da prova, a seu favor"}], "proxima": "g10"},
+        "g10": {"tipo": "veredicto", "carimbo": "PROCEDENTE", "titulo": "Consumidor não é culpado por defeito", "texto": "Reclamação no prazo, laudo da própria loja e responsabilidade solidária: Dona Cida recebe o dinheiro de volta e a insulina perdida. E alguém do escritório de Brandão anotou o seu nome."}
+      }
+    },
+    {
+      "id": "a2-dados", "ato": "ato2", "ordem": 2, "numero": 8,
+      "titulo": "Dados à Venda", "papel": "advogado", "nivel": "intermediario",
+      "sinopse": "Bruna recebe ligações de golpistas que sabem tudo sobre o tratamento dela. Os dados saíram de uma clínica. A clínica jura que não houve vazamento.",
+      "placas": {"acusacao": "Parte ré"},
+      "posicoes": {"voce": "defesa", "livia": "acusacao", "heitor": "juiz", "otavio": "testemunha", "kenji": "testemunha", "bruna": "defesa", "katia": "cena", "helena": "escritorio"},
+      "provas": [
+        {"id": "ligacoes", "tipo": "prova", "icone": "📱", "nome": "Gravação das ligações", "descricao": "'Dona Bruna, aqui é da Clínica Vida+. Para continuar o seu tratamento oncológico, pague a taxa de R$ 890 por Pix.'"},
+        {"id": "postit", "tipo": "prova", "icone": "🟨", "nome": "Foto do post-it da recepção", "descricao": "Colado no monitor do sistema de prontuários: 'login: admin / senha: vida123'."},
+        {"id": "fichas", "tipo": "prova", "icone": "🗑️", "nome": "Fichas no lixo comum", "descricao": "Fichas de pacientes com nome, CPF e diagnóstico, jogadas inteiras na lixeira da recepção."},
+        {"id": "pericia", "tipo": "prova", "icone": "💻", "nome": "Laudo do perito judicial", "descricao": "Dr. Kenji Sato: uma lista com 12.400 pacientes da Vida+ (nome, telefone, diagnóstico) está à venda num fórum. O arquivo foi exportado do sistema da clínica com o usuário 'admin'."},
+        {"id": "anpd", "tipo": "prova", "icone": "🏛️", "nome": "Resposta da autoridade de proteção de dados", "descricao": "Ofício: 'Não consta comunicação de incidente de segurança pela Clínica Vida+.'"},
+        {"id": "lgpd5", "tipo": "lei", "icone": "📜", "nome": "LGPD, art. 5º, II — Dado sensível", "chave": "LGPD#art-5/inc-ii", "trecho": "dado referente à saúde ou à vida sexual"},
+        {"id": "lgpd46", "tipo": "lei", "icone": "📜", "nome": "LGPD, art. 46 — Dever de segurança", "chave": "LGPD#art-46", "trecho": "medidas de segurança, técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados"},
+        {"id": "lgpd48", "tipo": "lei", "icone": "📜", "nome": "LGPD, art. 48 — Comunicar o incidente", "chave": "LGPD#art-48", "trecho": "O controlador deverá comunicar à autoridade nacional e ao titular a ocorrência de incidente de segurança"},
+        {"id": "lgpd42", "tipo": "lei", "icone": "📜", "nome": "LGPD, art. 42 — Dever de reparar", "chave": "LGPD#art-42", "trecho": "é obrigado a repará-lo"},
+        {"id": "lgpd43", "tipo": "lei", "icone": "📜", "nome": "LGPD, art. 43, III — Culpa exclusiva", "chave": "LGPD#art-43/inc-iii", "trecho": "que o dano é decorrente de culpa exclusiva do titular dos dados ou de terceiro"}
+      ],
+      "inicio": "d1",
+      "cenas": {
+        "d1": {"tipo": "titulo", "texto": "Caso 8", "subtitulo": "Dados à Venda", "proxima": "d2"},
+        "d2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "bruna", "e": "triste", "t": "Eu faço tratamento contra um câncer. Só a clínica sabia. E agora me ligam todo dia pedindo Pix para 'não interromper a quimioterapia'."},
+          {"q": "helena", "e": "bravo", "t": "Dado de saúde é dado pessoal sensível. A clínica tinha o dever de proteger e, se vazou, de avisar."},
+          {"q": "voce", "e": "pensativo", "t": "A clínica vai dizer que o vazamento não saiu dela. Precisamos provar o caminho dos dados."},
+          {"q": "helena", "e": "confiante", "t": "Pedi uma perícia ao juízo. Enquanto isso, vá à clínica. Recepções costumam falar mais do que deveriam."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["ligacoes", "lgpd5", "lgpd46", "lgpd48", "lgpd42", "lgpd43"]}
+        ], "proxima": "d3"},
+        "d3": {"tipo": "investigar", "local": "clinica", "titulo": "Clínica Vida+ · Recepção",
+          "intro": [{"q": "narrador", "t": "Paredes verde-água, cheiro de álcool em gel e uma recepcionista que atende três telefones ao mesmo tempo."}],
+          "pontos": [
+            {"id": "monitor", "nome": "Computador da recepção", "x": 45, "y": 39, "w": 12, "h": 12, "falas": [
+              {"q": "voce", "e": "chocado", "t": "Um post-it colado no monitor do sistema de prontuários: 'login: admin / senha: vida123'. Qualquer pessoa no balcão consegue ler.", "recebe": ["postit"]}]},
+            {"id": "lixeira", "nome": "Lixeira", "x": 15, "y": 59, "w": 8, "h": 20, "falas": [
+              {"q": "voce", "e": "bravo", "t": "Fichas inteiras de pacientes no lixo comum. Nome, CPF, diagnóstico. Nem rasgaram.", "recebe": ["fichas"]}]},
+            {"id": "aviso", "nome": "Aviso no mural", "x": 72, "y": 13, "w": 18, "h": 23, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "'Novo sistema de prontuários implantado por Altavista Tech. Agradecemos a parceria.' Altavista… de novo."}]}
+          ],
+          "conversas": [
+            {"q": "katia", "titulo": "Conversar com a recepcionista Kátia", "falas": [
+              {"q": "katia", "e": "nervoso", "t": "A senha é a mesma pra todo mundo, doutor(a). O pessoal da Altavista Tech veio, instalou e disse que 'tava tudo seguro'."},
+              {"q": "katia", "e": "triste", "t": "Em maio o sistema ficou lento uma noite inteira. O Dr. Otávio mandou a gente não comentar com ninguém."}]}
+          ],
+          "requer": ["postit", "fichas"],
+          "proxima": "d4"},
+        "d4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Ação de indenização. Autora: Bruna Teles. Ré: Clínica Vida+. Ouço o encarregado de dados da ré.", "fx": "martelo"},
+          {"q": "livia", "e": "confiante", "t": "Dra. Lívia Sampaio, de novo. Que coincidência, doutor(a)."}
+        ], "proxima": "d5"},
+        "d5": {"tipo": "depoimento", "testemunha": "otavio", "titulo": "A segurança da Vida+",
+          "intro": [{"q": "otavio", "e": "confiante", "t": "Sou o encarregado pelo tratamento de dados da clínica. A Vida+ é referência em proteção de dados."}],
+          "afirmacoes": [
+            {"t": "Adotamos medidas de segurança de última geração.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Quais, por exemplo?"}, {"q": "otavio", "e": "nervoso", "t": "Senhas individuais, controle de acesso… o padrão do mercado."}]},
+            {"t": "Cada funcionário tem a própria senha, que ninguém mais conhece.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Ninguém mais conhece?"}, {"q": "otavio", "e": "confiante", "t": "É sigilosa. Política interna."}]},
+            {"t": "Documentos físicos são triturados no fim do dia.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Todos?"}, {"q": "otavio", "e": "nervoso", "t": "Todos os… importantes."}]}
+          ],
+          "contradicao": {"afirmacao": 1, "provas": ["postit"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Senha individual e sigilosa? Esta é a foto do post-it colado no monitor da recepção: 'login: admin, senha: vida123'. A mesma para todos!"},
+            {"q": "otavio", "e": "chocado", "t": "Isso é… um procedimento provisório!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "E as fichas de pacientes estavam inteiras na lixeira comum. Isso não é medida de segurança apta a proteger dados de ninguém."}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz esta afirmação."}],
+          "proxima": "d6"},
+        "d6": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "livia", "e": "pensativo", "t": "Falhas internas não provam que os dados da autora saíram da clínica. Ela pode ter divulgado o próprio diagnóstico nas redes sociais."},
+          {"q": "heitor", "e": "normal", "t": "Ouço o perito do juízo, Dr. Kenji Sato."},
+          {"q": "kenji", "e": "normal", "t": "Excelência, encontrei uma lista com 12.400 pacientes da Vida+ à venda num fórum. O arquivo foi exportado do sistema da clínica com o usuário 'admin', numa madrugada de maio.", "recebe": ["pericia"]},
+          {"q": "heitor", "e": "normal", "t": "Junto aos autos também a resposta da autoridade nacional de proteção de dados ao ofício deste juízo.", "recebe": ["anpd"]},
+          {"q": "otavio", "e": "nervoso", "t": "…"}
+        ], "proxima": "d7"},
+        "d7": {"tipo": "depoimento", "testemunha": "otavio", "titulo": "O incidente",
+          "intro": [{"q": "otavio", "e": "nervoso", "t": "Está bem. Houve um… evento. Mas tratamos com total responsabilidade."}],
+          "afirmacoes": [
+            {"t": "Assim que descobrimos, comunicamos tudo à autoridade nacional de proteção de dados.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "E aos pacientes?"}, {"q": "otavio", "e": "nervoso", "t": "Aos pacientes… estávamos preparando um comunicado."}]},
+            {"t": "E a culpa é dos hackers, não nossa. Somos vítimas também.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Hackers que usaram a senha do post-it?"}, {"q": "otavio", "e": "bravo", "t": "Isso não está provado!"}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["anpd"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "A autoridade nacional respondeu ao ofício deste juízo: não consta NENHUMA comunicação de incidente pela Clínica Vida+. E nenhum paciente foi avisado."},
+            {"q": "otavio", "e": "chocado", "t": "O jurídico disse que comunicar ia gerar processos…", "fx": "tremor"},
+            {"q": "heitor", "e": "bravo", "t": "E gerou, doutor Otávio. Gerou.", "fx": "martelo"}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Isso não responde a esta afirmação."}],
+          "proxima": "d8"},
+        "d8": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "livia", "e": "confiante", "t": "O ataque foi de terceiros, os hackers. A clínica não pode responder por crime alheio: há culpa exclusiva de terceiro!"}
+        ], "pergunta": "Por que a 'culpa exclusiva de terceiro' não salva a clínica?",
+          "provas": ["lgpd46", "postit"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Não é culpa EXCLUSIVA de terceiro quando o controlador deixou a porta aberta. O art. 46 da LGPD exige medidas de segurança aptas a impedir acessos não autorizados. Senha única num post-it é o contrário disso."},
+            {"q": "heitor", "e": "normal", "t": "Procede. A falha de segurança da ré concorreu diretamente para o dano."}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Isso não afasta o argumento da culpa de terceiro."}],
+          "proxima": "d9"},
+        "d9": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Pedido final, doutor(a)."}
+        ], "pergunta": "Qual é o pedido?",
+          "opcoes": [
+            {"t": "Que a clínica apenas apague os dados da autora.", "certa": false,
+             "falas": [{"q": "bruna", "e": "triste", "t": "Apagar? Eles já foram vendidos, doutor(a). E eu continuo recebendo ligações."}]},
+            {"t": "Indenização por dano moral: dado sensível de saúde vazado por falta de segurança e incidente escondido da autoridade e da titular (LGPD, art. 42).", "certa": true,
+             "fundamentos": [{"chave": "LGPD#art-42", "trecho": "é obrigado a repará-lo"}, {"chave": "CF#art-5/inc-x", "trecho": "são invioláveis a intimidade, a vida privada, a honra e a imagem das pessoas"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "Dado sensível de saúde, exposto por falha de segurança e escondido da titular. A LGPD obriga o controlador a reparar o dano, e a Constituição protege a intimidade. Peço indenização por dano moral."}]},
+            {"t": "Que a autora seja indenizada pelos hackers, que são os verdadeiros culpados.", "certa": false,
+             "falas": [{"q": "heitor", "e": "pensativo", "t": "Hackers anônimos não são parte neste processo, doutor(a)."}]}
+          ],
+          "proxima": "d10"},
+        "d10": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Condeno a Clínica Vida+ a pagar R$ 25.000,00 por dano moral e oficio a autoridade nacional de proteção de dados quanto à omissão na comunicação do incidente.", "fx": "martelo"},
+          {"q": "bruna", "e": "feliz", "t": "Não é pelo dinheiro. É para eles nunca mais fazerem isso com ninguém."},
+          {"q": "kenji", "e": "pensativo", "t": "(na saída) Doutor(a)… o arquivo vendido no fórum foi comprado por uma única conta. Ela paga em nome de 'Altavista Serviços Ltda.'"},
+          {"q": "voce", "e": "chocado", "t": "A mesma empresa que recebeu o dinheiro do golpe do Seu Ivo…", "fx": "tremor"},
+          {"q": "kenji", "e": "normal", "t": "A Altavista Tech instala o sistema, a Altavista Serviços compra os dados, os golpistas usam. Alguém montou uma fábrica."}
+        ], "proxima": "d11"},
+        "d11": {"tipo": "veredicto", "carimbo": "PROCEDENTE", "titulo": "Dado de saúde não é mercadoria", "texto": "Senha num post-it, fichas no lixo e um incidente escondido: a LGPD cobrou a conta. E agora você sabe que a Altavista não é só uma construtora."}
+      }
+    },
+    {
+      "id": "a2-andaime", "ato": "ato2", "ordem": 3, "numero": 9,
+      "titulo": "O Andaime", "papel": "advogado", "nivel": "avancado",
+      "sinopse": "José Carlos caiu de oito metros numa obra da Altavista. A empresa terceirizada diz que ele era 'autônomo' e que recebeu todo o equipamento. Hora de conhecer a Justiça do Trabalho.",
+      "placas": {"acusacao": "Reclamada"},
+      "posicoes": {"voce": "defesa", "livia": "acusacao", "yara": "juiz", "sergio": "testemunha", "marta": "testemunha", "ze": "defesa", "helena": "escritorio"},
+      "provas": [
+        {"id": "ponto", "tipo": "prova", "icone": "🗂️", "nome": "Folhas de ponto", "descricao": "Catorze meses de registro: segunda a sábado, das 7h às 17h, com assinatura do encarregado da Prisma."},
+        {"id": "cracha", "tipo": "prova", "icone": "🪪", "nome": "Crachá de José Carlos", "descricao": "'Prisma Mão de Obra · a serviço da Construtora Altavista · Armador · Matrícula 0413.'"},
+        {"id": "talabarte", "tipo": "prova", "icone": "🪢", "nome": "Talabarte rompido", "descricao": "O cinto de segurança usado na queda. Etiqueta: validade vencida havia dois anos. A trava estava quebrada."},
+        {"id": "relatorio", "tipo": "prova", "icone": "📑", "nome": "Relatório de segurança", "descricao": "Assinado por Marta Queiroz, três meses antes da queda: 'EPIs vencidos no andaime B. Risco grave. Interditar.' Resposta da empresa: 'Arquivar.'"},
+        {"id": "clt3", "tipo": "lei", "icone": "📜", "nome": "CLT, art. 3º — Quem é empregado", "chave": "CLT#art-3", "trecho": "prestar serviços de natureza não eventual a empregador, sob a dependência deste e mediante salário"},
+        {"id": "clt157", "tipo": "lei", "icone": "📜", "nome": "CLT, art. 157, I — Dever de segurança", "chave": "CLT#art-157/inc-i", "trecho": "cumprir e fazer cumprir as normas de segurança e medicina do trabalho"},
+        {"id": "cf7", "tipo": "lei", "icone": "📜", "nome": "CF, art. 7º, XXVIII — Acidente de trabalho", "chave": "CF#art-7/inc-xxviii", "trecho": "sem excluir a indenização a que este está obrigado, quando incorrer em dolo ou culpa"},
+        {"id": "clt818", "tipo": "lei", "icone": "⚖️", "nome": "CLT, art. 818, II — Ônus da reclamada", "chave": "CLT#art-818/inc-ii", "trecho": "ao reclamado, quanto à existência de fato impeditivo, modificativo ou extintivo do direito do reclamante"}
+      ],
+      "inicio": "n1",
+      "cenas": {
+        "n1": {"tipo": "titulo", "texto": "Caso 9", "subtitulo": "O Andaime", "proxima": "n2"},
+        "n2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "ze", "e": "triste", "t": "Oito metros, doutor(a). Quebrei a bacia e as duas pernas. Não posso mais trabalhar em altura. E a Prisma diz que eu nem era funcionário."},
+          {"q": "helena", "e": "pensativo", "t": "Terceirizada da Altavista. Pagavam por dia, sem carteira, e chamavam de 'autônomo'."},
+          {"q": "voce", "e": "pensativo", "t": "Empregado é quem trabalha de forma não eventual, subordinado e mediante salário. O nome do contrato não importa: importa a realidade."},
+          {"q": "helena", "e": "confiante", "t": "Isso. E para a indenização, precisamos mostrar culpa da empresa no acidente. Vá à obra."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["clt3", "clt157", "cf7", "clt818"]}
+        ], "proxima": "n3"},
+        "n3": {"tipo": "investigar", "local": "obra", "titulo": "Residencial Horizonte · Torre B",
+          "intro": [{"q": "narrador", "t": "A mesma obra onde Paulo Seixas morreu. O andaime B continua de pé, com uma fita zebrada mal amarrada."}],
+          "pontos": [
+            {"id": "andaime", "nome": "Andaime B", "x": 64, "y": 6, "w": 30, "h": 26, "falas": [
+              {"q": "voce", "e": "chocado", "t": "Ainda tem um talabarte pendurado, rompido. A etiqueta de validade venceu há dois anos e a trava está quebrada.", "recebe": ["talabarte"]}]},
+            {"id": "barraco", "nome": "Escritório da obra", "x": 42, "y": 30, "w": 18, "h": 24, "falas": [
+              {"q": "voce", "e": "apontando", "t": "Um arquivo com as folhas de ponto da Prisma. José Carlos: catorze meses, de segunda a sábado, das 7h às 17h.", "recebe": ["ponto"]}]},
+            {"id": "catraca", "nome": "Catraca da portaria", "x": 8, "y": 40, "w": 16, "h": 22, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "No chão, perto da catraca, um crachá antigo: 'Prisma Mão de Obra · a serviço da Construtora Altavista · Armador · Matrícula 0413'.", "recebe": ["cracha"]}]}
+          ],
+          "conversas": [
+            {"q": "marta", "titulo": "Procurar a engenheira Marta (por telefone)", "falas": [
+              {"q": "marta", "e": "bravo", "t": "Eu avisei! Fiz um relatório três meses antes: EPIs vencidos no andaime B, risco grave, pedi interdição. Me demitiram duas semanas depois."},
+              {"q": "marta", "e": "confiante", "t": "Guardei uma cópia. Vou ao fórum depor. Alguém precisa dizer a verdade sobre essa obra.", "recebe": ["relatorio"]}]}
+          ],
+          "requer": ["ponto", "talabarte"],
+          "proxima": "n4"},
+        "n4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "yara", "e": "normal", "t": "Vara do Trabalho. Reclamante: José Carlos Ribeiro. Reclamadas: Prisma Mão de Obra e, subsidiariamente, Construtora Altavista. Ouço o preposto.", "fx": "martelo"},
+          {"q": "livia", "e": "confiante", "t": "Excelência, a reclamada nega o vínculo e nega a culpa. O reclamante era um prestador eventual."}
+        ], "proxima": "n5"},
+        "n5": {"tipo": "depoimento", "testemunha": "sergio", "titulo": "O 'autônomo'",
+          "intro": [{"q": "sergio", "e": "confiante", "t": "O seu José era um parceiro. Um empreendedor independente."}],
+          "afirmacoes": [
+            {"t": "Ele aparecia quando queria, sem horário nenhum.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "E como a empresa sabia quando ele vinha?"}, {"q": "sergio", "e": "nervoso", "t": "Ele… avisava. Às vezes."}]},
+            {"t": "Prestava serviço para várias obras, de várias empresas.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Quais?"}, {"q": "sergio", "e": "nervoso", "t": "Não sei de cabeça. Muitas."}]},
+            {"t": "Ninguém dava ordens a ele. Fazia do jeito dele.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Quem dizia em que andaime ele trabalharia?"}, {"q": "sergio", "e": "nervoso", "t": "O encarregado… sugeria."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["ponto"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Sem horário? As folhas de ponto da própria Prisma registram catorze meses de trabalho, de segunda a sábado, das 7h às 17h, assinadas pelo encarregado!"},
+            {"q": "sergio", "e": "chocado", "t": "Essas folhas eram… só pra controle de portaria!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "Trabalho não eventual, com jornada controlada, ordens do encarregado e pagamento: é empregado, nos termos do art. 3º da CLT. E o crachá tem até matrícula."},
+            {"q": "yara", "e": "pensativo", "t": "Matrícula, jornada e subordinação. O juízo tomou nota."}
+          ],
+          "erro": [{"q": "yara", "e": "bravo", "t": "Essa prova não contradiz esta afirmação, doutor(a)."}],
+          "proxima": "n6"},
+        "n6": {"tipo": "depoimento", "testemunha": "sergio", "titulo": "Os equipamentos",
+          "intro": [{"q": "sergio", "e": "nervoso", "t": "Mesmo que fosse empregado, a queda foi culpa dele. A empresa fez a parte dela."}],
+          "afirmacoes": [
+            {"t": "Fornecemos todos os equipamentos de proteção, novos e dentro da validade.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Há recibo de entrega?"}, {"q": "sergio", "e": "nervoso", "t": "Recibo… a gente entrega na confiança."}]},
+            {"t": "Ele caiu porque não prendeu o cinto direito.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Alguém viu?"}, {"q": "sergio", "e": "nervoso", "t": "É o que sempre acontece."}]},
+            {"t": "E nunca houve nenhum alerta de risco naquele andaime.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Nenhum?"}, {"q": "sergio", "e": "confiante", "t": "Nenhum. Andaime exemplar."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["talabarte"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Novos e na validade? O talabarte da queda tem validade vencida há DOIS anos e a trava quebrada. Ele prendeu o cinto direito: o cinto é que não prendia ninguém!"},
+            {"q": "sergio", "e": "chocado", "t": "Esse cinto… pode ser de outro!", "fx": "tremor"},
+            {"q": "yara", "e": "bravo", "t": "Senhor preposto, cuidado com o que afirma a este juízo.", "fx": "martelo"}
+          ],
+          "erro": [{"q": "yara", "e": "bravo", "t": "Isso não contradiz esta afirmação."}],
+          "proxima": "n7"},
+        "n7": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "livia", "e": "confiante", "t": "O equipamento podia estar velho, mas a empresa nunca foi avisada de risco algum. Não há culpa sem conhecimento do perigo."}
+        ], "pergunta": "Que prova mostra que a empresa sabia do risco?",
+          "provas": ["relatorio"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Três meses antes da queda, a técnica de segurança da própria obra escreveu: 'EPIs vencidos no andaime B. Risco grave. Interditar.' A resposta da empresa foi uma palavra: 'Arquivar.'"},
+            {"q": "marta", "e": "confiante", "t": "(da plateia) Fui demitida duas semanas depois desse relatório, Excelência."},
+            {"q": "livia", "e": "nervoso", "t": "…", "fx": "tremor"}
+          ],
+          "erro": [{"q": "yara", "e": "bravo", "t": "Isso não mostra que a empresa conhecia o risco."}],
+          "proxima": "n8"},
+        "n8": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "yara", "e": "normal", "t": "Razões finais, doutor(a)."}
+        ], "pergunta": "O que você pede?",
+          "opcoes": [
+            {"t": "Só o benefício do INSS, já que acidente é coberto pelo seguro.", "certa": false,
+             "falas": [{"q": "yara", "e": "pensativo", "t": "O seguro não exclui a indenização devida pelo empregador quando há culpa, doutor(a). Está deixando dinheiro do seu cliente na mesa."}]},
+            {"t": "Reconhecimento do vínculo de emprego e indenização pelo acidente: a empresa descumpriu as normas de segurança, foi alertada e se omitiu (CLT, art. 157, I; CF, art. 7º, XXVIII).", "certa": true,
+             "fundamentos": [{"chave": "CF#art-7/inc-xxviii", "trecho": "sem excluir a indenização a que este está obrigado, quando incorrer em dolo ou culpa"}, {"chave": "CLT#art-157/inc-i", "trecho": "cumprir e fazer cumprir as normas de segurança e medicina do trabalho"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "Vínculo de emprego desde o primeiro dia, com todas as verbas. E indenização por danos materiais e morais: a empresa tinha o dever de cumprir as normas de segurança, foi alertada por escrito e preferiu arquivar o alerta."}]},
+            {"t": "Indenização paga pelo colega que montou o andaime.", "certa": false,
+             "falas": [{"q": "ze", "e": "chocado", "t": "O Toninho? Ele ganhava menos que eu, doutor(a)!"}]}
+          ],
+          "proxima": "n9"},
+        "n9": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "yara", "e": "normal", "t": "Reconheço o vínculo de emprego e condeno a Prisma, com responsabilidade subsidiária da Construtora Altavista, a indenizar os danos materiais, morais e estéticos, com pensão mensal pela redução da capacidade de trabalho.", "fx": "martelo"},
+          {"q": "ze", "e": "feliz", "t": "Eu vou poder pagar a fisioterapia, doutor(a). E a faculdade da minha filha."},
+          {"q": "marta", "e": "pensativo", "t": "Doutor(a), uma coisa ainda me tira o sono. No dia em que o engenheiro Paulo morreu, ele me pediu uma cópia do meu relatório. Disse que ia juntar com 'o problema do aço'."},
+          {"q": "voce", "e": "pensativo", "t": "(Paulo Seixas ia denunciar o aço e a segurança da obra. E morreu na véspera.)"}
+        ], "proxima": "n10"},
+        "n10": {"tipo": "veredicto", "carimbo": "VÍNCULO RECONHECIDO", "titulo": "A realidade vence o rótulo", "texto": "Jornada controlada, matrícula e ordens: era empregado. Cinto vencido e alerta arquivado: era culpa. José Carlos recebe o que é dele, e a Altavista responde junto."}
+      }
+    },
+    {
+      "id": "a2-guarda", "ato": "ato2", "ordem": 4, "numero": 10,
+      "titulo": "Theo, 6 anos", "papel": "advogado", "nivel": "avancado",
+      "sinopse": "Diego diz que ganha um salário mínimo e quer a guarda só para ele. Larissa só quer que o filho tenha os dois pais por perto e uma pensão justa. Uma SUV preta conta outra história.",
+      "placas": {"acusacao": "Requerido"},
+      "posicoes": {"voce": "defesa", "livia": "acusacao", "heitor": "juiz", "diego": "testemunha", "larissa": "defesa", "helena": "escritorio"},
+      "provas": [
+        {"id": "suv", "tipo": "prova", "icone": "🚙", "nome": "Registro da SUV", "descricao": "SUV preta, ano atual, avaliada em R$ 280 mil, registrada em nome de Diego Moraes. Comprada à vista há quatro meses."},
+        {"id": "fotos", "tipo": "prova", "icone": "📸", "nome": "Fotos das redes sociais", "descricao": "Diego em Dubai, em restaurantes caros e num camarote de futebol. Legenda: 'Trabalho duro dá resultado.'"},
+        {"id": "mensagens", "tipo": "prova", "icone": "💬", "nome": "Mensagens de Diego", "descricao": "Nos últimos dez fins de semana de visita, Diego cancelou nove: 'Hoje não dá, tô viajando.'"},
+        {"id": "recibo", "tipo": "prova", "icone": "🧾", "nome": "Recibos de 'consultoria'", "descricao": "R$ 18 mil por mês pagos a Diego por 'A. Brandão Advocacia', a título de 'consultoria'."},
+        {"id": "cc1584", "tipo": "lei", "icone": "📜", "nome": "CC, art. 1.584, § 2º — Guarda compartilhada", "chave": "CC#art-1584/par-2", "trecho": "será aplicada a guarda compartilhada"},
+        {"id": "cc1583", "tipo": "lei", "icone": "📜", "nome": "CC, art. 1.583, § 2º — Convívio equilibrado", "chave": "CC#art-1583/par-2", "trecho": "o tempo de convívio com os filhos deve ser dividido de forma equilibrada com a mãe e com o pai"},
+        {"id": "cc1694", "tipo": "lei", "icone": "📜", "nome": "CC, art. 1.694, § 1º — Proporção dos alimentos", "chave": "CC#art-1694/par-1", "trecho": "na proporção das necessidades do reclamante e dos recursos da pessoa obrigada"}
+      ],
+      "inicio": "f1",
+      "cenas": {
+        "f1": {"tipo": "titulo", "texto": "Caso 10", "subtitulo": "Theo, 6 anos", "proxima": "f2"},
+        "f2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "larissa", "e": "triste", "t": "O Theo pergunta do pai toda semana. O Diego some, depois aparece pedindo a guarda só pra ele. E diz que não pode pagar mais que trezentos reais."},
+          {"q": "helena", "e": "pensativo", "t": "Quando os dois genitores estão aptos e não há acordo, a regra é a guarda compartilhada. Mas guarda não é moeda de troca para baixar pensão."},
+          {"q": "voce", "e": "pensativo", "t": "E os alimentos se fixam na proporção das necessidades do Theo e dos recursos do Diego. Precisamos descobrir os recursos de verdade."},
+          {"q": "larissa", "e": "bravo", "t": "Ele estaciona na frente da minha casa com um carro novo toda vez que vem buscar o Theo. Quando vem."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cc1584", "cc1583", "cc1694"]}
+        ], "proxima": "f3"},
+        "f3": {"tipo": "investigar", "local": "rua", "titulo": "Rua de Larissa, sábado à tarde",
+          "intro": [{"q": "narrador", "t": "Uma rua tranquila de bairro. Uma SUV preta, impecável, estacionada em frente à padaria."}],
+          "pontos": [
+            {"id": "suv", "nome": "SUV preta", "x": 62, "y": 61, "w": 29, "h": 19, "falas": [
+              {"q": "voce", "e": "chocado", "t": "Pela placa, consultei o registro: SUV do ano, avaliada em R$ 280 mil, em nome de Diego Moraes. Comprada à vista.", "recebe": ["suv"]}]},
+            {"id": "padaria", "nome": "Padaria", "x": 39, "y": 29, "w": 29, "h": 28, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "No celular do dono da padaria, que segue o Diego: Dubai, restaurantes caros, camarote no estádio. 'Trabalho duro dá resultado.'", "recebe": ["fotos"]}]},
+            {"id": "muro", "nome": "Muro da casa de Larissa", "x": 4, "y": 45, "w": 30, "h": 27, "falas": [
+              {"q": "voce", "e": "triste", "t": "Um desenho de giz no muro: três bonequinhos de mãos dadas. 'Eu, mamãe e papai.' O Theo desenhou esperando o pai."}]}
+          ],
+          "conversas": [
+            {"q": "larissa", "titulo": "Pedir a Larissa as mensagens de Diego", "falas": [
+              {"q": "larissa", "e": "triste", "t": "Tá aqui. Dez fins de semana, nove cancelamentos. Sempre no sábado de manhã, com o Theo já de mochila na porta.", "recebe": ["mensagens"]},
+              {"q": "larissa", "e": "pensativo", "t": "Ah, e um dia ele deixou isso cair do carro. Uns recibos. Não entendi nada.", "recebe": ["recibo"]}]}
+          ],
+          "requer": ["suv", "mensagens"],
+          "proxima": "f4"},
+        "f4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Vara de Família. Ação de guarda e alimentos. Autora: Larissa Amaral. Requerido: Diego Moraes. Ouço o requerido.", "fx": "martelo"},
+          {"q": "livia", "e": "confiante", "t": "Brandão & Associados, pelo requerido. Excelência, meu cliente é um pai dedicado e de poucos recursos."},
+          {"q": "voce", "e": "pensativo", "t": "(Lívia de novo. Um escritório de advocacia empresarial defendendo um pai 'de poucos recursos'?)"}
+        ], "proxima": "f5"},
+        "f5": {"tipo": "depoimento", "testemunha": "diego", "titulo": "O pai 'sem dinheiro'",
+          "intro": [{"q": "diego", "e": "triste", "t": "Eu amo o meu filho. Só não tenho como pagar o que ela quer."}],
+          "afirmacoes": [
+            {"t": "Eu ganho um salário mínimo, trabalhando de motorista de aplicativo.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Com que carro o senhor trabalha?"}, {"q": "diego", "e": "nervoso", "t": "Um… carro emprestado."}]},
+            {"t": "Mal consigo pagar o meu aluguel. Vivo apertado.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Viajou nos últimos meses?"}, {"q": "diego", "e": "nervoso", "t": "Viajar? Com que dinheiro, doutor(a)?"}]},
+            {"t": "Trezentos reais é tudo o que posso pagar de pensão.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "E quanto custa a escola do Theo?"}, {"q": "diego", "e": "nervoso", "t": "Isso é problema da mãe."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["suv", "fotos"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Um salário mínimo? O senhor comprou à vista, há quatro meses, uma SUV de R$ 280 mil registrada no SEU nome. E publicou fotos em Dubai e num camarote: 'Trabalho duro dá resultado.'"},
+            {"q": "diego", "e": "chocado", "t": "O carro… é da empresa! As fotos são antigas!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "Que empresa paga R$ 18 mil por mês de 'consultoria' a um motorista de aplicativo? Os recibos são de A. Brandão Advocacia."},
+            {"q": "livia", "e": "chocado", "t": "Isso não tem relação com o processo!", "fx": "tremor"},
+            {"q": "heitor", "e": "pensativo", "t": "Tem relação direta com os recursos do requerido, doutora."}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz esta afirmação."}],
+          "proxima": "f6"},
+        "f6": {"tipo": "depoimento", "testemunha": "diego", "titulo": "A guarda",
+          "intro": [{"q": "diego", "e": "bravo", "t": "Tá bom, eu ganho bem. Mas eu quero a guarda do meu filho, só pra mim."}],
+          "afirmacoes": [
+            {"t": "A Larissa me impede de ver o Theo. Ela inventa desculpas.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Quantas visitas o senhor fez nos últimos dez fins de semana?"}, {"q": "diego", "e": "nervoso", "t": "As que ela deixou!"}]},
+            {"t": "Eu sou o pai mais presente que existe.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Qual é o nome da professora do Theo?"}, {"q": "diego", "e": "nervoso", "t": "É… Dona… Maria. Acho."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["mensagens"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Ela impede? Nos últimos dez fins de semana, quem cancelou nove visitas foi o senhor. Por mensagem, sábado de manhã: 'Hoje não dá, tô viajando.'"},
+            {"q": "diego", "e": "triste", "t": "Eu… eu estava trabalhando.", "fx": "tremor"},
+            {"q": "voce", "e": "triste", "t": "O Theo desenhou vocês três de mãos dadas no muro de casa. Ele espera o senhor todo sábado."}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Isso não contradiz esta afirmação."}],
+          "proxima": "f7"},
+        "f7": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "pensativo", "t": "Doutor(a), a autora quer afastar o pai?"},
+          {"q": "larissa", "e": "triste", "t": "Não. Eu só quero que ele seja pai de verdade."}
+        ], "pergunta": "O que você pede para o Theo?",
+          "opcoes": [
+            {"t": "Guarda unilateral para a mãe e proibição de visitas do pai.", "certa": false,
+             "falas": [{"q": "heitor", "e": "bravo", "t": "Não há nenhum risco à criança nos autos, doutor(a). Afastar o pai puniria o Theo."}, {"q": "larissa", "e": "chocado", "t": "Eu não quero isso!"}]},
+            {"t": "Guarda compartilhada, com convívio equilibrado e base de moradia na casa materna, e alimentos proporcionais aos recursos reais de Diego.", "certa": true,
+             "fundamentos": [{"chave": "CC#art-1584/par-2", "trecho": "será aplicada a guarda compartilhada"}, {"chave": "CC#art-1694/par-1", "trecho": "na proporção das necessidades do reclamante e dos recursos da pessoa obrigada"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "Os dois estão aptos: guarda compartilhada, com tempo de convívio equilibrado e base de moradia com a mãe. E alimentos na proporção das necessidades do Theo e dos recursos de quem compra SUV à vista."}]},
+            {"t": "Guarda unilateral para o pai, já que ele tem mais dinheiro.", "certa": false,
+             "falas": [{"q": "larissa", "e": "chocado", "t": "Doutor(a)?!"}, {"q": "heitor", "e": "pensativo", "t": "Guarda se decide pelo interesse da criança, não pela renda dos pais."}]}
+          ],
+          "proxima": "f8"},
+        "f8": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Fixo a guarda compartilhada, com base de moradia materna e convivência paterna em fins de semana alternados e metade das férias. Alimentos de 20% dos rendimentos do requerido, incluídos os pagamentos de consultoria.", "fx": "martelo"},
+          {"q": "diego", "e": "triste", "t": "(para você, em voz baixa) Eu só fiz o que o Brandão mandou. Ele paga as minhas contas. Em troca eu… levo e trago envelopes."},
+          {"q": "diego", "e": "nervoso", "t": "Envelopes para o presídio. Para alguém chamado Rafael."},
+          {"q": "voce", "e": "chocado", "t": "!!!", "fx": "tremor"}
+        ], "fundamentos": [{"chave": "CC#art-1583/par-2", "trecho": "o tempo de convívio com os filhos deve ser dividido de forma equilibrada com a mãe e com o pai"}], "proxima": "f9"},
+        "f9": {"tipo": "veredicto", "carimbo": "GUARDA COMPARTILHADA", "titulo": "Pai é presença, não ausência", "texto": "Theo tem os dois pais e uma pensão proporcional aos recursos reais. E Diego deixou escapar: Brandão manda 'envelopes' para Rafael no presídio."}
+      }
+    },
+    {
+      "id": "a2-muro", "ato": "ato2", "ordem": 5, "numero": 11,
+      "titulo": "O Muro", "papel": "advogado", "nivel": "avancado",
+      "sinopse": "Quatro anos atrás, o muro de uma obra da Altavista desabou sobre Caio, então com 14 anos. Agora Brandão em pessoa vai ao tribunal para dizer que é tarde demais.",
+      "placas": {"acusacao": "Parte ré"},
+      "posicoes": {"voce": "defesa", "brandao": "acusacao", "heitor": "juiz", "silas": "testemunha", "caio": "defesa", "helena": "escritorio", "livia": "cena"},
+      "provas": [
+        {"id": "certidao", "tipo": "prova", "icone": "📄", "nome": "Certidão de nascimento", "descricao": "Caio Prates nasceu em 10 de agosto. Tinha 14 anos no dia do desabamento e completou 16 há dois anos."},
+        {"id": "reclamacoes", "tipo": "prova", "icone": "📨", "nome": "Protocolos dos vizinhos", "descricao": "Três reclamações à Altavista, nos seis meses anteriores ao desabamento: 'O muro da obra está rachado e inclinado. Vai cair.'"},
+        {"id": "fotos", "tipo": "prova", "icone": "📸", "nome": "Fotos das rachaduras", "descricao": "Tiradas por uma vizinha um mês antes da queda: rachaduras diagonais de cima a baixo e o muro visivelmente torto."},
+        {"id": "chuva", "tipo": "prova", "icone": "🌧️", "nome": "Boletim meteorológico", "descricao": "Na data do desabamento: chuva de 8 mm, classificada como fraca. Nenhum alerta da Defesa Civil."},
+        {"id": "cc206", "tipo": "lei", "icone": "📜", "nome": "CC, art. 206, § 3º, V — Prescrição de 3 anos", "chave": "CC#art-206/par-3/inc-v", "trecho": "a pretensão de reparação civil"},
+        {"id": "cc198", "tipo": "lei", "icone": "📜", "nome": "CC, art. 198, I — Não corre prescrição", "chave": "CC#art-198/inc-i", "trecho": "contra os incapazes de que trata o art. 3o"},
+        {"id": "cc3", "tipo": "lei", "icone": "📜", "nome": "CC, art. 3º — Absolutamente incapazes", "chave": "CC#art-3", "trecho": "os menores de 16 (dezesseis) anos"},
+        {"id": "cc937", "tipo": "lei", "icone": "📜", "nome": "CC, art. 937 — Ruína de construção", "chave": "CC#art-937", "trecho": "se esta provier de falta de reparos, cuja necessidade fosse manifesta"},
+        {"id": "cc944", "tipo": "lei", "icone": "📜", "nome": "CC, art. 944 — Extensão do dano", "chave": "CC#art-944", "trecho": "A indenização mede-se pela extensão do dano"}
+      ],
+      "inicio": "m1",
+      "cenas": {
+        "m1": {"tipo": "titulo", "texto": "Caso 11", "subtitulo": "O Muro", "proxima": "m2"},
+        "m2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "caio", "e": "triste", "t": "Eu voltava da escola. O muro caiu em cima de mim. Fiquei seis meses no hospital e ainda manco da perna direita."},
+          {"q": "helena", "e": "pensativo", "t": "Isso foi há quatro anos. A pretensão de reparação civil prescreve em três. A Altavista vai dizer que acabou o prazo."},
+          {"q": "voce", "e": "pensativo", "t": "Mas o Caio tinha 14 anos. Contra quem é absolutamente incapaz, a prescrição não corre…"},
+          {"q": "helena", "e": "feliz", "t": "Agora você pensa como advogado(a). Confirme as datas e descubra se o muro já dava sinais. Vá até a rua."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cc206", "cc198", "cc3", "cc937", "cc944"]}
+        ], "proxima": "m3"},
+        "m3": {"tipo": "investigar", "local": "rua", "titulo": "Rua da obra antiga",
+          "intro": [{"q": "narrador", "t": "O muro foi reconstruído às pressas, mas um pedaço antigo continua de pé, rachado."}],
+          "pontos": [
+            {"id": "muro", "nome": "Pedaço do muro antigo", "x": 4, "y": 45, "w": 30, "h": 27, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "Rachaduras diagonais de cima a baixo. Uma vizinha tirou fotos assim um mês antes da queda.", "recebe": ["fotos"]}]},
+            {"id": "padaria", "nome": "Padaria da esquina", "x": 39, "y": 29, "w": 29, "h": 28, "falas": [
+              {"q": "voce", "e": "apontando", "t": "O dono da padaria guardou os protocolos: três reclamações à Altavista em seis meses. 'O muro está rachado e inclinado. Vai cair.'", "recebe": ["reclamacoes"]}]},
+            {"id": "carro", "nome": "Carro estacionado", "x": 62, "y": 61, "w": 29, "h": 19, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "No para-brisa, um panfleto da Defesa Civil com o histórico de chuvas do bairro. Naquele dia: 8 mm. Chuva fraca.", "recebe": ["chuva"]}]}
+          ],
+          "conversas": [
+            {"q": "caio", "titulo": "Perguntar a Caio a data de aniversário", "falas": [
+              {"q": "caio", "e": "normal", "t": "10 de agosto. Fiz 18 este ano. No dia do muro eu tinha 14, tinha acabado de entrar no primeiro ano.", "recebe": ["certidao"]}]}
+          ],
+          "requer": ["certidao", "reclamacoes"],
+          "proxima": "m4"},
+        "m4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Ação de indenização. Autor: Caio Prates. Ré: Construtora Altavista.", "fx": "martelo"},
+          {"q": "brandao", "e": "confiante", "t": "Augusto Brandão, pela ré. Excelência, serei breve, porque o processo também será. O fato ocorreu há quatro anos. A pretensão prescreveu."},
+          {"q": "voce", "e": "nervoso", "t": "(Brandão em pessoa. Ele veio me olhar nos olhos.)"}
+        ], "proxima": "m5"},
+        "m5": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "brandao", "e": "confiante", "t": "Três anos para a reparação civil. Quatro anos se passaram. Peço a extinção do processo com resolução de mérito, pela prescrição."}
+        ], "pergunta": "Por que a prescrição não se consumou?",
+          "provas": ["cc198", "certidao"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Art. 198, I, do Código Civil: não corre prescrição contra os absolutamente incapazes, os menores de 16 anos. Caio tinha 14. O prazo só começou a correr quando ele fez 16, há dois anos. Faltava um ano inteiro."},
+            {"q": "brandao", "e": "pensativo", "t": "Hmm. Conhece o Código. Rafael ensinou bem."},
+            {"q": "heitor", "e": "normal", "t": "Rejeito a prejudicial de prescrição. Prossiga a instrução."}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Isso não afasta a prescrição, doutor(a)."}],
+          "proxima": "m6"},
+        "m6": {"tipo": "depoimento", "testemunha": "silas", "titulo": "O muro 'perfeito'",
+          "intro": [{"q": "silas", "e": "confiante", "t": "Engenheiro responsável pela obra. Vinte anos de carreira sem um acidente."}],
+          "afirmacoes": [
+            {"t": "O muro estava em perfeito estado, inspecionado semanalmente.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Há relatórios dessas inspeções?"}, {"q": "silas", "e": "nervoso", "t": "Eram… inspeções visuais."}]},
+            {"t": "Ninguém jamais reclamou de nada naquele muro.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Ninguém? Nenhum vizinho?"}, {"q": "silas", "e": "confiante", "t": "Ninguém. Os vizinhos adoravam a obra."}]},
+            {"t": "Caiu por causa de uma tempestade fora do comum. Força maior.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Quanto choveu?"}, {"q": "silas", "e": "nervoso", "t": "Muito. Muito mesmo."}]}
+          ],
+          "contradicao": {"afirmacao": 1, "provas": ["reclamacoes", "fotos"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Ninguém reclamou? Aqui estão três protocolos de reclamação dos vizinhos à Altavista, em seis meses: 'O muro está rachado e inclinado. Vai cair.'"},
+            {"q": "silas", "e": "chocado", "t": "Esses protocolos nunca chegaram até mim!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "A necessidade de reparo era manifesta. O dono da construção responde pela ruína, art. 937 do Código Civil."}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz esta afirmação."}],
+          "proxima": "m7"},
+        "m7": {"tipo": "depoimento", "testemunha": "silas", "titulo": "A 'tempestade'",
+          "intro": [{"q": "silas", "e": "nervoso", "t": "Ainda que houvesse rachaduras, sem aquela tempestade o muro estaria de pé até hoje."}],
+          "afirmacoes": [
+            {"t": "Foi a maior tempestade do ano. A cidade inteira alagou.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "A Defesa Civil emitiu alerta?"}, {"q": "silas", "e": "nervoso", "t": "Deve ter emitido."}]},
+            {"t": "Nenhuma construção resistiria àquela chuva.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Algum outro muro caiu no bairro?"}, {"q": "silas", "e": "nervoso", "t": "Não que eu saiba."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["chuva"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "A maior tempestade do ano? O boletim meteorológico registra 8 milímetros naquele dia: chuva FRACA, sem alerta da Defesa Civil. Não há força maior. Há um muro rachado que ninguém consertou."},
+            {"q": "silas", "e": "chocado", "t": "…", "fx": "tremor"},
+            {"q": "brandao", "e": "bravo", "t": "Silas, chega.", "fx": "bater"}
+          ],
+          "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz esta afirmação."}],
+          "proxima": "m8"},
+        "m8": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "brandao", "e": "confiante", "t": "A ré está disposta a um acordo generoso: cinco mil reais, hoje, e encerramos esta história."},
+          {"q": "caio", "e": "pensativo", "t": "(cochichando) Cinco mil… doutor(a), é muito dinheiro pra minha mãe."}
+        ], "pergunta": "Como você orienta e o que pede?",
+          "opcoes": [
+            {"t": "Aceitar os cinco mil reais: é dinheiro garantido.", "certa": false,
+             "falas": [{"q": "helena", "e": "bravo", "t": "(mensagem no seu celular) Cinco mil por uma perna para a vida toda? Leia o art. 944."}]},
+            {"t": "Recusar e pedir indenização pela extensão do dano: tratamento, pensão pela redução da capacidade, dano moral e estético. O dono da construção responde pela ruína.", "certa": true,
+             "fundamentos": [{"chave": "CC#art-944", "trecho": "A indenização mede-se pela extensão do dano"}, {"chave": "CC#art-937", "trecho": "se esta provier de falta de reparos, cuja necessidade fosse manifesta"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "A indenização mede-se pela extensão do dano. Caio tem uma lesão permanente aos 18 anos. Pedimos tratamento, pensão, dano moral e dano estético. Cinco mil reais não pagam nem a fisioterapia de um ano."}]},
+            {"t": "Desistir do processo, porque a Altavista é poderosa demais.", "certa": false,
+             "falas": [{"q": "caio", "e": "triste", "t": "Você também tem medo deles?"}]}
+          ],
+          "proxima": "m9"},
+        "m9": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "heitor", "e": "normal", "t": "Condeno a Construtora Altavista ao custeio integral do tratamento, pensão mensal vitalícia proporcional à redução da capacidade de trabalho e R$ 150.000,00 por danos morais e estéticos.", "fx": "martelo"},
+          {"q": "caio", "e": "feliz", "t": "Eu vou poder fazer a cirurgia. Obrigado, doutor(a)."},
+          {"q": "brandao", "e": "confiante", "t": "(parando ao seu lado) Parabéns. Você é bom(boa). Tão bom(boa) quanto o Rafael era antes de aprender a ficar calado."},
+          {"q": "brandao", "e": "feliz", "t": "Mande lembranças a ele. Enquanto ele ainda fala com alguém."},
+          {"q": "voce", "e": "bravo", "t": "Isso é uma ameaça, doutor Brandão?"},
+          {"q": "brandao", "e": "normal", "t": "É um conselho. De graça. O último."}
+        ], "proxima": "m10"},
+        "m10": {"tipo": "veredicto", "carimbo": "PROCEDENTE", "titulo": "Nunca é tarde para um incapaz", "texto": "A prescrição não corria contra o Caio, o muro rachado era conhecido e a chuva era fraca. Você venceu Brandão em pessoa. E ele acabou de ameaçar Rafael."}
+      }
+    },
+    {
+      "id": "a2-rafael", "ato": "ato2", "ordem": 6, "numero": 12,
+      "titulo": "A Palavra de Rafael", "papel": "advogado", "nivel": "especialista",
+      "sinopse": "Final do Ato II. Rafael decidiu colaborar com a Justiça. No dia da homologação, ele quer desistir de tudo. Alguém o ameaçou, e você sabe quem.",
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "rafael": "testemunha", "guarda": "cena", "helena": "escritorio", "diego": "cena"},
+      "provas": [
+        {"id": "bilhete", "tipo": "prova", "icone": "✉️", "nome": "Bilhete na cela", "descricao": "Letra de forma, sem assinatura: 'Desista do acordo. Pense na Sofia. Ela sai da escola às 17h.' Sofia é a filha de Rafael."},
+        {"id": "visitas", "tipo": "prova", "icone": "📒", "nome": "Livro de visitas do presídio", "descricao": "Diego Moraes visitou Rafael quatro vezes no último mês, sempre com um 'envelope de documentos jurídicos' entregue pelo escritório de Brandão."},
+        {"id": "caderno", "tipo": "prova", "icone": "📓", "nome": "Caderno de contas de Rafael", "descricao": "Escondido no fundo falso da cômoda: datas, valores e contas de 47 transferências da Construtora Altavista para a 'Altavista Serviços Ltda.' e dela para empresas de fachada."},
+        {"id": "pendrive", "tipo": "prova", "icone": "💾", "nome": "Pen drive", "descricao": "Planilhas originais exportadas do sistema financeiro da Altavista, com os mesmos números do caderno, e e-mails de Henrique Altavista aprovando os pagamentos."},
+        {"id": "lorc4", "tipo": "lei", "icone": "📜", "nome": "Lei 12.850, art. 4º, § 7º, IV — Voluntariedade", "chave": "LORC#art-4/par-7/inc-iv", "trecho": "voluntariedade da manifestação de vontade"},
+        {"id": "lorc16", "tipo": "lei", "icone": "📜", "nome": "Lei 12.850, art. 4º, § 16, I — Só a palavra não basta", "chave": "LORC#art-4/par-16/inc-i", "trecho": "medidas cautelares reais ou pessoais"},
+        {"id": "cp344", "tipo": "lei", "icone": "📜", "nome": "CP, art. 344 — Coação no curso do processo", "chave": "CP#art-344", "trecho": "Usar de violência ou grave ameaça, com o fim de favorecer interesse próprio ou alheio"}
+      ],
+      "inicio": "x1",
+      "cenas": {
+        "x1": {"tipo": "titulo", "texto": "Caso 12 · Final do Ato II", "subtitulo": "A Palavra de Rafael", "proxima": "x2"},
+        "x2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "helena", "e": "pensativo", "t": "Rafael aceitou colaborar com o Ministério Público. O Lacerda negociou o acordo. Amanhã a juíza Beatriz ouve o Rafael para homologar."},
+          {"q": "helena", "e": "triste", "t": "Eu não posso ser a defensora dele: sou testemunha do que aconteceu no escritório. Rafael pediu que fosse você."},
+          {"q": "voce", "e": "chocado", "t": "Eu?"},
+          {"q": "helena", "e": "confiante", "t": "Ele disse: 'É a única pessoa que eu conheço que ainda não tem medo do Brandão'."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["lorc4", "lorc16", "cp344"]}
+        ], "proxima": "x3"},
+        "x3": {"tipo": "investigar", "local": "parlatorio", "titulo": "Presídio Estadual · Parlatório",
+          "intro": [
+            {"q": "narrador", "t": "Vidro grosso, telefones pretos e um silêncio pesado."},
+            {"q": "rafael", "e": "triste", "t": "Oi, estagiário(a). Desculpa. Doutor(a). Eu te devo uma explicação."}
+          ],
+          "pontos": [
+            {"id": "cabine", "nome": "Papel na cabine 2", "x": 36, "y": 41, "w": 9, "h": 9, "falas": [
+              {"q": "voce", "e": "chocado", "t": "Rafael empurrou um papel pela fresta do vidro. 'Desista do acordo. Pense na Sofia. Ela sai da escola às 17h.'", "recebe": ["bilhete"]},
+              {"q": "rafael", "e": "triste", "t": "Apareceu na minha cela anteontem. A Sofia tem nove anos."}]},
+            {"id": "livro", "nome": "Livro de visitas", "x": 10, "y": 56, "w": 10, "h": 8, "falas": [
+              {"q": "voce", "e": "bravo", "t": "Diego Moraes: quatro visitas no último mês, sempre com 'envelope de documentos jurídicos' do escritório de Brandão. Os envelopes de que ele falou!", "recebe": ["visitas"]}]},
+            {"id": "telefone", "nome": "Telefone da cabine 1", "x": 11, "y": 35, "w": 6, "h": 13, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "As conversas aqui são gravadas. Brandão sabe disso. Por isso usa bilhetes."}]}
+          ],
+          "conversas": [
+            {"q": "rafael", "titulo": "Ouvir a história de Rafael", "falas": [
+              {"q": "rafael", "e": "triste", "t": "Há oito anos, eu abri a Altavista Serviços para o Henrique. Achei que era planejamento tributário. Quando entendi que era lavagem, já estava dentro."},
+              {"q": "rafael", "e": "pensativo", "t": "Eu anotei tudo. Cada transferência. Por seguro. Está num caderno, no fundo falso da cômoda do meu apartamento."},
+              {"q": "rafael", "e": "confiante", "t": "Sem o caderno, é só a minha palavra contra a de um bilionário. Vá buscar."}]},
+            {"q": "guarda", "titulo": "Falar com o agente penal", "falas": [
+              {"q": "guarda", "e": "nervoso", "t": "Doutor(a), não sei como aquele bilhete entrou. Mas sei que o 'office boy' do Brandão entra com envelope lacrado de advogado, e envelope de advogado a gente não abre."}]}
+          ],
+          "requer": ["bilhete", "visitas"],
+          "proxima": "x4"},
+        "x4": {"tipo": "investigar", "local": "apartamento", "titulo": "Apartamento de Rafael",
+          "intro": [{"q": "narrador", "t": "Poeira, porta-retratos de uma menina sorrindo e uma gaveta que alguém já revirou."}],
+          "pontos": [
+            {"id": "comoda", "nome": "Cômoda", "x": 64, "y": 46, "w": 16, "h": 14, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "Alguém revirou as gavetas, mas não encontrou o fundo falso. Aqui está: o caderno de contas. 47 transferências, com datas, valores e contas.", "recebe": ["caderno"]}]},
+            {"id": "estante", "nome": "Estante", "x": 9, "y": 22, "w": 19, "h": 20, "falas": [
+              {"q": "voce", "e": "feliz", "t": "Atrás de um livro de Direito Civil, colado com fita: um pen drive. Planilhas do sistema financeiro da Altavista e e-mails de Henrique aprovando os pagamentos.", "recebe": ["pendrive"]}]},
+            {"id": "mesa", "nome": "Mesa", "x": 30, "y": 50, "w": 12, "h": 10, "falas": [
+              {"q": "voce", "e": "triste", "t": "Um desenho da Sofia: 'Papai, volta logo.' Rafael tem muito a perder."}]}
+          ],
+          "conversas": [],
+          "requer": ["caderno"],
+          "proxima": "x5"},
+        "x5": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Audiência sigilosa para homologação de acordo de colaboração premiada. Colaborador: Rafael Duarte, acompanhado de seu defensor.", "fx": "martelo"},
+          {"q": "lacerda", "e": "normal", "t": "O Ministério Público ratifica o acordo, Excelência."},
+          {"q": "beatriz", "e": "pensativo", "t": "Senhor Rafael, a lei me obriga a verificar se a sua vontade é livre. Fale."}
+        ], "proxima": "x6"},
+        "x6": {"tipo": "depoimento", "testemunha": "rafael", "titulo": "Rafael quer desistir",
+          "intro": [{"q": "rafael", "e": "nervoso", "t": "Excelência… eu… pensei melhor."}],
+          "afirmacoes": [
+            {"t": "Eu desisto do acordo. Por decisão minha.", "e": "nervoso",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Rafael, o que mudou desde ontem?"}, {"q": "rafael", "e": "triste", "t": "Nada. Só… pensei."}]},
+            {"t": "Ninguém me ameaçou. Ninguém falou comigo.", "e": "nervoso",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Ninguém mesmo?"}, {"q": "rafael", "e": "nervoso", "t": "Ninguém. Eu juro."}]},
+            {"t": "Tudo o que eu disse ao Ministério Público era exagero.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Exagero de quê?"}, {"q": "rafael", "e": "nervoso", "t": "De… de tudo."}]}
+          ],
+          "contradicao": {"afirmacao": 1, "provas": ["bilhete", "visitas"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "UM MOMENTO!", "fx": "ummomento"},
+            {"q": "voce", "e": "triste", "t": "Excelência, peço licença. Este bilhete apareceu na cela do colaborador anteontem: 'Desista do acordo. Pense na Sofia. Ela sai da escola às 17h.' Sofia é a filha dele."},
+            {"q": "voce", "e": "apontando", "t": "E o livro de visitas mostra quatro entregas de 'envelopes jurídicos' do escritório de Augusto Brandão no último mês."},
+            {"q": "rafael", "e": "triste", "t": "(chorando) Me desculpa, Sofia…", "fx": "tremor"},
+            {"q": "beatriz", "e": "bravo", "t": "Isto é coação no curso do processo. Determino proteção imediata à criança e à família do colaborador.", "fx": "martelo"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não contradiz o que o colaborador disse, doutor(a)."}],
+          "proxima": "x7"},
+        "x7": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "pensativo", "t": "Doutor(a), a retratação do seu cliente foi feita sob ameaça. Que aspecto da homologação ela compromete?"}
+        ], "pergunta": "Qual requisito da homologação a ameaça atinge?",
+          "provas": ["lorc4"],
+          "acerto": [
+            {"q": "voce", "e": "confiante", "t": "A voluntariedade, Excelência, art. 4º, § 7º, IV, da Lei 12.850. Uma desistência arrancada com ameaça à filha não é manifestação livre de vontade. A vontade livre do Rafael é a de ontem: colaborar."},
+            {"q": "rafael", "e": "confiante", "t": "(enxugando o rosto) Com a Sofia protegida… eu confirmo tudo, Excelência. Tudo."}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Esse dispositivo não trata disso, doutor(a)."}],
+          "proxima": "x8"},
+        "x8": {"tipo": "decidir", "local": "tribunal", "falas": [
+          {"q": "lacerda", "e": "confiante", "t": "Com o acordo confirmado, o Ministério Público requer, desde já, a prisão preventiva de Henrique Altavista, com base nas declarações do colaborador."},
+          {"q": "beatriz", "e": "pensativo", "t": "Doutor(a), a defesa do colaborador é parte interessada. Mas quero ouvir a sua opinião técnica: devo decretar a prisão só com a palavra do colaborador?"}
+        ], "pergunta": "A juíza pergunta: o pedido, só com as declarações do colaborador, deve ser deferido?",
+          "correta": "indeferir",
+          "fundamentos": [{"chave": "LORC#art-4/par-16/inc-i", "trecho": "medidas cautelares reais ou pessoais"}],
+          "acerto": [
+            {"q": "voce", "e": "pensativo", "t": "Não, Excelência. O § 16 do art. 4º proíbe decretar medida cautelar com fundamento apenas nas declarações do colaborador. A palavra do Rafael precisa de corroboração."},
+            {"q": "lacerda", "e": "chocado", "t": "Você está defendendo o Altavista?!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "Estou defendendo a lei, doutor Lacerda. É ela que vai prender o Altavista sem que nenhum tribunal solte depois. E eu trouxe a corroboração."}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Doutor(a), a lei é expressa sobre isso. Nenhuma cautelar se decreta só com a palavra do colaborador."}],
+          "proxima": "x9"},
+        "x9": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Então mostre, doutor(a). O que corrobora as declarações do colaborador?"}
+        ], "pergunta": "Que prova independente corrobora a palavra de Rafael?",
+          "provas": ["pendrive", "caderno"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "AQUI ESTÁ!", "fx": "tomaisso"},
+            {"q": "voce", "e": "confiante", "t": "O caderno com 47 transferências, e um pen drive com as planilhas originais do sistema financeiro da Altavista e os e-mails de Henrique Altavista aprovando cada pagamento. Os números batem, um a um."},
+            {"q": "lacerda", "e": "feliz", "t": "…Retiro o que disse. Você é bom(boa) nisso.", "fx": "flash"},
+            {"q": "beatriz", "e": "normal", "t": "Homologo o acordo. E, com base em prova independente, decreto a prisão preventiva de Henrique Altavista e a busca e apreensão no escritório de Augusto Brandão.", "fx": "martelo"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não corrobora as declarações do colaborador."}],
+          "proxima": "x10"},
+        "x10": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "narrador", "t": "Seis horas depois."},
+          {"q": "helena", "e": "triste", "t": "(ao telefone) A Polícia Federal chegou à mansão do Henrique às dez. Ele tinha embarcado num jatinho às nove e meia. Alguém avisou."},
+          {"q": "helena", "e": "bravo", "t": "E o escritório do Brandão estava vazio. Sem um papel. Ele sabia da busca antes da própria juíza assinar."},
+          {"q": "lacerda", "e": "pensativo", "t": "Tem alguém lá dentro, doutor(a). No Ministério Público ou na polícia. Vazaram a decisão."},
+          {"q": "lacerda", "e": "confiante", "t": "Abriu o concurso para promotor de Justiça. Eu preciso de gente honesta do lado de dentro. Gente que conhece a Altavista melhor do que ninguém."},
+          {"q": "voce", "e": "pensativo", "t": "(Do outro lado da tribuna… para pegar quem está do lado de dentro.)"},
+          {"q": "rafael", "e": "feliz", "t": "(por carta, uma semana depois) Vá, doutor(a). Você já é melhor do que eu fui. E a Sofia mandou um desenho para você."}
+        ], "proxima": "x11"},
+        "x11": {"tipo": "veredicto", "carimbo": "ACORDO HOMOLOGADO", "titulo": "Fim do Ato II — A Advocacia", "texto": "Você protegeu a vontade livre de Rafael, defendeu a lei até contra a pressa do próprio Ministério Público e trouxe a prova que faltava. Henrique Altavista fugiu e há um traidor no sistema. Continua no Ato III: O Concurso."}
+      }
+    }
+  ]
+}

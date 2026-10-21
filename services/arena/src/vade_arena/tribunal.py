@@ -34,7 +34,7 @@ SCENE_TYPES = {"titulo", "dialogo", "depoimento", "apresentar", "escolha", "deci
 EXPRESSIONS = {"normal", "feliz", "bravo", "nervoso", "chocado", "pensativo", "triste", "confiante", "apontando"}
 EFFECTS = {"protesto", "martelo", "tremor", "bater", "flash", "ummomento", "tomaisso"}
 LOCAIS = {"tribunal", "escritorio", "rua", "bar", "delegacia", "parlatorio", "apartamento", "gabinete", "obra",
-          "mercado", "ponto", "juri"}
+          "mercado", "ponto", "juri", "loja", "clinica"}
 POSICOES = {"defesa", "acusacao", "juiz", "testemunha", "escritorio", "cena"}
 XP_BASE = {"basico": 80, "intermediario": 120, "avancado": 170, "especialista": 230}
 INTERACTIVE = {"depoimento", "apresentar", "escolha", "decidir", "investigar"}
