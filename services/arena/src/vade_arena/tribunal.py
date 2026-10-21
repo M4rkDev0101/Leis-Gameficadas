@@ -9,7 +9,13 @@ O roteiro (``content/tribunal.json``) é um grafo de cenas:
 * ``apresentar``  — o jogador escolhe nos autos a prova/lei que responde ao argumento;
 * ``escolha``     — alternativas com uma correta; erro custa credibilidade e repete a pergunta;
 * ``decidir``     — o jogador é o juiz e decide o protesto (deferir/indeferir);
+* ``investigar``  — explorar um local: pontos para examinar e pessoas para conversar; algumas
+  provas são obrigatórias para seguir;
 * ``veredicto``   — fim do episódio.
+
+O conteúdo é dividido em ``content/tribunal.json`` (personagens, normas e atos da carreira) e
+``content/atoN.json`` (episódios de cada ato). Nomes curtos de propósito: o Windows limita
+caminhos a 260 caracteres.
 
 O motor roda no navegador (``web/tribunal.html``). O servidor entrega o roteiro, enriquece as
 leis com o texto vigente do catálogo e calcula o XP no fim (com limites, para não confiar no
@@ -24,18 +30,70 @@ from functools import lru_cache
 from importlib import resources
 
 CREDIBILIDADE_MAX = 5
-SCENE_TYPES = {"titulo", "dialogo", "depoimento", "apresentar", "escolha", "decidir", "veredicto"}
+SCENE_TYPES = {"titulo", "dialogo", "depoimento", "apresentar", "escolha", "decidir", "investigar", "veredicto"}
 EXPRESSIONS = {"normal", "feliz", "bravo", "nervoso", "chocado", "pensativo", "triste", "confiante", "apontando"}
 EFFECTS = {"protesto", "martelo", "tremor", "bater", "flash", "ummomento", "tomaisso"}
-LOCAIS = {"tribunal", "escritorio"}
-POSICOES = {"defesa", "acusacao", "juiz", "testemunha", "escritorio"}
+LOCAIS = {"tribunal", "escritorio", "rua", "bar", "delegacia", "parlatorio", "apartamento", "gabinete", "obra",
+          "mercado", "ponto", "juri"}
+POSICOES = {"defesa", "acusacao", "juiz", "testemunha", "escritorio", "cena"}
 XP_BASE = {"basico": 80, "intermediario": 120, "avancado": 170, "especialista": 230}
-INTERACTIVE = {"depoimento", "apresentar", "escolha", "decidir"}
+INTERACTIVE = {"depoimento", "apresentar", "escolha", "decidir", "investigar"}
 
 
 @lru_cache(maxsize=1)
 def load() -> dict:
-    return json.loads(resources.files(__package__).joinpath("content", "tribunal.json").read_text(encoding="utf-8"))
+    content = resources.files(__package__).joinpath("content")
+    data = json.loads(content.joinpath("tribunal.json").read_text(encoding="utf-8"))
+    data.setdefault("atos", [])
+    for f in sorted((x for x in content.iterdir() if x.name.startswith("ato") and x.name.endswith(".json")),
+                    key=lambda x: x.name):
+        extra = json.loads(f.read_text(encoding="utf-8"))
+        for ep in extra.get("episodios", []):
+            ep.setdefault("ato", extra.get("ato"))
+            data["episodios"].append(ep)
+        data["personagens"].update(extra.get("personagens", {}))
+    # carreira na ordem dos atos; episódios avulsos no fim
+    data["episodios"].sort(key=lambda e: (not e.get("ato"), e.get("ato") or "", e.get("ordem", 0)))
+    return data
+
+
+def estimate_minutes(ep: dict) -> float:
+    """Duração estimada: leitura (~170 palavras/min, com a animação do texto) + ~25 s por decisão
+    + ~40 s por ponto de investigação. Serve para mostrar ao jogador e medir a meta de horas."""
+    words, decisions, spots = 0, 0, 0
+    for c in ep["cenas"].values():
+        for f in _falas(c):
+            words += len(f.get("t", "").split())
+        for a in c.get("afirmacoes", []):
+            words += len(a["t"].split()) * 2  # lidas no depoimento e de novo no interrogatório
+        if c["tipo"] in INTERACTIVE:
+            decisions += 1
+        spots += len(c.get("pontos", [])) + len(c.get("conversas", []))
+    return round(words / 170 + decisions * 25 / 60 + spots * 40 / 60, 1)
+
+
+def career(data: dict, won: dict[str, float], saves: set[str]) -> dict:
+    """Atos e episódios com estado: bloqueado, disponível (ou com jogo salvo) e concluído."""
+    eps = sorted((e for e in data["episodios"] if e.get("ato")), key=lambda e: (e["ato"], e.get("ordem", 0)))
+    out, unlocked, total_min, done_min = [], True, 0.0, 0.0
+    for ato in data["atos"]:
+        items = []
+        for ep in [e for e in eps if e["ato"] == ato["id"]]:
+            minutes = estimate_minutes(ep)
+            total_min += minutes
+            best = won.get(ep["id"])
+            status = "concluido" if best and best > 0 else ("disponivel" if unlocked else "bloqueado")
+            if status == "concluido":
+                done_min += minutes
+            elif status == "disponivel":
+                unlocked = False  # só o próximo caso fica liberado
+            items.append({**summary(ep), "status": status, "melhor": best, "salvo": ep["id"] in saves, "minutos": minutes})
+        out.append({**ato, "episodios": items})
+    avulsos = [{**summary(e), "minutos": estimate_minutes(e), "melhor": won.get(e["id"]), "salvo": e["id"] in saves}
+               for e in data["episodios"] if e.get("avulso")]
+    return {"atos": out, "avulsos": avulsos, "horas_total": round(total_min / 60, 1), "horas_jogadas": round(done_min / 60, 1),
+            "concluidos": sum(1 for a in out for e in a["episodios"] if e["status"] == "concluido"),
+            "total": sum(len(a["episodios"]) for a in out)}
 
 
 def episode(data: dict, ep_id: str) -> dict:
@@ -48,7 +106,7 @@ def episode(data: dict, ep_id: str) -> dict:
 def summary(ep: dict) -> dict:
     interativas = sum(1 for c in ep["cenas"].values() if c["tipo"] in INTERACTIVE)
     return {"id": ep["id"], "numero": ep["numero"], "titulo": ep["titulo"], "papel": ep["papel"], "nivel": ep["nivel"],
-            "sinopse": ep["sinopse"], "desafios": interativas}
+            "sinopse": ep["sinopse"], "desafios": interativas, "ato": ep.get("ato")}
 
 
 def all_fundamentos(data: dict):
@@ -69,6 +127,8 @@ def _falas(cena: dict) -> list[dict]:
     out = list(cena.get("falas", [])) + list(cena.get("intro", [])) + list(cena.get("acerto", [])) + list(cena.get("erro", []))
     for a in cena.get("afirmacoes", []):
         out += a.get("pressionar", [])
+    for p in cena.get("pontos", []) + cena.get("conversas", []):
+        out += p.get("falas", [])
     for o in cena.get("opcoes", []):
         out += o.get("falas", [])
     return out
@@ -78,6 +138,18 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
     errs: list[str] = []
     chars = data["personagens"]
     seen_ids = set()
+    atos = {a["id"] for a in data.get("atos", [])}
+    ordens: set[tuple] = set()
+    for ep in data["episodios"]:
+        if ep.get("ato"):
+            if ep["ato"] not in atos:
+                errs.append(f"{ep['id']}: ato desconhecido {ep['ato']}")
+            key = (ep["ato"], ep.get("ordem"))
+            if key in ordens:
+                errs.append(f"{ep['id']}: ordem repetida no {ep['ato']}")
+            ordens.add(key)
+        elif not ep.get("avulso"):
+            errs.append(f"{ep['id']}: episódio sem ato precisa ser marcado como avulso")
     for ep in data["episodios"]:
         eid = ep.get("id", "?")
         if eid in seen_ids:
@@ -141,6 +213,31 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
                         errs.append(f"{where}: contradição usa prova inexistente {pid}")
                 if not ct.get("provas"):
                     errs.append(f"{where}: contradição sem prova")
+            if c["tipo"] == "investigar":
+                if c.get("local") not in LOCAIS:
+                    errs.append(f"{where}: investigação precisa de local válido")
+                obtained = set()
+                for pt in c.get("pontos", []):
+                    for k in ("x", "y", "w", "h"):
+                        if not isinstance(pt.get(k), (int, float)) or not 0 <= pt[k] <= 100:
+                            errs.append(f"{where}/{pt.get('id')}: coordenada {k} deve estar entre 0 e 100")
+                    if not pt.get("nome") or not pt.get("falas"):
+                        errs.append(f"{where}/{pt.get('id')}: ponto precisa de nome e falas")
+                for conv in c.get("conversas", []):
+                    if conv.get("q") not in ep.get("posicoes", {}):
+                        errs.append(f"{where}: conversa com personagem sem posição {conv.get('q')!r}")
+                    if not conv.get("titulo") or not conv.get("falas"):
+                        errs.append(f"{where}: conversa precisa de título e falas")
+                for item in c.get("pontos", []) + c.get("conversas", []):
+                    for f in item.get("falas", []):
+                        obtained |= set(f.get("recebe", []))
+                for pid in c.get("requer", []):
+                    if pid not in provas:
+                        errs.append(f"{where}: requer prova inexistente {pid}")
+                    elif pid not in obtained:
+                        errs.append(f"{where}: requer {pid}, mas nenhum ponto ou conversa desta investigação a entrega")
+                if not c.get("pontos") and not c.get("conversas"):
+                    errs.append(f"{where}: investigação vazia")
             if c["tipo"] == "apresentar":
                 if not c.get("provas") or any(p not in provas for p in c["provas"]):
                     errs.append(f"{where}: provas aceitas inválidas")

@@ -42,6 +42,11 @@ CREATE TABLE IF NOT EXISTS partida (
   criado_em TEXT NOT NULL
 );
 CREATE INDEX IF NOT EXISTS partida_tipo ON partida (tipo, criado_em);
+CREATE TABLE IF NOT EXISTS tribunal_save (
+  ep_id TEXT PRIMARY KEY,
+  estado TEXT NOT NULL,
+  atualizado TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS questao_vista (
   questao_id TEXT PRIMARY KEY,
   vezes INTEGER NOT NULL,
@@ -76,6 +81,39 @@ class Player:
         cols = {r[1] for r in db.execute("PRAGMA table_info(jogador)")}
         if "avatar" not in cols:
             db.execute("ALTER TABLE jogador ADD COLUMN avatar TEXT")
+
+    def save_trial(self, ep_id: str, estado: dict) -> None:
+        db = self._db()
+        try:
+            with db:
+                db.execute("INSERT INTO tribunal_save VALUES (?, ?, ?) ON CONFLICT(ep_id) DO UPDATE SET estado = excluded.estado,"
+                           " atualizado = excluded.atualizado", (ep_id, json.dumps(estado, ensure_ascii=False),
+                                                                  dt.datetime.now().isoformat(timespec="seconds")))
+        finally:
+            db.close()
+
+    def load_trial(self, ep_id: str) -> dict | None:
+        db = self._db()
+        try:
+            row = db.execute("SELECT estado FROM tribunal_save WHERE ep_id = ?", (ep_id,)).fetchone()
+            return json.loads(row[0]) if row else None
+        finally:
+            db.close()
+
+    def clear_trial(self, ep_id: str) -> None:
+        db = self._db()
+        try:
+            with db:
+                db.execute("DELETE FROM tribunal_save WHERE ep_id = ?", (ep_id,))
+        finally:
+            db.close()
+
+    def saved_trials(self) -> set[str]:
+        db = self._db()
+        try:
+            return {r[0] for r in db.execute("SELECT ep_id FROM tribunal_save")}
+        finally:
+            db.close()
 
     def set_avatar(self, nome: str, avatar: dict) -> None:
         nome = (nome or "Você").strip()[:32] or "Você"

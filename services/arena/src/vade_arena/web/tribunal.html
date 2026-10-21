@@ -204,6 +204,55 @@
   input[type=text] { font:inherit; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:var(--panel-2); color:var(--text); width:100%; max-width:320px; }
   .save { background:var(--gold); color:#1a1206; border:0; border-radius:12px; padding:12px 20px; font-weight:900; }
   .card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; }
+  /* ------------------------------------------------------------ carreira */
+  .career-head { display:flex; gap:18px; align-items:center; flex-wrap:wrap; margin:0 0 18px; }
+  .career-head h2 { margin:0; font-family:Georgia,serif; font-size:1.6rem; }
+  .career-head .sp { flex:1; }
+  .pbar { height:10px; border-radius:99px; background:var(--panel-2); overflow:hidden; width:min(320px, 100%); }
+  .pbar i { display:block; height:100%; background:linear-gradient(90deg, var(--gold), #ffd866); }
+  .act { margin:0 0 26px; }
+  .act-title { display:flex; gap:12px; align-items:baseline; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:8px; margin-bottom:12px; }
+  .act-title b { font-family:Georgia,serif; color:var(--gold); letter-spacing:.2em; text-transform:uppercase; font-size:.8rem; }
+  .act-title h3 { margin:0; font-family:Georgia,serif; font-size:1.35rem; }
+  .act-title p { flex-basis:100%; margin:2px 0 0; color:var(--muted); font-size:.92rem; }
+  .act.locked .act-title { opacity:.55; }
+  .ep.locked { cursor:not-allowed; opacity:.5; filter:grayscale(.8); }
+  .ep.locked:hover { transform:none; border-color:var(--line); }
+  .ep.nextcase { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,183,0,.18); }
+  .ep .lock { position:absolute; inset:0; display:grid; place-items:center; font-size:2.6rem; background:rgba(0,0,0,.45); }
+  .ep .done { position:absolute; top:10px; right:12px; background:var(--green); color:#04210f; font-weight:900; font-size:.8rem; padding:2px 10px; border-radius:99px; }
+  .ep-actions { display:flex; gap:8px; flex-wrap:wrap; margin-top:4px; }
+  .ep-actions span { font-weight:800; font-size:.85rem; padding:6px 12px; border-radius:10px; background:var(--gold); color:#1a1206; }
+  .ep-actions span.sec { background:var(--panel-2); color:var(--text); }
+  .soon { color:var(--muted); border:1px dashed var(--line); border-radius:14px; padding:14px 16px; }
+
+  /* ------------------------------------------------------------ investigação */
+  .scene.loc .floor, .scene.loc .desk { display:none; }
+  .scene.loc .actor { bottom:18%; width:34%; }
+  .spot { position:absolute; z-index:7; border:.3cqw dashed rgba(255,224,138,.85); border-radius:1cqw; background:rgba(255,224,138,.08);
+          animation:glow 1.8s ease-in-out infinite; display:flex; align-items:flex-end; justify-content:center; padding:0; }
+  .spot span { transform:translateY(120%); background:rgba(0,0,0,.75); color:#ffe08a; font-weight:800; font-size:1.2cqw; padding:.2cqw .8cqw;
+               border-radius:.5cqw; white-space:nowrap; opacity:0; transition:opacity .15s; pointer-events:none; }
+  .spot:hover span, .spot:focus-visible span { opacity:1; }
+  .spot:hover { background:rgba(255,224,138,.22); }
+  .spot.seen { border-color:rgba(124,242,154,.7); animation:none; background:rgba(124,242,154,.06); }
+  .spot.seen::after { content:"✓"; position:absolute; top:-1.4cqw; right:-1cqw; background:#2FBF71; color:#04210f; font-weight:900;
+                      font-size:1.2cqw; width:2.2cqw; height:2.2cqw; border-radius:50%; display:grid; place-items:center; }
+  @keyframes glow { 50% { box-shadow:0 0 1.6cqw rgba(255,224,138,.55); } }
+  .inv-panel { position:absolute; right:2%; bottom:3%; width:30%; z-index:8; background:rgba(10,12,20,.9); border:.25cqw solid #d9d2c0;
+               border-radius:1.2cqw; padding:1.2cqw; display:grid; gap:.8cqw; }
+  .inv-panel h4 { margin:0; font-family:Georgia,serif; font-size:1.7cqw; color:#fff4d6; }
+  .inv-panel small { color:var(--muted); font-size:1.15cqw; }
+  .inv-panel button { text-align:left; font-size:1.35cqw; font-weight:800; padding:.7cqw 1cqw; border-radius:.8cqw; border:.2cqw solid #4a5570;
+                      background:#1c2333; display:flex; gap:.8cqw; align-items:center; }
+  .inv-panel button:hover { border-color:var(--gold); }
+  .inv-panel button.done { opacity:.6; }
+  .inv-panel .go { background:var(--gold); color:#1a1206; border-color:var(--gold); justify-content:center; }
+  .inv-panel .go:disabled { background:#30384a; color:#a3adbd; border-color:#30384a; cursor:not-allowed; }
+  .inv-title { position:absolute; left:2%; top:9%; z-index:8; background:rgba(0,0,0,.6); color:#fff4d6; font-family:Georgia,serif;
+               font-size:1.8cqw; padding:.4cqw 1.4cqw; border-radius:.6cqw; border-left:.4cqw solid var(--gold); }
+  .saved-toast { position:absolute; left:50%; top:3%; transform:translateX(-50%); z-index:9; font-size:1.1cqw; color:#a8e6c4;
+                 background:rgba(0,0,0,.55); padding:.2cqw 1cqw; border-radius:99px; animation:flash 2s ease-out forwards; pointer-events:none; }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; } }
 </style>
 </head>
@@ -473,6 +522,134 @@ function background(pos) {
     <rect width="160" height="100" fill="url(#lt${u})"/>
     <rect y="62" width="160" height="38" fill="${b.tint}" opacity=".35"/></svg>`;
 }
+// Locais de investigação. viewBox 160×100 com a mesma proporção do palco (16:10): os pontos
+// do roteiro (x, y, w, h em % do palco) caem exatamente sobre os objetos desenhados aqui.
+const LOCAL_NOME = {bar:"Bar", mercado:"Supermercado", ponto:"Ponto de ônibus", delegacia:"Delegacia", apartamento:"Apartamento",
+  obra:"Canteiro de obras", rua:"Rua", parlatorio:"Parlatório", gabinete:"Gabinete", juri:"Plenário do Júri"};
+function locationBG(local) {
+  const u = "l" + (++UID);
+  const svg = (inner, defs = "") => `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"><defs>${defs}</defs>${inner}</svg>`;
+  const grad = (id, a, b) => `<linearGradient id="${id}${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`;
+  const nightSky = grad("sk", "#0d1430", "#3a2a4a");
+  const windows = (x0, y0, cols, rows, w, h, dx, dy) => Array.from({length:cols * rows}, (_, i) =>
+    `<rect x="${x0 + (i % cols) * dx}" y="${y0 + Math.floor(i / cols) * dy}" width="${w}" height="${h}" fill="${(i * 7) % 5 < 2 ? "#ffd866" : "#1b2236"}" opacity=".85"/>`).join("");
+  switch (local) {
+    case "bar": return svg(`
+      <rect width="160" height="100" fill="url(#w${u})"/>
+      <rect x="0" y="22" width="20" height="58" fill="#1a0f08"/><rect x="2" y="24" width="16" height="54" fill="#3b2a1a" stroke="#c9a04a" stroke-width=".6"/>
+      <text x="10" y="19" font-size="3" fill="#ffd866" text-anchor="middle" font-family="Georgia">BAR DO ZÉ</text>
+      <rect x="60" y="14" width="64" height="22" fill="#2a1a10"/>${[0,1,2,3,4,5,6,7,8,9,10,11].map(i => `<rect x="${63 + i*5}" y="${18 + (i%2)*1}" width="3" height="${10 - (i%3)}" rx="1" fill="${["#2a6a3a","#8a1c1c","#c9a04a","#6a4a2a"][i%4]}"/>`).join("")}
+      <rect x="60" y="26" width="64" height="1.5" fill="#5a3a22"/>
+      <rect x="80" y="54" width="68" height="26" fill="url(#c${u})"/><rect x="78" y="52" width="72" height="3" fill="#9b6c42"/>
+      <rect x="90" y="42" width="18" height="11" rx="1.5" fill="#3a3f4a" stroke="#111" stroke-width=".6"/><rect x="92" y="44" width="10" height="4" fill="#7CF29A" opacity=".7"/>
+      <rect x="104" y="50" width="6" height="2" fill="#ecd9b0"/>
+      <g transform="translate(130 12)"><rect x="-4" y="-4" width="8" height="3" fill="#222"/><rect x="-2" y="-1" width="10" height="6" rx="1" fill="#d0d4dc" stroke="#222" stroke-width=".6" transform="rotate(20)"/><circle cx="6" cy="5" r="1.2" fill="#E5483B"/></g>
+      <rect y="80" width="160" height="20" fill="#3a2414"/>${Array.from({length:10}, (_, i) => `<rect x="${i*16}" y="80" width="15" height="20" fill="#000" opacity="${i%2 ? .08 : .16}"/>`).join("")}
+      <ellipse cx="36" cy="60" rx="15" ry="4" fill="#6a4a2a" stroke="#2a1a10" stroke-width=".6"/><rect x="34.5" y="60" width="3" height="18" fill="#2a1a10"/>
+      <text x="36" y="58.4" font-size="2.6" fill="#ecd9b0" text-anchor="middle" font-family="Georgia">7</text>
+      <rect x="40" y="55.5" width="4" height="2.4" rx=".5" fill="#111"/>
+      <ellipse cx="66" cy="66" rx="10" ry="3" fill="#6a4a2a" opacity=".8"/><rect x="65" y="66" width="2" height="12" fill="#2a1a10" opacity=".8"/>
+      <circle cx="80" cy="6" r="2" fill="#ffd866"/><path d="M80 0V4" stroke="#222" stroke-width=".5"/>
+      <rect width="160" height="100" fill="url(#lt${u})"/>`,
+      grad("w", "#6a3a22", "#2a160c") + grad("c", "#7a5232", "#3e2716") +
+      `<radialGradient id="lt${u}" cx=".5" cy=".05" r=".9"><stop offset="0" stop-color="#ffd27a" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></radialGradient>`);
+    case "mercado": return svg(`
+      <rect width="160" height="100" fill="#e9eef2"/><rect width="160" height="8" fill="#d8dfe5"/>${[20,60,100,140].map(x => `<rect x="${x - 10}" y="2" width="20" height="2" fill="#fff"/>`).join("")}
+      <rect x="0" y="8" width="160" height="6" fill="#d23a2f"/><text x="80" y="12.6" font-size="4" fill="#fff" text-anchor="middle" font-weight="700">SUPERMERCADO BOM PREÇO</text>
+      <rect x="12" y="28" width="38" height="52" fill="#9aa4ad"/>${[0,1,2,3].map(r => `<rect x="12" y="${36 + r*12}" width="38" height="1.5" fill="#5a646d"/>` +
+        Array.from({length:7}, (_, c) => `<rect x="${14 + c*5}" y="${30 + r*12}" width="4" height="6" fill="${["#f5b700","#ffffff","#4F7BFF","#2FBF71","#E5483B"][(r+c)%5]}"/>`).join("")).join("")}
+      <rect x="14" y="21" width="20" height="6" fill="#f5b700"/><text x="24" y="25.4" font-size="3.2" text-anchor="middle" font-weight="700" fill="#3a1a00">ARROZ R$ 8,90</text>
+      <rect x="112" y="12" width="26" height="18" rx="1.5" fill="#1b2236" stroke="#111" stroke-width=".8"/>${[0,1,2,3].map(i => `<rect x="${114 + (i%2)*12}" y="${14 + Math.floor(i/2)*8}" width="10" height="6" fill="#2c3e70"/>`).join("")}
+      <circle cx="136" cy="14" r=".9" fill="#E5483B"/>
+      <rect x="68" y="54" width="34" height="26" fill="#5a646d"/><rect x="66" y="50" width="38" height="5" fill="#d0d6dc"/><rect x="72" y="46" width="12" height="5" fill="#ecd9b0" stroke="#8a5a2b" stroke-width=".4"/>
+      <rect y="80" width="160" height="20" fill="#cfd6dc"/>${Array.from({length:16}, (_, i) => `<rect x="${i*10}" y="80" width="10" height="20" fill="${i%2 ? "#c2c9cf" : "#dbe1e6"}"/>`).join("")}
+      <rect x="120" y="58" width="20" height="14" rx="2" fill="none" stroke="#7a838b" stroke-width="1.2"/><circle cx="124" cy="76" r="2.4" fill="#444"/><circle cx="136" cy="76" r="2.4" fill="#444"/>`);
+    case "ponto": return svg(`
+      <rect width="160" height="70" fill="url(#sk${u})"/>${windows(4, 18, 5, 4, 3, 4, 6, 7)}
+      <rect x="0" y="12" width="34" height="58" fill="#141b2b" opacity=".6"/>
+      <rect x="108" y="26" width="52" height="44" fill="#3a2a20"/><rect x="108" y="22" width="52" height="6" fill="#c9a04a"/>
+      <text x="134" y="26.6" font-size="3.6" text-anchor="middle" font-weight="700" fill="#3a1a00">PADARIA</text>
+      <rect x="112" y="34" width="20" height="18" fill="#ffd866" opacity=".75"/><rect x="138" y="34" width="18" height="36" fill="#1a120c"/>
+      <g transform="translate(128 18)"><rect x="-2" y="-1" width="10" height="5" rx="1" fill="#d0d4dc" stroke="#222" stroke-width=".6" transform="rotate(15)"/><circle cx="7" cy="4" r="1" fill="#E5483B"/></g>
+      <rect x="44" y="34" width="44" height="3" fill="#4a5570"/><rect x="46" y="37" width="2" height="33" fill="#4a5570"/><rect x="84" y="37" width="2" height="33" fill="#4a5570"/>
+      <rect x="50" y="38" width="30" height="20" fill="#7a8ab0" opacity=".18"/><rect x="50" y="58" width="30" height="3" fill="#2a3242"/>
+      <rect x="78" y="10" width="2.4" height="60" fill="#8a929c"/><rect x="74" y="10" width="10" height="7" rx="1" fill="#2c3e70"/><text x="79" y="15" font-size="3.4" text-anchor="middle" fill="#fff" font-weight="700">412</text>
+      <rect y="70" width="160" height="4" fill="#9aa0a8"/><rect y="74" width="160" height="26" fill="#2a2d33"/>
+      <rect x="32" y="72" width="36" height="2" fill="#5a5f66"/><path d="M58 73.2l4 -.8" stroke="#d0d4dc" stroke-width=".7"/>
+      ${[0,1,2,3,4,5].map(i => `<rect x="${8 + i*28}" y="86" width="14" height="1.6" fill="#ffd866" opacity=".8"/>`).join("")}`, nightSky);
+    case "delegacia": return svg(`
+      <rect width="160" height="100" fill="url(#w${u})"/><rect y="62" width="160" height="2" fill="#2a3a30"/>
+      <rect x="70" y="6" width="24" height="4" fill="#d0d6dc"/><rect x="76" y="10" width="12" height="1" fill="#555"/>
+      <text x="80" y="20" font-size="5" text-anchor="middle" fill="#e6f0e6" font-family="Georgia" opacity=".85">14º DP</text>
+      <rect x="114" y="13" width="30" height="26" fill="#8a5a2b"/><rect x="115.5" y="14.5" width="27" height="23" fill="#c9a77a"/>
+      ${[[118,17,"#fff"],[127,16,"#ffe08a"],[134,19,"#fff"],[120,26,"#a8e6c4"],[130,27,"#fff"]].map(([x,y,c]) => `<rect x="${x}" y="${y}" width="7" height="8" fill="${c}" transform="rotate(${(x%3)-1} ${x} ${y})"/>`).join("")}
+      ${[[121,17],[130,16],[137,19],[123,26],[133,27]].map(([x,y]) => `<circle cx="${x}" cy="${y}" r=".7" fill="#E5483B"/>`).join("")}
+      <rect x="54" y="54" width="54" height="26" fill="url(#c${u})"/><rect x="52" y="51" width="58" height="4" fill="#6a6f76"/>
+      <rect x="64" y="45" width="18" height="7" fill="#2c3e70"/><rect x="65" y="45.8" width="16" height="5.4" fill="#ecd9b0"/><path d="M73 45.8V51.2" stroke="#8a5a2b" stroke-width=".5"/>
+      <rect x="92" y="44" width="6" height="8" rx="1" fill="#ddd"/><rect x="99" y="46" width="5" height="6" fill="#3a2716"/>
+      <rect x="12" y="52" width="32" height="28" fill="#5a646d"/>${[0,1].map(i => `<rect x="14" y="${56 + i*12}" width="28" height="10" fill="#6a747d" stroke="#3a4148" stroke-width=".5"/>`).join("")}
+      <rect x="16" y="47" width="26" height="6" fill="#d6b56a" stroke="#8a5a2b" stroke-width=".5"/>
+      <g transform="translate(140 6)" opacity=".85"><circle r="5" fill="#ddd"/><path d="M-4 0H4M0 -4V4" stroke="#999" stroke-width=".5"/></g>
+      <rect y="80" width="160" height="20" fill="#3a4a40"/>${Array.from({length:8}, (_, i) => `<rect x="${i*20}" y="80" width="19" height="20" fill="#000" opacity="${i%2 ? .06 : .12}"/>`).join("")}`,
+      grad("w", "#7a9a86", "#3e5446") + grad("c", "#7a838b", "#4a5158"));
+    case "apartamento": return svg(`
+      <rect width="160" height="100" fill="url(#w${u})"/>
+      <rect x="54" y="10" width="40" height="36" fill="#9ec4e6" stroke="#5a3a22" stroke-width="1.6"/><path d="M74 10V46M54 28H94" stroke="#5a3a22" stroke-width="1"/>
+      <path d="M50 8 Q56 30 52 50 L46 50 L46 8Z M98 8 Q92 30 96 50 L102 50 L102 8Z" fill="#a05a3a" opacity=".85"/>
+      <rect x="14" y="22" width="30" height="20" fill="#6a4a2a"/><rect x="14" y="30" width="30" height="1.4" fill="#3e2716"/>
+      <rect x="17" y="25" width="10" height="5" fill="#fff" transform="rotate(-6 17 25)"/><rect x="29" y="26" width="10" height="4" fill="#ecd9b0"/>
+      <rect x="18" y="33" width="6" height="8" fill="#8a1c1c"/><rect x="25" y="34" width="5" height="7" fill="#2c3e70"/>
+      <rect x="100" y="44" width="30" height="36" fill="#7a5232"/><rect x="102" y="47" width="26" height="12" fill="#8a6242" stroke="#3e2716" stroke-width=".6"/><circle cx="115" cy="53" r="1" fill="#c9a04a"/>
+      <rect x="102" y="62" width="26" height="15" fill="#8a6242" stroke="#3e2716" stroke-width=".6"/>
+      <g transform="translate(118 34)"><rect x="-5" y="0" width="10" height="10" fill="#ddd" stroke="#888" stroke-width=".4"/><circle cy="5" r="3" fill="#fff4d6"/></g>
+      <rect x="40" y="58" width="36" height="3" fill="#6a4a2a"/><rect x="43" y="61" width="2" height="19" fill="#3e2716"/><rect x="71" y="61" width="2" height="19" fill="#3e2716"/>
+      <rect x="52" y="55" width="7" height="3.4" rx=".6" fill="#333"/><rect x="62" y="55.6" width="6" height="2.6" fill="#ecd9b0"/>
+      <rect x="132" y="56" width="26" height="24" rx="3" fill="#5a6a8a"/><rect x="132" y="50" width="26" height="9" rx="3" fill="#6a7a9a"/>
+      <rect y="80" width="160" height="20" fill="#6a4a2a"/>${Array.from({length:20}, (_, i) => `<rect x="${i*8}" y="80" width="8" height="20" fill="#000" opacity="${i%2 ? .05 : .12}"/>`).join("")}`,
+      grad("w", "#d9c9a8", "#a8947a"));
+    case "obra": return svg(`
+      <rect width="160" height="70" fill="url(#sk${u})"/>
+      <g stroke="#c9a04a" stroke-width="1" fill="none" opacity=".9"><path d="M100 70V6H150V70M100 22H150M100 38H150M100 54H150M110 6V70M125 6V70M140 6V70"/></g>
+      <path d="M30 70V0M30 2H96M90 2V24" stroke="#f5b700" stroke-width="1.8" fill="none"/><rect x="86" y="24" width="8" height="4" fill="#555"/>
+      <rect x="40" y="8" width="44" height="12" fill="#1f2a44"/><text x="62" y="13" font-size="3.6" text-anchor="middle" fill="#fff" font-weight="700">CONSTRUTORA ALTAVISTA</text>
+      <text x="62" y="17.6" font-size="2.4" text-anchor="middle" fill="#f5b700">Construindo o seu futuro</text>
+      <rect x="66" y="32" width="30" height="22" fill="#d0d6dc"/><rect x="66" y="30" width="30" height="3" fill="#8a929c"/><rect x="70" y="36" width="10" height="7" fill="#ffd866" opacity=".8"/><rect x="84" y="38" width="8" height="16" fill="#5a646d"/>
+      <rect x="10" y="44" width="30" height="16" fill="#3a3f4a"/><rect x="16" y="48" width="4" height="12" fill="#8a929c"/><rect x="20" y="52" width="14" height="1.6" fill="#E5483B"/>
+      <rect x="22" y="40" width="10" height="5" fill="#2c3e70"/><rect x="23.5" y="41" width="7" height="3" fill="#7CF29A" opacity=".7"/>
+      <rect x="124" y="36" width="26" height="30" fill="none" stroke="#8a929c" stroke-width="1.6"/>${[0,1,2,3,4,5].map(i => `<path d="M${126 + i*4} 37V65" stroke="#8a929c" stroke-width=".8"/>`).join("")}
+      <path d="M134 50 Q137 54 140 50" stroke="#c9c9c9" stroke-width="1.2" fill="none"/><rect x="135" y="51" width="4" height="4" rx=".6" fill="#c9a04a"/>
+      <rect y="70" width="160" height="30" fill="#6a5440"/>${[[20,84],[58,90],[96,82],[140,92]].map(([x,y]) => `<ellipse cx="${x}" cy="${y}" rx="10" ry="2" fill="#4a3a2a"/>`).join("")}
+      ${[0,1,2,3,4].map(i => `<rect x="${44 + i*3}" y="${74 + i*.4}" width="22" height="1" fill="#555" transform="rotate(-4 ${44 + i*3} 74)"/>`).join("")}`,
+      grad("sk", "#ff9e5e", "#3a2a4a"));
+    case "rua": return svg(`
+      <rect width="160" height="70" fill="url(#sk${u})"/>
+      <rect x="4" y="14" width="40" height="56" fill="#3a4152"/>${windows(8, 18, 5, 6, 4, 4, 7, 8)}
+      <rect x="116" y="8" width="40" height="62" fill="#2a3040"/>${windows(120, 12, 5, 7, 4, 4, 7, 8)}
+      <rect x="54" y="30" width="52" height="40" fill="#4a3a30"/><rect x="58" y="40" width="20" height="18" fill="#ffd866" opacity=".6"/><rect x="84" y="44" width="16" height="26" fill="#1a120c"/>
+      <rect y="70" width="160" height="4" fill="#9aa0a8"/><rect y="74" width="160" height="26" fill="#2a2d33"/>
+      ${[0,1,2,3,4,5].map(i => `<rect x="${8 + i*28}" y="86" width="14" height="1.6" fill="#ffd866" opacity=".8"/>`).join("")}`, nightSky);
+    case "parlatorio": return svg(`
+      <rect width="160" height="100" fill="url(#w${u})"/>
+      ${Array.from({length:4}, (_, i) => `<rect x="${8 + i*40}" y="10" width="32" height="40" fill="#1c2230" stroke="#6a6f76" stroke-width="1.4"/><rect x="${10 + i*40}" y="12" width="28" height="36" fill="#9ec4e6" opacity=".18"/>`).join("")}
+      <rect y="50" width="160" height="6" fill="#6a6f76"/><rect y="56" width="160" height="24" fill="#4a5158"/>
+      ${[0,1,2,3].map(i => `<rect x="${20 + i*40}" y="38" width="3" height="10" fill="#222"/><rect x="${18 + i*40}" y="36" width="7" height="3" rx="1" fill="#333"/>`).join("")}
+      <rect y="80" width="160" height="20" fill="#3a3f46"/>`, grad("w", "#8a929c", "#4a5158"));
+    case "gabinete": return svg(`
+      <rect width="160" height="100" fill="url(#w${u})"/>
+      <rect x="10" y="10" width="60" height="60" fill="#3a2716"/>${[0,1,2,3,4].map(r => Array.from({length:9}, (_, c) => `<rect x="${13 + c*6.4}" y="${13 + r*11.6}" width="5" height="10" fill="${["#8a1c1c","#1c4a8a","#c9a04a","#2a6a3a","#6a2a6a","#1f2a44"][(r*3+c)%6]}"/>`).join("")).join("")}
+      <rect x="96" y="12" width="40" height="30" fill="#9ec4e6" stroke="#5a3a22" stroke-width="1.6"/><path d="M116 12V42M96 27H136" stroke="#5a3a22" stroke-width="1"/>
+      <g transform="translate(146 20)"><rect x="-1" y="0" width="2" height="30" fill="#c9a04a"/><path d="M1 2h10v6H1z" fill="#2FBF71"/><path d="M1 8h10v6H1z" fill="#F5B700"/><circle cx="6" cy="8" r="1.6" fill="#2c3e70"/></g>
+      <rect y="80" width="160" height="20" fill="#4a2e18"/>`, grad("w", "#6a4a32", "#3a2414"));
+    case "juri": return svg(`
+      <rect width="160" height="100" fill="url(#w${u})"/>
+      ${Array.from({length:12}, (_, i) => `<rect x="${i*14}" y="0" width="12" height="70" fill="#000" opacity="${i%2 ? .04 : .08}"/>`).join("")}
+      <rect x="20" y="40" width="120" height="8" fill="#6a4228"/><rect x="20" y="56" width="120" height="8" fill="#6a4228"/>
+      ${Array.from({length:7}, (_, i) => `<g transform="translate(${30 + i*17} ${i < 4 ? 36 : 52})"><circle r="4" fill="#3a2a20"/><rect x="-5" y="3" width="10" height="6" rx="2" fill="${["#1f2a44","#7a1f1f","#2a6a3a","#5a646d"][i%4]}"/></g>`).join("")}
+      <text x="80" y="20" font-size="5" text-anchor="middle" fill="#f7e3b0" font-family="Georgia" letter-spacing="1">CONSELHO DE SENTENÇA</text>
+      <rect y="70" width="160" height="30" fill="#2a1a10"/>`, grad("w", "#9a6a40", "#4a2e18"));
+  }
+  return background("testemunha");
+}
 function desk(pos) {
   const u = "d" + (++UID);
   if (pos === "escritorio") return `<svg viewBox="0 0 160 30" preserveAspectRatio="none" width="100%" height="100%"><rect y="6" width="160" height="24" fill="#3a2716"/><rect y="4" width="160" height="4" fill="#5a3a22"/><rect x="18" y="0" width="22" height="5" fill="#ecd9b0"/><rect x="118" y="-2" width="8" height="8" fill="#8a1c1c"/></svg>`;
@@ -505,14 +682,19 @@ function voiceOf(q) { return (EP.personagens[q] || {}).voz || 0; }
 let curPos = null, curChar = null;
 async function camera(pos, q, expr, local) {
   const scene = $("#scene");
-  const target = local === "escritorio" ? "escritorio" : pos;
+  // fora do tribunal, todos aparecem no próprio local; "cena" sem local fica onde a câmera está
+  const isLoc = local && local !== "tribunal" && local !== "escritorio";
+  if (pos === "cena" && !local) pos = curPos && curPos.startsWith("L:") ? curPos : "testemunha";
+  const target = isLoc ? "L:" + local : local === "escritorio" ? "escritorio" : pos;
   const curPosBefore = curPos;
   if (target !== curPos) {
     const dir = ["defesa", "escritorio"].includes(target) ? "enter-l" : "enter-r";
     scene.classList.add(dir); await sleep(120);
-    $("#bg").innerHTML = background(target);
-    $("#desk").innerHTML = desk(target);
-    const plaque = (BGS[target] || {}).plaque;
+    const loc = target.startsWith("L:");
+    scene.classList.toggle("loc", loc);
+    $("#bg").innerHTML = loc ? locationBG(target.slice(2)) : background(target);
+    $("#desk").innerHTML = loc ? "" : desk(target);
+    const plaque = loc ? "" : (BGS[target] || {}).plaque;
     if (plaque) $("#desk").append(el("div", {class:"plaque", textContent:plaque}));
     curPos = target;
     void scene.offsetWidth; scene.classList.remove(dir);
@@ -670,7 +852,43 @@ async function runScene(id) {
   if (c.tipo === "apresentar") return presentScene(c);
   if (c.tipo === "escolha") return choiceScene(c);
   if (c.tipo === "decidir") return decideScene(c);
+  if (c.tipo === "investigar") return investigate(c);
   if (c.tipo === "veredicto") { await verdict(c); return null; }
+  return c.proxima;
+}
+async function investigate(c) {
+  const opts = {local:c.local};
+  Sound.startMusic("calma");
+  await camera(null, null, null, c.local);
+  $("#actor").innerHTML = ""; curChar = null;
+  const title = el("div", {class:"inv-title", textContent:"🔎 " + (c.titulo || LOCAL_NOME[c.local] || "")});
+  $("#stage").append(title);
+  await sayAll(c.intro, opts);
+  const seen = new Set(), talked = new Set();
+  const missing = () => (c.requer || []).filter(id => !G.autos.includes(id));
+  try {
+    while (!G.over) {
+      hideDialog(); $("#actor").innerHTML = ""; curChar = null;
+      const pick = await new Promise(resolve => {
+        const spots = c.pontos.map(p => el("button", {class:"spot" + (seen.has(p.id) ? " seen" : ""), "aria-label":"Examinar: " + p.nome,
+          style:{left:p.x + "%", top:p.y + "%", width:p.w + "%", height:p.h + "%"}, onclick:() => resolve({ponto:p})}, el("span", {textContent:p.nome})));
+        const falta = missing().length;
+        const panel = el("div", {class:"inv-panel"},
+          el("h4", {textContent:"Investigação"}),
+          el("small", {textContent:`Examinados: ${seen.size} de ${c.pontos.length}. Clique nos pontos brilhantes da cena.`}),
+          ...(c.conversas || []).map((cv, i) => el("button", {class:talked.has(i) ? "done" : "", onclick:() => resolve({conversa:i})},
+            "💬 ", cv.titulo || ("Conversar com " + nameOf(cv.q)))),
+          el("button", {class:"go", disabled:falta > 0, onclick:() => resolve({seguir:true})},
+            falta ? `Ainda falta encontrar ${falta} prova(s) importante(s)` : "Seguir ▶"));
+        overlay(...spots, panel);
+      });
+      clearOverlay(); Sound.select();
+      if (pick.seguir) break;
+      if (pick.ponto) { seen.add(pick.ponto.id); await sayAll(pick.ponto.falas, opts); }
+      else { const cv = c.conversas[pick.conversa]; talked.add(pick.conversa); await sayAll(cv.falas, opts); }
+      if (G.over) return null;
+    }
+  } finally { title.remove(); }
   return c.proxima;
 }
 async function titleCard(c) {
@@ -800,7 +1018,7 @@ async function verdict(c) {
       el("div", {}, el("b", {textContent:r.perfeito ? "★" : "—"}), el("small", {textContent:"perfeito"}))),
     el("div", {class:"xp", textContent:`+${r.xp || 0} XP`}),
     r.progresso && r.progresso.subiu_de_nivel ? el("p", {textContent:`⬆️ Nível ${r.progresso.nivel}: ${r.progresso.titulo}!`}) : null,
-    el("div", {class:"bigbtns"}, el("button", {class:"bigbtn", textContent:"Outros julgamentos", onclick:quitGame}),
+    el("div", {class:"bigbtns"}, el("button", {class:"bigbtn", textContent:"Voltar à carreira", onclick:quitGame}),
       el("button", {class:"bigbtn sec", textContent:"Jogar de novo", onclick:() => startEpisode(EP.id)})));
   $("#stage").append(box);
 }
@@ -814,23 +1032,36 @@ async function gameOver() {
     el("h2", {textContent:"Você perdeu a credibilidade do juízo"}),
     el("p", {textContent:"Erros demais diante do tribunal. Releia os autos, procure a contradição e tente de novo: cada erro também ensina."}),
     el("div", {class:"xp", textContent:`+${r.xp || 0} XP`}),
-    el("div", {class:"bigbtns"}, el("button", {class:"bigbtn", textContent:"Tentar de novo", onclick:() => startEpisode(EP.id)}),
+    el("div", {class:"bigbtns"}, el("button", {class:"bigbtn", textContent:"Voltar ao último ponto salvo", onclick:() => startEpisode(EP.id, true)}),
+      el("button", {class:"bigbtn sec", textContent:"Recomeçar o caso", onclick:() => startEpisode(EP.id)}),
       el("button", {class:"bigbtn sec", textContent:"Sair", onclick:quitGame}))));
 }
 
 // ------------------------------------------------ ciclo do episódio
-async function startEpisode(id) {
+// resume: true continua do jogo salvo (o servidor guarda cena, credibilidade, erros e autos)
+async function startEpisode(id, resume = false) {
   Sound.ensure();
+  if (!resume) { try { await api("/api/arena/tribunal/recomecar", {episodio:id}); } catch (e) { /* sem salvo */ } }
   EP = await api("/api/arena/tribunal/" + encodeURIComponent(id));
-  G = {cred:5, erros:0, autos:[], over:false, scene:null};
+  const s = resume ? EP.salvo : null;
+  G = {cred:s ? Math.max(3, s.credibilidade) : 5, erros:s ? s.erros : 0, autos:s ? [...s.autos] : [], over:false, scene:null};
   curPos = null; curChar = null;
   $("#menu").classList.add("hidden"); $("#game").classList.remove("hidden");
-  [...$("#stage").querySelectorAll(".full, .modal, .lawpop")].forEach(n => n.remove());
+  [...$("#stage").querySelectorAll(".full, .modal, .lawpop, .inv-title")].forEach(n => n.remove());
   $("#fx").replaceChildren(); clearOverlay(); hideDialog(); renderCred();
   await camera(ROLE_PLAQUE[EP.papel], null);
-  let sid = EP.inicio;
+  let sid = s && EP.cenas[s.cena] ? s.cena : EP.inicio;
+  if (s) Sound.startMusic("calma");
   const token = G;
-  while (sid && token === G && !G.over) sid = await runScene(sid);
+  while (sid && token === G && !G.over) {
+    sid = await runScene(sid);
+    if (sid && token === G && !G.over && EP.cenas[sid].tipo !== "veredicto") saveProgress(sid);
+  }
+}
+function saveProgress(sid) {
+  api("/api/arena/tribunal/salvar", {episodio:EP.id, estado:{cena:sid, credibilidade:G.cred, erros:G.erros, autos:G.autos}})
+    .then(() => { const t = el("div", {class:"saved-toast", textContent:"💾 progresso salvo"}); $("#stage").append(t); setTimeout(() => t.remove(), 2000); })
+    .catch(() => {});
 }
 function quitGame() {
   Sound.stopMusic(); G = null; advance = null;
@@ -859,7 +1090,7 @@ document.addEventListener("keydown", (e) => {
   if ((k === "enter" || k === " ") && advance) { e.preventDefault(); const a = advance; a(); }
 });
 $("#btn-autos").onclick = () => openAutos(null);
-$("#btn-quit").onclick = () => { if (confirm("Sair do julgamento? O progresso deste episódio será perdido.")) quitGame(); };
+$("#btn-quit").onclick = () => { if (confirm("Sair do caso? Você continua da última cena salva.")) quitGame(); };
 
 // ================================================================ menu, avatar
 const SKINS = ["#FFDBAC", "#F1C27D", "#E0AC69", "#C68642", "#8D5524", "#5C3A1E"];
@@ -893,22 +1124,53 @@ const ROLE = {advogado:"💼 Defesa", promotor:"🏛️ Acusação", juiz:"⚖�
 const COVER = {advogado:{pele:"#F1C27D", cabelo:"topete", corCabelo:"#3b2414", roupa:"terno", corRoupa:"#1f2a44", gravata:"#8a1c1c"},
                promotor:{pele:"#C68642", cabelo:"rabo", corCabelo:"#111", roupa:"terno", corRoupa:"#7a1f1f", gravata:"#111111"},
                juiz:{pele:"#8D5524", cabelo:"coque", corCabelo:"#1b1b1b", roupa:"toga", corRoupa:"#111111", oculos:true}};
+const NIVEL = {basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite"};
+function epCard(ep, perfil, label) {
+  const status = ep.status || "disponivel", locked = status === "bloqueado";
+  const cover = el("div", {class:"cover"});
+  const look = perfil.avatar ? {...COVER[ep.papel], ...perfil.avatar, roupa:COVER[ep.papel].roupa} : COVER[ep.papel];
+  cover.innerHTML = background(ROLE_PLAQUE[ep.papel]) + `<div style="position:absolute;inset:auto 0 0 0;height:150px;display:flex;justify-content:center">${characterSVG(look, ep.papel === "juiz" ? "confiante" : "apontando")}</div>`;
+  cover.append(el("span", {class:"num", textContent:label}));
+  if (locked) cover.append(el("div", {class:"lock", textContent:"🔒"}));
+  if (status === "concluido") cover.append(el("span", {class:"done", textContent:"✓ Concluído"}));
+  const actions = locked ? [el("div", {class:"chip", textContent:"Vença o caso anterior para liberar"})]
+    : [el("div", {class:"ep-actions"}, ...(ep.salvo ? [el("span", {textContent:"▶ Continuar"}), el("span", {class:"sec", "data-act":"novo", textContent:"↺ Recomeçar"})]
+                                                 : [el("span", {textContent:status === "concluido" ? "↺ Jogar de novo" : "▶ Jogar"})]))];
+  const card = el("button", {class:"ep" + (locked ? " locked" : status === "disponivel" ? " nextcase" : ""), "aria-disabled":String(locked),
+    onclick:(e) => { if (locked) return; startEpisode(ep.id, !!ep.salvo && !e.target.closest("[data-act=novo]")); }}, cover,
+    el("div", {class:"body"}, el("span", {class:"chip " + ep.papel, textContent:ROLE[ep.papel]}), " ",
+      el("span", {class:"chip", textContent:NIVEL[ep.nivel]}), " ", el("span", {class:"chip", textContent:`⏱ ~${Math.round(ep.minutos || 0)} min`}),
+      el("h3", {textContent:ep.titulo}), el("p", {textContent:locked ? "???" : ep.sinopse}),
+      ep.melhor != null ? el("div", {class:"best", textContent:`Melhor: ${Math.round(ep.melhor * 100)}% de credibilidade`}) : null, ...actions));
+  return card;
+}
 async function loadMenu() {
   try {
-    const [eps, perfil] = await Promise.all([api("/api/arena/tribunal"), api("/api/arena/perfil")]);
+    const [car, perfil] = await Promise.all([api("/api/arena/carreira"), api("/api/arena/perfil")]);
     if (perfil.avatar) avatar = {...avatar, ...perfil.avatar};
     $("#av-name").value = perfil.nome && perfil.nome !== "Você" ? perfil.nome : "";
-    $("#eps").replaceChildren(...eps.map(ep => {
-      const cover = el("div", {class:"cover"});
-      cover.innerHTML = background(ROLE_PLAQUE[ep.papel]) + `<div style="position:absolute;inset:auto 0 0 0;height:150px;display:flex;justify-content:center">${characterSVG(perfil.avatar ? {...COVER[ep.papel], ...perfil.avatar, roupa:COVER[ep.papel].roupa} : COVER[ep.papel], ep.papel === "juiz" ? "confiante" : "apontando")}</div>`;
-      cover.append(el("span", {class:"num", textContent:`Episódio ${ep.numero}`}));
-      return el("button", {class:"ep", onclick:() => startEpisode(ep.id)}, cover,
-        el("div", {class:"body"}, el("span", {class:"chip " + ep.papel, textContent:ROLE[ep.papel]}), " ",
-          el("span", {class:"chip", textContent:{basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite"}[ep.nivel]}),
-          el("h3", {textContent:ep.titulo}), el("p", {textContent:ep.sinopse}),
-          el("div", {class:ep.melhor != null ? "best" : "chip", textContent:ep.melhor != null ? `Melhor: ${Math.round(ep.melhor * 100)}% de credibilidade` : `${ep.desafios} desafios · não jogado`})));
-    }));
-  } catch (e) { $("#eps").replaceChildren(el("p", {textContent:"Não consegui carregar os julgamentos: " + e.message})); }
+    const pct = car.total ? Math.round(100 * car.concluidos / car.total) : 0;
+    const out = [el("div", {class:"career-head"}, el("h2", {textContent:"Modo Carreira"}),
+      el("span", {class:"chip", textContent:`${car.concluidos} de ${car.total} casos · ~${car.horas_jogadas} de ${car.horas_total} h`}),
+      el("span", {class:"sp"}), el("div", {class:"pbar", "aria-label":`${pct}% concluído`}, el("i", {style:{width:pct + "%"}})))];
+    let prevDone = true, n = 0;
+    for (const ato of car.atos) {
+      const locked = !prevDone || !ato.episodios.length;
+      const sec = el("section", {class:"act" + (locked ? " locked" : "")},
+        el("div", {class:"act-title"}, el("b", {textContent:`Ato ${ato.numero}`}), el("h3", {textContent:ato.titulo}),
+          el("span", {class:"chip " + ato.papel, textContent:ato.cargo}), el("p", {textContent:ato.sinopse})));
+      if (ato.episodios.length) {
+        sec.append(el("div", {class:"eps"}, ...ato.episodios.map(ep => epCard(ep, perfil, `Caso ${++n}`))));
+      } else sec.append(el("div", {class:"soon", textContent:"🚧 Em produção: novos casos chegam nas próximas atualizações do jogo."}));
+      out.push(sec);
+      prevDone = prevDone && ato.episodios.length > 0 && ato.episodios.every(e => e.status === "concluido");
+    }
+    if (car.avulsos.length) out.push(el("section", {class:"act"},
+      el("div", {class:"act-title"}, el("b", {textContent:"Extra"}), el("h3", {textContent:"Casos avulsos"}),
+        el("p", {textContent:"Fora da campanha, sempre liberados: treine os papéis de promotor(a) e juiz(a)."})),
+      el("div", {class:"eps"}, ...car.avulsos.map(ep => epCard(ep, perfil, "Avulso")))));
+    $("#eps").className = ""; $("#eps").replaceChildren(...out);
+  } catch (e) { $("#eps").replaceChildren(el("p", {textContent:"Não consegui carregar a carreira: " + e.message})); }
 }
 loadMenu();
 const qp = new URLSearchParams(location.search).get("ep");

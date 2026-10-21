@@ -25,7 +25,7 @@ class TestRoteiro(unittest.TestCase):
 
     def test_validator_catches_broken_script(self):
         d = copy.deepcopy(DATA)
-        ep = d["episodios"][0]
+        ep = tribunal.episode(d, "ep1-celular")
         ep["cenas"]["a4"]["contradicao"]["provas"] = ["prova-que-nao-existe"]
         ep["cenas"]["a8"]["opcoes"][0]["certa"] = True  # duas certas
         ep["cenas"]["a3"]["falas"][0]["e"] = "dançando"
@@ -36,7 +36,7 @@ class TestRoteiro(unittest.TestCase):
 
     def test_required_evidence_is_given_before_use(self):
         d = copy.deepcopy(DATA)
-        for f in d["episodios"][0]["cenas"]["a2"]["falas"]:
+        for f in tribunal.episode(d, "ep1-celular")["cenas"]["a2"]["falas"]:
             f.pop("recebe", None)
         self.assertTrue(any("nunca é entregue" in e for e in tribunal.validate(d, NORMAS)))
 
@@ -52,16 +52,54 @@ class TestRoteiro(unittest.TestCase):
             self.assertIn(must, chaves)
 
 
+class TestCarreira(unittest.TestCase):
+    def test_only_next_case_is_unlocked(self):
+        c = tribunal.career(DATA, {}, set())
+        eps = [e for a in c["atos"] for e in a["episodios"]]
+        self.assertEqual(eps[0]["id"], "ep1-celular")
+        self.assertEqual([e["status"] for e in eps[:3]], ["disponivel", "bloqueado", "bloqueado"])
+        c = tribunal.career(DATA, {"ep1-celular": 240}, {"a1-pao"})
+        eps = [e for a in c["atos"] for e in a["episodios"]]
+        self.assertEqual([e["status"] for e in eps[:3]], ["concluido", "disponivel", "bloqueado"])
+        self.assertTrue(eps[1]["salvo"])
+        self.assertGreater(c["horas_jogadas"], 0)
+
+    def test_every_act_episode_has_unique_order(self):
+        seen = set()
+        for ep in DATA["episodios"]:
+            if ep.get("ato"):
+                self.assertNotIn((ep["ato"], ep["ordem"]), seen)
+                seen.add((ep["ato"], ep["ordem"]))
+
+    def test_estimate_counts_reading_and_decisions(self):
+        ep = tribunal.episode(DATA, "ep1-celular")
+        self.assertGreater(tribunal.estimate_minutes(ep), 5)
+
+    def test_investigation_rules(self):
+        d = copy.deepcopy(DATA)
+        cena = tribunal.episode(d, "ep1-celular")["cenas"]["a2b"]
+        cena["requer"] = ["laudo-fantasma"]
+        cena["pontos"][0]["x"] = 140
+        cena["local"] = "lua"
+        errs = "\n".join(tribunal.validate(d, NORMAS))
+        for msg in ("lua", "coordenada x", "laudo-fantasma"):
+            self.assertIn(msg, errs)
+        d = copy.deepcopy(DATA)
+        cena = tribunal.episode(d, "ep1-celular")["cenas"]["a2b"]
+        cena["pontos"][1]["falas"][1].pop("recebe")
+        self.assertTrue(tribunal.validate(d, NORMAS))
+
+
 class TestPontuacao(unittest.TestCase):
     ep = tribunal.episode(DATA, "ep1-celular")
 
     def test_perfect_run(self):
         r = tribunal.score(self.ep, 5, 0)
-        self.assertEqual((r["venceu"], r["perfeito"], r["xp"]), (True, True, 120 + 100 + 60))
+        self.assertEqual((r["venceu"], r["perfeito"], r["xp"]), (True, True, 80 + 100 + 60))
 
     def test_with_mistakes(self):
         r = tribunal.score(self.ep, 3, 2)
-        self.assertEqual((r["perfeito"], r["xp"], r["faixa"]), (False, 180, "medio"))
+        self.assertEqual((r["perfeito"], r["xp"], r["faixa"]), (False, 140, "medio"))
 
     def test_game_over(self):
         r = tribunal.score(self.ep, 0, 5)
@@ -69,7 +107,7 @@ class TestPontuacao(unittest.TestCase):
 
     def test_client_cannot_inflate_score(self):
         r = tribunal.score(self.ep, 999, -7)
-        self.assertEqual((r["credibilidade"], r["erros"], r["xp"]), (5, 0, 280))
+        self.assertEqual((r["credibilidade"], r["erros"], r["xp"]), (5, 0, 240))
 
 
 class TestServidor(unittest.TestCase):
@@ -103,7 +141,8 @@ class TestServidor(unittest.TestCase):
         self.assertEqual(code, 200)
         self.assertIn("Vade Tribunal", page)
         code, eps = self.req("/api/arena/tribunal")
-        self.assertEqual([e["id"] for e in eps], ["ep1-celular", "ep2-protetiva", "ep3-sentenca"])
+        self.assertEqual([e["id"] for e in eps][:2], ["ep1-celular", "a1-pao"])
+        self.assertTrue({"ep2-protetiva", "ep3-sentenca"} <= {e["id"] for e in eps})
         self.assertEqual(self.req("/api/arena/perfil/avatar", {"nome": "Dra. Teste", "avatar": {"pele": "#8D5524", "cabelo": "coque"}})[0], 200)
         code, ep = self.req("/api/arena/tribunal/ep3-sentenca")
         self.assertEqual(ep["personagens"]["voce"]["nome"], "Dra. Teste")
@@ -114,6 +153,15 @@ class TestServidor(unittest.TestCase):
         prof = self.req("/api/arena/perfil")[1]
         self.assertEqual((prof["xp"], prof["casos"]["jogadas"], prof["nome"]), (250, 1, "Dra. Teste"))
         self.assertEqual(self.req("/api/arena/tribunal/nao-existe")[0], 404)
+        # jogo salvo: só cenas e provas válidas, credibilidade limitada
+        code, salvo = self.req("/api/arena/tribunal/salvar", {"episodio": "a1-pao", "estado": {"cena": "p5", "credibilidade": 99, "erros": 2, "autos": ["cupom", "hack"]}})
+        self.assertEqual((code, salvo["credibilidade"], salvo["autos"]), (200, 5, ["cupom"]))
+        self.assertEqual(self.req("/api/arena/tribunal/salvar", {"episodio": "a1-pao", "estado": {"cena": "zz"}})[0], 400)
+        self.assertEqual(self.req("/api/arena/tribunal/a1-pao")[1]["salvo"]["cena"], "p5")
+        car = self.req("/api/arena/carreira")[1]
+        self.assertEqual(car["atos"][0]["episodios"][1]["salvo"], True)
+        self.req("/api/arena/tribunal/recomecar", {"episodio": "a1-pao"})
+        self.assertIsNone(self.req("/api/arena/tribunal/a1-pao")[1]["salvo"])
         self.assertEqual(self.req("/api/arena/perfil/avatar", {"avatar": "x"})[0], 400)
 
 

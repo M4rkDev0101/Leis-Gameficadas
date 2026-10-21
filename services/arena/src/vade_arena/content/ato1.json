@@ -1,0 +1,717 @@
+{
+  "ato": "ato1",
+  "personagens": {
+    "rosa":      {"nome": "Rosa Aparecida", "cargo": "Ré · 41 anos", "voz": 430, "visual": {"pele": "#8D5524", "cabelo": "coque", "corCabelo": "#2a1a10", "roupa": "casual", "corRoupa": "#8e44ad", "gravata": null, "oculos": false, "barba": false}},
+    "antonio":   {"nome": "Antônio Prates", "cargo": "Gerente do Supermercado Bom Preço", "voz": 260, "visual": {"pele": "#FFDBAC", "cabelo": "careca", "corCabelo": "#7b4a24", "roupa": "avental", "corRoupa": "#ffffff", "gravata": "#1e5a4a", "oculos": true, "barba": false}},
+    "marcos":    {"nome": "Marcos Vieira", "cargo": "Réu · entregador", "voz": 350, "visual": {"pele": "#5C3A1E", "cabelo": "curto", "corCabelo": "#111111", "roupa": "casual", "corRoupa": "#e67e22", "gravata": null, "oculos": false, "barba": false}},
+    "wellington":{"nome": "Wellington Rocha", "cargo": "Vítima declarada", "voz": 250, "visual": {"pele": "#F1C27D", "cabelo": "topete", "corCabelo": "#1b1b1b", "roupa": "casual", "corRoupa": "#2c3e50", "gravata": null, "oculos": false, "barba": true}},
+    "neide":     {"nome": "Neide Batista", "cargo": "Testemunha · cobradora de ônibus", "voz": 460, "visual": {"pele": "#C68642", "cabelo": "cacheado", "corCabelo": "#3b2414", "roupa": "farda", "corRoupa": "#1f618d", "gravata": null, "oculos": true, "barba": false}},
+    "joana":     {"nome": "Joana Lima", "cargo": "Presa · 23 anos", "voz": 480, "visual": {"pele": "#8D5524", "cabelo": "rabo", "corCabelo": "#111111", "roupa": "casual", "corRoupa": "#d35400", "gravata": null, "oculos": false, "barba": false}},
+    "fausto":    {"nome": "Delegado Fausto Rangel", "cargo": "Delegado de Polícia", "voz": 230, "visual": {"pele": "#F1C27D", "cabelo": "curto", "corCabelo": "#5a5a5a", "roupa": "terno", "corRoupa": "#3d3d3d", "gravata": "#7a1f1f", "oculos": false, "barba": true}},
+    "bento":     {"nome": "Bento Carvalho", "cargo": "Escrivão de Polícia", "voz": 330, "visual": {"pele": "#E0AC69", "cabelo": "cacheado", "corCabelo": "#2a1a10", "roupa": "blazer", "corRoupa": "#5d6d7e", "gravata": null, "oculos": true, "barba": false}},
+    "ivo":       {"nome": "Ivo Bernardes", "cargo": "Réu · aposentado, 68 anos", "voz": 290, "visual": {"pele": "#FFDBAC", "cabelo": "careca", "corCabelo": "#cfcfcf", "roupa": "casual", "corRoupa": "#7f8c8d", "gravata": null, "oculos": true, "barba": true}},
+    "patricia":  {"nome": "Patrícia Mendes", "cargo": "Vítima do golpe", "voz": 500, "visual": {"pele": "#F1C27D", "cabelo": "longo", "corCabelo": "#c9a227", "roupa": "blazer", "corRoupa": "#c0392b", "gravata": null, "oculos": false, "barba": false}},
+    "kenji":     {"nome": "Dr. Kenji Sato", "cargo": "Perito em computação forense", "voz": 360, "visual": {"pele": "#F1C27D", "cabelo": "curto", "corCabelo": "#111111", "roupa": "terno", "corRoupa": "#2c3e70", "gravata": "#1e5a4a", "oculos": true, "barba": false}},
+    "tiago":     {"nome": "Tiago Nunes", "cargo": "Réu · ex-operário da Altavista", "voz": 320, "visual": {"pele": "#C68642", "cabelo": "curto", "corCabelo": "#1b1b1b", "roupa": "casual", "corRoupa": "#566573", "gravata": null, "oculos": false, "barba": true}},
+    "ronaldo":   {"nome": "Ronaldo Freitas", "cargo": "Testemunha · mestre de obras", "voz": 240, "visual": {"pele": "#E0AC69", "cabelo": "careca", "corCabelo": "#3b2414", "roupa": "farda", "corRoupa": "#b9770e", "gravata": null, "oculos": false, "barba": true}},
+    "clara":     {"nome": "Clara Seixas", "cargo": "Irmã da vítima", "voz": 470, "visual": {"pele": "#FFDBAC", "cabelo": "longo", "corCabelo": "#7b1e1e", "roupa": "blazer", "corRoupa": "#1f2a44", "gravata": null, "oculos": true, "barba": false}},
+    "brandao":   {"nome": "Dr. Augusto Brandão", "cargo": "Advogado da Construtora Altavista", "voz": 210, "visual": {"pele": "#FFDBAC", "cabelo": "topete", "corCabelo": "#d0d0d0", "roupa": "terno", "corRoupa": "#111111", "gravata": "#c9a227", "oculos": false, "barba": false}}
+  },
+  "episodios": [
+    {
+      "id": "ep1-celular", "ato": "ato1", "ordem": 1, "numero": 1,
+      "titulo": "O Celular da Rua Augusta", "papel": "advogado", "nivel": "basico",
+      "sinopse": "Primeiro dia de estágio. Lucas, 19 anos, está preso por roubo de celular. A acusação jura que houve um empurrão. Investigue o bar e defenda o seu primeiro cliente.",
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "valdir": "testemunha", "jorge": "testemunha", "lucas": "defesa", "helena": "escritorio", "rafael": "escritorio"},
+      "provas": [
+        {"id": "video", "tipo": "prova", "icone": "📹", "nome": "Vídeo da câmera do bar", "descricao": "23h04: o celular aparece sozinho sobre a mesa 7. Ninguém sentado. Um rapaz de moletom pega o aparelho e sai andando rápido."},
+        {"id": "bo", "tipo": "prova", "icone": "📄", "nome": "Boletim de ocorrência", "descricao": "Declaração da vítima: 'Deixei o celular na mesa e fui ao banheiro. Quando voltei, ele tinha sumido.'"},
+        {"id": "laudo", "tipo": "prova", "icone": "🩺", "nome": "Exame de corpo de delito de Jorge", "descricao": "Realizado na mesma noite. Conclusão: nenhuma lesão aparente."},
+        {"id": "comanda", "tipo": "prova", "icone": "🧾", "nome": "Comandas da noite", "descricao": "Às 23h, Valdir atendia a mesa 3, do outro lado do salão, de costas para a mesa 7."},
+        {"id": "cp155", "tipo": "lei", "icone": "📜", "nome": "CP, art. 155 — Furto", "chave": "CP#art-155", "trecho": "Subtrair, para si ou para outrem, coisa alheia móvel"},
+        {"id": "cp157", "tipo": "lei", "icone": "📜", "nome": "CP, art. 157 — Roubo", "chave": "CP#art-157", "trecho": "mediante grave ameaça ou violência a pessoa"},
+        {"id": "cp157p1", "tipo": "lei", "icone": "📜", "nome": "CP, art. 157, § 1º — Roubo impróprio", "chave": "CP#art-157/par-1", "trecho": "logo depois de subtraída a coisa, emprega violência contra pessoa ou grave ameaça"},
+        {"id": "cp155p6", "tipo": "lei", "icone": "📜", "nome": "CP, art. 155, § 6º, II — Furto de celular", "chave": "CP#art-155/par-6/inc-ii", "trecho": "de aparelho de telefonia celular"},
+        {"id": "cpp155", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 155 — Prova do inquérito", "chave": "CPP#art-155", "trecho": "não podendo fundamentar sua decisão exclusivamente nos elementos informativos colhidos na investigação"}
+      ],
+      "inicio": "a1",
+      "cenas": {
+        "a1": {"tipo": "titulo", "texto": "Caso 1", "subtitulo": "O Celular da Rua Augusta", "proxima": "a2"},
+        "a2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "helena", "e": "normal", "t": "Bem-vindo(a) à Vasconcelos & Duarte. Aqui estagiário não serve café: estagiário trabalha."},
+          {"q": "helena", "e": "pensativo", "t": "Lucas Ferreira, 19 anos, preso por roubo majorado de celular. Audiência amanhã cedo, com o Dr. Lacerda na acusação."},
+          {"q": "rafael", "e": "confiante", "t": "Lacerda vai jurar que houve um empurrão. Sem empurrão, não tem roubo. É simples assim."},
+          {"q": "voce", "e": "pensativo", "t": "Roubo exige violência ou grave ameaça. Sem isso, a subtração é furto…"},
+          {"q": "helena", "e": "feliz", "t": "Exato. Peguei o boletim de ocorrência e o laudo de uma testemunha. O resto, você vai buscar no bar."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados. Abra a pasta 📁 sempre que precisar.", "recebe": ["bo", "laudo", "cp155", "cp157", "cp157p1", "cp155p6", "cpp155"]},
+          {"q": "rafael", "e": "apontando", "t": "Regra de ouro: quem chega na cena antes do processo, ganha o processo. Vá ao bar."}
+        ], "proxima": "a2b"},
+        "a2b": {"tipo": "investigar", "local": "bar", "titulo": "Bar do Zé, Rua Augusta",
+          "intro": [
+            {"q": "narrador", "t": "O Bar do Zé ainda tem cheiro de fritura da noite passada. A mesa 7 fica perto da porta."},
+            {"q": "voce", "e": "pensativo", "t": "(Se houve empurrão, alguém viu. Se não houve, alguma coisa aqui prova isso.)"}
+          ],
+          "pontos": [
+            {"id": "mesa7", "nome": "Mesa 7", "x": 14, "y": 52, "w": 18, "h": 16, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "A mesa 7 fica bem na entrada. Quem senta aqui vê a porta… e quem passa pela porta alcança a mesa sem esforço."}]},
+            {"id": "camera", "nome": "Câmera no canto do teto", "x": 76, "y": 8, "w": 12, "h": 14, "falas": [
+              {"q": "voce", "e": "feliz", "t": "Uma câmera apontada justamente para a entrada! Pedi a gravação ao dono do bar."},
+              {"q": "narrador", "t": "Você assistiu à gravação: o celular estava sozinho sobre a mesa 7.", "recebe": ["video"]}]},
+            {"id": "caixa", "nome": "Comandas no caixa", "x": 55, "y": 40, "w": 14, "h": 14, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "As comandas da noite… às 23h o garçom Valdir anotou um pedido na mesa 3. Do outro lado do salão.", "recebe": ["comanda"]}]}
+          ],
+          "conversas": [
+            {"q": "valdir", "titulo": "Perguntar a Valdir sobre a noite", "falas": [
+              {"q": "valdir", "e": "nervoso", "t": "Eu? Eu vi tudo! Quer dizer… o pessoal comentou muito. Foi um empurrão, com certeza."},
+              {"q": "voce", "e": "pensativo", "t": "(Ele hesitou. Vou guardar isso para a audiência.)"}]}
+          ],
+          "requer": ["video"],
+          "proxima": "a3"},
+        "a3": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Declaro aberta a audiência de instrução e julgamento. Réu: Lucas Ferreira. Acusação: roubo majorado.", "fx": "martelo"},
+          {"q": "lacerda", "e": "confiante", "t": "A acusação está pronta, Excelência. O réu empurrou a vítima e arrancou o celular da mão dela. Simples."},
+          {"q": "voce", "e": "confiante", "t": "A defesa está pronta, Excelência."},
+          {"q": "lacerda", "e": "apontando", "t": "Chamo a primeira testemunha: Valdir Souza, garçom do bar."}
+        ], "proxima": "a4"},
+        "a4": {"tipo": "depoimento", "testemunha": "valdir", "titulo": "O que Valdir viu",
+          "intro": [
+            {"q": "valdir", "e": "nervoso", "t": "B-boa tarde. Eu vi tudo, doutora. Tudinho."},
+            {"q": "beatriz", "e": "normal", "t": "A testemunha promete dizer a verdade. Pode começar, senhor Valdir."}
+          ],
+          "afirmacoes": [
+            {"t": "Eram umas onze da noite e o bar estava lotado.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Lotado quanto?"}, {"q": "valdir", "e": "nervoso", "t": "Todas as mesas cheias! Eu corria de um lado pro outro."}]},
+            {"t": "A moça estava sentada na mesa 7, mexendo no celular.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Ela estava com o celular na mão?"}, {"q": "valdir", "e": "confiante", "t": "Na mão! Com certeza na mão!"}]},
+            {"t": "Aí o rapaz chegou por trás e empurrou ela com força.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "O senhor viu o empurrão com seus próprios olhos?"}, {"q": "valdir", "e": "nervoso", "t": "Claro que… bom… eu estava servindo uma mesa. Mas todo mundo comentou!"}]},
+            {"t": "Ele arrancou o celular e saiu correndo pra Rua Augusta.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Correndo ou andando?"}, {"q": "valdir", "e": "pensativo", "t": "Andando rápido… correndo… dá no mesmo, né?"}]}
+          ],
+          "contradicao": {"afirmacao": 1, "provas": ["video", "bo"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "A moça não estava na mesa! O vídeo mostra o celular SOZINHO sobre a mesa 7, e o próprio boletim diz que ela estava no banheiro."},
+            {"q": "valdir", "e": "chocado", "t": "AAAH!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "E as comandas mostram que, às onze, o senhor estava na mesa 3. De costas para a porta."},
+            {"q": "beatriz", "e": "bravo", "t": "Senhor Valdir. O senhor viu ou não viu o empurrão?"},
+            {"q": "valdir", "e": "triste", "t": "Eu… eu estava de costas. Ouvi o pessoal falando."},
+            {"q": "lacerda", "e": "bravo", "t": "Isso não muda nada! Na delegacia ele confirmou o empurrão. Está no inquérito!", "fx": "bater"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Doutor(a), o que essa prova tem a ver com essa afirmação? Não brinque com o tempo do juízo."}],
+          "proxima": "a5"},
+        "a5": {"tipo": "apresentar", "falas": [
+          {"q": "lacerda", "e": "confiante", "t": "O depoimento da delegacia basta para condenar. O empurrão está registrado no inquérito policial."}
+        ], "pergunta": "Que dispositivo impede a sentença de se apoiar só no que foi dito no inquérito?",
+          "provas": ["cpp155"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Art. 155 do CPP: o juiz não pode fundamentar a decisão exclusivamente nos elementos colhidos na investigação. Em juízo, sob contraditório, a testemunha admitiu que não viu nada."},
+            {"q": "beatriz", "e": "normal", "t": "Procede. O depoimento da delegacia, sozinho, não sustenta a violência."},
+            {"q": "lacerda", "e": "chocado", "t": "Ngh…!", "fx": "tremor"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não responde ao argumento do Ministério Público."}],
+          "proxima": "a6"},
+        "a6": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "lacerda", "e": "pensativo", "t": "Muito bem. Mesmo sem empurrão no bar, houve violência DEPOIS. O réu agrediu quem o segurou na rua."},
+          {"q": "lacerda", "e": "apontando", "t": "Violência para garantir a coisa subtraída: roubo impróprio! Chamo Jorge Almeida, o pedestre que deteve o réu."},
+          {"q": "voce", "e": "nervoso", "t": "(Se ele provar violência depois da subtração, volta a ser roubo… Preciso ouvir com atenção.)"}
+        ], "proxima": "a7"},
+        "a7": {"tipo": "depoimento", "testemunha": "jorge", "titulo": "A versão de Jorge",
+          "intro": [{"q": "jorge", "e": "confiante", "t": "Eu peguei o ladrão, doutora. Sou praticamente um herói."}],
+          "afirmacoes": [
+            {"t": "Vi o rapaz passando rápido com um celular e pensei: é ladrão.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "E o que o senhor fez?"}, {"q": "jorge", "e": "confiante", "t": "Segurei o braço dele, ué. Reflexo de herói."}]},
+            {"t": "Quando eu segurei, ele largou o celular no chão.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Ele tentou se soltar?"}, {"q": "jorge", "e": "nervoso", "t": "Bom… na hora ele ficou branco. Pediu desculpa…"}]},
+            {"t": "Aí ele me deu um soco na cara pra fugir!", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Um soco? Onde?"}, {"q": "jorge", "e": "nervoso", "t": "Aqui, ó… no rosto. Doeu muito. Muito mesmo."}]},
+            {"t": "Depois a polícia chegou e levou ele.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "O senhor foi examinado naquela noite?"}, {"q": "jorge", "e": "nervoso", "t": "Fui… fizeram um exame lá. Coisa de rotina."}]}
+          ],
+          "contradicao": {"afirmacao": 2, "provas": ["laudo"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Um soco na cara que não deixou marca nenhuma? O exame de corpo de delito feito na mesma noite não encontrou lesão alguma!"},
+            {"q": "jorge", "e": "chocado", "t": "É que… me disseram que ia ficar melhor assim no processo…", "fx": "tremor"},
+            {"q": "beatriz", "e": "bravo", "t": "Ordem! Ordem no tribunal!", "fx": "martelo"},
+            {"q": "beatriz", "e": "bravo", "t": "Senhor Jorge, falso testemunho é crime. A verdade, agora."},
+            {"q": "jorge", "e": "triste", "t": "Ele não me bateu. Largou o celular e ficou parado, tremendo."},
+            {"q": "lacerda", "e": "nervoso", "t": "…"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}],
+          "proxima": "a8"},
+        "a8": {"tipo": "escolha", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Encerrada a instrução. A defesa tem a palavra para as alegações finais."}
+        ], "pergunta": "Qual é a tese da defesa?",
+          "opcoes": [
+            {"t": "Absolvição: não houve crime algum.", "certa": false,
+             "falas": [{"q": "beatriz", "e": "pensativo", "t": "O vídeo mostra a subtração, doutor(a). Dê ao juízo uma tese que ele possa acolher."}]},
+            {"t": "Desclassificação para furto: sem violência ou grave ameaça, a subtração de celular é o art. 155, § 6º, II.", "certa": true,
+             "fundamentos": [{"chave": "CP#art-157", "trecho": "mediante grave ameaça ou violência a pessoa"}, {"chave": "CP#art-155/par-6/inc-ii", "trecho": "de aparelho de telefonia celular"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "Sem violência e sem grave ameaça, não há roubo. O que resta é a subtração de um celular: furto, art. 155, § 6º, II, do Código Penal."}]},
+            {"t": "Legítima defesa.", "certa": false,
+             "falas": [{"q": "lacerda", "e": "feliz", "t": "Legítima defesa contra quem? Ninguém agrediu o seu cliente!"}, {"q": "beatriz", "e": "bravo", "t": "Tese incompatível com os fatos."}]}
+          ],
+          "proxima": "a9"},
+        "a9": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "pensativo", "t": "Sem modificar a descrição do fato, o juízo pode atribuir-lhe definição jurídica diversa, como permite o art. 383 do CPP."},
+          {"q": "beatriz", "e": "normal", "t": "Afastadas a violência e a grave ameaça, desclassifico a conduta para furto de aparelho celular, art. 155, § 6º, II, do Código Penal.", "fx": "martelo"},
+          {"q": "lucas", "e": "feliz", "t": "Obrigado… obrigado, doutor(a). Eu errei, mas não fiz o que disseram."},
+          {"q": "helena", "e": "feliz", "t": "Bom trabalho. Vindo de mim, é uma promoção."},
+          {"q": "rafael", "e": "pensativo", "t": "Só uma coisa me incomoda: o Jorge disse que 'mandaram' ele mentir. Quem manda uma testemunha mentir num furto de celular?"}
+        ], "fundamentos": [{"chave": "CPP#art-383", "trecho": "poderá atribuir-lhe definição jurídica diversa"}], "proxima": "a10"},
+        "a10": {"tipo": "veredicto", "carimbo": "DESCLASSIFICADO", "titulo": "Furto, não roubo", "texto": "Você derrubou duas testemunhas e a tese do roubo. A pena de Lucas será a do furto de celular, sem a violência que a acusação inventou."}
+      }
+    },
+    {
+      "id": "a1-pao", "ato": "ato1", "ordem": 2, "numero": 2,
+      "titulo": "O Pão e a Lei", "papel": "advogado", "nivel": "basico",
+      "sinopse": "Rosa, desempregada e mãe de uma bebê, foi presa por furtar arroz, leite e fraldas. O gerente diz que o prejuízo foi enorme. Será que foi mesmo?",
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "antonio": "testemunha", "rosa": "defesa", "helena": "escritorio", "rafael": "escritorio"},
+      "provas": [
+        {"id": "cupom", "tipo": "prova", "icone": "🧾", "nome": "Etiquetas dos produtos", "descricao": "Dois pacotes de arroz, uma lata de leite em pó e um pacote de fraldas: R$ 38,40 no total."},
+        {"id": "devolucao", "tipo": "prova", "icone": "📦", "nome": "Termo de restituição", "descricao": "Assinado pelo gerente: todos os produtos foram devolvidos intactos à loja, na mesma hora."},
+        {"id": "certidao", "tipo": "prova", "icone": "📋", "nome": "Certidão de antecedentes", "descricao": "Rosa Aparecida: nada consta. Nenhum processo, nenhuma condenação."},
+        {"id": "cp155p2", "tipo": "lei", "icone": "📜", "nome": "CP, art. 155, § 2º — Furto privilegiado", "chave": "CP#art-155/par-2", "trecho": "o juiz pode substituir a pena de reclusão pela de detenção, diminuí-la de um a dois terços, ou aplicar somente a pena de multa"},
+        {"id": "cp24", "tipo": "lei", "icone": "📜", "nome": "CP, art. 24 — Estado de necessidade", "chave": "CP#art-24", "trecho": "para salvar de perigo atual, que não provocou por sua vontade"},
+        {"id": "cpp386iii", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 386, III — Fato que não é infração", "chave": "CPP#art-386/inc-iii", "trecho": "não constituir o fato infração penal"}
+      ],
+      "inicio": "p1",
+      "cenas": {
+        "p1": {"tipo": "titulo", "texto": "Caso 2", "subtitulo": "O Pão e a Lei", "proxima": "p2"},
+        "p2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "helena", "e": "triste", "t": "Este chegou pela Defensoria, que está sobrecarregada. Rosa Aparecida, 41 anos. Furtou comida e fraldas num supermercado."},
+          {"q": "rafael", "e": "pensativo", "t": "A filha dela tem oito meses. Ela perdeu o emprego há três."},
+          {"q": "voce", "e": "triste", "t": "E o Ministério Público denunciou isso como furto?"},
+          {"q": "rafael", "e": "confiante", "t": "Denunciou. Agora me diga: você conhece o princípio da insignificância?"},
+          {"q": "voce", "e": "pensativo", "t": "O STF diz que não há crime material quando a conduta tem mínima ofensividade, nenhuma periculosidade social, reprovabilidade reduzidíssima e lesão inexpressiva."},
+          {"q": "rafael", "e": "feliz", "t": "Decorou a jurisprudência. Ótimo. Agora prove cada um desses pontos com fatos. Vá ao mercado."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["certidao", "cp155p2", "cp24", "cpp386iii"]}
+        ], "proxima": "p3"},
+        "p3": {"tipo": "investigar", "local": "mercado", "titulo": "Supermercado Bom Preço",
+          "intro": [{"q": "narrador", "t": "Corredores bem iluminados, uma promoção de arroz na entrada e um gerente que não gostou de ver um(a) advogado(a) por ali."}],
+          "pontos": [
+            {"id": "prateleira", "nome": "Prateleira de mercearia", "x": 8, "y": 30, "w": 22, "h": 30, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "Arroz a R$ 8,90 o pacote, leite em pó a R$ 12,70, fraldas a R$ 7,90… Somando os itens do processo: R$ 38,40.", "recebe": ["cupom"]}]},
+            {"id": "camera", "nome": "Monitor da segurança", "x": 70, "y": 12, "w": 16, "h": 18, "falas": [
+              {"q": "voce", "e": "triste", "t": "Na gravação, Rosa hesita na frente das fraldas, olha para os lados e coloca tudo na sacola. Na saída, o segurança a para. Ela entrega tudo sem resistir."}]},
+            {"id": "balcao", "nome": "Balcão do gerente", "x": 44, "y": 48, "w": 18, "h": 18, "falas": [
+              {"q": "voce", "e": "apontando", "t": "Um termo de restituição assinado pelo próprio gerente: todos os produtos voltaram intactos para a loja.", "recebe": ["devolucao"]}]}
+          ],
+          "conversas": [
+            {"q": "antonio", "titulo": "Conversar com o gerente", "falas": [
+              {"q": "antonio", "e": "bravo", "t": "Furto é furto, doutor(a). Se eu deixo um passar, amanhã levam o mercado inteiro."},
+              {"q": "voce", "e": "pensativo", "t": "E o prejuízo da loja?"},
+              {"q": "antonio", "e": "nervoso", "t": "…Prejuízo é prejuízo. O tempo do segurança, a confusão… Vou falar tudo na audiência."}]}
+          ],
+          "requer": ["cupom", "devolucao"],
+          "proxima": "p4"},
+        "p4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Aberta a audiência. Ré: Rosa Aparecida. Acusação: furto simples.", "fx": "martelo"},
+          {"q": "lacerda", "e": "normal", "t": "Excelência, o Ministério Público não se move pela compaixão, mas pela lei. A ré subtraiu coisa alheia móvel. É o art. 155."},
+          {"q": "rosa", "e": "triste", "t": "(baixinho) Eu só queria que ela não passasse fome…"},
+          {"q": "lacerda", "e": "apontando", "t": "Chamo o gerente do supermercado, senhor Antônio Prates."}
+        ], "proxima": "p5"},
+        "p5": {"tipo": "depoimento", "testemunha": "antonio", "titulo": "O prejuízo do supermercado",
+          "intro": [{"q": "antonio", "e": "confiante", "t": "Trabalho no varejo há vinte anos. Sei reconhecer um prejuízo."}],
+          "afirmacoes": [
+            {"t": "A senhora saiu com o carrinho cheio. Uns trezentos reais de mercadoria.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Trezentos reais? O senhor conferiu os itens?"}, {"q": "antonio", "e": "nervoso", "t": "Conferir, conferir… era muita coisa, dava pra ver de longe."}]},
+            {"t": "O segurança precisou correr atrás dela até o estacionamento.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Ela fugiu?"}, {"q": "antonio", "e": "pensativo", "t": "Bom… ela parou quando ele chamou."}]},
+            {"t": "E a loja ficou no prejuízo, porque mercadoria furtada a gente não recupera.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Nada foi recuperado?"}, {"q": "antonio", "e": "nervoso", "t": "Quase nada… quer dizer… olha, prejuízo é prejuízo."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["cupom"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Trezentos reais? Pelas etiquetas da sua própria loja, os itens do processo somam R$ 38,40. Dois pacotes de arroz, leite em pó e fraldas."},
+            {"q": "antonio", "e": "chocado", "t": "Eu… eu arredondei!", "fx": "tremor"},
+            {"q": "beatriz", "e": "pensativo", "t": "Arredondou de trinta e oito para trezentos, senhor Antônio?"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa prova não responde a esta afirmação, doutor(a)."}],
+          "proxima": "p6"},
+        "p6": {"tipo": "depoimento", "testemunha": "antonio", "titulo": "O prejuízo, segunda versão",
+          "intro": [{"q": "antonio", "e": "nervoso", "t": "Tá bom, era pouca coisa. Mas o prejuízo existiu, e o princípio importa!"}],
+          "afirmacoes": [
+            {"t": "Mesmo sendo pouco, a loja perdeu aquela mercadoria.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Perdeu como?"}, {"q": "antonio", "e": "nervoso", "t": "Ué… perdeu. Saiu da prateleira, não voltou."}]},
+            {"t": "E essa senhora deve fazer isso toda semana.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "bravo", "t": "O senhor tem algum registro disso?"}, {"q": "antonio", "e": "nervoso", "t": "Registro, não… é intuição de gerente."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["devolucao"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "A mercadoria voltou para a prateleira! O termo de restituição tem a SUA assinatura: todos os produtos devolvidos intactos, na mesma hora."},
+            {"q": "antonio", "e": "chocado", "t": "!!!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "E quanto à 'intuição': a certidão de antecedentes da ré está em branco. Nada consta."},
+            {"q": "lacerda", "e": "pensativo", "t": "…A acusação toma nota."}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não contradiz o que a testemunha disse agora."}],
+          "proxima": "p7"},
+        "p7": {"tipo": "escolha", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Alegações finais. A defesa tem a palavra."}
+        ], "pergunta": "Qual é o pedido principal da defesa?",
+          "opcoes": [
+            {"t": "Absolvição pela insignificância: lesão de R$ 38,40, bens restituídos, ré primária e sem periculosidade. O fato não constitui infração penal (art. 386, III, do CPP).", "certa": true,
+             "fundamentos": [{"chave": "CPP#art-386/inc-iii", "trecho": "não constituir o fato infração penal"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "Mínima ofensividade, nenhuma periculosidade, reprovabilidade reduzidíssima e lesão inexpressiva, já reparada. Pela insignificância, o fato é materialmente atípico. Peço a absolvição com base no art. 386, III, do CPP."},
+                       {"q": "voce", "e": "normal", "t": "Subsidiariamente, se o juízo entender diferente, ré primária e coisa de pequeno valor: furto privilegiado, art. 155, § 2º."}]},
+            {"t": "Condenação com a pena mínima, já que ela confessou.", "certa": false,
+             "falas": [{"q": "rafael", "e": "bravo", "t": "(mensagem no seu celular) Você está pedindo a condenação da sua própria cliente?"}]},
+            {"t": "Desclassificação para roubo, que tem pena menor.", "certa": false,
+             "falas": [{"q": "lacerda", "e": "chocado", "t": "Roubo tem pena MAIOR, doutor(a). E exige violência ou grave ameaça."}]}
+          ],
+          "proxima": "p8"},
+        "p8": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "pensativo", "t": "R$ 38,40 em alimentos e fraldas, restituídos na mesma hora, por ré primária. O Direito Penal não existe para isso."},
+          {"q": "beatriz", "e": "normal", "t": "Reconheço a insignificância e absolvo a ré: o fato não constitui infração penal, art. 386, III, do CPP.", "fx": "martelo"},
+          {"q": "rosa", "e": "feliz", "t": "Obrigada… Deus te pague, doutor(a)."},
+          {"q": "lacerda", "e": "normal", "t": "(passando por você) Bom trabalho. Não conte a ninguém que eu disse isso."},
+          {"q": "helena", "e": "feliz", "t": "Ah, e liguei para uma ONG de assistência social. Rosa sai daqui com um encaminhamento de emprego."}
+        ], "proxima": "p9"},
+        "p9": {"tipo": "veredicto", "carimbo": "ABSOLVIDA", "titulo": "Insignificante para o Direito Penal", "texto": "Você provou com números o que a compaixão sozinha não provaria: lesão inexpressiva, bens devolvidos e ré primária. A lei penal é a última trincheira, não a primeira."}
+      }
+    },
+    {
+      "id": "a1-ponto", "ato": "ato1", "ordem": 3, "numero": 3,
+      "titulo": "Ponto Final", "papel": "advogado", "nivel": "intermediario",
+      "sinopse": "Marcos, entregador, quebrou o braço de um homem num ponto de ônibus. A acusação diz lesão grave. Marcos diz que foi atacado com uma faca. Alguém está mentindo.",
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "wellington": "testemunha", "neide": "testemunha", "marcos": "defesa", "rafael": "escritorio", "helena": "escritorio"},
+      "provas": [
+        {"id": "video2", "tipo": "prova", "icone": "📹", "nome": "Câmera da padaria", "descricao": "22h17: Wellington se aproxima de Marcos e puxa uma faca. Marcos o empurra uma vez; Wellington cai do meio-fio e bate o braço. Marcos se afasta e liga para a polícia."},
+        {"id": "laudo2", "tipo": "prova", "icone": "🩺", "nome": "Laudo de Wellington", "descricao": "Fratura do antebraço direito, compatível com queda. Nenhuma outra lesão. Incapacidade estimada: 45 dias."},
+        {"id": "faca", "tipo": "prova", "icone": "🔪", "nome": "Faca apreendida", "descricao": "Encontrada na sarjeta, junto ao ponto. Perícia: impressões digitais de Wellington Rocha."},
+        {"id": "ligacao", "tipo": "prova", "icone": "📞", "nome": "Registro do 190", "descricao": "22h19: Marcos liga para a polícia: 'Um cara tentou me assaltar com uma faca, ele caiu, precisa de ambulância.'"},
+        {"id": "cp25", "tipo": "lei", "icone": "📜", "nome": "CP, art. 25 — Legítima defesa", "chave": "CP#art-25", "trecho": "usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente"},
+        {"id": "cp23pu", "tipo": "lei", "icone": "📜", "nome": "CP, art. 23, parágrafo único — Excesso", "chave": "CP#art-23/par-unico", "trecho": "responderá pelo excesso doloso ou culposo"},
+        {"id": "cp129", "tipo": "lei", "icone": "📜", "nome": "CP, art. 129, § 1º, I — Lesão grave", "chave": "CP#art-129/par-1/inc-i", "trecho": "Incapacidade para as ocupações habituais, por mais de trinta dias"},
+        {"id": "cpp386vi", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 386, VI — Excludente", "chave": "CPP#art-386/inc-vi", "trecho": "existirem circunstâncias que excluam o crime ou isentem o réu de pena"}
+      ],
+      "inicio": "q1",
+      "cenas": {
+        "q1": {"tipo": "titulo", "texto": "Caso 3", "subtitulo": "Ponto Final", "proxima": "q2"},
+        "q2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "rafael", "e": "normal", "t": "Marcos Vieira, entregador. Acusado de lesão corporal grave: o braço do Wellington vai ficar 45 dias imobilizado."},
+          {"q": "voce", "e": "pensativo", "t": "Mais de trinta dias de incapacidade… é o art. 129, § 1º, I."},
+          {"q": "rafael", "e": "confiante", "t": "E o Marcos jura que o Wellington puxou uma faca para roubar a bicicleta dele."},
+          {"q": "helena", "e": "pensativo", "t": "Se for verdade, é legítima defesa. Mas lembre: a defesa precisa ser moderada. Exagerou, responde pelo excesso."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["laudo2", "cp25", "cp23pu", "cp129", "cpp386vi"]}
+        ], "proxima": "q3"},
+        "q3": {"tipo": "investigar", "local": "ponto", "titulo": "Ponto de ônibus da Av. Brasil",
+          "intro": [{"q": "narrador", "t": "Um ponto de ônibus comum, uma padaria na esquina e um meio-fio alto demais."}],
+          "pontos": [
+            {"id": "padaria", "nome": "Câmera da padaria", "x": 74, "y": 14, "w": 14, "h": 16, "falas": [
+              {"q": "voce", "e": "chocado", "t": "A câmera da padaria pegou tudo! Wellington puxa uma faca. Marcos empurra UMA vez. Wellington tropeça no meio-fio e cai.", "recebe": ["video2"]}]},
+            {"id": "sarjeta", "nome": "Sarjeta junto ao ponto", "x": 20, "y": 70, "w": 22, "h": 12, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "Foi aqui que a polícia encontrou uma faca. O laudo de papiloscopia saiu ontem: digitais do Wellington.", "recebe": ["faca"]}]},
+            {"id": "poste", "nome": "Poste com o número da linha", "x": 46, "y": 10, "w": 8, "h": 50, "falas": [
+              {"q": "voce", "e": "normal", "t": "Linha 412, último ônibus às 22h30. O Marcos esperava o ônibus depois de um turno de doze horas."}]}
+          ],
+          "conversas": [
+            {"q": "neide", "titulo": "Conversar com a cobradora Neide", "falas": [
+              {"q": "neide", "e": "nervoso", "t": "Eu estava no ônibus parado no ponto de cima. Vi o moço alto puxar alguma coisa brilhante."},
+              {"q": "neide", "e": "pensativo", "t": "E o entregador ligou pra polícia na hora. Pedindo ambulância pro outro, acredita?"},
+              {"q": "narrador", "t": "Você pediu à delegacia o registro da ligação ao 190.", "recebe": ["ligacao"]}]}
+          ],
+          "requer": ["video2", "faca"],
+          "proxima": "q4"},
+        "q4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Aberta a audiência. Réu: Marcos Vieira. Acusação: lesão corporal grave.", "fx": "martelo"},
+          {"q": "lacerda", "e": "confiante", "t": "Um braço quebrado, 45 dias de incapacidade. A acusação ouvirá a própria vítima."}
+        ], "proxima": "q5"},
+        "q5": {"tipo": "depoimento", "testemunha": "wellington", "titulo": "A versão de Wellington",
+          "intro": [{"q": "wellington", "e": "triste", "t": "Doutora, eu sou a vítima aqui. Olha o meu braço."}],
+          "afirmacoes": [
+            {"t": "Eu só cheguei no ponto pra pedir uma informação.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Que informação?"}, {"q": "wellington", "e": "nervoso", "t": "…Sobre o ônibus. É. O ônibus."}]},
+            {"t": "Eu estava de mãos vazias, sem nada.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Nada mesmo? Nem no bolso?"}, {"q": "wellington", "e": "nervoso", "t": "Nada! Pode revistar a minha alma!"}]},
+            {"t": "E esse maluco me atacou do nada.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Atacou como?"}, {"q": "wellington", "e": "bravo", "t": "Me empurrou com tudo!"}]}
+          ],
+          "contradicao": {"afirmacao": 1, "provas": ["video2", "faca"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "De mãos vazias? A câmera da padaria mostra o senhor puxando uma faca. E a faca apreendida na sarjeta tem as SUAS digitais!"},
+            {"q": "wellington", "e": "chocado", "t": "Isso… isso é montagem!", "fx": "tremor"},
+            {"q": "beatriz", "e": "bravo", "t": "Senhor Wellington, a perícia confirmou as digitais. Recomendo que pense antes de responder.", "fx": "martelo"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não contradiz esta afirmação, doutor(a)."}],
+          "proxima": "q6"},
+        "q6": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "lacerda", "e": "pensativo", "t": "Muito bem, houve uma faca. Mas o réu não precisava QUEBRAR o braço da vítima. Ele continuou batendo depois que ela caiu. Isso é excesso!"},
+          {"q": "lacerda", "e": "apontando", "t": "Art. 23, parágrafo único: quem se excede responde pelo excesso!"}
+        ], "pergunta": "Que prova mostra que Marcos não continuou batendo?",
+          "provas": ["laudo2", "video2", "ligacao"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Não houve 'depois'. O laudo encontrou uma única lesão, compatível com a queda. O vídeo mostra um empurrão só. E dois minutos depois Marcos estava ligando para o 190 e pedindo ambulância para o próprio agressor."},
+            {"q": "voce", "e": "confiante", "t": "Um empurrão contra uma faca é uso moderado do meio necessário. Não há excesso."},
+            {"q": "lacerda", "e": "nervoso", "t": "…", "fx": "tremor"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não mostra se houve agressão depois da queda, doutor(a)."}],
+          "proxima": "q7"},
+        "q7": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Alegações finais, defesa."}
+        ], "pergunta": "Qual é a tese?",
+          "opcoes": [
+            {"t": "Desclassificação para lesão corporal leve.", "certa": false,
+             "falas": [{"q": "beatriz", "e": "pensativo", "t": "A incapacidade passou de trinta dias. E a sua prova aponta para algo bem maior do que uma desclassificação, doutor(a)."}]},
+            {"t": "Legítima defesa: agressão injusta e atual (a faca), meio necessário (um empurrão), uso moderado. Absolvição pelo art. 386, VI, do CPP.", "certa": true,
+             "fundamentos": [{"chave": "CP#art-25", "trecho": "usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente"}, {"chave": "CPP#art-386/inc-vi", "trecho": "existirem circunstâncias que excluam o crime ou isentem o réu de pena"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "Injusta agressão, atual, com faca. Reação com o meio necessário, usada com moderação. É legítima defesa, que exclui o crime. Peço a absolvição pelo art. 386, VI, do CPP."}]},
+            {"t": "Estado de necessidade.", "certa": false,
+             "falas": [{"q": "lacerda", "e": "feliz", "t": "Estado de necessidade é perigo, doutor(a). Aqui havia um agressor humano. A figura certa é outra."}]}
+          ],
+          "proxima": "q8"},
+        "q8": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Reconheço a legítima defesa e absolvo o réu, art. 386, VI, do CPP. Remetam-se cópias ao Ministério Público quanto à tentativa de roubo praticada pela vítima.", "fx": "martelo"},
+          {"q": "marcos", "e": "feliz", "t": "Eu só queria chegar em casa, doutor(a). Obrigado."},
+          {"q": "rafael", "e": "pensativo", "t": "Curioso. A ficha do Wellington diz que ele trabalhava como segurança terceirizado… numa obra da Construtora Altavista."},
+          {"q": "voce", "e": "pensativo", "t": "Altavista… onde eu já ouvi esse nome?"}
+        ], "proxima": "q9"},
+        "q9": {"tipo": "veredicto", "carimbo": "ABSOLVIDO", "titulo": "Legítima defesa", "texto": "Uma faca, um empurrão e uma ligação pedindo ambulância para o agressor. Você mostrou que defender-se com moderação não é crime."}
+      }
+    },
+    {
+      "id": "a1-custodia", "ato": "ato1", "ordem": 4, "numero": 4,
+      "titulo": "Três Dias no Escuro", "papel": "advogado", "nivel": "intermediario",
+      "sinopse": "Joana, empregada doméstica, foi presa acusada de furtar joias da patroa. Ninguém avisou o juiz. Ninguém avisou a família. Por três dias, ela simplesmente sumiu.",
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "fausto": "testemunha", "bento": "cena", "joana": "defesa", "helena": "escritorio", "rafael": "escritorio"},
+      "provas": [
+        {"id": "registro", "tipo": "prova", "icone": "📒", "nome": "Livro de registro da delegacia", "descricao": "Entrada de Joana Lima: dia 12, 21h40. Comunicação da prisão ao juiz e à família: dia 15, 9h10."},
+        {"id": "termo", "tipo": "prova", "icone": "✍️", "nome": "Termo de confissão", "descricao": "Assinado por Joana no dia 13, às 3h da manhã, sem advogado. Não há registro de que tenha sido informada do direito de ficar calada."},
+        {"id": "patroa", "tipo": "prova", "icone": "🏠", "nome": "Boletim da patroa", "descricao": "Comunicante: Beatriz Altavista, esposa de Henrique Altavista. 'Sumiram joias do quarto. Só a empregada tinha a chave.'"},
+        {"id": "cf5lxii", "tipo": "lei", "icone": "📜", "nome": "CF, art. 5º, LXII — Comunicação da prisão", "chave": "CF#art-5/inc-lxii", "trecho": "serão comunicados imediatamente ao juiz competente e à família do preso"},
+        {"id": "cf5lxiii", "tipo": "lei", "icone": "📜", "nome": "CF, art. 5º, LXIII — Direito ao silêncio", "chave": "CF#art-5/inc-lxiii", "trecho": "o preso será informado de seus direitos, entre os quais o de permanecer calado"},
+        {"id": "cf5lxv", "tipo": "lei", "icone": "📜", "nome": "CF, art. 5º, LXV — Prisão ilegal", "chave": "CF#art-5/inc-lxv", "trecho": "a prisão ilegal será imediatamente relaxada pela autoridade judiciária"},
+        {"id": "cpp310", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 310, I — Relaxar a prisão", "chave": "CPP#art-310/inc-i", "trecho": "relaxar a prisão ilegal"},
+        {"id": "cpp306", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 306 — Comunicação imediata", "chave": "CPP#art-306", "trecho": "serão comunicados imediatamente ao juiz competente, ao Ministério Público e à família do preso"}
+      ],
+      "inicio": "r1",
+      "cenas": {
+        "r1": {"tipo": "titulo", "texto": "Caso 4", "subtitulo": "Três Dias no Escuro", "proxima": "r2"},
+        "r2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "helena", "e": "bravo", "t": "A mãe de Joana Lima rodou três dias por hospitais e IML atrás da filha. Ela estava presa numa delegacia. Ninguém avisou."},
+          {"q": "rafael", "e": "pensativo", "t": "Acusada de furtar joias da patroa. E adivinha quem é a patroa: a esposa de Henrique Altavista."},
+          {"q": "voce", "e": "chocado", "t": "Altavista de novo?!"},
+          {"q": "helena", "e": "confiante", "t": "Foco. Toda prisão tem que ser comunicada imediatamente ao juiz e à família. Vá à delegacia e descubra quando isso aconteceu."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["patroa", "cf5lxii", "cf5lxiii", "cf5lxv", "cpp310", "cpp306"]}
+        ], "proxima": "r3"},
+        "r3": {"tipo": "investigar", "local": "delegacia", "titulo": "14º Distrito Policial",
+          "intro": [{"q": "narrador", "t": "Ventilador barulhento, café requentado e um escrivão que evita olhar nos seus olhos."}],
+          "pontos": [
+            {"id": "livro", "nome": "Livro de registro", "x": 40, "y": 44, "w": 18, "h": 14, "falas": [
+              {"q": "voce", "e": "chocado", "t": "Entrada de Joana: dia 12, 21h40. Comunicação ao juiz e à família… dia 15? Três dias depois!", "recebe": ["registro"]}]},
+            {"id": "mural", "nome": "Mural de avisos", "x": 72, "y": 14, "w": 18, "h": 24, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "Escala de plantão do dia 12: Delegado Fausto Rangel. Ao lado, um cartão de visitas: 'Dr. Augusto Brandão — Advocacia Empresarial'."}]},
+            {"id": "pasta", "nome": "Pasta do inquérito", "x": 10, "y": 46, "w": 16, "h": 16, "falas": [
+              {"q": "voce", "e": "bravo", "t": "Um termo de confissão assinado às três da manhã, sem advogado. Nenhuma linha dizendo que ela foi informada do direito de ficar calada.", "recebe": ["termo"]}]}
+          ],
+          "conversas": [
+            {"q": "bento", "titulo": "Conversar com o escrivão Bento", "falas": [
+              {"q": "bento", "e": "nervoso", "t": "Eu só cumpro ordens, doutor(a). O delegado mandou segurar a comunicação até 'a moça colaborar'."},
+              {"q": "bento", "e": "triste", "t": "Eu não falei isso. Entendeu? Eu não falei nada."}]}
+          ],
+          "requer": ["registro", "termo"],
+          "proxima": "r4"},
+        "r4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Audiência de custódia. Presa: Joana Lima. Ouço a autoridade policial.", "fx": "martelo"},
+          {"q": "joana", "e": "triste", "t": "(baixinho) Eu não roubei nada. Eu só queria ver a minha mãe."}
+        ], "proxima": "r5"},
+        "r5": {"tipo": "depoimento", "testemunha": "fausto", "titulo": "A versão do delegado",
+          "intro": [{"q": "fausto", "e": "confiante", "t": "Vinte e dois anos de polícia, Excelência. Tudo dentro da lei."}],
+          "afirmacoes": [
+            {"t": "A presa foi autuada em flagrante na noite do dia 12.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Flagrante de quê, exatamente?"}, {"q": "fausto", "e": "confiante", "t": "Ela estava com uma caixa de joias na bolsa."}]},
+            {"t": "A prisão foi comunicada ao juízo e à família no mesmo dia.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "No mesmo dia? O senhor tem certeza?"}, {"q": "fausto", "e": "bravo", "t": "Certeza absoluta. Eu mesmo assinei."}]},
+            {"t": "E ela confessou espontaneamente, de livre vontade.", "e": "feliz",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Com advogado presente?"}, {"q": "fausto", "e": "nervoso", "t": "Ela não pediu advogado."}]}
+          ],
+          "contradicao": {"afirmacao": 1, "provas": ["registro"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "No mesmo dia? O livro de registro da SUA delegacia diz que a comunicação saiu no dia 15, às 9h10. Três dias depois!"},
+            {"q": "fausto", "e": "chocado", "t": "Isso… foi um erro de anotação!", "fx": "tremor"},
+            {"q": "beatriz", "e": "bravo", "t": "Erro de anotação de três dias, delegado?", "fx": "martelo"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não contradiz esta afirmação, doutor(a)."}],
+          "proxima": "r6"},
+        "r6": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "lacerda", "e": "pensativo", "t": "Excelência, ainda que haja atraso na comunicação, existe a confissão assinada. Ela basta para manter a prisão."}
+        ], "pergunta": "Que garantia foi desrespeitada na 'confissão'?",
+          "provas": ["cf5lxiii"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Art. 5º, LXIII, da Constituição: o preso será informado de seus direitos, entre eles o de permanecer calado. Às três da manhã, sem advogado e sem esse aviso, isso não é confissão espontânea."},
+            {"q": "beatriz", "e": "pensativo", "t": "Uma 'confissão' obtida sem que a presa soubesse que podia ficar calada não sustenta prisão nenhuma neste juízo."}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa norma não trata da confissão, doutor(a)."}],
+          "proxima": "r7"},
+        "r7": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Defesa, seu requerimento."}
+        ], "pergunta": "O que você pede?",
+          "opcoes": [
+            {"t": "Liberdade provisória com fiança.", "certa": false,
+             "falas": [{"q": "beatriz", "e": "pensativo", "t": "Liberdade provisória pressupõe uma prisão legal. É isso que a defesa sustenta, doutor(a)?"}]},
+            {"t": "Relaxamento da prisão ilegal: comunicação três dias atrasada e confissão sem informação do direito ao silêncio (CF, art. 5º, LXV; CPP, art. 310, I).", "certa": true,
+             "fundamentos": [{"chave": "CF#art-5/inc-lxv", "trecho": "a prisão ilegal será imediatamente relaxada pela autoridade judiciária"}, {"chave": "CPP#art-310/inc-i", "trecho": "relaxar a prisão ilegal"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "A prisão não foi comunicada imediatamente, como exigem a Constituição e o art. 306 do CPP. Prisão ilegal não se convalida: deve ser imediatamente relaxada."}]},
+            {"t": "Que a prisão seja convertida em preventiva, para a ré ficar segura.", "certa": false,
+             "falas": [{"q": "joana", "e": "chocado", "t": "Doutor(a)?!"}, {"q": "beatriz", "e": "bravo", "t": "A defesa pedindo preventiva da própria cliente? Pense de novo."}]}
+          ],
+          "proxima": "r8"},
+        "r8": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "bravo", "t": "Relaxo a prisão de Joana Lima, por ilegal. Oficie-se à Corregedoria da Polícia Civil quanto à conduta da autoridade policial.", "fx": "martelo"},
+          {"q": "joana", "e": "feliz", "t": "Mãe… eu vou ver a minha mãe!"},
+          {"q": "fausto", "e": "bravo", "t": "(saindo, ao celular) …Doutor Brandão? Deu errado. O estagiário do Duarte."},
+          {"q": "voce", "e": "chocado", "t": "(Brandão… o mesmo nome do cartão no mural.)"}
+        ], "proxima": "r9"},
+        "r9": {"tipo": "veredicto", "carimbo": "PRISÃO RELAXADA", "titulo": "A lei vale para quem prende", "texto": "Prisão sem comunicação imediata e confissão sem aviso do direito ao silêncio: você mostrou que garantias não são formalidade. Joana dorme em casa hoje."}
+      }
+    },
+    {
+      "id": "a1-pix", "ato": "ato1", "ordem": 5, "numero": 5,
+      "titulo": "O Golpe do Pix", "papel": "advogado", "nivel": "intermediario",
+      "sinopse": "Seu Ivo, 68 anos, é réu por fraude eletrônica: R$ 9.800 de uma vítima caíram na conta dele. Ele mal sabe usar o celular. Siga o dinheiro.",
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "patricia": "testemunha", "kenji": "testemunha", "ivo": "defesa", "helena": "escritorio", "rafael": "escritorio"},
+      "provas": [
+        {"id": "prontuario", "tipo": "prova", "icone": "🏥", "nome": "Prontuário hospitalar", "descricao": "Ivo Bernardes internado no Hospital Municipal de 3 a 6 de maio, com cateter e sedação leve. O golpe foi no dia 4."},
+        {"id": "pericia", "tipo": "prova", "icone": "💻", "nome": "Laudo de perícia digital", "descricao": "As transferências do dia 4 partiram de um aparelho desconhecido, depois de uma troca do chip de Ivo (SIM swap) feita numa loja que Ivo nunca visitou."},
+        {"id": "extrato", "tipo": "prova", "icone": "🏦", "nome": "Extrato da conta de Ivo", "descricao": "R$ 9.800 entraram às 14h02 e saíram às 14h05 para a conta da empresa 'Altavista Serviços Ltda.'"},
+        {"id": "cp171", "tipo": "lei", "icone": "📜", "nome": "CP, art. 171, § 2º-A — Fraude eletrônica", "chave": "CP#art-171/par-2a", "trecho": "se a fraude é cometida com a utilização de informações fornecidas pela vítima"},
+        {"id": "cp18", "tipo": "lei", "icone": "📜", "nome": "CP, art. 18, parágrafo único — Só se pune o dolo", "chave": "CP#art-18/par-unico", "trecho": "ninguém pode ser punido por fato previsto como crime, senão quando o pratica dolosamente"},
+        {"id": "cpp386iv", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 386, IV — Réu não concorreu", "chave": "CPP#art-386/inc-iv", "trecho": "estar provado que o réu não concorreu para a infração penal"}
+      ],
+      "inicio": "s1",
+      "cenas": {
+        "s1": {"tipo": "titulo", "texto": "Caso 5", "subtitulo": "O Golpe do Pix", "proxima": "s2"},
+        "s2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "helena", "e": "pensativo", "t": "Ivo Bernardes, 68 anos, aposentado. A vítima, Patrícia, transferiu R$ 9.800 achando que falava com a 'central do banco'. O dinheiro caiu na conta do Ivo."},
+          {"q": "rafael", "e": "pensativo", "t": "Fraude eletrônica, art. 171, § 2º-A: quatro a oito anos. O Ministério Público acha que ele é o golpista."},
+          {"q": "voce", "e": "pensativo", "t": "Mas para ser crime é preciso dolo. Só se pune o crime culposo quando a lei prevê expressamente."},
+          {"q": "rafael", "e": "confiante", "t": "Isso. Se o Ivo também foi usado, não há dolo. Vá à casa dele. Ache o que ele mesmo não sabe que tem."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cp171", "cp18", "cpp386iv"]}
+        ], "proxima": "s3"},
+        "s3": {"tipo": "investigar", "local": "apartamento", "titulo": "Apartamento de Seu Ivo",
+          "intro": [{"q": "ivo", "e": "triste", "t": "Fica à vontade, doutor(a). Desculpe a bagunça. Desde que a Lurdes morreu, eu não ligo muito pra arrumação."}],
+          "pontos": [
+            {"id": "gaveta", "nome": "Gaveta de documentos", "x": 64, "y": 46, "w": 16, "h": 14, "falas": [
+              {"q": "voce", "e": "chocado", "t": "Um prontuário do Hospital Municipal: Seu Ivo ficou internado de 3 a 6 de maio. O golpe foi no dia 4!", "recebe": ["prontuario"]}]},
+            {"id": "celular", "nome": "Celular velho na mesa", "x": 30, "y": 50, "w": 12, "h": 10, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "Um aparelho antigo, sem nenhum aplicativo de banco. Na tela, um aviso de 4 de maio: 'Seu chip foi desativado'."},
+              {"q": "narrador", "t": "Você pediu uma perícia digital urgente no aparelho e na operadora.", "recebe": ["pericia"]}]},
+            {"id": "carta", "nome": "Carta do banco", "x": 10, "y": 24, "w": 16, "h": 14, "falas": [
+              {"q": "voce", "e": "bravo", "t": "Um extrato pelo correio: os R$ 9.800 entraram e saíram três minutos depois… para a 'Altavista Serviços Ltda.'!", "recebe": ["extrato"]}]}
+          ],
+          "conversas": [
+            {"q": "ivo", "titulo": "Perguntar a Seu Ivo sobre maio", "falas": [
+              {"q": "ivo", "e": "pensativo", "t": "Maio? Fiquei uns dias no hospital, a pressão. Quando voltei, o celular não funcionava mais. Achei que era coisa da operadora."},
+              {"q": "ivo", "e": "triste", "t": "Eu nunca fiz um Pix na vida, doutor(a). Nem sei como faz."}]}
+          ],
+          "requer": ["prontuario", "pericia"],
+          "proxima": "s4"},
+        "s4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Aberta a audiência. Réu: Ivo Bernardes. Acusação: fraude eletrônica.", "fx": "martelo"},
+          {"q": "lacerda", "e": "confiante", "t": "O dinheiro caiu na conta do réu. Ouço a vítima, senhora Patrícia Mendes."}
+        ], "proxima": "s5"},
+        "s5": {"tipo": "depoimento", "testemunha": "patricia", "titulo": "O golpe, por Patrícia",
+          "intro": [{"q": "patricia", "e": "bravo", "t": "Eu perdi as economias de um ano. Quero esse senhor na cadeia."}],
+          "afirmacoes": [
+            {"t": "Um homem me ligou dizendo ser da central do banco.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Como era a voz?"}, {"q": "patricia", "e": "pensativo", "t": "Jovem. Muito educado. Sabia todos os meus dados."}]},
+            {"t": "Ele mandou eu transferir para uma 'conta de segurança'.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "E a senhora transferiu na hora?"}, {"q": "patricia", "e": "triste", "t": "Às duas da tarde. Ele ficou na linha até eu terminar."}]},
+            {"t": "E foi ESSE senhor que me ligou, tenho certeza. O número era dele!", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "A voz era de um senhor de 68 anos?"}, {"q": "patricia", "e": "nervoso", "t": "Bom… a voz era de jovem. Mas o número era dele!"}]}
+          ],
+          "contradicao": {"afirmacao": 2, "provas": ["prontuario", "pericia"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Às duas da tarde do dia 4, Seu Ivo estava internado no Hospital Municipal, com cateter e sedação. E a perícia mostra que o chip dele foi trocado numa loja que ele nunca visitou: quem ligou usava o número clonado!"},
+            {"q": "patricia", "e": "chocado", "t": "Então… ele também foi enganado?", "fx": "tremor"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa prova não responde a esta afirmação."}],
+          "proxima": "s6"},
+        "s6": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "lacerda", "e": "bravo", "t": "Mesmo que outra pessoa tenha ligado, o dinheiro entrou na conta DELE. Isso basta para a condenação!"}
+        ], "pergunta": "Que norma mostra que 'o dinheiro passou pela conta' não basta?",
+          "provas": ["cp18"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Art. 18, parágrafo único, do Código Penal: ninguém pode ser punido por fato previsto como crime senão quando o pratica dolosamente. Seu Ivo estava num leito de hospital. Não quis nada, não sabia de nada."},
+            {"q": "voce", "e": "apontando", "t": "E o dinheiro saiu da conta dele três minutos depois para a Altavista Serviços Ltda. É lá que o Ministério Público deveria estar procurando!"},
+            {"q": "lacerda", "e": "chocado", "t": "Altavista…?", "fx": "tremor"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Esse dispositivo não trata do dolo, doutor(a)."}],
+          "proxima": "s7"},
+        "s7": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Alegações finais, defesa."}
+        ], "pergunta": "Qual é o fundamento da absolvição?",
+          "opcoes": [
+            {"t": "Falta de provas (art. 386, VII): não dá para saber se ele participou.", "certa": false,
+             "falas": [{"q": "beatriz", "e": "pensativo", "t": "Falta de provas, doutor(a)? A sua perícia e o prontuário provam bastante coisa. Peça o fundamento mais forte."}]},
+            {"t": "Está provado que o réu não concorreu para a infração (art. 386, IV): ele estava internado e teve o chip clonado.", "certa": true,
+             "fundamentos": [{"chave": "CPP#art-386/inc-iv", "trecho": "estar provado que o réu não concorreu para a infração penal"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "Não é dúvida: é prova. Prontuário e perícia provam que Seu Ivo não concorreu para o crime. Peço a absolvição pelo art. 386, IV, do CPP."}]},
+            {"t": "Perdão judicial, por causa da idade.", "certa": false,
+             "falas": [{"q": "lacerda", "e": "pensativo", "t": "Perdão judicial pressupõe crime e só cabe nos casos previstos em lei. Seu cliente não cometeu crime nenhum, segundo a sua própria tese."}]}
+          ],
+          "proxima": "s8"},
+        "s8": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Absolvo o réu, por estar provado que não concorreu para a infração penal, art. 386, IV, do CPP.", "fx": "martelo"},
+          {"q": "lacerda", "e": "pensativo", "t": "O Ministério Público vai requisitar a quebra de sigilo da Altavista Serviços Ltda. (para você) Isso fica entre nós, por enquanto."},
+          {"q": "ivo", "e": "feliz", "t": "Doutor(a), a Lurdes ia gostar de você."},
+          {"q": "rafael", "e": "nervoso", "t": "(no escritório, mais tarde) …Não mexa com a Altavista. Eu conheço essa gente. É sério."}
+        ], "proxima": "s9"},
+        "s9": {"tipo": "veredicto", "carimbo": "ABSOLVIDO", "titulo": "Laranja não é golpista", "texto": "Prontuário, perícia digital e o art. 18: sem dolo, não há crime. E o rastro do dinheiro leva, de novo, à Altavista."}
+      }
+    },
+    {
+      "id": "a1-juri", "ato": "ato1", "ordem": 6, "numero": 6,
+      "titulo": "O Júri", "papel": "advogado", "nivel": "avancado",
+      "sinopse": "Final do Ato I. Um engenheiro da Altavista foi morto no canteiro de obras. O acusado é um operário demitido. Rafael vai à tribuna com você — até que o celular dele toca.",
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "ronaldo": "testemunha", "tiago": "defesa", "clara": "cena", "rafael": "escritorio", "helena": "escritorio", "brandao": "cena"},
+      "provas": [
+        {"id": "catraca", "tipo": "prova", "icone": "🕒", "nome": "Registro da catraca", "descricao": "Crachá de Tiago Nunes: saída às 18h02. Nenhuma entrada depois disso. A morte ocorreu por volta das 19h30."},
+        {"id": "cadeado", "tipo": "prova", "icone": "🔒", "nome": "Foto do portão dos fundos", "descricao": "Portão dos fundos trancado com corrente e cadeado, foto da perícia tirada às 20h. Sem sinais de arrombamento."},
+        {"id": "caderno", "tipo": "prova", "icone": "📓", "nome": "Caderno do engenheiro", "descricao": "Anotação de Paulo Seixas, dia anterior à morte: 'Aço abaixo do especificado. Vou denunciar amanhã. Ronaldo sabe.'"},
+        {"id": "deposito", "tipo": "prova", "icone": "💰", "nome": "Comprovante de depósito", "descricao": "R$ 20.000 depositados na conta de Ronaldo Freitas dois dias antes do júri. Depositante: 'A. Brandão Advocacia'."},
+        {"id": "cf5juri", "tipo": "lei", "icone": "📜", "nome": "CF, art. 5º, XXXVIII — Júri", "chave": "CF#art-5/inc-xxxviii/ali-d", "trecho": "a competência para o julgamento dos crimes dolosos contra a vida"},
+        {"id": "cpp478", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 478, II — Silêncio no plenário", "chave": "CPP#art-478/inc-ii", "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento, em seu prejuízo"},
+        {"id": "cpp214", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 214 — Contradita", "chave": "CPP#art-214", "trecho": "as partes poderão contraditar a testemunha"},
+        {"id": "cp343", "tipo": "lei", "icone": "📜", "nome": "CP, art. 343 — Suborno de testemunha", "chave": "CP#art-343", "trecho": "Dar, oferecer ou prometer dinheiro ou qualquer outra vantagem a testemunha"}
+      ],
+      "inicio": "t1",
+      "cenas": {
+        "t1": {"tipo": "titulo", "texto": "Caso 6 · Final do Ato I", "subtitulo": "O Júri", "proxima": "t2"},
+        "t2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "rafael", "e": "normal", "t": "Paulo Seixas, engenheiro da Altavista, encontrado morto no canteiro da obra do Residencial Horizonte. Golpe na cabeça."},
+          {"q": "rafael", "e": "pensativo", "t": "O acusado é Tiago Nunes, operário demitido na semana anterior. A acusação diz que ele voltou para se vingar."},
+          {"q": "helena", "e": "normal", "t": "Homicídio doloso: quem julga é o júri popular, por determinação da Constituição. Sete jurados, e a decisão deles é soberana."},
+          {"q": "rafael", "e": "confiante", "t": "Eu faço a sustentação. Você me acompanha na tribuna. E hoje à noite vamos à obra."},
+          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cf5juri", "cpp478", "cpp214", "cp343"]}
+        ], "proxima": "t3"},
+        "t3": {"tipo": "investigar", "local": "obra", "titulo": "Canteiro do Residencial Horizonte",
+          "intro": [{"q": "narrador", "t": "Andaimes, vergalhões e uma placa enorme: 'CONSTRUTORA ALTAVISTA — Construindo o seu futuro'."}],
+          "pontos": [
+            {"id": "catraca", "nome": "Catraca da portaria", "x": 8, "y": 40, "w": 16, "h": 22, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "O sistema da catraca registra o crachá do Tiago saindo às 18h02. Nenhuma entrada depois disso.", "recebe": ["catraca"]}]},
+            {"id": "portao", "nome": "Portão dos fundos", "x": 78, "y": 36, "w": 16, "h": 28, "falas": [
+              {"q": "voce", "e": "pensativo", "t": "Corrente grossa e cadeado. A perícia fotografou o portão trancado às 20h, sem nenhum sinal de arrombamento.", "recebe": ["cadeado"]}]},
+            {"id": "barraco", "nome": "Escritório do engenheiro", "x": 42, "y": 30, "w": 18, "h": 24, "falas": [
+              {"q": "voce", "e": "chocado", "t": "Um caderno do Paulo… 'Aço abaixo do especificado. Vou denunciar amanhã. Ronaldo sabe.'", "recebe": ["caderno"]},
+              {"q": "voce", "e": "nervoso", "t": "(Paulo ia denunciar a obra. E morreu na véspera.)"}]}
+          ],
+          "conversas": [
+            {"q": "clara", "titulo": "Conversar com Clara, irmã de Paulo", "falas": [
+              {"q": "clara", "e": "triste", "t": "O Paulo vivia dizendo que a obra ia desabar um dia. Que estavam economizando no aço."},
+              {"q": "clara", "e": "bravo", "t": "E o mestre de obras, o Ronaldo, apareceu com carro novo esta semana. Quer saber de onde veio o dinheiro? Eu fui ao banco."},
+              {"q": "narrador", "t": "Clara entregou um comprovante de depósito.", "recebe": ["deposito"]}]},
+            {"q": "brandao", "titulo": "Falar com o homem de terno na portaria", "falas": [
+              {"q": "brandao", "e": "confiante", "t": "Augusto Brandão, advogado da construtora. Esta é uma área privada, doutor(a)."},
+              {"q": "brandao", "e": "feliz", "t": "Mande lembranças ao Rafael. Diga que eu disse: alguns casos não valem a carreira de ninguém."}]}
+          ],
+          "requer": ["catraca", "cadeado", "deposito"],
+          "proxima": "t4"},
+        "t4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Está instalada a sessão do Tribunal do Júri. Senhores jurados, o réu Tiago Nunes é acusado de homicídio.", "fx": "martelo"},
+          {"q": "rafael", "e": "confiante", "t": "(sussurrando) Respira. Eu cuido da abertura e…"},
+          {"q": "narrador", "t": "O celular de Rafael vibra. Ele lê a mensagem e empalidece."},
+          {"q": "rafael", "e": "chocado", "t": "Eu… preciso sair. Agora. Você assume. Confio em você."},
+          {"q": "voce", "e": "chocado", "t": "EU?!", "fx": "tremor"},
+          {"q": "lacerda", "e": "confiante", "t": "A acusação chama o mestre de obras Ronaldo Freitas."}
+        ], "proxima": "t5"},
+        "t5": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Antes do compromisso da testemunha, as partes desejam se manifestar?"},
+          {"q": "voce", "e": "pensativo", "t": "(É agora ou nunca. Existe um momento certo para questionar a imparcialidade de uma testemunha…)"}
+        ], "pergunta": "Que dispositivo permite questionar a testemunha antes do depoimento?",
+          "provas": ["cpp214"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "UM MOMENTO!", "fx": "ummomento"},
+            {"q": "voce", "e": "confiante", "t": "Com base no art. 214 do CPP, a defesa contradita a testemunha: ela recebeu R$ 20 mil dois dias antes deste júri, de um escritório de advocacia ligado à construtora."},
+            {"q": "beatriz", "e": "pensativo", "t": "Consigno a contradita e a resposta da testemunha. Os jurados vão avaliar o depoimento sabendo disso."},
+            {"q": "ronaldo", "e": "nervoso", "t": "Isso é… um empréstimo. É."}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Esse dispositivo não trata da contradita, doutor(a)."}],
+          "proxima": "t6"},
+        "t6": {"tipo": "depoimento", "testemunha": "ronaldo", "titulo": "O que Ronaldo viu",
+          "intro": [{"q": "ronaldo", "e": "confiante", "t": "Eu tava na obra até tarde naquele dia, conferindo material."}],
+          "afirmacoes": [
+            {"t": "O Tiago saiu da obra brigando, jurando vingança.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Que horas ele saiu?"}, {"q": "ronaldo", "e": "nervoso", "t": "Lá pelas seis…"}]},
+            {"t": "Às sete e meia eu vi o Tiago entrando de novo pela portaria.", "e": "confiante",
+             "pressionar": [{"q": "voce", "e": "apontando", "t": "Pela portaria? Com o crachá?"}, {"q": "ronaldo", "e": "confiante", "t": "Com o crachá, passando na catraca, eu vi!"}]},
+            {"t": "Depois ouvi um barulho e encontrei o doutor Paulo no chão.", "e": "triste",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "E o senhor chamou a polícia?"}, {"q": "ronaldo", "e": "nervoso", "t": "Chamei… depois. Primeiro eu liguei pro escritório."}]}
+          ],
+          "contradicao": {"afirmacao": 1, "provas": ["catraca"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Passando na catraca? O registro da catraca mostra a saída do crachá do Tiago às 18h02 e NENHUMA entrada depois disso!"},
+            {"q": "ronaldo", "e": "chocado", "t": "É que… ele não entrou pela portaria. Ele entrou pelos fundos! Isso, pelos fundos!", "fx": "tremor"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}],
+          "proxima": "t7"},
+        "t7": {"tipo": "depoimento", "testemunha": "ronaldo", "titulo": "A versão dos fundos",
+          "intro": [{"q": "ronaldo", "e": "nervoso", "t": "Agora eu lembrei direitinho. Juro."}],
+          "afirmacoes": [
+            {"t": "O portão dos fundos vive aberto, todo mundo sabe.", "e": "nervoso",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Naquela noite também?"}, {"q": "ronaldo", "e": "confiante", "t": "Escancarado! Eu mesmo vi."}]},
+            {"t": "O Tiago entrou por lá, escondido.", "e": "bravo",
+             "pressionar": [{"q": "voce", "e": "normal", "t": "Como o senhor viu, se ele estava escondido?"}, {"q": "ronaldo", "e": "nervoso", "t": "…Eu tenho boa visão."}]},
+            {"t": "Depois saiu correndo pelo mesmo portão.", "e": "normal",
+             "pressionar": [{"q": "voce", "e": "pensativo", "t": "E deixou o portão aberto?"}, {"q": "ronaldo", "e": "nervoso", "t": "Aberto, claro. Quem foge não fecha portão."}]}
+          ],
+          "contradicao": {"afirmacao": 0, "provas": ["cadeado"]},
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "apontando", "t": "Escancarado? A perícia fotografou o portão às 20h: corrente, cadeado e nenhum sinal de arrombamento. Ninguém entrou ou saiu por ali naquela noite!"},
+            {"q": "ronaldo", "e": "chocado", "t": "AAAAAH!", "fx": "tremor"},
+            {"q": "voce", "e": "confiante", "t": "E tem mais: o caderno do Paulo diz que ele ia denunciar o aço abaixo do especificado. E que 'Ronaldo sabe'."},
+            {"q": "ronaldo", "e": "triste", "t": "Eu… eu não matei ninguém! Me deram dinheiro pra dizer que foi o Tiago! O doutor Brandão disse que era só falar o que ele mandou!"},
+            {"q": "beatriz", "e": "bravo", "t": "ORDEM!", "fx": "martelo"}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}],
+          "proxima": "t8"},
+        "t8": {"tipo": "apresentar", "local": "tribunal", "falas": [
+          {"q": "lacerda", "e": "bravo", "t": "Senhores jurados! Não se deixem enganar. Pergunto: se o réu é inocente, por que ficou CALADO na delegacia?", "fx": "bater"}
+        ], "pergunta": "O promotor usou o silêncio do réu diante dos jurados. Qual dispositivo proíbe isso?",
+          "provas": ["cpp478"],
+          "acerto": [
+            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
+            {"q": "voce", "e": "confiante", "t": "Art. 478, II, do CPP: nos debates, as partes não podem fazer referência ao silêncio do acusado em seu prejuízo, sob pena de nulidade."},
+            {"q": "beatriz", "e": "bravo", "t": "Procede. Os jurados desconsiderarão a menção ao silêncio do réu. Doutor Lacerda, contenha-se.", "fx": "martelo"},
+            {"q": "lacerda", "e": "nervoso", "t": "…Retiro a afirmação, Excelência."}
+          ],
+          "erro": [{"q": "beatriz", "e": "bravo", "t": "Esse dispositivo não trata do que o promotor disse."}],
+          "proxima": "t9"},
+        "t9": {"tipo": "escolha", "local": "tribunal", "falas": [
+          {"q": "beatriz", "e": "normal", "t": "Com a palavra, a defesa, para a sustentação final aos jurados."}
+        ], "pergunta": "O que você pede aos jurados?",
+          "opcoes": [
+            {"t": "Que reconheçam que Tiago agiu sob violenta emoção e reduzam a pena.", "certa": false,
+             "falas": [{"q": "tiago", "e": "chocado", "t": "Mas eu não fiz nada, doutor(a)!"}, {"q": "voce", "e": "nervoso", "t": "(Pedir privilégio é admitir que ele matou. Não é isso.)"}]},
+            {"t": "A absolvição: Tiago não estava na obra (catraca), ninguém entrou pelos fundos (cadeado) e a única testemunha confessou ter sido paga para mentir.", "certa": true,
+             "fundamentos": [{"chave": "CF#art-5/inc-xxxviii/ali-d", "trecho": "a competência para o julgamento dos crimes dolosos contra a vida"}],
+             "falas": [{"q": "voce", "e": "confiante", "t": "Senhores jurados: o crachá saiu às 18h02 e não voltou. O portão estava trancado. E a acusação se apoiava numa testemunha que acabou de confessar que foi paga. A decisão é de vocês, e é soberana. Absolvam Tiago Nunes."}]},
+            {"t": "Que o juiz anule o júri e marque outro.", "certa": false,
+             "falas": [{"q": "beatriz", "e": "pensativo", "t": "Doutor(a), a defesa tem provas fortes nas mãos. Por que jogaria fora este julgamento?"}]}
+          ],
+          "proxima": "t10"},
+        "t10": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "narrador", "t": "Os jurados se recolhem à sala secreta. Vinte minutos depois, retornam."},
+          {"q": "beatriz", "e": "normal", "t": "O Conselho de Sentença absolveu o réu Tiago Nunes. Oficie-se ao Ministério Público quanto ao crime de suborno de testemunha, art. 343 do Código Penal.", "fx": "martelo"},
+          {"q": "tiago", "e": "feliz", "t": "Obrigado… eu achei que ia morrer na cadeia por uma coisa que eu não fiz."},
+          {"q": "lacerda", "e": "pensativo", "t": "(para você, em voz baixa) Brandão. Altavista. Eu também andei puxando esse fio. Precisamos conversar."},
+          {"q": "helena", "e": "triste", "t": "(ao telefone, na saída) …Você precisa vir ao escritório. É sobre o Rafael. Ele foi levado pela Polícia Federal."},
+          {"q": "voce", "e": "chocado", "t": "O quê?!", "fx": "tremor"}
+        ], "fundamentos": [{"chave": "CP#art-343", "trecho": "Dar, oferecer ou prometer dinheiro ou qualquer outra vantagem a testemunha"}], "proxima": "t11"},
+        "t11": {"tipo": "veredicto", "carimbo": "ABSOLVIDO", "titulo": "Fim do Ato I — O Estágio", "texto": "Seu primeiro júri, sozinho(a), contra uma testemunha comprada. Tiago está livre. Mas Rafael, o seu mentor, acaba de ser preso. E o nome por trás de tudo é o mesmo: Altavista. Continua no Ato II."}
+      }
+    }
+  ]
+}

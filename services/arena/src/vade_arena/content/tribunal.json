@@ -4,160 +4,200 @@
     "CPP": "federal/decretos-lei/1941/del-3689-1941-10-03"
   },
   "personagens": {
-    "voce":    {"nome": "Você", "cargo": "", "visual": null, "voz": 520},
-    "helena":  {"nome": "Helena Vasconcelos", "cargo": "Sócia-gestora", "voz": 470,
-                "visual": {"pele": "#8D5524", "cabelo": "coque", "corCabelo": "#1b1b1b", "roupa": "blazer", "corRoupa": "#4a2c6b", "gravata": null, "oculos": true, "barba": false}},
-    "rafael":  {"nome": "Rafael Duarte", "cargo": "Sócio sênior", "voz": 300,
-                "visual": {"pele": "#F1C27D", "cabelo": "topete", "corCabelo": "#3b2414", "roupa": "terno", "corRoupa": "#1f2a44", "gravata": "#8a1c1c", "oculos": false, "barba": true}},
-    "lacerda": {"nome": "Dr. Otávio Lacerda", "cargo": "Promotor de Justiça", "voz": 260,
-                "visual": {"pele": "#E0AC69", "cabelo": "curto", "corCabelo": "#9e9e9e", "roupa": "terno", "corRoupa": "#7a1f1f", "gravata": "#111111", "oculos": true, "barba": false}},
-    "beatriz": {"nome": "Dra. Beatriz Monteiro", "cargo": "Juíza de Direito", "voz": 420,
-                "visual": {"pele": "#C68642", "cabelo": "longo", "corCabelo": "#2a1a10", "roupa": "toga", "corRoupa": "#111111", "gravata": null, "oculos": false, "barba": false}},
-    "silvia":  {"nome": "Dra. Sílvia Prado", "cargo": "Advogada de defesa", "voz": 480,
-                "visual": {"pele": "#FFDBAC", "cabelo": "rabo", "corCabelo": "#a0522d", "roupa": "blazer", "corRoupa": "#1e5a4a", "gravata": null, "oculos": false, "barba": false}},
-    "valdir":  {"nome": "Valdir Souza", "cargo": "Testemunha · garçom", "voz": 340,
-                "visual": {"pele": "#E0AC69", "cabelo": "careca", "corCabelo": "#5a3b22", "roupa": "avental", "corRoupa": "#ffffff", "gravata": "#111111", "oculos": false, "barba": true}},
-    "jorge":   {"nome": "Jorge Almeida", "cargo": "Testemunha · pedestre", "voz": 300,
-                "visual": {"pele": "#8D5524", "cabelo": "curto", "corCabelo": "#111111", "roupa": "casual", "corRoupa": "#c0392b", "gravata": null, "oculos": false, "barba": false}},
-    "lucas":   {"nome": "Lucas Ferreira", "cargo": "Réu · 19 anos", "voz": 380,
-                "visual": {"pele": "#FFDBAC", "cabelo": "cacheado", "corCabelo": "#3b2414", "roupa": "casual", "corRoupa": "#5d6d7e", "gravata": null, "oculos": false, "barba": false}},
-    "ana":     {"nome": "Ana Ribeiro", "cargo": "Vítima", "voz": 500,
-                "visual": {"pele": "#C68642", "cabelo": "longo", "corCabelo": "#111111", "roupa": "casual", "corRoupa": "#2e86c1", "gravata": null, "oculos": false, "barba": false}},
-    "bruno":   {"nome": "Bruno Tavares", "cargo": "Réu", "voz": 280,
-                "visual": {"pele": "#F1C27D", "cabelo": "topete", "corCabelo": "#c9a227", "roupa": "casual", "corRoupa": "#34495e", "gravata": null, "oculos": false, "barba": true}},
-    "moreira": {"nome": "Sargento Moreira", "cargo": "Testemunha · policial militar", "voz": 270,
-                "visual": {"pele": "#E0AC69", "cabelo": "curto", "corCabelo": "#1b1b1b", "roupa": "farda", "corRoupa": "#3e4a2d", "gravata": null, "oculos": false, "barba": false}},
-    "dani":    {"nome": "Dani", "cargo": "Assessora do gabinete", "voz": 540,
-                "visual": {"pele": "#FFDBAC", "cabelo": "cacheado", "corCabelo": "#7b1e1e", "roupa": "blazer", "corRoupa": "#b9770e", "gravata": null, "oculos": true, "barba": false}},
-    "narrador": {"nome": "", "cargo": "", "visual": null, "voz": 0}
-  },
-  "episodios": [
-    {
-      "id": "ep1-celular",
-      "numero": 1,
-      "titulo": "O Celular da Rua Augusta",
-      "papel": "advogado",
-      "nivel": "intermediario",
-      "sinopse": "Lucas, 19 anos, é acusado de roubo majorado de um celular. A acusação jura que houve um empurrão. Você é a defesa, e só tem a verdade e o Código.",
-      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "valdir": "testemunha", "jorge": "testemunha", "lucas": "defesa", "helena": "escritorio", "rafael": "escritorio"},
-      "provas": [
-        {"id": "video", "tipo": "prova", "icone": "📹", "nome": "Vídeo da câmera do bar", "descricao": "23h04: o celular aparece sozinho sobre a mesa 7. Ninguém sentado. Um rapaz de moletom pega o aparelho e sai andando rápido."},
-        {"id": "bo", "tipo": "prova", "icone": "📄", "nome": "Boletim de ocorrência", "descricao": "Declaração da vítima: 'Deixei o celular na mesa e fui ao banheiro. Quando voltei, ele tinha sumido.'"},
-        {"id": "laudo", "tipo": "prova", "icone": "🩺", "nome": "Exame de corpo de delito de Jorge", "descricao": "Realizado na mesma noite. Conclusão: nenhuma lesão aparente."},
-        {"id": "cp155", "tipo": "lei", "icone": "📜", "nome": "CP, art. 155 — Furto", "chave": "CP#art-155", "trecho": "Subtrair, para si ou para outrem, coisa alheia móvel"},
-        {"id": "cp157", "tipo": "lei", "icone": "📜", "nome": "CP, art. 157 — Roubo", "chave": "CP#art-157", "trecho": "mediante grave ameaça ou violência a pessoa"},
-        {"id": "cp157p1", "tipo": "lei", "icone": "📜", "nome": "CP, art. 157, § 1º — Roubo impróprio", "chave": "CP#art-157/par-1", "trecho": "logo depois de subtraída a coisa, emprega violência contra pessoa ou grave ameaça"},
-        {"id": "cp155p6", "tipo": "lei", "icone": "📜", "nome": "CP, art. 155, § 6º, II — Furto de celular", "chave": "CP#art-155/par-6/inc-ii", "trecho": "de aparelho de telefonia celular"},
-        {"id": "cpp155", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 155 — Prova do inquérito", "chave": "CPP#art-155", "trecho": "não podendo fundamentar sua decisão exclusivamente nos elementos informativos colhidos na investigação"}
-      ],
-      "inicio": "a1",
-      "cenas": {
-        "a1": {"tipo": "titulo", "texto": "Episódio 1", "subtitulo": "O Celular da Rua Augusta", "proxima": "a2"},
-        "a2": {"tipo": "dialogo", "local": "escritorio", "falas": [
-          {"q": "helena", "e": "normal", "t": "Hoje é o julgamento do Lucas. Primeira audiência sua com o Dr. Lacerda do outro lado."},
-          {"q": "rafael", "e": "confiante", "t": "Lacerda vai jurar que houve um empurrão. Sem empurrão, não tem roubo. É simples assim."},
-          {"q": "voce", "e": "pensativo", "t": "Roubo exige violência ou grave ameaça. Sem isso, a subtração é furto…"},
-          {"q": "helena", "e": "feliz", "t": "Exato. Separei os autos para você: o vídeo do bar, o boletim de ocorrência e o laudo da testemunha. Use na hora certa."},
-          {"q": "narrador", "t": "Os autos do processo foram atualizados. Abra a pasta 📁 quando precisar apresentar uma prova.", "recebe": ["video", "bo", "laudo", "cp155", "cp157", "cp157p1", "cp155p6", "cpp155"]},
-          {"q": "rafael", "e": "apontando", "t": "Regra de ouro: quando a testemunha disser algo que a prova desmente, você grita. E grita alto."}
-        ], "proxima": "a3"},
-        "a3": {"tipo": "dialogo", "local": "tribunal", "falas": [
-          {"q": "beatriz", "e": "normal", "t": "Declaro aberta a audiência de instrução e julgamento. Réu: Lucas Ferreira. Acusação: roubo majorado.", "fx": "martelo"},
-          {"q": "lacerda", "e": "confiante", "t": "A acusação está pronta, Excelência. O réu empurrou a vítima e arrancou o celular da mão dela. Simples."},
-          {"q": "voce", "e": "confiante", "t": "A defesa está pronta, Excelência."},
-          {"q": "lacerda", "e": "apontando", "t": "Chamo a primeira testemunha: Valdir Souza, garçom do bar."}
-        ], "proxima": "a4"},
-        "a4": {"tipo": "depoimento", "testemunha": "valdir", "titulo": "O que Valdir viu",
-          "intro": [
-            {"q": "valdir", "e": "nervoso", "t": "B-boa tarde. Eu vi tudo, doutora. Tudinho."},
-            {"q": "beatriz", "e": "normal", "t": "A testemunha promete dizer a verdade. Pode começar, senhor Valdir."}
-          ],
-          "afirmacoes": [
-            {"t": "Eram umas onze da noite e o bar estava lotado.", "e": "normal",
-             "pressionar": [{"q": "voce", "e": "normal", "t": "Lotado quanto?"}, {"q": "valdir", "e": "nervoso", "t": "Todas as mesas cheias! Eu corria de um lado pro outro."}]},
-            {"t": "A moça estava sentada na mesa 7, mexendo no celular.", "e": "confiante",
-             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Ela estava com o celular na mão?"}, {"q": "valdir", "e": "confiante", "t": "Na mão! Com certeza na mão!"}]},
-            {"t": "Aí o rapaz chegou por trás e empurrou ela com força.", "e": "bravo",
-             "pressionar": [{"q": "voce", "e": "apontando", "t": "O senhor viu o empurrão com seus próprios olhos?"}, {"q": "valdir", "e": "nervoso", "t": "Claro que… bom… eu estava servindo a mesa 3. Mas todo mundo comentou!"}]},
-            {"t": "Ele arrancou o celular e saiu correndo pra Rua Augusta.", "e": "normal",
-             "pressionar": [{"q": "voce", "e": "normal", "t": "Correndo ou andando?"}, {"q": "valdir", "e": "pensativo", "t": "Andando rápido… correndo… dá no mesmo, né?"}]}
-          ],
-          "contradicao": {"afirmacao": 1, "provas": ["video", "bo"]},
-          "acerto": [
-            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
-            {"q": "voce", "e": "apontando", "t": "A moça não estava na mesa! O vídeo mostra o celular SOZINHO sobre a mesa 7, e o próprio boletim diz que ela estava no banheiro."},
-            {"q": "valdir", "e": "chocado", "t": "AAAH!", "fx": "tremor"},
-            {"q": "beatriz", "e": "bravo", "t": "Senhor Valdir. O senhor viu ou não viu o empurrão?"},
-            {"q": "valdir", "e": "triste", "t": "Eu… eu estava de costas. Ouvi o pessoal falando."},
-            {"q": "lacerda", "e": "bravo", "t": "Isso não muda nada! Na delegacia ele confirmou o empurrão. Está no inquérito!", "fx": "bater"}
-          ],
-          "erro": [
-            {"q": "beatriz", "e": "bravo", "t": "Doutor(a), o que essa prova tem a ver com essa afirmação? Não brinque com o tempo do juízo."}
-          ],
-          "proxima": "a5"},
-        "a5": {"tipo": "apresentar", "falas": [
-          {"q": "lacerda", "e": "confiante", "t": "O depoimento da delegacia basta para condenar. O empurrão está registrado no inquérito policial."}
-        ], "pergunta": "Que dispositivo impede a sentença de se apoiar só no que foi dito no inquérito?",
-          "provas": ["cpp155"],
-          "acerto": [
-            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
-            {"q": "voce", "e": "confiante", "t": "Art. 155 do CPP: o juiz não pode fundamentar a decisão exclusivamente nos elementos colhidos na investigação. Em juízo, sob contraditório, a testemunha admitiu que não viu nada."},
-            {"q": "beatriz", "e": "normal", "t": "Procede. O depoimento da delegacia, sozinho, não sustenta a violência."},
-            {"q": "lacerda", "e": "chocado", "t": "Ngh…!", "fx": "tremor"}
-          ],
-          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não responde ao argumento do Ministério Público."}],
-          "proxima": "a6"},
-        "a6": {"tipo": "dialogo", "local": "tribunal", "falas": [
-          {"q": "lacerda", "e": "pensativo", "t": "Muito bem. Mesmo sem empurrão no bar, houve violência DEPOIS. O réu agrediu quem o segurou na rua."},
-          {"q": "lacerda", "e": "apontando", "t": "Violência para garantir a coisa subtraída: roubo impróprio! Chamo Jorge Almeida, o pedestre que deteve o réu."},
-          {"q": "voce", "e": "nervoso", "t": "(Se ele provar violência depois da subtração, volta a ser roubo… Preciso ouvir com atenção.)"}
-        ], "proxima": "a7"},
-        "a7": {"tipo": "depoimento", "testemunha": "jorge", "titulo": "A versão de Jorge",
-          "intro": [{"q": "jorge", "e": "confiante", "t": "Eu peguei o ladrão, doutora. Sou praticamente um herói."}],
-          "afirmacoes": [
-            {"t": "Vi o rapaz passando rápido com um celular e pensei: é ladrão.", "e": "confiante",
-             "pressionar": [{"q": "voce", "e": "normal", "t": "E o que o senhor fez?"}, {"q": "jorge", "e": "confiante", "t": "Segurei o braço dele, ué. Reflexo de herói."}]},
-            {"t": "Quando eu segurei, ele largou o celular no chão.", "e": "normal",
-             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Ele tentou se soltar?"}, {"q": "jorge", "e": "nervoso", "t": "Bom… na hora ele ficou branco. Pediu desculpa…"}]},
-            {"t": "Aí ele me deu um soco na cara pra fugir!", "e": "bravo",
-             "pressionar": [{"q": "voce", "e": "apontando", "t": "Um soco? Onde?"}, {"q": "jorge", "e": "nervoso", "t": "Aqui, ó… no rosto. Doeu muito. Muito mesmo."}]},
-            {"t": "Depois a polícia chegou e levou ele.", "e": "normal",
-             "pressionar": [{"q": "voce", "e": "normal", "t": "O senhor foi examinado naquela noite?"}, {"q": "jorge", "e": "nervoso", "t": "Fui… fizeram um exame lá. Coisa de rotina."}]}
-          ],
-          "contradicao": {"afirmacao": 2, "provas": ["laudo"]},
-          "acerto": [
-            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
-            {"q": "voce", "e": "apontando", "t": "Um soco na cara que não deixou marca nenhuma? O exame de corpo de delito feito na mesma noite não encontrou lesão alguma!"},
-            {"q": "jorge", "e": "chocado", "t": "É que… me disseram que ia ficar melhor assim no processo…", "fx": "tremor"},
-            {"q": "beatriz", "e": "bravo", "t": "Ordem! Ordem no tribunal!", "fx": "martelo"},
-            {"q": "beatriz", "e": "bravo", "t": "Senhor Jorge, falso testemunho é crime. A verdade, agora."},
-            {"q": "jorge", "e": "triste", "t": "Ele não me bateu. Largou o celular e ficou parado, tremendo."},
-            {"q": "lacerda", "e": "nervoso", "t": "…"}
-          ],
-          "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}],
-          "proxima": "a8"},
-        "a8": {"tipo": "escolha", "falas": [
-          {"q": "beatriz", "e": "normal", "t": "Encerrada a instrução. A defesa tem a palavra para as alegações finais."}
-        ], "pergunta": "Qual é a tese da defesa?",
-          "opcoes": [
-            {"t": "Absolvição: não houve crime algum.", "certa": false,
-             "falas": [{"q": "beatriz", "e": "pensativo", "t": "O vídeo mostra a subtração, doutor(a). Dê ao juízo uma tese que ele possa acolher."}]},
-            {"t": "Desclassificação para furto: sem violência ou grave ameaça, a subtração de celular é o art. 155, § 6º, II.", "certa": true,
-             "fundamentos": [{"chave": "CP#art-157", "trecho": "mediante grave ameaça ou violência a pessoa"}, {"chave": "CP#art-155/par-6/inc-ii", "trecho": "de aparelho de telefonia celular"}],
-             "falas": [{"q": "voce", "e": "confiante", "t": "Sem violência e sem grave ameaça, não há roubo. O que resta é a subtração de um celular: furto, art. 155, § 6º, II, do Código Penal."}]},
-            {"t": "Legítima defesa.", "certa": false,
-             "falas": [{"q": "lacerda", "e": "feliz", "t": "Legítima defesa contra quem? Ninguém agrediu o seu cliente!"}, {"q": "beatriz", "e": "bravo", "t": "Tese incompatível com os fatos."}]}
-          ],
-          "proxima": "a9"},
-        "a9": {"tipo": "dialogo", "local": "tribunal", "falas": [
-          {"q": "beatriz", "e": "pensativo", "t": "Sem modificar a descrição do fato, o juízo pode atribuir-lhe definição jurídica diversa, como permite o art. 383 do CPP."},
-          {"q": "beatriz", "e": "normal", "t": "Afastadas a violência e a grave ameaça, desclassifico a conduta para furto de aparelho celular, art. 155, § 6º, II, do Código Penal.", "fx": "martelo"},
-          {"q": "lucas", "e": "feliz", "t": "Obrigado… obrigado, doutor(a). Eu errei, mas não fiz o que disseram."},
-          {"q": "helena", "e": "feliz", "t": "Bom trabalho. Vindo de mim, é uma promoção."}
-        ], "fundamentos": [{"chave": "CPP#art-383", "trecho": "poderá atribuir-lhe definição jurídica diversa"}], "proxima": "a10"},
-        "a10": {"tipo": "veredicto", "carimbo": "DESCLASSIFICADO", "titulo": "Furto, não roubo", "texto": "Você derrubou duas testemunhas e a tese do roubo. A pena de Lucas será a do furto de celular, sem a violência que a acusação inventou."}
+    "voce": {
+      "nome": "Você",
+      "cargo": "",
+      "visual": null,
+      "voz": 520
+    },
+    "helena": {
+      "nome": "Helena Vasconcelos",
+      "cargo": "Sócia-gestora",
+      "voz": 470,
+      "visual": {
+        "pele": "#8D5524",
+        "cabelo": "coque",
+        "corCabelo": "#1b1b1b",
+        "roupa": "blazer",
+        "corRoupa": "#4a2c6b",
+        "gravata": null,
+        "oculos": true,
+        "barba": false
       }
     },
+    "rafael": {
+      "nome": "Rafael Duarte",
+      "cargo": "Sócio sênior",
+      "voz": 300,
+      "visual": {
+        "pele": "#F1C27D",
+        "cabelo": "topete",
+        "corCabelo": "#3b2414",
+        "roupa": "terno",
+        "corRoupa": "#1f2a44",
+        "gravata": "#8a1c1c",
+        "oculos": false,
+        "barba": true
+      }
+    },
+    "lacerda": {
+      "nome": "Dr. Otávio Lacerda",
+      "cargo": "Promotor de Justiça",
+      "voz": 260,
+      "visual": {
+        "pele": "#E0AC69",
+        "cabelo": "curto",
+        "corCabelo": "#9e9e9e",
+        "roupa": "terno",
+        "corRoupa": "#7a1f1f",
+        "gravata": "#111111",
+        "oculos": true,
+        "barba": false
+      }
+    },
+    "beatriz": {
+      "nome": "Dra. Beatriz Monteiro",
+      "cargo": "Juíza de Direito",
+      "voz": 420,
+      "visual": {
+        "pele": "#C68642",
+        "cabelo": "longo",
+        "corCabelo": "#2a1a10",
+        "roupa": "toga",
+        "corRoupa": "#111111",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      }
+    },
+    "silvia": {
+      "nome": "Dra. Sílvia Prado",
+      "cargo": "Advogada de defesa",
+      "voz": 480,
+      "visual": {
+        "pele": "#FFDBAC",
+        "cabelo": "rabo",
+        "corCabelo": "#a0522d",
+        "roupa": "blazer",
+        "corRoupa": "#1e5a4a",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      }
+    },
+    "valdir": {
+      "nome": "Valdir Souza",
+      "cargo": "Testemunha · garçom",
+      "voz": 340,
+      "visual": {
+        "pele": "#E0AC69",
+        "cabelo": "careca",
+        "corCabelo": "#5a3b22",
+        "roupa": "avental",
+        "corRoupa": "#ffffff",
+        "gravata": "#111111",
+        "oculos": false,
+        "barba": true
+      }
+    },
+    "jorge": {
+      "nome": "Jorge Almeida",
+      "cargo": "Testemunha · pedestre",
+      "voz": 300,
+      "visual": {
+        "pele": "#8D5524",
+        "cabelo": "curto",
+        "corCabelo": "#111111",
+        "roupa": "casual",
+        "corRoupa": "#c0392b",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      }
+    },
+    "lucas": {
+      "nome": "Lucas Ferreira",
+      "cargo": "Réu · 19 anos",
+      "voz": 380,
+      "visual": {
+        "pele": "#FFDBAC",
+        "cabelo": "cacheado",
+        "corCabelo": "#3b2414",
+        "roupa": "casual",
+        "corRoupa": "#5d6d7e",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      }
+    },
+    "ana": {
+      "nome": "Ana Ribeiro",
+      "cargo": "Vítima",
+      "voz": 500,
+      "visual": {
+        "pele": "#C68642",
+        "cabelo": "longo",
+        "corCabelo": "#111111",
+        "roupa": "casual",
+        "corRoupa": "#2e86c1",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      }
+    },
+    "bruno": {
+      "nome": "Bruno Tavares",
+      "cargo": "Réu",
+      "voz": 280,
+      "visual": {
+        "pele": "#F1C27D",
+        "cabelo": "topete",
+        "corCabelo": "#c9a227",
+        "roupa": "casual",
+        "corRoupa": "#34495e",
+        "gravata": null,
+        "oculos": false,
+        "barba": true
+      }
+    },
+    "moreira": {
+      "nome": "Sargento Moreira",
+      "cargo": "Testemunha · policial militar",
+      "voz": 270,
+      "visual": {
+        "pele": "#E0AC69",
+        "cabelo": "curto",
+        "corCabelo": "#1b1b1b",
+        "roupa": "farda",
+        "corRoupa": "#3e4a2d",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      }
+    },
+    "dani": {
+      "nome": "Dani",
+      "cargo": "Assessora do gabinete",
+      "voz": 540,
+      "visual": {
+        "pele": "#FFDBAC",
+        "cabelo": "cacheado",
+        "corCabelo": "#7b1e1e",
+        "roupa": "blazer",
+        "corRoupa": "#b9770e",
+        "gravata": null,
+        "oculos": true,
+        "barba": false
+      }
+    },
+    "narrador": {
+      "nome": "",
+      "cargo": "",
+      "visual": null,
+      "voz": 0
+    }
+  },
+  "episodios": [
     {
       "id": "ep2-protetiva",
       "numero": 2,
@@ -165,116 +205,547 @@
       "papel": "promotor",
       "nivel": "intermediario",
       "sinopse": "Ana foi ameaçada pelo ex-namorado, que também destruiu o notebook dela. A defesa quer levar tudo para o Juizado Especial. Agora você é o Ministério Público.",
-      "posicoes": {"voce": "acusacao", "silvia": "defesa", "beatriz": "juiz", "bruno": "testemunha", "ana": "testemunha", "lacerda": "escritorio"},
+      "posicoes": {
+        "voce": "acusacao",
+        "silvia": "defesa",
+        "beatriz": "juiz",
+        "bruno": "testemunha",
+        "ana": "testemunha",
+        "lacerda": "escritorio"
+      },
       "provas": [
-        {"id": "prints", "tipo": "prova", "icone": "💬", "nome": "Prints das mensagens", "descricao": "Celular do réu, 23h12: 'Se você não voltar, vou acabar com você.' 23h15: 'Pensa bem.'"},
-        {"id": "fotos", "tipo": "prova", "icone": "💻", "nome": "Fotos do notebook", "descricao": "Notebook de trabalho de Ana partido ao meio, tela estilhaçada a partir de um ponto de impacto."},
-        {"id": "boletim2", "tipo": "prova", "icone": "📄", "nome": "Registro de descumprimento", "descricao": "Duas ocorrências: Bruno compareceu ao trabalho de Ana após a primeira medida protetiva."},
-        {"id": "lmp5", "tipo": "lei", "icone": "📜", "nome": "Lei Maria da Penha, art. 5º, III", "chave": "LMP#art-5/inc-iii", "trecho": "independentemente de coabitação"},
-        {"id": "s600", "tipo": "lei", "icone": "⚖️", "nome": "Súmula 600 do STJ", "chave": "STJ600#enunciado", "trecho": "não se exige a coabitação entre autor e vítima"},
-        {"id": "lmp7iv", "tipo": "lei", "icone": "📜", "nome": "Lei Maria da Penha, art. 7º, IV — Violência patrimonial", "chave": "LMP#art-7/inc-iv", "trecho": "destruição parcial ou total de seus objetos, instrumentos de trabalho"},
-        {"id": "lmp41", "tipo": "lei", "icone": "📜", "nome": "Lei Maria da Penha, art. 41", "chave": "LMP#art-41", "trecho": "não se aplica a Lei nº 9.099"},
-        {"id": "s536", "tipo": "lei", "icone": "⚖️", "nome": "Súmula 536 do STJ", "chave": "STJ536#enunciado", "trecho": "a transação penal não se aplicam"},
-        {"id": "lmp22", "tipo": "lei", "icone": "📜", "nome": "Lei Maria da Penha, art. 22, VIII e § 6º", "chave": "LMP#art-22/par-6", "trecho": "descumprimento de medidas protetivas anteriormente impostas"}
+        {
+          "id": "prints",
+          "tipo": "prova",
+          "icone": "💬",
+          "nome": "Prints das mensagens",
+          "descricao": "Celular do réu, 23h12: 'Se você não voltar, vou acabar com você.' 23h15: 'Pensa bem.'"
+        },
+        {
+          "id": "fotos",
+          "tipo": "prova",
+          "icone": "💻",
+          "nome": "Fotos do notebook",
+          "descricao": "Notebook de trabalho de Ana partido ao meio, tela estilhaçada a partir de um ponto de impacto."
+        },
+        {
+          "id": "boletim2",
+          "tipo": "prova",
+          "icone": "📄",
+          "nome": "Registro de descumprimento",
+          "descricao": "Duas ocorrências: Bruno compareceu ao trabalho de Ana após a primeira medida protetiva."
+        },
+        {
+          "id": "lmp5",
+          "tipo": "lei",
+          "icone": "📜",
+          "nome": "Lei Maria da Penha, art. 5º, III",
+          "chave": "LMP#art-5/inc-iii",
+          "trecho": "independentemente de coabitação"
+        },
+        {
+          "id": "s600",
+          "tipo": "lei",
+          "icone": "⚖️",
+          "nome": "Súmula 600 do STJ",
+          "chave": "STJ600#enunciado",
+          "trecho": "não se exige a coabitação entre autor e vítima"
+        },
+        {
+          "id": "lmp7iv",
+          "tipo": "lei",
+          "icone": "📜",
+          "nome": "Lei Maria da Penha, art. 7º, IV — Violência patrimonial",
+          "chave": "LMP#art-7/inc-iv",
+          "trecho": "destruição parcial ou total de seus objetos, instrumentos de trabalho"
+        },
+        {
+          "id": "lmp41",
+          "tipo": "lei",
+          "icone": "📜",
+          "nome": "Lei Maria da Penha, art. 41",
+          "chave": "LMP#art-41",
+          "trecho": "não se aplica a Lei nº 9.099"
+        },
+        {
+          "id": "s536",
+          "tipo": "lei",
+          "icone": "⚖️",
+          "nome": "Súmula 536 do STJ",
+          "chave": "STJ536#enunciado",
+          "trecho": "a transação penal não se aplicam"
+        },
+        {
+          "id": "lmp22",
+          "tipo": "lei",
+          "icone": "📜",
+          "nome": "Lei Maria da Penha, art. 22, VIII e § 6º",
+          "chave": "LMP#art-22/par-6",
+          "trecho": "descumprimento de medidas protetivas anteriormente impostas"
+        }
       ],
       "inicio": "b1",
       "cenas": {
-        "b1": {"tipo": "titulo", "texto": "Episódio 2", "subtitulo": "Medida Protetiva", "proxima": "b2"},
-        "b2": {"tipo": "dialogo", "local": "escritorio", "falas": [
-          {"q": "lacerda", "e": "normal", "t": "Promotoria de Violência Doméstica. Hoje você sustenta sozinho(a)."},
-          {"q": "lacerda", "e": "pensativo", "t": "A Dra. Sílvia vai dizer que, como nunca moraram juntos, não é caso da Lei Maria da Penha. Não deixe."},
-          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["prints", "fotos", "boletim2", "lmp5", "s600", "lmp7iv", "lmp41", "s536", "lmp22"]},
-          {"q": "lacerda", "e": "confiante", "t": "E lembre-se: a vítima está na sala. Você fala por ela."}
-        ], "proxima": "b3"},
-        "b3": {"tipo": "apresentar", "local": "tribunal", "falas": [
-          {"q": "beatriz", "e": "normal", "t": "Aberta a audiência. Réu: Bruno Tavares.", "fx": "martelo"},
-          {"q": "silvia", "e": "confiante", "t": "Preliminarmente, Excelência: réu e vítima namoraram, mas NUNCA moraram juntos. Sem coabitação, não há violência doméstica."},
-          {"q": "silvia", "e": "apontando", "t": "O caso deve ir para o Juizado Especial Criminal!"}
-        ], "pergunta": "Mostre o fundamento que derruba a preliminar da defesa.",
-          "provas": ["lmp5", "s600"],
-          "acerto": [
-            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
-            {"q": "voce", "e": "confiante", "t": "Relação íntima de afeto configura violência doméstica independentemente de coabitação. Está no art. 5º, III, da Lei Maria da Penha, e o STJ consolidou isso na Súmula 600."},
-            {"q": "beatriz", "e": "normal", "t": "Preliminar rejeitada.", "fx": "martelo"},
-            {"q": "silvia", "e": "nervoso", "t": "Hmpf."}
+        "b1": {
+          "tipo": "titulo",
+          "texto": "Episódio 2",
+          "subtitulo": "Medida Protetiva",
+          "proxima": "b2"
+        },
+        "b2": {
+          "tipo": "dialogo",
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "lacerda",
+              "e": "normal",
+              "t": "Promotoria de Violência Doméstica. Hoje você sustenta sozinho(a)."
+            },
+            {
+              "q": "lacerda",
+              "e": "pensativo",
+              "t": "A Dra. Sílvia vai dizer que, como nunca moraram juntos, não é caso da Lei Maria da Penha. Não deixe."
+            },
+            {
+              "q": "narrador",
+              "t": "Os autos do processo foram atualizados.",
+              "recebe": [
+                "prints",
+                "fotos",
+                "boletim2",
+                "lmp5",
+                "s600",
+                "lmp7iv",
+                "lmp41",
+                "s536",
+                "lmp22"
+              ]
+            },
+            {
+              "q": "lacerda",
+              "e": "confiante",
+              "t": "E lembre-se: a vítima está na sala. Você fala por ela."
+            }
           ],
-          "erro": [{"q": "beatriz", "e": "bravo", "t": "Promotor(a), esse fundamento não responde à preliminar de coabitação."}],
-          "proxima": "b4"},
-        "b4": {"tipo": "depoimento", "testemunha": "bruno", "titulo": "Interrogatório de Bruno",
+          "proxima": "b3"
+        },
+        "b3": {
+          "tipo": "apresentar",
+          "local": "tribunal",
+          "falas": [
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "Aberta a audiência. Réu: Bruno Tavares.",
+              "fx": "martelo"
+            },
+            {
+              "q": "silvia",
+              "e": "confiante",
+              "t": "Preliminarmente, Excelência: réu e vítima namoraram, mas NUNCA moraram juntos. Sem coabitação, não há violência doméstica."
+            },
+            {
+              "q": "silvia",
+              "e": "apontando",
+              "t": "O caso deve ir para o Juizado Especial Criminal!"
+            }
+          ],
+          "pergunta": "Mostre o fundamento que derruba a preliminar da defesa.",
+          "provas": [
+            "lmp5",
+            "s600"
+          ],
+          "acerto": [
+            {
+              "q": "voce",
+              "e": "apontando",
+              "t": "PROTESTO!",
+              "fx": "protesto"
+            },
+            {
+              "q": "voce",
+              "e": "confiante",
+              "t": "Relação íntima de afeto configura violência doméstica independentemente de coabitação. Está no art. 5º, III, da Lei Maria da Penha, e o STJ consolidou isso na Súmula 600."
+            },
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "Preliminar rejeitada.",
+              "fx": "martelo"
+            },
+            {
+              "q": "silvia",
+              "e": "nervoso",
+              "t": "Hmpf."
+            }
+          ],
+          "erro": [
+            {
+              "q": "beatriz",
+              "e": "bravo",
+              "t": "Promotor(a), esse fundamento não responde à preliminar de coabitação."
+            }
+          ],
+          "proxima": "b4"
+        },
+        "b4": {
+          "tipo": "depoimento",
+          "testemunha": "bruno",
+          "titulo": "Interrogatório de Bruno",
           "intro": [
-            {"q": "beatriz", "e": "normal", "t": "O réu será interrogado. O senhor tem o direito de permanecer calado, e o silêncio não será usado contra o senhor."},
-            {"q": "bruno", "e": "confiante", "t": "Eu quero falar. Não tenho nada a esconder."}
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "O réu será interrogado. O senhor tem o direito de permanecer calado, e o silêncio não será usado contra o senhor."
+            },
+            {
+              "q": "bruno",
+              "e": "confiante",
+              "t": "Eu quero falar. Não tenho nada a esconder."
+            }
           ],
           "afirmacoes": [
-            {"t": "A gente terminou numa boa. Sem briga nenhuma.", "e": "confiante",
-             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Numa boa? Vocês voltaram a se falar?"}, {"q": "bruno", "e": "normal", "t": "Nem mandei mais mensagem pra ela. Segui minha vida."}]},
-            {"t": "Eu nunca ameacei a Ana. Nunca!", "e": "bravo",
-             "pressionar": [{"q": "voce", "e": "apontando", "t": "Nunca, nem por mensagem?"}, {"q": "bruno", "e": "nervoso", "t": "N-nunca. Pode olhar meu celular."}]},
-            {"t": "Eu só quero que me deixem em paz.", "e": "triste",
-             "pressionar": [{"q": "voce", "e": "normal", "t": "O senhor esteve no trabalho dela depois da primeira medida?"}, {"q": "bruno", "e": "nervoso", "t": "Eu… passei por lá. Rua pública, né?"}]}
+            {
+              "t": "A gente terminou numa boa. Sem briga nenhuma.",
+              "e": "confiante",
+              "pressionar": [
+                {
+                  "q": "voce",
+                  "e": "pensativo",
+                  "t": "Numa boa? Vocês voltaram a se falar?"
+                },
+                {
+                  "q": "bruno",
+                  "e": "normal",
+                  "t": "Nem mandei mais mensagem pra ela. Segui minha vida."
+                }
+              ]
+            },
+            {
+              "t": "Eu nunca ameacei a Ana. Nunca!",
+              "e": "bravo",
+              "pressionar": [
+                {
+                  "q": "voce",
+                  "e": "apontando",
+                  "t": "Nunca, nem por mensagem?"
+                },
+                {
+                  "q": "bruno",
+                  "e": "nervoso",
+                  "t": "N-nunca. Pode olhar meu celular."
+                }
+              ]
+            },
+            {
+              "t": "Eu só quero que me deixem em paz.",
+              "e": "triste",
+              "pressionar": [
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "O senhor esteve no trabalho dela depois da primeira medida?"
+                },
+                {
+                  "q": "bruno",
+                  "e": "nervoso",
+                  "t": "Eu… passei por lá. Rua pública, né?"
+                }
+              ]
+            }
           ],
-          "contradicao": {"afirmacao": 1, "provas": ["prints"]},
+          "contradicao": {
+            "afirmacao": 1,
+            "provas": [
+              "prints"
+            ]
+          },
           "acerto": [
-            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
-            {"q": "voce", "e": "apontando", "t": "“Se você não voltar, vou acabar com você.” Enviada às 23h12. Do SEU celular, senhor Bruno."},
-            {"q": "bruno", "e": "chocado", "t": "Isso… isso foi da boca pra fora!", "fx": "tremor"},
-            {"q": "silvia", "e": "nervoso", "t": "Excelência, a mensagem está fora de contexto!"},
-            {"q": "beatriz", "e": "normal", "t": "A mensagem consta dos autos. Prossiga, senhor Bruno.", "fx": "martelo"}
+            {
+              "q": "voce",
+              "e": "apontando",
+              "t": "PROTESTO!",
+              "fx": "protesto"
+            },
+            {
+              "q": "voce",
+              "e": "apontando",
+              "t": "“Se você não voltar, vou acabar com você.” Enviada às 23h12. Do SEU celular, senhor Bruno."
+            },
+            {
+              "q": "bruno",
+              "e": "chocado",
+              "t": "Isso… isso foi da boca pra fora!",
+              "fx": "tremor"
+            },
+            {
+              "q": "silvia",
+              "e": "nervoso",
+              "t": "Excelência, a mensagem está fora de contexto!"
+            },
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "A mensagem consta dos autos. Prossiga, senhor Bruno.",
+              "fx": "martelo"
+            }
           ],
-          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não contradiz o que o réu acabou de dizer."}],
-          "proxima": "b5"},
-        "b5": {"tipo": "depoimento", "testemunha": "bruno", "titulo": "A nova versão de Bruno",
-          "intro": [{"q": "bruno", "e": "nervoso", "t": "Tá, eu mandei. Mas foi só raiva. Eu nunca encostei em nada dela."}],
+          "erro": [
+            {
+              "q": "beatriz",
+              "e": "bravo",
+              "t": "Isso não contradiz o que o réu acabou de dizer."
+            }
+          ],
+          "proxima": "b5"
+        },
+        "b5": {
+          "tipo": "depoimento",
+          "testemunha": "bruno",
+          "titulo": "A nova versão de Bruno",
+          "intro": [
+            {
+              "q": "bruno",
+              "e": "nervoso",
+              "t": "Tá, eu mandei. Mas foi só raiva. Eu nunca encostei em nada dela."
+            }
+          ],
           "afirmacoes": [
-            {"t": "Fui buscar minha mochila na casa dela e já saí.", "e": "normal",
-             "pressionar": [{"q": "voce", "e": "normal", "t": "E o notebook?"}, {"q": "bruno", "e": "nervoso", "t": "Que notebook? Ah… aquele."}]},
-            {"t": "O notebook caiu sozinho da mesa quando eu peguei a mochila.", "e": "nervoso",
-             "pressionar": [{"q": "voce", "e": "pensativo", "t": "Caiu de que altura?"}, {"q": "bruno", "e": "nervoso", "t": "Sei lá. Da mesa. Uns setenta centímetros."}]},
-            {"t": "E nem estragou tanto. Ela que é exagerada.", "e": "confiante",
-             "pressionar": [{"q": "voce", "e": "bravo", "t": "Era o instrumento de trabalho dela."}, {"q": "bruno", "e": "triste", "t": "…"}]}
+            {
+              "t": "Fui buscar minha mochila na casa dela e já saí.",
+              "e": "normal",
+              "pressionar": [
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "E o notebook?"
+                },
+                {
+                  "q": "bruno",
+                  "e": "nervoso",
+                  "t": "Que notebook? Ah… aquele."
+                }
+              ]
+            },
+            {
+              "t": "O notebook caiu sozinho da mesa quando eu peguei a mochila.",
+              "e": "nervoso",
+              "pressionar": [
+                {
+                  "q": "voce",
+                  "e": "pensativo",
+                  "t": "Caiu de que altura?"
+                },
+                {
+                  "q": "bruno",
+                  "e": "nervoso",
+                  "t": "Sei lá. Da mesa. Uns setenta centímetros."
+                }
+              ]
+            },
+            {
+              "t": "E nem estragou tanto. Ela que é exagerada.",
+              "e": "confiante",
+              "pressionar": [
+                {
+                  "q": "voce",
+                  "e": "bravo",
+                  "t": "Era o instrumento de trabalho dela."
+                },
+                {
+                  "q": "bruno",
+                  "e": "triste",
+                  "t": "…"
+                }
+              ]
+            }
           ],
-          "contradicao": {"afirmacao": 1, "provas": ["fotos"]},
+          "contradicao": {
+            "afirmacao": 1,
+            "provas": [
+              "fotos"
+            ]
+          },
           "acerto": [
-            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
-            {"q": "voce", "e": "apontando", "t": "Um notebook partido ao meio, com a tela estilhaçada a partir de um ponto de impacto, não “cai sozinho” de setenta centímetros."},
-            {"q": "voce", "e": "confiante", "t": "Destruir instrumento de trabalho da vítima é violência patrimonial: art. 7º, IV, da Lei Maria da Penha."},
-            {"q": "bruno", "e": "chocado", "t": "!!!", "fx": "tremor"}
+            {
+              "q": "voce",
+              "e": "apontando",
+              "t": "PROTESTO!",
+              "fx": "protesto"
+            },
+            {
+              "q": "voce",
+              "e": "apontando",
+              "t": "Um notebook partido ao meio, com a tela estilhaçada a partir de um ponto de impacto, não “cai sozinho” de setenta centímetros."
+            },
+            {
+              "q": "voce",
+              "e": "confiante",
+              "t": "Destruir instrumento de trabalho da vítima é violência patrimonial: art. 7º, IV, da Lei Maria da Penha."
+            },
+            {
+              "q": "bruno",
+              "e": "chocado",
+              "t": "!!!",
+              "fx": "tremor"
+            }
           ],
-          "erro": [{"q": "beatriz", "e": "bravo", "t": "Promotor(a), essa prova não tem relação com a afirmação."}],
-          "proxima": "b6"},
-        "b6": {"tipo": "apresentar", "local": "tribunal", "falas": [
-          {"q": "silvia", "e": "confiante", "t": "Mesmo assim, Excelência, o réu é primário. A defesa propõe transação penal. Ele paga cestas básicas e todos seguimos em frente."}
-        ], "pergunta": "Qual fundamento impede a transação penal?",
-          "provas": ["lmp41", "s536"],
+          "erro": [
+            {
+              "q": "beatriz",
+              "e": "bravo",
+              "t": "Promotor(a), essa prova não tem relação com a afirmação."
+            }
+          ],
+          "proxima": "b6"
+        },
+        "b6": {
+          "tipo": "apresentar",
+          "local": "tribunal",
+          "falas": [
+            {
+              "q": "silvia",
+              "e": "confiante",
+              "t": "Mesmo assim, Excelência, o réu é primário. A defesa propõe transação penal. Ele paga cestas básicas e todos seguimos em frente."
+            }
+          ],
+          "pergunta": "Qual fundamento impede a transação penal?",
+          "provas": [
+            "lmp41",
+            "s536"
+          ],
           "acerto": [
-            {"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"},
-            {"q": "voce", "e": "confiante", "t": "Nos crimes com violência doméstica contra a mulher não se aplica a Lei 9.099, independentemente da pena: art. 41. E a Súmula 536 do STJ afasta expressamente a transação penal."},
-            {"q": "beatriz", "e": "normal", "t": "Indeferida a transação.", "fx": "martelo"}
+            {
+              "q": "voce",
+              "e": "apontando",
+              "t": "PROTESTO!",
+              "fx": "protesto"
+            },
+            {
+              "q": "voce",
+              "e": "confiante",
+              "t": "Nos crimes com violência doméstica contra a mulher não se aplica a Lei 9.099, independentemente da pena: art. 41. E a Súmula 536 do STJ afasta expressamente a transação penal."
+            },
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "Indeferida a transação.",
+              "fx": "martelo"
+            }
           ],
-          "erro": [{"q": "beatriz", "e": "bravo", "t": "Isso não impede a transação penal, promotor(a)."}],
-          "proxima": "b7"},
-        "b7": {"tipo": "escolha", "falas": [
-          {"q": "ana", "e": "triste", "t": "(baixinho) Ele apareceu no meu trabalho duas vezes depois da primeira medida…"},
-          {"q": "beatriz", "e": "normal", "t": "Ministério Público, quais medidas requer?"}
-        ], "pergunta": "Seu requerimento:",
+          "erro": [
+            {
+              "q": "beatriz",
+              "e": "bravo",
+              "t": "Isso não impede a transação penal, promotor(a)."
+            }
+          ],
+          "proxima": "b7"
+        },
+        "b7": {
+          "tipo": "escolha",
+          "falas": [
+            {
+              "q": "ana",
+              "e": "triste",
+              "t": "(baixinho) Ele apareceu no meu trabalho duas vezes depois da primeira medida…"
+            },
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "Ministério Público, quais medidas requer?"
+            }
+          ],
+          "pergunta": "Seu requerimento:",
           "opcoes": [
-            {"t": "Nenhuma medida agora. Melhor aguardar a sentença.", "certa": false,
-             "falas": [{"q": "beatriz", "e": "pensativo", "t": "Medida protetiva é de urgência justamente porque não pode esperar a sentença."}]},
-            {"t": "Proibição de aproximação e contato, com monitoração eletrônica, que tem prioridade porque houve descumprimento anterior (art. 22, VIII e § 6º).", "certa": true,
-             "fundamentos": [{"chave": "LMP#art-22/inc-viii", "trecho": "monitoração eletrônica"}, {"chave": "LMP#art-22/par-6", "trecho": "descumprimento de medidas protetivas anteriormente impostas"}],
-             "falas": [{"q": "voce", "e": "confiante", "t": "Requeiro proibição de aproximação e de contato e monitoração eletrônica, com dispositivo de alerta para a vítima. Houve descumprimento anterior: a lei dá prioridade a essa medida."}]},
-            {"t": "Prisão perpétua para o réu!", "certa": false,
-             "falas": [{"q": "silvia", "e": "feliz", "t": "A Constituição veda penas de caráter perpétuo, colega."}, {"q": "beatriz", "e": "bravo", "t": "Art. 5º, XLVII, b. Por favor."}],
-             "fundamentos": [{"chave": "CF#art-5/inc-xlvii/ali-b", "trecho": "de caráter perpétuo"}]}
+            {
+              "t": "Nenhuma medida agora. Melhor aguardar a sentença.",
+              "certa": false,
+              "falas": [
+                {
+                  "q": "beatriz",
+                  "e": "pensativo",
+                  "t": "Medida protetiva é de urgência justamente porque não pode esperar a sentença."
+                }
+              ]
+            },
+            {
+              "t": "Proibição de aproximação e contato, com monitoração eletrônica, que tem prioridade porque houve descumprimento anterior (art. 22, VIII e § 6º).",
+              "certa": true,
+              "fundamentos": [
+                {
+                  "chave": "LMP#art-22/inc-viii",
+                  "trecho": "monitoração eletrônica"
+                },
+                {
+                  "chave": "LMP#art-22/par-6",
+                  "trecho": "descumprimento de medidas protetivas anteriormente impostas"
+                }
+              ],
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "Requeiro proibição de aproximação e de contato e monitoração eletrônica, com dispositivo de alerta para a vítima. Houve descumprimento anterior: a lei dá prioridade a essa medida."
+                }
+              ]
+            },
+            {
+              "t": "Prisão perpétua para o réu!",
+              "certa": false,
+              "falas": [
+                {
+                  "q": "silvia",
+                  "e": "feliz",
+                  "t": "A Constituição veda penas de caráter perpétuo, colega."
+                },
+                {
+                  "q": "beatriz",
+                  "e": "bravo",
+                  "t": "Art. 5º, XLVII, b. Por favor."
+                }
+              ],
+              "fundamentos": [
+                {
+                  "chave": "CF#art-5/inc-xlvii/ali-b",
+                  "trecho": "de caráter perpétuo"
+                }
+              ]
+            }
           ],
-          "proxima": "b8"},
-        "b8": {"tipo": "dialogo", "local": "tribunal", "falas": [
-          {"q": "beatriz", "e": "normal", "t": "Defiro as medidas requeridas, inclusive a monitoração eletrônica, a ser instalada hoje.", "fx": "martelo"},
-          {"q": "ana", "e": "feliz", "t": "Obrigada. De verdade."},
-          {"q": "lacerda", "e": "feliz", "t": "É para isso que existe a Promotoria."}
-        ], "proxima": "b9"},
-        "b9": {"tipo": "veredicto", "carimbo": "DEFERIDO", "titulo": "Ana está protegida", "texto": "Preliminar rejeitada, versões do réu desmontadas, transação negada e medidas deferidas. A lei chegou até Ana."}
-      }
+          "proxima": "b8"
+        },
+        "b8": {
+          "tipo": "dialogo",
+          "local": "tribunal",
+          "falas": [
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "Defiro as medidas requeridas, inclusive a monitoração eletrônica, a ser instalada hoje.",
+              "fx": "martelo"
+            },
+            {
+              "q": "ana",
+              "e": "feliz",
+              "t": "Obrigada. De verdade."
+            },
+            {
+              "q": "lacerda",
+              "e": "feliz",
+              "t": "É para isso que existe a Promotoria."
+            }
+          ],
+          "proxima": "b9"
+        },
+        "b9": {
+          "tipo": "veredicto",
+          "carimbo": "DEFERIDO",
+          "titulo": "Ana está protegida",
+          "texto": "Preliminar rejeitada, versões do réu desmontadas, transação negada e medidas deferidas. A lei chegou até Ana."
+        }
+      },
+      "avulso": true
     },
     {
       "id": "ep3-sentenca",
@@ -283,110 +754,492 @@
       "papel": "juiz",
       "nivel": "avancado",
       "sinopse": "Agora é você quem bate o martelo. Caio, 22 anos, foi preso com 12 porções de maconha e R$ 80. Acusação e defesa vão testar seus limites com protestos. Decida como manda a lei.",
-      "posicoes": {"voce": "juiz", "lacerda": "acusacao", "silvia": "defesa", "moreira": "testemunha", "dani": "escritorio"},
+      "posicoes": {
+        "voce": "juiz",
+        "lacerda": "acusacao",
+        "silvia": "defesa",
+        "moreira": "testemunha",
+        "dani": "escritorio"
+      },
       "provas": [
-        {"id": "auto", "tipo": "prova", "icone": "🧾", "nome": "Auto de apreensão", "descricao": "12 porções de maconha (30 g no total) e R$ 80 em notas trocadas. Nenhuma balança, caderno de anotações ou embalagens vazias."},
-        {"id": "cpp212", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 212 — Perguntas às testemunhas", "chave": "CPP#art-212", "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"},
-        {"id": "cpp186", "tipo": "lei", "icone": "⚖️", "nome": "CPP, art. 186, parágrafo único — Silêncio", "chave": "CPP#art-186/par-unico", "trecho": "O silêncio, que não importará em confissão, não poderá ser interpretado em prejuízo da defesa"},
-        {"id": "ld28p2", "tipo": "lei", "icone": "📜", "nome": "Lei de Drogas, art. 28, § 2º — Critérios", "chave": "LD#art-28/par-2", "trecho": "o juiz atenderá à natureza e à quantidade da substância apreendida"},
-        {"id": "ld28", "tipo": "lei", "icone": "📜", "nome": "Lei de Drogas, art. 28 — Porte para consumo", "chave": "LD#art-28/inc-i", "trecho": "advertência sobre os efeitos das drogas"},
-        {"id": "ld33", "tipo": "lei", "icone": "📜", "nome": "Lei de Drogas, art. 33 — Tráfico", "chave": "LD#art-33/pena", "trecho": "reclusão de 5 (cinco) a 15 (quinze) anos"}
+        {
+          "id": "auto",
+          "tipo": "prova",
+          "icone": "🧾",
+          "nome": "Auto de apreensão",
+          "descricao": "12 porções de maconha (30 g no total) e R$ 80 em notas trocadas. Nenhuma balança, caderno de anotações ou embalagens vazias."
+        },
+        {
+          "id": "cpp212",
+          "tipo": "lei",
+          "icone": "⚖️",
+          "nome": "CPP, art. 212 — Perguntas às testemunhas",
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+        },
+        {
+          "id": "cpp186",
+          "tipo": "lei",
+          "icone": "⚖️",
+          "nome": "CPP, art. 186, parágrafo único — Silêncio",
+          "chave": "CPP#art-186/par-unico",
+          "trecho": "O silêncio, que não importará em confissão, não poderá ser interpretado em prejuízo da defesa"
+        },
+        {
+          "id": "ld28p2",
+          "tipo": "lei",
+          "icone": "📜",
+          "nome": "Lei de Drogas, art. 28, § 2º — Critérios",
+          "chave": "LD#art-28/par-2",
+          "trecho": "o juiz atenderá à natureza e à quantidade da substância apreendida"
+        },
+        {
+          "id": "ld28",
+          "tipo": "lei",
+          "icone": "📜",
+          "nome": "Lei de Drogas, art. 28 — Porte para consumo",
+          "chave": "LD#art-28/inc-i",
+          "trecho": "advertência sobre os efeitos das drogas"
+        },
+        {
+          "id": "ld33",
+          "tipo": "lei",
+          "icone": "📜",
+          "nome": "Lei de Drogas, art. 33 — Tráfico",
+          "chave": "LD#art-33/pena",
+          "trecho": "reclusão de 5 (cinco) a 15 (quinze) anos"
+        }
       ],
       "inicio": "c1",
       "cenas": {
-        "c1": {"tipo": "titulo", "texto": "Episódio 3", "subtitulo": "Usuário ou Traficante?", "proxima": "c2"},
-        "c2": {"tipo": "dialogo", "local": "escritorio", "falas": [
-          {"q": "dani", "e": "feliz", "t": "Bom dia, Excelência! Café na mesa e processo do Caio separado."},
-          {"q": "dani", "e": "pensativo", "t": "Doze porções de maconha, oitenta reais. O MP pede tráfico; a defesa diz que é para consumo."},
-          {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["auto", "cpp212", "cpp186", "ld28p2", "ld28", "ld33"]},
-          {"q": "dani", "e": "apontando", "t": "Dica: a Dra. Sílvia e o Dr. Lacerda vão protestar o tempo todo. Quem decide é o senhor… ou a senhora. Mantenha a ordem!"}
-        ], "proxima": "c3"},
-        "c3": {"tipo": "dialogo", "local": "tribunal", "falas": [
-          {"q": "voce", "e": "confiante", "t": "Declaro aberta a audiência. Que entre a testemunha.", "fx": "martelo"},
-          {"q": "lacerda", "e": "confiante", "t": "Chamo o Sargento Moreira, que efetuou a prisão."}
-        ], "proxima": "c4"},
-        "c4": {"tipo": "decidir", "falas": [
-          {"q": "lacerda", "e": "apontando", "t": "Sargento, o senhor viu o réu vendendo droga para um rapaz de moto, não viu?"},
-          {"q": "silvia", "e": "apontando", "t": "PROTESTO! A pergunta induz a resposta, Excelência!", "fx": "protesto"}
-        ], "pergunta": "A defesa protesta: pergunta indutiva. Sua decisão?",
-          "correta": "deferir",
-          "fundamentos": [{"chave": "CPP#art-212", "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"}],
-          "acerto": [
-            {"q": "voce", "e": "confiante", "t": "Deferido. Reformule a pergunta, doutor.", "fx": "martelo"},
-            {"q": "lacerda", "e": "nervoso", "t": "…Sargento, o que o senhor viu naquela esquina?"},
-            {"q": "moreira", "e": "normal", "t": "Vi o réu parado, sozinho. Não presenciei venda nenhuma."}
+        "c1": {
+          "tipo": "titulo",
+          "texto": "Episódio 3",
+          "subtitulo": "Usuário ou Traficante?",
+          "proxima": "c2"
+        },
+        "c2": {
+          "tipo": "dialogo",
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "dani",
+              "e": "feliz",
+              "t": "Bom dia, Excelência! Café na mesa e processo do Caio separado."
+            },
+            {
+              "q": "dani",
+              "e": "pensativo",
+              "t": "Doze porções de maconha, oitenta reais. O MP pede tráfico; a defesa diz que é para consumo."
+            },
+            {
+              "q": "narrador",
+              "t": "Os autos do processo foram atualizados.",
+              "recebe": [
+                "auto",
+                "cpp212",
+                "cpp186",
+                "ld28p2",
+                "ld28",
+                "ld33"
+              ]
+            },
+            {
+              "q": "dani",
+              "e": "apontando",
+              "t": "Dica: a Dra. Sílvia e o Dr. Lacerda vão protestar o tempo todo. Quem decide é o senhor… ou a senhora. Mantenha a ordem!"
+            }
           ],
-          "erro": [{"q": "dani", "e": "nervoso", "t": "(sussurrando) Excelência… o art. 212 do CPP manda não admitir pergunta que induz a resposta!"}],
-          "proxima": "c5"},
-        "c5": {"tipo": "decidir", "falas": [
-          {"q": "silvia", "e": "confiante", "t": "Sargento, quanto o senhor ganha por mês? É verdade que está devendo o cartão?"},
-          {"q": "lacerda", "e": "apontando", "t": "PROTESTO! Isso não tem nenhuma relação com a causa!", "fx": "protesto"}
-        ], "pergunta": "A acusação protesta: pergunta sem relação com a causa. Sua decisão?",
-          "correta": "deferir",
-          "fundamentos": [{"chave": "CPP#art-212", "trecho": "não tiverem relação com a causa"}],
-          "acerto": [
-            {"q": "voce", "e": "bravo", "t": "Deferido. A vida financeira da testemunha não está em julgamento, doutora.", "fx": "martelo"},
-            {"q": "silvia", "e": "nervoso", "t": "Retiro a pergunta, Excelência."}
+          "proxima": "c3"
+        },
+        "c3": {
+          "tipo": "dialogo",
+          "local": "tribunal",
+          "falas": [
+            {
+              "q": "voce",
+              "e": "confiante",
+              "t": "Declaro aberta a audiência. Que entre a testemunha.",
+              "fx": "martelo"
+            },
+            {
+              "q": "lacerda",
+              "e": "confiante",
+              "t": "Chamo o Sargento Moreira, que efetuou a prisão."
+            }
           ],
-          "erro": [{"q": "dani", "e": "nervoso", "t": "(sussurrando) Excelência… pergunta sem relação com a causa também não deve ser admitida. Art. 212!"}],
-          "proxima": "c6"},
-        "c6": {"tipo": "decidir", "falas": [
-          {"q": "silvia", "e": "pensativo", "t": "Sargento, foi apreendida balança, caderno de anotações ou embalagens vazias?"},
-          {"q": "lacerda", "e": "bravo", "t": "PROTESTO! A defesa está repetindo perguntas já respondidas!", "fx": "protesto"}
-        ], "pergunta": "A acusação diz que a pergunta é repetida. Sua decisão?",
+          "proxima": "c4"
+        },
+        "c4": {
+          "tipo": "decidir",
+          "falas": [
+            {
+              "q": "lacerda",
+              "e": "apontando",
+              "t": "Sargento, o senhor viu o réu vendendo droga para um rapaz de moto, não viu?"
+            },
+            {
+              "q": "silvia",
+              "e": "apontando",
+              "t": "PROTESTO! A pergunta induz a resposta, Excelência!",
+              "fx": "protesto"
+            }
+          ],
+          "pergunta": "A defesa protesta: pergunta indutiva. Sua decisão?",
+          "correta": "deferir",
+          "fundamentos": [
+            {
+              "chave": "CPP#art-212",
+              "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+            }
+          ],
+          "acerto": [
+            {
+              "q": "voce",
+              "e": "confiante",
+              "t": "Deferido. Reformule a pergunta, doutor.",
+              "fx": "martelo"
+            },
+            {
+              "q": "lacerda",
+              "e": "nervoso",
+              "t": "…Sargento, o que o senhor viu naquela esquina?"
+            },
+            {
+              "q": "moreira",
+              "e": "normal",
+              "t": "Vi o réu parado, sozinho. Não presenciei venda nenhuma."
+            }
+          ],
+          "erro": [
+            {
+              "q": "dani",
+              "e": "nervoso",
+              "t": "(sussurrando) Excelência… o art. 212 do CPP manda não admitir pergunta que induz a resposta!"
+            }
+          ],
+          "proxima": "c5"
+        },
+        "c5": {
+          "tipo": "decidir",
+          "falas": [
+            {
+              "q": "silvia",
+              "e": "confiante",
+              "t": "Sargento, quanto o senhor ganha por mês? É verdade que está devendo o cartão?"
+            },
+            {
+              "q": "lacerda",
+              "e": "apontando",
+              "t": "PROTESTO! Isso não tem nenhuma relação com a causa!",
+              "fx": "protesto"
+            }
+          ],
+          "pergunta": "A acusação protesta: pergunta sem relação com a causa. Sua decisão?",
+          "correta": "deferir",
+          "fundamentos": [
+            {
+              "chave": "CPP#art-212",
+              "trecho": "não tiverem relação com a causa"
+            }
+          ],
+          "acerto": [
+            {
+              "q": "voce",
+              "e": "bravo",
+              "t": "Deferido. A vida financeira da testemunha não está em julgamento, doutora.",
+              "fx": "martelo"
+            },
+            {
+              "q": "silvia",
+              "e": "nervoso",
+              "t": "Retiro a pergunta, Excelência."
+            }
+          ],
+          "erro": [
+            {
+              "q": "dani",
+              "e": "nervoso",
+              "t": "(sussurrando) Excelência… pergunta sem relação com a causa também não deve ser admitida. Art. 212!"
+            }
+          ],
+          "proxima": "c6"
+        },
+        "c6": {
+          "tipo": "decidir",
+          "falas": [
+            {
+              "q": "silvia",
+              "e": "pensativo",
+              "t": "Sargento, foi apreendida balança, caderno de anotações ou embalagens vazias?"
+            },
+            {
+              "q": "lacerda",
+              "e": "bravo",
+              "t": "PROTESTO! A defesa está repetindo perguntas já respondidas!",
+              "fx": "protesto"
+            }
+          ],
+          "pergunta": "A acusação diz que a pergunta é repetida. Sua decisão?",
           "correta": "indeferir",
-          "fundamentos": [{"chave": "CPP#art-212", "trecho": "importarem na repetição de outra já respondida"}],
-          "acerto": [
-            {"q": "voce", "e": "normal", "t": "Indeferido. A pergunta é nova e pertinente. Responda, sargento.", "fx": "martelo"},
-            {"q": "moreira", "e": "normal", "t": "Não havia balança nem anotações. Só as doze porções e os oitenta reais."}
+          "fundamentos": [
+            {
+              "chave": "CPP#art-212",
+              "trecho": "importarem na repetição de outra já respondida"
+            }
           ],
-          "erro": [{"q": "dani", "e": "nervoso", "t": "(sussurrando) Mas ninguém tinha perguntado isso, Excelência! Só pergunta já respondida pode ser barrada."}],
-          "proxima": "c7"},
-        "c7": {"tipo": "decidir", "falas": [
-          {"q": "lacerda", "e": "bravo", "t": "Excelência, o réu ficou calado na delegacia! Quem cala, consente. O silêncio prova o tráfico!", "fx": "bater"},
-          {"q": "silvia", "e": "apontando", "t": "PROTESTO! O silêncio não pode ser usado contra o réu!", "fx": "protesto"}
-        ], "pergunta": "A defesa protesta contra o uso do silêncio do réu. Sua decisão?",
+          "acerto": [
+            {
+              "q": "voce",
+              "e": "normal",
+              "t": "Indeferido. A pergunta é nova e pertinente. Responda, sargento.",
+              "fx": "martelo"
+            },
+            {
+              "q": "moreira",
+              "e": "normal",
+              "t": "Não havia balança nem anotações. Só as doze porções e os oitenta reais."
+            }
+          ],
+          "erro": [
+            {
+              "q": "dani",
+              "e": "nervoso",
+              "t": "(sussurrando) Mas ninguém tinha perguntado isso, Excelência! Só pergunta já respondida pode ser barrada."
+            }
+          ],
+          "proxima": "c7"
+        },
+        "c7": {
+          "tipo": "decidir",
+          "falas": [
+            {
+              "q": "lacerda",
+              "e": "bravo",
+              "t": "Excelência, o réu ficou calado na delegacia! Quem cala, consente. O silêncio prova o tráfico!",
+              "fx": "bater"
+            },
+            {
+              "q": "silvia",
+              "e": "apontando",
+              "t": "PROTESTO! O silêncio não pode ser usado contra o réu!",
+              "fx": "protesto"
+            }
+          ],
+          "pergunta": "A defesa protesta contra o uso do silêncio do réu. Sua decisão?",
           "correta": "deferir",
-          "fundamentos": [{"chave": "CPP#art-186/par-unico", "trecho": "O silêncio, que não importará em confissão, não poderá ser interpretado em prejuízo da defesa"}],
+          "fundamentos": [
+            {
+              "chave": "CPP#art-186/par-unico",
+              "trecho": "O silêncio, que não importará em confissão, não poderá ser interpretado em prejuízo da defesa"
+            }
+          ],
           "acerto": [
-            {"q": "voce", "e": "bravo", "t": "Deferido. O silêncio não importa confissão e não pode ser interpretado em prejuízo da defesa. É garantia constitucional, doutor.", "fx": "martelo"},
-            {"q": "lacerda", "e": "nervoso", "t": "…Sem mais perguntas."}
+            {
+              "q": "voce",
+              "e": "bravo",
+              "t": "Deferido. O silêncio não importa confissão e não pode ser interpretado em prejuízo da defesa. É garantia constitucional, doutor.",
+              "fx": "martelo"
+            },
+            {
+              "q": "lacerda",
+              "e": "nervoso",
+              "t": "…Sem mais perguntas."
+            }
           ],
-          "erro": [{"q": "dani", "e": "chocado", "t": "(sussurrando) Excelência! O art. 186, parágrafo único, do CPP proíbe usar o silêncio contra o réu!"}],
-          "proxima": "c8"},
-        "c8": {"tipo": "escolha", "local": "escritorio", "falas": [
-          {"q": "dani", "e": "pensativo", "t": "Instrução encerrada. Agora é com o senhor… ou a senhora. Como decidir se a droga era para consumo pessoal?"}
-        ], "pergunta": "Que critério você usa?",
+          "erro": [
+            {
+              "q": "dani",
+              "e": "chocado",
+              "t": "(sussurrando) Excelência! O art. 186, parágrafo único, do CPP proíbe usar o silêncio contra o réu!"
+            }
+          ],
+          "proxima": "c8"
+        },
+        "c8": {
+          "tipo": "escolha",
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "dani",
+              "e": "pensativo",
+              "t": "Instrução encerrada. Agora é com o senhor… ou a senhora. Como decidir se a droga era para consumo pessoal?"
+            }
+          ],
+          "pergunta": "Que critério você usa?",
           "opcoes": [
-            {"t": "Só a quantidade: doze porções é tráfico.", "certa": false,
-             "falas": [{"q": "dani", "e": "nervoso", "t": "A quantidade é só um dos critérios, Excelência. O art. 28, § 2º, manda olhar o conjunto."}]},
-            {"t": "Os critérios do art. 28, § 2º, em conjunto: natureza e quantidade, local e condições da ação, circunstâncias sociais e pessoais, conduta e antecedentes.", "certa": true,
-             "fundamentos": [{"chave": "LD#art-28/par-2", "trecho": "o juiz atenderá à natureza e à quantidade da substância apreendida, ao local e às condições em que se desenvolveu a ação"}],
-             "falas": [{"q": "dani", "e": "feliz", "t": "Isso! E sem balança, sem anotações, sem venda presenciada… o conjunto aponta para consumo."}]},
-            {"t": "O jeito do réu: ele tem cara de traficante.", "certa": false,
-             "falas": [{"q": "dani", "e": "chocado", "t": "Excelência! Estereótipo não é critério legal. Isso seria reformado no primeiro recurso."}]}
+            {
+              "t": "Só a quantidade: doze porções é tráfico.",
+              "certa": false,
+              "falas": [
+                {
+                  "q": "dani",
+                  "e": "nervoso",
+                  "t": "A quantidade é só um dos critérios, Excelência. O art. 28, § 2º, manda olhar o conjunto."
+                }
+              ]
+            },
+            {
+              "t": "Os critérios do art. 28, § 2º, em conjunto: natureza e quantidade, local e condições da ação, circunstâncias sociais e pessoais, conduta e antecedentes.",
+              "certa": true,
+              "fundamentos": [
+                {
+                  "chave": "LD#art-28/par-2",
+                  "trecho": "o juiz atenderá à natureza e à quantidade da substância apreendida, ao local e às condições em que se desenvolveu a ação"
+                }
+              ],
+              "falas": [
+                {
+                  "q": "dani",
+                  "e": "feliz",
+                  "t": "Isso! E sem balança, sem anotações, sem venda presenciada… o conjunto aponta para consumo."
+                }
+              ]
+            },
+            {
+              "t": "O jeito do réu: ele tem cara de traficante.",
+              "certa": false,
+              "falas": [
+                {
+                  "q": "dani",
+                  "e": "chocado",
+                  "t": "Excelência! Estereótipo não é critério legal. Isso seria reformado no primeiro recurso."
+                }
+              ]
+            }
           ],
-          "proxima": "c9"},
-        "c9": {"tipo": "escolha", "local": "tribunal", "falas": [
-          {"q": "narrador", "t": "Todos se levantam. A sala inteira espera o dispositivo da sentença."}
-        ], "pergunta": "Sua sentença:",
+          "proxima": "c9"
+        },
+        "c9": {
+          "tipo": "escolha",
+          "local": "tribunal",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Todos se levantam. A sala inteira espera o dispositivo da sentença."
+            }
+          ],
+          "pergunta": "Sua sentença:",
           "opcoes": [
-            {"t": "Condeno por tráfico: 5 anos de reclusão.", "certa": false,
-             "falas": [{"q": "dani", "e": "nervoso", "t": "(sussurrando) Mas a sua própria análise das provas apontou para consumo, Excelência…"}]},
-            {"t": "Desclassifico para o art. 28: advertência sobre os efeitos das drogas e medida educativa de comparecimento a curso.", "certa": true,
-             "fundamentos": [{"chave": "LD#art-28/inc-i", "trecho": "advertência sobre os efeitos das drogas"}, {"chave": "LD#art-28/inc-iii", "trecho": "medida educativa de comparecimento a programa ou curso educativo"}],
-             "falas": [{"q": "voce", "e": "confiante", "t": "Desclassifico a conduta para o art. 28 da Lei de Drogas. Aplico advertência sobre os efeitos das drogas e comparecimento a curso educativo.", "fx": "martelo"}]},
-            {"t": "Desclassifico para o art. 28 e aplico 6 meses de detenção.", "certa": false,
-             "falas": [{"q": "dani", "e": "nervoso", "t": "(sussurrando) O art. 28 não prevê pena de prisão, Excelência!"}]}
+            {
+              "t": "Condeno por tráfico: 5 anos de reclusão.",
+              "certa": false,
+              "falas": [
+                {
+                  "q": "dani",
+                  "e": "nervoso",
+                  "t": "(sussurrando) Mas a sua própria análise das provas apontou para consumo, Excelência…"
+                }
+              ]
+            },
+            {
+              "t": "Desclassifico para o art. 28: advertência sobre os efeitos das drogas e medida educativa de comparecimento a curso.",
+              "certa": true,
+              "fundamentos": [
+                {
+                  "chave": "LD#art-28/inc-i",
+                  "trecho": "advertência sobre os efeitos das drogas"
+                },
+                {
+                  "chave": "LD#art-28/inc-iii",
+                  "trecho": "medida educativa de comparecimento a programa ou curso educativo"
+                }
+              ],
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "Desclassifico a conduta para o art. 28 da Lei de Drogas. Aplico advertência sobre os efeitos das drogas e comparecimento a curso educativo.",
+                  "fx": "martelo"
+                }
+              ]
+            },
+            {
+              "t": "Desclassifico para o art. 28 e aplico 6 meses de detenção.",
+              "certa": false,
+              "falas": [
+                {
+                  "q": "dani",
+                  "e": "nervoso",
+                  "t": "(sussurrando) O art. 28 não prevê pena de prisão, Excelência!"
+                }
+              ]
+            }
           ],
-          "proxima": "c10"},
-        "c10": {"tipo": "dialogo", "local": "tribunal", "falas": [
-          {"q": "silvia", "e": "feliz", "t": "A defesa agradece, Excelência."},
-          {"q": "lacerda", "e": "pensativo", "t": "O Ministério Público… se reserva o direito de recorrer. Mas reconhece a fundamentação."},
-          {"q": "dani", "e": "feliz", "t": "Sentença lavrada! O senhor… a senhora conduziu tudo como manda o CPP."}
-        ], "proxima": "c11"},
-        "c11": {"tipo": "veredicto", "carimbo": "SENTENÇA MANTIDA", "titulo": "Decisão irretocável", "texto": "Você manteve a ordem, barrou as perguntas ilegais, protegeu o silêncio do réu e decidiu pelos critérios da lei. O tribunal manteve sua sentença."}
-      }
+          "proxima": "c10"
+        },
+        "c10": {
+          "tipo": "dialogo",
+          "local": "tribunal",
+          "falas": [
+            {
+              "q": "silvia",
+              "e": "feliz",
+              "t": "A defesa agradece, Excelência."
+            },
+            {
+              "q": "lacerda",
+              "e": "pensativo",
+              "t": "O Ministério Público… se reserva o direito de recorrer. Mas reconhece a fundamentação."
+            },
+            {
+              "q": "dani",
+              "e": "feliz",
+              "t": "Sentença lavrada! O senhor… a senhora conduziu tudo como manda o CPP."
+            }
+          ],
+          "proxima": "c11"
+        },
+        "c11": {
+          "tipo": "veredicto",
+          "carimbo": "SENTENÇA MANTIDA",
+          "titulo": "Decisão irretocável",
+          "texto": "Você manteve a ordem, barrou as perguntas ilegais, protegeu o silêncio do réu e decidiu pelos critérios da lei. O tribunal manteve sua sentença."
+        }
+      },
+      "avulso": true
+    }
+  ],
+  "atos": [
+    {
+      "id": "ato1",
+      "numero": 1,
+      "titulo": "O Estágio",
+      "papel": "advogado",
+      "cargo": "Estagiário(a) de Direito",
+      "sinopse": "Seu primeiro ano na Vasconcelos & Duarte. Casos pequenos, clientes sem dinheiro e um nome que aparece onde não deveria: Altavista."
+    },
+    {
+      "id": "ato2",
+      "numero": 2,
+      "titulo": "A Advocacia",
+      "papel": "advogado",
+      "cargo": "Advogado(a)",
+      "sinopse": "Carteira da OAB na mão. Consumidor, dados pessoais, trabalho e família — e a construtora cada vez mais perto do escritório."
+    },
+    {
+      "id": "ato3",
+      "numero": 3,
+      "titulo": "O Concurso",
+      "papel": "promotor",
+      "cargo": "Promotor(a) de Justiça",
+      "sinopse": "Rafael foi preso. Para chegar à Altavista por dentro do sistema, você troca de lado e veste a beca do Ministério Público."
+    },
+    {
+      "id": "ato4",
+      "numero": 4,
+      "titulo": "A Toga",
+      "papel": "juiz",
+      "cargo": "Juiz(a) de Direito",
+      "sinopse": "Agora é você quem decide. Prisões, provas ilícitas, habeas corpus: cada decisão pode libertar um inocente ou um culpado."
+    },
+    {
+      "id": "ato5",
+      "numero": 5,
+      "titulo": "Altavista",
+      "papel": "juiz",
+      "cargo": "Juiz(a) de Direito",
+      "sinopse": "O julgamento que atravessa toda a sua carreira. Sem atalhos, sem favores — nem ao seu antigo mentor."
     }
   ]
 }
