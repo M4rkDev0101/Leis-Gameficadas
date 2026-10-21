@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vade · Acervo</title>
+<style>
+  :root {
+    --bg:#FAFAF7; --surface:#FFFFFF; --surface-2:#F2F2EE; --border:#E2E2DC;
+    --text:#16181D; --muted:#5D6470; --primary:#3D5BD9; --on-primary:#FFFFFF;
+    --success:#167A49; --danger:#B8321F; --xp:#8A6300; --streak:#AD4F00;
+    --radius:12px; --mono:ui-monospace,"JetBrains Mono","Cascadia Code",Consolas,monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg:#0E1116; --surface:#161B22; --surface-2:#1F2630; --border:#2A3340;
+      --text:#E8ECF2; --muted:#9AA6B6; --primary:#6C8CFF; --on-primary:#0E1116;
+      --success:#34C47C; --danger:#FF6B5E; --xp:#F5B700; --streak:#FF8A2B;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg:#0E1116; --surface:#161B22; --surface-2:#1F2630; --border:#2A3340;
+    --text:#E8ECF2; --muted:#9AA6B6; --primary:#6C8CFF; --on-primary:#0E1116;
+    --success:#34C47C; --danger:#FF6B5E; --xp:#F5B700; --streak:#FF8A2B;
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--text);
+         font:15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width:980px; margin:0 auto; padding:24px 16px 64px; }
+  header { display:flex; align-items:center; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
+  h1 { font-size:1.35rem; margin:0; letter-spacing:-.01em; }
+  h1 span { color:var(--muted); font-weight:500; }
+  h2 { font-size:1rem; margin:0 0 12px; }
+  .pill { margin-left:auto; padding:4px 12px; border-radius:999px; font-size:.82rem; font-weight:600;
+          border:1px solid var(--border); background:var(--surface-2); color:var(--muted); }
+  .pill.ok { color:var(--success); } .pill.new { color:var(--xp); } .pill.run { color:var(--primary); } .pill.err { color:var(--danger); }
+  .grid { display:grid; gap:16px; grid-template-columns:1fr; }
+  @media (min-width:860px) { .grid.two { grid-template-columns:1.25fr 1fr; } }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:18px; min-width:0; }
+  .muted { color:var(--muted); } .mono { font-family:var(--mono); font-size:.85em; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+  button { font:inherit; font-weight:600; border-radius:10px; padding:9px 16px; cursor:pointer;
+           border:1px solid var(--border); background:var(--surface-2); color:var(--text); }
+  button.primary { background:var(--primary); border-color:var(--primary); color:var(--on-primary); }
+  button:disabled { opacity:.55; cursor:not-allowed; }
+  button.link { background:none; border:none; padding:2px 4px; color:var(--primary); font-weight:500; }
+  button:focus-visible, input:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
+  .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:14px 0; }
+  .stat { background:var(--surface-2); border-radius:10px; padding:10px 12px; }
+  .stat b { display:block; font-size:1.3rem; font-variant-numeric:tabular-nums; }
+  .stat small { color:var(--muted); }
+  .bar { height:8px; background:var(--surface-2); border-radius:999px; overflow:hidden; }
+  .bar > i { display:block; height:100%; width:0; background:var(--primary); transition:width .3s; }
+  .areas { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 12px; font-size:.88rem; margin-top:8px; }
+  .areas .b { grid-column:1 / -1; height:4px; background:var(--surface-2); border-radius:4px; margin-bottom:4px; }
+  .areas .b > i { display:block; height:100%; background:var(--xp); border-radius:4px; }
+  ul.plain { list-style:none; padding:0; margin:8px 0 0; }
+  ul.plain li { padding:6px 0; border-top:1px solid var(--border); font-size:.88rem; overflow-wrap:anywhere; }
+  .chip { display:inline-flex; align-items:center; gap:6px; background:var(--surface-2); border:1px solid var(--border);
+          border-radius:999px; padding:3px 6px 3px 10px; font-family:var(--mono); font-size:.8rem; max-width:100%; overflow-wrap:anywhere; }
+  .chip button { padding:0 6px; border:none; background:none; color:var(--muted); font-size:1rem; line-height:1; }
+  input[type=search] { width:100%; font:inherit; padding:10px 12px; border-radius:10px; border:1px solid var(--border);
+                       background:var(--surface-2); color:var(--text); }
+  .hit { padding:10px 0; border-top:1px solid var(--border); }
+  .hit .ref { font-family:var(--mono); font-size:.8rem; color:var(--primary); }
+  .hit p { margin:4px 0 0; font-family:"Source Serif 4",Georgia,serif; font-size:1rem; }
+  mark { background:color-mix(in srgb, var(--xp) 28%, transparent); color:inherit; border-radius:3px; padding:0 2px; }
+  .msg { margin-top:10px; font-size:.9rem; } .msg.err { color:var(--danger); } .msg.ok { color:var(--success); }
+  details summary { cursor:pointer; color:var(--muted); font-size:.88rem; margin-top:10px; }
+  table { width:100%; border-collapse:collapse; font-size:.85rem; }
+  th, td { text-align:left; padding:6px 4px; border-top:1px solid var(--border); vertical-align:top; }
+  th { color:var(--muted); font-weight:500; }
+  .num { text-align:right; font-variant-numeric:tabular-nums; }
+  .table-wrap { overflow-x:auto; }
+  label.toggle { display:flex; gap:8px; align-items:center; font-size:.88rem; color:var(--muted); margin-top:10px; }
+  .crumbs { font-family:var(--mono); font-size:.8rem; margin:8px 0; overflow-wrap:anywhere; }
+  .browse li { display:flex; justify-content:space-between; gap:8px; align-items:center; }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Vade <span>· acervo de leis</span></h1>
+    <span id="pill" class="pill" role="status" aria-live="polite">carregando…</span>
+  </header>
+
+  <div class="grid two">
+    <section class="card" aria-labelledby="sync-h">
+      <h2 id="sync-h">Sincronização com ctresb/leis</h2>
+      <div id="local" class="muted">—</div>
+      <div class="stats">
+        <div class="stat"><b id="c-normas">–</b><small>normas</small></div>
+        <div class="stat"><b id="c-disp">–</b><small>dispositivos</small></div>
+        <div class="stat"><b id="c-falhas">–</b><small>falhas</small></div>
+      </div>
+      <div class="row">
+        <button id="btn-check" class="primary">Verificar atualização</button>
+        <button id="btn-update" hidden>Atualizar agora</button>
+      </div>
+      <div id="progress" hidden style="margin-top:14px">
+        <div class="bar"><i id="bar"></i></div>
+        <div id="progress-txt" class="muted mono" style="margin-top:6px"></div>
+      </div>
+      <div id="check-msg" class="msg" aria-live="polite"></div>
+      <div id="check-detail" hidden>
+        <div class="stats">
+          <div class="stat"><b id="d-commits">0</b><small>commits novos</small></div>
+          <div class="stat"><b id="d-files">0</b><small>arquivos alterados</small></div>
+          <div class="stat"><b id="d-scope">0</b><small>no seu recorte</small></div>
+        </div>
+        <div class="muted" style="font-size:.85rem">Onde mudou:</div>
+        <div id="d-areas" class="areas"></div>
+        <details><summary>Commits</summary><ul id="d-commit-list" class="plain"></ul></details>
+      </div>
+      <label class="toggle"><input type="checkbox" id="auto-check"> verificar sozinho a cada 15 min enquanto esta página estiver aberta</label>
+      <label class="toggle"><input type="checkbox" id="auto-update"> e atualizar automaticamente quando houver mudança no recorte</label>
+      <details><summary>Opções avançadas</summary>
+        <div class="row" style="margin-top:8px">
+          <button id="btn-full">Reconciliar recorte inteiro</button>
+          <span class="muted" style="font-size:.82rem">compara tudo, não só o diff (use se algo parecer fora de sincronia)</span>
+        </div>
+      </details>
+    </section>
+
+    <section class="card" aria-labelledby="scope-h">
+      <h2 id="scope-h">Recorte</h2>
+      <p class="muted" style="margin:0 0 8px;font-size:.88rem">Só estas pastas são importadas. O resto do acervo continua sendo verificado, mas não é baixado.</p>
+      <div id="chips" class="row"></div>
+      <div class="row" style="margin-top:10px">
+        <button data-preset="min">Mínimo (teste)</button>
+        <button data-preset="essencial">Essencial federal</button>
+      </div>
+      <div class="crumbs" id="crumbs"></div>
+      <ul id="browse" class="plain browse"></ul>
+      <div class="row" style="margin-top:10px">
+        <button id="btn-save-scope" class="primary">Salvar recorte</button>
+        <span id="scope-msg" class="msg"></span>
+      </div>
+    </section>
+  </div>
+
+  <section class="card" style="margin-top:16px" aria-labelledby="search-h">
+    <h2 id="search-h">Buscar no catálogo</h2>
+    <input id="q" type="search" placeholder="ex.: legítima defesa, ação popular, dados pessoais sensíveis" autocomplete="off">
+    <div id="hits"></div>
+  </section>
+
+  <section class="card" style="margin-top:16px" aria-labelledby="hist-h">
+    <h2 id="hist-h">Histórico de atualizações</h2>
+    <div class="table-wrap"><table>
+      <thead><tr><th>Quando</th><th>Commits</th><th class="num">Novas</th><th class="num">Alteradas</th><th class="num">Removidas</th><th class="num">Falhas</th></tr></thead>
+      <tbody id="hist"></tbody>
+    </table></div>
+  </section>
+</main>
+
+<script>
+const PRESETS = {
+  min: ["constituicao.md", "federal/leis-complementares", "jurisprudencia/stf/sumulas-vinculantes"],
+  essencial: ["constituicao.md", "federal/emendas-constitucionais", "federal/leis-complementares",
+              "federal/decretos-lei", "federal/leis-ordinarias", "jurisprudencia/stf/sumulas-vinculantes",
+              "jurisprudencia/stf/sumulas", "jurisprudencia/stj/sumulas", "jurisprudencia/tst/sumulas"],
+};
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => Number(n || 0).toLocaleString("pt-BR");
+const when = (iso) => iso ? new Date(iso).toLocaleString("pt-BR", {dateStyle:"short", timeStyle:"short"}) : "—";
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+let recorte = [], polling = null, autoTimer = null, browsePath = "";
+
+async function api(path, body) {
+  const opt = body === undefined ? {} : { method:"POST", headers:{ "Content-Type":"application/json", "X-Vade":"1" }, body:JSON.stringify(body) };
+  const r = await fetch(path, opt);
+  const data = await r.json().catch(() => ({}));
+  if (!r.ok && r.status !== 409) throw new Error(data.erro || r.statusText);
+  return data;
+}
+function el(tag, props = {}, ...kids) {
+  const e = document.createElement(tag);
+  Object.assign(e, props);
+  for (const k of kids) e.append(k);
+  return e;
+}
+function pill(text, cls) { const p = $("pill"); p.textContent = text; p.className = "pill " + (cls || ""); }
+
+function renderStatus(s) {
+  const c = s.commit_local;
+  $("local").replaceChildren(c
+    ? el("span", {}, "Importado até ", el("span", {className:"mono", textContent:c.sha.slice(0, 8)}), ` · ${when(c.data)}`,
+         el("br"), el("span", {textContent:c.mensagem, style:"font-size:.85rem"}))
+    : s.contagens.normas
+      ? "O catálogo precisa ser reindexado (formato novo). Clique em Verificar e depois em Importar."
+      : "Nada importado ainda. Escolha um recorte e clique em Verificar.");
+  $("c-normas").textContent = fmt(s.contagens.normas);
+  $("c-disp").textContent = fmt(s.contagens.dispositivos);
+  $("c-falhas").textContent = fmt(s.contagens.falhas);
+  recorte = s.recorte; renderChips();
+  renderHistory(s.historico);
+  if (s.job.estado === "rodando") startPolling();
+  else if (s.ultima_verificacao) renderCheck(s.ultima_verificacao, false);
+  else pill(c ? "não verificado" : "vazio");
+}
+
+function renderCheck(r, announce = true) {
+  const msg = $("check-msg"); msg.className = "msg";
+  $("check-detail").hidden = true; $("btn-update").hidden = true;
+  if (r.atualizado) {
+    pill("atualizado", "ok");
+    msg.className = "msg ok";
+    msg.textContent = `Em dia com o GitHub (verificado ${when(r.verificado_em)}).`;
+    return;
+  }
+  if (r.primeira_importacao) {
+    pill("primeira importação", "new");
+    msg.textContent = recorte.length
+      ? `O recorte tem ${fmt(r.no_recorte)} arquivos para importar.`
+      : "Defina um recorte antes de importar.";
+    $("btn-update").hidden = !recorte.length;
+    $("btn-update").textContent = "Importar agora";
+    return;
+  }
+  pill(`${fmt(r.commits_novos)} commit(s) novo(s)`, "new");
+  msg.textContent = r.no_recorte
+    ? `${fmt(r.no_recorte)} arquivo(s) do seu recorte mudaram.`
+    : "As mudanças estão fora do seu recorte; atualizar só registra o novo commit.";
+  $("btn-update").hidden = false;
+  $("btn-update").textContent = r.no_recorte ? `Atualizar ${fmt(r.no_recorte)} arquivo(s)` : "Marcar como atualizado";
+  $("d-commits").textContent = fmt(r.commits_novos);
+  $("d-files").textContent = fmt(r.arquivos_alterados);
+  $("d-scope").textContent = fmt(r.no_recorte);
+  const max = Math.max(1, ...r.por_area.map(a => a[1]));
+  $("d-areas").replaceChildren(...r.por_area.flatMap(([area, n]) => [
+    el("span", {className:"mono", textContent:area}), el("span", {className:"num", textContent:fmt(n)}),
+    el("div", {className:"b"}, el("i", {style:`width:${(100 * n / max).toFixed(1)}%`})),
+  ]));
+  $("d-commit-list").replaceChildren(...r.commits.map(c =>
+    el("li", {}, el("span", {className:"mono muted", textContent:`${c.sha.slice(0, 8)} · ${when(c.data)} `}), c.mensagem)));
+  $("check-detail").hidden = false;
+  if (announce && $("auto-update").checked && r.no_recorte) startUpdate(false);
+}
+
+function renderHistory(rows) {
+  $("hist").replaceChildren(...(rows.length ? rows.map(h => {
+    const tr = el("tr", {},
+      el("td", {textContent:when(h.concluido_em)}),
+      el("td", {className:"mono", textContent:`${(h.de_commit || "∅").slice(0, 7)} → ${(h.para_commit || "").slice(0, 7)}`}),
+      el("td", {className:"num", textContent:fmt(h.inseridas)}), el("td", {className:"num", textContent:fmt(h.atualizadas)}),
+      el("td", {className:"num", textContent:fmt(h.removidas)}), el("td", {className:"num", textContent:fmt(h.falhas)}));
+    if (!h.mudancas.length) return [tr];
+    const list = el("ul", {className:"plain"}, ...h.mudancas.slice(0, 30).map(m =>
+      el("li", {}, el("span", {className:"muted", textContent:`${m.acao}: `}), m.titulo)));
+    const det = el("tr", {}, el("td", {colSpan:6}, el("details", {}, el("summary", {textContent:`ver ${h.mudancas.length} norma(s)`}), list)));
+    return [tr, det];
+  }).flat() : [el("tr", {}, el("td", {colSpan:6, className:"muted", textContent:"Nenhuma atualização ainda."}))]));
+}
+
+async function refresh() { renderStatus(await api("/api/status")); }
+
+async function check() {
+  const b = $("btn-check"); b.disabled = true; pill("verificando…", "run");
+  try { renderCheck(await api("/api/verificar", {})); }
+  catch (e) { pill("erro", "err"); $("check-msg").className = "msg err"; $("check-msg").textContent = e.message; }
+  finally { b.disabled = false; }
+}
+
+async function startUpdate(full) {
+  try {
+    const r = await api("/api/atualizar", { completo: full });
+    if (!r.iniciado) $("check-msg").textContent = "Já existe uma atualização em andamento.";
+    startPolling();
+  } catch (e) { $("check-msg").className = "msg err"; $("check-msg").textContent = e.message; }
+}
+
+function startPolling() {
+  if (polling) return;
+  $("progress").hidden = false; $("btn-update").hidden = true; $("check-detail").hidden = true;
+  ["btn-check", "btn-full"].forEach(id => $(id).disabled = true);
+  pill("atualizando…", "run");
+  polling = setInterval(async () => {
+    const j = await api("/api/job").catch(() => null);
+    if (!j) return;
+    const pct = j.total ? (100 * j.feito / j.total) : 5;
+    $("bar").style.width = pct.toFixed(1) + "%";
+    $("progress-txt").textContent = j.total ? `${j.etapa}: ${fmt(j.feito)} / ${fmt(j.total)}` : `${j.etapa}…`;
+    if (j.estado !== "rodando") {
+      clearInterval(polling); polling = null;
+      ["btn-check", "btn-full"].forEach(id => $(id).disabled = false);
+      $("progress").hidden = true;
+      const msg = $("check-msg");
+      if (j.estado === "erro") { pill("erro", "err"); msg.className = "msg err"; msg.textContent = j.erro; }
+      else {
+        const r = j.resultado;
+        msg.className = "msg ok";
+        msg.textContent = `Pronto: ${fmt(r.inserted)} nova(s), ${fmt(r.updated)} alterada(s), ${fmt(r.deleted)} removida(s), ${fmt(r.failed)} falha(s).`;
+      }
+      await refresh();
+      if (j.estado !== "erro") pill("atualizado", "ok");
+    }
+  }, 700);
+}
+
+// ---------------------------------------------------------------- recorte
+function renderChips() {
+  $("chips").replaceChildren(...(recorte.length ? recorte.map(p => {
+    const x = el("button", {textContent:"×", title:`remover ${p}`, ariaLabel:`remover ${p}`});
+    x.onclick = () => { recorte = recorte.filter(r => r !== p); renderChips(); };
+    return el("span", {className:"chip"}, p, x);
+  }) : [el("span", {className:"muted", textContent:"vazio: escolha um atalho ou navegue abaixo"})]));
+}
+async function browse(path) {
+  browsePath = path;
+  const parts = path ? path.split("/") : [];
+  const crumbs = [el("button", {className:"link", textContent:"acervo", onclick:() => browse("")})];
+  parts.forEach((p, i) => crumbs.push(" / ", el("button", {className:"link", textContent:p, onclick:() => browse(parts.slice(0, i + 1).join("/"))})));
+  $("crumbs").replaceChildren(...crumbs);
+  try {
+    const items = await api("/api/arvore?prefixo=" + encodeURIComponent(path));
+    $("browse").replaceChildren(...items.slice(0, 60).map(it => {
+      const name = it.caminho.split("/").pop();
+      const open = it.tipo === "pasta"
+        ? el("button", {className:"link", textContent:name + "/", onclick:() => browse(it.caminho)})
+        : el("span", {className:"mono", textContent:name});
+      const add = el("button", {className:"link", textContent:recorte.includes(it.caminho) ? "✓ no recorte" : "+ adicionar",
+        onclick:(ev) => { if (!recorte.includes(it.caminho)) { recorte.push(it.caminho); renderChips(); ev.target.textContent = "✓ no recorte"; } }});
+      return el("li", {}, open, add);
+    }));
+  } catch (e) { $("browse").replaceChildren(el("li", {className:"msg err", textContent:e.message})); }
+}
+
+// ---------------------------------------------------------------- busca
+let searchTimer;
+$("q").addEventListener("input", () => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(async () => {
+    const q = $("q").value.trim();
+    if (q.length < 2) { $("hits").replaceChildren(); return; }
+    const hits = await api("/api/busca?q=" + encodeURIComponent(q)).catch(() => []);
+    $("hits").replaceChildren(...(hits.length ? hits.map(h => {
+      const p = el("p");
+      // o servidor marca os termos com [ ]; montamos <mark> sem usar innerHTML
+      h.trecho.split(/(\[[^\]]*\])/).forEach(part => p.append(part.startsWith("[") ? el("mark", {textContent:part.slice(1, -1)}) : part));
+      return el("div", {className:"hit"},
+        el("div", {className:"ref", textContent:`${h.norma} · ${h.caminho}${h.rubrica ? " — " + h.rubrica : ""}`}), p);
+    }) : [el("p", {className:"muted", textContent:"Nada encontrado no catálogo importado."})]));
+  }, 250);
+});
+
+// ---------------------------------------------------------------- ligações
+$("btn-check").onclick = check;
+$("btn-update").onclick = () => startUpdate(false);
+$("btn-full").onclick = () => startUpdate(true);
+document.querySelectorAll("[data-preset]").forEach(b => b.onclick = () => { recorte = [...PRESETS[b.dataset.preset]]; renderChips(); });
+$("btn-save-scope").onclick = async () => {
+  try { const r = await api("/api/recorte", { prefixos: recorte }); recorte = r.recorte; renderChips();
+        $("scope-msg").className = "msg ok"; $("scope-msg").textContent = "Salvo. Clique em Verificar."; }
+  catch (e) { $("scope-msg").className = "msg err"; $("scope-msg").textContent = e.message; }
+};
+function setAuto() {
+  clearInterval(autoTimer);
+  store.set("autoCheck", $("auto-check").checked);
+  store.set("autoUpdate", $("auto-update").checked);
+  if ($("auto-check").checked) autoTimer = setInterval(() => { if (!polling) check(); }, 15 * 60 * 1000);
+}
+$("auto-check").checked = store.get("autoCheck", true);
+$("auto-update").checked = store.get("autoUpdate", false);
+$("auto-check").onchange = setAuto; $("auto-update").onchange = setAuto;
+
+refresh().then(() => { setAuto(); if ($("auto-check").checked) check(); }).catch(e => pill("servidor fora do ar", "err"));
+browse("");
+</script>
+</body>
+</html>

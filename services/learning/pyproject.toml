@@ -1,0 +1,13 @@
+[project]
+name = "vade-learning"
+version = "0.1.0"
+description = "Núcleo de aprendizagem do Vade: revisão espaçada (FSRS-5), gamificação e dificuldade dinâmica"
+requires-python = ">=3.11"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
