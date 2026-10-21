@@ -1,0 +1,5605 @@
+{
+ "ato": "ato3",
+ "personagens": {
+  "a3camila": {
+   "nome": "Camila Furtado",
+   "cargo": "Vítima · 34 anos",
+   "voz": 490,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "longo",
+    "corCabelo": "#2a1a10",
+    "roupa": "casual",
+    "corRoupa": "#2e86c1",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3rogerio": {
+   "nome": "Rogério Pacheco",
+   "cargo": "Réu · ex-marido",
+   "voz": 290,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#3b2414",
+    "roupa": "casual",
+    "corRoupa": "#34495e",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3ilda": {
+   "nome": "Ilda Barreto",
+   "cargo": "Testemunha · zeladora do prédio",
+   "voz": 440,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "coque",
+    "corCabelo": "#cfcfcf",
+    "roupa": "avental",
+    "corRoupa": "#7d6608",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3cassio": {
+   "nome": "Dr. Cássio Mourão",
+   "cargo": "Advogado de defesa",
+   "voz": 250,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "topete",
+    "corCabelo": "#3b2414",
+    "roupa": "terno",
+    "corRoupa": "#4a235a",
+    "gravata": "#d4ac0d",
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3nilza": {
+   "nome": "Nilza Ferreira",
+   "cargo": "Pescadora · Vila do Cinzento",
+   "voz": 470,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "coque",
+    "corCabelo": "#1b1b1b",
+    "roupa": "casual",
+    "corRoupa": "#117864",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3ulisses": {
+   "nome": "Ulisses Prado",
+   "cargo": "Gerente operacional · Altavista Serviços",
+   "voz": 260,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#5a5a5a",
+    "roupa": "terno",
+    "corRoupa": "#566573",
+    "gravata": "#7a1f1f",
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3eduardo": {
+   "nome": "Eduardo Pimentel",
+   "cargo": "Secretário municipal de Obras",
+   "voz": 270,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "topete",
+    "corCabelo": "#3b2414",
+    "roupa": "terno",
+    "corRoupa": "#1e5a4a",
+    "gravata": "#d4ac0d",
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3renata": {
+   "nome": "Renata Guedes",
+   "cargo": "Arquiteta · servidora da Secretaria",
+   "voz": 480,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "longo",
+    "corCabelo": "#a0522d",
+    "roupa": "blazer",
+    "corRoupa": "#5d6d7e",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3fabio": {
+   "nome": "Dr. Fábio Amorim",
+   "cargo": "Advogado de defesa",
+   "voz": 300,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "terno",
+    "corRoupa": "#2c3e70",
+    "gravata": "#e67e22",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3davi": {
+   "nome": "Davi Moreira",
+   "cargo": "Réu · estudante de engenharia, 22 anos",
+   "voz": 330,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "cacheado",
+    "corCabelo": "#3b2414",
+    "roupa": "casual",
+    "corRoupa": "#2c3e50",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3bianca": {
+   "nome": "Bianca Sales",
+   "cargo": "Ré · namorada de Davi",
+   "voz": 500,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "rabo",
+    "corCabelo": "#7b1e1e",
+    "roupa": "casual",
+    "corRoupa": "#8e44ad",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3nogueira": {
+   "nome": "Cabo Nogueira",
+   "cargo": "Testemunha · policial militar",
+   "voz": 250,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "farda",
+    "corRoupa": "#3e4a2d",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3nelson": {
+   "nome": "Nelson Cardoso",
+   "cargo": "Contador · Altavista Serviços",
+   "voz": 300,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "careca",
+    "corCabelo": "#5a5a5a",
+    "roupa": "terno",
+    "corRoupa": "#7f8c8d",
+    "gravata": "#1e5a4a",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3debora": {
+   "nome": "Débora Lemos",
+   "cargo": "Secretária executiva · Altavista Serviços",
+   "voz": 520,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "longo",
+    "corCabelo": "#2a1a10",
+    "roupa": "blazer",
+    "corRoupa": "#922b21",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  }
+ },
+ "episodios": [
+  {
+   "id": "a3-posse",
+   "ato": "ato3",
+   "ordem": 1,
+   "numero": 13,
+   "titulo": "A Posse",
+   "papel": "promotor",
+   "nivel": "intermediario",
+   "sinopse": "Você toma posse como promotor(a) de Justiça e recebe de cara um caso de Maria da Penha: a vítima quer retirar a queixa, mas o crime não depende disso.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "beatriz": "juiz",
+    "a3cassio": "defesa",
+    "a3ilda": "testemunha",
+    "a3rogerio": "testemunha",
+    "a3camila": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "bo",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Boletim de ocorrência",
+     "descricao": "Camila Furtado, 34 anos, registra agressão do ex-marido, Rogério Pacheco, na noite de 12 de março, no apartamento dela. Medida protetiva já deferida desde o dia 3."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🩺",
+     "nome": "Laudo de corpo de delito",
+     "descricao": "Equimoses em formato de dedos nos dois braços, escoriação no ombro direito. Perito: lesões compatíveis com agarramento e empurrão, incompatíveis com queda de escada."
+    },
+    {
+     "id": "audio",
+     "tipo": "prova",
+     "icone": "🎙️",
+     "nome": "Áudio de Rogério",
+     "descricao": "Mensagem de voz às 22h03: “Se você me denunciar, eu volto aí e você vai ver o que é bom.”"
+    },
+    {
+     "id": "termo",
+     "tipo": "prova",
+     "icone": "✍️",
+     "nome": "Pedido de retratação",
+     "descricao": "Bilhete assinado por Camila, entregue ao cartório: “Quero retirar tudo. Foi exagero meu.” Data: três dias depois do boletim."
+    },
+    {
+     "id": "portaria",
+     "tipo": "prova",
+     "icone": "📒",
+     "nome": "Livro da portaria",
+     "descricao": "Foto da página do caderno de visitas do prédio. Linha de 12 de março: “Rogério P. — apto 42 — entrada 21h40.” Rubricado pela zeladora, Ilda."
+    },
+    {
+     "id": "lmp41",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei Maria da Penha, art. 41",
+     "chave": "LMP#art-41",
+     "trecho": "não se aplica a Lei nº 9.099"
+    },
+    {
+     "id": "jec88",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei 9.099, art. 88",
+     "chave": "JEC#art-88",
+     "trecho": "dependerá de representação a ação penal relativa aos crimes de lesões corporais leves"
+    },
+    {
+     "id": "lmp16",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei Maria da Penha, art. 16",
+     "chave": "LMP#art-16",
+     "trecho": "só será admitida a renúncia à representação perante o juiz"
+    },
+    {
+     "id": "cp129",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código Penal, art. 129, § 9º",
+     "chave": "CP#art-129/par-9",
+     "trecho": "com quem conviva ou tenha convivido"
+    },
+    {
+     "id": "lmp24a",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei Maria da Penha, art. 24-A",
+     "chave": "LMP#art-24a",
+     "trecho": "Descumprir decisão judicial que defere medidas protetivas de urgência"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 13",
+     "subtitulo": "A Posse",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sala de posse do Ministério Público. Cheiro de café, toga nova e uma bandeira que parece mais pesada do que é."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Pela autoridade que me confere o cargo de Promotor de Justiça, dou posse a V. Exa. Aprovado(a) em concurso, com louvor. Eu sabia que você seria nosso(a)."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Obrigado(a), doutor Lacerda. Passei meses estudando dentro de um carro, para fugir do barulho de casa."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Eis a diferença entre advogar e promover. Advogado defende o cliente. Promotor defende a lei. E a lei, às vezes, pede para absolver."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Então é o(a) famoso(a) colega do Ato II! Renato Valadares, Promotoria Criminal, sala ao lado. Qualquer dúvida com o sistema, os prazos ou o café, é comigo."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Prazer, doutor Valadares. O senhor trabalhou no caso Altavista?"
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "Só de longe, infelizmente. Uma pena aquela fuga. Mas aqui é um recomeço. Hoje você pega a Violência Doméstica, a pauta mais difícil do prédio."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Caso de hoje: Rogério Pacheco, ex-marido de Camila Furtado. Agrediu a ex, descumpriu a medida protetiva… e a vítima já pediu para retirar a queixa."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Vai dar tudo certo. E se precisar de alguma coisa no sistema do MP, me chame. Eu cuido da parte burocrática para você."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "bo",
+        "termo",
+        "lmp41",
+        "jec88",
+        "lmp16",
+        "cp129",
+        "lmp24a"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "gabinete"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia da Mulher",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Plantão de sábado. Uma cadeira vazia, um ventilador e um mural cheio de rostos que todo mundo gostaria de nunca ter visto."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Antes de pisar em audiência, preciso saber se a palavra de Camila é a única coisa que sustenta esse caso."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "registro",
+       "nome": "Livro de registro",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Boletim de 12 de março, 23h. Camila compareceu sozinha, com a manga arregaçada e o braço roxo. O registro anota: “vítima chorava, mas lúcida e coerente”."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Mais abaixo, um recado do escrivão: a medida protetiva foi deferida no dia 3, e Rogério foi intimado no dia 5. Ele sabia que não podia chegar perto."
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "O laudo do IML: equimoses em formato de dedos nos dois braços e escoriação no ombro. O perito escreveu que as lesões são “incompatíveis com queda de escada”.",
+         "recebe": [
+          "laudo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Cartazes da Lei Maria da Penha: “Ligue 180”. E um aviso do cartório sobre audiências especiais. Lembrete mental: renúncia à representação só vale diante do juiz."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Foi o que Lacerda me disse hoje cedo, e o que está no art. 16. Mas isso é só para crime de ação condicionada. Vou lembrar disso."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3camila",
+       "titulo": "Ouvir Camila",
+       "falas": [
+        {
+         "q": "a3camila",
+         "e": "triste",
+         "t": "Eu escrevi o bilhete porque ele prometeu mudar. Ele chorou, doutor(a). Disse que ia procurar ajuda."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "E ele procurou?"
+        },
+        {
+         "q": "a3camila",
+         "e": "nervoso",
+         "t": "Voltou ao meu prédio na mesma noite. A Ilda, a zeladora, deve ter visto. A síndica me mandou a foto da página do livro da portaria.",
+         "recebe": [
+          "portaria"
+         ]
+        },
+        {
+         "q": "a3camila",
+         "e": "triste",
+         "t": "Ele mandou um áudio também. Gravei. Está aqui no meu celular.",
+         "recebe": [
+          "audio"
+         ]
+        }
+       ]
+      },
+      {
+       "q": "valadares",
+       "titulo": "Falar com Valadares",
+       "falas": [
+        {
+         "q": "valadares",
+         "e": "feliz",
+         "t": "Primeiro conselho: não deixe a vítima se sentir culpada. Segundo: não deixe o juiz achar que o bilhete encerra o caso."
+        },
+        {
+         "q": "valadares",
+         "e": "normal",
+         "t": "Terceiro: se o réu levar testemunha de boa-fé, desconfie. Boa-fé é a melhor fantasia do mentiroso."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "laudo",
+      "audio",
+      "portaria"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Audiência de instrução. Réu: Rogério Pacheco. Vítima: Camila Furtado. Pela acusação, o(a) novo(a) promotor(a).",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3cassio",
+       "e": "confiante",
+       "t": "Excelência, preliminarmente: há nos autos pedido de retratação da vítima. A lesão é leve, a Lei 9.099 exige representação, e a representação foi retirada. Pede-se a extinção do processo."
+      },
+      {
+       "q": "a3camila",
+       "e": "triste",
+       "t": "(sussurrando) Eu não queria que ele fosse preso. Só queria que parasse."
+      }
+     ],
+     "proxima": "x5",
+     "local": "tribunal"
+    },
+    "x5": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a3cassio",
+       "e": "apontando",
+       "t": "A vítima já disse que foi exagero. Se ela não quer, o Estado não deve insistir, sob pena de violência institucional contra a própria mulher."
+      }
+     ],
+     "pergunta": "Que dispositivo responde à tese da defesa de que a retratação encerra o processo?",
+     "provas": [
+      "lmp41"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Excelência, o art. 88 da Lei 9.099 exige representação para lesão leve, mas o art. 41 da Lei Maria da Penha afasta a Lei 9.099 de TODOS os crimes com violência doméstica contra a mulher. A lesão do art. 129, § 9º, é de ação pública incondicionada."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Foi o que decidiu o STF na ADI 4424. Vítima não “retira queixa” de crime de ação pública. O Estado não age por favor, age por dever."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Pedido de extinção indeferido. Prossiga.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3cassio",
+       "e": "nervoso",
+       "t": "Hmpf. Ao menos tentei."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Promotor(a), isso não impede o pedido da defesa. O que afasta a exigência de representação nos crimes domésticos?"
+      }
+     ],
+     "proxima": "x6"
+    },
+    "x6": {
+     "tipo": "depoimento",
+     "testemunha": "a3ilda",
+     "titulo": "Depoimento de Ilda, zeladora",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Chamo a testemunha de defesa, Ilda Barreto. Prestou o compromisso legal?"
+      },
+      {
+       "q": "a3ilda",
+       "e": "nervoso",
+       "t": "Prestei, Excelência. Eu só falo a verdade. Moro naquele prédio há vinte anos."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O seu Rogério é um homem tranquilo. Nunca vi ele fazer mal a ninguém.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A senhora presenciou alguma briga do casal?"
+        },
+        {
+         "q": "a3ilda",
+         "e": "normal",
+         "t": "Brigar, eles brigavam, como todo mundo. Mas violência eu nunca vi."
+        }
+       ]
+      },
+      {
+       "t": "Depois que saiu a tal da medida, ele nunca mais pisou no prédio. Eu saberia, porque eu mesma registro todo mundo que entra.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A senhora tem certeza? Ele não esteve lá em 12 de março?"
+        },
+        {
+         "q": "a3ilda",
+         "e": "nervoso",
+         "t": "Eu… eu fico no portão o dia todo. Eu teria visto."
+        }
+       ]
+      },
+      {
+       "t": "A Camila machucou o braço caindo da escada. Eu mesma ajudei a levantar.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A senhora viu a queda?"
+        },
+        {
+         "q": "a3ilda",
+         "e": "nervoso",
+         "t": "Vi o braço dela roxo depois. Alguém tem que cair para ficar assim, né?"
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "portaria"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Dona Ilda, o livro da portaria, rubricado pela senhora: “Rogério P., apto 42, entrada 21h40”. Doze de março. Nove dias depois da medida, sete dias depois da intimação."
+      },
+      {
+       "q": "a3ilda",
+       "e": "chocado",
+       "t": "Ai, meu Deus. Eu me esqueci… eu esqueci de dizer…",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3cassio",
+       "e": "nervoso",
+       "t": "Excelência, a testemunha esqueceu um detalhe. Acontece com qualquer um!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Acontece, doutor. Só que o livro está rubricado pela própria testemunha.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Promotor(a), a prova não contradiz a testemunha neste ponto."
+      }
+     ],
+     "proxima": "x7"
+    },
+    "x7": {
+     "tipo": "depoimento",
+     "testemunha": "a3rogerio",
+     "titulo": "Interrogatório de Rogério",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Réu, o senhor tem direito ao silêncio. Mas, se falar, será ouvido."
+      },
+      {
+       "q": "a3rogerio",
+       "e": "nervoso",
+       "t": "Quero falar. Eu só queria conversar com a minha ex-mulher. Só isso."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Fui ao prédio dela só para conversar. A gente ficou em paz.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Em paz? Era só uma conversa?"
+        },
+        {
+         "q": "a3rogerio",
+         "e": "nervoso",
+         "t": "Era. Eu até levei flores."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca ameacei a Camila. Ela é que é dramática.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nunca ameaçou?"
+        },
+        {
+         "q": "a3rogerio",
+         "e": "bravo",
+         "t": "Nunca! Juro pela minha mãe."
+        }
+       ]
+      },
+      {
+       "t": "Eu só pedi que ela repensasse a denúncia. Educadamente.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Pediu educadamente?"
+        },
+        {
+         "q": "a3rogerio",
+         "e": "nervoso",
+         "t": "Pedi, ora. Educado como sempre fui."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "audio"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "“Se você me denunciar, eu volto aí e você vai ver o que é bom.” Mensagem de voz, 22h03, do seu celular, senhor Rogério."
+      },
+      {
+       "q": "a3rogerio",
+       "e": "chocado",
+       "t": "Isso… eu estava nervoso!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3cassio",
+       "e": "nervoso",
+       "t": "Excelência, protesto! Mensagem fora de contexto!"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "A voz está nos autos. Prossiga, doutor(a).",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Isso não contradiz a negativa de ameaça, promotor(a)."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "a3rogerio",
+     "titulo": "A nova versão de Rogério",
+     "intro": [
+      {
+       "q": "a3rogerio",
+       "e": "nervoso",
+       "t": "Tá. Eu falei no calor da hora. Mas bater, eu nunca bati. Ela caiu da escada."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Ela escorregou sozinha. Eu só tentei segurar.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Segurar onde?"
+        },
+        {
+         "q": "a3rogerio",
+         "e": "nervoso",
+         "t": "No braço, ué. Instintivo."
+        }
+       ]
+      },
+      {
+       "t": "Nem encostei nela com força. Foi tudo um acidente.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Não encostou com força?"
+        },
+        {
+         "q": "a3rogerio",
+         "e": "nervoso",
+         "t": "Nunca!"
+        }
+       ]
+      },
+      {
+       "t": "E a medida protetiva eu nem lembrava que existia.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "O senhor foi intimado no dia 5."
+        },
+        {
+         "q": "a3rogerio",
+         "e": "triste",
+         "t": "Eu li, mas esqueci. Eu estava nervoso."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "laudo"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Equimoses em formato de dedos nos DOIS braços, escoriação no ombro. O perito diz que são incompatíveis com queda de escada. Quem segura para não deixar cair não deixa a marca dos dedos nos dois lados."
+      },
+      {
+       "q": "a3rogerio",
+       "e": "chocado",
+       "t": "!!!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3cassio",
+       "e": "nervoso",
+       "t": "Eu… preciso conversar com o meu cliente."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Promotor(a), essa prova não toca na afirmação de que foi só segurar."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Ministério Público, encerrada a instrução, o que requer?"
+      },
+      {
+       "q": "a3camila",
+       "e": "triste",
+       "t": "(baixinho) Eu só quero poder voltar para minha casa sem medo."
+      }
+     ],
+     "pergunta": "Seu pedido:",
+     "opcoes": [
+      {
+       "t": "Arquivamento, em respeito ao pedido da vítima.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O pedido da vítima não vincula o Ministério Público, que age por dever, não por permissão."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E a lei diz que a ação é pública incondicionada."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LMP#art-41",
+         "trecho": "não se aplica a Lei nº 9.099"
+        }
+       ]
+      },
+      {
+       "t": "Condenação por lesão corporal no âmbito doméstico (art. 129, § 9º, CP) em concurso com o descumprimento de medida protetiva (art. 24-A da LMP), com manutenção das medidas.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Requeiro a condenação por lesão corporal doméstica, em concurso material com descumprimento de medida protetiva, que tem pena própria. E a manutenção das medidas, porque o risco persiste."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Anotado."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-129/par-9",
+         "trecho": "com quem conviva ou tenha convivido"
+        },
+        {
+         "chave": "LMP#art-24a",
+         "trecho": "Descumprir decisão judicial que defere medidas protetivas de urgência"
+        }
+       ]
+      },
+      {
+       "t": "Condenação só por ameaça, que combina melhor com o áudio.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a3cassio",
+         "e": "feliz",
+         "t": "Ameaça é de menor pena, Excelência. Concordo com o Ministério Público!"
+        },
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "A prova mostra lesão e descumprimento. Pedir só ameaça é aceitar menos do que os fatos provam."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-129/par-9",
+         "trecho": "com quem conviva ou tenha convivido"
+        }
+       ]
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Condeno o réu pelos dois crimes, em concurso material, e mantenho as medidas protetivas com monitoração eletrônica. Que a mulher saia daqui em segurança.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3camila",
+       "e": "feliz",
+       "t": "Obrigada. Eu tinha medo de que ninguém acreditasse em mim."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "A senhora fez o certo, dona Camila."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Primeiro dia e já com condenação! Vamos comemorar sexta. Vou te apresentar uns amigos da Polícia Civil, gente de confiança.",
+       "fx": "bater"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Bem-vindo(a) ao Ministério Público."
+      }
+     ],
+     "proxima": "x11",
+     "local": "tribunal"
+    },
+    "x11": {
+     "tipo": "veredicto",
+     "carimbo": "CONDENADO",
+     "titulo": "Camila está segura",
+     "texto": "Você impediu que a retratação encerrasse uma ação pública, desmontou duas testemunhas e pediu a pena certa. Valadares parece o colega ideal. Parece."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3-rio",
+   "ato": "ato3",
+   "ordem": 2,
+   "numero": 14,
+   "titulo": "O Rio Cinzento",
+   "papel": "promotor",
+   "nivel": "intermediario",
+   "sinopse": "A Altavista Serviços despeja resíduos num rio e a obra é avisada antes da vistoria. Você precisa responsabilizar a empresa e o gerente, sem deixar a pessoa jurídica escapar.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "beatriz": "juiz",
+    "livia": "defesa",
+    "a3ulisses": "testemunha",
+    "a3nilza": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🧪",
+     "nome": "Laudo da água do rio",
+     "descricao": "Amostras do Rio Cinzento: chumbo e solventes clorados 40 vezes acima do limite. Conclusão da agência ambiental estadual: poluição de origem industrial, com risco à saúde humana."
+    },
+    {
+     "id": "mortandade",
+     "tipo": "prova",
+     "icone": "🐟",
+     "nome": "Registro da mortandade",
+     "descricao": "Fotos e relatório da colônia de pescadores: cerca de três toneladas de peixes mortos em dois dias, espuma na margem e cheiro forte de solvente."
+    },
+    {
+     "id": "nf",
+     "tipo": "prova",
+     "icone": "🚛",
+     "nome": "Notas de transporte",
+     "descricao": "Quatorze viagens de caminhão-tanque da Altavista Serviços com carga “resíduo classe I”. Nenhuma tem recibo de entrega em aterro licenciado. Todas saem às 23h e voltam às 23h40."
+    },
+    {
+     "id": "ordem",
+     "tipo": "prova",
+     "icone": "📑",
+     "nome": "Ordem de serviço",
+     "descricao": "Papel timbrado: “Descartar resíduos líquidos no valão dos fundos, à noite. Economia de R$ 1,2 milhão ao ano em destinação.” Assinatura: U. Prado. Carimbo: “Aprovado — Diretoria”."
+    },
+    {
+     "id": "licenca",
+     "tipo": "prova",
+     "icone": "🪪",
+     "nome": "Licença ambiental",
+     "descricao": "Licença de operação do canteiro, vencida há 8 meses. Pedido de renovação: negado por ausência de plano de resíduos."
+    },
+    {
+     "id": "cano",
+     "tipo": "prova",
+     "icone": "📷",
+     "nome": "Fotos da tubulação",
+     "descricao": "Cano de PVC de 150 mm escondido atrás do tapume do portão dos fundos, saindo do tanque e desaguando no córrego que alimenta o Rio Cinzento."
+    },
+    {
+     "id": "lca54",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Crimes Ambientais, art. 54",
+     "chave": "LCA#art-54",
+     "trecho": "Causar poluição de qualquer natureza em níveis tais que resultem ou possam resultar em danos à saúde humana"
+    },
+    {
+     "id": "lca54v",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Crimes Ambientais, art. 54, § 2º, V",
+     "chave": "LCA#art-54/par-2/inc-v",
+     "trecho": "lançamento de resíduos sólidos, líquidos ou gasosos"
+    },
+    {
+     "id": "lca3",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Crimes Ambientais, art. 3º",
+     "chave": "LCA#art-3",
+     "trecho": "no interesse ou benefício da sua entidade"
+    },
+    {
+     "id": "lca3u",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Crimes Ambientais, art. 3º, parágrafo único",
+     "chave": "LCA#art-3/par-unico",
+     "trecho": "não exclui a das pessoas físicas"
+    },
+    {
+     "id": "lca60",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Crimes Ambientais, art. 60",
+     "chave": "LCA#art-60",
+     "trecho": "sem licença ou autorização dos órgãos ambientais competentes"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 14",
+     "subtitulo": "O Rio Cinzento",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Promotoria de Meio Ambiente. O Rio Cinzento amanheceu coberto de peixe morto. A comunidade ribeirinha acusa a Altavista Serviços de despejar produto químico."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Altavista Serviços… a mesma que lavava dinheiro de Henrique Altavista?"
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "A mesma. Só que, no papel, ela é “empresa de gestão de resíduos”. A melhor fachada é a que tem cheiro."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Posso ajudar com a operação. Falo com a Polícia Ambiental e fixo a vistoria na obra para quinta, às seis da manhã. Só nós três sabemos."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Obrigado(a), doutor Valadares. Discrição é tudo."
+      },
+      {
+       "q": "valadares",
+       "e": "confiante",
+       "t": "Sempre. Eu cuido da logística."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "lca54",
+        "lca54v",
+        "lca3",
+        "lca3u",
+        "lca60"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "gabinete"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "rua",
+     "titulo": "Vila do Cinzento",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Beira de rio, rua de terra e uma fila de baldes cheios de peixe boiando de barriga para cima."
+      },
+      {
+       "q": "a3nilza",
+       "e": "triste",
+       "t": "Tem quarenta anos que a minha família vive do rio. Nunca vi ele morrer assim, doutor(a)."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "muro",
+       "nome": "Muro da obra",
+       "x": 4,
+       "y": 45,
+       "w": 30,
+       "h": 27,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Uma faixa de lama escura escorre do pé do muro até a boca de lobo, e dali para o córrego. Tem cheiro de solvente, como no laudo."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "E a faixa passa por baixo de um cano. Vou ver o que tem do outro lado."
+        }
+       ]
+      },
+      {
+       "id": "loja",
+       "nome": "Peixaria da comunidade",
+       "x": 39,
+       "y": 29,
+       "w": 28,
+       "h": 28,
+       "falas": [
+        {
+         "q": "a3nilza",
+         "e": "triste",
+         "t": "Esse é o balde de ontem. Três toneladas, doutor(a). Tiramos e contamos. Tem foto, tem tudo.",
+         "recebe": [
+          "mortandade"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "carro",
+       "nome": "Caminhão estacionado",
+       "x": 62,
+       "y": 61,
+       "w": 19,
+       "h": 19,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Um caminhão-tanque com o logotipo da Altavista Serviços, parado atrás da peixaria. A porta traz um adesivo: “Resíduos Classe I”."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Classe I é a categoria mais perigosa. Esse tipo de carga só pode ir a aterro licenciado, e com recibo."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3nilza",
+       "titulo": "Ouvir Nilza",
+       "falas": [
+        {
+         "q": "a3nilza",
+         "e": "nervoso",
+         "t": "Todo dia, por volta de onze da noite, passava um caminhão. Voltava quarenta minutos depois. Se fosse até o aterro, doutor(a), levava três horas."
+        },
+        {
+         "q": "a3nilza",
+         "e": "triste",
+         "t": "Eu mesma coletei água e levei para a agência ambiental. Tem o papel aqui.",
+         "recebe": [
+          "laudo"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Quarenta minutos. A obra fica a vinte minutos da vila. Eles descarregavam por aqui e voltavam."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "mortandade",
+      "laudo"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Quinta-feira, 6h. A Polícia Ambiental chega ao canteiro com o mandado de busca. O portão está aberto. O tanque está vazio. O chão, lavado."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "Lavado?! Ontem à noite havia lama escura até aqui. Alguém limpou tudo."
+      },
+      {
+       "q": "a3ulisses",
+       "e": "feliz",
+       "t": "Bom dia, doutor(a). Fiquei sabendo da visita e quis deixar a obra em ordem. Somos colaborativos."
+      },
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "“Fiquei sabendo”? Só quatro pessoas sabiam o horário desta vistoria."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "Hum. Vazamento de agenda é comum nessas operações. O pessoal da Polícia Ambiental fala demais."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Pode ser. Mas fica anotado: alguém avisou a Altavista com menos de vinte e quatro horas de antecedência."
+      }
+     ],
+     "proxima": "x5",
+     "local": "obra"
+    },
+    "x5": {
+     "tipo": "investigar",
+     "local": "obra",
+     "titulo": "Canteiro da Altavista Serviços",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Mesmo lavado, um canteiro industrial guarda segredos nos lugares onde ninguém lembra de limpar."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "portao",
+       "nome": "Portão dos fundos",
+       "x": 78,
+       "y": 36,
+       "w": 16,
+       "h": 28,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Atrás do tapume, escondido: um cano de PVC de 150 mm saindo do tanque até o córrego. Ainda pinga."
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Os peritos fotografam tudo. Não dá para lavar prova que está dentro da terra.",
+         "recebe": [
+          "cano"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "escritorio",
+       "nome": "Escritório da obra",
+       "x": 42,
+       "y": 30,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Na gaveta do engenheiro, uma ordem de serviço: “Descartar resíduos líquidos no valão dos fundos, à noite”. Carimbo: “Aprovado — Diretoria”. Quem assinou foi Ulisses Prado, o gerente.",
+         "recebe": [
+          "ordem"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E um ofício da agência ambiental: a licença de operação venceu há oito meses, e a renovação foi negada por falta de plano de resíduos.",
+         "recebe": [
+          "licenca"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "catraca",
+       "nome": "Catraca de acesso",
+       "x": 8,
+       "y": 40,
+       "w": 16,
+       "h": 22,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O registro eletrônico da catraca guarda as saídas dos caminhões: quatorze viagens, sempre às 23h, voltando às 23h40. Nenhuma com recibo de aterro.",
+         "recebe": [
+          "nf"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "andaime",
+       "nome": "Andaime",
+       "x": 64,
+       "y": 6,
+       "w": 30,
+       "h": 26,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Lá de cima, dá para ver o córrego e, ao fundo, o Rio Cinzento. Uma mancha cinza de uns duzentos metros, como uma cicatriz."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3ulisses",
+       "titulo": "Perguntar a Ulisses",
+       "falas": [
+        {
+         "q": "a3ulisses",
+         "e": "confiante",
+         "t": "Doutor(a), eu sou gerente operacional, não sou poluidor. Qualquer coisa que a obra faça é com a licença da diretoria."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O senhor acabou de dizer que a diretoria autoriza o que a obra faz. Anotei."
+        },
+        {
+         "q": "a3ulisses",
+         "e": "nervoso",
+         "t": "Não foi isso que eu quis dizer."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "cano",
+      "ordem",
+      "nf",
+      "licenca"
+     ],
+     "proxima": "x6"
+    },
+    "x6": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Audiência de instrução. Altavista Serviços Ltda. e Ulisses Prado, denunciados.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, preliminarmente: pessoa jurídica não comete crime. Quem age é gente. O máximo que a lei pode fazer é punir o gerente, não a empresa."
+      },
+      {
+       "q": "livia",
+       "e": "apontando",
+       "t": "Pedimos a exclusão da Altavista Serviços do polo passivo."
+      }
+     ],
+     "proxima": "x7",
+     "local": "tribunal"
+    },
+    "x7": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "A Constituição e a doutrina clássica dizem que a responsabilidade penal é pessoal. Uma empresa não tem vontade própria."
+      }
+     ],
+     "pergunta": "Que dispositivo permite responsabilizar a pessoa jurídica por crime ambiental?",
+     "provas": [
+      "lca3"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 3º da Lei 9.605 diz que as pessoas jurídicas serão responsabilizadas penalmente quando a infração for cometida por decisão de seu representante legal ou contratual, ou de seu órgão colegiado, “no interesse ou benefício da sua entidade”. A ordem de serviço tem o carimbo da Diretoria e fala em economia de 1,2 milhão por ano."
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Excelência, a empresa não pode ser réu ao lado do gerente!"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Preliminar rejeitada. A empresa permanece.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Promotor(a), esse fundamento não responde à tese de que pessoa jurídica não pode ser ré."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "a3ulisses",
+     "titulo": "Interrogatório de Ulisses Prado",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Senhor Prado, o senhor pode se calar. Se falar, falará sob o compromisso de não mentir ao juízo."
+      },
+      {
+       "q": "a3ulisses",
+       "e": "nervoso",
+       "t": "Eu falo. A Altavista é uma empresa séria. Eu sou um funcionário correto."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Nenhum resíduo da Altavista foi lançado em rio ou córrego. Tudo vai para aterro licenciado, como manda a lei.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Todos os resíduos? Sem exceção?"
+        },
+        {
+         "q": "a3ulisses",
+         "e": "confiante",
+         "t": "Todos. Temos os recibos."
+        }
+       ]
+      },
+      {
+       "t": "Os caminhões só saíam à noite porque o trânsito da cidade é impossível de dia.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "E as viagens duravam?"
+        },
+        {
+         "q": "a3ulisses",
+         "e": "nervoso",
+         "t": "Variava. Às vezes, um pouco mais, um pouco menos."
+        }
+       ]
+      },
+      {
+       "t": "A obra nunca teve problema com licença. Estamos em dia com tudo.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Em dia com a licença?"
+        },
+        {
+         "q": "a3ulisses",
+         "e": "nervoso",
+         "t": "Claro. Em dia."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "nf"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Quatorze viagens de caminhão-tanque, todas às 23h, todas voltando em 40 minutos, e NENHUMA com recibo de aterro. O aterro licenciado mais próximo fica a três horas de distância. Onde os caminhões esvaziavam, senhor Prado?"
+      },
+      {
+       "q": "a3ulisses",
+       "e": "chocado",
+       "t": "Eu… eu não controlo o horário dos motoristas!",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Protesto, Excelência! O Ministério Público está dramatizando!"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Indefiro o protesto. A prova é objetiva.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Isso não contradiz a afirmação sobre destinação dos resíduos."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "depoimento",
+     "testemunha": "a3ulisses",
+     "titulo": "A nova versão de Ulisses",
+     "intro": [
+      {
+       "q": "a3ulisses",
+       "e": "nervoso",
+       "t": "Tá bom. Pode ter acontecido alguma coisa. Mas foi por minha conta, e só."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Fui eu sozinho. Para ganhar um bônus. A empresa nunca soube.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O senhor agiu por conta própria?"
+        },
+        {
+         "q": "a3ulisses",
+         "e": "nervoso",
+         "t": "Sim. Sozinho. Idiotice minha."
+        }
+       ]
+      },
+      {
+       "t": "A Altavista nunca lucrou um centavo com isso.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nenhum centavo?"
+        },
+        {
+         "q": "a3ulisses",
+         "e": "nervoso",
+         "t": "Nenhum. Juro."
+        }
+       ]
+      },
+      {
+       "t": "O tal cano eu nem sei quem instalou.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Não sabe?"
+        },
+        {
+         "q": "a3ulisses",
+         "e": "nervoso",
+         "t": "Não! Já estava lá."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "ordem"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "“Descartar resíduos líquidos no valão dos fundos, à noite. Economia de R$ 1,2 milhão ao ano.” Carimbo: “Aprovado — Diretoria”. Isso não é bônus individual, senhor Prado. É política da empresa."
+      },
+      {
+       "q": "a3ulisses",
+       "e": "chocado",
+       "t": "Eu só… eu só assinei!",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Excelência, solicito um recesso!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Indeferido. A defesa vai ter tempo de sobra para se explicar nas alegações.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Promotor(a), essa prova não responde ao que ele acabou de dizer."
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Ministério Público, encerrada a instrução, quem é denunciado e por qual crime?"
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "A defesa insiste: se for condenar, que seja só o gerente. Ele já confessou."
+      }
+     ],
+     "pergunta": "Sua denúncia:",
+     "opcoes": [
+      {
+       "t": "Só o gerente, Ulisses Prado, pelo art. 60 (funcionamento sem licença).",
+       "certa": false,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Isso deixaria a empresa livre, e o dano é muito maior que a falta de licença."
+        },
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "O art. 3º, parágrafo único, diz que a responsabilidade da pessoa jurídica não exclui a das pessoas físicas, e vice-versa. E o fato é poluição, não apenas ausência de licença."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LCA#art-3/par-unico",
+         "trecho": "não exclui a das pessoas físicas"
+        }
+       ]
+      },
+      {
+       "t": "A Altavista Serviços (pessoa jurídica) e Ulisses Prado (pessoa física), pelo art. 54, § 2º, V (poluição por lançamento de resíduos em desacordo com a lei).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Denuncio a empresa e o gerente, em concurso, pelo art. 54, § 2º, V. O art. 3º e seu parágrafo único autorizam, e a pena qualificada reflete o lançamento de resíduos em desacordo com a lei."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Recebo a denúncia nos exatos termos.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LCA#art-3/par-unico",
+         "trecho": "não exclui a das pessoas físicas"
+        },
+        {
+         "chave": "LCA#art-54/par-2/inc-v",
+         "trecho": "lançamento de resíduos sólidos, líquidos ou gasosos"
+        }
+       ]
+      },
+      {
+       "t": "Só a empresa. Pessoas físicas não respondem por crimes ambientais.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Errado, doutor(a). O art. 2º da Lei 9.605 alcança quem, de qualquer forma, concorre para o crime, inclusive o gerente e o preposto que sabe da conduta."
+        },
+        {
+         "q": "livia",
+         "e": "feliz",
+         "t": "Eu até aceitaria, Excelência!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LCA#art-2",
+         "trecho": "o gerente, o preposto ou mandatário de pessoa jurídica"
+        }
+       ]
+      }
+     ],
+     "proxima": "x11"
+    },
+    "x11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Aceita a denúncia, determino a interdição do tanque, a limpeza imediata do córrego a cargo da ré e o bloqueio de bens suficientes para a reparação.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3nilza",
+       "e": "feliz",
+       "t": "(da plateia) Obrigada, doutor(a). O rio vai voltar."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "Bom trabalho. Mas quem avisou a obra?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Foi o que eu perguntei ao senhor, doutor Valadares."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Ah, descobriremos. Vou dar uma olhada nos registros do sistema. Fica comigo."
+      }
+     ],
+     "proxima": "x12",
+     "local": "tribunal"
+    },
+    "x12": {
+     "tipo": "veredicto",
+     "carimbo": "RECEBIDA",
+     "titulo": "O rio vai voltar",
+     "texto": "A pessoa jurídica e o gerente respondem juntos. Mas a obra foi avisada antes da vistoria, e só quatro pessoas sabiam o horário. Uma delas disse que ia “olhar nos registros”."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3-alvara",
+   "ato": "ato3",
+   "ordem": 3,
+   "numero": 15,
+   "titulo": "Alvará com Pressa",
+   "papel": "promotor",
+   "nivel": "avancado",
+   "sinopse": "O secretário de Obras liberou alvarás para a Altavista Serviços num sábado, contra parecer técnico, e a cunhada recebeu uma consultoria de R$ 380 mil. Improbidade, mas só com dolo.",
+   "posicoes": {
+    "dani": "escritorio",
+    "valadares": "escritorio",
+    "heitor": "juiz",
+    "a3fabio": "defesa",
+    "a3eduardo": "testemunha",
+    "a3renata": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "parecer",
+     "tipo": "prova",
+     "icone": "📑",
+     "nome": "Parecer técnico da arquiteta",
+     "descricao": "Parecer 118, assinado por Renata Guedes, 90 dias antes dos alvarás: “Indeferir. Sem estudo de impacto de vizinhança e sem plano de resíduos. Risco ambiental alto.” Despacho do secretário: “De acordo. Arquive-se.”"
+    },
+    {
+     "id": "alvara",
+     "tipo": "prova",
+     "icone": "🏗️",
+     "nome": "Alvarás liberados",
+     "descricao": "Três alvarás de construção para a Altavista Serviços, assinados por Eduardo Pimentel num único sábado, 11h, sem vistoria, sem estudo de impacto e sem pagamento da taxa integral."
+    },
+    {
+     "id": "consultoria",
+     "tipo": "prova",
+     "icone": "💰",
+     "nome": "Contrato da Pimentel & Torres Consultoria",
+     "descricao": "Consultoria em nome de Marlene Torres, cunhada do secretário. Recebeu R$ 380 mil da Altavista Serviços, em duas parcelas, 15 dias após os alvarás. Serviço descrito: “apoio em licenciamento”."
+    },
+    {
+     "id": "jantar",
+     "tipo": "prova",
+     "icone": "🍽️",
+     "nome": "Comprovante de jantar",
+     "descricao": "Cantina do Porto, mesa 7: duas pessoas, R$ 1.940. Pago com cartão da Altavista Serviços, assinado por “Augusto B.” O garçom lembra do outro convidado: “o secretário”."
+    },
+    {
+     "id": "lia9",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Improbidade, art. 9º",
+     "chave": "LIA#art-9",
+     "trecho": "auferir, mediante a prática de ato doloso, qualquer tipo de vantagem patrimonial indevida"
+    },
+    {
+     "id": "lia9i",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Improbidade, art. 9º, I",
+     "chave": "LIA#art-9/inc-i",
+     "trecho": "de quem tenha interesse, direto ou indireto"
+    },
+    {
+     "id": "lia10",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Improbidade, art. 10",
+     "chave": "LIA#art-10",
+     "trecho": "enseje, efetiva e comprovadamente, perda patrimonial"
+    },
+    {
+     "id": "lia11",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Improbidade, art. 11",
+     "chave": "LIA#art-11",
+     "trecho": "a ação ou omissão dolosa que viole os deveres de honestidade, de imparcialidade e de legalidade"
+    },
+    {
+     "id": "lia1p2",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Improbidade, art. 1º, § 2º",
+     "chave": "LIA#art-1/par-2",
+     "trecho": "não bastando a voluntariedade do agente"
+    },
+    {
+     "id": "lia1p3",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Improbidade, art. 1º, § 3º",
+     "chave": "LIA#art-1/par-3",
+     "trecho": "sem comprovação de ato doloso com fim ilícito"
+    },
+    {
+     "id": "lia17",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Improbidade, art. 17",
+     "chave": "LIA#art-17",
+     "trecho": "será proposta pelo Ministério Público"
+    },
+    {
+     "id": "lia16",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Improbidade, art. 16",
+     "chave": "LIA#art-16",
+     "trecho": "indisponibilidade de bens dos réus"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 15",
+     "subtitulo": "Alvará com Pressa",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Doutor(a), bem-vindo(a) à Promotoria de Patrimônio Público. Eu sou a Dani, sua assessora. Minha missão: impedir que o senhor(a) esqueça um prazo."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Dani, a primeira coisa que ouvi de você foi um aviso. Gostei."
+      },
+      {
+       "q": "dani",
+       "e": "normal",
+       "t": "Caso de hoje: Eduardo Pimentel, secretário municipal de Obras. Liberou três alvarás para a Altavista Serviços num sábado, sem vistoria. A arquiteta do setor tinha dado parecer contrário três meses antes."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "Improbidade é sempre mais difícil que parece, colega. Se você não provar o dolo, o juiz joga a ação no lixo."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A lei exige dolo, não só erro. E o senhor acha que o secretário errou?"
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Eu acho que o secretário é um servidor dedicado e talvez injustiçado. Mas é só um palpite de quem já viu muita coisa."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(baixinho) Doutor(a), é a terceira vez esta semana que o doutor Valadares pergunta do seu inquérito. É normal?"
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "lia9",
+        "lia9i",
+        "lia10",
+        "lia11",
+        "lia1p2",
+        "lia1p3",
+        "lia17",
+        "lia16"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "gabinete"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Secretaria Municipal de Obras",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Protocolo, carimbos e um gabinete tão arrumado que parece cenário. Gabinete de quem não tem nada a esconder, ou de quem esconde muito bem."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com processos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "O processo de alvarás da Altavista Serviços. Dentro, o parecer da arquiteta Renata Guedes recomendando indeferir, e na primeira página o despacho do secretário: “De acordo. Arquive-se.”",
+         "recebe": [
+          "parecer"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Três meses depois, os mesmos alvarás aparecem aprovados. Sem nenhum documento novo anexado.",
+         "recebe": [
+          "alvara"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pc",
+       "nome": "Computador do protocolo",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O sistema de protocolo mostra a data: sábado, 11h02. Nenhum outro servidor trabalhou naquele dia. O secretário entrou sozinho, assinou e saiu em doze minutos."
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de livros",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Livros de legislação municipal intactos, com plástico de loja. Alguém aqui lê muito pouco o Código de Obras."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Mas há um manual de licenciamento com uma anotação a lápis: “Altavista = prioridade”."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3renata",
+       "titulo": "Conversar com Renata Guedes",
+       "falas": [
+        {
+         "q": "a3renata",
+         "e": "nervoso",
+         "t": "Eu dei o parecer. Faltavam estudo de impacto e plano de resíduos. O secretário disse: “de acordo”. E eu pensei que o caso estava encerrado."
+        },
+        {
+         "q": "a3renata",
+         "e": "triste",
+         "t": "Três meses depois, descubro que os alvarás saíram num sábado. Sem mim. Sem ninguém."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A senhora teme represálias?"
+        },
+        {
+         "q": "a3renata",
+         "e": "nervoso",
+         "t": "Moro de aluguel. Tenho dois filhos. Mas a lei me protege, não é, doutor(a)?"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "parecer",
+      "alvara"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "investigar",
+     "local": "bar",
+     "titulo": "Cantina do Porto",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Cantina com toalhas xadrez e fotos de políticos nas paredes. Alguns, a Promotoria já conhece pelo nome."
+      },
+      {
+       "q": "dani",
+       "e": "normal",
+       "t": "Doutor(a), o garçom me ligou. Disse que o secretário jantou aqui na semana do sábado dos alvarás."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "caixa",
+       "nome": "Caixa / balcão",
+       "x": 55,
+       "y": 40,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "A comanda da mesa 7: R$ 1.940, paga com cartão corporativo da Altavista Serviços. Assinatura: “Augusto B.”",
+         "recebe": [
+          "jantar"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "camera",
+       "nome": "Câmera no teto",
+       "x": 76,
+       "y": 8,
+       "w": 12,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "As imagens mostram o secretário Eduardo Pimentel sentado com um homem de cabelo grisalho e topete, de costas. Ele entrega um envelope. Ele pega e guarda no bolso interno do paletó."
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa",
+       "x": 14,
+       "y": 52,
+       "w": 18,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Na mesa 7, um guardanapo com rabisco: “380”. Mesmo número, mesma noite, mesmo envelope."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Falar com Dani",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "O contrato da consultoria da cunhada tem a mesma soma: R$ 380 mil. Quinze dias depois do alvará, a Altavista Serviços paga em duas parcelas."
+        },
+        {
+         "q": "dani",
+         "e": "feliz",
+         "t": "Pedi ao banco o extrato da conta da consultoria. Tem aqui.",
+         "recebe": [
+          "consultoria"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Agora temos a vantagem e o interesse: quem se beneficiou dos alvarás pagou ao secretário, por intermédio da cunhada."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "jantar",
+      "consultoria"
+     ],
+     "proxima": "x5"
+    },
+    "x5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Ação civil de improbidade administrativa proposta contra Eduardo Pimentel, secretário municipal. Aberta a audiência.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3fabio",
+       "e": "confiante",
+       "t": "Excelência, preliminarmente: o Município é o lesado. Cabe a ele propor a ação de improbidade, e não ao Ministério Público. Pede-se a extinção, por ilegitimidade ativa."
+      },
+      {
+       "q": "a3eduardo",
+       "e": "confiante",
+       "t": "(sussurrando) É isso, doutor Fábio. Derruba logo."
+      }
+     ],
+     "proxima": "x6",
+     "local": "tribunal"
+    },
+    "x6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a3fabio",
+       "e": "apontando",
+       "t": "A improbidade é um assunto interno da Administração. O Ministério Público não pode substituir o Município."
+      }
+     ],
+     "pergunta": "Qual dispositivo da Lei de Improbidade responde à preliminar de ilegitimidade?",
+     "provas": [
+      "lia17"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Art. 17 da Lei 8.429: a ação para aplicação das sanções “será proposta pelo Ministério Público”. A legitimidade está na lei."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Preliminar rejeitada. O Ministério Público tem legitimidade.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3fabio",
+       "e": "nervoso",
+       "t": "Hmm. Sigamos."
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Promotor(a), esse dispositivo não responde à preliminar de ilegitimidade."
+      }
+     ],
+     "proxima": "x7"
+    },
+    "x7": {
+     "tipo": "depoimento",
+     "testemunha": "a3eduardo",
+     "titulo": "Depoimento de Eduardo Pimentel",
+     "intro": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Senhor Pimentel, o senhor é réu. Pode falar ou se calar."
+      },
+      {
+       "q": "a3eduardo",
+       "e": "confiante",
+       "t": "Quero falar, Excelência. Sou servidor há vinte anos. Não tenho nada a esconder."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu nunca tive qualquer contato pessoal com representantes da Altavista. Tudo foi pelo protocolo, como qualquer cidadão.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nenhum contato pessoal?"
+        },
+        {
+         "q": "a3eduardo",
+         "e": "confiante",
+         "t": "Nenhum. Só por escrito."
+        }
+       ]
+      },
+      {
+       "t": "Os alvarás saíram porque o processo estava regular. Se o parecer da Renata estava errado, não me cabe saber.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Regular? Sem vistoria?"
+        },
+        {
+         "q": "a3eduardo",
+         "e": "nervoso",
+         "t": "A vistoria é dispensável quando a obra é de pequeno porte."
+        }
+       ]
+      },
+      {
+       "t": "Eu trabalhei no sábado porque estava atrasado com o expediente. Foi uma coincidência.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Coincidência?"
+        },
+        {
+         "q": "a3eduardo",
+         "e": "nervoso",
+         "t": "Ora, vá lá, não deu para fazer na sexta."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "jantar"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Cantina do Porto, mesa 7. Jantar de R$ 1.940 pago com cartão da Altavista Serviços. O garçom reconheceu o convidado: o secretário. E o vídeo mostra o senhor guardando um envelope no paletó."
+      },
+      {
+       "q": "a3eduardo",
+       "e": "chocado",
+       "t": "Aquilo era… era só um jantar! Uma reunião!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3fabio",
+       "e": "nervoso",
+       "t": "Excelência, protesto! Isso é presunção!"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "A prova é documental e a câmera é objetiva. Indeferido.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Promotor(a), isso não contradiz a negativa de contato pessoal."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "a3eduardo",
+     "titulo": "A nova versão do secretário",
+     "intro": [
+      {
+       "q": "a3eduardo",
+       "e": "nervoso",
+       "t": "Certo, houve um jantar. Mas foi institucional. Eu nunca recebi nada de ninguém."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O jantar foi pago por eles, mas isso não é vantagem. Foi gentileza.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Gentileza de quem tinha processo na sua mesa?"
+        },
+        {
+         "q": "a3eduardo",
+         "e": "nervoso",
+         "t": "Gentileza é gentileza!"
+        }
+       ]
+      },
+      {
+       "t": "Eu jamais recebi um centavo da Altavista Serviços. Nem direta, nem indiretamente.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nem indiretamente?"
+        },
+        {
+         "q": "a3eduardo",
+         "e": "bravo",
+         "t": "Nem indiretamente. Pode vasculhar!"
+        }
+       ]
+      },
+      {
+       "t": "Minha família não tem nenhuma relação com a Altavista.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nenhuma relação?"
+        },
+        {
+         "q": "a3eduardo",
+         "e": "confiante",
+         "t": "Nenhuma."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "consultoria"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Pimentel & Torres Consultoria, da sua cunhada, Marlene Torres: R$ 380 mil pagos pela Altavista Serviços, em duas parcelas, quinze dias depois dos alvarás. Chama-se vantagem indireta, senhor secretário. A própria lei a prevê."
+      },
+      {
+       "q": "a3eduardo",
+       "e": "chocado",
+       "t": "Marlene é adulta! Eu não tenho nada a ver com os negócios dela!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3fabio",
+       "e": "nervoso",
+       "t": "Excelência, preciso de um minuto com o meu cliente."
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Não vou conceder recesso. Prossiga, doutor(a).",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Isso não contradiz o que o réu acabou de dizer, promotor(a)."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a3fabio",
+       "e": "apontando",
+       "t": "Mesmo que houvesse algo, Excelência, improbidade exige dolo. Aqui houve, no máximo, erro de julgamento. A lei diz que o mero exercício da função não é ímprobo."
+      }
+     ],
+     "pergunta": "Que prova mostra que o secretário agiu com dolo, e não por mero erro?",
+     "provas": [
+      "parecer"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 1º, § 3º, exige comprovação de ato doloso com fim ilícito. Aqui está: o secretário recebeu o parecer técnico contrário, escreveu “de acordo” e arquivou. Três meses depois, liberou tudo num sábado, sem vistoria. Quem erra não arquiva a recomendação contrária e depois a ignora. Quem sabe, e faz mesmo assim, age com dolo."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "O dolo está demonstrado em cognição suficiente para o prosseguimento.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3fabio",
+       "e": "nervoso",
+       "t": "Hmpf."
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Esse documento não demonstra dolo, doutor(a)."
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Ministério Público, qual ato de improbidade imputa ao réu?"
+      },
+      {
+       "q": "a3fabio",
+       "e": "confiante",
+       "t": "(sussurrando) Imputa o art. 10, Excelência, para ficar fácil de contestar."
+      }
+     ],
+     "pergunta": "Sua imputação:",
+     "opcoes": [
+      {
+       "t": "Art. 10 (lesão ao erário), porque o Município deixou de arrecadar a taxa integral.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "pensativo",
+         "t": "O art. 10 exige perda patrimonial efetiva e comprovada. Ainda que haja taxa menor, o dano não foi quantificado nos autos."
+        },
+        {
+         "q": "a3fabio",
+         "e": "feliz",
+         "t": "Exato, Excelência! Prova de dano não há!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LIA#art-10",
+         "trecho": "enseje, efetiva e comprovadamente, perda patrimonial"
+        }
+       ]
+      },
+      {
+       "t": "Art. 9º, I (enriquecimento ilícito): vantagem econômica indireta, por meio da consultoria da cunhada, de quem tinha interesse nos alvarás.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Imputo o art. 9º, inciso I. O secretário recebeu, para outrem, por intermédio de uma consultoria, vantagem de quem tinha interesse direto no ato do cargo. E a vantagem foi de R$ 380 mil."
+        },
+        {
+         "q": "heitor",
+         "e": "normal",
+         "t": "Imputação recebida.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LIA#art-9/inc-i",
+         "trecho": "de quem tenha interesse, direto ou indireto"
+        }
+       ]
+      },
+      {
+       "t": "Art. 11, apenas, porque não exige provar vantagem nem dano.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "O art. 11 também exige dolo e seus incisos são taxativos. Imputar só o 11 é desprezar a prova da vantagem que o senhor trouxe."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Verdade. A prova me leva ao art. 9º."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LIA#art-11",
+         "trecho": "a ação ou omissão dolosa que viole os deveres de honestidade, de imparcialidade e de legalidade"
+        }
+       ]
+      }
+     ],
+     "proxima": "x11"
+    },
+    "x11": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Há pedido cautelar?"
+      },
+      {
+       "q": "a3renata",
+       "e": "nervoso",
+       "t": "(da plateia, baixinho) Doutor(a), eles podem sumir com o dinheiro…"
+      }
+     ],
+     "pergunta": "Qual cautelar o Ministério Público requer?",
+     "opcoes": [
+      {
+       "t": "Perda imediata do cargo e suspensão dos direitos políticos, já na liminar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "O art. 20 diz que a perda da função e a suspensão dos direitos políticos só se efetivam com o trânsito em julgado."
+        },
+        {
+         "q": "a3fabio",
+         "e": "feliz",
+         "t": "Obrigado, Excelência!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LIA#art-20",
+         "trecho": "só se efetivam com o trânsito em julgado da sentença condenatória"
+        }
+       ]
+      },
+      {
+       "t": "Indisponibilidade de bens do réu até o valor do acréscimo ilícito (R$ 380 mil), por perigo de dano irreparável (art. 16).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Requeiro a indisponibilidade de bens até R$ 380 mil, valor da vantagem. Há risco de dissipação: a verba saiu em duas parcelas e a consultoria é de parente próximo."
+        },
+        {
+         "q": "heitor",
+         "e": "normal",
+         "t": "Defiro a indisponibilidade.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LIA#art-16",
+         "trecho": "indisponibilidade de bens dos réus"
+        }
+       ]
+      },
+      {
+       "t": "Prisão preventiva do secretário, para evitar fuga.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "pensativo",
+         "t": "Esta é uma ação civil de improbidade, não um processo penal. Não há prisão preventiva aqui."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Anotado. As sanções da improbidade são de outra natureza: multa, perda do cargo, suspensão de direitos políticos, proibição de contratar."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LIA#art-12/inc-i",
+         "trecho": "perda da função pública"
+        }
+       ]
+      }
+     ],
+     "proxima": "x12"
+    },
+    "x12": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "O juiz deferiu a indisponibilidade! Parabéns, doutor(a)!"
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Obrigado(a), Dani. Aliás, você mencionou que o doutor Valadares perguntou do inquérito. O sistema registrou o acesso?"
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Registrou. Ontem, 23h47, com o login dele, de um computador que não é o do gabinete dele. Normal?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Pode ser. Ele é colega, coordena a Criminal. Mas anote o horário."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Colega! Ouvi que ganhou a cautelar. Eu avisei que você era bom(a)."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Foi um trabalho de equipe, doutor Valadares. Obrigado(a) pelo apoio."
+      },
+      {
+       "q": "valadares",
+       "e": "confiante",
+       "t": "Estamos aqui para isso."
+      }
+     ],
+     "proxima": "x13",
+     "local": "gabinete"
+    },
+    "x13": {
+     "tipo": "veredicto",
+     "carimbo": "DEFERIDA",
+     "titulo": "Bens bloqueados",
+     "texto": "Você provou o dolo, escolheu o art. 9º e pediu a cautelar certa, sem confundir a ação civil com um processo penal. O registro de acesso de Valadares ficou no seu caderno."
+    }
+   },
+   "placas": {
+    "defesa": "Réu",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3-gramas",
+   "ato": "ato3",
+   "ordem": 4,
+   "numero": 16,
+   "titulo": "Oito Gramas",
+   "papel": "promotor",
+   "nivel": "avancado",
+   "sinopse": "Dois jovens são denunciados por tráfico e associação por causa de 8 gramas de maconha. Você precisa decidir quando denunciar, quando desclassificar e quando absolver.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "beatriz": "juiz",
+    "a3cassio": "defesa",
+    "a3nogueira": "testemunha",
+    "a3davi": "testemunha",
+    "a3bianca": "testemunha",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "apreensao",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Auto de apreensão",
+     "descricao": "Apartamento de Davi Moreira: 8 gramas de maconha em um único pacote, um isqueiro, papel de seda e R$ 60 em notas pequenas. Nenhuma balança, nenhum caderno, nenhum saquinho fracionado."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🧪",
+     "nome": "Laudo toxicológico",
+     "descricao": "Peso líquido: 8,2 g de Cannabis sativa. Quantidade compatível com consumo pessoal de curto prazo, segundo o perito."
+    },
+    {
+     "id": "bopm",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Boletim da Polícia Militar",
+     "descricao": "“21h05: abordagem no apto 31, após denúncia anônima recebida às 20h40.” O boletim registra: “sem diligência prévia, sem campana, sem flagrante de venda”."
+    },
+    {
+     "id": "camera",
+     "tipo": "prova",
+     "icone": "📹",
+     "nome": "Câmera corporal",
+     "descricao": "Imagens da entrada dos policiais: Davi e Bianca no sofá, vendo TV. Nenhuma movimentação de entrada e saída de pessoas. Nenhum cliente no apartamento."
+    },
+    {
+     "id": "universidade",
+     "tipo": "prova",
+     "icone": "🎓",
+     "nome": "Declaração da universidade",
+     "descricao": "Davi Moreira, 5º período de Engenharia, bolsista, sem faltas e sem registro disciplinar. Certidão criminal negativa: nenhum antecedente."
+    },
+    {
+     "id": "bianca",
+     "tipo": "prova",
+     "icone": "🏢",
+     "nome": "Declaração do síndico",
+     "descricao": "Bianca Sales não mora no prédio. Entrou às 19h, registrada na portaria, para visitar o namorado. Sem antecedentes. Passagem de ônibus intermunicipal, mesmo dia."
+    },
+    {
+     "id": "ld28",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Drogas, art. 28",
+     "chave": "LD#art-28",
+     "trecho": "para consumo pessoal"
+    },
+    {
+     "id": "ld28p2",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Drogas, art. 28, § 2º",
+     "chave": "LD#art-28/par-2",
+     "trecho": "à natureza e à quantidade da substância apreendida"
+    },
+    {
+     "id": "ld33",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Drogas, art. 33",
+     "chave": "LD#art-33",
+     "trecho": "trazer consigo"
+    },
+    {
+     "id": "ld33p4",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Drogas, art. 33, § 4º",
+     "chave": "LD#art-33/par-4",
+     "trecho": "desde que o agente seja primário"
+    },
+    {
+     "id": "ld35",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Drogas, art. 35",
+     "chave": "LD#art-35",
+     "trecho": "Associarem-se duas ou mais pessoas"
+    },
+    {
+     "id": "ld48p5",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Drogas, art. 48, § 5º",
+     "chave": "LD#art-48/par-5",
+     "trecho": "o Ministério Público poderá propor a aplicação imediata de pena prevista no art. 28"
+    },
+    {
+     "id": "cpp386v",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 386, V",
+     "chave": "CPP#art-386/inc-v",
+     "trecho": "não existir prova de ter o réu concorrido para a infração penal"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 16",
+     "subtitulo": "Oito Gramas",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Promotoria Criminal. Caso de hoje: Davi Moreira e Bianca Sales, denunciados por tráfico e associação para o tráfico. O inquérito chegou da delegacia do doutor Fausto Rangel."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "Fausto Rangel? O delegado que prendeu a Joana de forma ilegal no Ato I?"
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "O próprio. Está de volta ao plantão. E a denúncia foi assinada em regime de urgência pelo doutor Valadares. Agora é caso seu."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Colega, o Procurador está de olho nas estatísticas de tráfico. Assinei porque o delegado pediu e a imprensa já noticiou. Não complique."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Estatística não é prova, doutor Valadares."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Lembre-se do que eu disse na posse: o Ministério Público é parte, mas é parte imparcial. Se a prova mostrar um usuário, a lei manda tratá-lo como usuário. E se mostrar um inocente, a lei manda pedir a absolvição."
+      },
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "Cuidado com a ingenuidade. Já vi muita gente derrotada por achar que o réu era “só um usuário”."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "laudo",
+        "apreensao",
+        "ld28",
+        "ld28p2",
+        "ld33",
+        "ld33p4",
+        "ld35",
+        "ld48p5",
+        "cpp386v"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "gabinete"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia de Entorpecentes",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Cheiro de café queimado, uma pilha de inquéritos e um cartaz com a frase “Tolerância Zero”. Bom lema para uma campanha. Péssimo para uma investigação."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "registro",
+       "nome": "Livro de registro",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O registro da ocorrência: “Abordagem às 21h05, denúncia anônima às 20h40”. Vinte e cinco minutos entre o telefonema e a invasão. Sem campana, sem monitoramento.",
+         "recebe": [
+          "bopm"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Lacuna importante: a denúncia anônima foi a única fonte. Sem investigação prévia."
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O auto de apreensão: 8 g de maconha em um pacote, papel de seda e R$ 60. Nada de balança, caderno ou saquinhos.",
+         "recebe": [
+          "apreensao"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O laudo toxicológico: 8,2 g. O perito escreveu que a quantidade é compatível com uso pessoal de curto prazo.",
+         "recebe": [
+          "laudo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Fotos de apreensões grandes: tijolos de cocaína, balanças, rolos de dinheiro. Tráfico de verdade tem outra cara."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "É por isso que a lei manda olhar natureza e quantidade. Oito gramas não são um depósito."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3nogueira",
+       "titulo": "Ouvir o cabo Nogueira",
+       "falas": [
+        {
+         "q": "a3nogueira",
+         "e": "confiante",
+         "t": "Doutor(a), fizemos uma campana de dois dias antes da abordagem. Vimos o rapaz entregando pacotes para outros jovens na portaria."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Dois dias de campana? O boletim registra “sem diligência prévia”."
+        },
+        {
+         "q": "a3nogueira",
+         "e": "nervoso",
+         "t": "Ah… foi o delegado quem escreveu o boletim. Eu só confirmei."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "bopm",
+      "apreensao",
+      "laudo"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "investigar",
+     "local": "apartamento",
+     "titulo": "Apartamento 31",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Pequeno, arrumado, com pôsteres de bandas e uma maquete de ponte sobre a mesa. Cheiro de incenso e de provas semestrais."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "estante",
+       "nome": "Estante",
+       "x": 9,
+       "y": 22,
+       "w": 19,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Livros de cálculo, resistência dos materiais e um violão. Nenhum caderno de contabilidade, nenhuma lista de clientes."
+        }
+       ]
+      },
+      {
+       "id": "comoda",
+       "nome": "Cômoda",
+       "x": 64,
+       "y": 46,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Na gaveta: papel de seda, um isqueiro e um potinho de vidro vazio. É o kit de um usuário. Tráfico precisa de balança, embalagem e controle."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nenhuma arma. Nenhum dinheiro além de R$ 60. Um boleto da faculdade, pago."
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa",
+       "x": 30,
+       "y": 50,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Em cima da maquete de ponte, um recibo de bolsa de estudos e o extrato de um estágio de R$ 1.400. Sem renda extra, sem movimentação suspeita.",
+         "recebe": [
+          "universidade"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "sofa",
+       "nome": "Sofá",
+       "x": 82,
+       "y": 50,
+       "w": 16,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Almofada, dois controles e uma televisão ligada em série. Os policiais encontraram os dois assim."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A câmera corporal dos agentes confirma: nenhum cliente, nenhum fluxo de pessoas.",
+         "recebe": [
+          "camera"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3bianca",
+       "titulo": "Perguntar a Bianca",
+       "falas": [
+        {
+         "q": "a3bianca",
+         "e": "nervoso",
+         "t": "Eu moro em outra cidade, doutor(a). Vim passar a noite com o Davi. Cheguei às sete, com a bolsa e a passagem."
+        },
+        {
+         "q": "a3bianca",
+         "e": "triste",
+         "t": "Eu nem sabia que ele fumava. Para mim, era só maconha de fim de semana. Agora estou presa por associação?"
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A senhora tem a passagem de ônibus?"
+        },
+        {
+         "q": "a3bianca",
+         "e": "nervoso",
+         "t": "Tenho. E o síndico me registrou na portaria às 19h.",
+         "recebe": [
+          "bianca"
+         ]
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "universidade",
+      "camera",
+      "bianca"
+     ],
+     "proxima": "x5"
+    },
+    "x5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Audiência de instrução e julgamento. Réus: Davi Moreira e Bianca Sales. Denúncia: tráfico (art. 33) e associação (art. 35).",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3cassio",
+       "e": "confiante",
+       "t": "Excelência, a defesa vai demonstrar que Davi é usuário e Bianca é simples visita. Pede a desclassificação do art. 33 para o art. 28."
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Doutor(a), antes de ouvir as testemunhas: que critérios a lei me dá para distinguir uso pessoal de tráfico?"
+      }
+     ],
+     "proxima": "x6",
+     "local": "tribunal"
+    },
+    "x6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "A lei não fixa um número de gramas. Que elementos devo considerar para decidir o destino da droga?"
+      }
+     ],
+     "pergunta": "Qual dispositivo traz os critérios para distinguir consumo pessoal de tráfico?",
+     "provas": [
+      "ld28p2"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Excelência, o art. 28, § 2º: o juiz atenderá à natureza e à quantidade da substância apreendida, ao local e às condições em que se desenvolveu a ação, às circunstâncias sociais e pessoais, e à conduta e aos antecedentes do agente."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Anotado. Há seis critérios, e nenhum é decisivo sozinho."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Esse não é o dispositivo que traz os critérios de distinção, promotor(a)."
+      }
+     ],
+     "proxima": "x7"
+    },
+    "x7": {
+     "tipo": "depoimento",
+     "testemunha": "a3nogueira",
+     "titulo": "Depoimento do cabo Nogueira",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Chamo a testemunha de acusação, cabo Nogueira, da Polícia Militar."
+      },
+      {
+       "q": "a3nogueira",
+       "e": "confiante",
+       "t": "Excelência, estive na operação. Foi uma ação planejada, com monitoramento prévio."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Fizemos campana de dois dias. Vimos o acusado entregando pacotes a vários jovens na portaria.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Campana de dois dias, cabo?"
+        },
+        {
+         "q": "a3nogueira",
+         "e": "confiante",
+         "t": "Dois dias. Eu mesmo vi."
+        }
+       ]
+      },
+      {
+       "t": "A abordagem foi tranquila, os réus estavam sentados no sofá.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Sentados no sofá?"
+        },
+        {
+         "q": "a3nogueira",
+         "e": "normal",
+         "t": "Isso. Calmos."
+        }
+       ]
+      },
+      {
+       "t": "A prisão se deu pela gravidade do crime: tráfico de entorpecentes.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Gravidade de quê?"
+        },
+        {
+         "q": "a3nogueira",
+         "e": "nervoso",
+         "t": "De… de tudo."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "bopm"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O boletim da PM, cabo: “21h05, abordagem, denúncia anônima às 20h40. Sem diligência prévia, sem campana, sem flagrante de venda”. A campana de dois dias existiu em que documento?"
+      },
+      {
+       "q": "a3nogueira",
+       "e": "chocado",
+       "t": "Eu… eu me confundi com outra operação!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3cassio",
+       "e": "feliz",
+       "t": "Vossa Excelência anotou?"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Anotei. A testemunha confundiu operações. Prossiga.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Promotor(a), isso não contradiz a existência de campana."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "a3nogueira",
+     "titulo": "O resto do depoimento",
+     "intro": [
+      {
+       "q": "a3nogueira",
+       "e": "nervoso",
+       "t": "Tá bom, a campana não foi tão longa. Mas o que encontramos dentro era de traficante."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Encontramos uma balança de precisão e um caderno de anotações do tráfico.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Balança e caderno?"
+        },
+        {
+         "q": "a3nogueira",
+         "e": "confiante",
+         "t": "Os dois. Estavam na cômoda."
+        }
+       ]
+      },
+      {
+       "t": "Tinha dinheiro de venda em notas miúdas.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Quanto?"
+        },
+        {
+         "q": "a3nogueira",
+         "e": "nervoso",
+         "t": "Sei lá. Umas notas."
+        }
+       ]
+      },
+      {
+       "t": "A moça também participava do esquema, era fácil perceber.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Perceber como?"
+        },
+        {
+         "q": "a3nogueira",
+         "e": "nervoso",
+         "t": "Pela cara."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "apreensao"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O auto de apreensão, assinado pelo senhor: 8 gramas, papel de seda, isqueiro e R$ 60. “Nenhuma balança, nenhum caderno, nenhum saquinho fracionado”. Onde estão a balança e o caderno, cabo Nogueira?"
+      },
+      {
+       "q": "a3nogueira",
+       "e": "chocado",
+       "t": "!!!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3cassio",
+       "e": "feliz",
+       "t": "Excelência, a testemunha acaba de inventar provas!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Cabo, o senhor está à beira de responder por falso testemunho. Vou determinar o envio de cópia ao Ministério Público.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz a afirmação, promotor(a)."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Ministério Público, em alegações finais, qual o seu pedido quanto a Davi Moreira?"
+      },
+      {
+       "q": "a3davi",
+       "e": "triste",
+       "t": "(baixinho) Eu fumo, doutor(a). Mas nunca vendi nada para ninguém."
+      }
+     ],
+     "pergunta": "Quanto a Davi:",
+     "opcoes": [
+      {
+       "t": "Condenação por tráfico, porque a denúncia já foi oferecida e o Ministério Público não pode voltar atrás.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "O Ministério Público pode, e deve, pedir a desclassificação quando a prova mostra outro crime. A denúncia não o prende ao erro."
+        },
+        {
+         "q": "a3cassio",
+         "e": "feliz",
+         "t": "Exatamente, Excelência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-383",
+         "trecho": "poderá atribuir-lhe definição jurídica diversa"
+        }
+       ]
+      },
+      {
+       "t": "Desclassificação para o art. 28 (consumo pessoal), com proposta de pena de advertência e curso educativo (art. 48, § 5º).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, 8 gramas, sem balança, sem caderno, sem fluxo de clientes, réu primário, estudante, bom antecedente. A prova leva ao art. 28. Requeiro a desclassificação e proponho advertência e medida educativa, na forma do art. 48, § 5º."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Anotado. Nada de prisão: o art. 28 só admite advertência, serviços à comunidade e medida educativa."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LD#art-28",
+         "trecho": "para consumo pessoal"
+        },
+        {
+         "chave": "LD#art-48/par-5",
+         "trecho": "o Ministério Público poderá propor a aplicação imediata de pena prevista no art. 28"
+        }
+       ]
+      },
+      {
+       "t": "Absolvição total, porque maconha para uso pessoal não é crime.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O art. 28 continua a descrever uma conduta ilícita, com sanções próprias. O Legislativo afastou a prisão, não a ilicitude da posse."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A pena é de advertência e educação, mas o fato continua previsto em lei."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LD#art-28/inc-i",
+         "trecho": "advertência sobre os efeitos das drogas"
+        }
+       ]
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "E quanto a Bianca Sales, denunciada por associação para o tráfico?"
+      },
+      {
+       "q": "a3bianca",
+       "e": "triste",
+       "t": "(chorando) Eu só vim visitar meu namorado, Excelência."
+      }
+     ],
+     "pergunta": "Quanto a Bianca:",
+     "opcoes": [
+      {
+       "t": "Manter a condenação por associação, porque ela estava no mesmo apartamento.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Estar no mesmo local não é associar-se. O art. 35 exige vínculo estável e finalidade de praticar tráfico."
+        },
+        {
+         "q": "a3cassio",
+         "e": "nervoso",
+         "t": "Protesto, Excelência! Isso seria condenar pela companhia!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LD#art-35",
+         "trecho": "Associarem-se duas ou mais pessoas"
+        }
+       ]
+      },
+      {
+       "t": "Absolvição, por não existir prova de ter ela concorrido para a infração penal (art. 386, V, do CPP).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Requeiro a absolvição de Bianca Sales. Ela mora em outra cidade, chegou horas antes, não tem antecedentes nem nenhum vínculo com a droga. Não há prova de que tenha concorrido para a infração: art. 386, inciso V."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Acolho. O Ministério Público também absolve quando é o justo. É a melhor parte da função."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-386/inc-v",
+         "trecho": "não existir prova de ter o réu concorrido para a infração penal"
+        }
+       ]
+      },
+      {
+       "t": "Desclassificar Bianca para o art. 28, por segurança.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "Ela nem tinha a droga. Não há conduta a desclassificar."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Verdade. Não se desclassifica o que não se praticou."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LD#art-28",
+         "trecho": "para consumo pessoal"
+        }
+       ]
+      }
+     ],
+     "proxima": "x11"
+    },
+    "x11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Desclassifico a conduta de Davi para o art. 28 e aplico a pena de advertência e curso educativo, nos termos da proposta. Absolvo Bianca Sales, com base no art. 386, V, do CPP.",
+       "fx": "martelo"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Nesta sentença, observo que o art. 385 do CPP me permitiria condenar mesmo diante do pedido de absolvição. Mas não havia prova, e a prova manda."
+      },
+      {
+       "q": "a3davi",
+       "e": "feliz",
+       "t": "Obrigado, doutor(a). Eu vou fazer o curso e parar de fumar. Prometo."
+      },
+      {
+       "q": "valadares",
+       "e": "bravo",
+       "t": "Você soltou um traficante! O Procurador vai ouvir isso, e eu também."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Soltei um usuário e uma inocente, doutor Valadares. A lei é essa."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Esse é o Ministério Público que eu quero."
+      }
+     ],
+     "proxima": "x12",
+     "local": "tribunal"
+    },
+    "x12": {
+     "tipo": "veredicto",
+     "carimbo": "DESCLASSIFICADO",
+     "titulo": "Justiça, não estatística",
+     "texto": "Você diferenciou usuário de traficante pelos critérios do art. 28, § 2º, pediu a desclassificação e absolveu quem não tinha concorrido. Valadares não gostou, e anotou o seu nome."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3-firma",
+   "ato": "ato3",
+   "ordem": 5,
+   "numero": 17,
+   "titulo": "A Firma",
+   "papel": "promotor",
+   "nivel": "especialista",
+   "sinopse": "A Altavista Serviços funciona como uma empresa criminosa: chefe, caixa, logística e laranjas. Você precisa provar a organização criminosa, e alguém cancelou a ação controlada na véspera.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "dani": "escritorio",
+    "beatriz": "juiz",
+    "livia": "defesa",
+    "a3nelson": "testemunha",
+    "a3debora": "testemunha",
+    "fausto": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "organograma",
+     "tipo": "prova",
+     "icone": "🗂️",
+     "nome": "Organograma apreendido",
+     "descricao": "Arquivo no monitor da loja: “CHEFE” > “Jurídico (A.B.)” > “Caixa (Nelson)” > “Logística (Débora)” > “Laranjas 1 e 2”. Seis pessoas, cada uma com função própria, e a hierarquia desenhada em setas."
+    },
+    {
+     "id": "planilha",
+     "tipo": "prova",
+     "icone": "📊",
+     "nome": "Planilha de repasses",
+     "descricao": "Planilha semanal: 14 empresas de fachada, entradas de R$ 2 milhões em dinheiro vivo, saídas fracionadas. Coluna final: “15% — Chefe”. Autor do arquivo: Nelson Cardoso."
+    },
+    {
+     "id": "agenda",
+     "tipo": "prova",
+     "icone": "📒",
+     "nome": "Agenda de Débora",
+     "descricao": "Anotações semanais: “Seg 9h — envelope p/ Del. R.”, “Qua 14h — envelope p/ cartório”, “Sex 10h — instruções do Chefe por mensageiro”. Letra de Débora Lemos."
+    },
+    {
+     "id": "fachada",
+     "tipo": "prova",
+     "icone": "🏢",
+     "nome": "Cadastro de empresas de fachada",
+     "descricao": "Três empresas abertas em nome de dois laranjas, com o mesmo contador e o mesmo endereço da Altavista Serviços."
+    },
+    {
+     "id": "cancelamento",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Ofício de cancelamento",
+     "descricao": "Ofício da delegacia: “A ação controlada prevista para sexta, 6h, está cancelada por determinação do delegado titular, Fausto Rangel. Motivo: reestruturação do plantão.” Cancelada na véspera."
+    },
+    {
+     "id": "lorc1",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 1º, § 1º",
+     "chave": "LORC#art-1/par-1",
+     "trecho": "estruturalmente ordenada e caracterizada pela divisão de tarefas"
+    },
+    {
+     "id": "lorc2",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 2º",
+     "chave": "LORC#art-2",
+     "trecho": "Promover, constituir, financiar ou integrar"
+    },
+    {
+     "id": "lorc2p3",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 2º, § 3º",
+     "chave": "LORC#art-2/par-3",
+     "trecho": "exerce o comando, individual ou coletivo"
+    },
+    {
+     "id": "cp288",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código Penal, art. 288",
+     "chave": "CP#art-288",
+     "trecho": "Associarem-se 3 (três) ou mais pessoas"
+    },
+    {
+     "id": "lorc8",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 8º",
+     "chave": "LORC#art-8",
+     "trecho": "retardar a intervenção policial ou administrativa"
+    },
+    {
+     "id": "lorc4",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 4º, § 16",
+     "chave": "LORC#art-4/par-16",
+     "trecho": "com fundamento apenas nas declarações do colaborador"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 17",
+     "subtitulo": "A Firma",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Promotoria de Combate ao Crime Organizado. Alvo: a Altavista Serviços. Não como empresa de lixo, mas como o que ela sempre foi: uma firma."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Uma organização criminosa, doutor Lacerda? A lei exige mais do que um grupo de colegas mal-intencionados."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Exige. Quatro pessoas, no mínimo, estruturalmente ordenadas, com divisão de tarefas, visando vantagem com crimes de pena máxima acima de quatro anos. É exatamente o que preciso que você prove."
+      },
+      {
+       "q": "dani",
+       "e": "normal",
+       "t": "Doutor(a), a Polícia Civil prepara uma ação controlada para sexta, às 6h. Vão acompanhar a entrega do dinheiro antes de prender."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Ação controlada é coisa boa. Mas confie em quem sabe: se o delegado não gostar da data, ele cancela. Não crie caso."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O senhor parece conhecer bem o delegado Fausto Rangel."
+      },
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "Todos o conhecem, colega. Todos."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "lorc1",
+        "lorc2",
+        "lorc2p3",
+        "cp288",
+        "lorc8",
+        "lorc4"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "gabinete"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "loja",
+     "titulo": "Conecta+ Assistência Técnica",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Loja de celulares no centro. Poucos clientes, muitos funcionários, e um servidor ligado dia e noite no fundo. A fachada de um negócio sem estoque."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "balcao",
+       "nome": "Balcão da assistência",
+       "x": 41,
+       "y": 44,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Sob o balcão, uma caixa de envelopes pardos numerados. Dentro, notas de cem em maços de dez mil, com uma etiqueta: “Del. R.”",
+         "recebe": [
+          "planilha"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "E uma planilha impressa: entradas de dois milhões em dinheiro vivo e a coluna “15% — Chefe”. Metadados do arquivo: autor “Nelson Cardoso”."
+        }
+       ]
+      },
+      {
+       "id": "monitor",
+       "nome": "Monitor",
+       "x": 52,
+       "y": 39,
+       "w": 8,
+       "h": 9,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Na tela, um organograma: CHEFE no topo, depois Jurídico, Caixa, Logística, Laranjas. Seis pessoas e seis funções, cada uma com seta e prazo.",
+         "recebe": [
+          "organograma"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "cartaz",
+       "nome": "Cartaz",
+       "x": 70,
+       "y": 12,
+       "w": 18,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Cartaz de promoção de celular com letras enormes. No canto inferior, escondido, um QR code que leva à plataforma de repasse. Ninguém instala um QR code de lavagem à toa."
+        }
+       ]
+      },
+      {
+       "id": "vitrine",
+       "nome": "Vitrine de produtos",
+       "x": 6,
+       "y": 24,
+       "w": 22,
+       "h": 50,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Celulares sem preço, sem lacre e sem poeira. Produto de vitrine não gira em loja de rua. Cadastro das empresas: três de fachada, todas com o mesmo endereço.",
+         "recebe": [
+          "fachada"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Falar com Dani",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "feliz",
+         "t": "A planilha tem 14 empresas de fachada. O contador é o mesmo em todas: Nelson Cardoso."
+        },
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "A secretária executiva, Débora Lemos, é quem distribui os envelopes. A agenda dela tem uma anotação curiosa: “Del. R.”"
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Del. R. Delegado R.? Anote, Dani, mas não conte a ninguém."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "organograma",
+      "planilha",
+      "fachada"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia de Repressão ao Crime Organizado",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A delegacia está estranhamente vazia. Metade dos agentes foi remanejada na véspera. Uma ordem de serviço pende do mural."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "registro",
+       "nome": "Livro de registro",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O livro mostra a ação controlada de sexta registrada desde terça. E, quinta à tarde, um ofício: “cancelada por determinação do delegado titular”.",
+         "recebe": [
+          "cancelamento"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Escala de plantão reorganizada na quarta, assinada por Fausto Rangel. Os melhores agentes foram mandados para outra cidade. Coincidência."
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Pasta com a agenda de Débora Lemos, apreendida na loja. Quase toda a rotina da firma está lá, em letra miúda.",
+         "recebe": [
+          "agenda"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "fausto",
+       "titulo": "Falar com o delegado Fausto Rangel",
+       "falas": [
+        {
+         "q": "fausto",
+         "e": "confiante",
+         "t": "Doutor(a), ação controlada exige estrutura. Não tínhamos estrutura. Cancelei por prudência."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Na véspera. Sem comunicar o Ministério Público, que requereu."
+        },
+        {
+         "q": "fausto",
+         "e": "bravo",
+         "t": "A Polícia Civil não deve satisfação a promotor novato. Boa tarde."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "cancelamento",
+      "agenda"
+     ],
+     "proxima": "x5"
+    },
+    "x5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Audiência de instrução. Réus: Nelson Cardoso e Débora Lemos, entre outros, denunciados por organização criminosa.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, a tese da acusação é fantasiosa. O que há é, no máximo, um bando de três funcionários. Se há crime, é associação criminosa do Código Penal, com pena de um a três anos."
+      },
+      {
+       "q": "livia",
+       "e": "apontando",
+       "t": "Pede a desclassificação para o art. 288 do Código Penal."
+      }
+     ],
+     "proxima": "x6",
+     "local": "tribunal"
+    },
+    "x6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "A Lei 12.850 é uma exceção, Excelência. A regra é o Código Penal."
+      }
+     ],
+     "pergunta": "Que dispositivo mostra por que o grupo é organização criminosa, e não mera associação?",
+     "provas": [
+      "lorc1"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Art. 1º, § 1º, da Lei 12.850: associação de QUATRO ou mais pessoas, estruturalmente ordenada, com divisão de tarefas, ainda que informal, buscando vantagem por meio de infrações cuja pena máxima ultrapasse quatro anos. O organograma apreendido mostra seis pessoas, cada uma com função: chefe, jurídico, caixa, logística e dois laranjas."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Desclassificação indeferida por ora. Prossiga.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Hmpf."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Esse dispositivo não responde à tese de associação simples, promotor(a)."
+      }
+     ],
+     "proxima": "x7"
+    },
+    "x7": {
+     "tipo": "depoimento",
+     "testemunha": "a3nelson",
+     "titulo": "Depoimento de Nelson Cardoso, contador",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Senhor Cardoso, o senhor está sob compromisso."
+      },
+      {
+       "q": "a3nelson",
+       "e": "nervoso",
+       "t": "Eu sou apenas contador, Excelência. Cuido da escrituração de empresas pequenas."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "A Altavista Serviços é empresa de coleta de resíduos. Eu só cuido dos livros fiscais.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Só os livros fiscais?"
+        },
+        {
+         "q": "a3nelson",
+         "e": "normal",
+         "t": "Só. Eu nem conheço o pessoal da outra ponta."
+        }
+       ]
+      },
+      {
+       "t": "Nunca recebi ordens de ninguém acima de mim. Faço meu trabalho sozinho.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Ninguém acima do senhor?"
+        },
+        {
+         "q": "a3nelson",
+         "e": "nervoso",
+         "t": "Ninguém. Sou autônomo."
+        }
+       ]
+      },
+      {
+       "t": "As empresas de fachada? Nunca ouvi falar. Não tenho nada com isso.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nunca ouviu?"
+        },
+        {
+         "q": "a3nelson",
+         "e": "nervoso",
+         "t": "Nunca."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "organograma"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O organograma apreendido na loja: CHEFE no topo, depois Jurídico, depois CAIXA (Nelson). A planilha, de sua autoria, tem a coluna “15% — Chefe”. O senhor recebe ordens, senhor Cardoso, e as obedece."
+      },
+      {
+       "q": "a3nelson",
+       "e": "chocado",
+       "t": "Era só… era só um arquivo interno!",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Excelência, o organograma pode ter sido montado por qualquer um!"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "A autoria dos metadados está nos autos. Indeferido.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Promotor(a), essa prova não contradiz a afirmação de que ele não recebe ordens."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "a3debora",
+     "titulo": "Depoimento de Débora Lemos",
+     "intro": [
+      {
+       "q": "a3debora",
+       "e": "nervoso",
+       "t": "Eu sou apenas secretária. Atendo telefone e organizo agenda."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu só atendo telefone. Não sei de dinheiro, nem de envelopes.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nunca entregou nenhum envelope?"
+        },
+        {
+         "q": "a3debora",
+         "e": "nervoso",
+         "t": "Nunca. Não é a minha função."
+        }
+       ]
+      },
+      {
+       "t": "O doutor Fausto? Nunca vi, nem de nome.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nem de nome?"
+        },
+        {
+         "q": "a3debora",
+         "e": "bravo",
+         "t": "Juro."
+        }
+       ]
+      },
+      {
+       "t": "Minha agenda é só de compromissos pessoais.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Compromissos pessoais?"
+        },
+        {
+         "q": "a3debora",
+         "e": "nervoso",
+         "t": "Sim, consultas, cabeleireiro, essas coisas."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "agenda"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Agenda de Débora Lemos: “Seg 9h, envelope p/ Del. R.”, “Qua 14h, envelope p/ cartório”, “Sex 10h, instruções do Chefe por mensageiro”. A logística da firma é da senhora."
+      },
+      {
+       "q": "a3debora",
+       "e": "chocado",
+       "t": "Isso… é minha letra… mas eu só anotei!",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Protesto, Excelência! Escrever não é praticar!"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Anotar com tanta regularidade ajuda a provar a divisão de tarefas, doutora. Indeferido.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz a afirmação, promotor(a)."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Ministério Público, que crime imputa a Nelson, Débora e aos demais?"
+      }
+     ],
+     "pergunta": "Sua imputação:",
+     "opcoes": [
+      {
+       "t": "Associação criminosa (art. 288 do CP), para ser mais fácil de provar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O art. 288 exige apenas três pessoas. Aqui há seis, com estrutura e divisão de tarefas. O fato é mais grave."
+        },
+        {
+         "q": "livia",
+         "e": "feliz",
+         "t": "Concordo plenamente, Excelência!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-288",
+         "trecho": "Associarem-se 3 (três) ou mais pessoas"
+        }
+       ]
+      },
+      {
+       "t": "Organização criminosa (art. 2º da Lei 12.850), com agravação para quem exerce o comando (art. 2º, § 3º).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Imputo o art. 2º da Lei 12.850 a todos os integrantes, com agravação do § 3º ao Chefe, que comanda sem executar. O Código Penal não alcança o que a lei especial pune."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Recebo a imputação.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LORC#art-2",
+         "trecho": "Promover, constituir, financiar ou integrar"
+        },
+        {
+         "chave": "LORC#art-2/par-3",
+         "trecho": "exerce o comando, individual ou coletivo"
+        }
+       ]
+      },
+      {
+       "t": "Só o contador, como autor de lavagem, e libertar os demais.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "O contador é uma peça de uma estrutura maior. Isolar uma peça é deixar a máquina funcionando."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Verdade. E o art. 2º pune quem integra, não só quem comanda."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LORC#art-2",
+         "trecho": "Promover, constituir, financiar ou integrar"
+        }
+       ]
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "O Ministério Público pretende apurar os demais integrantes. Como pretende produzir prova?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A ação controlada de sexta foi cancelada. Preciso de outro caminho."
+      }
+     ],
+     "pergunta": "Seu requerimento de prova:",
+     "opcoes": [
+      {
+       "t": "Ação controlada (art. 8º), retardando a intervenção para flagrar a entrega e identificar quem recebe.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Requeiro nova ação controlada, sob a minha supervisão direta. Retardar a intervenção até o momento mais eficaz permite identificar o destinatário do envelope. A Polícia Civil será comunicada apenas após a execução."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Autorizo, sob sigilo.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LORC#art-8",
+         "trecho": "retardar a intervenção policial ou administrativa"
+        }
+       ]
+      },
+      {
+       "t": "Prender todos hoje, com base apenas nas declarações de Nelson, que vai colaborar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "O § 16 do art. 4º veda qualquer cautelar decretada apenas com base nas declarações do colaborador. Falta corroboração."
+        },
+        {
+         "q": "livia",
+         "e": "feliz",
+         "t": "Excelente notícia para a defesa."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LORC#art-4/par-16",
+         "trecho": "com fundamento apenas nas declarações do colaborador"
+        }
+       ]
+      },
+      {
+       "t": "Aguardar o fim do processo sem pedir mais nada.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "A lei oferece meios de obtenção de prova justamente para quem não pode esperar. O Ministério Público não é espectador."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Anotado."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LORC#art-3/inc-iii",
+         "trecho": "ação controlada"
+        }
+       ]
+      }
+     ],
+     "proxima": "x11"
+    },
+    "x11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Boa. Imputação certa, prova bem escolhida. Mas me diga: o ofício cancelando a ação controlada na véspera… quem sabia da data?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Quatro pessoas: o senhor, a Dani, o delegado Fausto… e o doutor Valadares."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Valadares é meu amigo há vinte anos."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Eu sei. Por isso preciso ter certeza antes de falar."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "(entrando) Colega! Fiquei sabendo da imputação. Bom trabalho. O que o doutor Lacerda está dizendo de mim?"
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Elogiando você, Renato. Como sempre."
+      }
+     ],
+     "proxima": "x12",
+     "local": "gabinete"
+    },
+    "x12": {
+     "tipo": "veredicto",
+     "carimbo": "RECEBIDA",
+     "titulo": "A firma tem chefe",
+     "texto": "Seis pessoas, funções definidas, hierarquia e dinheiro vivo: organização criminosa, não associação. E um ofício cancelando a ação na véspera aponta para alguém de dentro."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3-traidor",
+   "ato": "ato3",
+   "ordem": 6,
+   "numero": 18,
+   "titulo": "O Colega",
+   "papel": "promotor",
+   "nivel": "especialista",
+   "sinopse": "Final do Ato III. Os vazamentos têm um padrão: sempre depois das onze, sempre da sala 3. Você precisa provar, em audiência, que o colega mais gentil do Ministério Público era o traidor.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "dani": "escritorio",
+    "beatriz": "juiz",
+    "livia": "defesa",
+    "valadares": "testemunha",
+    "fausto": "testemunha",
+    "bento": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "acessos",
+     "tipo": "prova",
+     "icone": "🖥️",
+     "nome": "Registros de acesso ao sistema do MP",
+     "descricao": "Decisão sigilosa da juíza Beatriz (preventiva de Henrique e busca na banca de Brandão) aberta às 23h47 do dia anterior à execução, no terminal da sala 3, com o login de R. Valadares. Ele não era o promotor do caso e não tinha designação."
+    },
+    {
+     "id": "ligacoes",
+     "tipo": "prova",
+     "icone": "📞",
+     "nome": "Extrato de ligações",
+     "descricao": "Às 23h52, 23h58 e 00h10 do mesmo dia: chamadas do celular de Valadares para um número pré-pago ligado a Augusto Brandão. Às 00h15, o número pré-pago liga para o celular do delegado Fausto Rangel."
+    },
+    {
+     "id": "depositos",
+     "tipo": "prova",
+     "icone": "💵",
+     "nome": "Extratos bancários",
+     "descricao": "Seis depósitos de R$ 40 mil na conta de dona Heloísa Valadares, mãe do promotor, feitos pela Altavista Serviços ao longo de dois anos. Cada um, dias antes de uma operação que vazou."
+    },
+    {
+     "id": "cp325",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código Penal, art. 325",
+     "chave": "CP#art-325",
+     "trecho": "Revelar fato de que tem ciência em razão do cargo e que deva permanecer em segredo"
+    },
+    {
+     "id": "cp317",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código Penal, art. 317",
+     "chave": "CP#art-317",
+     "trecho": "Solicitar ou receber, para si ou para outrem"
+    },
+    {
+     "id": "lorc2p4",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 2º, § 4º, II",
+     "chave": "LORC#art-2/par-4/inc-ii",
+     "trecho": "se há concurso de funcionário público"
+    },
+    {
+     "id": "lorc2p5",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 2º, § 5º",
+     "chave": "LORC#art-2/par-5",
+     "trecho": "poderá o juiz determinar seu afastamento cautelar do cargo"
+    },
+    {
+     "id": "lorc3",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 3º, IV",
+     "chave": "LORC#art-3/inc-iv",
+     "trecho": "acesso a registros de ligações telefônicas e telemáticas"
+    },
+    {
+     "id": "lorc2p7",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei das Organizações Criminosas, art. 2º, § 7º",
+     "chave": "LORC#art-2/par-7",
+     "trecho": "a Corregedoria de Polícia instaurará inquérito policial"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 18",
+     "subtitulo": "O Colega",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Noite no Ministério Público. A sala está vazia, e uma luz acesa no corredor mostra que alguém ainda trabalha."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Doutor(a), a ação foi cancelada, o rio foi avisado, e o secretário apareceu no meu relatório de acesso. Sempre o mesmo horário."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Qual horário?"
+      },
+      {
+       "q": "dani",
+       "e": "triste",
+       "t": "Sempre depois das onze da noite. Sempre da sala 3. Sempre com o login do doutor Valadares."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Valadares me ensinou a achar o café. Me apresentou ao pessoal. Me chamou de colega."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "O doutor Valadares foi meu aluno, meu amigo. Se for ele, não vou aceitar nada além de prova. Prova que ele mesmo não consiga negar."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Então vamos buscá-la. Dani, preciso do relatório completo de acessos, desta vez com a data e o horário de cada processo."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "cp325",
+        "cp317",
+        "lorc2p4",
+        "lorc2p5",
+        "lorc3",
+        "lorc2p7"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "gabinete"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Sala 3, Ministério Público",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A sala de reunião que ninguém usa. Um computador, uma pilha de processos e a sensação de que alguém esteve aqui antes de você."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "computador",
+       "nome": "Computador",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "O histórico do terminal: às 23h47 do dia anterior à busca no escritório de Brandão, alguém abriu a decisão sigilosa da juíza Beatriz. Login: R. Valadares. Não havia designação dele no caso.",
+         "recebe": [
+          "acessos"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "A mesma sequência se repete antes da fuga de Henrique, antes da vistoria do rio e antes da ação controlada. Quatro vazamentos, um terminal."
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa com processos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Uma pilha de processos da Altavista com anotações a lápis. A letra é a mesma dos cartões de aniversário que recebi no gabinete. A letra do doutor Valadares."
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de livros",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Tratados de processo penal e uma pasta sem etiqueta. Dentro, um cartão de visitas: “A. Brandão, Advogado”. Com um telefone escrito a caneta no verso."
+        }
+       ]
+      },
+      {
+       "id": "janela",
+       "nome": "Janela",
+       "x": 60,
+       "y": 12,
+       "w": 25,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Da janela dá para ver o estacionamento. Às vezes, Valadares fica ali, de costas, falando ao celular. Eu nunca perguntei com quem."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Conversar com Dani",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "triste",
+         "t": "Doutor(a), eu sempre tive medo de dizer. Ele é coordenador. Eu sou só assessora."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Você fez o certo. A lei autoriza que a gente peça o afastamento cautelar de servidor suspeito de integrar organização criminosa."
+        },
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "E se ele descobrir antes?"
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Então vamos terminar hoje."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "acessos"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia (Corregedoria)",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A Corregedoria de Polícia funciona num anexo discreto. O escrivão Bento Carvalho abre uma gaveta trancada."
+      },
+      {
+       "q": "bento",
+       "e": "nervoso",
+       "t": "Doutor(a), eu sou escrivão. Não me meto em política. Mas há coisas que a gente não pode engolir."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "registro",
+       "nome": "Livro de registro",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A quebra do sigilo telefônico, autorizada pela juíza Beatriz com base no art. 3º, IV, da Lei 12.850. Três chamadas de Valadares para um pré-pago ligado a Brandão, e uma do pré-pago para Fausto, quinze minutos depois.",
+         "recebe": [
+          "ligacoes"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Os extratos bancários da mãe de Valadares, dona Heloísa: seis depósitos de R$ 40 mil, da Altavista Serviços. Datas: sempre pouco antes de cada operação vazar.",
+         "recebe": [
+          "depositos"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Uma foto do mural de honra da Polícia: Fausto Rangel, Renato Valadares e outros, sorrindo num almoço de formatura. Mas no fundo, desfocado, um homem de terno preto e gravata dourada. Augusto Brandão."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "bento",
+       "titulo": "Ouvir Bento",
+       "falas": [
+        {
+         "q": "bento",
+         "e": "nervoso",
+         "t": "Eu escrevi um relatório sobre a ligação cancelada e o delegado me mandou queimar. Guardei uma cópia."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor testemunhará?"
+        },
+        {
+         "q": "bento",
+         "e": "triste",
+         "t": "Se a lei me proteger, sim. Se não, minha filha vai ter que explicar por que o pai sumiu."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "ligacoes",
+      "depositos"
+     ],
+     "proxima": "x5"
+    },
+    "x5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Audiência de justificação. O Ministério Público pede o afastamento cautelar de servidores suspeitos de integrar organização criminosa. Presentes: o delegado Fausto Rangel e o promotor Renato Valadares.",
+       "fx": "martelo"
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Excelência, é uma honra ser chamado a esclarecer. Não tenho nada a esconder."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, em nome do delegado Rangel, a defesa protesta: afastamento cautelar de um servidor honrado, sem condenação, ofende a presunção de inocência."
+      }
+     ],
+     "proxima": "x6",
+     "local": "tribunal"
+    },
+    "x6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "apontando",
+       "t": "A lei não permite afastar servidor sem sentença transitada em julgado."
+      }
+     ],
+     "pergunta": "Qual dispositivo permite o afastamento cautelar do servidor antes da condenação?",
+     "provas": [
+      "lorc2p5"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Art. 2º, § 5º, da Lei 12.850: havendo indícios suficientes de que o funcionário público integra organização criminosa, o juiz poderá determinar o afastamento cautelar do cargo, sem prejuízo da remuneração, quando necessário à investigação. É cautelar, não é condenação."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Preliminar rejeitada. Passo à oitiva.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Hmpf."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Esse dispositivo não autoriza o afastamento, promotor(a)."
+      }
+     ],
+     "proxima": "x7"
+    },
+    "x7": {
+     "tipo": "depoimento",
+     "testemunha": "fausto",
+     "titulo": "Depoimento do delegado Fausto Rangel",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Delegado Rangel, o senhor está sob compromisso."
+      },
+      {
+       "q": "fausto",
+       "e": "bravo",
+       "t": "Doutora, sou delegado há vinte e cinco anos. Não tenho que ouvir insinuações de um(a) promotor(a) recém-chegado(a)."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu cancelei a ação controlada por razões operacionais. Só isso.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Razões operacionais?"
+        },
+        {
+         "q": "fausto",
+         "e": "confiante",
+         "t": "Falta de efetivo. Nada além disso."
+        }
+       ]
+      },
+      {
+       "t": "Nunca tive contato com o advogado Augusto Brandão depois da prisão da Joana, no Ato I. Cortei qualquer relação.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nenhum contato?"
+        },
+        {
+         "q": "fausto",
+         "e": "bravo",
+         "t": "Nenhum! Rompi com ele."
+        }
+       ]
+      },
+      {
+       "t": "Tampouco tenho qualquer ligação com o promotor Valadares além da profissional.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Só profissional?"
+        },
+        {
+         "q": "fausto",
+         "e": "normal",
+         "t": "Só profissional."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "ligacoes"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Às 00h15 do dia da busca, o número pré-pago de Augusto Brandão ligou para o seu celular, delegado. Quinze minutos depois de o número ter recebido três chamadas de Renato Valadares. A quebra do sigilo foi autorizada com base no art. 3º, IV, da Lei 12.850."
+      },
+      {
+       "q": "fausto",
+       "e": "chocado",
+       "t": "Isso… eu não atendi! Foi engano!",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Excelência, preciso conversar com o meu cliente!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "O extrato registra três minutos e quarenta segundos de ligação. Engano muito longo, delegado.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Isso não contradiz a negativa de contato com Brandão, promotor(a)."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "valadares",
+     "titulo": "Depoimento do promotor Renato Valadares",
+     "intro": [
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Excelência, sou promotor há vinte anos. Nunca tive uma advertência. Estou chocado com a suspeita."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Doutor Valadares, vou fazer perguntas difíceis. Por favor, responda com honestidade."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu nunca acessei a decisão da juíza Beatriz sobre o caso Altavista. Não era meu caso, não tenho motivo.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O senhor nunca abriu?"
+        },
+        {
+         "q": "valadares",
+         "e": "confiante",
+         "t": "Nunca. Tenho respeito pelo sigilo."
+        }
+       ]
+      },
+      {
+       "t": "Eu mal conheço o advogado Brandão. Cruzei com ele uma vez em um congresso.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Uma vez?"
+        },
+        {
+         "q": "valadares",
+         "e": "normal",
+         "t": "Em um congresso, há anos."
+        }
+       ]
+      },
+      {
+       "t": "Minha mãe vive de aposentadoria. Nunca recebeu nenhuma ajuda de ninguém.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nenhuma ajuda?"
+        },
+        {
+         "q": "valadares",
+         "e": "nervoso",
+         "t": "Nenhuma."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "acessos"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Registro de acesso do sistema do MP: a decisão sigilosa da juíza Beatriz foi aberta às 23h47 do dia anterior à busca, no terminal da sala 3, com o SEU login, doutor Valadares. O senhor não tinha designação no caso."
+      },
+      {
+       "q": "valadares",
+       "e": "chocado",
+       "t": "Alguém usou meu login! Eu fui hackeado!",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Excelência, qualquer um pode ter usado a senha dele!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "O terminal fica na sala 3, que ele mesmo reservou naquela noite. Prossiga, doutor(a).",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Isso não contradiz o que ele afirmou, promotor(a)."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "depoimento",
+     "testemunha": "valadares",
+     "titulo": "A nova versão de Valadares",
+     "intro": [
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "Certo, abri a decisão. Curiosidade profissional. Mas jamais contei a ninguém."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Só li o documento. Nunca falei com ninguém sobre ele.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca falou?"
+        },
+        {
+         "q": "valadares",
+         "e": "nervoso",
+         "t": "Jamais."
+        }
+       ]
+      },
+      {
+       "t": "Eu não tenho vínculo algum com a Altavista Serviços. Nem econômico, nem pessoal.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nem econômico?"
+        },
+        {
+         "q": "valadares",
+         "e": "bravo",
+         "t": "Nem econômico!"
+        }
+       ]
+      },
+      {
+       "t": "Quem quiser falar de dinheiro que apresente prova.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Apresento."
+        },
+        {
+         "q": "valadares",
+         "e": "nervoso",
+         "t": "…"
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "depositos"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Seis depósitos de R$ 40 mil na conta de dona Heloísa Valadares, sua mãe, feitos pela Altavista Serviços em dois anos. Cada um dias antes de uma operação que vazou. Chama-se corrupção passiva, doutor Valadares, em benefício de terceiro."
+      },
+      {
+       "q": "valadares",
+       "e": "chocado",
+       "t": "…",
+       "fx": "tremor"
+      },
+      {
+       "q": "lacerda",
+       "e": "triste",
+       "t": "Renato… é verdade?"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "O promotor Valadares está afastado do cargo desde já, nos termos do art. 2º, § 5º. Prossiga, doutor(a).",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Isso não contradiz a negativa de vínculo econômico, promotor(a)."
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Ministério Público, que requer contra o delegado Fausto Rangel e o promotor Renato Valadares?"
+      }
+     ],
+     "pergunta": "Seu requerimento:",
+     "opcoes": [
+      {
+       "t": "Apenas representar administrativamente, para evitar escândalo.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "Vazamento de decisão sigilosa e recebimento de propina são crimes. Escândalo é o que a impunidade gera."
+        },
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "A lei prevê o afastamento e a persecução penal. O Ministério Público não escolhe a quem acusa pela biografia."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-325",
+         "trecho": "Revelar fato de que tem ciência em razão do cargo e que deva permanecer em segredo"
+        }
+       ]
+      },
+      {
+       "t": "Afastamento cautelar de ambos (art. 2º, § 5º), com denúncia por violação de sigilo funcional (art. 325, CP), corrupção passiva (art. 317, CP) e organização criminosa, com a majorante do concurso de funcionário público (art. 2º, § 4º, II).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Requeiro o afastamento cautelar e a denúncia de ambos: violação de sigilo funcional, corrupção passiva e organização criminosa com a causa de aumento do funcionário público. E que a Corregedoria de Polícia instaure inquérito quanto ao delegado."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Deferido. Expeça-se tudo.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LORC#art-2/par-5",
+         "trecho": "poderá o juiz determinar seu afastamento cautelar do cargo"
+        },
+        {
+         "chave": "CP#art-317",
+         "trecho": "Solicitar ou receber, para si ou para outrem"
+        },
+        {
+         "chave": "LORC#art-2/par-4/inc-ii",
+         "trecho": "se há concurso de funcionário público"
+        }
+       ]
+      },
+      {
+       "t": "Prisão preventiva imediata, sem outro fundamento além do cargo.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "A prisão preventiva exige fundamentos concretos do art. 312 do CPP. Cargo e vergonha não bastam."
+        },
+        {
+         "q": "livia",
+         "e": "feliz",
+         "t": "Exato, Excelência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-312",
+         "trecho": "garantia da ordem pública"
+        }
+       ]
+      }
+     ],
+     "proxima": "x11"
+    },
+    "x11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "valadares",
+       "e": "triste",
+       "t": "(vencido) Eu comecei com um favor. Um pequeno favor, para quitar a casa da minha mãe. Depois já não tinha como parar."
+      },
+      {
+       "q": "lacerda",
+       "e": "triste",
+       "t": "Eu apresentei você ao Brandão numa festa, Renato. Eu fui o primeiro a te aproximar deles."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "Vou dizer a você uma coisa, colega, porque você me tratou bem quando entrou. Henrique Altavista voltou ao Brasil. Com identidade falsa. Está aqui, a poucos quilômetros."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "Voltou?!",
+       "fx": "tremor"
+      },
+      {
+       "q": "valadares",
+       "e": "confiante",
+       "t": "E o julgamento dele vai chegar. E, quando chegar, ele vai precisar de um(a) juiz(a) que ninguém compre. Porque os que podem ser comprados… ele já comprou."
+      },
+      {
+       "q": "fausto",
+       "e": "bravo",
+       "t": "Cale a boca, Renato!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Delegado, mais uma palavra e acrescento desacato à sua conta.",
+       "fx": "martelo"
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Valadares e Fausto são conduzidos para fora. A sala fica em silêncio."
+      }
+     ],
+     "proxima": "x12",
+     "local": "tribunal"
+    },
+    "x12": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Ele tem razão numa coisa. Henrique vai ser julgado. E a Beatriz está sozinha na vara criminal, com a pilha de processos da Altavista até o teto."
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "(na porta) A vara precisa de mais uma toga, Lacerda. E de uma toga que não se curve."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O senhor está me sugerindo o que eu estou pensando?"
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "O concurso para a magistratura abre em março. Você já sabe acusar, já sabe defender. Falta aprender a decidir."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Então vou estudar. Quem julga precisa não ter lado, a não ser o da lei."
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Eu separo a apostila, doutor(a). E o café."
+      }
+     ],
+     "proxima": "x13",
+     "local": "gabinete"
+    },
+    "x13": {
+     "tipo": "veredicto",
+     "carimbo": "AFASTADOS",
+     "titulo": "Fim do Ato III — O Concurso",
+     "texto": "Você desmascarou o colega que vazava as decisões, derrubou o delegado corrupto e provou que o Ministério Público também investiga a si mesmo. Henrique Altavista voltou ao Brasil com identidade falsa. A próxima toga é a sua. Continua no Ato IV: A Toga."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  }
+ ]
+}
