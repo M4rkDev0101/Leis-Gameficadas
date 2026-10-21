@@ -26,6 +26,7 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 from functools import lru_cache
 from importlib import resources
 
@@ -103,6 +104,42 @@ def episode(data: dict, ep_id: str) -> dict:
     raise KeyError(f"episódio desconhecido: {ep_id}")
 
 
+MARCA_RE = re.compile(r"^[a-z0-9_]{2,40}$")
+
+
+def episode_marks(ep: dict) -> set[str]:
+    """Marcas que as escolhas livres deste episódio podem deixar na carreira."""
+    return {o["marca"] for c in ep["cenas"].values() if c.get("livre") for o in c.get("opcoes", []) if o.get("marca")}
+
+
+def choice_texts(data: dict) -> dict[str, dict]:
+    """Marca -> texto da opção escolhida e caso em que foi feita (para o resumo da carreira)."""
+    return {o["marca"]: {"texto": o["t"], "caso": ep["titulo"]} for ep in data["episodios"] for c in ep["cenas"].values()
+            if c.get("livre") for o in c.get("opcoes", []) if o.get("marca")}
+
+
+def achievements(data: dict, won: dict[str, float], perfect: set[str], marks: set[str]) -> list[dict]:
+    """Conquistas calculadas do histórico (nada é gravado à parte: refazer um caso só melhora)."""
+    atos = [(a, [e["id"] for e in data["episodios"] if e.get("ato") == a["id"]]) for a in data.get("atos", [])]
+    done = {k for k, v in won.items() if v and v > 0}
+    career_ids = [i for _, ids in atos for i in ids]
+    out = [
+        {"id": "primeiro", "icone": "⚖️", "nome": "Primeiro veredicto", "descricao": "Vença o seu primeiro caso.", "ok": bool(done)},
+        {"id": "perfeito", "icone": "✨", "nome": "Sem um arranhão", "descricao": "Vença um caso sem perder credibilidade.", "ok": bool(perfect)},
+        {"id": "perfeito10", "icone": "💎", "nome": "Mão firme", "descricao": "Dez casos perfeitos.", "ok": len(perfect) >= 10},
+    ]
+    for a, ids in atos:
+        if ids:
+            out.append({"id": "ato-" + a["id"], "icone": "🏛️", "nome": f"{a['cargo']}", "descricao": f"Conclua o Ato {a['numero']}: {a['titulo']}.",
+                        "ok": all(i in done for i in ids)})
+            out.append({"id": "impecavel-" + a["id"], "icone": "🌟", "nome": f"Impecável no Ato {a['numero']}", "descricao": "Todos os casos do ato perfeitos.",
+                        "ok": all(i in perfect for i in ids)})
+    out.append({"id": "carreira", "icone": "👑", "nome": "Da toga ao veredicto final", "descricao": "Conclua o Modo Carreira.",
+                "ok": bool(career_ids) and all(i in done for i in career_ids)})
+    out.append({"id": "escolhas", "icone": "🧭", "nome": "Consciência", "descricao": "Tome cinco decisões morais na carreira.", "ok": len(marks) >= 5})
+    return out
+
+
 def summary(ep: dict) -> dict:
     interativas = sum(1 for c in ep["cenas"].values() if c["tipo"] in INTERACTIVE)
     return {"id": ep["id"], "numero": ep["numero"], "titulo": ep["titulo"], "papel": ep["papel"], "nivel": ep["nivel"],
@@ -140,6 +177,7 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
     seen_ids = set()
     atos = {a["id"] for a in data.get("atos", [])}
     ordens: set[tuple] = set()
+    all_marcas = {m for e in data["episodios"] for m in episode_marks(e)}
     for ep in data["episodios"]:
         if ep.get("ato"):
             if ep["ato"] not in atos:
@@ -241,10 +279,24 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
             if c["tipo"] == "apresentar":
                 if not c.get("provas") or any(p not in provas for p in c["provas"]):
                     errs.append(f"{where}: provas aceitas inválidas")
-            if c["tipo"] == "escolha":
+            if c["tipo"] == "escolha" and c.get("livre"):
+                # dilema: todas as opções valem, cada uma pode deixar uma marca na carreira
+                if len(c.get("opcoes", [])) < 2 or any(o.get("certa") for o in c["opcoes"]):
+                    errs.append(f"{where}: escolha livre precisa de 2+ opções e nenhuma 'certa'")
+            elif c["tipo"] == "escolha":
                 n_ok = sum(1 for o in c.get("opcoes", []) if o.get("certa"))
                 if n_ok != 1 or len(c.get("opcoes", [])) < 2:
                     errs.append(f"{where}: escolha precisa de 2+ opções e exatamente 1 certa")
+            for o in c.get("opcoes", []):
+                if "marca" in o and (not c.get("livre") or not MARCA_RE.match(str(o["marca"]))):
+                    errs.append(f"{where}: marca inválida {o['marca']!r} (só em escolha livre; a-z, 0-9 e _)")
+            conds = [f.get("se") for f in _falas(c)] + [v.get("se") for v in c.get("variantes", [])]
+            for cond in filter(None, conds):
+                if cond.lstrip("!") not in all_marcas:
+                    errs.append(f"{where}: condição usa marca que nenhuma escolha cria {cond!r}")
+            for v in c.get("variantes", []):
+                if not v.get("se") or not any(v.get(k) for k in ("carimbo", "titulo", "texto")):
+                    errs.append(f"{where}: variante de veredicto precisa de 'se' e de carimbo/título/texto")
             if c["tipo"] == "decidir" and c.get("correta") not in ("deferir", "indeferir"):
                 errs.append(f"{where}: decisão correta deve ser deferir ou indeferir")
             for f in c.get("fundamentos", []) + [f for o in c.get("opcoes", []) for f in o.get("fundamentos", [])]:

@@ -106,12 +106,19 @@ class Arena:
         nome, avatar = self.player.avatar()
         out = tribunal_mod.public_episode(self.tribunal, ep, lambda k: self.lookup(self.bank.resolve(k)), avatar, nome)
         out["salvo"] = self.player.load_trial(ep_id)
+        out["marcas"] = sorted(self.player.marks())
         out["minutos"] = tribunal_mod.estimate_minutes(ep)
         return out
 
     def carreira(self) -> dict:
         won = self.player.profile()["melhor_por_caso"]
-        return tribunal_mod.career(self.tribunal, won, self.player.saved_trials())
+        out = tribunal_mod.career(self.tribunal, won, self.player.saved_trials())
+        marks = self.player.marks()
+        out["marcas"] = sorted(marks)
+        texts = tribunal_mod.choice_texts(self.tribunal)
+        out["escolhas"] = [{"marca": m, **texts[m]} for m in sorted(marks) if m in texts]
+        out["conquistas"] = tribunal_mod.achievements(self.tribunal, won, self.player.perfect_cases(), marks)
+        return out
 
     def salvar_episodio(self, ep_id: str, estado: dict) -> dict:
         ep = tribunal_mod.episode(self.tribunal, ep_id)
@@ -121,13 +128,16 @@ class Arena:
         provas = {p["id"] for p in ep["provas"]}
         limpo = {"cena": cena, "credibilidade": max(1, min(5, int(estado.get("credibilidade", 5)))),
                  "erros": max(0, min(99, int(estado.get("erros", 0)))),
-                 "autos": [a for a in estado.get("autos", []) if a in provas]}
+                 "autos": [a for a in estado.get("autos", []) if a in provas],
+                 "marcas": [m for m in estado.get("marcas", []) if m in tribunal_mod.episode_marks(ep)]}
         self.player.save_trial(ep_id, limpo)
         return limpo
 
-    def concluir_episodio(self, ep_id: str, credibilidade, erros) -> dict:
+    def concluir_episodio(self, ep_id: str, credibilidade, erros, marcas=()) -> dict:
         ep = tribunal_mod.episode(self.tribunal, ep_id)
         result = tribunal_mod.score(ep, credibilidade, erros)
+        if result["venceu"]:  # só a escolha de quem chegou ao veredicto vale para a história
+            self.player.set_marks(ep_id, tribunal_mod.episode_marks(ep), {str(m) for m in (marcas or [])})
         result["progresso"] = self.player.record_trial(uuid.uuid4().hex, ep, result)
         if result["venceu"]:
             self.player.clear_trial(ep_id)
@@ -210,7 +220,7 @@ class ArenaHandler(ingest_server._Handler):
                 return self._json(self.arena.entregar_simulado(str(body.get("sessao")), body.get("respostas") or {}))
             if path == "/api/arena/tribunal/concluir":
                 return self._json(self.arena.concluir_episodio(str(body.get("episodio")), body.get("credibilidade", 0),
-                                                               body.get("erros", 0)))
+                                                               body.get("erros", 0), body.get("marcas") or []))
             if path == "/api/arena/tribunal/salvar":
                 return self._json(self.arena.salvar_episodio(str(body.get("episodio")), body.get("estado") or {}))
             if path == "/api/arena/tribunal/recomecar":

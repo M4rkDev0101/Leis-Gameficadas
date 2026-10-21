@@ -253,6 +253,24 @@
                font-size:1.8cqw; padding:.4cqw 1.4cqw; border-radius:.6cqw; border-left:.4cqw solid var(--gold); }
   .saved-toast { position:absolute; left:50%; top:3%; transform:translateX(-50%); z-index:9; font-size:1.1cqw; color:#a8e6c4;
                  background:rgba(0,0,0,.55); padding:.2cqw 1cqw; border-radius:99px; animation:flash 2s ease-out forwards; pointer-events:none; }
+  .dilemma .q { color:#ffe08a; } .dhint { text-align:center; color:#d9c9a8; font-size:1.3cqw; margin-top:-.4cqw; }
+  .actcard { background:radial-gradient(circle at 50% 45%, #2a1d10, #050403 72%); }
+  .actcard .num { font-family:Georgia,serif; color:#c9a04a; letter-spacing:.6em; font-size:2.2cqw; animation:slidein .8s both; }
+  .actcard h1 { font-family:Georgia,serif; font-size:7cqw; margin:.4cqw 0; color:#fff4d6; text-shadow:0 .5cqw 0 #6b3d10; animation:pop .9s .2s both; }
+  .actcard .cargo { margin:1cqw 0; padding:.5cqw 2cqw; border:.25cqw solid #c9a04a; border-radius:99px; color:#ffe08a; font-weight:800; font-size:1.7cqw; animation:pop .6s .9s both; }
+  .actcard p { color:#d9c9a8; max-width:58ch; font-size:1.6cqw; animation:slidein .8s 1.2s both; }
+  .credits { background:#050403; overflow:hidden; justify-content:flex-start; }
+  .credits .roll { animation:roll 46s linear forwards; padding-top:60cqh; }
+  @keyframes roll { to { transform:translateY(-100%); } }
+  .credits h2 { font-family:Georgia,serif; color:#F5B700; font-size:3cqw; margin:3cqw 0 .6cqw; }
+  .credits p, .credits li { color:#d9c9a8; font-size:1.6cqw; margin:.3cqw 0; list-style:none; }
+  .credits .big { font-size:5cqw; color:#fff4d6; font-family:Georgia,serif; }
+  .credits .skip { position:absolute; right:2%; bottom:3%; z-index:2; }
+  .achs { display:grid; grid-template-columns:repeat(auto-fill, minmax(170px, 1fr)); gap:8px; margin:0 0 20px; }
+  .ach { display:flex; gap:8px; align-items:center; background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:8px 10px; font-size:.82rem; }
+  .ach b { display:block; font-size:.86rem; } .ach small { color:var(--muted); }
+  .ach .ic { font-size:1.4rem; } .ach.off { opacity:.4; filter:grayscale(1); }
+  .choices { margin:0 0 20px; color:var(--muted); font-size:.9rem; } .choices li { margin:2px 0; }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; } }
 </style>
 </head>
@@ -1209,7 +1227,12 @@ async function doFx(fx) {
 // ------------------------------------------------ diálogo
 let advance = null;
 function waitAdvance() { return new Promise(r => { advance = r; }); }
+// marcas: as deste episódio vêm da escolha feita agora; as outras, do histórico da carreira
+function epMarks() { return new Set(Object.values(EP.cenas).filter(c => c.livre).flatMap(c => c.opcoes.map(o => o.marca)).filter(Boolean)); }
+function hasMark(m) { return epMarks().has(m) ? G.marcas.includes(m) : (EP.marcas || []).includes(m); }
+function cond(se) { return !se || (se.startsWith("!") ? !hasMark(se.slice(1)) : hasMark(se)); }
 async function say(line, opts = {}) {
+  if (!cond(line.se)) return;
   const q = line.q || "narrador";
   const pos = q === "narrador" ? curPos : posOf(q);
   if (line.fx === "protesto" || line.fx === "ummomento" || line.fx === "tomaisso") {
@@ -1365,9 +1388,28 @@ async function investigate(c) {
   } finally { title.remove(); }
   return c.proxima;
 }
+let CAR = null;  // carreira carregada no menu: numeração dos casos e aberturas de ato
+function careerPos(id) {
+  if (!CAR) return null;
+  let n = 0;
+  for (const a of CAR.atos) for (const [i, e] of a.episodios.entries()) { n++; if (e.id === id) return {ato:a, numero:n, primeiro:i === 0, ultimo:i === a.episodios.length - 1}; }
+  return null;
+}
+async function actIntro(a) {
+  hideDialog(); Sound.stopMusic(); Sound.vitoria();
+  const roman = ["", "I", "II", "III", "IV", "V", "VI", "VII"][a.numero] || a.numero;
+  const t = el("div", {class:"full actcard"}, el("div", {class:"num", textContent:"ATO " + roman}), el("h1", {textContent:a.titulo}),
+    el("div", {class:"cargo", textContent:"Você agora é: " + a.cargo}), el("p", {textContent:a.sinopse}),
+    el("p", {style:{opacity:.6, fontSize:"1.2cqw"}, textContent:"clique ou Enter para continuar"}));
+  $("#stage").append(t);
+  await waitAdvance(); t.remove();
+}
 async function titleCard(c) {
   hideDialog();
-  const t = el("div", {class:"full titlecard"}, el("div", {class:"ep", textContent:c.texto}), el("h1", {textContent:c.subtitulo}),
+  const pos = careerPos(EP.id);
+  if (pos && pos.primeiro && !G.resumed) await actIntro(pos.ato);
+  const label = pos ? `Ato ${pos.ato.numero} · Caso ${pos.numero}` + (pos.ultimo ? " · Final do ato" : "") : c.texto;
+  const t = el("div", {class:"full titlecard"}, el("div", {class:"ep", textContent:label}), el("h1", {textContent:c.subtitulo}),
     el("p", {textContent:EP.sinopse}), el("p", {style:{opacity:.7, fontSize:"1.3cqw"}, textContent:"clique ou Enter para começar"}));
   $("#stage").append(t); Sound.vitoria();
   await waitAdvance(); t.remove(); Sound.startMusic("calma");
@@ -1431,7 +1473,23 @@ async function presentScene(c) {
   }
   return null;
 }
+async function dilemmaScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  await say({q:"narrador", t:c.pergunta}, {noWait:true});
+  const i = await new Promise(resolve => {
+    G.choiceKeys = resolve;
+    overlay(el("div", {class:"menu dilemma"}, el("div", {class:"q", textContent:"🧭 " + c.pergunta}),
+      el("small", {class:"dhint", textContent:"Não há resposta errada. A sua escolha muda a história."}),
+      ...c.opcoes.map((o, k) => el("button", {class:"opt", onclick:() => resolve(k)}, el("b", {textContent:String(k + 1)}), el("span", {textContent:o.t})))));
+  });
+  G.choiceKeys = null; clearOverlay(); Sound.select();
+  const o = c.opcoes[i];
+  if (o.marca && !G.marcas.includes(o.marca)) G.marcas.push(o.marca);
+  await sayAll(o.falas, {local:c.local}); lawPopup(o.fundamentos);
+  return c.proxima;
+}
 async function choiceScene(c) {
+  if (c.livre) return dilemmaScene(c);
   await sayAll(c.falas, {local:c.local});
   const tried = new Set();
   while (!G.over) {
@@ -1476,10 +1534,11 @@ function confetti() {
   }
 }
 async function finish(won) {
-  try { return await api("/api/arena/tribunal/concluir", {episodio:EP.id, credibilidade:won ? G.cred : 0, erros:G.erros}); }
+  try { return await api("/api/arena/tribunal/concluir", {episodio:EP.id, credibilidade:won ? G.cred : 0, erros:G.erros, marcas:G.marcas}); }
   catch (e) { return {xp:0, erro:e.message}; }
 }
 async function verdict(c) {
+  c = {...c, ...((c.variantes || []).find(v => cond(v.se)) || {})};
   hideDialog(); Sound.stopMusic(); Sound.vitoria(); confetti();
   const r = await finish(true);
   const cls = r.faixa === "otimo" ? "ok" : "mid";
@@ -1492,8 +1551,31 @@ async function verdict(c) {
       el("div", {}, el("b", {textContent:r.perfeito ? "★" : "—"}), el("small", {textContent:"perfeito"}))),
     el("div", {class:"xp", textContent:`+${r.xp || 0} XP`}),
     r.progresso && r.progresso.subiu_de_nivel ? el("p", {textContent:`⬆️ Nível ${r.progresso.nivel}: ${r.progresso.titulo}!`}) : null,
-    el("div", {class:"bigbtns"}, el("button", {class:"bigbtn", textContent:"Voltar à carreira", onclick:quitGame}),
+    el("div", {class:"bigbtns"}, EP.final ? el("button", {class:"bigbtn", textContent:"🎬 Epílogo e créditos", onclick:credits}) : null,
+      el("button", {class:EP.final ? "bigbtn sec" : "bigbtn", textContent:"Voltar à carreira", onclick:quitGame}),
       el("button", {class:"bigbtn sec", textContent:"Jogar de novo", onclick:() => startEpisode(EP.id)})));
+  $("#stage").append(box);
+}
+async function credits() {
+  Sound.stopMusic(); Sound.startMusic("calma");
+  let car = CAR || {}, perfil = {};
+  try { [car, perfil] = await Promise.all([api("/api/arena/carreira"), api("/api/arena/perfil")]); } catch (e) { /* offline */ }
+  const cast = Object.values(EP.personagens || {}).map(p => p.nome).filter(n => n && n !== "Você");
+  const sec = (h, items) => items.length ? [el("h2", {textContent:h}), ...items.map(x => el("li", {textContent:x}))] : [];
+  const got = (car.conquistas || []).filter(a => a.ok);
+  const roll = el("div", {class:"roll"},
+    el("div", {class:"big", textContent:"Vade Tribunal"}), el("p", {textContent:"Modo Carreira"}),
+    ...sec("A sua carreira", [`${perfil.nome || "Você"} · nível ${perfil.nivel || "?"} · ${perfil.titulo || ""}`,
+      `${car.concluidos || 0} de ${car.total || 0} casos vencidos`, `${perfil.xp || 0} XP no total`]),
+    ...sec("As suas escolhas", (car.escolhas || []).map(e => `${e.caso}: ${e.texto}`)),
+    ...sec("Conquistas", got.map(a => `${a.icone} ${a.nome}`)),
+    ...sec("Elenco", cast),
+    ...sec("Fundamentos", ["Texto vigente das leis brasileiras: acervo ctresb/leis", "Cada artigo citado foi conferido contra a lei em vigor"]),
+    ...sec("Roteiro, personagens e casos", ["Obra original, criada para estudar Direito jogando"]),
+    el("div", {class:"big", style:{marginTop:"8cqw"}, textContent:"Obrigado por jogar."}),
+    el("p", {textContent:"A lei é igual para todos. Inclusive para quem a aplica."}));
+  const box = el("div", {class:"full credits"}, roll, el("button", {class:"bigbtn sec skip", textContent:"Voltar à carreira", onclick:quitGame}));
+  [...$("#stage").querySelectorAll(".full")].forEach(n => n.remove());
   $("#stage").append(box);
 }
 async function gameOver() {
@@ -1518,7 +1600,8 @@ async function startEpisode(id, resume = false) {
   if (!resume) { try { await api("/api/arena/tribunal/recomecar", {episodio:id}); } catch (e) { /* sem salvo */ } }
   EP = await api("/api/arena/tribunal/" + encodeURIComponent(id));
   const s = resume ? EP.salvo : null;
-  G = {cred:s ? Math.max(3, s.credibilidade) : 5, erros:s ? s.erros : 0, autos:s ? [...s.autos] : [], over:false, scene:null};
+  if (!CAR) { try { CAR = await api("/api/arena/carreira"); } catch (e) { /* jogo avulso */ } }
+  G = {resumed:!!s, cred:s ? Math.max(3, s.credibilidade) : 5, erros:s ? s.erros : 0, autos:s ? [...s.autos] : [], marcas:s ? [...(s.marcas || [])] : [], over:false, scene:null};
   curPos = null; curChar = null;
   $("#menu").classList.add("hidden"); $("#game").classList.remove("hidden");
   [...$("#stage").querySelectorAll(".full, .modal, .lawpop, .inv-title")].forEach(n => n.remove());
@@ -1533,7 +1616,7 @@ async function startEpisode(id, resume = false) {
   }
 }
 function saveProgress(sid) {
-  api("/api/arena/tribunal/salvar", {episodio:EP.id, estado:{cena:sid, credibilidade:G.cred, erros:G.erros, autos:G.autos}})
+  api("/api/arena/tribunal/salvar", {episodio:EP.id, estado:{cena:sid, credibilidade:G.cred, erros:G.erros, autos:G.autos, marcas:G.marcas}})
     .then(() => { const t = el("div", {class:"saved-toast", textContent:"💾 progresso salvo"}); $("#stage").append(t); setTimeout(() => t.remove(), 2000); })
     .catch(() => {});
 }
@@ -1627,6 +1710,12 @@ async function loadMenu() {
     const out = [el("div", {class:"career-head"}, el("h2", {textContent:"Modo Carreira"}),
       el("span", {class:"chip", textContent:`${car.concluidos} de ${car.total} casos · ~${car.horas_jogadas} de ${car.horas_total} h`}),
       el("span", {class:"sp"}), el("div", {class:"pbar", "aria-label":`${pct}% concluído`}, el("i", {style:{width:pct + "%"}})))];
+    CAR = car;
+    const achs = car.conquistas || [];
+    out.push(el("div", {class:"achs"}, ...achs.map(a => el("div", {class:"ach" + (a.ok ? "" : " off"), title:a.descricao},
+      el("span", {class:"ic", textContent:a.icone}), el("div", {}, el("b", {textContent:a.nome}), el("small", {textContent:a.descricao}))))));
+    if ((car.escolhas || []).length) out.push(el("ul", {class:"choices"}, el("b", {textContent:"🧭 Suas escolhas: "}),
+      ...car.escolhas.map(e => el("li", {textContent:`${e.caso} — ${e.texto}`}))));
     let prevDone = true, n = 0;
     for (const ato of car.atos) {
       const locked = !prevDone || !ato.episodios.length;

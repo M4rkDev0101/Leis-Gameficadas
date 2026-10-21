@@ -90,6 +90,49 @@ class TestCarreira(unittest.TestCase):
         self.assertTrue(tribunal.validate(d, NORMAS))
 
 
+class TestEscolhas(unittest.TestCase):
+    def _with_dilemma(self):
+        d = copy.deepcopy(DATA)
+        ep = tribunal.episode(d, "ep1-celular")
+        ep["cenas"]["a9"]["proxima"] = "dil"
+        ep["cenas"]["dil"] = {"tipo": "escolha", "livre": True, "pergunta": "Ajudar o Lucas?", "falas": [], "proxima": "a10",
+                              "opcoes": [{"t": "Sim", "marca": "a1_lucas", "falas": [{"q": "voce", "t": "Vamos."}]},
+                                         {"t": "Não", "falas": [{"q": "voce", "t": "Não."}]}]}
+        ep["cenas"]["a10"]["variantes"] = [{"se": "a1_lucas", "texto": "Lucas foi contratado."}]
+        return d, ep
+
+    def test_dilemma_is_valid_and_marks_are_declared(self):
+        d, ep = self._with_dilemma()
+        self.assertEqual(tribunal.validate(d, NORMAS), [])
+        self.assertEqual(tribunal.episode_marks(ep), {"a1_lucas"})
+        self.assertEqual(tribunal.choice_texts(d)["a1_lucas"]["texto"], "Sim")
+
+    def test_conditions_need_a_declared_mark(self):
+        d, ep = self._with_dilemma()
+        ep["cenas"]["a2"]["falas"][0]["se"] = "!marca_fantasma"
+        ep["cenas"]["dil"]["opcoes"][0]["certa"] = True
+        errs = "\n".join(tribunal.validate(d, NORMAS))
+        self.assertIn("marca_fantasma", errs)
+        self.assertIn("nenhuma 'certa'", errs)
+
+    def test_achievements(self):
+        a = {x["id"]: x["ok"] for x in tribunal.achievements(DATA, {"ep1-celular": 1.0}, {"ep1-celular"}, set())}
+        self.assertTrue(a["primeiro"] and a["perfeito"])
+        self.assertFalse(a["carreira"] or a["ato-ato1"])
+
+    def test_player_marks_replace_on_replay(self):
+        from vade_arena.player import Player
+        tmp = Path(tempfile.mkdtemp())
+        try:
+            pl = Player(tmp / "j.sqlite")
+            pl.set_marks("ep", {"x_sim", "x_nao"}, {"x_sim", "intrusa"})
+            self.assertEqual(pl.marks(), {"x_sim"})
+            pl.set_marks("ep", {"x_sim", "x_nao"}, {"x_nao"})
+            self.assertEqual(pl.marks(), {"x_nao"})
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
+
+
 class TestPontuacao(unittest.TestCase):
     ep = tribunal.episode(DATA, "ep1-celular")
 

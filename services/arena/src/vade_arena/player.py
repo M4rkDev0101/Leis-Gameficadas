@@ -47,6 +47,11 @@ CREATE TABLE IF NOT EXISTS tribunal_save (
   estado TEXT NOT NULL,
   atualizado TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS marca (
+  nome TEXT PRIMARY KEY,
+  ep_id TEXT NOT NULL,
+  criado_em TEXT NOT NULL
+);
 CREATE TABLE IF NOT EXISTS questao_vista (
   questao_id TEXT PRIMARY KEY,
   vezes INTEGER NOT NULL,
@@ -112,6 +117,31 @@ class Player:
         db = self._db()
         try:
             return {r[0] for r in db.execute("SELECT ep_id FROM tribunal_save")}
+        finally:
+            db.close()
+
+    def set_marks(self, ep_id: str, declared: set[str], chosen: set[str]) -> None:
+        """Troca as marcas de um episódio: rejogar o caso com outra escolha muda a história."""
+        db = self._db()
+        try:
+            with db:
+                db.executemany("DELETE FROM marca WHERE nome = ?", [(m,) for m in declared])
+                now = dt.datetime.now().isoformat(timespec="seconds")
+                db.executemany("INSERT INTO marca VALUES (?, ?, ?)", [(m, ep_id, now) for m in sorted(chosen & declared)])
+        finally:
+            db.close()
+
+    def marks(self) -> set[str]:
+        db = self._db()
+        try:
+            return {r[0] for r in db.execute("SELECT nome FROM marca")}
+        finally:
+            db.close()
+
+    def perfect_cases(self) -> set[str]:
+        db = self._db()
+        try:
+            return {r[0] for r in db.execute("SELECT DISTINCT ref FROM partida WHERE tipo = 'caso' AND sucesso = 1")}
         finally:
             db.close()
 

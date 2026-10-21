@@ -30,7 +30,7 @@ window.autoplay = async (maxMs = 240000) => {
       if (!m) continue;
       G.xkeys(Number(m[1]) - 1 === c.contradicao.afirmacao ? 'present' : 'next'); continue;
     }
-    if (G && G.choiceKeys) { G.choiceKeys(c.opcoes.findIndex(o => o.certa)); continue; }
+    if (G && G.choiceKeys) { G.choiceKeys(c.livre ? 0 : c.opcoes.findIndex(o => o.certa)); continue; }
     if (G && G.decideKeys) { G.decideKeys(c.correta); continue; }
     if (advance) advance();
   }
