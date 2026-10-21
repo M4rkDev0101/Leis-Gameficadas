@@ -1,39 +1,94 @@
 {
   "_sobre": "Modelos de simulado com a ESTRUTURA de concursos reais (banca, formato, regra de pontuação, áreas cobradas). As questões são originais do Vade, nunca cópias de provas (direito autoral das bancas). Quantidade de questões e tempo são de um simulado curto proporcional à prova; a 'meta' é a meta do simulado, não a nota de corte oficial. Confira sempre o edital.",
   "niveis": {
-    "basico":        {"nome": "Treino",  "icone": "🟢", "questoes": 10, "fator_tempo": 1.3, "meta": 0.55, "bonus_xp": 20},
-    "intermediario": {"nome": "Padrão",  "icone": "🟡", "questoes": 15, "fator_tempo": 1.0, "meta": 0.60, "bonus_xp": 40},
-    "avancado":      {"nome": "Difícil", "icone": "🔴", "questoes": 20, "fator_tempo": 0.9, "meta": 0.65, "bonus_xp": 70},
-    "especialista":  {"nome": "Elite",   "icone": "⚫", "questoes": 20, "fator_tempo": 0.8, "meta": 0.70, "bonus_xp": 120}
+    "basico": {
+      "nome": "Treino",
+      "icone": "🟢",
+      "questoes": 10,
+      "fator_tempo": 1.3,
+      "meta": 0.55,
+      "bonus_xp": 20
+    },
+    "intermediario": {
+      "nome": "Padrão",
+      "icone": "🟡",
+      "questoes": 15,
+      "fator_tempo": 1.0,
+      "meta": 0.6,
+      "bonus_xp": 40
+    },
+    "avancado": {
+      "nome": "Difícil",
+      "icone": "🔴",
+      "questoes": 20,
+      "fator_tempo": 0.9,
+      "meta": 0.65,
+      "bonus_xp": 70
+    },
+    "especialista": {
+      "nome": "Elite",
+      "icone": "⚫",
+      "questoes": 20,
+      "fator_tempo": 0.8,
+      "meta": 0.7,
+      "bonus_xp": 120
+    }
   },
   "concursos": [
     {
       "id": "policial-cebraspe",
       "nome": "Carreiras policiais federais",
-      "exemplos": ["PF — Agente e Escrivão", "PRF — Policial Rodoviário Federal"],
+      "exemplos": [
+        "PF — Agente e Escrivão",
+        "PRF — Policial Rodoviário Federal"
+      ],
       "banca": "CEBRASPE",
       "formato": "certo_errado",
       "regra": "cebraspe",
       "regra_descricao": "Itens de julgar Certo ou Errado. Cada erro anula um acerto; item em branco vale zero.",
       "segundos_por_questao": 120,
-      "areas": ["constitucional", "penal", "penal-especial", "administrativo"]
+      "areas": [
+        "constitucional",
+        "penal",
+        "penal-especial",
+        "processo-penal",
+        "administrativo",
+        "transito",
+        "direitos-humanos",
+        "jurisprudencia"
+      ]
     },
     {
       "id": "tribunais-fgv",
       "nome": "Tribunais (técnico e analista)",
-      "exemplos": ["TJ — Analista Judiciário", "TRT — Técnico Judiciário"],
+      "exemplos": [
+        "TJ — Analista Judiciário",
+        "TRT — Técnico Judiciário"
+      ],
       "banca": "FGV / FCC / VUNESP",
       "formato": "multipla",
       "alternativas": 5,
       "regra": "simples",
       "regra_descricao": "Múltipla escolha com 5 alternativas (A–E). Erro não desconta.",
       "segundos_por_questao": 180,
-      "areas": ["constitucional", "administrativo", "civil", "penal", "protecao-de-dados"]
+      "areas": [
+        "constitucional",
+        "administrativo",
+        "civil",
+        "processo-civil",
+        "penal",
+        "processo-penal",
+        "protecao-de-dados",
+        "consumidor",
+        "jurisprudencia"
+      ]
     },
     {
       "id": "oab-fgv",
       "nome": "Exame de Ordem — 1ª fase",
-      "exemplos": ["OAB — Exame Unificado"],
+      "exemplos": [
+        "OAB — Exame Unificado"
+      ],
       "banca": "FGV",
       "formato": "multipla",
       "alternativas": 4,
@@ -41,12 +96,37 @@
       "regra_descricao": "Múltipla escolha com 4 alternativas (A–D). Erro não desconta. Aprova quem acerta 50%, como na prova real.",
       "meta_fixa": 0.5,
       "segundos_por_questao": 180,
-      "areas": ["constitucional", "civil", "penal", "penal-especial", "protecao-de-dados", "administrativo"]
+      "areas": [
+        "constitucional",
+        "administrativo",
+        "civil",
+        "processo-civil",
+        "penal",
+        "processo-penal",
+        "penal-especial",
+        "trabalho",
+        "tributario",
+        "financeiro",
+        "consumidor",
+        "crianca-adolescente",
+        "protecao-de-dados",
+        "previdenciario",
+        "transito",
+        "ambiental",
+        "eleitoral",
+        "direitos-humanos",
+        "empresarial",
+        "jurisprudencia"
+      ]
     },
     {
       "id": "magistratura-mp",
       "nome": "Magistratura e Ministério Público",
-      "exemplos": ["Juiz de Direito", "Promotor de Justiça", "Defensor Público"],
+      "exemplos": [
+        "Juiz de Direito",
+        "Promotor de Justiça",
+        "Defensor Público"
+      ],
       "banca": "FCC / VUNESP / banca própria",
       "formato": "multipla",
       "alternativas": 5,
@@ -54,7 +134,91 @@
       "regra_descricao": "Múltipla escolha com 5 alternativas, com peso em jurisprudência e exceções da lei.",
       "segundos_por_questao": 180,
       "nivel_minimo": "avancado",
-      "areas": ["constitucional", "penal", "penal-especial", "civil", "administrativo", "protecao-de-dados"]
+      "areas": [
+        "constitucional",
+        "administrativo",
+        "civil",
+        "processo-civil",
+        "penal",
+        "processo-penal",
+        "penal-especial",
+        "trabalho",
+        "tributario",
+        "financeiro",
+        "consumidor",
+        "crianca-adolescente",
+        "protecao-de-dados",
+        "previdenciario",
+        "transito",
+        "ambiental",
+        "eleitoral",
+        "direitos-humanos",
+        "empresarial",
+        "jurisprudencia"
+      ]
+    },
+    {
+      "id": "inss-cebraspe",
+      "nome": "INSS — Técnico do Seguro Social",
+      "exemplos": [
+        "INSS — Técnico",
+        "INSS — Analista"
+      ],
+      "banca": "CEBRASPE",
+      "formato": "certo_errado",
+      "regra": "cebraspe",
+      "regra_descricao": "Itens de julgar Certo ou Errado. Cada erro anula um acerto; item em branco vale zero.",
+      "segundos_por_questao": 120,
+      "areas": [
+        "previdenciario",
+        "constitucional",
+        "administrativo",
+        "direitos-humanos",
+        "crianca-adolescente"
+      ]
+    },
+    {
+      "id": "fiscal-fgv",
+      "nome": "Fiscal e Receita",
+      "exemplos": [
+        "Receita Federal — Auditor-Fiscal",
+        "SEFAZ — Auditor Fiscal"
+      ],
+      "banca": "FGV / FCC",
+      "formato": "multipla",
+      "alternativas": 5,
+      "regra": "simples",
+      "regra_descricao": "Múltipla escolha com 5 alternativas, com peso em tributário e financeiro.",
+      "segundos_por_questao": 180,
+      "areas": [
+        "tributario",
+        "financeiro",
+        "constitucional",
+        "administrativo",
+        "empresarial",
+        "civil"
+      ]
+    },
+    {
+      "id": "trt-fcc",
+      "nome": "Justiça do Trabalho (TRT)",
+      "exemplos": [
+        "TRT — Analista Judiciário",
+        "TRT — Técnico Judiciário"
+      ],
+      "banca": "FCC / FGV",
+      "formato": "multipla",
+      "alternativas": 5,
+      "regra": "simples",
+      "regra_descricao": "Múltipla escolha com 5 alternativas, com peso em Direito e Processo do Trabalho.",
+      "segundos_por_questao": 180,
+      "areas": [
+        "trabalho",
+        "processo-civil",
+        "constitucional",
+        "administrativo",
+        "previdenciario"
+      ]
     }
   ]
 }

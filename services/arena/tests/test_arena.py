@@ -62,6 +62,63 @@ class TestContent(unittest.TestCase):
             shutil.rmtree(tmp, ignore_errors=True)
 
 
+class TestGeneratedBank(unittest.TestCase):
+    """Coerência de cada questão gerada, sem precisar do catálogo (o catálogo é conferido por 'validar')."""
+
+    G = [q for q in B.questoes if q.get("gerada")]
+
+    @staticmethod
+    def norm(s):
+        return bank._norm(s)
+
+    def test_size_and_coverage(self):
+        self.assertGreaterEqual(len(B.questoes), 600)
+        areas = {q["area"] for q in self.G}
+        for must in ("constitucional", "penal", "processo-penal", "civil", "processo-civil", "trabalho",
+                     "tributario", "administrativo", "consumidor", "previdenciario", "eleitoral", "ambiental"):
+            self.assertIn(must, areas)
+        for lv in bank.LEVELS:
+            self.assertGreaterEqual(sum(q["nivel"] == lv for q in self.G), 50, lv)
+
+    def test_true_items_quote_the_law_and_false_items_do_not(self):
+        for q in self.G:
+            if q["formato"] != "certo_errado":
+                continue
+            enun, trecho = self.norm(q["enunciado"]), self.norm(q["fundamentos"][0]["trecho"])
+            if q["gabarito"] == "C":
+                self.assertIn(trecho, enun, q["id"])
+            else:
+                self.assertNotIn(trecho, enun, q["id"])  # a troca está justamente no trecho citado
+                self.assertTrue(q.get("pegadinha") or "Errado" in q["explicacao"], q["id"])
+
+    def test_number_swaps_explain_both_values(self):
+        import re
+        for q in self.G:
+            if q.get("tipo_geracao") in ("troca-numero", "troca-prazo", "troca-fracao", "troca-termo"):
+                m = re.search(r"diz “(.+?)”, e não “(.+?)”", q["explicacao"])
+                if m:
+                    de, para = m.groups()
+                else:  # súmulas: "O item trocou “de” por “para”"
+                    m = re.search(r"trocou “(.+?)” por “(.+?)”", q["explicacao"])
+                    self.assertIsNotNone(m, q["id"])
+                    de, para = m.groups()
+                self.assertNotEqual(de, para, q["id"])
+                self.assertIn(self.norm(para), self.norm(q["enunciado"]), q["id"])
+                self.assertIn(self.norm(de), self.norm(q["fundamentos"][0]["trecho"]), q["id"])
+
+    def test_no_formatting_glitches(self):
+        for q in self.G:
+            self.assertNotIn("..”", q["enunciado"], q["id"])
+            self.assertNotIn("  ", q["enunciado"], q["id"])
+            if q["formato"] == "multipla":
+                self.assertEqual(len(set(q["alternativas"].values())), 5, q["id"])
+
+    def test_every_generated_contest_pool_is_large(self):
+        for c in B.concursos:
+            pool = [q for q in B.questoes if q["formato"] == c["formato"] and q["area"] in c["areas"]]
+            self.assertGreaterEqual(len(pool), 40, c["id"])
+
+
 class TestExam(unittest.TestCase):
     def test_build_respects_contest_and_level(self):
         s = exam.build(B, "policial-cebraspe", "intermediario", seed=1)

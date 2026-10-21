@@ -65,12 +65,25 @@ def _read(name: str, base: Path | None) -> dict:
     return json.loads(resources.files(__package__).joinpath("content", name).read_text(encoding="utf-8"))
 
 
+def _exists(name: str, base: Path | None) -> bool:
+    if base is not None:
+        return (base / name).exists()
+    return resources.files(__package__).joinpath("content", name).is_file()
+
+
 def load(base: Path | None = None) -> Bank:
     c = _read("concursos.json", base)
-    q = _read("questoes.json", base)
+    q = _read("questoes.json", base)  # escritas à mão (comentadas, com pegadinhas de jurisprudência)
     k = _read("casos.json", base)
-    return Bank(niveis=c["niveis"], concursos=c["concursos"], questoes=q["questoes"],
-                casos=k["casos"], elenco=k["elenco"], normas=q["normas"])
+    questoes, normas = list(q["questoes"]), dict(q["normas"])
+    if _exists("geradas.json", base):  # letra da lei, gerada de tools/gerar_questoes.py
+        g = _read("geradas.json", base)
+        questoes += g["questoes"]
+        for alias, norma_id in g["normas"].items():
+            if normas.setdefault(alias, norma_id) != norma_id:
+                raise ValueError(f"alias {alias} aponta para normas diferentes nos dois bancos")
+    return Bank(niveis=c["niveis"], concursos=c["concursos"], questoes=questoes,
+                casos=k["casos"], elenco=k["elenco"], normas=normas)
 
 
 @lru_cache(maxsize=1)

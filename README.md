@@ -17,8 +17,8 @@ python jogar.py --repo acervo --db catalogo.sqlite
 
 Abre http://127.0.0.1:8765 com três áreas:
 
-- **Simulados**: estrutura de concursos reais (carreiras policiais/CEBRASPE, tribunais/FGV-FCC-VUNESP,
-  OAB 1ª fase/FGV, Magistratura e MP) em quatro dificuldades (🟢 Treino, 🟡 Padrão, 🔴 Difícil,
+- **Simulados**: estrutura de 7 concursos reais (carreiras policiais e INSS/CEBRASPE, tribunais, TRT,
+  Fiscal/Receita, OAB 1ª fase/FGV, Magistratura e MP) em quatro dificuldades (🟢 Treino, 🟡 Padrão, 🔴 Difícil,
   ⚫ Elite). Cronômetro, regra de pontuação da banca (no CEBRASPE, cada erro anula um acerto),
   correção comentada com o texto vigente da lei, desempenho por área e XP.
 - **Casos**: você é **advogado(a), promotor(a) ou juiz(a)** na Vasconcelos & Duarte Advocacia. Cada
@@ -35,12 +35,32 @@ Nível, título (de Estagiário(a) a Ministro(a)), XP e sequência de dias ficam
 > fundamenta, e `python jogar.py validar --db catalogo.sqlite` confere se o trecho citado ainda está
 > no texto vigente (pega questão desatualizada quando a lei muda).
 
+## Banco de questões
+
+| Origem | Quantidade | Como o gabarito é garantido |
+| --- | ---: | --- |
+| Escritas à mão (`content/questoes.json`) | 70 | comentário, pegadinha e jurisprudência; fundamento conferido contra o texto vigente |
+| Letra da lei, geradas (`content/geradas.json`) | 771 | por construção: item **literal** (Certo) ou com **uma troca controlada** (prazo, fração, reclusão↔detenção, poderá↔deverá, órgão, negação de súmula) mostrada na explicação; múltipla escolha de completar o número, assinalar a correta/incorreta, pena cominada, artigo do crime e tipo pela conduta |
+
+Cobre CF, CP, CPP, CC, CPC, CLT, CTN, CDC, ECA, Leis 8.112, 9.784, 8.429, 12.527, 12.016, LGPD, Maria da
+Penha, Drogas, LEP, Juizados, Hediondos, Tortura, Desarmamento, Organizações Criminosas, Abuso de
+Autoridade, CTB, Crimes Ambientais, Código Eleitoral, Lei 8.213, Estatuto da Pessoa Idosa, LRF e
+súmulas do STJ e vinculantes do STF. Para regenerar depois que a lei mudar:
+
+```bash
+python services/arena/tools/gerar_questoes.py --db catalogo.sqlite
+```
+
+```bash
+python jogar.py validar --db catalogo.sqlite
+```
+
 ## Estado atual
 
 | Parte | Situação |
 | --- | --- |
 | [`docs/`](docs) | análise do acervo, arquitetura, funcionalidades, dados, pipeline, roadmap, riscos, tecnologias, design system |
-| [`services/arena`](services/arena) | ✅ jogo: 4 modelos de concurso × 4 dificuldades, 70 questões, 4 casos (advogado, promotor, juiz), perfil do jogador (16 testes) |
+| [`services/arena`](services/arena) | ✅ jogo: 7 modelos de concurso × 4 dificuldades, **841 questões** em 20 áreas (70 comentadas à mão + 771 de letra da lei geradas do texto vigente), 4 casos (advogado, promotor, juiz), perfil do jogador (21 testes) |
 | [`services/ingest`](services/ingest) | ✅ importador (parser estrutural, precedentes, qualidade, classificação, SQLite + FTS) e painel com o botão "Verificar atualização" (49 testes) |
 | [`services/learning`](services/learning) | ✅ núcleo de aprendizagem: FSRS-5, XP/níveis/streak/ligas/moedas, dificuldade dinâmica (21 testes) |
 | [`db/sqlite`](db/sqlite) | ✅ esquema multiusuário de progresso/gamificação e eventos mensais (4 testes) |

@@ -223,7 +223,11 @@ const $ = (s, r = document) => r.querySelector(s);
 const fmt = (n) => Number(n || 0).toLocaleString("pt-BR");
 const pct = (x) => Math.round((x || 0) * 100) + "%";
 const AREAS = {"constitucional":"Constitucional","administrativo":"Administrativo","civil":"Civil","penal":"Penal",
-  "penal-especial":"Legislação penal especial","protecao-de-dados":"Proteção de dados"};
+  "penal-especial":"Legislação penal especial","protecao-de-dados":"Proteção de dados","processo-penal":"Processo Penal",
+  "processo-civil":"Processo Civil","trabalho":"Trabalho","tributario":"Tributário","financeiro":"Financeiro",
+  "consumidor":"Consumidor","crianca-adolescente":"Criança e Adolescente","previdenciario":"Previdenciário",
+  "transito":"Trânsito","ambiental":"Ambiental","eleitoral":"Eleitoral","direitos-humanos":"Direitos Humanos",
+  "empresarial":"Empresarial","jurisprudencia":"Jurisprudência"};
 const ROLE = {advogado:{nome:"Advogado(a)", cor:"var(--primary)", ic:"💼"}, promotor:{nome:"Promotor(a)", cor:"var(--danger)", ic:"🏛️"}, juiz:{nome:"Juiz(a)", cor:"var(--juiz)", ic:"⚖️"}};
 const LV = {basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite"};
 const COR = {primary:"var(--primary)", danger:"var(--danger)", xp:"var(--xp)", success:"var(--success)", muted:"var(--muted)"};
