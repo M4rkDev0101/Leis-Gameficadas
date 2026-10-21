@@ -528,158 +528,599 @@ const LOCAL_NOME = {bar:"Bar", mercado:"Supermercado", ponto:"Ponto de ônibus",
   obra:"Canteiro de obras", rua:"Rua", parlatorio:"Parlatório", gabinete:"Gabinete", juri:"Plenário do Júri", loja:"Loja", clinica:"Clínica"};
 function locationBG(local) {
   const u = "l" + (++UID);
-  const svg = (inner, defs = "") => `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"><defs>${defs}</defs>${inner}</svg>`;
-  const grad = (id, a, b) => `<linearGradient id="${id}${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${a}"/><stop offset="1" stop-color="${b}"/></linearGradient>`;
-  const nightSky = grad("sk", "#0d1430", "#3a2a4a");
-  const windows = (x0, y0, cols, rows, w, h, dx, dy) => Array.from({length:cols * rows}, (_, i) =>
-    `<rect x="${x0 + (i % cols) * dx}" y="${y0 + Math.floor(i / cols) * dy}" width="${w}" height="${h}" fill="${(i * 7) % 5 < 2 ? "#ffd866" : "#1b2236"}" opacity=".85"/>`).join("");
+  const F = n => `url(#${n}${u})`;
+  const R = (x, y, w, h, f, ex = "") => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}" ${ex}/>`;
+  const E = (cx, cy, rx, ry, f, ex = "") => `<ellipse cx="${cx}" cy="${cy}" rx="${rx}" ry="${ry}" fill="${f}" ${ex}/>`;
+  const lin = (id, stops, x1 = 0, y1 = 0, x2 = 0, y2 = 1) => `<linearGradient id="${id}${u}" x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}">${stops.map(s => `<stop offset="${s[0]}" stop-color="${s[1]}"${s[2] != null ? ` stop-opacity="${s[2]}"` : ""}/>`).join("")}</linearGradient>`;
+  const rad = (id, stops, cx = .5, cy = .5, r = .5) => `<radialGradient id="${id}${u}" cx="${cx}" cy="${cy}" r="${r}">${stops.map(s => `<stop offset="${s[0]}" stop-color="${s[1]}"${s[2] != null ? ` stop-opacity="${s[2]}"` : ""}/>`).join("")}</radialGradient>`;
+  const glowDef = (id, col, op = .6) => rad(id, [[0, col, op], [1, col, 0]]);
+  const brick = (id, c1, c2, m, w = 8, h = 4) => `<pattern id="${id}${u}" width="${w}" height="${h * 2}" patternUnits="userSpaceOnUse"><rect width="${w}" height="${h * 2}" fill="${m}"/><rect x=".25" y=".25" width="${w - .5}" height="${h - .5}" fill="${c1}"/><rect x="${-w / 2 + .25}" y="${h + .25}" width="${w - .5}" height="${h - .5}" fill="${c2}"/><rect x="${w / 2 + .25}" y="${h + .25}" width="${w - .5}" height="${h - .5}" fill="${c2}"/></pattern>`;
+  const tile = (id, c1, c2, s) => `<pattern id="${id}${u}" width="${s * 2}" height="${s * 2}" patternUnits="userSpaceOnUse"><rect width="${s * 2}" height="${s * 2}" fill="${c1}"/><rect width="${s}" height="${s}" fill="${c2}"/><rect x="${s}" y="${s}" width="${s}" height="${s}" fill="${c2}"/></pattern>`;
+  const wood = (id, c1, c2, w = 4) => `<pattern id="${id}${u}" width="${w * 2}" height="24" patternUnits="userSpaceOnUse"><rect width="${w * 2}" height="24" fill="${c1}"/><rect x="${w}" width="${w}" height="24" fill="${c2}"/><path d="M0 0V24M${w} 0V24" stroke="#000" stroke-opacity=".35" stroke-width=".4"/><path d="M1 4Q2 9 1 14M${w + 2} 8Q${w + 3} 15 ${w + 2} 21" stroke="#000" stroke-opacity=".12" stroke-width=".3" fill="none"/></pattern>`;
+  const speck = (id, c, op = .25) => `<pattern id="${id}${u}" width="14" height="11" patternUnits="userSpaceOnUse"><circle cx="2" cy="3" r=".5" fill="${c}" opacity="${op}"/><circle cx="9" cy="7" r=".7" fill="${c}" opacity="${op}"/><circle cx="12" cy="2" r=".4" fill="${c}" opacity="${op}"/><circle cx="5" cy="10" r=".4" fill="${c}" opacity="${op}"/></pattern>`;
+  const floorLines = (y0, col, op = .25, n = 9) => {
+    let s = "";
+    for (let i = -n; i <= n; i++) { const xb = 80 + i * 160 / n * .75; s += `<line x1="${80 + (xb - 80) * .3}" y1="${y0}" x2="${xb}" y2="100"/>`; }
+    for (let k = 1; k < 5; k++) { const y = y0 + (100 - y0) * Math.pow(k / 5, 1.7); s += `<line x1="0" y1="${y}" x2="160" y2="${y}"/>`; }
+    return `<g stroke="${col}" stroke-width=".35" opacity="${op}">${s}</g>`;
+  };
+  const skyline = (y0, col, seed, win) => {
+    let x = -2, s = "", k = seed;
+    while (x < 160) {
+      k = (k * 73 + 19) % 97; const w = 9 + k % 13, h = 12 + (k * 3) % 24;
+      s += R(x, y0 - h, w, h + 40, col);
+      if (win) for (let wy = y0 - h + 3; wy < y0 - 2; wy += 5) for (let wx = x + 2; wx < x + w - 2; wx += 4) { k = (k * 31 + 7) % 101; if (k % 4 === 0) s += R(wx, wy, 1.6, 2.2, "#ffd866", 'opacity=".75"'); }
+      x += w + (k % 3);
+    }
+    return s;
+  };
+  const svg = (inner, defs = "") => `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"><defs>${rad("vg", [[.5, "#000", 0], [1, "#000", .55]], .5, .5, .78)}${defs}</defs>${inner}<rect width="160" height="100" fill="${F("vg")}"/></svg>`;
+  const cam = (x, y, s = 1) => `<g transform="translate(${x} ${y}) scale(${s})"><rect x="9" y="-3" width="2.6" height="5" fill="#2a2d33"/><rect x="0" y="1" width="16" height="7" rx="1.6" fill="#dfe3e8" stroke="#1a1c20" stroke-width=".5"/><rect x="1" y="2" width="14" height="1.6" fill="#fff" opacity=".7"/><circle cx="3" cy="5.2" r="2.3" fill="#10172a" stroke="#555" stroke-width=".5"/><circle cx="2.4" cy="4.6" r=".7" fill="#7ab0ff"/><circle cx="13.2" cy="4.4" r="1" fill="#ff3b3b"/><circle cx="13.2" cy="4.4" r="2.4" fill="#ff3b3b" opacity=".25"/></g>`;
   switch (local) {
+    // ------------------------------------------------------------------ BAR
     case "bar": return svg(`
-      <rect width="160" height="100" fill="url(#w${u})"/>
-      <rect x="0" y="22" width="20" height="58" fill="#1a0f08"/><rect x="2" y="24" width="16" height="54" fill="#3b2a1a" stroke="#c9a04a" stroke-width=".6"/>
-      <text x="10" y="19" font-size="3" fill="#ffd866" text-anchor="middle" font-family="Georgia">BAR DO ZÉ</text>
-      <rect x="60" y="14" width="64" height="22" fill="#2a1a10"/>${[0,1,2,3,4,5,6,7,8,9,10,11].map(i => `<rect x="${63 + i*5}" y="${18 + (i%2)*1}" width="3" height="${10 - (i%3)}" rx="1" fill="${["#2a6a3a","#8a1c1c","#c9a04a","#6a4a2a"][i%4]}"/>`).join("")}
-      <rect x="60" y="26" width="64" height="1.5" fill="#5a3a22"/>
-      <rect x="80" y="54" width="68" height="26" fill="url(#c${u})"/><rect x="78" y="52" width="72" height="3" fill="#9b6c42"/>
-      <rect x="90" y="42" width="18" height="11" rx="1.5" fill="#3a3f4a" stroke="#111" stroke-width=".6"/><rect x="92" y="44" width="10" height="4" fill="#7CF29A" opacity=".7"/>
-      <rect x="104" y="50" width="6" height="2" fill="#ecd9b0"/>
-      <g transform="translate(130 12)"><rect x="-4" y="-4" width="8" height="3" fill="#222"/><rect x="-2" y="-1" width="10" height="6" rx="1" fill="#d0d4dc" stroke="#222" stroke-width=".6" transform="rotate(20)"/><circle cx="6" cy="5" r="1.2" fill="#E5483B"/></g>
-      <rect y="80" width="160" height="20" fill="#3a2414"/>${Array.from({length:10}, (_, i) => `<rect x="${i*16}" y="80" width="15" height="20" fill="#000" opacity="${i%2 ? .08 : .16}"/>`).join("")}
-      <ellipse cx="36" cy="60" rx="15" ry="4" fill="#6a4a2a" stroke="#2a1a10" stroke-width=".6"/><rect x="34.5" y="60" width="3" height="18" fill="#2a1a10"/>
-      <text x="36" y="58.4" font-size="2.6" fill="#ecd9b0" text-anchor="middle" font-family="Georgia">7</text>
-      <rect x="40" y="55.5" width="4" height="2.4" rx=".5" fill="#111"/>
-      <ellipse cx="66" cy="66" rx="10" ry="3" fill="#6a4a2a" opacity=".8"/><rect x="65" y="66" width="2" height="12" fill="#2a1a10" opacity=".8"/>
-      <circle cx="80" cy="6" r="2" fill="#ffd866"/><path d="M80 0V4" stroke="#222" stroke-width=".5"/>
-      <rect width="160" height="100" fill="url(#lt${u})"/>`,
-      grad("w", "#6a3a22", "#2a160c") + grad("c", "#7a5232", "#3e2716") +
-      `<radialGradient id="lt${u}" cx=".5" cy=".05" r=".9"><stop offset="0" stop-color="#ffd27a" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></radialGradient>`);
+      ${R(0, 0, 160, 100, F("br"))}${R(0, 0, 160, 34, F("tp"))}
+      ${R(0, 58.5, 160, 22, F("wp"))}${R(0, 57.6, 160, 1.4, "#d9a95a", 'opacity=".55"')}${R(0, 56.6, 160, 1, "#1a0d06")}
+      ${R(0, 80, 160, 20, F("fg"))}${F && ""}
+      <g stroke="#000" stroke-width=".35" opacity=".32">${Array.from({ length: 10 }, (_, i) => `<line x1="${80 + (i - 4.5) * 7}" y1="80" x2="${80 + (i - 4.5) * 24}" y2="100"/>`).join("")}${[84, 89, 95].map(y => `<line x1="0" x2="160" y1="${y}" y2="${y}"/>`).join("")}</g>
+      <!-- porta de saída -->
+      ${R(0, 20, 21, 62, "#150b05")}${R(2, 22, 17, 59, "#4b2c18")}${R(2, 22, 17, 59, "#fff", 'opacity=".04"')}
+      ${R(4.5, 25, 12, 20, F("dg"))}${R(4.5, 25, 12, 20, "none", 'stroke="#c9a04a" stroke-width=".6"')}
+      <path d="M6 44L14 26M9 44L16 31" stroke="#fff" stroke-width=".8" opacity=".18"/>
+      ${R(4.5, 49, 12, 12, "#3a2212", 'stroke="#22130a" stroke-width=".5"')}${R(4.5, 64, 12, 13, "#3a2212", 'stroke="#22130a" stroke-width=".5"')}
+      <circle cx="16.4" cy="55" r="1" fill="#d9a95a"/>${R(2, 15, 17, 5, "#12643a")}<text x="10.5" y="18.8" font-size="3" fill="#d8ffe8" text-anchor="middle" font-weight="700">SAÍDA</text>
+      <path d="M21 82 L46 100 L0 100 L0 82Z" fill="#ff5aa8" opacity=".07"/>
+      <!-- cartaz e relógio -->
+      <g transform="translate(5 7.5) scale(.7)">      ${R(25, 25, 17, 21, "#e9d7a8", 'stroke="#2a1a10" stroke-width="1"')}${R(27, 27, 13, 8, "#b8402a")}<text x="33.5" y="32.5" font-size="3" fill="#ffe9a8" text-anchor="middle" font-weight="800">CHOPP</text>
+      <text x="33.5" y="39.5" font-size="2.2" fill="#3a2212" text-anchor="middle">gelado</text><text x="33.5" y="43" font-size="2" fill="#3a2212" text-anchor="middle">R$ 9,90</text></g>
+      <circle cx="102" cy="14" r="4.6" fill="#2a1a10"/><circle cx="102" cy="14" r="3.8" fill="#f0e2c0"/><path d="M102 14V11M102 14L104 15" stroke="#222" stroke-width=".6"/>
+      <!-- neon -->
+      ${E(80, 11, 30, 9, F("ng"))}
+      <text x="80" y="14.2" font-size="8" text-anchor="middle" font-weight="900" fill="none" stroke="#ff6fb0" stroke-width=".9" font-family="Georgia,serif">BAR DO ZÉ</text>
+      <text x="80" y="14.2" font-size="8" text-anchor="middle" font-weight="900" fill="#ffe3f1" font-family="Georgia,serif" opacity=".85">BAR DO ZÉ</text>
+      <path d="M58 17.6H102" stroke="#6fd8ff" stroke-width=".7" opacity=".9"/><path d="M58 17.6H102" stroke="#6fd8ff" stroke-width="2" opacity=".2"/>
+      <!-- prateleira de garrafas -->
+      ${R(84, 21, 71, 22, "#1d100a")}${R(84, 21, 71, 22, F("bk"))}
+      ${[31, 41].map((y, r) => `${R(84, y, 71, 1.4, "#7a4a28")}${Array.from({ length: 14 }, (_, i) => { const h = 6 + (i * 5 + r * 3) % 4, c = ["#2a7a45", "#9a2a2a", "#d9a95a", "#6a4a2a", "#2d5fa8", "#c9c9a0"][(i + r * 2) % 6]; return `<rect x="${86 + i * 4.9}" y="${y - h}" width="2.8" height="${h}" rx=".9" fill="${c}"/><rect x="${87 + i * 4.9}" y="${y - h - 2}" width="1" height="2.4" fill="${c}"/><rect x="${86.5 + i * 4.9}" y="${y - h + 1}" width=".5" height="${h - 2}" fill="#fff" opacity=".35"/>`; }).join("")}`).join("")}
+      ${cam(122, 8)}<path d="M124 14L108 40H150Z" fill="#fff6cc" opacity=".04"/>
+      <!-- balcão -->
+      ${R(76, 58, 80, 22, F("wp"))}${R(76, 58, 80, 22, "#000", 'opacity=".28"')}${R(76, 60, 80, 1, "#000", 'opacity=".5"')}
+      ${R(78, 63, 17, 13, "none", 'stroke="#c9a04a" stroke-width=".4" opacity=".6"')}${R(98, 63, 17, 13, "none", 'stroke="#c9a04a" stroke-width=".4" opacity=".6"')}${R(118, 63, 17, 13, "none", 'stroke="#c9a04a" stroke-width=".4" opacity=".6"')}${R(138, 63, 15, 13, "none", 'stroke="#c9a04a" stroke-width=".4" opacity=".6"')}
+      ${R(74, 53, 84, 5, F("bt"))}${R(74, 53, 84, 1, "#fff", 'opacity=".35"')}${R(77, 74, 80, 1.6, "#d9a95a")}${R(77, 74, 80, .6, "#fff", 'opacity=".5"')}
+      ${R(90, 45, 18, 8.4, "#3a3f4a", 'stroke="#111" stroke-width=".5" rx="1"')}${R(92, 46.6, 10, 4, "#7CF29A", 'opacity=".8"')}${R(103, 46.4, 4, 4, "#222")}${R(90, 51.6, 18, 2, "#22262c")}
+      ${R(105, 52, 5, 1.4, "#ecd9b0")}${R(70, 50.4, 6, 2.6, "#111")}
+      <g transform="translate(118 42)">${R(1, 0, 8, 10, "#c8ccd4", 'rx="1"')}${R(0, 9.4, 10, 1.6, "#8a8f98")}${[2, 4.4, 6.8].map((x, i) => `<rect x="${x}" y="-3" width="1.4" height="5.4" rx=".5" fill="${["#d9a95a", "#d9a95a", "#d9a95a"][i]}"/>`).join("")}</g>
+      <path d="M133 51h3l-.6 2.6h-1.8z" fill="#f2e2a8"/><path d="M137 50.6h3.2l-.6 3h-2z" fill="#fff" opacity=".65"/>
+      ${[122, 146].map(x => `${R(x - .6, 68, 1.2, 12, "#2a1a10")}${E(x, 66, 5, 1.8, "#7a2020")}${E(x, 65.2, 5, 1.4, "#a53030")}${R(x - 3, 80, 6, .8, "#000", 'opacity=".3"')}`).join("")}
+      <!-- mesa redonda -->
+      ${E(36, 79.5, 11, 2, "#000", 'opacity=".4"')}${R(34.7, 62, 2.6, 17, "#241309")}${E(36, 79, 6, 1.4, "#1a0d06")}
+      ${E(36, 60.6, 15.6, 4, "#2a1a10")}${E(36, 59.8, 15, 3.6, "#8a5a32")}${E(34, 59, 9, 2, "#b27a48", 'opacity=".45"')}
+      ${[22, 51].map(x => `${R(x - .5, 70, 1, 10, "#1a0d06")}${E(x, 69, 4, 1.6, "#7a2020")}${E(x, 68.4, 4, 1.2, "#a53030")}`).join("")}
+      <g transform="translate(29 49)"><path d="M0 2L1.2 10H5.8L7 2Z" fill="#e9b23a" opacity=".92"/><path d="M0 2H7V4H0Z" fill="#fff" opacity=".9"/><path d="M7 4Q10 5 7 8" stroke="#ddd" fill="none" stroke-width=".6"/></g>
+      <g transform="translate(42 51)"><rect x="1" y="3" width="3" height="7" rx=".6" fill="#2a7a45"/><rect x="2" y="0" width="1" height="4" fill="#2a7a45"/><rect x="1" y="5" width="3" height="2" fill="#f2e2a8"/></g>
+      <ellipse cx="36" cy="58.6" rx="3" ry=".9" fill="#d9d9d9"/><circle cx="36" cy="58" r="1.2" fill="#ffb347"/><circle cx="36" cy="57" r="3" fill="#ffb347" opacity=".2"/>
+      <!-- lustres -->
+      ${[[36, 38], [80, 0]].map(([x, h]) => h ? "" : "").join("")}
+      <path d="M36 0V34" stroke="#1a1209" stroke-width=".5"/><path d="M30 41 Q36 30 42 41Z" fill="#3b2a18" stroke="#c9a04a" stroke-width=".4"/>${E(36, 41, 6, 1.2, "#ffe7a8")}
+      <path d="M36 41L24 82H48Z" fill="url(#cn${u})" opacity=".6"/>
+      <path d="M126 0V4" stroke="#1a1209" stroke-width=".5"/>
+      ${E(36, 90, 28, 6, F("pl"))}${E(116, 86, 30, 5, F("pl"), 'opacity=".7"')}${E(80, 95, 50, 6, F("ngf"))}
+      ${R(0, 0, 160, 100, "#14090a", 'opacity=".12"')}`,
+      brick("br", "#7a3a2a", "#6d3224", "#24120c", 8, 4) +
+      lin("tp", [[0, "#000", .75], [1, "#000", 0]]) +
+      wood("wp", "#4b2c18", "#3f2514", 4) +
+      lin("fg", [[0, "#3c2414"], [1, "#150a05"]]) +
+      lin("dg", [[0, "#1a2a58"], [1, "#6a2a7a"]]) +
+      lin("bk", [[0, "#ffb347", .35], [1, "#ffb347", .05]]) +
+      lin("bt", [[0, "#a0683a"], [1, "#5a381d"]]) +
+      glowDef("ng", "#ff4f9a", .55) + glowDef("pl", "#ffd27a", .5) + glowDef("ngf", "#ff4f9a", .22) +
+      lin("cn", [[0, "#ffd27a", .3], [1, "#ffd27a", 0]]));
+
+    // ------------------------------------------------------------------ MERCADO
     case "mercado": return svg(`
-      <rect width="160" height="100" fill="#e9eef2"/><rect width="160" height="8" fill="#d8dfe5"/>${[20,60,100,140].map(x => `<rect x="${x - 10}" y="2" width="20" height="2" fill="#fff"/>`).join("")}
-      <rect x="0" y="8" width="160" height="6" fill="#d23a2f"/><text x="80" y="12.6" font-size="4" fill="#fff" text-anchor="middle" font-weight="700">SUPERMERCADO BOM PREÇO</text>
-      <rect x="12" y="28" width="38" height="52" fill="#9aa4ad"/>${[0,1,2,3].map(r => `<rect x="12" y="${36 + r*12}" width="38" height="1.5" fill="#5a646d"/>` +
-        Array.from({length:7}, (_, c) => `<rect x="${14 + c*5}" y="${30 + r*12}" width="4" height="6" fill="${["#f5b700","#ffffff","#4F7BFF","#2FBF71","#E5483B"][(r+c)%5]}"/>`).join("")).join("")}
-      <rect x="14" y="21" width="20" height="6" fill="#f5b700"/><text x="24" y="25.4" font-size="3.2" text-anchor="middle" font-weight="700" fill="#3a1a00">ARROZ R$ 8,90</text>
-      <rect x="112" y="12" width="26" height="18" rx="1.5" fill="#1b2236" stroke="#111" stroke-width=".8"/>${[0,1,2,3].map(i => `<rect x="${114 + (i%2)*12}" y="${14 + Math.floor(i/2)*8}" width="10" height="6" fill="#2c3e70"/>`).join("")}
-      <circle cx="136" cy="14" r=".9" fill="#E5483B"/>
-      <rect x="68" y="54" width="34" height="26" fill="#5a646d"/><rect x="66" y="50" width="38" height="5" fill="#d0d6dc"/><rect x="72" y="46" width="12" height="5" fill="#ecd9b0" stroke="#8a5a2b" stroke-width=".4"/>
-      <rect y="80" width="160" height="20" fill="#cfd6dc"/>${Array.from({length:16}, (_, i) => `<rect x="${i*10}" y="80" width="10" height="20" fill="${i%2 ? "#c2c9cf" : "#dbe1e6"}"/>`).join("")}
-      <rect x="120" y="58" width="20" height="14" rx="2" fill="none" stroke="#7a838b" stroke-width="1.2"/><circle cx="124" cy="76" r="2.4" fill="#444"/><circle cx="136" cy="76" r="2.4" fill="#444"/>`);
+      ${R(0, 0, 160, 100, "#eef2f5")}${R(0, 0, 160, 60, F("wl"))}
+      ${R(0, 0, 160, 9, "#cfd6dc")}${[18, 62, 106, 150].map(x => `${R(x - 14, 1.6, 28, 3.6, "#fff")}${R(x - 14, 5.2, 28, 1, "#000", 'opacity=".12"')}${E(x, 10, 16, 5, F("fl"))}`).join("")}
+      ${R(0, 9, 160, 6.5, "#c8281f")}${R(0, 15.5, 160, 1, "#7a130d")}
+      <text x="80" y="14" font-size="4.4" fill="#fff" text-anchor="middle" font-weight="900" letter-spacing=".4">SUPERMERCADO BOM PREÇO</text>
+      ${R(0, 56, 160, 2, "#b6bec6")}
+      ${R(0, 60, 160, 40, F("tl"))}${R(0, 60, 160, 40, F("fgl"))}${floorLines(60, "#9aa4ad", .35, 10)}
+      <!-- corredor ao fundo -->
+      ${R(50, 33, 60, 26, "#dde3e8")}${[0, 1, 2].map(r => `${R(50, 37 + r * 8, 60, 1, "#a9b2ba")}${Array.from({ length: 15 }, (_, c) => R(51 + c * 4, 31.5 + r * 8, 3, 5.5, ["#f5b700", "#fff", "#4F7BFF", "#2FBF71", "#E5483B"][(r + c * 2) % 5], 'opacity=".55"')).join("")}`).join("")}
+      <path d="M50 33H110V59H50Z" fill="#fff" opacity=".18"/>
+      <!-- gondola esquerda -->
+      ${R(13, 29, 36, 31, "#8f9aa4")}${R(13, 29, 36, 2, "#6e7983")}
+      ${[0, 1, 2, 3].map(r => `${R(13, 31 + r * 7.2, 36, 1.4, "#5b6670")}${Array.from({ length: 8 }, (_, c) => { const cols = ["#f5b700", "#ffffff", "#4F7BFF", "#2FBF71", "#E5483B", "#ff8a3a"]; const h = 4.6 + (c + r) % 2; return `<rect x="${14.5 + c * 4.4}" y="${31 + r * 7.2 + 1.4 - h + 5.6 - 0}" width="3.6" height="${h}" rx=".5" fill="${cols[(r * 2 + c) % 6]}"/><rect x="${14.5 + c * 4.4}" y="${31 + r * 7.2 + 1.4 - h + 5.6}" width="3.6" height="1" fill="#000" opacity=".12"/>`; }).join("")}${R(13, 31 + r * 7.2 + 6.4, 36, 1, "#ffe08a")}`).join("")}
+      ${R(13, 59, 36, 1.6, "#4a545d")}
+      ${R(13, 21, 36, 7, "#f5b700")}${R(13, 27.4, 36, .8, "#c78a00")}<text x="31" y="26.2" font-size="3.3" text-anchor="middle" font-weight="900" fill="#3a1a00">ARROZ  R$ 8,90</text>
+      <path d="M31 28V30" stroke="#555" stroke-width=".4"/>
+      ${R(11, 29, 2, 31, "#7a858f")}${R(49, 29, 2, 31, "#7a858f")}
+      <!-- monitor de seguranca -->
+      ${R(124, 30, 2, 5, "#2a2d33")}${R(118, 33.4, 14, 1.6, "#2a2d33")}
+      ${R(112, 12, 26, 19, "#0d1118", 'stroke="#2a2d33" stroke-width="1" rx="1.2"')}
+      ${[0, 1, 2, 3].map(i => `${R(113.6 + (i % 2) * 11.4, 13.6 + Math.floor(i / 2) * 8, 10.6, 7.4, ["#2f4a3a", "#3a4a44", "#34463e", "#2c3e4a"][i])}${R(113.6 + (i % 2) * 11.4, 13.6 + Math.floor(i / 2) * 8, 10.6, 7.4, "none", 'stroke="#7CF29A" stroke-width=".25" opacity=".5"')}<circle cx="${119 + (i % 2) * 11.4}" cy="${16.6 + Math.floor(i / 2) * 8}" r="1" fill="#0d1118" opacity=".7"/>`).join("")}
+      <path d="M113.6 21H124M113.6 29H124" stroke="#fff" stroke-width=".2" opacity=".35"/>
+      <circle cx="135.8" cy="14.6" r=".8" fill="#ff3b3b"/><text x="116" y="12.2" font-size="1.9" fill="#7CF29A" font-family="monospace" opacity=".8">CAM 1-4 · REC</text>
+      ${R(112, 12, 26, 19, "#fff", 'opacity=".05"')}
+      <!-- balcao do gerente -->
+      ${E(84, 68, 20, 2.2, "#000", 'opacity=".25"')}${R(70, 54, 29, 12, "#5b6670")}${R(70, 54, 29, 12, F("cn"))}${R(68, 49, 33, 5, "#e3e7eb", 'stroke="#aab3bb" stroke-width=".4"')}${R(68, 49, 33, 1, "#fff")}
+      ${R(70, 66, 29, 1.6, "#3d454d")}${R(72, 56, 9, 6, "#c8281f")}<text x="76.5" y="60.4" font-size="2.2" fill="#fff" text-anchor="middle" font-weight="700">GERENTE</text>
+      ${R(75, 43.5, 10, 5.6, "#1b2236", 'stroke="#111" stroke-width=".5" rx=".6"')}${R(76, 44.5, 8, 3.4, "#5b8cff", 'opacity=".5"')}${R(79, 49, 2, .8, "#333")}
+      ${R(87, 46, 6, 3, "#ecd9b0", 'stroke="#8a5a2b" stroke-width=".3"')}${R(89, 44.6, 4, 2.4, "#fff", 'transform="rotate(8 89 44)"')}${R(94, 47, 5, 2, "#333", 'rx=".6"')}
+      ${R(70, 47, 3, 2, "#222")}
+      <!-- carrinho -->
+      ${E(131, 77.6, 12, 1.6, "#000", 'opacity=".25"')}
+      <g fill="none" stroke="#7d8892" stroke-width=".7"><path d="M120 59H141L139 70H123Z"/>${[0, 1, 2, 3].map(i => `<path d="M${122 + i * 5 + 0.4} 59.4V69.6"/>`).join("")}${[63, 66.5].map(y => `<path d="M${121 + (y - 59) * .15} ${y}H${140 - (y - 59) * .15}"/>`).join("")}<path d="M120 59L117 55H112" stroke-width="1.1"/><path d="M123 70L125 75H138" stroke-width=".7"/><path d="M130 75v2M137 75v2"/></g>
+      ${R(121, 55, 18, 4, "#E5483B", 'opacity=".85" rx=".6"')}${R(125, 56, 8, 2, "#fff", 'opacity=".5"')}
+      <circle cx="125" cy="77" r="2" fill="#2a2d33"/><circle cx="125" cy="77" r=".8" fill="#9aa"/><circle cx="137" cy="77" r="2" fill="#2a2d33"/><circle cx="137" cy="77" r=".8" fill="#9aa"/>
+      <path d="M0 58H160" stroke="#fff" stroke-width=".4" opacity=".4"/>
+      <!-- placas penduradas -->
+      ${[[66, "Hortifruti"], [94, "Padaria · Açougue"]].map(([x, t]) => `<path d="M${x - 10} 16V19M${x + 10} 16V19" stroke="#8a929c" stroke-width=".4"/>${R(x - 11, 19, 22, 5, "#2FBF71", 'rx=".6"')}<text x="${x}" y="22.6" font-size="2.2" fill="#fff" text-anchor="middle" font-weight="700">${t}</text>`).join("")}
+      ${R(0, 0, 160, 100, "#fff", 'opacity=".04"')}`,
+      lin("wl", [[0, "#f4f7f9"], [1, "#d9e0e5"]]) + tile("tl", "#d6dde2", "#e9eef1", 8) +
+      lin("fgl", [[0, "#fff", .1], [1, "#000", .2]]) + glowDef("fl", "#fff", .85) +
+      lin("cn", [[0, "#fff", .15], [1, "#000", .2]]));
+
+    // ------------------------------------------------------------------ PONTO
     case "ponto": return svg(`
-      <rect width="160" height="70" fill="url(#sk${u})"/>${windows(4, 18, 5, 4, 3, 4, 6, 7)}
-      <rect x="0" y="12" width="34" height="58" fill="#141b2b" opacity=".6"/>
-      <rect x="108" y="26" width="52" height="44" fill="#3a2a20"/><rect x="108" y="22" width="52" height="6" fill="#c9a04a"/>
-      <text x="134" y="26.6" font-size="3.6" text-anchor="middle" font-weight="700" fill="#3a1a00">PADARIA</text>
-      <rect x="112" y="34" width="20" height="18" fill="#ffd866" opacity=".75"/><rect x="138" y="34" width="18" height="36" fill="#1a120c"/>
-      <g transform="translate(128 18)"><rect x="-2" y="-1" width="10" height="5" rx="1" fill="#d0d4dc" stroke="#222" stroke-width=".6" transform="rotate(15)"/><circle cx="7" cy="4" r="1" fill="#E5483B"/></g>
-      <rect x="44" y="34" width="44" height="3" fill="#4a5570"/><rect x="46" y="37" width="2" height="33" fill="#4a5570"/><rect x="84" y="37" width="2" height="33" fill="#4a5570"/>
-      <rect x="50" y="38" width="30" height="20" fill="#7a8ab0" opacity=".18"/><rect x="50" y="58" width="30" height="3" fill="#2a3242"/>
-      <rect x="78" y="10" width="2.4" height="60" fill="#8a929c"/><rect x="74" y="10" width="10" height="7" rx="1" fill="#2c3e70"/><text x="79" y="15" font-size="3.4" text-anchor="middle" fill="#fff" font-weight="700">412</text>
-      <rect y="70" width="160" height="4" fill="#9aa0a8"/><rect y="74" width="160" height="26" fill="#2a2d33"/>
-      <rect x="32" y="72" width="36" height="2" fill="#5a5f66"/><path d="M58 73.2l4 -.8" stroke="#d0d4dc" stroke-width=".7"/>
-      ${[0,1,2,3,4,5].map(i => `<rect x="${8 + i*28}" y="86" width="14" height="1.6" fill="#ffd866" opacity=".8"/>`).join("")}`, nightSky);
+      ${R(0, 0, 160, 76, F("sk"))}
+      ${Array.from({ length: 26 }, (_, i) => `<circle cx="${(i * 37) % 160}" cy="${(i * 19) % 32 + 2}" r="${i % 3 ? .25 : .45}" fill="#fff" opacity="${.35 + (i % 4) * .15}"/>`).join("")}
+      <circle cx="26" cy="16" r="7" fill="#fff6d8" opacity=".12"/><circle cx="26" cy="16" r="4.4" fill="#fff6d8"/><circle cx="24.4" cy="14.8" r="1" fill="#e5dcc0"/><circle cx="28" cy="17.6" r=".7" fill="#e5dcc0"/>
+      ${skyline(66, "#1a2038", 11, false)}${skyline(70, "#141a2e", 37, true)}
+      <!-- padaria -->
+      ${R(104, 20, 56, 54, F("brp"))}${R(104, 20, 56, 54, "#000", 'opacity=".18"')}
+      ${R(102, 14, 58, 7, "#2a1a10")}${R(102, 14, 58, 1.2, "#c9a04a")}
+      ${E(131, 17, 22, 5, F("nd"))}<text x="131" y="19.8" font-size="5.6" text-anchor="middle" font-weight="900" fill="#fff0c0" font-family="Georgia,serif" stroke="#ff9d3a" stroke-width=".3">PADARIA</text>
+      ${cam(118, 22)}
+      ${R(106, 35, 26, 21, "#2b1a10")}${R(108, 37, 22, 17, F("vd"))}${R(108, 49, 22, 5, "#7a4a22")}
+      ${[0, 1, 2, 3, 4].map(i => `<ellipse cx="${112 + i * 4.4}" cy="48" rx="2" ry="1.3" fill="#d9a05a"/>`).join("")}${[0, 1, 2].map(i => `<rect x="${110 + i * 7}" y="40" width="5.6" height="2.6" rx=".6" fill="#e8c27a"/>`).join("")}
+      ${R(106, 56, 26, 2.4, "#5a3a22")}
+      ${R(137, 36, 18, 38, "#1a120c")}${R(139, 38, 14, 22, F("vd"), 'opacity=".55"')}<circle cx="151.4" cy="58" r=".9" fill="#c9a04a"/>${R(137, 36, 18, 38, "none", 'stroke="#5a3a22" stroke-width="1"')}
+      <path d="M104 31H160L157 38H107Z" fill="#c8281f"/>${Array.from({ length: 8 }, (_, i) => `<path d="M${104 + i * 7} 31h3.5l-.6 7h-3.5z" fill="#fff" opacity=".9"/>`).join("")}${R(107, 38, 50, 1, "#000", 'opacity=".3"')}
+      ${R(104, 72, 56, 4, "#6a6f76")}
+      <!-- fios -->
+      <path d="M0 6Q40 14 80 7T160 10M0 11Q50 20 100 12T160 17" stroke="#0b0e1a" stroke-width=".4" fill="none" opacity=".9"/>
+      <!-- calcada e rua -->
+      ${R(0, 62, 160, 12, "#5a5e68")}${R(0, 62, 160, 12, F("sp"))}${Array.from({ length: 10 }, (_, i) => `<path d="M${i * 17} 62V74" stroke="#3a3d45" stroke-width=".4"/>`).join("")}
+      ${R(0, 72, 160, 4.6, "#9aa0a8")}${R(0, 72, 160, 1, "#c8ccd2")}${R(0, 76, 160, 24, "#25272d")}${R(0, 76, 160, 24, F("sp"))}
+      ${R(0, 76, 160, 1.4, "#14161a")}${[0, 1, 2, 3, 4, 5].map(i => R(10 + i * 28, 90, 15, 1.6, "#e8d27a", 'opacity=".8"')).join("")}
+      <!-- sarjeta e poca -->
+      ${R(32, 72, 36, 4.6, "#b0b6bd")}${R(32, 76, 36, 4, "#15171b")}${E(50, 84, 20, 3.4, F("pd"))}<path d="M34 83Q42 82 50 83T66 84" stroke="#fff" stroke-width=".3" opacity=".4" fill="none"/>
+      ${R(40, 77, 8, 2.6, "#0c0d10")}${[0, 1, 2, 3].map(i => R(41 + i * 2, 77, .5, 2.6, "#4a4d55")).join("")}
+      <path d="M58 77l3-1 1 2.4-3 .6z" fill="#e8d27a" opacity=".85"/>${R(54, 78, 3, 1.4, "#c8281f", 'transform="rotate(-10 54 78)"')}
+      <!-- poste e placa -->
+      ${R(79.4, 14, 1.8, 48, "#7d858f")}${R(79.4, 14, .6, 48, "#fff", 'opacity=".3"')}${R(77.6, 60, 5.4, 2.2, "#4a4f58")}
+      ${R(74, 10, 12.4, 8.4, "#245fb0", 'stroke="#fff" stroke-width=".5" rx=".8"')}<text x="80.2" y="15" font-size="4" text-anchor="middle" fill="#fff" font-weight="900">412</text><text x="80.2" y="17.4" font-size="1.5" text-anchor="middle" fill="#cfe2ff">PARADA</text>
+      ${R(75, 20, 10, 6, "#f5b700", 'rx=".6"')}<path d="M77 24l1.5-2 1.5 1 1.5-2 1.5 3" stroke="#3a1a00" stroke-width=".4" fill="none"/>
+      <!-- abrigo -->
+      ${R(50, 34, 38, 3, "#3d4660")}${R(50, 34, 38, 1, "#6a7898")}${R(50, 37, 38, 1, "#000", 'opacity=".3"')}
+      ${R(51, 37, 2, 26, "#4a5570")}${R(85, 37, 2, 26, "#4a5570")}
+      ${R(53, 38, 32, 20, "#9ab4e0", 'opacity=".16"')}<path d="M56 58L64 38H70L62 58ZM72 58L80 38H82L74 58Z" fill="#fff" opacity=".13"/>
+      ${R(53, 38, 14, 18, F("ad"))}${R(53, 38, 14, 18, "none", 'stroke="#2a3242" stroke-width=".5"')}
+      <text x="60" y="44" font-size="2.6" fill="#fff" text-anchor="middle" font-weight="900">TUDO</text><text x="60" y="48" font-size="2.6" fill="#ffe08a" text-anchor="middle" font-weight="900">AGORA</text><circle cx="60" cy="52.4" r="2.4" fill="#fff" opacity=".85"/>
+      ${R(69, 40, 10, 14, "#f2efe2", 'stroke="#2a3242" stroke-width=".4"')}<path d="M71 44H77M71 47H76M71 50H77" stroke="#7a838b" stroke-width=".5"/><path d="M71 52L73 50 75 52 77 49" stroke="#245fb0" stroke-width=".5" fill="none"/><text x="74" y="42.6" font-size="1.7" fill="#245fb0" text-anchor="middle" font-weight="700">LINHAS</text>
+      ${R(53, 58, 32, 1.8, "#2a3242")}${R(54, 56, 30, 2.2, "#6a4a2a")}${R(54, 56, 30, .6, "#a07a4a")}${R(56, 59.8, 1.2, 3, "#222")}${R(81, 59.8, 1.2, 3, "#222")}
+      ${R(51, 63, 36, 1.4, "#000", 'opacity=".25"')}
+      ${E(52, 58.6, 3, 1.4, "#3d6a4a", 'opacity=".0"')}
+      <!-- poste de luz -->
+      ${R(20, 24, 1.8, 50, "#2d3138")}${R(20, 23, 13, 1.6, "#2d3138")}${R(30, 23.8, 6, 2.4, "#3a3f48", 'rx="1"')}${E(33, 26.4, 3.4, 1, "#fff2c0")}
+      <path d="M30 26L16 76H54Z" fill="url(#lc${u})"/>${E(34, 24, 12, 7, F("lg"))}${E(34, 76, 24, 4, F("lg"), 'opacity=".7"')}
+      ${R(0, 0, 160, 100, "#0a1030", 'opacity=".12"')}`,
+      lin("sk", [[0, "#080d26"], [.6, "#1c2250"], [1, "#4a3a66"]]) +
+      brick("brp", "#6a3a2a", "#5e3224", "#241410", 10, 4) + speck("sp", "#9aa0aa", .35) +
+      lin("vd", [[0, "#ffd27a"], [1, "#e89a3a"]]) + glowDef("nd", "#ffb050", .45) + glowDef("lg", "#ffe9a0", .5) +
+      lin("lc", [[0, "#ffe9a0", .3], [1, "#ffe9a0", 0]]) +
+      lin("ad", [[0, "#ff3a7a"], [1, "#6a2ad0"]]) + lin("pd", [[0, "#7a8ad0", .7], [1, "#0c0e14", .8]]));
+
+    // ------------------------------------------------------------------ DELEGACIA
     case "delegacia": return svg(`
-      <rect width="160" height="100" fill="url(#w${u})"/><rect y="62" width="160" height="2" fill="#2a3a30"/>
-      <rect x="70" y="6" width="24" height="4" fill="#d0d6dc"/><rect x="76" y="10" width="12" height="1" fill="#555"/>
-      <text x="80" y="20" font-size="5" text-anchor="middle" fill="#e6f0e6" font-family="Georgia" opacity=".85">14º DP</text>
-      <rect x="114" y="13" width="30" height="26" fill="#8a5a2b"/><rect x="115.5" y="14.5" width="27" height="23" fill="#c9a77a"/>
-      ${[[118,17,"#fff"],[127,16,"#ffe08a"],[134,19,"#fff"],[120,26,"#a8e6c4"],[130,27,"#fff"]].map(([x,y,c]) => `<rect x="${x}" y="${y}" width="7" height="8" fill="${c}" transform="rotate(${(x%3)-1} ${x} ${y})"/>`).join("")}
-      ${[[121,17],[130,16],[137,19],[123,26],[133,27]].map(([x,y]) => `<circle cx="${x}" cy="${y}" r=".7" fill="#E5483B"/>`).join("")}
-      <rect x="54" y="54" width="54" height="26" fill="url(#c${u})"/><rect x="52" y="51" width="58" height="4" fill="#6a6f76"/>
-      <rect x="64" y="45" width="18" height="7" fill="#2c3e70"/><rect x="65" y="45.8" width="16" height="5.4" fill="#ecd9b0"/><path d="M73 45.8V51.2" stroke="#8a5a2b" stroke-width=".5"/>
-      <rect x="92" y="44" width="6" height="8" rx="1" fill="#ddd"/><rect x="99" y="46" width="5" height="6" fill="#3a2716"/>
-      <rect x="12" y="52" width="32" height="28" fill="#5a646d"/>${[0,1].map(i => `<rect x="14" y="${56 + i*12}" width="28" height="10" fill="#6a747d" stroke="#3a4148" stroke-width=".5"/>`).join("")}
-      <rect x="16" y="47" width="26" height="6" fill="#d6b56a" stroke="#8a5a2b" stroke-width=".5"/>
-      <g transform="translate(140 6)" opacity=".85"><circle r="5" fill="#ddd"/><path d="M-4 0H4M0 -4V4" stroke="#999" stroke-width=".5"/></g>
-      <rect y="80" width="160" height="20" fill="#3a4a40"/>${Array.from({length:8}, (_, i) => `<rect x="${i*20}" y="80" width="19" height="20" fill="#000" opacity="${i%2 ? .06 : .12}"/>`).join("")}`,
-      grad("w", "#7a9a86", "#3e5446") + grad("c", "#7a838b", "#4a5158"));
+      ${R(0, 0, 160, 100, F("dw"))}${R(0, 38, 160, 30, "#cdd8d0", 'opacity=".0"')}
+      ${R(0, 40, 160, 24, "#5d7a68")}${R(0, 40, 160, 1.4, "#e8efe9")}${R(0, 41.4, 160, .8, "#000", 'opacity=".25"')}${R(0, 64, 160, 1.6, "#2a3a30")}
+      ${Array.from({ length: 16 }, (_, i) => R(i * 10, 42, .35, 22, "#000", 'opacity=".12"')).join("")}
+      ${[24, 80, 136].map(x => `${R(x - 14, 0, 28, 3, "#d8dfd9")}${R(x - 12, 3, 24, 1.6, "#fffbe8")}${E(x, 6, 20, 5, F("fl"))}`).join("")}
+      ${R(66, 8, 28, 13, "#1c2a22", 'stroke="#c9a04a" stroke-width=".6" rx="1"')}<text x="80" y="17.4" font-size="6" text-anchor="middle" fill="#f1e7bf" font-family="Georgia,serif" font-weight="700">14º DP</text>
+      <g transform="translate(80 5)"><path d="M-3 0L0-3L3 0L0 3Z" fill="#c9a04a"/><circle r="1" fill="#1c2a22"/></g>
+      ${R(8, 6, 28, 28, "#e8efe9", 'stroke="#3a4a40" stroke-width="1.2"')}${R(10, 8, 24, 24, "#9fc3e0")}${R(10, 8, 24, 24, F("wn"))}
+      ${Array.from({ length: 12 }, (_, i) => R(10, 8 + i * 2, 24, 1.2, "#e8efe9", 'opacity=".85"')).join("")}${[14, 21, 28].map(x => R(x, 8, 1, 24, "#2a2d33", 'opacity=".55"')).join("")}
+      <path d="M36 34L52 64H8Z" fill="#fff8d0" opacity=".05"/>
+      <!-- mural -->
+      ${R(115, 14, 29, 24, "#8a5a2b", 'rx=".8"')}${R(116.5, 15.5, 26, 21, "#c9a77a")}${R(116.5, 15.5, 26, 21, F("ck"))}
+      ${[[118, 17, "#fff", -2], [127, 16.4, "#ffe08a", 3], [134, 19, "#fff", 1], [119, 26, "#a8e6c4", 2], [129, 27, "#fff", -2], [136, 28, "#ffc9c9", 3]].map(([x, y, c, r]) => `<rect x="${x}" y="${y}" width="7" height="8" fill="${c}" transform="rotate(${r} ${x + 3} ${y})"/><path d="M${x + 1} ${y + 2.4}H${x + 6}M${x + 1} ${y + 4}H${x + 5}M${x + 1} ${y + 5.6}H${x + 6}" stroke="#7a838b" stroke-width=".35"/><circle cx="${x + 3.5}" cy="${y + .6}" r=".8" fill="#E5483B"/>`).join("")}
+      <path d="M121.5 17.6L132 17L137.5 19.6L123 27L133 27.6L139.5 29" stroke="#c8281f" stroke-width=".35" fill="none" opacity=".9"/>
+      <rect x="125" y="19" width="5" height="6" fill="#222" opacity=".0"/>
+      <!-- bandeira / quadro -->
+      ${R(44, 10, 14, 18, "#d8cba5", 'stroke="#3a2a10" stroke-width=".8"')}${R(46, 12, 10, 8, "#7a8ab0")}<circle cx="51" cy="16" r="2.4" fill="#d9b58a"/>${R(47.6, 18.6, 7, 2, "#2a3a60")}<path d="M46 23H56M46 25H54" stroke="#6a5a3a" stroke-width=".5"/>
+      <!-- relogio -->
+      <circle cx="101" cy="22" r="5" fill="#222"/><circle cx="101" cy="22" r="4.2" fill="#f4f4ee"/><path d="M101 22V19M101 22L103 23" stroke="#222" stroke-width=".6"/>
+      <!-- arquivo + pasta -->
+      ${R(16, 52, 26, 28, "#7c8790")}${R(16, 52, 26, 1.8, "#a4aeb6")}${[0, 1].map(i => `${R(18, 56 + i * 11.4, 22, 9.6, "#8f9aa4", 'stroke="#4a545d" stroke-width=".5"')}${R(25, 59.4 + i * 11.4, 8, 1.8, "#e8eef2", 'rx=".5"')}${R(26.6, 60 + i * 11.4, 4.8, .8, "#4a545d")}`).join("")}
+      ${R(16, 80, 26, 1.4, "#3a4148")}
+      ${R(18, 47.4, 17, 4.6, "#d6b56a", 'stroke="#8a5a2b" stroke-width=".4"')}${R(18, 46.4, 7, 1.6, "#d6b56a", 'stroke="#8a5a2b" stroke-width=".4"')}${R(20, 49, 12, .6, "#8a5a2b")}${R(30, 45.6, 9, 6.4, "#fffaf0", 'transform="rotate(7 30 45)" stroke="#aaa" stroke-width=".3"')}${R(15, 52, 28, 1, "#000", 'opacity=".2"')}
+      <!-- mesa -->
+      ${E(79, 80, 22, 2.2, "#000", 'opacity=".3"')}${R(60, 57, 38, 22, "#6a747d")}${R(60, 57, 38, 22, F("cn"))}${R(58, 54, 42, 4, F("bt"))}${R(58, 54, 42, .8, "#fff", 'opacity=".4"')}
+      ${R(62, 60, 14, 17, "#59626a", 'stroke="#3a4148" stroke-width=".5"')}${R(67, 63, 4, 1.8, "#d0d6dc", 'rx=".6"')}
+      ${R(63, 47, 29, 8, "#2c3e70", 'rx=".6"')}${R(64, 45, 27, 8.6, "#0000")}
+      <path d="M62 53.6L66 48.6H90L94 53.6Z" fill="#ecd9b0" stroke="#8a5a2b" stroke-width=".4"/><path d="M78 48.6V53.6" stroke="#8a5a2b" stroke-width=".5"/><path d="M67 50H77M67 51.6H76M80 50H89M80 51.6H88" stroke="#6a5a3a" stroke-width=".35"/>
+      <path d="M62 53.6L63 54.6H93L94 53.6Z" fill="#2c3e70"/>
+      ${R(86, 51, 1.2, 4, "#222", 'transform="rotate(30 86 51)"')}
+      <g transform="translate(92 46)"><path d="M1 8L2.4 2H6L7 8Z" fill="#c8cdd4"/><path d="M1.6 2L2.6 0H5.6L6 2" fill="#e8eef2"/><circle cx="4" cy="4.6" r=".8" fill="#E5483B"/></g>
+      ${R(60, 60, 38, 1, "#000", 'opacity=".18"')}
+      <!-- banco -->
+      ${R(120, 62, 32, 3.4, "#4a3a2a")}${R(122, 65, 1.6, 12, "#2a2d33")}${R(148, 65, 1.6, 12, "#2a2d33")}${R(120, 62, 32, .8, "#8a6a42")}${E(136, 78.4, 16, 1.4, "#000", 'opacity=".25"')}
+      <!-- piso -->
+      ${R(0, 64, 160, 36, F("tl"))}${floorLines(66, "#2a3a30", .35, 10)}${R(0, 66, 160, 34, F("fgl"))}
+      ${E(80, 90, 56, 7, F("fl"), 'opacity=".6"')}
+      ${R(0, 0, 160, 100, "#d4ffe0", 'opacity=".03"')}`,
+      lin("dw", [[0, "#8aa893"], [1, "#4a6454"]]) + glowDef("fl", "#fffbe0", .55) +
+      lin("wn", [[0, "#ffd9a0", .35], [1, "#ffd9a0", 0]]) + brick("ckp", "#c9a77a", "#c9a77a", "#c9a77a", 4, 2) +
+      speck("ck", "#7a5a30", .6) + tile("tl", "#6e7f73", "#5f7064", 10) + lin("fgl", [[0, "#000", .35], [1, "#000", 0]]) +
+      lin("cn", [[0, "#fff", .12], [1, "#000", .25]]) + lin("bt", [[0, "#8a949c"], [1, "#5a646d"]]));
+
+    // ------------------------------------------------------------------ APARTAMENTO
     case "apartamento": return svg(`
-      <rect width="160" height="100" fill="url(#w${u})"/>
-      <rect x="54" y="10" width="40" height="36" fill="#9ec4e6" stroke="#5a3a22" stroke-width="1.6"/><path d="M74 10V46M54 28H94" stroke="#5a3a22" stroke-width="1"/>
-      <path d="M50 8 Q56 30 52 50 L46 50 L46 8Z M98 8 Q92 30 96 50 L102 50 L102 8Z" fill="#a05a3a" opacity=".85"/>
-      <rect x="14" y="22" width="30" height="20" fill="#6a4a2a"/><rect x="14" y="30" width="30" height="1.4" fill="#3e2716"/>
-      <rect x="17" y="25" width="10" height="5" fill="#fff" transform="rotate(-6 17 25)"/><rect x="29" y="26" width="10" height="4" fill="#ecd9b0"/>
-      <rect x="18" y="33" width="6" height="8" fill="#8a1c1c"/><rect x="25" y="34" width="5" height="7" fill="#2c3e70"/>
-      <rect x="100" y="44" width="30" height="36" fill="#7a5232"/><rect x="102" y="47" width="26" height="12" fill="#8a6242" stroke="#3e2716" stroke-width=".6"/><circle cx="115" cy="53" r="1" fill="#c9a04a"/>
-      <rect x="102" y="62" width="26" height="15" fill="#8a6242" stroke="#3e2716" stroke-width=".6"/>
-      <g transform="translate(118 34)"><rect x="-5" y="0" width="10" height="10" fill="#ddd" stroke="#888" stroke-width=".4"/><circle cy="5" r="3" fill="#fff4d6"/></g>
-      <rect x="40" y="58" width="36" height="3" fill="#6a4a2a"/><rect x="43" y="61" width="2" height="19" fill="#3e2716"/><rect x="71" y="61" width="2" height="19" fill="#3e2716"/>
-      <rect x="52" y="55" width="7" height="3.4" rx=".6" fill="#333"/><rect x="62" y="55.6" width="6" height="2.6" fill="#ecd9b0"/>
-      <rect x="132" y="56" width="26" height="24" rx="3" fill="#5a6a8a"/><rect x="132" y="50" width="26" height="9" rx="3" fill="#6a7a9a"/>
-      <rect y="80" width="160" height="20" fill="#6a4a2a"/>${Array.from({length:20}, (_, i) => `<rect x="${i*8}" y="80" width="8" height="20" fill="#000" opacity="${i%2 ? .05 : .12}"/>`).join("")}`,
-      grad("w", "#d9c9a8", "#a8947a"));
+      ${R(0, 0, 160, 80, F("wl"))}${Array.from({ length: 40 }, (_, i) => R(i * 4, 0, 1.2, 80, "#fff", 'opacity=".05"')).join("")}
+      ${R(0, 62, 160, 1.4, "#fff", 'opacity=".6"')}${R(0, 63, 160, 17, "#9a8566", 'opacity=".35"')}${R(0, 78, 160, 2.6, "#f4ecd9")}${R(0, 80.4, 160, .8, "#000", 'opacity=".3"')}
+      ${R(0, 80, 160, 20, F("pk"))}${floorLines(80, "#3a2414", .5, 10)}${R(0, 80, 160, 20, F("fgl"))}
+      <!-- janela -->
+      ${R(51, 7, 46, 42, "#4a3320", 'rx="1"')}${R(54, 10, 40, 36, F("ds"))}
+      ${skyline(40, "#2a2040", 5, true).replace(/<rect/g, "<rect clip-path=\"url(#cw" + u + ")\"")}
+      ${R(54, 10, 40, 36, F("ds"), 'opacity="0"')}
+      <path d="M54 46V10H94V46Z" fill="none"/>
+      ${R(74, 10, 1.6, 36, "#e8dcc4")}${R(54, 27.4, 40, 1.6, "#e8dcc4")}${R(52, 10, 44, 1.4, "#e8dcc4")}${R(50, 46, 48, 3, "#f4ecd9")}${R(50, 49, 48, 1, "#000", 'opacity=".25"')}
+      <path d="M54 46L60 10H66L58 46Z" fill="#fff" opacity=".06"/>
+      <path d="M50 4Q56 28 53 52L45 52L45 4Z" fill="#b5593a"/><path d="M98 4Q92 28 95 52L103 52L103 4Z" fill="#b5593a"/>
+      ${[0, 1, 2, 3, 4].map(i => `<path d="M${46 + i * 1.6} 4Q${50 + i * 1.2} 28 ${48 + i * 1.6} 52" stroke="#000" stroke-width=".35" opacity=".2" fill="none"/><path d="M${102 - i * 1.6} 4Q${98 - i * 1.2} 28 ${100 - i * 1.6} 52" stroke="#000" stroke-width=".35" opacity=".2" fill="none"/>`).join("")}
+      ${R(43, 2, 62, 2.6, "#3a2414")}${[46, 56, 66, 76, 86, 96].map(x => `<circle cx="${x}" cy="3.3" r="1.2" fill="#c9a04a"/>`).join("")}
+      <g transform="translate(80 49)"><path d="M-3 0L-4 -5H4L3 0Z" fill="#a8603a"/><path d="M0 -5Q-6 -9 -7 -5M0 -5Q6 -10 7 -4M0 -5Q-2 -12 0 -13M0 -5Q3 -10 5 -12" stroke="#2f7a3f" stroke-width="1.4" fill="none" stroke-linecap="round"/></g>
+      <!-- estante -->
+      ${R(14, 21, 31, 2, "#6a4a2a")}${R(14, 21, 31, 2, F("cn"))}
+      ${R(14, 32, 31, 1.6, "#6a4a2a")}${R(14, 43, 31, 2, "#6a4a2a")}${R(14, 23, 31, 20, "#000", 'opacity=".1"')}
+      ${Array.from({ length: 9 }, (_, i) => { const h = 6 + (i * 3) % 4; return R(15.6 + i * 2.7, 32 - h, 2.3, h, ["#8a1c1c", "#1c4a8a", "#c9a04a", "#2a6a3a", "#6a2a6a", "#d8d0b8"][i % 6]); }).join("")}
+      ${R(40.4, 26, 3, 6, "#2c3e70", 'transform="rotate(10 40 32)"')}${R(36, 27, 3.6, 4.6, "#c9a04a", 'opacity="0"')}
+      ${R(17, 36, 8, 6, "#d8c9a0", 'stroke="#5a3a22" stroke-width=".6"')}${R(18.2, 37.2, 5.6, 3.6, "#7a9ab8")}
+      ${R(28, 39, 5, 3.4, "#a8603a", 'rx=".6"')}<path d="M30.5 39Q28 35 29 34M30.5 39Q33 35 32 34" stroke="#2f7a3f" stroke-width="1" fill="none"/>
+      ${R(36, 37, 8, 5, "#8a1c1c")}${R(36, 39, 8, 1, "#e8d9b0")}
+      <!-- mesa lateral -->
+      ${E(57, 81, 9, 1.4, "#000", 'opacity=".3"')}${R(48, 58, 19, 2.6, "#7a5232")}${R(48, 58, 19, .8, "#b28056")}${R(50, 60.6, 1.6, 20, "#4a3020")}${R(63.4, 60.6, 1.6, 20, "#4a3020")}${R(50, 69, 15, 1.4, "#4a3020")}
+      ${R(50, 55, 8, 3.2, "#333", 'rx=".6"')}${R(51, 51.4, 7, 4, "#1d2433", 'rx=".5"')}${R(51.6, 52, 5.8, 2.8, "#5b8cff", 'opacity=".5"')}
+      ${R(59, 56, 6, 2, "#ecd9b0")}${R(60, 55.2, 5, 1.4, "#fff", 'transform="rotate(-6 60 55)"')}${R(62, 53, 3.6, 3, "#e8eef2", 'rx=".6"')}
+      <!-- comoda -->
+      ${E(115, 81, 16, 1.6, "#000", 'opacity=".3"')}${R(102, 55.6, 26, 25, "#6a4a2e")}${R(101, 54, 28, 2.6, "#a07a4a")}${R(101, 54, 28, .8, "#fff", 'opacity=".25"')}
+      ${R(103.6, 58, 22.8, 9, "#7c5838", 'stroke="#3a2414" stroke-width=".5"')}${R(103.6, 68.4, 22.8, 9, "#7c5838", 'stroke="#3a2414" stroke-width=".5"')}${R(112, 61.6, 6, 1.2, "#d9b86a")}${R(112, 72, 6, 1.2, "#d9b86a")}
+      ${R(103, 80.6, 3, 2, "#3a2414")}${R(123, 80.6, 3, 2, "#3a2414")}
+      <path d="M112 54V49" stroke="#c9a04a" stroke-width="1"/><path d="M107 49.6Q112 43 117 49.6Z" fill="#f2e6c4"/>${E(112, 49.6, 5, 1, "#fff2c0")}${E(112, 54, 4.4, 1.2, "#000", 'opacity=".1"')}
+      ${R(119, 47.4, 7, 6.6, "#5a3a22")}${R(120, 48.4, 5, 4.6, "#9ab4c8")}<circle cx="122.5" cy="50" r="1" fill="#e8c9a0"/>${R(104, 51, 4.4, 3, "#c8d0d8", 'opacity="0"')}
+      <!-- quadro -->
+      ${R(104, 12, 22, 24, "#3a2414", 'rx=".6"')}${R(106, 14, 18, 20, "#e8dcc0")}<path d="M106 28L112 22L117 27L120 24L124 29V34H106Z" fill="#6a8a6a"/><circle cx="118" cy="19" r="2" fill="#e8a74a"/>
+      <!-- luz do abajur no teto + sombra -->
+      ${E(115, 52, 24, 12, F("lm"))}${E(150, 54, 16, 12, F("lm"), 'opacity=".7"')}
+      <!-- tapete -->
+      <path d="M32 100L40 84H120L132 100Z" fill="#7a3a3a" opacity=".85"/><path d="M36 97L43 86H117L127 97Z" fill="none" stroke="#e8c98a" stroke-width=".6" opacity=".7"/><path d="M44 97L48 88H112L118 97Z" fill="none" stroke="#e8c98a" stroke-width=".4" opacity=".5"/>
+      <!-- sofa -->
+      ${E(145, 77.6, 15, 1.8, "#000", 'opacity=".3"')}${R(131, 49, 29, 12, "#4d5c7e", 'rx="3"')}${R(131, 47, 29, 4, "#586a90", 'rx="2"')}
+      ${R(129, 57, 8, 17, "#52628a", 'rx="3"')}${R(131, 58, 29, 14, "#6578a2", 'rx="2.5"')}${R(133, 58, 25, 3, "#7a8db4", 'rx="1.4"')}
+      ${R(139, 59, 1, 13, "#000", 'opacity=".25"')}${R(150, 59, 1, 13, "#000", 'opacity=".25"')}${R(131, 72, 29, 3, "#3e4a68")}${R(132, 75, 2, 3, "#2a2018")}${R(156, 75, 2, 3, "#2a2018")}
+      <g transform="translate(144 53) rotate(-8)">${R(0, 0, 8, 8, "#e5a64a", 'rx="1.6"')}<path d="M1 2L7 6M1 6L7 2" stroke="#fff" stroke-width=".5" opacity=".5"/></g>
+      <path d="M133 66Q140 62 146 70L146 74H133Z" fill="#b5593a" opacity=".9"/>
+      ${R(0, 0, 160, 100, "#ff9a4a", 'opacity=".05"')}`,
+      lin("wl", [[0, "#dccdaa"], [1, "#b09a7a"]]) +
+      lin("ds", [[0, "#2a3a7a"], [.55, "#c0607a"], [1, "#ffb070"]]) +
+      wood("pk", "#7a5232", "#6c4628", 5) + `<clipPath id="cw${u}"><rect x="54" y="10" width="40" height="36"/></clipPath>` +
+      lin("fgl", [[0, "#000", .35], [1, "#000", 0]]) + lin("cn", [[0, "#fff", .1], [1, "#fff", 0]]) +
+      glowDef("lm", "#ffcf7a", .45));
+    // ------------------------------------------------------------------ OBRA
     case "obra": return svg(`
-      <rect width="160" height="70" fill="url(#sk${u})"/>
-      <g stroke="#c9a04a" stroke-width="1" fill="none" opacity=".9"><path d="M100 70V6H150V70M100 22H150M100 38H150M100 54H150M110 6V70M125 6V70M140 6V70"/></g>
-      <path d="M30 70V0M30 2H96M90 2V24" stroke="#f5b700" stroke-width="1.8" fill="none"/><rect x="86" y="24" width="8" height="4" fill="#555"/>
-      <rect x="40" y="8" width="44" height="12" fill="#1f2a44"/><text x="62" y="13" font-size="3.6" text-anchor="middle" fill="#fff" font-weight="700">CONSTRUTORA ALTAVISTA</text>
-      <text x="62" y="17.6" font-size="2.4" text-anchor="middle" fill="#f5b700">Construindo o seu futuro</text>
-      <rect x="66" y="32" width="30" height="22" fill="#d0d6dc"/><rect x="66" y="30" width="30" height="3" fill="#8a929c"/><rect x="70" y="36" width="10" height="7" fill="#ffd866" opacity=".8"/><rect x="84" y="38" width="8" height="16" fill="#5a646d"/>
-      <rect x="10" y="44" width="30" height="16" fill="#3a3f4a"/><rect x="16" y="48" width="4" height="12" fill="#8a929c"/><rect x="20" y="52" width="14" height="1.6" fill="#E5483B"/>
-      <rect x="22" y="40" width="10" height="5" fill="#2c3e70"/><rect x="23.5" y="41" width="7" height="3" fill="#7CF29A" opacity=".7"/>
-      <rect x="124" y="36" width="26" height="30" fill="none" stroke="#8a929c" stroke-width="1.6"/>${[0,1,2,3,4,5].map(i => `<path d="M${126 + i*4} 37V65" stroke="#8a929c" stroke-width=".8"/>`).join("")}
-      <path d="M134 50 Q137 54 140 50" stroke="#c9c9c9" stroke-width="1.2" fill="none"/><rect x="135" y="51" width="4" height="4" rx=".6" fill="#c9a04a"/>
-      <rect y="70" width="160" height="30" fill="#6a5440"/>${[[20,84],[58,90],[96,82],[140,92]].map(([x,y]) => `<ellipse cx="${x}" cy="${y}" rx="10" ry="2" fill="#4a3a2a"/>`).join("")}
-      ${[0,1,2,3,4].map(i => `<rect x="${44 + i*3}" y="${74 + i*.4}" width="22" height="1" fill="#555" transform="rotate(-4 ${44 + i*3} 74)"/>`).join("")}`,
-      grad("sk", "#ff9e5e", "#3a2a4a"));
+      ${R(0, 0, 160, 66, F("sk"))}${E(32, 58, 40, 12, F("sun"))}
+      <g fill="#fff" opacity=".13">${[[20, 14, 14, 2], [26, 17, 20, 1.8], [100, 10, 18, 2], [120, 14, 22, 1.8], [60, 24, 16, 1.4]].map(([x, y, w, h]) => `<ellipse cx="${x + w / 2}" cy="${y}" rx="${w}" ry="${h}"/>`).join("")}</g>
+      ${skyline(60, "#3a2a50", 23, false)}${R(0, 56, 160, 12, "#2a2040", 'opacity=".35"')}
+      <!-- estrutura de concreto -->
+      ${[0, 1, 2, 3].map(i => `${R(98, 62 - i * 14.6, 62, 3.4, "#9aa0a8")}${R(98, 65.4 - i * 14.6, 62, .8, "#000", 'opacity=".3"')}`).join("")}
+      ${[100, 118, 136, 154].map(x => `${R(x, 4, 4, 58, "#8a9098")}${R(x, 4, 1.2, 58, "#c0c6cc", 'opacity=".5"')}${[0, 1, 2].map(k => `<path d="M${x + 1} 4V${-2 + k}" stroke="#7a4a2a" stroke-width=".4"/>`).join("")}`).join("")}
+      ${R(98, 40, 62, 22, "#7a5a8a", 'opacity=".0"')}${R(98, 50.4, 62, 11, "#b8c0c8", 'opacity=".18"')}
+      <!-- guindaste -->
+      <g stroke="#f2b600" fill="none" stroke-width=".7"><path d="M16 66V4M22 66V4"/>${Array.from({ length: 14 }, (_, i) => `<path d="M${i % 2 ? 22 : 16} ${66 - i * 4.4}L${i % 2 ? 16 : 22} ${61.6 - i * 4.4}"/>`).join("")}<path d="M2 4H96" stroke-width="1.4"/><path d="M4 7H94M4 4L10 7L16 4L22 7L28 4L34 7L40 4L46 7L52 4L58 7L64 4L70 7L76 4L82 7L88 4L94 7" stroke-width=".4"/><path d="M19 0L3 4M19 0L60 4" stroke-width=".3"/></g>
+      ${R(14, 5.6, 10, 5.4, "#e8a800")}${R(15.6, 6.8, 4, 3, "#9ec4e6")}${R(3, 4, 6, 4, "#555")}<path d="M84 5V28" stroke="#222" stroke-width=".4"/>${R(80, 28, 8, 1.6, "#555")}${R(79, 29.6, 10, 3, "#a85a32")}<path d="M79 29.6L84 28L89 29.6" stroke="#222" stroke-width=".3" fill="none"/>
+      <circle cx="19" cy="6.4" r=".8" fill="#ff3b3b"/><circle cx="19" cy="6.4" r="2.4" fill="#ff3b3b" opacity=".3"/>
+      <!-- billboard -->
+      ${R(46, 12, 1.4, 30, "#444")}${R(86, 12, 1.4, 30, "#444")}
+      ${R(40, 6, 54, 15, "#1f2a44", 'stroke="#c9a04a" stroke-width=".6" rx=".8"')}${R(42, 8, 6, 11, "#f5b700")}<path d="M42 19L45 8L48 19Z" fill="#1f2a44"/>
+      <text x="72" y="12.8" font-size="3.4" text-anchor="middle" fill="#fff" font-weight="900" letter-spacing=".15">CONSTRUTORA ALTAVISTA</text><text x="72" y="17.4" font-size="2.2" text-anchor="middle" fill="#f5b700">Construindo o seu futuro</text>
+      <!-- chao de fundo (patio) -->
+      ${R(0, 56, 160, 44, F("gd"))}${R(0, 56, 160, 44, F("gr"))}
+      <!-- escritorio da obra (container) -->
+      ${R(66, 56, 32, 1.6, "#2a2018", 'opacity=".5"')}${R(67, 30, 29, 25, "#c9d0d6")}${Array.from({ length: 15 }, (_, i) => R(67 + i * 2, 30, .5, 25, "#9aa4ac", 'opacity=".55"')).join("")}
+      ${R(66, 28.4, 31, 2.6, "#8a939b")}${R(66, 28.4, 31, .8, "#e8edf0")}${R(67, 54, 29, 1.6, "#4a525a")}
+      ${R(69, 35.4, 11, 8.6, "#5d6770")}${R(70, 36.4, 9, 6.6, "#ffd27a")}${R(70, 36.4, 9, 6.6, F("wl2"))}${Array.from({ length: 4 }, (_, i) => R(70, 37 + i * 1.6, 9, .5, "#c8821a", 'opacity=".7"')).join("")}
+      <text x="74.5" y="33.6" font-size="1.9" text-anchor="middle" fill="#1f2a44" font-weight="800">ADMINISTRAÇÃO</text>
+      ${R(84, 37, 8.4, 17, "#6a747d")}${R(85.4, 38.4, 5.6, 6, "#9ec4e6", 'opacity=".6"')}<circle cx="90.6" cy="48" r=".6" fill="#ddd"/>
+      ${R(82, 54, 12.4, 1.6, "#a0a8b0")}${R(83, 55.6, 10.4, 1.2, "#8a929a")}
+      ${R(78, 44, 5, 3.4, "#e8edf0", 'stroke="#aab" stroke-width=".3"')}${R(86, 33.6, 4, 1.2, "#333")}${E(88, 35, 4, 2, F("wl2"))}
+      ${E(78, 44, 18, 8, F("wl2"), 'opacity=".55"')}${R(70, 43, 6, .8, "#000", 'opacity=".2"')}
+      <!-- cerca de tapume esquerda -->
+      ${R(0, 40, 13, 24, F("tpm"))}${R(40, 40, 22, 24, F("tpm"))}${R(0, 38, 62, 2.4, "#7a5a32")}${R(0, 38, 62, .6, "#d9b078", 'opacity=".6"')}
+      ${R(0, 60, 13, 4, "#f2b600")}${R(40, 60, 22, 4, "#f2b600")}${Array.from({ length: 9 }, (_, i) => `<path d="M${i * 5 + 40} 64l2.4-4h2l-2.4 4z" fill="#111"/>`).join("")}${Array.from({ length: 3 }, (_, i) => `<path d="M${i * 5} 64l2.4-4h2l-2.4 4z" fill="#111"/>`).join("")}
+      ${R(48, 44, 11, 9, "#fff", 'stroke="#c8281f" stroke-width=".6"')}<text x="53.5" y="48.4" font-size="2.4" text-anchor="middle" fill="#c8281f" font-weight="900">PERIGO</text><text x="53.5" y="51.2" font-size="1.5" text-anchor="middle" fill="#222">uso de EPI</text>
+      <rect x="42" y="45" width="5" height="8" fill="#fff" opacity=".7" transform="rotate(-4 44 49)"/>
+      <!-- catraca -->
+      ${R(12, 40, 28, 24, "#1d1626")}${R(12, 40, 28, 24, F("gd"), 'opacity=".5"')}${R(11, 39, 30, 1.8, "#6a727a")}${R(11, 39, 1.8, 25, "#6a727a")}${R(39.2, 39, 1.8, 25, "#6a727a")}
+      ${E(25, 62.6, 14, 1.8, "#000", 'opacity=".35"')}
+      ${R(15, 62, 20, 1.6, "#f2b600")}${R(17, 49, 9.6, 13, F("ss"), 'stroke="#555" stroke-width=".4" rx="1"')}${R(17, 49, 9.6, 1.4, "#e6ebf0", 'rx=".7"')}
+      ${R(19.4, 51.6, 4.8, 3.4, "#10151e")}${R(20, 52.2, 3.6, 1.4, "#7CF29A")}<circle cx="21.8" cy="57" r="1" fill="#ffd27a"/><circle cx="21.8" cy="57" r="2" fill="#ffd27a" opacity=".25"/>
+      <g stroke="#cfd5db" stroke-width="1.8" stroke-linecap="round"><path d="M26.6 52.4H36.4"/><path d="M26.6 52.4L32 58.4" opacity=".85"/><path d="M26.6 52.4L31 46.4" opacity=".7"/></g>
+      <g stroke="#fff" stroke-width=".5" stroke-linecap="round" opacity=".7"><path d="M26.6 51.6H36.4"/></g>
+      ${R(13, 43, 8, 3.6, "#c8281f", 'rx=".5"')}<text x="17" y="45.6" font-size="1.7" text-anchor="middle" fill="#fff" font-weight="800">CRACHÁ</text>
+      <path d="M13 43.6L20 42" stroke="#555" stroke-width=".3"/>
+      <!-- portao dos fundos -->
+      ${R(112, 38, 48, 26, F("tpm"))}${R(112, 36.4, 48, 2, "#7a5a32")}
+      ${R(124, 36, 27, 28, "#10151c")}${R(125.2, 37, 12.4, 26.4, F("gt"), 'stroke="#0d1a14" stroke-width=".5"')}${R(138.4, 37, 12.4, 26.4, F("gt"), 'stroke="#0d1a14" stroke-width=".5"')}
+      ${Array.from({ length: 5 }, (_, i) => `<path d="M${125.6 + i * 2.5} 37.6V63" stroke="#000" stroke-width=".25" opacity=".25"/><path d="M${138.8 + i * 2.5} 37.6V63" stroke="#000" stroke-width=".25" opacity=".25"/>`).join("")}
+      <path d="M125.6 56L137 40M139 56L150 40" stroke="#fff" stroke-width=".4" opacity=".12"/>
+      ${R(125, 40, 26, 1.2, "#0f1a14", 'opacity=".6"')}${R(125, 58, 26, 1.2, "#0f1a14", 'opacity=".6"')}
+      ${R(135.6, 47, 4.8, 6, "#2b2f36", 'rx=".8"')}<path d="M137 47V45Q138 43 139.4 45V47" stroke="#aeb4bb" stroke-width=".8" fill="none"/><circle cx="138" cy="50.4" r=".7" fill="#e5b04a"/>
+      <path d="M133 50Q138 55 144 49" stroke="#aeb4bb" stroke-width=".9" fill="none"/>
+      ${R(118, 42, 16, 7, "#f2b600", 'rx=".5"')}<text x="126" y="45.4" font-size="1.9" text-anchor="middle" fill="#111" font-weight="900">ENTRADA DE</text><text x="126" y="47.8" font-size="1.9" text-anchor="middle" fill="#111" font-weight="900">MATERIAIS</text>
+      ${R(124, 62.4, 27, 1.6, "#111")}${[0, 1, 2, 3, 4, 5].map(i => `<path d="M${124 + i * 4.5} 64l2.2-1.6h2l-2.2 1.6z" fill="#f2b600"/>`).join("")}
+      <!-- holofote -->
+      ${R(106, 20, 1.6, 44, "#3a3f48")}${R(103, 18, 8, 3.6, "#444", 'rx=".8"')}${E(107, 21, 4, 1.2, "#fff6c0")}<path d="M106 21L92 66H122Z" fill="url(#lc${u})"/>${E(107, 21, 9, 6, F("lg"))}${E(107, 70, 26, 5, F("lg"), 'opacity=".55"')}
+      <!-- andaime -->
+      ${[104, 116, 128, 140, 152].map(x => R(x, 6, 1.2, 31, "#9aa0a8")).join("")}${[6, 20, 34].map(y => R(102, y, 52, 1.2, "#8a9098")).join("")}
+      ${[20, 34].map(y => R(102, y + 1.2, 52, 2, "#a8783c")).join("")}${[20, 34].map(y => R(102, y + 1.2, 52, .5, "#d9a463", 'opacity=".7"')).join("")}
+      ${[[104, 6], [128, 20]].map(([x, y]) => `<path d="M${x} ${y + 1}L${x + 24} ${y + 14}M${x + 24} ${y + 1}L${x} ${y + 14}" stroke="#9aa0a8" stroke-width=".6"/>`).join("")}
+      ${R(102, 20, 52, 14, "#ff8a2a", 'opacity=".2"')}${Array.from({ length: 13 }, (_, i) => R(102 + i * 4, 20, .3, 14, "#ff8a2a", 'opacity=".4"')).join("")}
+      <path d="M118 20l2-4h4l2 4z" fill="#f5b700"/><rect x="116" y="19.4" width="12" height="1" fill="#e8a800"/>
+      ${R(138, 15.6, 5, 4.4, "#e8e0cc", 'rx=".6"')}<path d="M138 16Q140.5 12 143 16" stroke="#444" stroke-width=".5" fill="none"/>
+      ${E(146, 64.6, 7, 1.6, "#000", 'opacity=".25"')}
+      <!-- chao proximo -->
+      <path d="M30 100Q60 82 100 84T160 78" stroke="#3a2a1c" stroke-width="2.4" fill="none" opacity=".35"/><path d="M26 100Q56 86 94 88T160 83" stroke="#3a2a1c" stroke-width="1.6" fill="none" opacity=".25"/>
+      ${E(70, 91, 22, 3.6, F("pu"))}${E(70, 91, 22, 3.6, "none", 'stroke="#fff" stroke-width=".2" opacity=".3"')}
+      <!-- areia, cones, paletes -->
+      <path d="M2 82Q8 66 18 70Q26 72 30 82Z" fill="#cfa66a"/><path d="M2 82Q8 66 18 70Q10 72 6 82Z" fill="#e4bc80" opacity=".7"/>${R(24, 77.6, 14, 1.4, "#000", 'opacity=".2"')}
+      ${R(128, 74, 24, 10, "#a85a32")}${Array.from({ length: 12 }, (_, i) => R(129 + (i % 6) * 3.8, 75 + Math.floor(i / 6) * 4.4, 3.4, 3.6, i % 3 ? "#b86a3e" : "#9a4e2a")).join("")}${R(126, 84, 28, 1.6, "#6a4a2a")}${R(128, 85.6, 24, 1, "#000", 'opacity=".3"')}
+      ${[[46, 77], [110, 80]].map(([x, y]) => `<path d="M${x - 3} ${y}L${x - .8} ${y - 8}H${x + .8}L${x + 3} ${y}Z" fill="#ff6a1a"/><rect x="${x - 2}" y="${y - 5}" width="4" height="1.6" fill="#fff"/><rect x="${x - 4}" y="${y}" width="8" height="1.2" fill="#2a2018"/>${E(x, y + 1.6, 5, 1, "#000", 'opacity=".25"')}`).join("")}
+      <path d="M52 98L58 94L60 96L66 93" stroke="#7a7f88" stroke-width=".6" fill="none" opacity=".7"/>`,
+      lin("sk", [[0, "#2c2a68"], [.5, "#c25a7a"], [1, "#ffb067"]]) +
+      glowDef("sun", "#ffd890", .55) + lin("gd", [[0, "#6e5742"], [1, "#4a3828"]]) + speck("gr", "#2a1c10", .55) +
+      wood("tpm", "#b8935a", "#a8834a", 4) + lin("ss", [[0, "#aab3bb"], [.5, "#e6ebf0"], [1, "#8a939b"]], 0, 0, 1, 0) +
+      lin("gt", [[0, "#2b7a52"], [1, "#1f5c3d"]]) + glowDef("wl2", "#ffd27a", .6) + glowDef("lg", "#fff0b8", .55) +
+      lin("lc", [[0, "#fff0b8", .35], [1, "#fff0b8", 0]]) + lin("pu", [[0, "#ff9e7a", .55], [1, "#2a1c30", .6]]));
+
+    // ------------------------------------------------------------------ RUA
     case "rua": return svg(`
-      <rect width="160" height="70" fill="url(#sk${u})"/>
-      <rect x="4" y="14" width="40" height="32" fill="#3a4152"/>${windows(8, 18, 5, 3, 4, 4, 7, 8)}
-      <rect x="6" y="46" width="48" height="26" fill="#8a7a6a"/>${Array.from({length:24}, (_, i) => `<rect x="${6 + (i%6)*8 + (Math.floor(i/6)%2)*4}" y="${46 + Math.floor(i/6)*6.5}" width="7.4" height="6" fill="#9a8a78" stroke="#6a5a4a" stroke-width=".3"/>`).join("")}
-      <path d="M22 46 L26 54 L23 60 L28 68 L26 72" stroke="#2a1a10" stroke-width=".9" fill="none"/><path d="M40 47 L37 55 L41 62" stroke="#2a1a10" stroke-width=".7" fill="none"/>
-      <rect x="116" y="8" width="40" height="62" fill="#2a3040"/>${windows(120, 12, 5, 7, 4, 4, 7, 8)}
-      <rect x="58" y="30" width="54" height="40" fill="#4a3a30"/><rect x="62" y="40" width="20" height="16" fill="#ffd866" opacity=".6"/><rect x="88" y="44" width="16" height="26" fill="#1a120c"/>
-      <rect x="62" y="30" width="46" height="6" fill="#c9a04a"/>
-      <rect y="70" width="160" height="4" fill="#9aa0a8"/><rect y="74" width="160" height="26" fill="#2a2d33"/>
-      ${[0,1,2,3,4,5].map(i => `<rect x="${8 + i*28}" y="92" width="14" height="1.6" fill="#ffd866" opacity=".8"/>`).join("")}
-      <g transform="translate(100 62)"><path d="M2 14 L6 4 Q8 0 14 0 L30 0 Q36 0 39 5 L44 10 L46 14 Q46 18 42 18 L4 18 Q0 18 2 14Z" fill="#111" stroke="#555" stroke-width=".6"/>
-        <path d="M9 5 L13 2 L27 2 L33 6 L33 9 L9 9Z" fill="#5a7aa0" opacity=".7"/><circle cx="10" cy="18" r="4" fill="#222" stroke="#777" stroke-width=".8"/><circle cx="36" cy="18" r="4" fill="#222" stroke="#777" stroke-width=".8"/>
-        <rect x="41" y="11" width="4" height="2" fill="#ffd866"/></g>`, nightSky);
+      ${R(0, 0, 160, 80, F("sk"))}
+      ${Array.from({ length: 16 }, (_, i) => `<circle cx="${(i * 47) % 160}" cy="${(i * 13) % 20 + 2}" r=".3" fill="#fff" opacity=".5"/>`).join("")}
+      ${skyline(60, "#161c32", 31, true)}
+      <!-- predio esquerdo -->
+      ${R(0, 8, 56, 40, F("rb"))}${R(0, 8, 56, 40, "#000", 'opacity=".12"')}${R(0, 6, 58, 3, "#2a3042")}
+      ${[0, 1, 2].map(r => [0, 1, 2, 3].map(c => `${R(5 + c * 13, 13 + r * 11, 8, 8, "#1b2236", 'stroke="#0e121e" stroke-width=".5"')}${(r + c) % 3 === 1 ? R(5.6 + c * 13, 13.6 + r * 11, 6.8, 6.8, "#ffd27a", 'opacity=".8"') : R(5.6 + c * 13, 13.6 + r * 11, 6.8, 6.8, "#4a5a8a", 'opacity=".25"')}${R(4 + c * 13, 21 + r * 11, 10, 1, "#2a3042")}`).join("")).join("")}
+      <!-- predio direito -->
+      ${R(114, 4, 46, 62, F("rb2"))}${R(114, 4, 46, 62, "#000", 'opacity=".18"')}${[0, 1, 2, 3, 4].map(r => [0, 1, 2].map(c => `${R(118 + c * 13.6, 9 + r * 11, 8, 7.4, "#1b2236", 'stroke="#0e121e" stroke-width=".5"')}${(r * 2 + c) % 4 === 0 ? R(118.6 + c * 13.6, 9.6 + r * 11, 6.8, 6.2, "#ffd27a", 'opacity=".8"') : ""}`).join("")).join("")}
+      <!-- fachada padaria -->
+      ${R(60, 30, 50, 29, F("fs"))}${R(60, 30, 50, 29, "#000", 'opacity=".12"')}
+      ${R(58, 25, 54, 6.4, "#2a1a10")}${R(58, 25, 54, 1, "#c9a04a")}${E(85, 28, 20, 4.6, F("nd"))}<text x="85" y="30" font-size="4.4" text-anchor="middle" font-weight="900" fill="#fff0c0" font-family="Georgia,serif" stroke="#ff9d3a" stroke-width=".25">PADARIA</text>
+      <path d="M60 36H110L107 43H63Z" fill="#c8281f"/>${Array.from({ length: 8 }, (_, i) => `<path d="M${60 + i * 6.4} 36h3.2l-.4 7h-3.2z" fill="#fff" opacity=".92"/>`).join("")}
+      ${R(64, 44, 22, 13, "#2b1a10")}${R(65.6, 45.6, 18.8, 10.4, F("vd"))}${R(65.6, 52, 18.8, 4, "#7a4a22")}${[0, 1, 2, 3].map(i => `<ellipse cx="${69 + i * 4.6}" cy="51" rx="1.8" ry="1.2" fill="#d9a05a"/>`).join("")}${R(65.6, 45.6, 18.8, 10.4, "#fff", 'opacity=".08"')}
+      ${R(90, 44, 15, 15, "#14100c")}${R(91.6, 45.6, 11.8, 11, F("vd"), 'opacity=".4"')}${R(91.6, 45.6, 11.8, 11, "none", 'stroke="#5a3a22" stroke-width=".6"')}<circle cx="102" cy="53" r=".7" fill="#c9a04a"/><text x="97.5" y="50.4" font-size="2.4" text-anchor="middle" fill="#ffe9a8" font-weight="800">ABERTO</text>
+      ${R(60, 56.6, 50, 2.6, "#5a5e66")}${E(78, 52, 26, 8, F("wlt"), 'opacity=".5"')}
+      ${cam(95, 17.4, .9)}<path d="M96 22L76 62H108Z" fill="#fff6cc" opacity=".03"/>
+      <!-- fios -->
+      <path d="M0 4Q30 12 60 6T114 8T160 5" stroke="#0a0c16" stroke-width=".4" fill="none"/><path d="M0 9Q40 17 80 10T160 12" stroke="#0a0c16" stroke-width=".4" fill="none"/>
+      <!-- calcada, rua -->
+      ${R(0, 58, 160, 16, "#5c606a")}${R(0, 58, 160, 16, F("sp"))}${Array.from({ length: 12 }, (_, i) => `<path d="M${i * 14} 58V74" stroke="#3a3d45" stroke-width=".4"/>`).join("")}${R(0, 58, 160, 1, "#8a8f98", 'opacity=".5"')}
+      ${R(0, 74, 160, 4.4, "#a4aab2")}${R(0, 74, 160, 1, "#d0d4da")}${R(0, 78.4, 160, 21.6, "#25272d")}${R(0, 78.4, 160, 21.6, F("sp"))}${R(0, 78.4, 160, 1.4, "#111")}
+      ${[0, 1, 2, 3, 4, 5].map(i => R(8 + i * 28, 92, 15, 1.6, "#e8d27a", 'opacity=".75"')).join("")}
+      <path d="M0 100Q40 88 90 94" stroke="#fff" stroke-width=".3" opacity=".08" fill="none"/>
+      <!-- muro -->
+      ${E(30, 72.4, 26, 1.8, "#000", 'opacity=".35"')}${R(6, 44, 48, 28, F("mb"))}${R(4, 42, 52, 3.4, "#6e6358")}${R(4, 42, 52, .8, "#b0a496", 'opacity=".7"')}${R(6, 44, 48, 28, F("mg"))}
+      <path d="M22 45.6L26 54L23 60L28 68L26 72" stroke="#1a0f08" stroke-width=".9" fill="none"/><path d="M40 46.6L37 55L41 62" stroke="#1a0f08" stroke-width=".7" fill="none"/>
+      <g font-family="Georgia,serif" font-weight="900"><text x="30" y="62" font-size="9" text-anchor="middle" fill="#ff4f9a" opacity=".85" transform="rotate(-6 30 58)">ZÉ</text><path d="M10 64Q20 58 30 66T50 62" stroke="#31d0ff" stroke-width="1.4" fill="none" opacity=".75" stroke-linecap="round"/><text x="46" y="54" font-size="3" fill="#ffe08a" opacity=".6" transform="rotate(4 46 54)">1998</text></g>
+      <rect x="8" y="48" width="8" height="10" fill="#e8e0c8" opacity=".75" transform="rotate(-3 12 53)"/><path d="M9 51H15M9 53H14M9 55H15" stroke="#8a7a5a" stroke-width=".4"/>
+      <!-- poste de luz -->
+      ${R(56, 20, 1.6, 54, "#2d3138")}${R(56, 19.4, 12, 1.6, "#2d3138")}${R(65, 20.4, 6, 2.4, "#3a3f48", 'rx="1"')}${E(68, 23, 3.4, 1, "#fff2c0")}
+      <path d="M66 23L52 78H86Z" fill="url(#lc${u})"/>${E(68, 21, 12, 7, F("lg"))}${E(68, 76, 24, 4, F("lg"), 'opacity=".5"')}
+      <!-- carro -->
+      ${E(123, 80.4, 25, 2.4, "#000", 'opacity=".5"')}
+      <g transform="translate(99 61)"><path d="M1 14L4 5Q6 1 12 .6L30 .6Q36 1 40 6L45 10L47 14Q47.6 19 43 19H5Q1 19 1 14Z" fill="#161a22" stroke="#4a5060" stroke-width=".5"/>
+      <path d="M8 6L12 2.4L29 2.4L35.4 7.6L35.4 10H8Z" fill="#2a3a58"/><path d="M12 2.4L20 2.4L16 10H8Z" fill="#fff" opacity=".12"/><path d="M22 2.4V10" stroke="#161a22" stroke-width="1"/>
+      <path d="M2 11H45" stroke="#fff" stroke-width=".3" opacity=".3"/><path d="M4 7.6Q18 4 36 8" stroke="#fff" stroke-width=".5" opacity=".2" fill="none"/>
+      <rect x="41.6" y="10.6" width="5" height="2.6" rx=".8" fill="#ffe9a0"/><rect x="41.6" y="10.6" width="5" height="2.6" rx=".8" fill="#fff" opacity=".6"/><path d="M45 12L66 20L40 24Z" fill="#ffe9a0" opacity=".1" transform="translate(-4 -2)"/>
+      <rect x=".4" y="11" width="3" height="2.2" rx=".6" fill="#ff3b3b"/><rect x="18" y="12" width="4" height=".8" fill="#4a5060"/>
+      <circle cx="11" cy="19" r="4.6" fill="#0c0d10" stroke="#555" stroke-width=".7"/><circle cx="11" cy="19" r="2" fill="#6a707a"/><circle cx="37" cy="19" r="4.6" fill="#0c0d10" stroke="#555" stroke-width=".7"/><circle cx="37" cy="19" r="2" fill="#6a707a"/>
+      <rect x="2" y="15" width="6" height="2.4" fill="#fff" opacity=".0"/></g>
+      <!-- lixo -->
+      ${E(57, 77, 3.4, 2.4, "#1a1c22")}${E(53, 78, 2.6, 1.8, "#22252c")}<path d="M56 74.6L57.4 72.8L58.6 74.6" stroke="#1a1c22" stroke-width=".6" fill="none"/>
+      ${R(0, 0, 160, 100, "#0a1030", 'opacity=".1"')}`,
+      lin("sk", [[0, "#080d26"], [.6, "#1c2250"], [1, "#4a3a66"]]) +
+      brick("rb", "#5a3a46", "#4e303c", "#1f1620", 7, 3.4) + brick("rb2", "#41486a", "#39405e", "#161a2c", 8, 4) +
+      speck("sp", "#9aa0aa", .35) + lin("fs", [[0, "#7a5a44"], [1, "#4e3828"]]) + lin("vd", [[0, "#ffd27a"], [1, "#e89a3a"]]) +
+      glowDef("nd", "#ffb050", .45) + glowDef("wlt", "#ffd27a", .5) + glowDef("lg", "#ffe9a0", .5) + lin("lc", [[0, "#ffe9a0", .3], [1, "#ffe9a0", 0]]) +
+      brick("mb", "#9c8c78", "#8e7e6a", "#5a4e42", 8, 3.6) + rad("mg", [[0, "#ffe9a0", .25], [1, "#000", .45]], .6, .2, .9));
+
+    // ------------------------------------------------------------------ PARLATORIO
     case "parlatorio": return svg(`
-      <rect width="160" height="100" fill="url(#w${u})"/>
-      ${Array.from({length:4}, (_, i) => `<rect x="${8 + i*40}" y="10" width="32" height="40" fill="#1c2230" stroke="#6a6f76" stroke-width="1.4"/><rect x="${10 + i*40}" y="12" width="28" height="36" fill="#9ec4e6" opacity=".18"/>`).join("")}
-      <rect y="50" width="160" height="6" fill="#6a6f76"/><rect y="56" width="160" height="24" fill="#4a5158"/>
-      ${[0,1,2,3].map(i => `<rect x="${20 + i*40}" y="38" width="3" height="10" fill="#222"/><rect x="${18 + i*40}" y="36" width="7" height="3" rx="1" fill="#333"/>`).join("")}
-      <rect x="60" y="44" width="10" height="5" fill="#fffaf0" transform="rotate(-8 60 44)"/>
-      <rect x="10" y="62" width="30" height="3" fill="#5a3a22"/><rect x="12" y="65" width="2" height="15" fill="#3e2716"/><rect x="36" y="65" width="2" height="15" fill="#3e2716"/>
-      <rect x="16" y="58" width="16" height="4.4" fill="#1f2a44"/><rect x="17" y="58.6" width="14" height="3.2" fill="#ecd9b0"/>
-      <rect y="80" width="160" height="20" fill="#3a3f46"/>`, grad("w", "#8a929c", "#4a5158"));
+      ${R(0, 0, 160, 100, F("cb"))}${R(0, 0, 160, 100, F("cbs"))}
+      ${R(0, 0, 160, 5, "#aab2ba")}${R(0, 0, 160, 5, "#000", 'opacity=".15"')}${[22, 62, 102, 142].map(x => `${R(x - 12, 5, 24, 2, "#d8ecd0")}${E(x, 9, 18, 4.4, F("fl"))}`).join("")}
+      <text x="80" y="9.6" font-size="3" fill="#cfe8d8" text-anchor="middle" font-weight="800" letter-spacing=".6" opacity="0">PARLATÓRIO</text>
+      ${R(52, 7.4, 56, 5.4, "#1f3a5a", 'stroke="#aeb7c0" stroke-width=".4" rx=".6"')}<text x="80" y="11.4" font-size="3.2" fill="#fff" text-anchor="middle" font-weight="800" letter-spacing=".5">PARLATÓRIO · VISITAS</text>
+      ${cam(70, 15.8, .0)}
+      ${[0, 1, 2, 3].map(i => { const x = 8 + i * 40; return `
+        ${R(x - 1.4, 14, 34.8, 42, "#262b33")}${R(x, 16, 32, 36, F("cin"))}${R(x, 16, 32, 36, "#000", 'opacity=".0"')}
+        ${R(x + 4, 38, 24, 14, "#12161c")}${E(x + 16, 32, 5.6, 6, "#1a1f27")}${R(x + 9, 36, 14, 10, "#1a1f27", 'rx="3"')}
+        ${R(x, 16, 32, 36, F("gl"))}<path d="M${x + 2} 50L${x + 14} 16H${x + 20}L${x + 8} 50Z" fill="#fff" opacity=".07"/><path d="M${x + 22} 50L${x + 28} 28V50Z" fill="#fff" opacity=".05"/>
+        ${R(x - 1.4, 14, 34.8, 2.4, "#6a727a")}${R(x - 1.4, 14, 34.8, .7, "#c8ced4")}${R(x - 1.4, 52, 34.8, 4.6, "#7d868e")}${R(x - 1.4, 52, 34.8, 1, "#d0d6dc", 'opacity=".6"')}${R(x - 1.4, 56.6, 34.8, 1.2, "#000", 'opacity=".3"')}
+        ${R(x + 9, 17.4, 14, 4, "#12161c")}<text x="${x + 16}" y="20.4" font-size="2.8" fill="#ffd866" text-anchor="middle" font-weight="900">CABINE ${i + 1}</text>
+        ${Array.from({ length: 5 }, (_, k) => `<circle cx="${x + 9 + k * 3.4}" cy="46" r=".36" fill="#aab" opacity=".6"/>`).join("")}${Array.from({ length: 5 }, (_, k) => `<circle cx="${x + 9 + k * 3.4}" cy="49" r=".36" fill="#aab" opacity=".6"/>`).join("")}`; }).join("")}
+      <!-- telefone cabine 1 -->
+      ${R(19, 36, 6, 13, "#2a2d33", 'rx="1"')}<path d="M18 40Q22 34 26 40" stroke="#14161a" stroke-width="2.6" fill="none" stroke-linecap="round"/><circle cx="18.6" cy="40.4" r="1.6" fill="#14161a"/><circle cx="25.6" cy="40.4" r="1.6" fill="#14161a"/>
+      ${R(20, 42.6, 4, 5, "#555")}${Array.from({ length: 6 }, (_, i) => R(20.3 + (i % 2) * 1.8, 43 + Math.floor(i / 2) * 1.5, 1.2, 1, "#bbb")).join("")}
+      <path d="M22 49Q20 54 24 54Q30 54 29 50" stroke="#14161a" stroke-width=".6" fill="none"/>
+      <!-- papel na cabine 2 -->
+      <g transform="rotate(-8 65 46)">${R(58, 41.4, 13.4, 9.4, "#fffaf0", 'stroke="#c8bfa8" stroke-width=".3"')}${[0, 1, 2, 3].map(i => R(59.4, 43 + i * 1.8, 10.6 - (i === 3 ? 4 : 0), .4, "#6a7a9a", 'opacity=".8"')).join("")}${R(66, 49.6, 4, .8, "#c8281f")}</g>
+      ${R(56, 50.8, 3, .8, "#000", 'opacity="0"')}
+      <!-- mesa do carcereiro + livro de visitas -->
+      ${R(10, 56, 30, 2.4, "#6a4a2a")}${R(10, 56, 30, .6, "#a07a4a")}${R(12, 58.4, 26, 19, "#4a3220")}${R(12, 58.4, 26, 19, F("sh"))}${R(14, 61, 10, 14, "#3a2616", 'stroke="#241609" stroke-width=".4"')}
+      ${R(16, 56, 16, 1.4, "#000", 'opacity="0"')}<path d="M16 59L24 56.8L32 59L32 62.6L24 60.4L16 62.6Z" fill="#1f2a44" opacity="0"/>
+      <path d="M16.6 56.4L24 54.6L31.4 56.4V59L24 57.2L16.6 59Z" fill="#fffaf0" stroke="#8a7a58" stroke-width=".3"/><path d="M24 54.6V57.2" stroke="#8a7a58" stroke-width=".4"/>${[0, 1, 2].map(i => `<path d="M18 ${56.6 + i * .7}L23 ${55.4 + i * .7}M25 ${55.4 + i * .7}L30 ${56.6 + i * .7}" stroke="#6a7a9a" stroke-width=".25"/>`).join("")}
+      <path d="M33 55.4Q36 53 38 56" stroke="#999" stroke-width=".4" fill="none"/>${R(31, 55.6, 3, .8, "#223", 'transform="rotate(-20 31 56)"')}
+      ${R(13, 61, 3, .8, "#000", 'opacity="0"')}${R(30, 60, 6, 4, "#1d2433", 'rx=".6"')}${R(30.6, 60.6, 4.8, 2.6, "#7CF29A", 'opacity=".35"')}
+      <!-- faixa amarela e piso -->
+      ${R(0, 78, 160, 22, F("cf"))}${floorLines(78, "#14181d", .5, 10)}${R(0, 78, 160, 22, F("fgl"))}${R(0, 77, 160, 1.4, "#e8c53a")}${R(0, 78.4, 160, .6, "#000", 'opacity=".4"')}
+      ${[0, 1, 2, 3].map(i => `${E(24 + i * 40, 89, 11, 5, F("fl"), 'opacity=".5"')}`).join("")}
+      ${[0, 1, 2, 3].map(i => `${R(19 + i * 40, 66, 1.8, 11, "#2a2d33")}${E(20 + i * 40, 65.4, 6, 1.8, "#3a3f48")}${E(20 + i * 40, 64.8, 6, 1.4, "#5a626a")}${E(20 + i * 40, 78, 6, 1.1, "#000", 'opacity=".3"')}`).join("").replace(`${R(19, 66, 1.8, 11, "#2a2d33")}`, "")}
+      ${R(0, 0, 160, 100, "#9ad0b0", 'opacity=".03"')}`,
+      lin("cb0", [[0, "#8d969e"], [1, "#59616a"]]) +
+      brick("cb", "#8b949c", "#828b93", "#59616a", 14, 6.4) + lin("cbs", [[0, "#000", .5], [.3, "#000", 0], [1, "#000", .25]]) +
+      lin("cin", [[0, "#1d242e"], [1, "#0c0f14"]]) + lin("gl", [[0, "#9ec4e6", .2], [1, "#9ec4e6", .08]]) +
+      lin("sh", [[0, "#000", .0], [1, "#000", .35]]) + glowDef("fl", "#e8ffe8", .5) +
+      tile("cf", "#454b53", "#3c424a", 8) + lin("fgl", [[0, "#000", .4], [1, "#fff", .06]]));
+
+    // ------------------------------------------------------------------ LOJA
     case "loja": return svg(`
-      <rect width="160" height="100" fill="#f2f4f7"/><rect width="160" height="12" fill="#1f5aa6"/>
-      <text x="80" y="8.4" font-size="5" text-anchor="middle" fill="#fff" font-weight="800">MegaLar · Eletros</text>
-      ${[0,1,2].map(i => `<g transform="translate(${10 + i*12} 24)"><rect width="10" height="50" rx="1" fill="#e3e7ec" stroke="#9aa4ad" stroke-width=".6"/><path d="M0 18H10" stroke="#9aa4ad" stroke-width=".5"/><rect x="8" y="6" width=".8" height="8" fill="#7a838b"/><rect x="8" y="24" width=".8" height="12" fill="#7a838b"/></g>`).join("")}
-      <rect x="66" y="44" width="34" height="2" fill="#7a838b"/><rect x="64" y="50" width="36" height="30" fill="#5a646d"/><rect x="62" y="46" width="40" height="5" fill="#d0d6dc"/>
-      <rect x="66" y="47" width="14" height="4" fill="#fffaf0" stroke="#8a5a2b" stroke-width=".4"/><rect x="84" y="40" width="10" height="7" rx="1" fill="#1b2236"/>
-      <text x="82" y="60" font-size="3" text-anchor="middle" fill="#fff" font-weight="700">ASSISTÊNCIA TÉCNICA</text>
-      <rect x="112" y="12" width="28" height="20" fill="#F5B700"/><text x="126" y="19" font-size="3.4" text-anchor="middle" font-weight="800" fill="#3a1a00">GARANTIA</text>
-      <text x="126" y="24" font-size="2.6" text-anchor="middle" fill="#3a1a00">ESTENDIDA</text><text x="126" y="29" font-size="2.4" text-anchor="middle" fill="#3a1a00">só R$ 299!</text>
-      <rect x="118" y="44" width="30" height="36" fill="#d0d6dc"/><rect x="120" y="46" width="12" height="16" fill="#1b2236"/><rect x="134" y="46" width="12" height="16" fill="#1b2236"/>
-      <rect y="80" width="160" height="20" fill="#cfd6dc"/>${Array.from({length:16}, (_, i) => `<rect x="${i*10}" y="80" width="10" height="20" fill="${i%2 ? "#c2c9cf" : "#dbe1e6"}"/>`).join("")}`);
+      ${R(0, 0, 160, 80, F("wl"))}${R(0, 14, 160, 1.6, "#1f5aa6")}${R(0, 0, 160, 14, "#174a8a")}
+      ${[16, 56, 96, 136].map(x => `${R(x - 8, 14.4, 16, 1.2, "#000", 'opacity=".15"')}${E(x, 18, 10, 6, F("sp2"))}`).join("")}
+      ${[[16, 21], [56, 21], [96, 21], [136, 21]].map(([x, y]) => `<circle cx="${x}" cy="${y - 5}" r="1.4" fill="#fff"/>`).join("")}
+      ${R(0, 0, 160, 14, F("sh2"))}<text x="80" y="9.6" font-size="6" text-anchor="middle" fill="#fff" font-weight="900" font-family="Georgia,serif" letter-spacing=".4">MegaLar</text><text x="107" y="9.6" font-size="3" fill="#ffd866" font-weight="800">· Eletros</text>
+      <path d="M52 3L56 7L52 11M108 3L104 7L108 11" stroke="#ffd866" stroke-width=".6" fill="none" opacity=".6"/>
+      ${R(0, 60, 160, 20, "#dfe4e9", 'opacity=".5"')}${R(0, 58.6, 160, 1.4, "#1f5aa6", 'opacity=".5"')}
+      <!-- vitrine de produtos -->
+      ${R(10, 24, 35, 50, "#c6ced6", 'rx="1"')}${R(11.4, 25.4, 32.2, 47.2, "#0f1626")}${R(11.4, 25.4, 32.2, 47.2, F("vt"))}
+      ${[0, 1, 2].map(r => `${R(11.4, 38 + r * 11.4, 32.2, 1.2, "#aab4be")}${R(11.4, 39.2 + r * 11.4, 32.2, 1.6, "#000", 'opacity=".25"')}${[0, 1, 2, 3].map(c => r === 0 ? `<rect x="${13.6 + c * 7.6}" y="${29.4}" width="3.4" height="7.4" rx=".6" fill="#1b2236" stroke="#9aa4b0" stroke-width=".3"/><rect x="${14 + c * 7.6}" y="30.2" width="2.6" height="5" fill="${["#4F7BFF", "#ff6a9a", "#7CF29A", "#ffd866"][c]}" opacity=".8"/>` : r === 1 ? `<rect x="${13 + c * 7.8}" y="${44.6}" width="5.6" height="5.2" rx=".8" fill="${["#e8edf0", "#2a2d33", "#cfd6dc", "#e8edf0"][c]}" stroke="#7a838b" stroke-width=".3"/><circle cx="${15.8 + c * 7.8}" cy="47.2" r="1.4" fill="#59626b"/>` : `<rect x="${13 + c * 7.8}" y="${56}" width="6" height="5.8" rx=".8" fill="${["#c8281f", "#e8edf0", "#2a2d33", "#f5b700"][c]}"/><rect x="${14 + c * 7.8}" y="${57}" width="4" height="1.2" fill="#fff" opacity=".5"/>`).join("")}${R(12.4, 40.6 + r * 11.4, 5, 3, "#ffe24a", 'opacity="0"')}`).join("")}
+      ${[0, 1, 2].map(r => `${R(12.4, 36.4 + r * 11.4, 6, 2.6, "#ffe24a")}<text x="15.4" y="${38.4 + r * 11.4}" font-size="1.6" fill="#c8281f" text-anchor="middle" font-weight="900">R$ ${[199, 399, 899][r]}</text>`).join("")}
+      ${R(11.4, 66, 32.2, 6.6, "#e8edf0")}${R(12.4, 67, 30, 4.6, "#cfe2ff")}<text x="27.4" y="70.4" font-size="2.6" text-anchor="middle" fill="#174a8a" font-weight="900">OFERTAS DA SEMANA</text>
+      <path d="M13 28L26 70M30 26L44 56" stroke="#fff" stroke-width="1" opacity=".07"/>${R(10, 24, 35, 50, "none", 'stroke="#fff" stroke-width=".4" opacity=".4"')}${R(10, 72.6, 35, 1.6, "#6a737c")}
+      ${R(8, 74, 39, 2, "#5a646d")}
+      <!-- balcão -->
+      ${E(76, 78.6, 22, 2.2, "#000", 'opacity=".25"')}${R(58, 53.6, 38, 24, "#4b5a70")}${R(58, 53.6, 38, 24, F("cn"))}${R(58, 61, 38, .8, "#1f5aa6")}${R(56.6, 51.4, 41, 3, "#e8edf2", 'stroke="#aab4be" stroke-width=".3"')}${R(56.6, 51.4, 41, .7, "#fff")}
+      <text x="77" y="68" font-size="2.8" text-anchor="middle" fill="#fff" font-weight="900">ASSISTÊNCIA TÉCNICA</text><text x="77" y="72" font-size="1.7" text-anchor="middle" fill="#cfe2ff">Orçamento sem compromisso</text>
+      ${R(66, 46.4, 16, 5, "#fffaf0", 'stroke="#8a5a2b" stroke-width=".3" transform="rotate(-2 66 46)"')}${R(68, 48, 10, .4, "#6a7a9a")}${R(68, 49.2, 8, .4, "#6a7a9a")}${R(78, 47, 2, 1, "#c8281f", 'rx=".3"')}
+      ${R(83, 39.4, 13, 9, "#10151e", 'stroke="#2a2d33" stroke-width=".6" rx=".8"')}${R(84, 40.4, 11, 6.2, "#5b8cff", 'opacity=".55"')}<path d="M85 45L88 42.6L91 44.4L94 41.6" stroke="#fff" stroke-width=".4" fill="none" opacity=".7"/>${R(87.6, 48.4, 3.8, 3, "#2a2d33")}
+      ${R(59, 48, 6, 3.4, "#d0d6dc", 'rx=".6"')}${R(60, 46, 4, 2.4, "#1b2236", 'rx=".4"')}
+      <!-- cartaz -->
+      ${R(112, 12, 29, 20, "#f5b700", 'stroke="#a07200" stroke-width=".6" rx=".8"')}${R(113, 13, 27, 18, "none", 'stroke="#fff" stroke-width=".3" stroke-dasharray="1 .8"')}
+      <text x="126.5" y="19.8" font-size="4" text-anchor="middle" font-weight="900" fill="#3a1a00">GARANTIA</text><text x="126.5" y="24" font-size="3" text-anchor="middle" fill="#3a1a00" font-weight="800">ESTENDIDA</text><text x="126.5" y="28.4" font-size="2.6" text-anchor="middle" fill="#8a1c1c" font-weight="900">só R$ 299!*</text><text x="126.5" y="30.8" font-size="1" text-anchor="middle" fill="#3a1a00">*consulte regulamento nas letras miúdas</text>
+      <!-- parede de TVs e linha branca -->
+      ${R(112, 36, 46, 25, "#161b26")}${[0, 1, 2].map(i => `${R(114 + i * 14.6, 38, 13, 8.4, "#05070c")}${R(114.4 + i * 14.6, 38.4, 12.2, 7.6, F("tv" + (i % 3)))}`).join("")}${[0, 1, 2].map(i => `${R(114 + i * 14.6, 48, 13, 8.4, "#05070c")}${R(114.4 + i * 14.6, 48.4, 12.2, 7.6, F("tv" + ((i + 1) % 3)))}`).join("")}
+      ${R(112, 36, 46, 25, "#fff", 'opacity=".04"')}${R(112, 61, 46, 1.4, "#6a737c")}
+      ${[0, 1].map(i => `${E(130 + i * 17, 79.2, 8.4, 1.4, "#000", 'opacity=".25"')}${R(122 + i * 17, 62.4, 16, 17, "#e3e8ed", 'rx="1"')}${R(122 + i * 17, 62.4, 16, 17, F("ssw"), 'rx="1"')}${R(124.4 + i * 17, 65, 11, 9.6, "#1c2330", 'rx="3"')}${R(125.4 + i * 17, 66, 9, 7.6, "#4a7abf", 'rx="2.6" opacity=".45"')}${R(124 + i * 17, 63.4, 8, 1.2, "#aab4be")}<circle cx="${134.4 + i * 17}" cy="64" r=".6" fill="#7CF29A"/>`).join("")}
+      <!-- piso -->
+      ${R(0, 80, 160, 20, F("tl"))}${floorLines(78, "#a8b2bc", .45, 10)}${R(0, 78, 160, 22, F("fgl"))}
+      ${E(30, 88, 20, 5, F("rf"), 'opacity=".6"')}${E(126, 90, 30, 6, F("rf"), 'opacity=".5"')}
+      <path d="M16 78L10 100H40L38 78Z" fill="#fff" opacity=".05"/>
+      ${R(0, 0, 160, 100, "#1f5aa6", 'opacity=".03"')}`,
+      lin("wl", [[0, "#f7f9fb"], [1, "#d9e0e7"]]) + glowDef("sp2", "#fff", .9) + lin("sh2", [[0, "#fff", .15], [1, "#000", .15]]) +
+      lin("vt", [[0, "#fff", .22], [.5, "#fff", .03], [1, "#000", 0]]) +
+      lin("cn", [[0, "#fff", .1], [1, "#000", .25]]) +
+      lin("tv0", [[0, "#ff7a4a"], [1, "#6a2ad0"]], 0, 0, 1, 1) + lin("tv1", [[0, "#2ad0a8"], [1, "#1a4aa8"]], 0, 0, 1, 1) + lin("tv2", [[0, "#ffd866"], [1, "#e5483b"]], 0, 0, 1, 1) +
+      lin("ssw", [[0, "#fff", .5], [1, "#000", .12]], 0, 0, 1, 0) +
+      tile("tl", "#cfd6dc", "#e0e5ea", 8) + lin("fgl", [[0, "#000", .3], [1, "#fff", .1]]) + glowDef("rf", "#9ec4ff", .35));
+
+    // ------------------------------------------------------------------ CLINICA
     case "clinica": return svg(`
-      <rect width="160" height="100" fill="url(#w${u})"/><rect width="160" height="10" fill="#e8f4f2"/>
-      <text x="80" y="7.4" font-size="4.4" text-anchor="middle" fill="#1e5a4a" font-weight="800">Clínica Vida+</text>
-      <rect x="14" y="22" width="40" height="24" fill="#9ec4e6" stroke="#bcd" stroke-width="1"/><path d="M34 22V46" stroke="#bcd" stroke-width="1"/>
-      <rect x="50" y="52" width="60" height="28" fill="#e8f4f2" stroke="#9fc9bf" stroke-width=".8"/><rect x="48" y="49" width="64" height="4" fill="#1e5a4a"/>
-      <rect x="72" y="40" width="16" height="10" rx="1" fill="#1b2236" stroke="#111" stroke-width=".6"/><rect x="73.4" y="41.4" width="13.2" height="7.2" fill="#4F7BFF" opacity=".5"/>
-      <rect x="85" y="40.4" width="4" height="4" fill="#ffe08a" transform="rotate(8 85 40)"/><rect x="78" y="50" width="4" height="2" fill="#555"/>
-      <rect x="116" y="14" width="28" height="22" fill="#fffaf0" stroke="#9fc9bf" stroke-width=".8"/><text x="130" y="20" font-size="2.6" text-anchor="middle" fill="#1e5a4a" font-weight="700">AVISO</text>
-      <path d="M120 24H140M120 27H138M120 30H136" stroke="#9aa4ad" stroke-width=".6"/><text x="130" y="34" font-size="2" text-anchor="middle" fill="#1f2a44">Altavista Tech</text>
-      <path d="M24 64 L36 64 L34 78 L26 78Z" fill="#7a838b"/><rect x="25" y="61" width="10" height="4" fill="#fffaf0" transform="rotate(-10 25 61)"/><rect x="27" y="60" width="8" height="4" fill="#ecf" transform="rotate(12 27 60)"/>
-      ${[0,1,2].map(i => `<rect x="${118 + i*12}" y="62" width="10" height="8" rx="2" fill="#9fc9bf"/><rect x="${119 + i*12}" y="70" width="1.4" height="10" fill="#555"/><rect x="${125.6 + i*12}" y="70" width="1.4" height="10" fill="#555"/>`).join("")}
-      <rect y="80" width="160" height="20" fill="#dfe9e6"/>${Array.from({length:16}, (_, i) => `<rect x="${i*10}" y="80" width="10" height="20" fill="${i%2 ? "#d3dfdb" : "#e8f0ee"}"/>`).join("")}`,
-      grad("w", "#f4fbf9", "#cfe3de"));
+      ${R(0, 0, 160, 100, F("wl"))}${R(0, 54, 160, 26, "#8fc7bb")}${R(0, 54, 160, 1.4, "#fff")}${R(0, 55.4, 160, .8, "#000", 'opacity=".15"')}
+      ${R(0, 0, 160, 8, "#eef7f5")}${[22, 62, 102, 142].map(x => `${R(x - 11, 1.6, 22, 3.4, "#fff")}${R(x - 11, 5, 22, .8, "#000", 'opacity=".1"')}${E(x, 8, 15, 5, F("fl"))}`).join("")}
+      ${R(50, 9.6, 60, 9, "#1e5a4a", 'rx="1.4"')}<g transform="translate(60 14)">${R(-3, -1, 6, 2, "#fff", 'rx=".4"')}${R(-1, -3, 2, 6, "#fff", 'rx=".4"')}</g><text x="84" y="15.6" font-size="5.4" text-anchor="middle" fill="#fff" font-weight="900" font-family="Georgia,serif">Clínica Vida+</text>
+      <!-- janela -->
+      ${R(12, 20, 44, 28, "#f4faf8", 'stroke="#c4ddd7" stroke-width="1"')}${R(14, 22, 40, 24, F("jn"))}
+      <path d="M14 36Q24 30 30 36T44 34T54 38V46H14Z" fill="#6aa86a" opacity=".6"/><path d="M14 40Q26 36 40 41T54 42V46H14Z" fill="#4a8a5a" opacity=".6"/>${E(46, 28, 3, 3, "#fff4c0", 'opacity=".9"')}
+      ${Array.from({ length: 12 }, (_, i) => R(14, 22 + i * 2, 40, 1.3, "#f4faf8", 'opacity=".75"')).join("")}${R(34, 22, .8, 24, "#fff", 'opacity="0"')}<path d="M54 22L40 62L58 62Z" fill="#fff" opacity=".05"/>
+      ${R(11, 47.6, 46, 2, "#e8f4f0")}${R(11, 49.6, 46, .8, "#000", 'opacity=".2"')}
+      <g transform="translate(18 47.6)"><path d="M-3 0L-3.6 -4H3.6L3 0Z" fill="#c07a52"/><path d="M0 -4Q-6 -8 -6 -3M0 -4Q6 -9 6 -4M0 -4Q-2 -11 0 -12" stroke="#2f8a4a" stroke-width="1.4" fill="none" stroke-linecap="round"/></g>
+      <!-- recepcao -->
+      ${E(84, 80.6, 28, 2.4, "#000", 'opacity=".22"')}${R(58, 53, 52, 27, "#e9f2f0")}${R(58, 53, 52, 27, F("cn"))}${R(58, 53, 52, 5.4, "#2a7a68")}${R(56, 50.6, 56, 3, "#f4fbf9", 'stroke="#b5d4cd" stroke-width=".4"')}${R(56, 50.6, 56, .7, "#fff")}
+      <text x="84" y="57.4" font-size="3" fill="#fff" text-anchor="middle" font-weight="800" letter-spacing=".5">RECEPÇÃO</text>
+      ${R(62, 62, 14, 15, "#cfe2de", 'stroke="#9fc9bf" stroke-width=".4"')}${R(64.4, 64, 9, 1.4, "#9fc9bf")}${R(64.4, 67, 9, 1.4, "#9fc9bf")}
+      ${R(72, 40, 19, 11, "#12161c", 'stroke="#2a2d33" stroke-width=".6" rx="1"')}${R(73.4, 41.4, 16.2, 7.6, F("mn"))}${R(75, 43, 6, .8, "#fff", 'opacity=".6"')}${R(75, 44.6, 10, .6, "#fff", 'opacity=".4"')}${R(75, 46, 8, .6, "#fff", 'opacity=".4"')}${R(79, 51, 5, .8, "#333")}
+      ${R(92, 46, 5, 4.4, "#ffe08a", 'transform="rotate(8 92 46)"')}${R(98, 46.4, 4.6, 4.4, "#fff", 'stroke="#aaa" stroke-width=".3" transform="rotate(-6 98 46)"')}${R(66, 48.6, 4.4, 2, "#3a3f48", 'rx=".8"')}<path d="M104 50.6V47Q105.6 45 107.2 47V50.6Z" fill="#fff" stroke="#9fc9bf" stroke-width=".4"/>
+      ${R(60, 48, 3.6, 2.6, "#d0d6dc", 'rx=".6"')}${R(61.2, 46.4, 1.2, 2, "#3a3f48")}
+      <!-- lixeira -->
+      ${E(30.4, 79.6, 6.4, 1.2, "#000", 'opacity=".3"')}${R(25, 65, 11, 14.6, "#8a939b", 'rx="1.2"')}${R(25, 65, 11, 14.6, F("ssw2"), 'rx="1.2"')}${R(24, 63.4, 13, 2.6, "#6a737c", 'rx="1"')}<path d="M26 63.4L28 59.4L32 60.4L34 63.4" fill="#fffaf0" stroke="#aaa" stroke-width=".3"/><path d="M29 61.6H32.4" stroke="#aaa" stroke-width=".3"/>
+      ${R(28.4, 68, 4, 4, "#fff")}${R(29.6, 67, 1.6, 6, "#c8281f", 'opacity="0"')}${R(30.4, 68.6, 1.6, 4, "#c8281f")}${R(29.2, 69.8, 4, 1.6, "#c8281f")}${R(27.6, 78.4, 5.6, 1.2, "#3a3f48")}
+      <!-- mural -->
+      ${R(114, 13, 31, 24, "#b0bfb8", 'rx=".8"')}${R(115.4, 14.4, 28.2, 21.2, "#fffaf0")}${R(115.4, 14.4, 28.2, 5, "#1e5a4a")}<text x="129.5" y="18.2" font-size="2.8" text-anchor="middle" fill="#fff" font-weight="900">AVISOS</text>
+      <path d="M118 22H141M118 24.6H139M118 27.2H140M118 29.8H136" stroke="#9aa4ad" stroke-width=".6"/>${R(118, 31.6, 22, 3, "#e8f4f2", 'rx=".5"')}<text x="129" y="33.8" font-size="1.8" text-anchor="middle" fill="#1f2a44" font-weight="800">Altavista Tech</text>
+      ${[[117, 20.2, "#ffe08a"], [137, 20.4, "#a8e6c4"]].map(([x, y, c]) => `<rect x="${x}" y="${y}" width="5.4" height="5.4" fill="${c}" transform="rotate(4 ${x} ${y})"/>`).join("")}${[[119.4, 20.6], [139.6, 20.8]].map(([x, y]) => `<circle cx="${x}" cy="${y}" r=".7" fill="#E5483B"/>`).join("")}
+      <!-- cadeiras -->
+      ${R(116, 72, 38, 1.4, "#000", 'opacity="0"')}${[0, 1, 2].map(i => `${E(127.4 + i * 12, 79.8, 5.6, 1, "#000", 'opacity=".3"')}${R(119 + i * 12, 62, 11.4, 9, "#4a9a8a", 'rx="2"')}${R(119 + i * 12, 62, 11.4, 2.4, "#6ab8a8", 'rx="1.2"')}${R(118.6 + i * 12, 69.6, 12.2, 3, "#3f8678", 'rx="1.2"')}${R(121 + i * 12, 72.4, 1.2, 7.4, "#2a2d33")}${R(127.4 + i * 12, 72.4, 1.2, 7.4, "#2a2d33")}${R(118 + i * 12, 70.8, 1.6, 2, "#2a2d33")}`).join("")}
+      ${R(124, 64, 4, 5, "#e8d27a", 'opacity="0"')}
+      <!-- piso com faixa guia -->
+      ${R(0, 80, 160, 20, F("tl"))}${floorLines(78, "#b8cdc7", .5, 10)}${R(0, 78, 160, 22, F("fgl"))}
+      <path d="M76 100L82 80H88L94 100Z" fill="#2a8a72" opacity=".18"/><path d="M82 94l4-6 4 6" stroke="#2a8a72" stroke-width="1" fill="none" opacity=".3"/>
+      ${E(80, 92, 50, 6, F("fl"), 'opacity=".45"')}
+      ${R(0, 0, 160, 100, "#dffff4", 'opacity=".03"')}`,
+      lin("wl", [[0, "#f6fcfa"], [1, "#d3e6e1"]]) + glowDef("fl", "#fff", .8) +
+      lin("jn", [[0, "#8ec4ee"], [1, "#d4eef8"]]) + lin("cn", [[0, "#fff", .15], [1, "#000", .1]]) +
+      lin("mn", [[0, "#4f86ff"], [1, "#2a4aa8"]]) + lin("ssw2", [[0, "#fff", .35], [.5, "#fff", 0], [1, "#000", .2]], 0, 0, 1, 0) +
+      tile("tl", "#dfe9e6", "#eaf1ef", 8) + lin("fgl", [[0, "#000", .2], [1, "#fff", .08]]));
+
+    // ------------------------------------------------------------------ GABINETE
     case "gabinete": return svg(`
-      <rect width="160" height="100" fill="url(#w${u})"/>
-      <rect x="10" y="10" width="60" height="60" fill="#3a2716"/>${[0,1,2,3,4].map(r => Array.from({length:9}, (_, c) => `<rect x="${13 + c*6.4}" y="${13 + r*11.6}" width="5" height="10" fill="${["#8a1c1c","#1c4a8a","#c9a04a","#2a6a3a","#6a2a6a","#1f2a44"][(r*3+c)%6]}"/>`).join("")).join("")}
-      <rect x="96" y="12" width="40" height="30" fill="#9ec4e6" stroke="#5a3a22" stroke-width="1.6"/><path d="M116 12V42M96 27H136" stroke="#5a3a22" stroke-width="1"/>
-      <g transform="translate(146 20)"><rect x="-1" y="0" width="2" height="30" fill="#c9a04a"/><path d="M1 2h10v6H1z" fill="#2FBF71"/><path d="M1 8h10v6H1z" fill="#F5B700"/><circle cx="6" cy="8" r="1.6" fill="#2c3e70"/></g>
-      <rect y="80" width="160" height="20" fill="#4a2e18"/>`, grad("w", "#6a4a32", "#3a2414"));
+      ${R(0, 0, 160, 100, F("pn"))}${Array.from({ length: 8 }, (_, i) => R(i * 20 + 2, 6, 16, 56, "#000", 'opacity=".12" rx=".8"')).join("")}${Array.from({ length: 8 }, (_, i) => R(i * 20 + 3.4, 7.4, 13.2, 53.2, "none", 'stroke="#c9a04a" stroke-width=".25" opacity=".35"')).join("")}
+      ${R(0, 62, 160, 2.4, "#2a170c")}${R(0, 62, 160, .8, "#c9a04a", 'opacity=".6"')}${R(0, 0, 160, 3.4, "#2a170c")}${R(0, 3.4, 160, .6, "#c9a04a", 'opacity=".5"')}
+      ${R(0, 64, 160, 36, F("pq"))}${floorLines(64, "#1a0c05", .5, 11)}${R(0, 64, 160, 36, F("fgl"))}
+      <!-- estante -->
+      ${R(8, 8, 62, 63, "#2a170c")}${R(10, 10, 58, 59, "#1a0d06")}
+      ${[0, 1, 2, 3, 4].map(r => `${R(10, 10 + r * 11.8 + 10.4, 58, 1.4, "#6a4020")}${Array.from({ length: 15 }, (_, c) => { const h = 7 + (c * 7 + r * 3) % 4, w = 2.6 + (c * 5 + r) % 3 * .5; const x = 11 + c * 3.8; return `<rect x="${x}" y="${10 + r * 11.8 + 10.4 - h}" width="${w}" height="${h}" fill="${["#7a1c1c", "#1c3f7a", "#a07a2a", "#245a34", "#5a2a5a", "#1f2a44", "#6a3a1c"][(r * 3 + c) % 7]}"/><rect x="${x}" y="${10 + r * 11.8 + 10.4 - h + 1.4}" width="${w}" height=".5" fill="#d9b86a" opacity=".8"/><rect x="${x + .3}" y="${10 + r * 11.8 + 10.4 - h}" width=".4" height="${h}" fill="#fff" opacity=".12"/>`; }).join("")}`).join("")}
+      ${R(10, 10, 58, 59, "#000", 'opacity=".12"')}${R(6, 6, 66, 3, "#3a2010")}${R(6, 6, 66, .8, "#c9a04a", 'opacity=".6"')}${R(6, 70, 66, 3, "#3a2010")}
+      ${E(60, 40, 4, 4, "#c9a04a", 'opacity="0"')}
+      <g transform="translate(54 24)">${R(-1, 5, 2, 3, "#6a4a2a")}${E(0, 1.6, 4, 4, "#2a5a8a", 'stroke="#c9a04a" stroke-width=".5"')}<path d="M-4 1.6Q0 3 4 1.6" stroke="#9ad0ff" stroke-width=".3" fill="none"/></g>
+      <g transform="translate(28 46.6)">${R(-6, 3, 12, 1.2, "#c9a04a")}${R(-.4, -2, .8, 5.4, "#c9a04a")}${R(-6, -2, 12, .6, "#c9a04a")}<path d="M-6 -1.4L-8 2H-4Z M6 -1.4L4 2H8Z" fill="#c9a04a" opacity=".9"/></g>
+      <!-- janela -->
+      ${R(94, 10, 44, 34, "#2a170c")}${R(96, 12, 40, 30, F("ds"))}${skyline(41, "#1c1530", 9, true).replace(/<rect/g, "<rect clip-path=\"url(#cw" + u + ")\"")}
+      ${R(115.4, 12, 1.4, 30, "#2a170c")}${R(96, 26.4, 40, 1.4, "#2a170c")}${R(92, 42, 48, 3, "#4a2a14")}
+      <path d="M96 4Q101 24 98 52L90 52L90 4Z M136 4Q131 24 134 52L142 52L142 4Z" fill="#7a1c1c"/>${[0, 1, 2].map(i => `<path d="M${91.5 + i * 2} 4Q${96 + i} 24 ${94 + i * 2} 52M${140.5 - i * 2} 4Q${136 - i} 24 ${138 - i * 2} 52" stroke="#000" stroke-width=".3" opacity=".25" fill="none"/>`).join("")}
+      ${R(88, 2, 58, 2.4, "#c9a04a")}
+      <path d="M98 44L72 98H122L114 44Z" fill="url(#lr${u})"/>
+      <!-- bandeira -->
+      ${R(148, 20, 1.8, 62, "#c9a04a")}<circle cx="149" cy="19" r="1.4" fill="#e8c46a"/>${R(146, 78, 6, 3, "#3a2010")}
+      <g transform="translate(150.8 22)"><path d="M0 0H10Q8 12 10 24H0Z" fill="#1f8a4a" opacity="0"/>${R(0, 0, 8.4, 14, "#1f8a4a")}<path d="M0 7L4.2 1.6L8.4 7L4.2 12.4Z" fill="#f5d000"/><circle cx="4.2" cy="7" r="2.6" fill="#2a4aa8"/><path d="M1.8 6.4Q4.2 5.6 6.6 7.4" stroke="#fff" stroke-width=".4" fill="none"/>${R(0, 0, 8.4, 14, "#000", 'opacity=".12"')}</g>
+      <!-- mesa -->
+      ${E(80, 81, 36, 2.6, "#000", 'opacity=".4"')}${R(50, 58, 60, 22, "#3a2010")}${R(50, 58, 60, 22, "#000", 'opacity=".15"')}${R(52, 62, 26, 15, "#4a2a14", 'stroke="#241309" stroke-width=".5"')}${R(82, 62, 26, 15, "#4a2a14", 'stroke="#241309" stroke-width=".5"')}${R(52, 62, 26, 15, "none", 'stroke="#c9a04a" stroke-width=".25" opacity=".5" transform="translate(1.4 1.4) scale(.95)"')}
+      <circle cx="65" cy="69.4" r="1" fill="#d9b86a"/><circle cx="95" cy="69.4" r="1" fill="#d9b86a"/>
+      ${R(47, 55, 66, 3.4, "#5a3418")}${R(47, 55, 66, .8, "#c28a4a")}${R(49, 52.4, 62, 3, F("lt"))}${R(49, 52.4, 62, .5, "#c9a04a", 'opacity=".8"')}
+      <!-- computador -->
+      ${R(76, 47, 12, 8, "#10151e", 'stroke="#2a2d33" stroke-width=".6" rx=".8"')}${R(77, 48, 10, 5.2, F("mn"))}<path d="M78 49.4H84M78 50.8H82" stroke="#fff" stroke-width=".3" opacity=".6"/>${R(80.4, 55, 3, .8, "#333", 'opacity="0"')}${R(78.6, 52.8, 6.8, 1.6, "#2a2d33", 'opacity="0"')}
+      ${R(74, 51.6, 10, 1.4, "#333", 'opacity="0"')}
+      <!-- processos -->
+      ${[0, 1, 2, 3, 4].map(i => `${R(54 + (i % 2) * .6, 48.6 + i * 0, 14, 1, "#000", 'opacity="0"')}`).join("")}
+      ${R(52, 49.4, 16, 3.2, "#e8dcc0", 'stroke="#a08a58" stroke-width=".3"')}${R(53, 46.6, 15, 3, "#d8ccb0", 'stroke="#a08a58" stroke-width=".3"')}${R(52.4, 43.8, 14, 3, "#e8dcc0", 'stroke="#a08a58" stroke-width=".3"')}${R(54, 41.4, 13, 2.6, "#c9b88a", 'stroke="#a08a58" stroke-width=".3"')}
+      <path d="M52 51L68 51M53 48L68 48" stroke="#8a1c1c" stroke-width=".4"/>${R(62, 44.6, 4, 1.4, "#c8281f")}
+      ${R(93, 49, 9, 3.4, "#d8ccb0", 'stroke="#a08a58" stroke-width=".3"')}${R(94, 46.4, 8, 3, "#e8dcc0", 'stroke="#a08a58" stroke-width=".3"')}
+      <g transform="translate(103 42)">${R(-.6, 5, 1.2, 5, "#c9a04a")}${R(-3, 9.6, 6, 1, "#c9a04a")}<path d="M-5 2.4L-7 6H-3Z M5 2.4L3 6H7Z" fill="#c9a04a"/>${R(-5, 2, 10, .6, "#c9a04a")}${R(-.4, 0, .8, 5, "#c9a04a")}</g>
+      
+      ${R(0, 0, 160, 100, "#ffb060", 'opacity=".04"')}`,
+      lin("pn", [[0, "#6a4228"], [1, "#3a2010"]]) + wood("pq", "#4a2a14", "#3e2410", 7) + lin("fgl", [[0, "#000", .45], [1, "#000", 0]]) +
+      lin("ds", [[0, "#2a3a7a"], [.55, "#c0607a"], [1, "#ffb070"]]) + `<clipPath id="cw${u}"><rect x="96" y="12" width="40" height="30"/></clipPath>` +
+      lin("lr", [[0, "#ffc07a", .28], [1, "#ffc07a", 0]]) + lin("lt", [[0, "#2a5a3a"], [1, "#1a3a28"]]) + lin("mn", [[0, "#4f86ff"], [1, "#2a4aa8"]]));
+
+    // ------------------------------------------------------------------ JURI
     case "juri": return svg(`
-      <rect width="160" height="100" fill="url(#w${u})"/>
-      ${Array.from({length:12}, (_, i) => `<rect x="${i*14}" y="0" width="12" height="70" fill="#000" opacity="${i%2 ? .04 : .08}"/>`).join("")}
-      <rect x="20" y="40" width="120" height="8" fill="#6a4228"/><rect x="20" y="56" width="120" height="8" fill="#6a4228"/>
-      ${Array.from({length:7}, (_, i) => `<g transform="translate(${30 + i*17} ${i < 4 ? 36 : 52})"><circle r="4" fill="#3a2a20"/><rect x="-5" y="3" width="10" height="6" rx="2" fill="${["#1f2a44","#7a1f1f","#2a6a3a","#5a646d"][i%4]}"/></g>`).join("")}
-      <text x="80" y="20" font-size="5" text-anchor="middle" fill="#f7e3b0" font-family="Georgia" letter-spacing="1">CONSELHO DE SENTENÇA</text>
-      <rect y="70" width="160" height="30" fill="#2a1a10"/>`, grad("w", "#9a6a40", "#4a2e18"));
+      ${R(0, 0, 160, 100, F("jw"))}${Array.from({ length: 10 }, (_, i) => R(i * 17 - 4, 4, 15, 58, "#000", 'opacity=".12" rx=".8"')).join("")}
+      ${R(0, 0, 160, 4, "#2a170c")}${R(0, 4, 160, .8, "#c9a04a", 'opacity=".6"')}${R(0, 60, 160, 2.6, "#2a170c")}${R(0, 60, 160, .8, "#c9a04a", 'opacity=".5"')}
+      <!-- colunas -->
+      ${[6, 154].map(x => `${R(x - 5, 4, 10, 58, F("co"))}${R(x - 6.4, 4, 12.8, 3, "#e8dcc0")}${R(x - 6.4, 59, 12.8, 3, "#e8dcc0")}${Array.from({ length: 4 }, (_, i) => R(x - 4 + i * 2.6, 7, .4, 52, "#000", 'opacity=".12"')).join("")}`).join("")}
+      <!-- brasao -->
+      <g transform="translate(80 20)">${E(0, 0, 18, 14, F("gw"))}<circle r="10" fill="#2a170c" stroke="#c9a04a" stroke-width="1.2"/><circle r="8" fill="none" stroke="#c9a04a" stroke-width=".4"/><g stroke="#e8c46a" stroke-width="1" fill="none" stroke-linecap="round"><path d="M0 -6.4V6M-6 -3.4H6"/><path d="M-6 -3.4L-8 1.6H-4ZM6 -3.4L4 1.6H8Z" fill="#e8c46a" opacity=".85"/><path d="M-3 6H3"/></g></g>
+      <text x="80" y="41" font-size="3.6" text-anchor="middle" fill="#f7e3b0" font-family="Georgia,serif" letter-spacing=".9" font-weight="700">CONSELHO DE SENTENÇA</text>
+      ${R(60, 36.6, 40, .5, "#c9a04a", 'opacity=".6"')}${R(60, 42.6, 40, .5, "#c9a04a", 'opacity=".6"')}
+      ${R(18, 14, 24, 28, "#1a0d06", 'stroke="#c9a04a" stroke-width=".5"')}${R(20, 16, 20, 24, "#e8dcc0")}<path d="M22 21H38M22 24H36M22 27H38M22 30H34M22 33H37" stroke="#8a7a5a" stroke-width=".4"/><text x="30" y="20" font-size="2.2" fill="#1f2a44" text-anchor="middle" font-weight="900" opacity="0">LEI</text>
+      ${R(118, 14, 24, 28, "#1a0d06", 'stroke="#c9a04a" stroke-width=".5"')}${R(120, 16, 20, 24, "#c8bfa0")}<circle cx="130" cy="26" r="5" fill="#9a8a68"/><path d="M122 40Q130 30 138 40Z" fill="#7a6a4a"/>
+      <!-- piso -->
+      ${R(0, 62.6, 160, 37.4, F("mt"))}${floorLines(66, "#6a6258", .35, 11)}${R(0, 62.6, 160, 37.4, F("fgl"))}
+      <path d="M62 100L72 66H88L98 100Z" fill="#7a1f1f" opacity=".75"/><path d="M62 100L72 66" stroke="#c9a04a" stroke-width=".6" opacity=".7"/><path d="M98 100L88 66" stroke="#c9a04a" stroke-width=".6" opacity=".7"/>
+      <!-- bancada dos jurados -->
+      ${E(80, 66.6, 66, 2.2, "#000", 'opacity=".4"')}
+      ${R(19, 36, 122, 14, "#2a170c")}${R(19, 36, 122, 14, "#000", 'opacity=".2"')}
+      ${Array.from({ length: 7 }, (_, i) => { const x = 24 + i * 16.4; return `${R(x - 1, 38, 12, 10, "#5a1a1a", 'rx="2.4"')}${R(x - 1, 38, 12, 2, "#7a2a2a", 'rx="1"')}${R(x + 1, 40.6, 8, 6, "#6a2222", 'rx="1.6"')}<path d="M${x + 5} 40.6V46.4" stroke="#3a0f0f" stroke-width=".3"/><circle cx="${x + 1.4}" cy="43" r=".4" fill="#c9a04a"/><circle cx="${x + 8.6}" cy="43" r=".4" fill="#c9a04a"/>`; }).join("")}
+      ${R(17, 49, 126, 4, "#6a4228")}${R(17, 49, 126, 1, "#b88652")}${R(17, 52.4, 126, 1, "#000", 'opacity=".35"')}
+      ${R(19, 53.4, 122, 12.6, F("wd2"))}${R(19, 53.4, 122, 12.6, "#000", 'opacity=".15"')}${Array.from({ length: 7 }, (_, i) => `${R(21 + i * 17.2, 55.4, 14.4, 8.6, "none", 'stroke="#c9a04a" stroke-width=".35" opacity=".6"')}${R(24 + i * 17.2, 57.6, 8.4, 4.2, "#000", 'opacity=".12"')}<text x="${28.2 + i * 17.2}" y="60.8" font-size="3" fill="#c9a04a" text-anchor="middle" font-weight="900" font-family="Georgia,serif" opacity=".8">${i + 1}</text>`).join("")}
+      ${R(17, 66, 126, 1.6, "#2a170c")}${R(17, 66, 126, .5, "#c9a04a", 'opacity=".5"')}
+      <!-- pulpito -->
+      ${E(80, 90.6, 11, 1.4, "#000", 'opacity=".35"')}${R(70, 76, 20, 14, "#3a2010")}${R(70, 76, 20, 14, F("wd2"))}${R(70, 76, 20, 14, "#000", 'opacity=".2"')}<path d="M68 76H92L90 71.4H70Z" fill="#6a4228"/><path d="M70 71.4H90" stroke="#c28a4a" stroke-width=".6"/>
+      ${R(71, 78, 18, 9.4, "none", 'stroke="#c9a04a" stroke-width=".35" opacity=".7"')}<g transform="translate(80 82.6)" stroke="#c9a04a" stroke-width=".6" fill="none"><path d="M0 -3V3M-3.6 -2H3.6M-3.6 -2L-5 .6H-2.2ZM3.6 -2L2.2 .6H5Z"/></g>
+      ${R(79.4, 66, .8, 5.6, "#8a8f98")}<path d="M80 66Q84 64.4 85 66.8" stroke="#8a8f98" stroke-width=".7" fill="none"/>${R(84.4, 66.6, 2.4, 1.4, "#222", 'rx=".6"')}${R(72, 72, 5.6, .6, "#fffaf0", 'opacity="0"')}${R(73, 71.6, 6, 1.2, "#fffaf0", 'transform="rotate(-3 73 71)"')}
+      ${E(80, 20, 60, 9, F("gw"), 'opacity=".25"')}${E(80, 84, 40, 7, F("fl"), 'opacity=".35"')}
+      ${R(0, 0, 160, 100, "#ffb060", 'opacity=".03"')}`,
+      lin("jw", [[0, "#7a4a2c"], [1, "#4a2c18"]]) + lin("co", [[0, "#cfc3a2"], [.4, "#f1e8d0"], [1, "#a89c7c"]], 0, 0, 1, 0) +
+      glowDef("gw", "#ffe0a0", .45) + glowDef("fl", "#ffe0a0", .5) +
+      tile("mt", "#8a8174", "#6e665a", 8) + lin("fgl", [[0, "#000", .45], [1, "#000", 0]]) + wood("wd2", "#6a4228", "#5e3a22", 6));
   }
   return background("testemunha");
 }
