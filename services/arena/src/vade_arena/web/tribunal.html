@@ -518,27 +518,92 @@ const BGS = {
 let UID = 0;  // ids de gradiente únicos: ids repetidos apontariam para SVGs ocultos (e sairiam pretos)
 function background(pos) {
   const b = BGS[pos] || BGS.testemunha, u = "g" + (++UID);
+  const svg = inner => `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">${inner}</svg>`;
+  const lin = (id, c0, c1, o0 = 1, o1 = 1) => `<linearGradient id="${id}${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c0}" stop-opacity="${o0}"/><stop offset="1" stop-color="${c1}" stop-opacity="${o1}"/></linearGradient>`;
+  const wood = (id, c0, c1) => `<pattern id="${id}${u}" width="22" height="9" patternUnits="userSpaceOnUse"><rect width="22" height="9" fill="${c0}"/><path d="M0 2Q6 1 11 2T22 2M0 5.5Q7 7 13 5.5T22 6.5M0 8.5H22" stroke="${c1}" stroke-width=".5" fill="none" opacity=".55"/><path d="M5 0V9" stroke="#000" stroke-width=".3" opacity=".25"/></pattern>`;
+  const vig = `<radialGradient id="vg${u}" cx=".5" cy=".45" r=".75"><stop offset=".55" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></radialGradient><radialGradient id="gl${u}" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6dc" stop-opacity=".38"/><stop offset="1" stop-color="#fff6dc" stop-opacity="0"/></radialGradient>`;
+  const cone = (x, w = 20, len = 56, a = .3) => `<polygon points="${x - 3},13 ${x + 3},13 ${x + w},${13 + len} ${x - w},${13 + len}" fill="url(#cn${u})" opacity="${a}"/>`;
+  const lamp = (x, c = "#ffe9b0") => `<path d="M${x} 0V9" stroke="#2a1a10" stroke-width=".7"/><path d="M${x - 5} 13Q${x - 4} 8 ${x} 8Q${x + 4} 8 ${x + 5} 13Z" fill="#c9a04a"/><ellipse cx="${x}" cy="13" rx="4.2" ry="1.3" fill="${c}"/>`;
+  const curtain = (x, w, c, flip) => { const f = flip ? -1 : 1, x0 = flip ? x + w : x;
+    return `<path d="M${x0} 0H${x0 + f * w}Q${x0 + f * (w - 3)} 40 ${x0 + f * (w - 1)} 76H${x0}Z" fill="${c}"/>` +
+      Array.from({length: 4}, (_, i) => `<path d="M${x0 + f * (3 + i * w / 4.5)} 0Q${x0 + f * (1 + i * w / 4.5)} 40 ${x0 + f * (3 + i * w / 4.5)} 76" stroke="#000" stroke-width="1.2" opacity=".28" fill="none"/>`).join("") +
+      `<path d="M${x0} 0H${x0 + f * w}V4H${x0}Z" fill="#c9a04a"/><path d="M${x0} 40Q${x0 + f * w * .5} 44 ${x0 + f * w} 38" stroke="#c9a04a" stroke-width="1.4" fill="none"/>`; };
+  const windowH = (x, tone) => `<g><path d="M${x} 48V24Q${x} 8 ${x + 12} 8Q${x + 24} 8 ${x + 24} 24V48Z" fill="url(#sk${u})" stroke="#2a1a10" stroke-width="1.6"/>
+    <path d="M${x + 12} 8V48M${x} 28H${x + 24}" stroke="#2a1a10" stroke-width="1"/><rect x="${x - 2}" y="48" width="28" height="2.4" fill="#4a2e1a"/>
+    <polygon points="${x + 2},48 ${x + 22},48 ${x + 44},100 ${x - 16},100" fill="${tone}" opacity=".10"/></g>`;
+  const brasao = (cx, cy, s, o = 1) => `<g transform="translate(${cx} ${cy}) scale(${s})" opacity="${o}"><circle r="12" fill="#2a1710" stroke="#c9a04a" stroke-width="1.2"/><circle r="9" fill="none" stroke="#c9a04a" stroke-width=".5"/>
+    <g stroke="#e2bf6a" stroke-width="1" fill="none"><path d="M0 -8V7M-6 -5H6M-6 -5l-3 6h6zM6 -5l-3 6h6z"/><path d="M-4 8H4"/></g><path d="M-14 4Q-10 14 0 15Q10 14 14 4" stroke="#3f8a4a" stroke-width="1.4" fill="none"/></g>`;
+  const flagBR = x => `<g><rect x="${x - .5}" y="14" width="1" height="62" fill="#c9a04a"/><circle cx="${x}" cy="13" r="1.4" fill="#e2bf6a"/>
+    <path d="M${x + .5} 17H${x + 22}Q${x + 20} 29 ${x + 22} 40H${x + .5}Z" fill="#1f9a4a"/><path d="M${x + 11} 20.5L${x + 19.5} 28.5L${x + 11} 36.5L${x + 2.5} 28.5Z" fill="#f2cf2a"/><circle cx="${x + 11}" cy="28.5" r="4.4" fill="#1f4aa0"/><path d="M${x + 6.8} 27.4Q${x + 11} 26 ${x + 15.2} 29.4" stroke="#fff" stroke-width=".7" fill="none"/>
+    <path d="M${x + .5} 17H${x + 22}Q${x + 20} 29 ${x + 22} 40H${x + .5}Z" fill="#000" opacity=".08"/></g>`;
+  const flagUF = x => `<g><rect x="${x - .5}" y="14" width="1" height="62" fill="#c9a04a"/><circle cx="${x}" cy="13" r="1.4" fill="#e2bf6a"/>
+    ${Array.from({length: 7}, (_, i) => `<rect x="${x + .5}" y="${17 + i * 3.3}" width="21" height="1.65" fill="${i % 2 ? "#f3f3f3" : "#b02a2a"}"/>`).join("")}<rect x="${x + .5}" y="17" width="9" height="11.5" fill="#15264d"/><path d="M${x + 5} 19.5l1 2.3 2.4.2-1.8 1.6.6 2.4-2.2-1.3-2.2 1.3.6-2.4-1.8-1.6 2.4-.2z" fill="#fff"/></g>`;
+  const balanca = (cx, cy, s, o) => `<g transform="translate(${cx} ${cy}) scale(${s})" stroke="#e2bf6a" stroke-width="1" fill="none" opacity="${o}"><path d="M0 -9V8M-10 -5H10M-10 -5l-4 8h8zM10 -5l-4 8h8zM-4 8H4"/></g>`;
+  const panels = (y0, y1) => Array.from({length: 8}, (_, i) => `<rect x="${3 + i * 20}" y="${y0}" width="14" height="${y1 - y0}" rx=".8" fill="#000" opacity=".07" stroke="#f0d28a" stroke-width=".3" stroke-opacity=".5"/>`).join("");
+  const wainscot = () => `<rect y="56" width="160" height="44" fill="url(#wd${u})"/><rect y="56" width="160" height="44" fill="url(#wsh${u})"/>${panels(61, 100)}<rect y="54" width="160" height="3.4" fill="#2a1a10"/><rect y="54" width="160" height="1" fill="#e2bf6a" opacity=".6"/>`;
+  const cornice = `<rect width="160" height="5.5" fill="#5a3a22"/><rect y="5.5" width="160" height="1.2" fill="#c9a04a" opacity=".8"/><path d="M0 6.7H160" stroke="#000" stroke-opacity=".3"/>`;
+  const common = `<radialGradient id="cn${u}" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#fff2c0" stop-opacity=".9"/><stop offset="1" stop-color="#fff2c0" stop-opacity="0"/></radialGradient>` + vig + wood("wd", "#b0794c", "#6a4226") + lin("wsh", "#000", "#000", 0, .22);
+  const cfg = {
+    defesa:     {a: "#bcd0e8", c: "#3f6aa8", l: "#e6f0ff", t: "#9cc0ff"},
+    acusacao:   {a: "#ebc2b0", c: "#a83a36", l: "#ffe2cc", t: "#ffb08a"},
+    testemunha: {a: "#ecd8ae", c: "#8a7248", l: "#fff0c8", t: "#ffe9b0"},
+    juiz:       {a: "#d9a878", c: "#9a2a2a", l: "#ffe9b0", t: "#ffd27a"}}[pos] || {a: "#ecd8ae", c: "#8a7248", l: "#fff0c8", t: "#ffe9b0"};
+  const wallDef = `<linearGradient id="wl2${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${cfg.a}"/><stop offset="1" stop-color="${cfg.a}" stop-opacity=".8"/></linearGradient>` +
+    `<linearGradient id="sk${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb4e8"/><stop offset="1" stop-color="#e8f2ff"/></linearGradient>`;
+  const finish = `<rect y="62" width="160" height="38" fill="${cfg.t}" opacity=".05"/><ellipse cx="80" cy="46" rx="46" ry="48" fill="url(#gl${u})"/><rect width="160" height="100" fill="url(#vg${u})"/>`;
+  const wall = `<rect width="160" height="100" fill="#8a5a38"/><rect width="160" height="56" fill="url(#wl2${u})"/><rect width="160" height="56" fill="#fff" opacity=".08"/>` +
+    Array.from({length: 16}, (_, i) => `<rect x="${i * 10}" y="7" width="5" height="48" fill="#fff" opacity=".05"/>`).join("") + cornice;
+
   if (pos === "escritorio") {
-    return `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
-      <defs><linearGradient id="sky${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9e5e"/><stop offset="1" stop-color="#2b3a6a"/></linearGradient></defs>
-      <rect width="160" height="100" fill="#26313e"/><rect x="18" y="10" width="78" height="56" fill="url(#sky${u})" stroke="#11161d" stroke-width="2"/>
-      ${[24,32,40,52,60,70,80,88].map((x,i) => `<rect x="${x}" y="${30 + (i*7)%18}" width="7" height="${36 - (i*7)%18}" fill="#141b2b" opacity=".9"/>`).join("")}
-      <path d="M57 10V66M18 38H96" stroke="#11161d" stroke-width="1.5"/>
-      <rect x="110" y="12" width="40" height="60" fill="#3a2716"/>${[0,1,2,3].map(r => [0,1,2,3,4].map(c => `<rect x="${113 + c*7}" y="${16 + r*14}" width="5" height="11" fill="${["#8a1c1c","#1c4a8a","#c9a04a","#2a6a3a","#6a2a6a"][(r+c)%5]}"/>`).join("")).join("")}
-      <rect y="66" width="160" height="34" fill="#1b2430"/></svg>`;
+    const prints = [["#8a1c1c", "#c9a04a"], ["#1c4a8a", "#e8d9b0"], ["#2a6a3a", "#c9a04a"]];
+    const shelf = x => `<rect x="${x}" y="10" width="38" height="64" fill="#2a1a10"/><rect x="${x + 1.5}" y="11.5" width="35" height="61" fill="#1a110a"/>` +
+      [0, 1, 2, 3].map(r => `<rect x="${x + 1.5}" y="${25 + r * 15.5}" width="35" height="1.8" fill="#6a4228"/>` +
+        Array.from({length: 8}, (_, c) => { const h = 8 + ((r * 5 + c * 3) % 5); return `<rect x="${x + 3 + c * 4.1}" y="${25 + r * 15.5 - h}" width="3.4" height="${h}" fill="${["#8a1c1c", "#1c4a8a", "#c9a04a", "#2a6a3a", "#6a2a6a", "#d8cfae"][(r + c * 2) % 6]}"/>`; }).join("")).join("") +
+      `<rect x="${x + 22}" y="13.5" width="10" height="8" fill="#3a2a1a"/><circle cx="${x + 27}" cy="17.5" r="2.4" fill="#4a6a8a"/><path d="M${x + 27} 15.5v4M${x + 25} 17.5h4" stroke="#c9a04a" stroke-width=".3"/>`;
+    return svg(`<defs>${common}${wallDef}
+      <linearGradient id="sc${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a3f7a"/><stop offset=".45" stop-color="#d4607a"/><stop offset=".8" stop-color="#ff9e5e"/><stop offset="1" stop-color="#ffd08a"/></linearGradient>
+      <radialGradient id="sun${u}" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff2c0" stop-opacity=".9"/><stop offset="1" stop-color="#ffb060" stop-opacity="0"/></radialGradient></defs>
+      <rect width="160" height="100" fill="#4a5c72"/><rect width="160" height="62" fill="#6f87a3"/>
+      ${Array.from({length: 16}, (_, i) => `<rect x="${i * 10}" y="7" width="5" height="55" fill="#fff" opacity=".06"/>`).join("")}${cornice}
+      <rect y="62" width="160" height="38" fill="url(#wd${u})"/><rect y="62" width="160" height="38" fill="#000" opacity=".12"/><rect y="60" width="160" height="3" fill="#10161e"/><rect y="60" width="160" height=".8" fill="#c9a04a" opacity=".5"/>
+      <g><rect x="6" y="10" width="42" height="52" fill="url(#sc${u})" stroke="#10161e" stroke-width="2"/>
+      <circle cx="30" cy="48" r="16" fill="url(#sun${u})"/>
+      ${[[8, 36, 5, 26], [14, 30, 6, 32], [21, 40, 5, 22], [27, 34, 7, 28], [35, 42, 5, 20], [41, 32, 6, 30]].map(([x, y, w, h], i) => `<rect x="${x}" y="${y + 6}" width="${w}" height="${h}" fill="${i % 2 ? "#1a2038" : "#232a48"}"/>${[0, 1, 2, 3].map(k => `<rect x="${x + 1}" y="${y + 9 + k * 5}" width="1.2" height="1.6" fill="#ffd27a" opacity="${(i + k) % 3 ? .9 : .2}"/>`).join("")}`).join("")}
+      <path d="M27 10V62M6 34H48" stroke="#10161e" stroke-width="1.2"/><rect x="4" y="62" width="46" height="2.6" fill="#4a2e1a"/>
+      <polygon points="8,62 46,62 76,100 -4,100" fill="#ffb060" opacity=".10"/></g>
+      ${prints.map((p, i) => `<g opacity=".7"><rect x="${58 + i * 17}" y="${16 + (i % 2) * 3}" width="13" height="${i === 1 ? 14 : 10}" fill="#3a2716" stroke="#c9a04a" stroke-width=".6"/><rect x="${59.3 + i * 17}" y="${17.3 + (i % 2) * 3}" width="10.4" height="${i === 1 ? 11.4 : 7.4}" fill="${p[1]}" opacity=".85"/><path d="M${59.3 + i * 17} ${28 + (i % 2) * 3}l3-4 3 3 2-2 2.4 3z" fill="${p[0]}" opacity=".8"/></g>`).join("")}
+      ${shelf(118)}
+      <g transform="translate(106 20)"><path d="M0 0V40" stroke="#c9a04a" stroke-width="1"/><path d="M-5 0Q-5 -6 0 -6Q5 -6 5 0Z" fill="#e8b84a"/><polygon points="-4,0 4,0 14,38 -14,38" fill="url(#cn${u})" opacity=".3"/></g>
+      <g transform="translate(110 66)"><path d="M-5 0H5L4 14H-4Z" fill="#8a4a2a"/><path d="M0 0Q-14 -8 -12 -20Q-4 -16 0 0M0 0Q12 -10 10 -24Q2 -18 0 0M0 0Q-2 -14 4 -28Q6 -12 0 0M0 0Q-9 -3 -16 -9Q-9 -11 0 0" fill="#2f7a3f"/></g>
+      <ellipse cx="80" cy="46" rx="46" ry="48" fill="url(#gl${u})"/><rect width="160" height="100" fill="url(#vg${u})"/>`);
   }
-  const isJudge = pos === "juiz";
-  return `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
-    <defs><linearGradient id="wl${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${b.wall}"/><stop offset="1" stop-color="#4a2e18"/></linearGradient>
-    <radialGradient id="lt${u}" cx=".5" cy=".2" r=".8"><stop offset="0" stop-color="#fff2c8" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs>
-    <rect width="160" height="100" fill="url(#wl${u})"/>
-    ${Array.from({length:12}, (_, i) => `<rect x="${i*14}" y="0" width="12" height="70" fill="#000" opacity="${i%2 ? .04 : .08}"/>`).join("")}
-    <rect y="58" width="160" height="4" fill="#c9a04a" opacity=".5"/>
-    ${isJudge ? `<path d="M20 0 Q30 50 22 70 L0 70 L0 0Z M140 0 Q130 50 138 70 L160 70 L160 0Z" fill="#6b1414"/>
-      <g transform="translate(80 26)" fill="none" stroke="#c9a04a" stroke-width="1.6"><circle r="16" fill="#3a1a14"/><path d="M0 -10V9M-9 -6H9M-9 -6l-4 8h8zM9 -6l-4 8h8z"/></g>`
-      : `<rect x="64" y="10" width="32" height="40" rx="2" fill="#000" opacity=".18"/><g transform="translate(80 28)" fill="none" stroke="#c9a04a" stroke-width="1.2" opacity=".7"><path d="M0 -10V9M-9 -6H9M-9 -6l-4 8h8zM9 -6l-4 8h8z"/></g>`}
-    <rect width="160" height="100" fill="url(#lt${u})"/>
-    <rect y="62" width="160" height="38" fill="${b.tint}" opacity=".35"/></svg>`;
+
+  const side = pos === "defesa" ? 1 : 0;
+  const inner = [`<defs>${common}${wallDef}</defs>`, wall];
+  if (pos === "juiz") {
+    inner.push(`<rect x="24" y="8" width="112" height="48" fill="#000" opacity=".05"/><rect x="28" y="10" width="104" height="44" fill="none" stroke="#c9a04a" stroke-width=".5" opacity=".5"/>
+      ${Array.from({length: 7}, (_, i) => `<rect x="${32 + i * 14}" y="14" width="10" height="36" fill="#000" opacity=".05" rx=".6"/>`).join("")}
+      ${brasao(80, 16, .8, .85)}${balanca(80, 40, 1.1, .18)}`,
+      flagBR(30), flagUF(108), wainscot(),
+      `<rect y="64" width="160" height="2" fill="#e2bf6a" opacity=".35"/><rect y="66" width="160" height="34" fill="#000" opacity=".08"/>`,
+      curtain(0, 17, cfg.c, false), curtain(143, 17, cfg.c, true));
+  } else if (pos === "testemunha") {
+    const heads = Array.from({length: 22}, (_, i) => { const x = 8 + i * 6.9 + (i % 3), c = ["#3a2a20", "#7a5232", "#2c2c3c", "#a07a52", "#5a4058"][i % 5], sh = ["#4a78b0", "#b04a4a", "#7a7a82", "#6a8a4a", "#b09a5a"][(i * 2) % 5], o = (i % 2) * 3;
+      return `<g opacity="${Math.abs(x - 80) < 26 ? .55 : 1}"><ellipse cx="${x}" cy="${44 + o}" rx="2.6" ry="3.1" fill="${c}"/><path d="M${x - 5} ${55 + o}Q${x - 5} ${48 + o} ${x} ${48 + o}Q${x + 5} ${48 + o} ${x + 5} ${55 + o}Z" fill="${sh}"/></g>`; }).join("");
+    inner.push(`<rect x="16" y="14" width="128" height="30" fill="#fff" opacity=".05"/>${brasao(80, 20, .5, .35)}`, heads,
+      ``, wainscot(),
+      `<g transform="translate(120 46)"><path d="M0 24V8L3 6H21L24 8V24Z" fill="url(#wd${u})" stroke="#4a2e1a" stroke-width=".8"/><path d="M0 8L3 4H21L24 8Z" fill="#d09a68"/><path d="M12 4V-3Q13 -6 16 -6" stroke="#222" stroke-width=".9" fill="none"/><ellipse cx="16.4" cy="-6.2" rx="1.6" ry="1" fill="#222"/></g>`,
+      windowH(10, "#fff0c8"), curtain(0, 7, cfg.c, false), curtain(153, 7, cfg.c, true));
+  } else {
+    const wx = side ? 10 : 126, sx = side ? 122 : 6;
+    inner.push(`<rect x="52" y="12" width="56" height="38" fill="#fff" opacity=".06"/>${brasao(80, 20, .6, .55)}${balanca(80, 40, 1, .14)}`,
+      windowH(wx, cfg.l),
+      `<rect x="${sx}" y="14" width="32" height="40" fill="#1a110a" stroke="#2a1a10" stroke-width="1.2"/>` +
+        [0, 1, 2].map(r => `<rect x="${sx}" y="${27 + r * 13}" width="32" height="1.6" fill="#6a4228"/>` + Array.from({length: 8}, (_, c) => { const h = 8 + ((r * 3 + c * 2) % 4); return `<rect x="${sx + 1.5 + c * 3.7}" y="${27 + r * 13 - h}" width="3.1" height="${h}" fill="${["#7a1c1c", "#1c3a6a", "#c9a04a", "#2a5a3a", "#d8cfae"][(r + c) % 5]}"/>`; }).join("")).join(""),
+      wainscot(), curtain(side ? 0 : 143, 17, cfg.c, !side));
+  }
+  inner.push(lamp(30), lamp(130), cone(30, 24, 52, .22), cone(130, 24, 52, .22), finish);
+  return svg(inner.join(""));
 }
 // Locais de investigação. viewBox 160×100 com a mesma proporção do palco (16:10): os pontos
 // do roteiro (x, y, w, h em % do palco) caem exatamente sobre os objetos desenhados aqui.
@@ -1144,14 +1209,25 @@ function locationBG(local) {
 }
 function desk(pos) {
   const u = "d" + (++UID);
-  if (pos === "escritorio") return `<svg viewBox="0 0 160 30" preserveAspectRatio="none" width="100%" height="100%"><rect y="6" width="160" height="24" fill="#3a2716"/><rect y="4" width="160" height="4" fill="#5a3a22"/><rect x="18" y="0" width="22" height="5" fill="#ecd9b0"/><rect x="118" y="-2" width="8" height="8" fill="#8a1c1c"/></svg>`;
-  const h = pos === "juiz" ? 30 : 30;
-  return `<svg viewBox="0 0 160 ${h}" preserveAspectRatio="none" width="100%" height="100%">
-    <defs><linearGradient id="dk${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5232"/><stop offset="1" stop-color="#3e2716"/></linearGradient></defs>
-    <rect y="3" width="160" height="${h}" fill="url(#dk${u})"/><rect y="0" width="160" height="4" fill="#9b6c42"/>
-    ${Array.from({length:8}, (_, i) => `<rect x="${6 + i*20}" y="9" width="16" height="${h - 13}" rx="1" fill="#000" opacity=".12"/>`).join("")}
-    ${pos === "juiz" ? `<g transform="translate(118 -1)"><rect x="0" y="-4" width="14" height="6" rx="2" fill="#5a3a22"/><rect x="5" y="2" width="4" height="10" fill="#3e2716"/></g>` : ""}
-  </svg>`;
+  const defs = `<defs><pattern id="dp${u}" width="24" height="10" patternUnits="userSpaceOnUse"><rect width="24" height="10" fill="#a8744a"/><path d="M0 2Q7 1 12 2T24 2M0 6Q8 7.5 15 6T24 7" stroke="#2e1b0e" stroke-width=".5" fill="none" opacity=".5"/></pattern>
+    <linearGradient id="dk${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".25" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>
+    <linearGradient id="tp${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cf9a64"/><stop offset="1" stop-color="#b07c4c"/></linearGradient></defs>`;
+  const svg = inner => `<svg viewBox="0 0 160 30" preserveAspectRatio="none" width="100%" height="100%">${defs}${inner}</svg>`;
+  if (pos === "escritorio") return svg(`<rect y="6" width="160" height="24" fill="url(#dp${u})"/><rect y="6" width="160" height="24" fill="url(#dk${u})"/>
+    <rect y="3" width="160" height="4" fill="url(#tp${u})"/><rect y="3" width="160" height="1" fill="#e0b27a" opacity=".6"/>
+    <rect x="6" y="11" width="44" height="17" rx="1" fill="#000" opacity=".18"/><rect x="110" y="11" width="44" height="17" rx="1" fill="#000" opacity=".18"/><circle cx="28" cy="19" r="1.2" fill="#c9a04a"/><circle cx="132" cy="19" r="1.2" fill="#c9a04a"/>
+    <g transform="translate(16 0)"><path d="M0 4H14V-1H0Z" fill="#ecd9b0"/><rect x="2" y="-3" width="12" height="3" fill="#f4e7c4" transform="rotate(-4 8 -2)"/></g>
+    <g transform="translate(124 3)"><path d="M0 0V-3H6V0Z" fill="#2a6a3a"/><path d="M3 -3V-8Q8 -9 11 -6" stroke="#2a6a3a" stroke-width="1.2" fill="none"/><path d="M8 -9H14L12 -5H9Z" fill="#2a6a3a"/></g>
+    <rect x="144" y="-2" width="7" height="6" fill="#8a1c1c"/><rect x="145" y="-2" width="1" height="6" fill="#c9a04a"/>`);
+  const accent = {defesa: "#4a6fa5", acusacao: "#b0524a"}[pos] || "#c9a04a";
+  let extra = "";
+  if (pos === "juiz") extra = `<g transform="translate(116 -1)"><rect x="0" y="-3" width="12" height="4" rx="1.5" fill="#5a3a22"/><rect x="4.5" y="1" width="3" height="5" fill="#3e2716"/><rect x="-4" y="2.3" width="20" height="1.6" rx=".6" fill="#2a1a10"/></g>
+    <g transform="translate(30 0)"><rect x="0" y="-2" width="16" height="3" fill="#ecd9b0"/><rect x="1" y="-4" width="14" height="2.4" fill="#f4e7c4"/></g>`;
+  else if (pos === "testemunha") extra = `<g transform="translate(10 0)"><rect x="0" y="-5" width="3" height="5" fill="#8a1c1c"/><rect x="4" y="-3.5" width="3" height="3.5" fill="#1c3a6a"/></g><path d="M122 4v-5q2-3 6-3" stroke="#222" stroke-width="1.2" fill="none"/>`;
+  else extra = `<g transform="translate(${pos === "defesa" ? 22 : 118} 0)"><rect x="0" y="-3" width="14" height="3.2" fill="#ecd9b0"/><rect x="2" y="-6" width="10" height="3" fill="#f4e7c4"/></g><g transform="translate(${pos === "defesa" ? 124 : 28} 0)"><rect x="0" y="-4" width="5" height="4" fill="#1c3a6a"/><rect x="5.4" y="-3" width="4" height="3" fill="#7a1c1c"/></g>`;
+  return svg(`<rect y="5" width="160" height="25" fill="url(#dp${u})"/><rect y="5" width="160" height="25" fill="url(#dk${u})"/>
+    ${Array.from({length: 7}, (_, i) => `<rect x="${5 + i * 22.5}" y="11" width="18" height="16" rx="1" fill="#000" opacity=".2" stroke="#e2bf6a" stroke-width=".3" stroke-opacity=".4"/>`).join("")}
+    <rect y="2.5" width="160" height="3.6" fill="url(#tp${u})"/><rect y="2.5" width="160" height=".9" fill="#e0b27a" opacity=".7"/><rect y="6" width="160" height=".8" fill="${accent}" opacity=".75"/>${extra}`);
 }
 
 // ================================================================ estado do jogo
