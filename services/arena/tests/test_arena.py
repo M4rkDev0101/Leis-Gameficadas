@@ -51,12 +51,12 @@ class TestContent(unittest.TestCase):
             only = copy.deepcopy(B)
             only.questoes = [q for q in only.questoes if q["id"] in ("ce-001", "ce-002", "ce-005")]
             only.casos = []
-            problems, checked, absent = bank.validate_against_catalog(only, tmp / "c.sqlite")
+            problems, checked, absent = bank.validate_against_catalog(only, tmp / "c.sqlite", incluir_tribunal=False)
             self.assertEqual(checked, 3)
             self.assertEqual(len(problems), 1)  # ce-005 cita art-5/inc-lvii, ausente deste catálogo
             self.assertIn("inc-lvii não existe", problems[0])
             only.questoes[0]["fundamentos"][0]["trecho"] = "durante a noite, por determinação judicial"
-            problems, _, _ = bank.validate_against_catalog(only, tmp / "c.sqlite")
+            problems, _, _ = bank.validate_against_catalog(only, tmp / "c.sqlite", incluir_tribunal=False)
             self.assertTrue(any("trecho não encontrado" in p for p in problems))
         finally:
             shutil.rmtree(tmp, ignore_errors=True)

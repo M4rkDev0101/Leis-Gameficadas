@@ -1,0 +1,918 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vade Tribunal</title>
+<style>
+  :root {
+    --bg:#0B0D12; --panel:#141821; --panel-2:#1C2230; --line:#2A3242; --text:#EEF1F6; --muted:#A3ADBD;
+    --gold:#F5B700; --red:#E5483B; --blue:#4F7BFF; --green:#2FBF71; --purple:#A57BFF;
+    --wood-1:#5A3A22; --wood-2:#7A5232; --wood-3:#3E2716;
+    --mono:ui-monospace,"JetBrains Mono",Consolas,monospace;
+  }
+  * { box-sizing:border-box; }
+  html, body { margin:0; height:100%; background:var(--bg); color:var(--text);
+               font:16px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  button { font:inherit; color:inherit; cursor:pointer; }
+  button:focus-visible { outline:3px solid var(--gold); outline-offset:2px; }
+  .hidden { display:none !important; }
+  .wrap { max-width:1180px; margin:0 auto; padding:14px 16px 40px; }
+
+  /* ------------------------------------------------------------ menu */
+  .topbar { display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+  .topbar a { color:var(--muted); text-decoration:none; font-weight:600; }
+  .topbar .sp { flex:1; }
+  .iconbtn { border:1px solid var(--line); background:var(--panel); border-radius:10px; padding:7px 12px; font-weight:700; }
+  .hero { position:relative; border-radius:20px; overflow:hidden; padding:34px 28px; margin-bottom:22px;
+          background:radial-gradient(1200px 400px at 70% -10%, #3a2614 0%, transparent 60%),
+                     linear-gradient(180deg, #1a1410 0%, #0e0b08 100%); border:1px solid #3a2a1a; }
+  .hero h1 { font-size:clamp(2rem, 5vw, 3.4rem); margin:0; letter-spacing:-.03em; line-height:1;
+             font-family:Georgia,"Times New Roman",serif; color:#fff4d6; text-shadow:0 3px 0 #6b3d10; }
+  .hero h1 em { color:var(--gold); font-style:normal; }
+  .hero p { color:#d9c9a8; max-width:56ch; margin:12px 0 0; }
+  .hero .scale { position:absolute; right:28px; top:16px; width:150px; opacity:.9; animation:sway 4s ease-in-out infinite; transform-origin:50% 12%; }
+  @keyframes sway { 50% { transform:rotate(4deg); } }
+  @media (max-width:640px) { .hero .scale { width:90px; opacity:.35; } }
+  .eps { display:grid; gap:16px; grid-template-columns:repeat(auto-fill, minmax(300px, 1fr)); }
+  .ep { text-align:left; border:1px solid var(--line); background:var(--panel); border-radius:18px; padding:0; overflow:hidden;
+        transition:transform .15s, border-color .15s; }
+  .ep:hover { transform:translateY(-3px); border-color:var(--gold); }
+  .ep .cover { height:150px; position:relative; overflow:hidden; background:#2a1c12; }
+  .ep .cover svg { position:absolute; bottom:-8px; left:50%; transform:translateX(-50%); height:160px; }
+  .ep .num { position:absolute; top:10px; left:12px; font-family:Georgia,serif; font-weight:700; color:#fff4d6; font-size:.9rem;
+             background:rgba(0,0,0,.45); padding:2px 10px; border-radius:99px; }
+  .ep .body { padding:14px 16px 16px; }
+  .ep h3 { margin:6px 0 6px; font-size:1.15rem; }
+  .ep p { margin:0 0 10px; color:var(--muted); font-size:.92rem; }
+  .chip { display:inline-block; font-size:.75rem; font-weight:800; padding:2px 9px; border-radius:99px; background:var(--panel-2); color:var(--muted); }
+  .chip.advogado { background:rgba(79,123,255,.18); color:#9db4ff; } .chip.promotor { background:rgba(229,72,59,.18); color:#ff9a90; }
+  .chip.juiz { background:rgba(165,123,255,.18); color:#cbb3ff; }
+  .best { color:var(--gold); font-weight:800; font-size:.85rem; }
+
+  /* ------------------------------------------------------------ palco */
+  #game { position:fixed; inset:0; background:#000; z-index:50; display:flex; align-items:center; justify-content:center; }
+  .stage-wrap { width:min(100vw, calc(100vh * 16 / 10)); aspect-ratio:16 / 10; position:relative; container-type:inline-size; }
+  .stage { position:absolute; inset:0; overflow:hidden; background:#111; user-select:none; }
+  .stage.shake { animation:shake .45s cubic-bezier(.36,.07,.19,.97); }
+  @keyframes shake { 10%,90%{transform:translate(-2px,1px)} 20%,80%{transform:translate(5px,-2px)} 30%,50%,70%{transform:translate(-9px,3px)} 40%,60%{transform:translate(9px,-3px)} }
+  .scene { position:absolute; inset:0; transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .35s; }
+  .scene.enter-l { transform:translateX(-30%); opacity:0; } .scene.enter-r { transform:translateX(30%); opacity:0; }
+  .bg { position:absolute; inset:0; }
+  .actor { position:absolute; left:50%; bottom:26%; width:38%; transform:translateX(-50%); transition:transform .25s; }
+  .actor svg { width:100%; height:auto; display:block; overflow:visible; }
+  .actor.idle svg { animation:bob 3.2s ease-in-out infinite; }
+  @keyframes bob { 50% { transform:translateY(-1.2%); } }
+  .actor.slam { animation:slam .35s ease; } @keyframes slam { 30% { transform:translateX(-50%) translateY(6%); } }
+  .actor.shock svg { animation:jolt .4s ease; } @keyframes jolt { 20% { transform:translateX(-3%) rotate(-2deg);} 40% { transform:translateX(3%) rotate(2deg);} 60%{transform:translateX(-2%);} }
+  .desk { position:absolute; left:0; right:0; bottom:23%; height:19%; }
+  .floor { position:absolute; left:0; right:0; bottom:0; height:24%; background:linear-gradient(#2a1a10,#120b06); }
+  .plaque { position:absolute; bottom:30%; left:50%; transform:translateX(-50%); font-family:Georgia,serif; font-weight:700;
+            letter-spacing:.2em; font-size:1.6cqw; color:#f7e3b0; background:linear-gradient(#6b4a2a,#4a2f19); padding:.3cqw 1.4cqw;
+            border:.25cqw solid #c9a04a; border-radius:.4cqw; text-transform:uppercase; }
+  /* boca falando / piscar */
+  .talking .m-open { animation:mouth .18s steps(1) infinite; }
+  .talking .m-closed { animation:mouth .18s steps(1) infinite reverse; }
+  @keyframes mouth { 0% { opacity:1; } 50% { opacity:0; } }
+  .m-open { opacity:0; }
+  .eyes { transform-box:fill-box; transform-origin:center; animation:blink 4.6s infinite; }
+  @keyframes blink { 0%,94%,100% { transform:scaleY(1); } 96% { transform:scaleY(.08); } }
+  .sweat { animation:drip 1.4s ease-in infinite; } @keyframes drip { 0% { transform:translateY(0); opacity:1;} 100% { transform:translateY(14px); opacity:0;} }
+
+  /* ------------------------------------------------------------ HUD */
+  .hud { position:absolute; top:2%; left:2%; right:2%; display:flex; align-items:flex-start; gap:1cqw; z-index:5; pointer-events:none; }
+  .hud > * { pointer-events:auto; }
+  .hudbtn { border:.2cqw solid #c9a04a; background:linear-gradient(#3a2716,#24170c); color:#f7e3b0; border-radius:.8cqw;
+            padding:.6cqw 1.2cqw; font-weight:800; font-size:1.4cqw; box-shadow:0 .3cqw 0 #120b05; }
+  .hudbtn:active { transform:translateY(.2cqw); box-shadow:none; }
+  .cred { margin-left:auto; display:flex; gap:.4cqw; background:rgba(0,0,0,.55); padding:.6cqw 1cqw; border-radius:99px; align-items:center; }
+  .cred small { font-size:1.1cqw; font-weight:800; color:#f7e3b0; margin-right:.4cqw; letter-spacing:.06em; }
+  .cred i { width:2.2cqw; height:2.2cqw; display:grid; place-items:center; font-style:normal; font-size:1.7cqw; transition:all .3s; }
+  .cred i.lost { filter:grayscale(1) brightness(.4); transform:scale(.8); }
+  .cred i.break { animation:break .6s ease; } @keyframes break { 30% { transform:scale(1.6) rotate(-20deg); filter:hue-rotate(-40deg) saturate(3); } }
+
+  /* ------------------------------------------------------------ caixa de diálogo */
+  .dialog { position:absolute; left:2%; right:2%; bottom:2.5%; height:25%; z-index:6;
+            background:linear-gradient(180deg, rgba(14,18,30,.94), rgba(8,10,18,.96)); border:.3cqw solid #d9d2c0;
+            border-radius:1.2cqw; box-shadow:0 0 0 .3cqw #1a1f2e, 0 1.2cqw 2cqw rgba(0,0,0,.5); padding:2.2cqw 2.4cqw 1.6cqw; cursor:pointer; }
+  .nameplate { position:absolute; top:-2.4cqw; left:2cqw; font-weight:900; font-size:1.7cqw; letter-spacing:.02em;
+               padding:.3cqw 1.4cqw; border-radius:.6cqw .6cqw 0 0; background:#d9d2c0; color:#141821; }
+  .nameplate.np-defesa { background:#9db4ff; } .nameplate.np-acusacao { background:#ff9a90; } .nameplate.np-juiz { background:#cbb3ff; }
+  .nameplate.np-testemunha { background:#ffe08a; } .nameplate.np-escritorio { background:#a8e6c4; }
+  .text { font-size:2.15cqw; line-height:1.45; white-space:pre-wrap; min-height:5.6cqw; }
+  .text.thought { color:#8fb6ff; } .text.statement { color:#7CF29A; } .text.narr { color:#d9c9a8; font-style:italic; }
+  .next { position:absolute; right:2cqw; bottom:1.2cqw; font-size:1.8cqw; color:var(--gold); animation:nudge .8s infinite; }
+  @keyframes nudge { 50% { transform:translateY(.4cqw); } }
+
+  /* ------------------------------------------------------------ interrogatório e escolhas */
+  .xbar { position:absolute; left:2%; right:2%; bottom:29.5%; z-index:7; display:flex; gap:1cqw; align-items:center; justify-content:center; }
+  .xbtn { font-weight:900; font-size:1.7cqw; padding:.9cqw 2cqw; border-radius:1cqw; border:.3cqw solid #fff; box-shadow:0 .4cqw 0 rgba(0,0,0,.5);
+          text-transform:uppercase; letter-spacing:.03em; }
+  .xbtn:active { transform:translateY(.3cqw); box-shadow:none; }
+  .x-press { background:#2e6ae6; } .x-present { background:#d23a2f; } .x-nav { background:#30384a; min-width:5cqw; }
+  .x-defer { background:#1f8f55; } .x-indef { background:#a32b22; }
+  .banner { position:absolute; top:12%; left:0; right:0; z-index:8; text-align:center; pointer-events:none; }
+  .banner span { display:inline-block; font-family:Georgia,serif; font-weight:900; font-size:3.4cqw; letter-spacing:.12em; text-transform:uppercase;
+                 color:#fff; padding:.6cqw 4cqw; background:linear-gradient(90deg, transparent, rgba(180,20,20,.9) 15%, rgba(180,20,20,.9) 85%, transparent);
+                 animation:slidein .5s cubic-bezier(.2,.8,.2,1) both; }
+  .banner.green span { background:linear-gradient(90deg, transparent, rgba(20,130,70,.9) 15%, rgba(20,130,70,.9) 85%, transparent); }
+  .banner small { display:block; font-size:1.7cqw; color:#ffe08a; margin-top:.6cqw; animation:slidein .5s .1s both; }
+  @keyframes slidein { from { transform:translateX(-40%); opacity:0; } }
+  .menu { position:absolute; left:50%; top:46%; transform:translate(-50%,-50%); width:min(78%, 80cqw); z-index:9; display:grid; gap:1cqw; }
+  .menu .q { text-align:center; font-weight:900; font-size:2cqw; text-shadow:0 .2cqw .4cqw #000; margin-bottom:.4cqw; }
+  .opt { text-align:left; font-size:1.8cqw; padding:1.2cqw 1.6cqw; border-radius:1cqw; border:.25cqw solid #d9d2c0;
+         background:linear-gradient(#232b3d,#171d2a); display:flex; gap:1.2cqw; align-items:flex-start; animation:pop .25s both; }
+  .opt:hover { border-color:var(--gold); background:linear-gradient(#2c3650,#1c2333); }
+  .opt b { flex:none; width:3cqw; height:3cqw; border-radius:.7cqw; background:#d9d2c0; color:#141821; display:grid; place-items:center; }
+  @keyframes pop { from { transform:scale(.92); opacity:0; } }
+
+  /* ------------------------------------------------------------ efeitos */
+  .fx { position:absolute; inset:0; z-index:20; pointer-events:none; }
+  .flash { position:absolute; inset:0; background:#fff; animation:flash .35s ease-out forwards; }
+  @keyframes flash { from { opacity:.95; } to { opacity:0; } }
+  .bubble { position:absolute; left:50%; top:42%; width:62%; transform:translate(-50%,-50%) rotate(-6deg); animation:bubble .9s cubic-bezier(.2,1.6,.4,1) both; }
+  @keyframes bubble { 0% { transform:translate(-50%,-50%) rotate(-6deg) scale(.2); } 18% { transform:translate(-50%,-50%) rotate(-6deg) scale(1.08);} 30%,100% { transform:translate(-50%,-50%) rotate(-6deg) scale(1);} }
+  .gavel { position:absolute; right:12%; top:16%; width:22%; transform-origin:80% 80%; animation:gavel .9s ease-in-out both; }
+  @keyframes gavel { 0%{transform:rotate(-50deg)} 15%{transform:rotate(10deg)} 33%{transform:rotate(-40deg)} 48%{transform:rotate(10deg)} 66%{transform:rotate(-40deg)} 80%,100%{transform:rotate(10deg)} }
+  .card-fly { position:absolute; left:50%; top:40%; width:30%; transform:translate(-50%,-50%); animation:fly .7s cubic-bezier(.2,1.2,.4,1) both;
+              background:#f4ecd8; color:#2a1c12; border-radius:1cqw; padding:1.4cqw; border:.4cqw solid #c9a04a; box-shadow:0 1cqw 3cqw rgba(0,0,0,.6); }
+  .card-fly .ic { font-size:5cqw; text-align:center; } .card-fly b { display:block; text-align:center; font-size:1.7cqw; }
+  @keyframes fly { from { transform:translate(60%, 80%) scale(.3) rotate(20deg); opacity:0; } }
+  .redflash { position:absolute; inset:0; background:radial-gradient(circle, transparent 40%, rgba(220,30,30,.65)); animation:flash .6s ease-out forwards; }
+
+  /* ------------------------------------------------------------ autos (provas) */
+  .modal { position:absolute; inset:4%; z-index:30; background:linear-gradient(#f4ecd8,#e8dcbf); color:#2a1c12; border-radius:1.6cqw;
+           border:.5cqw solid #8a5a2b; box-shadow:0 2cqw 5cqw rgba(0,0,0,.6); display:grid; grid-template-rows:auto 1fr auto; overflow:hidden; }
+  .modal header { display:flex; align-items:center; gap:1cqw; padding:1.4cqw 2cqw; background:#8a5a2b; color:#fff4d6; }
+  .modal header h2 { margin:0; font-family:Georgia,serif; font-size:2.2cqw; }
+  .modal header .sp { flex:1; }
+  .modal .x { background:none; border:0; color:#fff4d6; font-size:2.6cqw; line-height:1; }
+  .tabs2 button { border:0; background:rgba(255,255,255,.15); color:#fff4d6; border-radius:.6cqw; padding:.4cqw 1.2cqw; font-size:1.4cqw; font-weight:800; margin-left:.4cqw; }
+  .tabs2 button[aria-pressed="true"] { background:#fff4d6; color:#5a3a1c; }
+  .mbody { display:grid; grid-template-columns:1.1fr 1fr; gap:1.6cqw; padding:1.6cqw 2cqw; overflow:auto; }
+  .grid-ev { display:grid; grid-template-columns:repeat(auto-fill, minmax(11cqw, 1fr)); gap:1cqw; align-content:start; }
+  .ev { border:.3cqw solid #c9a04a; background:#fffaf0; border-radius:1cqw; padding:1cqw; text-align:center; font-size:1.25cqw; font-weight:700; color:#2a1c12; }
+  .ev .ic { font-size:3.6cqw; display:block; }
+  .ev[aria-pressed="true"] { border-color:#d23a2f; box-shadow:0 0 0 .3cqw #d23a2f; background:#fff1e6; }
+  .detail { background:#fffaf0; border:.3cqw dashed #c9a04a; border-radius:1cqw; padding:1.4cqw; font-size:1.45cqw; }
+  .detail h3 { margin:0 0 .6cqw; font-size:1.8cqw; } .detail .law { font-family:Georgia,serif; font-size:1.55cqw; line-height:1.55; }
+  .detail .ref { font-family:var(--mono); font-size:1.1cqw; color:#8a5a2b; }
+  .modal footer { padding:1.2cqw 2cqw; display:flex; gap:1cqw; justify-content:flex-end; background:#e2d3b0; }
+  .modal footer .hint { margin-right:auto; font-size:1.3cqw; color:#5a3a1c; align-self:center; }
+  .pbtn { font-weight:900; font-size:1.6cqw; padding:.8cqw 2cqw; border-radius:.9cqw; border:0; background:#d23a2f; color:#fff; box-shadow:0 .35cqw 0 #7a1d16; }
+  .pbtn:disabled { opacity:.4; cursor:not-allowed; } .pbtn.sec { background:#8a5a2b; box-shadow:0 .35cqw 0 #4a2f19; }
+
+  /* ------------------------------------------------------------ telas cheias */
+  .full { position:absolute; inset:0; z-index:25; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:4cqw; }
+  .titlecard { background:radial-gradient(circle at 50% 40%, #3a2614, #0b0806 70%); }
+  .titlecard .ep { all:unset; font-family:Georgia,serif; color:#c9a04a; letter-spacing:.4em; font-size:2cqw; text-transform:uppercase; animation:slidein .6s both; }
+  .titlecard h1 { font-family:Georgia,serif; font-size:6cqw; margin:.6cqw 0 0; color:#fff4d6; text-shadow:0 .4cqw 0 #6b3d10; animation:pop .7s .15s both; }
+  .titlecard p { color:#d9c9a8; max-width:60ch; font-size:1.6cqw; animation:slidein .6s .3s both; }
+  .verdict { background:radial-gradient(circle at 50% 35%, rgba(60,40,20,.92), rgba(5,4,3,.97) 70%); }
+  .stamp { font-family:Georgia,serif; font-weight:900; font-size:6cqw; letter-spacing:.06em; padding:.6cqw 3cqw; border:.8cqw solid currentColor;
+           border-radius:1.4cqw; transform:rotate(-7deg); animation:stampin .55s cubic-bezier(.2,1.6,.4,1) both; text-transform:uppercase;
+           max-width:88%; white-space:nowrap; background:rgba(0,0,0,.35); text-shadow:0 0 1.4cqw currentColor; position:relative; z-index:2; }
+  .stamp.ok { color:#3ddc84; } .stamp.no { color:#ff5a4c; } .stamp.mid { color:var(--gold); }
+  @keyframes stampin { from { transform:rotate(-7deg) scale(3); opacity:0; } }
+  .verdict h2 { font-family:Georgia,serif; font-size:3.2cqw; margin:2.4cqw 0 .6cqw; color:#fff4d6; }
+  .verdict p { max-width:62ch; color:#d9c9a8; font-size:1.6cqw; }
+  .stats { display:flex; gap:1.4cqw; flex-wrap:wrap; justify-content:center; margin:1.4cqw 0; }
+  .stats div { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15); border-radius:1cqw; padding:1cqw 1.8cqw; }
+  .stats b { display:block; font-size:2.6cqw; color:#fff4d6; } .stats small { font-size:1.2cqw; color:var(--muted); }
+  .xp { font-size:3.4cqw; font-weight:900; color:var(--gold); text-shadow:0 0 2cqw rgba(245,183,0,.5); }
+  .confetti { position:absolute; top:-4%; width:1.2cqw; height:1.8cqw; animation:fall linear forwards; }
+  @keyframes fall { to { transform:translateY(110cqh) rotate(720deg); } }
+  .bigbtns { display:flex; gap:1.4cqw; margin-top:1.8cqw; flex-wrap:wrap; justify-content:center; }
+  .bigbtn { font-weight:900; font-size:1.8cqw; padding:1cqw 2.6cqw; border-radius:1cqw; border:0; background:var(--gold); color:#1a1206; box-shadow:0 .4cqw 0 #8a6300; }
+  .bigbtn.sec { background:#30384a; color:#fff; box-shadow:0 .4cqw 0 #151a24; }
+  .lawpop { position:absolute; right:3%; top:12%; width:36%; z-index:12; background:#f4ecd8; color:#2a1c12; border:.35cqw solid #c9a04a;
+            border-radius:1cqw; padding:1.2cqw 1.4cqw; box-shadow:0 1cqw 2.4cqw rgba(0,0,0,.5); animation:pop .35s both; font-size:1.35cqw; }
+  .lawpop b { display:block; font-size:1.5cqw; margin-bottom:.4cqw; } .lawpop .ref { font-family:var(--mono); font-size:1.05cqw; color:#8a5a2b; }
+  .lawpop .law { font-family:Georgia,serif; }
+  .keys { position:absolute; left:2.4%; top:9%; z-index:5; font-size:1.05cqw; color:rgba(255,255,255,.55); }
+
+  /* ------------------------------------------------------------ criador de avatar */
+  .creator { display:grid; grid-template-columns:260px 1fr; gap:22px; align-items:start; }
+  @media (max-width:720px) { .creator { grid-template-columns:1fr; } }
+  .preview { background:linear-gradient(#3a2716,#1a110a); border-radius:18px; padding:10px; border:1px solid #5a3a1c; }
+  .field { margin-bottom:14px; } .field label { display:block; font-weight:800; font-size:.85rem; color:var(--muted); margin-bottom:6px; }
+  .swatches { display:flex; gap:8px; flex-wrap:wrap; }
+  .sw { width:34px; height:34px; border-radius:10px; border:2px solid var(--line); }
+  .sw[aria-pressed="true"] { border-color:var(--gold); box-shadow:0 0 0 3px rgba(245,183,0,.3); }
+  .pill { border:1px solid var(--line); background:var(--panel-2); border-radius:99px; padding:6px 12px; font-weight:700; font-size:.85rem; }
+  .pill[aria-pressed="true"] { border-color:var(--gold); color:var(--gold); }
+  input[type=text] { font:inherit; padding:10px 12px; border-radius:10px; border:1px solid var(--line); background:var(--panel-2); color:var(--text); width:100%; max-width:320px; }
+  .save { background:var(--gold); color:#1a1206; border:0; border-radius:12px; padding:12px 20px; font-weight:900; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:18px; padding:18px; }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; } }
+</style>
+</head>
+<body>
+<div class="wrap" id="menu">
+  <div class="topbar">
+    <a href="/">← Arena</a><span class="sp"></span>
+    <button class="iconbtn" id="btn-sound" aria-pressed="true">🔊 Som</button>
+    <button class="iconbtn" id="btn-music" aria-pressed="false">🎵 Música</button>
+    <button class="iconbtn" id="btn-avatar">🧑‍⚖️ Meu personagem</button>
+  </div>
+  <section class="hero">
+    <svg class="scale" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#F5B700" stroke-width="3" stroke-linecap="round">
+      <path d="M60 14v86M40 100h40M20 30h80"/><path d="M20 30l-14 34h28zM100 30l-14 34h28z"/><circle cx="60" cy="12" r="5" fill="#F5B700"/></g>
+      <g fill="#F5B700" opacity=".35"><path d="M6 64a14 6 0 0 0 28 0zM86 64a14 6 0 0 0 28 0z"/></g></svg>
+    <h1>Vade <em>Tribunal</em></h1>
+    <p>Pressione testemunhas, encontre contradições e apresente a lei certa na hora certa. Grite <b>PROTESTO!</b>, bata o martelo e decida como advogado(a), promotor(a) ou juiz(a). Cada artigo é o texto vigente da lei.</p>
+  </section>
+  <div class="eps" id="eps"></div>
+  <div class="card hidden" id="creator-card" style="margin-top:22px">
+    <h2 style="margin-top:0">Meu personagem</h2>
+    <div class="creator">
+      <div class="preview" id="avatar-preview"></div>
+      <div>
+        <div class="field"><label for="av-name">Nome</label><input type="text" id="av-name" maxlength="32" placeholder="Como o tribunal vai te chamar"></div>
+        <div class="field"><label>Tom de pele</label><div class="swatches" id="sw-pele"></div></div>
+        <div class="field"><label>Cabelo</label><div class="swatches" id="pl-cabelo"></div></div>
+        <div class="field"><label>Cor do cabelo</label><div class="swatches" id="sw-cabelo"></div></div>
+        <div class="field"><label>Cor do terno</label><div class="swatches" id="sw-roupa"></div></div>
+        <div class="field"><label>Detalhes</label><div class="swatches" id="pl-extra"></div></div>
+        <button class="save" id="av-save">Salvar personagem</button> <span id="av-msg" class="best"></span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="game" class="hidden" aria-live="polite">
+  <div class="stage-wrap">
+    <div class="stage" id="stage">
+      <div class="scene" id="scene"><div class="bg" id="bg"></div><div class="floor"></div><div class="actor idle" id="actor"></div><div class="desk" id="desk"></div></div>
+      <div class="hud">
+        <button class="hudbtn" id="btn-autos" title="Autos do processo (tecla A)">📁 Autos</button>
+        <button class="hudbtn" id="btn-quit" title="Sair do julgamento">✕</button>
+        <div class="cred" id="cred" aria-label="Credibilidade"><small>CREDIBILIDADE</small></div>
+      </div>
+      <div class="keys" id="keys"></div>
+      <div class="dialog hidden" id="dialog" tabindex="0">
+        <div class="nameplate hidden" id="nameplate"></div>
+        <div class="text" id="text"></div>
+        <div class="next hidden" id="nextmark">▼</div>
+      </div>
+      <div id="overlay"></div>
+      <div class="fx" id="fx"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+"use strict";
+// ================================================================ utilidades
+const $ = (s, r = document) => r.querySelector(s);
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+const HEX = /^#[0-9a-fA-F]{6}$/;
+const col = (c, d) => (typeof c === "string" && HEX.test(c)) ? c : d;
+const pick = (v, allowed, d) => allowed.includes(v) ? v : d;
+function el(tag, props = {}, ...kids) {
+  const e = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === "class") e.className = v;
+    else if (k.startsWith("on")) e.addEventListener(k.slice(2), v);
+    else if (k === "style") Object.assign(e.style, v);
+    else if (k in e) e[k] = v; else e.setAttribute(k, v);
+  }
+  for (const k of kids.flat()) if (k !== null && k !== undefined && k !== false) e.append(k);
+  return e;
+}
+async function api(path, body) {
+  const opt = body === undefined ? {} : {method:"POST", headers:{"Content-Type":"application/json", "X-Vade":"1"}, body:JSON.stringify(body)};
+  const r = await fetch(path, opt);
+  const d = await r.json().catch(() => ({}));
+  if (!r.ok) throw new Error(d.erro || r.statusText);
+  return d;
+}
+const store = {get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
+               set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }};
+
+// ================================================================ som (sintetizado, sem arquivos)
+const Sound = {
+  ctx: null, on: store.get("tribSom", true), music: store.get("tribMusica", false), musicTimer: null, step: 0,
+  ensure() { if (!this.ctx) { try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch { return null; } }
+             if (this.ctx.state === "suspended") this.ctx.resume(); return this.ctx; },
+  tone(freq, dur, type = "square", vol = .05, when = 0, slide = 0) {
+    if (!this.on) return; const c = this.ensure(); if (!c) return;
+    const t = c.currentTime + when, o = c.createOscillator(), g = c.createGain();
+    o.type = type; o.frequency.setValueAtTime(freq, t); if (slide) o.frequency.exponentialRampToValueAtTime(Math.max(30, freq + slide), t + dur);
+    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    o.connect(g).connect(c.destination); o.start(t); o.stop(t + dur + .02);
+  },
+  noise(dur, vol = .2, when = 0) {
+    if (!this.on) return; const c = this.ensure(); if (!c) return;
+    const b = c.createBuffer(1, c.sampleRate * dur, c.sampleRate), d = b.getChannelData(0);
+    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
+    const s = c.createBufferSource(), g = c.createGain(); s.buffer = b; g.gain.value = vol;
+    s.connect(g).connect(c.destination); s.start(c.currentTime + when);
+  },
+  blip(pitch) { if (pitch) this.tone(pitch * (0.95 + Math.random() * .1), .045, "square", .025); },
+  protesto() { this.noise(.25, .25); [0, .06, .12].forEach((w, i) => this.tone([392, 494, 587][i], .45, "sawtooth", .07, w)); this.tone(110, .6, "square", .08, 0, -40); },
+  ummomento() { this.noise(.18, .18); this.tone(523, .3, "sawtooth", .06); this.tone(659, .3, "sawtooth", .05, .07); },
+  martelo() { [0, .28, .56].forEach(w => { this.tone(90, .18, "triangle", .35, w, -50); this.noise(.06, .25, w); }); },
+  bater() { this.tone(70, .25, "triangle", .4, 0, -30); this.noise(.12, .3); },
+  dano() { this.tone(330, .5, "sawtooth", .08, 0, -260); this.noise(.3, .15); },
+  acerto() { [523, 659, 784, 1047].forEach((f, i) => this.tone(f, .18, "triangle", .08, i * .08)); },
+  select() { this.tone(880, .05, "square", .03); },
+  vitoria() { [523, 523, 659, 784, 659, 784, 1047].forEach((f, i) => this.tone(f, .22, "triangle", .09, i * .13)); },
+  startMusic(kind = "calma") {
+    this.stopMusic(); if (!this.music || !this.on) return; this.ensure();
+    const scales = {calma:[220, 261.6, 329.6, 392, 329.6, 261.6, 293.7, 349.2], tensa:[196, 233.1, 293.7, 196, 233.1, 311.1, 293.7, 233.1]};
+    const notes = scales[kind] || scales.calma, bass = kind === "tensa" ? [98, 98, 116.5, 103.8] : [110, 87.3, 98, 82.4];
+    this.step = 0;
+    this.musicTimer = setInterval(() => {
+      const s = this.step++;
+      this.tone(notes[s % notes.length], .22, kind === "tensa" ? "sawtooth" : "triangle", .018);
+      if (s % 4 === 0) this.tone(bass[(s / 4 | 0) % bass.length], .5, "triangle", .05);
+      if (kind === "tensa" && s % 2 === 0) this.noise(.03, .02);
+    }, kind === "tensa" ? 180 : 260);
+  },
+  stopMusic() { clearInterval(this.musicTimer); this.musicTimer = null; },
+};
+
+// ================================================================ bonequinhos (SVG gerado com cores e formas validadas)
+const HAIRS = ["curto", "topete", "longo", "coque", "rabo", "cacheado", "careca"];
+const OUTFITS = ["terno", "toga", "blazer", "avental", "casual", "farda"];
+const EXPRS = ["normal", "feliz", "bravo", "nervoso", "chocado", "pensativo", "triste", "confiante", "apontando"];
+function characterSVG(v, expr = "normal") {
+  v = v || {};
+  const pele = col(v.pele, "#E0AC69"), cab = col(v.corCabelo, "#2a1a10"), roupa = col(v.corRoupa, "#1f2a44");
+  const hair = pick(v.cabelo, HAIRS, "curto"), out = pick(v.roupa, OUTFITS, "terno");
+  const tie = v.gravata && HEX.test(v.gravata) ? v.gravata : null;
+  expr = pick(expr, EXPRS, "normal");
+  const dark = "#1a1a1a", shade = "rgba(0,0,0,.18)";
+  // ------ corpo e roupa
+  let body = "";
+  if (out === "toga") {
+    body = `<path d="M40 300 C42 220 70 196 120 192 C170 196 198 220 200 300Z" fill="#111"/>
+      <path d="M96 196 L120 236 L144 196 Z" fill="#fff"/><path d="M108 200 L120 226 L132 200" fill="none" stroke="#ddd" stroke-width="2"/>
+      <path d="M70 216 Q120 236 170 216" fill="none" stroke="#333" stroke-width="3"/>`;
+  } else if (out === "avental") {
+    body = `<path d="M44 300 C46 222 72 198 120 194 C168 198 194 222 196 300Z" fill="#f4f4f4"/>
+      <path d="M78 236 L162 236 L168 300 L72 300Z" fill="#222"/><path d="M104 196 L120 218 L136 196" fill="none" stroke="#ccc" stroke-width="3"/>
+      ${tie ? `<path d="M112 200 L128 200 L124 208 L116 208Z" fill="${tie}"/><path d="M112 212 L128 212 L120 206Z" fill="${tie}"/>` : ""}`;
+  } else if (out === "casual") {
+    body = `<path d="M44 300 C46 222 72 198 120 194 C168 198 194 222 196 300Z" fill="${roupa}"/>
+      <path d="M98 196 Q120 214 142 196" fill="none" stroke="${shade}" stroke-width="6"/>`;
+  } else if (out === "farda") {
+    body = `<path d="M44 300 C46 222 72 198 120 194 C168 198 194 222 196 300Z" fill="${roupa}"/>
+      <path d="M100 196 L120 222 L140 196" fill="#2b3320"/><rect x="138" y="232" width="22" height="14" rx="3" fill="#c9a04a"/>
+      <rect x="80" y="232" width="24" height="6" rx="2" fill="#7f1d1d"/><rect x="80" y="240" width="24" height="6" rx="2" fill="#1d4f7f"/>`;
+  } else { // terno / blazer
+    body = `<path d="M44 300 C46 222 72 198 120 194 C168 198 194 222 196 300Z" fill="${roupa}"/>
+      <path d="M98 196 L120 250 L142 196Z" fill="#f3f3f3"/>
+      <path d="M98 196 L112 236 L94 222Z M142 196 L128 236 L146 222Z" fill="${shade}"/>
+      ${out === "terno" && tie ? `<path d="M114 202 L126 202 L123 212 L117 212Z" fill="${tie}"/><path d="M117 212 L123 212 L128 246 L120 254 L112 246Z" fill="${tie}"/>` : ""}
+      ${out === "blazer" ? `<circle cx="120" cy="262" r="3" fill="${shade}"/>` : ""}
+      <rect x="146" y="228" width="16" height="3" rx="1" fill="#c9a04a" opacity=".8"/>`;
+  }
+  // ------ braços
+  const sleeve = out === "toga" ? "#111" : out === "avental" ? "#f4f4f4" : roupa;
+  let arms = `<path d="M60 236 Q44 262 50 300 L72 300 Q70 268 80 244Z" fill="${sleeve}"/>`;
+  if (expr === "apontando") {
+    arms += `<g class="arm-point"><path d="M160 228 Q200 206 236 196 L240 214 Q204 226 172 250Z" fill="${sleeve}"/>
+      <circle cx="244" cy="204" r="10" fill="${pele}"/><path d="M248 200 L274 194 L275 202 L250 210Z" fill="${pele}"/></g>`;
+  } else if (expr === "pensativo") {
+    arms += `<path d="M164 236 Q182 214 156 176 L142 186 Q160 214 150 244Z" fill="${sleeve}"/><circle cx="146" cy="174" r="11" fill="${pele}"/>`;
+  } else if (expr === "bravo" || expr === "confiante") {
+    arms += `<path d="M180 236 Q196 262 190 300 L168 300 Q170 268 160 244Z" fill="${sleeve}"/><circle cx="170" cy="282" r="0"/>`;
+  } else {
+    arms += `<path d="M180 236 Q196 262 190 300 L168 300 Q170 268 160 244Z" fill="${sleeve}"/>`;
+  }
+  // ------ cabeça
+  const hx = 120, hy = 112;
+  let hairBack = "", hairFront = "";
+  if (hair === "longo") hairBack = `<path d="M66 110 Q62 196 82 214 L158 214 Q178 196 174 110Z" fill="${cab}"/>`;
+  if (hair === "rabo") hairBack = `<path d="M164 92 Q206 120 186 196 Q176 160 160 128Z" fill="${cab}"/>`;
+  if (hair === "coque") hairBack = `<circle cx="120" cy="48" r="20" fill="${cab}"/>`;
+  const top = `<path d="M66 108 Q64 56 120 52 Q176 56 174 108 Q160 80 120 80 Q80 80 66 108Z" fill="${cab}"/>`;
+  if (hair === "curto") hairFront = top + `<path d="M66 108 L70 128 L74 104Z M174 108 L170 128 L166 104Z" fill="${cab}"/>`;
+  else if (hair === "topete") hairFront = top + `<path d="M92 66 Q112 30 150 50 Q132 54 128 76Z" fill="${cab}"/>`;
+  else if (hair === "longo") hairFront = top + `<path d="M120 54 Q86 66 76 104 Q98 84 120 80Z" fill="${cab}"/>`;
+  else if (hair === "coque" || hair === "rabo") hairFront = top;
+  else if (hair === "cacheado") hairFront = [[72,92],[84,70],[104,58],[128,56],[150,62],[166,78],[172,98],[96,72],[140,70]].map(([x,y]) => `<circle cx="${x}" cy="${y}" r="15" fill="${cab}"/>`).join("");
+  else if (hair === "careca") hairFront = `<path d="M66 116 Q66 100 72 96 L74 124Z M174 116 Q174 100 168 96 L166 124Z" fill="${cab}"/><ellipse cx="104" cy="70" rx="14" ry="6" fill="#fff" opacity=".18"/>`;
+  let hat = "";
+  if (out === "farda") hat = `<path d="M70 82 Q120 40 170 82 L176 90 L64 90Z" fill="#2b3320"/><rect x="62" y="86" width="116" height="10" rx="4" fill="#1d2416"/><circle cx="120" cy="70" r="7" fill="#c9a04a"/>`;
+  // ------ rosto por expressão
+  const ex = {
+    normal:   {brow:"M88 100 L108 98 M132 98 L152 100", eyes:"n", mouth:"M108 152 Q120 158 132 152"},
+    feliz:    {brow:"M88 96 L108 94 M132 94 L152 96", eyes:"h", mouth:"M104 148 Q120 166 136 148Z"},
+    bravo:    {brow:"M86 94 L110 104 M130 104 L154 94", eyes:"n", mouth:"M106 158 Q120 150 134 158"},
+    nervoso:  {brow:"M88 96 L108 102 M132 102 L152 96", eyes:"n", mouth:"M106 156 Q112 150 118 156 Q124 162 130 156 Q134 152 136 154"},
+    chocado:  {brow:"M86 88 L108 92 M132 92 L154 88", eyes:"w", mouth:"O"},
+    pensativo:{brow:"M88 98 L108 96 M132 92 L152 96", eyes:"u", mouth:"M110 154 L130 152"},
+    triste:   {brow:"M88 100 L108 94 M132 94 L152 100", eyes:"n", mouth:"M106 158 Q120 148 134 158"},
+    confiante:{brow:"M88 98 L108 96 M132 92 L152 96", eyes:"n", mouth:"M106 150 Q124 160 136 146"},
+    apontando:{brow:"M86 94 L110 102 M130 102 L154 94", eyes:"n", mouth:"M106 148 Q120 162 134 148Z"},
+  }[expr];
+  let eyes;
+  if (ex.eyes === "h") eyes = `<path d="M90 122 Q98 112 106 122 M134 122 Q142 112 150 122" stroke="${dark}" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+  else if (ex.eyes === "w") eyes = `<g class="eyes"><ellipse cx="98" cy="120" rx="11" ry="13" fill="#fff" stroke="${dark}" stroke-width="2"/><ellipse cx="142" cy="120" rx="11" ry="13" fill="#fff" stroke="${dark}" stroke-width="2"/><circle cx="98" cy="121" r="3" fill="${dark}"/><circle cx="142" cy="121" r="3" fill="${dark}"/></g>`;
+  else {
+    const dx = ex.eyes === "u" ? 3 : 0, dy = ex.eyes === "u" ? -3 : 0;
+    eyes = `<g class="eyes"><ellipse cx="98" cy="120" rx="8" ry="10" fill="#fff"/><ellipse cx="142" cy="120" rx="8" ry="10" fill="#fff"/>
+      <circle cx="${99 + dx}" cy="${121 + dy}" r="5.5" fill="${dark}"/><circle cx="${143 + dx}" cy="${121 + dy}" r="5.5" fill="${dark}"/>
+      <circle cx="${101 + dx}" cy="${118 + dy}" r="1.8" fill="#fff"/><circle cx="${145 + dx}" cy="${118 + dy}" r="1.8" fill="#fff"/></g>`;
+  }
+  const mouthClosed = ex.mouth === "O" ? `<ellipse cx="120" cy="156" rx="9" ry="11" fill="#5a1d1d"/>`
+    : `<path d="${ex.mouth}" stroke="#5a1d1d" stroke-width="3.5" fill="${ex.mouth.endsWith("Z") ? "#7a2a2a" : "none"}" stroke-linecap="round"/>`;
+  const mouthOpen = `<ellipse cx="120" cy="155" rx="10" ry="${expr === "chocado" ? 12 : 7}" fill="#5a1d1d"/><ellipse cx="120" cy="159" rx="6" ry="3" fill="#c0504d"/>`;
+  const glasses = v.oculos ? `<g fill="none" stroke="#222" stroke-width="3"><circle cx="98" cy="120" r="15"/><circle cx="142" cy="120" r="15"/><path d="M113 120 L127 120 M83 118 L68 112 M157 118 L172 112"/></g>` : "";
+  const beard = v.barba ? `<path d="M76 130 Q80 184 120 188 Q160 184 164 130 Q156 168 120 170 Q84 168 76 130Z" fill="${cab}" opacity=".85"/>` : "";
+  const blush = expr === "feliz" || expr === "nervoso" ? `<ellipse cx="86" cy="140" rx="9" ry="5" fill="#ff7b7b" opacity=".35"/><ellipse cx="154" cy="140" rx="9" ry="5" fill="#ff7b7b" opacity=".35"/>` : "";
+  const sweat = expr === "nervoso" || expr === "chocado" ? `<path class="sweat" d="M168 96 Q176 110 168 116 Q160 110 168 96Z" fill="#8fd3ff"/>` : "";
+  const shock = expr === "chocado" ? `<g stroke="#fff" stroke-width="3" opacity=".8"><path d="M54 70 L40 56 M186 70 L200 56 M120 36 L120 18"/></g>` : "";
+  return `<svg viewBox="0 0 280 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    ${hairBack}${body}${arms}
+    <rect x="106" y="160" width="28" height="40" rx="10" fill="${pele}"/><rect x="106" y="178" width="28" height="10" fill="${shade}"/>
+    <ellipse cx="66" cy="124" rx="9" ry="13" fill="${pele}"/><ellipse cx="174" cy="124" rx="9" ry="13" fill="${pele}"/>
+    <ellipse cx="${hx}" cy="${hy + 6}" rx="54" ry="64" fill="${pele}"/>
+    ${beard}${hairFront}${hat}
+    <path d="${ex.brow}" stroke="${cab === "#ffffff" ? "#999" : cab}" stroke-width="5" stroke-linecap="round" fill="none"/>
+    ${eyes}${glasses}${blush}
+    <path d="M118 128 Q114 142 122 142" stroke="${shade}" stroke-width="3" fill="none"/>
+    <g class="m-closed">${mouthClosed}</g><g class="m-open">${mouthOpen}</g>
+    ${sweat}${shock}
+  </svg>`;
+}
+
+// ================================================================ cenários
+const BGS = {
+  defesa:     {wall:"#9a6a40", tint:"#2c4a7a", plaque:"Defesa"},
+  acusacao:   {wall:"#9a5a40", tint:"#7a2c2c", plaque:"Acusação"},
+  testemunha: {wall:"#a07a4c", tint:"#4a3a2a", plaque:"Testemunha"},
+  juiz:       {wall:"#7a4a32", tint:"#5a2a1c", plaque:""},
+  escritorio: {wall:"#2b3a4a", tint:"#0f1824", plaque:""},
+};
+let UID = 0;  // ids de gradiente únicos: ids repetidos apontariam para SVGs ocultos (e sairiam pretos)
+function background(pos) {
+  const b = BGS[pos] || BGS.testemunha, u = "g" + (++UID);
+  if (pos === "escritorio") {
+    return `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+      <defs><linearGradient id="sky${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ff9e5e"/><stop offset="1" stop-color="#2b3a6a"/></linearGradient></defs>
+      <rect width="160" height="100" fill="#26313e"/><rect x="18" y="10" width="78" height="56" fill="url(#sky${u})" stroke="#11161d" stroke-width="2"/>
+      ${[24,32,40,52,60,70,80,88].map((x,i) => `<rect x="${x}" y="${30 + (i*7)%18}" width="7" height="${36 - (i*7)%18}" fill="#141b2b" opacity=".9"/>`).join("")}
+      <path d="M57 10V66M18 38H96" stroke="#11161d" stroke-width="1.5"/>
+      <rect x="110" y="12" width="40" height="60" fill="#3a2716"/>${[0,1,2,3].map(r => [0,1,2,3,4].map(c => `<rect x="${113 + c*7}" y="${16 + r*14}" width="5" height="11" fill="${["#8a1c1c","#1c4a8a","#c9a04a","#2a6a3a","#6a2a6a"][(r+c)%5]}"/>`).join("")).join("")}
+      <rect y="66" width="160" height="34" fill="#1b2430"/></svg>`;
+  }
+  const isJudge = pos === "juiz";
+  return `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">
+    <defs><linearGradient id="wl${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${b.wall}"/><stop offset="1" stop-color="#4a2e18"/></linearGradient>
+    <radialGradient id="lt${u}" cx=".5" cy=".2" r=".8"><stop offset="0" stop-color="#fff2c8" stop-opacity=".25"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient></defs>
+    <rect width="160" height="100" fill="url(#wl${u})"/>
+    ${Array.from({length:12}, (_, i) => `<rect x="${i*14}" y="0" width="12" height="70" fill="#000" opacity="${i%2 ? .04 : .08}"/>`).join("")}
+    <rect y="58" width="160" height="4" fill="#c9a04a" opacity=".5"/>
+    ${isJudge ? `<path d="M20 0 Q30 50 22 70 L0 70 L0 0Z M140 0 Q130 50 138 70 L160 70 L160 0Z" fill="#6b1414"/>
+      <g transform="translate(80 26)" fill="none" stroke="#c9a04a" stroke-width="1.6"><circle r="16" fill="#3a1a14"/><path d="M0 -10V9M-9 -6H9M-9 -6l-4 8h8zM9 -6l-4 8h8z"/></g>`
+      : `<rect x="64" y="10" width="32" height="40" rx="2" fill="#000" opacity=".18"/><g transform="translate(80 28)" fill="none" stroke="#c9a04a" stroke-width="1.2" opacity=".7"><path d="M0 -10V9M-9 -6H9M-9 -6l-4 8h8zM9 -6l-4 8h8z"/></g>`}
+    <rect width="160" height="100" fill="url(#lt${u})"/>
+    <rect y="62" width="160" height="38" fill="${b.tint}" opacity=".35"/></svg>`;
+}
+function desk(pos) {
+  const u = "d" + (++UID);
+  if (pos === "escritorio") return `<svg viewBox="0 0 160 30" preserveAspectRatio="none" width="100%" height="100%"><rect y="6" width="160" height="24" fill="#3a2716"/><rect y="4" width="160" height="4" fill="#5a3a22"/><rect x="18" y="0" width="22" height="5" fill="#ecd9b0"/><rect x="118" y="-2" width="8" height="8" fill="#8a1c1c"/></svg>`;
+  const h = pos === "juiz" ? 30 : 30;
+  return `<svg viewBox="0 0 160 ${h}" preserveAspectRatio="none" width="100%" height="100%">
+    <defs><linearGradient id="dk${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a5232"/><stop offset="1" stop-color="#3e2716"/></linearGradient></defs>
+    <rect y="3" width="160" height="${h}" fill="url(#dk${u})"/><rect y="0" width="160" height="4" fill="#9b6c42"/>
+    ${Array.from({length:8}, (_, i) => `<rect x="${6 + i*20}" y="9" width="16" height="${h - 13}" rx="1" fill="#000" opacity=".12"/>`).join("")}
+    ${pos === "juiz" ? `<g transform="translate(118 -1)"><rect x="0" y="-4" width="14" height="6" rx="2" fill="#5a3a22"/><rect x="5" y="2" width="4" height="10" fill="#3e2716"/></g>` : ""}
+  </svg>`;
+}
+
+// ================================================================ estado do jogo
+let EP = null, G = null;
+const ROLE_PLAQUE = {advogado:"defesa", promotor:"acusacao", juiz:"juiz"};
+function posOf(q) { return (EP.posicoes || {})[q] || "testemunha"; }
+function visualOf(q) {
+  const ch = EP.personagens[q] || {};
+  if (q !== "voce") return ch.visual;
+  const v = {...(ch.visual || {pele:"#E0AC69", cabelo:"curto", corCabelo:"#2a1a10", corRoupa:"#1f2a44", oculos:false, barba:false})};
+  v.roupa = EP.papel === "juiz" ? "toga" : "terno";
+  if (EP.papel === "juiz") v.corRoupa = "#111111";
+  v.gravata = EP.papel === "promotor" ? "#111111" : "#8a1c1c";
+  return v;
+}
+function nameOf(q) { return q === "narrador" ? "" : (EP.personagens[q] || {}).nome || q; }
+function voiceOf(q) { return (EP.personagens[q] || {}).voz || 0; }
+
+// ------------------------------------------------ câmera
+let curPos = null, curChar = null;
+async function camera(pos, q, expr, local) {
+  const scene = $("#scene");
+  const target = local === "escritorio" ? "escritorio" : pos;
+  const curPosBefore = curPos;
+  if (target !== curPos) {
+    const dir = ["defesa", "escritorio"].includes(target) ? "enter-l" : "enter-r";
+    scene.classList.add(dir); await sleep(120);
+    $("#bg").innerHTML = background(target);
+    $("#desk").innerHTML = desk(target);
+    const plaque = (BGS[target] || {}).plaque;
+    if (plaque) $("#desk").append(el("div", {class:"plaque", textContent:plaque}));
+    curPos = target;
+    void scene.offsetWidth; scene.classList.remove(dir);
+  }
+  const actor = $("#actor");
+  if (q && q !== "narrador") {
+    const key = q + "|" + expr;
+    if (curChar !== key) { actor.innerHTML = characterSVG(visualOf(q), expr); curChar = key; }
+    actor.classList.remove("hidden");
+  } else if (!q && target !== curPosBefore) { actor.innerHTML = ""; curChar = null; }  // narrador mantém quem está em cena
+}
+
+// ------------------------------------------------ efeitos
+function shake() { const s = $("#stage"); s.classList.remove("shake"); void s.offsetWidth; s.classList.add("shake"); }
+function flash(cls = "flash") { const f = el("div", {class:cls}); $("#fx").append(f); setTimeout(() => f.remove(), 700); }
+async function bubble(text, color = "#E5483B") {
+  const w = el("div", {class:"bubble"});
+  w.innerHTML = `<svg viewBox="0 0 400 200"><path d="M200 6 L232 50 L290 18 L282 70 L350 60 L310 100 L380 128 L306 140 L334 192 L262 162 L228 196 L198 156 L150 194 L142 150 L70 176 L102 128 L20 118 L92 90 L40 46 L118 60 L120 10 L164 52Z" fill="#fff" stroke="#111" stroke-width="8" stroke-linejoin="round"/></svg>`;
+  const t = el("div", {style:{position:"absolute", inset:"0", display:"grid", placeItems:"center", fontFamily:"Impact, 'Arial Black', sans-serif",
+    fontSize:"7.4cqw", color, WebkitTextStroke:".45cqw #111", letterSpacing:".02em", textShadow:".5cqw .5cqw 0 #111"}, textContent:text});
+  w.append(t); $("#fx").append(w); flash(); shake();
+  await sleep(1000); w.remove();
+}
+async function doFx(fx) {
+  if (fx === "protesto") { Sound.protesto(); await bubble("PROTESTO!"); }
+  else if (fx === "ummomento") { Sound.ummomento(); await bubble("UM MOMENTO!", "#4F7BFF"); }
+  else if (fx === "tomaisso") { Sound.ummomento(); await bubble("AQUI ESTÁ!", "#2FBF71"); }
+  else if (fx === "martelo") {
+    const g = el("div", {class:"gavel"});
+    g.innerHTML = `<svg viewBox="0 0 120 120"><rect x="20" y="20" width="56" height="30" rx="8" fill="#7a5232" stroke="#2a1a10" stroke-width="4" transform="rotate(-30 48 35)"/><rect x="52" y="44" width="10" height="66" rx="4" fill="#5a3a22" stroke="#2a1a10" stroke-width="3" transform="rotate(-30 57 77)"/></svg>`;
+    $("#fx").append(g); Sound.martelo(); [0, 280, 560].forEach(t => setTimeout(shake, t)); await sleep(950); g.remove();
+  }
+  else if (fx === "bater") { Sound.bater(); shake(); const a = $("#actor"); a.classList.remove("slam"); void a.offsetWidth; a.classList.add("slam"); await sleep(300); }
+  else if (fx === "tremor") { Sound.bater(); shake(); const a = $("#actor"); a.classList.remove("shock"); void a.offsetWidth; a.classList.add("shock"); await sleep(350); }
+  else if (fx === "flash") { flash(); }
+}
+
+// ------------------------------------------------ diálogo
+let advance = null;
+function waitAdvance() { return new Promise(r => { advance = r; }); }
+async function say(line, opts = {}) {
+  const q = line.q || "narrador";
+  const pos = q === "narrador" ? curPos : posOf(q);
+  if (line.fx === "protesto" || line.fx === "ummomento" || line.fx === "tomaisso") {
+    await camera(pos, q, line.e || "apontando", opts.local);
+    await doFx(line.fx);
+  } else {
+    await camera(pos, q === "narrador" ? null : q, line.e || "normal", opts.local);
+  }
+  if (line.recebe) receive(line.recebe);
+  if (line.fx && !["protesto", "ummomento", "tomaisso"].includes(line.fx)) await doFx(line.fx);
+  const dlg = $("#dialog"), np = $("#nameplate"), tx = $("#text"), nx = $("#nextmark");
+  dlg.classList.remove("hidden");
+  const name = nameOf(q);
+  np.textContent = name; np.className = "nameplate np-" + (q === "narrador" ? "x" : posOf(q)); np.classList.toggle("hidden", !name);
+  const text = line.t;
+  tx.className = "text" + (q === "narrador" ? " narr" : "") + (/^\(.*\)$/.test(text.trim()) ? " thought" : "") + (opts.statement ? " statement" : "");
+  tx.textContent = ""; nx.classList.add("hidden");
+  const actor = $("#actor");
+  if (q !== "narrador") actor.classList.add("talking");
+  let i = 0, skip = false;
+  advance = () => { skip = true; };
+  const voice = voiceOf(q);
+  while (i < text.length && !skip) {
+    tx.textContent = text.slice(0, ++i);
+    if (i % 2 === 0 && /\S/.test(text[i - 1])) Sound.blip(voice);
+    const ch = text[i - 1];
+    await sleep(/[.!?…]/.test(ch) ? 140 : /,/.test(ch) ? 70 : 24);
+  }
+  tx.textContent = text;
+  actor.classList.remove("talking");
+  if (opts.noWait) return;
+  nx.classList.remove("hidden");
+  await waitAdvance();
+  Sound.select();
+}
+async function sayAll(lines, opts) { for (const l of lines || []) { await say(l, opts); if (G && G.over) return; } }
+function hideDialog() { $("#dialog").classList.add("hidden"); }
+function overlay(...nodes) { const o = $("#overlay"); o.replaceChildren(...nodes); }
+function clearOverlay() { $("#overlay").replaceChildren(); }
+
+// ------------------------------------------------ credibilidade
+function renderCred(breakIdx = -1) {
+  const c = $("#cred");
+  c.replaceChildren(el("small", {textContent:"CREDIBILIDADE"}),
+    ...Array.from({length:5}, (_, i) => el("i", {class:(i >= G.cred ? "lost" : "") + (i === breakIdx ? " break" : ""), textContent:"⚖️"})));
+}
+async function damage(lines) {
+  G.erros++; G.cred = Math.max(0, G.cred - 1);
+  Sound.dano(); flash("redflash"); shake(); renderCred(G.cred);
+  await sayAll(lines);
+  if (G.cred <= 0) { G.over = true; await gameOver(); }
+}
+
+// ------------------------------------------------ autos do processo
+function receive(ids) {
+  let n = 0;
+  for (const id of ids) if (!G.autos.includes(id)) { G.autos.push(id); n++; }
+  if (n) { Sound.acerto(); const b = $("#btn-autos"); b.animate([{transform:"scale(1)"}, {transform:"scale(1.25)"}, {transform:"scale(1)"}], {duration:500, iterations:2}); }
+}
+function provaById(id) { return EP.provas.find(p => p.id === id); }
+function openAutos(mode) {
+  // mode: null (só consulta) ou {titulo, onPick(id)}
+  return new Promise(resolve => {
+    let tab = "prova", sel = null;
+    const close = (v) => { m.remove(); document.removeEventListener("keydown", esc); resolve(v); };
+    const esc = (e) => { if (e.key === "Escape") { e.stopPropagation(); close(null); } };
+    document.addEventListener("keydown", esc);
+    const m = el("div", {class:"modal", role:"dialog", "aria-label":"Autos do processo"});
+    const grid = el("div", {class:"grid-ev"}), detail = el("div", {class:"detail"});
+    const presentBtn = mode ? el("button", {class:"pbtn", disabled:true, textContent:"Apresentar!", onclick:() => close(sel)}) : null;
+    const tabsEl = el("div", {class:"tabs2"});
+    function draw() {
+      tabsEl.replaceChildren(...[["prova", "Provas"], ["lei", "Leis"]].map(([k, l]) =>
+        el("button", {"aria-pressed":String(tab === k), textContent:l, onclick:() => { tab = k; sel = null; Sound.select(); draw(); }})));
+      const items = G.autos.map(provaById).filter(p => p && p.tipo === tab);
+      grid.replaceChildren(...(items.length ? items.map(p => el("button", {class:"ev", "aria-pressed":String(sel === p.id),
+        onclick:() => { sel = p.id; Sound.select(); draw(); }}, el("span", {class:"ic", textContent:p.icone || "📄"}), p.nome))
+        : [el("p", {textContent:"Nada aqui ainda."})]));
+      const p = sel && provaById(sel);
+      // replaceChildren converte null em texto "null": filtra os itens vazios
+      detail.replaceChildren(...(p ? [el("h3", {textContent:`${p.icone || ""} ${p.nome}`}),
+        p.tipo === "lei" ? el("div", {class:"law", textContent:p.texto || ("“" + p.trecho + "”")}) : el("div", {textContent:p.descricao}),
+        p.tipo === "lei" ? el("div", {class:"ref", textContent:(p.texto ? "Texto vigente do catálogo · " : "Trecho citado · ") + p.chave}) : null].filter(Boolean)
+        : [el("p", {textContent: mode ? "Escolha a prova ou a lei que você quer apresentar." : "Selecione um item para ver os detalhes."})]));
+      if (presentBtn) presentBtn.disabled = !sel;
+    }
+    m.append(el("header", {}, el("h2", {textContent:"📁 Autos do processo"}), tabsEl, el("span", {class:"sp"}), el("button", {class:"x", "aria-label":"Fechar", textContent:"×", onclick:() => close(null)})),
+      el("div", {class:"mbody"}, grid, detail),
+      el("footer", {}, el("span", {class:"hint", textContent: mode ? mode.titulo : "Tudo o que você reuniu até agora."}),
+        el("button", {class:"pbtn sec", textContent: mode ? "Voltar" : "Fechar", onclick:() => close(null)}), presentBtn));
+    $("#stage").append(m); draw();
+  });
+}
+function lawPopup(fs) {
+  const items = (fs || []).filter(f => f);
+  if (!items.length) return;
+  const f = items[0];
+  const box = el("div", {class:"lawpop"}, el("b", {textContent:"📜 Fundamento"}),
+    el("div", {class:"law", textContent:f.texto || ("“" + f.trecho + "”")}),
+    el("div", {class:"ref", textContent:(f.norma ? f.norma + " · " : "") + (f.rotulo || "") + " · " + f.chave}));
+  $("#stage").append(box); setTimeout(() => box.remove(), 6500);
+}
+function banner(text, sub, green) { const b = el("div", {class:"banner" + (green ? " green" : "")}, el("span", {textContent:text}), sub ? el("small", {textContent:sub}) : null);
+  $("#fx").append(b); return b; }
+
+// ------------------------------------------------ cenas
+async function runScene(id) {
+  const c = EP.cenas[id];
+  G.scene = id;
+  clearOverlay();
+  if (c.tipo === "titulo") return titleCard(c);
+  if (c.tipo === "dialogo") { await sayAll(c.falas, {local:c.local}); if (c.fundamentos) lawPopup(c.fundamentos); return c.proxima; }
+  if (c.tipo === "depoimento") return testimony(c);
+  if (c.tipo === "apresentar") return presentScene(c);
+  if (c.tipo === "escolha") return choiceScene(c);
+  if (c.tipo === "decidir") return decideScene(c);
+  if (c.tipo === "veredicto") { await verdict(c); return null; }
+  return c.proxima;
+}
+async function titleCard(c) {
+  hideDialog();
+  const t = el("div", {class:"full titlecard"}, el("div", {class:"ep", textContent:c.texto}), el("h1", {textContent:c.subtitulo}),
+    el("p", {textContent:EP.sinopse}), el("p", {style:{opacity:.7, fontSize:"1.3cqw"}, textContent:"clique ou Enter para começar"}));
+  $("#stage").append(t); Sound.vitoria();
+  await waitAdvance(); t.remove(); Sound.startMusic("calma");
+  return c.proxima;
+}
+async function testimony(c) {
+  await sayAll(c.intro);
+  hideDialog();
+  Sound.startMusic("tensa");
+  const b = banner("— Depoimento —", c.titulo, true); await sleep(1400); b.remove();
+  for (const a of c.afirmacoes) { await say({q:c.testemunha, e:a.e, t:a.t}, {statement:true}); if (G.over) return null; }
+  hideDialog();
+  const b2 = banner("— Interrogatório —", "Pressione as afirmações ou apresente uma prova"); Sound.ummomento(); await sleep(1500); b2.remove();
+  let idx = 0;
+  while (!G.over) {
+    const a = c.afirmacoes[idx];
+    await say({q:c.testemunha, e:a.e, t:a.t}, {statement:true, noWait:true});
+    const action = await new Promise(resolve => {
+      G.xkeys = resolve;
+      overlay(el("div", {class:"xbar"},
+        el("button", {class:"xbtn x-nav", "aria-label":"Afirmação anterior", textContent:"◀", disabled:idx === 0, onclick:() => resolve("prev")}),
+        el("button", {class:"xbtn x-press", textContent:"Pressionar (P)", onclick:() => resolve("press")}),
+        el("button", {class:"xbtn x-present", textContent:"Apresentar (A)", onclick:() => resolve("present")}),
+        el("button", {class:"xbtn x-nav", "aria-label":"Próxima afirmação", textContent:"▶", onclick:() => resolve("next")})));
+      $("#keys").textContent = `Afirmação ${idx + 1} de ${c.afirmacoes.length}`;
+    });
+    G.xkeys = null; clearOverlay(); $("#keys").textContent = "";
+    if (action === "prev") idx = Math.max(0, idx - 1);
+    else if (action === "next") idx = (idx + 1) % c.afirmacoes.length;
+    else if (action === "press") {
+      await say({q:"voce", e:"apontando", t:"UM MOMENTO!", fx:"ummomento"}, {noWait:true}); hideDialog();
+      await sayAll(a.pressionar);
+      idx = (idx + 1) % c.afirmacoes.length;
+    } else if (action === "present") {
+      const id = await openAutos({titulo:"Qual prova contradiz esta afirmação?"});
+      if (!id) continue;
+      await presentAnim(id);
+      if (idx === c.contradicao.afirmacao && c.contradicao.provas.includes(id)) {
+        Sound.stopMusic(); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma"); return c.proxima;
+      }
+      await damage(c.erro);
+    }
+  }
+  return null;
+}
+async function presentAnim(id) {
+  const p = provaById(id);
+  await say({q:"voce", e:"apontando", t:"AQUI ESTÁ!", fx:"tomaisso"}, {noWait:true});
+  const card = el("div", {class:"card-fly"}, el("div", {class:"ic", textContent:p.icone || "📄"}), el("b", {textContent:p.nome}));
+  $("#fx").append(card); await sleep(1100); card.remove(); hideDialog();
+}
+async function presentScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  while (!G.over) {
+    await say({q:"narrador", t:c.pergunta}, {noWait:true});
+    const id = await openAutos({titulo:c.pergunta});
+    if (!id) { continue; }
+    await presentAnim(id);
+    if (c.provas.includes(id)) { await sayAll(c.acerto); Sound.acerto(); lawPopup([provaById(id)]); return c.proxima; }
+    await damage(c.erro);
+  }
+  return null;
+}
+async function choiceScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  const tried = new Set();
+  while (!G.over) {
+    await say({q:"narrador", t:c.pergunta}, {noWait:true});
+    const i = await new Promise(resolve => {
+      G.choiceKeys = resolve;
+      overlay(el("div", {class:"menu"}, el("div", {class:"q", textContent:c.pergunta}),
+        ...c.opcoes.map((o, k) => el("button", {class:"opt", disabled:tried.has(k), style:tried.has(k) ? {opacity:.45} : {},
+          onclick:() => resolve(k)}, el("b", {textContent:String(k + 1)}), el("span", {textContent:o.t})))));
+    });
+    G.choiceKeys = null; clearOverlay(); Sound.select();
+    const o = c.opcoes[i];
+    if (o.certa) { await sayAll(o.falas); Sound.acerto(); lawPopup(o.fundamentos); return c.proxima; }
+    tried.add(i);
+    await damage(o.falas);
+  }
+  return null;
+}
+async function decideScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  while (!G.over) {
+    await say({q:"narrador", t:c.pergunta}, {noWait:true});
+    const d = await new Promise(resolve => {
+      G.decideKeys = resolve;
+      overlay(el("div", {class:"xbar", style:{bottom:"31%"}},
+        el("button", {class:"xbtn x-defer", textContent:"🔨 Deferido (D)", onclick:() => resolve("deferir")}),
+        el("button", {class:"xbtn x-indef", textContent:"🔨 Indeferido (I)", onclick:() => resolve("indeferir")})));
+    });
+    G.decideKeys = null; clearOverlay();
+    if (d === c.correta) { await sayAll(c.acerto); Sound.acerto(); lawPopup(c.fundamentos); return c.proxima; }
+    await damage(c.erro);
+  }
+  return null;
+}
+function stampSize(t) { return Math.min(6, 62 / Math.max(6, t.length)) + "cqw"; }  // cabe em qualquer carimbo
+function confetti() {
+  const colors = ["#F5B700", "#E5483B", "#4F7BFF", "#2FBF71", "#fff"];
+  for (let i = 0; i < 80; i++) {
+    const p = el("div", {class:"confetti", style:{left:Math.random() * 100 + "%", background:colors[i % 5],
+      animationDuration:(2 + Math.random() * 2.5) + "s", animationDelay:(Math.random() * .8) + "s"}});
+    $("#fx").append(p); setTimeout(() => p.remove(), 5200);
+  }
+}
+async function finish(won) {
+  try { return await api("/api/arena/tribunal/concluir", {episodio:EP.id, credibilidade:won ? G.cred : 0, erros:G.erros}); }
+  catch (e) { return {xp:0, erro:e.message}; }
+}
+async function verdict(c) {
+  hideDialog(); Sound.stopMusic(); Sound.vitoria(); confetti();
+  const r = await finish(true);
+  const cls = r.faixa === "otimo" ? "ok" : "mid";
+  const box = el("div", {class:"full verdict"},
+    el("div", {class:"stamp " + cls, textContent:c.carimbo, style:{fontSize:stampSize(c.carimbo)}}),
+    el("h2", {textContent:c.titulo}), el("p", {textContent:c.texto}),
+    el("div", {class:"stats"},
+      el("div", {}, el("b", {textContent:`${G.cred}/5`}), el("small", {textContent:"credibilidade"})),
+      el("div", {}, el("b", {textContent:String(G.erros)}), el("small", {textContent:"erros"})),
+      el("div", {}, el("b", {textContent:r.perfeito ? "★" : "—"}), el("small", {textContent:"perfeito"}))),
+    el("div", {class:"xp", textContent:`+${r.xp || 0} XP`}),
+    r.progresso && r.progresso.subiu_de_nivel ? el("p", {textContent:`⬆️ Nível ${r.progresso.nivel}: ${r.progresso.titulo}!`}) : null,
+    el("div", {class:"bigbtns"}, el("button", {class:"bigbtn", textContent:"Outros julgamentos", onclick:quitGame}),
+      el("button", {class:"bigbtn sec", textContent:"Jogar de novo", onclick:() => startEpisode(EP.id)})));
+  $("#stage").append(box);
+}
+async function gameOver() {
+  hideDialog(); clearOverlay(); Sound.stopMusic(); Sound.dano();
+  await camera("juiz", Object.keys(EP.posicoes).find(k => EP.posicoes[k] === "juiz" && k !== "voce") || null, "bravo");
+  await doFx("martelo");
+  const r = await finish(false);
+  $("#stage").append(el("div", {class:"full verdict"},
+    el("div", {class:"stamp no", textContent:"DESTITUÍDO", style:{fontSize:stampSize("DESTITUÍDO")}}),
+    el("h2", {textContent:"Você perdeu a credibilidade do juízo"}),
+    el("p", {textContent:"Erros demais diante do tribunal. Releia os autos, procure a contradição e tente de novo: cada erro também ensina."}),
+    el("div", {class:"xp", textContent:`+${r.xp || 0} XP`}),
+    el("div", {class:"bigbtns"}, el("button", {class:"bigbtn", textContent:"Tentar de novo", onclick:() => startEpisode(EP.id)}),
+      el("button", {class:"bigbtn sec", textContent:"Sair", onclick:quitGame}))));
+}
+
+// ------------------------------------------------ ciclo do episódio
+async function startEpisode(id) {
+  Sound.ensure();
+  EP = await api("/api/arena/tribunal/" + encodeURIComponent(id));
+  G = {cred:5, erros:0, autos:[], over:false, scene:null};
+  curPos = null; curChar = null;
+  $("#menu").classList.add("hidden"); $("#game").classList.remove("hidden");
+  [...$("#stage").querySelectorAll(".full, .modal, .lawpop")].forEach(n => n.remove());
+  $("#fx").replaceChildren(); clearOverlay(); hideDialog(); renderCred();
+  await camera(ROLE_PLAQUE[EP.papel], null);
+  let sid = EP.inicio;
+  const token = G;
+  while (sid && token === G && !G.over) sid = await runScene(sid);
+}
+function quitGame() {
+  Sound.stopMusic(); G = null; advance = null;
+  $("#game").classList.add("hidden"); $("#menu").classList.remove("hidden");
+  [...$("#stage").querySelectorAll(".full, .modal, .lawpop")].forEach(n => n.remove());
+  loadMenu();
+}
+
+// ------------------------------------------------ entrada (clique, teclado)
+$("#stage").addEventListener("click", (e) => {
+  if (e.target.closest("button, .modal")) return;
+  if (advance) { const a = advance; a(); }
+});
+document.addEventListener("keydown", (e) => {
+  if ($("#game").classList.contains("hidden") || e.target.tagName === "INPUT") return;
+  if ($("#stage").querySelector(".modal")) return;
+  const k = e.key.toLowerCase();
+  if (G && G.xkeys) {
+    const map = {arrowleft:"prev", arrowright:"next", p:"press", a:"present"};
+    if (map[k]) { e.preventDefault(); G.xkeys(map[k]); }
+    return;
+  }
+  if (G && G.choiceKeys && /^[1-9]$/.test(k)) { G.choiceKeys(Number(k) - 1); return; }
+  if (G && G.decideKeys && (k === "d" || k === "i")) { G.decideKeys(k === "d" ? "deferir" : "indeferir"); return; }
+  if (k === "a" && G) { openAutos(null); return; }
+  if ((k === "enter" || k === " ") && advance) { e.preventDefault(); const a = advance; a(); }
+});
+$("#btn-autos").onclick = () => openAutos(null);
+$("#btn-quit").onclick = () => { if (confirm("Sair do julgamento? O progresso deste episódio será perdido.")) quitGame(); };
+
+// ================================================================ menu, avatar
+const SKINS = ["#FFDBAC", "#F1C27D", "#E0AC69", "#C68642", "#8D5524", "#5C3A1E"];
+const HAIRCOLS = ["#1b1b1b", "#3b2414", "#7b4a24", "#c9a227", "#a0522d", "#9e9e9e", "#7b1e1e", "#3a4fa0"];
+const SUITS = ["#1f2a44", "#2c3e70", "#3d3d3d", "#4a2c6b", "#1e5a4a", "#7a1f1f"];
+let avatar = {pele:"#E0AC69", cabelo:"curto", corCabelo:"#3b2414", corRoupa:"#1f2a44", oculos:false, barba:false};
+function drawCreator() {
+  const pv = $("#avatar-preview");
+  pv.innerHTML = characterSVG({...avatar, roupa:"terno", gravata:"#8a1c1c"}, "confiante");
+  const sw = (box, list, key) => $(box).replaceChildren(...list.map(c => el("button", {class:"sw", style:{background:c}, "aria-label":c,
+    "aria-pressed":String(avatar[key] === c), onclick:() => { avatar[key] = c; Sound.select(); drawCreator(); }})));
+  sw("#sw-pele", SKINS, "pele"); sw("#sw-cabelo", HAIRCOLS, "corCabelo"); sw("#sw-roupa", SUITS, "corRoupa");
+  $("#pl-cabelo").replaceChildren(...HAIRS.map(h => el("button", {class:"pill", "aria-pressed":String(avatar.cabelo === h), textContent:h,
+    onclick:() => { avatar.cabelo = h; Sound.select(); drawCreator(); }})));
+  $("#pl-extra").replaceChildren(...[["oculos", "Óculos"], ["barba", "Barba"]].map(([k, l]) => el("button", {class:"pill", "aria-pressed":String(!!avatar[k]),
+    textContent:l, onclick:() => { avatar[k] = !avatar[k]; Sound.select(); drawCreator(); }})));
+}
+$("#btn-avatar").onclick = () => { $("#creator-card").classList.toggle("hidden"); drawCreator(); $("#creator-card").scrollIntoView({behavior:"smooth"}); };
+$("#av-save").onclick = async () => {
+  try { await api("/api/arena/perfil/avatar", {nome:$("#av-name").value, avatar}); $("#av-msg").textContent = "Salvo! Você aparece assim nos julgamentos."; Sound.acerto(); }
+  catch (e) { $("#av-msg").textContent = e.message; }
+};
+function toggleBtn(btn, key, prop) {
+  const sync = () => { btn.setAttribute("aria-pressed", String(Sound[prop])); btn.style.opacity = Sound[prop] ? 1 : .55; };
+  btn.onclick = () => { Sound[prop] = !Sound[prop]; store.set(key, Sound[prop]); if (!Sound.music || !Sound.on) Sound.stopMusic(); sync(); };
+  sync();
+}
+toggleBtn($("#btn-sound"), "tribSom", "on"); toggleBtn($("#btn-music"), "tribMusica", "music");
+
+const ROLE = {advogado:"💼 Defesa", promotor:"🏛️ Acusação", juiz:"⚖️ Juiz(a)"};
+const COVER = {advogado:{pele:"#F1C27D", cabelo:"topete", corCabelo:"#3b2414", roupa:"terno", corRoupa:"#1f2a44", gravata:"#8a1c1c"},
+               promotor:{pele:"#C68642", cabelo:"rabo", corCabelo:"#111", roupa:"terno", corRoupa:"#7a1f1f", gravata:"#111111"},
+               juiz:{pele:"#8D5524", cabelo:"coque", corCabelo:"#1b1b1b", roupa:"toga", corRoupa:"#111111", oculos:true}};
+async function loadMenu() {
+  try {
+    const [eps, perfil] = await Promise.all([api("/api/arena/tribunal"), api("/api/arena/perfil")]);
+    if (perfil.avatar) avatar = {...avatar, ...perfil.avatar};
+    $("#av-name").value = perfil.nome && perfil.nome !== "Você" ? perfil.nome : "";
+    $("#eps").replaceChildren(...eps.map(ep => {
+      const cover = el("div", {class:"cover"});
+      cover.innerHTML = background(ROLE_PLAQUE[ep.papel]) + `<div style="position:absolute;inset:auto 0 0 0;height:150px;display:flex;justify-content:center">${characterSVG(perfil.avatar ? {...COVER[ep.papel], ...perfil.avatar, roupa:COVER[ep.papel].roupa} : COVER[ep.papel], ep.papel === "juiz" ? "confiante" : "apontando")}</div>`;
+      cover.append(el("span", {class:"num", textContent:`Episódio ${ep.numero}`}));
+      return el("button", {class:"ep", onclick:() => startEpisode(ep.id)}, cover,
+        el("div", {class:"body"}, el("span", {class:"chip " + ep.papel, textContent:ROLE[ep.papel]}), " ",
+          el("span", {class:"chip", textContent:{basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite"}[ep.nivel]}),
+          el("h3", {textContent:ep.titulo}), el("p", {textContent:ep.sinopse}),
+          el("div", {class:ep.melhor != null ? "best" : "chip", textContent:ep.melhor != null ? `Melhor: ${Math.round(ep.melhor * 100)}% de credibilidade` : `${ep.desafios} desafios · não jogado`})));
+    }));
+  } catch (e) { $("#eps").replaceChildren(el("p", {textContent:"Não consegui carregar os julgamentos: " + e.message})); }
+}
+loadMenu();
+const qp = new URLSearchParams(location.search).get("ep");
+if (qp) startEpisode(qp);
+</script>
+</body>
+</html>

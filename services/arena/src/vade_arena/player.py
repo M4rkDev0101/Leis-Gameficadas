@@ -61,6 +61,8 @@ class Player:
         db = self._db()
         try:
             db.executescript(SCHEMA)
+            self._migrate(db)
+            db.commit()
         finally:
             db.close()
 
@@ -69,6 +71,41 @@ class Player:
         db.row_factory = sqlite3.Row
         db.execute("PRAGMA busy_timeout = 5000")
         return db
+
+    def _migrate(self, db: sqlite3.Connection) -> None:
+        cols = {r[1] for r in db.execute("PRAGMA table_info(jogador)")}
+        if "avatar" not in cols:
+            db.execute("ALTER TABLE jogador ADD COLUMN avatar TEXT")
+
+    def set_avatar(self, nome: str, avatar: dict) -> None:
+        nome = (nome or "Você").strip()[:32] or "Você"
+        db = self._db()
+        try:
+            with db:
+                db.execute("UPDATE jogador SET nome = ?, avatar = ? WHERE id = 1", (nome, json.dumps(avatar)))
+        finally:
+            db.close()
+
+    def avatar(self) -> tuple[str, dict | None]:
+        db = self._db()
+        try:
+            row = db.execute("SELECT nome, avatar FROM jogador WHERE id = 1").fetchone()
+            return row["nome"], (json.loads(row["avatar"]) if row["avatar"] else None)
+        finally:
+            db.close()
+
+    def record_trial(self, run_id: str, ep: dict, result: dict, today: dt.date | None = None) -> dict:
+        db = self._db()
+        try:
+            with db:
+                resumo = {"titulo": ep["titulo"], "papel": ep["papel"], "carimbo": result["carimbo"], "modo": "tribunal",
+                          "credibilidade": result["credibilidade"], "erros": result["erros"]}
+                db.execute("INSERT OR IGNORE INTO partida VALUES (?, 'caso', ?, ?, ?, ?, ?, ?, ?)",
+                           (run_id, ep["id"], ep["nivel"], result["aproveitamento"], int(result["perfeito"]),
+                            result["xp"], json.dumps(resumo, ensure_ascii=False), dt.datetime.now().isoformat(timespec="seconds")))
+                return self._register(db, result["xp"], today or dt.date.today())
+        finally:
+            db.close()
 
     def _register(self, db: sqlite3.Connection, xp: int, today: dt.date) -> dict:
         row = db.execute("SELECT * FROM jogador WHERE id = 1").fetchone()
@@ -137,7 +174,8 @@ class Player:
             streak = g.Streak(row["streak_atual"], row["streak_max"],
                               dt.date.fromisoformat(row["streak_dia"]) if row["streak_dia"] else None, row["protetores"])
             return {
-                "nome": row["nome"], "xp": row["xp_total"], "nivel": level, "titulo": title_for(level),
+                "nome": row["nome"], "avatar": json.loads(row["avatar"]) if row["avatar"] else None,
+                "xp": row["xp_total"], "nivel": level, "titulo": title_for(level),
                 "xp_nivel_atual": row["xp_total"] - floor, "xp_proximo_nivel": ceil - floor,
                 "streak": streak.current if g.is_alive(streak, today) else 0, "streak_max": streak.longest,
                 "jogou_hoje": streak.last_day == today, "protetores": streak.freezes,

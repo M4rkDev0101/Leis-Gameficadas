@@ -200,6 +200,7 @@
   <div class="top-in">
     <div class="brand">⚖️ Vade <small>Arena</small></div>
     <nav class="tabs" aria-label="Seções">
+      <a href="/tribunal" style="color:var(--xp)">⚖️ Tribunal</a>
       <button data-tab="inicio">Início</button>
       <button data-tab="simulados">Simulados</button>
       <button data-tab="casos">Casos</button>
@@ -301,6 +302,11 @@ async function viewInicio() {
   show(
     el("h1", {textContent:`Olá, ${p.titulo}.`}),
     el("p", {class:"sub", textContent: p.jogou_hoje ? "Você já treinou hoje. Que tal mais uma rodada?" : "Uma rodada rápida mantém sua sequência viva."}),
+    el("a", {class:"card click", href:"/tribunal", style:{display:"block", textDecoration:"none", color:"inherit", marginBottom:"14px",
+        background:"linear-gradient(120deg, #2a1c12, #4a2e18)", borderColor:"#c9a04a"}},
+      el("div", {class:"row"}, el("span", {class:"chip banca", textContent:"NOVO"}), el("span", {class:"chip", textContent:"3 julgamentos"})),
+      el("h2", {style:{marginTop:"10px", color:"#fff4d6", fontSize:"1.4rem"}, textContent:"⚖️ Tribunal: pressione testemunhas e grite PROTESTO!"}),
+      el("p", {style:{margin:0, color:"#e0cfa8"}, textContent:"Simulação de audiência com personagens, autos do processo, interrogatório e veredicto. Seja defesa, acusação ou juiz."})),
     el("div", {class:"grid"},
       el("button", {class:"card click", onclick:() => startExam("policial-cebraspe", "basico")},
         el("div", {class:"row"}, el("span", {class:"chip banca", textContent:"CEBRASPE"}), el("span", {class:"chip", textContent:"🟢 Treino · 10 itens"})),

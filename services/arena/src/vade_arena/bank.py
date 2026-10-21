@@ -82,6 +82,10 @@ def load(base: Path | None = None) -> Bank:
         for alias, norma_id in g["normas"].items():
             if normas.setdefault(alias, norma_id) != norma_id:
                 raise ValueError(f"alias {alias} aponta para normas diferentes nos dois bancos")
+    if _exists("tribunal.json", base):  # julgamentos do modo Tribunal
+        for alias, norma_id in _read("tribunal.json", base).get("normas", {}).items():
+            if normas.setdefault(alias, norma_id) != norma_id:
+                raise ValueError(f"alias {alias} aponta para normas diferentes")
     return Bank(niveis=c["niveis"], concursos=c["concursos"], questoes=questoes,
                 casos=k["casos"], elenco=k["elenco"], normas=normas)
 
@@ -237,7 +241,7 @@ def _norm(s: str) -> str:
     return re.sub(r"\s+", " ", s).strip()
 
 
-def all_fundamentos(b: Bank):
+def all_fundamentos(b: Bank, incluir_tribunal: bool = True):
     for q in b.questoes:
         for f in _fundamentos(q):
             yield q["id"], f
@@ -246,15 +250,19 @@ def all_fundamentos(b: Bank):
             for i, e in enumerate(cena["escolhas"]):
                 for f in _fundamentos(e):
                     yield f"{caso['id']}/{sid}#{i}", f
+    if incluir_tribunal:
+        from . import tribunal  # import tardio: tribunal não depende do banco
+
+        yield from tribunal.all_fundamentos(tribunal.load())
 
 
-def validate_against_catalog(b: Bank, db_path: str | Path) -> tuple[list[str], int, int]:
+def validate_against_catalog(b: Bank, db_path: str | Path, incluir_tribunal: bool = True) -> tuple[list[str], int, int]:
     """Devolve (problemas, fundamentos conferidos, fundamentos cuja norma não está no catálogo)."""
     db = sqlite3.connect(str(db_path))
     problems, checked, absent = [], 0, 0
     try:
         norms = {r[0] for r in db.execute("SELECT id FROM norma")}
-        for owner, f in all_fundamentos(b):
+        for owner, f in all_fundamentos(b, incluir_tribunal):
             chave = b.resolve(f["chave"])
             norma_id = chave.split("#", 1)[0]
             if norma_id not in norms:

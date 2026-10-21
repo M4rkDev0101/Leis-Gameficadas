@@ -33,8 +33,11 @@ def main(argv: list[str] | None = None) -> int:
     a = ap.parse_args(argv)
     if a.cmd == "validar":
         b = bank.load()
-        errs = bank.validate_structure(b)
-        print(f"Estrutura: {len(b.questoes)} questões, {len(b.casos)} casos, {len(errs)} erro(s)")
+        from . import tribunal
+
+        errs = bank.validate_structure(b) + tribunal.validate(tribunal.load(), b.normas)
+        n_ep = len(tribunal.load()["episodios"])
+        print(f"Estrutura: {len(b.questoes)} questões, {len(b.casos)} casos, {n_ep} julgamentos, {len(errs)} erro(s)")
         for e in errs:
             print("  -", e)
         if a.db:

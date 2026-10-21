@@ -10,6 +10,7 @@ recebe o que pode ver.
 
 from __future__ import annotations
 
+import json
 import sqlite3
 import threading
 import time
@@ -21,8 +22,11 @@ from urllib.parse import urlparse
 from vade_ingest import server as ingest_server
 from vade_ingest.updater import Updater
 
+import uuid
+
 from . import bank as bank_mod
 from . import cases, exam
+from . import tribunal as tribunal_mod
 from .player import Player
 
 MAX_SESSIONS = 200
@@ -58,6 +62,10 @@ class Arena:
             raise ValueError("conteúdo da Arena inválido:\n" + "\n".join(errors))
         self.player = Player(player_db)
         self.sessions = Sessions()
+        self.tribunal = tribunal_mod.load()
+        terrs = tribunal_mod.validate(self.tribunal, self.bank.normas)
+        if terrs:
+            raise ValueError("roteiro do Tribunal inválido:\n" + "\n".join(terrs))
 
     def lookup(self, chave: str) -> dict | None:
         """Texto vigente do dispositivo no catálogo (se a norma estiver no recorte importado)."""
@@ -87,6 +95,22 @@ class Arena:
     def casos(self) -> list[dict]:
         best = self.player.profile()["melhor_por_caso"]
         return [{**cases.summary(self.bank, c), "melhor": best.get(c["id"])} for c in self.bank.casos]
+
+    # ------------------------------------------------------------ tribunal
+    def episodios(self) -> list[dict]:
+        best = self.player.profile()["melhor_por_caso"]
+        return [{**tribunal_mod.summary(ep), "melhor": best.get(ep["id"])} for ep in self.tribunal["episodios"]]
+
+    def episodio(self, ep_id: str) -> dict:
+        ep = tribunal_mod.episode(self.tribunal, ep_id)
+        nome, avatar = self.player.avatar()
+        return tribunal_mod.public_episode(self.tribunal, ep, lambda k: self.lookup(self.bank.resolve(k)), avatar, nome)
+
+    def concluir_episodio(self, ep_id: str, credibilidade, erros) -> dict:
+        ep = tribunal_mod.episode(self.tribunal, ep_id)
+        result = tribunal_mod.score(ep, credibilidade, erros)
+        result["progresso"] = self.player.record_trial(uuid.uuid4().hex, ep, result)
+        return result
 
     def iniciar_simulado(self, concurso: str, nivel: str) -> dict:
         s = exam.build(self.bank, concurso, nivel, seen=self.player.seen_questions())
@@ -127,6 +151,13 @@ class ArenaHandler(ingest_server._Handler):
             if path in ("/", "/index.html", "/arena"):
                 html = resources.files(__package__).joinpath("web/app.html").read_bytes()
                 return self._send(200, html, "text/html; charset=utf-8")
+            if path == "/tribunal":
+                html = resources.files(__package__).joinpath("web/tribunal.html").read_bytes()
+                return self._send(200, html, "text/html; charset=utf-8")
+            if path == "/api/arena/tribunal":
+                return self._json(self.arena.episodios())
+            if path.startswith("/api/arena/tribunal/"):
+                return self._json(self.arena.episodio(path.rsplit("/", 1)[-1]))
             if path == "/acervo":
                 html = resources.files(ingest_server.__package__).joinpath("web/index.html").read_bytes()
                 return self._send(200, html, "text/html; charset=utf-8")
@@ -136,6 +167,8 @@ class ArenaHandler(ingest_server._Handler):
                 return self._json(self.arena.concursos())
             if path == "/api/arena/casos":
                 return self._json(self.arena.casos())
+        except KeyError as exc:
+            return self._json({"erro": str(exc).strip("'\"")}, 404)
         except Exception as exc:
             return self._json({"erro": str(exc)}, 500)
         return super().do_GET()
@@ -152,6 +185,15 @@ class ArenaHandler(ingest_server._Handler):
                 return self._json(self.arena.iniciar_simulado(str(body.get("concurso")), str(body.get("nivel"))))
             if path == "/api/arena/simulado/entregar":
                 return self._json(self.arena.entregar_simulado(str(body.get("sessao")), body.get("respostas") or {}))
+            if path == "/api/arena/tribunal/concluir":
+                return self._json(self.arena.concluir_episodio(str(body.get("episodio")), body.get("credibilidade", 0),
+                                                               body.get("erros", 0)))
+            if path == "/api/arena/perfil/avatar":
+                avatar = body.get("avatar")
+                if not isinstance(avatar, dict) or len(json.dumps(avatar)) > 2000:
+                    return self._json({"erro": "avatar inválido"}, 400)
+                self.arena.player.set_avatar(str(body.get("nome", "")), avatar)
+                return self._json({"ok": True})
             if path == "/api/arena/caso/iniciar":
                 return self._json(self.arena.iniciar_caso(str(body.get("caso"))))
             if path == "/api/arena/caso/escolher":

@@ -18,3 +18,8 @@ acervo/
 .claude/
 .vscode/
 .idea/
+
+# instalador (gerados pelo build)
+instalador/build/
+instalador/dist/
+instalador/vade.ico
