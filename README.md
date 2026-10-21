@@ -44,8 +44,9 @@ Abre http://127.0.0.1:8765. As áreas do jogo:
   - **Modo Carreira** ([roteiro](docs/10-modo-carreira.md)): de estagiário(a) a juiz(a) em 5 atos, com uma
     trama que atravessa todos os casos. Cada caso tem **investigação** (examine os pontos da cena,
     converse com as pessoas, colete provas obrigatórias) e audiência. O progresso é salvo a cada cena;
-    cada caso só libera depois de vencer o anterior. **Ato I — O Estágio** pronto: 6 casos (furto × roubo,
-    insignificância, legítima defesa, audiência de custódia, fraude eletrônica e um júri).
+    cada caso só libera depois de vencer o anterior. **29 casos em 5 atos**: Estágio (penal), Advocacia
+    (consumidor, LGPD, trabalho, família, responsabilidade civil), Concurso (promotoria), Toga
+    (magistratura) e o julgamento final da Altavista.
   - **Casos avulsos**: julgamentos de promotor(a) e juiz(a) sempre liberados.
 
 - **Simulados**: estrutura de 7 concursos reais (carreiras policiais e INSS/CEBRASPE, tribunais, TRT,
@@ -92,7 +93,7 @@ python jogar.py validar --db catalogo.sqlite
 | --- | --- |
 | [`docs/`](docs) | análise do acervo, arquitetura, funcionalidades, dados, pipeline, roadmap, riscos, tecnologias, design system |
 | [`instalador`](instalador) | ✅ `VadeTribunal.exe`: instala, baixa jogo e leis, abre o jogo e mantém tudo atualizado |
-| [`services/arena`](services/arena) | ✅ jogo: modo Tribunal com Modo Carreira (Ato I: 6 casos com investigação) e 2 casos avulsos, 7 modelos de concurso × 4 dificuldades, **841 questões** em 20 áreas (70 comentadas à mão + 771 de letra da lei geradas do texto vigente), 4 casos (advogado, promotor, juiz), perfil do jogador e avatar (36 testes) |
+| [`services/arena`](services/arena) | ✅ jogo: modo Tribunal com Modo Carreira (5 atos, 29 casos com investigação) e 2 casos avulsos, 7 modelos de concurso × 4 dificuldades, **841 questões** em 20 áreas (70 comentadas à mão + 771 de letra da lei geradas do texto vigente), 4 casos (advogado, promotor, juiz), perfil do jogador e avatar (36 testes) |
 | [`services/ingest`](services/ingest) | ✅ importador (parser estrutural, precedentes, qualidade, classificação, SQLite + FTS) e painel com o botão "Verificar atualização" (49 testes) |
 | [`services/learning`](services/learning) | ✅ núcleo de aprendizagem: FSRS-5, XP/níveis/streak/ligas/moedas, dificuldade dinâmica (21 testes) |
 | [`db/sqlite`](db/sqlite) | ✅ esquema multiusuário de progresso/gamificação e eventos mensais (4 testes) |

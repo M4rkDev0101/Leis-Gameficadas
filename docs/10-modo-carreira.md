@@ -44,12 +44,18 @@ nem o seu antigo mentor.
 
 | Ato | Casos | Situação |
 | --- | --- | --- |
-| I — O Estágio | O Celular da Rua Augusta · O Pão e a Lei · Ponto Final · Três Dias no Escuro · O Golpe do Pix · O Júri | ✅ jogável |
-| II a V | — | em produção |
+| I — O Estágio | O Celular da Rua Augusta · O Pão e a Lei · Ponto Final · Três Dias no Escuro · O Golpe do Pix · O Júri | ✅ |
+| II — A Advocacia | A Geladeira que Esquentava · Dados à Venda · O Andaime · Theo, 6 anos · O Muro · A Palavra de Rafael | ✅ |
+| III — O Concurso | A Posse · O Rio Cinzento · Alvará com Pressa · Oito Gramas · A Firma · O Colega | ✅ |
+| IV — A Toga | A Primeira Decisão · O Celular Aberto · Preso para Averiguação · As Três Fases · A Casa É Asilo · Jorge Antunes | ✅ |
+| V — Altavista | A Exceção · O Colaborador · O Aço Não Mente · O Plenário · Sentença | ✅ |
+
+29 casos, todos validados contra a lei vigente e jogados de ponta a ponta pelo `tools/autoplay.js`.
 
 A duração mostrada no jogo é uma estimativa conservadora (`tribunal.estimate_minutes`): leitura a
 ~170 palavras por minuto, ~25 s por decisão e ~40 s por ponto de investigação, sem contar erros,
-releitura dos autos e retomadas. O Ato I soma cerca de 53 minutos por essa conta.
+releitura dos autos e retomadas. A campanha inteira soma cerca de 6,1 horas por essa conta
+(Ato I 0,9 h · II 1,0 h · III 1,6 h · IV 1,3 h · V 1,3 h).
 
 ## Formato da cena de investigação
 
