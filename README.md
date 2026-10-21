@@ -7,6 +7,24 @@ IA ancorado no texto legal. O conteúdo vem do acervo aberto [ctresb/leis](https
 
 ## Jogar
 
+### Instalador para Windows (recomendado)
+
+Baixe o **[VadeTribunal.exe](https://github.com/M4rkDev0101/Leis-Gameficadas/releases/download/instalador/VadeTribunal.exe)**
+e dê dois cliques. Ele faz tudo sozinho:
+
+1. instala em `%LOCALAPPDATA%\VadeTribunal` e cria o atalho **Vade Tribunal** na Área de Trabalho;
+2. instala o Git pelo winget, se faltar (pergunta antes);
+3. baixa o jogo deste repositório e, nas próximas aberturas, só atualiza;
+4. baixa o acervo [ctresb/leis](https://github.com/ctresb/leis) em clone parcial (sem os 2,5 GB);
+5. na primeira vez, importa as leis que o jogo usa (Constituição, códigos, leis especiais e súmulas);
+6. abre o jogo no navegador e verifica leis novas a cada 30 minutos.
+
+O `.exe` traz o Python embutido e é compilado pelo GitHub Actions a cada mudança em `instalador/`.
+Como não é assinado digitalmente, o Windows pode mostrar "editor desconhecido": clique em
+*Mais informações → Executar assim mesmo*.
+
+### Pelo código-fonte (Python 3.11+ e git)
+
 ```bash
 git clone --filter=blob:none --no-checkout https://github.com/ctresb/leis.git acervo
 ```
@@ -15,7 +33,14 @@ git clone --filter=blob:none --no-checkout https://github.com/ctresb/leis.git ac
 python jogar.py --repo acervo --db catalogo.sqlite
 ```
 
-Abre http://127.0.0.1:8765 com três áreas:
+Abre http://127.0.0.1:8765. As áreas do jogo:
+
+- **⚖️ Tribunal** (`/tribunal`): simulação de audiência no estilo dos jogos de tribunal, com
+  personagens e textos originais. Você é a **defesa**, a **acusação** ou o **juiz**: ouve depoimentos,
+  *pressiona* afirmações, abre os **autos do processo** e *apresenta* a prova ou o artigo que
+  desmente a testemunha. Tem gritos de **PROTESTO!**, martelo, credibilidade (5 balanças) e veredicto.
+  Como juiz, você decide os protestos (deferido/indeferido) pelo CPP art. 212. Bonequinhos animados,
+  sons sintetizados e criador de personagem. 3 julgamentos, todos validados contra a lei vigente.
 
 - **Simulados**: estrutura de 7 concursos reais (carreiras policiais e INSS/CEBRASPE, tribunais, TRT,
   Fiscal/Receita, OAB 1ª fase/FGV, Magistratura e MP) em quatro dificuldades (🟢 Treino, 🟡 Padrão, 🔴 Difícil,
@@ -60,7 +85,8 @@ python jogar.py validar --db catalogo.sqlite
 | Parte | Situação |
 | --- | --- |
 | [`docs/`](docs) | análise do acervo, arquitetura, funcionalidades, dados, pipeline, roadmap, riscos, tecnologias, design system |
-| [`services/arena`](services/arena) | ✅ jogo: 7 modelos de concurso × 4 dificuldades, **841 questões** em 20 áreas (70 comentadas à mão + 771 de letra da lei geradas do texto vigente), 4 casos (advogado, promotor, juiz), perfil do jogador (21 testes) |
+| [`instalador`](instalador) | ✅ `VadeTribunal.exe`: instala, baixa jogo e leis, abre o jogo e mantém tudo atualizado |
+| [`services/arena`](services/arena) | ✅ jogo: modo Tribunal (3 julgamentos), 7 modelos de concurso × 4 dificuldades, **841 questões** em 20 áreas (70 comentadas à mão + 771 de letra da lei geradas do texto vigente), 4 casos (advogado, promotor, juiz), perfil do jogador e avatar (32 testes) |
 | [`services/ingest`](services/ingest) | ✅ importador (parser estrutural, precedentes, qualidade, classificação, SQLite + FTS) e painel com o botão "Verificar atualização" (49 testes) |
 | [`services/learning`](services/learning) | ✅ núcleo de aprendizagem: FSRS-5, XP/níveis/streak/ligas/moedas, dificuldade dinâmica (21 testes) |
 | [`db/sqlite`](db/sqlite) | ✅ esquema multiusuário de progresso/gamificação e eventos mensais (4 testes) |

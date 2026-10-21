@@ -1,0 +1,53 @@
+# Compila o VadeTribunal.exe numa máquina Windows e publica na Release "instalador".
+# Link fixo para baixar: https://github.com/M4rkDev0101/Leis-Gameficadas/releases/download/instalador/VadeTribunal.exe
+name: Instalador Windows
+
+on:
+  push:
+    branches: [main]
+    paths: ["instalador/**", ".github/workflows/instalador.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Testes (o jogo baixado pelo instalador precisa passar)
+        shell: pwsh
+        run: |
+          $env:PYTHONPATH = "services/arena/src;services/ingest/src;services/learning/src"
+          python -m unittest discover -s services/arena/tests
+          python -m unittest discover -s services/learning/tests
+
+      - name: Compilar o .exe
+        shell: pwsh
+        run: |
+          python -m pip install --disable-pip-version-check pyinstaller
+          python instalador/gerar_icone.py instalador/vade.ico
+          python -m PyInstaller --noconfirm --clean --onefile --windowed `
+            --name VadeTribunal --icon "$PWD/instalador/vade.ico" `
+            --distpath dist --workpath build --specpath build instalador/vade_launcher.py
+
+      - name: Publicar na Release "instalador"
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: instalador
+          name: Vade Tribunal — instalador para Windows
+          make_latest: true
+          files: dist/VadeTribunal.exe
+          body: |
+            Baixe o **VadeTribunal.exe** e dê dois cliques. Na primeira vez ele instala tudo sozinho
+            (o jogo, o acervo de leis e as leis usadas nos julgamentos), cria o atalho na Área de
+            Trabalho e abre o jogo no navegador. Nas próximas vezes, só atualiza e abre.
+
+            O Windows pode avisar que o aplicativo é de um editor desconhecido (o executável não é
+            assinado digitalmente): clique em "Mais informações" → "Executar assim mesmo".
