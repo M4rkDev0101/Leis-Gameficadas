@@ -1,0 +1,3185 @@
+{
+ "ato": "ato2",
+ "personagens": {
+  "a2xamaro": {
+   "nome": "Amaro Teixeira",
+   "cargo": "Autor · aposentado",
+   "voz": 200,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#d9d9d9",
+    "roupa": "casual",
+    "corRoupa": "#7f8c8d",
+    "gravata": null,
+    "oculos": true,
+    "barba": true
+   }
+  },
+  "a2xdenis": {
+   "nome": "Denis Aguiar",
+   "cargo": "Preposto e cobrador · Crédito+",
+   "voz": 300,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#2c2c2c",
+    "roupa": "social",
+    "corRoupa": "#34495e",
+    "gravata": "#c0392b",
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a2xzuleica": {
+   "nome": "Zuleica Prado",
+   "cargo": "Vizinha de Seu Amaro",
+   "voz": 480,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "cacheado",
+    "corCabelo": "#bdbdbd",
+    "roupa": "casual",
+    "corRoupa": "#8e44ad",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a2xcleide": {
+   "nome": "Cleide Ramos",
+   "cargo": "Impetrante · dona do bar Sabor de Casa",
+   "voz": 400,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "cacheado",
+    "corCabelo": "#2c2c2c",
+    "roupa": "casual",
+    "corRoupa": "#d35400",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a2xlauro": {
+   "nome": "Lauro Pimentel",
+   "cargo": "Secretário Municipal de Fiscalização",
+   "voz": 240,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#555555",
+    "roupa": "social",
+    "corRoupa": "#2c3e50",
+    "gravata": "#7f8c8d",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a2xnilton": {
+   "nome": "Dr. Nilton Prado",
+   "cargo": "Procurador do Município",
+   "voz": 270,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "social",
+    "corRoupa": "#1f2d3d",
+    "gravata": "#16a085",
+    "oculos": true,
+    "barba": true
+   }
+  },
+  "a2xgilmar": {
+   "nome": "Gilmar Dutra",
+   "cargo": "Fiscal municipal",
+   "voz": 330,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#8b5a2b",
+    "roupa": "casual",
+    "corRoupa": "#27ae60",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a2xlurdes": {
+   "nome": "Lurdes Pacheco",
+   "cargo": "Autora · 78 anos, moradora da Casa Boa Estação",
+   "voz": 520,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#e5e5e5",
+    "roupa": "casual",
+    "corRoupa": "#c0392b",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a2xpedro": {
+   "nome": "Pedro Pacheco",
+   "cargo": "Neto de Dona Lurdes",
+   "voz": 310,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#2c2c2c",
+    "roupa": "casual",
+    "corRoupa": "#2980b9",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a2xheloisa": {
+   "nome": "Heloísa Brito",
+   "cargo": "Diretora da Casa Boa Estação",
+   "voz": 440,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#6b4423",
+    "roupa": "blazer",
+    "corRoupa": "#7d3c98",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a2xnadia": {
+   "nome": "Nádia Silveira",
+   "cargo": "Enfermeira da Casa Boa Estação",
+   "voz": 460,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "cacheado",
+    "corCabelo": "#111111",
+    "roupa": "casual",
+    "corRoupa": "#1abc9c",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  }
+ },
+ "episodios": [
+  {
+   "id": "a2x-cobranca",
+   "ato": "ato2",
+   "ordem": 2.5,
+   "numero": 8,
+   "titulo": "A Dívida em Dobro",
+   "papel": "advogado",
+   "nivel": "intermediario",
+   "sinopse": "Seu Amaro, 71 anos, pagou em dobro por seis meses e ainda teve o nome exposto no muro do prédio. A financeira diz que foi só um erro de sistema. A carteira veio da Altavista.",
+   "placas": {
+    "acusacao": "Parte ré"
+   },
+   "posicoes": {
+    "voce": "defesa",
+    "a2xamaro": "defesa",
+    "livia": "acusacao",
+    "heitor": "juiz",
+    "a2xdenis": "testemunha",
+    "a2xzuleica": "cena",
+    "helena": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "extrato",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Extrato do contrato nº 7731",
+     "descricao": "Seu Amaro contratou R$ 2.000,00 em 12 parcelas de R$ 190,00. De março a agosto, cada mês aparece em DUAS linhas: 'parcela do contrato' e 'parcela do refinanciamento', ambas de R$ 190,00, no mesmo dia. São seis cobranças a mais: R$ 1.140,00."
+    },
+    {
+     "id": "comprov",
+     "tipo": "prova",
+     "icone": "💸",
+     "nome": "Comprovantes de pagamento",
+     "descricao": "Seu Amaro pagou as doze parcelas e também as seis repetidas, por medo de 'ficar com o nome sujo': R$ 1.140,00 a mais saíram da aposentadoria dele."
+    },
+    {
+     "id": "aviso",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Aviso colado no muro do prédio",
+     "descricao": "'ATENÇÃO, MORADORES: o Sr. Amaro Teixeira, apto 32, deve R$ 3.480,00. Crédito+ Cobranças.' Papel preso com fita ao lado do interfone."
+    },
+    {
+     "id": "roteiro",
+     "tipo": "prova",
+     "icone": "🖥️",
+     "nome": "Roteiro de cobrança (tela do sistema)",
+     "descricao": "'Cliente com 5 dias de atraso? 1) Ligar para o contato de emergência. 2) Passar na portaria e falar com o porteiro. 3) Fixar aviso na entrada.' Rodapé: 'Meta do mês: recuperar 85% da carteira'."
+    },
+    {
+     "id": "protocolos",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Protocolos de reclamação",
+     "descricao": "Três protocolos de Seu Amaro (abril, junho e julho) pedindo o estorno das parcelas repetidas. Os três foram encerrados no sistema como 'sem pendência'."
+    },
+    {
+     "id": "cdc42",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CDC, art. 42 — Cobrança sem constrangimento",
+     "chave": "CDC#art-42",
+     "trecho": "não será exposto a ridículo, nem será submetido a qualquer tipo de constrangimento ou ameaça"
+    },
+    {
+     "id": "cdc42pu",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CDC, art. 42, parágrafo único — Repetição em dobro",
+     "chave": "CDC#art-42/par-unico",
+     "trecho": "direito à repetição do indébito, por valor igual ao dobro do que pagou em excesso"
+    },
+    {
+     "id": "cdc71",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CDC, art. 71 — Cobrança abusiva",
+     "chave": "CDC#art-71",
+     "trecho": "ameaça, coação, constrangimento físico ou moral"
+    },
+    {
+     "id": "cdc6",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CDC, art. 6º, VIII — Inversão do ônus da prova",
+     "chave": "CDC#art-6/inc-viii",
+     "trecho": "inversão do ônus da prova"
+    }
+   ],
+   "inicio": "a1",
+   "cenas": {
+    "a1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "A Dívida em Dobro",
+     "proxima": "a2"
+    },
+    "a2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "a2xamaro",
+       "e": "triste",
+       "t": "Eu tenho setenta e um anos, doutor(a), e nunca devi nada a ninguém. Peguei dois mil reais emprestados para trocar o telhado e pensei que fosse só pagar em doze vezes."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "Seu Amaro trouxe uma pasta inteira de comprovantes. Em metade dos meses ele pagou duas vezes a mesma parcela."
+      },
+      {
+       "q": "a2xamaro",
+       "e": "nervoso",
+       "t": "Eu reclamei, mas o rapaz do cobrador foi ao meu prédio. Falou alto na portaria, ligou para a minha filha, colou papel no muro com o meu nome. Fiquei com vergonha de descer para comprar pão."
+      },
+      {
+       "q": "a2xamaro",
+       "e": "triste",
+       "t": "Então eu paguei tudo. Tudo que pediram. Só queria que parassem."
+      },
+      {
+       "q": "helena",
+       "e": "bravo",
+       "t": "Cobrar o que é devido é direito do credor. Constranger o devedor, não. E cobrar o que NÃO é devido, e ainda ameaçar para receber, é bem pior."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Há dois pedidos aqui: a devolução do que foi pago a mais, que o CDC manda devolver em dobro, e a indenização pelo constrangimento."
+      },
+      {
+       "q": "helena",
+       "e": "confiante",
+       "t": "O contrato foi cedido por uma tal 'Altavista Serviços Ltda.' à financeira Crédito+. Esse nome já me tirou o sono hoje. Vá conferir a papelada deles."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "comprov",
+        "cdc42",
+        "cdc42pu",
+        "cdc71",
+        "cdc6"
+       ]
+      }
+     ],
+     "proxima": "a3"
+    },
+    "a3": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Antes de sair, doutor(a): o consumidor quase nunca tem o extrato interno da empresa. Como evitamos que ele carregue sozinho esse peso?"
+      }
+     ],
+     "pergunta": "Que requerimento probatório facilita a defesa do consumidor?",
+     "opcoes": [
+      {
+       "t": "Nenhum: caberá a Seu Amaro provar tudo, inclusive os registros internos da financeira.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "Errado. O consumidor é a parte vulnerável e o sistema interno é da empresa. Dar tudo ao Seu Amaro seria ignorar o CDC."
+        }
+       ]
+      },
+      {
+       "t": "Pedir a inversão do ônus da prova, porque a alegação é verossímil e Seu Amaro é hipossuficiente.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CDC#art-6/inc-viii",
+         "trecho": "inversão do ônus da prova"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A alegação é verossímil: há comprovantes. E a empresa tem os registros. O CDC permite ao juiz inverter o ônus, para a financeira provar que a cobrança era devida."
+        },
+        {
+         "q": "helena",
+         "e": "feliz",
+         "t": "É isso. Agora vá atrás do que ela guarda."
+        }
+       ]
+      },
+      {
+       "t": "Pedir apenas uma perícia contábil antes de qualquer outra medida.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "A perícia pode vir depois, mas é cara e lenta para um aposentado. Primeiro ajustamos o ônus; muitas vezes o documento do próprio réu resolve."
+        }
+       ]
+      }
+     ],
+     "proxima": "a4"
+    },
+    "a4": {
+     "tipo": "investigar",
+     "local": "loja",
+     "titulo": "Crédito+ Financeira · Loja da Avenida",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Cartazes de 'crédito sem burocracia', fila de aposentados e um atendente que sorri com os dentes, mas não com os olhos."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Preciso do extrato do contrato e de qualquer prova de como eles cobram.)"
+      }
+     ],
+     "pontos": [
+      {
+       "id": "balcao",
+       "nome": "Balcão de atendimento",
+       "x": 41,
+       "y": 44,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Ao lado da maquininha, um extrato impresso do contrato 7731. Em cada mês de março a agosto, DUAS parcelas de R$ 190,00 na mesma data. O sistema cobrou em dobro por seis meses seguidos.",
+         "recebe": [
+          "extrato"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "monitor",
+       "nome": "Monitor do gerente",
+       "x": 52,
+       "y": 39,
+       "w": 8,
+       "h": 9,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Uma tela de 'Roteiro de cobrança': ligar para o contato de emergência, falar com o porteiro, colar aviso na entrada. E embaixo: 'Meta do mês: recuperar 85%'. Isso não é cobrança, é pressão.",
+         "recebe": [
+          "roteiro"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "cartaz",
+       "nome": "Cartaz promocional",
+       "x": 70,
+       "y": 12,
+       "w": 18,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "'Crédito aprovado na hora, cobrado na sua porta.' Em letrinhas: 'carteira cedida por Altavista Serviços Ltda.' Lá vem a Altavista de novo."
+        }
+       ]
+      },
+      {
+       "id": "vitrine",
+       "nome": "Vitrine de produtos",
+       "x": 6,
+       "y": 24,
+       "w": 22,
+       "h": 50,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Folhetos de 'consignado sem consulta', 'refinanciamento fácil' e 'portabilidade com bônus'. Quanto mais fácil, mais caro vai ficar depois."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2xdenis",
+       "titulo": "Conversar com Denis, o cobrador",
+       "falas": [
+        {
+         "q": "a2xdenis",
+         "e": "confiante",
+         "t": "O doutor(a) é advogado(a) do velhinho, né? Olha, sistema não erra. Se saiu duas vezes, foi porque ele contratou duas vezes."
+        },
+        {
+         "q": "a2xdenis",
+         "e": "nervoso",
+         "t": "Reclamação? Ah, ele reclamou, sim. Três vezes. Mas o atendimento fecha como 'sem pendência' quando o contrato está ativo. Eu mesmo só faço o que o roteiro manda."
+        },
+        {
+         "q": "a2xdenis",
+         "e": "bravo",
+         "t": "E quem não paga no prazo, a gente vai atrás. A gente vai até o prédio, fala com o porteiro, qualquer um. Meta é meta.",
+         "recebe": [
+          "protocolos"
+         ]
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "extrato",
+      "roteiro"
+     ],
+     "proxima": "a5"
+    },
+    "a5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Ação de repetição de indébito e indenização por danos morais. Autor: Amaro Teixeira. Réu: Crédito+ Financeira S.A.",
+       "fx": "martelo"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Inverto o ônus da prova quanto aos lançamentos, nos termos do art. 6º, VIII, do CDC. Ouço o preposto da ré."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, a Crédito+ é uma empresa séria. Todas as cobranças seguem o contrato, e o Sr. Denis Aguiar vai esclarecer."
+      },
+      {
+       "q": "a2xdenis",
+       "e": "confiante",
+       "t": "Meritíssimo, no nosso sistema cada parcela é lançada uma única vez por mês."
+      }
+     ],
+     "proxima": "a6"
+    },
+    "a6": {
+     "tipo": "depoimento",
+     "testemunha": "a2xdenis",
+     "titulo": "Cada parcela, uma vez",
+     "intro": [
+      {
+       "q": "a2xdenis",
+       "e": "confiante",
+       "t": "Eu trabalho há nove anos nessa casa. Nunca vi erro de lançamento na carteira que cuido."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O sistema da Crédito+ lança a parcela uma única vez por mês, para todos os clientes.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Todos os clientes? Sem exceção?"
+        },
+        {
+         "q": "a2xdenis",
+         "e": "nervoso",
+         "t": "Sem exceção. É automático, não tem como duplicar."
+        }
+       ]
+      },
+      {
+       "t": "Se houve pagamento duplicado, foi porque o cliente pagou por conta própria.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Ele pagou porque o sistema gerou o boleto, não?"
+        },
+        {
+         "q": "a2xdenis",
+         "e": "nervoso",
+         "t": "O boleto sai do sistema, claro, mas o cliente é que paga."
+        }
+       ]
+      },
+      {
+       "t": "Nenhum cliente reclamou de lançamento em dobro neste contrato.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nenhum?"
+        },
+        {
+         "q": "a2xdenis",
+         "e": "bravo",
+         "t": "Nenhum que eu me lembre."
+        }
+       ]
+      },
+      {
+       "t": "O contrato 7731 sempre esteve regular até o atraso do Sr. Amaro.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Até o atraso. E quando começou o atraso?"
+        },
+        {
+         "q": "a2xdenis",
+         "e": "nervoso",
+         "t": "Em setembro, creio."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "extrato"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Este é o extrato do contrato 7731, impresso na sua própria loja. De março a agosto, DUAS linhas por mês: 'parcela do contrato' e 'parcela do refinanciamento', ambas de R$ 190,00, na mesma data!"
+      },
+      {
+       "q": "a2xdenis",
+       "e": "chocado",
+       "t": "Esse… esse refinanciamento nunca foi pedido pelo cliente…",
+       "fx": "tremor"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Então o sistema lança em dobro, sim, senhor Denis. E nenhum cliente é avisado.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Essa prova não contradiz esta afirmação."
+      }
+     ],
+     "proxima": "a7"
+    },
+    "a7": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "pensativo",
+       "t": "Excelência, admitamos um erro de sistema. Mas o autor também alega constrangimento, e isso é outra conversa. Onde está a prova de que a empresa o expôs ao ridículo?"
+      },
+      {
+       "q": "a2xamaro",
+       "e": "triste",
+       "t": "Eu tive que ouvir o porteiro perguntando se eu era 'caloteiro'…"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Palavra do autor, por mais sincera que seja, não basta. Doutor(a), tem algo além do relato dele? Suspendo por quinze minutos."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(O prédio. Alguém viu. Alguém tem que ter visto.)"
+      }
+     ],
+     "proxima": "a8"
+    },
+    "a8": {
+     "tipo": "investigar",
+     "local": "rua",
+     "titulo": "Rua do prédio de Seu Amaro",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Prédio de quatro andares, interfone antigo e um muro cheio de recados de chaveiro e aulas de reforço."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "(Se a empresa colou aviso, deve ter sobrado alguma coisa.)"
+      }
+     ],
+     "pontos": [
+      {
+       "id": "muro",
+       "nome": "Muro ao lado do interfone",
+       "x": 4,
+       "y": 45,
+       "w": 30,
+       "h": 27,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Presa com fita ao lado do interfone: 'ATENÇÃO, MORADORES: o Sr. Amaro Teixeira, apto 32, deve R$ 3.480,00. Crédito+ Cobranças.' Qualquer um que entra lê.",
+         "recebe": [
+          "aviso"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "fachada",
+       "nome": "Fachada do prédio",
+       "x": 39,
+       "y": 29,
+       "w": 29,
+       "h": 28,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Na portaria, uma folha de visitas: 'Denis, Crédito+, 14h'. Três registros em duas semanas. Só para perguntar por um morador."
+        }
+       ]
+      },
+      {
+       "id": "carro",
+       "nome": "Carro estacionado",
+       "x": 62,
+       "y": 61,
+       "w": 29,
+       "h": 19,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "No para-brisa, um adesivo: 'Crédito+ Cobranças · Equipe de Campo'. No banco, uma pasta com a lista dos devedores do bairro. O nome do Seu Amaro está sublinhado."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2xzuleica",
+       "titulo": "Conversar com a vizinha Zuleica",
+       "falas": [
+        {
+         "q": "a2xzuleica",
+         "e": "bravo",
+         "t": "Eu moro no 31, doutor(a). Vi o rapaz colando o papel. Falou alto: 'o velho do 32 não paga'. Quase fui lá tirar, mas era feio mexer."
+        },
+        {
+         "q": "a2xzuleica",
+         "e": "triste",
+         "t": "O Seu Amaro ficou três semanas sem descer. Eu levava pão para ele. Um senhor de setenta anos, que nunca atrasou nem a taxa do condomínio."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "aviso"
+     ],
+     "proxima": "a9"
+    },
+    "a9": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Retomo a audiência. O preposto ainda tem esclarecimentos a prestar sobre o método de cobrança."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, a cobrança da Crédito+ é discreta e profissional."
+      },
+      {
+       "q": "a2xdenis",
+       "e": "confiante",
+       "t": "Isso mesmo. A nossa política é só falar com o devedor, nunca com terceiros."
+      }
+     ],
+     "proxima": "a10"
+    },
+    "a10": {
+     "tipo": "depoimento",
+     "testemunha": "a2xdenis",
+     "titulo": "Cobrança discreta",
+     "intro": [
+      {
+       "q": "a2xdenis",
+       "e": "normal",
+       "t": "Eu tenho um código de conduta e sigo à risca."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "A política da empresa é nunca expor o cliente a terceiros: só o devedor é procurado.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca? Nem a vizinhos, nem ao porteiro?"
+        },
+        {
+         "q": "a2xdenis",
+         "e": "nervoso",
+         "t": "Nunca. É regra."
+        }
+       ]
+      },
+      {
+       "t": "Não existe meta de recuperação ou pressão sobre os cobradores.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Meta nenhuma?"
+        },
+        {
+         "q": "a2xdenis",
+         "e": "nervoso",
+         "t": "Acompanhamos resultados, só isso."
+        }
+       ]
+      },
+      {
+       "t": "Se algum colega agiu errado, foi iniciativa individual, nunca orientação da empresa.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca orientação?"
+        },
+        {
+         "q": "a2xdenis",
+         "e": "bravo",
+         "t": "Nunca, doutor(a)."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "aviso"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "'ATENÇÃO, MORADORES: o Sr. Amaro Teixeira, apto 32, deve R$ 3.480,00.' Um aviso público, assinado Crédito+ Cobranças, colado ao lado do interfone. Isso é falar só com o devedor?"
+      },
+      {
+       "q": "a2xdenis",
+       "e": "chocado",
+       "t": "Eu só colei porque… porque a rota mandou.",
+       "fx": "tremor"
+      },
+      {
+       "q": "a2xzuleica",
+       "e": "bravo",
+       "t": "Eu vi, Excelência! Vi ele colando!"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Silêncio na plateia. Anotado: a exposição existiu.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Essa prova não contradiz esta afirmação."
+      }
+     ],
+     "proxima": "a11"
+    },
+    "a11": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "bravo",
+       "t": "Ainda que o cobrador tenha exagerado, foi um ato isolado. A empresa não pode responder por improviso de um funcionário!"
+      }
+     ],
+     "pergunta": "Como provar que o constrangimento era política da empresa, e não improviso?",
+     "provas": [
+      "roteiro"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Aqui está o roteiro oficial do sistema da própria Crédito+: ligar para o contato de emergência, falar com o porteiro, fixar aviso na entrada. E, no rodapé, 'meta do mês: recuperar 85%'. Não é improviso, é método."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "O roteiro está no sistema da ré. Procede: a conduta decorre da política de cobrança, e não de excesso individual."
+      },
+      {
+       "q": "livia",
+       "e": "chocado",
+       "t": "…",
+       "fx": "tremor"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Isso não demonstra que a conduta era política da empresa."
+      }
+     ],
+     "proxima": "a12"
+    },
+    "a12": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Então vejamos o que resta. Quanto ao dobro do art. 42, ele só se aplica se não houver 'engano justificável'. Um erro de sistema é engano justificável!"
+      },
+      {
+       "q": "heitor",
+       "e": "pensativo",
+       "t": "A ré aponta o engano justificável. O autor?"
+      }
+     ],
+     "proxima": "a13"
+    },
+    "a13": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Doutor(a), o que torna injustificável o engano da ré?"
+      }
+     ],
+     "pergunta": "Que prova mostra que o erro não foi um simples engano justificável?",
+     "provas": [
+      "protocolos"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Três protocolos de reclamação, em abril, junho e julho: o autor avisou a ré e pediu estorno, e todos os pedidos foram fechados como 'sem pendência'. Engano justificável é o que ocorre uma vez, de boa-fé. Aqui o erro se repetiu por seis meses e foi ignorado depois de avisado!"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Engano justificável é o erro que a diligência não evita. A ré foi avisada e se manteve inerte. Afasto a excludente."
+      },
+      {
+       "q": "a2xamaro",
+       "e": "feliz",
+       "t": "Foi o que eu disse, doutor(a)…"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Isso não afasta a tese do engano justificável."
+      }
+     ],
+     "proxima": "a14"
+    },
+    "a14": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Pedidos finais do autor, doutor(a)."
+      }
+     ],
+     "pergunta": "Qual é o pedido?",
+     "opcoes": [
+      {
+       "t": "Devolução simples dos R$ 1.140,00 pagos a mais, sem indenização.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "pensativo",
+         "t": "Devolução simples só vale quando há engano justificável. Aqui o autor tem direito ao dobro, e há dano moral pelo constrangimento."
+        }
+       ]
+      },
+      {
+       "t": "Repetição em dobro (R$ 2.280,00) e indenização por dano moral pela cobrança vexatória.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CDC#art-42/par-unico",
+         "trecho": "direito à repetição do indébito, por valor igual ao dobro do que pagou em excesso"
+        },
+        {
+         "chave": "CDC#art-42",
+         "trecho": "não será exposto a ridículo, nem será submetido a qualquer tipo de constrangimento ou ameaça"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência: R$ 1.140,00 pagos a mais, devolvidos em dobro, R$ 2.280,00. E dano moral pelo aviso no muro, pelo porteiro e pelas ligações à filha dele."
+        }
+       ]
+      },
+      {
+       "t": "Que o contrato seja declarado nulo e toda a dívida, inclusive o empréstimo original, seja perdoada.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "O empréstimo original foi contratado e é devido. O pedido de perdão de tudo não tem base. A ilegalidade está na duplicidade e na forma de cobrar, não no contrato original."
+        }
+       ]
+      }
+     ],
+     "proxima": "a15"
+    },
+    "a15": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "O Código de Processo Civil manda que juízes e advogados estimulem a solução consensual de conflitos, inclusive no curso do processo. Doutora Lívia?"
+      },
+      {
+       "q": "livia",
+       "e": "pensativo",
+       "t": "Excelência, minha cliente está disposta a um acordo: pagaria R$ 4.000,00 em dez dias, sem confissão de culpa, e retiraria os avisos."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Doutor(a), converse com o seu cliente. A decisão é dele."
+      },
+      {
+       "q": "a2xamaro",
+       "e": "pensativo",
+       "t": "O que você acha? Eu não entendo dessas coisas. Eu queria só o meu dinheiro e ficar em paz."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Os dois caminhos são lícitos. O acordo é rápido e certo. A sentença pode render mais e ficar como recado para as outras vítimas do mesmo roteiro, mas demora e pode ter recurso.)"
+      }
+     ],
+     "proxima": "a16"
+    },
+    "a16": {
+     "tipo": "escolha",
+     "livre": true,
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a2xamaro",
+       "e": "pensativo",
+       "t": "Eu confio em você. O que fazemos?"
+      }
+     ],
+     "pergunta": "Qual conselho você dá a Seu Amaro?",
+     "opcoes": [
+      {
+       "t": "Aceitar o acordo: dinheiro rápido, tranquilidade e fim do desgaste.",
+       "marca": "a2x_amaro_acordo",
+       "fundamentos": [
+        {
+         "chave": "CPC#art-3/par-3",
+         "trecho": "A conciliação, a mediação e outros métodos de solução consensual de conflitos deverão ser estimulados"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Seu Amaro, o acordo cobre o dobro e ainda dá uma indenização. O senhor recebe em dez dias e para de ouvir falar disso. É uma escolha legítima."
+        },
+        {
+         "q": "a2xamaro",
+         "e": "feliz",
+         "t": "Então vamos acabar com isso. Eu quero reformar o telhado antes das chuvas."
+        }
+       ]
+      },
+      {
+       "t": "Seguir até a sentença, para que a decisão proteja também os outros clientes.",
+       "marca": "a2x_amaro_sentenca",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Também é legítimo continuar. A sentença vai dizer em letras de forma que aquele roteiro é ilegal, e pode render mais. Mas pode demorar e haver recurso."
+        },
+        {
+         "q": "a2xamaro",
+         "e": "confiante",
+         "t": "Eu aguento esperar. Tem muito velhinho com medo de descer para comprar pão. Se a decisão mostrar que dá para ganhar, vale a pena."
+        }
+       ]
+      }
+     ],
+     "proxima": "a17"
+    },
+    "a17": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Homologo a transação entre as partes e julgo extinto o processo com resolução do mérito.",
+       "se": "a2x_amaro_acordo",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "A Crédito+ cumprirá o acordo em dez dias.",
+       "se": "a2x_amaro_acordo"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Julgo procedentes os pedidos: devolução em dobro de R$ 1.140,00, ou seja, R$ 2.280,00 com correção, e R$ 8.000,00 de indenização por dano moral. Oficie-se ao Procon e ao Ministério Público sobre o roteiro de cobrança.",
+       "se": "a2x_amaro_sentenca",
+       "fx": "martelo"
+      },
+      {
+       "q": "a2xzuleica",
+       "e": "feliz",
+       "t": "Agora ele desce para o pão sem medo, doutor(a)."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "(ao telefone) A carteira de 9.400 contratos da Crédito+ veio toda da Altavista Serviços. Se o roteiro é o mesmo para todos, Seu Amaro é só a ponta do iceberg."
+      }
+     ],
+     "proxima": "a18"
+    },
+    "a18": {
+     "tipo": "veredicto",
+     "carimbo": "PROCEDENTE",
+     "titulo": "Dívida paga, dívida devolvida",
+     "texto": "Repetição em dobro, constrangimento reconhecido e um roteiro de cobrança exposto. A Altavista vendeu a carteira, mas a conta chegou.",
+     "variantes": [
+      {
+       "se": "a2x_amaro_acordo",
+       "carimbo": "ACORDO HOMOLOGADO",
+       "titulo": "Paz, e o telhado trocado",
+       "texto": "Seu Amaro recebeu o dobro e uma indenização em dez dias. Um acordo lícito e sensato; o roteiro de cobrança, porém, continua a existir."
+      },
+      {
+       "se": "a2x_amaro_sentenca",
+       "carimbo": "PROCEDENTE",
+       "titulo": "Uma sentença para todos",
+       "texto": "Dobro devolvido, dano moral reconhecido e ofício ao Procon e ao MP. Seu Amaro esperou, e a decisão agora protege outros clientes."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a2x-lacre",
+   "ato": "ato2",
+   "ordem": 4.5,
+   "numero": 10,
+   "titulo": "O Lacre",
+   "papel": "advogado",
+   "nivel": "avancado",
+   "sinopse": "A fiscalização lacrou o bar de Dona Cleide, sem processo e sem explicar. Quem quer o ponto é a Altavista. O instrumento: mandado de segurança, que só vive de prova documental.",
+   "placas": {
+    "acusacao": "Município"
+   },
+   "posicoes": {
+    "voce": "defesa",
+    "a2xcleide": "defesa",
+    "a2xnilton": "acusacao",
+    "heitor": "juiz",
+    "a2xlauro": "testemunha",
+    "a2xgilmar": "cena",
+    "helena": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "alvara",
+     "tipo": "prova",
+     "icone": "🪪",
+     "nome": "Alvará de funcionamento",
+     "descricao": "Alvará nº 4410 do bar Sabor de Casa, válido até dezembro, com todas as taxas pagas desde 2009."
+    },
+    {
+     "id": "auto",
+     "tipo": "prova",
+     "icone": "🔒",
+     "nome": "Auto de interdição e lacre",
+     "descricao": "'Interdição imediata do estabelecimento por irregularidades diversas.' Não diz quais, não dá prazo de defesa. Assinado: Secretário Lauro Pimentel. O lacre está na porta há 20 dias."
+    },
+    {
+     "id": "video",
+     "tipo": "prova",
+     "icone": "📹",
+     "nome": "Gravação da câmera do bar",
+     "descricao": "O fiscal Gilmar, ao lado do caixa, diz ao telefone: 'O pessoal da Altavista quer o ponto. Ou a senhora vende, ou eu lacro.' Data: véspera da interdição."
+    },
+    {
+     "id": "parecer",
+     "tipo": "prova",
+     "icone": "📑",
+     "nome": "Parecer da vistoria sanitária de março",
+     "descricao": "Vistoria da Vigilância Sanitária do próprio Município: 'Estabelecimento aprovado, sem pendências.' Assinado em março deste ano."
+    },
+    {
+     "id": "processo",
+     "tipo": "prova",
+     "icone": "🗂️",
+     "nome": "Certidão da Secretaria",
+     "descricao": "Certifica que NÃO consta processo administrativo, notificação ou prazo de defesa em nome do estabelecimento Sabor de Casa."
+    },
+    {
+     "id": "cf5lv",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CF, art. 5º, LV — Contraditório e ampla defesa",
+     "chave": "CF#art-5/inc-lv",
+     "trecho": "o contraditório e ampla defesa"
+    },
+    {
+     "id": "ms1",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "LMS, art. 1º — Direito líquido e certo",
+     "chave": "LMS#art-1",
+     "trecho": "Conceder-se-á mandado de segurança para proteger direito líquido e certo"
+    },
+    {
+     "id": "ms6",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "LMS, art. 6º — Indicar a autoridade e a pessoa jurídica",
+     "chave": "LMS#art-6",
+     "trecho": "indicará, além da autoridade coatora, a pessoa jurídica que esta integra"
+    },
+    {
+     "id": "ms23",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "LMS, art. 23 — Prazo de 120 dias",
+     "chave": "LMS#art-23",
+     "trecho": "decorridos 120 (cento e vinte) dias, contados da ciência"
+    },
+    {
+     "id": "ms7",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "LMS, art. 7º, III — Liminar",
+     "chave": "LMS#art-7/inc-iii",
+     "trecho": "que se suspenda o ato que deu motivo ao pedido"
+    },
+    {
+     "id": "l50",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei 9.784, art. 50, I — Motivação",
+     "chave": "L9784#art-50/inc-i",
+     "trecho": "neguem, limitem ou afetem direitos ou interesses"
+    }
+   ],
+   "inicio": "b1",
+   "cenas": {
+    "b1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "O Lacre",
+     "proxima": "b2"
+    },
+    "b2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "a2xcleide",
+       "e": "triste",
+       "t": "Dezoito anos de bar, doutor(a). Dezoito. Sempre paguei tudo, sempre passei na vistoria. Vinte dias atrás chegou o fiscal e colou um lacre na minha porta. Sem conversa."
+      },
+      {
+       "q": "a2xcleide",
+       "e": "bravo",
+       "t": "Eu servia almoço para os pedreiros do Residencial Horizonte. Agora eles comem marmita fria na calçada e eu estou sem renda para pagar a dona da casa."
+      },
+      {
+       "q": "a2xcleide",
+       "e": "feliz",
+       "t": "O Seu Amaro, aquele senhor do prédio ao lado, me disse que vocês ganharam a causa dele na sentença. Ele não para de falar de vocês.",
+       "se": "a2x_amaro_sentenca"
+      },
+      {
+       "q": "a2xcleide",
+       "e": "feliz",
+       "t": "O Seu Amaro, aquele senhor do prédio ao lado, comentou que o escritório resolveu a dívida dele num instante e sem estresse.",
+       "se": "a2x_amaro_acordo"
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "Interdição de estabelecimento sem processo e sem defesa. Nosso instrumento é o mandado de segurança: protege direito líquido e certo contra ato ilegal de autoridade."
+      },
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Mas atenção: no mandado de segurança não existe testemunha nem perícia. A prova tem que vir pronta, em documento. Se faltar documento, a ação é indeferida logo na entrada."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Alvará, auto de interdição e, se existir, o que prova o motivo real.)"
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "alvara",
+        "cf5lv",
+        "ms1",
+        "ms6",
+        "ms23",
+        "ms7",
+        "l50"
+       ]
+      }
+     ],
+     "proxima": "b3"
+    },
+    "b3": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Primeiro erro clássico: errar a autoridade coatora. Contra quem apontamos o mandado de segurança?"
+      }
+     ],
+     "pergunta": "Quem deve ser indicado como autoridade coatora?",
+     "opcoes": [
+      {
+       "t": "O fiscal Gilmar, que colou o lacre na porta.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "Ele só executou. A autoridade coatora é a que ordenou e tem poder para desfazer o ato, e a petição também deve indicar a pessoa jurídica de direito público a que ela pertence."
+        }
+       ]
+      },
+      {
+       "t": "O Secretário Municipal de Fiscalização, que assinou a interdição, e o Município como pessoa jurídica.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "LMS#art-6",
+         "trecho": "indicará, além da autoridade coatora, a pessoa jurídica que esta integra"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Quem assinou e pode revogar o ato é o Secretário. O Município entra como a pessoa jurídica a que ele se vincula."
+        },
+        {
+         "q": "helena",
+         "e": "feliz",
+         "t": "Exato. Se errássemos aqui, perderíamos tempo, e tempo é o que a Dona Cleide menos tem."
+        }
+       ]
+      },
+      {
+       "t": "O Prefeito, por ser o chefe do Executivo.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "O Prefeito não praticou nem ordenou esse ato específico. Apontar a autoridade mais alta não é regra."
+        }
+       ]
+      }
+     ],
+     "proxima": "b4"
+    },
+    "b4": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "a2xcleide",
+       "e": "nervoso",
+       "t": "O lacre foi há vinte dias. Ainda dá tempo, doutor(a)? Alguém me disse que o prazo era de cinco dias."
+      }
+     ],
+     "pergunta": "Qual é o prazo para impetrar mandado de segurança?",
+     "opcoes": [
+      {
+       "t": "Cinco dias, a contar do lacre.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "Inventaram esse número. O prazo é outro, e é decadencial."
+        }
+       ]
+      },
+      {
+       "t": "120 dias, a contar da ciência do ato impugnado.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "LMS#art-23",
+         "trecho": "decorridos 120 (cento e vinte) dias, contados da ciência"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Cento e vinte dias, contados da ciência do ato. Passaram-se vinte: estamos dentro do prazo."
+        },
+        {
+         "q": "a2xcleide",
+         "e": "feliz",
+         "t": "Graças a Deus."
+        }
+       ]
+      },
+      {
+       "t": "Cinco anos, como nas ações contra a Fazenda.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "Cinco anos é o prazo prescricional de outras ações. O mandado de segurança tem prazo decadencial, muito mais curto."
+        }
+       ]
+      }
+     ],
+     "proxima": "b5"
+    },
+    "b5": {
+     "tipo": "investigar",
+     "local": "bar",
+     "titulo": "Bar Sabor de Casa · Porta lacrada",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Cadeiras empilhadas, o cheiro de feijão ainda impregnado nas paredes e um lacre de papel vermelho cruzando a porta."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Como o mandado de segurança só vive de documentos, cada papel aqui vale ouro.)"
+      }
+     ],
+     "pontos": [
+      {
+       "id": "porta",
+       "nome": "Porta com lacre",
+       "x": 0,
+       "y": 22,
+       "w": 12,
+       "h": 58,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "O lacre diz: 'Interdição imediata por irregularidades diversas. Sec. Lauro Pimentel.' Não aponta qual irregularidade, não cita artigo de lei, não dá prazo de defesa.",
+         "recebe": [
+          "auto"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "camera",
+       "nome": "Câmera no teto",
+       "x": 76,
+       "y": 8,
+       "w": 12,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A câmera continuou gravando mesmo com o bar fechado, ligada na bateria. Na véspera do lacre, o fiscal Gilmar falava ao telefone: 'O pessoal da Altavista quer o ponto. Ou a senhora vende, ou eu lacro.'",
+         "recebe": [
+          "video"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "caixa",
+       "nome": "Caixa e balcão",
+       "x": 55,
+       "y": 40,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Atrás do caixa, emoldurado, o Alvará nº 4410, válido até dezembro. Taxas pagas desde 2009. Não há nada vencido.",
+         "recebe": [
+          "alvara"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa do canto",
+       "x": 14,
+       "y": 52,
+       "w": 18,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Uma pasta de plástico: o parecer da Vigilância Sanitária de março, assinado pelo próprio Município. 'Aprovado, sem pendências.' Seis meses depois, 'irregularidades diversas'?",
+         "recebe": [
+          "parecer"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2xcleide",
+       "titulo": "Conversar com Dona Cleide",
+       "falas": [
+        {
+         "q": "a2xcleide",
+         "e": "triste",
+         "t": "Esse ponto fica ao lado do terreno onde vão ampliar o Horizonte. Meses atrás um moço bem-vestido, da Altavista, me ofereceu um dinheirinho para eu sair."
+        },
+        {
+         "q": "a2xcleide",
+         "e": "bravo",
+         "t": "Eu disse que não. Que o ponto era a minha vida. Duas semanas depois, o fiscal."
+        },
+        {
+         "q": "a2xcleide",
+         "e": "nervoso",
+         "t": "Eu tenho medo, doutor(a). Mas a minha filha estuda com o dinheiro desse bar."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "auto",
+      "video",
+      "alvara"
+     ],
+     "proxima": "b6"
+    },
+    "b6": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Mandado de segurança. Impetrante: Cleide Ramos. Autoridade coatora: Secretário Municipal de Fiscalização, pelo Município.",
+       "fx": "martelo"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Observo que, no mandado de segurança, o juiz não ouve testemunhas: examina a autoridade pelas informações prestadas e as confronta com a prova documental pré-constituída."
+      },
+      {
+       "q": "a2xnilton",
+       "e": "confiante",
+       "t": "Procurador do Município, Excelência. A interdição foi legítima, técnica e impessoal. O Secretário Lauro Pimentel prestará as informações."
+      },
+      {
+       "q": "a2xlauro",
+       "e": "confiante",
+       "t": "Excelência, o ato seguiu todos os procedimentos legais."
+      }
+     ],
+     "proxima": "b7"
+    },
+    "b7": {
+     "tipo": "depoimento",
+     "testemunha": "a2xlauro",
+     "titulo": "Informações da autoridade: o ato",
+     "intro": [
+      {
+       "q": "a2xlauro",
+       "e": "confiante",
+       "t": "Prestarei as informações com a clareza de quem tem a consciência tranquila."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "A interdição foi precedida de vistoria técnica recente, que apontou riscos à saúde pública.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Vistoria recente? De quando?"
+        },
+        {
+         "q": "a2xlauro",
+         "e": "nervoso",
+         "t": "Muito recente, não me lembro a data exata."
+        }
+       ]
+      },
+      {
+       "t": "O auto de interdição descreve com clareza as irregularidades encontradas.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Com clareza? Quais?"
+        },
+        {
+         "q": "a2xlauro",
+         "e": "nervoso",
+         "t": "As irregularidades… estão todas no auto."
+        }
+       ]
+      },
+      {
+       "t": "Um estabelecimento que descumpre normas sanitárias não pode esperar processo para ser fechado.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca? Nem para ouvir o comerciante?"
+        },
+        {
+         "q": "a2xlauro",
+         "e": "bravo",
+         "t": "Saúde pública não espera burocracia."
+        }
+       ]
+      },
+      {
+       "t": "Em todo caso, o ato foi impessoal e motivado apenas por razões técnicas.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Só razões técnicas?"
+        },
+        {
+         "q": "a2xlauro",
+         "e": "nervoso",
+         "t": "Absolutamente."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "auto"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O auto de interdição, assinado pelo senhor, diz apenas 'irregularidades diversas'. Não aponta qual, não cita norma, não dá prazo de defesa. Onde está a clareza?"
+      },
+      {
+       "q": "a2xlauro",
+       "e": "chocado",
+       "t": "Eu… isso é um formulário padrão!",
+       "fx": "tremor"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "A Lei 9.784 exige motivação explícita, clara e congruente para atos que afetem direitos. Formulário padrão em branco não é motivação.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Essa prova não contradiz esta afirmação."
+      }
+     ],
+     "proxima": "b8"
+    },
+    "b8": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a2xnilton",
+       "e": "confiante",
+       "t": "Excelência, o mandado de segurança exige prova pré-constituída. A impetrante diz que não houve processo administrativo, mas é fato negativo, sem prova alguma!"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "É ônus da impetrante, sim. Doutor(a), há como provar documentalmente que NÃO existe processo? Suspendo a audiência."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "(ao telefone) Peça uma certidão na Secretaria. A ausência de processo também se prova por documento: a certidão negativa é a resposta."
+      }
+     ],
+     "proxima": "b9"
+    },
+    "b9": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Secretaria de Fiscalização · Protocolo",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Um corredor com bandeira do Município, pilhas de processos amarrados com barbante e um relógio que parece andar mais devagar que o normal."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "(Preciso de um documento oficial dizendo que não há processo.)"
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com processos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Pilhas ordenadas por bairro. Procuro 'Sabor de Casa'. Não há pasta, protocolo ou sequer uma capa em branco com esse nome."
+        }
+       ]
+      },
+      {
+       "id": "computador",
+       "nome": "Computador do protocolo",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Pelo sistema, uma certidão é emitida na hora: 'Certifico que NÃO consta processo administrativo, notificação ou prazo de defesa em nome do estabelecimento Sabor de Casa.'",
+         "recebe": [
+          "processo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de livros",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Entre os decretos municipais, o Código de Posturas: interdição cautelar exige parecer técnico e abertura de processo em 24 horas. Nada disso aconteceu."
+        }
+       ]
+      },
+      {
+       "id": "bandeira",
+       "nome": "Bandeira do Município",
+       "x": 90,
+       "y": 20,
+       "w": 8,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Brasão: legalidade, moralidade, eficiência. Do jeito que a prefeitura usa, parece decoração."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2xgilmar",
+       "titulo": "Conversar com o fiscal Gilmar",
+       "falas": [
+        {
+         "q": "a2xgilmar",
+         "e": "nervoso",
+         "t": "Eu cumpro ordem, doutor(a). O Secretário disse: 'interdite o bar da dona Cleide'. Eu perguntei o motivo, ele disse que não precisava de motivo."
+        },
+        {
+         "q": "a2xgilmar",
+         "e": "triste",
+         "t": "Eu como lá desde que comecei no emprego. A comida é a melhor do bairro. Fiquei com vergonha."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "processo"
+     ],
+     "proxima": "b10"
+    },
+    "b10": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Retomo. Junte-se a certidão da Secretaria. Senhor Secretário, as informações sobre a motivação do ato."
+      },
+      {
+       "q": "a2xlauro",
+       "e": "confiante",
+       "t": "Excelência, a motivação do ato é puramente técnica. Nunca houve qualquer interesse privado envolvido."
+      }
+     ],
+     "proxima": "b11"
+    },
+    "b11": {
+     "tipo": "depoimento",
+     "testemunha": "a2xlauro",
+     "titulo": "Informações da autoridade: o motivo",
+     "intro": [
+      {
+       "q": "a2xlauro",
+       "e": "normal",
+       "t": "O ato tem finalidade única: proteger a saúde dos consumidores."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "A interdição não teve qualquer relação com interesses de empresas privadas da região.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nenhuma empresa privada?"
+        },
+        {
+         "q": "a2xlauro",
+         "e": "nervoso",
+         "t": "Nenhuma, Excelência."
+        }
+       ]
+      },
+      {
+       "t": "Nunca houve contato entre a Secretaria e a Altavista a respeito do terreno vizinho.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nunca?"
+        },
+        {
+         "q": "a2xlauro",
+         "e": "nervoso",
+         "t": "Nunca de modo relevante."
+        }
+       ]
+      },
+      {
+       "t": "O fiscal Gilmar agiu por conta própria na execução do ato.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Por conta própria? O senhor assinou o auto."
+        },
+        {
+         "q": "a2xlauro",
+         "e": "bravo",
+         "t": "Assinei porque ele me pediu."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "video"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Esta é a gravação da câmera do bar, na véspera do lacre. O fiscal Gilmar diz: 'O pessoal da Altavista quer o ponto. Ou a senhora vende, ou eu lacro.' Nenhuma relação com interesses privados?"
+      },
+      {
+       "q": "a2xlauro",
+       "e": "chocado",
+       "t": "Isso foi… tirado de contexto!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a2xnilton",
+       "e": "nervoso",
+       "t": "Excelência, a gravação…"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Desvio de finalidade, doutor Nilton. Ato administrativo que usa o poder de polícia para satisfazer interesse particular é nulo.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Essa prova não contradiz esta afirmação."
+      }
+     ],
+     "proxima": "b12"
+    },
+    "b12": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a2xnilton",
+       "e": "bravo",
+       "t": "Mesmo assim, Excelência, o mandado de segurança é via inadequada! Seria necessária ampla dilação probatória para apurar esses fatos!"
+      }
+     ],
+     "pergunta": "Que prova torna desnecessária a dilação probatória?",
+     "provas": [
+      "processo",
+      "auto"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Excelência, a prova é toda documental e já está nos autos: o alvará válido, o auto de interdição sem motivação e a certidão da própria Secretaria dizendo que não há processo. Nenhum fato depende de testemunha: o direito é líquido e certo."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Direito líquido e certo é o que decorre de fatos comprovados de plano, sem dilação. É o caso. Rejeito a preliminar de inadequação da via."
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Isso não demonstra que os fatos estão provados de plano."
+      }
+     ],
+     "proxima": "b13"
+    },
+    "b13": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Pedido final do impetrante, doutor(a)."
+      }
+     ],
+     "pergunta": "Qual é o pedido?",
+     "opcoes": [
+      {
+       "t": "Liminar para suspender o lacre e, no mérito, a concessão da segurança para anular a interdição, por falta de motivação e de contraditório.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "LMS#art-7/inc-iii",
+         "trecho": "que se suspenda o ato que deu motivo ao pedido"
+        },
+        {
+         "chave": "CF#art-5/inc-lv",
+         "trecho": "o contraditório e ampla defesa"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, há fundamento relevante e o ato torna ineficaz a segurança se não for suspenso: o bar fecha e a impetrante quebra. Peço a suspensão imediata do lacre e, no mérito, a anulação do ato por falta de motivação e de contraditório."
+        }
+       ]
+      },
+      {
+       "t": "Indenização por lucros cessantes de vinte dias de bar fechado, no próprio mandado de segurança.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "pensativo",
+         "t": "O mandado de segurança não substitui a ação de cobrança: não é o meio adequado para o pagamento de valores do passado. A reparação, se for o caso, pede outra via."
+        }
+       ]
+      },
+      {
+       "t": "A demissão do fiscal Gilmar e do Secretário.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "Este juízo controla a legalidade do ato, não aplica penalidade funcional. Isso pertence ao processo administrativo e ao Ministério Público."
+        }
+       ]
+      }
+     ],
+     "proxima": "b14"
+    },
+    "b14": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Concedo a liminar e, no mérito, a segurança: fica anulada a interdição, e determino a imediata remoção do lacre. Remeta-se cópia ao Ministério Público quanto ao desvio de finalidade.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a2xcleide",
+       "e": "feliz",
+       "t": "Eu vou ligar o fogão agora mesmo! Hoje tem feijoada para todo mundo!"
+      },
+      {
+       "q": "a2xgilmar",
+       "e": "triste",
+       "t": "(ao fundo) A feijoada eu ainda vou comer, né? Depois do depoimento que vou ter que dar…"
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "(ao telefone) Doutor(a), achei algo. O terreno ao lado do bar foi comprado há duas semanas pela 'Altavista Serviços Ltda.' para um 'estacionamento'. Não é estacionamento. É a ampliação do Horizonte."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Ou seja: a Altavista não só compra dados e carteiras. Compra bairros, usando a Prefeitura como ferramenta.)"
+      }
+     ],
+     "proxima": "b15"
+    },
+    "b15": {
+     "tipo": "veredicto",
+     "carimbo": "SEGURANÇA CONCEDIDA",
+     "titulo": "Sem motivo, sem lacre",
+     "texto": "Ato sem motivação, sem processo e movido por interesse particular: o lacre caiu. A Altavista agora também aparece comprando o chão debaixo dos pés dos moradores."
+    }
+   }
+  },
+  {
+   "id": "a2x-idosa",
+   "ato": "ato2",
+   "ordem": 5.5,
+   "numero": 11,
+   "titulo": "Setenta por Cento",
+   "papel": "advogado",
+   "nivel": "avancado",
+   "sinopse": "Dona Lurdes, 78 anos, lúcida, vive numa casa de repouso que retém 100% da aposentadoria dela e guarda o cartão na gaveta. O dinheiro vai parar numa velha conhecida: a Altavista Serviços.",
+   "placas": {
+    "acusacao": "Parte ré"
+   },
+   "posicoes": {
+    "voce": "defesa",
+    "a2xlurdes": "defesa",
+    "livia": "acusacao",
+    "heitor": "juiz",
+    "a2xheloisa": "testemunha",
+    "a2xnadia": "cena",
+    "a2xpedro": "defesa",
+    "helena": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "extratos",
+     "tipo": "prova",
+     "icone": "🏦",
+     "nome": "Extratos do benefício do INSS",
+     "descricao": "Aposentadoria de R$ 1.850,00 depositada todo mês. No mesmo dia, um débito: 'Casa Boa Estação — mensalidade, R$ 1.850,00'. Nada sobra para Dona Lurdes."
+    },
+    {
+     "id": "contrato",
+     "tipo": "prova",
+     "icone": "📝",
+     "nome": "Contrato de acolhimento",
+     "descricao": "Assinado só por Pedro, o neto, como 'responsável'. Cláusula 9: 'A entidade fica autorizada a reter o cartão do benefício.' Cláusula 12: 'Reclamações podem levar à perda da vaga.'"
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🩺",
+     "nome": "Laudo geriátrico",
+     "descricao": "Dra. Samira Nunes, geriatra: 'Paciente lúcida, orientada no tempo e no espaço, plenamente capaz de decidir sobre a própria vida e o próprio patrimônio.'"
+    },
+    {
+     "id": "regimento",
+     "tipo": "prova",
+     "icone": "📌",
+     "nome": "Regimento interno fixado no mural",
+     "descricao": "'Visitas: uma hora por semana, com autorização da diretoria. Cartões bancários ficam sob guarda da secretaria, por segurança.'"
+    },
+    {
+     "id": "planilha",
+     "tipo": "prova",
+     "icone": "📊",
+     "nome": "Planilha do computador da recepção",
+     "descricao": "Receita mensal: 100% dos benefícios dos 32 residentes. Repasse: 'taxa de gestão' de 35% do total para Altavista Serviços Ltda."
+    },
+    {
+     "id": "resolucao",
+     "tipo": "prova",
+     "icone": "🏛️",
+     "nome": "Resolução do Conselho Municipal da Pessoa Idosa",
+     "descricao": "Fixa a participação dos residentes das entidades filantrópicas do Município em 70% do benefício, no máximo. Nádia a guardava na sala dos funcionários: a diretora mandou retirá-la do mural."
+    },
+    {
+     "id": "epi35",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "EPI, art. 35 — Contrato com a pessoa idosa",
+     "chave": "EPI#art-35",
+     "trecho": "firmar contrato de prestação de serviços com a pessoa idosa abrigada"
+    },
+    {
+     "id": "epi35p2",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "EPI, art. 35, § 2º — Teto de 70%",
+     "chave": "EPI#art-35/par-2",
+     "trecho": "não poderá exceder a 70% (setenta por cento) de qualquer benefício previdenciário"
+    },
+    {
+     "id": "epi35p3",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "EPI, art. 35, § 3º — Só o incapaz tem representante",
+     "chave": "EPI#art-35/par-3",
+     "trecho": "Se a pessoa idosa for incapaz, caberá a seu representante legal firmar o contrato"
+    },
+    {
+     "id": "epi37",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "EPI, art. 37 — Moradia digna",
+     "chave": "EPI#art-37",
+     "trecho": "quando assim o desejar"
+    },
+    {
+     "id": "epi102",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "EPI, art. 102 — Apropriação de proventos",
+     "chave": "EPI#art-102",
+     "trecho": "Apropriar-se de ou desviar bens, proventos, pensão"
+    },
+    {
+     "id": "cpc300",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPC, art. 300 — Tutela de urgência",
+     "chave": "CPC#art-300",
+     "trecho": "probabilidade do direito e o perigo de dano"
+    }
+   ],
+   "inicio": "c1",
+   "cenas": {
+    "c1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "Setenta por Cento",
+     "proxima": "c2"
+    },
+    "c2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "a2xpedro",
+       "e": "triste",
+       "t": "Eu tenho dezenove anos, doutor(a). A minha avó caiu em casa, e o hospital só deu alta se ela fosse para um lugar com cuidados. Um conhecido indicou a Casa Boa Estação."
+      },
+      {
+       "q": "a2xpedro",
+       "e": "nervoso",
+       "t": "A diretora me deu um contrato para assinar na recepção, com pressa. Eu assinei como 'responsável'. Depois descobri que o cartão do benefício da vovó está na gaveta da secretaria."
+      },
+      {
+       "q": "a2xlurdes",
+       "e": "bravo",
+       "t": "Eu estou bem da cabeça, moço. Eu sei fazer conta, eu sei ler e escrever. Eu só não posso comprar nem um chinelo, porque o meu dinheiro vai todo para a Casa."
+      },
+      {
+       "q": "helena",
+       "e": "bravo",
+       "t": "Cem por cento da aposentadoria! O Estatuto da Pessoa Idosa permite às entidades filantrópicas cobrar participação no custeio, mas com um teto: setenta por cento do benefício."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "E tem outro detalhe: o contrato deve ser firmado com a própria pessoa idosa. O representante legal só assina se ela for incapaz."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A Casa Boa Estação aparece ligada a alguma empresa? Eu já aprendi a perguntar isso."
+      },
+      {
+       "q": "helena",
+       "e": "confiante",
+       "t": "Aparece, sim: em letrinhas miúdas no rodapé do contrato: 'gestão administrativa por Altavista Serviços Ltda.'"
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "epi35",
+        "epi35p2",
+        "epi35p3",
+        "epi37",
+        "epi102",
+        "cpc300"
+       ]
+      }
+     ],
+     "proxima": "c3"
+    },
+    "c3": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Dona Lurdes tem setenta e oito anos e está sem acesso ao próprio dinheiro. Qual a nossa primeira medida processual?"
+      }
+     ],
+     "pergunta": "Que requerimentos iniciais protegem Dona Lurdes?",
+     "opcoes": [
+      {
+       "t": "Apenas a ação de indenização, sem pedidos urgentes, porque a lei garante o resultado no final.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "Dona Lurdes não pode esperar anos. A pessoa idosa tem prioridade de tramitação, e a urgência exige uma tutela provisória."
+        }
+       ]
+      },
+      {
+       "t": "Prioridade na tramitação e tutela de urgência para devolver o cartão e limitar a cobrança a 70%, por haver probabilidade do direito e perigo de dano.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPC#art-300",
+         "trecho": "probabilidade do direito e o perigo de dano"
+        },
+        {
+         "chave": "EPI#art-35/par-2",
+         "trecho": "não poderá exceder a 70% (setenta por cento) de qualquer benefício previdenciário"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A probabilidade do direito está no teto de 70% e na ausência de contrato com ela. O perigo de dano é a idade e a falta de acesso à renda para itens básicos."
+        },
+        {
+         "q": "helena",
+         "e": "feliz",
+         "t": "Exatamente. Prioridade e urgência, e já com o pedido de restituição."
+        }
+       ]
+      },
+      {
+       "t": "Fechar a entidade e transferir todos os 32 idosos para outro lugar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "Medida desproporcional e prejudicial aos outros residentes. A tutela deve resolver o caso de Dona Lurdes, não desabrigar trinta e uma pessoas."
+        }
+       ]
+      }
+     ],
+     "proxima": "c4"
+    },
+    "c4": {
+     "tipo": "investigar",
+     "local": "apartamento",
+     "titulo": "Apartamento de Dona Lurdes",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Sala pequena, tudo no lugar, um sofá com crochê e porta-retratos de uma vida inteira. Cheiro de café guardado."
+      },
+      {
+       "q": "a2xpedro",
+       "e": "triste",
+       "t": "Eu venho aqui toda semana pra regar as plantas dela. Alguma coisa tem que ter ficado dos papéis."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "comoda",
+       "nome": "Cômoda",
+       "x": 64,
+       "y": 46,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Na gaveta de cima, os extratos do INSS: R$ 1.850,00 depositados e, no mesmo dia, R$ 1.850,00 debitados para a 'Casa Boa Estação — mensalidade'. Nada sobra. Nem um real.",
+         "recebe": [
+          "extratos"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa da sala",
+       "x": 30,
+       "y": 50,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Uma cópia do contrato de acolhimento. Assinado só por Pedro, o neto. Cláusula 9: reter o cartão do benefício. Cláusula 12: reclamação pode custar a vaga. Em nenhum lugar a assinatura dela.",
+         "recebe": [
+          "contrato"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante",
+       "x": 9,
+       "y": 22,
+       "w": 19,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Entre os livros de receitas, uma pasta azul com um laudo da geriatra de Dona Lurdes: 'plenamente capaz'. Feita meses antes de ir para a Casa.",
+         "recebe": [
+          "laudo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "sofa",
+       "nome": "Sofá com crochê",
+       "x": 82,
+       "y": 50,
+       "w": 16,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Uma manta de crochê inacabada, com a agulha ainda espetada. Dona Lurdes tricotava aqui toda tarde. Na Casa, disseram que 'agulha é perigoso'."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2xpedro",
+       "titulo": "Conversar com Pedro",
+       "falas": [
+        {
+         "q": "a2xpedro",
+         "e": "triste",
+         "t": "Eu não sabia que não podia assinar por ela. Pensei que 'responsável' fosse eu."
+        },
+        {
+         "q": "a2xpedro",
+         "e": "nervoso",
+         "t": "Quando eu fui reclamar, a diretora disse que 'reclamar' podia atrapalhar a vaga. Eu fiquei com medo de a vovó ficar sem lugar nenhum."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "extratos",
+      "contrato",
+      "laudo"
+     ],
+     "proxima": "c5"
+    },
+    "c5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Ação de obrigação de fazer c/c restituição. Autora: Lurdes Pacheco, 78 anos, com prioridade de tramitação. Ré: Casa Boa Estação.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Dra. Lívia Sampaio, pela ré, Excelência. A Casa Boa Estação é entidade de acolhimento reconhecida. Tudo é feito às claras, com o consentimento da família."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Ouço a diretora, Heloísa Brito, sobre a formação do vínculo."
+      },
+      {
+       "q": "a2xheloisa",
+       "e": "confiante",
+       "t": "Excelência, tudo foi feito dentro da lei."
+      }
+     ],
+     "proxima": "c6"
+    },
+    "c6": {
+     "tipo": "depoimento",
+     "testemunha": "a2xheloisa",
+     "titulo": "O contrato de acolhimento",
+     "intro": [
+      {
+       "q": "a2xheloisa",
+       "e": "confiante",
+       "t": "Atendemos trinta e duas pessoas idosas com carinho. Cada uma tem a sua história e o seu contrato."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Os contratos da Casa seguem a lei do Estatuto: todos assinados pela própria pessoa idosa.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Todos assinados por quem mora aqui?"
+        },
+        {
+         "q": "a2xheloisa",
+         "e": "nervoso",
+         "t": "Todos. Sempre fazemos assim."
+        }
+       ]
+      },
+      {
+       "t": "No caso da autora, a assinatura foi dispensada porque o neto se responsabilizou.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Dispensada? A lei permite?"
+        },
+        {
+         "q": "a2xheloisa",
+         "e": "nervoso",
+         "t": "Você sabe, na prática…"
+        }
+       ]
+      },
+      {
+       "t": "A retenção do cartão é uma medida de proteção, a pedido da própria família.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Pedido de quem?"
+        },
+        {
+         "q": "a2xheloisa",
+         "e": "nervoso",
+         "t": "Da família, em tese."
+        }
+       ]
+      },
+      {
+       "t": "Nenhuma pessoa idosa jamais foi impedida de reclamar ou de receber visitas.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Jamais?"
+        },
+        {
+         "q": "a2xheloisa",
+         "e": "bravo",
+         "t": "Jamais."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "contrato"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Este contrato de acolhimento, nos autos, foi assinado só por Pedro, o neto, como 'responsável'. A assinatura da própria Dona Lurdes não aparece em lugar nenhum!"
+      },
+      {
+       "q": "a2xheloisa",
+       "e": "chocado",
+       "t": "É que… a dona Lurdes chegou cansada…",
+       "fx": "tremor"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "O art. 35 do Estatuto da Pessoa Idosa exige contrato com a pessoa abrigada. Anote-se.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Essa prova não contradiz esta afirmação."
+      }
+     ],
+     "proxima": "c7"
+    },
+    "c7": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "pensativo",
+       "t": "Excelência, o neto podia assinar como representante legal. A autora é uma senhora de setenta e oito anos, internada após uma queda: é razoável presumir fragilidade."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "O Estatuto fala em representante legal para a pessoa idosa INCAPAZ. Doutor(a), o que você tem sobre a capacidade da autora?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Ela fala claramente. Sabe fazer conta. Preciso ver como é a rotina lá dentro.)"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Concedo à parte autora a oportunidade de inspecionar a Casa. Suspendo a audiência."
+      }
+     ],
+     "proxima": "c8"
+    },
+    "c8": {
+     "tipo": "investigar",
+     "local": "clinica",
+     "titulo": "Casa Boa Estação · Recepção e enfermaria",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Corredor limpo, cheiro de desinfetante, cadeiras de plástico ocupadas por senhoras e senhores olhando a janela. Ninguém conversa."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Lugar silencioso demais para quem tem tanta gente dentro.)"
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mural",
+       "nome": "Mural de avisos",
+       "x": 72,
+       "y": 13,
+       "w": 18,
+       "h": 23,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "'Regimento interno. Visitas: uma hora por semana, com autorização da diretoria. Cartões bancários ficam sob guarda da secretaria, por segurança.' Isso não é segurança, é retenção.",
+         "recebe": [
+          "regimento"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "computador",
+       "nome": "Computador da recepção",
+       "x": 45,
+       "y": 39,
+       "w": 12,
+       "h": 12,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Uma planilha aberta: 'Receita mensal: 100% dos benefícios dos 32 residentes.' E uma linha: 'Repasse taxa de gestão 35% — Altavista Serviços Ltda.' O dinheiro dos idosos paga a taxa de gestão do dono.",
+         "recebe": [
+          "planilha"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "cadeiras",
+       "nome": "Cadeiras do corredor",
+       "x": 74,
+       "y": 62,
+       "w": 21,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Um senhor segura uma foto antiga, uma senhora cochila com o rosário na mão. Uma delas me pergunta baixinho: 'Você é do banco? Eu queria saber se ainda tenho aposentadoria.'"
+        }
+       ]
+      },
+      {
+       "id": "lixeira",
+       "nome": "Lixeira",
+       "x": 15,
+       "y": 59,
+       "w": 8,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Cartões de aniversário rasgados, sem entregar: 'avisos da família não foram autorizados pela diretoria'. Quem decidiu o que a família pode ler?"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2xnadia",
+       "titulo": "Conversar com a enfermeira Nádia",
+       "falas": [
+        {
+         "q": "a2xnadia",
+         "e": "nervoso",
+         "t": "Eu não devia falar, doutor(a). Mas eu cuido deles há três anos e não aguento mais calar."
+        },
+        {
+         "q": "a2xnadia",
+         "e": "triste",
+         "t": "O Conselho Municipal fixou 70%. A Heloísa mandou tirar a resolução do mural. Eu guardei cópia no meu armário.",
+         "recebe": [
+          "resolucao"
+         ]
+        },
+        {
+         "q": "a2xnadia",
+         "e": "bravo",
+         "t": "A Dona Lurdes é a mais esperta daqui. Faz as contas de todos nós. Mas ela não pode nem comprar o chinelo dela, doutor(a). Isso não está certo."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "regimento",
+      "planilha",
+      "resolucao"
+     ],
+     "proxima": "c9"
+    },
+    "c9": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Retomamos. Senhora diretora, esclareça o valor cobrado dos residentes."
+      },
+      {
+       "q": "a2xheloisa",
+       "e": "confiante",
+       "t": "Excelência, a cobrança é a praxe de todo o setor. O custeio de uma casa dessas é altíssimo."
+      }
+     ],
+     "proxima": "c10"
+    },
+    "c10": {
+     "tipo": "depoimento",
+     "testemunha": "a2xheloisa",
+     "titulo": "Quanto custa cuidar",
+     "intro": [
+      {
+       "q": "a2xheloisa",
+       "e": "normal",
+       "t": "Eu sempre atuei com transparência. Nada foi escondido de ninguém."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "A participação dos residentes em casas como a nossa é de até cem por cento do benefício, conforme o costume.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Costume? Há alguma norma que diga isso?"
+        },
+        {
+         "q": "a2xheloisa",
+         "e": "nervoso",
+         "t": "É a prática de todas as instituições."
+        }
+       ]
+      },
+      {
+       "t": "Cada centavo cobrado vai para a alimentação, os remédios e os cuidados dos moradores.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Cada centavo?"
+        },
+        {
+         "q": "a2xheloisa",
+         "e": "nervoso",
+         "t": "Na essência, sim."
+        }
+       ]
+      },
+      {
+       "t": "Nunca recebemos ordens de empresas externas sobre o valor das mensalidades.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca?"
+        },
+        {
+         "q": "a2xheloisa",
+         "e": "nervoso",
+         "t": "Nunca de modo vinculante."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "resolucao"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Esta é a Resolução do Conselho Municipal da Pessoa Idosa, retirada do mural por ordem da própria diretoria: a participação dos residentes é de 70% do benefício, no máximo. E o Estatuto da Pessoa Idosa diz o mesmo: não poderá exceder a 70%!"
+      },
+      {
+       "q": "a2xheloisa",
+       "e": "chocado",
+       "t": "Eu… o contador disse que era 'custo operacional'…",
+       "fx": "tremor"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Costume não revoga lei, doutora Heloísa.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Essa prova não contradiz esta afirmação."
+      }
+     ],
+     "proxima": "c11"
+    },
+    "c11": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "bravo",
+       "t": "Excelência, a autora é frágil, internada por queda. Era natural que o neto assinasse. A Casa só agiu de boa-fé, presumindo que ela não tinha condições!"
+      }
+     ],
+     "pergunta": "Que prova mostra que a autora é capaz e que o neto não podia assinar por ela?",
+     "provas": [
+      "laudo"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Laudo da geriatra, Dra. Samira Nunes: 'paciente lúcida, orientada no tempo e no espaço, plenamente capaz de decidir sobre a própria vida e o próprio patrimônio.' O representante legal só firma o contrato da pessoa idosa INCAPAZ!"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "O art. 35, § 3º, é claro. Presumir incapacidade por idade é preconceito, não é Direito. Procede."
+      },
+      {
+       "q": "a2xlurdes",
+       "e": "feliz",
+       "t": "Obrigada por dizer, Excelência. Há tempo que ninguém dizia que eu sou capaz."
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Isso não prova a capacidade da autora."
+      }
+     ],
+     "proxima": "c12"
+    },
+    "c12": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "E mesmo que se admita um excesso, o valor retido é destinado integralmente ao custeio. Não há lucro algum!"
+      }
+     ],
+     "pergunta": "Que prova mostra que parte do dinheiro dos idosos não ficava na Casa?",
+     "provas": [
+      "planilha"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "A planilha da recepção: receita de 100% dos benefícios dos trinta e dois residentes e, em seguida, o repasse de uma 'taxa de gestão' de 35% para a Altavista Serviços Ltda. O dinheiro da aposentadoria não ficava na Casa. Ia para a Altavista!"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Dar aos proventos da pessoa idosa aplicação diversa da sua finalidade é crime, doutora Lívia. Oficie-se ao Ministério Público.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Excelência, não conheço esses repasses…",
+       "fx": "tremor"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Isso não mostra o destino do dinheiro."
+      }
+     ],
+     "proxima": "c13"
+    },
+    "c13": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Pedidos finais, doutor(a)."
+      }
+     ],
+     "pergunta": "Qual é o pedido?",
+     "opcoes": [
+      {
+       "t": "Devolução do cartão, limite de 70% da participação, restituição do que excedeu esse teto e novo contrato assinado pela própria Dona Lurdes.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "EPI#art-35/par-2",
+         "trecho": "não poderá exceder a 70% (setenta por cento) de qualquer benefício previdenciário"
+        },
+        {
+         "chave": "EPI#art-35",
+         "trecho": "firmar contrato de prestação de serviços com a pessoa idosa abrigada"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência: a Casa deve devolver o cartão a Dona Lurdes, limitar a cobrança a 70% do benefício, restituir o que passou desse teto e firmar novo contrato com ela mesma, e não com o neto."
+        }
+       ]
+      },
+      {
+       "t": "Que Dona Lurdes seja obrigada a voltar para a casa do neto, porque ali estaria mais protegida.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "A pessoa idosa tem direito à moradia onde desejar. Não cabe ao juízo, nem ao advogado, decidir por ela. A escolha é dela."
+        }
+       ]
+      },
+      {
+       "t": "Fechar a Casa e responsabilizar penalmente a diretora neste mesmo processo.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "pensativo",
+         "t": "A responsabilização penal é do Ministério Público, em procedimento próprio. Este processo é cível e o pedido ultrapassa a causa de pedir."
+        }
+       ]
+      }
+     ],
+     "proxima": "c14"
+    },
+    "c14": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Concedo a tutela de urgência: o cartão deve ser devolvido em 24 horas, e a cobrança limitada a 70% até o final do processo.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a2xlurdes",
+       "e": "pensativo",
+       "t": "Doutor(a)… agora que o cartão é meu, eu tenho que decidir uma coisa. A Casa tem as minhas amigas, o coral de domingo. Mas o Pedro tem um quarto vago e um café fresco todo dia."
+      },
+      {
+       "q": "a2xpedro",
+       "e": "triste",
+       "t": "Eu não vou forçar a vovó. Mas eu queria que ela morasse comigo."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(É uma decisão dela. Qualquer das duas é digna, e o Estatuto garante que ela escolha.)"
+      }
+     ],
+     "proxima": "c15"
+    },
+    "c15": {
+     "tipo": "escolha",
+     "livre": true,
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a2xlurdes",
+       "e": "pensativo",
+       "t": "O que você acha que eu devo fazer? Não precisa decidir por mim, só me ajude a pensar."
+      }
+     ],
+     "pergunta": "Como você ajuda Dona Lurdes a decidir?",
+     "opcoes": [
+      {
+       "t": "Sugerir que fique na Casa, agora com contrato justo, para manter as amizades e o coral.",
+       "marca": "a2x_lurdes_fica",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A senhora conhece a casa, as amigas, a rotina. Com o contrato correto, o cartão no seu bolso e a nova fiscalização, pode ser um lugar seguro para ficar."
+        },
+        {
+         "q": "a2xlurdes",
+         "e": "feliz",
+         "t": "Então eu fico. Mas desta vez eu mando em mim."
+        }
+       ]
+      },
+      {
+       "t": "Sugerir que vá morar com o neto, longe de quem a tratou mal.",
+       "marca": "a2x_lurdes_casa",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A senhora tem direito de morar onde quiser. Com o Pedro, o dinheiro é seu, o horário é seu e o café é fresquinho."
+        },
+        {
+         "q": "a2xlurdes",
+         "e": "feliz",
+         "t": "Que bom que você disse. Eu já estava com saudade do meu quarto de infância dele."
+        }
+       ]
+      }
+     ],
+     "proxima": "c16"
+    },
+    "c16": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a2xlurdes",
+       "e": "feliz",
+       "t": "Fico no coral! E o meu cartão está comigo. Ontem comprei um chinelo azul. Azul!",
+       "se": "a2x_lurdes_fica"
+      },
+      {
+       "q": "a2xpedro",
+       "e": "feliz",
+       "t": "A vovó vai passar os fins de semana lá em casa e a semana na Casa. Combinamos assim.",
+       "se": "a2x_lurdes_fica"
+      },
+      {
+       "q": "a2xlurdes",
+       "e": "feliz",
+       "t": "Vou levar as minhas agulhas e o meu crochê para o quarto do Pedro.",
+       "se": "a2x_lurdes_casa"
+      },
+      {
+       "q": "a2xpedro",
+       "e": "feliz",
+       "t": "Arrumei o quarto com a janela para o jardim. Ela escolheu a cor da parede.",
+       "se": "a2x_lurdes_casa"
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "(ao telefone) Doutor(a), a taxa de 35% era de TODAS as casas de repouso que a Altavista Serviços 'administra'. São onze casas, quase quatrocentos idosos."
+      },
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "A Altavista não mexe só com concreto. Mexe com idosos, com dados e com lavagem de dinheiro. E tem alguém lá dentro do sistema que a protege."
+      }
+     ],
+     "proxima": "c17"
+    },
+    "c17": {
+     "tipo": "veredicto",
+     "carimbo": "PROCEDENTE",
+     "titulo": "A aposentadoria é de quem trabalhou",
+     "texto": "Contrato assinado por quem não podia, cobrança acima do teto e dinheiro desviado para a Altavista. Dona Lurdes recuperou o cartão, o contrato e, mais importante, a voz.",
+     "variantes": [
+      {
+       "se": "a2x_lurdes_fica",
+       "titulo": "Chinelo azul, coral de domingo",
+       "texto": "Dona Lurdes ficou na Casa, com contrato justo e o cartão no bolso, e ganhou o direito de comprar o que quiser. A escolha foi dela, e o Direito só a garantiu."
+      },
+      {
+       "se": "a2x_lurdes_casa",
+       "titulo": "Casa nova, mesmo crochê",
+       "texto": "Dona Lurdes foi morar com o neto, com o benefício na própria conta. A escolha foi dela, e o Direito só a garantiu."
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

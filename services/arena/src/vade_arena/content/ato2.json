@@ -745,8 +745,32 @@
           {"q": "helena", "e": "bravo", "t": "E o escritório do Brandão estava vazio. Sem um papel. Ele sabia da busca antes da própria juíza assinar."},
           {"q": "lacerda", "e": "pensativo", "t": "Tem alguém lá dentro, doutor(a). No Ministério Público ou na polícia. Vazaram a decisão."},
           {"q": "lacerda", "e": "confiante", "t": "Abriu o concurso para promotor de Justiça. Eu preciso de gente honesta do lado de dentro. Gente que conhece a Altavista melhor do que ninguém."},
-          {"q": "voce", "e": "pensativo", "t": "(Do outro lado da tribuna… para pegar quem está do lado de dentro.)"},
-          {"q": "rafael", "e": "feliz", "t": "(por carta, uma semana depois) Vá, doutor(a). Você já é melhor do que eu fui. E a Sofia mandou um desenho para você."}
+          {"q": "voce", "e": "pensativo", "t": "(Do outro lado da tribuna… para pegar quem está do lado de dentro.)"}
+        ], "proxima": "x10b"},
+        "x10b": {"tipo": "dialogo", "local": "parlatorio", "falas": [
+          {"q": "narrador", "t": "Parlatório do presídio. Última visita antes de Rafael ser transferido para uma ala protegida."},
+          {"q": "rafael", "e": "triste", "t": "Eu sei que você vai embora para estudar e que a sua vida vai mudar. Mas preciso pedir uma coisa que não é de advogado."},
+          {"q": "rafael", "e": "triste", "t": "A Sofia tem nove anos, a mãe trabalha em dois empregos e a menina ouviu o nome do pai na televisão. Ela me escreveu perguntando se eu sou um bandido."},
+          {"q": "rafael", "e": "pensativo", "t": "Eu ficarei preso por um bom tempo. Será que você poderia visitá-la de vez em quando? Só ver como ela está. Sem compromisso."},
+          {"q": "voce", "e": "pensativo", "t": "(Ele não está pedindo um favor jurídico. Está pedindo um lugar para a filha na vida de alguém. E nenhuma regra proíbe nem manda que eu aceite.)"}
+        ], "proxima": "x10c"},
+        "x10c": {"tipo": "escolha", "livre": true, "local": "parlatorio", "falas": [
+          {"q": "rafael", "e": "pensativo", "t": "Não precisa responder agora. Mas me diga o que o seu coração manda."}
+        ], "pergunta": "Como você responde ao pedido de Rafael?", "opcoes": [
+          {"t": "Prometer visitar Sofia, pelo menos uma vez por mês.", "marca": "a2_sofia_promessa", "falas": [
+            {"q": "voce", "e": "confiante", "t": "Eu vou, Rafael. Uma vez por mês, no mínimo. Não como advogado(a): como alguém que gosta da sua filha sem precisar de motivo."},
+            {"q": "rafael", "e": "feliz", "t": "Obrigado. Eu não tenho mais nada para lhe dar além disso. Obrigado mesmo."}
+          ]},
+          {"t": "Manter a distância profissional e apenas desejar que a menina fique bem.", "marca": "a2_sofia_distancia", "falas": [
+            {"q": "voce", "e": "pensativo", "t": "Rafael, vou ser sincero(a): daqui para frente a minha vida será o concurso, a Altavista e provas de que ninguém me veja perto de colaboradores. Misturar as coisas pode prejudicar você e ela."},
+            {"q": "rafael", "e": "triste", "t": "Eu entendo. Você tem razão: ninguém deveria ser arrastado para o meio dos meus erros. Cuide-se."}
+          ]}
+        ], "proxima": "x10d"},
+        "x10d": {"tipo": "dialogo", "local": "tribunal", "falas": [
+          {"q": "rafael", "e": "feliz", "t": "(por carta, uma semana depois) Vá, doutor(a). Você já é melhor do que eu fui. E a Sofia mandou um desenho para você.", "se": "a2_sofia_promessa"},
+          {"q": "rafael", "e": "feliz", "t": "(por carta, uma semana depois) Vá, doutor(a). Você já é melhor do que eu fui. Que a vida lhe devolva em dobro o que me deu.", "se": "a2_sofia_distancia"},
+          {"q": "narrador", "t": "A carta vem com um desenho a lápis de cor: uma menina de mãos dadas com uma pessoa de beca, sob um sol enorme.", "se": "a2_sofia_promessa"},
+          {"q": "narrador", "t": "Na carta, não há desenho nenhum. Só o silêncio de quem aprendeu a não pedir.", "se": "a2_sofia_distancia"}
         ], "proxima": "x11"},
         "x11": {"tipo": "veredicto", "carimbo": "ACORDO HOMOLOGADO", "titulo": "Fim do Ato II — A Advocacia", "texto": "Você protegeu a vontade livre de Rafael, defendeu a lei até contra a pressa do próprio Ministério Público e trouxe a prova que faltava. Henrique Altavista fugiu e há um traidor no sistema. Continua no Ato III: O Concurso."}
       }

@@ -1,0 +1,2266 @@
+{
+ "ato": "ato5",
+ "personagens": {
+  "a5xmoura": {
+   "nome": "Dr. Caetano Moura",
+   "cargo": "Advogado de Augusto Brandão",
+   "voz": 190,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#3a3a3a",
+    "roupa": "terno",
+    "corRoupa": "#1d2a44",
+    "gravata": "#c9a227",
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a5xrel": {
+   "nome": "Desa. Odete Fontoura",
+   "cargo": "Relatora no Tribunal de Justiça",
+   "voz": 430,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "coque",
+    "corCabelo": "#9a9a9a",
+    "roupa": "toga",
+    "corRoupa": "#111111",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a5xlima": {
+   "nome": "Dr. Fábio Lima",
+   "cargo": "Psiquiatra, assistente técnico da defesa",
+   "voz": 280,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "careca",
+    "corCabelo": "#555555",
+    "roupa": "blazer",
+    "corRoupa": "#5a4a3a",
+    "gravata": "#2b4c7e",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a5xmenezes": {
+   "nome": "Dra. Lúcia Menezes",
+   "cargo": "Perita oficial, psiquiatra forense",
+   "voz": 400,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "cacheado",
+    "corCabelo": "#1a1a1a",
+    "roupa": "casual",
+    "corRoupa": "#e8e4d8",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  }
+ },
+ "episodios": [
+  {
+   "id": "a5x-habeas",
+   "ato": "ato5",
+   "ordem": 2.5,
+   "numero": 26,
+   "titulo": "O Habeas de Brandão",
+   "papel": "juiz",
+   "nivel": "especialista",
+   "sinopse": "Brandão impetra habeas corpus no tribunal contra a sua preventiva e a relatora pede informações em 24 horas. Reveja a prisão com fatos concretos, desmonte um álibi com provas, confesse o atraso do seu próprio juízo e decida, numa escolha humana, se um preso poderá enterrar a mãe.",
+   "posicoes": {
+    "voce": "juiz",
+    "lacerda": "acusacao",
+    "a5xmoura": "defesa",
+    "brandao": "defesa",
+    "a5xrel": "escritorio",
+    "dani": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "hc",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "Habeas corpus no tribunal (Brandão)",
+     "descricao": "Impetrante: Dr. Caetano Moura. Paciente: Augusto Brandão, preso preventivamente há sete meses. Alega (1) excesso de prazo; (2) decreto genérico, sem fato concreto; (3) falta da revisão de noventa dias. Pede liminar. A relatora requisita informações por escrito."
+    },
+    {
+     "id": "decreto",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Decisão que decretou a preventiva",
+     "descricao": "Assinada pela juíza Beatriz há sete meses. Fundada na fuga de Henrique, no vazamento da decisão de busca e no risco às testemunhas. Cita o art. 312 e descreve fatos de datas determinadas."
+    },
+    {
+     "id": "revis",
+     "tipo": "prova",
+     "icone": "🗂️",
+     "nome": "Certidão: última revisão da preventiva",
+     "descricao": "A última decisão de revisão da prisão de Brandão é de 112 dias atrás. Passaram-se 22 dias além do prazo de noventa dias previsto na lei."
+    },
+    {
+     "id": "cron",
+     "tipo": "prova",
+     "icone": "📅",
+     "nome": "Cronograma da instrução",
+     "descricao": "Instrução em curso, oitivas em ritmo regular. Quarenta e um dias de atraso decorreram de adiamentos pedidos pela própria defesa de Brandão (dois pedidos de nova perícia e uma troca de advogado na véspera da audiência)."
+    },
+    {
+     "id": "fuga",
+     "tipo": "prova",
+     "icone": "🚨",
+     "nome": "Auto de prisão em Foz do Iguaçu",
+     "descricao": "Brandão ficou dezenove dias foragido após o vazamento. Foi encontrado em um hotel em Foz do Iguaçu com R$ 400 mil em espécie, três celulares e passagem de ônibus para Assunção, no Paraguai."
+    },
+    {
+     "id": "hotel",
+     "tipo": "prova",
+     "icone": "🏨",
+     "nome": "Ficha de hospedagem",
+     "descricao": "Check-in no dia 11, sob o nome \"Antônio Brandt\", pagamento em dinheiro, sem documento de identidade registrado no sistema; o recepcionista anotou a placa de um carro de aluguel."
+    },
+    {
+     "id": "oab",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Ofício da seccional da OAB",
+     "descricao": "Informa que não houve congresso, seminário ou evento de advocacia em Foz do Iguaçu entre os dias 8 e 20 daquele mês."
+    },
+    {
+     "id": "l316",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 316, par. único: Revisão a cada 90 dias",
+     "chave": "CPP#art-316/par-unico",
+     "trecho": "Decretada a prisão preventiva, deverá o órgão emissor da decisão revisar a necessidade de sua manutenção a cada 90 (noventa) dias, mediante decisão fundamentada, de ofício, sob pena de tornar a prisão ilegal"
+    },
+    {
+     "id": "l312",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 312, § 2º: Fatos contemporâneos",
+     "chave": "CPP#art-312/par-2",
+     "trecho": "A decisão que decretar a prisão preventiva deve ser motivada e fundamentada em receio de perigo e existência concreta de fatos novos ou contemporâneos que justifiquem a aplicação da medida adotada"
+    }
+   ],
+   "inicio": "c1",
+   "cenas": {
+    "c1": {
+     "tipo": "titulo",
+     "texto": "Ato V · Habeas Corpus",
+     "subtitulo": "O Habeas de Brandão",
+     "proxima": "c2"
+    },
+    "c2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Entre a oitiva do colaborador e a perícia do aço, a Vara recebe um ofício do Tribunal de Justiça. Capa azul, carimbo de URGENTE e a assinatura da Desembargadora Odete Fontoura."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Excelência, o Dr. Brandão impetrou habeas corpus contra a manutenção da preventiva. Quem assina é o Dr. Caetano Moura. A relatora quer informações por escrito, e rápido."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Então eu sou a autoridade apontada como coatora. Do outro lado, um réu que eu mesmo(a) vou julgar em poucas semanas. A tentação é revidar, ou ceder só para parecer imparcial. Nenhuma das duas serve."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "São três argumentos: excesso de prazo, decisão genérica e a revisão de noventa dias, que a Secretaria anotou como atrasada. Eles dizem que a prisão virou ilegal só por isso."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Informação ao tribunal não é defesa pessoal, Dani. É prestação de contas. Antes de escrever uma linha, preciso conferir o que existe de verdade nos autos."
+      },
+      {
+       "q": "narrador",
+       "t": "O gabinete cheira a café frio. A pasta da preventiva está aberta sobre a mesa."
+      }
+     ],
+     "proxima": "c3"
+    },
+    "c3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Gabinete: a pasta da preventiva",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Três volumes de decisões, certidões e a cópia do habeas corpus que acabou de chegar pelo malote."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com os autos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A petição do habeas corpus. Moura escreveu bem: três páginas de indignação e uma página de lei. Três argumentos, nenhum fato novo.",
+         "recebe": [
+          "hc"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E a decisão da Dra. Beatriz que decretou a preventiva. Está fundada em fatos com data: a fuga do Henrique, o vazamento da decisão de busca e o risco às testemunhas.",
+         "recebe": [
+          "decreto"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "computador",
+       "nome": "Computador (movimentação)",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "A certidão da Secretaria: última revisão da preventiva, 112 dias atrás. Passaram 22 dias do prazo. Isso é um erro do meu juízo, e eu não vou escondê-lo.",
+         "recebe": [
+          "revis"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O cronograma: quarenta e um dias de atraso vieram de pedidos da própria defesa. Dois pedidos de nova perícia e uma troca de advogado na véspera da audiência.",
+         "recebe": [
+          "cron"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de códigos",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Art. 316, parágrafo único: revisar a necessidade a cada noventa dias, mediante decisão fundamentada, de ofício. A lei põe o dever em cima do juiz, não do réu.",
+         "recebe": [
+          "l316"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E o art. 312, § 2º: a decisão precisa de fato novo ou contemporâneo. \"O crime foi grave\" não basta. Eu preciso mostrar o que hoje, concretamente, ainda justifica a prisão.",
+         "recebe": [
+          "l312"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "janela",
+       "nome": "Janela",
+       "x": 60,
+       "y": 12,
+       "w": 25,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Lá embaixo, na calçada do fórum, a imprensa já montou plantão. Todos querem saber se o juiz do caso Altavista vai ceder ao Brandão."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Se eu mantiver a prisão por medo de parecer fraco, erro. Se eu soltar por medo de parecer duro, erro igual. Só a lei decide."
+        }
+       ]
+      },
+      {
+       "id": "bandeira",
+       "nome": "Bandeira",
+       "x": 90,
+       "y": 20,
+       "w": 8,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A bandeira, a lei e o meu compromisso. O habeas corpus é um direito do preso, e ele faz o seu papel mesmo quando incomoda quem é apontado como coator."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Perguntar sobre o prazo da relatora",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "Vinte e quatro horas, Excelência. Se o prazo estourar sem resposta, a relatora presume que a autoridade não tem o que dizer."
+        },
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "Mas ela pediu também que a resposta venha com a decisão de revisão anexada. Então é melhor revisar a prisão hoje."
+        }
+       ]
+      },
+      {
+       "q": "dani",
+       "titulo": "Perguntar se o MP vai se manifestar",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "normal",
+         "t": "O Dr. Lacerda diz que o Ministério Público só quer uma coisa: que a decisão de manutenção, se vier, tenha fato concreto e contemporâneo. Para o MP, uma decisão fraca é um habeas corpus que o Brandão ganha."
+        },
+        {
+         "q": "dani",
+         "e": "feliz",
+         "t": "Ele pediu audiência de revisão com a presença do Brandão. Eu já reservei a sala."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "hc",
+      "decreto",
+      "revis"
+     ],
+     "proxima": "c4"
+    },
+    "c4": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Dani, está claro o roteiro. Primeiro a prova do que aconteceu em Foz do Iguaçu, depois a audiência de revisão, depois as informações. Nessa ordem."
+      },
+      {
+       "q": "dani",
+       "e": "normal",
+       "t": "A delegacia de Foz mandou o auto de prisão por malote, Excelência. Está sobre a pasta da delegacia, aqui na Vara."
+      },
+      {
+       "q": "narrador",
+       "t": "Na sala de apoio da Secretaria, os papéis da delegacia ocupam a mesa. Vale revisar o que ficou registrado na prisão de Brandão."
+      }
+     ],
+     "proxima": "c5"
+    },
+    "c5": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia: o auto de Foz do Iguaçu",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Cópias do inquérito policial, dos autos de apreensão e dos ofícios que a Vara requisitou nesta madrugada."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "livro",
+       "nome": "Livro de registro (auto de prisão)",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Auto de prisão, Foz do Iguaçu. Brandão ficou dezenove dias foragido, depois do vazamento. Encontrado num hotel, com R$ 400 mil em espécie, três celulares e passagem para Assunção.",
+         "recebe": [
+          "fuga"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Quatrocentos mil em notas pequenas, no travesseiro. Quem tem a vida limpa não dorme assim."
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural da delegacia",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A ficha de hospedagem, afixada para a perícia: check-in dia 11, nome \"Antônio Brandt\", pago em dinheiro, sem documento no sistema.",
+         "recebe": [
+          "hotel"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Uma placa de carro de aluguel anotada pelo recepcionista. Isso é prova que não depende de ninguém contar nada."
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Ofício da seccional da OAB: nenhum congresso, seminário ou evento de advocacia em Foz do Iguaçu naquele período. A explicação que ele vai dar já nasceu morta.",
+         "recebe": [
+          "oab"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Perguntar sobre os três celulares",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "Dois deles estavam desligados e sem chip. O terceiro tinha uma mensagem apagada às 19h12, do dia do vazamento, enviada para um número que a perícia ainda está recuperando."
+        },
+        {
+         "q": "dani",
+         "e": "normal",
+         "t": "A defesa vai dizer que são aparelhos \"de clientes\". Mas ninguém registra cliente em celular sem chip."
+        }
+       ]
+      },
+      {
+       "q": "dani",
+       "titulo": "Perguntar sobre a passagem para Assunção",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "Passagem só de ida, Excelência, comprada à vista. E a Polícia Federal informa que Henrique usa a mesma rota para mover dinheiro entre contas de fachada."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "fuga",
+      "hotel",
+      "oab"
+     ],
+     "proxima": "c6"
+    },
+    "c6": {
+     "tipo": "decidir",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a5xmoura",
+       "e": "bravo",
+       "t": "Excelência, a prisão do meu cliente já passa de sete meses sem sentença! Requeiro o relaxamento imediato por excesso de prazo!",
+       "fx": "protesto"
+      },
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "O atraso é todo da defesa, Excelência: quarenta e um dias de adiamentos que ela mesma pediu. Não se beneficia da própria demora."
+      }
+     ],
+     "pergunta": "O Dr. Moura pede o relaxamento por excesso de prazo. Sua decisão sobre esse pedido?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-648/inc-ii",
+       "trecho": "quando alguém estiver preso por mais tempo do que determina a lei"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Indefiro. Não há prazo a ser contado contra o Estado quando a demora vem de pedidos da própria defesa: foram quarenta e um dias de adiamentos, e a instrução segue em ritmo regular. A prisão não excede o razoável.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a5xmoura",
+       "e": "nervoso",
+       "t": "Registro o meu protesto. Mas a prova está nos autos."
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o cronograma mostra 41 dias de atraso causados pela própria defesa. Não dá para contar essa demora contra o Estado."
+      }
+     ],
+     "proxima": "c7"
+    },
+    "c7": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Audiência de revisão da preventiva. Brandão entra pela porta lateral, de camisa azul, sem gravata. Parece ter envelhecido dez anos."
+      },
+      {
+       "q": "a5xmoura",
+       "e": "bravo",
+       "t": "Excelência, o decreto de preventiva é de sete meses atrás. Qual fato contemporâneo ainda justifica a prisão? Nenhum! O art. 312, § 2º, exige fatos novos ou contemporâneos."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Os fatos são concretos, Excelência: a fuga, o dinheiro em espécie, os celulares e o vazamento de uma decisão sigilosa que só quem tinha acesso ao gabinete e ao escritório poderia ter transmitido."
+      },
+      {
+       "q": "brandao",
+       "e": "triste",
+       "t": "Doutor Lacerda, o senhor já foi meu colega de júri. Por favor, não me trate como bandido de novela. Eu apenas viajei."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Doutor Brandão, o senhor terá a palavra, como a lei garante. Mas antes, uma pergunta objetiva ao Dr. Moura."
+      }
+     ],
+     "proxima": "c8"
+    },
+    "c8": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Doutor Moura, o senhor diz que não há fato concreto ou contemporâneo a justificar a preventiva. Que elemento dos autos mostra o contrário?"
+      }
+     ],
+     "pergunta": "Que elemento dos autos mostra um fato concreto e contemporâneo que sustenta a prisão?",
+     "provas": [
+      "fuga",
+      "hotel"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Doutor Moura, o auto de prisão de Foz do Iguaçu registra dezenove dias de foragido, R$ 400 mil em espécie, três celulares e passagem para o Paraguai. A ficha do hotel mostra um nome falso. Isso é fato concreto, é contemporâneo à decisão e à instrução, e é independente de qualquer colaborador."
+      },
+      {
+       "q": "a5xmoura",
+       "e": "nervoso",
+       "t": "…Excelência, o meu cliente tem explicações."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Pois que as dê, doutor. Sob compromisso de verdade, e sujeitas a perguntas."
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) O que prova um fato concreto e recente é a prisão em Foz, o dinheiro em espécie e o hotel. O decreto de sete meses atrás ou a certidão de revisão não mostram o risco de hoje."
+      }
+     ],
+     "proxima": "c9"
+    },
+    "c9": {
+     "tipo": "depoimento",
+     "testemunha": "brandao",
+     "titulo": "Augusto Brandão, interrogado na revisão",
+     "intro": [
+      {
+       "q": "brandao",
+       "e": "triste",
+       "t": "Excelência, eu fui advogado por trinta anos. Eu sei o que é ser interrogado, e prefiro ser sincero."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu nunca fugi. Estava em Foz do Iguaçu num congresso de advocacia, e voltaria no dia 15, por conta própria.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Um congresso de advocacia, doutor? Qual deles?"
+        },
+        {
+         "q": "brandao",
+         "e": "nervoso",
+         "t": "Um evento fechado, de um grupo de colegas. Não havia inscrição formal."
+        }
+       ]
+      },
+      {
+       "t": "Os R$ 400 mil eram honorários que cliente me pagou em dinheiro, porque cliente fala em dinheiro vivo, Excelência.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Honorários pagos por quem? Há recibo?"
+        },
+        {
+         "q": "brandao",
+         "e": "nervoso",
+         "t": "Eu… perdi. Mas o cliente existe."
+        }
+       ]
+      },
+      {
+       "t": "Os três celulares eram porque cada cliente exige um canal exclusivo de comunicação.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Dois deles estavam sem chip, doutor. Para que serve um canal exclusivo sem número?"
+        },
+        {
+         "q": "brandao",
+         "e": "pensativo",
+         "t": "Para… guardar fotos. Eram reservas."
+        }
+       ]
+      },
+      {
+       "t": "Eu não tenho contato com o Henrique desde janeiro. Nenhum.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nenhum contato, em dez meses?"
+        },
+        {
+         "q": "brandao",
+         "e": "normal",
+         "t": "Nenhum. Eu juro pela minha carreira."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "oab",
+       "hotel"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Doutor Brandão, a seccional da OAB informa que não houve evento de advocacia algum em Foz do Iguaçu naquele período, e o hotel registrou o senhor sob o nome \"Antônio Brandt\". Um advogado que viaja a trabalho usa o próprio nome."
+      },
+      {
+       "q": "brandao",
+       "e": "nervoso",
+       "t": "…Eu usei o nome por receio da imprensa."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Receio da imprensa, com R$ 400 mil e passagem para Assunção. O senhor sabe que a lei trata isso como fuga, doutor. Registre-se."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "O Ministério Público agradece a sinceridade, Excelência. Ela ajuda mais do que qualquer defesa."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Essa prova não contradiz a viagem alegada por Brandão. Há uma prova que mostra que o tal congresso não existiu."
+      }
+     ],
+     "proxima": "c10"
+    },
+    "c10": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "A revisão da preventiva. O Dr. Moura pede revogação; o MP pede manutenção; Brandão olha para o chão. Só falta uma decisão fundamentada."
+      }
+     ],
+     "pergunta": "Qual deve ser a decisão sobre a manutenção da preventiva de Brandão, na revisão do art. 316?",
+     "opcoes": [
+      {
+       "t": "Mantenho a prisão porque homicídio qualificado é crime hediondo, extremamente grave, e a sociedade exige resposta firme.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) Excelência, a gravidade abstrata do crime não fundamenta preventiva (art. 312, § 4º). O STJ cassa decisão assim com frequência. E ainda daria razão ao habeas."
+        }
+       ]
+      },
+      {
+       "t": "Mantenho a prisão com fundamentos concretos e contemporâneos: a fuga de dezenove dias, o dinheiro em espécie, o nome falso e o vazamento da decisão sigilosa, e explico por que as cautelares do art. 319 não bastam.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Mantenho a prisão preventiva, por decisão fundamentada. Há fatos concretos e contemporâneos: a fuga de dezenove dias, os R$ 400 mil em espécie, o nome falso no hotel e a capacidade já demonstrada de obter e transmitir uma decisão sigilosa. Monitoração eletrônica ou comparecimento em juízo não impediriam novo ato de obstrução, por isso as cautelares do art. 319 são insuficientes.",
+         "fx": "martelo"
+        },
+        {
+         "q": "a5xmoura",
+         "e": "nervoso",
+         "t": "Recorrerei, Excelência."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "É o seu direito, doutor. E o dever do juízo é fundamentar o suficiente para que o tribunal possa julgar sem adivinhar."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-312/par-2",
+         "trecho": "A decisão que decretar a prisão preventiva deve ser motivada e fundamentada em receio de perigo e existência concreta de fatos novos ou contemporâneos que justifiquem a aplicação da medida adotada"
+        },
+        {
+         "chave": "CPP#art-282/par-6",
+         "trecho": "A prisão preventiva somente será determinada quando não for cabível a sua substituição por outra medida cautelar, observado o art. 319 deste Código"
+        }
+       ]
+      },
+      {
+       "t": "Revogo a preventiva para encerrar o habeas corpus e evitar desgaste com o tribunal.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) A preventiva se mantém ou se revoga pelos requisitos do art. 312, e não para agradar o tribunal nem para fugir de recurso. Decidir pela conveniência pessoal do juiz é errado nos dois sentidos."
+        }
+       ]
+      }
+     ],
+     "proxima": "c11"
+    },
+    "c11": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "brandao",
+       "e": "triste",
+       "t": "Obrigado por não ter lido o decreto da juíza Beatriz como quem lê o jornal, Excelência. Pelo menos a decisão tem as minhas mentiras escritas por extenso."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "A decisão tem os seus atos, doutor Brandão. É diferente."
+      },
+      {
+       "q": "narrador",
+       "t": "Meia hora depois, no corredor, o diretor do presídio pede a palavra."
+      },
+      {
+       "q": "dani",
+       "e": "triste",
+       "t": "Excelência, uma notícia. A mãe do Dr. Brandão faleceu esta manhã. Ele tem 61 anos e ela, 88. O diretor consulta o juízo, por cautela, sobre a saída para o velório."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A lei prevê a permissão de saída em caso de falecimento de ascendente, mesmo para o preso provisório. A concessão é do diretor, mas o diretor consulta o juízo porque há inquérito sobre tentativa de resgate de réus ligados ao caso."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Duas respostas são lícitas, e as duas têm custo. Preciso escolher uma."
+      }
+     ],
+     "proxima": "c12"
+    },
+    "c12": {
+     "tipo": "escolha",
+     "livre": true,
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O diretor aguarda. Lá fora, a viatura está parada. A família do Dr. Brandão espera na capela do cemitério. Do outro lado, o inquérito sobre a tentativa de resgate de Henrique e uma informação sem confirmação de que a saída pode ser usada como chance de fuga."
+      }
+     ],
+     "pergunta": "Como responder ao diretor sobre a saída de Brandão para o velório da mãe?",
+     "opcoes": [
+      {
+       "t": "Autorizar a saída por três horas, com escolta reforçada, sem algemas desnecessárias (SV 11) e trajeto reservado: um filho que enterra a mãe também é um ser humano.",
+       "marca": "a5x_brandao_velorio",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Autorizo a saída por três horas, com escolta reforçada, trajeto reservado e nenhuma exposição à imprensa. O uso de algemas só se houver resistência ou risco concreto, como manda a Súmula Vinculante 11."
+        },
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "O Ministério Público não se opõe, Excelência. Mas pede que o relatório da escolta venha em 24 horas."
+        },
+        {
+         "q": "brandao",
+         "e": "triste",
+         "t": "…Obrigado. Eu não vou agradecer de novo, para não parecer ardil. Mas eu enterro a minha mãe."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Vá em paz, doutor. Volta para cá antes do pôr do sol."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LEP#art-120/inc-i",
+         "trecho": "falecimento ou doença grave do cônjuge, companheira, ascendente, descendente ou irmão"
+        }
+       ]
+      },
+      {
+       "t": "Negar a saída pelo risco concreto de resgate e autorizar uma videochamada supervisionada com a família no presídio, para a despedida.",
+       "marca": "a5x_brandao_sem_saida",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nego a saída, em decisão fundamentada: há inquérito instaurado sobre tentativa de resgate, e a Polícia Federal informa movimentação de veículos em torno do cemitério. Em substituição, autorizo videochamada supervisionada com a família, de uma hora, na capela do presídio."
+        },
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "O Ministério Público concorda, Excelência."
+        },
+        {
+         "q": "brandao",
+         "e": "triste",
+         "t": "Excelência, é a minha mãe. Eu estive sempre ao lado dela, menos agora."
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Eu sei, doutor. E sei também que a lei me dava as duas respostas. Escolhi a que protege os agentes que o escoltariam. Isso não apaga a dor, e eu não pretendo fingir que apaga."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LEP#art-120/inc-i",
+         "trecho": "falecimento ou doença grave do cônjuge, companheira, ascendente, descendente ou irmão"
+        }
+       ]
+      }
+     ],
+     "proxima": "c13"
+    },
+    "c13": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "À noite, no gabinete, resta redigir as informações à relatora. Dani trouxe o rascunho e uma xícara de chá."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Excelência, o prazo vence amanhã de manhã. O Dr. Moura disse na imprensa que a revisão atrasou. O que a senhora… o senhor… quer que eu escreva?"
+      }
+     ],
+     "pergunta": "Como redigir as informações à relatora (art. 662)?",
+     "opcoes": [
+      {
+       "t": "Pedir que o tribunal sequer conheça do habeas: o juiz de primeira instância é soberano em matéria de prisão processual.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) O habeas corpus é o instrumento que o tribunal usa para controlar a prisão. Juiz não é soberano em matéria de liberdade: ele responde ao tribunal, e responde com fatos."
+        }
+       ]
+      },
+      {
+       "t": "Informar com franqueza, inclusive o atraso de 22 dias na revisão, juntar a nova decisão fundamentada, o auto de Foz e o cronograma, e destacar que parte da demora é da própria defesa.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Escreva exatamente assim, Dani: \"A revisão do art. 316 estava atrasada em 22 dias; foi feita hoje, por decisão fundamentada, que segue anexa. A prisão se mantém por fatos concretos: fuga, dinheiro em espécie, nome falso e vazamento de decisão sigilosa. Parte da demora da instrução deve-se à própria defesa.\""
+        },
+        {
+         "q": "dani",
+         "e": "chocado",
+         "t": "Excelência, o senhor… a senhora… confessou o atraso?"
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Confessei. O juiz que esconde o próprio erro do tribunal deixa de ser fonte confiável, e a prisão que ele mantém vira suspeita. Dizer a verdade é o melhor argumento."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-662",
+         "trecho": "o presidente, se necessário, requisitará da autoridade indicada como coatora informações por escrito"
+        },
+        {
+         "chave": "CPP#art-316/par-unico",
+         "trecho": "Decretada a prisão preventiva, deverá o órgão emissor da decisão revisar a necessidade de sua manutenção a cada 90 (noventa) dias, mediante decisão fundamentada, de ofício, sob pena de tornar a prisão ilegal"
+        }
+       ]
+      },
+      {
+       "t": "Omitir o atraso da revisão: a nova decisão já resolve o problema, e confessar o erro enfraquece a prisão.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) Excelência, a Secretaria já certificou o atraso e o Dr. Moura anexou a certidão ao habeas. Omitir só faria o tribunal duvidar do resto das informações."
+        }
+       ]
+      }
+     ],
+     "proxima": "c14"
+    },
+    "c14": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Na manhã seguinte, o telefone toca. É a Desembargadora Odete Fontoura, em pessoa."
+      },
+      {
+       "q": "a5xrel",
+       "e": "normal",
+       "t": "Doutor(a), li as informações. Raras vezes um juiz de primeiro grau confessa um atraso de revisão com tanta clareza. O tribunal respeita isso."
+      },
+      {
+       "q": "a5xrel",
+       "e": "normal",
+       "t": "Denego a liminar: a prisão se mantém por fatos concretos, a revisão foi feita, e a demora da instrução tem causa na própria defesa. O mérito vai a julgamento na Câmara."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Agradeço, Excelência. Se o tribunal entender diferente, a ordem será cumprida no mesmo dia."
+      },
+      {
+       "q": "a5xrel",
+       "e": "normal",
+       "t": "Um conselho de quem já esteve do seu lado da mesa: faça a revisão a cada noventa dias sem esperar habeas. A liberdade de um réu, mesmo culpado, é coisa que se confere sozinho."
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Excelência, dessa vez eu anotei: na agenda, a cada noventa dias, em vermelho: \"revisar a preventiva\"."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Em vermelho e em negrito. E com a sua rubrica ao lado, Dani."
+      }
+     ],
+     "proxima": "c15"
+    },
+    "c15": {
+     "tipo": "veredicto",
+     "carimbo": "PRISÃO MANTIDA, COM FUNDAMENTOS",
+     "titulo": "O habeas que não derrubou a decisão",
+     "texto": "Você distinguiu demora do Estado de demora da defesa, fundamentou a preventiva em fatos concretos e contemporâneos (a gravidade abstrata não basta), desmentiu o álibi de Brandão com a prova e confessou ao tribunal o atraso da revisão, em vez de escondê-lo. Diante da morte da mãe do réu, exerceu com cuidado um poder que a lei lhe dava em duas direções. O tribunal negou a liminar, e a lição ficou na agenda: revisar a cada noventa dias."
+    }
+   }
+  },
+  {
+   "id": "a5x-insanidade",
+   "ato": "ato5",
+   "ordem": 3.5,
+   "numero": 28,
+   "titulo": "O Incidente de Insanidade",
+   "papel": "juiz",
+   "nivel": "especialista",
+   "sinopse": "A uma semana do plenário, a defesa de Henrique alega perturbação mental e pede o exame do art. 149. Defira com cautela, nomeie curador, confronte o laudo particular com a ata, o cartório e o exame toxicológico, e decida se a inimputabilidade do art. 26 existe ou é só teatro.",
+   "posicoes": {
+    "voce": "juiz",
+    "lacerda": "acusacao",
+    "a5pires": "defesa",
+    "henrique": "defesa",
+    "a5xlima": "testemunha",
+    "a5xmenezes": "testemunha",
+    "dani": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "pedido",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "Incidente de insanidade mental (Pires)",
+     "descricao": "Petição do Dr. Heraldo Pires, a sete dias do plenário: alega que Henrique Altavista sofre de \"perturbação mental grave\" desde fevereiro e pede exame médico-legal, suspensão do processo e, ao final, reconhecimento de inimputabilidade."
+    },
+    {
+     "id": "laudoprv",
+     "tipo": "prova",
+     "icone": "🩺",
+     "nome": "Laudo particular do Dr. Fábio Lima",
+     "descricao": "Psiquiatra contratado pela defesa. Conclui que Henrique é \"incapaz de organizar o pensamento e de compreender decisões\" desde fevereiro. Assinado seis dias antes do protocolo do incidente."
+    },
+    {
+     "id": "prontuario",
+     "tipo": "prova",
+     "icone": "🏥",
+     "nome": "Prontuário de internação (2019)",
+     "descricao": "Internação de onze dias em 2019, em clínica particular, por \"esgotamento nervoso e crises de pânico\". Alta médica sem recomendação de afastamento ou tratamento contínuo."
+    },
+    {
+     "id": "ata",
+     "tipo": "prova",
+     "icone": "📝",
+     "nome": "Ata da reunião de 14 de março",
+     "descricao": "Registro (da planilha periciada) de uma reunião de três horas em que Henrique conduziu decisões sobre contratos, discutiu cláusulas, ordenou a abertura de uma conta e mudou de banco."
+    },
+    {
+     "id": "cartorio",
+     "tipo": "prova",
+     "icone": "🏛️",
+     "nome": "Registro do cartório (12 de março)",
+     "descricao": "Henrique compareceu pessoalmente ao cartório, assinou procuração com biometria e firma reconhecida, conversou quarenta minutos com a tabeliã e pediu café duas vezes."
+    },
+    {
+     "id": "agenda",
+     "tipo": "prova",
+     "icone": "📅",
+     "nome": "Agenda do consultório do Dr. Lima",
+     "descricao": "Primeira consulta de Henrique com o Dr. Lima: 19 de outubro, nove dias depois de ele ser citado. Antes disso, nenhuma consulta desde 2019."
+    },
+    {
+     "id": "tox",
+     "tipo": "prova",
+     "icone": "🧪",
+     "nome": "Exame toxicológico (presídio)",
+     "descricao": "Sem qualquer vestígio de antipsicótico ou medicação psiquiátrica no sangue de Henrique, embora o laudo particular diga que ele estaria em tratamento há meses."
+    },
+    {
+     "id": "laudoof",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Laudo oficial da Dra. Lúcia Menezes",
+     "descricao": "Perícia oficial de 45 dias: sem doença mental ao tempo dos fatos nem atualmente; sinais compatíveis com simulação consciente e preparada. Plena capacidade de entender e de se determinar."
+    },
+    {
+     "id": "l149",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 149: Dúvida sobre a integridade mental",
+     "chave": "CPP#art-149",
+     "trecho": "Quando houver dúvida sobre a integridade mental do acusado, o juiz ordenará, de ofício ou a requerimento do Ministério Público, do defensor, do curador, do ascendente, descendente, irmão ou cônjuge do acusado, seja este submetido a exame médico-legal"
+    },
+    {
+     "id": "l26",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 26: Inimputabilidade",
+     "chave": "CP#art-26",
+     "trecho": "É isento de pena o agente que, por doença mental ou desenvolvimento mental incompleto ou retardado, era, ao tempo da ação ou da omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento"
+    },
+    {
+     "id": "l182",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 182: O juiz e o laudo",
+     "chave": "CPP#art-182",
+     "trecho": "O juiz não ficará adstrito ao laudo, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte"
+    }
+   ],
+   "inicio": "c1",
+   "cenas": {
+    "c1": {
+     "tipo": "titulo",
+     "texto": "Ato V · O Incidente",
+     "subtitulo": "O Incidente de Insanidade",
+     "proxima": "c2"
+    },
+    "c2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Sete dias para o plenário do júri. Na mesa de Dani, uma pilha de pedidos novos e uma petição de capa preta."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Excelência, o Dr. Pires protocolou um incidente de insanidade mental do Henrique. Diz que ele \"sofre de perturbação mental grave desde fevereiro\". Junta laudo particular de um psiquiatra."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A uma semana do júri. Que coincidência. Se eu aceitar, o júri adia. Se eu negar sem olhar, a defesa vai ao tribunal."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "O Dr. Lacerda já ligou: \"Manobra. Indefira de plano.\" Mas ele mesmo admitiu que o art. 149 prevê o exame quando houver dúvida."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Dúvida não se presume, e também não se despreza. Vou ler a petição, o laudo, o prontuário e o que mais houver, antes de qualquer decisão."
+      },
+      {
+       "q": "narrador",
+       "t": "A pasta do incidente está aberta sobre a mesa do gabinete."
+      }
+     ],
+     "proxima": "c3"
+    },
+    "c3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Gabinete: a pasta do incidente",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "A petição, um laudo de doze páginas e uma caixa com o prontuário de 2019."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com o incidente",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A petição de Pires: \"perturbação mental grave desde fevereiro\". Pede exame, suspensão do processo e, ao final, inimputabilidade. Quer tudo, como sempre.",
+         "recebe": [
+          "pedido"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "O laudo do Dr. Fábio Lima: \"incapaz de organizar o pensamento e de compreender decisões\". Assinado seis dias antes do incidente. Ele esperou o último momento para adoecer.",
+         "recebe": [
+          "laudoprv"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "computador",
+       "nome": "Computador (prontuário digitalizado)",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Prontuário de 2019: onze dias de internação por \"esgotamento nervoso e crises de pânico\". Alta sem tratamento contínuo. É um dado real, mas fraco, e não prova doença mental permanente.",
+         "recebe": [
+          "prontuario"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Ainda assim, um réu com antecedente de internação psiquiátrica e um laudo de especialista geram ao menos uma dúvida razoável. A dúvida do art. 149 é só isso."
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de códigos",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Art. 149: \"quando houver dúvida sobre a integridade mental do acusado, o juiz ordenará\". Quem decide se há dúvida é o juiz. Quem diz se há doença é o perito.",
+         "recebe": [
+          "l149"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Art. 26 do Código Penal: só isenta de pena quem, ao tempo do fato, era inteiramente incapaz de entender o caráter ilícito ou de se determinar. Doença hoje não apaga o que se fez antes.",
+         "recebe": [
+          "l26"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "E o art. 182: o juiz não fica preso ao laudo. Nem ao de Lima, nem ao que o tribunal nomear. Laudo é prova, não sentença.",
+         "recebe": [
+          "l182"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "janela",
+       "nome": "Janela",
+       "x": 60,
+       "y": 12,
+       "w": 25,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Um caminhão da imprensa montou antena na calçada do fórum. \"Altavista sofre de loucura?\", a manchete já está pronta."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Quero evitar duas capas: \"Juiz cai na farsa\" e \"Juiz nega exame a doente\". Só o processo resolve."
+        }
+       ]
+      },
+      {
+       "id": "bandeira",
+       "nome": "Bandeira",
+       "x": 90,
+       "y": 20,
+       "w": 8,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Ao réu que alega estar doente, a lei dá o exame. Ao réu que simula, a lei dá a verdade. Mas só o exame descobre qual dos dois está na minha frente."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Pedir o histórico recente de Henrique",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "normal",
+         "t": "Segundo a planilha periciada, em 14 de março ele conduziu uma reunião de três horas, discutiu cláusulas, ordenou a abertura de uma conta e mudou de banco. Está na ata.",
+         "recebe": [
+          "ata"
+         ]
+        },
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "Tem mais: no dia 12 de março ele esteve no cartório, assinou procuração com biometria e firma reconhecida e conversou quarenta minutos com a tabeliã.",
+         "recebe": [
+          "cartorio"
+         ]
+        }
+       ]
+      },
+      {
+       "q": "dani",
+       "titulo": "Perguntar sobre o plenário",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "O júri está marcado para daqui a sete dias, Excelência. Se o processo for suspenso, as testemunhas e os jurados terão de ser reconvocados. A defesa sabe disso."
+        },
+        {
+         "q": "dani",
+         "e": "normal",
+         "t": "Mas o art. 149 diz que, nesses casos, ficam de fora da suspensão as diligências que o adiamento possa prejudicar. Eu já separei a lista."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "pedido",
+      "laudoprv",
+      "prontuario"
+     ],
+     "proxima": "c4"
+    },
+    "c4": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a5pires",
+       "e": "confiante",
+       "t": "Excelência, a defesa não busca adiar o inadiável: busca respeitar a Constituição. Um réu que não entende o que lhe acontece não pode ser julgado."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Excelência, o laudo foi assinado seis dias antes do pedido. Se o Dr. Henrique Altavista é incapaz desde fevereiro, quem assinou a procuração de março? Um fantasma?"
+      },
+      {
+       "q": "a5pires",
+       "e": "nervoso",
+       "t": "O Ministério Público pretende diagnosticar o meu cliente pelo cartório. Que ironia!"
+      },
+      {
+       "q": "narrador",
+       "t": "Henrique, na bancada, está imóvel, olhos fixos no vazio. Há três horas não pronuncia uma palavra. Parece, a quem não o conheceu, um homem de cera."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "A defesa pede o exame, o MP vê manobra, e o art. 149 não dá preferência a nenhum dos dois. Vou decidir."
+      }
+     ],
+     "proxima": "c5"
+    },
+    "c5": {
+     "tipo": "decidir",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Excelência, o MP pede que o incidente seja indeferido de plano: é artifício para adiar o júri!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O MP quer indeferir de plano o incidente; a defesa pede o exame médico-legal. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-149",
+       "trecho": "Quando houver dúvida sobre a integridade mental do acusado, o juiz ordenará, de ofício ou a requerimento do Ministério Público, do defensor, do curador, do ascendente, descendente, irmão ou cônjuge do acusado, seja este submetido a exame médico-legal"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Defiro o exame. Há laudo particular e antecedente de internação: isso basta para instaurar a dúvida razoável. O juízo não presume doença, mas também não pode, sem perícia, afirmar que ela não existe. Se for manobra, o exame oficial vai dizer.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "O MP respeita, Excelência. E confia que a perícia diga o que o cartório já disse."
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, quando o laudo de um psiquiatra e o prontuário geram ao menos uma dúvida, o art. 149 manda ordenar o exame. Negar de plano seria o tribunal anulando tudo depois."
+      }
+     ],
+     "proxima": "c6"
+    },
+    "c6": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "henrique",
+       "e": "bravo",
+       "t": "Eu não preciso de curador! Eu sou um homem de negócios, e me tratam como criança!"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Silêncio, doutor Henrique. Não é uma ofensa: é uma garantia. A lei quer proteger o senhor, caso a perícia conclua o que a sua defesa afirma."
+      },
+      {
+       "q": "a5pires",
+       "e": "nervoso",
+       "t": "(sussurrando a Henrique) O senhor não deveria ter falado. A defesa precisa que o senhor pareça confuso, e não furioso."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Tomo nota, Excelência. A fúria dele é a de um homem plenamente consciente de que o plenário se aproxima."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Registre-se, sem juízo de valor. A decisão sobre o que Henrique é virá da perícia, e não do humor."
+      }
+     ],
+     "proxima": "c7"
+    },
+    "c7": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Resta organizar o processo: o que acontece, a partir de agora, com a ação penal e com o júri?"
+      }
+     ],
+     "pergunta": "Que providências processuais seguem a determinação do exame?",
+     "opcoes": [
+      {
+       "t": "Nomear curador ao acusado, instaurar o incidente em autos apartados e suspender o processo, ressalvadas as diligências que o adiamento possa prejudicar.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Nomeio curadora a Dra. Nair Batista, advogada dativa. O incidente correrá em autos apartados e o processo fica suspenso, salvo as diligências que o adiamento possa prejudicar: a conservação das provas e a oitiva das testemunhas em risco seguem.",
+         "fx": "martelo"
+        },
+        {
+         "q": "a5pires",
+         "e": "nervoso",
+         "t": "Excelência, e o júri?"
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Suspenso, doutor. Até que o laudo chegue."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-149/par-2",
+         "trecho": "O juiz nomeará curador ao acusado, quando determinar o exame, ficando suspenso o processo, se já iniciada a ação penal, salvo quanto às diligências que possam ser prejudicadas pelo adiamento"
+        },
+        {
+         "chave": "CPP#art-153",
+         "trecho": "O incidente da insanidade mental processar-se-á em auto apartado, que só depois da apresentação do laudo será apenso ao processo principal"
+        }
+       ]
+      },
+      {
+       "t": "Manter o júri na data marcada: o exame corre em paralelo e o laudo será considerado quando chegar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) Excelência, o art. 149, § 2º, manda nomear curador e suspender o processo. Julgar alguém cuja capacidade está em dúvida seria a nulidade perfeita para a defesa."
+        }
+       ]
+      },
+      {
+       "t": "Suspender o processo, mas sem curador: ele já tem advogado, o Dr. Pires.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "(sussurrando) O advogado atua pela defesa técnica. O curador protege os interesses de quem, em tese, não entende o que acontece. São funções diferentes, e a lei exige a nomeação."
+        }
+       ]
+      }
+     ],
+     "proxima": "c8"
+    },
+    "c8": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Henrique está preso. O exame precisa de local e de prazo."
+      }
+     ],
+     "pergunta": "Onde e por quanto tempo deve ser feito o exame de Henrique, que está preso?",
+     "opcoes": [
+      {
+       "t": "Internação em manicômio judiciário (ou estabelecimento adequado), pelo prazo máximo de 45 dias, prorrogável se os peritos demonstrarem a necessidade.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "O acusado preso será internado, para efeito do exame, em manicômio judiciário ou estabelecimento adequado que este juízo designar, pelo prazo máximo de quarenta e cinco dias, prorrogável se os peritos demonstrarem a necessidade. As partes podem formular quesitos e indicar assistente técnico.",
+         "fx": "martelo"
+        },
+        {
+         "q": "a5pires",
+         "e": "normal",
+         "t": "A defesa indica o Dr. Fábio Lima como assistente técnico."
+        },
+        {
+         "q": "lacerda",
+         "e": "normal",
+         "t": "O MP formula os quesitos que já protocolou."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-150",
+         "trecho": "o acusado, se estiver preso, será internado em manicômio judiciário, onde houver, ou, se estiver solto, e o requererem os peritos, em estabelecimento adequado que o juiz designar"
+        },
+        {
+         "chave": "CPP#art-150/par-1",
+         "trecho": "O exame não durará mais de quarenta e cinco dias, salvo se os peritos demonstrarem a necessidade de maior prazo"
+        }
+       ]
+      },
+      {
+       "t": "Exame na própria cela, em uma tarde, para não perder tempo.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "(sussurrando) Um exame de insanidade pede observação e avaliação por semanas: o prazo é de até 45 dias, e não de uma tarde. Pressa aqui é erro e nulidade."
+        }
+       ]
+      },
+      {
+       "t": "Perícia feita só pelo Dr. Fábio Lima, que já conhece o paciente.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) A perícia é oficial. O Dr. Lima é assistente técnico da defesa: acompanha, mas não é o perito do juízo (art. 159, § 5º, II)."
+        }
+       ]
+      }
+     ],
+     "proxima": "c9"
+    },
+    "c9": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Quarenta dias depois. A Vara está em silêncio, e o plenário aguarda. Sobre a mesa, o laudo da perita oficial, selado, ainda por abrir."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Excelência, antes de abrir o laudo, um aviso. O Dr. Lima apresentou um parecer complementar dizendo que o paciente está \"em tratamento com antipsicóticos desde outubro\". E juntou o prontuário do consultório."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Tratamento. Isso é verificável. Peça a diligência no consultório e no presídio, Dani: agenda e exame toxicológico."
+      },
+      {
+       "q": "narrador",
+       "t": "Dani volta com caixas e fotografias do consultório, autorizadas pelo juízo."
+      }
+     ],
+     "proxima": "c10"
+    },
+    "c10": {
+     "tipo": "investigar",
+     "local": "clinica",
+     "titulo": "Consultório do Dr. Lima: a diligência",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Uma recepção de bom gosto, revistas antigas e um cheiro de lavanda. As cópias foram feitas com a presença do oficial de justiça."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "computador",
+       "nome": "Computador da recepção (agenda)",
+       "x": 45,
+       "y": 39,
+       "w": 12,
+       "h": 12,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A agenda: primeira consulta de Henrique com o Dr. Lima, 19 de outubro, nove dias depois da citação. Antes disso, nada desde 2019.",
+         "recebe": [
+          "agenda"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Consultas em outubro e novembro, e uma de urgência, no dia seguinte à decisão que determinou o exame. Coincidência bem organizada."
+        }
+       ]
+      },
+      {
+       "id": "lixeira",
+       "nome": "Lixeira",
+       "x": 15,
+       "y": 59,
+       "w": 8,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Uma receita amassada: \"haloperidol, 5 mg\". Sem carimbo de farmácia, sem data de dispensação."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A receita de quem, receitou para quem, e entregue onde? Anotar. A perícia confirmará se o remédio chegou a entrar no corpo do paciente."
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural de avisos",
+       "x": 72,
+       "y": 13,
+       "w": 18,
+       "h": 23,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Certificado de especialização em psiquiatria forense. Foto do Dr. Lima com um presidente de congresso. Currículo de peso."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Qualificação não dá infalibilidade, e cliente que paga não é paciente sem interesse. O art. 182 me deixa livre para confrontar."
+        }
+       ]
+      },
+      {
+       "id": "janela",
+       "nome": "Janela",
+       "x": 9,
+       "y": 22,
+       "w": 25,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "No estacionamento, um carro blindado com motorista. O mesmo que Henrique usa nas audiências. Os fatos falam mais baixo, mas não se calam."
+        }
+       ]
+      },
+      {
+       "id": "cadeiras",
+       "nome": "Cadeiras da recepção",
+       "x": 74,
+       "y": 62,
+       "w": 21,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Um bloco de assinaturas de visitantes: o motorista de Henrique chegou antes de todos os pacientes, nos dias das consultas. Chegou para esperar um paciente que nunca saía de casa?"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Pedir o exame toxicológico do presídio",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "Chegou, Excelência. Sangue colhido há três dias: nenhum vestígio de antipsicótico, nem de qualquer medicação psiquiátrica.",
+         "recebe": [
+          "tox"
+         ]
+        },
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "Quem toma haloperidol há meses deixa vestígio. O Henrique não tem nenhum. Ou o tratamento é mentira, ou foi interrompido para o exame, o que é outra forma de simulação."
+        }
+       ]
+      },
+      {
+       "q": "dani",
+       "titulo": "Abrir o laudo oficial",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "normal",
+         "t": "A Dra. Lúcia Menezes concluiu: sem doença mental ao tempo dos fatos nem atualmente. Sinais compatíveis com simulação consciente, preparada com antecedência.",
+         "recebe": [
+          "laudoof"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Laudo oficial não é a palavra final (art. 182), mas é a palavra mais técnica que eu tenho. Vou confrontá-la com o resto."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "agenda",
+      "tox",
+      "laudoof"
+     ],
+     "proxima": "c11"
+    },
+    "c11": {
+     "tipo": "depoimento",
+     "testemunha": "a5xlima",
+     "titulo": "Dr. Fábio Lima, assistente técnico da defesa",
+     "intro": [
+      {
+       "q": "a5xlima",
+       "e": "confiante",
+       "t": "Excelência, eu sou médico há trinta anos. Eu nunca assinei um laudo que eu não pudesse sustentar."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Desde fevereiro o paciente é incapaz de organizar o pensamento e de compreender decisões. A doença é grave e contínua.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Desde fevereiro, doutor? O senhor o examinou naquela época?"
+        },
+        {
+         "q": "a5xlima",
+         "e": "nervoso",
+         "t": "Eu… examinei as informações da família. Eu o vi em outubro."
+        }
+       ]
+      },
+      {
+       "t": "Iniciei o tratamento com antipsicóticos em outubro e a resposta é lenta, como é de esperar.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Qual a dose, e há registro de dispensação?"
+        },
+        {
+         "q": "a5xlima",
+         "e": "pensativo",
+         "t": "A dose foi ajustada em consultas. A dispensação é feita no presídio."
+        }
+       ]
+      },
+      {
+       "t": "A internação de 2019 comprova doença mental grave, que nunca deixou de existir.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Onze dias, alta sem tratamento contínuo. É doença grave ou esgotamento?"
+        },
+        {
+         "q": "a5xlima",
+         "e": "nervoso",
+         "t": "Esgotamento é a porta de entrada de doenças piores."
+        }
+       ]
+      },
+      {
+       "t": "Ele é incapaz de entender que mandar matar uma pessoa é ilícito.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O senhor perguntou isso a ele, ou deduziu?"
+        },
+        {
+         "q": "a5xlima",
+         "e": "nervoso",
+         "t": "Deduzi, a partir do quadro clínico. Ele evitou o assunto."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "ata"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Doutor Lima, o senhor afirma que Henrique é incapaz de organizar o pensamento desde fevereiro. A ata de 14 de março, extraída da planilha periciada, registra uma reunião de três horas em que ele conduziu decisões sobre contratos, discutiu cláusulas e mudou de banco."
+      },
+      {
+       "q": "a5xlima",
+       "e": "nervoso",
+       "t": "Pode ter sido um dia lúcido, Excelência. Esses quadros oscilam."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Três horas lúcidas, depois uma procuração com biometria no cartório, dois dias antes? E nenhuma consulta desde 2019 até a citação? Registre-se, doutor."
+      },
+      {
+       "q": "a5pires",
+       "e": "bravo",
+       "t": "Protesto, Excelência! A defesa não foi ouvida sobre a ata!"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Será ouvida, doutor Pires. Por isso estamos aqui."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Essa prova não contradiz o fato de o paciente estar incapaz de organizar o pensamento. Procuro algo que mostre atividade mental lúcida em fevereiro ou março."
+      }
+     ],
+     "proxima": "c12"
+    },
+    "c12": {
+     "tipo": "depoimento",
+     "testemunha": "henrique",
+     "titulo": "Henrique Altavista, interrogado pela perita",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Henrique senta, as mãos cruzadas. Fala devagar, como quem ensaiou a lentidão."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Não me lembro de nada do mês de março. É como se o mês tivesse sido apagado.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nada? Nenhuma reunião, nenhum documento, nenhuma pessoa?"
+        },
+        {
+         "q": "henrique",
+         "e": "nervoso",
+         "t": "Nada. Eu tenho… lapsos."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca assinei nenhum contrato da Altavista Serviços. Nem sei o que é.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O senhor é o sócio-controlador. Nunca ouviu falar?"
+        },
+        {
+         "q": "henrique",
+         "e": "nervoso",
+         "t": "Eu delego tudo. Eu assino sem ler."
+        }
+       ]
+      },
+      {
+       "t": "Eu tenho vozes que me mandam fazer coisas. Não consigo me controlar.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Quando começaram essas vozes?"
+        },
+        {
+         "q": "henrique",
+         "e": "triste",
+         "t": "Há uns… cinco meses."
+        }
+       ]
+      },
+      {
+       "t": "Eu não sei quem era Paulo Seixas. Nunca vi o homem.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca viu o engenheiro da sua obra, o que ficava a duzentos metros do seu escritório?"
+        },
+        {
+         "q": "henrique",
+         "e": "bravo",
+         "t": "Eu tenho cinco mil obras. Não conheço engenheiro."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "cartorio"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Doutor Henrique, o senhor diz que março foi \"apagado\". Mas o cartório registra a sua presença no dia 12: o senhor assinou uma procuração com biometria e firma reconhecida, conversou quarenta minutos com a tabeliã e pediu café duas vezes."
+      },
+      {
+       "q": "henrique",
+       "e": "nervoso",
+       "t": "…Eu pedi um café. Eu sempre peço café."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "O senhor pediu café duas vezes e conversou durante quarenta minutos. É uma lacuna muito conveniente: o senhor só esqueceu o que o compromete."
+      },
+      {
+       "q": "a5pires",
+       "e": "nervoso",
+       "t": "(sussurrando a Henrique) Pare de falar."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "O MP nada mais tem a perguntar, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Essa prova não contradiz a lacuna de memória. Preciso de um fato que mostre que Henrique estava presente e lúcido em março."
+      }
+     ],
+     "proxima": "c13"
+    },
+    "c13": {
+     "tipo": "decidir",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a5pires",
+       "e": "bravo",
+       "t": "Excelência, requeiro o reconhecimento de inimputabilidade e a absolvição imprópria, com medida de segurança, pelo art. 26 do Código Penal!",
+       "fx": "protesto"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "A perita oficial, as provas documentais e o laudo toxicológico afastam a tese, Excelência."
+      }
+     ],
+     "pergunta": "A defesa pede o reconhecimento da inimputabilidade de Henrique. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CP#art-26",
+       "trecho": "É isento de pena o agente que, por doença mental ou desenvolvimento mental incompleto ou retardado, era, ao tempo da ação ou da omissão, inteiramente incapaz de entender o caráter ilícito do fato ou de determinar-se de acordo com esse entendimento"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Indefiro. O art. 26 exige que, ao tempo da ação ou da omissão, o agente fosse inteiramente incapaz de entender o caráter ilícito do fato ou de se determinar. A perícia oficial afastou doença mental; o exame toxicológico desmente o tratamento; e a ata, o cartório e o interrogatório mostram lucidez e domínio dos atos.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a5pires",
+       "e": "nervoso",
+       "t": "A defesa recorre, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) O art. 26 exige incapacidade inteira ao tempo dos fatos. A perícia oficial, o toxicológico e a ata mostram o contrário. Reconhecer inimputabilidade aqui seria decidir contra a prova."
+      }
+     ],
+     "proxima": "c14"
+    },
+    "c14": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Dani tem na mão o laudo oficial, o parecer do Dr. Lima e três pilhas de documentos. O juízo precisa dizer o que fez com cada um."
+      }
+     ],
+     "pergunta": "Como tratar o laudo oficial da Dra. Menezes e o parecer do Dr. Lima na decisão?",
+     "opcoes": [
+      {
+       "t": "Acolher o laudo oficial automaticamente, porque a perícia oficial sempre prevalece sobre a do assistente técnico.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) O juiz não fica preso ao laudo (art. 182), nem ao oficial. Aqui o laudo oficial convence porque bate com o resto da prova, e não por ser oficial."
+        }
+       ]
+      },
+      {
+       "t": "Adotar o laudo oficial por fundamentos próprios: confrontá-lo com a ata, o cartório e o toxicológico, e afastar o parecer particular por contradição com os fatos. O juiz não está adstrito ao laudo.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A conclusão da perita oficial é acolhida não porque seja oficial, mas porque está de acordo com a ata de 14 de março, o registro do cartório, o exame toxicológico e a agenda do consultório. O parecer do assistente técnico fica afastado, pois se baseia em informações da família e em consultas posteriores à citação."
+        },
+        {
+         "q": "a5xmenezes",
+         "e": "feliz",
+         "t": "Agradeço a confiança, Excelência. Mas o mérito é dos fatos, e não do meu diploma."
+        },
+        {
+         "q": "lacerda",
+         "e": "confiante",
+         "t": "O Ministério Público nada tem a acrescentar."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-182",
+         "trecho": "O juiz não ficará adstrito ao laudo, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte"
+        }
+       ]
+      },
+      {
+       "t": "Rejeitar o laudo oficial para evitar a impressão de que o juízo se alinha ao Ministério Público.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "(sussurrando) Rejeitar a prova técnica para parecer isento é ser parcial ao contrário. O juiz aceita ou rejeita pelo que a prova mostra, e não pelo que parece."
+        }
+       ]
+      }
+     ],
+     "proxima": "c15"
+    },
+    "c15": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Concluído o incidente, apenso-se o auto apartado ao processo principal (art. 153). Cessa a suspensão. O júri fica marcado para o dia designado.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a5pires",
+       "e": "nervoso",
+       "t": "Excelência, a defesa quer reinquirir as testemunhas ouvidas na ausência do réu durante a suspensão."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Excelência, não houve oitiva em ausência do réu. As únicas diligências feitas na suspensão foram as que o próprio art. 149 ressalva."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Vamos a esse pedido da defesa."
+      }
+     ],
+     "proxima": "c16"
+    },
+    "c16": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Pires insiste: o art. 152, § 2º, diz que o processo retoma o curso e o acusado pode reinquirir as testemunhas ouvidas sem a sua presença."
+      }
+     ],
+     "pergunta": "A defesa pede para reinquirir as testemunhas, com base no art. 152, § 2º. Qual a decisão?",
+     "opcoes": [
+      {
+       "t": "Defiro: a suspensão do processo, por si só, dá direito de reinquirir todas as testemunhas.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) O art. 152, § 2º, só vale para o caso em que a doença sobreveio à infração e o acusado se restabeleceu. Aqui não houve doença."
+        }
+       ]
+      },
+      {
+       "t": "Indefiro: o art. 152 trata da doença que sobreveio à infração e do acusado que se restabelece; aqui o laudo afastou qualquer doença, e as diligências do período foram as ressalvadas pelo art. 149, § 2º.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Indefiro. O art. 152, § 2º, faculta a reinquirição quando a doença sobrevém à infração e o acusado se restabelece. Aqui, a perícia concluiu que não houve doença. As diligências feitas na suspensão foram só as ressalvadas pelo art. 149, § 2º, e o réu esteve representado pelo curador.",
+         "fx": "martelo"
+        },
+        {
+         "q": "henrique",
+         "e": "bravo",
+         "t": "Isso tudo é teatro!"
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O teatro, doutor Henrique, começou do seu lado da mesa."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-152",
+         "trecho": "Se se verificar que a doença mental sobreveio à infração o processo continuará suspenso até que o acusado se restabeleça"
+        },
+        {
+         "chave": "CPP#art-152/par-2",
+         "trecho": "O processo retomará o seu curso, desde que se restabeleça o acusado, ficando-lhe assegurada a faculdade de reinquirir as testemunhas que houverem prestado depoimento sem a sua presença"
+        }
+       ]
+      },
+      {
+       "t": "Indefiro, porque a defesa já usou a sua oportunidade de produzir provas e a lei não prevê reinquirição.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "(sussurrando) A lei prevê, sim: o art. 152, § 2º. O problema é que ele só se aplica quando houve doença superveniente, e não é o caso."
+        }
+       ]
+      }
+     ],
+     "proxima": "c17"
+    },
+    "c17": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "No fim do dia, a imprensa já mudou a manchete: \"Juiz nega manobra de Altavista\". Mas o gabinete não comemora."
+      },
+      {
+       "q": "dani",
+       "e": "triste",
+       "t": "Excelência, o Dr. Lima me pediu um minuto no corredor. Disse que sente muito: acreditou na família e não checou a ata. Uma carreira de trinta anos, Excelência."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O laudo errado de um médico honesto e o laudo certo de um médico vendido são muito parecidos no papel. Nossa obrigação é olhar os fatos por trás."
+      },
+      {
+       "q": "dani",
+       "e": "normal",
+       "t": "E o júri, Excelência? Daqui a sete dias."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Daqui a sete dias, Dani, o Henrique senta, e dessa vez ninguém pode dizer que não houve exame."
+      }
+     ],
+     "proxima": "c18"
+    },
+    "c18": {
+     "tipo": "veredicto",
+     "carimbo": "INCIDENTE REJEITADO",
+     "titulo": "Sem doença, sem escapatória",
+     "texto": "Você deferiu o exame porque havia dúvida razoável (art. 149), nomeou curador, suspendeu o processo (salvo diligências urgentes), fixou o exame oficial em até 45 dias, confrontou o laudo particular com a ata, o cartório e o toxicológico, e só então negou a inimputabilidade, sem se prender nem ao laudo oficial (art. 182) nem ao assistente técnico. A reinquirição do art. 152 foi negada porque não houve doença superveniente. O júri vem aí."
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,3622 @@
+{
+ "ato": "ato4",
+ "personagens": {
+  "a4xbeto": {
+   "nome": "Adalberto “Beto” Nunes",
+   "cargo": "Apenado · marceneiro da oficina do presídio",
+   "voz": 300,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "casual",
+    "corRoupa": "#c9a227",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a4xosvaldo": {
+   "nome": "Dr. Osvaldo Peçanha",
+   "cargo": "Diretor da Penitenciária",
+   "voz": 255,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "careca",
+    "corCabelo": "#222222",
+    "roupa": "terno",
+    "corRoupa": "#4a4a4a",
+    "gravata": "#6b1f1f",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a4xsonia": {
+   "nome": "Sônia Prado",
+   "cargo": "Agente penitenciária",
+   "voz": 475,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "rabo",
+    "corCabelo": "#1a1208",
+    "roupa": "farda",
+    "corRoupa": "#2e3b4e",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a4xwagner": {
+   "nome": "Wagner Teles",
+   "cargo": "Autor do fato · segurança patrimonial",
+   "voz": 235,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#1a1a1a",
+    "roupa": "casual",
+    "corRoupa": "#2a2a2a",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a4xcicero": {
+   "nome": "Cícero Mota",
+   "cargo": "Vítima · ajudante de obra e delegado sindical",
+   "voz": 320,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#222222",
+    "roupa": "casual",
+    "corRoupa": "#5a7a9a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a4xdalva": {
+   "nome": "Dona Dalva Rocha",
+   "cargo": "Dona do bar",
+   "voz": 440,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "coque",
+    "corCabelo": "#6a6a6a",
+    "roupa": "avental",
+    "corRoupa": "#b04a4a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a4xcelio": {
+   "nome": "Dr. Célio Prado",
+   "cargo": "Advogado do autor do fato",
+   "voz": 265,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "topete",
+    "corCabelo": "#2a1a10",
+    "roupa": "terno",
+    "corRoupa": "#1f3a5f",
+    "gravata": "#c9a227",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a4xlorena": {
+   "nome": "Lorena Peixoto",
+   "cargo": "Ofendida · contadora",
+   "voz": 455,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "cacheado",
+    "corCabelo": "#1a1208",
+    "roupa": "blazer",
+    "corRoupa": "#3a5a8a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a4xmarcio": {
+   "nome": "Márcio Tavares",
+   "cargo": "Agressor denunciado · supervisor",
+   "voz": 245,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#2a2a2a",
+    "roupa": "terno",
+    "corRoupa": "#2b3a4a",
+    "gravata": "#555555",
+    "oculos": false,
+    "barba": true
+   }
+  }
+ },
+ "episodios": [
+  {
+   "id": "a4x-progressao",
+   "ato": "ato4",
+   "ordem": 2.5,
+   "numero": 25,
+   "titulo": "Pena a Cumprir",
+   "papel": "juiz",
+   "nivel": "avancado",
+   "sinopse": "Beto pede o semiaberto, o diretor atesta má conduta e o Ministério Público quer manter o regime fechado. Você refaz a conta com detração e remição, confronta o diretor e a agente que fez a busca, descobre o vínculo da oficina da prisão com a Altavista e decide o futuro de um homem.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4nadia": "defesa",
+    "a4rita": "escritorio",
+    "a4xbeto": "testemunha",
+    "a4xosvaldo": "testemunha",
+    "a4xsonia": "testemunha"
+   },
+   "provas": [
+    {
+     "id": "guia",
+     "tipo": "prova",
+     "icone": "📑",
+     "nome": "Guia de execução e cálculo de pena",
+     "descricao": "Adalberto Nunes, 34 anos, primário: condenado a 8 anos de reclusão por roubo com emprego de faca (violência e grave ameaça), regime inicial fechado. Ficou 6 meses preso provisoriamente antes da sentença. Desde o trânsito em julgado cumpre 1 ano e 3 meses em regime fechado."
+    },
+    {
+     "id": "oficina",
+     "tipo": "prova",
+     "icone": "🪚",
+     "nome": "Certidão de trabalho da oficina",
+     "descricao": "A oficina de marcenaria da unidade certifica que Adalberto trabalhou 540 dias, o que dá 180 dias remidos (1 dia de pena para cada 3 de trabalho): cerca de 6 meses. A certidão é assinada pelo Diretor Osvaldo Peçanha."
+    },
+    {
+     "id": "atestado",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Atestado de conduta do diretor",
+     "descricao": "O Diretor atesta “conduta carcerária ruim”, por causa de uma falta grave registrada: posse de aparelho celular. Não faz menção a nenhuma outra anotação disciplinar em 15 meses."
+    },
+    {
+     "id": "exame",
+     "tipo": "prova",
+     "icone": "🧠",
+     "nome": "Exame criminológico",
+     "descricao": "Laudo da comissão técnica: baixa periculosidade, adaptação ao trabalho, vínculo familiar preservado, plano concreto de emprego em marcenaria. Conclusão favorável à progressão."
+    },
+    {
+     "id": "pad",
+     "tipo": "prova",
+     "icone": "🗂️",
+     "nome": "Procedimento disciplinar (cópia)",
+     "descricao": "Celular encontrado no armário coletivo do corredor da cela 7, usado por seis presos. Adalberto foi “ouvido” pelo próprio Diretor, sem defensor, e a falta foi homologada no mesmo dia. Não consta intimação da Defensoria Pública."
+    },
+    {
+     "id": "lista",
+     "tipo": "prova",
+     "icone": "✍️",
+     "nome": "Lista de presença da oficina (março)",
+     "descricao": "Marca 20 dias de trabalho para todos do grupo, inclusive 8 dias em que a oficina esteve fechada para reforma, conforme aviso da própria direção. Ao lado do nome de Adalberto, a lápis: “recusou assinar”. As demais assinaturas têm a mesma letra."
+    },
+    {
+     "id": "visitas",
+     "tipo": "prova",
+     "icone": "📒",
+     "nome": "Livro de visitas da direção",
+     "descricao": "Dois dias antes da busca no armário, “representante comercial da Altavista Serviços Ltda.” permaneceu duas horas na sala do Diretor Osvaldo. A oficina de marcenaria funciona por contrato com essa empresa."
+    },
+    {
+     "id": "l112",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 112 — Progressão de regime",
+     "chave": "LEP#art-112",
+     "trecho": "A pena privativa de liberdade será executada de forma progressiva com a transferência para regime menos rigoroso, a ser determinada pelo juiz, quando o preso tiver cumprido ao menos 1/6 (um sexto) da pena no regime anterior e seu"
+    },
+    {
+     "id": "l112i",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 112, I — 25% para crime com violência ou grave ameaça (primário)",
+     "chave": "LEP#art-112/inc-i",
+     "trecho": "se o apenado for primário e for condenado pela prática de crime mediante o exercício de violência ou grave ameaça, salvo em relação aos crimes previstos no Título XII da Parte Especial do Decreto-Lei nº 2.848, de 7 de dezembro de"
+    },
+    {
+     "id": "l112p1",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 112, § 1º — Boa conduta e exame criminológico",
+     "chave": "LEP#art-112/par-1",
+     "trecho": "Em todos os casos, o apenado somente terá direito à progressão de regime se ostentar boa conduta carcerária, comprovada pelo diretor do estabelecimento, e pelos resultados do exame criminológico, respeitadas as normas que vedam a"
+    },
+    {
+     "id": "l112p2",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 112, § 2º — Decisão motivada, MP e defesa",
+     "chave": "LEP#art-112/par-2",
+     "trecho": "A decisão do juiz que determinar a progressão de regime será sempre motivada e precedida de manifestação do Ministério Público e do defensor, procedimento que também será adotado na concessão de livramento condicional, indulto e"
+    },
+    {
+     "id": "l112p6",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 112, § 6º — Falta grave interrompe o prazo",
+     "chave": "LEP#art-112/par-6",
+     "trecho": "O cometimento de falta grave durante a execução da pena privativa de liberdade interrompe o prazo para a obtenção da progressão no regime de cumprimento da pena, caso em que o reinício da contagem do requisito objetivo terá como"
+    },
+    {
+     "id": "l126",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 126, § 1º, II — Remição pelo trabalho",
+     "chave": "LEP#art-126/par-1/inc-ii",
+     "trecho": "1 (um) dia de pena a cada 3 (três) dias de trabalho."
+    },
+    {
+     "id": "cp42",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 42 — Detração",
+     "chave": "CP#art-42",
+     "trecho": "Computam-se, na pena privativa de liberdade e na medida de segurança, o tempo de prisão provisória, no Brasil ou no estrangeiro, o de prisão administrativa e o de internação em qualquer dos estabelecimentos referidos no artigo"
+    },
+    {
+     "id": "l59",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 59 — Apuração da falta com defesa",
+     "chave": "LEP#art-59",
+     "trecho": "Praticada a falta disciplinar, deverá ser instaurado o procedimento para sua apuração, conforme regulamento, assegurado o direito de defesa."
+    },
+    {
+     "id": "l50",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 50, VII — Falta grave: aparelho telefônico",
+     "chave": "LEP#art-50/inc-vii",
+     "trecho": "tiver em sua posse, utilizar ou fornecer aparelho telefônico, de rádio ou similar, que permita a comunicação com outros presos ou com o ambiente externo;"
+    },
+    {
+     "id": "l40",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LEP, art. 40 — Respeito à integridade do preso",
+     "chave": "LEP#art-40",
+     "trecho": "Impõe-se a todas as autoridades o respeito à integridade física e moral dos condenados e dos presos provisórios."
+    },
+    {
+     "id": "cf5lv",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LV — Contraditório e ampla defesa",
+     "chave": "CF#art-5/inc-lv",
+     "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa, com os meios e recursos a ela inerentes;"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas às testemunhas",
+     "chave": "CPP#art-212",
+     "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+    }
+   ],
+   "placas": {
+    "defesa": "Defensoria Pública",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 25 · Ato IV: A Toga",
+     "subtitulo": "Pena a Cumprir",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Bom dia, Excelência. A pauta de hoje é da Vara de Execuções Penais, que o Tribunal lhe confiou além das varas comuns. São dezenas de processos, mas um deles está marcado com um post-it amarelo meu."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Adalberto Nunes, o “Beto”. Pede progressão ao regime semiaberto. O Ministério Público se opõe, e o diretor da penitenciária atestou conduta carcerária ruim. A Defensoria diz que o cálculo está certo e que a falta grave foi mal apurada."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Na execução penal, a pena não termina na sentença. Cada dia atrás das grades é uma decisão minha, e uma decisão errada pesa dos dois lados: um preso que fica a mais, ou um preso que sai antes de estar pronto."
+      },
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Posso separar os dispositivos de que Vossa Excelência vai precisar. A progressão está no art. 112 da Lei de Execução Penal, a remição no art. 126, e a apuração das faltas no art. 59."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A Lei de Execução Penal e os dispositivos de apoio foram juntados aos autos.",
+       "recebe": [
+        "l112",
+        "l112i",
+        "l112p1",
+        "l112p2",
+        "l112p6",
+        "l126",
+        "cp42",
+        "l59",
+        "l50",
+        "l40",
+        "cf5lv",
+        "cpp212"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Gabinete · Os autos da execução",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Antes de qualquer audiência, é preciso conferir a conta. Em execução penal, a matemática vale tanto quanto a moral: um erro de seis meses é um erro de seis meses de liberdade."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "guia",
+       "nome": "Mesa com processos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A guia de execução. Oito anos de reclusão por roubo com emprego de faca, regime inicial fechado, réu primário. Seis meses de preventiva antes da sentença, e um ano e três meses de cumprimento depois do trânsito em julgado.",
+         "recebe": [
+          "guia"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Roubo é crime cometido com violência ou grave ameaça. O percentual não será o de um sexto, que é a regra geral do caput. O art. 112 traz escalas específicas por tipo de crime e por reincidência."
+        }
+       ]
+      },
+      {
+       "id": "comp",
+       "nome": "Computador",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "No sistema de execução, o atestado do diretor: “conduta carcerária ruim”. O único motivo é a falta grave por posse de celular. Em quinze meses, nenhuma outra anotação.",
+         "recebe": [
+          "atestado"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "E aqui o laudo da comissão técnica: baixa periculosidade, adaptação ao trabalho, plano concreto de emprego em marcenaria. Conclusão favorável.",
+         "recebe": [
+          "exame"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de livros",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Entre os códigos, a pasta de convênios do sistema prisional. A oficina de marcenaria da penitenciária funciona por contrato com a Altavista Serviços Ltda. O nome de novo.",
+         "recebe": [
+          "oficina"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "E a certidão da oficina: 540 dias de trabalho de Adalberto, ou seja, 180 dias remidos, mais ou menos seis meses. Assinada pelo diretor da unidade, o mesmo que atestou má conduta."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4rita",
+       "titulo": "Conferir o cálculo com Rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "Fiz a conta de duas formas, Excelência. Uma contando só o tempo no regime fechado e outra somando detração e remição. A segunda dá resultado bem diferente."
+        },
+        {
+         "q": "a4rita",
+         "e": "normal",
+         "t": "A detração, art. 42 do Código Penal, é o tempo de prisão provisória. A remição, art. 126, § 1º, II, é um dia de pena para cada três de trabalho. Os dois entram no tempo cumprido."
+        }
+       ]
+      },
+      {
+       "q": "a4tulio",
+       "titulo": "Ouvir o promotor Túlio",
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "confiante",
+         "t": "Excelência, o Ministério Público não é contra a ressocialização. Mas o diretor atestou má conduta, e o art. 112, § 1º, exige boa conduta comprovada pelo diretor. Sem esse atestado, não há progressão."
+        },
+        {
+         "q": "a4tulio",
+         "e": "bravo",
+         "t": "Além disso, falta grave interrompe o prazo, art. 112, § 6º. A contagem recomeça sobre a pena que resta. Não sou eu quem está pedindo isso: é a lei."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "guia",
+      "atestado",
+      "exame",
+      "oficina"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Excelência, antes de ouvir quem quer que seja, a pergunta objetiva: o requisito de tempo está cumprido?"
+      }
+     ],
+     "pergunta": "Qual é o requisito objetivo e ele foi atingido?",
+     "opcoes": [
+      {
+       "t": "Não. A pena é de 8 anos, o apenado só cumpriu 1 ano e 3 meses no regime fechado, e isso é menos que o necessário.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Excelência, essa conta ignora a detração e a remição, que entram no tempo cumprido. Adalberto tem mais tempo do que o simples calendário mostra."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "O percentual é o de um sexto da pena, que a pena de 8 anos e o tempo de 1 ano e 3 meses já alcançaram.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Um sexto seria a regra geral, mas o roubo foi com violência ou grave ameaça, e o réu é primário: o inciso I do art. 112 exige 25%. Não é o caso do caput."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "Para crime com violência ou grave ameaça e réu primário, são 25%, ou 2 anos de uma pena de 8. Somando 1 ano e 3 meses de regime fechado, 6 meses de detração e 6 meses de remição, ele chega a 2 anos e 3 meses: o requisito objetivo está atingido.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Dois anos e três meses contra dois anos exigidos. Atingiu o requisito objetivo com três meses de folga. Mas só com a remição: sem ela, seriam um ano e nove."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "LEP#art-112/inc-i",
+         "trecho": "se o apenado for primário e for condenado pela prática de crime mediante o exercício de violência ou grave ameaça, salvo em relação aos crimes previstos no Título XII da Parte Especial do Decreto-Lei"
+        },
+        {
+         "chave": "LEP#art-126/par-1/inc-ii",
+         "trecho": "1 (um) dia de pena a cada 3 (três) dias de trabalho."
+        },
+        {
+         "chave": "CP#art-42",
+         "trecho": "Computam-se, na pena privativa de liberdade e na medida de segurança, o tempo de prisão provisória, no Brasil ou no estrangeiro, o de prisão administrativa e o de internação em qualquer dos"
+        }
+       ]
+      }
+     ],
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "investigar",
+     "local": "parlatorio",
+     "titulo": "Penitenciária · Parlatório",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você decide ir à unidade e ver o que os papéis não mostram. O parlatório é onde os presos falam com advogados e visitas, e onde ficam vestígios de quem entra e sai."
+      },
+      {
+       "q": "a4xbeto",
+       "e": "triste",
+       "t": "Excelência… eu nunca imaginei que um juiz ou uma juíza viria até aqui."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "visitas",
+       "nome": "Livro de visitas",
+       "x": 10,
+       "y": 56,
+       "w": 10,
+       "h": 8,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O livro de visitas da direção. Há duas semanas, “representante comercial da Altavista Serviços Ltda.”: duas horas dentro da sala do diretor. Dois dias depois, a busca no armário do corredor.",
+         "recebe": [
+          "visitas"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Um contrato de oficina não exige duas horas de conversa a portas fechadas com o diretor, a menos que haja algo a acertar."
+        }
+       ]
+      },
+      {
+       "id": "lista",
+       "nome": "Papel na cabine 2",
+       "x": 36,
+       "y": 41,
+       "w": 9,
+       "h": 9,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Alguém esqueceu isto na cabine: a lista de presença da oficina de março. Vinte dias marcados para todos, mas a própria direção avisou que a oficina esteve fechada para reforma por oito deles. E ao lado de Beto, a lápis: “recusou assinar”.",
+         "recebe": [
+          "lista"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "As demais assinaturas têm a mesma letra. Alguém preencheu os dias de trabalho de todo mundo. Dias de trabalho que viram remição de pena."
+        }
+       ]
+      },
+      {
+       "id": "pad",
+       "nome": "Cabine 3",
+       "x": 55,
+       "y": 10,
+       "w": 20,
+       "h": 40,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Na cabine 3, a cópia do procedimento disciplinar que a Defensoria deixou com Beto. O celular foi achado no armário coletivo do corredor da cela 7, usado por seis presos. Beto foi ouvido pelo próprio diretor, sem defensor, e a falta foi homologada no mesmo dia.",
+         "recebe": [
+          "pad"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Sem defensor, sem intimação da Defensoria, decisão no mesmo dia. Isso não é apuração: é carimbo."
+        }
+       ]
+      },
+      {
+       "id": "tel",
+       "nome": "Telefone da cabine 1",
+       "x": 11,
+       "y": 35,
+       "w": 6,
+       "h": 13,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O telefone do parlatório tem um quadro com os horários de ligação autorizados. Beto ligou para a Defensoria três vezes depois da falta e nenhuma foi atendida em tempo: o plantão estava sem estagiário."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4xbeto",
+       "titulo": "Ouvir Beto",
+       "falas": [
+        {
+         "q": "a4xbeto",
+         "e": "triste",
+         "t": "A oficina era a única coisa boa aqui, Excelência. Eu aprendi marcenaria de verdade. Quando eu sair, tenho emprego prometido numa marcenaria do bairro, é só Vossa Excelência liberar o semiaberto."
+        },
+        {
+         "q": "a4xbeto",
+         "e": "nervoso",
+         "t": "Em março, o seu Osvaldo mandou o pessoal assinar a lista de presença com o mês inteiro. Eu disse que a oficina ficou fechada oito dias. Eu não assinei. Três semanas depois acharam esse celular, num armário de que eu nem tenho a chave."
+        },
+        {
+         "q": "a4xbeto",
+         "e": "triste",
+         "t": "Não é no meu canto, doutor(a). É no armário do corredor, onde ficam as coisas de seis homens. Mas só o meu nome foi pro papel."
+        }
+       ]
+      },
+      {
+       "q": "a4nadia",
+       "titulo": "Falar com a defensora",
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "bravo",
+         "t": "Excelência, o art. 59 da LEP exige procedimento com direito de defesa para apurar falta disciplinar. Aqui o diretor foi acusador, ouvinte e julgador. Não houve defensor, e eu nunca fui intimada."
+        },
+        {
+         "q": "a4nadia",
+         "e": "pensativo",
+         "t": "A falta grave, se existisse, ainda assim exigiria prova de que o aparelho era dele. Aqui nem isso há. E o que estou pedindo é só o que a lei prevê: a progressão, e uma apuração que respeite o devido processo."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "visitas",
+      "lista",
+      "pad"
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência de justificação na execução. Ouvidos o apenado, a defesa e o Ministério Público, decidirei sobre a progressão de regime.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Excelência, o Ministério Público se opõe. Houve falta grave, o diretor atestou má conduta e o próprio apenado foi flagrado com um celular."
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "Excelência, a Defensoria sustenta que o procedimento disciplinar foi nulo e que o aparelho nem era dele. Peço que se ouça o diretor e a agente que fez a busca."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Beto, você já respondeu que não era o seu armário. Mas o senhor foi o único que teve celular apreendido naquele corredor, não foi? Repito: o celular era ou não era seu?"
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "PROTESTO! Excelência, a pergunta já foi respondida duas vezes! O promotor repete a mesma pergunta para pressionar o apenado!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defensora protesta: pergunta repetida. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. A pergunta já foi respondida. Passemos adiante, doutor.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Como queira, Excelência. Dispenso a pergunta."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o art. 212 não admite a repetição de pergunta já respondida."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "depoimento",
+     "testemunha": "a4xosvaldo",
+     "titulo": "O Diretor Osvaldo Peçanha",
+     "intro": [
+      {
+       "q": "a4xosvaldo",
+       "e": "confiante",
+       "t": "Excelência, trabalho no sistema prisional há vinte e dois anos. Atesto conduta pelo que vejo e pelo que está nos autos. Não persigo ninguém."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O procedimento disciplinar foi regular. O apenado foi ouvido por mim e teve oportunidade de se defender.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Ouvido pelo senhor. E o defensor?"
+        },
+        {
+         "q": "a4xosvaldo",
+         "e": "nervoso",
+         "t": "Na unidade, o diretor pode apurar. A defensoria é comunicada depois."
+        }
+       ]
+      },
+      {
+       "t": "A oficina de marcenaria funciona de forma regular, e cada lista de presença é conferida por mim pessoalmente.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Pessoalmente. Mesmo em março, quando houve reforma?"
+        },
+        {
+         "q": "a4xosvaldo",
+         "e": "nervoso",
+         "t": "Eu… confio na equipe, Excelência. A lista é da equipe."
+        }
+       ]
+      },
+      {
+       "t": "Minha relação com a empresa que mantém a oficina é estritamente contratual. Nunca recebi representante dela fora das reuniões formais de fiscalização.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca fora das reuniões formais?"
+        },
+        {
+         "q": "a4xosvaldo",
+         "e": "confiante",
+         "t": "Jamais. Trato do contrato com o setor jurídico, em reuniões com ata."
+        }
+       ]
+      },
+      {
+       "t": "O atestado de conduta ruim decorre unicamente da falta grave. Nenhuma outra razão pesou.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Unicamente a falta. Então, sem ela, o atestado seria outro."
+        },
+        {
+         "q": "a4xosvaldo",
+         "e": "nervoso",
+         "t": "Hipoteticamente, Excelência… sim."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 2,
+      "provas": [
+       "visitas"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Diretor!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor diz que nunca recebeu representante da empresa fora das reuniões formais. Mas o livro de visitas da direção registra um representante comercial da Altavista Serviços dentro da sua sala por duas horas, dois dias antes da busca no armário do corredor. Onde está a ata dessa reunião?"
+      },
+      {
+       "q": "a4xosvaldo",
+       "e": "chocado",
+       "t": "Eu… foi uma visita de cortesia, Excelência. Não houve ata…",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "Dois dias antes da busca no armário. Mais uma vez, Excelência, o nome da empresa."
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "O Ministério Público registra o dado, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não contradiz o depoimento, Diretor. Pense no livro de visitas da direção: com quem o senhor se reuniu na sala dois dias antes da busca?"
+      }
+     ],
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "Diretor, quantas vezes o senhor almoçou ou jantou com dirigentes da Altavista Serviços nos últimos doze meses?"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! Excelência, a pergunta não tem relação com a causa! Almoços do diretor não são objeto da execução!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta: pergunta sem relação com a causa. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Indeferido. A relação do diretor com a empresa interessa à credibilidade do atestado que sustenta a negativa. Responda, Diretor.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4xosvaldo",
+       "e": "nervoso",
+       "t": "Algumas… quatro ou cinco vezes. Assuntos de contrato."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o atestado do diretor é o fundamento da oposição do MP. O interesse dele nele é parte da causa."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "depoimento",
+     "testemunha": "a4xsonia",
+     "titulo": "A Agente Sônia Prado",
+     "intro": [
+      {
+       "q": "a4xsonia",
+       "e": "nervoso",
+       "t": "Eu só fiz a revista, Excelência. Segui a ordem de cima."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Cumpri a ordem de revista na cela 7 sem saber quem era o alvo.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Sem saber quem era o alvo. Quem deu a ordem?"
+        },
+        {
+         "q": "a4xsonia",
+         "e": "nervoso",
+         "t": "A chefia, Excelência. Foi dito para “começar pelo armário do corredor”."
+        }
+       ]
+      },
+      {
+       "t": "O celular estava dentro do armário individual do apenado Adalberto Nunes.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Individual? Com chave?"
+        },
+        {
+         "q": "a4xsonia",
+         "e": "nervoso",
+         "t": "O armário… era o do corredor. Mas todos sabem de quem era."
+        }
+       ]
+      },
+      {
+       "t": "O apenado confessou a posse do aparelho na hora da apreensão.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Confessou? Está registrado em algum lugar?"
+        },
+        {
+         "q": "a4xsonia",
+         "e": "nervoso",
+         "t": "Eu… escrevi no relatório, depois."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "pad"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Agente!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "A senhora afirma que o celular estava no armário individual do apenado. Mas o procedimento disciplinar registra que o aparelho foi achado no armário coletivo do corredor da cela 7, usado por seis presos. Qual dos seis era o dono?"
+      },
+      {
+       "q": "a4xsonia",
+       "e": "chocado",
+       "t": "Eu… não sei dizer, Excelência. O diretor disse que era do Beto.",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "O diretor disse. Não houve perícia, não houve impressão digital, não houve defesa."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não contradiz o depoimento, Agente. Releia o procedimento disciplinar: onde exatamente o aparelho foi achado?"
+      }
+     ],
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Agente Sônia, é claro que o senhor Adalberto era o responsável pelo armário do corredor, não é verdade? Ele era o preso mais antigo da cela."
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor já entrega a resposta!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defensora protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. Reformule, doutor. A testemunha não é obrigada a responder ao que a pergunta já afirma.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Agente, quem tinha a chave do armário do corredor?"
+      },
+      {
+       "q": "a4xsonia",
+       "e": "triste",
+       "t": "Ninguém, Excelência. Era aberto."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "apresentar",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "pensativo",
+       "t": "Excelência, qual a regra da própria Lei de Execução Penal que exige procedimento com direito de defesa para apurar a falta disciplinar? O diretor não pode ser acusador e juiz ao mesmo tempo."
+      }
+     ],
+     "pergunta": "Qual dispositivo da LEP exige apuração da falta com direito de defesa?",
+     "provas": [
+      "l59"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 59: praticada a falta disciplinar, deverá ser instaurado procedimento para sua apuração, assegurado o direito de defesa. Aqui ele foi suprimido: sem defensor, sem intimação, no mesmo dia."
+      },
+      {
+       "q": "a4nadia",
+       "e": "feliz",
+       "t": "Obrigada, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, é o art. 59 da LEP: procedimento de apuração com direito de defesa."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s13"
+    },
+    "s13": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Excelência, a questão da falta grave é o ponto central. Como tratá-la na decisão?"
+      }
+     ],
+     "pergunta": "Qual o efeito do procedimento disciplinar sem defesa?",
+     "opcoes": [
+      {
+       "t": "Considero a falta grave válida: o aparelho foi achado na cela, o diretor atestou má conduta, e o prazo recomeça (art. 112, § 6º).",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Excelência, uma falta apurada sem defensor viola o art. 59 da LEP e o contraditório (CF, art. 5º, LV). Ela não pode produzir os efeitos do § 6º."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "Reconheço a nulidade do procedimento disciplinar, por ausência de defesa (LEP, art. 59 e CF, art. 5º, LV); a falta não pode servir para negar a conduta nem para interromper o prazo, sem prejuízo de nova apuração com defesa técnica.",
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "feliz",
+         "t": "É exatamente o que a Defensoria pediu, Excelência."
+        },
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "O Ministério Público registra o inconformismo, mas reconhece o vício de forma."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "LEP#art-59",
+         "trecho": "Praticada a falta disciplinar, deverá ser instaurado o procedimento para sua apuração, conforme regulamento, assegurado o direito de defesa."
+        },
+        {
+         "chave": "CF#art-5/inc-lv",
+         "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa, com os meios e recursos a ela inerentes;"
+        }
+       ]
+      },
+      {
+       "t": "Eu mesmo(a) aplico ao apenado a sanção da falta, para suprir o defeito do procedimento do diretor.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "O poder disciplinar é da autoridade administrativa (LEP, art. 47). O juiz decide sobre incidentes da execução, não faz as vezes do diretor."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s14"
+    },
+    "s14": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Instrução encerrada, Excelência. O promotor, a defensora e o apenado aguardam. Quais serão os termos da decisão?"
+      }
+     ],
+     "pergunta": "Qual é a decisão?",
+     "opcoes": [
+      {
+       "t": "Indefiro a progressão: há conduta ruim atestada pelo diretor, e a falta grave interrompeu o prazo.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "O atestado e a falta se apoiam em procedimento nulo. Indeferir seria dar efeito jurídico a um ato que a lei não admite."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "Defiro a progressão ao regime semiaberto: cumpridos 25% da pena, com detração e remição, exame criminológico favorável e conduta carcerária regular, já que a falta é nula; ouvidos o Ministério Público e a defesa; sem prejuízo de nova apuração com defesa técnica.",
+       "falas": [
+        {
+         "q": "a4xbeto",
+         "e": "feliz",
+         "t": "Doutor(a)… obrigado. Eu vou trabalhar. Eu juro que vou."
+        },
+        {
+         "q": "a4nadia",
+         "e": "feliz",
+         "t": "É a decisão que a lei exige, Excelência."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "LEP#art-112",
+         "trecho": "A pena privativa de liberdade será executada de forma progressiva com a transferência para regime menos rigoroso, a ser determinada pelo juiz, quando o preso tiver cumprido ao menos 1/6 (um sexto) da"
+        },
+        {
+         "chave": "LEP#art-112/par-1",
+         "trecho": "Em todos os casos, o apenado somente terá direito à progressão de regime se ostentar boa conduta carcerária, comprovada pelo diretor do estabelecimento, e pelos resultados do exame criminológico,"
+        },
+        {
+         "chave": "LEP#art-112/par-2",
+         "trecho": "A decisão do juiz que determinar a progressão de regime será sempre motivada e precedida de manifestação do Ministério Público e do defensor, procedimento que também será adotado na concessão de"
+        }
+       ]
+      },
+      {
+       "t": "Defiro a progressão direto ao regime aberto, para compensar o tempo perdido com o procedimento irregular.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "A progressão é do regime fechado para o semiaberto, e só depois para o aberto. A execução é progressiva, e a lei não autoriza saltos."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s15"
+    },
+    "s15": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Concedo a progressão de Adalberto Nunes ao regime semiaberto, nos termos do art. 112 da LEP. Reconheço a nulidade do procedimento disciplinar por violação ao art. 59 e ao art. 5º, LV, da Constituição. Expeça-se alvará de transferência.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "O Ministério Público vai agravar, Excelência. É o nosso dever. Mas anoto que a fundamentação está inatacável quanto ao tempo."
+      },
+      {
+       "q": "a4xosvaldo",
+       "e": "bravo",
+       "t": "Excelência, isso será lembrado. A unidade não esquece quem a desautoriza."
+      },
+      {
+       "q": "a4xbeto",
+       "e": "triste",
+       "t": "Excelência… posso falar com Vossa Excelência um instante? É sobre a oficina."
+      },
+      {
+       "q": "a4xbeto",
+       "e": "nervoso",
+       "t": "Não é só a minha lista. Eu vi o que acontece lá dentro. Os dias de trabalho que o seu Osvaldo preenche viram remição para quem paga por fora. E tem gente que sabe que eu sei. Se eu voltar pro corredor da cela 7, eu não sei o que vai ser."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Beto, o senhor está me dizendo que corre risco. E que pode haver um esquema por trás da oficina."
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s16"
+    },
+    "s16": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, o juiz da execução decide sobre os incidentes e fiscaliza a unidade. Aqui há uma encruzilhada, e as duas saídas são lícitas."
+      }
+     ],
+     "pergunta": "Como proteger Beto e tratar o que ele revelou?",
+     "opcoes": [
+      {
+       "t": "Determino a transferência imediata de Beto, antes do alvará, para outra unidade, e oficio à Secretaria e ao Ministério Público para apurar a oficina e o diretor.",
+       "falas": [
+        {
+         "q": "a4xbeto",
+         "e": "feliz",
+         "t": "Obrigado, Excelência. Longe daqui eu consigo respirar."
+        },
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "Segurança primeiro. Mas ele perde o vínculo com a oficina e a família fica mais longe."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LEP#art-40",
+         "trecho": "Impõe-se a todas as autoridades o respeito à integridade física e moral dos condenados e dos presos provisórios."
+        }
+       ],
+       "marca": "a4x_beto_protegido"
+      },
+      {
+       "t": "Mantenho Beto na unidade até o alvará, com medidas de segurança pontuais, e requisito ao Ministério Público e à Corregedoria uma apuração imediata, com diligência na oficina e a oitiva dele sob sigilo.",
+       "falas": [
+        {
+         "q": "a4xbeto",
+         "e": "nervoso",
+         "t": "Vossa Excelência tem coragem. Eu confio."
+        },
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "A apuração anda mais rápida e preserva o vínculo da oficina. Mas ele passa mais alguns dias onde corre risco."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LEP#art-66/inc-iii/ali-b",
+         "trecho": "progressão ou regressão nos regimes;"
+        }
+       ],
+       "marca": "a4x_beto_apuracao"
+      }
+     ],
+     "livre": true,
+     "proxima": "s17"
+    },
+    "s17": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Rita, anote. Oficina de marcenaria, contrato com a Altavista Serviços, lista de presença com assinaturas de uma mesma letra, e um diretor que se reúne duas horas com um representante da empresa dois dias antes de um celular aparecer num armário aberto."
+      },
+      {
+       "q": "a4rita",
+       "e": "chocado",
+       "t": "Excelência… a Altavista. Henrique Altavista fugiu, Brandão sumiu, e o braço de serviços continua operando dentro da penitenciária."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "E tem mais: a lavagem de dinheiro de que falamos pode passar justamente por contratos de “trabalho prisional” com dias fictícios. Remição de pena de um lado, nota fiscal do outro."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Então este caso era só o primeiro fio. Vamos puxar."
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s18"
+    },
+    "s18": {
+     "tipo": "veredicto",
+     "carimbo": "PROGRESSÃO CONCEDIDA",
+     "titulo": "Pena cumprida na medida da lei",
+     "texto": "Você refez a conta com detração e remição, descobriu que a falta grave nasceu de um procedimento sem defesa e concedeu a progressão ao semiaberto. De quebra, abriu a porta para investigar um contrato de oficina prisional ligado à Altavista Serviços.",
+     "variantes": [
+      {
+       "se": "a4x_beto_protegido",
+       "titulo": "Progressão concedida, Beto protegido",
+       "texto": "Você refez a conta com detração e remição, anulou a falta apurada sem defesa e concedeu a progressão ao semiaberto. Beto foi transferido para longe do corredor da cela 7, e o Ministério Público recebeu o que ele revelou sobre a oficina ligada à Altavista Serviços."
+      },
+      {
+       "se": "a4x_beto_apuracao",
+       "titulo": "Progressão concedida, oficina sob investigação",
+       "texto": "Você refez a conta com detração e remição, anulou a falta apurada sem defesa e concedeu a progressão ao semiaberto. A Corregedoria e o Ministério Público entraram na oficina ligada à Altavista Serviços, com Beto ouvido sob sigilo e à espera do alvará."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a4x-juizado",
+   "ato": "ato4",
+   "ordem": 3.5,
+   "numero": 26,
+   "titulo": "Briga de Bar",
+   "papel": "juiz",
+   "nivel": "avancado",
+   "sinopse": "Um sindicalista apanhou num bar depois de falar com a imprensa. Na audiência preliminar do Juizado Especial Criminal, você esclarece sobre composição e transação penal, nega uma cláusula de silêncio, descobre um benefício anterior que impede a proposta e manda investigar quem deu o recado.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4xcelio": "defesa",
+    "a4rita": "escritorio",
+    "a4xwagner": "testemunha",
+    "a4xcicero": "testemunha",
+    "a4xdalva": "cena",
+    "a4gilson": "cena"
+   },
+   "provas": [
+    {
+     "id": "tco",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Termo circunstanciado",
+     "descricao": "Autor do fato: Wagner Teles, 38 anos, segurança patrimonial. Vítima: Cícero Mota, 45 anos, ajudante de obra e delegado sindical dos operários. Local: um bar do bairro, às 21h40. Fatos: lesão corporal leve e ameaça. Ninguém foi preso: Wagner assumiu o compromisso de comparecer ao Juizado."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🩺",
+     "nome": "Laudo do exame de corpo de delito",
+     "descricao": "Equimose na região periorbitária esquerda e escoriação no lábio inferior. Sem fratura. Incapacidade para as ocupações habituais por menos de 30 dias. Conclusão: lesão corporal leve."
+    },
+    {
+     "id": "video",
+     "tipo": "prova",
+     "icone": "🎥",
+     "nome": "Gravação da câmera do bar",
+     "descricao": "Cícero, de costas, tentando sair. Wagner aproxima-se por trás, o empurra contra o balcão e o atinge com um soco. Cícero não revida. O áudio capta: “Fala mais uma vez com repórter e eu volto”."
+    },
+    {
+     "id": "comanda",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Comanda do bar",
+     "descricao": "A mesa de Wagner, com outros três homens, foi paga no cartão corporativo da Altavista Serviços Ltda. às 20h14, antes da briga. No encosto da cadeira ficou um crachá de “Segurança Patrimonial · Altavista Serviços”."
+    },
+    {
+     "id": "certidao",
+     "tipo": "prova",
+     "icone": "🏛️",
+     "nome": "Certidão do Juizado",
+     "descricao": "Há quatro anos e dois meses, em outro processo, o Juizado Especial Criminal homologou transação penal proposta a Wagner Teles por lesão corporal leve, e ele cumpriu a prestação pecuniária. A certidão registra o benefício apenas para impedir novo benefício no prazo legal."
+    },
+    {
+     "id": "acordo",
+     "tipo": "prova",
+     "icone": "✉️",
+     "nome": "Minuta de composição civil",
+     "descricao": "Wagner pagaria R$ 8.000 a Cícero, via “terceiro interessado: Altavista Serviços Ltda.”. Cláusula 5: “a vítima compromete-se a não prestar declarações à imprensa sobre a empresa Altavista Serviços”. Assinada pelo advogado Célio Prado."
+    },
+    {
+     "id": "j61",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 61 — Menor potencial ofensivo",
+     "chave": "JEC#art-61",
+     "trecho": "Consideram-se infrações penais de menor potencial ofensivo, para os efeitos desta Lei, as contravenções penais e os crimes a que a lei comine pena máxima não superior a 2 (dois) anos, cumulada ou não com multa."
+    },
+    {
+     "id": "j62",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 62 — Critérios do Juizado",
+     "chave": "JEC#art-62",
+     "trecho": "O processo perante o Juizado Especial orientar-se-á pelos critérios da oralidade, simplicidade, informalidade, economia processual e celeridade, objetivando, sempre que possível, a reparação dos danos sofridos pela vítima e a"
+    },
+    {
+     "id": "j72",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 72 — Audiência preliminar",
+     "chave": "JEC#art-72",
+     "trecho": "Na audiência preliminar, presente o representante do Ministério Público, o autor do fato e a vítima e, se possível, o responsável civil, acompanhados por seus advogados, o Juiz esclarecerá sobre a possibilidade da composição dos"
+    },
+    {
+     "id": "j74",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 74 — Composição de danos",
+     "chave": "JEC#art-74",
+     "trecho": "A composição dos danos civis será reduzida a escrito e, homologada pelo Juiz mediante sentença irrecorrível, terá eficácia de título a ser executado no juízo civil competente."
+    },
+    {
+     "id": "j74p",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 74, parágrafo único — Renúncia à representação",
+     "chave": "JEC#art-74/par-unico",
+     "trecho": "Tratando-se de ação penal de iniciativa privada ou de ação penal pública condicionada à representação, o acordo homologado acarreta a renúncia ao direito de queixa ou representação."
+    },
+    {
+     "id": "j75",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 75 — Representação verbal",
+     "chave": "JEC#art-75",
+     "trecho": "Não obtida a composição dos danos civis, será dada imediatamente ao ofendido a oportunidade de exercer o direito de representação verbal, que será reduzida a termo."
+    },
+    {
+     "id": "j76",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 76 — Transação penal",
+     "chave": "JEC#art-76",
+     "trecho": "Havendo representação ou tratando-se de crime de ação penal pública incondicionada, não sendo caso de arquivamento, o Ministério Público poderá propor a aplicação imediata de pena restritiva de direitos ou multas, a ser"
+    },
+    {
+     "id": "j76ii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 76, § 2º, II — Benefício nos últimos cinco anos",
+     "chave": "JEC#art-76/par-2/inc-ii",
+     "trecho": "ter sido o agente beneficiado anteriormente, no prazo de cinco anos, pela aplicação de pena restritiva ou multa, nos termos deste artigo;"
+    },
+    {
+     "id": "j77p2",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 77, § 2º — Complexidade do caso",
+     "chave": "JEC#art-77/par-2",
+     "trecho": "Se a complexidade ou circunstâncias do caso não permitirem a formulação da denúncia, o Ministério Público poderá requerer ao Juiz o encaminhamento das peças existentes, na forma do parágrafo único do art. 66 desta Lei."
+    },
+    {
+     "id": "j88",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "JEC, art. 88 — Lesão leve depende de representação",
+     "chave": "JEC#art-88",
+     "trecho": "Além das hipóteses do Código Penal e da legislação especial, dependerá de representação a ação penal relativa aos crimes de lesões corporais leves e lesões culposas."
+    },
+    {
+     "id": "cp129",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 129 — Lesão corporal (pena)",
+     "chave": "CP#art-129/pena",
+     "trecho": "detenção, de três meses a um ano."
+    },
+    {
+     "id": "cf5ix",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, IX — Liberdade de expressão",
+     "chave": "CF#art-5/inc-ix",
+     "trecho": "é livre a expressão da atividade intelectual, artística, científica e de comunicação, independentemente de censura ou licença;"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas às testemunhas",
+     "chave": "CPP#art-212",
+     "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+    }
+   ],
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 26 · Ato IV: A Toga",
+     "subtitulo": "Briga de Bar",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Excelência, hoje o plantão do Juizado Especial Criminal ficou com Vossa Excelência. É a justiça da pressa: oralidade, informalidade, economia processual."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Uma briga de bar. Wagner Teles agrediu Cícero Mota. Lesão leve, um tapa e um soco, pelo que o termo circunstanciado conta, e uma frase que me pareceu um recado. O promotor é o Dr. Túlio, e a defesa, o Dr. Célio Prado."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Um caso pequeno só na aparência. No Juizado, a primeira pergunta é sempre se existe a possibilidade de composição dos danos e de pena não privativa de liberdade. Se der certo, o processo acaba hoje. Se der errado por fraqueza minha, alguém sai pior do que entrou."
+      },
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Aqui estão os dispositivos da Lei 9.099 e os do Código Penal. O art. 72 é o roteiro da audiência preliminar, o art. 74 trata da composição, o art. 76 da transação penal."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A Lei 9.099/95 e os dispositivos de apoio foram juntados.",
+       "recebe": [
+        "j61",
+        "j62",
+        "j72",
+        "j74",
+        "j74p",
+        "j75",
+        "j76",
+        "j76ii",
+        "j77p2",
+        "j88",
+        "cp129",
+        "cf5ix",
+        "cpp212"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "bar",
+     "titulo": "Bar · O local da briga",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Juízes do Juizado não costumam ir ao local. Mas uma frase no termo circunstanciado, “fala mais uma vez com repórter”, fez você querer ver o bar com seus próprios olhos."
+      },
+      {
+       "q": "a4xdalva",
+       "e": "nervoso",
+       "t": "Eu nunca tive confusão aqui em dezoito anos, Excelência. Gente simples, cerveja e dominó. Aquilo foi um escândalo."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "cam",
+       "nome": "Câmera no teto",
+       "x": 76,
+       "y": 8,
+       "w": 12,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A câmera da Dona Dalva pegou tudo. Cícero de costas, tentando sair. Wagner chega por trás, o empurra contra o balcão e o atinge no rosto. Cícero não revida.",
+         "recebe": [
+          "video"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "E o áudio: “Fala mais uma vez com repórter e eu volto.” Isso não é briga de bar. É recado."
+        }
+       ]
+      },
+      {
+       "id": "caixa",
+       "nome": "Caixa e balcão",
+       "x": 55,
+       "y": 40,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A comanda da mesa de Wagner. Quatro homens, paga às 20h14 no cartão corporativo da Altavista Serviços. Quem paga a cerveja dos seguranças também paga o advogado?",
+         "recebe": [
+          "comanda"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa",
+       "x": 14,
+       "y": 52,
+       "w": 18,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Copos quebrados, uma cadeira caída. E no encosto de outra, um crachá esquecido: “Segurança Patrimonial · Altavista Serviços”. Wagner chegou a sair às pressas, e não só da briga."
+        }
+       ]
+      },
+      {
+       "id": "porta",
+       "nome": "Porta",
+       "x": 0,
+       "y": 22,
+       "w": 12,
+       "h": 58,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Na porta, o batente com marcas recentes de calçado: a vítima foi empurrada para o balcão exatamente quando tentava sair. A cena bate com o vídeo."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4xdalva",
+       "titulo": "Ouvir Dona Dalva",
+       "falas": [
+        {
+         "q": "a4xdalva",
+         "e": "nervoso",
+         "t": "O Wagner chegou com mais três, todos de camiseta com o emblema da empresa. Ficaram numa mesa de canto, olhando para o Cícero. Eu conheço o Cícero, ele é delegado do sindicato dos operários do Horizonte."
+        },
+        {
+         "q": "a4xdalva",
+         "e": "triste",
+         "t": "Quando o Cícero levantou para ir embora, o Wagner foi atrás. Eu gritei. Ele ainda olhou para mim e disse: “Isso aqui não é com a senhora”."
+        }
+       ]
+      },
+      {
+       "q": "a4xcicero",
+       "titulo": "Conversar com Cícero",
+       "falas": [
+        {
+         "q": "a4xcicero",
+         "e": "triste",
+         "t": "Excelência, eu só dei uma entrevista ao jornal sobre os atrasos de salário na obra. Dois dias depois, o Wagner me achou no bar. Não foi sorte."
+        },
+        {
+         "q": "a4xcicero",
+         "e": "nervoso",
+         "t": "Depois da briga, o advogado dele me procurou com um papel. Dinheiro, mas com uma cláusula para eu me calar com a imprensa. Eu não assinei. Mas não sei se vou conseguir recusar de novo."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "video",
+      "comanda"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia · O termo circunstanciado",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "No Juizado, não há inquérito. A autoridade policial lavra o termo e envia ao juízo com o autor do fato e a vítima, art. 69 da Lei 9.099. É o único papel que alimenta a audiência. Vale conferir inteiro."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "livro",
+       "nome": "Livro de registro (mesa)",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O termo circunstanciado: Wagner Teles, 38 anos, segurança patrimonial; Cícero Mota, 45 anos, ajudante de obra. Lesão corporal leve e ameaça, às 21h40. Wagner assumiu o compromisso de comparecer ao Juizado, por isso não foi preso.",
+         "recebe": [
+          "tco"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O laudo: equimose periorbitária e escoriação no lábio. Lesão leve, sem fratura.",
+         "recebe": [
+          "laudo"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E uma certidão do próprio Juizado: há quatro anos e dois meses, Wagner foi beneficiado com transação penal por outra lesão corporal leve. Cumpriu a prestação. Vale lembrar.",
+         "recebe": [
+          "certidao"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "No mural, o cartaz da campanha da delegacia: “Briga resolvida na conversa dura mais que briga resolvida no soco”. A ironia é involuntária."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4gilson",
+       "titulo": "Falar com o Inspetor Gilson",
+       "falas": [
+        {
+         "q": "a4gilson",
+         "e": "normal",
+         "t": "Excelência, eu lavrei o termo. Os quatro rapazes da mesa de canto são seguranças contratados pela Altavista Serviços para a obra do Residencial Horizonte. A vítima estava incomodando os patrões, pelo que entendi."
+        },
+        {
+         "q": "a4gilson",
+         "e": "pensativo",
+         "t": "O Wagner chegou calmo, disse que “foi só um empurrão”. Mas já tinha o advogado na porta antes de a viatura chegar. Rápido demais para um empurrão."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "tco",
+      "laudo",
+      "certidao"
+     ],
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Excelência, antes de ir à audiência, a pergunta de enquadramento: isso é mesmo assunto do Juizado?"
+      }
+     ],
+     "pergunta": "Como classificar o fato e qual o rito?",
+     "opcoes": [
+      {
+       "t": "Não é infração de menor potencial ofensivo: lesão corporal vai sempre à vara comum, com inquérito policial.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Lesão corporal leve tem pena máxima de um ano. O art. 61 da Lei 9.099 abrange crimes com pena máxima de até dois anos: é do Juizado."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "É infração de menor potencial ofensivo (lesão leve: pena máxima de 1 ano, menos que o limite de 2 anos do art. 61); o rito é o do Juizado, com audiência preliminar, e a ação depende de representação da vítima (art. 88).",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Exatamente. E isso muda tudo: sem representação, não há ação penal por lesão leve. A vítima é a chave."
+        },
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "O Ministério Público concorda com o enquadramento, Excelência."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "JEC#art-61",
+         "trecho": "Consideram-se infrações penais de menor potencial ofensivo, para os efeitos desta Lei, as contravenções penais e os crimes a que a lei comine pena máxima não superior a 2 (dois) anos, cumulada ou não"
+        },
+        {
+         "chave": "JEC#art-88",
+         "trecho": "Além das hipóteses do Código Penal e da legislação especial, dependerá de representação a ação penal relativa aos crimes de lesões corporais leves e lesões culposas."
+        },
+        {
+         "chave": "CP#art-129/pena",
+         "trecho": "detenção, de três meses a um ano."
+        }
+       ]
+      },
+      {
+       "t": "É infração de menor potencial ofensivo, mas a ação é pública incondicionada: o Ministério Público denuncia mesmo que a vítima não queira.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "O art. 88 diz o contrário: a lesão corporal leve depende de representação. Sem ela, o MP não pode denunciar."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência preliminar do Juizado Especial Criminal. Presentes o Ministério Público, o autor do fato, a vítima e seu advogado, passo a esclarecer sobre a possibilidade de composição dos danos e de proposta de pena não privativa de liberdade.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "O Ministério Público registra que há lesão leve, com laudo, e que o autor do fato é segurança treinado."
+      },
+      {
+       "q": "a4xcelio",
+       "e": "confiante",
+       "t": "Excelência, trata-se de episódio isolado, de um trabalhador sem antecedentes de violência. Meu cliente lamenta e quer compor."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4xcelio",
+       "e": "apontando",
+       "t": "Sr. Cícero, o senhor tinha bebido naquela noite? Quantas cervejas o senhor tomou?"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! Excelência, a vítima já respondeu a essa pergunta duas vezes ao termo e já respondeu agora! É repetição!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta: pergunta repetida. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. A pergunta já foi respondida. Siga adiante, doutor.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4xcicero",
+       "e": "triste",
+       "t": "Duas cervejas, Excelência. Eu como o que sobra do salário. O Wagner veio por outra coisa."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o art. 212 não admite a repetição de pergunta já respondida."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "depoimento",
+     "testemunha": "a4xwagner",
+     "titulo": "O autor do fato, Wagner Teles",
+     "intro": [
+      {
+       "q": "a4xwagner",
+       "e": "confiante",
+       "t": "Excelência, eu trabalho com segurança há quinze anos. Sou educado. Aquilo foi um mal-entendido que fugiu do controle."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O Cícero me atacou primeiro. Eu só me defendi.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Atacou como?"
+        },
+        {
+         "q": "a4xwagner",
+         "e": "nervoso",
+         "t": "Ele… levantou o braço. Eu tive que reagir."
+        }
+       ]
+      },
+      {
+       "t": "Foi um empurrão só. Não houve soco nenhum.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Só um empurrão? E o laudo?"
+        },
+        {
+         "q": "a4xwagner",
+         "e": "nervoso",
+         "t": "Ele deve ter batido no balcão sozinho."
+        }
+       ]
+      },
+      {
+       "t": "Eu não conhecia o Cícero, nunca o tinha visto na vida.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Mas o senhor sabia o nome dele."
+        },
+        {
+         "q": "a4xwagner",
+         "e": "nervoso",
+         "t": "Sabia depois, pela polícia."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca ameacei ninguém, e jamais falei em imprensa ou em repórter.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nunca?"
+        },
+        {
+         "q": "a4xwagner",
+         "e": "confiante",
+         "t": "Nunca. Nem lembro de ter falado nada."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "video"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Senhor Wagner!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor diz que Cícero o atacou primeiro e que só se defendeu. Mas a câmera do bar mostra o contrário: Cícero de costas, tentando sair, e o senhor vindo por trás, empurrando-o contra o balcão e atingindo-o no rosto. E o áudio: “Fala mais uma vez com repórter e eu volto”."
+      },
+      {
+       "q": "a4xwagner",
+       "e": "chocado",
+       "t": "Eu… não sabia que tinha câmera, Excelência…",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "O senhor afirmou que nunca falou em repórter. O vídeo diz o contrário, Excelência."
+      },
+      {
+       "q": "a4xcelio",
+       "e": "nervoso",
+       "t": "A defesa pede para se manifestar depois, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não contradiz o depoimento. Veja o que a câmera do bar registrou: quem tinha as costas viradas antes do golpe?"
+      }
+     ],
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Senhor Wagner, quem lhe mandou dar o recado sobre o repórter? Foi alguém da Altavista Serviços?"
+      },
+      {
+       "q": "a4xcelio",
+       "e": "bravo",
+       "t": "PROTESTO! Excelência, a pergunta não tem relação com a causa! Isso é uma pescaria contra o empregador do meu cliente!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O defensor protesta: pergunta sem relação com a causa. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Indeferido. A pergunta tem relação direta com a causa: o motivo e a autoria do recado. Responda, Senhor Wagner.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4xwagner",
+       "e": "nervoso",
+       "t": "Foi… o supervisor da empresa. Disse que o Cícero estava “dando trabalho” e que alguém tinha que conversar com ele."
+      },
+      {
+       "q": "a4xcelio",
+       "e": "chocado",
+       "t": "Wagner, cale-se…"
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o motivo do recado é a própria ameaça. Isso tem relação com a causa."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4xcelio",
+       "e": "pensativo",
+       "t": "Excelência, o autor do fato lamenta e quer reparar o dano. Apresentamos a minuta de composição civil: oito mil reais, pagos por um terceiro interessado."
+      },
+      {
+       "q": "a4xcicero",
+       "e": "nervoso",
+       "t": "Excelência, há uma cláusula 5 que me impede de falar com a imprensa sobre a empresa. É isso que eu não aceito."
+      }
+     ],
+     "pergunta": "Como tratar a composição proposta?",
+     "opcoes": [
+      {
+       "t": "Homologo a composição como está: as partes são maiores e capazes, e o acordo extingue a questão com a renúncia à representação.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "A cláusula 5 é censura prévia (CF, art. 5º, IX). Homologar equivaleria a comprar o silêncio da vítima, e a renúncia à representação (art. 74, parágrafo único) encerraria a ação penal."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "Não homologo a cláusula 5, por violar a liberdade de expressão (CF, art. 5º, IX): a composição só pode versar sobre a reparação dos danos. Se as partes mantiverem apenas os danos, homologo; se Cícero não aceitar, ele pode representar.",
+       "falas": [
+        {
+         "q": "a4xcicero",
+         "e": "feliz",
+         "t": "Excelência… obrigado. Eu quero indenização pelo que sofri, mas não quero vender a minha boca."
+        },
+        {
+         "q": "a4xcelio",
+         "e": "nervoso",
+         "t": "A defesa tomará nota, Excelência."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CF#art-5/inc-ix",
+         "trecho": "é livre a expressão da atividade intelectual, artística, científica e de comunicação, independentemente de censura ou licença;"
+        },
+        {
+         "chave": "JEC#art-74",
+         "trecho": "A composição dos danos civis será reduzida a escrito e, homologada pelo Juiz mediante sentença irrecorrível, terá eficácia de título a ser executado no juízo civil competente."
+        },
+        {
+         "chave": "JEC#art-74/par-unico",
+         "trecho": "Tratando-se de ação penal de iniciativa privada ou de ação penal pública condicionada à representação, o acordo homologado acarreta a renúncia ao direito de queixa ou representação."
+        }
+       ]
+      },
+      {
+       "t": "Recuso qualquer composição: a Lei 9.099 não permite acordos entre vítima e autor em crimes com violência.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "O art. 72 manda o juiz esclarecer sobre a composição dos danos. A conciliação é o centro da Lei 9.099, e a violência leve não a veda."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4xcicero",
+       "e": "nervoso",
+       "t": "Excelência, eu não vou assinar nada que me cale. Se eu não puder falar, eu não posso defender os operários. Eu prefiro responder pela minha dor: eu quero representar contra o Wagner."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Não obtida a composição, dou ao ofendido a oportunidade de exercer o direito de representação verbal, art. 75. Reduza-se a termo, Rita: o ofendido representa contra o autor do fato pelo crime de lesão corporal leve e pela ameaça.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Excelência, com a representação, o Ministério Público propõe a aplicação imediata de pena restritiva de direitos, a transação penal: seis meses de prestação de serviços à comunidade, mais uma cesta básica mensal à entidade assistencial."
+      },
+      {
+       "q": "a4xcelio",
+       "e": "feliz",
+       "t": "A defesa aceita a proposta, Excelência. Meu cliente é primário e merece o benefício."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "apresentar",
+     "falas": [
+      {
+       "q": "a4xcelio",
+       "e": "confiante",
+       "t": "Excelência, a proposta do Ministério Público é perfeitamente regular. Meu cliente nunca foi condenado e nunca foi beneficiado por nada."
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "Pelo que consta dos autos, doutor, o Ministério Público não tem tanta certeza. Excelência, existe um dispositivo da Lei 9.099 que pode vedar essa proposta. Qual?"
+      }
+     ],
+     "pergunta": "Qual dispositivo da Lei 9.099 impede a proposta de transação penal neste caso?",
+     "provas": [
+      "j76ii"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 76, § 2º, II: não se admitirá a proposta se ficar comprovado ter sido o agente beneficiado anteriormente, no prazo de cinco anos, pela aplicação de pena restritiva ou multa. A certidão do Juizado mostra a transação de há quatro anos e dois meses."
+      },
+      {
+       "q": "a4xcelio",
+       "e": "chocado",
+       "t": "Eu… Wagner, o senhor me disse que era primário!"
+      },
+      {
+       "q": "a4xwagner",
+       "e": "nervoso",
+       "t": "E eu sou… não condenado."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o impedimento é o do art. 76, § 2º, II: benefício anterior, nos últimos cinco anos. A certidão de transação de há quatro anos e dois meses está nos autos."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s13"
+    },
+    "s13": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "Excelência, o Ministério Público, à vista da certidão, reconhece o impedimento. Aguardo a decisão de Vossa Excelência sobre a proposta."
+      }
+     ],
+     "pergunta": "Qual a decisão sobre a proposta de transação penal?",
+     "opcoes": [
+      {
+       "t": "Homologo a transação: um segundo benefício não compromete a proposta se as partes concordam.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "O art. 76, § 2º, II veda a proposta a quem foi beneficiado há menos de cinco anos. A concordância das partes não revoga a lei."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "Não admito a proposta de transação, pelo art. 76, § 2º, II, e determino que o Ministério Público siga com a denúncia oral (art. 77), já que houve representação.",
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "confiante",
+         "t": "O Ministério Público oferece denúncia oral por lesão corporal leve e ameaça, Excelência."
+        },
+        {
+         "q": "a4xcelio",
+         "e": "nervoso",
+         "t": "A defesa se reserva o direito de produzir prova na instrução."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "JEC#art-76/par-2/inc-ii",
+         "trecho": "ter sido o agente beneficiado anteriormente, no prazo de cinco anos, pela aplicação de pena restritiva ou multa, nos termos deste artigo;"
+        },
+        {
+         "chave": "JEC#art-75",
+         "trecho": "Não obtida a composição dos danos civis, será dada imediatamente ao ofendido a oportunidade de exercer o direito de representação verbal, que será reduzida a termo."
+        }
+       ]
+      },
+      {
+       "t": "Arquivo o caso por insignificância: foi um soco isolado, de baixa gravidade.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Há representação, laudo, vídeo e uma ameaça para calar um sindicalista. Não há nada de insignificante, Excelência."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s14"
+    },
+    "s14": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Sr. Cícero, o senhor sentiu medo de morrer quando o Wagner o ameaçou, não foi verdade?"
+      },
+      {
+       "q": "a4xcelio",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor já entrega a resposta à vítima!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O defensor protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. Reformule, doutor. A vítima deve contar o que sentiu com as próprias palavras.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Sr. Cícero, como o senhor se sentiu ao ouvir a frase do recado?"
+      },
+      {
+       "q": "a4xcicero",
+       "e": "triste",
+       "t": "Com medo, Excelência. Não só de mim: da minha mulher e das crianças. Ele sabe onde eu moro."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s15"
+    },
+    "s15": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "Excelência, uma última questão. Pelo que se viu, o recado veio de um supervisor da Altavista Serviços, e a empresa se dispôs a pagar um acordo com cláusula de silêncio. Isso é mais complexo do que uma briga de bar."
+      },
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "O Ministério Público requer, nos termos do art. 77, § 2º, o encaminhamento das peças ao juízo comum, para investigar quem mandou o recado."
+      }
+     ],
+     "pergunta": "Qual a sua decisão sobre o requerimento do MP?",
+     "opcoes": [
+      {
+       "t": "Indefiro: o Juizado é célere e deve julgar tudo hoje, sem diligências, mesmo que haja mais autores por trás.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "O art. 77, § 2º prevê exatamente isso: se a complexidade ou as circunstâncias não permitirem a denúncia, o MP pode requerer o encaminhamento das peças ao juízo comum."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "Defiro: a complexidade e as circunstâncias do caso, com indícios de mando por terceiros e de uma tentativa de silenciar a vítima, não cabem no rito sumaríssimo (art. 77, § 2º); encaminho as peças ao juízo comum e à Polícia, preservadas a representação e as medidas de proteção.",
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "confiante",
+         "t": "Obrigado, Excelência. É assim que se chega aos que mandaram."
+        },
+        {
+         "q": "a4xcicero",
+         "e": "feliz",
+         "t": "Doutor(a)… alguém vai olhar para quem mandou. Obrigado."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "O Juizado sabe a hora de ceder o passo."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "JEC#art-77/par-2",
+         "trecho": "Se a complexidade ou circunstâncias do caso não permitirem a formulação da denúncia, o Ministério Público poderá requerer ao Juiz o encaminhamento das peças existentes, na forma do parágrafo único do"
+        },
+        {
+         "chave": "JEC#art-62",
+         "trecho": "O processo perante o Juizado Especial orientar-se-á pelos critérios da oralidade, simplicidade, informalidade, economia processual e celeridade, objetivando, sempre que possível, a reparação dos"
+        }
+       ]
+      },
+      {
+       "t": "Arquivo as peças contra a empresa, por falta de pedido da vítima, e prossigo só contra Wagner.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "O pedido é do Ministério Público, titular da ação, não da vítima. Arquivar seria ignorar a investigação."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s16"
+    },
+    "s16": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro encerrada a audiência. Não homologada a cláusula de silêncio, não admitida a transação penal pelo impedimento do art. 76, § 2º, II, e encaminhadas as peças ao juízo comum para apurar quem mandou o recado. Registre-se a representação do ofendido.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4xwagner",
+       "e": "bravo",
+       "t": "A empresa vai saber disso, Excelência. Isso não vai ficar assim."
+      },
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Se o senhor ou qualquer pessoa ligada à empresa se aproximar da vítima ou a ameaçar de novo, a consequência será imediata. A vítima está sob a proteção deste juízo."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, o nome Altavista voltou à pauta duas vezes na mesma semana, na execução penal e agora num bar. Henrique Altavista fugiu, mas o braço de serviços continua longe de ter parado."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Uma briga de bar que virou fio de uma meada maior. É assim que as grandes investigações começam, Rita: com um caso pequeno que alguém levou a sério."
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s17"
+    },
+    "s17": {
+     "tipo": "veredicto",
+     "carimbo": "TRANSAÇÃO NEGADA",
+     "titulo": "O silêncio não está à venda",
+     "texto": "Você afastou a cláusula que censuraria a vítima, descobriu pela certidão que o autor do fato não podia receber o benefício e encaminhou as peças ao juízo comum para apurar quem mandou o recado. A justiça da pressa também sabe quando precisa ir mais devagar."
+    }
+   }
+  },
+  {
+   "id": "a4x-protetiva",
+   "ato": "ato4",
+   "ordem": 4.5,
+   "numero": 27,
+   "titulo": "Duzentos Metros",
+   "papel": "juiz",
+   "nivel": "especialista",
+   "sinopse": "Lorena tem medida protetiva, mas o ex-companheiro continua a vigiá-la: mensagens anônimas, um carro na calçada e um rastreador na bolsa. Você inspeciona o local, nega a transação penal que a lei veda, confronta o requerido com a câmera do prédio e decide a preventiva com fatos concretos.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4nadia": "defesa",
+    "a4rita": "escritorio",
+    "a4xlorena": "testemunha",
+    "a4xmarcio": "testemunha",
+    "a4anselmo": "cena"
+   },
+   "provas": [
+    {
+     "id": "pedido",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "Pedido de medidas protetivas",
+     "descricao": "Lorena Peixoto, 33 anos, contadora, viveu três anos com Márcio Tavares. Relata controle do celular, ameaças e perseguição depois da separação. Pede proibição de aproximação e de contato por qualquer meio."
+    },
+    {
+     "id": "decisao",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Decisão que deferiu as protetivas (20 dias atrás)",
+     "descricao": "Medidas de urgência deferidas: proibição de se aproximar da ofendida a menos de 200 metros e de contatá-la por qualquer meio. Márcio foi intimado pessoalmente e assinou a ciência."
+    },
+    {
+     "id": "rastreador",
+     "tipo": "prova",
+     "icone": "📍",
+     "nome": "Rastreador escondido na bolsa",
+     "descricao": "Pequeno aparelho de GPS, do tipo chaveiro, achado no forro da bolsa de Lorena depois da decisão. Foi pareado pelo número de série ao celular de Márcio Tavares."
+    },
+    {
+     "id": "mensagens",
+     "tipo": "prova",
+     "icone": "💬",
+     "nome": "Mensagens de números desconhecidos",
+     "descricao": "Quatorze mensagens recebidas depois da decisão, de três números pré-pagos: “Eu sei onde você está”, “Você mudou de rota hoje”, “Quem fala demais perde tudo”. Os chips foram ativados com o endereço comercial de Márcio."
+    },
+    {
+     "id": "camera",
+     "tipo": "prova",
+     "icone": "🎥",
+     "nome": "Câmera da fachada do prédio",
+     "descricao": "Às 23h12 de anteontem, o carro de Márcio ficou parado por 40 minutos a cerca de 18 metros do portão do prédio. Márcio desceu, olhou para a janela de Lorena e voltou ao carro. A gravação está datada, 17 dias depois da decisão."
+    },
+    {
+     "id": "bo",
+     "tipo": "prova",
+     "icone": "🚔",
+     "nome": "Boletim da Polícia Militar",
+     "descricao": "O Cabo Anselmo atendeu à chamada de Lorena e encontrou Márcio a 20 metros do prédio, de pé ao lado do carro. Ele disse: “só estava passando”. Foi orientado a se afastar e o fez, mas voltou na mesma semana."
+    },
+    {
+     "id": "contab",
+     "tipo": "prova",
+     "icone": "📊",
+     "nome": "Relatório contábil guardado por Lorena",
+     "descricao": "Lorena, contadora na Altavista Serviços, anotou depósitos mensais da empresa, sob a rubrica “consultoria de gestão”, a um diretor de unidade prisional. Márcio, seu supervisor e ex-companheiro, tinha ciência."
+    },
+    {
+     "id": "lmp5",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 5º — Violência doméstica e familiar",
+     "chave": "LMP#art-5",
+     "trecho": "Para os efeitos desta Lei configura violência doméstica e familiar contra a mulher qualquer ação ou omissão baseada no gênero que lhe cause morte, lesão, sofrimento físico, sexual ou psicológico e dano moral ou patrimonial:"
+    },
+    {
+     "id": "lmp7",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 7º, II — Violência psicológica",
+     "chave": "LMP#art-7/inc-ii",
+     "trecho": "a violência psicológica, entendida como qualquer conduta que lhe cause dano emocional e diminuição da autoestima ou que lhe prejudique e perturbe o pleno desenvolvimento ou que vise degradar ou controlar suas ações,"
+    },
+    {
+     "id": "lmp19p1",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 19, § 1º — Protetivas de imediato",
+     "chave": "LMP#art-19/par-1",
+     "trecho": "As medidas protetivas de urgência poderão ser concedidas de imediato, independentemente de audiência das partes e de manifestação do Ministério Público, devendo este ser prontamente comunicado."
+    },
+    {
+     "id": "lmp19p5",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 19, § 5º — Independem de tipificação ou inquérito",
+     "chave": "LMP#art-19/par-5",
+     "trecho": "As medidas protetivas de urgência serão concedidas independentemente da tipificação penal da violência, do ajuizamento de ação penal ou cível, da existência de inquérito policial ou do registro de boletim de ocorrência."
+    },
+    {
+     "id": "lmp20",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 20 — Prisão preventiva do agressor",
+     "chave": "LMP#art-20",
+     "trecho": "Em qualquer fase do inquérito policial ou da instrução criminal, caberá a prisão preventiva do agressor, decretada pelo juiz, de ofício, a requerimento do Ministério Público ou mediante representação da autoridade policial."
+    },
+    {
+     "id": "lmp22a",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 22, III, a — Aproximação da ofendida",
+     "chave": "LMP#art-22/inc-iii/ali-a",
+     "trecho": "aproximação da ofendida, de seus familiares e das testemunhas, fixando o limite mínimo de distância entre estes e o agressor;"
+    },
+    {
+     "id": "lmp22p3",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 22, § 3º — Auxílio da força policial",
+     "chave": "LMP#art-22/par-3",
+     "trecho": "Para garantir a efetividade das medidas protetivas de urgência, poderá o juiz requisitar, a qualquer momento, auxílio da força policial."
+    },
+    {
+     "id": "lmp23",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 23, I — Programa de proteção",
+     "chave": "LMP#art-23/inc-i",
+     "trecho": "encaminhar a ofendida e seus dependentes a programa oficial ou comunitário de proteção ou de atendimento;"
+    },
+    {
+     "id": "lmp24a",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 24-A — Descumprimento de medida protetiva",
+     "chave": "LMP#art-24a",
+     "trecho": "Descumprir decisão judicial que defere medidas protetivas de urgência previstas nesta Lei:"
+    },
+    {
+     "id": "lmp41",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "LMP, art. 41 — Não se aplica a Lei 9.099",
+     "chave": "LMP#art-41",
+     "trecho": "Aos crimes praticados com violência doméstica e familiar contra a mulher, independentemente da pena prevista, não se aplica a Lei nº 9.099, de 26 de setembro de 1995."
+    },
+    {
+     "id": "s536",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "Súmula 536 do STJ — Sem transação penal nem suspensão",
+     "chave": "STJ536#enunciado",
+     "trecho": "A suspensão condicional do processo e a transação penal não se aplicam na hipótese de delitos sujeitos ao rito da Lei Maria da Penha."
+    },
+    {
+     "id": "c313",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 313, III — Preventiva para garantir protetivas",
+     "chave": "CPP#art-313/inc-iii",
+     "trecho": "se o crime envolver violência doméstica e familiar contra a mulher, criança, adolescente, idoso, enfermo ou pessoa com deficiência, para garantir a execução das medidas protetivas de urgência;"
+    },
+    {
+     "id": "c282p4",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 282, § 4º — Descumprimento de cautelar",
+     "chave": "CPP#art-282/par-4",
+     "trecho": "No caso de descumprimento de qualquer das obrigações impostas, o juiz, mediante requerimento do Ministério Público, de seu assistente ou do querelante, poderá substituir a medida, impor outra em cumulação, ou, em último caso,"
+    },
+    {
+     "id": "c282p6",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 282, § 6º — Cautelares insuficientes",
+     "chave": "CPP#art-282/par-6",
+     "trecho": "A prisão preventiva somente será determinada quando não for cabível a sua substituição por outra medida cautelar, observado o art. 319 deste Código, e o não cabimento da substituição por outra medida cautelar deverá ser"
+    },
+    {
+     "id": "c315",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 315, § 1º — Fatos contemporâneos",
+     "chave": "CPP#art-315/par-1",
+     "trecho": "Na motivação da decretação da prisão preventiva ou de qualquer outra cautelar, o juiz deverá indicar concretamente a existência de fatos novos ou contemporâneos que justifiquem a aplicação da medida adotada."
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas às testemunhas",
+     "chave": "CPP#art-212",
+     "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+    }
+   ],
+   "placas": {
+    "defesa": "Defensoria Pública",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 27 · Ato IV: A Toga",
+     "subtitulo": "Duzentos Metros",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Excelência, o plantão da Violência Doméstica. Lorena Peixoto, 33 anos, contadora, voltou à delegacia ontem à noite. Há vinte dias esta vara deferiu medidas protetivas: Márcio Tavares, o ex-companheiro, não pode chegar a menos de 200 metros dela nem contatá-la."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Ela diz que ele não parou. Mensagens de números desconhecidos, um carro na porta do prédio, e agora um aparelho de rastreamento na bolsa. O Ministério Público pede a preventiva."
+      },
+      {
+       "q": "a4xlorena",
+       "e": "triste",
+       "t": "Excelência, eu fiz tudo o que mandaram. Mudei o caminho, troquei o número, parei de sair. Mas ele sempre sabe onde eu estou."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Isso, Excelência, é violência psicológica nos termos do art. 7º, II: vigilância constante e perseguição. E quando a ordem judicial é descumprida, a lei tem uma tipificação própria."
+      },
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Outro assunto, que não é desta ação mas que deixo aqui. A Corregedoria da Secretaria de Administração Penitenciária abriu apuração sobre o diretor da unidade onde o Beto cumpria pena, e o contrato da oficina com a Altavista Serviços foi suspenso por liminar.",
+       "se": "a4x_beto_apuracao"
+      },
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Outro assunto, que não é desta ação mas que deixo aqui. O Beto, já em outra unidade, depôs ao Ministério Público sobre a oficina da Altavista Serviços, e a Secretaria afastou o diretor que lhe deu a falta grave.",
+       "se": "a4x_beto_protegido"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Lorena. Antes de qualquer decisão, preciso ver a sua casa e ouvir quem esteve lá. Uma decisão sobre liberdade se faz com fato, não com raiva."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A Lei Maria da Penha e os dispositivos de apoio foram juntados.",
+       "recebe": [
+        "lmp5",
+        "lmp7",
+        "lmp19p1",
+        "lmp19p5",
+        "lmp20",
+        "lmp22a",
+        "lmp22p3",
+        "lmp23",
+        "lmp24a",
+        "lmp41",
+        "s536",
+        "c313",
+        "c282p4",
+        "c282p6",
+        "c315",
+        "cpp212"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "apartamento",
+     "titulo": "Apartamento de Lorena",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você vai ao apartamento, com escolta. Alguns juízes nunca verão o que vê hoje: o lugar onde uma mulher mudou o caminho de casa, trocou o número e parou de abrir a janela."
+      },
+      {
+       "q": "a4xlorena",
+       "e": "triste",
+       "t": "É aqui, Excelência. Eu moro aqui. Eu só queria poder acender a luz da sala."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "janela",
+       "nome": "Janela",
+       "x": 34,
+       "y": 10,
+       "w": 25,
+       "h": 36,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Da janela, a rua inteira. Daqui se vê o ponto onde um carro estacionaria sem ser visto pelo porteiro. Lorena colou papel pardo em metade do vidro."
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa",
+       "x": 30,
+       "y": 50,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O celular de Lorena, com as mensagens. Quatorze, de três números pré-pagos: “Eu sei onde você está”, “Você mudou de rota hoje”, “Quem fala demais perde tudo”. Os chips foram ativados com o endereço comercial de Márcio.",
+         "recebe": [
+          "mensagens"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "comoda",
+       "nome": "Cômoda",
+       "x": 64,
+       "y": 46,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "A bolsa de Lorena, aberta sobre a cômoda. O forro rasgado e, preso nele, um pequeno aparelho de GPS, do tipo chaveiro. O número de série foi pareado ao celular de Márcio.",
+         "recebe": [
+          "rastreador"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Alguém soube onde ela estava durante semanas por causa disto. E isso aconteceu depois da decisão."
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante",
+       "x": 9,
+       "y": 22,
+       "w": 19,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Entre os livros, uma pasta de papéis contábeis. Lorena anotou, na Altavista Serviços, depósitos mensais a um diretor de presídio sob a rubrica “consultoria de gestão”. Márcio, seu supervisor, sabia.",
+         "recebe": [
+          "contab"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Vale distinguir: isso explica por que ela se sente vigiada. Mas não é isso que decide a prisão. O que decide é a violência contra ela, e o descumprimento da ordem."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4xlorena",
+       "titulo": "Ouvir Lorena",
+       "falas": [
+        {
+         "q": "a4xlorena",
+         "e": "triste",
+         "t": "No começo ele era atencioso. Depois passou a olhar o meu celular, a decidir a roupa, a me buscar na saída. Quando eu terminei, ele disse que ia me “cuidar de longe”."
+        },
+        {
+         "q": "a4xlorena",
+         "e": "nervoso",
+         "t": "Anteontem, à noite, vi o carro dele embaixo. Ele ficou olhando para a minha janela por quase uma hora. Chamei a polícia, mas ele disse que só estava passando. E se eu não tivesse chamado?"
+        }
+       ]
+      },
+      {
+       "q": "a4anselmo",
+       "titulo": "Falar com o Cabo Anselmo",
+       "falas": [
+        {
+         "q": "a4anselmo",
+         "e": "normal",
+         "t": "Excelência, atendi a chamada. O senhor Márcio estava de pé, ao lado do carro, a vinte metros do prédio. Disse que “só estava passando” e que não sabia da ordem."
+        },
+        {
+         "q": "a4anselmo",
+         "e": "pensativo",
+         "t": "Mas ele tinha assinado a ciência da decisão, Excelência. Eu verifiquei. Voltou no mesmo dia da semana seguinte, e eu já não pude fazer nada: a polícia não consegue estar em dois lugares."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "mensagens",
+      "rastreador"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "investigar",
+     "local": "rua",
+     "titulo": "Rua em frente ao prédio",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você desce para a calçada. Medir 200 metros em linha reta é fácil. Difícil é sentir o que representa estar a 18 metros de quem prometeu ficar longe."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "fachada",
+       "nome": "Fachada do prédio",
+       "x": 39,
+       "y": 29,
+       "w": 29,
+       "h": 28,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A câmera da fachada aponta para a rua. Anteontem, às 23h12: o carro de Márcio, parado por 40 minutos a cerca de 18 metros do portão. Ele desce e olha para cima, para a janela de Lorena.",
+         "recebe": [
+          "camera"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "carro",
+       "nome": "Carro estacionado",
+       "x": 62,
+       "y": 61,
+       "w": 29,
+       "h": 19,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Uma vaga em frente ao prédio. Na calçada, pontas de cigarro iguais, em pequeno círculo. Alguém ficou parado aqui por muito tempo, em mais de uma noite."
+        }
+       ]
+      },
+      {
+       "id": "muro",
+       "nome": "Muro",
+       "x": 4,
+       "y": 45,
+       "w": 30,
+       "h": 27,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "No muro do lado, uma pichação fresca: “FALA DEMAIS”. É a mesma expressão das mensagens, e não prova quem a fez, mas é um sinal do clima ao redor."
+        },
+        {
+         "q": "a4anselmo",
+         "e": "normal",
+         "t": "Prefeitura já apagou duas vezes, Excelência. Volta toda semana."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4anselmo",
+       "titulo": "Pegar o boletim com o Cabo Anselmo",
+       "falas": [
+        {
+         "q": "a4anselmo",
+         "e": "normal",
+         "t": "O boletim da PM está aqui, Excelência. Registra vinte metros, a fala dele e a minha orientação de que ele se afastasse. Ele se afastou, e voltou depois."
+        },
+        {
+         "q": "a4anselmo",
+         "e": "pensativo",
+         "t": "Sem uma ordem de prisão, eu só posso orientar. Por isso é bom que a decisão seja de Vossa Excelência: a polícia faz cumprir, mas é o juiz que a faz valer.",
+         "recebe": [
+          "bo"
+         ]
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "camera",
+      "bo"
+     ],
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "Excelência, antes da audiência, o enquadramento. Qual é o fato que o Ministério Público tem diante de si?"
+      }
+     ],
+     "pergunta": "Como classificar o descumprimento das medidas protetivas?",
+     "opcoes": [
+      {
+       "t": "É infração de menor potencial ofensivo: mera desobediência a ordem judicial, de competência do Juizado, com possibilidade de transação penal.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "A Lei Maria da Penha tem crime próprio (art. 24-A), com pena de 2 a 5 anos de reclusão. E o art. 41 diz que a Lei 9.099 não se aplica à violência doméstica, qualquer que seja a pena."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "É o crime do art. 24-A da Lei Maria da Penha (descumprimento de decisão que defere medidas protetivas), com pena de reclusão de 2 a 5 anos; a Lei 9.099 não se aplica (art. 41), nem a transação penal (Súmula 536 do STJ).",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "É isso. Crime autônomo, sem transação possível, e a configuração independe de qual juízo deferiu a medida, art. 24-A, § 1º."
+        },
+        {
+         "q": "a4tulio",
+         "e": "confiante",
+         "t": "O Ministério Público concorda com o enquadramento."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "LMP#art-24a",
+         "trecho": "Descumprir decisão judicial que defere medidas protetivas de urgência previstas nesta Lei:"
+        },
+        {
+         "chave": "LMP#art-41",
+         "trecho": "Aos crimes praticados com violência doméstica e familiar contra a mulher, independentemente da pena prevista, não se aplica a Lei nº 9.099, de 26 de setembro de 1995."
+        },
+        {
+         "chave": "STJ536#enunciado",
+         "trecho": "A suspensão condicional do processo e a transação penal não se aplicam na hipótese de delitos sujeitos ao rito da Lei Maria da Penha."
+        }
+       ]
+      },
+      {
+       "t": "É apenas descumprimento de cautelar cível: o juiz civil deve aplicar multa diária, e o assunto não é criminal.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "O art. 24-A, § 1º diz expressamente que o crime se configura independentemente da competência civil ou criminal do juiz que deferiu as medidas."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência para apreciar o pedido de prisão preventiva por descumprimento de medidas protetivas. Ouvidos o Ministério Público, a defesa, a ofendida e o requerido.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "Excelência, o requerido descumpriu a ordem judicial duas vezes, colocou um rastreador na bolsa da ofendida e continua perseguindo. O Ministério Público requer a preventiva (LMP, art. 20; CPP, art. 313, III)."
+      },
+      {
+       "q": "a4nadia",
+       "e": "pensativo",
+       "t": "A Defensoria entende, Excelência, que o requerido é primário, tem residência fixa e emprego. Pedimos que se mantenha a liberdade, com cautelares mais firmes."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "Sra. Lorena, com quem a senhora tem saído desde o fim do relacionamento? A senhora tem namorado?"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! Excelência, a vida afetiva da ofendida não tem relação com a causa! Estamos julgando o descumprimento de uma ordem judicial!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta: pergunta sem relação com a causa. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. A vida afetiva da ofendida não tem relação com o descumprimento da ordem. A pergunta está indeferida, doutora.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4nadia",
+       "e": "nervoso",
+       "t": "…Retiro a pergunta, Excelência."
+      },
+      {
+       "q": "a4xlorena",
+       "e": "triste",
+       "t": "Obrigada, Excelência. Eu me sinto sendo julgada, e a vítima aqui sou eu."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a pergunta não tem relação com o descumprimento. É uma tentativa de desviar a atenção, e o art. 212 permite ao juiz impedi-la."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "depoimento",
+     "testemunha": "a4xmarcio",
+     "titulo": "O requerido, Márcio Tavares",
+     "intro": [
+      {
+       "q": "a4xmarcio",
+       "e": "confiante",
+       "t": "Excelência, sou supervisor de uma empresa grande, pai de família, nunca respondi a nada. Tudo isso é exagero de uma ex-companheira magoada."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Desde que fui intimado da decisão, nunca me aproximei de Lorena. Cumpro a ordem à risca.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca? Nem uma vez?"
+        },
+        {
+         "q": "a4xmarcio",
+         "e": "nervoso",
+         "t": "Nunca. Se algum dia passei perto, foi por acaso."
+        }
+       ]
+      },
+      {
+       "t": "Moro a dois quilômetros do prédio. Passo por aquela rua porque é o caminho da minha academia.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A academia é para o outro lado da cidade, segundo o seu próprio cadastro."
+        },
+        {
+         "q": "a4xmarcio",
+         "e": "nervoso",
+         "t": "Eu… troquei de academia."
+        }
+       ]
+      },
+      {
+       "t": "Eu não mandei mensagem alguma. Nem sei de que números se fala.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Os chips foram ativados com o endereço comercial do senhor."
+        },
+        {
+         "q": "a4xmarcio",
+         "e": "nervoso",
+         "t": "Muita gente usa o endereço da empresa. Eu não controlo isso."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca coloquei nada na bolsa de Lorena. Esse aparelho não é meu.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O número de série foi pareado ao celular do senhor."
+        },
+        {
+         "q": "a4xmarcio",
+         "e": "nervoso",
+         "t": "Alguém pode ter clonado o meu telefone."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "camera"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Senhor Márcio!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor afirma que, desde que foi intimado, nunca se aproximou de Lorena. Mas a câmera da fachada do prédio registra, 17 dias depois da decisão, o seu carro parado por 40 minutos a cerca de 18 metros do portão e o senhor olhando para a janela dela. A ordem proibia menos de 200 metros."
+      },
+      {
+       "q": "a4xmarcio",
+       "e": "chocado",
+       "t": "Eu… foi só um minuto… eu precisava ver se ela estava bem…",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4xlorena",
+       "e": "triste",
+       "t": "Quarenta minutos, Excelência. Eu contei."
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "A frase “ver se ela estava bem” é exatamente o que a violência psicológica chama de cuidado, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não contradiz o depoimento, Senhor Márcio. Olhe de novo o que a câmera da fachada do prédio registrou, e a que distância."
+      }
+     ],
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "Excelência, a defesa requer, em substituição à preventiva, a aplicação imediata de transação penal: multa e prestação de serviços, já que o requerido é primário."
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! A transação penal é incabível em violência doméstica, Excelência! A Lei Maria da Penha afasta a Lei 9.099, e a Súmula 536 do STJ é expressa!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta contra o pedido de transação penal. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "LMP#art-41",
+       "trecho": "Aos crimes praticados com violência doméstica e familiar contra a mulher, independentemente da pena prevista, não se aplica a Lei nº 9.099, de 26 de setembro de 1995."
+      },
+      {
+       "chave": "STJ536#enunciado",
+       "trecho": "A suspensão condicional do processo e a transação penal não se aplicam na hipótese de delitos sujeitos ao rito da Lei Maria da Penha."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido o protesto. A transação penal e a suspensão condicional do processo não se aplicam a delitos sujeitos ao rito da Lei Maria da Penha. Pedido indeferido.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4nadia",
+       "e": "pensativo",
+       "t": "A defesa registra que a lei não deixa margem, Excelência. Não insistirei."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o art. 41 da Lei Maria da Penha e a Súmula 536 do STJ afastam a transação penal em violência doméstica."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "apresentar",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Excelência, para que conste da decisão, qual é o dispositivo da Lei Maria da Penha que tipifica a conduta de quem descumpre medida protetiva?"
+      }
+     ],
+     "pergunta": "Qual dispositivo da Lei Maria da Penha tipifica o descumprimento de medida protetiva?",
+     "provas": [
+      "lmp24a"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 24-A: descumprir decisão judicial que defere medidas protetivas de urgência previstas nesta Lei. Reclusão de dois a cinco anos e multa."
+      },
+      {
+       "q": "a4tulio",
+       "e": "feliz",
+       "t": "Obrigado, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o crime de descumprimento está no art. 24-A da Lei Maria da Penha."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Sra. Lorena, é claro que o Márcio colocou o rastreador na sua bolsa para saber a hora de te matar, não é verdade?"
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor entrega a resposta, e ainda uma resposta que ninguém provou!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defensora protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. Reformule, doutor. O Ministério Público tem provas suficientes e não precisa pôr palavras na boca da vítima.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Sra. Lorena, o que a senhora pensou ao encontrar o aparelho?"
+      },
+      {
+       "q": "a4xlorena",
+       "e": "triste",
+       "t": "Que ele nunca ia me deixar em paz. Eu pensei nos meus pais, no meu trabalho… em mim."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, instrução encerrada. O Ministério Público pede a preventiva, a defesa pede cautelares. Qual será a decisão?"
+      }
+     ],
+     "pergunta": "Qual a decisão sobre a liberdade do requerido?",
+     "opcoes": [
+      {
+       "t": "Mantenho apenas as medidas protetivas já deferidas e advirto o requerido, para evitar excessos: ele é primário e tem emprego.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "As medidas já foram descumpridas duas vezes, e ele ainda escondeu um rastreador na bolsa da vítima. Insistir no que não funcionou é abandonar a ofendida (CPP, art. 282, § 4º; LMP, art. 19, § 2º)."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "Decreto a preventiva, com fundamento no descumprimento concreto e contemporâneo das medidas (CPP, art. 312, § 1º e art. 313, III; LMP, art. 20), justificando de forma individualizada por que outras cautelares, como a monitoração eletrônica, não bastam, já que ele burlou os controles e voltou depois de advertido (art. 282, § 6º).",
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "confiante",
+         "t": "O Ministério Público agradece, Excelência."
+        },
+        {
+         "q": "a4xlorena",
+         "e": "feliz",
+         "t": "Eu vou conseguir dormir. Obrigada."
+        },
+        {
+         "q": "a4nadia",
+         "e": "pensativo",
+         "t": "A defesa registra que a decisão está fundamentada em fatos, Excelência."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPP#art-313/inc-iii",
+         "trecho": "se o crime envolver violência doméstica e familiar contra a mulher, criança, adolescente, idoso, enfermo ou pessoa com deficiência, para garantir a execução das medidas protetivas de urgência;"
+        },
+        {
+         "chave": "CPP#art-282/par-4",
+         "trecho": "No caso de descumprimento de qualquer das obrigações impostas, o juiz, mediante requerimento do Ministério Público, de seu assistente ou do querelante, poderá substituir a medida, impor outra em"
+        },
+        {
+         "chave": "CPP#art-282/par-6",
+         "trecho": "A prisão preventiva somente será determinada quando não for cabível a sua substituição por outra medida cautelar, observado o art. 319 deste Código, e o não cabimento da substituição por outra medida"
+        }
+       ]
+      },
+      {
+       "t": "Decreto a preventiva porque Márcio trabalha na Altavista Serviços e a empresa é suspeita de crimes muito graves.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Presumir periculosidade pela empresa em que ele trabalha é fundamentação genérica. A preventiva exige fatos concretos e contemporâneos relativos a este investigado (CPP, art. 315, § 1º)."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s13"
+    },
+    "s13": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "normal",
+       "t": "E a ofendida, Excelência? A prisão do agressor não encerra a proteção dela."
+      }
+     ],
+     "pergunta": "Qual a providência complementar de proteção à ofendida?",
+     "opcoes": [
+      {
+       "t": "Determino o afastamento da ofendida do lar, para ficar em local sigiloso, já que é a forma mais simples de protegê-la.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "É a medida mais pesada para a vítima: ela perderia casa e rotina. O art. 22, II prevê o afastamento do agressor, e o do lar da ofendida é último recurso (art. 23, III)."
+        }
+       ],
+       "certa": false
+      },
+      {
+       "t": "Mantenho as medidas protetivas enquanto persistir o risco (art. 19, § 6º), requisito patrulhamento policial na região (art. 22, § 3º) e encaminho a ofendida a programa de proteção e atendimento (art. 23, I).",
+       "falas": [
+        {
+         "q": "a4xlorena",
+         "e": "feliz",
+         "t": "Obrigada, Excelência. Eu quero continuar morando na minha casa."
+        },
+        {
+         "q": "a4anselmo",
+         "e": "confiante",
+         "t": "A PM acompanhará, Excelência. Ronda reforçada."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "LMP#art-19/par-6",
+         "trecho": "As medidas protetivas de urgência vigorarão enquanto persistir risco à integridade física, psicológica, sexual, patrimonial ou moral da ofendida ou de seus dependentes."
+        },
+        {
+         "chave": "LMP#art-22/par-3",
+         "trecho": "Para garantir a efetividade das medidas protetivas de urgência, poderá o juiz requisitar, a qualquer momento, auxílio da força policial."
+        },
+        {
+         "chave": "LMP#art-23/inc-i",
+         "trecho": "encaminhar a ofendida e seus dependentes a programa oficial ou comunitário de proteção ou de atendimento;"
+        }
+       ]
+      },
+      {
+       "t": "Considero a proteção encerrada, já que o agressor está preso e não há mais risco.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "As medidas vigoram enquanto persistir o risco (art. 19, § 6º). A preventiva pode ser revogada, e a ofendida precisa continuar protegida."
+        }
+       ],
+       "certa": false
+      }
+     ],
+     "proxima": "s14"
+    },
+    "s14": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Decreto a prisão preventiva de Márcio Tavares por descumprimento de medidas protetivas, com os fundamentos lançados. Mantenho as protetivas em favor de Lorena, requisito patrulhamento e a encaminho a programa de proteção. Expeça-se o mandado.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4xmarcio",
+       "e": "bravo",
+       "t": "Isso não vai ficar assim. Tem gente que vai se lembrar de quem fez isso comigo."
+      },
+      {
+       "q": "a4xlorena",
+       "e": "triste",
+       "t": "Excelência, eu guardei esses papéis da empresa por medo. Posso entregá-los ao Ministério Público? Se ele cair, talvez eu tenha coragem de falar o que sei."
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "Receberei, Excelência. Em sigilo. Aqueles depósitos a um diretor de presídio me interessam muito."
+      },
+      {
+       "q": "a4rita",
+       "e": "chocado",
+       "t": "Excelência, o Beto, a oficina e os depósitos a um diretor, tudo se encaixa. A Altavista Serviços usa contratos de trabalho prisional como lavagem."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "E uma contadora com medo, guardando papéis numa estante. Hoje protegemos uma mulher. Amanhã, talvez, o caminho para tudo isto."
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s15"
+    },
+    "s15": {
+     "tipo": "veredicto",
+     "carimbo": "PREVENTIVA DECRETADA",
+     "titulo": "A ordem judicial é para ser cumprida",
+     "texto": "Você foi ao apartamento, conferiu a câmera, as mensagens e o rastreador, negou a transação penal que a lei veda e decretou a preventiva com fundamentos concretos. Lorena foi protegida, e os papéis que guardava podem abrir o caminho até a Altavista.",
+     "variantes": [
+      {
+       "se": "a4x_beto_apuracao",
+       "titulo": "Preventiva decretada, a Altavista cercada",
+       "texto": "Você decretou a preventiva de Márcio com fundamentos concretos, negou a transação penal que a lei veda e manteve Lorena protegida. Os papéis contábeis que ela guardava chegam ao Ministério Público no momento em que a Corregedoria já investiga o diretor da oficina, o mesmo que o caso de Beto expôs."
+      },
+      {
+       "se": "a4x_beto_protegido",
+       "titulo": "Preventiva decretada, uma testemunha a mais",
+       "texto": "Você decretou a preventiva de Márcio com fundamentos concretos, negou a transação penal que a lei veda e manteve Lorena protegida. Os papéis que ela guardava se juntam ao depoimento de Beto, que você protegeu: duas testemunhas contra o mesmo contrato da Altavista Serviços."
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

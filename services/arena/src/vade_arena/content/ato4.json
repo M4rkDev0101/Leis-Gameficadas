@@ -3989,7 +3989,8 @@
     "livia": "defesa",
     "a4jorge": "testemunha",
     "henrique": "testemunha",
-    "a4rita": "escritorio"
+    "a4rita": "escritorio",
+    "helena": "escritorio"
    },
    "provas": [
     {
@@ -4871,13 +4872,108 @@
       }
      ],
      "local": "tribunal",
-     "proxima": "s15"
+     "proxima": "s14a"
     },
     "s15": {
      "tipo": "veredicto",
      "carimbo": "A LEI VALE PARA TODOS",
      "titulo": "Fim do Ato IV: A Toga",
-     "texto": "Você conduziu a audiência de custódia, descobriu quem era o homem sem passado e decidiu pela preventiva com fundamento concreto, justificando por que as cautelares não bastavam. Nenhum atalho, nem para Henrique Altavista. A ação contra ele e Augusto Brandão caiu na sua vara por prevenção. Continua no Ato V: Altavista."
+     "texto": "Você conduziu a audiência de custódia, descobriu quem era o homem sem passado e decidiu pela preventiva com fundamento concreto, justificando por que as cautelares não bastavam. Nenhum atalho, nem para Henrique Altavista. A ação contra ele e Augusto Brandão caiu na sua vara por prevenção. Continua no Ato V: Altavista.",
+     "variantes": [
+      {
+       "se": "a4_helena_distancia",
+       "texto": "Você conduziu a audiência de custódia, descobriu quem era o homem sem passado e decidiu pela preventiva com fundamento concreto, justificando por que as cautelares não bastavam. Nenhum atalho, nem para Henrique Altavista. A ação contra ele e Augusto Brandão caiu na sua vara por prevenção. Continua no Ato V: Altavista. Você recusou o jantar de Helena para preservar a aparência de imparcialidade no julgamento que vem."
+      },
+      {
+       "se": "a4_helena_proxima",
+       "texto": "Você conduziu a audiência de custódia, descobriu quem era o homem sem passado e decidiu pela preventiva com fundamento concreto, justificando por que as cautelares não bastavam. Nenhum atalho, nem para Henrique Altavista. A ação contra ele e Augusto Brandão caiu na sua vara por prevenção. Continua no Ato V: Altavista. Você manteve a amizade de sempre com Helena e foi jantar com ela, prometendo que o processo ficaria fora da mesa."
+      }
+     ]
+    },
+    "s14a": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Doutor(a)! Eu vim direto do escritório quando soube da decisão. Que audiência, que fundamentação! Rafael teria se orgulhado."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "Preciso lhe contar uma coisa. O escritório foi habilitado como assistente de acusação, em nome de Clara Seixas, a irmã de Paulo, no processo contra Henrique e Brandão. Vamos ficar frente a frente, na sua vara."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Mas isso é amanhã. Hoje eu quero só comemorar. Jantar, como nos velhos tempos. Eu pago o vinho e você escolhe o restaurante."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Helena, eu sou o que sou por causa de você e do Rafael. Mas daqui a algumas semanas eu vou me sentar numa cadeira e ouvir a sua sustentação."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, só observo: o art. 254 do CPP trata da suspeição por amizade íntima. Ninguém vai acusar Vossa Excelência de nada, mas a aparência importa."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s14b"
+    },
+    "s14b": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "triste",
+       "t": "Eu entendo se não puder. Mas eu preferia perguntar a descobrir pelo silêncio."
+      }
+     ],
+     "pergunta": "O que responder a Helena?",
+     "opcoes": [
+      {
+       "t": "Recuso o jantar com carinho: até o julgamento, prefiro manter distância, para que ninguém possa duvidar da minha imparcialidade.",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "triste",
+         "t": "Faz sentido. É duro, mas faz sentido. Quando tudo isso acabar, o vinho continua me esperando."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "É o tipo de cuidado que as decisões de Vossa Excelência vão merecer."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-254/inc-i",
+         "trecho": "se for amigo íntimo ou inimigo capital de qualquer delas;"
+        }
+       ],
+       "marca": "a4_helena_distancia"
+      },
+      {
+       "t": "Aceito o jantar: somos amigos de sempre, não falaremos do processo, e a minha imparcialidade não se compra com um vinho.",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "feliz",
+         "t": "Combinado! Nem uma palavra sobre o processo. Prometo."
+        },
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "A amizade é antiga e o jantar é só um jantar. Mas a aparência, Excelência, tem peso também."
+        }
+       ],
+       "marca": "a4_helena_proxima"
+      }
+     ],
+     "livre": true,
+     "proxima": "s15"
     }
    }
   }

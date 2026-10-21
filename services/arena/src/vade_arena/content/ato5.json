@@ -158,6 +158,42 @@
        "t": "Rafael me ensinou tudo o que sei de advocacia. Se eu errar para um lado ou para o outro, este processo inteiro cai. Vamos com calma e com o Código aberto."
       },
       {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Ah, e o Lucas passou aqui cedo, Excelência. O office boy da Dra. Helena, lembra? Veio entregar um malote e deixou um recado: \"diz pra ele que eu estou estudando à noite\".",
+       "se": "a1_lucas_chance"
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "O rapaz do celular da Rua Augusta, com emprego, caderno e horário de aula. Foi a melhor sentença que aquele processo podia ter.",
+       "se": "a1_lucas_chance"
+      },
+      {
+       "q": "dani",
+       "e": "normal",
+       "t": "Chegou também um cartão-postal sem remetente, Excelência. Uma frase só: \"Obrigado por ter lido até o fim. Lucas.\" O carimbo é do interior: ele foi trabalhar na padaria de um tio.",
+       "se": "a1_lucas_sozinho"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Eu desejei boa sorte e segui o meu caminho. Ele seguiu o dele, e não precisou de padrinho. Fico feliz.",
+       "se": "a1_lucas_sozinho"
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "A Dra. Helena ligou duas vezes esta semana, Excelência. \"Almoce, por favor\", ela disse. Garantiu que não vai tocar no assunto do processo.",
+       "se": "a4_helena_proxima"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Amiga é amiga. Mas o Brandão vai tentar fazer dessa amizade uma arma, e eu preciso estar pronto(a) para responder com a lei, não com a saudade.",
+       "se": "a4_helena_proxima"
+      },
+      {
        "q": "narrador",
        "t": "A pasta do processo está sobre a mesa. Vale examinar o gabinete antes de a audiência começar."
       }
@@ -251,6 +287,23 @@
          "q": "voce",
          "e": "triste",
          "t": "Na calçada, uma menina de uns nove anos segura a mão de um homem de camisa social. Sofia e Rafael. Eu não posso nem acenar para eles."
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Cumpri o que prometi no parlatório: visitei a Sofia, quando eu ainda era advogado(a) e este processo nem tinha número. Hoje não posso nem acenar. É o preço de ter prometido algo bonito.",
+         "se": "a2_sofia_promessa"
+        },
+        {
+         "q": "narrador",
+         "t": "A menina levanta contra o vidro do carro um papel com um barquinho colorido, e movimenta os lábios sem som: \"eu guardei pra você\".",
+         "se": "a2_sofia_promessa"
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Mantive a distância de Sofia, como a minha função pediria. Mesmo assim ela me olha como quem já sabe o motivo. Crianças entendem mais do que a gente imagina.",
+         "se": "!a2_sofia_promessa"
         }
        ]
       },
@@ -488,6 +541,54 @@
        "q": "a5pires",
        "e": "pensativo",
        "t": "(à parte) O Brandão sempre exagera. Mas amizade com o delator… isso dói."
+      },
+      {
+       "q": "brandao",
+       "e": "apontando",
+       "t": "E mais, Excelência: Vossa Excelência visitou a filha do delator! Menina de nove anos, sentada no colo da toga! Que isenção é essa?",
+       "se": "a2_sofia_promessa"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Visitei uma criança quando eu era advogado(a), antes de este processo existir. Criança não é parte, doutor Brandão. O art. 254, I, trata de amizade íntima com qualquer das PARTES, e nem Rafael nem Sofia o são. Registro que não vou visitá-la de novo enquanto durar o julgamento.",
+       "se": "a2_sofia_promessa"
+      },
+      {
+       "q": "a5pires",
+       "e": "pensativo",
+       "t": "(à parte) Visitas à filha do delator… a ideia é boa, mas o texto do art. 254 não colabora com a tese.",
+       "se": "a2_sofia_promessa"
+      },
+      {
+       "q": "a5pires",
+       "e": "pensativo",
+       "t": "(à parte) Nem uma visita à menina nos últimos meses. Fica difícil sustentar amizade íntima com o delator quando a convivência foi cortada de propósito.",
+       "se": "a2_sofia_distancia"
+      },
+      {
+       "q": "brandao",
+       "e": "bravo",
+       "t": "E a Dra. Helena Vasconcelos, sócia do escritório que formou Vossa Excelência, jantou com a toga duas vezes na semana passada! Isso é um julgamento ou um almoço de família?",
+       "se": "a4_helena_proxima"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Helena Vasconcelos não é parte nestes autos, nem advogada, nem testemunha. Amizade com terceiro não é causa de suspeição (art. 254, I). Mas o senhor lembrou algo válido: a aparência de imparcialidade também importa, e eu a levo a sério.",
+       "se": "a4_helena_proxima"
+      },
+      {
+       "q": "brandao",
+       "e": "nervoso",
+       "t": "Nem sequer posso alegar a convivência com a Dra. Helena. Ela sumiu da vida de Vossa Excelência desde o fim do concurso. Que astúcia, doutor(a).",
+       "se": "a4_helena_distancia"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Não é astúcia, doutor Brandão. É o que a prudência manda quando se vai julgar o que mais importa na carreira.",
+       "se": "a4_helena_distancia"
       }
      ],
      "proxima": "c9"
@@ -967,6 +1068,30 @@
        "q": "dani",
        "e": "feliz",
        "t": "Excelência… Vossa Excelência não errou nenhuma hoje. Eu fico orgulhosa."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "A Dra. Helena mandou café e pão de queijo para a Secretaria inteira, Excelência. Mas pediu que NADA chegasse a Vossa Excelência. No bilhete: \"Sei do que ele precisa de mim: que eu não apareça.\"",
+       "se": "a4_helena_distancia"
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Ela me conhece melhor do que eu mesmo(a). Guarde o bilhete, Dani. Daqui a pouco eu o releio.",
+       "se": "a4_helena_distancia"
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "A Dra. Helena mandou mensagem: \"Ele te irritou? Responde só com o código.\" Eu não respondi nada, Excelência. Só avisei que Vossa Excelência estava bem.",
+       "se": "a4_helena_proxima"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Fez bem. A amizade fica do lado de fora da sala. A sala é do processo.",
+       "se": "a4_helena_proxima"
       }
      ],
      "proxima": "c19"
@@ -995,7 +1120,8 @@
     "brandao": "defesa",
     "rafael": "testemunha",
     "livia": "testemunha",
-    "dani": "escritorio"
+    "dani": "escritorio",
+    "valadares": "testemunha"
    },
    "provas": [
     {
@@ -1109,6 +1235,28 @@
         "contrato",
         "planilha"
        ]
+      },
+      {
+       "q": "narrador",
+       "t": "No verso do bilhete, em letra torta de criança: \"Obrigada por ter vindo me ver. A Sofia, 9 anos.\"",
+       "se": "a2_sofia_promessa"
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Eu prometi que visitaria a menina e cumpri. Pena que hoje o gesto só serve para me lembrar do que não posso fazer mais.",
+       "se": "a2_sofia_promessa"
+      },
+      {
+       "q": "narrador",
+       "t": "No rodapé, a letra de Rafael: \"A Sofia pergunta por que você não aparece mais. Eu disse que juiz não pode ter amigo na plateia. Ela não entendeu. Eu também não.\"",
+       "se": "!a2_sofia_promessa"
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Escolhi a distância e ela custou o olhar de uma criança. Mas se a lei exige isso, eu cumpro. Ainda que doa.",
+       "se": "!a2_sofia_promessa"
       },
       {
        "q": "voce",
@@ -1590,6 +1738,59 @@
       },
       {
        "q": "narrador",
+       "t": "Antes de a Dra. Lívia entrar, o oficial de justiça anuncia uma testemunha não prevista: Renato Valadares, ex-promotor, de camisa branca, sob escolta. O MP juntou o termo do acordo de colaboração dele, homologado em autos apartados.",
+       "se": "a3_valadares_acordo"
+      },
+      {
+       "q": "valadares",
+       "e": "triste",
+       "t": "Fui promotor por doze anos, Excelência. Vazei a decisão da Dra. Beatriz para o escritório do Dr. Brandão. Recebi trezentos mil reais. Estou aqui porque o acordo me obriga a dizer, e porque dessa vez ninguém me pediu para mentir.",
+       "se": "a3_valadares_acordo"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "O acordo é lícito, doutor Valadares, e o senhor foi ouvido como colaborador. Mas lembre: a sua palavra, sozinha, não condena ninguém (art. 4º, § 16, da Lei 12.850). Que provas o senhor entrega, além do que diz?",
+       "se": "a3_valadares_acordo"
+      },
+      {
+       "q": "valadares",
+       "e": "normal",
+       "t": "O extrato da conta de passagem, o registro da mensagem enviada às 19h12 do dia do vazamento e a localização do celular do Dr. Brandão naquele minuto. Está tudo no termo.",
+       "se": "a3_valadares_acordo"
+      },
+      {
+       "q": "brandao",
+       "e": "bravo",
+       "t": "Um traidor comprado pela redução de pena! Excelência, esta testemunha é uma fraude!",
+       "se": "a3_valadares_acordo",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Será avaliada como qualquer colaborador: a sua versão vale quanto for corroborada. Registre-se o termo. O senhor pode se retirar, doutor Valadares.",
+       "se": "a3_valadares_acordo"
+      },
+      {
+       "q": "narrador",
+       "t": "Valadares foi denunciado com todo o rigor e já cumpre pena. Não há acordo: ele não foi arrolado por ninguém, não tem benefício algum a ganhar e, sem a voz dele, a defesa aproveita para insinuar que o vazamento nunca foi provado.",
+       "se": "a3_valadares_rigor"
+      },
+      {
+       "q": "a5pires",
+       "e": "normal",
+       "t": "A única pessoa que poderia confirmar o vazamento está cumprindo pena e não tem nada a ganhar falando, Excelência. A defesa aguarda a prova que o MP não tem.",
+       "se": "a3_valadares_rigor"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "O Ministério Público dispensa o testemunho dele, Excelência. A planilha periciada, o relatório financeiro e os registros telefônicos de Ronaldo bastam. A lei não nos obriga a negociar com quem traiu o cargo.",
+       "se": "a3_valadares_rigor"
+      },
+      {
+       "q": "narrador",
        "t": "A porta lateral se abre. A Dra. Lívia Sampaio, de terno cinza, entra com uma pasta de couro apertada contra o peito."
       }
      ],
@@ -2034,6 +2235,18 @@
        "q": "voce",
        "e": "pensativo",
        "t": "Ver o lugar onde Paulo morreu. Faz quatro anos que eu me recuso a voltar lá."
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Excelência, uma curiosidade da Secretaria: o Lucas, aquele do bar, perguntou pelo corredor se a perícia de hoje é aberta ao público. Disse que quer ver como se prova uma coisa com ferro e com número.",
+       "se": "a1_lucas_chance"
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "A audiência é pública. Pode entrar, se ficar quieto. E peça a ele que se sente no fundo, longe da bancada. A isenção também tem etiqueta.",
+       "se": "a1_lucas_chance"
       }
      ],
      "proxima": "c3"
@@ -2882,6 +3095,24 @@
        "q": "voce",
        "e": "confiante",
        "t": "Sessão de júri é teatro, Dani. Mas quem rege a orquestra é o presidente. E o presidente só pode falar o que a lei autoriza."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "A Dra. Helena está na galeria, na última fileira, de óculos escuros. Pediu para sentar longe, Excelência. Disse que ouve o julgamento \"como cidadã, não como amiga\".",
+       "se": "a4_helena_distancia"
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "A Dra. Helena está na primeira fileira da galeria, com uma pasta no colo. Me disse que veio só assistir e prometeu não fazer sinal nenhum. Só que a imprensa já tirou três fotos dela perto da bancada.",
+       "se": "a4_helena_proxima"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Se alguém fotografar o meu rosto olhando para a galeria, o Brandão faz uma capa de jornal. Olhar para frente, só para frente.",
+       "se": "a4_helena_proxima"
       }
      ],
      "proxima": "c3"
@@ -3288,6 +3519,18 @@
        "q": "brandao",
        "e": "confiante",
        "t": "Jurados, eu sou advogado há trinta anos. Um advogado não mata. Aqui, Dra. Lívia e o Sr. Rafael não são testemunhas; são ex-colegas que trocaram a ética por um desconto de pena."
+      },
+      {
+       "q": "brandao",
+       "e": "triste",
+       "t": "(voz embargada) Há três semanas, jurados, eu enterrei a minha mãe sob escolta. Não peço piedade. Peço que olhem para um homem de 61 anos e não para um monstro de capa de jornal.",
+       "se": "a5x_brandao_velorio"
+      },
+      {
+       "q": "brandao",
+       "e": "triste",
+       "t": "(voz seca) Minha mãe morreu e eu ouvi a notícia pela grade. Não peço compaixão, jurados. Só peço que se lembrem de que o Estado também erra quando se esquece de que preso é gente.",
+       "se": "a5x_brandao_sem_saida"
       },
       {
        "q": "brandao",
@@ -3742,7 +3985,8 @@
     "caio": "escritorio",
     "tiago": "escritorio",
     "clara": "escritorio",
-    "dani": "escritorio"
+    "dani": "escritorio",
+    "lucas": "escritorio"
    },
    "provas": [
     {
@@ -4455,6 +4699,30 @@
        "t": "Eu… construí uma carreira inteira defendendo os que a lei não alcançava. E acabei virando o que a lei alcança. Obrigado por me julgar como a lei manda e não como o meu pior inimigo."
       },
       {
+       "q": "brandao",
+       "e": "triste",
+       "t": "E obrigado, Excelência, por ter deixado que eu enterrasse a minha mãe. Três horas, sob escolta. Eu não esqueci.",
+       "se": "a5x_brandao_velorio"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Era o que a lei me permitia. Ela não pergunta quem é o preso. Só se é filho.",
+       "se": "a5x_brandao_velorio"
+      },
+      {
+       "q": "brandao",
+       "e": "triste",
+       "t": "Eu queria ter enterrado a minha mãe, Excelência. A lei lhe dava essa escolha, e Vossa Excelência fez a sua. Eu entendo. Mas eu me lembro.",
+       "se": "a5x_brandao_sem_saida"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Escolhi pelo risco que existia, doutor Brandão. E mesmo assim, não faço disso uma vitória.",
+       "se": "a5x_brandao_sem_saida"
+      },
+      {
        "q": "henrique",
        "e": "bravo",
        "t": "Isto não acaba aqui!"
@@ -4493,12 +4761,26 @@
       {
        "q": "sofia",
        "e": "feliz",
-       "t": "Eu fiz um desenho! É o juiz de capa preta, com a balança e a bandeira. Mas eu coloquei um laço azul na balança, porque é a cor da minha mãe."
+       "t": "Eu fiz um desenho! É o juiz de capa preta, com a balança e a bandeira. Mas eu coloquei um laço azul na balança, porque é a cor da minha mãe.",
+       "se": "a2_sofia_promessa"
       },
       {
        "q": "voce",
        "e": "feliz",
-       "t": "É lindo, Sofia. Vai ficar na parede do gabinete, bem em cima da minha mesa."
+       "t": "É lindo, Sofia. Vai ficar na parede do gabinete, bem em cima da minha mesa.",
+       "se": "a2_sofia_promessa"
+      },
+      {
+       "q": "sofia",
+       "e": "nervoso",
+       "t": "Eu fiz um desenho, mas fiquei com vergonha. O papai disse que a gente não podia falar antes de o julgamento acabar. Agora pode?",
+       "se": "!a2_sofia_promessa"
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Agora pode, Sofia. E é bonito demais para ficar guardado numa gaveta. Vai na parede, em cima da minha mesa.",
+       "se": "!a2_sofia_promessa"
       },
       {
        "q": "lacerda",
@@ -4519,6 +4801,60 @@
        "q": "tiago",
        "e": "feliz",
        "t": "Eu trabalho agora como restaurador de ferramentas. Ninguém me chama de criminoso. A senhora… o senhor… devolveu o meu nome."
+      },
+      {
+       "q": "lucas",
+       "e": "feliz",
+       "t": "Excelência! Eu vim de uniforme, olha: estagiário de escritório! A Dra. Helena me deu a vaga e a chance. Sabia que eu vou prestar vestibular de Direito à noite?",
+       "se": "a1_lucas_chance"
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Não existe pasta de processo pequena demais, Lucas. Guarda isso no peito: o primeiro caso é sempre o maior.",
+       "se": "a1_lucas_chance"
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Chegou uma encomenda do interior, Excelência: um pão de queijo gigante e um bilhete. \"Do Lucas. Obrigado por ter lido até o fim. Agora eu mesmo assino a minha vida.\"",
+       "se": "a1_lucas_sozinho"
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "E eu cumpri o que você pediu: fiquei longe o julgamento inteiro. Foi a coisa mais difícil e mais certa que eu já fiz por alguém. Agora pode me abraçar, doutor(a).",
+       "se": "a4_helena_distancia"
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Pode, Helena. Hoje sim. Hoje só sou eu mesmo(a) de novo, sem toga.",
+       "se": "a4_helena_distancia"
+      },
+      {
+       "q": "helena",
+       "e": "confiante",
+       "t": "Jantamos toda semana durante o processo, e nunca pronunciamos a palavra \"Altavista\". Se isso não é prova de que amizade e imparcialidade cabem juntas, eu não sei o que seria.",
+       "se": "a4_helena_proxima"
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Cabem, desde que a gente saiba onde uma termina e a outra começa. Ainda bem que você sabia.",
+       "se": "a4_helena_proxima"
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Valadares, como colaborador, teve a pena reduzida pelo acordo, e já ajudou o MP a identificar dois outros vazamentos. Não é perdão: é a lei funcionando de dentro para fora.",
+       "se": "a3_valadares_acordo"
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Valadares cumpre seis anos em regime fechado, sem acordo e sem benefício. Escreveu uma carta pedindo desculpas. Eu li, arquivei e não respondi. Ele escolheu o silêncio quando devia ter escolhido o MP.",
+       "se": "a3_valadares_rigor"
       },
       {
        "q": "clara",
@@ -4556,13 +4892,194 @@
        "t": "Lá fora, o sol bate nas escadas do fórum. Na bandeira, a toga nova ainda está dobrada no cabide. Você a veste, ajeita a gola e bate de leve na pasta de uma audiência qualquer, de um réu qualquer, de um caso pequeno. Porque é assim que a justiça realmente acontece."
       }
      ],
-     "proxima": "c15"
+     "proxima": "c14a"
     },
     "c15": {
      "tipo": "veredicto",
      "carimbo": "CARREIRA CONCLUÍDA",
      "titulo": "No processo em que",
-     "texto": "Do primeiro caso, o celular da Rua Augusta, ao último, o julgamento da Altavista, você nunca decidiu por emoção: não puniu o seu inimigo, não protegeu o seu amigo, não usou uma ameaça a uma criança como pena e não condenou ninguém só pela palavra de um colaborador. Mentor, amigos e réus, todos foram julgados pela lei. É isso que faz de você um(a) juiz(a)."
+     "texto": "Do primeiro caso, o celular da Rua Augusta, ao último, o julgamento da Altavista, você nunca decidiu por emoção: não puniu o seu inimigo, não protegeu o seu amigo, não usou uma ameaça a uma criança como pena e não condenou ninguém só pela palavra de um colaborador. Mentor, amigos e réus, todos foram julgados pela lei. É isso que faz de você um(a) juiz(a).",
+     "variantes": [
+      {
+       "se": "a5_futuro_primeira",
+       "carimbo": "CARREIRA CONCLUÍDA: PRIMEIRA INSTÂNCIA",
+       "titulo": "A Sala onde a Lei Vira Gente",
+       "texto": "Do celular da Rua Augusta ao julgamento da Altavista, você nunca decidiu por emoção. Pôde subir, e escolheu ficar onde a lei olha nos olhos de quem a sofre: a primeira instância. Lucas, Sofia, Valadares e Helena, cada um à sua maneira, entenderam: era o que fazia de você um(a) juiz(a)."
+      },
+      {
+       "se": "a5_futuro_tribunal",
+       "carimbo": "CARREIRA CONCLUÍDA: TRIBUNAL",
+       "titulo": "O Voto que Vira Precedente",
+       "texto": "Do primeiro caso ao último, você nunca decidiu por emoção. Subiu ao tribunal, onde cada voto bem fundamentado protege quem você nunca vai conhecer. Lucas, Sofia, Valadares e Helena ficaram na memória: lembretes de que a lei é para todos, e que até o desembargador(a) precisa ler o artigo até o fim."
+      },
+      {
+       "se": "a5_futuro_escola",
+       "carimbo": "CARREIRA CONCLUÍDA: MESTRE",
+       "titulo": "No Processo em Que",
+       "texto": "Do primeiro caso ao último, você nunca decidiu por emoção, e escolheu ensinar isso a quem vem depois. Lucas, Sofia, Valadares e Helena foram os seus melhores casos de aula: provas de que a lei vale para o amigo, para o inimigo e para quem você mais ama. Formar bons juízes é continuar julgando bem."
+      }
+     ]
+    },
+    "c14a": {
+     "tipo": "escolha",
+     "livre": true,
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O telefone toca. Duas coisas aconteceram na mesma semana: o presidente do tribunal convidou você para integrar a Câmara Criminal como desembargador(a), por merecimento, e a Escola da Magistratura convidou você para coordenar a formação de novos juízes. Na sua mesa, a pasta de uma audiência qualquer espera."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Excelência, eu sei que não cabe a mim opinar. Mas qualquer que seja a sua escolha, eu gostaria de continuar do seu lado."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Os três caminhos são honrados, Dani. Nenhum é fuga, nenhum é vaidade. A pergunta é onde eu faço mais falta, e onde eu continuo sendo justo(a)."
+      }
+     ],
+     "pergunta": "Qual será o seu futuro?",
+     "opcoes": [
+      {
+       "t": "Continuar como juiz(a) de primeira instância: é ali que o réu de verdade e a vítima de verdade ainda olham nos seus olhos.",
+       "marca": "a5_futuro_primeira",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Eu fico. Quero estar na sala onde o réu me vê e a vítima me vê. É lá que a lei deixa de ser texto e vira gente."
+        },
+        {
+         "q": "dani",
+         "e": "feliz",
+         "t": "Então vou trazer a próxima pasta. É um furto de celular, Excelência. De um garoto de 19 anos."
+        },
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Ótimo. Leia até o fim, Dani. Sempre."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CF#art-93/inc-ii",
+         "trecho": "promoção de entrância para entrância, alternadamente, por antigüidade e merecimento"
+        }
+       ]
+      },
+      {
+       "t": "Aceitar a promoção ao tribunal: lá, cada voto vira precedente e protege muita gente que nunca vai ver o seu rosto.",
+       "marca": "a5_futuro_tribunal",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Eu aceito. No tribunal um voto bem fundamentado protege milhares de réus e milhares de vítimas que eu nunca vou conhecer. É uma responsabilidade de outra escala."
+        },
+        {
+         "q": "dani",
+         "e": "feliz",
+         "t": "A Vara vai sentir a sua falta, Excelência. Eu também. Mas vou arrumar a minha mala: gabinete de desembargador(a) sem assessora que sussurra é uma tristeza."
+        },
+        {
+         "q": "lacerda",
+         "e": "feliz",
+         "t": "Mais difícil que condenar é julgar com mais dois colegas ao lado, Excelência. Boa sorte na Câmara."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CF#art-93/inc-ii",
+         "trecho": "promoção de entrância para entrância, alternadamente, por antigüidade e merecimento"
+        }
+       ]
+      },
+      {
+       "t": "Dar aulas na Escola da Magistratura: formar quem vai julgar depois de você vale tanto quanto julgar.",
+       "marca": "a5_futuro_escola",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Eu vou ensinar. Quem aprende a ler o artigo até o fim vai carregar isso para mil processos que eu jamais verei."
+        },
+        {
+         "q": "rafael",
+         "e": "feliz",
+         "t": "Quando você precisar de uma aula sobre o que NÃO fazer, eu estou à disposição. Tenho o currículo."
+        },
+        {
+         "q": "dani",
+         "e": "feliz",
+         "t": "A primeira aula já tem título, né, Excelência? \"No processo em que.\""
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CF#art-93/inc-ii",
+         "trecho": "promoção de entrância para entrância, alternadamente, por antigüidade e merecimento"
+        }
+       ]
+      }
+     ],
+     "proxima": "c14b"
+    },
+    "c14b": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Dez anos depois."
+      },
+      {
+       "q": "narrador",
+       "t": "O rapaz do celular da Rua Augusta se formou em Direito à noite e hoje é advogado. Na parede do escritório dele, emoldurada, há uma cópia do primeiro despacho que leu: \"Leia o artigo até o fim.\"",
+       "se": "a1_lucas_chance"
+      },
+      {
+       "q": "narrador",
+       "t": "O rapaz do celular da Rua Augusta abriu uma padaria no interior. Num quadro atrás do balcão, um cartão-postal: \"Obrigado por ter lido até o fim.\" Ele nunca precisou da toga para ser inteiro.",
+       "se": "a1_lucas_sozinho"
+      },
+      {
+       "q": "sofia",
+       "e": "feliz",
+       "t": "Aos dezoito anos eu escrevi uma carta. Eu nunca esqueci aquele barquinho que desenhei para você. Agora eu estudo Direito, e dividimos o mesmo prédio da faculdade com o Lucas.",
+       "se": "a2_sofia_promessa"
+      },
+      {
+       "q": "sofia",
+       "e": "normal",
+       "t": "Aos dezoito anos eu escrevi uma carta: \"Entendi por que o senhor não vinha. Eu queria que tivesse vindo, mas entendi.\" Hoje eu me preparo para a Defensoria. Foi a distância que me ensinou o que é imparcialidade.",
+       "se": "a2_sofia_distancia"
+      },
+      {
+       "q": "narrador",
+       "t": "Valadares cumpriu o acordo, devolveu o que recebeu e hoje dá palestras sobre integridade nos concursos públicos. Ninguém o chama de herói. Ele aceitou o silêncio de quem foi perdoado só pela metade.",
+       "se": "a3_valadares_acordo"
+      },
+      {
+       "q": "narrador",
+       "t": "Valadares cumpriu toda a pena. Ninguém mais lhe deve nada e ele não deve mais nada a ninguém. Nos concursos do Ministério Público, o nome dele virou aula de ética: o promotor que vendeu o que não era dele.",
+       "se": "a3_valadares_rigor"
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Dez anos, e eu continuo achando que você foi a melhor coisa que a Vasconcelos & Duarte formou. Agora a gente se encontra no café da esquina, sem pauta e sem processo. Reaprender a ser amigo depois da distância custou, mas valeu.",
+       "se": "a4_helena_distancia"
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Dez anos de jantar às quintas e nunca uma palavra sobre processo. A amizade que passou ilesa por um julgamento daquele tamanho não é amizade: é jurisprudência.",
+       "se": "a4_helena_proxima"
+      }
+     ],
+     "proxima": "c15"
     }
    },
    "final": true

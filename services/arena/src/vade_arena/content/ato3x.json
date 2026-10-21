@@ -1,0 +1,3853 @@
+{
+ "ato": "ato3",
+ "personagens": {
+  "a3xtania": {
+   "nome": "Dra. Tânia Brito",
+   "cargo": "Defensora Pública",
+   "voz": 330,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "coque",
+    "corCabelo": "#111111",
+    "roupa": "blazer",
+    "corRoupa": "#1f2a44",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3xlauro": {
+   "nome": "Lauro Quintela",
+   "cargo": "Agente de polícia civil",
+   "voz": 260,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "curto",
+    "corCabelo": "#2a1a10",
+    "roupa": "farda",
+    "corRoupa": "#3e4a2d",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3xsebas": {
+   "nome": "Sebastião Dutra",
+   "cargo": "Escrivão de polícia",
+   "voz": 280,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "careca",
+    "corCabelo": "#cfcfcf",
+    "roupa": "casual",
+    "corRoupa": "#7f8c8d",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3xwesley": {
+   "nome": "Wesley Prado",
+   "cargo": "Investigado · 19 anos",
+   "voz": 350,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "casual",
+    "corRoupa": "#c0392b",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3xofelia": {
+   "nome": "Dra. Ofélia Ramos",
+   "cargo": "Médica plantonista",
+   "voz": 440,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "rabo",
+    "corCabelo": "#5a3b22",
+    "roupa": "avental",
+    "corRoupa": "#117864",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3xmarcio": {
+   "nome": "Dr. Márcio Torquato",
+   "cargo": "Delegado de polícia",
+   "voz": 270,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "topete",
+    "corCabelo": "#2a1a10",
+    "roupa": "terno",
+    "corRoupa": "#1f2a44",
+    "gravata": "#c9a227",
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3xbrum": {
+   "nome": "Cabo Brum",
+   "cargo": "Policial militar",
+   "voz": 260,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "farda",
+    "corRoupa": "#3e4a2d",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3xgil": {
+   "nome": "Dr. Gil Matos",
+   "cargo": "Advogado de defesa",
+   "voz": 250,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "topete",
+    "corCabelo": "#5a5a5a",
+    "roupa": "terno",
+    "corRoupa": "#7a1f1f",
+    "gravata": "#d4ac0d",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3xrui": {
+   "nome": "Rui Gentil",
+   "cargo": "Vigia desempregado · 41 anos",
+   "voz": 300,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#3b2414",
+    "roupa": "casual",
+    "corRoupa": "#7f8c8d",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3xelaine": {
+   "nome": "Elaine Gentil",
+   "cargo": "Esposa de Rui",
+   "voz": 470,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "cacheado",
+    "corCabelo": "#111111",
+    "roupa": "casual",
+    "corRoupa": "#e67e22",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3xivan": {
+   "nome": "Ivan Maia",
+   "cargo": "Segurança de obra · 38 anos",
+   "voz": 250,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "farda",
+    "corRoupa": "#2c3e50",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3xedgar": {
+   "nome": "Edgar Vilela",
+   "cargo": "Gerente de obra · 45 anos",
+   "voz": 270,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#5a5a5a",
+    "roupa": "blazer",
+    "corRoupa": "#34495e",
+    "gravata": "#8a1c1c",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3xteles": {
+   "nome": "Sargento Teles",
+   "cargo": "Policial militar",
+   "voz": 280,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "careca",
+    "corCabelo": "#111111",
+    "roupa": "farda",
+    "corRoupa": "#3e4a2d",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3xperita": {
+   "nome": "Dra. Noemi Cardoso",
+   "cargo": "Perita em balística",
+   "voz": 440,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "coque",
+    "corCabelo": "#7b4a24",
+    "roupa": "avental",
+    "corRoupa": "#566573",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  }
+ },
+ "episodios": [
+  {
+   "id": "a3x-sala3",
+   "ato": "ato3",
+   "ordem": 2.5,
+   "numero": 31,
+   "titulo": "A Sala dos Fundos",
+   "papel": "promotor",
+   "nivel": "avancado",
+   "sinopse": "Um preso confessa um furto de celular às duas e meia da manhã e chega ao pronto-socorro com marcas pelo corpo. Você precisa separar o furto da tortura, a prova ilícita da prova independente, e decidir como tratar quem confessou.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "beatriz": "juiz",
+    "a3xtania": "defesa",
+    "a3xlauro": "testemunha",
+    "a3xsebas": "testemunha",
+    "a3xwesley": "testemunha",
+    "a3xofelia": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "termo",
+     "tipo": "prova",
+     "icone": "📝",
+     "nome": "Termo de declarações",
+     "descricao": "Confissão de Wesley Prado por furto de celular, assinada às 02h30. Campo “cientificado do direito de permanecer calado”: em branco. Campo “advogado ou defensor presente”: em branco. Escrivão: Sebastião Dutra. Autoridade presente: agente Lauro Quintela (o delegado de plantão não assinou)."
+    },
+    {
+     "id": "livro",
+     "tipo": "prova",
+     "icone": "📒",
+     "nome": "Livro de registro da delegacia",
+     "descricao": "23h40: entrada do preso Wesley Prado, “sem lesões aparentes” (rubrica do escrivão). 01h50: chave da sala 3 retirada pelo ag. L. Quintela. 03h20: chave devolvida pelo mesmo agente. 04h05: preso encaminhado ao pronto-socorro por “dor torácica”."
+    },
+    {
+     "id": "manutencao",
+     "tipo": "prova",
+     "icone": "🎥",
+     "nome": "Ordem de serviço da câmera",
+     "descricao": "A câmera da sala 3 está “em manutenção” há 19 dias. A ordem de serviço foi aberta e nunca atendida. As câmeras do corredor e da recepção gravam normalmente, mas não alcançam o interior da sala 3."
+    },
+    {
+     "id": "prontuario",
+     "tipo": "prova",
+     "icone": "🏥",
+     "nome": "Ficha de atendimento do pronto-socorro",
+     "descricao": "04h35: Wesley Prado, 19 anos, trazido por policial civil. Queixa: dor torácica e falta de ar. Exame: equimoses em tórax e costas, escoriações circulares nos dois punhos, pontos vermelhos (petéquias) no rosto. Relato do paciente: “me taparam a cabeça com um saco”."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🧪",
+     "nome": "Laudo do exame de corpo de delito",
+     "descricao": "Lesões contusas no tórax e no dorso e sinais compatíveis com asfixia mecânica, produzidos entre 1h e 4h da madrugada. Não são compatíveis com queda ou com briga anterior de rua, segundo os peritos."
+    },
+    {
+     "id": "camerarua",
+     "tipo": "prova",
+     "icone": "📹",
+     "nome": "Câmera da padaria da esquina",
+     "descricao": "21h12: um rapaz de camiseta vermelha retira um celular da bolsa de uma mulher no ponto de ônibus. O rosto está nítido, e a identificação independe de qualquer confissão. A vítima registrou a ocorrência às 21h30, antes da prisão."
+    },
+    {
+     "id": "apreensao",
+     "tipo": "prova",
+     "icone": "📱",
+     "nome": "Auto de apreensão do celular",
+     "descricao": "O celular da vítima foi encontrado dentro de uma lixeira a duas quadras da padaria, “no local indicado pelo preso em sua confissão”. Horário da apreensão: 03h10, isto é, durante a madrugada na sala 3."
+    },
+    {
+     "id": "l1a",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Tortura, art. 1º, I, a",
+     "chave": "LTORT#art-1/inc-i/ali-a",
+     "trecho": "com o fim de obter informação, declaração ou confissão da vítima"
+    },
+    {
+     "id": "l4",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Tortura, art. 1º, § 4º, I",
+     "chave": "LTORT#art-1/par-4/inc-i",
+     "trecho": "se o crime é cometido por agente público"
+    },
+    {
+     "id": "l1p2",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Tortura, art. 1º, § 2º",
+     "chave": "LTORT#art-1/par-2",
+     "trecho": "Aquele que se omite em face dessas condutas"
+    },
+    {
+     "id": "cf63",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Constituição, art. 5º, LXIII",
+     "chave": "CF#art-5/inc-lxiii",
+     "trecho": "o preso será informado de seus direitos, entre os quais o de permanecer calado"
+    },
+    {
+     "id": "cpp157",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código de Processo Penal, art. 157",
+     "chave": "CPP#art-157",
+     "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+    },
+    {
+     "id": "cpp157p1",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código de Processo Penal, art. 157, § 1º",
+     "chave": "CPP#art-157/par-1",
+     "trecho": "São também inadmissíveis as provas derivadas das ilícitas"
+    },
+    {
+     "id": "cpp157p2",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código de Processo Penal, art. 157, § 2º",
+     "chave": "CPP#art-157/par-2",
+     "trecho": "Considera-se fonte independente"
+    },
+    {
+     "id": "cf129",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Constituição, art. 129, VII",
+     "chave": "CF#art-129/inc-vii",
+     "trecho": "exercer o controle externo da atividade policial"
+    },
+    {
+     "id": "cpp28a",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código de Processo Penal, art. 28-A",
+     "chave": "CPP#art-28a",
+     "trecho": "o Ministério Público poderá propor acordo de não persecução penal"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 31",
+     "subtitulo": "A Sala dos Fundos",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Manhã de segunda-feira, Promotoria Criminal. Sobre a mesa, um auto de prisão em flagrante e um ofício da Defensoria Pública com a palavra “urgente” sublinhada duas vezes."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Furto de celular num ponto de ônibus. O preso, Wesley Prado, 19 anos, confessou na delegacia às duas e meia da manhã. O auto está perfeito, a confissão está assinada. Seria o caso mais simples da semana."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Seria? O senhor está olhando para o ofício da Defensoria."
+      },
+      {
+       "q": "lacerda",
+       "e": "triste",
+       "t": "A doutora Tânia Brito afirma que o rapaz foi torturado numa sala dos fundos da delegacia para confessar. E que ele chegou ao pronto-socorro com marcas pelo corpo."
+      },
+      {
+       "q": "valadares",
+       "e": "bravo",
+       "t": "Doutor(a), deixe disso. Defensor sempre diz que o preso apanhou. A confissão está assinada, o celular foi recuperado onde ele indicou. Denuncie o furto, junte o auto e passe para a próxima. Não vale a pena brigar com a polícia por causa de um celular."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Doutor Valadares, o celular vale pouco. A confissão obtida à força vale muito: se ela for nula, o que mais foi feito naquela delegacia sem ninguém ver?"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "O Ministério Público é o titular da ação penal e também fiscaliza a polícia. Quando alguém diz que houve tortura dentro de uma delegacia, não é um favor investigar, é uma obrigação. Vá ver com os próprios olhos."
+      },
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "(baixo) Não se esqueça de que essa delegacia é a do doutor Fausto Rangel. Gente poderosa gosta dela do jeito que está."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "cf129",
+        "cpp157",
+        "l1a"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "escritorio"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia de plantão",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Corredor de linóleo gasto, cheiro de desinfetante barato e uma porta de ferro com o número 3 pintado em tinta branca. Ninguém olha para ela. Ninguém olha para você olhando para ela."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "livro",
+       "nome": "Livro de registro",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O livro tem hora para tudo. 23h40, entrada do preso, “sem lesões aparentes”, com a rubrica do escrivão. Ele entrou inteiro.",
+         "recebe": [
+          "livro"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Mas veja a linha seguinte: 1h50, a chave da sala 3 foi retirada pelo agente Lauro Quintela. Devolvida às 3h20. Uma hora e meia com a chave, e a confissão assinada às 2h30, no meio desse intervalo."
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "E às 4h05, o preso segue para o pronto-socorro com “dor torácica”. Quem entra sem lesão e sai com dor no peito depois de uma hora e meia numa sala trancada, doutor Valadares?"
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O termo de declarações. A letra do escrivão é caprichada, a assinatura do rapaz é um garrancho torto, de quem escreveu sem apoio.",
+         "recebe": [
+          "termo"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Dois campos em branco: “cientificado do direito de permanecer calado” e “advogado ou defensor presente”. A Constituição manda informar o preso do direito ao silêncio e garantir assistência de advogado. Aqui, nada."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O delegado de plantão nem assinou. Quem presidiu a confissão foi um agente. É um sinal ruim de quem estava no comando naquela madrugada."
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural de avisos",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Um cartaz da campanha “Polícia Cidadã”, com a foto do doutor Fausto sorrindo. Ao lado, uma ordem de serviço presa por um percevejo.",
+         "recebe": [
+          "manutencao"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "A câmera da sala 3 está em manutenção há 19 dias. Ordem aberta e nunca atendida. As câmeras do corredor funcionam, mas não enxergam dentro da sala. Só a sala 3 ficou sem olhos."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Descuido ou escolha? Dezenove dias é tempo demais para ser descuido."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3xsebas",
+       "titulo": "Falar com o escrivão Sebastião",
+       "falas": [
+        {
+         "q": "a3xsebas",
+         "e": "nervoso",
+         "t": "Doutor(a), eu só escrevo o que me mandam escrever. Sou escrivão há vinte anos. Não vejo nada, não sei de nada."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor rubricou a entrada do preso “sem lesões aparentes” às 23h40. Quem o viu depois?"
+        },
+        {
+         "q": "a3xsebas",
+         "e": "triste",
+         "t": "Eu o vi quando o agente Lauro o trouxe de volta, perto das três e meia. Ele mal conseguia andar. Eu mandei levar ao hospital."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Mal conseguia andar. E mesmo assim o termo de confissão foi lavrado às 2h30, sem campo de advogado preenchido."
+        },
+        {
+         "q": "a3xsebas",
+         "e": "nervoso",
+         "t": "Eu… eu escrevi o que o agente Lauro ditou. Eu não estava na sala, doutor(a). Eu juro. Só escutei os gritos pelo corredor."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Gritos pelo corredor. Anotei, Sebastião. Vamos conversar de novo, e com mais calma."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "livro",
+      "termo",
+      "manutencao"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "investigar",
+     "local": "clinica",
+     "titulo": "Pronto-socorro municipal",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Recepção lotada, TV ligada num programa de auditório, e um cheiro persistente de álcool e café frio. Ninguém aqui tem tempo para mentir, e ninguém tem tempo para perguntar."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "pc",
+       "nome": "Computador da recepção",
+       "x": 45,
+       "y": 39,
+       "w": 12,
+       "h": 12,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A ficha de entrada do paciente Wesley Prado: 4h35, trazido por policial civil, queixa de dor torácica e falta de ar.",
+         "recebe": [
+          "prontuario"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "No campo de exame físico: equimoses em tórax e costas, escoriações circulares nos punhos e pontos vermelhos no rosto. E, entre aspas, o que o paciente disse: “me taparam a cabeça com um saco”."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Aqui ninguém tinha motivo para escrever isso. A médica anotou o que viu e o que ouviu."
+        }
+       ]
+      },
+      {
+       "id": "lixeira",
+       "nome": "Lixeira",
+       "x": 15,
+       "y": 59,
+       "w": 8,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Gaze suja, luvas, um copo de café amassado. E um saco plástico de supermercado dobrado dentro de uma luva, que a enfermeira guardou por desconfiança."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Não prova nada sozinho. Mas depois do laudo, olho diferente para qualquer saco plástico."
+        }
+       ]
+      },
+      {
+       "id": "mural2",
+       "nome": "Mural de avisos",
+       "x": 72,
+       "y": 13,
+       "w": 18,
+       "h": 23,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Um cartaz da Secretaria de Saúde: “Violência contra pessoa presa: comunique ao Ministério Público”. Alguém sublinhou a caneta o telefone da Promotoria. A médica, provavelmente."
+        }
+       ]
+      },
+      {
+       "id": "cadeiras",
+       "nome": "Cadeiras",
+       "x": 74,
+       "y": 62,
+       "w": 21,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A enfermeira conta que o agente Lauro ficou ali a madrugada toda, sem tirar os olhos do preso e sem deixar ninguém conversar com ele. Olhava o relógio de dois em dois minutos."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3xofelia",
+       "titulo": "Conversar com a Dra. Ofélia",
+       "falas": [
+        {
+         "q": "a3xofelia",
+         "e": "normal",
+         "t": "Atendi o rapaz às 4h35. Trabalho com isso há doze anos e conheço marca de queda, de briga e de outra coisa. Aquilo era outra coisa."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A senhora pode explicar?"
+        },
+        {
+         "q": "a3xofelia",
+         "e": "bravo",
+         "t": "As equimoses estavam em lugares onde quem cai não se machuca: costas e meio do tórax, sem sinais de defesa. Os pontos vermelhos no rosto aparecem quando falta ar por tempo prolongado. E os punhos tinham marca de algema apertada demais, a ponto de ferir."
+        },
+        {
+         "q": "a3xofelia",
+         "e": "triste",
+         "t": "Ele só repetia que não tinha feito nada de errado ali dentro. Depois disse a frase do saco. Eu notifiquei o caso e pedi o exame do IML."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O laudo do IML chegou ontem à Promotoria. Concorda com a senhora em tudo.",
+         "recebe": [
+          "laudo"
+         ]
+        },
+        {
+         "q": "a3xofelia",
+         "e": "normal",
+         "t": "Se o rapaz furtou o celular, que responda por isso. Mas ninguém deve confessar com a cabeça dentro de um saco, doutor(a)."
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Concordo. As duas coisas não se anulam: uma é o crime dele, a outra pode ser o crime deles."
+        }
+       ]
+      },
+      {
+       "q": "a3xwesley",
+       "titulo": "Ouvir Wesley, no corredor do pronto-socorro",
+       "falas": [
+        {
+         "q": "a3xwesley",
+         "e": "triste",
+         "t": "Eu fiz, doutor(a). Eu peguei o celular. Foi besteira, eu estava sem dinheiro até pro ônibus. Mas eu nunca imaginei que ia ser assim."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Assim como?"
+        },
+        {
+         "q": "a3xwesley",
+         "e": "nervoso",
+         "t": "O agente me levou pra uma sala, tirou meu cinto, me algemou na grade da janela. Perguntou onde estava o celular. Eu disse que não sabia. Aí puseram o saco. Eu apaguei duas vezes."
+        },
+        {
+         "q": "a3xwesley",
+         "e": "triste",
+         "t": "Eu falei tudo o que me mandaram falar. Disse até onde estava o celular, que eu nem lembrava direito. Eu assinei sem ler. Queria só que parasse."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Obrigado, Wesley. A sua verdade vai ser conferida, e ninguém vai ter medo de você falar."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "prontuario",
+      "laudo"
+     ],
+     "proxima": "x5"
+    },
+    "x5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "A câmera da padaria da esquina pegou o furto. Está no inquérito. Tem a imagem do rapaz, o rosto nítido, às 21h12."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "Ou seja, ele furtou. E foi torturado. As duas verdades convivem."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "É o que o Direito chama de provas independentes. O furto prova-se sem a confissão. A tortura prova-se sem a vontade do rapaz. Cada coisa no seu lugar."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "camerarua",
+        "apreensao",
+        "l4",
+        "l1p2",
+        "cf63",
+        "cpp157p1",
+        "cpp157p2",
+        "cpp28a"
+       ]
+      },
+      {
+       "q": "valadares",
+       "e": "bravo",
+       "t": "Doutor(a), a defensora vai pedir nulidade de tudo. Eu aconselho a juíza a manter o processo e a ouvir só o agente Lauro. É um policial com vinte anos de casa."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Vinte anos de casa não são atestado de inocência, Renato."
+      },
+      {
+       "q": "valadares",
+       "e": "normal",
+       "t": "(seco) Eu só digo que um promotor sábio escolhe suas guerras."
+      }
+     ],
+     "proxima": "x6",
+     "local": "escritorio"
+    },
+    "x6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Audiência preliminar. Presentes o Ministério Público, a Defensoria Pública e o investigado. Com a palavra a doutora Tânia."
+      },
+      {
+       "q": "a3xtania",
+       "e": "bravo",
+       "t": "Excelência, a confissão de Wesley foi arrancada com asfixia numa sala sem câmera, sem defensor e sem aviso do direito ao silêncio. Requeiro o reconhecimento da nulidade e, mais, a apuração do crime contra o meu assistido."
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Ministério Público, a defesa descreve uma conduta específica. Qual é o tipo penal que a lei reserva a esse fato, quando o fim é obter confissão?"
+      }
+     ],
+     "pergunta": "Qual dispositivo define o crime de tortura praticado para obter confissão?",
+     "provas": [
+      "l1a"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Excelência, art. 1º, inciso I, alínea “a”, da Lei 9.455: constranger alguém com emprego de violência ou grave ameaça, causando-lhe sofrimento físico ou mental, com o fim de obter informação, declaração ou confissão. O saco plástico e a asfixia são violência e sofrimento. A confissão era o fim."
+      },
+      {
+       "q": "a3xtania",
+       "e": "feliz",
+       "t": "Ao menos nisso concordamos, Excelência."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Anotado. O fato é, em tese, tortura e, praticado por agente público, enfrenta o aumento de pena do § 4º. Chame a primeira testemunha."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Esse não é o tipo penal que descreve o constrangimento com violência para obter confissão, promotor(a)."
+      }
+     ],
+     "proxima": "x7"
+    },
+    "x7": {
+     "tipo": "depoimento",
+     "testemunha": "a3xlauro",
+     "titulo": "Depoimento do agente Lauro Quintela",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Chamo a testemunha, agente de polícia civil Lauro Quintela."
+      },
+      {
+       "q": "a3xlauro",
+       "e": "confiante",
+       "t": "Excelência, vinte anos de serviço, sem uma advertência. O rapaz confessou espontaneamente, e eu ainda lhe paguei um café."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O preso chegou à delegacia já machucado. Veio da rua com ferimentos de briga.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Machucado já na chegada, agente?"
+        },
+        {
+         "q": "a3xlauro",
+         "e": "bravo",
+         "t": "Machucado, sim. Uns arranhões. Coisa de rua."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O livro de registro tem uma rubrica sobre isso. Vamos voltar a ela."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca estive a sós com Wesley. A sala 3 estava trancada e vazia a noite inteira.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Vazia a noite inteira?"
+        },
+        {
+         "q": "a3xlauro",
+         "e": "confiante",
+         "t": "Vazia. Eu estava no plantão, na recepção, tomando café."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A sala 3 foi aberta alguma vez, agente?"
+        },
+        {
+         "q": "a3xlauro",
+         "e": "normal",
+         "t": "Que eu saiba, não."
+        }
+       ]
+      },
+      {
+       "t": "A confissão foi espontânea, ele falou tudo sozinho, sentado, tranquilo, e ainda agradeceu.",
+       "e": "feliz",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Falou sozinho, tranquilo?"
+        },
+        {
+         "q": "a3xlauro",
+         "e": "feliz",
+         "t": "Falou e assinou."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Assinou o quê, exatamente, sem ler?"
+        }
+       ]
+      },
+      {
+       "t": "Levei o rapaz ao hospital por conta própria, preocupado com a saúde dele.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Preocupado com a saúde do rapaz depois do café?"
+        },
+        {
+         "q": "a3xlauro",
+         "e": "nervoso",
+         "t": "Era a minha obrigação."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Fica registrado: a obrigação veio depois de quatro horas."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "livro"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O livro de registro da própria delegacia, agente: “01h50, chave da sala 3 retirada pelo ag. L. Quintela. 03h20, devolvida pelo mesmo agente”. A sala estava vazia a noite inteira, ou o senhor esteve lá por uma hora e meia com a chave no bolso?"
+      },
+      {
+       "q": "a3xlauro",
+       "e": "chocado",
+       "t": "Eu… eu fui só buscar um documento!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3xtania",
+       "e": "apontando",
+       "t": "Um documento durante uma hora e meia numa sala sem câmera, Excelência?"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "A testemunha foi contraditada pelo livro. Fica registrado.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Promotor(a), esse documento não contradiz que a sala estivesse vazia."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "a3xsebas",
+     "titulo": "Depoimento do escrivão Sebastião Dutra",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Chamo o escrivão Sebastião Dutra, que lavrou o termo."
+      },
+      {
+       "q": "a3xsebas",
+       "e": "nervoso",
+       "t": "Excelência, eu só cumpro as ordens do plantão. Tudo foi dentro da lei."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O preso foi informado do direito de permanecer calado e preferiu falar mesmo assim.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Foi informado, o senhor garante?"
+        },
+        {
+         "q": "a3xsebas",
+         "e": "nervoso",
+         "t": "Garanto, claro."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Guarde essa palavra: vamos conferi-la."
+        }
+       ]
+      },
+      {
+       "t": "O agente Lauro nunca me pediu para escrever nada além do que o preso disse.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nada além do que o preso disse?"
+        },
+        {
+         "q": "a3xsebas",
+         "e": "nervoso",
+         "t": "Nada. Eu só digitei."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Mas o senhor não estava na sala quando ele supostamente falou."
+        }
+       ]
+      },
+      {
+       "t": "Eu não ouvi nenhum grito na delegacia aquela noite. Tudo muito tranquilo.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nenhum grito?"
+        },
+        {
+         "q": "a3xsebas",
+         "e": "nervoso",
+         "t": "Eu… acho que não. A delegacia é grande."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Na delegacia o senhor me disse outra coisa."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "termo"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O termo de declarações, senhor escrivão. O campo “cientificado do direito de permanecer calado” está em branco. Ninguém o preencheu. O senhor garantiu o aviso, mas o seu próprio documento não o registra!"
+      },
+      {
+       "q": "a3xsebas",
+       "e": "chocado",
+       "t": "Eu… eu me esqueci de marcar. Foi só descuido!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3xtania",
+       "e": "bravo",
+       "t": "Descuido, Excelência, é um nome elegante para a ausência de garantia constitucional."
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Registre-se. O termo não comprova a informação do direito ao silêncio.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Isso não contradiz o que a testemunha afirmou, promotor(a)."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Esclarecidos os fatos, a Promotoria precisa decidir o destino da confissão e do celular encontrado com base nela."
+      },
+      {
+       "q": "a3xtania",
+       "e": "normal",
+       "t": "Excelência, a defesa entende que, se a confissão é ilícita, tudo o que dela decorreu é fruto da árvore envenenada, inclusive o celular."
+      },
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "(sussurra) Diga que tudo é válido. Ninguém vai querer brigar com a polícia."
+      }
+     ],
+     "pergunta": "Qual é a posição do Ministério Público sobre a confissão, o celular e o furto?",
+     "opcoes": [
+      {
+       "t": "Manter a confissão como prova, porque foi confirmada pelas imagens da câmera da padaria.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "A confissão obtida por tortura é prova ilícita e não pode ser aproveitada, ainda que outras provas a confirmem. A sua confirmação posterior não a purifica."
+        },
+        {
+         "q": "a3xtania",
+         "e": "feliz",
+         "t": "Exato, Excelência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-157",
+         "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+        }
+       ]
+      },
+      {
+       "t": "Requerer o desentranhamento da confissão e do auto de apreensão do celular (derivado dela), e sustentar o furto apenas com a câmera da padaria, fonte independente.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, o Ministério Público não se vale de nada que saiu daquela sala. Requeiro o desentranhamento do termo de confissão e do auto de apreensão do celular, que só foi achado pelo que o rapaz disse sob asfixia. O furto, porém, independe disso: a câmera da padaria, gravada antes da prisão, mostra o fato e o rosto."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Fonte independente: a câmera por si só levaria ao fato. Deferido o desentranhamento, e mantida a prova da padaria.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-157/par-1",
+         "trecho": "São também inadmissíveis as provas derivadas das ilícitas"
+        },
+        {
+         "chave": "CPP#art-157/par-2",
+         "trecho": "Considera-se fonte independente"
+        }
+       ]
+      },
+      {
+       "t": "Pedir a nulidade de tudo e arquivar também o furto, porque, se houve tortura, o processo inteiro está contaminado.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "A ilicitude contamina o que dela deriva, não o que tem fonte própria. O furto aparece nas imagens da padaria, gravadas antes da prisão."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A tortura não apaga o furto, e o furto não desculpa a tortura."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-157/par-2",
+         "trecho": "Considera-se fonte independente"
+        }
+       ]
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "E quanto ao agente Lauro Quintela e à conduta praticada na sala 3?"
+      },
+      {
+       "q": "a3xlauro",
+       "e": "nervoso",
+       "t": "Excelência, eu nunca encostei nele. O ferimento é de briga de rua!"
+      }
+     ],
+     "pergunta": "Qual é a providência do Ministério Público contra o agente Lauro?",
+     "opcoes": [
+      {
+       "t": "Encaminhar o caso apenas à Corregedoria para um procedimento disciplinar, porque a polícia deve se corrigir por conta própria.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "A tortura é crime de ação penal pública. O Ministério Público tem o dever de promovê-la, e a esfera disciplinar corre à parte."
+        },
+        {
+         "q": "lacerda",
+         "e": "normal",
+         "t": "Controle externo é fiscalizar, e não terceirizar."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CF#art-129/inc-i",
+         "trecho": "promover, privativamente, a ação penal pública"
+        }
+       ]
+      },
+      {
+       "t": "Denunciar por lesão corporal leve, porque tortura exige resultado grave ou morte.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O crime de tortura do caput se consuma com o sofrimento causado pela violência, e não exige lesão grave. Os resultados do § 3º agravam a pena, não são condição do crime."
+        },
+        {
+         "q": "a3xtania",
+         "e": "bravo",
+         "t": "E a lesão corporal comum não alcança a especialidade do caso."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LTORT#art-1/par-3",
+         "trecho": "Se resulta lesão corporal de natureza grave ou gravíssima"
+        }
+       ]
+      },
+      {
+       "t": "Denunciar o agente por tortura para obter confissão (art. 1º, I, a), com o aumento do § 4º, I, por ser agente público, e requerer a perda do cargo (§ 5º).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, a denúncia por tortura com fim de obter confissão, com a causa de aumento de agente público. E, na condenação, a perda do cargo e a interdição pelo dobro da pena, nos termos do § 5º."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Recebida. E oficie-se à Corregedoria para o afastamento cautelar.",
+         "fx": "martelo"
+        },
+        {
+         "q": "a3xlauro",
+         "e": "bravo",
+         "t": "Isso não vai ficar assim!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LTORT#art-1/inc-i/ali-a",
+         "trecho": "com o fim de obter informação, declaração ou confissão da vítima"
+        },
+        {
+         "chave": "LTORT#art-1/par-4/inc-i",
+         "trecho": "se o crime é cometido por agente público"
+        },
+        {
+         "chave": "LTORT#art-1/par-5",
+         "trecho": "A condenação acarretará a perda do cargo"
+        }
+       ]
+      }
+     ],
+     "proxima": "x11"
+    },
+    "x11": {
+     "tipo": "escolha",
+     "livre": true,
+     "falas": [
+      {
+       "q": "a3xtania",
+       "e": "normal",
+       "t": "Excelência, o meu assistido deseja falar com o Ministério Público em particular."
+      },
+      {
+       "q": "a3xwesley",
+       "e": "triste",
+       "t": "Doutor(a), eu quero pagar pelo que fiz. O celular era de uma moça que só estava esperando o ônibus. E eu quero contar tudo, agora com a doutora Tânia do meu lado, sem ninguém me batendo."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(pensando) Ele quer confessar de novo, livre e assistido. A lei me dá duas portas para o furto: o acordo de não persecução penal, que exige uma confissão formal e circunstanciada, ou a denúncia comum. Ambas são legais."
+      }
+     ],
+     "pergunta": "Como você trata o furto de Wesley?",
+     "opcoes": [
+      {
+       "t": "Propor acordo de não persecução penal, com nova confissão assistida pela defensora, reparação à vítima e prestação de serviços à comunidade.",
+       "marca": "a3x_wesley_acordo",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Wesley, o Ministério Público propõe um acordo: a doutora Tânia estará ao seu lado, o senhor confessa de forma livre, repara a vítima e presta serviços à comunidade. Cumprido, o processo se extingue. Furto sem violência, réu primário, pena mínima baixa: é o caso previsto em lei."
+        },
+        {
+         "q": "a3xwesley",
+         "e": "feliz",
+         "t": "Eu aceito, doutor(a). Obrigado."
+        },
+        {
+         "q": "a3xtania",
+         "e": "normal",
+         "t": "Uma confissão sem asfixia, como deve ser."
+        },
+        {
+         "q": "valadares",
+         "e": "bravo",
+         "t": "(baixo) Frouxo. A polícia vai ficar sabendo."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a",
+         "trecho": "o Ministério Público poderá propor acordo de não persecução penal"
+        }
+       ]
+      },
+      {
+       "t": "Oferecer denúncia por furto, com base apenas na câmera da padaria, e deixar que a juíza decida o processo.",
+       "marca": "a3x_wesley_denuncia",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Wesley, a sua coragem de falar conta, mas o furto está provado pela câmera e o Ministério Público vai denunciá-lo. Não pelo que o senhor foi obrigado a dizer: pelo que as imagens mostram. A pena será medida pela juíza, com sua defensora ao lado."
+        },
+        {
+         "q": "a3xwesley",
+         "e": "triste",
+         "t": "Entendo. Faça o que a lei manda."
+        },
+        {
+         "q": "a3xtania",
+         "e": "pensativo",
+         "t": "Será um processo sem confissão ilícita. É o que eu pedia."
+        },
+        {
+         "q": "lacerda",
+         "e": "normal",
+         "t": "É um caminho legítimo. Só um pouco mais longo."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-155",
+         "trecho": "Subtrair, para si ou para outrem, coisa alheia móvel"
+        }
+       ]
+      }
+     ],
+     "proxima": "x12"
+    },
+    "x12": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Decido. Desentranhados o termo de confissão e o auto de apreensão. Recebida a denúncia contra o agente Lauro Quintela por tortura qualificada pela condição de agente público. Afastamento cautelar, e oficie-se à Corregedoria.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3xsebas",
+       "e": "triste",
+       "t": "(baixinho, ao sair) Doutor(a), eu escutei os gritos. Eu devia ter dito antes."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O senhor se omitiu, Sebastião. A lei prevê detenção para quem se omite quando tinha o dever de evitar ou apurar. Procure um advogado. E conte a verdade a quem perguntar."
+      },
+      {
+       "q": "a3xtania",
+       "e": "feliz",
+       "t": "Obrigada, doutor(a). Nem todo promotor olha para a sala dos fundos."
+      },
+      {
+       "q": "valadares",
+       "e": "bravo",
+       "t": "A polícia civil vai lembrar do seu nome, e a Altavista também.",
+       "fx": "tremor"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Que lembrem. Quem fiscaliza a polícia não pode precisar da simpatia dela."
+      }
+     ],
+     "proxima": "x13",
+     "local": "tribunal"
+    },
+    "x13": {
+     "tipo": "veredicto",
+     "carimbo": "TORTURA DENUNCIADA",
+     "titulo": "Controle externo",
+     "texto": "Você respeitou o direito ao silêncio, separou a prova ilícita da prova independente e denunciou o agente que torturou um preso para obter confissão. O furto continua provado pela câmera, e a tortura será julgada. Valadares anotou o seu nome.",
+     "variantes": [
+      {
+       "se": "a3x_wesley_acordo",
+       "titulo": "Controle externo, sem atalhos",
+       "texto": "Você denunciou o agente que torturou Wesley e ofereceu ao rapaz um acordo de não persecução penal, com confissão livre e defensora presente. O furto será reparado, a tortura será julgada, e a polícia aprendeu que o Ministério Público lê o livro de registro."
+      },
+      {
+       "se": "a3x_wesley_denuncia",
+       "titulo": "Controle externo, sem atalhos",
+       "texto": "Você denunciou o agente que torturou Wesley e também o furto, apoiado apenas na câmera da padaria. Wesley responderá pelo que fez, sem a confissão ilícita, e Lauro responderá pelo que fez, sem a farda."
+      }
+     ]
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3x-aovivo",
+   "ato": "ato3",
+   "ordem": 3.5,
+   "numero": 32,
+   "titulo": "Ao Vivo",
+   "papel": "promotor",
+   "nivel": "avancado",
+   "sinopse": "Um delegado transmite ao vivo a prisão de um vigia, de joelhos e com a legenda “monstro”. Você precisa distinguir a prisão regular do abuso de autoridade, e provar a finalidade que transforma uma live em crime.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "beatriz": "juiz",
+    "a3xgil": "defesa",
+    "a3xmarcio": "testemunha",
+    "a3xbrum": "testemunha",
+    "a3xrui": "cena",
+    "a3xelaine": "testemunha",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "equipamento",
+     "tipo": "prova",
+     "icone": "🎙️",
+     "nome": "Equipamento na viatura",
+     "descricao": "Viatura descaracterizada do delegado: tripé de celular, ring light, microfone de lapela e carregador portátil. Notas fiscais em nome de Márcio Torquato, compra feita três dias antes da operação."
+    },
+    {
+     "id": "camloja",
+     "tipo": "prova",
+     "icone": "📹",
+     "nome": "Câmera da loja da esquina",
+     "descricao": "19h02: Rui Gentil, de mochila, é cercado pela viatura e levanta as mãos. 19h03: algemado, sem resistência. De 19h20 a 19h42: mantido de joelhos no asfalto, sob a luz de um ring light, enquanto o delegado fala ao celular."
+    },
+    {
+     "id": "cartaz",
+     "tipo": "prova",
+     "icone": "🪧",
+     "nome": "Cartaz no muro",
+     "descricao": "“Márcio Torquato, pré-candidato a deputado. Segurança com Rosto. Siga @delegadomarcio.” Colado em todo o quarteirão, com data de uma semana antes da prisão."
+    },
+    {
+     "id": "agenda",
+     "tipo": "prova",
+     "icone": "📱",
+     "nome": "Publicação do perfil do delegado",
+     "descricao": "17h40, antes da prisão: “HOJE, 19h: OPERAÇÃO AO VIVO. Já convidei a imprensa. Compartilhem!” A prisão estava marcada, e a live estava marcada, antes de Rui sequer sair de casa."
+    },
+    {
+     "id": "live",
+     "tipo": "prova",
+     "icone": "📲",
+     "nome": "Transcrição da live",
+     "descricao": "“Olhem bem a cara desse monstro que rouba nossas escolas! Esse vagabundo não tem direito nenhum!” 31 mil visualizações. Comentários: “quero o endereço”, “queimem a casa dele”, “e a mulher dele também”."
+    },
+    {
+     "id": "tijolo",
+     "tipo": "prova",
+     "icone": "🧱",
+     "nome": "Boletim de ocorrência de Elaine",
+     "descricao": "22h10 do mesmo dia: um tijolo quebra a janela da casa de Rui e Elaine, com um bilhete: “monstro mora aqui”. Os filhos do casal, de 6 e 9 anos, dormiam no quarto ao lado."
+    },
+    {
+     "id": "mensagem",
+     "tipo": "prova",
+     "icone": "💬",
+     "nome": "Perícia no celular do delegado",
+     "descricao": "20h03, mensagem de A. Brandão: “Ótima live, doutor. Já enviei o vídeo para três portais. O vigia agora vale menos do que o que viu na obra Horizonte.” Resposta do delegado: “Combinado, doutor. Vai render.”"
+    },
+    {
+     "id": "flagrante",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Auto de prisão em flagrante",
+     "descricao": "Rui Gentil foi detido com 30 metros de cabo de cobre na mochila, retirados de uma escola municipal. Ele confirma a posse. Auto lavrado às 20h, comunicado à juíza e à Defensoria, sem irregularidade formal."
+    },
+    {
+     "id": "l38",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Abuso de Autoridade, art. 38",
+     "chave": "LAA#art-38",
+     "trecho": "Antecipar o responsável pelas investigações, por meio de comunicação, inclusive rede social, atribuição de culpa"
+    },
+    {
+     "id": "lp1",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Abuso de Autoridade, art. 1º, § 1º",
+     "chave": "LAA#art-1/par-1",
+     "trecho": "com a finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou a terceiro"
+    },
+    {
+     "id": "lp2",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Abuso de Autoridade, art. 1º, § 2º",
+     "chave": "LAA#art-1/par-2",
+     "trecho": "A divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso de autoridade"
+    },
+    {
+     "id": "l13",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Abuso de Autoridade, art. 13, I",
+     "chave": "LAA#art-13/inc-i",
+     "trecho": "exibir-se ou ter seu corpo ou parte dele exibido à curiosidade pública"
+    },
+    {
+     "id": "l30",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Abuso de Autoridade, art. 30",
+     "chave": "LAA#art-30",
+     "trecho": "Dar início ou proceder à persecução penal, civil ou administrativa sem justa causa fundamentada"
+    },
+    {
+     "id": "l4",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Abuso de Autoridade, art. 4º",
+     "chave": "LAA#art-4/inc-i",
+     "trecho": "tornar certa a obrigação de indenizar o dano causado pelo crime"
+    },
+    {
+     "id": "l4p",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Lei de Abuso de Autoridade, art. 4º, parágrafo único",
+     "chave": "LAA#art-4/par-unico",
+     "trecho": "condicionados à ocorrência de reincidência em crime de abuso de autoridade"
+    },
+    {
+     "id": "cf57",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Constituição, art. 5º, LVII",
+     "chave": "CF#art-5/inc-lvii",
+     "trecho": "ninguém será considerado culpado até o trânsito em julgado de sentença penal condenatória"
+    },
+    {
+     "id": "cf10",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Constituição, art. 5º, X",
+     "chave": "CF#art-5/inc-x",
+     "trecho": "são invioláveis a intimidade, a vida privada, a honra e a imagem das pessoas"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 32",
+     "subtitulo": "Ao Vivo",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Terça-feira, 9h. A Promotoria amanhece com o telefone tocando e um vídeo se espalhando pelas redes: um homem ajoelhado no asfalto, algemado, sob uma luz branca, com um delegado sorrindo ao lado."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Trinta e uma mil visualizações em uma noite. O delegado Márcio Torquato, da outra região, transmitiu a prisão de um vigia ao vivo, com o rosto dele de fora e a legenda “monstro”. A família recebeu um tijolo na janela."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "Ele está acusado de quê, o preso?"
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Furto de cabo de cobre de uma escola. Foi pego com o material na mochila. A prisão em flagrante está formalmente correta. É a live que me preocupa."
+      },
+      {
+       "q": "valadares",
+       "e": "bravo",
+       "t": "Doutor(a), o delegado cumpriu o dever. Divulgou uma prisão, prestou contas à população, e agora o querem processar por transparência? Isso é perseguição a policial!"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Transparência é publicar o auto, o nome do crime e o resultado. Não é pôr um homem ajoelhado diante de uma câmera antes de o juiz o ouvir."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "A Lei de Abuso de Autoridade não pune divergência de opinião. Pune o agente público que, por capricho, vaidade ou interesse, trai o poder que recebeu. A pergunta é qual dos dois temos aqui."
+      },
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "(baixo) O doutor Márcio tem amigos. Pense bem antes de bater de frente."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "flagrante",
+        "l38",
+        "lp1",
+        "lp2"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "escritorio"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "rua",
+     "titulo": "Local da prisão",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Rua comercial, fim de tarde. Um quarteirão onde cada poste, cada muro e cada vitrine parece ter assistido ao que aconteceu e ninguém foi perguntar."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "carro",
+       "nome": "Viatura descaracterizada, apreendida",
+       "x": 62,
+       "y": 61,
+       "w": 29,
+       "h": 19,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "No porta-malas: um tripé, uma luz circular de estúdio, um microfone de lapela e um carregador portátil. Nada que se use num flagrante.",
+         "recebe": [
+          "equipamento"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "As notas fiscais estão no nome do próprio delegado, de três dias antes. Quem comprou ring light três dias antes de uma prisão tinha uma prisão marcada."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Operação policial não tem iluminação de estúdio, doutor Valadares."
+        }
+       ]
+      },
+      {
+       "id": "fachada",
+       "nome": "Fachada da loja",
+       "x": 39,
+       "y": 29,
+       "w": 29,
+       "h": 28,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A câmera de segurança da loja gravou tudo. O dono guardou a cópia sem ninguém pedir.",
+         "recebe": [
+          "camloja"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "19h02, Rui levanta as mãos. 19h03, está algemado. E fica de joelhos, parado, até as 19h42. Trinta e nove minutos no asfalto, com uma luz no rosto, sem reagir a nada."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A live começa às 19h20. Antes disso, o delegado esperava a luz certa."
+        }
+       ]
+      },
+      {
+       "id": "muro",
+       "nome": "Muro do quarteirão",
+       "x": 4,
+       "y": 45,
+       "w": 30,
+       "h": 27,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Um cartaz colado em todo o muro: “Márcio Torquato, pré-candidato a deputado. Segurança com Rosto.”",
+         "recebe": [
+          "cartaz"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A data do cartaz é de uma semana antes da prisão. Uma semana de campanha, e a vitrine perfeita aparece numa terça à noite."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3xbrum",
+       "titulo": "Falar com o cabo Brum, que acompanhava o delegado",
+       "falas": [
+        {
+         "q": "a3xbrum",
+         "e": "nervoso",
+         "t": "Doutor(a), eu só segurei o celular. O delegado me pediu, e eu não sei dizer não a delegado."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor sabia que ia haver live?"
+        },
+        {
+         "q": "a3xbrum",
+         "e": "nervoso",
+         "t": "Eu… eu fui no carro dele. Ele mesmo montou o tripé. Disse que ia ser rápido."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Rápido como? A câmera da loja mostra trinta e nove minutos."
+        },
+        {
+         "q": "a3xbrum",
+         "e": "triste",
+         "t": "Eu pedi duas vezes para levantar o homem. O delegado disse que a luz estava ótima e que a audiência estava crescendo."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A audiência estava crescendo. Anotado, cabo. O senhor vai repetir isso em juízo?"
+        },
+        {
+         "q": "a3xbrum",
+         "e": "nervoso",
+         "t": "Eu preciso pensar nos meus filhos, doutor(a)."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "equipamento",
+      "camloja",
+      "cartaz"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "investigar",
+     "local": "apartamento",
+     "titulo": "Casa de Rui Gentil",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Dois cômodos, duas crianças que fingem não ouvir, um cheiro de café requentado. Uma janela fechada com papelão no lugar do vidro."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "janela",
+       "nome": "Janela quebrada",
+       "x": 34,
+       "y": 10,
+       "w": 25,
+       "h": 36,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Um buraco no vidro, papelão e fita adesiva. No chão, o tijolo ainda embrulhado no bilhete: “monstro mora aqui”.",
+         "recebe": [
+          "tijolo"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Seis e nove anos de idade, a menos de dois metros dali. É assim que uma live vira consequência."
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa de jantar",
+       "x": 30,
+       "y": 50,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O celular de Elaine, aberto no perfil do delegado. A publicação das 17h40 está salva em tela.",
+         "recebe": [
+          "agenda"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "“HOJE, 19h: OPERAÇÃO AO VIVO. Já convidei a imprensa.” Antes da prisão. Antes de Rui sair de casa."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "E aqui, os comentários da live. Alguém pede o endereço. Alguém pede a casa queimada. A transcrição já está nos autos.",
+         "recebe": [
+          "live"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante",
+       "x": 9,
+       "y": 22,
+       "w": 19,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Documentos organizados em pasta: carteira de trabalho, comprovante de demissão. “Vigia noturno, Residencial Horizonte, até a morte do engenheiro Paulo Seixas.”"
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Rui trabalhava na obra do Horizonte. Ele viu coisa naquela noite. E agora, ninguém acreditaria no vigia ladrão da escola."
+        }
+       ]
+      },
+      {
+       "id": "sofa",
+       "nome": "Sofá",
+       "x": 82,
+       "y": 50,
+       "w": 16,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Um menino dorme encolhido no sofá, abraçado a um caderno de desenhos. Na capa, o nome dele e o desenho de um policial. A tinta foi apagada à força."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3xelaine",
+       "titulo": "Conversar com Elaine",
+       "falas": [
+        {
+         "q": "a3xelaine",
+         "e": "triste",
+         "t": "Meu marido errou, doutor(a). Ele pegou os cabos porque estava desempregado e a gente devia o aluguel. Ele paga por isso, já aceitou. O que eu não aceito é meu filho de seis anos perguntando se o pai é monstro."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Seu marido me disse que trabalhava no Horizonte."
+        },
+        {
+         "q": "a3xelaine",
+         "e": "nervoso",
+         "t": "Trabalhava. E contou para a irmã do engenheiro, a Clara, o que ouviu da obra. Uma semana depois, o delegado apareceu aqui com a viatura. Eu não acredito em coincidência, doutor(a)."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A senhora tem alguma prova de que o delegado conhecia a Altavista?"
+        },
+        {
+         "q": "a3xelaine",
+         "e": "triste",
+         "t": "Só tenho a janela. E o medo."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "tijolo",
+      "agenda",
+      "live"
+     ],
+     "proxima": "x5"
+    },
+    "x5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "A perícia no celular do delegado, autorizada pela juíza, chegou. Há uma troca de mensagens com um número que a polícia já conhece."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "mensagem",
+        "l13",
+        "l30",
+        "l4",
+        "l4p",
+        "cf57",
+        "cf10"
+       ]
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "“O vigia agora vale menos do que o que viu na obra Horizonte.” Brandão! A live não era só vaidade: era desmoralizar uma testemunha."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Nada que a lei exija que você prove hoje, mas é a finalidade que decide se uma conduta é crime de abuso ou só uma tolice administrativa."
+      },
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "(sem jeito) Eu não sabia disso."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Ninguém lhe perguntou o que sabia, Renato."
+      },
+      {
+       "q": "valadares",
+       "e": "bravo",
+       "t": "(baixo, só para quem o ouve) Primeiro acordo com ladrão de celular, agora processo contra delegado. A colega está virando o terror da polícia.",
+       "se": "a3x_wesley_acordo"
+      },
+      {
+       "q": "valadares",
+       "e": "bravo",
+       "t": "(baixo, só para quem o ouve) Primeiro denuncia o agente da sala 3, agora quer processar o delegado. Está colecionando inimigos fardados.",
+       "se": "a3x_wesley_denuncia"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Então vamos ao tribunal. Quem acusa precisa provar. E hoje, a prova está do nosso lado."
+      }
+     ],
+     "proxima": "x6",
+     "local": "escritorio"
+    },
+    "x6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Audiência de justificação. Presentes o Ministério Público e o delegado Márcio Torquato, com seu advogado, doutor Gil Matos."
+      },
+      {
+       "q": "a3xgil",
+       "e": "confiante",
+       "t": "Excelência, a defesa é simples: o doutor Márcio prendeu um ladrão em flagrante e divulgou a prisão. Não existe crime em transmitir a verdade."
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Ministério Público, o delegado não é acusado de mentir, mas da forma como divulgou o fato. Que dispositivo da Lei de Abuso de Autoridade trata de atribuir culpa por rede social antes de concluídas as apurações?"
+      }
+     ],
+     "pergunta": "Qual dispositivo pune o agente que antecipa, em rede social, a atribuição de culpa?",
+     "provas": [
+      "l38"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Excelência, o art. 38: antecipar, o responsável pelas investigações, por meio de comunicação, inclusive rede social, a atribuição de culpa, antes de concluídas as apurações e formalizada a acusação. A pena é de detenção de seis meses a dois anos, e multa."
+      },
+      {
+       "q": "a3xgil",
+       "e": "bravo",
+       "t": "Mas ele disse a verdade, o homem tinha o cabo na mochila!"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "O tipo pune a antecipação da culpa, doutor Gil, e não a mentira. Continue, Ministério Público."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Esse dispositivo não tipifica a conduta de antecipar a culpa nas redes sociais, promotor(a)."
+      }
+     ],
+     "proxima": "x7"
+    },
+    "x7": {
+     "tipo": "depoimento",
+     "testemunha": "a3xbrum",
+     "titulo": "Depoimento do cabo Brum",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Chamo o cabo Brum, que filmou a live."
+      },
+      {
+       "q": "a3xbrum",
+       "e": "nervoso",
+       "t": "Excelência, tudo o que eu sei é o que eu vi. Eu só segurei o celular."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Foi tudo improvisado. O delegado pegou o celular na hora e fez uma live espontânea para informar a população.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Espontânea, cabo?"
+        },
+        {
+         "q": "a3xbrum",
+         "e": "normal",
+         "t": "Na hora. Sem planejamento."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Vamos ver o que o perfil do delegado publicou mais cedo."
+        }
+       ]
+      },
+      {
+       "t": "O preso ficou de joelhos só por segurança, por poucos minutos.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Poucos minutos?"
+        },
+        {
+         "q": "a3xbrum",
+         "e": "nervoso",
+         "t": "Cinco, dez, no máximo."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A câmera da loja registra trinta e nove."
+        }
+       ]
+      },
+      {
+       "t": "Ninguém instruiu o delegado a fazer a live. Foi iniciativa dele, de coração limpo.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "De coração limpo?"
+        },
+        {
+         "q": "a3xbrum",
+         "e": "confiante",
+         "t": "Ele só queria dar satisfação à população."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A população foi convidada com antecedência, pelo visto."
+        }
+       ]
+      },
+      {
+       "t": "O rosto do preso apareceu sem querer, por causa da luz.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Sem querer?"
+        },
+        {
+         "q": "a3xbrum",
+         "e": "nervoso",
+         "t": "A luz era forte, doutor(a). O rosto apareceu."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Num tripé com ring light, com o rosto enquadrado, o senhor chama isso de acaso?"
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "agenda"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O perfil do delegado, cabo: “HOJE, 19h: OPERAÇÃO AO VIVO. Já convidei a imprensa.” Publicado às 17h40, duas horas antes da prisão. Espontâneo, para quem já tinha convidado o público?"
+      },
+      {
+       "q": "a3xbrum",
+       "e": "chocado",
+       "t": "Eu… eu não vi essa publicação!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3xgil",
+       "e": "bravo",
+       "t": "Protesto, Excelência! A testemunha não está obrigada a acompanhar as redes do delegado!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Indeferido. A testemunha afirmou espontaneidade, e a própria publicação do delegado a desmente.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Isso não contradiz a alegada espontaneidade, promotor(a)."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "a3xmarcio",
+     "titulo": "Interrogatório do delegado Márcio Torquato",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Delegado Márcio Torquato, o senhor será ouvido. Tem direito ao silêncio, mas escolheu falar."
+      },
+      {
+       "q": "a3xmarcio",
+       "e": "confiante",
+       "t": "Excelência, vinte e dois anos de polícia. Tudo o que fiz foi para proteger a sociedade."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Fiz a live por dever de transparência, sem interesse pessoal e sem pensar em política.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Sem pensar em política?"
+        },
+        {
+         "q": "a3xmarcio",
+         "e": "confiante",
+         "t": "Nem por um segundo."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O muro do quarteirão tem uma opinião diferente."
+        }
+       ]
+      },
+      {
+       "t": "Eu não conheço o doutor Brandão a ponto de trocar mensagens com ele.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Não conhece?"
+        },
+        {
+         "q": "a3xmarcio",
+         "e": "normal",
+         "t": "De vista. Nada mais."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nesse caso, não deve haver mensagem alguma."
+        }
+       ]
+      },
+      {
+       "t": "O preso foi mantido de joelhos para garantir a segurança de todos, e não para constrangê-lo.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Segurança de quem, delegado? Ele estava algemado e rendido."
+        },
+        {
+         "q": "a3xmarcio",
+         "e": "bravo",
+         "t": "Ele era perigoso."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Um vigia desempregado com cabos de cobre, de joelhos por trinta e nove minutos."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "cartaz"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O cartaz do muro, delegado: “Márcio Torquato, pré-candidato a deputado”. Colado uma semana antes da prisão. A live foi um ato de transparência ou o primeiro comício da campanha?"
+      },
+      {
+       "q": "a3xmarcio",
+       "e": "chocado",
+       "t": "Isso… isso é a divulgação de um trabalho legítimo!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3xgil",
+       "e": "nervoso",
+       "t": "Excelência, pré-candidatura não é crime."
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Não é. Mas é elemento relevante para a finalidade. Registre-se.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "O cartaz não contradiz essa afirmação, promotor(a)."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "A defesa de Rui Gentil, em petição, também alega que a própria prisão em flagrante foi abuso de autoridade."
+      },
+      {
+       "q": "a3xgil",
+       "e": "confiante",
+       "t": "Excelência, que se acrescente: se o Ministério Público ataca meu cliente por tudo, que ataque também pela prisão."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(pensando) O vigia estava com o cabo na mochila. Será que a prisão foi uma ilegalidade, ou apenas o início de um problema diferente?"
+      }
+     ],
+     "pergunta": "Qual é a posição do Ministério Público sobre a prisão em flagrante de Rui?",
+     "opcoes": [
+      {
+       "t": "Denunciar o delegado também pela prisão, por privação de liberdade sem justa causa.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Não há justa causa em causa, promotor(a): o preso estava com o cabo furtado na mochila. É uma das hipóteses de flagrante em lei."
+        },
+        {
+         "q": "a3xgil",
+         "e": "feliz",
+         "t": "Excelência, ao menos aqui, o Ministério Público reconhece o óbvio."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-30",
+         "trecho": "Dar início ou proceder à persecução penal, civil ou administrativa sem justa causa fundamentada"
+        }
+       ]
+      },
+      {
+       "t": "Não denunciar quanto à prisão: houve flagrante regular, e a eventual discordância sobre o enquadramento ou a avaliação dos fatos não configura abuso. A conduta ilícita é a exposição pela live.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, a prisão em si estava regular: o rapaz foi pego com 30 metros de cabo, o auto foi lavrado, a juíza e a Defensoria foram comunicadas. Se alguém quiser discutir o enquadramento, é divergência na avaliação dos fatos, o que a própria lei diz que não é abuso. O ilícito está no que veio depois: a live."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Concordo. Dividimos o joio do trigo. Prossiga.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-1/par-2",
+         "trecho": "A divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso de autoridade"
+        }
+       ]
+      },
+      {
+       "t": "Arquivar tudo, já que o delegado agiu em estrito cumprimento do dever ao prender um criminoso.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O dever de prender não inclui o direito de expor. O flagrante foi legal. A live é outro fato."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Prender é função, e exibir não é."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CF#art-5/inc-x",
+         "trecho": "são invioláveis a intimidade, a vida privada, a honra e a imagem das pessoas"
+        }
+       ]
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Passemos à live. Qual é a sua imputação?"
+      },
+      {
+       "q": "a3xmarcio",
+       "e": "bravo",
+       "t": "Foi só uma transmissão, Excelência!"
+      }
+     ],
+     "pergunta": "Como o Ministério Público enquadra a transmissão do delegado?",
+     "opcoes": [
+      {
+       "t": "Art. 38 da Lei 13.869: antecipou, em rede social, a atribuição de culpa, antes de concluídas as apurações e formalizada a acusação, com a finalidade específica de beneficiar a si (campanha) e a terceiro (§ 1º do art. 1º).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, o art. 38, com a finalidade do art. 1º, § 1º: o delegado, responsável pelas investigações, chamou Rui de “monstro” e de culpado, ao vivo, antes de qualquer sentença, para ganhar votos e para satisfazer um terceiro que lhe agradeceu por mensagem. É o tipo e é o dolo específico."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Recebo a denúncia. A prova de finalidade é robusta.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-38",
+         "trecho": "Antecipar o responsável pelas investigações, por meio de comunicação, inclusive rede social, atribuição de culpa"
+        },
+        {
+         "chave": "LAA#art-1/par-1",
+         "trecho": "com a finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou a terceiro"
+        }
+       ]
+      },
+      {
+       "t": "Nenhum crime: foi mera divulgação de ato público de polícia, de relevo social, que só gera infração disciplinar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Divulgar o ato é uma coisa. Antecipar a culpa, com a finalidade de promoção própria e de terceiro, é a conduta que o art. 38 descreve."
+        },
+        {
+         "q": "lacerda",
+         "e": "normal",
+         "t": "Há uma diferença entre prestar contas e fazer propaganda, doutor(a)."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-1/par-2",
+         "trecho": "A divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso de autoridade"
+        }
+       ]
+      },
+      {
+       "t": "Art. 13, I: constrangeu o preso a ser exibido à curiosidade pública, porque o algemou.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O art. 13 exige constrangimento por violência, grave ameaça ou redução da capacidade de resistência. Algemar quem se rende não é, por si, o que o tipo descreve. O ponto central aqui é a atribuição antecipada de culpa."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O enquadramento exato importa, e eu queria o mais seguro."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-13/inc-i",
+         "trecho": "exibir-se ou ter seu corpo ou parte dele exibido à curiosidade pública"
+        }
+       ]
+      }
+     ],
+     "proxima": "x11"
+    },
+    "x11": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Resta o pedido sobre os efeitos de uma eventual condenação."
+      },
+      {
+       "q": "a3xelaine",
+       "e": "triste",
+       "t": "Excelência, a minha família não vai esquecer essa janela."
+      }
+     ],
+     "pergunta": "Quais efeitos da condenação o Ministério Público requer?",
+     "opcoes": [
+      {
+       "t": "A inabilitação do delegado por cinco anos e a perda do cargo, como sanção exemplar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "Esses efeitos dependem de reincidência em crime de abuso de autoridade e de declaração motivada na sentença. O doutor Márcio é primário."
+        },
+        {
+         "q": "a3xgil",
+         "e": "feliz",
+         "t": "Obrigado, Excelência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-4/par-unico",
+         "trecho": "condicionados à ocorrência de reincidência em crime de abuso de autoridade"
+        }
+       ]
+      },
+      {
+       "t": "Apenas a pena da lei e nenhuma reparação, porque o crime é contra a administração e não contra a pessoa.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "O crime tem vítima: Rui e sua família suportaram o dano. A lei manda tornar certa a obrigação de indenizar."
+        },
+        {
+         "q": "a3xelaine",
+         "e": "triste",
+         "t": "Obrigada, Excelência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-4/inc-i",
+         "trecho": "tornar certa a obrigação de indenizar o dano causado pelo crime"
+        }
+       ]
+      },
+      {
+       "t": "Que se torne certa a obrigação de indenizar, com valor mínimo para reparação fixado na sentença a requerimento do ofendido, sem pedir inabilitação ou perda do cargo, que dependem de reincidência.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, requeiro a fixação do valor mínimo de reparação à vítima, na forma do art. 4º, I. As penas de inabilitação e de perda do cargo só cabem com reincidência, de modo que o Ministério Público não as requer agora."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Pedido técnico, e proporcional. Fica registrado.",
+         "fx": "martelo"
+        },
+        {
+         "q": "a3xelaine",
+         "e": "feliz",
+         "t": "Obrigada, doutor(a). Mesmo sem o cargo dele, a janela vai ser consertada."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-4/inc-i",
+         "trecho": "tornar certa a obrigação de indenizar o dano causado pelo crime"
+        },
+        {
+         "chave": "LAA#art-4/par-unico",
+         "trecho": "condicionados à ocorrência de reincidência em crime de abuso de autoridade"
+        }
+       ]
+      }
+     ],
+     "proxima": "x12"
+    },
+    "x12": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Recebida a denúncia contra o delegado Márcio Torquato, quanto à live. Quanto à prisão em flagrante de Rui Gentil, mantida, sem abuso. Que se oficie a Corregedoria e a Justiça Eleitoral.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3xmarcio",
+       "e": "bravo",
+       "t": "Isso não vai render votos, doutor(a). Vai render vingança.",
+       "fx": "tremor"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Doutor Márcio, a lei que o senhor jurou cumprir é a mesma que me autoriza a processá-lo."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Primeira denúncia por antecipação de culpa nas redes na história da comarca, doutor(a)."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Rui Gentil responderá ao furto em outro processo, com a família protegida por medida cautelar. Naquela noite, um novo vídeo começa a circular: o do juiz decidindo que nenhuma live vale mais do que uma audiência."
+      }
+     ],
+     "proxima": "x13",
+     "local": "tribunal"
+    },
+    "x13": {
+     "tipo": "veredicto",
+     "carimbo": "ABUSO DENUNCIADO",
+     "titulo": "Sem câmera, sem palanque",
+     "texto": "Você separou o flagrante regular da live ilegal, usou a finalidade específica para distinguir abuso de erro, e pediu só os efeitos que a lei permitia. Brandão também perdeu a sua vitrine, e o vigia da obra Horizonte voltou a ser testemunha, e não ré."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3x-calibre",
+   "ato": "ato3",
+   "ordem": 5.5,
+   "numero": 33,
+   "titulo": "Calibre de Obra",
+   "papel": "promotor",
+   "nivel": "avancado",
+   "sinopse": "Um vigia é preso com uma pistola registrada no nome do gerente, e no cofre da obra aparece um revólver de numeração raspada que nunca foi destruído. Você precisa distinguir posse, porte e arma raspada, e individualizar a conduta de cada acusado.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "beatriz": "juiz",
+    "livia": "defesa",
+    "a3xedgar": "testemunha",
+    "a3xivan": "testemunha",
+    "a3xteles": "cena",
+    "a3xperita": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "apreensao",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Auto de apreensão",
+     "descricao": "23h50, portão dos fundos do Residencial Horizonte, fase 2: uma pistola .380 carregada, com 14 cartuchos, dentro da mochila de Ivan Maia. Ivan não tem registro nem autorização de porte."
+    },
+    {
+     "id": "registro",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Certificado de registro da pistola",
+     "descricao": "A pistola .380 está registrada em nome de Edgar Vilela, com certificado válido, e consta como mantida em seu endereço residencial. O registro não inclui autorização de porte."
+    },
+    {
+     "id": "cautela",
+     "tipo": "prova",
+     "icone": "📒",
+     "nome": "Caderno de cautela da obra",
+     "descricao": "“Pistola .380, entregue ao vigia I. Maia às 18h, devolver às 6h.” Assinado: E. Vilela. Dezenas de linhas iguais, ao longo de oito meses."
+    },
+    {
+     "id": "contrato",
+     "tipo": "prova",
+     "icone": "📃",
+     "nome": "Contrato de vigilância",
+     "descricao": "Contrato entre a Altavista Serviços Ltda. e Ivan Maia, “prestador autônomo de vigilância”. Ivan não possui curso de vigilante, e a Altavista Serviços não tem autorização da Polícia Federal para atividade de segurança privada."
+    },
+    {
+     "id": "cofre",
+     "tipo": "prova",
+     "icone": "🔐",
+     "nome": "Auto de apreensão do cofre",
+     "descricao": "No cofre do escritório, de que só Edgar tem a chave: um revólver .38 com a numeração raspada a lima e 40 cartuchos. As digitais de Edgar estão na porta do cofre e na caixa de cartuchos. Não há digitais de Ivan."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🧪",
+     "nome": "Laudo de restauração de numeração",
+     "descricao": "A restauração química revelou a numeração original. O revólver integrava um lote de armas apreendidas pela polícia civil e “destinadas à destruição”, cuja baixa foi registrada, mas a destruição nunca foi cumprida."
+    },
+    {
+     "id": "acesso",
+     "tipo": "prova",
+     "icone": "🚪",
+     "nome": "Registro da catraca",
+     "descricao": "Ivan entra na obra às 18h, todo dia, com uma mochila. Nenhuma revista na entrada. O gerente aparece no registro só nas manhãs."
+    },
+    {
+     "id": "l14",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Estatuto do Desarmamento, art. 14",
+     "chave": "EDES#art-14",
+     "trecho": "ceder, ainda que gratuitamente, emprestar"
+    },
+    {
+     "id": "l12",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Estatuto do Desarmamento, art. 12",
+     "chave": "EDES#art-12",
+     "trecho": "desde que seja o titular ou o responsável legal do estabelecimento ou empresa"
+    },
+    {
+     "id": "l16",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Estatuto do Desarmamento, art. 16",
+     "chave": "EDES#art-16",
+     "trecho": "arma de fogo, acessório ou munição de uso restrito"
+    },
+    {
+     "id": "l16p1",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Estatuto do Desarmamento, art. 16, § 1º, IV",
+     "chave": "EDES#art-16/par-1/inc-iv",
+     "trecho": "portar, possuir, adquirir, transportar ou fornecer arma de fogo com numeração, marca ou qualquer outro sinal de identificação raspado, suprimido ou adulterado"
+    },
+    {
+     "id": "l5",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Estatuto do Desarmamento, art. 5º",
+     "chave": "EDES#art-5",
+     "trecho": "autoriza o seu proprietário a manter a arma de fogo exclusivamente no interior de sua residência ou domicílio"
+    },
+    {
+     "id": "l10",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Estatuto do Desarmamento, art. 10",
+     "chave": "EDES#art-10",
+     "trecho": "A autorização para o porte de arma de fogo de uso permitido"
+    },
+    {
+     "id": "cp29",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código Penal, art. 29",
+     "chave": "CP#art-29",
+     "trecho": "Quem, de qualquer modo, concorre para o crime incide nas penas a este cominadas, na medida de sua culpabilidade"
+    },
+    {
+     "id": "cpp41",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "Código de Processo Penal, art. 41",
+     "chave": "CPP#art-41",
+     "trecho": "exposição do fato criminoso, com todas as suas circunstâncias"
+    }
+   ],
+   "inicio": "x1",
+   "cenas": {
+    "x1": {
+     "tipo": "titulo",
+     "texto": "Episódio 33",
+     "subtitulo": "Calibre de Obra",
+     "proxima": "x2"
+    },
+    "x2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Quinta-feira, 18h. O inquérito acabou de chegar, ainda com o cheiro de pasta nova e pólvora velha. A capa traz um endereço conhecido: Residencial Horizonte, fase 2."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Noite de segunda, o sargento Teles estava de ronda perto do portão dos fundos da obra quando viu um vigia sair com uma mochila pesada. Revistou. Pistola .380 carregada."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Horizonte. A obra do Paulo Seixas."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "A mesma. Agora com um segundo canteiro. O vigia é Ivan Maia, 38 anos, sem porte. E o dono da pistola, no papel, é o gerente da obra, Edgar Vilela. Mas isso é só a metade."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "A outra metade?"
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "A polícia abriu o escritório da obra com mandado. No cofre, um revólver com a numeração raspada e quarenta cartuchos. E o advogado dos dois, ao mesmo tempo, é a doutora Lívia Sampaio."
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Dois acusados com interesses opostos e uma só advogada. Isso vai dar o que falar."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "A lei desenha um corredor estreito: posse, porte, arma permitida, arma de uso restrito, numeração raspada. Se você errar a classificação, vai errar a pena e vai errar a pessoa."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "E aproveite para observar a diferença de caminhos: aquele rapaz do celular, o Wesley, está cumprindo o acordo que você propôs. Cada caso pede um remédio diferente.",
+       "se": "a3x_wesley_acordo"
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "E aproveite para observar a diferença de caminhos: o Wesley, aquele do celular, responde ao processo que você ofereceu. Cada caso pede um remédio diferente.",
+       "se": "a3x_wesley_denuncia"
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "apreensao",
+        "registro",
+        "l14",
+        "l12",
+        "l5"
+       ]
+      }
+     ],
+     "proxima": "x3",
+     "local": "escritorio"
+    },
+    "x3": {
+     "tipo": "investigar",
+     "local": "obra",
+     "titulo": "Residencial Horizonte, fase 2",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Concreto cru, ferragens, um guindaste dormindo sobre o horizonte e um aviso enferrujado: “Previna acidentes”. De noite, o único movimento é o das lanternas dos vigias."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "portao",
+       "nome": "Portão dos fundos",
+       "x": 78,
+       "y": 36,
+       "w": 16,
+       "h": 28,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Fechadura trocada há pouco. Marcas de pneu e um pedaço de fita de isolamento da PM no chão. Foi aqui que o sargento Teles parou o vigia.",
+         "recebe": [
+          "apreensao"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O boletim diz: Ivan estava saindo, com a mochila nas costas, às 23h50. A arma estava dentro, a mochila fechada. Não estava à mostra."
+        }
+       ]
+      },
+      {
+       "id": "catraca",
+       "nome": "Catraca",
+       "x": 8,
+       "y": 40,
+       "w": 16,
+       "h": 22,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O registro da catraca: Ivan Maia entra às 18h, todo dia, com uma mochila. Nenhuma revista, nenhum controle. O gerente só aparece de manhã.",
+         "recebe": [
+          "acesso"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Oito meses seguidos. Alguém sabia que aquela mochila entrava toda noite."
+        }
+       ]
+      },
+      {
+       "id": "escritorio",
+       "nome": "Escritório da obra",
+       "x": 42,
+       "y": 30,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Sobre a mesa, um caderno com colunas de horário: “Pistola .380, entregue ao vigia I. Maia, 18h; devolver 6h”. Assinado: E. Vilela. Dezenas de linhas iguais.",
+         "recebe": [
+          "cautela"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Na gaveta, um contrato com a Altavista Serviços: Ivan é “prestador autônomo de vigilância”. Sem curso, sem autorização da Polícia Federal para atividade de segurança privada.",
+         "recebe": [
+          "contrato"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "E atrás da mesa, o cofre aberto pela polícia. Revólver .38, numeração raspada a lima, quarenta cartuchos. Só o gerente tem a chave.",
+         "recebe": [
+          "cofre"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "andaime",
+       "nome": "Andaime",
+       "x": 64,
+       "y": 6,
+       "w": 30,
+       "h": 26,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "No alto, um posto de observação improvisado: uma cadeira, um rádio, um cobertor. O posto de vigilância de uma obra com armas que não eram dele."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3xteles",
+       "titulo": "Falar com o sargento Teles",
+       "falas": [
+        {
+         "q": "a3xteles",
+         "e": "normal",
+         "t": "Doutor(a), eu abordei porque o rapaz saiu pelo fundo, de madrugada, apressado. Fundada suspeita, dentro da lei."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "E ele reagiu?"
+        },
+        {
+         "q": "a3xteles",
+         "e": "normal",
+         "t": "Não. Entregou a mochila, disse que a arma era do chefe e que só guardava durante a noite. Falou isso antes de eu perguntar."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Antes de o senhor perguntar. Isso importa."
+        },
+        {
+         "q": "a3xteles",
+         "e": "pensativo",
+         "t": "Ele estava com medo, mas era medo de quem sabe que vai pagar pelo erro de outro."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Obrigado, sargento. O senhor atuou com legalidade, e isso fica registrado."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "apreensao",
+      "cautela",
+      "contrato",
+      "cofre"
+     ],
+     "proxima": "x4"
+    },
+    "x4": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Depósito de armas da delegacia",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Um corredor com portas de ferro, estantes de caixas lacradas e uma placa: “Armas apreendidas: não manusear”. O cadeado de uma das prateleiras está arrebentado."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "livro",
+       "nome": "Livro de registro",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O livro do depósito. Entre as armas “destinadas à destruição”, um revólver .38, com a série anotada ao lado do nome do delegado responsável pela baixa.",
+         "recebe": [
+          "laudo"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "A baixa foi registrada e a assinatura confere. Mas a arma não foi destruída. Três anos depois, apareceu num cofre de obra."
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O laudo da restauração química: a numeração raspada voltou a aparecer sob o ácido. A mesma série do livro. É a mesma arma."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E a lima que raspou a série deixou marcas mais recentes que a baixa. Alguém tentou apagar o rastro depois de tirá-la do depósito."
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Fotos de apreensões premiadas, recortes de jornal, e uma foto do doutor Fausto Rangel entregando um troféu. “Delegacia modelo”, diz a legenda."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3xperita",
+       "titulo": "Conversar com a perita Noemi",
+       "falas": [
+        {
+         "q": "a3xperita",
+         "e": "normal",
+         "t": "Doutor(a), restaurar numeração é como ressuscitar. Se a lima não for fundo demais, o metal lembra."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O que a senhora conclui?"
+        },
+        {
+         "q": "a3xperita",
+         "e": "normal",
+         "t": "O revólver é calibre .38, arma de uso permitido por si só. Mas está com a série raspada, e isso muda tudo: a lei equipara essa conduta ao art. 16, parágrafo primeiro, inciso IV, com pena de três a seis anos. A arma permitida raspada vira crime mais grave."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Então a classificação do revólver não depende do calibre, e sim da identificação."
+        },
+        {
+         "q": "a3xperita",
+         "e": "feliz",
+         "t": "Exato. E as digitais no cofre e na caixa de cartuchos são de Edgar. Não achei nada de Ivan."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nada de Ivan no cofre. Isso é importante, perita."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "laudo"
+     ],
+     "proxima": "x5"
+    },
+    "x5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "A Polícia Federal respondeu: a Altavista Serviços não tem autorização para segurança privada, e esse revólver estava no lote que nunca foi destruído. Quem devia destruir ainda é o delegado do depósito."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O mesmo Fausto Rangel. E o mesmo grupo. Henrique distribui armas para seus canteiros sem deixar o nome na arma."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "l10",
+        "l16",
+        "l16p1",
+        "cp29",
+        "cpp41"
+       ]
+      },
+      {
+       "q": "valadares",
+       "e": "normal",
+       "t": "Doutor(a), é um caso de arma de obra. Denuncie o vigia, que foi pego com a pistola, e feche a porta. O gerente é pai de família."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Ele tem a chave do cofre e as digitais na caixa de munição, Renato."
+      },
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "Eu só digo que os grandes não se tocam. O doutor Brandão tem acordo com o Judiciário."
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Que acordo é esse, doutor Valadares?"
+      },
+      {
+       "q": "valadares",
+       "e": "nervoso",
+       "t": "Nenhum. É só uma maneira de falar."
+      }
+     ],
+     "proxima": "x6",
+     "local": "escritorio"
+    },
+    "x6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Audiência de instrução. Presentes o Ministério Público, os dois acusados e a defensora, doutora Lívia Sampaio."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, a pistola está registrada em nome do doutor Edgar, e o registro é válido. A posse é regular, e o vigia a guardava em nome do proprietário. Tudo dentro da lei."
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Ministério Público, o certificado de registro de uma arma de fogo autoriza o proprietário a levá-la para qualquer lugar? Qual dispositivo delimita o alcance do registro?"
+      }
+     ],
+     "pergunta": "Qual dispositivo limita o alcance do registro à residência ou ao local de trabalho do titular?",
+     "provas": [
+      "l5"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Excelência, o art. 5º do Estatuto: o certificado de registro autoriza o proprietário a manter a arma exclusivamente no interior de sua residência ou domicílio, ou no seu local de trabalho, se for titular ou responsável legal do estabelecimento. Não autoriza porte, e muito menos a entrega a terceiro."
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Mas o doutor Edgar é o gerente da obra, Excelência!"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Gerente não é titular nem responsável legal da empresa, doutora. Continue, promotor(a)."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Esse não é o dispositivo que delimita o alcance do registro, promotor(a)."
+      }
+     ],
+     "proxima": "x7"
+    },
+    "x7": {
+     "tipo": "depoimento",
+     "testemunha": "a3xedgar",
+     "titulo": "Depoimento de Edgar Vilela",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Chamo Edgar Vilela, gerente da obra."
+      },
+      {
+       "q": "a3xedgar",
+       "e": "confiante",
+       "t": "Excelência, trabalho há vinte anos na construção civil. Nunca respondi a processo. Sou um homem de bem."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu nunca entreguei a pistola a ninguém. Ela ficava guardada na minha casa, e eu nem sei como foi parar na mochila do Ivan.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca entregou a ninguém?"
+        },
+        {
+         "q": "a3xedgar",
+         "e": "confiante",
+         "t": "Nunca. Sou muito cuidadoso."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Guarde essa convicção, doutor Edgar."
+        }
+       ]
+      },
+      {
+       "t": "O revólver do cofre não é meu. Alguém o colocou ali depois de eu fechar o escritório.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Alguém, quem?"
+        },
+        {
+         "q": "a3xedgar",
+         "e": "nervoso",
+         "t": "Qualquer um. A obra é grande."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "E a chave do cofre?"
+        }
+       ]
+      },
+      {
+       "t": "Eu só vejo o Ivan de manhã. À noite, a obra é responsabilidade da empresa de vigilância.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Da empresa de vigilância?"
+        },
+        {
+         "q": "a3xedgar",
+         "e": "normal",
+         "t": "Sim, a empresa."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Qual empresa, doutor Edgar? A Altavista Serviços não tem autorização para isso."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "cautela"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O caderno de cautela da obra, doutor Edgar: “Pistola .380, entregue ao vigia I. Maia, 18h, devolver 6h”. Assinado E. Vilela. Dezenas de linhas, ao longo de oito meses. O senhor nunca entregou a pistola a ninguém?"
+      },
+      {
+       "q": "a3xedgar",
+       "e": "chocado",
+       "t": "Eu… era só um empréstimo, para a segurança da obra!",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "bravo",
+       "t": "Protesto, Excelência! O doutor Edgar é leigo!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Indeferido. Registre-se: a testemunha admitiu a entrega.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Esse documento não contradiz essa afirmação, promotor(a)."
+      }
+     ],
+     "proxima": "x8"
+    },
+    "x8": {
+     "tipo": "depoimento",
+     "testemunha": "a3xivan",
+     "titulo": "Depoimento de Ivan Maia",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Chamo o acusado Ivan Maia. A defensora pede que ele permaneça em silêncio, mas ele pediu a palavra."
+      },
+      {
+       "q": "a3xivan",
+       "e": "nervoso",
+       "t": "Excelência, eu quero falar. Doutora Lívia, eu sei que a senhora é minha advogada, mas eu preciso dizer."
+      },
+      {
+       "q": "livia",
+       "e": "bravo",
+       "t": "Ivan, eu não recomendo."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Sou vigilante habilitado, tenho curso e autorização. Eu podia carregar aquela arma.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Habilitado, o senhor?"
+        },
+        {
+         "q": "a3xivan",
+         "e": "confiante",
+         "t": "Habilitado. Tenho o curso."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Vamos ver o seu contrato."
+        }
+       ]
+      },
+      {
+       "t": "Eu só obedecia ao doutor Edgar. Ele me entregava a pistola, e eu a devolvia de manhã.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Obedecia ao doutor Edgar?"
+        },
+        {
+         "q": "a3xivan",
+         "e": "nervoso",
+         "t": "Sempre. Ele disse que era para o bem da obra."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Isso é relevante, e vou considerar."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca abri o cofre do escritório. Não sei nada do revólver raspado.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nunca abriu?"
+        },
+        {
+         "q": "a3xivan",
+         "e": "triste",
+         "t": "Nunca, doutor(a). Só Edgar tinha a chave."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O laudo concorda com o senhor."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "contrato"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O contrato, senhor Ivan: “prestador autônomo de vigilância”, sem curso de vigilante. E a Altavista Serviços não tem autorização da Polícia Federal. O senhor não era vigilante habilitado."
+      },
+      {
+       "q": "a3xivan",
+       "e": "triste",
+       "t": "Eu… eu não tinha. Eu só precisava do trabalho, doutor(a).",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "bravo",
+       "t": "Excelência, há conflito entre as defesas! Peço a palavra!"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Pedido anotado, doutora Lívia. E a Defensoria vai nomear um defensor ao senhor Ivan, para que não haja dúvida.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "O documento não contradiz a afirmação de que ele seria habilitado, promotor(a)."
+      }
+     ],
+     "proxima": "x9"
+    },
+    "x9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Resta ao Ministério Público definir a imputação. Primeiro, quanto à pistola .380 que Ivan levava na mochila."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, se a arma é registrada, o mais que se pode falar é de posse irregular, art. 12, no local de trabalho."
+      }
+     ],
+     "pergunta": "Como o Ministério Público enquadra a conduta de Ivan quanto à pistola .380?",
+     "opcoes": [
+      {
+       "t": "Art. 12 (posse irregular de arma de uso permitido), porque a arma estava no local de trabalho.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O art. 12 vale para quem possui a arma no local de trabalho em que seja titular ou responsável legal pelo estabelecimento. Ivan é empregado, e levava a arma na mochila para fora da obra."
+        },
+        {
+         "q": "livia",
+         "e": "nervoso",
+         "t": "Registro é registro, Excelência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "EDES#art-12",
+         "trecho": "desde que seja o titular ou o responsável legal do estabelecimento ou empresa"
+        }
+       ]
+      },
+      {
+       "t": "Art. 14 (porte ilegal de arma de uso permitido), porque deteve e transportou a pistola sem autorização e em desacordo com a lei.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, art. 14: portar, deter, transportar, sem autorização. Ivan não tinha porte, não era titular nem responsável legal do estabelecimento, e levava a pistola na mochila fora do que o registro permite. O fato de ter agido sob ordem do gerente pesa na pena, na medida de sua culpabilidade, mas não afasta o tipo."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Anotado. A culpabilidade será avaliada na sentença, na medida de cada um.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "EDES#art-14",
+         "trecho": "Portar, deter, adquirir, fornecer, receber, ter em depósito, transportar, ceder, ainda que gratuitamente, emprestar"
+        },
+        {
+         "chave": "CP#art-29",
+         "trecho": "Quem, de qualquer modo, concorre para o crime incide nas penas a este cominadas, na medida de sua culpabilidade"
+        }
+       ]
+      },
+      {
+       "t": "Art. 16 (arma de uso restrito), porque pistola e cartuchos de obra são sempre de uso restrito.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Uma pistola .380 é arma de uso permitido. O art. 16 exige uso restrito, ou uma das condutas do § 1º, como numeração raspada."
+        },
+        {
+         "q": "a3xperita",
+         "e": "normal",
+         "t": "Calibre .380 é permitido, doutor(a)."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "EDES#art-16",
+         "trecho": "arma de fogo, acessório ou munição de uso restrito"
+        }
+       ]
+      }
+     ],
+     "proxima": "x10"
+    },
+    "x10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "E quanto a Edgar Vilela e à mesma pistola, registrada em seu nome?"
+      },
+      {
+       "q": "a3xedgar",
+       "e": "nervoso",
+       "t": "Excelência, a arma é minha, tenho o registro!"
+      }
+     ],
+     "pergunta": "Qual é a imputação a Edgar quanto à pistola .380?",
+     "opcoes": [
+      {
+       "t": "Nenhuma imputação: a arma está regularmente registrada em nome dele.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "O registro não autoriza ceder a pistola a terceiro, nem fazê-la circular fora de sua residência. O art. 14 inclui, entre os verbos, “ceder” e “emprestar”."
+        },
+        {
+         "q": "lacerda",
+         "e": "normal",
+         "t": "Dono de arma responde por quem entrega, doutor(a)."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "EDES#art-5",
+         "trecho": "autoriza o seu proprietário a manter a arma de fogo exclusivamente no interior de sua residência ou domicílio"
+        }
+       ]
+      },
+      {
+       "t": "Art. 14, pelas condutas de ceder e emprestar a pistola a Ivan, fora do que o registro autoriza.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, art. 14: ceder, ainda que gratuitamente, emprestar. O caderno de cautela comprova oito meses de entrega diária, com assinatura. O registro é válido, mas autoriza o dono a mantê-la em sua residência, e não a repassá-la."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Deferida a imputação.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "EDES#art-14",
+         "trecho": "ceder, ainda que gratuitamente, emprestar"
+        },
+        {
+         "chave": "EDES#art-5",
+         "trecho": "autoriza o seu proprietário a manter a arma de fogo exclusivamente no interior de sua residência ou domicílio"
+        }
+       ]
+      },
+      {
+       "t": "Art. 16, § 1º, IV, pela pistola, porque a arma estava num canteiro da Altavista.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "A numeração da pistola não foi raspada. O § 1º, IV aplica-se ao revólver do cofre, e não à pistola registrada."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Cada arma, o seu tipo."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "EDES#art-16/par-1/inc-iv",
+         "trecho": "portar, possuir, adquirir, transportar ou fornecer arma de fogo com numeração, marca ou qualquer outro sinal de identificação raspado, suprimido ou adulterado"
+        }
+       ]
+      }
+     ],
+     "proxima": "x11"
+    },
+    "x11": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Por fim, o revólver .38 de numeração raspada, encontrado no cofre do escritório."
+      },
+      {
+       "q": "a3xperita",
+       "e": "normal",
+       "t": "Digitais de Edgar na porta do cofre e na caixa de cartuchos. Nenhuma de Ivan."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(pensando) A denúncia precisa descrever o fato de cada um, com as suas circunstâncias. Não posso pôr dois nomes lado a lado só porque estão no mesmo processo."
+      }
+     ],
+     "pergunta": "Como o Ministério Público imputa o revólver de numeração raspada?",
+     "opcoes": [
+      {
+       "t": "Denunciar Ivan e Edgar, em conjunto e sem distinção, por todas as armas, porque todos estavam na obra.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "A denúncia deve expor o fato criminoso com todas as suas circunstâncias, individualizando a conduta de cada acusado. Presença na obra não é prova de posse."
+        },
+        {
+         "q": "livia",
+         "e": "nervoso",
+         "t": "Protesto de peça genérica!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-41",
+         "trecho": "exposição do fato criminoso, com todas as suas circunstâncias"
+        }
+       ]
+      },
+      {
+       "t": "Denunciar apenas Edgar, por posse do revólver com numeração raspada (art. 16, § 1º, IV), com base na chave e nas digitais, e não imputar o revólver a Ivan.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, só Edgar tinha a chave, as digitais no cofre e na caixa de cartuchos são dele, e a numeração raspada leva o fato ao art. 16, § 1º, IV, ainda que o calibre seja permitido. Quanto a Ivan, não há prova de conhecimento do que estava no cofre, e o Ministério Público não o denuncia por essa arma."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Individualizou. Recebo nesse sentido.",
+         "fx": "martelo"
+        },
+        {
+         "q": "a3xivan",
+         "e": "feliz",
+         "t": "Obrigado, doutor(a). Pelo que eu fiz, eu pago. Pelo que eu não fiz, não."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "EDES#art-16/par-1/inc-iv",
+         "trecho": "portar, possuir, adquirir, transportar ou fornecer arma de fogo com numeração, marca ou qualquer outro sinal de identificação raspado, suprimido ou adulterado"
+        },
+        {
+         "chave": "CPP#art-41",
+         "trecho": "exposição do fato criminoso, com todas as suas circunstâncias"
+        }
+       ]
+      },
+      {
+       "t": "Art. 14 para Edgar, porque o revólver é de calibre permitido, e o raspado não muda a classificação.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O fato de o calibre ser permitido não afasta o § 1º, IV: a lei trata com mais rigor quem mexe na identificação da arma. A pena vai de três a seis anos."
+        },
+        {
+         "q": "a3xperita",
+         "e": "normal",
+         "t": "Numeração raspada é um crime à parte."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "EDES#art-16/par-1/inc-iv",
+         "trecho": "portar, possuir, adquirir, transportar ou fornecer arma de fogo com numeração, marca ou qualquer outro sinal de identificação raspado, suprimido ou adulterado"
+        }
+       ]
+      }
+     ],
+     "proxima": "x12"
+    },
+    "x12": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Recebida a denúncia: Ivan Maia, art. 14 (pistola .380); Edgar Vilela, art. 14 (pistola .380) e art. 16, § 1º, IV (revólver .38). Oficie-se à Polícia Federal sobre a Altavista Serviços e à Corregedoria sobre o lote de armas do depósito.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3xedgar",
+       "e": "bravo",
+       "t": "Eu só fiz o que mandaram!"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "E quem mandou, doutor Edgar? Pergunto agora, ou o senhor responde só pela parte que lhe cabe."
+      },
+      {
+       "q": "a3xedgar",
+       "e": "triste",
+       "t": "(abaixa a cabeça) Eu… preciso falar com o meu advogado."
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Eu renuncio à defesa de Ivan, Excelência. Como há conflito, só posso ficar com um."
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Conflito de interesses faz mais barulho do que arma, doutor(a). E ensina o que a Altavista faz com os seus empregados: usa e esconde."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Do lado de fora, uma ligação para um número pré-pago: “Perdemos a pistola. Mas o rio e a rua ainda são nossos.” A mensagem é do mesmo número que, meses antes, orientara um vazamento."
+      }
+     ],
+     "proxima": "x13",
+     "local": "tribunal"
+    },
+    "x13": {
+     "tipo": "veredicto",
+     "carimbo": "ARMAS APREENDIDAS",
+     "titulo": "Cada arma, o seu tipo",
+     "texto": "Você separou a pistola registrada do revólver raspado, individualizou a conduta de cada acusado, e mostrou que a Altavista armava os seus canteiros sem deixar o nome na arma. O lote que nunca foi destruído aponta, de novo, para a delegacia de Fausto Rangel. Falta pouco para ligar os pontos."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  }
+ ]
+}

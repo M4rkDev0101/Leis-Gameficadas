@@ -5586,14 +5586,157 @@
        "t": "Eu separo a apostila, doutor(a). E o café."
       }
      ],
-     "proxima": "x13",
+     "proxima": "x12a",
      "local": "gabinete"
     },
     "x13": {
      "tipo": "veredicto",
      "carimbo": "AFASTADOS",
      "titulo": "Fim do Ato III — O Concurso",
-     "texto": "Você desmascarou o colega que vazava as decisões, derrubou o delegado corrupto e provou que o Ministério Público também investiga a si mesmo. Henrique Altavista voltou ao Brasil com identidade falsa. A próxima toga é a sua. Continua no Ato IV: A Toga."
+     "texto": "Você desmascarou o colega que vazava as decisões, derrubou o delegado corrupto e provou que o Ministério Público também investiga a si mesmo. Henrique Altavista voltou ao Brasil com identidade falsa. A próxima toga é a sua. Continua no Ato IV: A Toga.",
+     "variantes": [
+      {
+       "se": "a3_valadares_acordo",
+       "carimbo": "AFASTADOS",
+       "titulo": "Fim do Ato III — O Concurso",
+       "texto": "Você desmascarou o colega que vazava as decisões, derrubou o delegado corrupto e abriu, dentro da lei, a negociação de uma colaboração com Valadares: o caminho do dinheiro pode ser seguido. Henrique Altavista voltou ao Brasil com identidade falsa. A próxima toga é a sua. Continua no Ato IV: A Toga."
+      },
+      {
+       "se": "a3_valadares_rigor",
+       "carimbo": "AFASTADOS",
+       "titulo": "Fim do Ato III — O Concurso",
+       "texto": "Você desmascarou o colega que vazava as decisões, derrubou o delegado corrupto e denunciou Valadares sem barganha, por inteiro. O caminho do dinheiro ficou mais difícil de seguir, mas ninguém dirá que a promotoria negociou com o traidor. Henrique Altavista voltou ao Brasil com identidade falsa. A próxima toga é a sua. Continua no Ato IV: A Toga."
+      }
+     ]
+    },
+    "x12a": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Na porta, a escolta espera o corredor esvaziar. Valadares, algemado, pede um minuto. Beatriz concede com um gesto cansado."
+      },
+      {
+       "q": "valadares",
+       "e": "triste",
+       "t": "Colega, não vou lhe pedir clemência. Vou lhe pedir uma conversa. Sei de coisas que o inquérito não alcança: nomes, datas, contas. Tudo o que eu vi do outro lado da mesa."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Ele quer negociar a própria pele, e depois de tudo o que fez."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "Eu sei o que sou. Mas eu sou também o único que conhece o caminho do dinheiro até a Altavista. Se eu calar, esse caminho some."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(pensando) A lei admite que um investigado colabore, desde que o acordo seja voluntário, útil e conduzido pelas partes. Ninguém lhe promete impunidade, nem eu poderia. Mas a lei também admite denunciá-lo por inteiro, sem acordo nenhum. As duas portas são legais."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "O Judiciário não participa dessa negociação, promotor(a). A decisão é do Ministério Público, e só sua."
+      }
+     ],
+     "proxima": "x12b",
+     "local": "tribunal"
+    },
+    "x12b": {
+     "tipo": "escolha",
+     "livre": true,
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Valadares espera, de cabeça baixa. Lacerda não diz nada. A escolta também."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "O que o Ministério Público responde ao investigado?"
+      }
+     ],
+     "pergunta": "Como você trata a oferta de Valadares?",
+     "opcoes": [
+      {
+       "t": "Abrir negociação de colaboração premiada, com defensor, voluntariedade e utilidade para a investigação, sem prometer impunidade.",
+       "marca": "a3_valadares_acordo",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Doutor Valadares, o Ministério Público aceita abrir a negociação, com o seu defensor presente. A lei exige voluntariedade e resultado útil. Não prometo perdão nem pena menor: prometo apenas que o que o senhor entregar será checado, e que nenhuma medida será decretada só com a sua palavra."
+        },
+        {
+         "q": "valadares",
+         "e": "triste",
+         "t": "É mais do que eu merecia."
+        },
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "Cuidado com colaborador, colega. Ele só vale o que a prova confirmar."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Por isso mesmo. A palavra dele abre portas. A prova é que as atravessa."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LORC#art-3a",
+         "trecho": "negócio jurídico processual e meio de obtenção de prova"
+        },
+        {
+         "chave": "LORC#art-4/par-16",
+         "trecho": "Nenhuma das seguintes medidas será decretada ou proferida com fundamento apenas nas declarações do colaborador"
+        }
+       ]
+      },
+      {
+       "t": "Oferecer a denúncia com todo o rigor, sem acordo, e deixar que o processo diga o que ele merece.",
+       "marca": "a3_valadares_rigor",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Doutor Valadares, o Ministério Público oferece a denúncia pelo que o senhor fez, por inteiro. Quem vendeu a decisão de uma juíza para o crime não recebe de mim uma negociação."
+        },
+        {
+         "q": "valadares",
+         "e": "nervoso",
+         "t": "Então o dinheiro some de vez."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Há outros meios de seguir o dinheiro: quebra de sigilo, perícia, cooperação. Mais lentos, mas limpos. E ninguém poderá dizer que a promotoria barganhou com quem traiu a casa."
+        },
+        {
+         "q": "lacerda",
+         "e": "normal",
+         "t": "É uma escolha legítima. Mais dura, e mais lenta."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LORC#art-2/par-4/inc-ii",
+         "trecho": "se há concurso de funcionário público"
+        },
+        {
+         "chave": "CP#art-317",
+         "trecho": "Solicitar ou receber, para si ou para outrem"
+        }
+       ]
+      }
+     ],
+     "proxima": "x13"
     }
    },
    "placas": {

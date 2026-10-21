@@ -574,7 +574,7 @@
       "id": "a1-juri", "ato": "ato1", "ordem": 6, "numero": 6,
       "titulo": "O Júri", "papel": "advogado", "nivel": "avancado",
       "sinopse": "Final do Ato I. Um engenheiro da Altavista foi morto no canteiro de obras. O acusado é um operário demitido. Rafael vai à tribuna com você — até que o celular dele toca.",
-      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "ronaldo": "testemunha", "tiago": "defesa", "clara": "cena", "rafael": "escritorio", "helena": "escritorio", "brandao": "cena"},
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "ronaldo": "testemunha", "tiago": "defesa", "clara": "cena", "lucas": "cena", "rafael": "escritorio", "helena": "escritorio", "brandao": "cena"},
       "provas": [
         {"id": "catraca", "tipo": "prova", "icone": "🕒", "nome": "Registro da catraca", "descricao": "Crachá de Tiago Nunes: saída às 18h02. Nenhuma entrada depois disso. A morte ocorreu por volta das 19h30."},
         {"id": "cadeado", "tipo": "prova", "icone": "🔒", "nome": "Foto do portão dos fundos", "descricao": "Portão dos fundos trancado com corrente e cadeado, foto da perícia tirada às 20h. Sem sinais de arrombamento."},
@@ -706,10 +706,37 @@
           {"q": "narrador", "t": "Os jurados se recolhem à sala secreta. Vinte minutos depois, retornam."},
           {"q": "beatriz", "e": "normal", "t": "O Conselho de Sentença absolveu o réu Tiago Nunes. Oficie-se ao Ministério Público quanto ao crime de suborno de testemunha, art. 343 do Código Penal.", "fx": "martelo"},
           {"q": "tiago", "e": "feliz", "t": "Obrigado… eu achei que ia morrer na cadeia por uma coisa que eu não fiz."},
-          {"q": "lacerda", "e": "pensativo", "t": "(para você, em voz baixa) Brandão. Altavista. Eu também andei puxando esse fio. Precisamos conversar."},
+          {"q": "lacerda", "e": "pensativo", "t": "(para você, em voz baixa) Brandão. Altavista. Eu também andei puxando esse fio. Precisamos conversar."}
+        ], "fundamentos": [{"chave": "CP#art-343", "trecho": "Dar, oferecer ou prometer dinheiro ou qualquer outra vantagem a testemunha"}], "proxima": "t10a"},
+        "t10a": {"tipo": "dialogo", "local": "rua", "falas": [
+          {"q": "narrador", "t": "Na calçada do fórum, entre repórteres e curiosos, alguém acena para você. É um rapaz de moletom, com um boné nas mãos."},
+          {"q": "lucas", "e": "feliz", "t": "Doutor(a)! Eu vi o júri da galeria. Eu sabia que o Tiago ia sair, pelo jeito que a juíza Beatriz olhou pra aquele mestre de obras…"},
+          {"q": "voce", "e": "feliz", "t": "Lucas! Como você está? Faz tempo que o seu caso acabou."},
+          {"q": "lucas", "e": "triste", "t": "Solto, graças a vocês. Mas currículo com 'processo criminal' ninguém quer ver, mesmo absolvido. Já faz quatro meses que eu bato em porta."},
+          {"q": "lucas", "e": "pensativo", "t": "Eu pensei… o escritório não precisa de um office boy? Eu levo petição no fórum, tiro cópia, pego café. Aprendo rápido. Eu só queria uma chance."},
+          {"q": "voce", "e": "pensativo", "t": "(Ele é inocente, tem a ficha limpa e muita vontade. Mas o escritório está no centro de uma guerra com a Altavista, e Helena é quem decide quem entra.)"}
+        ], "proxima": "t10b"},
+        "t10b": {"tipo": "escolha", "livre": true, "local": "rua", "falas": [
+          {"q": "lucas", "e": "normal", "t": "Se não puder, eu entendo, doutor(a). De verdade."}
+        ], "pergunta": "O que você responde a Lucas?",
+          "opcoes": [
+            {"t": "Indicar Lucas a Helena: \"Venha ao escritório amanhã cedo. Eu falo com a doutora Helena.\"", "marca": "a1_lucas_chance",
+             "falas": [
+               {"q": "voce", "e": "confiante", "t": "Venha amanhã cedo, de camisa passada. Eu falo com a doutora Helena hoje. Não posso prometer a vaga, só que ela vai te ouvir."},
+               {"q": "lucas", "e": "feliz", "t": "Eu vou estar na porta às sete! Obrigado, doutor(a). Você não sabe o que isso significa pra mim."},
+               {"q": "voce", "e": "feliz", "t": "(Todo mundo merece uma segunda chance. Até o escritório, que vai ganhar um bom colega.)"}
+             ]},
+            {"t": "Desejar boa sorte e seguir: \"O escritório está passando por um momento delicado. Mas você vai achar o seu lugar.\"", "marca": "a1_lucas_sozinho",
+             "falas": [
+               {"q": "voce", "e": "triste", "t": "Agora o escritório está no meio de uma tempestade, Lucas. Não é um bom lugar para quem está começando. Mas você vai achar o seu caminho."},
+               {"q": "lucas", "e": "triste", "t": "Eu entendo… Obrigado por tudo, de verdade. Se precisar de mim, você sabe onde me achar."},
+               {"q": "voce", "e": "pensativo", "t": "(Fiz a escolha prudente. Mesmo assim, ele caminha pela calçada com os ombros baixos, e eu fico com um aperto no peito.)"}
+             ]}
+          ], "proxima": "t10c"},
+        "t10c": {"tipo": "dialogo", "local": "tribunal", "falas": [
           {"q": "helena", "e": "triste", "t": "(ao telefone, na saída) …Você precisa vir ao escritório. É sobre o Rafael. Ele foi levado pela Polícia Federal."},
           {"q": "voce", "e": "chocado", "t": "O quê?!", "fx": "tremor"}
-        ], "fundamentos": [{"chave": "CP#art-343", "trecho": "Dar, oferecer ou prometer dinheiro ou qualquer outra vantagem a testemunha"}], "proxima": "t11"},
+        ], "proxima": "t11"},
         "t11": {"tipo": "veredicto", "carimbo": "ABSOLVIDO", "titulo": "Fim do Ato I — O Estágio", "texto": "Seu primeiro júri, sozinho(a), contra uma testemunha comprada. Tiago está livre. Mas Rafael, o seu mentor, acaba de ser preso. E o nome por trás de tudo é o mesmo: Altavista. Continua no Ato II."}
       }
     }

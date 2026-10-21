@@ -1,0 +1,3234 @@
+{
+ "ato": "ato1",
+ "personagens": {
+  "a1xelias": {
+   "nome": "Elias Moura",
+   "cargo": "Réu · 27 anos · designer",
+   "voz": 340,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#2b1d12",
+    "roupa": "casual",
+    "corRoupa": "#2e86c1",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a1xdiego": {
+   "nome": "Diego Pacheco",
+   "cargo": "Testemunha · vendedor da TecnoVolta",
+   "voz": 300,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "topete",
+    "corCabelo": "#111111",
+    "roupa": "casual",
+    "corRoupa": "#c0392b",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a1xcassio": {
+   "nome": "Cássio Barros",
+   "cargo": "Réu · 41 anos · motorista",
+   "voz": 270,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#1a1a1a",
+    "roupa": "casual",
+    "corRoupa": "#e67e22",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a1xvalmir": {
+   "nome": "Valmir Siqueira",
+   "cargo": "Testemunha · motorista de aplicativo",
+   "voz": 300,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "careca",
+    "corCabelo": "#555555",
+    "roupa": "casual",
+    "corRoupa": "#34495e",
+    "gravata": null,
+    "oculos": true,
+    "barba": true
+   }
+  },
+  "a1xdora": {
+   "nome": "Dora Ramalho",
+   "cargo": "Testemunha · gerente de logística da Altavista",
+   "voz": 420,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "coque",
+    "corCabelo": "#4a2c17",
+    "roupa": "blazer",
+    "corRoupa": "#1e5a4a",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a1xnair": {
+   "nome": "Nair Teles",
+   "cargo": "Viúva de Osvaldo Teles",
+   "voz": 470,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "cacheado",
+    "corCabelo": "#8c8c8c",
+    "roupa": "casual",
+    "corRoupa": "#6c3483",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a1xangela": {
+   "nome": "Ângela Souza",
+   "cargo": "Ré · 34 anos · cuidadora de idosos",
+   "voz": 440,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "rabo",
+    "corCabelo": "#1a1a1a",
+    "roupa": "casual",
+    "corRoupa": "#16a085",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a1xhortensia": {
+   "nome": "Hortênsia Vilela",
+   "cargo": "82 anos · aposentada",
+   "voz": 490,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "coque",
+    "corCabelo": "#d0d0d0",
+    "roupa": "casual",
+    "corRoupa": "#8e44ad",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a1xwesley": {
+   "nome": "Wesley Vilela",
+   "cargo": "Testemunha · sobrinho da idosa",
+   "voz": 280,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "topete",
+    "corCabelo": "#3b2414",
+    "roupa": "terno",
+    "corRoupa": "#2c3e50",
+    "gravata": "#c0392b",
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a1xotavio": {
+   "nome": "Otávio Reis",
+   "cargo": "Testemunha · gerente do banco",
+   "voz": 250,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "curto",
+    "corCabelo": "#555555",
+    "roupa": "terno",
+    "corRoupa": "#1b2631",
+    "gravata": "#1e5a4a",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a1xrita": {
+   "nome": "Rita Camargo",
+   "cargo": "Escrivã de polícia",
+   "voz": 450,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "coque",
+    "corCabelo": "#111111",
+    "roupa": "farda",
+    "corRoupa": "#34495e",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  }
+ },
+ "episodios": [
+  {
+   "id": "a1x-receptacao",
+   "ato": "ato1",
+   "ordem": 5.2,
+   "numero": 6,
+   "titulo": "O Preço do Notebook",
+   "papel": "advogado",
+   "nivel": "intermediario",
+   "sinopse": "Elias comprou um notebook recondicionado, com nota e garantia, e agora responde por receptação: dois a seis anos. Será que ele 'sabia'? E de quem eram os quarenta notebooks furtados?",
+   "posicoes": {
+    "voce": "defesa",
+    "lacerda": "acusacao",
+    "beatriz": "juiz",
+    "a1xdiego": "testemunha",
+    "fausto": "testemunha",
+    "a1xelias": "defesa",
+    "helena": "escritorio",
+    "rafael": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "nota",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Nota fiscal nº 3321",
+     "descricao": "Nota fiscal da TecnoVolta: notebook RECONDICIONADO, número de série registrado, R$ 1.900,00, em nome de Elias Moura, com CPF. Garantia de 90 dias."
+    },
+    {
+     "id": "zap",
+     "tipo": "prova",
+     "icone": "💬",
+     "nome": "Conversa de Elias com a loja",
+     "descricao": "Elias, 14h40: 'Esse aparelho tem nota e procedência?' Loja: 'Tudo com nota fiscal, lote de liquidação corporativa, 90 dias de garantia.'"
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "💻",
+     "nome": "Laudo do aparelho",
+     "descricao": "Bateria substituída, 14 meses de uso e selo 'RECONDICIONADO' na tampa. Não é um aparelho novo nem lacrado."
+    },
+    {
+     "id": "cartaz",
+     "tipo": "prova",
+     "icone": "🪧",
+     "nome": "Cartaz da TecnoVolta",
+     "descricao": "'Recondicionados com nota e 90 dias de garantia: de R$ 1.700 a R$ 2.400.' A loja tem CNPJ ativo há seis anos e alvará."
+    },
+    {
+     "id": "tabela",
+     "tipo": "prova",
+     "icone": "📊",
+     "nome": "Avaliação de mercado",
+     "descricao": "Avaliação do perito Kenji Sato: o modelo recondicionado vale entre R$ 1.700 e R$ 2.400. Novo, R$ 4.800. O preço pago por Elias, R$ 1.900, está dentro da faixa."
+    },
+    {
+     "id": "bo",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "BO da Altavista Tech",
+     "descricao": "Boletim de ocorrência: 40 notebooks furtados de um depósito da Altavista Tech três semanas antes. O número de série do aparelho de Elias consta da lista."
+    },
+    {
+     "id": "cp180",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 180 — Receptação",
+     "chave": "CP#art-180",
+     "trecho": "coisa que sabe ser produto de crime"
+    },
+    {
+     "id": "cp180p3",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 180, § 3º — Receptação culposa",
+     "chave": "CP#art-180/par-3",
+     "trecho": "deve presumir-se obtida por meio criminoso"
+    },
+    {
+     "id": "cp180p4",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 180, § 4º — Autor do crime anterior",
+     "chave": "CP#art-180/par-4",
+     "trecho": "ainda que desconhecido ou isento de pena o autor do crime de que proveio a coisa"
+    },
+    {
+     "id": "cp18",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 18, parágrafo único — Só se pune o dolo",
+     "chave": "CP#art-18/par-unico",
+     "trecho": "ninguém pode ser punido por fato previsto como crime, senão quando o pratica dolosamente"
+    },
+    {
+     "id": "cpp386iii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 386, III — Fato não é crime",
+     "chave": "CPP#art-386/inc-iii",
+     "trecho": "não constituir o fato infração penal"
+    }
+   ],
+   "inicio": "a1",
+   "cenas": {
+    "a1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "O Preço do Notebook",
+     "proxima": "a2"
+    },
+    "a2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "Elias Moura, 27 anos, designer freelancer. O notebook dele quebrou no meio de um projeto grande, e ele comprou um recondicionado numa loja de bairro, a TecnoVolta, por R$ 1.900."
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "Três semanas antes, quarenta notebooks foram furtados de um depósito da Altavista Tech. Um deles foi parar na mão do Elias. O Ministério Público o denunciou por receptação, art. 180 do Código Penal: reclusão de dois a seis anos."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "Seis anos por ter comprado um computador? Ele nem sabia que era furtado!"
+      },
+      {
+       "q": "helena",
+       "e": "confiante",
+       "t": "É exatamente esse o ponto. O caput do art. 180 fala em coisa que 'sabe ser produto de crime'. É um crime doloso, e o dolo, aqui, precisa ser provado."
+      },
+      {
+       "q": "rafael",
+       "e": "pensativo",
+       "t": "Existe também a receptação culposa, no § 3º: detenção de um mês a um ano. Mas ela exige circunstâncias bem específicas: a natureza da coisa, um preço desproporcional ao valor ou a condição de quem a oferece."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Então eu preciso mostrar duas coisas: que Elias não sabia e que nada, naquela compra, o obrigava a desconfiar."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Você pegou o espírito da coisa. Comece pela casa do Elias. Depois, visite a loja: quero saber quem é o dono do estabelecimento, como ele vende e o que ele anuncia."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "cp180",
+        "cp180p3",
+        "cp180p4",
+        "cp18",
+        "cpp386iii",
+        "bo"
+       ]
+      }
+     ],
+     "proxima": "a3"
+    },
+    "a3": {
+     "tipo": "investigar",
+     "local": "apartamento",
+     "titulo": "Apartamento de Elias",
+     "intro": [
+      {
+       "q": "a1xelias",
+       "e": "nervoso",
+       "t": "Entra, doutor(a). Desculpa o aperto: eu trabalho aqui mesmo, na sala, com o notebook em cima da mesa de jantar. Aliás, o notebook que a polícia me devolveu só para a perícia…"
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa de trabalho",
+       "x": 30,
+       "y": 50,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O aparelho está aberto. Na tampa, um adesivo discreto: 'RECONDICIONADO'. A bateria está inchada de tão velha."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Não parece em nada com um equipamento novo, lacrado, saído de fábrica."
+        },
+        {
+         "q": "narrador",
+         "t": "Você pediu uma perícia técnica no aparelho.",
+         "recebe": [
+          "laudo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Pasta de documentos na estante",
+       "x": 9,
+       "y": 22,
+       "w": 19,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Elias guarda tudo em pastas etiquetadas. Aqui está: a nota fiscal da TecnoVolta, número 3321, em nome dele, com CPF e número de série do aparelho!",
+         "recebe": [
+          "nota"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Quem quer esconder a origem de um aparelho não pede nota fiscal em seu nome e com o próprio CPF."
+        }
+       ]
+      },
+      {
+       "id": "comoda",
+       "nome": "Celular velho na cômoda",
+       "x": 64,
+       "y": 46,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O celular antigo de Elias guarda a conversa com a loja. Antes de comprar, ele perguntou: 'Esse aparelho tem nota e procedência?'"
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "E a loja respondeu por escrito: 'Tudo com nota fiscal, lote de liquidação corporativa, 90 dias de garantia.' Ele perguntou, e a resposta o tranquilizou.",
+         "recebe": [
+          "zap"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "janela",
+       "nome": "Janela com vista para a rua",
+       "x": 34,
+       "y": 10,
+       "w": 25,
+       "h": 36,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Dá para ver a rua do bairro. A TecnoVolta fica a duas quadras, no mesmo trecho da padaria."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a1xelias",
+       "titulo": "Perguntar a Elias como foi a compra",
+       "falas": [
+        {
+         "q": "a1xelias",
+         "e": "triste",
+         "t": "O meu computador morreu numa terça-feira, com um cliente esperando a entrega do dia seguinte. Eu pesquisei, vi que um novo custava R$ 4.800, e eu não tinha isso."
+        },
+        {
+         "q": "a1xelias",
+         "e": "normal",
+         "t": "Minha vizinha recomendou a TecnoVolta. Eles anunciam 'recondicionados'. Eu pensei: usado, com garantia e nota, perfeito."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Você desconfiou do preço?"
+        },
+        {
+         "q": "a1xelias",
+         "e": "pensativo",
+         "t": "Achei bom, mas não absurdo. Eu já tinha visto recondicionado desse mesmo modelo na internet por R$ 2.100."
+        },
+        {
+         "q": "a1xelias",
+         "e": "triste",
+         "t": "Eu paguei por Pix na conta da empresa, doutor(a). Se eu soubesse que era roubado, eu nunca teria deixado rastro nenhum."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "nota",
+      "zap",
+      "laudo"
+     ],
+     "proxima": "a3b"
+    },
+    "a3b": {
+     "tipo": "investigar",
+     "local": "loja",
+     "titulo": "TecnoVolta Recondicionados",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Uma loja pequena, com o letreiro meio apagado. Na vitrine, notebooks usados com etiquetas de preço. Atrás do balcão, um rapaz confere uma planilha com o rosto tenso."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "cartaz",
+       "nome": "Cartaz promocional",
+       "x": 70,
+       "y": 12,
+       "w": 18,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "'Recondicionados com nota e 90 dias de garantia: de R$ 1.700 a R$ 2.400.' Está colado na parede, à vista de qualquer cliente.",
+         "recebe": [
+          "cartaz"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A loja existe há seis anos, tem alvará e CNPJ ativo. Quem comprou ali não estava negociando num beco."
+        }
+       ]
+      },
+      {
+       "id": "vitrine",
+       "nome": "Vitrine de produtos",
+       "x": 6,
+       "y": 24,
+       "w": 22,
+       "h": 50,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Há outros três modelos iguais ao do Elias. Etiquetas: R$ 1.850, R$ 2.100 e R$ 2.200."
+        },
+        {
+         "q": "narrador",
+         "t": "Você pediu ao perito Kenji Sato uma avaliação de mercado do modelo.",
+         "recebe": [
+          "tabela"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "O Dr. Kenji confirma: recondicionado desse modelo vale de R$ 1.700 a R$ 2.400. O que Elias pagou está no meio da faixa."
+        }
+       ]
+      },
+      {
+       "id": "monitor",
+       "nome": "Monitor do caixa",
+       "x": 52,
+       "y": 39,
+       "w": 8,
+       "h": 9,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O sistema de vendas mostra os nove notebooks do mesmo lote vendidos com nota fiscal, todos em nome dos compradores."
+        },
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "O fornecedor registrado é uma tal 'Distribuidora Lúmina Ltda.'. Nunca ouvi falar. Vou anotar o CNPJ."
+        }
+       ]
+      },
+      {
+       "id": "balcao",
+       "nome": "Balcão da assistência",
+       "x": 41,
+       "y": 44,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O caderno de ordens de serviço está em dia: garantia, trocas e reclamações de clientes de verdade."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a1xdiego",
+       "titulo": "Conversar com o vendedor Diego",
+       "falas": [
+        {
+         "q": "a1xdiego",
+         "e": "nervoso",
+         "t": "A loja não vai comentar nada. O dono não está."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Dono que não aparece, vendedor que está nervoso e um lote de notebooks sem origem clara. Interessante."
+        },
+        {
+         "q": "a1xdiego",
+         "e": "bravo",
+         "t": "Eu só passo a venda! Eu não sei de onde vem a mercadoria. Quem negocia com o fornecedor é o dono."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Pois essa frase pode ser importante no tribunal. Vou lembrar o senhor dela."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "cartaz",
+      "tabela"
+     ],
+     "proxima": "a4"
+    },
+    "a4": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Aberta a audiência. Processo contra Elias Moura, por receptação, art. 180 do Código Penal.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Excelência, o réu adquiriu um equipamento furtado. Para provar que ele sabia da origem ilícita, ouço a testemunha Diego Pacheco, vendedor da loja."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Diego está a serviço de quem? Ele me disse que não sabia de nada. Vamos ver o que ele diz agora, sob compromisso.)"
+      }
+     ],
+     "proxima": "a5"
+    },
+    "a5": {
+     "tipo": "depoimento",
+     "testemunha": "a1xdiego",
+     "titulo": "O balcão da TecnoVolta, por Diego",
+     "intro": [
+      {
+       "q": "a1xdiego",
+       "e": "nervoso",
+       "t": "Eu vim dizer a verdade. Sobre aquele rapaz, o Elias."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Aquele lote chegou à loja sem documento nenhum. Todo mundo na loja sabia que era estranho.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Todo mundo quem?"
+        },
+        {
+         "q": "a1xdiego",
+         "e": "nervoso",
+         "t": "Eu, os outros funcionários. Eu desconfiava."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O senhor desconfiava e, mesmo assim, vendeu?"
+        },
+        {
+         "q": "a1xdiego",
+         "e": "bravo",
+         "t": "Ordens do dono! Eu só obedeço."
+        }
+       ]
+      },
+      {
+       "t": "Eu avisei o Elias no balcão: 'esse aparelho não tem nota, é por fora'. E ele topou, porque era mais barato.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor avisou por escrito?"
+        },
+        {
+         "q": "a1xdiego",
+         "e": "normal",
+         "t": "De boca. No balcão. Não tinha ninguém olhando."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Então é a palavra do senhor contra a de Elias."
+        }
+       ]
+      },
+      {
+       "t": "Ele pagou em dinheiro vivo, para não deixar rastro.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Em dinheiro vivo? Quanto?"
+        },
+        {
+         "q": "a1xdiego",
+         "e": "nervoso",
+         "t": "Mil e novecentos. Em notas… ou foi no cartão? Sei lá, passa tanta gente aqui."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Dinheiro ou cartão? O senhor mudou a história no meio da frase."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "nota",
+       "zap"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor disse que avisou Elias que o aparelho era 'por fora', sem nota. Pois aqui está a nota fiscal nº 3321, emitida pela própria TecnoVolta, em nome de Elias, com CPF e número de série!"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "E aqui está a conversa por escrito: Elias perguntou se tinha nota e procedência, e a loja respondeu: 'Tudo com nota fiscal, lote de liquidação corporativa'. Quem mentiu ao cliente foi a loja!"
+      },
+      {
+       "q": "a1xdiego",
+       "e": "chocado",
+       "t": "Eu… a nota era para todo mundo. O dono mandava emitir para esconder que o lote era estranho!",
+       "fx": "tremor"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Consigno a declaração da testemunha. Ela aponta que a loja, e não o cliente, sabia da irregularidade."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "a6"
+    },
+    "a6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Excelência, o preço fala por si! O mesmo notebook novo custa R$ 4.800. O réu pagou R$ 1.900, menos da metade. Quem paga tão pouco sabe, ou ao menos deve saber, que a coisa é suspeita!"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Preço baixo é o único argumento sério dele. Mas ele só comparou com o preço de um aparelho NOVO.)"
+      }
+     ],
+     "pergunta": "Que prova mostra que o preço pago era normal para um aparelho recondicionado?",
+     "provas": [
+      "tabela",
+      "cartaz"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "A comparação é com o produto errado, Excelência! O aparelho era recondicionado: a avaliação do perito Kenji Sato dá a faixa de R$ 1.700 a R$ 2.400, e o cartaz da própria loja anunciava os mesmos valores."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "R$ 1.900 está no meio da faixa. Não há desproporção entre o valor e o preço, que é a circunstância que a lei exige."
+      },
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Hum… preciso reconhecer que o argumento do preço perde a força."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não responde ao argumento do preço, doutor(a)."
+      }
+     ],
+     "proxima": "a7"
+    },
+    "a7": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Senhor promotor, a testemunha seguinte?",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "O delegado Fausto Rangel, que conduziu o inquérito."
+      },
+      {
+       "q": "fausto",
+       "e": "confiante",
+       "t": "Excelência, a Altavista Tech me procurou no mesmo dia do furto. Eu mesmo fiz a investigação. Pessoalmente."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Fausto de novo. O mesmo delegado que prendeu a Joana por ordem de alguém. Cada passo aqui leva à Altavista.)"
+      }
+     ],
+     "proxima": "a8"
+    },
+    "a8": {
+     "tipo": "depoimento",
+     "testemunha": "fausto",
+     "titulo": "O inquérito, por Fausto",
+     "intro": [
+      {
+       "q": "fausto",
+       "e": "confiante",
+       "t": "Foi um caso simples. Quarenta notebooks, nove recuperados, um comprador identificado."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O réu pagou R$ 1.900 num computador que custa R$ 4.800. Desconto de sessenta por cento.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Custa R$ 4.800 novo, delegado?"
+        },
+        {
+         "q": "fausto",
+         "e": "normal",
+         "t": "Novo. Do mesmo modelo."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Guarde esse 'novo', delegado. Ele vai voltar."
+        }
+       ]
+      },
+      {
+       "t": "O aparelho era novo, lacrado, de fábrica! Ninguém vende assim sem ser produto de crime.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O senhor periciou o aparelho?"
+        },
+        {
+         "q": "fausto",
+         "e": "nervoso",
+         "t": "Eu li o boletim de ocorrência. Dizia que eram notebooks novos."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O BO descreve o que foi furtado. Não descreve o que Elias comprou."
+        }
+       ]
+      },
+      {
+       "t": "E ele confessou na delegacia que sabia que o aparelho era de origem criminosa.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Confessou? Isso está no termo de declarações?"
+        },
+        {
+         "q": "fausto",
+         "e": "nervoso",
+         "t": "Ele disse que 'achou barato'. É a mesma coisa."
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Achar barato não é saber que é produto de crime, delegado."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "laudo",
+       "cartaz"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "'Novo, lacrado de fábrica'? O laudo do aparelho mostra bateria substituída, quatorze meses de uso e o selo 'RECONDICIONADO' na tampa! E o cartaz da loja anuncia recondicionados, não aparelhos novos!"
+      },
+      {
+       "q": "fausto",
+       "e": "chocado",
+       "t": "É… eu não examinei o aparelho. Eu me baseei no BO.",
+       "fx": "tremor"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Delegado, o senhor conduziu o inquérito sem ver o objeto do crime?"
+      },
+      {
+       "q": "fausto",
+       "e": "nervoso",
+       "t": "Fui informado de que… a vítima era a Altavista Tech, Excelência. Havia pressa."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "a9"
+    },
+    "a9": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Mesmo assim, Excelência! O art. 180 pune quem adquire coisa de origem criminosa. Os notebooks foram furtados e o réu está com um deles. O que mais falta?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Falta o essencial: o crime só existe se Elias SOUBESSE. A palavra da lei é muito precisa.)"
+      }
+     ],
+     "pergunta": "Que dispositivo exige que o réu 'saiba' que a coisa é produto de crime?",
+     "provas": [
+      "cp180",
+      "cp18"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O art. 180 pune quem adquire 'coisa que sabe ser produto de crime'. E o art. 18, parágrafo único, completa: ninguém pode ser punido por fato previsto como crime senão quando o pratica dolosamente."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Elias perguntou pela procedência, recebeu uma nota fiscal em seu CPF, pagou por Pix na conta da empresa e comprou numa loja regular por um preço de mercado. Ele não sabia. E nada o obrigava a saber."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "O dolo precisa estar demonstrado. E não está."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Esse dispositivo não trata do conhecimento do réu, doutor(a)."
+      }
+     ],
+     "proxima": "a10"
+    },
+    "a10": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Alegações finais da defesa. O que a defesa requer, doutor(a)?"
+      }
+     ],
+     "pergunta": "Qual é o pedido final da defesa?",
+     "opcoes": [
+      {
+       "t": "Absolvição por não constituir o fato infração penal (art. 386, III): não houve dolo (caput) e não havia circunstância que fizesse Elias presumir origem criminosa (§ 3º).",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CP#art-180/par-3",
+         "trecho": "deve presumir-se obtida por meio criminoso"
+        },
+        {
+         "chave": "CPP#art-386/inc-iii",
+         "trecho": "não constituir o fato infração penal"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, a acusação não provou que Elias soubesse da origem do aparelho: ele perguntou, recebeu nota, pagou por Pix e comprou numa loja regular, por preço de mercado. Sem dolo, o caput não incide; e sem circunstância que o fizesse presumir a origem criminosa, nem o § 3º. Peço a absolvição, art. 386, III."
+        }
+       ]
+      },
+      {
+       "t": "Desclassificar para a receptação culposa (§ 3º) e pedir a suspensão condicional do processo (Lei 9.099, art. 89).",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "Doutor(a), seria uma saída confortável, mas o § 3º exige circunstâncias que a sua própria prova afasta: o preço era de mercado, a loja era regular, a nota existia. Por que aceitar uma pena branda quando a prova é de inocência?"
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "(É verdade. Pedir o 'meio-termo' seria abrir mão da tese que a prova sustenta.)"
+        }
+       ]
+      },
+      {
+       "t": "Absolvição porque ninguém foi condenado pelo furto original dos notebooks.",
+       "certa": false,
+       "fundamentos": [
+        {
+         "chave": "CP#art-180/par-4",
+         "trecho": "ainda que desconhecido ou isento de pena o autor do crime de que proveio a coisa"
+        }
+       ],
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "O art. 180, § 4º, é claro: a receptação é punível ainda que desconhecido ou isento de pena o autor do crime de que proveio a coisa. A tese é frágil."
+        },
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "(Cuidado: a autonomia da receptação é regra expressa. A defesa deve ficar na falta de dolo.)"
+        }
+       ]
+      }
+     ],
+     "proxima": "a11"
+    },
+    "a11": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Julgo improcedente a denúncia. Absolvo Elias Moura, nos termos do art. 386, III, do Código de Processo Penal. A boa-fé do adquirente está demonstrada, e a loja é quem deve ser investigada.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a1xelias",
+       "e": "feliz",
+       "t": "Eu já ia pagar a conta de R$ 1.900 de novo se precisasse. Obrigado, doutor(a)."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "(para você) A Distribuidora Lúmina, fornecedora da loja, tem como sócia uma empresa chamada 'Altavista Serviços'. O MP vai abrir um procedimento."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A vítima do furto era a Altavista Tech. A fornecedora do produto furtado, a Altavista Serviços… Quem rouba de si mesmo?"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Seguro de carga, doutor(a). Uma empresa que 'perde' quarenta notebooks e depois os vende por uma ponta para ficar com o seguro e com o dinheiro. É o que eu suspeito."
+      },
+      {
+       "q": "rafael",
+       "e": "nervoso",
+       "t": "(no escritório, mais tarde) Sempre a Altavista. Eu disse para tomar cuidado. Mas continue anotando tudo."
+      }
+     ],
+     "proxima": "a12"
+    },
+    "a12": {
+     "tipo": "veredicto",
+     "carimbo": "ABSOLVIDO",
+     "titulo": "Barato não é crime",
+     "texto": "Sem dolo e sem circunstâncias que o fizessem presumir a origem criminosa, Elias é inocente. E o lote que a Altavista dizia ter perdido reaparece, com nota fiscal, nas mãos de uma distribuidora ligada à própria Altavista."
+    }
+   }
+  },
+  {
+   "id": "a1x-transito",
+   "ato": "ato1",
+   "ordem": 5.4,
+   "numero": 7,
+   "titulo": "Faróis Apagados",
+   "papel": "advogado",
+   "nivel": "avancado",
+   "sinopse": "Um motorista da Altavista é acusado de matar um ciclista numa noite de garoa. A empresa o abandonou e mandou lavar o caminhão. Houve culpa dele, ou o escuro matou?",
+   "posicoes": {
+    "voce": "defesa",
+    "lacerda": "acusacao",
+    "beatriz": "juiz",
+    "a1xvalmir": "testemunha",
+    "a1xdora": "testemunha",
+    "a1xnair": "testemunha",
+    "a1xcassio": "defesa",
+    "helena": "escritorio",
+    "rafael": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "video",
+     "tipo": "prova",
+     "icone": "🎥",
+     "nome": "Câmera da padaria",
+     "descricao": "Gravação, 21h10min14s: o ciclista Osvaldo atravessa a Av. Itapuã com o semáforo vermelho para ele, sem nenhuma luz na bicicleta. O caminhão vinha no verde, em velocidade moderada."
+    },
+    {
+     "id": "bike",
+     "tipo": "prova",
+     "icone": "🚲",
+     "nome": "Laudo da bicicleta",
+     "descricao": "A bicicleta de Osvaldo não tinha farol, lanterna traseira nem refletores. Atravessava à noite, com garoa."
+    },
+    {
+     "id": "croqui",
+     "tipo": "prova",
+     "icone": "📐",
+     "nome": "Laudo do local",
+     "descricao": "Um carro parado em fila dupla escondia a via transversal. O ciclista surgiu a cerca de 9 m do caminhão. A distância necessária para parar a 41 km/h é de cerca de 20 m."
+    },
+    {
+     "id": "telemetria",
+     "tipo": "prova",
+     "icone": "📡",
+     "nome": "Telemetria do caminhão",
+     "descricao": "21h07: 62 km/h na Av. Itapuã (trecho de 60 km/h). 21h10min12s: 41 km/h, no cruzamento (via de 40 km/h)."
+    },
+    {
+     "id": "checklist",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Checklist de saída",
+     "descricao": "Assinado por Cássio às 20h50: freios, pneus, faróis e setas conferidos e em ordem."
+    },
+    {
+     "id": "email",
+     "tipo": "prova",
+     "icone": "✉️",
+     "nome": "E-mail da logística",
+     "descricao": "22h14, da logística da Altavista ao lava-rápido: 'Lavar o caminhão 07 com urgência e liberar. Não dar informações.' Com cópia para A. Brandão Advocacia."
+    },
+    {
+     "id": "alcool",
+     "tipo": "prova",
+     "icone": "🧪",
+     "nome": "Exame de alcoolemia",
+     "descricao": "Teste do etilômetro em Cássio, 21h50: 0,00 mg/L."
+    },
+    {
+     "id": "cp18ii",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 18, II — Crime culposo",
+     "chave": "CP#art-18/inc-ii",
+     "trecho": "por imprudência, negligência ou imperícia"
+    },
+    {
+     "id": "cp13",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 13 — Relação de causalidade",
+     "chave": "CP#art-13",
+     "trecho": "somente é imputável a quem lhe deu causa"
+    },
+    {
+     "id": "ctb302",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CTB, art. 302 — Homicídio culposo",
+     "chave": "CTB#art-302",
+     "trecho": "Praticar homicídio culposo na direção de veiculo automotor"
+    },
+    {
+     "id": "ctb208",
+     "tipo": "lei",
+     "icone": "🚦",
+     "nome": "CTB, art. 208 — Sinal vermelho",
+     "chave": "CTB#art-208",
+     "trecho": "Avançar o sinal vermelho do semáforo"
+    },
+    {
+     "id": "ctb105",
+     "tipo": "lei",
+     "icone": "🚲",
+     "nome": "CTB, art. 105, VI — Equipamento da bicicleta",
+     "chave": "CTB#art-105/inc-vi",
+     "trecho": "sinalização noturna dianteira, traseira, lateral e nos pedais"
+    },
+    {
+     "id": "cpp386iii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 386, III — Fato não é crime",
+     "chave": "CPP#art-386/inc-iii",
+     "trecho": "não constituir o fato infração penal"
+    }
+   ],
+   "inicio": "b1",
+   "cenas": {
+    "b1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "Faróis Apagados",
+     "proxima": "b2"
+    },
+    "b2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "Cássio Barros, 41 anos, motorista de caminhão-betoneira. Às 21h10 de uma noite de garoa, ele cruzava a Avenida Itapuã quando um ciclista, Osvaldo Teles, apareceu na frente do caminhão. Osvaldo morreu no local."
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "O Ministério Público o denunciou por homicídio culposo na direção de veículo automotor: art. 302 do Código de Trânsito, detenção de dois a quatro anos e suspensão da habilitação."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "E a Altavista? O caminhão era da empresa."
+      },
+      {
+       "q": "helena",
+       "e": "bravo",
+       "t": "A empresa disse que ele agiu 'por conta própria' e retirou o advogado. Foi por isso que o Cássio veio até nós. Ele está sozinho."
+      },
+      {
+       "q": "rafael",
+       "e": "confiante",
+       "t": "Lembre-se: crime culposo, art. 18, II, do Código Penal, é dar causa ao resultado por imprudência, negligência ou imperícia. É preciso que o motorista tenha violado um dever de cuidado, e que essa violação seja a causa da morte."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Se o motorista agiu com todo o cuidado exigido, e a causa foi outra, não há crime."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Vá ao cruzamento. Depois vá à obra, onde o caminhão ficava. Eu quero provas e horários, não opiniões."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "cp18ii",
+        "cp13",
+        "ctb302",
+        "ctb208",
+        "ctb105",
+        "cpp386iii",
+        "alcool"
+       ]
+      }
+     ],
+     "proxima": "b3"
+    },
+    "b3": {
+     "tipo": "investigar",
+     "local": "rua",
+     "titulo": "Cruzamento da Avenida Itapuã",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "A rua é larga e mal iluminada. Há uma padaria na esquina, um muro grafitado e marcas de frenagem no asfalto. Uma fita de isolamento ainda balança no poste."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "padaria",
+       "nome": "Câmera da padaria",
+       "x": 39,
+       "y": 29,
+       "w": 29,
+       "h": 28,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "O dono guardou a gravação. Hora no canto da tela: 21h10min14s. O ciclista avança com o semáforo vermelho para ele, sem luz nenhuma, no escuro!",
+         "recebe": [
+          "video"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O caminhão vem pela avenida, no verde, em velocidade que não parece de corrida. Dois segundos depois, o impacto."
+        }
+       ]
+      },
+      {
+       "id": "muro",
+       "nome": "Muro e restos da bicicleta",
+       "x": 4,
+       "y": 45,
+       "w": 30,
+       "h": 27,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Os restos da bicicleta ficaram encostados no muro. Nenhum farol. Nenhuma lanterna traseira. Nenhum refletor nos pedais ou nas rodas.",
+         "recebe": [
+          "bike"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Osvaldo não era descuidado por maldade. Mas a bicicleta, à noite, era invisível."
+        }
+       ]
+      },
+      {
+       "id": "carro",
+       "nome": "Carro em fila dupla",
+       "x": 62,
+       "y": 61,
+       "w": 29,
+       "h": 19,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Um carro estava parado em fila dupla bem na esquina da via transversal, tapando a visão de quem vinha pela avenida."
+        },
+        {
+         "q": "narrador",
+         "t": "Você pediu a medição do campo de visão e das distâncias de frenagem.",
+         "recebe": [
+          "croqui"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A perícia confirma: o ciclista surgiu a nove metros, e o caminhão precisava de vinte para parar."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a1xcassio",
+       "titulo": "Conversar com Cássio no local do acidente",
+       "falas": [
+        {
+         "q": "a1xcassio",
+         "e": "triste",
+         "t": "Eu estou aqui todo dia, doutor(a). Eu passo aqui para trabalhar e tenho que passar por aqui. Toda vez eu fecho os olhos."
+        },
+        {
+         "q": "a1xcassio",
+         "e": "pensativo",
+         "t": "O sinal estava verde para mim. Eu vi uma sombra, nada mais. Eu pisei no freio, mas já tinha acontecido."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Você estava correndo?"
+        },
+        {
+         "q": "a1xcassio",
+         "e": "triste",
+         "t": "Eu fiquei a noite toda pensando: será que eu devia ter visto mais cedo? Mas eu nunca corri em cruzamento. Tenho três filhos, preciso da carteira."
+        },
+        {
+         "q": "a1xcassio",
+         "e": "bravo",
+         "t": "E o pior: na empresa me mandaram esperar. Sumiram. Depois disse que a culpa era minha."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "video",
+      "bike",
+      "croqui"
+     ],
+     "proxima": "b4"
+    },
+    "b4": {
+     "tipo": "investigar",
+     "local": "obra",
+     "titulo": "Canteiro da Altavista",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "O pátio de manobras da obra, de noite, com o caminhão 07 estacionado, ainda úmido. O vigia deixa você passar com um aceno desanimado."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "escritorio",
+       "nome": "Escritório da obra",
+       "x": 42,
+       "y": 30,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A telemetria do caminhão é gravada num computador do escritório. Ela mostra velocidade e horário minuto a minuto.",
+         "recebe": [
+          "telemetria"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "21h07, 62 km/h, na avenida onde o limite é 60. Já às 21h10min12s, no cruzamento: 41 km/h, com limite de 40. Eram 3 minutos de diferença!"
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "E o checklist de saída: freios, pneus, faróis e setas conferidos e assinados às 20h50.",
+         "recebe": [
+          "checklist"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "portao",
+       "nome": "Portão dos fundos",
+       "x": 78,
+       "y": 36,
+       "w": 16,
+       "h": 28,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "O vigia guardou uma cópia. A logística da Altavista mandou lavar o caminhão logo depois do acidente: 'Lavar o caminhão 07 com urgência e liberar. Não dar informações.' Com cópia para A. Brandão Advocacia!",
+         "recebe": [
+          "email"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "Mandar lavar um veículo que atropelou alguém. Isso pode ser fraude processual, CTB, art. 312. E não foi o Cássio quem mandou."
+        }
+       ]
+      },
+      {
+       "id": "catraca",
+       "nome": "Catraca da portaria",
+       "x": 8,
+       "y": 40,
+       "w": 16,
+       "h": 22,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O ponto de Cássio: entrada às 12h, saída prevista às 21h. Jornada normal, com o intervalo. Ele não estava no limite de cansaço."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a1xdora",
+       "titulo": "Falar com Dora Ramalho, gerente de logística",
+       "falas": [
+        {
+         "q": "a1xdora",
+         "e": "confiante",
+         "t": "A empresa lamenta o acidente. Mas o motorista agiu por conta própria."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A empresa mandou lavar o caminhão logo depois?"
+        },
+        {
+         "q": "a1xdora",
+         "e": "nervoso",
+         "t": "Foi apenas… protocolo de limpeza. Eu preciso ir. A empresa vai se manifestar em juízo."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Fique tranquila: eu vou lhe perguntar exatamente isso lá."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "telemetria",
+      "checklist",
+      "email"
+     ],
+     "proxima": "b5"
+    },
+    "b5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Aberta a audiência. Processo contra Cássio Barros, art. 302 do Código de Trânsito.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Excelência, um homem de 58 anos, que voltava de entregar marmitas, foi atropelado e morto por um caminhão em alta velocidade. Chamo a testemunha ocular, o senhor Valmir Siqueira."
+      },
+      {
+       "q": "a1xnair",
+       "e": "triste",
+       "t": "(na plateia, apertando o terço) Foi o meu marido…"
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "(Há uma dor verdadeira nesta sala. Mas a sentença precisa olhar o que aconteceu, e não só a quem dói mais.)"
+      }
+     ],
+     "proxima": "b6"
+    },
+    "b6": {
+     "tipo": "depoimento",
+     "testemunha": "a1xvalmir",
+     "titulo": "O cruzamento, por Valmir",
+     "intro": [
+      {
+       "q": "a1xvalmir",
+       "e": "confiante",
+       "t": "Eu vi tudo. Eu estava parado no semáforo, no meu carro, no outro lado do cruzamento."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O caminhão vinha numa velocidade absurda, uns 70 por hora.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A que distância o senhor estava?"
+        },
+        {
+         "q": "a1xvalmir",
+         "e": "normal",
+         "t": "Uns quarenta metros."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "À noite, com garoa, e consegue calcular a velocidade de um caminhão?"
+        },
+        {
+         "q": "a1xvalmir",
+         "e": "nervoso",
+         "t": "Eu dirijo há vinte anos, doutor(a). Eu sei olhar."
+        }
+       ]
+      },
+      {
+       "t": "O ciclista atravessou no verde, como manda a lei. O coitado estava certinho.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O senhor tem certeza de que o sinal estava verde para ele?"
+        },
+        {
+         "q": "a1xvalmir",
+         "e": "confiante",
+         "t": "Certeza absoluta."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Vou anotar. Certeza absoluta."
+        }
+       ]
+      },
+      {
+       "t": "A bicicleta tinha uma luzinha piscando, eu lembro até hoje.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Luz na frente e na traseira?"
+        },
+        {
+         "q": "a1xvalmir",
+         "e": "nervoso",
+         "t": "Eu acho que sim… Pelo menos uma."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "'Acho que sim' e 'pelo menos uma' não é o mesmo que certeza."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "video"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Certeza absoluta? A câmera da padaria, às 21h10min14s, mostra o ciclista atravessando com o semáforo VERMELHO para ele! O caminhão estava no verde!"
+      },
+      {
+       "q": "a1xvalmir",
+       "e": "chocado",
+       "t": "Eu… estava longe, com a garoa. Pareceu verde.",
+       "fx": "tremor"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Consigno a gravação nos autos. O senhor Valmir, a sua memória está sendo confrontada com um registro objetivo."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "b7"
+    },
+    "b7": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Excelência, a vítima estava na pista com preferência de circulação, como determina o art. 58 do Código de Trânsito! O ciclista é o mais frágil, e o motorista tem o dever de cuidado reforçado. Que lhe importa se não tinha luzinha?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(O art. 58 dá preferência na via, mas não elimina os deveres de quem pedala. A lei também exige equipamento noturno nas bicicletas.)"
+      }
+     ],
+     "pergunta": "Que prova e que norma mostram que a bicicleta circulava sem a sinalização noturna obrigatória?",
+     "provas": [
+      "bike",
+      "ctb105"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O art. 105, VI, do CTB exige nas bicicletas 'sinalização noturna dianteira, traseira, lateral e nos pedais'. O laudo mostra que a bicicleta de Osvaldo não tinha farol, lanterna traseira nem refletores, atravessando à noite, com garoa!"
+      },
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "A falta de equipamento da vítima não autoriza o motorista a atropelar."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Concordo. Mas ela explica por que o caminhoneiro não o viu a tempo: era invisível, num cruzamento escondido por um carro em fila dupla."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não trata do equipamento da bicicleta, doutor(a)."
+      }
+     ],
+     "proxima": "b8"
+    },
+    "b8": {
+     "tipo": "depoimento",
+     "testemunha": "a1xdora",
+     "titulo": "O controle da frota, por Dora",
+     "intro": [
+      {
+       "q": "a1xdora",
+       "e": "confiante",
+       "t": "A Altavista tem rigor no controle de sua frota. Eu mesma acompanho a telemetria de cada caminhão."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Todos os nossos caminhões são monitorados, e a empresa sempre cumpre as normas de segurança.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Inclusive o caminhão 07?"
+        },
+        {
+         "q": "a1xdora",
+         "e": "confiante",
+         "t": "Inclusive o 07. Estava em perfeito estado."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Anotado. Em perfeito estado."
+        }
+       ]
+      },
+      {
+       "t": "No momento do impacto, o caminhão estava a 62 km/h. O limite da via era 40. Foi excesso de velocidade.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A senhora tem os dados da telemetria?"
+        },
+        {
+         "q": "a1xdora",
+         "e": "confiante",
+         "t": "Sim. Eu li a telemetria. 62 km/h."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A que horas, exatamente?"
+        },
+        {
+         "q": "a1xdora",
+         "e": "nervoso",
+         "t": "Perto da hora do acidente."
+        }
+       ]
+      },
+      {
+       "t": "Depois do acidente, o Cássio mandou lavar o caminhão para apagar os vestígios.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Quem mandou lavar o caminhão?"
+        },
+        {
+         "q": "a1xdora",
+         "e": "nervoso",
+         "t": "O motorista, claro."
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "A senhora vai repetir isso com a cópia do e-mail na mão?"
+        },
+        {
+         "q": "a1xdora",
+         "e": "nervoso",
+         "t": "Eu… eu não me recordo."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "telemetria",
+       "video"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "62 km/h foi o registro das 21h07, na Avenida Itapuã, onde o limite é de 60! Às 21h10min12s, no cruzamento, a telemetria marca 41 km/h, com limite de 40. A câmera da padaria confirma a hora do impacto: 21h10min14s!"
+      },
+      {
+       "q": "a1xdora",
+       "e": "chocado",
+       "t": "Eu li… a primeira linha.",
+       "fx": "tremor"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "E quem mandou lavar o caminhão: a logística da Altavista, às 22h14, por e-mail, 'não dar informações', com cópia para o escritório do doutor Augusto Brandão!"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Dona Dora, isso pode configurar fraude processual. Fica a senhora advertida e a Promotoria comunicada.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "chocado",
+       "t": "(para si) O mesmo Brandão. De novo."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "b9"
+    },
+    "b9": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Excelência, ainda que a vítima tenha errado, o motorista não pode fugir à responsabilidade. Concorreu para a morte. Culpa concorrente também é culpa!"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Há duas normas que respondem a isso: a que define quem causa o resultado e a que define o que é culpa penal.)"
+      }
+     ],
+     "pergunta": "Que normas mostram que o resultado só é imputável a quem lhe deu causa e que o crime culposo exige imprudência, negligência ou imperícia?",
+     "provas": [
+      "cp13",
+      "cp18ii"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O art. 13 do Código Penal: o resultado somente é imputável a quem lhe deu causa. E o art. 18, II: culposo é o crime em que o agente deu causa ao resultado por imprudência, negligência ou imperícia."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Cássio estava sóbrio, com a habilitação em dia, com o veículo revisado e o checklist assinado, a 41 km/h num trecho de 40, no sinal verde. Nenhuma imprudência, negligência ou imperícia. O que causou a morte foi a travessia no vermelho, no escuro, com uma bicicleta invisível."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Se a conduta do réu não violou o dever de cuidado, a tese da acusação cai."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa norma não responde ao argumento da culpa, doutor(a)."
+      }
+     ],
+     "proxima": "b10"
+    },
+    "b10": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Alegações finais, defesa."
+      }
+     ],
+     "pergunta": "O que a defesa pede?",
+     "opcoes": [
+      {
+       "t": "Reduzir a pena: a vítima também teve culpa, e uma culpa compensa a outra.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "No direito penal não existe compensação de culpas. Se há culpa do réu, a pena se aplica; a culpa da vítima só serviria para ajustar a pena."
+        },
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "(Pedir redução é admitir culpa. Mas a nossa tese é outra: a conduta de Cássio foi correta.)"
+        }
+       ]
+      },
+      {
+       "t": "Absolvição por não constituir o fato infração penal (art. 386, III): Cássio não violou dever de cuidado, e a causa da morte foi a conduta da própria vítima.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CP#art-18/inc-ii",
+         "trecho": "por imprudência, negligência ou imperícia"
+        },
+        {
+         "chave": "CPP#art-386/inc-iii",
+         "trecho": "não constituir o fato infração penal"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, quem dirige dentro do limite, sóbrio, com veículo revisado e no sinal verde não pratica imprudência, negligência nem imperícia. A causa exclusiva foi a travessia no vermelho, sem sinalização noturna. O fato não é crime: peço a absolvição, art. 386, III."
+        }
+       ]
+      },
+      {
+       "t": "Absolvição por estar provado que o réu não concorreu para a infração (art. 386, IV), porque o caminhão era da empresa.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "Doutor(a), o réu estava ao volante, e isso ninguém discute. A questão não é a autoria: é saber se ele violou algum dever de cuidado. O inciso IV não se encaixa."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "(Verdade. Ele dirigiu, e dirigiu bem. A tese correta é a da conduta atípica, inciso III.)"
+        }
+       ]
+      }
+     ],
+     "proxima": "b11"
+    },
+    "b11": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Absolvo Cássio Barros, nos termos do art. 386, III, do Código de Processo Penal: não houve violação do dever de cuidado, e a causa da morte foi a conduta da vítima. Comunique-se o Ministério Público sobre a lavagem do veículo, art. 312 do CTB.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a1xcassio",
+       "e": "triste",
+       "t": "Eu fui absolvido… e o Osvaldo continua morto. Isso não passa."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "(para você) O e-mail com cópia para Brandão. A Altavista tentou apagar a cena. Eu vou investigar quem deu a ordem."
+      }
+     ],
+     "proxima": "b12"
+    },
+    "b12": {
+     "tipo": "escolha",
+     "local": "rua",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Na saída do fórum, Dona Nair Teles, a viúva, está sentada num banco, sozinha, com a bolsa no colo. Cássio para a poucos metros e não consegue dar mais um passo."
+      },
+      {
+       "q": "a1xcassio",
+       "e": "triste",
+       "t": "Doutor(a), eu queria pedir perdão a ela. Eu sei que fui absolvido, que a culpa não foi minha, mas ela perdeu o marido. Será que eu devo falar com ela?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Ele agiu certo na lei. Mas a dor dela é real. Um pedido de desculpas é um gesto humano, e também pode ser usado numa ação cível por indenização. Os dois caminhos são legítimos.)"
+      }
+     ],
+     "pergunta": "O que você aconselha a Cássio?",
+     "opcoes": [
+      {
+       "t": "Ir até Dona Nair agora, com você ao lado, e dizer o que sente.",
+       "marca": "a1x_cassio_visita",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Vá. Eu vou com você. Diga o que sente, sem falar do processo. Uma pessoa pode pedir desculpas sem confessar culpa."
+        },
+        {
+         "q": "a1xcassio",
+         "e": "triste",
+         "t": "Obrigado, doutor(a)."
+        },
+        {
+         "q": "a1xnair",
+         "e": "triste",
+         "t": "(chorando baixinho, para Cássio) Você veio. Pensei que ninguém da empresa viria. Eu sei que o Osvaldo atravessou errado. Mas dói do mesmo jeito."
+        },
+        {
+         "q": "a1xcassio",
+         "e": "triste",
+         "t": "Dona Nair… me perdoa. Eu pisei no freio. Eu juro que pisei."
+        },
+        {
+         "q": "a1xnair",
+         "e": "feliz",
+         "t": "Eu sei, meu filho. Eu vi o vídeo. Vá com Deus."
+        }
+       ]
+      },
+      {
+       "t": "Fazer contato por escrito, por você: uma carta de condolências e a oferta de pagar as despesas do funeral.",
+       "marca": "a1x_cassio_formal",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Vamos por carta, assinada por mim, em nome do Cássio: condolências, respeito pela dor dela e a oferta de arcar com as despesas do funeral. Assim ninguém distorce nenhuma palavra, e a ação cível, se vier, não nasce de um mal-entendido."
+        },
+        {
+         "q": "a1xcassio",
+         "e": "triste",
+         "t": "Parece frio… mas entendo que é o jeito certo."
+        },
+        {
+         "q": "a1xnair",
+         "e": "triste",
+         "t": "(ao longe, olhando para os dois sem se aproximar) …"
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "(Dona Nair vai receber a carta amanhã. Espero que ela entenda o gesto como respeito, e não como distância.)"
+        }
+       ]
+      }
+     ],
+     "proxima": "b13",
+     "livre": true
+    },
+    "b13": {
+     "tipo": "veredicto",
+     "carimbo": "ABSOLVIDO",
+     "titulo": "A culpa não é de quem dirige bem",
+     "texto": "Telemetria, câmera e laudo mostraram que Cássio dirigia dentro do que a lei pede. A causa da morte foi a travessia no vermelho, no escuro. E um e-mail da Altavista, com cópia para Brandão, mandou lavar o caminhão para apagar a cena."
+    }
+   }
+  },
+  {
+   "id": "a1x-idosa",
+   "ato": "ato1",
+   "ordem": 5.6,
+   "numero": 8,
+   "titulo": "A Cuidadora",
+   "papel": "advogado",
+   "nivel": "avancado",
+   "sinopse": "Uma cuidadora é acusada de desviar R$ 62.500 da pensão de uma idosa. O acusador é o sobrinho. Siga os recibos, a procuração e o contrato que a Altavista Serviços fez em nome da tia.",
+   "posicoes": {
+    "voce": "defesa",
+    "lacerda": "acusacao",
+    "beatriz": "juiz",
+    "a1xwesley": "testemunha",
+    "a1xotavio": "testemunha",
+    "a1xhortensia": "testemunha",
+    "a1xnair": "testemunha",
+    "a1xrita": "cena",
+    "a1xangela": "defesa",
+    "helena": "escritorio",
+    "rafael": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "procuracao",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Procuração pública",
+     "descricao": "Escritura pública lavrada em cartório há 14 meses: Hortênsia Vilela, de próprio punho, dá a Ângela Souza poderes para movimentar sua conta e pagar despesas da casa e do tratamento."
+    },
+    {
+     "id": "laudomed",
+     "tipo": "prova",
+     "icone": "🩺",
+     "nome": "Laudo da geriatra",
+     "descricao": "Dra. Cíntia Alves: Hortênsia, 82 anos, plenamente lúcida e orientada (28 de 30 pontos no mini-exame cognitivo) na data da procuração e na atual."
+    },
+    {
+     "id": "recibos",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Recibos guardados",
+     "descricao": "R$ 37.300 em remédios, fisioterapia, fraldas e consultas, mais o contrato da cuidadora: R$ 2.100 por mês, R$ 25.200 no ano. Soma: R$ 62.500, igual aos saques."
+    },
+    {
+     "id": "extrato",
+     "tipo": "prova",
+     "icone": "🏦",
+     "nome": "Extrato do benefício",
+     "descricao": "Saques mensais de cerca de R$ 5.200 no dia seguinte ao pagamento da pensão (total de R$ 62.500 em 12 meses). Em 12 de março, entrada de R$ 48.000 'Altavista Serviços', seguida de 48 parcelas descontadas da pensão."
+    },
+    {
+     "id": "consignado",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Contrato de consignado",
+     "descricao": "Empréstimo consignado de R$ 48.000 em nome de Hortênsia, assinado eletronicamente. O valor foi transferido no mesmo dia para a conta de Wesley Vilela."
+    },
+    {
+     "id": "ip",
+     "tipo": "prova",
+     "icone": "🖥️",
+     "nome": "Relatório do endereço de IP",
+     "descricao": "O endereço de IP usado na assinatura eletrônica do contrato pertence à residência de Wesley Vilela, e a hora (23h14) coincide com um acesso ao aplicativo do banco no celular dele."
+    },
+    {
+     "id": "epi102",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "EPI, art. 102 — Apropriação de bens do idoso",
+     "chave": "EPI#art-102",
+     "trecho": "dando-lhes aplicação diversa da de sua finalidade"
+    },
+    {
+     "id": "epi106",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "EPI, art. 106 — Induzir idoso sem discernimento",
+     "chave": "EPI#art-106",
+     "trecho": "Induzir pessoa idosa sem discernimento de seus atos a outorgar procuração"
+    },
+    {
+     "id": "epi95",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "EPI, art. 95 — Ação penal pública incondicionada",
+     "chave": "EPI#art-95",
+     "trecho": "não se lhes aplicando os arts. 181 e 182 do Código Penal"
+    },
+    {
+     "id": "cp171p4",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 171, § 4º — Estelionato contra idoso",
+     "chave": "CP#art-171/par-4",
+     "trecho": "se o crime é cometido contra idoso ou vulnerável"
+    },
+    {
+     "id": "cpp386iii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 386, III — Fato não é crime",
+     "chave": "CPP#art-386/inc-iii",
+     "trecho": "não constituir o fato infração penal"
+    }
+   ],
+   "inicio": "c1",
+   "cenas": {
+    "c1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "A Cuidadora",
+     "proxima": "c2"
+    },
+    "c2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "Ângela Souza, 34 anos, cuidadora de idosos. Há quase dois anos cuida de Dona Hortênsia Vilela, 82 anos, viúva e sem filhos. O sobrinho dela, Wesley, registrou queixa: diz que Ângela sacou R$ 62.500 da pensão da tia."
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "O Ministério Público denunciou por apropriação de proventos de idoso, art. 102 do Estatuto da Pessoa Idosa: reclusão de um a quatro anos e multa. O tipo exige 'aplicação diversa da finalidade'."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Então a pergunta é: o dinheiro foi gasto com a idosa, ou foi para o bolso de Ângela?"
+      },
+      {
+       "q": "helena",
+       "e": "confiante",
+       "t": "Exatamente. E tem outro detalhe: o Estatuto também pune quem induz idoso sem discernimento a assinar procuração, art. 106. A acusação vai sustentar que Dona Hortênsia não sabia o que assinava."
+      },
+      {
+       "q": "rafael",
+       "e": "bravo",
+       "t": "E tenha cuidado com a família. O art. 95 do Estatuto diz que, nos crimes contra o idoso, não valem as escusas do Código Penal para parentes. Quem lesa um idoso responde, mesmo sendo sobrinho."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Vou à casa de Dona Hortênsia. E depois à delegacia, ver o que mais há nos autos."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "epi102",
+        "epi106",
+        "epi95",
+        "cp171p4",
+        "cpp386iii"
+       ]
+      }
+     ],
+     "proxima": "c3"
+    },
+    "c3": {
+     "tipo": "investigar",
+     "local": "apartamento",
+     "titulo": "Apartamento de Dona Hortênsia",
+     "intro": [
+      {
+       "q": "a1xhortensia",
+       "e": "feliz",
+       "t": "Entre, meu bem, entre! Eu sou velha, mas não sou boba. Sei exatamente por que você veio. Aceita um café?"
+      }
+     ],
+     "pontos": [
+      {
+       "id": "estante",
+       "nome": "Caixa de recibos na estante",
+       "x": 9,
+       "y": 22,
+       "w": 19,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Uma caixa de sapato com divisórias por mês: remédios, fisioterapia, fraldas, consultas. Tudo com recibo, tudo na ordem, e o contrato da cuidadora!",
+         "recebe": [
+          "recibos"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Se Ângela quisesse desviar dinheiro, não guardaria cada papel como uma contadora."
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa com papéis",
+       "x": 30,
+       "y": 50,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Uma cópia da procuração pública, lavrada em cartório. A assinatura é de Hortênsia, com firma reconhecida, e o cartório certificou a identificação da outorgante.",
+         "recebe": [
+          "procuracao"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "comoda",
+       "nome": "Cartas do banco na cômoda",
+       "x": 64,
+       "y": 46,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Um extrato: saques mensais, sempre depois do pagamento da pensão. E, em 12 de março, um depósito de R$ 48.000 de uma tal 'Altavista Serviços', com 48 parcelas descontadas da pensão!",
+         "recebe": [
+          "extrato"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Altavista Serviços de novo. Mas que dinheiro é esse que a senhora não sabe que recebeu?"
+        }
+       ]
+      },
+      {
+       "id": "sofa",
+       "nome": "Pasta médica ao lado do sofá",
+       "x": 82,
+       "y": 50,
+       "w": 16,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "O laudo da geriatra: Hortênsia, plenamente lúcida, 28 de 30 pontos no mini-exame cognitivo. Ela sabe exatamente o que assina.",
+         "recebe": [
+          "laudomed"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "janela",
+       "nome": "Janela e vasos de violeta",
+       "x": 34,
+       "y": 10,
+       "w": 25,
+       "h": 36,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Violetas em todos os parapeitos. Alguém regou de manhã e as mantém vivas. Era o trabalho de Ângela."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a1xhortensia",
+       "titulo": "Conversar com Dona Hortênsia",
+       "falas": [
+        {
+         "q": "a1xhortensia",
+         "e": "bravo",
+         "t": "Eu mandei a Ângela sacar o dinheiro! Eu confio nela mais do que no meu próprio sangue. Ela me dá banho, me dá remédio, me ouve."
+        },
+        {
+         "q": "a1xhortensia",
+         "e": "triste",
+         "t": "O Wesley… apareceu uma vez no ano passado, no meu aniversário. Trouxe um bolo caro e perguntou do cartão do banco."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Ele perguntou do cartão?"
+        },
+        {
+         "q": "a1xhortensia",
+         "e": "pensativo",
+         "t": "Dizia que eu devia 'investir melhor'. Que ele conhecia uma financeira. Eu falei não. Ele ficou calado."
+        },
+        {
+         "q": "a1xhortensia",
+         "e": "triste",
+         "t": "A Ângela não vai para a prisão, não é? Ela é uma moça decente."
+        }
+       ]
+      },
+      {
+       "q": "a1xangela",
+       "titulo": "Conversar com Ângela",
+       "falas": [
+        {
+         "q": "a1xangela",
+         "e": "nervoso",
+         "t": "Doutor(a), eu juro que cada centavo foi com a Dona Hortênsia. Remédio, fralda, fisioterapeuta. E o meu salário, que ela mesma fixou."
+        },
+        {
+         "q": "a1xangela",
+         "e": "triste",
+         "t": "Eu sei que parece suspeito, sacar em dinheiro. Mas a farmácia e o fisioterapeuta dela só aceitam dinheiro, e a pensão não cobre tudo."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Você guarda os recibos?"
+        },
+        {
+         "q": "a1xangela",
+         "e": "confiante",
+         "t": "Todos. A minha mãe ensinou: papel é proteção para pobre."
+        }
+       ]
+      },
+      {
+       "q": "a1xnair",
+       "titulo": "Conversar com Dona Nair, a vizinha",
+       "falas": [
+        {
+         "q": "a1xnair",
+         "e": "feliz",
+         "t": "Eu e a Hortênsia nos conhecemos na igreja, somos viúvas da mesma rua. Venho tomar café com ela todo sábado."
+        },
+        {
+         "q": "a1xnair",
+         "e": "pensativo",
+         "t": "Eu já vi o Wesley entrar aqui com cara de quem faz conta. Ele trouxe um tablet, mandou ela assinar uns 'papéis do banco', e ela assinou."
+        },
+        {
+         "q": "a1xnair",
+         "e": "feliz",
+         "t": "Eu aprendi a reconhecer gente de bem, doutor(a). O rapaz do caminhão, o que atropelou o meu Osvaldo, veio me procurar. Entrou na minha cozinha, de cabeça baixa, e chorou comigo. Gente que erra e dá a cara tem alma. A Ângela é desse tipo.",
+         "se": "a1x_cassio_visita"
+        },
+        {
+         "q": "a1xnair",
+         "e": "pensativo",
+         "t": "Eu aprendi a reconhecer gente de bem, doutor(a). O rapaz do caminhão, o que atropelou o meu Osvaldo, me mandou uma carta muito bem escrita, e ofereceu pagar o funeral. Achei um pouco fria, mas honesta. A Ângela é desse tipo também.",
+         "se": "a1x_cassio_formal"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "recibos",
+      "procuracao",
+      "extrato",
+      "laudomed"
+     ],
+     "proxima": "c4"
+    },
+    "c4": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia: autos do inquérito",
+     "intro": [
+      {
+       "q": "a1xrita",
+       "e": "normal",
+       "t": "O doutor Fausto saiu em viagem. Eu sou a escrivã Rita Camargo. Os autos do caso estão à disposição da defesa, como manda a lei."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "livro",
+       "nome": "Livro de registro",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O registro da queixa: Wesley Vilela, dia 3 do mês, 10h. Ele diz que a tia 'está sendo explorada'. Nenhuma menção a recibos, nenhuma prova, só a acusação."
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural de avisos",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Um cartaz: 'Atenção, idoso: consignado só com sua presença e documento. Desconfie de financeiras que ligam oferecendo dinheiro.' Parece feito para esta história."
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Anexado ao inquérito, um contrato de consignado de R$ 48.000 em nome de Hortênsia, assinado eletronicamente… e o dinheiro foi para a conta de Wesley Vilela no mesmo dia!",
+         "recebe": [
+          "consignado"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Ninguém da polícia deu atenção a este contrato. O acusador é o beneficiário do empréstimo."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a1xrita",
+       "titulo": "Perguntar à escrivã sobre o contrato",
+       "falas": [
+        {
+         "q": "a1xrita",
+         "e": "nervoso",
+         "t": "O contrato veio da financeira, a Altavista Serviços, como anexo. O doutor Fausto mandou guardar na pasta e não pedir perícia."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A senhora sabe de onde veio a assinatura eletrônica?"
+        },
+        {
+         "q": "a1xrita",
+         "e": "pensativo",
+         "t": "O endereço de IP aparece no anexo. Eu mesma pesquisei, por curiosidade: é da casa do sobrinho. E o horário bate com o acesso ao aplicativo do banco no celular dele."
+        },
+        {
+         "q": "a1xrita",
+         "e": "nervoso",
+         "t": "Eu não devia estar falando isso. Mas idosa assim, doutor(a), eu tenho mãe."
+        },
+        {
+         "q": "narrador",
+         "t": "A escrivã imprime o relatório e o entrega a você.",
+         "recebe": [
+          "ip"
+         ]
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "consignado",
+      "ip"
+     ],
+     "proxima": "c5"
+    },
+    "c5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Aberta a audiência. Processo contra Ângela Souza, art. 102 do Estatuto da Pessoa Idosa.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Excelência, uma cuidadora com acesso à conta bancária e à confiança de uma senhora de 82 anos sacou R$ 62.500 em um ano. Chamo o sobrinho e único parente, Wesley Vilela."
+      },
+      {
+       "q": "a1xwesley",
+       "e": "triste",
+       "t": "Eu só quero proteger a minha tia, Excelência."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Proteger a tia, ou proteger a si mesmo? Vamos descobrir.)"
+      }
+     ],
+     "proxima": "c6"
+    },
+    "c6": {
+     "tipo": "depoimento",
+     "testemunha": "a1xwesley",
+     "titulo": "A queixa de Wesley",
+     "intro": [
+      {
+       "q": "a1xwesley",
+       "e": "triste",
+       "t": "Eu amo a minha tia. Se ela está sendo explorada, eu preciso agir."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Minha tia vive isolada. A cuidadora controla tudo, o cartão, o dinheiro e as visitas.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Isolada de quem?"
+        },
+        {
+         "q": "a1xwesley",
+         "e": "nervoso",
+         "t": "De mim. Da família."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Dona Nair a visita todo sábado, e a igreja a visita no domingo. Isso é isolamento?"
+        }
+       ]
+      },
+      {
+       "t": "Não existe nenhum comprovante de que o dinheiro foi usado com a minha tia. Nenhum recibo, nada!",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nenhum? O senhor procurou na casa dela?"
+        },
+        {
+         "q": "a1xwesley",
+         "e": "nervoso",
+         "t": "Não precisei. A Ângela nunca me mostrou nada."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O senhor pediu para ver?"
+        },
+        {
+         "q": "a1xwesley",
+         "e": "nervoso",
+         "t": "…Não."
+        }
+       ]
+      },
+      {
+       "t": "Eu vou lá todo mês e vejo como ela está. Sou presente.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Todo mês, senhor Wesley?"
+        },
+        {
+         "q": "a1xwesley",
+         "e": "nervoso",
+         "t": "Quase todo mês."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Dona Hortênsia disse que o senhor foi uma vez, no aniversário."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "recibos",
+       "extrato"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Nenhum comprovante? Aqui estão: R$ 37.300 em remédios, fisioterapia, fraldas e consultas, todos com recibo e guardados por mês, mais o contrato da cuidadora, R$ 2.100 por mês, que somam R$ 25.200. Total: R$ 62.500. Exatamente o que o extrato mostra que foi sacado!"
+      },
+      {
+       "q": "a1xwesley",
+       "e": "chocado",
+       "t": "Isso… isso eu não sabia.",
+       "fx": "tremor"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "O senhor registrou queixa de apropriação sem sequer pedir para ver os recibos?"
+      },
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Excelência, a denúncia pressupunha o desvio…"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "c7"
+    },
+    "c7": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Mesmo que existam recibos, Excelência, quem autorizou a ré a movimentar a conta? Uma cuidadora não tem esse direito! Isso é, no mínimo, abuso de confiança!"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(A ré não sacava por conta própria. Existe um documento público que a autoriza.)"
+      }
+     ],
+     "pergunta": "Que prova mostra que Ângela tinha autorização para movimentar a conta?",
+     "provas": [
+      "procuracao"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "A procuração pública, lavrada em cartório, assinada de próprio punho por Dona Hortênsia, dando a Ângela poderes para movimentar a conta e pagar as despesas da casa e do tratamento!"
+      },
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Mas a idosa pode ter sido induzida a assinar!"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "É o que vamos analisar. Mas, até aqui, o saque tinha amparo documental e era correspondente às despesas."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não trata da autorização, doutor(a)."
+      }
+     ],
+     "proxima": "c8"
+    },
+    "c8": {
+     "tipo": "depoimento",
+     "testemunha": "a1xotavio",
+     "titulo": "O olhar do banco",
+     "intro": [
+      {
+       "q": "a1xotavio",
+       "e": "normal",
+       "t": "Eu sou o gerente da agência há onze anos. Conheço a movimentação da senhora Hortênsia."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Os saques eram sempre feitos no dia seguinte ao crédito da pensão. É o padrão típico de quem desvia.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "É padrão de quem desvia, ou de quem paga as contas do mês?"
+        },
+        {
+         "q": "a1xotavio",
+         "e": "nervoso",
+         "t": "Bom… também pode ser."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Obrigado, o senhor acaba de me poupar uma pergunta."
+        }
+       ]
+      },
+      {
+       "t": "Nunca houve nenhuma autorização da titular para esses saques. Não consta no nosso sistema.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nunca? O senhor conferiu em cartório?"
+        },
+        {
+         "q": "a1xotavio",
+         "e": "nervoso",
+         "t": "No nosso sistema, apenas. A procuração pode não ter sido cadastrada."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Então o senhor não sabe, o sistema é que não sabe."
+        }
+       ]
+      },
+      {
+       "t": "A conta da senhora Hortênsia teve um depósito de R$ 48.000 em março, uma entrada fora do comum.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Um depósito? De quem?"
+        },
+        {
+         "q": "a1xotavio",
+         "e": "pensativo",
+         "t": "De uma financeira. 'Altavista Serviços'. E, desde então, 48 parcelas descontadas da pensão."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "E no mesmo dia, o dinheiro saiu da conta dela?"
+        },
+        {
+         "q": "a1xotavio",
+         "e": "nervoso",
+         "t": "Para outra conta. Eu não posso dizer de quem."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "procuracao"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "'Nunca houve autorização'? Existe uma procuração pública, lavrada em cartório, com firma reconhecida, pela qual a própria titular autorizou Ângela a movimentar a conta e pagar as despesas!"
+      },
+      {
+       "q": "a1xotavio",
+       "e": "chocado",
+       "t": "O sistema não a registrou, mas… se é pública, é válida.",
+       "fx": "tremor"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "O senhor gerente falou 'nunca' sem verificar a única fonte que importava: o cartório."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "c9"
+    },
+    "c9": {
+     "tipo": "depoimento",
+     "testemunha": "a1xwesley",
+     "titulo": "O empréstimo, por Wesley",
+     "intro": [
+      {
+       "q": "a1xwesley",
+       "e": "nervoso",
+       "t": "Eu volto a dizer: a minha tia estava confusa. Aquela cuidadora se aproveitou."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu nunca soube de empréstimo nenhum em nome da minha tia.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nunca ouviu falar de um consignado de R$ 48.000?"
+        },
+        {
+         "q": "a1xwesley",
+         "e": "nervoso",
+         "t": "Nunca. Só soube pela polícia."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Vamos ver o que mais o senhor 'só soube pela polícia'."
+        }
+       ]
+      },
+      {
+       "t": "Ela, sem discernimento, deve ter assinado qualquer coisa que a cuidadora pôs na frente.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Sem discernimento? Uma senhora que bordou a toalha do altar da igreja?"
+        },
+        {
+         "q": "a1xwesley",
+         "e": "nervoso",
+         "t": "Ela tem 82 anos!"
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Idade não é incapacidade, senhor Wesley."
+        }
+       ]
+      },
+      {
+       "t": "E aquele dinheiro de R$ 48.000 eu nem vi a cor. Se foi para a conta de alguém, não foi para a minha.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O senhor tem certeza de que não foi para a sua conta?"
+        },
+        {
+         "q": "a1xwesley",
+         "e": "confiante",
+         "t": "Absoluta. Eu nunca recebi nada."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Anotado. 'Absoluta'."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 2,
+      "provas": [
+       "consignado",
+       "ip"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O contrato de consignado mostra que o valor de R$ 48.000 foi transferido, no mesmo dia, para a conta de Wesley Vilela! E o relatório do endereço de IP mostra que a assinatura eletrônica foi feita da casa dele, às 23h14, no horário em que o celular dele acessava o aplicativo do banco!"
+      },
+      {
+       "q": "a1xwesley",
+       "e": "chocado",
+       "t": "Eu… foi um empréstimo para a minha tia, que ela pediu!",
+       "fx": "tremor"
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Senhor Wesley, o senhor acabou de afirmar sob compromisso que nunca soube do empréstimo, e que nunca recebeu nada. Qual das versões é a verdadeira?",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "chocado",
+       "t": "Excelência, a Promotoria precisa reavaliar a denúncia."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "c10"
+    },
+    "c10": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Ainda assim, Excelência! O art. 106 do Estatuto pune quem induz idoso sem discernimento a outorgar procuração. A senhora Hortênsia tem 82 anos. Quem garante que a procuração não foi induzida?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(O art. 106 exige idoso 'sem discernimento'. Dona Hortênsia, de crochê e café, está longe disso.)"
+      }
+     ],
+     "pergunta": "Que prova e que norma afastam a tese de que a procuração foi obtida de pessoa sem discernimento?",
+     "provas": [
+      "laudomed",
+      "epi106"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O art. 106 do Estatuto só alcança quem induz 'pessoa idosa sem discernimento de seus atos'. O laudo da geriatra atesta que Dona Hortênsia é plenamente lúcida, com 28 de 30 pontos no mini-exame cognitivo, na data da procuração e hoje!"
+      },
+      {
+       "q": "a1xhortensia",
+       "e": "bravo",
+       "t": "Eu sou velha, mas não sou boba!"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Palavras que ficam registradas nos autos."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Sem a falta de discernimento, o art. 106 não se aplica. A Promotoria reconhece."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não trata do discernimento da idosa, doutor(a)."
+      }
+     ],
+     "proxima": "c11"
+    },
+    "c11": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Alegações finais da defesa, doutor(a)."
+      }
+     ],
+     "pergunta": "Qual é o pedido final da defesa?",
+     "opcoes": [
+      {
+       "t": "Absolvição por insuficiência de provas (art. 386, VII): a acusação não conseguiu provar o desvio.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "Doutor(a), a sua prova faz mais do que deixar dúvida: ela demonstra que cada centavo foi aplicado na finalidade. Peça o fundamento mais forte."
+        }
+       ]
+      },
+      {
+       "t": "Absolvição por não constituir o fato infração penal (art. 386, III): dinheiro sacado com procuração válida e aplicado nas despesas da própria idosa não tem 'aplicação diversa da finalidade'.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "EPI#art-102",
+         "trecho": "dando-lhes aplicação diversa da de sua finalidade"
+        },
+        {
+         "chave": "CPP#art-386/inc-iii",
+         "trecho": "não constituir o fato infração penal"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, o art. 102 pune quem dá aos proventos do idoso 'aplicação diversa da finalidade'. Aqui a finalidade era o cuidado da própria senhora: remédio, fisioterapia, fraldas e o salário que ela mesma fixou. A procuração é válida, a idosa é lúcida e cada real tem recibo. O fato não é crime. Peço a absolvição, art. 386, III."
+        }
+       ]
+      },
+      {
+       "t": "Que o processo seja extinto porque o Ministério Público depende da representação da família (CP, art. 182).",
+       "certa": false,
+       "fundamentos": [
+        {
+         "chave": "EPI#art-95",
+         "trecho": "não se lhes aplicando os arts. 181 e 182 do Código Penal"
+        }
+       ],
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "O art. 95 do Estatuto afasta os arts. 181 e 182 do Código Penal: a ação é pública incondicionada, não depende da vontade de nenhum parente."
+        },
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "(Além do mais, o art. 182 trata de crime em prejuízo de parente do agente, e Ângela não é parente de Hortênsia. O argumento nem se aplicaria.)"
+        }
+       ]
+      }
+     ],
+     "proxima": "c12"
+    },
+    "c12": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Absolvo Ângela Souza, nos termos do art. 386, III, do Código de Processo Penal. Os valores sacados foram aplicados no custeio da própria idosa. Determino a remessa dos autos ao Ministério Público para apurar o empréstimo consignado em nome da senhora Hortênsia, art. 171, § 4º, do Código Penal.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a1xangela",
+       "e": "feliz",
+       "t": "Dona Hortênsia, eu vou continuar cuidando da senhora, pode ficar sossegada."
+      },
+      {
+       "q": "a1xhortensia",
+       "e": "feliz",
+       "t": "Eu nunca duvidei, filha."
+      },
+      {
+       "q": "a1xnair",
+       "e": "feliz",
+       "t": "Eu sempre disse que a vida dá voltas. E este tribunal acertou.",
+       "se": "a1x_cassio_visita"
+      },
+      {
+       "q": "a1xnair",
+       "e": "feliz",
+       "t": "Eu disse que a Ângela era honesta. Eu conheço gente honesta quando vejo.",
+       "se": "a1x_cassio_formal"
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "(para você) A Altavista Serviços de novo. O Pix do Ivo, o consignado da Hortênsia… eles têm uma máquina de aplicar golpe em idosos. E os documentos de Wesley chegam até alguém, doutor(a)."
+      },
+      {
+       "q": "rafael",
+       "e": "nervoso",
+       "t": "(no escritório, mais tarde) Você está chegando perto demais. Eles não vão perdoar."
+      }
+     ],
+     "proxima": "c13"
+    },
+    "c13": {
+     "tipo": "veredicto",
+     "carimbo": "ABSOLVIDA",
+     "titulo": "Uma ré de recibos na mão",
+     "texto": "Com recibos, procuração e laudo médico, a cuidadora foi absolvida. O verdadeiro beneficiário do dinheiro era quem acusou: o sobrinho, com um consignado da Altavista Serviços em nome da tia.",
+     "variantes": [
+      {
+       "se": "a1x_cassio_visita",
+       "texto": "Com recibos, procuração e laudo médico, a cuidadora foi absolvida. O verdadeiro beneficiário do dinheiro era quem acusou: o sobrinho, com um consignado da Altavista Serviços em nome da tia. Dona Nair, que perdoou Cássio frente a frente, vê no seu trabalho uma coerência: você defende gente, mesmo quando ninguém olha."
+      },
+      {
+       "se": "a1x_cassio_formal",
+       "texto": "Com recibos, procuração e laudo médico, a cuidadora foi absolvida. O verdadeiro beneficiário do dinheiro era quem acusou: o sobrinho, com um consignado da Altavista Serviços em nome da tia. Dona Nair, que recebeu a carta de condolências de Cássio, reconhece em você um jeito sóbrio e correto de defender."
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

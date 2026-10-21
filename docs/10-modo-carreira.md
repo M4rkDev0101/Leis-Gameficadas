@@ -50,12 +50,35 @@ nem o seu antigo mentor.
 | IV — A Toga | A Primeira Decisão · O Celular Aberto · Preso para Averiguação · As Três Fases · A Casa É Asilo · Jorge Antunes | ✅ |
 | V — Altavista | A Exceção · O Colaborador · O Aço Não Mente · O Plenário · Sentença | ✅ |
 
-29 casos, todos validados contra a lei vigente e jogados de ponta a ponta pelo `tools/autoplay.js`.
+Casos extras (entre os casos principais de cada ato): Ato I — O Preço do Notebook, Faróis Apagados,
+A Cuidadora · Ato II — A Dívida em Dobro, O Lacre, Setenta por Cento · Ato III — A Sala dos Fundos, Ao Vivo,
+Calibre de Obra · Ato IV — Pena a Cumprir, Briga de Bar, Duzentos Metros · Ato V — O Habeas de Brandão,
+O Incidente de Insanidade.
+
+**43 casos**, todos validados contra a lei vigente e jogados de ponta a ponta pelo `tools/autoplay.js`.
 
 A duração mostrada no jogo é uma estimativa conservadora (`tribunal.estimate_minutes`): leitura a
 ~170 palavras por minuto, ~25 s por decisão e ~40 s por ponto de investigação, sem contar erros,
-releitura dos autos e retomadas. A campanha inteira soma cerca de 6,1 horas por essa conta
-(Ato I 0,9 h · II 1,0 h · III 1,6 h · IV 1,3 h · V 1,3 h).
+releitura dos autos e retomadas. A campanha inteira soma cerca de **11,9 horas** por essa conta
+(Ato I 2,0 h · II 2,0 h · III 2,8 h · IV 2,6 h · V 2,4 h).
+
+## Escolhas e finais
+
+Dilemas (`escolha` com `"livre": true`) não têm resposta errada: cada opção deixa uma **marca** na
+carreira, gravada quando o caso é vencido (rejogar e escolher diferente troca a marca). Falas com
+`"se": "marca"` (ou `"!marca"`) e veredictos com `variantes` mudam conforme as marcas, inclusive de atos
+anteriores. As marcas que atravessam a campanha:
+
+| Ato | Dilema | Consequência |
+| --- | --- | --- |
+| I | dar uma chance a Lucas no escritório | Lucas reaparece no Ato V |
+| II | prometer visitar Sofia | o desenho de Sofia no epílogo |
+| III | abrir colaboração com Valadares ou denunciar com rigor | Valadares depõe (ou não) no julgamento final |
+| IV | manter distância de Helena antes do julgamento | Brandão usa (ou não) a amizade na exceção de suspeição |
+| V | o seu futuro: primeira instância, tribunal ou escola | três finais e o epílogo "Dez anos depois" |
+
+Cada ato abre com uma cena de promoção de cargo; o menu mostra conquistas e as escolhas feitas, e o
+último caso termina com epílogo e créditos.
 
 ## Formato da cena de investigação
 
