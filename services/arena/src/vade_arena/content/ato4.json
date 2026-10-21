@@ -1,0 +1,4885 @@
+{
+ "ato": "ato4",
+ "personagens": {
+  "a4rita": {
+   "nome": "Rita Camargo",
+   "cargo": "Assessora de gabinete",
+   "voz": 480,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "coque",
+    "corCabelo": "#2a1a10",
+    "roupa": "blazer",
+    "corRoupa": "#2c5f4a",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a4tulio": {
+   "nome": "Dr. Túlio Bastos",
+   "cargo": "Promotor de Justiça",
+   "voz": 250,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#3b2414",
+    "roupa": "terno",
+    "corRoupa": "#2b2b3a",
+    "gravata": "#8a1c1c",
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a4nadia": {
+   "nome": "Dra. Nádia Quirino",
+   "cargo": "Defensora Pública",
+   "voz": 460,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "cacheado",
+    "corCabelo": "#111111",
+    "roupa": "terno",
+    "corRoupa": "#5b2c6f",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a4gilson": {
+   "nome": "Inspetor Gilson Maia",
+   "cargo": "Investigador da Polícia Civil",
+   "voz": 290,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "curto",
+    "corCabelo": "#222222",
+    "roupa": "farda",
+    "corRoupa": "#2e3b4e",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a4anselmo": {
+   "nome": "Cabo Anselmo Reis",
+   "cargo": "Policial militar",
+   "voz": 310,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "curto",
+    "corCabelo": "#5a3a22",
+    "roupa": "farda",
+    "corRoupa": "#3b4a2a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a4helio": {
+   "nome": "Dr. Hélio Brito",
+   "cargo": "Delegado de Polícia",
+   "voz": 270,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "topete",
+    "corCabelo": "#2a2a2a",
+    "roupa": "terno",
+    "corRoupa": "#3a3a3a",
+    "gravata": "#1f5aa6",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a4des": {
+   "nome": "Des. Ernesto Vilar",
+   "cargo": "Desembargador · Tribunal de Justiça",
+   "voz": 215,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "careca",
+    "corCabelo": "#cfcfcf",
+    "roupa": "toga",
+    "corRoupa": "#111111",
+    "gravata": null,
+    "oculos": true,
+    "barba": true
+   }
+  },
+  "a4everton": {
+   "nome": "Everton Ramos",
+   "cargo": "Pedreiro · paciente do habeas corpus",
+   "voz": 330,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "casual",
+    "corRoupa": "#7f8c8d",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a4heraldo": {
+   "nome": "Heraldo Pimentel",
+   "cargo": "Dono da loja de móveis (vítima)",
+   "voz": 280,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "careca",
+    "corCabelo": "#999999",
+    "roupa": "casual",
+    "corRoupa": "#7b4a24",
+    "gravata": null,
+    "oculos": true,
+    "barba": true
+   }
+  },
+  "a4barreto": {
+   "nome": "Sargento Barreto",
+   "cargo": "Policial militar",
+   "voz": 240,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#111111",
+    "roupa": "farda",
+    "corRoupa": "#3b4a2a",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a4zilda": {
+   "nome": "Dona Zilda Menezes",
+   "cargo": "Vizinha do réu",
+   "voz": 430,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "cacheado",
+    "corCabelo": "#cfcfcf",
+    "roupa": "casual",
+    "corRoupa": "#c0392b",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a4jorge": {
+   "nome": "Jorge Antunes",
+   "cargo": "Preso em flagrante · corretor de imóveis",
+   "voz": 215,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "careca",
+    "corCabelo": "#111111",
+    "roupa": "casual",
+    "corRoupa": "#6b7a8f",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  }
+ },
+ "episodios": [
+  {
+   "id": "a4-fundamento",
+   "ato": "ato4",
+   "ordem": 1,
+   "numero": 19,
+   "titulo": "A Primeira Decisão",
+   "papel": "juiz",
+   "nivel": "intermediario",
+   "sinopse": "Sua primeira semana de toga. O Ministério Público pede a prisão preventiva de um jovem primário, a cidade quer um culpado e alguém promete \"consequências\" se você soltar o réu. Decida com fundamento concreto, não com o clamor.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4nadia": "defesa",
+    "a4gilson": "testemunha",
+    "a4rita": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "flagrante",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Auto de prisão em flagrante",
+     "descricao": "Cléber Nunes, 24 anos, foi preso dentro da loja TecnoVila, de madrugada, com um comparsa que fugiu. Rompeu o cadeado da porta de enrolar. Crime: furto qualificado (art. 155, § 4º, I e IV), pena de 2 a 8 anos."
+    },
+    {
+     "id": "mp",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "Pedido de preventiva do MP",
+     "descricao": "O Ministério Público pede a preventiva \"pela gravidade do crime, pelo clamor social e porque o réu ameaçou a testemunha Lúcia por telefone\"."
+    },
+    {
+     "id": "certidao",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Certidão de antecedentes",
+     "descricao": "Nada consta. Cléber nunca foi processado nem condenado. Sem inquéritos em curso."
+    },
+    {
+     "id": "carceragem",
+     "tipo": "prova",
+     "icone": "🔒",
+     "nome": "Registro da carceragem",
+     "descricao": "Cléber está sob custódia desde o flagrante. Entregou o celular e os pertences ao ser preso e não teve acesso a telefone algum até a audiência."
+    },
+    {
+     "id": "trabalho",
+     "tipo": "prova",
+     "icone": "🏠",
+     "nome": "Emprego e residência",
+     "descricao": "Carteira assinada na Padaria Boa Massa há 3 anos. Mora com a mãe, em endereço fixo, comprovado por conta de luz."
+    },
+    {
+     "id": "ligacoes",
+     "tipo": "prova",
+     "icone": "📞",
+     "nome": "Registro das ligações ameaçadoras",
+     "descricao": "As duas ligações a Lúcia partiram de uma linha pré-paga cujo titular é Cleiton Nunes Barreto, de outro município, e foram feitas quando Cléber já estava preso."
+    },
+    {
+     "id": "cpp312",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 312 — Requisitos da preventiva",
+     "chave": "CPP#art-312",
+     "trecho": "quando houver prova da existência do crime e indício suficiente de autoria e de perigo gerado pelo estado de liberdade do imputado"
+    },
+    {
+     "id": "cpp312p4",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 312, § 4º — Gravidade abstrata",
+     "chave": "CPP#art-312/par-4",
+     "trecho": "É incabível a decretação da prisão preventiva com base em alegações de gravidade abstrata do delito"
+    },
+    {
+     "id": "cpp313",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 313, I — Admissibilidade",
+     "chave": "CPP#art-313/inc-i",
+     "trecho": "nos crimes dolosos punidos com pena privativa de liberdade máxima superior a 4 (quatro) anos"
+    },
+    {
+     "id": "cpp315",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 315, § 1º — Fatos concretos",
+     "chave": "CPP#art-315/par-1",
+     "trecho": "o juiz deverá indicar concretamente a existência de fatos novos ou contemporâneos que justifiquem a aplicação da medida adotada"
+    },
+    {
+     "id": "cpp282",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 282, § 6º — Preventiva como último caso",
+     "chave": "CPP#art-282/par-6",
+     "trecho": "A prisão preventiva somente será determinada quando não for cabível a sua substituição por outra medida cautelar"
+    },
+    {
+     "id": "cpp319",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 319 — Cautelares diversas da prisão",
+     "chave": "CPP#art-319/inc-i",
+     "trecho": "comparecimento periódico em juízo, no prazo e nas condições fixadas pelo juiz, para informar e justificar atividades"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas às testemunhas",
+     "chave": "CPP#art-212",
+     "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+    }
+   ],
+   "placas": {
+    "defesa": "Defensoria Pública",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 19 · Ato IV: A Toga",
+     "subtitulo": "A Primeira Decisão",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Vara Criminal. Uma sala de pé-direito alto, cheiro de papel velho e uma bandeira que ainda parece grande demais para você."
+      },
+      {
+       "q": "a4rita",
+       "e": "feliz",
+       "t": "Bom dia, Excelência! Eu sou a Rita, assessora do gabinete. Seja bem-vindo(a). Passou no concurso, tomou posse, e já tem audiência marcada para as dez."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "É o caso do Cléber Nunes: furto qualificado numa loja de eletrônicos, com rompimento de obstáculo e concurso de pessoas. Preso em flagrante há dois dias."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "O promotor, Dr. Túlio, pediu a preventiva. Tem repórter na porta do fórum e alguém deixou este bilhete na sua mesa: \"Quem solta ladrão é cúmplice\"."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Sem assinatura. Guarde o bilhete, Rita. Quero ler os autos antes de me preocupar com ele."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram juntados ao processo.",
+       "recebe": [
+        "flagrante",
+        "mp",
+        "cpp312",
+        "cpp312p4",
+        "cpp313",
+        "cpp315",
+        "cpp282",
+        "cpp319",
+        "cpp212"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Gabinete · Autos do caso Cléber Nunes",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Antes da audiência, você confere o que o processo realmente diz. A decisão sobre a liberdade de uma pessoa não nasce de manchete."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com processos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A certidão de antecedentes: nada consta. Nenhum processo, nenhum inquérito. Primário.",
+         "recebe": [
+          "certidao"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "E o registro da carceragem: Cléber entregou o celular ao ser preso e ficou sem telefone desde então.",
+         "recebe": [
+          "carceragem"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pc",
+       "nome": "Computador",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Consulto o sistema. Carteira assinada há três anos na padaria, endereço fixo na casa da mãe.",
+         "recebe": [
+          "trabalho"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "E o relatório da operadora sobre as ligações a Lúcia: a linha é de um tal Cleiton Nunes Barreto, de outra cidade. As chamadas foram feitas quando Cléber já estava preso!",
+         "recebe": [
+          "ligacoes"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de livros",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Um exemplar gasto do Código de Processo Penal, marcado com post-its de quem ocupou a sala antes. No art. 312: \"perigo concreto, não presumido\"."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Concreto. É a palavra que vou repetir hoje."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4rita",
+       "titulo": "Conversar com Rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "O Dr. Túlio é bom e é honesto, Excelência. Mas está sob pressão: o dono da loja é conhecido do prefeito."
+        },
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Se Vossa Excelência decretar a preventiva, ninguém reclama. Se soltar, vai ter manchete. Mas manchete não é fundamento."
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Exatamente, Rita. O que a lei exige é motivação concreta, não aplauso."
+        }
+       ]
+      },
+      {
+       "q": "a4nadia",
+       "titulo": "Ouvir a defensora",
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "confiante",
+         "t": "Excelência, o Cléber é réu primário, trabalha, mora com a mãe. A única coisa nova no pedido do MP é uma ligação ameaçadora que ele não pode ter feito: estava preso."
+        },
+        {
+         "q": "a4nadia",
+         "e": "pensativo",
+         "t": "Peço que Vossa Excelência confira o registro da operadora antes de me ouvir em plenário."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "certidao",
+      "carceragem",
+      "trabalho",
+      "ligacoes"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência de instrução do caso Cléber Nunes.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Excelência, o Ministério Público mantém o pedido: o crime foi grave, a cidade está indignada e o réu ameaçou uma testemunha. Chamo o Inspetor Gilson Maia."
+      },
+      {
+       "q": "a4gilson",
+       "e": "normal",
+       "t": "Boa tarde, Excelência. Eu conduzi a investigação."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Inspetor, o senhor confirma que o réu agiu sempre com extrema periculosidade, não é verdade?"
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor já entrega a resposta!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defensora protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. Reformule, doutor. A testemunha relata fatos; as conclusões são minhas.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Inspetor, o que o senhor viu na loja?"
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência… a pergunta já traz a resposta embutida. O art. 212 do CPP manda não admitir."
+      }
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "depoimento",
+     "testemunha": "a4gilson",
+     "titulo": "O Inspetor Gilson Maia",
+     "intro": [
+      {
+       "q": "a4gilson",
+       "e": "confiante",
+       "t": "Excelência, vou relatar o que apurei."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O réu foi preso dentro da loja, no flagrante, depois de romper o cadeado da porta.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O flagrante é incontroverso?"
+        },
+        {
+         "q": "a4gilson",
+         "e": "normal",
+         "t": "Sim, Excelência. Isso está no auto."
+        }
+       ]
+      },
+      {
+       "t": "Dois dias depois, a testemunha Lúcia recebeu duas ligações ameaçadoras. Foi o réu quem ligou.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O senhor tem certeza de que foi o próprio réu?"
+        },
+        {
+         "q": "a4gilson",
+         "e": "nervoso",
+         "t": "Tenho… tenho, sim. Quem mais teria motivo?"
+        }
+       ]
+      },
+      {
+       "t": "O número da linha está ligado ao círculo do réu e à família dele.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Ligado de que forma?"
+        },
+        {
+         "q": "a4gilson",
+         "e": "nervoso",
+         "t": "Um parente, acho. Vou conferir."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "carceragem",
+       "ligacoes"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Inspetor!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor afirma que o réu ligou. Mas o registro da carceragem prova que ele estava preso, sem celular, desde o flagrante. E a operadora informa que a linha é de Cleiton Nunes Barreto, que mora em outro município."
+      },
+      {
+       "q": "a4gilson",
+       "e": "chocado",
+       "t": "Eu… não tinha cruzado esses dados, Excelência.",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4tulio",
+       "e": "chocado",
+       "t": "Retiro o argumento da ameaça, Excelência. Eu também não tinha esses dados."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não afasta a afirmação, Inspetor. Olhe de novo o que a defesa e a carceragem registram."
+      }
+     ],
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "pensativo",
+       "t": "Inspetor, o senhor já disse que ninguém tinha visto o réu usar violência. Há alguma arma apreendida?"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! A pergunta já foi respondida, Excelência!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta: pergunta repetida. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "importarem na repetição de outra já respondida"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Indeferido. Ninguém perguntou sobre arma ainda. Responda, Inspetor.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4gilson",
+       "e": "normal",
+       "t": "Nenhuma arma, Excelência. Só a ferramenta que rompeu o cadeado."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Mas essa pergunta é nova, Excelência. Só se barra pergunta já respondida."
+      }
+     ],
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Instrução encerrada. A decisão é sua, Excelência. Vamos por partes, como manda o CPP."
+      }
+     ],
+     "pergunta": "A preventiva é admissível neste caso? E isso basta para decretá-la?",
+     "opcoes": [
+      {
+       "t": "Não é admissível: furto não permite preventiva.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "O furto qualificado tem pena máxima de 8 anos. Passa dos 4 do art. 313, I."
+        }
+       ]
+      },
+      {
+       "t": "É admissível (pena máxima de 8 anos, art. 313, I), mas admissibilidade não basta: sem perigo concreto gerado pela liberdade (art. 312), não há preventiva.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Isso! O art. 313 só abre a porta. Quem decide se a pessoa entra é o art. 312."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-313/inc-i",
+         "trecho": "nos crimes dolosos punidos com pena privativa de liberdade máxima superior a 4 (quatro) anos"
+        },
+        {
+         "chave": "CPP#art-312",
+         "trecho": "perigo gerado pelo estado de liberdade do imputado"
+        }
+       ]
+      },
+      {
+       "t": "É admissível e, sendo admissível, está decretada: o crime é grave.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Excelência, esse é o raciocínio que o § 4º do art. 312 proíbe: gravidade abstrata não basta."
+        }
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "O MP aponta três motivos: gravidade, clamor social e a ameaça à testemunha. Vossa Excelência vai enfrentar cada um na decisão, não é? O art. 315 exige."
+      }
+     ],
+     "pergunta": "Qual é o tratamento correto desses argumentos?",
+     "opcoes": [
+      {
+       "t": "Gravidade e clamor bastam; a ameaça confirma. Decreto.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Clamor social e gravidade abstrata não são fundamentos concretos (art. 312, § 4º). E a ameaça foi desmentida."
+        }
+       ]
+      },
+      {
+       "t": "Gravidade abstrata e clamor não fundamentam a preventiva; a ameaça foi desmentida pela carceragem e pela operadora; sobram primariedade, emprego e residência fixos.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Perfeito. Decisão que enfrenta todos os argumentos, um a um, é decisão fundamentada."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-312/par-4",
+         "trecho": "É incabível a decretação da prisão preventiva com base em alegações de gravidade abstrata do delito"
+        },
+        {
+         "chave": "CPP#art-315/par-1",
+         "trecho": "fatos novos ou contemporâneos"
+        }
+       ]
+      },
+      {
+       "t": "Não preciso responder ao clamor: basta escrever \"ausentes os requisitos\".",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Fórmula genérica não é fundamentação (art. 315, § 2º). A decisão que nega também deve ser motivada."
+        }
+       ]
+      }
+     ],
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "Excelência, se Vossa Excelência não decretar a preventiva, ao menos faça algo: um réu de furto qualificado não pode sair sem nenhuma consequência."
+      }
+     ],
+     "pergunta": "Qual é a decisão?",
+     "opcoes": [
+      {
+       "t": "Decreto a preventiva \"por cautela\", para apaziguar a cidade.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "\"Por cautela\" é motivo que serviria a qualquer outra decisão. Fundamentação vazia, Excelência."
+        }
+       ]
+      },
+      {
+       "t": "Concedo liberdade provisória, mas imponho cautelares do art. 319: comparecimento periódico, proibição de ausentar-se da comarca e recolhimento noturno, justificando por que são adequadas e suficientes.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "É uma resposta proporcional. O Ministério Público não vai recorrer."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-319/inc-i",
+         "trecho": "comparecimento periódico em juízo"
+        },
+        {
+         "chave": "CPP#art-282/par-6",
+         "trecho": "A prisão preventiva somente será determinada quando não for cabível a sua substituição por outra medida cautelar"
+        }
+       ]
+      },
+      {
+       "t": "Solto Cléber sem nenhuma condição: ele é primário e a defensora pediu.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "O art. 282 manda considerar necessidade e adequação. Para furto qualificado, o acompanhamento mínimo é razoável."
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Concedo liberdade provisória a Cléber Nunes, mediante as cautelares do art. 319, I, IV e V. Não há perigo concreto que exija a prisão, e a suposta ameaça foi desmentida pela prova. Encaminhem a certidão ao Ministério Público: alguém usou a linha de Cleiton Nunes Barreto para intimidar Lúcia.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4nadia",
+       "e": "feliz",
+       "t": "A defesa agradece a atenção aos autos, Excelência."
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "O Ministério Público reconhece a fundamentação. E vai investigar quem ligou para a testemunha."
+      },
+      {
+       "q": "a4rita",
+       "e": "chocado",
+       "t": "Excelência… outro bilhete na mesa. \"Foi só a primeira. Cuidado com as próximas.\" De novo sem assinatura."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Então tem alguém acompanhando minhas decisões. Que acompanhe. Decisão boa é a que eu poderia assinar com o nome na porta."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "veredicto",
+     "carimbo": "LIBERDADE FUNDAMENTADA",
+     "titulo": "Primeira decisão, primeira prova",
+     "texto": "Você negou a preventiva sem ceder ao clamor, enfrentou cada argumento do MP e aplicou cautelares do art. 319. Mas dois bilhetes sem assinatura mostram que alguém vigia a sua toga. Próximo caso: uma audiência cheia de protestos e uma prova que nasceu de uma ilegalidade."
+    }
+   }
+  },
+  {
+   "id": "a4-ilicita",
+   "ato": "ato4",
+   "ordem": 2,
+   "numero": 20,
+   "titulo": "O Celular Aberto",
+   "papel": "juiz",
+   "nivel": "avancado",
+   "sinopse": "O advogado Augusto Brandão volta a aparecer, agora diante de você. Seu cliente foi preso com o celular aberto por policiais sem ordem judicial. Decida os protestos, barre a prova ilícita e preserve o que a lei deixa de pé.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "brandao": "defesa",
+    "a4anselmo": "testemunha",
+    "a4rita": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "denuncia",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "Denúncia",
+     "descricao": "Wesley Tavares, analista de TI da Altavista Tech, é acusado de furto mediante fraude eletrônica (CP, art. 155, § 4º-B) por desviar R$ 40 mil de clientes de um banco por meio de transferências para contas laranja."
+    },
+    {
+     "id": "termo",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Termo de apreensão",
+     "descricao": "Wesley foi abordado às 2h40 e conduzido à delegacia, aonde chegou às 4h. No termo, assinado por duas testemunhas, consta: \"o conduzido recusou-se a fornecer a senha e permaneceu em silêncio\"."
+    },
+    {
+     "id": "log",
+     "tipo": "prova",
+     "icone": "💾",
+     "nome": "Relatório forense do celular",
+     "descricao": "O aparelho foi desbloqueado por programa de força bruta às 3h12, ainda na viatura, e as mensagens com instruções de transferência foram copiadas. Não havia ordem judicial para acessar o conteúdo."
+    },
+    {
+     "id": "quebra",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Decisão de quebra de sigilo bancário",
+     "descricao": "Onze dias antes da prisão, outra decisão judicial, fundamentada e em procedimento próprio, quebrou o sigilo bancário das contas de destino e requisitou ao banco os dados de acesso das transferências."
+    },
+    {
+     "id": "banco",
+     "tipo": "prova",
+     "icone": "🏦",
+     "nome": "Relatório do banco",
+     "descricao": "Enviado em resposta à quebra de sigilo: as 14 transferências partiram do IP residencial de Wesley, com seu login. Documento anterior ao flagrante e independente do celular."
+    },
+    {
+     "id": "cf5lvi",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LVI — Provas ilícitas",
+     "chave": "CF#art-5/inc-lvi",
+     "trecho": "são inadmissíveis, no processo, as provas obtidas por meios ilícitos"
+    },
+    {
+     "id": "cpp157",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 157 — Provas ilícitas",
+     "chave": "CPP#art-157",
+     "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+    },
+    {
+     "id": "cpp157p1",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 157, § 1º — Provas derivadas",
+     "chave": "CPP#art-157/par-1",
+     "trecho": "São também inadmissíveis as provas derivadas das ilícitas, salvo quando não evidenciado o nexo de causalidade entre umas e outras, ou quando as derivadas puderem ser obtidas por uma fonte independente das primeiras"
+    },
+    {
+     "id": "cpp157p2",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 157, § 2º — Fonte independente",
+     "chave": "CPP#art-157/par-2",
+     "trecho": "Considera-se fonte independente aquela que por si só, seguindo os trâmites típicos e de praxe, próprios da investigação ou instrução criminal, seria capaz de conduzir ao fato objeto da prova"
+    },
+    {
+     "id": "cf5lxiii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LXIII — Silêncio",
+     "chave": "CF#art-5/inc-lxiii",
+     "trecho": "o preso será informado de seus direitos, entre os quais o de permanecer calado"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas às testemunhas",
+     "chave": "CPP#art-212",
+     "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+    },
+    {
+     "id": "cpp315",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 315, § 2º, IV — Enfrentar argumentos",
+     "chave": "CPP#art-315/par-2/inc-iv",
+     "trecho": "não enfrentar todos os argumentos deduzidos no processo capazes de, em tese, infirmar a conclusão adotada pelo julgador"
+    }
+   ],
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 20 · Ato IV: A Toga",
+     "subtitulo": "O Celular Aberto",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Excelência, preparado(a) para hoje? O réu é Wesley Tavares, da Altavista Tech. E o advogado dele é…"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Augusto Brandão. Eu sei, Rita. Faz anos que esse nome atravessa a minha vida."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Ele já protocolou uma petição de 60 páginas: pede nulidade de tudo, desde o flagrante. E avisou à imprensa que, se Vossa Excelência errar, \"o Tribunal corrige\"."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A denúncia e as primeiras peças entraram nos autos.",
+       "recebe": [
+        "denuncia",
+        "cf5lvi",
+        "cpp157",
+        "cpp157p1",
+        "cpp157p2",
+        "cf5lxiii",
+        "cpp212",
+        "cpp315"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Gabinete · A prova do celular",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Brandão pediu para falar com você antes da audiência. Você aceita, com a Rita na sala, e antes disso confere os autos."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com processos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O termo de apreensão: o conduzido \"recusou-se a fornecer a senha e permaneceu em silêncio\". Duas testemunhas assinaram.",
+         "recebe": [
+          "termo"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Chegada à delegacia: 4h. Abordagem: 2h40. Guarde esses números."
+        }
+       ]
+      },
+      {
+       "id": "pc",
+       "nome": "Computador",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "O relatório forense: o celular foi desbloqueado por força bruta às 3h12, ainda na viatura, e nenhuma ordem judicial autorizava isso.",
+         "recebe": [
+          "log"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Mas tem outra pasta: uma decisão de quebra de sigilo bancário, de onze dias antes da prisão, em procedimento separado.",
+         "recebe": [
+          "quebra"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "E o relatório do banco, que chegou em resposta a essa quebra: 14 transferências saíram do IP de Wesley.",
+         "recebe": [
+          "banco"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de livros",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Um comentário ao art. 157: prova ilícita, derivada, fonte independente. Três ideias para decidir esta audiência."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Ilícita ela é; mas o que dela decorre só cai se tiver nexo de causalidade e não tiver fonte independente."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "brandao",
+       "titulo": "Receber o Dr. Brandão",
+       "falas": [
+        {
+         "q": "brandao",
+         "e": "confiante",
+         "t": "Excelência, é um prazer revê-lo(a). O tempo passa. Lembro de quando via Vossa Excelência como um(a) jovem estagiário(a)…"
+        },
+        {
+         "q": "brandao",
+         "e": "apontando",
+         "t": "Quero apenas lembrar que a prova do celular é ilícita. Se Vossa Excelência a admitir, o processo todo cai no Tribunal. E uma reforma de sentença… marca a carreira de um(a) magistrado(a)."
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Dr. Brandão, o senhor pode fazer todos os pedidos na audiência. Aqui no gabinete, só ouço. Decido em audiência pública, com os fundamentos escritos."
+        }
+       ]
+      },
+      {
+       "q": "a4rita",
+       "titulo": "Conversar com Rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "Excelência, o Tribunal reforma quem erra por pressa e também quem erra por medo. A pressão do Brandão é sempre sobre o segundo."
+        },
+        {
+         "q": "a4rita",
+         "e": "confiante",
+         "t": "Siga o CPP. Se a prova é ilícita, desentranhe. Mas só o que for realmente ilícito."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "termo",
+      "log",
+      "quebra",
+      "banco"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência. Ministério Público, chame a testemunha.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Cabo Anselmo Reis, da Polícia Militar, que abordou o réu."
+      },
+      {
+       "q": "brandao",
+       "e": "confiante",
+       "t": "A defesa já registra que se oporá a toda prova obtida do celular, Excelência."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Cabo, o réu lhe entregou a senha do celular de livre e espontânea vontade, não foi?"
+      },
+      {
+       "q": "brandao",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor está dizendo à testemunha o que responder!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defesa protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. A pergunta já embute a resposta. Reformule, doutor.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Cabo, como o celular foi aberto?"
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência… art. 212: a pergunta induz a resposta."
+      }
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "brandao",
+       "e": "pensativo",
+       "t": "Cabo, o senhor torce para algum time? Porque o comportamento da PM esta semana lembra um clássico…"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! Sem relação com a causa, Excelência!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta: pergunta sem relação com a causa. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não tiverem relação com a causa"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. O time do cabo não interessa ao processo, doutor.",
+       "fx": "martelo"
+      },
+      {
+       "q": "brandao",
+       "e": "nervoso",
+       "t": "Retiro a pergunta, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Futebol não tem relação com a causa, Excelência. O art. 212 autoriza barrar."
+      }
+     ],
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "depoimento",
+     "testemunha": "a4anselmo",
+     "titulo": "O Cabo Anselmo Reis",
+     "intro": [
+      {
+       "q": "a4anselmo",
+       "e": "nervoso",
+       "t": "Excelência, vou relatar tudo como aconteceu."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Abordei o réu às 2h40, em atitude suspeita, perto da agência bancária.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Foi a abordagem que levou ao flagrante?"
+        },
+        {
+         "q": "a4anselmo",
+         "e": "normal",
+         "t": "Sim, Excelência."
+        }
+       ]
+      },
+      {
+       "t": "Ele me entregou a senha do celular por livre vontade, e eu só vi as mensagens depois, quando ele assinou o termo, já na delegacia.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O senhor tem certeza de que foi só na delegacia?"
+        },
+        {
+         "q": "a4anselmo",
+         "e": "nervoso",
+         "t": "Sim… foi o procedimento normal."
+        }
+       ]
+      },
+      {
+       "t": "Tudo foi feito com o conhecimento e o consentimento do réu.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Ele declarou consentimento por escrito?"
+        },
+        {
+         "q": "a4anselmo",
+         "e": "nervoso",
+         "t": "Verbalmente, Excelência."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "termo",
+       "log"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Cabo!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor diz que só viu as mensagens na delegacia, depois da assinatura do termo. Mas o relatório forense registra o desbloqueio às 3h12, ainda na viatura, e o termo diz que Wesley chegou à delegacia às 4h e permaneceu em silêncio."
+      },
+      {
+       "q": "a4anselmo",
+       "e": "chocado",
+       "t": "Eu… abri antes, Excelência. Para adiantar o trabalho.",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4tulio",
+       "e": "chocado",
+       "t": "O Ministério Público toma nota, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não contradiz o seu depoimento, Cabo. Veja a hora do desbloqueio e a da chegada à delegacia."
+      }
+     ],
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "apresentar",
+     "falas": [
+      {
+       "q": "brandao",
+       "e": "apontando",
+       "t": "Excelência, agora que o cabo confessou, requeiro o desentranhamento das mensagens. Peço que Vossa Excelência indique o fundamento."
+      }
+     ],
+     "pergunta": "Qual dispositivo torna inadmissível a prova obtida do celular sem ordem judicial?",
+     "provas": [
+      "cpp157",
+      "cf5lvi"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 5º, LVI, da Constituição e o art. 157 do CPP: são inadmissíveis as provas obtidas por meios ilícitos, e devem ser desentranhadas do processo."
+      },
+      {
+       "q": "brandao",
+       "e": "confiante",
+       "t": "A defesa agradece, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) A regra geral está no art. 157 do CPP e na Constituição, art. 5º, LVI, Excelência."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "brandao",
+       "e": "apontando",
+       "t": "E, Excelência, aplicando a teoria dos frutos da árvore envenenada, requeiro também o desentranhamento do relatório do banco. Tudo veio do celular!"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! O relatório do banco veio de quebra de sigilo anterior, Excelência! Não derivou do celular!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta contra o pedido da defesa de desentranhar também o relatório do banco. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-157/par-1",
+       "trecho": "quando as derivadas puderem ser obtidas por uma fonte independente das primeiras"
+      },
+      {
+       "chave": "CPP#art-157/par-2",
+       "trecho": "Considera-se fonte independente aquela que por si só, seguindo os trâmites típicos e de praxe, próprios da investigação ou instrução criminal, seria capaz de conduzir ao fato objeto da prova"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Deferido o protesto: o relatório do banco foi obtido por decisão judicial anterior ao flagrante, em procedimento próprio. É fonte independente (art. 157, §§ 1º e 2º). O pedido de desentranhamento fica indeferido.",
+       "fx": "martelo"
+      },
+      {
+       "q": "brandao",
+       "e": "nervoso",
+       "t": "…Registro meu inconformismo."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o relatório veio de ordem anterior e independente. O § 1º do art. 157 salva a prova derivada de fonte independente."
+      }
+     ],
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Instrução encerrada. Falta a decisão sobre as provas, Excelência. Brandão disse que vai recorrer de qualquer maneira."
+      }
+     ],
+     "pergunta": "Como decidir sobre a admissibilidade das provas?",
+     "opcoes": [
+      {
+       "t": "Admito tudo: o réu é investigado de fraude e a polícia agiu para adiantar o trabalho.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Prova obtida sem ordem judicial, sobre o conteúdo de um celular, é ilícita. O fim não justifica o meio."
+        }
+       ]
+      },
+      {
+       "t": "Desentranho as mensagens do celular (prova ilícita) e o que depender exclusivamente delas, mas preservo o relatório do banco, obtido por fonte independente. O processo segue.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Foi exatamente isso: exclui o que é ilícito e só o que é ilícito. A defesa não pode pedir mais do que a lei manda."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-157",
+         "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+        },
+        {
+         "chave": "CPP#art-157/par-1",
+         "trecho": "ou quando as derivadas puderem ser obtidas por uma fonte independente das primeiras"
+        }
+       ]
+      },
+      {
+       "t": "Declaro nulo todo o processo, como pede a defesa: a árvore está envenenada.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "A nulidade não é automática: a teoria tem exceção expressa para a fonte independente, no § 1º do art. 157."
+        }
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "brandao",
+       "e": "bravo",
+       "t": "Excelência, se Vossa Excelência não anular o processo, farei representação ao Tribunal e à Corregedoria. Ninguém vai acreditar que uma decisão assim foi serena."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Ele está tentando intimidar o gabinete. O que Vossa Excelência faz?"
+      }
+     ],
+     "pergunta": "Como responder à ameaça e redigir a decisão?",
+     "opcoes": [
+      {
+       "t": "Ceder em parte: anulo o relatório do banco para evitar a representação.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Isso seria decidir por medo. A fonte independente continua válida, e a lei não permite barganha."
+        }
+       ]
+      },
+      {
+       "t": "Decido sem comentar a ameaça e escrevo apenas \"indefiro o restante\".",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Decisão sem enfrentar os argumentos da defesa não é fundamentada (art. 315, § 2º, IV). Brandão usaria isso no recurso."
+        }
+       ]
+      },
+      {
+       "t": "Fundamento a decisão enfrentando cada argumento da defesa, registro que a ameaça de representação não influi no julgamento e mando juntar os termos aos autos.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "brandao",
+         "e": "nervoso",
+         "t": "…Excelência, não houve ameaça. Foi um comentário."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Fundamentada e transparente. É a melhor defesa do magistrado."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-315/par-2/inc-iv",
+         "trecho": "não enfrentar todos os argumentos deduzidos no processo capazes de, em tese, infirmar a conclusão adotada pelo julgador"
+        }
+       ]
+      }
+     ],
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Determino o desentranhamento das mensagens extraídas do celular e a inutilização, nos termos do art. 157, § 3º, após a preclusão. O relatório bancário permanece nos autos. O processo segue para as alegações finais.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "O Ministério Público considera a decisão correta, ainda que dolorosa, Excelência. A acusação se sustenta nas provas lícitas."
+      },
+      {
+       "q": "brandao",
+       "e": "confiante",
+       "t": "A defesa recorrerá. Mas… devo reconhecer que a decisão é bem fundamentada. Passe bem, Excelência. Nos veremos de novo."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Ele disse isso como quem sabe de um próximo encontro, Excelência."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s13"
+    },
+    "s13": {
+     "tipo": "veredicto",
+     "carimbo": "PROVA ILÍCITA EXCLUÍDA",
+     "titulo": "A árvore e o fruto",
+     "texto": "Você desentranhou a prova obtida sem ordem judicial, preservou a que tinha fonte independente e fundamentou tudo, apesar da pressão de Brandão. Mas o próximo caso traz uma prisão que ninguém comunicou à Justiça, e um desembargador que prefere que você espere."
+    }
+   }
+  },
+  {
+   "id": "a4-habeas",
+   "ato": "ato4",
+   "ordem": 3,
+   "numero": 21,
+   "titulo": "Preso para Averiguação",
+   "papel": "juiz",
+   "nivel": "avancado",
+   "sinopse": "Um pedreiro está há seis dias na carceragem sem flagrante, sem mandado e sem que ninguém avise ao juiz. A Defensoria impetra habeas corpus e um desembargador sugere que você espere. Vá à delegacia, confronte o delegado e relaxe o que for ilegal.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4nadia": "defesa",
+    "a4helio": "testemunha",
+    "a4rita": "escritorio",
+    "a4des": "juiz",
+    "a4everton": "cena"
+   },
+   "provas": [
+    {
+     "id": "hc",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "Habeas corpus da Defensoria",
+     "descricao": "A Dra. Nádia Quirino impetra habeas corpus em favor de Everton Ramos, pedreiro, preso há seis dias na delegacia sem auto de prisão em flagrante, sem mandado e sem audiência de custódia."
+    },
+    {
+     "id": "livro",
+     "tipo": "prova",
+     "icone": "📒",
+     "nome": "Livro de registro da carceragem",
+     "descricao": "Everton Ramos: entrada há seis dias, às 14h, \"recolhido para averiguações\". Campo \"número do auto de prisão em flagrante\" em branco. Campo \"comunicação ao juízo\": em branco."
+    },
+    {
+     "id": "pasta",
+     "tipo": "prova",
+     "icone": "🗂️",
+     "nome": "Pasta de documentos do delegado",
+     "descricao": "Há duas oitivas informais de Everton, sem advogado, e um bilhete do delegado: \"ele sabe quem avisou a construtora\". Nenhum mandado de prisão, nenhuma representação por prisão temporária ou preventiva."
+    },
+    {
+     "id": "aviso",
+     "tipo": "prova",
+     "icone": "📌",
+     "nome": "Aviso no mural",
+     "descricao": "Folha impressa: \"Comunicações de prisão ao Judiciário: responsável, escrivão Marcos. Prazo: até 24h\". Ninguém assinou como enviada."
+    },
+    {
+     "id": "cf5lxi",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LXI — Prisão só em flagrante ou por ordem escrita",
+     "chave": "CF#art-5/inc-lxi",
+     "trecho": "ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente"
+    },
+    {
+     "id": "cf5lxv",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LXV — Relaxamento",
+     "chave": "CF#art-5/inc-lxv",
+     "trecho": "a prisão ilegal será imediatamente relaxada pela autoridade judiciária"
+    },
+    {
+     "id": "cpp306",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 306 — Comunicação da prisão",
+     "chave": "CPP#art-306",
+     "trecho": "A prisão de qualquer pessoa e o local onde se encontre serão comunicados imediatamente ao juiz competente, ao Ministério Público e à família do preso ou à pessoa por ele indicada"
+    },
+    {
+     "id": "cpp310",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 310, I — Relaxar a prisão ilegal",
+     "chave": "CPP#art-310/inc-i",
+     "trecho": "relaxar a prisão ilegal"
+    },
+    {
+     "id": "cpp310p4",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 310, § 4º — Ilegalidade pela falta de custódia",
+     "chave": "CPP#art-310/par-4",
+     "trecho": "a não realização de audiência de custódia sem motivação idônea ensejará também a ilegalidade da prisão, a ser relaxada pela autoridade competente"
+    },
+    {
+     "id": "cpp648",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 648 — Coação ilegal",
+     "chave": "CPP#art-648/inc-ii",
+     "trecho": "quando alguém estiver preso por mais tempo do que determina a lei"
+    },
+    {
+     "id": "cpp660",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 660 — Decisão em 24 horas",
+     "chave": "CPP#art-660",
+     "trecho": "o juiz decidirá, fundamentadamente, dentro de vinte e quatro horas"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas às testemunhas",
+     "chave": "CPP#art-212",
+     "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+    }
+   ],
+   "placas": {
+    "defesa": "Defensoria Pública",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 21 · Ato IV: A Toga",
+     "subtitulo": "Preso para Averiguação",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Excelência, urgente! Habeas corpus da Defensoria, protocolado às sete. Um pedreiro, Everton Ramos, está há seis dias preso numa delegacia e ninguém avisou ao juízo."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "O delegado, Dr. Hélio Brito, diz que está \"tudo regular\". E o telefone não para: o Desembargador Vilar quer falar com Vossa Excelência."
+      },
+      {
+       "q": "a4des",
+       "e": "pensativo",
+       "t": "Excelência, é o Ernesto Vilar, do Tribunal. Eu soube do habeas. Posso ser franco? Um(a) magistrado(a) em início de carreira faz bem em esperar. Eu mesmo aprecio o caso na turma, se for necessário."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Desembargador, o art. 660 do CPP me dá vinte e quatro horas para decidir. Se houver ilegalidade, o relator não pode ser eu, mas a obrigação de fazê-la cessar é minha."
+      },
+      {
+       "q": "a4des",
+       "e": "bravo",
+       "t": "O Tribunal revisa o que Vossa Excelência decidir, Excelência. Convém lembrar disso."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Convém. E é por isso que vou fundamentar cada linha."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O habeas corpus e os dispositivos de relevância foram juntados.",
+       "recebe": [
+        "hc",
+        "cf5lxi",
+        "cf5lxv",
+        "cpp306",
+        "cpp310",
+        "cpp310p4",
+        "cpp648",
+        "cpp660",
+        "cpp212"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "delegacia",
+     "titulo": "Delegacia · Inspeção judicial",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você decide ver a carceragem pessoalmente. Quem tem o preso sob sua guarda precisa mostrar a documentação. Nada de manchete: só livros, pastas e um homem esperando."
+      },
+      {
+       "q": "a4everton",
+       "e": "triste",
+       "t": "Excelência… eu só trabalhava na obra. Não sei por que estou aqui."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "livro",
+       "nome": "Livro de registro (mesa)",
+       "x": 40,
+       "y": 44,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Everton Ramos: entrada há seis dias, às 14h, \"recolhido para averiguações\". O campo do número do flagrante está em branco. O da comunicação ao juízo também.",
+         "recebe": [
+          "livro"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural",
+       "x": 72,
+       "y": 14,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "\"Comunicações de prisão ao Judiciário: escrivão Marcos. Prazo: até 24h.\" Mas ninguém assinou como enviada.",
+         "recebe": [
+          "aviso"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta sobre o arquivo",
+       "x": 10,
+       "y": 46,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Duas oitivas informais de Everton, sem advogado. E um bilhete do delegado: \"ele sabe quem avisou a construtora\".",
+         "recebe": [
+          "pasta"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Nenhum mandado, nenhuma representação por prisão temporária ou preventiva. É prisão para averiguação."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4everton",
+       "titulo": "Ouvir Everton",
+       "falas": [
+        {
+         "q": "a4everton",
+         "e": "triste",
+         "t": "Me pegaram saindo da obra, dia de pagamento. Disseram que era para eu ir depor e me deixaram aqui. Não me deram advogado, não deixaram ligar pra minha mulher."
+        },
+        {
+         "q": "a4everton",
+         "e": "nervoso",
+         "t": "O delegado pergunta de um vazamento: quem avisou o patrão de que a polícia ia aparecer. Eu nem sei de que patrão ele fala."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Vazamento… a mesma palavra que atravessa a minha vida desde que decidi ser operador(a) do Direito. Anotei."
+        }
+       ]
+      },
+      {
+       "q": "a4nadia",
+       "titulo": "Falar com a defensora",
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "bravo",
+         "t": "Excelência, prisão para averiguação não existe no nosso ordenamento. É prisão ilegal, sem flagrante e sem ordem escrita, e viola a Constituição."
+        },
+        {
+         "q": "a4nadia",
+         "e": "pensativo",
+         "t": "Peço apenas que Vossa Excelência ouça o delegado e confronte os documentos."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "livro",
+      "pasta"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência de instrução do habeas corpus. Apresentem o paciente.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "O Ministério Público atua como fiscal da lei, Excelência. Peço que o delegado seja ouvido."
+      },
+      {
+       "q": "a4helio",
+       "e": "confiante",
+       "t": "Excelência, tudo foi feito dentro da lei. O paciente foi preso em flagrante e a comunicação seguiu no prazo."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Everton, você estava envolvido naquele esquema de vazamento, não estava?"
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor já entrega a resposta!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defensora protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. Reformule, doutor. E lembre-se: o paciente tem o direito de permanecer calado.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Everton, o que você fazia na obra?"
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência… a pergunta já traz a resposta. Art. 212."
+      }
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "depoimento",
+     "testemunha": "a4helio",
+     "titulo": "O Delegado Hélio Brito",
+     "intro": [
+      {
+       "q": "a4helio",
+       "e": "confiante",
+       "t": "Excelência, é só um mal-entendido. Eu atuo há vinte anos e nunca tive uma prisão questionada."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O paciente foi preso em flagrante delito, dentro da obra, no dia 14.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Em flagrante de qual crime?"
+        },
+        {
+         "q": "a4helio",
+         "e": "nervoso",
+         "t": "De… de receptação, Excelência. Estava com materiais."
+        }
+       ]
+      },
+      {
+       "t": "A prisão foi comunicada ao juiz no mesmo dia, dentro do prazo de 24 horas, como manda o CPP.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "No mesmo dia? Por que meio?"
+        },
+        {
+         "q": "a4helio",
+         "e": "nervoso",
+         "t": "Pelo escrivão. Ele é responsável por isso."
+        }
+       ]
+      },
+      {
+       "t": "O paciente teve advogado desde o primeiro momento.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Qual o nome do advogado?"
+        },
+        {
+         "q": "a4helio",
+         "e": "nervoso",
+         "t": "A defensora… foi comunicada depois."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "livro",
+       "aviso"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Delegado!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor afirma que a prisão foi comunicada ao juízo no mesmo dia. Mas o livro de registro da carceragem deixa em branco o campo da comunicação, e o aviso do mural, que lista o escrivão responsável pelas comunicações, não traz assinatura de envio algum. Eu mesmo(a) sou o juízo competente e não recebi nada."
+      },
+      {
+       "q": "a4helio",
+       "e": "chocado",
+       "t": "Eu… o escrivão deve ter esquecido, Excelência…",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "Seis dias, Excelência. Seis dias sem comunicação."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não contradiz o depoimento, Delegado. Veja o campo da comunicação ao juízo no livro."
+      }
+     ],
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "Delegado, quem ordenou que o paciente fosse mantido preso na carceragem, e com qual fundamento legal?"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! A defesa quer saber de assuntos internos da delegacia, Excelência! Isso não tem relação com a causa!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta: pergunta sem relação com a causa. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não tiverem relação com a causa"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Indeferido. A pergunta é a própria causa: a base legal da custódia. Responda, Delegado.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4helio",
+       "e": "nervoso",
+       "t": "Fui eu, Excelência. Para… averiguações. E para o paciente colaborar."
+      },
+      {
+       "q": "a4nadia",
+       "e": "confiante",
+       "t": "Para colaborar. Está registrado."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Mas a base legal da prisão é exatamente o objeto do habeas corpus, Excelência."
+      }
+     ],
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "apresentar",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "pensativo",
+       "t": "Excelência, qual a regra constitucional que impede prender alguém para averiguação, sem flagrante e sem ordem escrita?"
+      }
+     ],
+     "pergunta": "Qual dispositivo da Constituição a prisão do paciente viola?",
+     "provas": [
+      "cf5lxi"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 5º, LXI: ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada de autoridade judiciária competente. Não houve nenhuma das duas hipóteses."
+      },
+      {
+       "q": "a4nadia",
+       "e": "feliz",
+       "t": "Obrigada, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, é o inciso LXI do art. 5º: só flagrante ou ordem escrita."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Instrução encerrada, Excelência. A pergunta é só uma: o que fazer com o paciente?"
+      }
+     ],
+     "pergunta": "Qual é a decisão?",
+     "opcoes": [
+      {
+       "t": "Converto a prisão em preventiva, para o delegado terminar as averiguações.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Preventiva não serve para \"averiguar\". Falta justa causa e fundamento concreto (art. 312). Seria a mesma ilegalidade com outro nome."
+        }
+       ]
+      },
+      {
+       "t": "Relaxo a prisão, por ilegal, e mando soltar o paciente imediatamente, salvo se por outro motivo deva ficar preso.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "feliz",
+         "t": "É a única decisão compatível com a Constituição, Excelência."
+        },
+        {
+         "q": "a4everton",
+         "e": "feliz",
+         "t": "Moça… doutor(a)… obrigado!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CF#art-5/inc-lxv",
+         "trecho": "a prisão ilegal será imediatamente relaxada pela autoridade judiciária"
+        },
+        {
+         "chave": "CPP#art-310/inc-i",
+         "trecho": "relaxar a prisão ilegal"
+        }
+       ]
+      },
+      {
+       "t": "Mantenho a prisão por mais 48 horas, até a delegacia ajustar a papelada.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "A papelada não legitima a prisão já feita. Cada hora a mais é coação ilegal, Excelência."
+        }
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, há ainda o que fazer com a autoridade que manteve o paciente. O delegado tem o dever de comunicar, o MP tem o dever de fiscalizar."
+      }
+     ],
+     "pergunta": "Como tratar a conduta do delegado?",
+     "opcoes": [
+      {
+       "t": "Nada: o delegado só cometeu um erro de procedimento.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Seis dias sem comunicação, sem flagrante e sem ordem não são um erro burocrático. O art. 310, § 3º, prevê responsabilidade."
+        }
+       ]
+      },
+      {
+       "t": "Determino a extração de cópias para o Ministério Público e para a Corregedoria da Polícia, para apurar a omissão e a possível prisão manifestamente ilegal.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "Ofício recebido, Excelência. O MP vai apurar."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "É exatamente a providência prevista. A lei não deixa a prisão ilegal sem consequência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-310/par-4",
+         "trecho": "a não realização de audiência de custódia sem motivação idônea ensejará também a ilegalidade da prisão, a ser relaxada pela autoridade competente"
+        }
+       ]
+      },
+      {
+       "t": "Prendo o delegado em flagrante por abuso de autoridade, agora, na audiência.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Excelência, o juiz não prende por conta própria. A atribuição de investigar e denunciar é do MP, e o devido processo vale para o delegado também."
+        }
+       ]
+      }
+     ],
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Concedo a ordem de habeas corpus e relaxo a prisão de Everton Ramos, por ilegal, nos termos do art. 5º, LXI e LXV, da Constituição e do art. 310, I, do CPP. Expeça-se alvará de soltura. Extraiam cópias à Corregedoria e ao Ministério Público.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4helio",
+       "e": "bravo",
+       "t": "Vossa Excelência vai se arrepender, Excelência. Eu tenho amigos no Tribunal."
+      },
+      {
+       "q": "a4des",
+       "e": "pensativo",
+       "t": "Excelência, Ernesto Vilar outra vez. A decisão foi lida na turma: nada a reparar. Fundamentou como poucos."
+      },
+      {
+       "q": "a4rita",
+       "e": "chocado",
+       "t": "Excelência, o delegado Hélio foi nomeado há três meses. Por quem? E por que a pergunta dele era sobre quem avisou a construtora…?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Anote isso, Rita. Há alguma coisa maior debaixo desse caso."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "veredicto",
+     "carimbo": "ORDEM CONCEDIDA",
+     "titulo": "Prisão ilegal, relaxamento imediato",
+     "texto": "Você foi à delegacia, confrontou o delegado, relaxou a prisão sem preventiva de ocasião e mandou apurar a omissão. O Tribunal, que você temia, confirmou. Resta saber quem colocou aquele delegado ali."
+    }
+   }
+  },
+  {
+   "id": "a4-dosimetria",
+   "ato": "ato4",
+   "ordem": 4,
+   "numero": 22,
+   "titulo": "As Três Fases",
+   "papel": "juiz",
+   "nivel": "avancado",
+   "sinopse": "Condenar é fácil de dizer e difícil de calcular. Anderson, 20 anos, confesso, é réu num furto qualificado. Fixe a pena nas três fases do art. 68, escolha as circunstâncias certas e resista a uma ameaça por carta.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4nadia": "defesa",
+    "a4heraldo": "testemunha",
+    "a4rita": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "ficha",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Ficha criminal",
+     "descricao": "Anderson Bispo é primário: nenhuma condenação transitada em julgado. Responde a um inquérito e a uma ação penal em andamento por outros fatos, ainda sem sentença."
+    },
+    {
+     "id": "idade",
+     "tipo": "prova",
+     "icone": "🪪",
+     "nome": "Documento de identidade",
+     "descricao": "Anderson nasceu há 20 anos e 3 meses da data do fato: era menor de 21 anos quando o crime foi cometido."
+    },
+    {
+     "id": "confissao",
+     "tipo": "prova",
+     "icone": "📝",
+     "nome": "Termo de confissão",
+     "descricao": "Anderson confessou espontaneamente a autoria na delegacia e repetiu em juízo. A denúncia e as alegações do MP usam a confissão para provar a autoria."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🔍",
+     "nome": "Laudo de avaliação",
+     "descricao": "Os bens furtados valiam R$ 4.200. A polícia recuperou R$ 3.800 em mercadorias, devolvidas ao dono. Prejuízo líquido: R$ 400."
+    },
+    {
+     "id": "video",
+     "tipo": "prova",
+     "icone": "🎞️",
+     "nome": "Imagens de câmera",
+     "descricao": "Dois homens entram na loja às 3h, com o estabelecimento fechado, rompendo o cadeado dos fundos. Não há ninguém dentro. Ninguém carrega arma."
+    },
+    {
+     "id": "bo",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Boletim de ocorrência",
+     "descricao": "Registrado pelo próprio Heraldo na manhã do fato: \"arrombaram meu depósito durante a madrugada. Ninguém ficou ferido nem foi ameaçado\"."
+    },
+    {
+     "id": "cp59",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 59 — Pena-base",
+     "chave": "CP#art-59",
+     "trecho": "O juiz, atendendo à culpabilidade, aos antecedentes, à conduta social, à personalidade do agente, aos motivos, às circunstâncias e conseqüências do crime"
+    },
+    {
+     "id": "cp68",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 68 — Três fases",
+     "chave": "CP#art-68",
+     "trecho": "A pena-base será fixada atendendo-se ao critério do art. 59 deste Código; em seguida serão consideradas as circunstâncias atenuantes e agravantes; por último, as causas de diminuição e de aumento"
+    },
+    {
+     "id": "cp65i",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 65, I — Menoridade",
+     "chave": "CP#art-65/inc-i",
+     "trecho": "ser o agente menor de 21 (vinte e um) anos, na data do fato"
+    },
+    {
+     "id": "cp65d",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 65, III, d — Confissão",
+     "chave": "CP#art-65/inc-iii/ali-d",
+     "trecho": "confessado espontaneamente, perante a autoridade, a autoria do crime"
+    },
+    {
+     "id": "stj231",
+     "tipo": "lei",
+     "icone": "📘",
+     "nome": "Súmula 231 do STJ",
+     "chave": "STJ231#enunciado",
+     "trecho": "A incidência da circunstância atenuante não pode conduzir à redução da pena abaixo do mínimo legal"
+    },
+    {
+     "id": "stj545",
+     "tipo": "lei",
+     "icone": "📘",
+     "nome": "Súmula 545 do STJ",
+     "chave": "STJ545#enunciado",
+     "trecho": "Quando a confissão for utilizada para a formação do convencimento do julgador, o réu fará jus à atenuante prevista no art. 65, III, d, do Código Penal"
+    },
+    {
+     "id": "cf5lvii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LVII — Presunção de inocência",
+     "chave": "CF#art-5/inc-lvii",
+     "trecho": "ninguém será considerado culpado até o trânsito em julgado de sentença penal condenatória"
+    },
+    {
+     "id": "cp33",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 33, § 2º, c — Regime aberto",
+     "chave": "CP#art-33/par-2/ali-c",
+     "trecho": "o condenado não reincidente, cuja pena seja igual ou inferior a quatro anos, poderá, desde o início, cumpri-la em regime aberto"
+    },
+    {
+     "id": "cp44",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CP, art. 44, I — Substituição",
+     "chave": "CP#art-44/inc-i",
+     "trecho": "aplicada pena privativa de liberdade não superior a quatro anos e o crime não for cometido com violência ou grave ameaça à pessoa"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas às testemunhas",
+     "chave": "CPP#art-212",
+     "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+    }
+   ],
+   "placas": {
+    "defesa": "Defensoria Pública",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 22 · Ato IV: A Toga",
+     "subtitulo": "As Três Fases",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, hoje é dia de sentença: Anderson Bispo, furto qualificado pelo concurso de pessoas (art. 155, § 4º, IV): pena de 2 a 8 anos. Ele confessou."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "O Dr. Túlio pede seis anos, \"pela periculosidade e porque o réu já responde a outros processos\". A Dra. Nádia pede o mínimo e substituição."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "E chegou isto, Excelência. Uma carta com a letra malfeita: \"Sabemos o caminho que você faz para casa. Condene forte, ou nós condenamos você\"."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Vai para o MP e para a Polícia, com cópia ao Tribunal. A ameaça não altera a pena por um dia sequer. A pena é do réu, não do medo."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos e as normas de dosimetria foram juntados.",
+       "recebe": [
+        "ficha",
+        "confissao",
+        "cp59",
+        "cp68",
+        "cp65i",
+        "cp65d",
+        "stj231",
+        "stj545",
+        "cf5lvii",
+        "cp33",
+        "cp44",
+        "cpp212"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Gabinete · Antes da sentença",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Dosimetria é cálculo com consciência. Antes de decidir, você separa fatos de impressões."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com processos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A ficha criminal: primário. Um inquérito e uma ação penal em curso, sem condenação definitiva.",
+         "recebe": [
+          "ficha"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "E o documento de identidade: 20 anos e 3 meses na data do fato. Menor de 21.",
+         "recebe": [
+          "idade"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "As imagens da câmera: dois homens entram às 3h, loja fechada e vazia, rompem o cadeado dos fundos. Nenhuma arma à vista.",
+         "recebe": [
+          "video"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "E o boletim do próprio Heraldo: \"ninguém ficou ferido nem foi ameaçado\".",
+         "recebe": [
+          "bo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pc",
+       "nome": "Computador",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O termo de confissão, espontânea, na delegacia e em juízo, e usado pelo MP na denúncia.",
+         "recebe": [
+          "confissao"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "O laudo: R$ 4.200 furtados, R$ 3.800 recuperados e devolvidos. Prejuízo líquido: R$ 400.",
+         "recebe": [
+          "laudo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "estante",
+       "nome": "Estante de livros",
+       "x": 6,
+       "y": 10,
+       "w": 38,
+       "h": 60,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Entre os volumes, um caderno com a minha própria letra: \"1ª fase: art. 59. 2ª fase: agravantes e atenuantes. 3ª fase: aumentos e diminuições.\""
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Nunca misturar fases. É o que mais anula sentença no Tribunal."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4rita",
+       "titulo": "Conversar com Rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "Excelência, muitos juízes se deixam levar pelo \"já responde a outros processos\". Vossa Excelência tem a Constituição para responder a isso."
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A presunção de inocência. Processo em curso não é culpa provada, Rita."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "E sem condenação definitiva não há mau antecedente."
+        }
+       ]
+      },
+      {
+       "q": "a4nadia",
+       "titulo": "Ouvir a defensora",
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "pensativo",
+         "t": "Excelência, Anderson tinha 20 anos, confessou e devolveu o que sobrou. Ele não pede perdão pela lei, pede apenas a lei."
+        },
+        {
+         "q": "a4nadia",
+         "e": "confiante",
+         "t": "Peço que Vossa Excelência fixe a pena no mínimo, regime aberto e substituição por restritivas de direitos."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "ficha",
+      "idade",
+      "confissao",
+      "laudo"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência. Ouviremos a vítima antes da sentença.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Chamo o Sr. Heraldo Pimentel, dono da loja."
+      },
+      {
+       "q": "a4heraldo",
+       "e": "bravo",
+       "t": "Excelência, eu perdi tudo! Fui assaltado por criminosos armados!"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Sr. Heraldo, o senhor ficou profundamente traumatizado com o ocorrido, não ficou?"
+      },
+      {
+       "q": "a4nadia",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defensora protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. Pergunte como o senhor se sentiu, doutor, e deixe a resposta com a testemunha.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Sr. Heraldo, qual foi o impacto do fato?"
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência… a pergunta traz a resposta embutida. Art. 212."
+      }
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "depoimento",
+     "testemunha": "a4heraldo",
+     "titulo": "O dono da loja",
+     "intro": [
+      {
+       "q": "a4heraldo",
+       "e": "bravo",
+       "t": "Eu trabalho há trinta anos nessa loja. Foi um absurdo."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O prejuízo foi de quase oitenta mil reais. Quase fui à falência.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Há laudo de avaliação nos autos, Sr. Heraldo?"
+        },
+        {
+         "q": "a4heraldo",
+         "e": "nervoso",
+         "t": "Eu sei o que perdi!"
+        }
+       ]
+      },
+      {
+       "t": "Eles me ameaçaram. Um deles apontou uma faca para mim.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O senhor estava na loja no momento do fato?"
+        },
+        {
+         "q": "a4heraldo",
+         "e": "nervoso",
+         "t": "Eu… cheguei pouco depois. Mas sei como foi."
+        }
+       ]
+      },
+      {
+       "t": "Não recuperei absolutamente nada do que levaram.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nada?"
+        },
+        {
+         "q": "a4heraldo",
+         "e": "nervoso",
+         "t": "Quase nada…"
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "video",
+       "bo"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Sr. Heraldo!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor diz que foi ameaçado com uma faca. Mas as imagens mostram que os dois entraram às 3h com a loja fechada e vazia, e o seu próprio boletim de ocorrência diz que ninguém foi ameaçado."
+      },
+      {
+       "q": "a4heraldo",
+       "e": "triste",
+       "t": "Eu… estava nervoso, Excelência. Falei com a emoção.",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4nadia",
+       "e": "confiante",
+       "t": "Sem violência nem ameaça, Excelência, não há roubo. Segue o furto."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não contradiz o depoimento. Veja o que as imagens e o boletim dizem sobre ameaça."
+      }
+     ],
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "pensativo",
+       "t": "Sr. Heraldo, o réu chegou a pedir desculpas ao senhor no corredor do fórum, depois da audiência de ontem?"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! Isso não tem relação com a causa, Excelência!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta: pergunta sem relação com a causa. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não tiverem relação com a causa"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Indeferido. A pergunta toca no comportamento posterior ao fato e na reparação do dano. Responda, Sr. Heraldo.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4heraldo",
+       "e": "triste",
+       "t": "Pediu. Chorando. E ajudou a devolver as mercadorias."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a atitude pós-fato do réu e a reparação interessam à dosimetria."
+      }
+     ],
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "apresentar",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Instrução encerrada, Excelência. Mãos à pena. Qual é o dispositivo que dita a ordem de cálculo?"
+      }
+     ],
+     "pergunta": "Qual artigo do Código Penal impõe as três fases da dosimetria?",
+     "provas": [
+      "cp68"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 68: pena-base pelo art. 59; depois agravantes e atenuantes; por último, causas de aumento e de diminuição. Três fases, nessa ordem."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o art. 68 do Código Penal é quem fixa a ordem."
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "Excelência, o réu responde a um inquérito e a uma ação penal. Isso é antecedente e personalidade voltada ao crime. Peço pena-base de quatro anos."
+      }
+     ],
+     "pergunta": "1ª fase, pena-base (art. 59): como tratar o inquérito e a ação penal em curso?",
+     "opcoes": [
+      {
+       "t": "Aumento a pena-base: quem responde a processos tem maus antecedentes e personalidade voltada ao crime.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Sem condenação transitada em julgado, ninguém é considerado culpado. Isso viola o art. 5º, LVII, da Constituição."
+        }
+       ]
+      },
+      {
+       "t": "Aumento a pena-base porque o laudo mostra que o prejuízo foi de oitenta mil reais.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "O prejuízo foi de R$ 400, não oitenta mil. A testemunha foi desmentida pelo laudo."
+        }
+       ]
+      },
+      {
+       "t": "Fixo a pena-base no mínimo (2 anos): inquérito e ação penal em curso não são maus antecedentes, e as demais circunstâncias do art. 59 são neutras ou favoráveis.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Perfeito! A presunção de inocência impede que processo em curso agrave a pena."
+        },
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "O Ministério Público registra a discordância, mas reconhece o fundamento."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-59",
+         "trecho": "O juiz, atendendo à culpabilidade, aos antecedentes, à conduta social, à personalidade do agente, aos motivos, às circunstâncias e conseqüências do crime"
+        },
+        {
+         "chave": "CF#art-5/inc-lvii",
+         "trecho": "ninguém será considerado culpado até o trânsito em julgado de sentença penal condenatória"
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Segunda fase, Excelência. Há duas atenuantes em jogo: a menoridade relativa e a confissão."
+      }
+     ],
+     "pergunta": "2ª fase (agravantes e atenuantes): como aplicar?",
+     "opcoes": [
+      {
+       "t": "Reconheço as duas atenuantes e reduzo a pena para 1 ano e 4 meses.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "A Súmula 231 do STJ não admite reduzir a pena abaixo do mínimo legal por atenuante."
+        }
+       ]
+      },
+      {
+       "t": "Reconheço a menoridade (art. 65, I) e a confissão (art. 65, III, d; Súmula 545), mas, como a pena já está no mínimo, a pena intermediária continua em 2 anos (Súmula 231).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "confiante",
+         "t": "A defesa concorda: reconhece a atenuante, mas respeita o mínimo legal."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Exatamente. Atenuante reconhecida, mínimo preservado."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-65/inc-i",
+         "trecho": "ser o agente menor de 21 (vinte e um) anos, na data do fato"
+        },
+        {
+         "chave": "STJ545#enunciado",
+         "trecho": "o réu fará jus à atenuante prevista no art. 65, III, d, do Código Penal"
+        },
+        {
+         "chave": "STJ231#enunciado",
+         "trecho": "A incidência da circunstância atenuante não pode conduzir à redução da pena abaixo do mínimo legal"
+        }
+       ]
+      },
+      {
+       "t": "Afasto a confissão porque o réu foi preso em flagrante: confessar não valeu de nada.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Se a confissão foi usada para a formação do convencimento, a atenuante é devida (Súmula 545)."
+        }
+       ]
+      }
+     ],
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Excelência, na terceira fase aplique um terço a mais, pelo concurso de pessoas. Foram dois."
+      }
+     ],
+     "pergunta": "3ª fase (aumentos e diminuições): e o concurso de pessoas?",
+     "opcoes": [
+      {
+       "t": "Aumento um terço pelo concurso de pessoas: foram dois autores.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "O concurso de pessoas já é qualificadora do art. 155, § 4º, IV. Aumentar de novo seria dupla punição pelo mesmo fato."
+        }
+       ]
+      },
+      {
+       "t": "Não há causa de aumento nem de diminuição: o concurso de pessoas já qualificou o furto. Pena definitiva: 2 anos de reclusão e multa.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "É verdade. O concurso já está na qualificadora. Retiro o pedido."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Pena definitiva calculada, sem bis in idem."
+        }
+       ]
+      },
+      {
+       "t": "Diminuo um terço pelo pequeno valor da coisa furtada.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "Não cabe aqui: o furto privilegiado do § 2º é para coisa de pequeno valor, e o furto é qualificado."
+        }
+       ]
+      }
+     ],
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4nadia",
+       "e": "confiante",
+       "t": "Excelência, resta o regime e a substituição. Anderson é primário e a pena é de dois anos."
+      }
+     ],
+     "pergunta": "Qual regime e substituição, e o que fazer com a prisão provisória que ele já cumpriu?",
+     "opcoes": [
+      {
+       "t": "Regime fechado, para marcar a seriedade do furto.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Pena de 2 anos, réu não reincidente: o art. 33, § 2º, c, autoriza o regime aberto."
+        }
+       ]
+      },
+      {
+       "t": "Regime semiaberto, porque o réu responde a outros processos.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Processo em curso não define regime. O regime vem do art. 33, § 2º, e do art. 59."
+        }
+       ]
+      },
+      {
+       "t": "Regime inicial aberto (art. 33, § 2º, c), substituição da pena por restritivas de direitos (art. 44, I), já que a pena não passa de 4 anos e não houve violência, e desconto do tempo de prisão provisória.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "feliz",
+         "t": "Obrigada, Excelência. Anderson vai prestar serviços à comunidade e voltar ao trabalho."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Sentença completa e sem excessos."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-33/par-2/ali-c",
+         "trecho": "o condenado não reincidente, cuja pena seja igual ou inferior a quatro anos, poderá, desde o início, cumpri-la em regime aberto"
+        },
+        {
+         "chave": "CP#art-44/inc-i",
+         "trecho": "aplicada pena privativa de liberdade não superior a quatro anos e o crime não for cometido com violência ou grave ameaça à pessoa"
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s13"
+    },
+    "s13": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Condeno Anderson Bispo à pena de 2 anos de reclusão e multa, por furto qualificado. Regime aberto. Substituo a privativa de liberdade por restritivas de direitos.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "O Ministério Público vai recorrer, Excelência. Mas a sentença é clara em cada fase."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Excelência, a polícia rastreou a carta ameaçadora. Veio de uma impressora que já apareceu em outros papéis… ligados à Altavista Serviços."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A mesma sombra de sempre. Quem tenta me intimidar com carta é quem tem medo do que vem depois."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s14"
+    },
+    "s14": {
+     "tipo": "veredicto",
+     "carimbo": "PENA CALCULADA",
+     "titulo": "Três fases, nenhum atalho",
+     "texto": "Você fixou a pena-base sem se deixar levar por processos em curso, reconheceu atenuantes sem violar a Súmula 231 e evitou o bis in idem na terceira fase. A carta ameaçadora leva a Altavista. O próximo caso traz um juiz diante de uma casa invadida."
+    }
+   }
+  },
+  {
+   "id": "a4-busca",
+   "ato": "ato4",
+   "ordem": 5,
+   "numero": 23,
+   "titulo": "A Casa É Asilo",
+   "papel": "juiz",
+   "nivel": "especialista",
+   "sinopse": "A polícia entrou sem mandado na casa de Elias Moura, gerente da Altavista Serviços, e levou um pen drive. Brandão quer anular tudo, até as interceptações lícitas. Vá ao apartamento, ouça os policiais e separe o ilícito do lícito.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "brandao": "defesa",
+    "a4barreto": "testemunha",
+    "a4rita": "escritorio",
+    "a4zilda": "cena"
+   },
+   "provas": [
+    {
+     "id": "denuncia",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "Denúncia",
+     "descricao": "Elias Moura, gerente financeiro da Altavista Serviços, é acusado de uso de documento falso e de lavagem, a partir de notas e de um pen drive apreendidos em seu apartamento."
+    },
+    {
+     "id": "janela",
+     "tipo": "prova",
+     "icone": "🪟",
+     "nome": "Laudo da janela",
+     "descricao": "O perito constata vidro quebrado e esquadria forçada, de fora para dentro, na janela da sala. Sem sinais de que a porta tenha sido aberta pelo morador."
+    },
+    {
+     "id": "comoda",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Auto de apreensão",
+     "descricao": "O pen drive foi encontrado em gaveta trancada da cômoda, arrombada. Apreensão às 22h30, sem mandado e sem testemunha civil."
+    },
+    {
+     "id": "zilda",
+     "tipo": "prova",
+     "icone": "🗣️",
+     "nome": "Declaração da vizinha",
+     "descricao": "Dona Zilda viu \"dois policiais pulando a janela\" por volta de 22h30. Ninguém abriu a porta. Ela ouviu o morador gritar \"Eu não autorizei!\"."
+    },
+    {
+     "id": "interc",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Decisão de interceptação telefônica",
+     "descricao": "Decisão judicial anterior, fundamentada e com prazo certo, autorizou a interceptação do telefone de Elias em procedimento próprio. Os áudios apontam as transferências suspeitas. Não dependem da busca na casa."
+    },
+    {
+     "id": "cf5xi",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, XI — Inviolabilidade do domicílio",
+     "chave": "CF#art-5/inc-xi",
+     "trecho": "a casa é asilo inviolável do indivíduo, ninguém nela podendo penetrar sem consentimento do morador, salvo em caso de flagrante delito ou desastre, ou para prestar socorro, ou, durante o dia, por determinação judicial"
+    },
+    {
+     "id": "cf5xii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, XII — Comunicações telefônicas",
+     "chave": "CF#art-5/inc-xii",
+     "trecho": "salvo, no último caso, por ordem judicial, nas hipóteses e na forma que a lei estabelecer para fins de investigação criminal ou instrução processual penal"
+    },
+    {
+     "id": "cf5lvi",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LVI — Provas ilícitas",
+     "chave": "CF#art-5/inc-lvi",
+     "trecho": "são inadmissíveis, no processo, as provas obtidas por meios ilícitos"
+    },
+    {
+     "id": "cpp157p1",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 157, § 1º — Fonte independente",
+     "chave": "CPP#art-157/par-1",
+     "trecho": "ou quando as derivadas puderem ser obtidas por uma fonte independente das primeiras"
+    },
+    {
+     "id": "cpp245",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 245 — Busca domiciliar de dia",
+     "chave": "CPP#art-245",
+     "trecho": "As buscas domiciliares serão executadas de dia, salvo se o morador consentir que se realizem à noite"
+    },
+    {
+     "id": "laa22",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "Lei 13.869, art. 22, § 2º — Exceção de flagrante",
+     "chave": "LAA#art-22/par-2",
+     "trecho": "Não haverá crime se o ingresso for para prestar socorro, ou quando houver fundados indícios que indiquem a necessidade do ingresso em razão de situação de flagrante delito ou de desastre"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas às testemunhas",
+     "chave": "CPP#art-212",
+     "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+    }
+   ],
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 23 · Ato IV: A Toga",
+     "subtitulo": "A Casa É Asilo",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Excelência, Brandão protocolou 120 páginas de nulidade: busca sem mandado, interceptação \"contaminada\", flagrante forjado. Pede a anulação de tudo."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "A polícia diz que o morador consentiu. Brandão diz que a porta estava trancada e que os policiais pularam a janela."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Então eu mesmo(a) vou ver essa janela. Inspeção judicial no local, Rita. Convoque o perito."
+      },
+      {
+       "q": "a4rita",
+       "e": "chocado",
+       "t": "E Excelência… o Dr. Brandão deixou um recado no balcão do fórum: \"A toga não protege de tudo\"."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A denúncia e as normas sobre domicílio, interceptação e provas foram juntadas.",
+       "recebe": [
+        "denuncia",
+        "cf5xi",
+        "cf5xii",
+        "cf5lvi",
+        "cpp157p1",
+        "cpp245",
+        "laa22",
+        "cpp212"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "apartamento",
+     "titulo": "Apartamento de Elias Moura · Inspeção judicial",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Cheiro de tinta fresca e de coisa mexida. Fita de isolamento da perícia ainda na porta. O Código Penal chama de \"casa\" o lugar onde o Estado precisa de licença para entrar."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "janela",
+       "nome": "Janela",
+       "x": 34,
+       "y": 10,
+       "w": 25,
+       "h": 36,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Vidro quebrado de fora para dentro, a esquadria forçada. O perito confirma: sem sinal de que a porta tenha sido aberta pelo morador.",
+         "recebe": [
+          "janela"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "comoda",
+       "nome": "Cômoda",
+       "x": 64,
+       "y": 46,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Gaveta arrombada. O pen drive estava aí, em gaveta trancada. Auto de apreensão: 22h30, sem testemunha civil e sem mandado.",
+         "recebe": [
+          "comoda"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mesa",
+       "nome": "Mesa",
+       "x": 30,
+       "y": 50,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Papéis em ordem, sem sinal de pressa. Ninguém vive assim na iminência de um flagrante. Registro."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nenhuma arma, nenhuma droga, nenhuma pessoa ferida: não havia crime em curso que justificasse entrar à força."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4zilda",
+       "titulo": "Falar com Dona Zilda",
+       "falas": [
+        {
+         "q": "a4zilda",
+         "e": "nervoso",
+         "t": "Eu vi, Excelência. Dois policiais pularam a janela, umas dez e meia da noite. O Elias gritou que não autorizou. Ele estava de pijama.",
+         "recebe": [
+          "zilda"
+         ]
+        },
+        {
+         "q": "a4zilda",
+         "e": "triste",
+         "t": "Eles ficaram uma hora. Depois saíram com uma sacola. Eu tenho medo de falar, mas é a verdade."
+        }
+       ]
+      },
+      {
+       "q": "a4rita",
+       "titulo": "Conversar com Rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "Excelência, a Constituição só deixa entrar sem consentimento em quatro hipóteses: flagrante, desastre, socorro ou, de dia, ordem judicial."
+        },
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Já era noite. Sem mandado, só o flagrante poderia justificar, e flagrante é coisa que tem de existir, não ser presumida."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "janela",
+      "comoda",
+      "zilda"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência. Chame-se o sargento.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Sargento Barreto, que comandou a diligência."
+      },
+      {
+       "q": "brandao",
+       "e": "confiante",
+       "t": "A defesa informa que Elias Moura não consentiu em nada, Excelência. A Constituição está aqui para isso."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Sargento, o morador permitiu a sua entrada com um gesto, não foi?"
+      },
+      {
+       "q": "brandao",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defesa protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. A pergunta sugere o consentimento. Reformule, doutor.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "…Sargento, como o senhor entrou na casa?"
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o promotor já sugere a resposta: art. 212."
+      }
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "depoimento",
+     "testemunha": "a4barreto",
+     "titulo": "O Sargento Barreto",
+     "intro": [
+      {
+       "q": "a4barreto",
+       "e": "confiante",
+       "t": "Excelência, agimos para evitar a destruição de provas."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Recebemos uma denúncia anônima, às 21h, de que o réu guardava documentos falsos em casa.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Só a denúncia anônima?"
+        },
+        {
+         "q": "a4barreto",
+         "e": "normal",
+         "t": "Sim, mas era de fonte confiável."
+        }
+       ]
+      },
+      {
+       "t": "Batemos à porta e o morador abriu e consentiu em nossa entrada.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O senhor tem certeza de que a porta foi aberta pelo morador?"
+        },
+        {
+         "q": "a4barreto",
+         "e": "nervoso",
+         "t": "Sim… ele autorizou verbalmente."
+        }
+       ]
+      },
+      {
+       "t": "Encontramos a gaveta aberta, com o pen drive à vista.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "À vista?"
+        },
+        {
+         "q": "a4barreto",
+         "e": "nervoso",
+         "t": "Mais ou menos."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "janela",
+       "zilda"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO, Sargento!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor afirma que o morador abriu a porta e consentiu. Mas o laudo constata vidro quebrado e esquadria forçada de fora para dentro na janela da sala, e Dona Zilda viu dois policiais pulando a janela, ouviu o morador gritar que não autorizava."
+      },
+      {
+       "q": "a4barreto",
+       "e": "chocado",
+       "t": "Foi… foi pela janela, Excelência. Temíamos que ele destruísse a prova.",
+       "fx": "tremor"
+      },
+      {
+       "q": "brandao",
+       "e": "feliz",
+       "t": "A defesa agradece a sinceridade do sargento, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Não é contradição, Sargento. Veja o laudo da janela e o que a vizinha disse."
+      }
+     ],
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "brandao",
+       "e": "bravo",
+       "t": "Sargento, o senhor tinha mandado de busca? Tinha mandado, Sargento? Responda: tinha mandado?"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! A defesa está repetindo a mesma pergunta, Excelência!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta: pergunta repetida. A pergunta já havia sido respondida?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "importarem na repetição de outra já respondida"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Indeferido. Ninguém perguntou ainda sobre mandado. É a primeira vez. Responda, Sargento.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4barreto",
+       "e": "nervoso",
+       "t": "Não havia mandado, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, essa pergunta ainda não tinha sido feita. Só se barra a já respondida."
+      }
+     ],
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "apresentar",
+     "falas": [
+      {
+       "q": "brandao",
+       "e": "apontando",
+       "t": "Excelência, peço que Vossa Excelência indique qual regra constitucional a diligência violou."
+      }
+     ],
+     "pergunta": "Qual dispositivo protege a casa e quais são as exceções?",
+     "provas": [
+      "cf5xi"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 5º, XI: a casa é asilo inviolável; só se entra sem consentimento em flagrante, desastre ou socorro, ou, durante o dia, por determinação judicial. Aqui era noite, não havia mandado e não havia consentimento."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) É o inciso XI do art. 5º, Excelência: a casa como asilo inviolável."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Excelência, a denúncia anônima mostra fundados indícios de flagrante: documento falso guardado em casa é crime permanente. A Lei 13.869 permite entrar."
+      }
+     ],
+     "pergunta": "A exceção de flagrante, no art. 22, § 2º da Lei 13.869, justifica a entrada?",
+     "opcoes": [
+      {
+       "t": "Sim: denúncia anônima basta para entrar em casa.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Denúncia anônima, isolada, é só ponto de partida para investigar, não fundado indício de flagrante."
+        }
+       ]
+      },
+      {
+       "t": "Não: faltaram fundados indícios concretos de flagrante. Havia só denúncia anônima e nenhuma diligência prévia; a entrada foi forçada, à noite, sem consentimento.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "O Ministério Público reconhece a fragilidade, Excelência."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Isso: a exceção é para situação concreta e urgente, não para suspeita."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "LAA#art-22/par-2",
+         "trecho": "quando houver fundados indícios que indiquem a necessidade do ingresso em razão de situação de flagrante delito ou de desastre"
+        }
+       ]
+      },
+      {
+       "t": "Sim: como a gaveta tinha o pen drive, o flagrante ficou provado depois.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "A legalidade da entrada se mede pelo que se sabia antes, não pelo que se achou depois."
+        }
+       ]
+      }
+     ],
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "brandao",
+       "e": "apontando",
+       "t": "E mais, Excelência! Tudo é derivado da ilegalidade. Requeiro o desentranhamento também das interceptações telefônicas!"
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "PROTESTO! As interceptações foram autorizadas por decisão judicial anterior e independem da busca, Excelência!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta contra o pedido de anular também as interceptações. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-157/par-1",
+       "trecho": "ou quando as derivadas puderem ser obtidas por uma fonte independente das primeiras"
+      },
+      {
+       "chave": "CF#art-5/inc-xii",
+       "trecho": "salvo, no último caso, por ordem judicial, nas hipóteses e na forma que a lei estabelecer para fins de investigação criminal ou instrução processual penal"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Deferido o protesto: as interceptações foram autorizadas por ordem judicial fundamentada, anterior à busca e em procedimento próprio. São fonte independente e permanecem nos autos.",
+       "fx": "martelo"
+      },
+      {
+       "q": "brandao",
+       "e": "nervoso",
+       "t": "…A defesa recorrerá."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a interceptação foi autorizada em procedimento próprio, antes da busca. É fonte independente."
+      }
+     ],
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, a sentença de admissibilidade é sua. Brandão ameaça recorrer ao Tribunal e à imprensa, o MP pede para manter tudo. Qual é a decisão?"
+      }
+     ],
+     "pergunta": "Como decidir sobre as provas?",
+     "opcoes": [
+      {
+       "t": "Admito tudo: a polícia agiu com boa intenção e a prova é relevante.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Boa intenção não legitima invasão de casa sem consentimento e sem mandado. É prova ilícita."
+        }
+       ]
+      },
+      {
+       "t": "Anulo todo o processo, inclusive interceptações: a busca contaminou tudo.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "A interceptação tem fonte independente. O art. 157, § 1º, preserva a prova que não decorreu da ilegalidade."
+        }
+       ]
+      },
+      {
+       "t": "Declaro ilícita a busca e desentranho o pen drive e tudo que dele derivar sem fonte independente. Mantenho as interceptações telefônicas, que têm ordem judicial própria, e o processo segue.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "O Ministério Público continua com a acusação, Excelência, agora com prova lícita."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Equilíbrio perfeito: rigor com o ilícito, sem anular o lícito."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CF#art-5/inc-lvi",
+         "trecho": "são inadmissíveis, no processo, as provas obtidas por meios ilícitos"
+        },
+        {
+         "chave": "CPP#art-157/par-1",
+         "trecho": "ou quando as derivadas puderem ser obtidas por uma fonte independente das primeiras"
+        }
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro ilícita a busca domiciliar realizada às 22h30, sem mandado, sem consentimento e sem fundados indícios de flagrante (CF, art. 5º, XI; CPP, art. 157). Determino o desentranhamento do pen drive. As interceptações telefônicas permanecem, por fonte independente.",
+       "fx": "martelo"
+      },
+      {
+       "q": "brandao",
+       "e": "confiante",
+       "t": "Excelência, é uma decisão corajosa. Mas ainda não ganhei. O jogo é longo, e o seu nome está em muitos processos meus."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Excelência, o sargento Barreto vai responder na Corregedoria. Mas o endereço do réu foi passado por alguém de dentro do fórum. Outra vez."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Dentro do fórum… Eu conheço esse padrão. Alguém que passa nomes à Altavista e informa a hora em que a lei vai bater."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s13"
+    },
+    "s13": {
+     "tipo": "veredicto",
+     "carimbo": "DOMICÍLIO PROTEGIDO",
+     "titulo": "A lei bate à porta antes da polícia",
+     "texto": "Você inspecionou o local, desentranhou o que foi obtido pela invasão e preservou as interceptações lícitas. Nem a pressa da polícia nem a fúria da defesa mudaram a regra: a casa é asilo inviolável. O último caso do ato traz um preso com nome falso e uma regra que vale até para ele."
+    }
+   }
+  },
+  {
+   "id": "a4-jorge",
+   "ato": "ato4",
+   "ordem": 6,
+   "numero": 24,
+   "titulo": "Jorge Antunes",
+   "papel": "juiz",
+   "nivel": "especialista",
+   "sinopse": "Madrugada de plantão. Um homem preso com documentos falsos jura ser \"Jorge Antunes\", corretor de imóveis. Você conduz a audiência de custódia, descobre quem ele é e decide sua liberdade com a mesma lei de qualquer outro preso.",
+   "posicoes": {
+    "voce": "juiz",
+    "lacerda": "acusacao",
+    "livia": "defesa",
+    "a4jorge": "testemunha",
+    "henrique": "testemunha",
+    "a4rita": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "apf",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Auto de prisão em flagrante",
+     "descricao": "Em blitz da Polícia Rodoviária, \"Jorge Antunes\", 55 anos, apresentou CNH e RG. O papel é autêntico, os dados são falsos: o número do RG não existe no cadastro. Crime: uso de documento falso (CP, art. 304, com pena do art. 297: 2 a 6 anos de reclusão)."
+    },
+    {
+     "id": "mala",
+     "tipo": "prova",
+     "icone": "💼",
+     "nome": "Bolsa apreendida",
+     "descricao": "R$ 38 mil em espécie, dois celulares, um passaporte estrangeiro com entrada no país há cinco dias por Foz do Iguaçu e um chaveiro com uma chave de cofre de banco."
+    },
+    {
+     "id": "digitais",
+     "tipo": "prova",
+     "icone": "🖐️",
+     "nome": "Laudo papiloscópico",
+     "descricao": "As digitais do preso coincidem, em 17 pontos, com as de Henrique Altavista, arquivadas no Instituto de Identificação desde a emissão do seu RG, há 22 anos."
+    },
+    {
+     "id": "mandado",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Mandado de prisão no BNMP",
+     "descricao": "Existe mandado de prisão preventiva em aberto contra Henrique Altavista, expedido pela Dra. Beatriz Monteiro em outro processo. A fuga ocorreu depois do vazamento daquela decisão."
+    },
+    {
+     "id": "voo",
+     "tipo": "prova",
+     "icone": "✈️",
+     "nome": "Registro de voo",
+     "descricao": "Há oito meses, um jatinho da Altavista decolou de madrugada com destino ao exterior, horas depois da decretação da preventiva anterior. Henrique estava a bordo."
+    },
+    {
+     "id": "cpp310",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 310 — Audiência de custódia",
+     "chave": "CPP#art-310",
+     "trecho": "o juiz deverá promover, por meio de videoconferência em tempo real, audiência de custódia com a presença do acusado, seu advogado constituído ou membro da Defensoria Pública e o membro do Ministério Público"
+    },
+    {
+     "id": "cpp313p1",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 313, § 1º — Dúvida sobre a identidade",
+     "chave": "CPP#art-313/par-1",
+     "trecho": "Também será admitida a prisão preventiva quando houver dúvida sobre a identidade civil da pessoa ou quando esta não fornecer elementos suficientes para esclarecê-la, devendo o preso ser colocado imediatamente em liberdade após a identificação, salvo se outra hipótese recomendar a manutenção da medida"
+    },
+    {
+     "id": "cpp312",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 312 — Requisitos",
+     "chave": "CPP#art-312",
+     "trecho": "para assegurar a aplicação da lei penal, quando houver prova da existência do crime e indício suficiente de autoria e de perigo gerado pelo estado de liberdade do imputado"
+    },
+    {
+     "id": "cpp312p2",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 312, § 2º — Contemporaneidade",
+     "chave": "CPP#art-312/par-2",
+     "trecho": "A decisão que decretar a prisão preventiva deve ser motivada e fundamentada em receio de perigo e existência concreta de fatos novos ou contemporâneos que justifiquem a aplicação da medida adotada"
+    },
+    {
+     "id": "cpp312p4",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 312, § 4º — Gravidade abstrata",
+     "chave": "CPP#art-312/par-4",
+     "trecho": "É incabível a decretação da prisão preventiva com base em alegações de gravidade abstrata do delito"
+    },
+    {
+     "id": "cpp282",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 282, § 6º — Cautelares insuficientes",
+     "chave": "CPP#art-282/par-6",
+     "trecho": "o não cabimento da substituição por outra medida cautelar deverá ser justificado de forma fundamentada nos elementos presentes do caso concreto, de forma individualizada"
+    },
+    {
+     "id": "cpp315",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 315, § 2º, III — Motivação",
+     "chave": "CPP#art-315/par-2/inc-iii",
+     "trecho": "invocar motivos que se prestariam a justificar qualquer outra decisão"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas",
+     "chave": "CPP#art-212",
+     "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+    },
+    {
+     "id": "cf5lxiii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LXIII — Silêncio e advogado",
+     "chave": "CF#art-5/inc-lxiii",
+     "trecho": "o preso será informado de seus direitos, entre os quais o de permanecer calado, sendo-lhe assegurada a assistência da família e de advogado"
+    }
+   ],
+   "inicio": "s1",
+   "cenas": {
+    "s1": {
+     "tipo": "titulo",
+     "texto": "Caso 24 · Final do Ato IV",
+     "subtitulo": "Jorge Antunes",
+     "proxima": "s2"
+    },
+    "s2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Plantão da madrugada. Chuva fina na janela do gabinete. O telefone toca às 3h20."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Excelência, flagrante de uma blitz na rodovia. \"Jorge Antunes\", 55 anos, apresentou documentos falsos. Crime menor, uso de documento falso."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Só que a papiloscopia chamou a minha atenção: as digitais não batem com o nome informado. O laudo está saindo agora."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Excelência… Otávio Lacerda, o promotor de plantão. Eu li o laudo preliminar. Eu sei de quem se trata."
+      },
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Decrete logo a preventiva e acabou. Todos nós esperamos esse dia há meses. Não precisamos de audiência, de advogado, de nada disso."
+      },
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Dr. Lacerda, eu respeito o senhor. Mas a lei não tem versão para quem a gente espera. Se não houver audiência de custódia, não há decisão legítima."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os dispositivos de custódia e preventiva foram anotados.",
+       "recebe": [
+        "apf",
+        "cpp310",
+        "cpp313p1",
+        "cpp312",
+        "cpp312p2",
+        "cpp312p4",
+        "cpp282",
+        "cpp315",
+        "cpp212",
+        "cf5lxiii"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s3"
+    },
+    "s3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Gabinete · Antes da custódia",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O prazo de 24 horas do art. 310 corre. Mas também correm os direitos do preso: você confere os autos antes de abrir a audiência."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com processos",
+       "x": 30,
+       "y": 56,
+       "w": 40,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O auto de prisão: CNH autêntica com dados falsos, RG inexistente. Uso de documento falso, pena de 2 a 6 anos.",
+         "recebe": [
+          "apf"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "A bolsa: R$ 38 mil em espécie, dois celulares, passaporte estrangeiro com entrada há cinco dias por Foz do Iguaçu e chave de cofre.",
+         "recebe": [
+          "mala"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pc",
+       "nome": "Computador",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O laudo papiloscópico: 17 pontos coincidentes com as digitais cadastradas de Henrique Altavista.",
+         "recebe": [
+          "digitais"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "No BNMP há um mandado de prisão preventiva em aberto, da Dra. Beatriz Monteiro, outro processo.",
+         "recebe": [
+          "mandado"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "E o registro do voo: o jatinho que levou Henrique ao exterior, horas depois daquela decisão.",
+         "recebe": [
+          "voo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "bandeira",
+       "nome": "Bandeira",
+       "x": 90,
+       "y": 20,
+       "w": 8,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A bandeira do Brasil atrás da mesa. É a mesma lei para o bilionário e para o pedreiro. Hoje isso vai ser testado de verdade."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4rita",
+       "titulo": "Conversar com Rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Excelência, o mandado do BNMP existe, mas o flagrante de hoje é uma prisão nova, e é seu. O art. 310 exige que Vossa Excelência a analise, ouça o preso e fundamente a decisão."
+        },
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "O mandado antigo não dispensa a custódia. E Vossa Excelência vai ter de justificar a preventiva dessa nova prisão com fatos concretos, não com o nome dele."
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Exato, Rita. O nome do réu não é fundamento. Os fatos são."
+        }
+       ]
+      },
+      {
+       "q": "lacerda",
+       "titulo": "Falar com Lacerda",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "triste",
+         "t": "Eu perdi a conta de quantas vezes eu quis esse momento, Excelência. O Rafael pagou caro. A filha dele ainda dorme com a luz acesa."
+        },
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "Mas Vossa Excelência tem razão. Se hoje a gente pular um degrau da lei, amanhã o Brandão usa isso para anular tudo. Pode contar com o MP."
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Obrigado(a), Otávio. Vamos fazer direito."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "apf",
+      "mala",
+      "digitais",
+      "mandado"
+     ],
+     "proxima": "s4"
+    },
+    "s4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Audiência de custódia por videoconferência. O preso aparece na tela, de óculos escuros, barba aparada e cabelo tingido."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência de custódia. O preso foi informado de seus direitos e tem o de permanecer calado?",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, Lívia Sampaio. O sr. Jorge Antunes me constituiu há uma hora. Peço o relaxamento imediato: prisão ilegal, preso errado e provas ilícitas."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Dra. Lívia, a senhora foi constituída há uma hora e já está aqui. Interessante. Mas a defesa técnica é um direito, e o senhor Jorge terá a sua, com entrevista prévia e reservada (CPP, art. 310, § 9º)."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s5"
+    },
+    "s5": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "apontando",
+       "t": "Senhor Jorge, o senhor admite que é Henrique Altavista, o foragido, não admite?"
+      },
+      {
+       "q": "livia",
+       "e": "apontando",
+       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor responde pelo preso!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "A defesa protesta: pergunta indutiva. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Deferido. Mesmo com a ansiedade da história, a regra é a mesma, doutor.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Perdão, Excelência. Reformulo: senhor Jorge, qual o seu nome completo e a sua filiação?"
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a pergunta já traz a resposta embutida. Art. 212."
+      }
+     ],
+     "proxima": "s6"
+    },
+    "s6": {
+     "tipo": "depoimento",
+     "testemunha": "a4jorge",
+     "titulo": "O preso \"Jorge Antunes\"",
+     "intro": [
+      {
+       "q": "a4jorge",
+       "e": "normal",
+       "t": "Excelência, é tudo um engano. Eu sou um homem de bem."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Meu nome é Jorge Antunes, sou corretor de imóveis em Foz do Iguaçu, de 55 anos.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Qual o nome da sua mãe e a cidade onde nasceu?"
+        },
+        {
+         "q": "a4jorge",
+         "e": "nervoso",
+         "t": "Maria… Antunes. Nasci em… Cascavel."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca saí do Brasil nos últimos dez anos. Pergunte a quem quiser.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Dez anos? E o passaporte estrangeiro na sua bolsa?"
+        },
+        {
+         "q": "a4jorge",
+         "e": "nervoso",
+         "t": "É… de um cliente. Estava guardando."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca ouvi falar nesse tal Henrique Altavista. Não sei quem é.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca?"
+        },
+        {
+         "q": "a4jorge",
+         "e": "nervoso",
+         "t": "Só pelo jornal."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "digitais"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O senhor afirma que é Jorge Antunes. Mas as digitais colhidas coincidem, em 17 pontos, com as arquivadas há 22 anos no Instituto de Identificação em nome de Henrique Altavista. O seu RG, o de Jorge, nunca existiu."
+      },
+      {
+       "q": "a4jorge",
+       "e": "chocado",
+       "t": "…",
+       "fx": "tremor"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Excelência, eu requeiro que se suspenda… eu preciso falar com o meu cliente."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O homem na tela tira os óculos escuros. Os ombros relaxam, o olhar muda. Já não é Jorge Antunes quem está ali."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Isso não responde à pergunta. A afirmação sobre o nome só cai diante da prova da identidade civil dele."
+      }
+     ],
+     "proxima": "s7"
+    },
+    "s7": {
+     "tipo": "decidir",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "bravo",
+       "t": "Excelência, a coleta das digitais foi feita sem o consentimento do meu cliente, que invocou o silêncio! A prova é ilícita e deve ser desentranhada!"
+      },
+      {
+       "q": "lacerda",
+       "e": "apontando",
+       "t": "PROTESTO! O silêncio não impede a identificação datiloscópica, e o art. 313, § 1º, trata expressamente da dúvida sobre a identidade!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O promotor protesta contra o pedido de desentranhar a identificação por digitais. Sua decisão?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-313/par-1",
+       "trecho": "Também será admitida a prisão preventiva quando houver dúvida sobre a identidade civil da pessoa ou quando esta não fornecer elementos suficientes para esclarecê-la"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Deferido o protesto. O silêncio é direito do preso, mas não o dispensa de ser identificado quando há dúvida sobre sua identidade civil. A prova fica nos autos.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "A defesa registra o inconformismo, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o direito ao silêncio não impede a identificação datiloscópica quando há dúvida sobre a identidade civil."
+      }
+     ],
+     "proxima": "s8"
+    },
+    "s8": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "henrique",
+       "e": "confiante",
+       "t": "Está bem. Chega de teatro. Eu sou Henrique Altavista."
+      },
+      {
+       "q": "henrique",
+       "e": "pensativo",
+       "t": "Há quanto tempo, doutor(a)? A última vez em que nos vimos, Vossa Excelência ainda era um(a) jovem que acreditava que o Direito sozinho derrubava um homem como eu."
+      },
+      {
+       "q": "henrique",
+       "e": "apontando",
+       "t": "O Rafael também acreditou. Ele ainda ama a filha, não ama? Seria uma pena se a lei esquecesse dela de novo."
+      },
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Dr. Lacerda, registre a ameaça na ata. Nenhuma palavra do réu muda o meu dever."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Registrado, Excelência. E encaminhado ao MP para apuração.",
+       "fx": "martelo"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s9"
+    },
+    "s9": {
+     "tipo": "apresentar",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "apontando",
+       "t": "Excelência, se Vossa Excelência reconhece agora que meu cliente é Henrique, a prisão por identidade falsa deixa de ter objeto. O 313, § 1º, manda soltar quem se identificou!"
+      }
+     ],
+     "pergunta": "Qual regra a defesa invoca, e qual é a sua ressalva?",
+     "provas": [
+      "cpp313p1"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O art. 313, § 1º: identificado o preso, ele deve ser colocado imediatamente em liberdade, salvo se outra hipótese recomendar a manutenção da medida. É a ressalva que vou examinar: os requisitos do art. 312."
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "…Então não é automático."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) É o art. 313, § 1º, do CPP: soltar após identificar, salvo se outra hipótese recomendar a manutenção."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s10"
+    },
+    "s10": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, antes do mérito: o flagrante é legal? E a preventiva só se decreta se o crime admitir e houver requisitos."
+      }
+     ],
+     "pergunta": "Qual a análise correta do flagrante e da admissibilidade?",
+     "opcoes": [
+      {
+       "t": "O flagrante é nulo porque o preso foi identificado depois.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "A identificação posterior não torna nulo o flagrante: ele foi preso usando documento falso em blitz, em situação de flagrância."
+        }
+       ]
+      },
+      {
+       "t": "O flagrante é legal (uso de documento falso em blitz). O crime tem pena máxima de 6 anos (art. 313, I) e a dúvida sobre a identidade também admite a preventiva (art. 313, § 1º), mas ainda é preciso demonstrar os requisitos do art. 312.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "O Ministério Público concorda, Excelência."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Perfeito: admissível não significa necessário."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-313/par-1",
+         "trecho": "Também será admitida a prisão preventiva quando houver dúvida sobre a identidade civil da pessoa"
+        }
+       ]
+      },
+      {
+       "t": "O mandado antigo do BNMP basta: a prisão do flagrante é desnecessária analisar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "O art. 310 manda analisar o flagrante. Mandado antigo não é atalho para pular a custódia."
+        }
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "s11"
+    },
+    "s11": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Excelência, quais fatos concretos sustentam a preventiva? Eu sugiro que Vossa Excelência escreva \"pela gravidade e pelo nome do réu\"."
+      }
+     ],
+     "pergunta": "Quais os fundamentos corretos da preventiva?",
+     "opcoes": [
+      {
+       "t": "A gravidade do crime e a fama do réu, para garantir a ordem pública.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Gravidade abstrata e fama não bastam (art. 312, § 4º). Seria fundamentação que serviria para qualquer decisão (art. 315, § 2º, III)."
+        }
+       ]
+      },
+      {
+       "t": "Risco concreto à aplicação da lei penal: fuga comprovada de jatinho há oito meses, entrada recente por fronteira, identidade falsa, R$ 38 mil em espécie, passaporte e chave de cofre de banco, tudo contemporâneo à prisão.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "confiante",
+         "t": "É a descrição objetiva do perigo, Excelência."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Fatos concretos e contemporâneos, como exige o art. 312, § 2º."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-312",
+         "trecho": "para assegurar a aplicação da lei penal, quando houver prova da existência do crime e indício suficiente de autoria e de perigo gerado pelo estado de liberdade do imputado"
+        },
+        {
+         "chave": "CPP#art-312/par-2",
+         "trecho": "existência concreta de fatos novos ou contemporâneos que justifiquem a aplicação da medida adotada"
+        }
+       ]
+      },
+      {
+       "t": "Porque a Dra. Beatriz já decretou uma preventiva: basta confirmar.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Confirmar sem fundamentação própria é repetir fórmula. Cada decisão precisa dos seus fatos."
+        }
+       ]
+      }
+     ],
+     "proxima": "s12"
+    },
+    "s12": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "apontando",
+       "t": "Excelência, ao menos fixe cautelares diversas: monitoração eletrônica, fiança alta e comparecimento. Meu cliente é um empresário."
+      }
+     ],
+     "pergunta": "As cautelares do art. 319 bastam para este preso?",
+     "opcoes": [
+      {
+       "t": "Sim: aplico monitoração eletrônica e fiança alta.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Quem fugiu de jatinho e usa identidade falsa já frustrou monitoramento e consegue pagar qualquer fiança. Não bastam."
+        }
+       ]
+      },
+      {
+       "t": "Não bastam, e explico por quê, individualizadamente: o histórico de fuga com recursos, a identidade falsa e a posse de dinheiro e cofre mostram que monitoração, fiança ou comparecimento seriam ineficazes.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "livia",
+         "e": "nervoso",
+         "t": "…Registre-se meu inconformismo."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "É a justificativa individualizada que o art. 282, § 6º, exige."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-282/par-6",
+         "trecho": "o não cabimento da substituição por outra medida cautelar deverá ser justificado de forma fundamentada nos elementos presentes do caso concreto, de forma individualizada"
+        }
+       ]
+      },
+      {
+       "t": "Não preciso explicar: a preventiva é a regra para foragido famoso.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "A preventiva é exceção e só se decreta depois de justificar por que as cautelares não bastam (art. 282, § 6º)."
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s13"
+    },
+    "s13": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "A decisão final, Excelência. Escreva como se o mundo fosse ler, e o Tribunal vai ler."
+      }
+     ],
+     "pergunta": "Qual é o dispositivo?",
+     "opcoes": [
+      {
+       "t": "Decreto a preventiva sem ouvir a defesa nem juntar fundamentação, para evitar vazamentos.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "Sem contraditório e sem fundamentação, a decisão seria anulada e o preso solto. Seria o maior presente a Brandão."
+        }
+       ]
+      },
+      {
+       "t": "Relaxo a prisão: o flagrante de documento falso é crime menor e o réu é empresário.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "Há fuga, identidade falsa e dinheiro em espécie. Os requisitos do art. 312 estão presentes, e soltar seria ignorar os fatos concretos."
+        }
+       ]
+      },
+      {
+       "t": "Homologo o flagrante e o converto em preventiva (art. 310, II), com a fundamentação concreta e a justificativa da insuficiência das cautelares; assegura-se a defesa técnica, comunico a juíza do mandado anterior e determino a revisão da necessidade a cada 90 dias (art. 316, parágrafo único).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "confiante",
+         "t": "O Ministério Público não tem o que acrescentar, Excelência."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Foi isso. A lei vale para todos, inclusive para ele."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-310/inc-ii",
+         "trecho": "converter a prisão em flagrante em preventiva, quando presentes os requisitos constantes do art. 312 deste Código, e se revelarem inadequadas ou insuficientes as medidas cautelares diversas da prisão"
+        },
+        {
+         "chave": "CPP#art-316/par-unico",
+         "trecho": "deverá o órgão emissor da decisão revisar a necessidade de sua manutenção a cada 90 (noventa) dias, mediante decisão fundamentada, de ofício, sob pena de tornar a prisão ilegal"
+        }
+       ]
+      }
+     ],
+     "proxima": "s14"
+    },
+    "s14": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Homologo a prisão em flagrante e a converto em preventiva, com os fundamentos lançados: risco concreto e contemporâneo à aplicação da lei penal, insuficiência das cautelares do art. 319 e admissibilidade pelo art. 313, I e § 1º. O preso terá defesa técnica e será mantido sob a minha revisão a cada 90 dias.",
+       "fx": "martelo"
+      },
+      {
+       "q": "henrique",
+       "e": "bravo",
+       "t": "Isso ainda não acabou, doutor(a). Vossa Excelência vai se sentar numa cadeira muito alta e vai precisar escolher. Eu sei esperar."
+      },
+      {
+       "q": "livia",
+       "e": "pensativo",
+       "t": "Excelência, a defesa agradece a regularidade. Não vou contestar a forma da decisão."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Excelência… obrigado. Eu quis pular essa etapa e Vossa Excelência não deixou. Hoje a Justiça foi mais forte do que a minha raiva."
+      },
+      {
+       "q": "a4rita",
+       "e": "chocado",
+       "t": "Excelência, acabou de chegar da distribuição: a ação penal contra Henrique Altavista e Augusto Brandão, por lavagem e organização criminosa, foi recebida e distribuída por prevenção. Cai na sua vara."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Então o próximo julgamento é meu. Sem favor, sem atalho, sem vingança. Só a lei."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "s15"
+    },
+    "s15": {
+     "tipo": "veredicto",
+     "carimbo": "A LEI VALE PARA TODOS",
+     "titulo": "Fim do Ato IV: A Toga",
+     "texto": "Você conduziu a audiência de custódia, descobriu quem era o homem sem passado e decidiu pela preventiva com fundamento concreto, justificando por que as cautelares não bastavam. Nenhum atalho, nem para Henrique Altavista. A ação contra ele e Augusto Brandão caiu na sua vara por prevenção. Continua no Ato V: Altavista."
+    }
+   }
+  }
+ ]
+}
