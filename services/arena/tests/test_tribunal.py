@@ -195,6 +195,9 @@ class TestServidor(unittest.TestCase):
         self.assertEqual(ep["personagens"]["voce"]["nome"], "Dra. Teste")
         self.assertEqual(ep["personagens"]["voce"]["visual"]["cabelo"], "coque")
         self.assertNotIn("helena", ep["personagens"])  # só os personagens do episódio
+        code, tut = self.req("/api/arena/tribunal/a1-tutorial")
+        com_bio = [k for k, v in tut["personagens"].items() if v.get("bio")]
+        self.assertTrue(com_bio)  # a tela de elenco depende de bio na API
         code, r = self.req("/api/arena/tribunal/concluir", {"episodio": "ep3-sentenca", "credibilidade": 4, "erros": 1})
         self.assertEqual((code, r["xp"], r["carimbo"]), (200, 170 + 80, "SENTENÇA MANTIDA"))
         prof = self.req("/api/arena/perfil")[1]
