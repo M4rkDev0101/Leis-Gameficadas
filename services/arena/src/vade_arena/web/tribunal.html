@@ -2142,9 +2142,88 @@ async function loadMenu() {
     $("#eps").className = ""; $("#eps").replaceChildren(...out);
   } catch (e) { $("#eps").replaceChildren(el("p", {textContent:"Não consegui carregar a carreira: " + e.message})); }
 }
-loadMenu();
-const qp = new URLSearchParams(location.search).get("ep");
-if (qp) startEpisode(qp);
+// ================================================================ galeria de QA de arte (?galeria=1)
+// Parâmetros: sec=elenco|combinatoria|palco|tudo (padrão tudo) · de/ate (índices do elenco) · fundo=ambos|claro|escuro
+// · tam=px da figura · f=filtro por nome/id · expr=lista de expressões. Serve para revisar todos os bonecos sem jogar.
+async function galeriaQA(P) {
+  const sec = P.get("sec") || "tudo", fundo = P.get("fundo") || "ambos", tam = +P.get("tam") || 210, filtro = (P.get("f") || "").toLowerCase();
+  const exprs = P.get("expr") ? P.get("expr").split(",").filter(x => EXPRS.includes(x)) : EXPRS;
+  const de = +P.get("de") || 0, ate = P.has("ate") ? +P.get("ate") : 1e9;
+  document.title = "Galeria de QA · personagens";
+  const css = el("style", {textContent:`
+    body.gal { background:#20232b; color:#eee; font-family:system-ui,sans-serif; margin:0; padding:16px 16px 60px; overflow:auto; }
+    body.gal > *:not(.galroot) { display:none !important; }
+    .galroot h1 { font-size:20px; margin:0 0 4px; } .galroot h2 { font-size:18px; margin:26px 0 8px; border-bottom:1px solid #555; padding-bottom:4px; }
+    .galroot .bar { position:sticky; top:0; z-index:3; background:#20232b; padding:6px 0; display:flex; gap:12px; flex-wrap:wrap; align-items:center; font-size:13px; }
+    .galroot .who { margin:14px 0 4px; font-size:14px; } .galroot .who b { font-size:16px; } .galroot .who code { color:#9ab; font-size:12px; }
+    .galroot .row { display:flex; flex-wrap:wrap; gap:6px; }
+    .galroot .cell { border-radius:8px; padding:4px 4px 2px; text-align:center; font-size:12px; }
+    .galroot .cell.claro { background:#f3efe6; color:#222; } .galroot .cell.escuro { background:#14161c; color:#ddd; }
+    .galroot .cell svg { display:block; width:${tam}px; height:auto; overflow:visible; }
+    .galroot .stagebox { position:relative; width:480px; aspect-ratio:16/10; overflow:hidden; border-radius:8px; container-type:inline-size; }
+    .galroot .stagebox .actor { position:absolute; }`});
+  const root = el("div", {class:"galroot"});
+  document.body.classList.add("gal"); document.body.append(css, root);
+  const talkBox = el("input", {type:"checkbox", onchange:e => root.classList.toggle("talking", e.target.checked)});
+  root.append(el("h1", {textContent:"Galeria de QA dos personagens"}),
+    el("div", {class:"bar"}, el("label", {}, talkBox, " animar boca (falando)"),
+      el("span", {textContent:"sec=elenco|combinatoria|palco · de/ate · fundo=claro|escuro|ambos · tam · f · expr"})));
+  const fundos = fundo === "ambos" ? ["claro", "escuro"] : [fundo];
+  const cell = (v, e, label, f) => { const c = el("div", {class:"cell " + f}); c.innerHTML = characterSVG(v, e); c.append(el("div", {textContent:label})); return c; };
+  if (sec === "tudo" || sec === "elenco" || sec === "palco") {
+    const car = await api("/api/arena/carreira");
+    const ids = [...car.atos.flatMap(a => a.episodios.map(e => e.id)), ...car.avulsos.map(e => e.id)];
+    const eps = await Promise.all(ids.map(id => api("/api/arena/tribunal/" + id).catch(() => null)));
+    const elenco = [], vistos = new Set();
+    eps.forEach((ep, i) => { if (!ep) return; EP = ep;
+      for (const [q, ch] of Object.entries(ep.personagens || {})) {
+        if (q === "narrador") continue;
+        const v = q === "voce" ? visualOf(q) : (ch || {}).visual; if (!v) continue;
+        const k = JSON.stringify(v) + "|" + (ch || {}).nome; if (vistos.has(k)) continue; vistos.add(k);
+        elenco.push({q, nome:(ch || {}).nome || q, ep:ids[i], v, pos:(ep.posicoes || {})[q] || "testemunha"});
+      } });
+    const lista = elenco.map((c, i) => ({...c, i})).filter(c => c.i >= de && c.i <= ate && (!filtro || (c.nome + " " + c.q + " " + c.ep).toLowerCase().includes(filtro)));
+    if (sec !== "palco") {
+      root.append(el("h2", {textContent:`Elenco (${lista.length} de ${elenco.length} visuais distintos) × ${exprs.length} expressões`}));
+      for (const c of lista) {
+        root.append(el("div", {class:"who"}, el("b", {textContent:`#${c.i} ${c.nome}`}), " ", el("code", {textContent:`${c.ep} · ${c.q} · ${JSON.stringify(c.v)}`})));
+        for (const f of fundos) root.append(el("div", {class:"row"}, ...exprs.map(e => cell(c.v, e, e, f))));
+      }
+    }
+    if (sec === "palco" || sec === "tudo") {
+      root.append(el("h2", {textContent:"Palco: no tribunal (atrás da bancada) e num local de investigação"}));
+      const locs = ["bar", "delegacia", "rua", "apartamento", "clinica", "obra", "loja", "gabinete"];
+      for (const c of lista) {
+        const pos = ["defesa", "acusacao", "juiz", "testemunha"].includes(c.pos) ? c.pos : "testemunha";
+        const court = el("div", {class:"stagebox"}), loc = el("div", {class:"stagebox"});
+        court.innerHTML = `<div class="scene"><div class="bg">${background(pos)}</div><div class="floor"></div><div class="actor idle">${characterSVG(c.v, "normal")}</div><div class="desk">${desk(pos)}</div></div>`;
+        loc.innerHTML = `<div class="scene loc"><div class="bg">${locationBG(locs[c.i % locs.length])}</div><div class="actor idle">${characterSVG(c.v, "apontando")}</div></div>`;
+        root.append(el("div", {class:"who"}, el("b", {textContent:`#${c.i} ${c.nome}`}), " ", el("code", {textContent:pos})), el("div", {class:"row"}, court, loc));
+      }
+    }
+  }
+  if (sec === "tudo" || sec === "combinatoria") {
+    const PELES = ["#FFDBAC", "#F1C27D", "#E0AC69", "#C68642", "#8D5524", "#5C3A1E"];
+    const ROUPA = {terno:"#1f2a44", toga:"#111111", blazer:"#4a2c6b", avental:"#ffffff", casual:"#c0392b", farda:"#3e4a2d"};
+    const CAB = ["#2a1a10", "#111111", "#c9a227", "#7b1e1e", "#9e9e9e", "#d0d0d0"];
+    root.append(el("h2", {textContent:"Combinatória: cabelo × roupa × tom de pele (linha 1 sem acessórios; linha 2 com óculos e barba)"}));
+    HAIRS.forEach((h, hi) => OUTFITS.forEach((o, oi) => {
+      root.append(el("div", {class:"who"}, el("b", {textContent:`${h} × ${o}`})));
+      for (const extra of [{oculos:false, barba:false}, {oculos:true, barba:true}])
+        root.append(el("div", {class:"row"}, ...PELES.map((p, pi) => {
+          const v = {pele:p, cabelo:h, corCabelo:CAB[(hi + oi + pi) % CAB.length], roupa:o, corRoupa:ROUPA[o], gravata:(o === "terno" || o === "farda" || pi % 2) ? "#8a1c1c" : null, ...extra};
+          return cell(v, exprs[(hi + oi + pi) % exprs.length], `${p} ${exprs[(hi + oi + pi) % exprs.length]}${extra.oculos ? " +óculos+barba" : ""}`, pi % 2 ? "escuro" : "claro");
+        })));
+    }));
+  }
+}
+const QP = new URLSearchParams(location.search);
+if (QP.get("galeria")) galeriaQA(QP);
+else {
+  loadMenu();
+  const qp = QP.get("ep");
+  if (qp) startEpisode(qp);
+}
 </script>
 </body>
 </html>
