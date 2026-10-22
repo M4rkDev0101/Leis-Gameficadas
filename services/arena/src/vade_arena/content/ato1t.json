@@ -1,0 +1,884 @@
+{
+ "ato": "ato1",
+ "personagens": {
+  "a1tzeca": {
+   "nome": "Zeca Menezes",
+   "cargo": "Office boy do escritório",
+   "voz": 330,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "cacheado",
+    "corCabelo": "#1b1b1b",
+    "roupa": "casual",
+    "corRoupa": "#2e7d6b",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Zeca tem 22 anos, entrega papéis para o escritório desde os 17 e conhece cada atalho do fórum. Adora uma boa fofoca e tem o hábito de contar histórias que não viu, só ouviu. Faz o papel de testemunha nos treinos de audiência de Helena e já salvou muito estagiário de passar vergonha de verdade.",
+   "personalidade": "falante, prestativo, exagerado, simpático",
+   "motivacao": "Ser reconhecido como parte da equipe e, um dia, estudar Direito."
+  },
+  "a1tnando": {
+   "nome": "Nando Ferraz",
+   "cargo": "Técnico da assistência Cafeína",
+   "voz": 280,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "curto",
+    "corCabelo": "#3b2414",
+    "roupa": "avental",
+    "corRoupa": "#37474f",
+    "gravata": null,
+    "oculos": true,
+    "barba": true
+   },
+   "bio": "Nando conserta cafeteiras, moedores e o que mais aparecer há quinze anos e guarda cada laudo numa pasta azul. Já foi chamado como testemunha uma vez e jurou nunca mais opinar sem papel na mão. Foi ele quem mostrou ao escritório que a peça da cafeteira de Rafael já estava trincada de tanto uso.",
+   "personalidade": "metódico, direto, paciente, honesto",
+   "motivacao": "Que ninguém seja culpado por um defeito que ele mesmo viu nascer na peça."
+  }
+ },
+ "episodios": [
+  {
+   "id": "a1-tutorial",
+   "ato": "ato1",
+   "ordem": 0.5,
+   "numero": 0,
+   "titulo": "Primeiro Dia",
+   "papel": "advogado",
+   "nivel": "basico",
+   "sinopse": "Helena recebe você no escritório e ensina, com um caso de treino sobre uma cafeteira quebrada, como ler os autos, investigar, pressionar testemunhas, apresentar leis, escolher a tese e decidir protestos.",
+   "posicoes": {
+    "voce": "defesa",
+    "helena": "acusacao",
+    "rafael": "juiz",
+    "a1tzeca": "testemunha",
+    "a1tnando": "cena"
+   },
+   "provas": [
+    {
+     "id": "portaria",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Registro da portaria",
+     "descricao": "Quarta-feira, 14h50: Zeca Menezes sai do prédio levando um malote para o banco. Volta às 15h20."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🔧",
+     "nome": "Laudo da assistência técnica",
+     "descricao": "A base da cafeteira apresentava trinca antiga por fadiga do material. Queda por impacto não é a causa mais provável."
+    },
+    {
+     "id": "cp163",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 163 — Dano",
+     "chave": "CP#art-163",
+     "trecho": "Destruir, inutilizar ou deteriorar coisa alheia"
+    },
+    {
+     "id": "cp18",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 18, parágrafo único — Crime culposo só se a lei prevê",
+     "chave": "CP#art-18/par-unico",
+     "trecho": "ninguém pode ser punido por fato previsto como crime, senão quando o pratica dolosamente"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas à testemunha",
+     "chave": "CPP#art-212",
+     "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+    },
+    {
+     "id": "cpp203",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 203 — Compromisso e qualificação da testemunha",
+     "chave": "CPP#art-203",
+     "trecho": "devendo declarar seu nome, sua idade, seu estado e sua residência, sua profissão"
+    }
+   ],
+   "inicio": "t1",
+   "cenas": {
+    "t1": {
+     "tipo": "titulo",
+     "texto": "Tutorial",
+     "subtitulo": "Primeiro Dia",
+     "proxima": "t2"
+    },
+    "t2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Seja bem-vindo(a) à Vasconcelos & Duarte! Eu sou a Helena. Hoje você não pega um caso de verdade: hoje você aprende a pilotar."
+      },
+      {
+       "q": "rafael",
+       "e": "confiante",
+       "t": "E eu sou o Rafael. Regra número um do escritório: ninguém entra numa audiência sem treinar antes. Nem eu."
+      },
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Montamos uma sala de treino. Nada do que acontece lá vale na vida real, mas tudo o que você aprender vale."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Primeiro dia. Respira. Eu só preciso não derrubar nada.)"
+      },
+      {
+       "q": "rafael",
+       "e": "feliz",
+       "t": "Aliás, antes de tudo: o primeiro dia de um estagiário tem uma tradição sagrada. Eu faço o café. Como você toma o seu?"
+      }
+     ],
+     "proxima": "t2b"
+    },
+    "t2b": {
+     "tipo": "escolha",
+     "livre": true,
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "rafael",
+       "e": "pensativo",
+       "t": "Pergunta séria. Muita coisa se descobre sobre uma pessoa pelo café que ela escolhe."
+      }
+     ],
+     "pergunta": "Como você toma o seu café?",
+     "opcoes": [
+      {
+       "t": "Puro e forte: \"Sem açúcar, sem frescura.\"",
+       "marca": "a1t_cafe_puro",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Puro e forte, por favor. Sem açúcar."
+        },
+        {
+         "q": "rafael",
+         "e": "feliz",
+         "t": "Esse(a) aguenta madrugada de processo. Gostei."
+        }
+       ]
+      },
+      {
+       "t": "Com leite e açúcar: \"Bem docinho, por favor.\"",
+       "marca": "a1t_cafe_doce",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Com bastante leite e uma colher de açúcar, por favor."
+        },
+        {
+         "q": "rafael",
+         "e": "feliz",
+         "t": "Um(a) otimista! Vai combinar com o escritório."
+        }
+       ]
+      },
+      {
+       "t": "Não tomo café: \"Aceito um chá, se tiver.\"",
+       "marca": "a1t_cafe_cha",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Eu, na verdade, não tomo café. Um chá, se não for incômodo."
+        },
+        {
+         "q": "rafael",
+         "e": "pensativo",
+         "t": "Um(a) sereno(a). Vamos ver se isso dura até a primeira audiência."
+        }
+       ]
+      }
+     ],
+     "proxima": "t3"
+    },
+    "t3": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Vamos ao treino. O caso de hoje é simulado e pequeno: a cafeteira italiana do Rafael apareceu quebrada, e o ex-estagiário Tadeu está sendo acusado de dano."
+      },
+      {
+       "q": "rafael",
+       "e": "triste",
+       "t": "Era uma cafeteira linda. Mas o processo é só para treinar. Eu juro que perdoei o Tadeu."
+      },
+      {
+       "q": "helena",
+       "e": "apontando",
+       "t": "Primeira lição: os AUTOS. Todo caso tem uma pasta com as provas e as leis que você pode usar. Fica no botão 📁 do canto da tela. Atalho: tecla A."
+      },
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Quem lê os autos antes de falar ganha metade da audiência. Quem esquece o que está neles perde a outra metade."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do caso foram atualizados. Aperte a tecla A (ou o botão 📁) e confira: a pasta tem provas 📄 e leis 📜. Leis só valem se você as apresentar no momento certo.",
+       "recebe": [
+        "portaria",
+        "cp163",
+        "cp18",
+        "cpp212",
+        "cpp203"
+       ]
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "Eu tirei o registro da portaria do prédio. Ele diz quem entrou e quem saiu na quarta-feira em que a cafeteira quebrou. Guarde."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "A segunda prova falta: o laudo do técnico que examinou a cafeteira. Segunda lição: INVESTIGAR."
+      }
+     ],
+     "proxima": "t4"
+    },
+    "t4": {
+     "tipo": "investigar",
+     "local": "loja",
+     "titulo": "Assistência técnica Cafeína",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "O cheiro de café torrado e de solda quente se misturam na pequena loja de Nando. Cafeteiras em todas as prateleiras."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(A tela mostra pontos que posso examinar. E dá para conversar com as pessoas do lugar.)"
+      },
+      {
+       "q": "narrador",
+       "t": "Clique nos pontos da cena para examiná-los. Use as conversas para falar com quem está no local. Provas importantes vão sozinhas para os autos."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "balcao",
+       "nome": "Balcão da assistência",
+       "x": 41,
+       "y": 44,
+       "w": 12,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Uma pasta azul bem identificada: 'Cafeteira do Dr. Rafael, laudo técnico'."
+        },
+        {
+         "q": "narrador",
+         "t": "Nando entregou o laudo da cafeteira.",
+         "recebe": [
+          "laudo"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "cartaz",
+       "nome": "Cartaz na parede",
+       "x": 70,
+       "y": 12,
+       "w": 18,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "'Peça trincada por desgaste não é culpa de ninguém: é culpa do tempo.' Alguém aqui tem senso de humor."
+        }
+       ]
+      },
+      {
+       "id": "vitrine",
+       "nome": "Vitrine de cafeteiras",
+       "x": 6,
+       "y": 24,
+       "w": 22,
+       "h": 50,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Esta vermelha é parecida com a do Rafael. Só que a dele não está tão brilhante assim."
+        }
+       ]
+      },
+      {
+       "id": "monitor",
+       "nome": "Monitor de ordens de serviço",
+       "x": 52,
+       "y": 39,
+       "w": 8,
+       "h": 9,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Ordem de serviço aberta em nome de Rafael Duarte, três semanas ANTES da quarta-feira da acusação. A peça já estava ruim."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a1tnando",
+       "titulo": "Conversar com Nando",
+       "falas": [
+        {
+         "q": "a1tnando",
+         "e": "normal",
+         "t": "A cafeteira do doutor Rafael já chegou aqui trincada, e ele só pediu orçamento. O dano veio com o tempo, não de uma pancada."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E o senhor tem isso por escrito?"
+        },
+        {
+         "q": "a1tnando",
+         "e": "confiante",
+         "t": "Sempre. Está no laudo, no balcão. Pode levar."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "laudo"
+     ],
+     "proxima": "t5"
+    },
+    "t5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Pronto, sala de treino montada. Eu faço o Ministério Público, o Rafael é o juiz e o Zeca, nosso office boy, é a testemunha. Você é a defesa do Tadeu."
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "Declaro aberta a audiência simulada. Dois avisos: a defesa tem CREDIBILIDADE, e testemunha é para ser ouvida com atenção.",
+       "fx": "martelo"
+      },
+      {
+       "q": "rafael",
+       "e": "pensativo",
+       "t": "Credibilidade é o seu fôlego diante do juiz: são cinco pontos. Cada erro, na hora de apresentar prova ou lei, custa um. Zerou, perdeu o caso. Hoje, no treino, é só para você sentir o peso."
+      },
+      {
+       "q": "helena",
+       "e": "confiante",
+       "t": "O Ministério Público chama Zeca Menezes."
+      }
+     ],
+     "proxima": "t6"
+    },
+    "t6": {
+     "tipo": "depoimento",
+     "testemunha": "a1tzeca",
+     "titulo": "O que Zeca viu",
+     "intro": [
+      {
+       "q": "a1tzeca",
+       "e": "confiante",
+       "t": "Boa tarde, doutor Rafael! Digo, Excelência! Eu vi tudo!"
+      },
+      {
+       "q": "narrador",
+       "t": "Terceira lição: DEPOIMENTO. A testemunha faz afirmações, uma por vez. Aperte P (ou o botão Pressionar) para pedir mais detalhes. Quando achar uma contradição com os autos, aperte Apresentar e escolha a prova."
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "A testemunha promete dizer a verdade. Pode começar, senhor Zeca."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Era quarta-feira, por volta das três da tarde, e eu estava aqui no escritório.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Tem certeza do horário?"
+        },
+        {
+         "q": "a1tzeca",
+         "e": "confiante",
+         "t": "Três da tarde, no ponto! Eu sempre sei as horas."
+        }
+       ]
+      },
+      {
+       "t": "Eu vi com meus próprios olhos o Tadeu jogando a cafeteira no chão de propósito.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "De onde exatamente o senhor viu isso?"
+        },
+        {
+         "q": "a1tzeca",
+         "e": "nervoso",
+         "t": "Bom… da porta de vidro da copa. Ou foi do corredor. Mas eu vi, viu?"
+        }
+       ]
+      },
+      {
+       "t": "Ele gritou que nunca mais ia fazer café para ninguém.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Ele estava com raiva?"
+        },
+        {
+         "q": "a1tzeca",
+         "e": "nervoso",
+         "t": "Eu acho que sim. Ele sempre foi meio… intenso."
+        }
+       ]
+      },
+      {
+       "t": "Depois eu varri os cacos e joguei no lixo.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor guardou algum caco como prova?"
+        },
+        {
+         "q": "a1tzeca",
+         "e": "nervoso",
+         "t": "Não… eu varri e joguei fora mesmo. Era só vidro e plástico."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "portaria"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Às 14h50 de quarta o registro da portaria mostra o senhor saindo para o banco. O senhor só voltou às 15h20. Não poderia ter visto nada às três da tarde!"
+      },
+      {
+       "q": "a1tzeca",
+       "e": "chocado",
+       "t": "Ai, ai, ai… eu cheguei depois, tá? Me contaram a história e eu achei que já tinha visto!",
+       "fx": "tremor"
+      },
+      {
+       "q": "rafael",
+       "e": "bravo",
+       "t": "Ordem! Senhor Zeca, o compromisso de dizer a verdade vale mesmo no treino.",
+       "fx": "martelo"
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Primeiro depoimento derrubado. Excelente."
+      }
+     ],
+     "erro": [
+      {
+       "q": "rafael",
+       "e": "pensativo",
+       "t": "Essa prova não contradiz a afirmação. Releia com calma: a testemunha disse onde estava e quando. Que documento fala disso?"
+      }
+     ],
+     "proxima": "t7"
+    },
+    "t7": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "apontando",
+       "t": "O Ministério Público não se abala. Mesmo sem a testemunha: quem estraga coisa alheia responde pelo dano, com intenção ou sem. Qualquer um sabe disso!"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Isso está errado. Qual dispositivo diz quando alguém pode ser punido por um fato previsto como crime?)"
+      },
+      {
+       "q": "narrador",
+       "t": "Quarta lição: APRESENTAR UMA LEI. Abra os autos (tecla A) e escolha o artigo que responde ao argumento. Cuidado: a lei errada custa credibilidade."
+      }
+     ],
+     "pergunta": "Que dispositivo diz que só se pune o fato previsto como crime quando praticado com dolo, salvo previsão expressa de culpa?",
+     "provas": [
+      "cp18"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Art. 18, parágrafo único, do Código Penal: salvo os casos expressos em lei, ninguém pode ser punido por fato previsto como crime senão quando o pratica dolosamente. O art. 163 não prevê dano culposo!"
+      },
+      {
+       "q": "rafael",
+       "e": "feliz",
+       "t": "Procede. Dano culposo não é crime no Brasil."
+      },
+      {
+       "q": "helena",
+       "e": "chocado",
+       "t": "Ngh…!",
+       "fx": "tremor"
+      }
+     ],
+     "erro": [
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "Esse dispositivo não responde ao argumento. A pergunta é: quando é possível punir alguém por um crime que não seja doloso?"
+      }
+     ],
+     "fundamentos": [
+      {
+       "chave": "CP#art-163",
+       "trecho": "Destruir, inutilizar ou deteriorar coisa alheia"
+      }
+     ],
+     "proxima": "t8"
+    },
+    "t8": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "Encerrada a instrução. A defesa tem a palavra para as alegações finais."
+      },
+      {
+       "q": "narrador",
+       "t": "Quinta lição: ESCOLHER A TESE. Com todas as provas na mão, você decide a linha de defesa. Cada opção tem consequências diferentes; só uma é a melhor."
+      }
+     ],
+     "pergunta": "Qual é a tese da defesa de Tadeu?",
+     "opcoes": [
+      {
+       "t": "Absolvição: o laudo mostra desgaste antigo da peça e não há prova de dolo; sem dolo, o fato não é crime de dano.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CP#art-18/par-unico",
+         "trecho": "ninguém pode ser punido por fato previsto como crime, senão quando o pratica dolosamente"
+        },
+        {
+         "chave": "CPP#art-386/inc-iii",
+         "trecho": "não constituir o fato infração penal"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, o laudo aponta trinca antiga por desgaste e não há testemunha confiável de ato intencional. Sem dolo, o dano do art. 163 não se configura. Peço a absolvição."
+        }
+       ]
+      },
+      {
+       "t": "Legítima defesa: Tadeu só quebrou a cafeteira porque ela o atacou.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "feliz",
+         "t": "Legítima defesa contra uma cafeteira? A cafeteira estava armada?"
+        },
+        {
+         "q": "rafael",
+         "e": "bravo",
+         "t": "Tese incompatível com os fatos. Dê ao juízo algo que ele possa acolher."
+        }
+       ]
+      },
+      {
+       "t": "Confessar o dano e pedir só a pena mínima.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "rafael",
+         "e": "pensativo",
+         "t": "Confessar o que o laudo e a portaria desmentem? Você derrubou a prova da acusação e agora a entrega de bandeja."
+        },
+        {
+         "q": "helena",
+         "e": "normal",
+         "t": "A defesa não pede pena quando o caso é de absolvição. Releia o que você tem nos autos."
+        }
+       ]
+      }
+     ],
+     "proxima": "t9"
+    },
+    "t9": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "rafael",
+       "e": "feliz",
+       "t": "Muito bem. Agora vamos trocar de lugar: sexta e última lição. Você vira o JUIZ por alguns minutos."
+      },
+      {
+       "q": "helena",
+       "e": "confiante",
+       "t": "Eu sou a acusação e vou tentar passar uma ou duas. Você decide cada protesto: deferir (a objeção procede) ou indeferir (não procede)."
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "O Zeca está de volta ao banco das testemunhas, só para a rodada de perguntas."
+      },
+      {
+       "q": "helena",
+       "e": "apontando",
+       "t": "Senhor Zeca, o Tadeu sempre odiou aquela cafeteira, não é verdade?"
+      },
+      {
+       "q": "rafael",
+       "e": "apontando",
+       "t": "Protesto, Excelência!",
+       "fx": "protesto"
+      }
+     ],
+     "proxima": "t10"
+    },
+    "t10": {
+     "tipo": "decidir",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "rafael",
+       "e": "apontando",
+       "t": "A pergunta é sugestiva: já traz a resposta que a acusação quer ouvir. Peço que ela seja barrada e que o senhor Zeca responda sem indução."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "A pergunta é apenas direta, Excelência."
+      }
+     ],
+     "pergunta": "Você é o juiz: o protesto contra a pergunta deve ser deferido?",
+     "correta": "deferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-212",
+       "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Protesto deferido. O art. 212 do CPP não admite perguntas que induzam a resposta. A acusação que reformule."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Perfeito. Eu fiz de propósito, claro. Quando é você na toga, é a lei, não a simpatia."
+      }
+     ],
+     "erro": [
+      {
+       "q": "rafael",
+       "e": "pensativo",
+       "t": "Releia a pergunta: 'não é verdade que…'. Ela já entrega a resposta que a acusação quer. O art. 212 proíbe exatamente isso."
+      }
+     ],
+     "proxima": "t11"
+    },
+    "t11": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "Agora a acusação faz outra pergunta."
+      },
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Senhor Zeca, pode declarar seu nome completo, idade e profissão?"
+      },
+      {
+       "q": "rafael",
+       "e": "apontando",
+       "t": "Protesto! Irrelevante! Isso não tem nada a ver com a causa!",
+       "fx": "protesto"
+      }
+     ],
+     "proxima": "t12"
+    },
+    "t12": {
+     "tipo": "decidir",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "rafael",
+       "e": "nervoso",
+       "t": "Excelência, a acusação está perdendo tempo com perguntas inúteis."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "É a qualificação da testemunha, Excelência. É o início de todo depoimento."
+      }
+     ],
+     "pergunta": "Você é o juiz: o protesto de irrelevância deve ser deferido?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-203",
+       "trecho": "devendo declarar seu nome, sua idade, seu estado e sua residência, sua profissão"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Indeferido. Declarar nome, idade, residência e profissão é dever da testemunha e abre o depoimento, art. 203 do CPP. Pode responder, senhor Zeca."
+      },
+      {
+       "q": "rafael",
+       "e": "feliz",
+       "t": "Perfeito. Protestar contra tudo não é estratégia: é ruído."
+      }
+     ],
+     "erro": [
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Pense em como se abre qualquer depoimento: a qualificação é parte da lei. O art. 203 lista o que a testemunha deve declarar."
+      }
+     ],
+     "proxima": "t13"
+    },
+    "t13": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "rafael",
+       "e": "feliz",
+       "t": "Encerrado o treino. Tadeu absolvido, cafeteira inocente e eu, por fim, perdoado por ter apontado o dedo para um rapaz que só queria um estágio."
+      },
+      {
+       "q": "a1tzeca",
+       "e": "feliz",
+       "t": "Eu falei que ia ser uma testemunha ótima! Só errei o horário, o resto estava perfeito."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Resumo da aula: leia os autos (A), investigue o local, pressione e apresente (P), use a lei certa, escolha a tese, decida os protestos. E cuide da credibilidade."
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "Seu café ficou pronto. Puro e forte, como você pediu.",
+       "se": "a1t_cafe_puro"
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "Seu café ficou pronto. Com leite e açúcar, exatamente como você pediu.",
+       "se": "a1t_cafe_doce"
+      },
+      {
+       "q": "rafael",
+       "e": "normal",
+       "t": "E o seu chá ficou pronto. Tínhamos um saquinho esquecido na gaveta desde o ano passado. Sirva-se.",
+       "se": "a1t_cafe_cha"
+      },
+      {
+       "q": "narrador",
+       "t": "O telefone da recepção toca. Helena atende, franze a testa e anota um nome no bloco."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "Rafael… é do plantão da delegacia. Um rapaz de 19 anos preso por roubo de celular. Pede um advogado."
+      },
+      {
+       "q": "rafael",
+       "e": "pensativo",
+       "t": "Lucas Ferreira. O treino acabou, e o seu primeiro caso de verdade acabou de chegar."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Já? Eu mal aprendi onde fica o banheiro.)"
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Você está pronto(a). Amanhã cedo é a audiência, e hoje à noite eu quero você lendo cada linha dos autos."
+      }
+     ],
+     "proxima": "t14"
+    },
+    "t14": {
+     "tipo": "veredicto",
+     "carimbo": "TREINADO",
+     "titulo": "Treino concluído",
+     "texto": "Você leu os autos, investigou, pressionou uma testemunha, apresentou uma lei, escolheu a tese e decidiu protestos como juiz. O primeiro caso de verdade chegou: Lucas Ferreira, 19 anos, no Caso 1."
+    }
+   }
+  }
+ ]
+}

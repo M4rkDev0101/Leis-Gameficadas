@@ -14,7 +14,10 @@
     "gravata": null,
     "oculos": true,
     "barba": false
-   }
+   },
+   "bio": "Assessora do gabinete do juiz e braço direito do jogador na toga, Rita traz os autos com um resumo afiado e um aviso sobre quem está de olho na decisão. Percebe que as digitais do preso não batem com o nome que ele deu. Acompanha o jogador pelas decisões mais perigosas.",
+   "personalidade": "eficiente, discreta, perspicaz, leal",
+   "motivacao": "Que o juiz decida com fundamento e não com medo do que dizem lá fora."
   },
   "a4tulio": {
    "nome": "Dr. Túlio Bastos",
@@ -29,7 +32,10 @@
     "gravata": "#8a1c1c",
     "oculos": false,
     "barba": true
-   }
+   },
+   "bio": "Promotor de Justiça que pede a prisão preventiva pela gravidade e pelo clamor, mas respeita o resultado quando a lei manda outra coisa. É adversário correto e frequente nas decisões do jogador como juiz. Defende o interesse público com convicção.",
+   "personalidade": "convicto, correto, enérgico, pragmático",
+   "motivacao": "Garantir que quem ameaçou a ordem pública responda, sem atropelar o processo."
   },
   "a4nadia": {
    "nome": "Dra. Nádia Quirino",
@@ -44,7 +50,10 @@
     "gravata": null,
     "oculos": false,
     "barba": false
-   }
+   },
+   "bio": "Defensora Pública que atua com ritmo e calor nos casos em que o jogador é juiz. Protesta contra perguntas indutivas e exige o que a lei garante ao preso. Convence a vara com argumento e não com barulho.",
+   "personalidade": "combativa, técnica, empática, incansável",
+   "motivacao": "Que ninguém pobre seja preso porque ninguém lhe explicou o próprio direito."
   },
   "a4gilson": {
    "nome": "Inspetor Gilson Maia",
@@ -59,7 +68,10 @@
     "gravata": null,
     "oculos": false,
     "barba": true
-   }
+   },
+   "bio": "Inspetor da Polícia Civil que depõe em audiências de preventiva e de juizado. Confirma o que viu, admite o que não sabe e não se deixa conduzir por perguntas sugestivas. Mostra o investigador que fala com cautela.",
+   "personalidade": "cauteloso, honesto, experiente, reservado",
+   "motivacao": "Entregar uma investigação limpa para que nenhum juiz precise anulá-la."
   },
   "a4anselmo": {
    "nome": "Cabo Anselmo Reis",
@@ -74,7 +86,10 @@
     "gravata": null,
     "oculos": false,
     "barba": false
-   }
+   },
+   "bio": "Cabo da Polícia Militar que atua em abordagens importantes, como o celular aberto sem ordem judicial e o descumprimento de medida protetiva. Descreve cada passo com seriedade, mas a lei limita o que a farda pode fazer. Representa o policial que precisa aprender onde o poder acaba.",
+   "personalidade": "firme, disciplinado, direto, honesto",
+   "motivacao": "Cumprir a missão sem transformar a prova em nulidade."
   },
   "a4helio": {
    "nome": "Dr. Hélio Brito",
@@ -89,7 +104,10 @@
     "gravata": "#1f5aa6",
     "oculos": true,
     "barba": false
-   }
+   },
+   "bio": "Delegado de Polícia que mantém um pedreiro seis dias na carceragem sem flagrante e sem mandado. Defende a prisão como investigação e hesita quando o jogador chega à delegacia. É um exemplo de abuso por rotina, mais que por maldade.",
+   "personalidade": "burocrático, resistente, defensivo, autoritário",
+   "motivacao": "Preservar a autoridade da delegacia e não ser desautorizado."
   },
   "a4des": {
    "nome": "Des. Ernesto Vilar",
@@ -104,7 +122,10 @@
     "gravata": null,
     "oculos": true,
     "barba": true
-   }
+   },
+   "bio": "Desembargador do Tribunal de Justiça que sugere ao jogador esperar antes de decidir um habeas corpus. Fala com a delicadeza de quem lembra, sem dizer, que o Tribunal revisa o que o juiz decidir. Representa a pressão hierárquica sobre a independência do juiz.",
+   "personalidade": "polido, ameaçador, experiente, conservador",
+   "motivacao": "Evitar que um juiz novo cause ruído para a instituição."
   },
   "a4everton": {
    "nome": "Everton Ramos",
@@ -179,7 +200,10 @@
     "gravata": null,
     "oculos": true,
     "barba": false
-   }
+   },
+   "bio": "Nome falso de Henrique Altavista, preso numa blitz com documentos falsos e apresentado como corretor de imóveis. Quando as digitais o denunciam, abandona o teatro e provoca o jogador com a ameaça velada à filha de Rafael. Seu julgamento nasce da audiência de custódia.",
+   "personalidade": "frio, irônico, perigoso, paciente",
+   "motivacao": "Sair livre outra vez e lembrar ao juiz que sabe esperar."
   }
  },
  "episodios": [

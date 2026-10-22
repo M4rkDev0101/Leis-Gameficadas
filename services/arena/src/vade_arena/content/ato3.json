@@ -59,7 +59,10 @@
     "gravata": "#d4ac0d",
     "oculos": false,
     "barba": false
-   }
+   },
+   "bio": "Advogado de defesa do réu em um caso de Maria da Penha, sempre pronto com a tese da retratação. Tenta transformar o arrependimento da vítima em extinção do processo. A promotoria mostra por que a ação não pode depender de desistência.",
+   "personalidade": "formal, persuasivo, calculista, eloquente",
+   "motivacao": "Ganhar a causa explorando cada brecha formal."
   },
   "a3nilza": {
    "nome": "Nilza Ferreira",
@@ -89,7 +92,10 @@
     "gravata": "#7a1f1f",
     "oculos": false,
     "barba": true
-   }
+   },
+   "bio": "Gerente operacional da Altavista Serviços, afirma que a empresa é séria e colaborativa sempre que um fiscal chega. Foi quem recebeu o aviso antes da vistoria que livrou o rio de ser flagrado. É peça de uma estrutura que despeja resíduos no rio da Vila do Cinzento.",
+   "personalidade": "simpático, dissimulado, obediente, cínico",
+   "motivacao": "Manter o emprego e a boa vontade do patrão."
   },
   "a3eduardo": {
    "nome": "Eduardo Pimentel",
@@ -104,7 +110,10 @@
     "gravata": "#d4ac0d",
     "oculos": false,
     "barba": false
-   }
+   },
+   "bio": "Secretário municipal de Obras que liberou alvarás para a Altavista Serviços num sábado, contra o parecer técnico, e cuja cunhada recebeu uma consultoria de R$ 380 mil. Defende que apenas deu celeridade, mas o dolo está nos horários. Exemplo de improbidade que só se prova no detalhe.",
+   "personalidade": "político, escorregadio, vaidoso, conciliador",
+   "motivacao": "Preservar o cargo e agradar a quem financia sua campanha."
   },
   "a3renata": {
    "nome": "Renata Guedes",
@@ -194,7 +203,10 @@
     "gravata": "#1e5a4a",
     "oculos": true,
     "barba": false
-   }
+   },
+   "bio": "Contador da Altavista Serviços, que se apresenta como mero escriturador de empresas pequenas. Seus livros mostram caixa, laranjas e fluxo de dinheiro. É o elo contábil da organização criminosa que o jogador precisa provar.",
+   "personalidade": "meticuloso, medroso, falso, cauteloso",
+   "motivacao": "Passar despercebido e jamais ser visto como parte do esquema."
   },
   "a3debora": {
    "nome": "Débora Lemos",
@@ -209,7 +221,10 @@
     "gravata": null,
     "oculos": false,
     "barba": false
-   }
+   },
+   "bio": "Secretária executiva da Altavista Serviços, diz que só atende telefone e organiza agenda. Na prática conhece cada reunião, cada nome e cada código do grupo. Seu depoimento é o ponto fraco da muralha de silêncio.",
+   "personalidade": "reservada, discreta, assustada, leal",
+   "motivacao": "Proteger o emprego e escapar de qualquer consequência."
   }
  },
  "episodios": [

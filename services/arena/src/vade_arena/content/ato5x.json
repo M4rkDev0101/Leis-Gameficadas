@@ -14,7 +14,10 @@
     "gravata": "#c9a227",
     "oculos": false,
     "barba": true
-   }
+   },
+   "bio": "Advogado de Augusto Brandão no habeas corpus que tenta derrubar a preventiva do antigo colega. Cobra prazos e fundamentos com precisão. Representa a defesa que usa o Tribunal para pressionar o juiz de primeiro grau.",
+   "personalidade": "técnico, insistente, polido, hábil",
+   "motivacao": "Soltar Brandão e transformar a decisão do jogador em erro."
   },
   "a5xrel": {
    "nome": "Desa. Odete Fontoura",
@@ -29,7 +32,10 @@
     "gravata": null,
     "oculos": true,
     "barba": false
-   }
+   },
+   "bio": "Desembargadora e relatora do habeas corpus de Brandão no Tribunal de Justiça. Pede informações em vinte e quatro horas e examina o fundamento concreto da preventiva. Mostra que a revisão da segunda instância pode ser justa e exigente ao mesmo tempo.",
+   "personalidade": "criteriosa, imparcial, severa, direta",
+   "motivacao": "Revisar a prisão com base nos fatos, não no nome do preso."
   },
   "a5xlima": {
    "nome": "Dr. Fábio Lima",
@@ -44,7 +50,10 @@
     "gravata": "#2b4c7e",
     "oculos": true,
     "barba": false
-   }
+   },
+   "bio": "Psiquiatra e assistente técnico da defesa de Henrique. Defende que há perturbação mental e pede o exame do art. 149. Seu laudo particular não resiste ao confronto com a ata e o exame toxicológico.",
+   "personalidade": "elegante, convincente, cuidadoso, parcial",
+   "motivacao": "Sustentar que o cliente não tinha plena capacidade."
   },
   "a5xmenezes": {
    "nome": "Dra. Lúcia Menezes",
@@ -59,7 +68,10 @@
     "gravata": null,
     "oculos": false,
     "barba": false
-   }
+   },
+   "bio": "Perita oficial e psiquiatra forense que examina Henrique no incidente de insanidade. Contraria o laudo particular com ata, cartório e exame toxicológico. Mostra que laudo bom sustenta a imputabilidade, não a defesa.",
+   "personalidade": "rigorosa, serena, objetiva, independente",
+   "motivacao": "Que a perícia diga o que o exame mostra, não o que o cliente paga."
   }
  },
  "episodios": [

@@ -57,12 +57,12 @@ class TestCarreira(unittest.TestCase):
     def test_only_next_case_is_unlocked(self):
         c = tribunal.career(DATA, {}, set())
         eps = [e for a in c["atos"] for e in a["episodios"]]
-        self.assertEqual(eps[0]["id"], "ep1-celular")
+        self.assertEqual([e["id"] for e in eps[:3]], ["a1-tutorial", "ep1-celular", "a1-pao"])
         self.assertEqual([e["status"] for e in eps[:3]], ["disponivel", "bloqueado", "bloqueado"])
-        c = tribunal.career(DATA, {"ep1-celular": 240}, {"a1-pao"})
+        c = tribunal.career(DATA, {"a1-tutorial": 240, "ep1-celular": 240}, {"a1-pao"})
         eps = [e for a in c["atos"] for e in a["episodios"]]
-        self.assertEqual([e["status"] for e in eps[:3]], ["concluido", "disponivel", "bloqueado"])
-        self.assertTrue(eps[1]["salvo"])
+        self.assertEqual([e["status"] for e in eps[:4]], ["concluido", "concluido", "disponivel", "bloqueado"])
+        self.assertTrue(eps[2]["salvo"])
         self.assertGreater(c["horas_jogadas"], 0)
 
     def test_every_act_episode_has_unique_order(self):
@@ -188,7 +188,7 @@ class TestServidor(unittest.TestCase):
         self.assertEqual(code, 200)
         self.assertIn("Vade Tribunal", page)
         code, eps = self.req("/api/arena/tribunal")
-        self.assertEqual([e["id"] for e in eps][:2], ["ep1-celular", "a1-pao"])
+        self.assertEqual([e["id"] for e in eps][:3], ["a1-tutorial", "ep1-celular", "a1-pao"])
         self.assertTrue({"ep2-protetiva", "ep3-sentenca"} <= {e["id"] for e in eps})
         self.assertEqual(self.req("/api/arena/perfil/avatar", {"nome": "Dra. Teste", "avatar": {"pele": "#8D5524", "cabelo": "coque"}})[0], 200)
         code, ep = self.req("/api/arena/tribunal/ep3-sentenca")
@@ -209,7 +209,7 @@ class TestServidor(unittest.TestCase):
         self.assertEqual(self.req("/api/arena/tribunal/salvar", {"episodio": "a1-pao", "estado": {"cena": "zz"}})[0], 400)
         self.assertEqual(self.req("/api/arena/tribunal/a1-pao")[1]["salvo"]["cena"], "p5")
         car = self.req("/api/arena/carreira")[1]
-        self.assertEqual(car["atos"][0]["episodios"][1]["salvo"], True)
+        self.assertEqual(car["atos"][0]["episodios"][2]["salvo"], True)
         self.req("/api/arena/tribunal/recomecar", {"episodio": "a1-pao"})
         self.assertIsNone(self.req("/api/arena/tribunal/a1-pao")[1]["salvo"])
         self.assertEqual(self.req("/api/arena/perfil/avatar", {"avatar": "x"})[0], 400)
