@@ -228,7 +228,7 @@
 
   /* ------------------------------------------------------------ investigação */
   .scene.loc .floor, .scene.loc .desk { display:none; }
-  .scene.loc .actor { bottom:18%; width:34%; }
+  .scene.loc .actor { bottom:0; width:36%; }
   .spot { position:absolute; z-index:7; border:.3cqw dashed rgba(255,224,138,.85); border-radius:1cqw; background:rgba(255,224,138,.08);
           animation:glow 1.8s ease-in-out infinite; display:flex; align-items:flex-end; justify-content:center; padding:0; }
   .spot span { transform:translateY(120%); background:rgba(0,0,0,.75); color:#ffe08a; font-weight:800; font-size:1.2cqw; padding:.2cqw .8cqw;
@@ -675,96 +675,102 @@ function characterSVG(v, expr = "normal") {
   const T = "M34 300 C36 228 70 204 120 200 C170 204 204 228 206 300Z";
   const sleeve = out === "toga" ? "#14141c" : out === "avental" ? "#f5f5f3" : roupa;
   const sleeveS = out === "toga" ? "#08080c" : out === "avental" ? "#d8d8d4" : roupaS;
+  const cid = "tc" + (++UID);
+  const seamL = expr !== "chocado", seamR = expr !== "chocado" && expr !== "apontando";
+  const seam = (d, fillD) => `<path d="${fillD}" fill="${sleeveS}" opacity=".28"/><path d="${d}" fill="none" stroke="${ink}" stroke-width="1.8" stroke-linecap="round"/>`;
+  const seams = `<clipPath id="${cid}"><path d="${T}"/></clipPath><g clip-path="url(#${cid})">${seamL ? seam("M54 216 Q73 228 71 248 Q67 272 69 300", "M0 200 L54 216 Q73 228 71 248 Q67 272 69 300 L0 300Z") : ""}${seamR ? seam("M186 216 Q167 228 169 248 Q173 272 171 300", "M240 200 L186 216 Q167 228 169 248 Q173 272 171 300 L240 300Z") : ""}</g>`;
+  const torso = fill => `<path d="${T}" fill="${fill}" ${O}/>${seams}`;
   const hand = (x, y, r = 11) => `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r + 1}" fill="${pele}" ${O1}/><path d="M${x - r + 3} ${y + 4} Q${x} ${y + r} ${x + r - 3} ${y + 4}" fill="none" stroke="${peleS}" stroke-width="2"/>`;
   // ------ corpo e roupa
   let body = "";
   if (out === "toga") {
     const sash = tie || "#8a1c1c";
-    body = `<path d="${T}" fill="#14141c" ${O}/><path d="M120 200 C170 204 204 228 206 300 L170 300 C178 262 170 226 150 206Z" fill="#08080c" opacity=".6"/>
+    body = `${torso("#14141c")}<path d="M120 200 C170 204 204 228 206 300 L170 300 C178 262 170 226 150 206Z" fill="#08080c" opacity=".6"/>
       <path d="M58 218 L100 204 L196 300 L150 300Z" fill="${sash}" ${O1}/><path d="M78 212 L186 300" stroke="${lighten(sash, .35)}" stroke-width="2" opacity=".7"/>
       <path d="M96 200 L120 272 L144 200Z" fill="#f4f4f2" ${O1}/><path d="M108 212 L120 254 M132 212 L120 254 M120 206 L120 262" stroke="#cfcfca" stroke-width="2" fill="none"/>
       <path d="M92 200 L110 300 M148 200 L130 300" stroke="${gold}" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="120" cy="204" r="3.5" fill="${gold}" ${O1}/>`;
   } else if (out === "avental") {
-    body = `<path d="${T}" fill="#f5f5f3" ${O}/><path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="#d8d8d4" opacity=".7"/>
+    body = `${torso("#f5f5f3")}<path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="#d8d8d4" opacity=".7"/>
       <path d="M100 200 L120 252 L140 200Z" fill="${roupa}" ${O1}/>
       ${tie ? `<path d="M114 204 L126 204 L123 212 L117 212Z" fill="${tie}"/><path d="M117 212 L123 212 L127 240 L120 246 L113 240Z" fill="${tie}"/>` : ""}
       <path d="M96 198 L112 232 L120 214 L108 198Z M144 198 L128 232 L120 214 L132 198Z" fill="#fff" ${O1}/>
       <path d="M120 252 L120 300" stroke="#c9c9c4" stroke-width="2"/>${[266, 284].map(y => `<circle cx="116" cy="${y}" r="2.6" fill="#b5b5ae"/>`).join("")}
-      <rect x="66" y="252" width="28" height="26" rx="4" fill="#f5f5f3" ${O1}/><rect x="76" y="246" width="3" height="14" rx="1.2" fill="#2f5fb3"/>`;
+      <rect x="78" y="252" width="26" height="24" rx="4" fill="#f5f5f3" ${O1}/><rect x="87" y="246" width="3" height="14" rx="1.2" fill="#2f5fb3"/>`;
   } else if (out === "casual") {
-    body = `<path d="${T}" fill="${roupa}" ${O}/><path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
+    body = `${torso(roupa)}<path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
       <path d="M70 262 Q120 276 170 262 M84 284 Q120 292 156 284" stroke="${roupaS}" stroke-width="2.4" fill="none" opacity=".7"/>
       <path d="M96 202 Q120 232 144 202 Z" fill="${pele}"/><path d="M96 202 Q120 232 144 202" fill="none" stroke="${roupaH}" stroke-width="6" stroke-linecap="round"/><path d="M96 202 Q120 232 144 202" fill="none" stroke="${ink}" stroke-width="1.6"/>`;
   } else if (out === "farda") {
     const dk = darken(roupa, .35);
-    body = `<path d="${T}" fill="${roupa}" ${O}/><path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
+    body = `${torso(roupa)}<path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
       <path d="M98 200 L120 236 L142 200 L132 196 L120 210 L108 196Z" fill="${dk}" ${O1}/><path d="M114 208 L126 208 L123 232 L120 238 L117 232Z" fill="${tie || "#222"}"/>
       <path d="M44 218 L76 206 L82 222 L50 236Z M196 218 L164 206 L158 222 L190 236Z" fill="${gold}" ${O1}/>
       ${[246, 262, 278, 294].map(y => `<circle cx="108" cy="${y}" r="3" fill="${gold}" ${O1}/><circle cx="132" cy="${y}" r="3" fill="${gold}" ${O1}/>`).join("")}
-      <path d="M150 238 L166 238 L166 252 L158 260 L150 252Z" fill="${gold}" ${O1}/><rect x="70" y="240" width="26" height="6" rx="2" fill="#a32b22"/><rect x="70" y="248" width="26" height="6" rx="2" fill="#1d4f7f"/><rect x="70" y="256" width="26" height="6" rx="2" fill="#2e7d4f"/>`;
+      <path d="M150 238 L166 238 L166 252 L158 260 L150 252Z" fill="${gold}" ${O1}/><rect x="78" y="240" width="22" height="6" rx="2" fill="#a32b22"/><rect x="78" y="248" width="22" height="6" rx="2" fill="#1d4f7f"/><rect x="78" y="256" width="22" height="6" rx="2" fill="#2e7d4f"/>`;
   } else { // terno / blazer
     const shirt = out === "blazer" ? "#ece8df" : "#f4f4f2", lap = out === "blazer" ? roupaH : roupa;
-    body = `<path d="${T}" fill="${roupa}" ${O}/><path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
+    body = `${torso(roupa)}<path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
       <path d="M97 200 L120 268 L143 200Z" fill="${shirt}" ${O1}/>
       <path d="M97 198 L108 214 L120 204 L132 214 L143 198 L132 193 L120 202 L108 193Z" fill="#fff" ${O1}/>
       ${out === "terno" && tie ? `<path d="M114 206 L126 206 L123 216 L117 216Z" fill="${tie}" ${O1}/><path d="M117 216 L123 216 L129 250 L120 260 L111 250Z" fill="${tie}" ${O1}/><path d="M120 218 L124 248" stroke="${darken(tie, .3)}" stroke-width="2"/>` : ""}
       <path d="M97 198 L120 268 L110 292 L80 236 L88 214Z" fill="${lap}" ${O1}/><path d="M143 198 L120 268 L130 292 L160 236 L152 214Z" fill="${roupaS}" ${O1}/>
       <path d="M88 214 L98 224 M152 214 L142 224" stroke="${ink}" stroke-width="1.6"/>
       <circle cx="120" cy="${out === "blazer" ? 276 : 284}" r="3.2" fill="${darken(roupa, .45)}" ${O1}/>
-      <path d="M150 242 L166 240 L165 248 L151 249Z" fill="#fff" ${O1}/><path d="M148 250 L168 248" stroke="${roupaS}" stroke-width="2"/>
+      <path d="M148 242 L163 240 L162 248 L149 249Z" fill="#fff" ${O1}/><path d="M146 250 L165 248" stroke="${roupaS}" stroke-width="2"/>
       ${out === "blazer" ? `<circle cx="96" cy="232" r="3.5" fill="${gold}" ${O1}/>` : ""}`;
   }
-  // ------ braços (atrás) e braços/mãos de pose (na frente)
-  const armL = `<path d="M54 226 Q26 262 36 292 L74 292 Q70 262 86 236Z" fill="${sleeve}" ${O}/><path d="M36 292 L74 292" stroke="${sleeveS}" stroke-width="6"/>`;
-  const armR = `<path d="M186 226 Q214 262 204 292 L166 292 Q170 262 154 236Z" fill="${sleeve}" ${O}/><path d="M166 292 L204 292" stroke="${sleeveS}" stroke-width="6"/>`;
+  // ------ braços de pose (na frente); em repouso os braços seguem para fora do quadro (só a costura da manga)
   const limb = (d, w = 24) => `<path d="${d}" fill="none" stroke="${ink}" stroke-width="${w + 5}" stroke-linecap="round"/><path d="${d}" fill="none" stroke="${sleeve}" stroke-width="${w}" stroke-linecap="round"/>`;
-  let armsBack = armL + armR, armsFront = "";
+  let armsFront = "";
   if (expr === "apontando") {
-    armsBack = armL;
-    armsFront = `<g class="arm-point">${limb("M170 238 Q204 222 236 206")}
-      <ellipse cx="246" cy="203" rx="11" ry="10" fill="${pele}" ${O1}/><path d="M250 198 L276 186 Q282 190 277 196 L252 210Z" fill="${pele}" ${O1}/><path d="M240 196 Q244 190 250 192" stroke="${peleS}" stroke-width="2" fill="none"/></g>`;
+    armsFront = `<g class="arm-point">${limb("M166 238 Q198 222 228 208")}
+      <ellipse cx="238" cy="205" rx="11" ry="10" fill="${pele}" ${O1}/><path d="M242 200 L266 188 Q272 192 267 198 L244 212Z" fill="${pele}" ${O1}/><path d="M232 198 Q236 192 242 194" stroke="${peleS}" stroke-width="2" fill="none"/></g>`;
   } else if (expr === "pensativo") {
-    armsBack = armL;
-    armsFront = `${limb("M184 292 Q210 236 160 200", 22)}<ellipse cx="152" cy="186" rx="11" ry="12" fill="${pele}" ${O1}/><path d="M146 178 Q152 172 160 178 M144 186 Q150 180 158 186" stroke="${peleS}" stroke-width="2" fill="none"/>`;
+    armsFront = `${limb("M168 296 Q180 240 160 204", 22)}<ellipse cx="152" cy="186" rx="11" ry="12" fill="${pele}" ${O1}/><path d="M146 178 Q152 172 160 178 M144 186 Q150 180 158 186" stroke="${peleS}" stroke-width="2" fill="none"/>`;
   } else if (expr === "confiante") {
-    armsFront = `${limb("M180 280 Q124 262 62 266", 22)}${hand(54, 266, 10)}${limb("M58 276 Q118 244 176 262", 22)}${hand(184, 262, 10)}`;
+    armsFront = `${limb("M178 280 Q124 262 68 268", 22)}${hand(62, 268, 10)}${limb("M62 278 Q118 246 172 262", 22)}${hand(178, 262, 10)}`;
   } else if (expr === "chocado") {
-    armsBack = "";
-    armsFront = `${limb("M62 236 Q28 230 32 192", 22)}${hand(32, 182, 12)}${limb("M178 236 Q212 230 208 192", 22)}${hand(208, 182, 12)}`;
-  } else if (expr === "bravo") {
-    armsFront = `${hand(55, 296, 12)}${hand(185, 296, 12)}<path d="M47 292 L63 292 M177 292 L193 292" stroke="${peleS}" stroke-width="2"/>`;
-  } else armsFront = `${hand(55, 298)}${hand(185, 298)}`;
+    armsFront = `${limb("M56 232 Q26 226 32 192", 22)}${hand(32, 182, 12)}${limb("M184 232 Q214 226 208 192", 22)}${hand(208, 182, 12)}`;
+  }
   const frontOver = expr === "apontando" || expr === "pensativo";
   // ------ cabeça
   const F = "M64 112 Q62 62 120 58 Q178 62 176 112 Q176 150 152 172 Q138 186 120 186 Q102 186 88 172 Q64 150 64 112Z";
   let hairBack = "", hairFront = "";
-  const cap = `M60 116 Q52 46 120 42 Q188 46 180 116 Q176 92 160 84 Q146 98 120 92 Q94 98 80 84 Q64 92 60 116Z`;
-  const capHi = `<path d="M84 64 Q112 46 150 58" stroke="${cabH}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"/><path d="M96 86 Q102 70 110 58 M132 90 Q146 76 152 62" stroke="${cabS}" stroke-width="2.6" fill="none" opacity=".7"/>`;
-  if (hair === "longo") hairBack = `<path d="M54 112 Q44 204 76 226 L164 226 Q196 204 186 112Z" fill="${cab}" ${HO}/><path d="M150 140 Q172 190 160 224 L176 224 Q192 196 184 124Z" fill="${cabS}" opacity=".7"/>`;
+  const cap = `M61 110 Q52 46 120 42 Q188 46 179 110 Q176 92 160 82 Q146 90 120 86 Q94 90 80 82 Q64 92 61 110Z`;
+  const capHi = `<path d="M84 64 Q112 46 150 58" stroke="${cabH}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"/><path d="M96 84 Q102 70 110 58 M132 86 Q146 76 152 62" stroke="${cabS}" stroke-width="2.6" fill="none" opacity=".7"/>`;
+  // costeletas ficam entre a orelha e o rosto (nunca por cima da orelha)
+  const burns = (h = 144) => `<path d="M62 96 Q61 126 67 ${h} L73 ${h - 2} Q71 120 80 92Z M178 96 Q179 126 173 ${h} L167 ${h - 2} Q169 120 160 92Z" fill="${cab}" ${HO}/>`;
+  const locks = `<path d="M62 100 Q54 150 64 200 Q72 208 80 198 Q74 160 78 116 Q72 104 62 100Z M178 100 Q186 150 176 200 Q168 208 160 198 Q166 160 162 116 Q168 104 178 100Z" fill="${cab}" ${HO}/><path d="M68 130 Q66 166 72 192 M172 130 Q174 166 168 192" stroke="${cabS}" stroke-width="2.4" fill="none" opacity=".7"/>`;
+  const curl = (x, y, r = 15) => `<circle cx="${x}" cy="${y + 3}" r="${r + 1}" fill="${cabS}"/><circle cx="${x}" cy="${y}" r="${r}" fill="${cab}" ${HO}/>`;
+  const sides = {curto:burns(), topete:burns(140), longo:locks, coque:burns(138), rabo:`<path d="M62 96 Q61 124 66 138 L72 136 Q71 120 80 92Z" fill="${cab}" ${HO}/>`,
+    cacheado:curl(63, 110, 10) + curl(65, 128, 10) + curl(177, 110, 10) + curl(175, 128, 10), careca:""}[hair];
+  if (hair === "longo") hairBack = `<path d="M62 100 Q44 160 54 210 Q62 228 80 228 L160 228 Q178 228 186 210 Q196 160 178 100Z" fill="${cab}" ${HO}/><path d="M156 140 Q174 190 162 224 L176 224 Q192 196 182 124Z" fill="${cabS}" opacity=".7"/>`;
   if (hair === "rabo") hairBack = `<path d="M164 70 Q214 98 196 150 Q192 190 204 214 Q172 200 176 150 Q176 110 156 84Z" fill="${cab}" ${HO}/><path d="M190 120 Q196 170 200 204" stroke="${cabH}" stroke-width="3" fill="none" opacity=".5"/>`;
-  if (hair === "coque") hairBack = `<circle cx="120" cy="38" r="21" fill="${cab}" ${HO}/><path d="M106 30 Q120 22 134 30" stroke="${cabH}" stroke-width="4" fill="none" opacity=".55" stroke-linecap="round"/>`;
+  if (hair === "coque" && out !== "farda") hairBack = `<circle cx="120" cy="38" r="21" fill="${cab}" ${HO}/><path d="M106 30 Q120 22 134 30" stroke="${cabH}" stroke-width="4" fill="none" opacity=".55" stroke-linecap="round"/>`;
+  if (hair === "cacheado") hairBack = `<ellipse cx="120" cy="98" rx="66" ry="58" fill="${cabS}"/>`;
   const fringe = `<path d="${cap}" fill="${cab}" ${HO}/>`;
-  if (hair === "curto") hairFront = fringe + capHi + `<path d="M60 116 L64 144 L74 112Z M180 116 L176 144 L166 112Z" fill="${cab}" ${HO}/>`;
-  else if (hair === "topete") hairFront = fringe + `<path d="M86 72 Q92 24 148 34 Q176 42 170 72 Q142 50 128 76Z" fill="${cab}" ${HO}/><path d="M100 54 Q124 34 152 44" stroke="${cabH}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"/><path d="M60 116 L64 140 L72 112Z M180 116 L176 140 L168 112Z" fill="${cab}" ${HO}/>`;
-  else if (hair === "longo") hairFront = fringe + capHi + `<path d="M60 112 Q54 160 68 196 Q80 150 86 106Z M180 112 Q186 160 172 196 Q160 150 154 106Z" fill="${cab}" ${HO}/>`;
-  else if (hair === "coque") hairFront = fringe + capHi + `<path d="M60 116 L64 138 L72 112Z M180 116 L176 138 L168 112Z" fill="${cab}" ${HO}/><rect x="98" y="52" width="44" height="7" rx="3" fill="${gold}" ${O1}/>`;
-  else if (hair === "rabo") hairFront = fringe + capHi + `<path d="M60 116 L64 138 L72 112Z" fill="${cab}" ${HO}/><ellipse cx="166" cy="82" rx="8" ry="10" fill="${gold}" ${O1} transform="rotate(30 166 82)"/>`;
+  if (out === "farda") hairFront = hair === "careca" ? "" : (hair === "longo" ? locks + fringe : sides + fringe);   // sob o quepe: só o que aparece abaixo da aba
+  else if (hair === "curto") hairFront = sides + fringe + capHi;
+  else if (hair === "topete") hairFront = sides + fringe + `<path d="M76 88 Q66 42 114 30 Q160 22 174 54 Q180 74 166 90 Q156 66 126 70 Q98 72 76 88Z" fill="${cab}" ${HO}/><path d="M92 56 Q118 34 158 44" stroke="${cabH}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"/><path d="M104 70 Q126 52 162 62" stroke="${cabS}" stroke-width="2.6" fill="none" opacity=".7"/>`;
+  else if (hair === "longo") hairFront = locks + fringe + capHi;
+  else if (hair === "coque") hairFront = sides + fringe + capHi + `<ellipse cx="120" cy="46" rx="12" ry="4" fill="${gold}" ${O1}/>`;
+  else if (hair === "rabo") hairFront = sides + fringe + capHi + `<ellipse cx="166" cy="82" rx="8" ry="10" fill="${gold}" ${O1} transform="rotate(30 166 82)"/>`;
   else if (hair === "cacheado") {
     const pts = [[66, 104], [74, 80], [92, 62], [118, 54], [146, 60], [166, 76], [176, 100], [96, 74], [140, 72], [60, 130], [180, 130]];
     hairFront = pts.map(([x, y]) => `<circle cx="${x}" cy="${y + 3}" r="16" fill="${cabS}"/>`).join("") + pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="15" fill="${cab}" ${HO}/>`).join("") + pts.slice(2, 6).map(([x, y]) => `<path d="M${x - 8} ${y - 6} Q${x} ${y - 11} ${x + 8} ${y - 6}" stroke="${cabH}" stroke-width="3" fill="none" opacity=".5" stroke-linecap="round"/>`).join("");
-  } else if (hair === "careca") hairFront = `<path d="M62 118 Q58 98 70 90 L72 134Z M178 118 Q182 98 170 90 L168 134Z" fill="${cab}" ${HO}/><ellipse cx="100" cy="72" rx="16" ry="7" fill="${peleH}" opacity=".5" transform="rotate(-18 100 72)"/>`;
+  } else if (hair === "careca") hairFront = `<path d="M62 124 Q57 100 72 88 Q65 110 71 136 Q64 134 62 124Z M178 124 Q183 100 168 88 Q175 110 169 136 Q176 134 178 124Z" fill="${cab}" ${HO}/><ellipse cx="100" cy="72" rx="16" ry="7" fill="${peleH}" opacity=".5" transform="rotate(-18 100 72)"/>`;
   let hat = "";
-  if (out === "farda") { const hc = darken(roupa, .3); hat = `<path d="M62 88 Q120 30 178 88 L182 96 L58 96Z" fill="${hc}" ${O}/><path d="M60 94 Q120 110 180 94 L180 102 Q120 118 60 102Z" fill="#14181a" ${O1}/><path d="M112 66 L128 66 L128 82 L120 90 L112 82Z" fill="${gold}" ${O1}/>`; }
+  if (out === "farda") { const hc = darken(roupa, .3); hat = `<path d="M54 72 Q50 34 120 28 Q190 34 186 72 L176 87 L64 87Z" fill="${hc}" ${O}/><path d="M64 75 Q120 83 176 75 L176 89 Q120 97 64 89Z" fill="${darken(hc, .35)}" ${O1}/><path d="M62 87 Q120 95 178 87 Q172 95 120 99 Q68 95 62 87Z" fill="#14181a" ${O1}/><path d="M112 44 L128 44 L128 60 L120 68 L112 60Z" fill="${gold}" ${O1}/>`; }
   // ------ rosto por expressão
   const ex = {
     normal:   {bl:"M86 103 Q98 96 110 100", br:"M130 100 Q142 96 154 103", eyes:"n", mouth:"M108 154 Q120 160 132 154"},
-    feliz:    {bl:"M86 98 Q98 90 110 96", br:"M130 96 Q142 90 154 98", eyes:"h", mouth:"M104 150 Q120 170 136 150Z"},
+    feliz:    {bl:"M86 100 Q98 92 110 98", br:"M130 98 Q142 92 154 100", eyes:"h", mouth:"M104 150 Q120 170 136 150Z"},
     bravo:    {bl:"M84 94 Q98 98 112 106", br:"M128 106 Q142 98 156 94", eyes:"b", mouth:"M106 160 Q120 150 134 160"},
     nervoso:  {bl:"M86 106 Q98 98 110 94", br:"M130 94 Q142 98 154 106", eyes:"s", mouth:"M106 158 Q112 152 118 158 Q124 164 130 158 Q134 154 136 156"},
-    chocado:  {bl:"M86 92 Q98 80 110 88", br:"M130 88 Q142 80 154 92", eyes:"w", mouth:"O"},
-    pensativo:{bl:"M86 102 Q98 98 110 102", br:"M130 92 Q142 84 154 94", eyes:"u", mouth:"M110 156 Q122 154 132 150"},
+    chocado:  {bl:"M86 96 Q98 86 110 92", br:"M130 92 Q142 86 154 96", eyes:"w", mouth:"O"},
+    pensativo:{bl:"M86 104 Q98 100 110 104", br:"M130 96 Q142 88 154 98", eyes:"u", mouth:"M110 156 Q122 154 132 150"},
     triste:   {bl:"M86 104 Q98 98 110 92", br:"M130 92 Q142 98 154 104", eyes:"t", mouth:"M106 162 Q120 150 134 162"},
-    confiante:{bl:"M86 104 Q98 98 110 100", br:"M130 92 Q142 88 154 96", eyes:"c", mouth:"M106 152 Q124 164 138 148"},
+    confiante:{bl:"M86 104 Q98 98 110 100", br:"M130 95 Q142 90 154 98", eyes:"c", mouth:"M106 152 Q124 164 138 148"},
     apontando:{bl:"M84 96 Q98 98 112 106", br:"M128 106 Q142 98 156 96", eyes:"b", mouth:"M106 150 Q120 168 134 150Z"},
   }[expr];
   const lash = (cx, y0, y1) => `<path d="M${cx - 11} ${y1} Q${cx} ${y0} ${cx + 11} ${y1}" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
@@ -794,23 +800,22 @@ function characterSVG(v, expr = "normal") {
     : `<path d="${ex.mouth}" stroke="#7a2a2a" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
   const mouthOpen = `<ellipse cx="120" cy="156" rx="10" ry="${expr === "chocado" ? 12 : 7}" fill="#5a1d1d" ${O1}/><ellipse cx="120" cy="${expr === "chocado" ? 162 : 159}" rx="6" ry="3" fill="#c0504d"/>`;
   const glasses = v.oculos ? `<g fill="rgba(180,220,255,.12)" stroke="#23232b" stroke-width="3"><circle cx="98" cy="122" r="16"/><circle cx="142" cy="122" r="16"/><path d="M114 120 L126 120 M82 118 L66 112 M158 118 L174 112" fill="none"/></g><path d="M88 112 L96 108 M132 112 L140 108" stroke="#fff" stroke-width="2.4" opacity=".7" stroke-linecap="round"/>` : "";
-  const beard = v.barba ? `<path d="M70 126 Q72 186 120 192 Q168 186 170 126 Q160 170 120 172 Q80 170 70 126Z" fill="${cab}" ${HO}/><path d="M104 168 Q120 162 136 168 Q120 176 104 168Z" fill="${cabS}"/>` : "";
+  const beard = v.barba ? `<path d="M70 126 Q72 186 120 192 Q168 186 170 126 Q160 170 120 172 Q80 170 70 126Z" fill="${cab}" ${HO}/><path d="M104 168 Q120 162 136 168 Q120 176 104 168Z" fill="${cabS}"/><path d="M103 151 Q110 141 120 146 Q130 141 137 151 Q129 150 120 149 Q111 150 103 151Z" fill="${cab}" ${HO}/>` : "";
   const blush = expr === "feliz" || expr === "nervoso" || expr === "confiante" ? `<ellipse cx="84" cy="144" rx="10" ry="5.5" fill="#ff7b7b" opacity=".32"/><ellipse cx="156" cy="144" rx="10" ry="5.5" fill="#ff7b7b" opacity=".32"/>` : "";
   const sweat = expr === "nervoso" || expr === "chocado" ? `<path class="sweat" d="M170 94 Q180 110 170 118 Q160 110 170 94Z" fill="#8fd3ff" ${O1}/>` : "";
-  const shock = expr === "chocado" ? `<g stroke="#fff" stroke-width="3.2" opacity=".85" stroke-linecap="round"><path d="M50 66 L36 52 M190 66 L204 52 M120 34 L120 14"/></g>` : "";
+  const shock = expr === "chocado" ? `<g stroke="#fff" stroke-width="3.2" opacity=".85" stroke-linecap="round"><path d="M50 66 L36 52 M190 66 L204 52 M120 14 L120 0"/></g>` : "";
   const wrink = old ? `<g stroke="${darken(pele, .3)}" stroke-width="1.8" fill="none" opacity=".6" stroke-linecap="round"><path d="M76 118 L69 113 M76 124 L68 126 M164 118 L171 113 M164 124 L172 126"/><path d="M90 146 Q85 154 90 162 M150 146 Q155 154 150 162"/><path d="M94 86 Q120 80 146 86 M100 92 Q120 88 140 92" opacity=".7"/></g>` : "";
   return `<svg viewBox="0 0 280 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
     ${hairBack}
     <g class="breath"><path d="M104 160 L104 208 Q120 222 136 208 L136 160Z" fill="${pele}" ${O1}/><path d="M104 176 Q120 196 136 176 L136 190 Q120 206 104 190Z" fill="${peleS}" opacity=".7"/>
-    ${armsBack}${body}${frontOver ? "" : armsFront}</g>
+    ${body}${frontOver ? "" : armsFront}</g>
     <g class="head">
     <ellipse cx="63" cy="126" rx="9" ry="13" fill="${pele}" ${O1}/><ellipse cx="177" cy="126" rx="9" ry="13" fill="${pele}" ${O1}/><path d="M61 120 Q66 126 62 134 M179 120 Q174 126 178 134" stroke="${peleS}" stroke-width="2" fill="none"/>
     <path d="${F}" fill="${pele}" ${O}/>
     <path d="M176 112 Q176 150 152 172 Q138 186 120 186 Q152 176 164 150 Q170 128 166 98 Q172 100 176 112Z" fill="${peleS}" opacity=".5"/>
     <ellipse cx="90" cy="146" rx="12" ry="7" fill="${peleH}" opacity=".35"/><path d="M70 98 Q120 78 170 98 L170 84 Q120 66 70 84Z" fill="${peleS}" opacity=".45"/>
     ${wrink}${beard}${hairFront}${hat}
-    <path d="${ex.bl} ${ex.br}" stroke="${browC}" stroke-width="5.4" stroke-linecap="round" fill="none"/>
-    ${eyes}${glasses}${blush}
+    ${eyes}<path d="${ex.bl} ${ex.br}" stroke="${browC}" stroke-width="5.4" stroke-linecap="round" fill="none"/>${glasses}${blush}
     <path d="M118 132 Q113 144 122 145" stroke="${peleS}" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="121" cy="139" r="1.6" fill="${peleH}" opacity=".7"/>
     <g class="m-closed">${mouthClosed}</g><g class="m-open">${mouthOpen}</g>
     ${sweat}${shock}</g>
@@ -2155,7 +2160,8 @@ async function galeriaQA(P) {
     body.gal > *:not(.galroot) { display:none !important; }
     .galroot h1 { font-size:20px; margin:0 0 4px; } .galroot h2 { font-size:18px; margin:26px 0 8px; border-bottom:1px solid #555; padding-bottom:4px; }
     .galroot .bar { position:sticky; top:0; z-index:3; background:#20232b; padding:6px 0; display:flex; gap:12px; flex-wrap:wrap; align-items:center; font-size:13px; }
-    .galroot .who { margin:14px 0 4px; font-size:14px; } .galroot .who b { font-size:16px; } .galroot .who code { color:#9ab; font-size:12px; }
+    .galroot .who { margin:14px 0 4px; font-size:14px; } .galroot .who b { font-size:16px; } .galroot .who code { color:#9ab; font-size:12px; word-break:break-all; }
+    html:has(body.gal) { background:#20232b; }
     .galroot .row { display:flex; flex-wrap:wrap; gap:6px; }
     .galroot .cell { border-radius:8px; padding:4px 4px 2px; text-align:center; font-size:12px; }
     .galroot .cell.claro { background:#f3efe6; color:#222; } .galroot .cell.escuro { background:#14161c; color:#ddd; }
