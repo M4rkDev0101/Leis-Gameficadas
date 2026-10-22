@@ -62,8 +62,8 @@ Cinco balanças. Cada erro custa uma; zerar derruba o caso, que recomeça do úl
 restante e os erros entram no XP, calculado no servidor com limites.
 
 ### 5.7 XP, níveis e conquistas
-- XP do caso: base por nível de dificuldade (básico 80, intermediário 120, avançado 170, especialista 230), mais 20
-  por balança restante, mais 60 se não houve erros. Derrota rende 25.
+- XP do caso: base por nível de dificuldade (básico 80, intermediário 120, avançado 170, especialista 230), mais um
+  **ajuste pela duração estimada** (ver 5.8), mais 20 por balança restante, mais 60 se não houve erros. Derrota rende 25.
 - Títulos por nível, de Estagiário(a) a Ministro(a) (nível 45), definidos em `player.py`. XP, níveis e sequência
   diária seguem as regras de `services/learning` (`gamification.py`).
 - Conquistas são calculadas do histórico, sem estado próprio: Primeiro veredicto, Sem um arranhão, Mão firme (10
@@ -74,6 +74,56 @@ restante e os erros entram no XP, calculado no servidor com limites.
 Cada caso tem um nível (básico, intermediário, avançado, especialista). Os simulados têm quatro dificuldades:
 Treino, Padrão, Difícil e Elite, e alguns concursos exigem nível mínimo. A dificuldade dinâmica está em
 `services/learning/.../difficulty.py`.
+
+#### Curva de dificuldade e XP por ato (balanceamento)
+Levantamento dos 46 episódios (`tribunal.estimate_minutes`, cenas por tipo, provas, afirmações, opções erradas):
+o XP era fixo por nível, então um caso avançado de 9 min pagava o mesmo que um de 27 min, e seis casos estavam
+rotulados fora da realidade (um "intermediário" de 21 min com 5 provas obrigatórias valia menos que um "avançado"
+de 9 min). Ajustes:
+
+1. **Fórmula** (`tribunal.xp_base`): `XP base = base do nível + ajuste`, onde `ajuste = 3 XP × (minutos − 12)`,
+   arredondado a múltiplos de 5 e limitado a [−20, +45]. A duração vem do mesmo cálculo mostrado ao jogador.
+2. **Rótulos corrigidos** (só o campo `nivel`; nenhum texto narrativo mudou):
+
+| Caso | Antes | Depois | Motivo |
+| --- | --- | --- | --- |
+| a1x-receptacao | intermediário | avançado | 21 min, 5 decisões, 5 provas obrigatórias: maior que o "avançado" a1-juri |
+| a2x-cobranca | intermediário | avançado | 6 decisões e 4 opções erradas, acima dos avançados curtos do ato |
+| a2-guarda | avançado | intermediário | o mais curto e simples do Ato II (3 decisões) |
+| a2-rafael | especialista | avançado | 4 decisões, sem opção errada: não é especialista |
+| a3x-calibre | avançado | especialista | 22 min, 6 decisões, 6 opções erradas, 15 provas: acima do "especialista" a3-firma |
+| a4-dosimetria | avançado | especialista | 8 decisões e 8 opções erradas: acima do "especialista" a4-busca |
+
+Total de XP base por ato (soma dos casos, antes → depois) e XP por minuto estimado:
+
+| Ato | Casos | Min. | XP base antes | XP base depois | XP/min antes → depois |
+| --- | ---: | ---: | ---: | ---: | --- |
+| I | 10 | 136 | 1230 | 1325 | 9,1 → 9,8 |
+| II | 9 | 122 | 1440 | 1415 | 11,8 → 11,6 |
+| III | 9 | 169 | 1550 | 1790 | 9,1 → 10,6 |
+| IV | 9 | 154 | 1660 | 1855 | 10,8 → 12,0 |
+| V | 7 | 146 | 1610 | 1795 | 11,1 → 12,3 |
+| Avulsos | 2 | 11 | 290 | 250 | 27,4 → 23,6 |
+
+A média por caso passa a subir a cada ato (132, 157, 199, 206, 256), sem os vales do desenho antigo (Ato III pagava
+9 XP/min contra 12 do Ato II). Mantém-se o vale proposital no começo do Ato IV (novo cargo, mecânica de decidir).
+Tabela completa por caso: `a1-pao` 80→70, `a1x-idosa` 170→205, `a2-guarda` 170→110, `a3x-calibre` 170→260,
+`a5x-insanidade` 230→275, `ep3-sentenca` 170→150 (os demais seguem a mesma regra e podem ser recalculados com
+`tribunal.xp_base`). Testes: `TestBalanceamento` em `tests/test_tribunal.py`.
+
+#### Dicas após erros repetidos
+Quando o jogador erra **duas vezes na mesma cena** (prova errada, escolha errada, decisão errada ou afirmação
+errada no depoimento), o narrador mostra uma caixa de diálogo "💡 Dica" (mesmo estilo do diálogo; sem custo extra):
+
+- **2º erro:** dica vaga, que orienta o raciocínio (reler o argumento, procurar a afirmação que não combina com os
+  autos, pesar lei e fatos).
+- **3º erro em diante:** dica específica, que aponta o tipo de resposta (prova do caso ou lei, qual aba dos autos) e,
+  em escolhas e decisões, o artigo e a norma do fundamento; no depoimento, qual afirmação examinar. Nunca diz qual
+  prova ou opção é a certa.
+- O contador é por cena e não é salvo. O erro continua custando uma balança; a dica vem depois da fala de erro e
+  não aparece se o erro zerou a credibilidade.
+- Conteúdo pode sobrescrever o texto gerado com o campo opcional `dica` da cena: um texto, ou `[vaga, específica]`.
+  O validador aceita no máximo duas dicas, em cenas com erro possível.
 
 ### 5.9 Simulados, questões e FSRS
 Sete modelos de concurso (carreiras policiais e INSS/CEBRASPE, tribunais, TRT, Fiscal/Receita, OAB 1ª fase/FGV,

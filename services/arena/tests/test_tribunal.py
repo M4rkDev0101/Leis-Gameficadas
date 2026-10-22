@@ -24,6 +24,15 @@ class TestRoteiro(unittest.TestCase):
     def test_one_episode_per_role(self):
         self.assertEqual({ep["papel"] for ep in DATA["episodios"]}, {"advogado", "promotor", "juiz"})
 
+    def test_dica_field_is_validated(self):
+        d = copy.deepcopy(DATA)
+        ep = tribunal.episode(d, "ep1-celular")
+        cena = next(c for c in ep["cenas"].values() if c["tipo"] == "escolha" and not c.get("livre"))
+        cena["dica"] = ["vaga", "específica"]
+        self.assertEqual(tribunal.validate(d, NORMAS), [])
+        cena["dica"] = ["a", "b", "c"]
+        self.assertTrue(any("dica" in e for e in tribunal.validate(d, NORMAS)))
+
     def test_validator_catches_broken_script(self):
         d = copy.deepcopy(DATA)
         ep = tribunal.episode(d, "ep1-celular")
@@ -139,11 +148,11 @@ class TestPontuacao(unittest.TestCase):
 
     def test_perfect_run(self):
         r = tribunal.score(self.ep, 5, 0)
-        self.assertEqual((r["venceu"], r["perfeito"], r["xp"]), (True, True, 80 + 100 + 60))
+        self.assertEqual((r["venceu"], r["perfeito"], r["xp"]), (True, True, tribunal.xp_base(self.ep) + 100 + 60))
 
     def test_with_mistakes(self):
         r = tribunal.score(self.ep, 3, 2)
-        self.assertEqual((r["perfeito"], r["xp"], r["faixa"]), (False, 140, "medio"))
+        self.assertEqual((r["perfeito"], r["xp"], r["faixa"]), (False, tribunal.xp_base(self.ep) + 60, "medio"))
 
     def test_game_over(self):
         r = tribunal.score(self.ep, 0, 5)
@@ -151,7 +160,35 @@ class TestPontuacao(unittest.TestCase):
 
     def test_client_cannot_inflate_score(self):
         r = tribunal.score(self.ep, 999, -7)
-        self.assertEqual((r["credibilidade"], r["erros"], r["xp"]), (5, 0, 240))
+        self.assertEqual((r["credibilidade"], r["erros"], r["xp"]), (5, 0, tribunal.xp_base(self.ep) + 100 + 60))
+
+
+class TestBalanceamento(unittest.TestCase):
+    def ep(self, nivel, palavras):
+        fala = {"q": "voce", "t": " ".join(["palavra"] * palavras)}
+        return {"nivel": nivel, "cenas": {"a": {"tipo": "dialogo", "falas": [fala]}}}
+
+    def test_duration_adjustment_formula(self):
+        ref = round(tribunal.DUR_REF * 170)  # só leitura: 12 min -> sem ajuste
+        self.assertEqual(tribunal.xp_base(self.ep("avancado", ref)), 170)
+        self.assertEqual(tribunal.xp_base(self.ep("avancado", ref + 170 * 5)), 170 + 15)  # +5 min = +15 XP
+        self.assertEqual(tribunal.xp_base(self.ep("basico", 10)), 80 + tribunal.DUR_MIN)  # curtíssimo: piso
+        self.assertEqual(tribunal.xp_base(self.ep("especialista", 170 * 60)), 230 + tribunal.DUR_MAX)  # longuíssimo: teto
+
+    def test_xp_follows_duration_within_a_level(self):
+        for nivel in tribunal.XP_BASE:
+            eps = sorted((e for e in DATA["episodios"] if e["nivel"] == nivel), key=tribunal.estimate_minutes)
+            xps = [tribunal.xp_base(e) for e in eps]
+            self.assertEqual(xps, sorted(xps), nivel)
+
+    def test_levels_stay_ordered_on_average(self):
+        media = {n: [tribunal.xp_base(e) for e in DATA["episodios"] if e["nivel"] == n] for n in tribunal.XP_BASE}
+        medias = [sum(v) / len(v) for n, v in media.items() if v]
+        self.assertEqual(medias, sorted(medias))
+
+    def test_xp_stays_in_bounds(self):
+        for e in DATA["episodios"]:
+            self.assertTrue(tribunal.XP_BASE[e["nivel"]] + tribunal.DUR_MIN <= tribunal.xp_base(e) <= tribunal.XP_BASE[e["nivel"]] + tribunal.DUR_MAX)
 
 
 class TestServidor(unittest.TestCase):
@@ -199,9 +236,9 @@ class TestServidor(unittest.TestCase):
         com_bio = [k for k, v in tut["personagens"].items() if v.get("bio")]
         self.assertTrue(com_bio)  # a tela de elenco depende de bio na API
         code, r = self.req("/api/arena/tribunal/concluir", {"episodio": "ep3-sentenca", "credibilidade": 4, "erros": 1})
-        self.assertEqual((code, r["xp"], r["carimbo"]), (200, 170 + 80, "SENTENÇA MANTIDA"))
+        self.assertEqual((code, r["xp"], r["carimbo"]), (200, tribunal.xp_base(tribunal.episode(DATA, "ep3-sentenca")) + 80, "SENTENÇA MANTIDA"))
         prof = self.req("/api/arena/perfil")[1]
-        self.assertEqual((prof["xp"], prof["casos"]["jogadas"], prof["nome"]), (250, 1, "Dra. Teste"))
+        self.assertEqual((prof["xp"], prof["casos"]["jogadas"], prof["nome"]), (r["xp"], 1, "Dra. Teste"))
         self.assertEqual(self.req("/api/arena/tribunal/nao-existe")[0], 404)
         self.assertEqual(self.req("/api/arena/vozes")[1], ["adb0f86cc1d7"])
         self.assertEqual(self.req("/voz/adb0f86cc1d7.mp3"), (200, "ID3"))

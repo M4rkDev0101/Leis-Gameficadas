@@ -38,6 +38,9 @@ LOCAIS = {"tribunal", "escritorio", "rua", "bar", "delegacia", "parlatorio", "ap
           "mercado", "ponto", "juri", "loja", "clinica"}
 POSICOES = {"defesa", "acusacao", "juiz", "testemunha", "escritorio", "cena"}
 XP_BASE = {"basico": 80, "intermediario": 120, "avancado": 170, "especialista": 230}
+# Ajuste de XP pela duração estimada: o XP base do nível vale para um caso de DUR_REF minutos; cada minuto a mais
+# (ou a menos) soma (ou tira) DUR_XP_MIN, arredondado a múltiplos de 5 e limitado a [DUR_MIN, DUR_MAX].
+DUR_REF, DUR_XP_MIN, DUR_MIN, DUR_MAX = 12.0, 3.0, -20, 45
 INTERACTIVE = {"depoimento", "apresentar", "escolha", "decidir", "investigar"}
 
 
@@ -71,6 +74,12 @@ def estimate_minutes(ep: dict) -> float:
             decisions += 1
         spots += len(c.get("pontos", [])) + len(c.get("conversas", []))
     return round(words / 170 + decisions * 25 / 60 + spots * 40 / 60, 1)
+
+
+def xp_base(ep: dict) -> int:
+    """XP base do episódio: base do nível + ajuste pela duração estimada (casos longos pagam mais, curtos menos)."""
+    ajuste = round((estimate_minutes(ep) - DUR_REF) * DUR_XP_MIN / 5) * 5
+    return XP_BASE[ep["nivel"]] + max(DUR_MIN, min(DUR_MAX, ajuste))
 
 
 def career(data: dict, won: dict[str, float], saves: set[str]) -> dict:
@@ -297,6 +306,10 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
             for v in c.get("variantes", []):
                 if not v.get("se") or not any(v.get(k) for k in ("carimbo", "titulo", "texto")):
                     errs.append(f"{where}: variante de veredicto precisa de 'se' e de carimbo/título/texto")
+            if "dica" in c:
+                dicas = c["dica"] if isinstance(c["dica"], list) else [c["dica"]]
+                if c["tipo"] not in INTERACTIVE - {"investigar"} or not 1 <= len(dicas) <= 2                         or not all(isinstance(d, str) and d.strip() for d in dicas):
+                    errs.append(f"{where}: 'dica' deve ser texto (ou [vaga, específica]) em cena com erro possível")
             if c["tipo"] == "decidir" and c.get("correta") not in ("deferir", "indeferir"):
                 errs.append(f"{where}: decisão correta deve ser deferir ou indeferir")
             for f in c.get("fundamentos", []) + [f for o in c.get("opcoes", []) for f in o.get("fundamentos", [])]:
@@ -368,7 +381,7 @@ def score(ep: dict, credibilidade: int, erros: int) -> dict:
     erros = max(0, min(99, int(erros)))
     venceu = credibilidade > 0
     perfeito = venceu and erros == 0
-    xp = (XP_BASE[ep["nivel"]] + 20 * credibilidade + (60 if perfeito else 0)) if venceu else 25
+    xp = (xp_base(ep) + 20 * credibilidade + (60 if perfeito else 0)) if venceu else 25
     return {"credibilidade": credibilidade, "erros": erros, "venceu": venceu, "perfeito": perfeito, "xp": xp,
             "aproveitamento": round(credibilidade / CREDIBILIDADE_MAX, 4) if venceu else 0.0,
             "carimbo": _carimbo(ep) if venceu else "DESTITUÍDO", "faixa": "otimo" if perfeito else ("medio" if venceu else "ruim")}

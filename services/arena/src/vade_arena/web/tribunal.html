@@ -1707,12 +1707,48 @@ function renderCred(breakIdx = -1) {
   c.replaceChildren(el("small", {textContent:"CREDIBILIDADE"}),
     ...Array.from({length:5}, (_, i) => el("i", {class:(i >= G.cred ? "lost" : "") + (i === breakIdx ? " break" : ""), textContent:"⚖️"})));
 }
-async function damage(lines) {
+// Dicas progressivas: no 2º erro na mesma cena vem uma dica vaga; do 3º em diante, uma mais específica (tipo de prova
+// ou lei), sem entregar a resposta. O campo "dica" da cena (texto, ou [vaga, específica]) tem prioridade.
+function hintFor(c, level, ctx) {
+  const custom = c.dica ? [].concat(c.dica) : [];
+  if (custom.length) return custom[Math.min(level - 1, custom.length - 1)];
+  const nome = (f) => { const m = /^([^#]+)#art-(\d+[A-Za-z-]*)/.exec(f.chave || ""); return m ? `o art. ${m[2]} do ${m[1]}` : "a lei do caso"; };
+  const ids = c.tipo === "depoimento" ? c.contradicao.provas : c.provas;
+  const tipos = new Set((ids || []).map(id => (provaById(id) || {}).tipo));
+  const fund = ((c.tipo === "escolha" ? (c.opcoes.find(o => o.certa) || {}).fundamentos : c.fundamentos) || [])[0];
+  if (c.tipo === "depoimento") {
+    if (level < 2) return "Nem toda afirmação é falsa. Procure a que não combina com o que está nos autos; pressionar pode revelar o ponto fraco.";
+    const n = ctx && ctx.idx != null ? ` Fique de olho na afirmação ${c.contradicao.afirmacao + 1} de ${c.afirmacoes.length}.` : "";
+    return (tipos.has("lei") && !tipos.has("prova") ? "A resposta é uma lei: confira a aba Leis dos autos." : "A resposta é um documento ou prova do caso, não uma lei: confira a aba Provas dos autos.") + n;
+  }
+  if (c.tipo === "apresentar") {
+    if (level < 2) return "Releia o argumento e a pergunta com calma: a resposta está nos autos que você reuniu.";
+    return tipos.has("lei") && !tipos.has("prova") ? "Aqui a resposta é uma lei: abra a aba Leis e procure a norma que trata exatamente deste ponto."
+      : tipos.has("prova") && !tipos.has("lei") ? "Aqui a resposta é um documento ou prova do caso, não uma lei: abra a aba Provas." : "Confira tanto a aba Provas quanto a aba Leis: a resposta está em uma delas.";
+  }
+  if (c.tipo === "decidir") {
+    if (level < 2 || !fund) return "Pergunte-se se o pedido tem amparo na lei e nos fatos do processo, e não apenas se ele parece justo.";
+    return `Pense no que diz ${nome(fund)}: isso orienta esta decisão.`;
+  }
+  if (c.tipo === "escolha") {
+    if (level < 2 || !fund) return "Releia as falas do caso: a melhor opção é a que a lei sustenta e que resolve o problema da parte, não a mais cômoda.";
+    return `O caminho certo se apoia n${nome(fund)}.`;
+  }
+  return null;
+}
+async function giveHint(c, fails, ctx) {
+  const h = hintFor(c, fails >= 3 ? 2 : 1, ctx);
+  if (h) await say({q:"narrador", e:"pensativo", t:"💡 Dica: " + h});
+}
+async function damage(lines, c, ctx) {
   G.erros++; G.cred = Math.max(0, G.cred - 1);
+  G.fails = G.fails || {};
+  const fails = c ? (G.fails[G.scene] = (G.fails[G.scene] || 0) + 1) : 0;
   Sound.dano(); Sound.erro(); flash("redflash"); shake(); renderCred(G.cred);
   if (G.cred > 0 && G.cred <= 2) Sound.startMusic("pressao");
   await sayAll(lines);
   if (G.cred <= 0) { G.over = true; await gameOver(); }
+  else if (fails >= 2) await giveHint(c, fails, ctx);
 }
 
 // ------------------------------------------------ autos do processo
@@ -1897,7 +1933,7 @@ async function testimony(c) {
       if (idx === c.contradicao.afirmacao && c.contradicao.provas.includes(id)) {
         Sound.stopMusic(); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma"); return c.proxima;
       }
-      await damage(c.erro);
+      await damage(c.erro, c, {idx});
     }
   }
   return null;
@@ -1916,7 +1952,7 @@ async function presentScene(c) {
     if (!id) { continue; }
     await presentAnim(id);
     if (c.provas.includes(id)) { await sayAll(c.acerto); Sound.acerto(); lawPopup([provaById(id)]); return c.proxima; }
-    await damage(c.erro);
+    await damage(c.erro, c);
   }
   return null;
 }
@@ -1951,7 +1987,7 @@ async function choiceScene(c) {
     const o = c.opcoes[i];
     if (o.certa) { await sayAll(o.falas); Sound.acerto(); lawPopup(o.fundamentos); return c.proxima; }
     tried.add(i);
-    await damage(o.falas);
+    await damage(o.falas, c);
   }
   return null;
 }
@@ -1967,7 +2003,7 @@ async function decideScene(c) {
     });
     G.decideKeys = null; clearOverlay();
     if (d === c.correta) { await sayAll(c.acerto); Sound.acerto(); lawPopup(c.fundamentos); return c.proxima; }
-    await damage(c.erro);
+    await damage(c.erro, c);
   }
   return null;
 }
