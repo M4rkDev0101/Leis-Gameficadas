@@ -84,7 +84,7 @@ def exportar(out: Path) -> None:
     print(f"{len(lines)} falas únicas, {total} caracteres, {len(stats)} personagens -> {out}")
 
 
-def gerar(out: Path, sem_voce: bool, limite: int, so: set[str], chave_arquivo: str | None, modelo: str) -> None:
+def gerar(out: Path, sem_voce: bool, limite: int, so: set[str], chave_arquivo: str | None, modelo: str, casos: set[str] = frozenset()) -> None:
     key = os.environ.get("ELEVENLABS_API_KEY") or (Path(chave_arquivo).read_text(encoding="utf-8").strip() if chave_arquivo else "")
     if not key:
         sys.exit("Defina ELEVENLABS_API_KEY ou use --chave-arquivo.")
@@ -95,7 +95,7 @@ def gerar(out: Path, sem_voce: bool, limite: int, so: set[str], chave_arquivo: s
     gastos = feitos = faltando_voz = 0
     for r in rows:
         q, path = r["personagem"], out / r["arquivo"]
-        if path.exists() or (sem_voce and q == "voce") or (so and q not in so):
+        if path.exists() or (sem_voce and q == "voce") or (so and q not in so) or (casos and r["primeira_cena"].split("/")[0] not in casos):
             continue
         if q not in voices:
             faltando_voz += 1
@@ -137,12 +137,14 @@ def main() -> None:
     g.add_argument("--so", default="", help="só estes personagens (ids separados por vírgula)")
     g.add_argument("--chave-arquivo", help="arquivo de texto com a chave da API")
     g.add_argument("--modelo", default="eleven_multilingual_v2")
+    g.add_argument("--casos", default="", help="só falas que estreiam nestes casos (ids separados por vírgula)")
     a = ap.parse_args()
     out = Path(a.saida)
     if a.cmd == "exportar":
         exportar(out)
     else:
-        gerar(out, a.sem_voce, a.limite, {s for s in a.so.split(",") if s}, a.chave_arquivo, a.modelo)
+        gerar(out, a.sem_voce, a.limite, {s for s in a.so.split(",") if s}, a.chave_arquivo, a.modelo,
+              {c for c in a.casos.split(",") if c})
 
 
 if __name__ == "__main__":
