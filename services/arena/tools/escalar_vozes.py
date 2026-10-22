@@ -102,11 +102,12 @@ def main() -> None:
             r["voice_id"] = min(dict.fromkeys(cand), key=lambda vid: (conflito[vid], uso[vid], cand.index(vid)))
             voz_de[q] = r["voice_id"]
             uso[r["voice_id"]] += int(r["caracteres"]) // 1000 + 1  # quem fala muito "pesa" mais na rotação
-    cols = ["personagem", "nome", "cargo", "genero", "idade", "falas", "caracteres", "tom_sugerido", "voice_id", "voz"]
+    base = ["personagem", "nome", "cargo", "genero", "idade", "falas", "caracteres", "tom_sugerido", "voice_id", "voz"]
+    cols = list(dict.fromkeys(base + [k for r in rows for k in r]))  # preserva colunas de outras ferramentas (perfil_vs…)
     for r in rows:
         r["voz"] = names.get(r.get("voice_id", ""), "")
     with open(out / "elenco.csv", "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.DictWriter(f, fieldnames=cols, delimiter=";", extrasaction="ignore")
+        w = csv.DictWriter(f, fieldnames=cols, delimiter=";")
         w.writeheader()
         w.writerows(rows)
     print(Counter((r["genero"], r["idade"]) for r in rows).most_common())
