@@ -76,22 +76,22 @@ def exportar(out: Path) -> None:
         for ln in lines:
             nome = data["personagens"].get(ln["personagem"], {}).get("nome", ln["personagem"])
             w.writerow([ln["id"] + ".mp3", ln["personagem"], nome, ln["expressao"], ln["texto"], ln["cena"], len(ln["casos"])])
-    old = {}
-    if (out / "elenco.csv").exists():  # preserva os voice_id já preenchidos
+    old: dict[str, dict] = {}
+    if (out / "elenco.csv").exists():  # preserva voice_id, perfis do VoiceStudio e classificação já feitos
         with open(out / "elenco.csv", encoding="utf-8-sig") as f:
-            old = {r["personagem"]: r.get("voice_id", "") for r in csv.DictReader(f, delimiter=";")}
+            old = {r["personagem"]: r for r in csv.DictReader(f, delimiter=";")}
     stats: dict[str, list[int]] = {}
     for ln in lines:
         s = stats.setdefault(ln["personagem"], [0, 0])
         s[0] += 1
         s[1] += len(ln["texto"])
-    with open(out / "elenco.csv", "w", newline="", encoding="utf-8-sig") as f:
-        w = csv.writer(f, delimiter=";")
-        w.writerow(["personagem", "nome", "cargo", "falas", "caracteres", "tom_sugerido", "voice_id"])
-        for q, (n, chars) in sorted(stats.items(), key=lambda kv: -kv[1][1]):
-            p = data["personagens"].get(q, {})
-            tom = "conforme o avatar" if q == "voce" else "grave" if p.get("voz", 300) < 260 else "agudo" if p.get("voz", 300) > 430 else "médio"
-            w.writerow([q, p.get("nome") or q.capitalize(), p.get("cargo", ""), n, chars, tom, old.get(q, "")])
+    rows = []
+    for q, (n, chars) in sorted(stats.items(), key=lambda kv: -kv[1][1]):
+        p = data["personagens"].get(q, {})
+        tom = "conforme o avatar" if q == "voce" else "grave" if p.get("voz", 300) < 260 else "agudo" if p.get("voz", 300) > 430 else "médio"
+        rows.append({**old.get(q, {}), "personagem": q, "nome": p.get("nome") or q.capitalize(), "cargo": p.get("cargo", ""),
+                     "falas": n, "caracteres": chars, "tom_sugerido": tom, "voice_id": old.get(q, {}).get("voice_id", "")})
+    _write_cast(out, rows)
     total = sum(s[1] for s in stats.values())
     print(f"{len(lines)} falas únicas, {total} caracteres, {len(stats)} personagens -> {out}")
 
