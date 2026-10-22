@@ -2089,11 +2089,16 @@ const COVER = {advogado:{pele:"#F1C27D", cabelo:"topete", corCabelo:"#3b2414", r
                promotor:{pele:"#C68642", cabelo:"rabo", corCabelo:"#111", roupa:"terno", corRoupa:"#7a1f1f", gravata:"#111111"},
                juiz:{pele:"#8D5524", cabelo:"coque", corCabelo:"#1b1b1b", roupa:"toga", corRoupa:"#111111", oculos:true}};
 const NIVEL = {basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite"};
+// Capas do menu desenhadas sob demanda: o placeholder (.cover tem altura fixa) vira SVG quando chega perto da viewport.
+const coverFill = new WeakMap();
+const coverIO = "IntersectionObserver" in window ? new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) paintCover(e.target); }, {rootMargin:"300px 0px"}) : null;
+function paintCover(c) { const f = coverFill.get(c); if (!f) return; coverFill.delete(c); if (coverIO) coverIO.unobserve(c); c.insertAdjacentHTML("afterbegin", f()); }
+function lazyCover(c, f) { coverFill.set(c, f); if (coverIO) coverIO.observe(c); else paintCover(c); }
 function epCard(ep, perfil, label) {
   const status = ep.status || "disponivel", locked = status === "bloqueado";
   const cover = el("div", {class:"cover"});
   const look = perfil.avatar ? {...COVER[ep.papel], ...perfil.avatar, roupa:COVER[ep.papel].roupa} : COVER[ep.papel];
-  cover.innerHTML = background(ROLE_PLAQUE[ep.papel]) + `<div style="position:absolute;inset:auto 0 0 0;height:150px;display:flex;justify-content:center">${characterSVG(look, ep.papel === "juiz" ? "confiante" : "apontando")}</div>`;
+  lazyCover(cover, () => background(ROLE_PLAQUE[ep.papel]) + `<div style="position:absolute;inset:auto 0 0 0;height:150px;display:flex;justify-content:center">${characterSVG(look, ep.papel === "juiz" ? "confiante" : "apontando")}</div>`);
   cover.append(el("span", {class:"num", textContent:label}));
   if (locked) cover.append(el("div", {class:"lock", textContent:"🔒"}));
   if (status === "concluido") cover.append(el("span", {class:"done", textContent:"✓ Concluído"}));
