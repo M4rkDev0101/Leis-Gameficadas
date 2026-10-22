@@ -11,6 +11,8 @@ recebe o que pode ver.
 from __future__ import annotations
 
 import json
+import os
+import re
 import sqlite3
 import threading
 import time
@@ -66,6 +68,11 @@ class Arena:
         terrs = tribunal_mod.validate(self.tribunal, self.bank.normas)
         if terrs:
             raise ValueError("roteiro do Tribunal inválido:\n" + "\n".join(terrs))
+        # dublagem opcional (services/arena/tools/vozes.py): <id>.mp3 numa pasta fora do repositório
+        self.vozes = Path(os.environ.get("VADE_VOZES") or Path(os.environ.get("LOCALAPPDATA", str(Path.home()))) / "VadeTribunal" / "vozes")
+
+    def vozes_disponiveis(self) -> list[str]:
+        return sorted(p.stem for p in self.vozes.glob("*.mp3")) if self.vozes.is_dir() else []
 
     def lookup(self, chave: str) -> dict | None:
         """Texto vigente do dispositivo no catálogo (se a norma estiver no recorte importado)."""
@@ -187,6 +194,14 @@ class ArenaHandler(ingest_server._Handler):
                 return self._send(200, html, "text/html; charset=utf-8")
             if path == "/api/arena/tribunal":
                 return self._json(self.arena.episodios())
+            if path == "/api/arena/vozes":
+                return self._json(self.arena.vozes_disponiveis())
+            if path.startswith("/voz/"):
+                vid = path[5:].removesuffix(".mp3")
+                f = self.arena.vozes / f"{vid}.mp3"
+                if not re.fullmatch(r"[0-9a-f]{12}", vid) or not f.is_file():
+                    return self._json({"erro": "áudio não encontrado"}, 404)
+                return self._send(200, f.read_bytes(), "audio/mpeg")
             if path == "/api/arena/carreira":
                 return self._json(self.arena.carreira())
             if path.startswith("/api/arena/tribunal/"):

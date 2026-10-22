@@ -1307,6 +1307,23 @@ function waitAdvance() { return new Promise(r => { advance = r; }); }
 function epMarks() { return new Set(Object.values(EP.cenas).filter(c => c.livre).flatMap(c => c.opcoes.map(o => o.marca)).filter(Boolean)); }
 function hasMark(m) { return epMarks().has(m) ? G.marcas.includes(m) : (EP.marcas || []).includes(m); }
 function cond(se) { return !se || (se.startsWith("!") ? !hasMark(se.slice(1)) : hasMark(se)); }
+// dublagem: se existir <sha1("personagem|texto")[:12]>.mp3 na pasta de vozes, toca no lugar dos bipes
+let VOZES = new Set(), curVoice = null;
+fetch("/api/arena/vozes").then(r => r.json()).then(l => { VOZES = new Set(l); }).catch(() => {});
+async function voiceKey(q, t) {
+  const h = await crypto.subtle.digest("SHA-1", new TextEncoder().encode(q + "|" + t));
+  return [...new Uint8Array(h)].map(b => b.toString(16).padStart(2, "0")).join("").slice(0, 12);
+}
+function stopVoice() { if (curVoice) { curVoice.pause(); curVoice = null; } }
+async function playVoice(q, t) {
+  stopVoice();
+  if (!VOZES.size || !Sound.on) return false;
+  const k = await voiceKey(q, t);
+  if (!VOZES.has(k)) return false;
+  curVoice = new Audio("/voz/" + k + ".mp3"); curVoice.volume = .95;
+  curVoice.play().catch(() => {});
+  return true;
+}
 async function say(line, opts = {}) {
   if (!cond(line.se)) return;
   const q = line.q || "narrador";
@@ -1330,10 +1347,11 @@ async function say(line, opts = {}) {
   if (q !== "narrador") actor.classList.add("talking");
   let i = 0, skip = false;
   advance = () => { skip = true; };
-  const voice = voiceOf(q);
+  const dubbed = await playVoice(q, text);
+  const voice = dubbed ? 0 : voiceOf(q);
   while (i < text.length && !skip) {
     tx.textContent = text.slice(0, ++i);
-    if (i % 2 === 0 && /\S/.test(text[i - 1])) Sound.blip(voice);
+    if (!dubbed && i % 2 === 0 && /\S/.test(text[i - 1])) Sound.blip(voice);
     const ch = text[i - 1];
     await sleep(/[.!?…]/.test(ch) ? 140 : /,/.test(ch) ? 70 : 24);
   }
@@ -1342,6 +1360,7 @@ async function say(line, opts = {}) {
   if (opts.noWait) return;
   nx.classList.remove("hidden");
   await waitAdvance();
+  stopVoice();
   Sound.select();
 }
 async function sayAll(lines, opts) { for (const l of lines || []) { await say(l, opts); if (G && G.over) return; } }

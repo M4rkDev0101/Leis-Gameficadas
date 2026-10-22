@@ -2,6 +2,7 @@
 
 import copy
 import json
+import os
 import shutil
 import tempfile
 import threading
@@ -159,6 +160,9 @@ class TestServidor(unittest.TestCase):
         from vade_ingest.updater import Updater
 
         self.tmp = Path(tempfile.mkdtemp())
+        (self.tmp / "vozes").mkdir()
+        (self.tmp / "vozes" / "adb0f86cc1d7.mp3").write_bytes(b"ID3")
+        os.environ["VADE_VOZES"] = str(self.tmp / "vozes")
         self.srv = make_server(Updater(self.tmp, self.tmp / "c.sqlite"), Arena(str(self.tmp / "c.sqlite"), str(self.tmp / "j.sqlite")), port=0)
         self.base = f"http://127.0.0.1:{self.srv.server_address[1]}"
         threading.Thread(target=self.srv.serve_forever, daemon=True).start()
@@ -196,6 +200,9 @@ class TestServidor(unittest.TestCase):
         prof = self.req("/api/arena/perfil")[1]
         self.assertEqual((prof["xp"], prof["casos"]["jogadas"], prof["nome"]), (250, 1, "Dra. Teste"))
         self.assertEqual(self.req("/api/arena/tribunal/nao-existe")[0], 404)
+        self.assertEqual(self.req("/api/arena/vozes")[1], ["adb0f86cc1d7"])
+        self.assertEqual(self.req("/voz/adb0f86cc1d7.mp3"), (200, "ID3"))
+        self.assertEqual(self.req("/voz/..%2Fserver")[0], 404)
         # jogo salvo: só cenas e provas válidas, credibilidade limitada
         code, salvo = self.req("/api/arena/tribunal/salvar", {"episodio": "a1-pao", "estado": {"cena": "p5", "credibilidade": 99, "erros": 2, "autos": ["cupom", "hack"]}})
         self.assertEqual((code, salvo["credibilidade"], salvo["autos"]), (200, 5, ["cupom"]))
