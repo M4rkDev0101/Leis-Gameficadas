@@ -1736,7 +1736,7 @@ function openAutos(mode) {
     const mbody = el("div", {class:"mbody"}, grid, detail);
     const castCard = (q) => {
       const ch = EP.personagens[q] || {}, v = visualOf(q);
-      const role = (ch.cargo ? ch.cargo + " · " : "") + (q === "voce" ? "Você · " : "") + posOf(q);
+      const role = (ch.cargo ? ch.cargo + " · " : "") + (q === "voce" ? "Você · " : "") + ({defesa:"Defesa", acusacao:"Acusação", juiz:"Juiz(a)", testemunha:"Testemunha"}[posOf(q)] || posOf(q));
       return el("div", {class:"castcard"},
         el("div", {class:"pt", innerHTML: v ? characterSVG(v, "normal") : ""}),
         el("div", {class:"tx"}, el("b", {textContent:nameOf(q)}), el("div", {class:"role", textContent:role}),
