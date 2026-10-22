@@ -106,6 +106,7 @@ python jogar.py validar --db catalogo.sqlite
 - [Changelog](docs/CHANGELOG.md): histórico de mudanças
 - [Licenças de assets](docs/ASSET_LICENSES.md): origem e licença de cada recurso
 - [Arquitetura](docs/ARCHITECTURE.md): componentes, conteúdo, validação e decisões
+- [Plano da equipe](docs/PLANO_EQUIPE.md): fila de trabalho, responsáveis e critérios de aceite
 
 ## Documentação
 
