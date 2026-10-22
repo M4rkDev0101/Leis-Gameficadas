@@ -11,6 +11,7 @@ from __future__ import annotations
 
 import json
 import re
+import sys
 import threading
 import time
 from http import HTTPStatus
@@ -37,7 +38,8 @@ class _Handler(BaseHTTPRequestHandler):
     server_version = "Vade/0.1"
 
     def log_message(self, fmt: str, *args) -> None:  # silencioso, menos o essencial
-        if not self.path.startswith("/api/job"):
+        # no executável sem console, sys.stderr é None: escrever nele derrubaria a requisição
+        if sys.stderr is not None and not self.path.startswith("/api/job"):
             super().log_message(fmt, *args)
 
     # ---------------------------------------------------------------- respostas

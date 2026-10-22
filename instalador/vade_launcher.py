@@ -306,7 +306,17 @@ def install_self(ui: UI) -> None:
                    capture_output=True, creationflags=NO_WINDOW)
 
 
+def redirect_logs() -> None:
+    """Sem console (atalho/duplo clique), sys.stdout/stderr são None: mande os logs para um arquivo."""
+    if sys.stdout is None or sys.stderr is None:
+        BASE.mkdir(parents=True, exist_ok=True)
+        log = open(BASE / "vade.log", "a", encoding="utf-8", buffering=1)  # noqa: SIM115
+        sys.stdout = sys.stdout or log
+        sys.stderr = sys.stderr or log
+
+
 def main() -> None:
+    redirect_logs()
     ui = UI()
 
     def worker() -> None:
