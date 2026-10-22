@@ -7,7 +7,8 @@ Ao abrir:
   3. baixa/atualiza o jogo (github.com/M4rkDev0101/Leis-Gameficadas);
   4. baixa/atualiza o acervo de leis (github.com/ctresb/leis) em clone parcial, sem os 2,5 GB;
   5. na 1ª vez importa as leis que o jogo usa (content/recorte.json), com barra de progresso;
-  6. sobe o servidor local e abre o jogo no navegador; verifica atualizações das leis a cada 30 min.
+  6. dublagem opcional: oferece baixar o pacote de vozes (release `vozes-vN`) e o atualiza depois;
+  7. sobe o servidor local e abre o jogo no navegador; verifica atualizações das leis a cada 30 min.
 
 O código do jogo NÃO vai dentro do .exe: ele é baixado com git e atualizado a cada abertura, então
 o mesmo .exe continua servindo quando o jogo ganha conteúdo novo. O .exe traz só o Python e a
@@ -49,11 +50,16 @@ import uuid  # noqa: F401
 import webbrowser
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import vozes_pacote  # noqa: E402  (dublagem opcional; o PyInstaller o inclui a partir daqui)
+
 APP_REPO = "https://github.com/M4rkDev0101/Leis-Gameficadas.git"
 LEIS_REPO = "https://github.com/ctresb/leis.git"
 BASE = Path(os.environ.get("LOCALAPPDATA", str(Path.home()))) / "VadeTribunal"
 APP, ACERVO = BASE / "app", BASE / "acervo"
 CATALOGO, JOGADOR = BASE / "catalogo.sqlite", BASE / "jogador.sqlite"
+VOZES = Path(os.environ.get("VADE_VOZES") or BASE / "vozes")  # mesma regra do servidor do jogo
+CONFIG = BASE / "config.json"
 EXE_NAME = "VadeTribunal.exe"
 PORTA = 8765
 NO_WINDOW = 0x08000000 if os.name == "nt" else 0  # git sem piscar janela de console
@@ -257,6 +263,20 @@ def first_import(ui: UI) -> None:
         raise RuntimeError("A importação das leis falhou:\n" + str(j["erro"])[-400:])
 
 
+def sync_vozes(ui: UI) -> None:
+    """Dublagem opcional: pacote de vozes publicado como release `vozes-vN` (nunca vai para o git do jogo).
+    Qualquer falha é ignorada: sem pacote/sem internet o jogo segue com bipes. `--vozes` pergunta de novo."""
+    api = os.environ.get("VADE_VOZES_API") or vozes_pacote.REPO_API
+    ui.set("Verificando a dublagem…", 90)
+
+    def dizer(texto: str, frac: float) -> None:
+        ui.set(step="Baixando a dublagem (opcional)…" if frac < 1 else None, pct=90 + 6 * frac, detail=texto)
+
+    r = vozes_pacote.sincronizar(VOZES, CONFIG, ui.ask, dizer, api, forcar="--vozes" in sys.argv)
+    if r == "instalada":
+        ui.set(detail="dublagem instalada")
+
+
 def port_free(p: int) -> bool:
     with socket.socket() as s:
         return s.connect_ex(("127.0.0.1", p)) != 0
@@ -328,6 +348,7 @@ def main() -> None:
             sync_acervo(ui)
             load_game_modules()
             first_import(ui)
+            sync_vozes(ui)
             ui.set("Abrindo o tribunal…", 97)
             url = start_server(ui)
             webbrowser.open(url)
