@@ -157,6 +157,15 @@
   .detail { background:#fffaf0; border:.3cqw dashed #c9a04a; border-radius:1cqw; padding:1.4cqw; font-size:1.45cqw; }
   .detail h3 { margin:0 0 .6cqw; font-size:1.8cqw; } .detail .law { font-family:Georgia,serif; font-size:1.55cqw; line-height:1.55; }
   .detail .ref { font-family:var(--mono); font-size:1.1cqw; color:#8a5a2b; }
+  .mbody.cast { grid-template-columns:1fr; } .mbody.cast .detail { display:none; }
+  .mbody.cast .grid-ev { grid-template-columns:repeat(auto-fill, minmax(min(100%, max(34cqw, 260px)), 1fr)); gap:1.2cqw; align-items:start; }
+  .castcard { display:flex; gap:1.2cqw; align-items:flex-start; background:#fffaf0; border:.25cqw solid #c9a04a; border-radius:1cqw; padding:1cqw; color:#2a1c12; min-width:0; }
+  .castcard .pt { flex:none; width:max(48px, 8cqw); aspect-ratio:3/4; overflow:hidden; border-radius:.8cqw; background:linear-gradient(#e8dcbf,#cdb98d); }
+  .castcard .pt svg { width:100%; height:100%; display:block; }
+  .castcard .tx { min-width:0; font-size:max(11px, 1.35cqw); line-height:1.4; overflow-wrap:anywhere; }
+  .castcard .tx b { font-family:Georgia,serif; font-size:max(13px, 1.7cqw); }
+  .castcard .tx .role { color:#8a5a2b; font-weight:800; text-transform:uppercase; font-size:max(10px, 1.05cqw); letter-spacing:.05em; margin-bottom:.3cqw; }
+  .castcard .tx p { margin:.4cqw 0 0; } .castcard .tx .mot { color:#5a3a1c; font-style:italic; }
   .modal footer { padding:1.2cqw 2cqw; display:flex; gap:1cqw; justify-content:flex-end; background:#e2d3b0; }
   .modal footer .hint { margin-right:auto; font-size:1.3cqw; color:#5a3a1c; align-self:center; }
   .pbtn { font-weight:900; font-size:1.6cqw; padding:.8cqw 2cqw; border-radius:.9cqw; border:0; background:#d23a2f; color:#fff; box-shadow:0 .35cqw 0 #7a1d16; }
@@ -1711,10 +1720,28 @@ function openAutos(mode) {
     const grid = el("div", {class:"grid-ev"}), detail = el("div", {class:"detail"});
     const presentBtn = mode ? el("button", {class:"pbtn", disabled:true, textContent:"Apresentar!", onclick:() => close(sel)}) : null;
     const tabsEl = el("div", {class:"tabs2"});
+    const mbody = el("div", {class:"mbody"}, grid, detail);
+    const castCard = (q) => {
+      const ch = EP.personagens[q] || {}, v = visualOf(q);
+      const role = (ch.cargo ? ch.cargo + " · " : "") + (q === "voce" ? "Você · " : "") + posOf(q);
+      return el("div", {class:"castcard"},
+        el("div", {class:"pt", innerHTML: v ? characterSVG(v, "normal") : ""}),
+        el("div", {class:"tx"}, el("b", {textContent:nameOf(q)}), el("div", {class:"role", textContent:role}),
+          ch.bio ? el("p", {textContent:ch.bio}) : null,
+          ch.motivacao ? el("p", {class:"mot", textContent:"Motivação: " + ch.motivacao}) : null));
+    };
     function draw() {
-      tabsEl.replaceChildren(...[["prova", "Provas"], ["lei", "Leis"]].map(([k, l]) =>
+      const isCast = tab === "elenco";
+      mbody.classList.toggle("cast", isCast);
+      tabsEl.replaceChildren(...[["prova", "Provas"], ["lei", "Leis"], ["elenco", "Elenco"]].map(([k, l]) =>
         el("button", {"aria-pressed":String(tab === k), textContent:l, onclick:() => { tab = k; sel = null; Sound.select(); draw(); }})));
       const items = G.autos.map(provaById).filter(p => p && p.tipo === tab);
+      if (isCast) {
+        grid.replaceChildren(...Object.keys(EP.personagens || {}).filter(q => q !== "narrador").map(castCard));
+        if (presentBtn) { presentBtn.disabled = true; presentBtn.style.display = "none"; }
+        return;
+      }
+      if (presentBtn) presentBtn.style.display = "";
       grid.replaceChildren(...(items.length ? items.map(p => el("button", {class:"ev", "aria-pressed":String(sel === p.id),
         onclick:() => { sel = p.id; Sound.select(); draw(); }}, el("span", {class:"ic", textContent:p.icone || "📄"}), p.nome))
         : [el("p", {textContent:"Nada aqui ainda."})]));
@@ -1727,7 +1754,7 @@ function openAutos(mode) {
       if (presentBtn) presentBtn.disabled = !sel;
     }
     m.append(el("header", {}, el("h2", {textContent:"📁 Autos do processo"}), tabsEl, el("span", {class:"sp"}), el("button", {class:"x", "aria-label":"Fechar", textContent:"×", onclick:() => close(null)})),
-      el("div", {class:"mbody"}, grid, detail),
+      mbody,
       el("footer", {}, el("span", {class:"hint", textContent: mode ? mode.titulo : "Tudo o que você reuniu até agora."}),
         el("button", {class:"pbtn sec", textContent: mode ? "Voltar" : "Fechar", onclick:() => close(null)}), presentBtn));
     $("#stage").append(m); draw(); Sound.abrir();
