@@ -271,6 +271,66 @@
   .ach b { display:block; font-size:.86rem; } .ach small { color:var(--muted); }
   .ach .ic { font-size:1.4rem; } .ach.off { opacity:.4; filter:grayscale(1); }
   .choices { margin:0 0 20px; color:var(--muted); font-size:.9rem; } .choices li { margin:2px 0; }
+  /* ============================================================ passe de arte: identidade visual, personagens animados, foco/hover */
+  :root { --serif:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif; --focus:#ffd866; --ink:#1b1410; }
+  .hero h1, .career-head h2, .act-title h3, .act-title b, .titlecard h1, .titlecard .ep, .actcard h1, .verdict h2, .credits h2, .modal header h2,
+  .nameplate, .inv-title, .inv-panel h4, .banner span, .stamp { font-family:var(--serif); }
+  a:focus-visible, input:focus-visible, [tabindex]:focus-visible, .spot:focus-visible { outline:3px solid var(--focus); outline-offset:2px; }
+  .modal :focus-visible { outline:3px solid var(--ink); outline-offset:2px; }
+  .modal header :focus-visible { outline-color:#fff4d6; }
+  /* personagens */
+  .breath { transform-box:fill-box; transform-origin:50% 100%; animation:breathe 4.2s ease-in-out infinite; }
+  @keyframes breathe { 50% { transform:scaleY(1.014); } }
+  .head { transform-box:fill-box; transform-origin:50% 100%; animation:headtilt 6s ease-in-out infinite; }
+  @keyframes headtilt { 50% { transform:rotate(.8deg) translateY(-1px); } }
+  .arm-point { animation:pointpump 1.1s ease-in-out infinite; }
+  @keyframes pointpump { 50% { transform:translate(3px,-2px); } }
+  .actor.shock .head { animation:startle .45s ease; }
+  @keyframes startle { 25% { transform:translateY(-7px) scale(1.04); } 60% { transform:translateY(1px) scale(.99); } }
+  /* título e logotipo */
+  .hero .kicker { font-weight:800; font-size:.78rem; letter-spacing:.3em; text-transform:uppercase; color:#e6c37a; margin-bottom:10px; }
+  .hero h1 { display:flex; align-items:center; gap:14px; }
+  .hero h1 .mark { width:clamp(44px,7vw,68px); height:auto; flex:none; filter:drop-shadow(0 3px 0 #6b3d10); }
+  .hero h1 em { background:linear-gradient(180deg,#ffe48a,#e29a00); -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none; filter:drop-shadow(0 3px 0 #6b3d10); }
+  .titlecard h1::after { content:""; display:block; height:.3cqw; width:16cqw; margin:1.4cqw auto 0; background:linear-gradient(90deg, transparent, #c9a04a, transparent); }
+  /* botões: hover, foco e contraste AA */
+  .hudbtn, .xbtn, .pbtn, .bigbtn, .iconbtn, .save, .pill, .sw, .opt, .ev, .inv-panel button, .tabs2 button, .modal .x { transition:transform .12s, filter .15s, box-shadow .15s, border-color .15s, background .15s; }
+  .hudbtn:hover, .xbtn:hover, .pbtn:hover:not(:disabled), .bigbtn:hover, .save:hover { filter:brightness(1.12); transform:translateY(-1px); }
+  .hudbtn:active, .xbtn:active, .pbtn:active:not(:disabled), .bigbtn:active, .save:active { transform:translateY(.25cqw); }
+  .iconbtn:hover, .pill:hover, .sw:hover { border-color:var(--gold); }
+  .hudbtn:focus-visible, .xbtn:focus-visible, .bigbtn:focus-visible, .opt:focus-visible, .inv-panel button:focus-visible, .pbtn:focus-visible { outline:.3cqw solid var(--focus); outline-offset:.3cqw; }
+  .opt:hover, .opt:focus-visible { border-color:var(--gold); background:linear-gradient(#2c3650,#1c2333); transform:translateX(.5cqw); }
+  .opt:hover b, .opt:focus-visible b { background:var(--gold); }
+  .x-defer { background:#177a47; } .x-press { background:#2a5fd6; }
+  .keys { color:rgba(255,255,255,.78); }
+  /* caixa de diálogo */
+  .dialog { background:linear-gradient(180deg, rgba(20,26,44,.95), rgba(8,10,18,.97)); border-color:#e4dcc6; }
+  .dialog::before { content:""; position:absolute; inset:.55cqw; border:.12cqw solid rgba(201,160,74,.5); border-radius:.8cqw; pointer-events:none; }
+  .dialog:focus-visible { outline:.3cqw solid var(--focus); outline-offset:.3cqw; }
+  .nameplate { display:flex; align-items:center; gap:.7cqw; letter-spacing:.04em; border:.2cqw solid #141821; border-bottom:0; box-shadow:0 -.2cqw .8cqw rgba(0,0,0,.35); }
+  .nameplate::before { content:""; width:.9cqw; height:.9cqw; background:#141821; transform:rotate(45deg); opacity:.75; }
+  .text { text-shadow:0 .1cqw .2cqw rgba(0,0,0,.5); }
+  /* autos */
+  .modal { background:repeating-linear-gradient(0deg, rgba(138,90,43,.05) 0 .2cqw, transparent .2cqw .9cqw), linear-gradient(#f6eedb,#e8dcbf); }
+  .modal header { background:linear-gradient(#9a6630,#7a4d22); border-bottom:.3cqw solid #c9a04a; }
+  .ev { cursor:pointer; box-shadow:0 .25cqw 0 rgba(138,90,43,.35); }
+  .ev:hover, .ev:focus-visible { transform:translateY(-.4cqw) rotate(-.6deg); border-color:#8a5a2b; box-shadow:0 .8cqw 1.4cqw rgba(60,35,10,.3); }
+  .detail { background:#fffaf0 repeating-linear-gradient(0deg, transparent 0 1.9cqw, rgba(138,90,43,.08) 1.9cqw 2cqw); }
+  /* cartões da carreira */
+  .eps .ep { position:relative; box-shadow:0 2px 0 rgba(0,0,0,.35); animation:rise .5s both; }
+  .eps .ep:nth-child(2) { animation-delay:.05s; } .eps .ep:nth-child(3) { animation-delay:.1s; } .eps .ep:nth-child(4) { animation-delay:.15s; } .eps .ep:nth-child(n+5) { animation-delay:.2s; }
+  @keyframes rise { from { transform:translateY(14px); opacity:0; } }
+  .eps .ep::after { content:""; position:absolute; left:0; right:0; top:0; height:3px; background:linear-gradient(90deg, transparent, var(--gold), transparent); opacity:0; transition:opacity .2s; }
+  .eps .ep:hover, .eps .ep:focus-visible { transform:translateY(-4px); border-color:var(--gold); box-shadow:0 12px 26px rgba(0,0,0,.45), 0 0 0 1px rgba(245,183,0,.35); }
+  .eps .ep:hover::after, .eps .ep:focus-visible::after { opacity:1; }
+  .eps .ep:focus-visible { outline:3px solid var(--focus); outline-offset:3px; }
+  .eps .ep .cover::after { content:""; position:absolute; inset:auto 0 0 0; height:45%; background:linear-gradient(transparent, rgba(0,0,0,.5)); pointer-events:none; }
+  .eps .ep.nextcase { animation:rise .5s both, nextpulse 2.6s 1s ease-in-out infinite; }
+  @keyframes nextpulse { 50% { box-shadow:0 0 0 6px rgba(245,183,0,.1), 0 0 22px rgba(245,183,0,.25); } }
+  .eps .ep.locked:hover, .eps .ep.locked:focus-visible { transform:none; border-color:var(--line); box-shadow:none; }
+  .eps .ep .num { font-family:var(--serif); letter-spacing:.06em; z-index:2; }
+  .ep-actions span { transition:filter .15s; } .eps .ep:hover .ep-actions span { filter:brightness(1.1); }
+  @media (prefers-reduced-motion: reduce) { .breath, .head, .arm-point { animation:none !important; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; } }
 </style>
 </head>
@@ -286,7 +346,8 @@
     <svg class="scale" viewBox="0 0 120 120" aria-hidden="true"><g fill="none" stroke="#F5B700" stroke-width="3" stroke-linecap="round">
       <path d="M60 14v86M40 100h40M20 30h80"/><path d="M20 30l-14 34h28zM100 30l-14 34h28z"/><circle cx="60" cy="12" r="5" fill="#F5B700"/></g>
       <g fill="#F5B700" opacity=".35"><path d="M6 64a14 6 0 0 0 28 0zM86 64a14 6 0 0 0 28 0z"/></g></svg>
-    <h1>Vade <em>Tribunal</em></h1>
+    <div class="kicker">Direito em forma de jogo</div>
+    <h1><svg class="mark" viewBox="0 0 64 72" aria-hidden="true"><path d="M32 3 L59 12 V36 C59 52 47 63 32 69 C17 63 5 52 5 36 V12Z" fill="#2a1a0e" stroke="#F5B700" stroke-width="3"/><g stroke="#F5B700" stroke-width="2.6" stroke-linecap="round" fill="none"><path d="M32 16V54M22 54H42M16 24H48"/><path d="M16 24L11 38H21ZM48 24L43 38H53Z"/></g><path d="M10 38a6 3 0 0 0 12 0zM42 38a6 3 0 0 0 12 0z" fill="#F5B700"/><circle cx="32" cy="13" r="3" fill="#F5B700"/></svg><span>Vade <em>Tribunal</em></span></h1>
     <p>Pressione testemunhas, encontre contradições e apresente a lei certa na hora certa. Grite <b>PROTESTO!</b>, bata o martelo e decida como advogado(a), promotor(a) ou juiz(a). Cada artigo é o texto vigente da lei.</p>
   </section>
   <div class="eps" id="eps"></div>
@@ -358,152 +419,402 @@ const store = {get(k, d) { try { const v = localStorage.getItem(k); return v ===
                set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} }};
 
 // ================================================================ som (sintetizado, sem arquivos)
+// Temas compostos para este jogo (obra original). Cada compasso = [acorde (MIDI), baixo (MIDI), melodia em 8 colcheias:
+// n>1 nota, 1 prolonga, 0 pausa]. Percussão: k=bumbo, s=caixa, h=chimbal ('x' toca).
+const THEMES = {
+  principal: {bpm:104, pad:{t:"sawtooth", v:.022, lp:1100}, bass:"1.5.1.5.", bt:"triangle", bv:.11, blp:700,
+    lead:{type:["triangle", "sine"], v:.075, lp:4200, a:.015, s:.55, r:.18, send:.3},
+    k:"x.....x.", s:"..x...x.", h:"x.x.x.x.", dv:.8, bars:[
+    [[60,64,67],36,[79,1,76,79,84,1,83,79]], [[59,62,67],43,[83,1,79,83,86,1,84,83]], [[57,60,64],45,[81,1,79,76,81,1,84,81]], [[53,57,60],41,[77,1,81,84,81,1,79,77]],
+    [[60,64,67],36,[84,1,1,79,81,79,76,1]], [[55,59,62],43,[74,76,79,1,83,1,79,1]], [[53,57,60],41,[77,1,81,1,84,1,81,77]], [[55,59,62,65],43,[83,1,79,1,74,1,1,0]]]},
+  investigacao: {bpm:88, pad:{t:"triangle", v:.03, lp:900}, bass:"1...5...", bt:"triangle", bv:.09, blp:500,
+    lead:{type:["triangle"], v:.06, lp:3000, a:.004, s:.1, r:.25, send:.35}, arp:{p:[0,1,2,1,0,1,2,1], v:.03, type:"square", lp:1700},
+    k:"x.......", s:"........", h:"..x...x.", dv:.45, bars:[
+    [[57,60,64],45,[76,0,0,72,0,74,0,0]], [[53,57,62],38,[77,0,0,74,0,77,0,0]], [[57,60,64],45,[76,0,72,0,69,0,72,0]], [[52,56,59],40,[71,0,0,68,0,71,0,0]],
+    [[57,60,64],45,[81,0,0,76,0,72,0,0]], [[53,57,60],41,[77,0,0,72,0,74,0,0]], [[53,57,62],38,[74,0,77,0,81,0,77,0]], [[52,56,59],40,[76,0,71,0,68,0,0,0]]]},
+  julgamento: {bpm:112, pad:{t:"sawtooth", v:.02, lp:700}, bass:"1.11.1.1", bt:"sawtooth", bv:.07, blp:420,
+    lead:{type:["square", "sawtooth"], v:.045, lp:2600, a:.01, s:.4, r:.15, send:.25},
+    k:"x...x...", s:"....x.x.", h:"x.x.x.x.", dv:.7, bars:[
+    [[50,53,57],38,[0,0,77,1,0,0,76,0]], [[50,53,57],38,[74,1,1,0,0,0,0,0]], [[58,62,65],34,[0,0,74,1,0,0,77,0]], [[57,61,64],33,[0,0,76,1,73,1,1,0]],
+    [[50,53,57],38,[0,0,77,1,0,0,81,0]], [[55,58,62],31,[79,1,0,77,1,0,74,0]], [[58,62,65],34,[0,0,77,0,74,0,70,0]], [[57,61,64],33,[73,1,76,1,81,1,1,0]]]},
+  pressao: {bpm:138, pad:{t:"sawtooth", v:.024, lp:800}, bass:"11.1.11.", bt:"sawtooth", bv:.08, blp:520,
+    lead:{type:["square"], v:.05, lp:3200, a:.005, s:.3, r:.1, send:.15},
+    k:"x..x..x.", s:"..x...x.", h:"xxxxxxxx", dv:.9, bars:[
+    [[52,55,59],40,[83,0,83,0,86,0,83,0]], [[48,52,55],36,[84,0,84,0,83,0,79,0]], [[57,60,64],33,[81,0,81,0,84,0,81,0]], [[59,63,66],35,[83,0,78,0,83,0,87,0]],
+    [[52,55,59],40,[86,0,86,0,88,0,86,0]], [[48,52,55],36,[84,0,79,0,84,0,88,0]], [[50,54,57],38,[86,0,85,0,86,0,81,0]], [[59,63,66],35,[83,0,82,0,80,0,78,0]]]},
+  vitoria: {bpm:126, pad:{t:"sawtooth", v:.03, lp:1500}, bass:"1.5.1.5.", bt:"triangle", bv:.13, blp:800,
+    lead:{type:["sawtooth", "square"], v:.06, lp:3800, a:.01, s:.6, r:.3, send:.35, det:6},
+    k:"x.x.x.x.", s:"..x...x.", h:"x.x.x.x.", dv:.9, bars:[
+    [[60,64,67],36,[72,76,79,76,84,1,1,1]], [[55,59,62],43,[83,0,81,0,79,1,83,1]], [[60,64,67,72],36,[84,1,1,1,1,1,1,1]]]},
+  calma: {bpm:72, pad:{t:"triangle", v:.035, lp:800}, bass:"1.......", bt:"sine", bv:.1, blp:400,
+    lead:{type:["sine", "triangle"], v:.05, lp:2600, a:.03, s:.5, r:.4, send:.5}, arp:{p:[0,1,2,1,2,1,0,1], v:.022, type:"sine", lp:2400},
+    k:"........", s:"........", h:"........", dv:0, bars:[
+    [[60,64,67],36,[0,0,76,1,1,0,79,1]], [[57,60,64],45,[81,1,1,1,0,0,76,1]], [[53,57,60],41,[0,0,77,1,1,1,0,0]], [[55,59,62],43,[0,0,74,1,79,1,1,1]],
+    [[60,64,67],36,[0,0,76,0,79,0,84,1]], [[52,55,59],40,[83,1,1,1,0,0,79,1]], [[53,57,60],41,[77,1,81,1,1,1,0,0]], [[55,59,62],43,[79,1,1,1,74,1,1,0]]]},
+};
+const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
+const AMB_KIND = {bar:"bar", mercado:"bar", rua:"rua", ponto:"rua", obra:"rua", delegacia:"forum", parlatorio:"forum", gabinete:"forum", juri:"forum"};
 const Sound = {
-  ctx: null, on: store.get("tribSom", true), music: store.get("tribMusica", false), musicTimer: null, step: 0,
-  ensure() { if (!this.ctx) { try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch { return null; } }
-             if (this.ctx.state === "suspended") this.ctx.resume(); return this.ctx; },
+  ctx: null, on: store.get("tribSom", true), music: store.get("tribMusica", false), want: "principal", cur: null, amb: null, ambK: null, ambLocal: null,
+  // ---- infraestrutura: mestre -> compressor; barras de efeitos, música e ambiência; reverb por convolução gerada
+  ensure() {
+    if (!this.ctx) {
+      try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch { return null; }
+      const c = this.ctx, mk = (v, to) => { const g = c.createGain(); g.gain.value = v; g.connect(to); return g; };
+      const comp = c.createDynamicsCompressor(); comp.threshold.value = -20; comp.ratio.value = 4; comp.attack.value = .005; comp.release.value = .2; comp.connect(c.destination);
+      this.master = mk(.85, comp); this.sfx = mk(.9, this.master); this.mus = mk(.45, this.master); this.ambBus = mk(.7, this.master);
+      this.rev = c.createConvolver(); this.rev.buffer = this._ir(2.4); this.rev.connect(mk(.55, this.master));
+    }
+    if (this.ctx.state === "suspended") this.ctx.resume();
+    return this.ctx;
+  },
+  _ok() { return this.on ? this.ensure() : null; },
+  _ir(sec) {
+    const c = this.ctx, n = c.sampleRate * sec | 0, b = c.createBuffer(2, n, c.sampleRate);
+    for (let ch = 0; ch < 2; ch++) { const d = b.getChannelData(ch); let lp = 0;
+      for (let i = 0; i < n; i++) { const x = i / n; lp += ((Math.random() * 2 - 1) - lp) * (.6 - .5 * x); d[i] = lp * 1.8 * Math.pow(1 - x, 2.6); } }
+    return b;
+  },
+  _send(node, amt) { if (!amt) return; const g = this.ctx.createGain(); g.gain.value = amt; node.connect(g); g.connect(this.rev); },
+  _noiseBuf() {
+    if (this._nb) return this._nb; const c = this.ctx, n = c.sampleRate * 2 | 0; this._nb = c.createBuffer(1, n, c.sampleRate);
+    const d = this._nb.getChannelData(0); for (let i = 0; i < n; i++) d[i] = Math.random() * 2 - 1; return this._nb;
+  },
+  // nota com envelope (ataque, decaimento até o sustain s, relaxamento r), filtro passa-baixa e reverb opcional
+  _n(dest, f, t, dur, o = {}) {
+    const c = this.ctx, g = c.createGain(), fl = c.createBiquadFilter(), v = o.v || .1, a = o.a || .01, r = o.r || .08, d = Math.max(a + .01, dur);
+    fl.type = "lowpass"; fl.frequency.setValueAtTime(o.lp || 5000, t); if (o.lp2) fl.frequency.exponentialRampToValueAtTime(o.lp2, t + d);
+    g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(v, t + a);
+    g.gain.exponentialRampToValueAtTime(Math.max(.0001, v * (o.s ?? .6)), t + d); g.gain.exponentialRampToValueAtTime(.0001, t + d + r);
+    for (const ty of [].concat(o.type || "triangle")) for (const dt of o.det ? [o.det, -o.det] : [0]) {
+      const x = c.createOscillator(); x.type = ty; x.frequency.setValueAtTime(f, t); x.detune.value = dt;
+      if (o.slide) x.frequency.exponentialRampToValueAtTime(Math.max(30, f + o.slide), t + d);
+      x.connect(fl); x.start(t); x.stop(t + d + r + .05);
+    }
+    fl.connect(g); g.connect(dest); this._send(g, o.send); return g;
+  },
+  _noise(dest, t, dur, o = {}) {
+    const c = this.ctx, s = c.createBufferSource(), fl = c.createBiquadFilter(), g = c.createGain(), v = o.v || .2, a = o.a || .002;
+    s.buffer = this._noiseBuf(); fl.type = o.type || "bandpass"; fl.frequency.setValueAtTime(o.f || 2000, t); fl.Q.value = o.q || .7;
+    if (o.f2) fl.frequency.exponentialRampToValueAtTime(o.f2, t + dur);
+    g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(v, t + a); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    s.connect(fl); fl.connect(g); g.connect(dest); this._send(g, o.send); s.start(t, Math.random() * 1.5, dur + .05); return g;
+  },
+  _kick(d, t, v) { const c = this.ctx, o = c.createOscillator(), g = c.createGain(); o.frequency.setValueAtTime(150, t); o.frequency.exponentialRampToValueAtTime(42, t + .16);
+    g.gain.setValueAtTime(v, t); g.gain.exponentialRampToValueAtTime(.0001, t + .26); o.connect(g); g.connect(d); o.start(t); o.stop(t + .3); },
+  // compatibilidade: tom e ruído simples nas barras de efeitos
   tone(freq, dur, type = "square", vol = .05, when = 0, slide = 0) {
-    if (!this.on) return; const c = this.ensure(); if (!c) return;
-    const t = c.currentTime + when, o = c.createOscillator(), g = c.createGain();
-    o.type = type; o.frequency.setValueAtTime(freq, t); if (slide) o.frequency.exponentialRampToValueAtTime(Math.max(30, freq + slide), t + dur);
-    g.gain.setValueAtTime(vol, t); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
-    o.connect(g).connect(c.destination); o.start(t); o.stop(t + dur + .02);
+    const c = this._ok(); if (!c) return; this._n(this.sfx, freq, c.currentTime + when, dur, {type, v:vol, a:.004, s:.01, r:.02, slide});
   },
   noise(dur, vol = .2, when = 0) {
-    if (!this.on) return; const c = this.ensure(); if (!c) return;
-    const b = c.createBuffer(1, c.sampleRate * dur, c.sampleRate), d = b.getChannelData(0);
-    for (let i = 0; i < d.length; i++) d[i] = (Math.random() * 2 - 1) * (1 - i / d.length);
-    const s = c.createBufferSource(), g = c.createGain(); s.buffer = b; g.gain.value = vol;
-    s.connect(g).connect(c.destination); s.start(c.currentTime + when);
+    const c = this._ok(); if (!c) return; this._noise(this.sfx, c.currentTime + when, dur, {type:"lowpass", f:6000, f2:800, v:vol});
   },
-  blip(pitch) { if (pitch) this.tone(pitch * (0.95 + Math.random() * .1), .045, "square", .025); },
-  protesto() { this.noise(.25, .25); [0, .06, .12].forEach((w, i) => this.tone([392, 494, 587][i], .45, "sawtooth", .07, w)); this.tone(110, .6, "square", .08, 0, -40); },
-  ummomento() { this.noise(.18, .18); this.tone(523, .3, "sawtooth", .06); this.tone(659, .3, "sawtooth", .05, .07); },
-  martelo() { [0, .28, .56].forEach(w => { this.tone(90, .18, "triangle", .35, w, -50); this.noise(.06, .25, w); }); },
-  bater() { this.tone(70, .25, "triangle", .4, 0, -30); this.noise(.12, .3); },
-  dano() { this.tone(330, .5, "sawtooth", .08, 0, -260); this.noise(.3, .15); },
-  acerto() { [523, 659, 784, 1047].forEach((f, i) => this.tone(f, .18, "triangle", .08, i * .08)); },
-  select() { this.tone(880, .05, "square", .03); },
-  vitoria() { [523, 523, 659, 784, 659, 784, 1047].forEach((f, i) => this.tone(f, .22, "triangle", .09, i * .13)); },
+  // ---- sequenciador: agenda as notas à frente no relógio do áudio (melodia, baixo, acordes, arpejo, percussão)
+  _seq(name, dest, loop) {
+    const c = this.ctx, T = THEMES[name], out = c.createGain(); out.connect(dest);
+    const s = {name, T, out, i:0, spb:30 / T.bpm, next:c.currentTime + .06, loop, dead:false};
+    const tick = () => {
+      if (s.dead) return;
+      while (s.next < c.currentTime + 1.1) {
+        if (!loop && s.i >= T.bars.length * 8) { s.dead = true; clearInterval(s.timer); setTimeout(() => { try { out.disconnect(); } catch {} }, 4000); return; }
+        this._step(s); s.next += s.spb; s.i++;
+      }
+    };
+    s.timer = setInterval(tick, 150); tick(); return s;
+  },
+  _step(s) {
+    const T = s.T, spb = s.spb, k = s.i & 7, [ch, br, mel] = T.bars[(s.i >> 3) % T.bars.length], t = s.next, o = s.out;
+    if (k === 0) ch.forEach(m => this._n(o, mtof(m), t, spb * 8, {type:T.pad.t, v:T.pad.v, lp:T.pad.lp, a:.35, s:.8, r:.5, det:7, send:.35}));
+    const b = T.bass[k];
+    if (b !== ".") { let n = 1; while (k + n < 8 && T.bass[k + n] === "." && n < 4) n++;
+      this._n(o, mtof(br + (b === "5" ? 7 : b === "8" ? 12 : 0)), t, spb * n * .9, {type:T.bt, v:T.bv, lp:T.blp, a:.01, s:.5, r:.06}); }
+    const m = mel[k];
+    if (m > 1) { let n = 1; while (k + n < 8 && mel[k + n] === 1) n++; this._n(o, mtof(m), t, spb * n * .95, T.lead); }
+    if (T.arp && T.arp.p[k] >= 0) this._n(o, mtof(ch[T.arp.p[k] % ch.length] + 12), t, spb * .9, {type:T.arp.type, v:T.arp.v, lp:T.arp.lp, a:.003, s:.05, r:.15, send:.3});
+    const dv = T.dv;
+    if (dv) {
+      if (T.k[k] === "x") this._kick(o, t, .26 * dv);
+      if (T.s[k] === "x") { this._noise(o, t, .14, {type:"bandpass", f:1900, q:.8, v:.12 * dv, send:.15}); this._n(o, 190, t, .08, {type:"triangle", v:.08 * dv, a:.002, s:.01, r:.02}); }
+      if (T.h[k] === "x") this._noise(o, t, .045, {type:"highpass", f:7500, q:.7, v:(k % 2 ? .035 : .06) * dv});
+    }
+  },
+  _fade(s, sec) {
+    s.dead = true; clearInterval(s.timer); const c = this.ctx, g = s.out.gain, t = c.currentTime;
+    g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.0001, t + sec);
+    setTimeout(() => { try { s.out.disconnect(); } catch {} }, sec * 1000 + 1500);
+  },
+  _duck(sec) {
+    if (!this.ctx) return; const g = this.mus.gain, t = this.ctx.currentTime;
+    g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.14, t + .15); g.setValueAtTime(.14, t + sec); g.linearRampToValueAtTime(.45, t + sec + 1.2);
+  },
+  // ---- música: troca de tema com crossfade. Temas: principal, investigacao, julgamento, pressao, vitoria, calma
   startMusic(kind = "calma") {
-    this.stopMusic(); if (!this.music || !this.on) return; this.ensure();
-    const scales = {calma:[220, 261.6, 329.6, 392, 329.6, 261.6, 293.7, 349.2], tensa:[196, 233.1, 293.7, 196, 233.1, 311.1, 293.7, 233.1]};
-    const notes = scales[kind] || scales.calma, bass = kind === "tensa" ? [98, 98, 116.5, 103.8] : [110, 87.3, 98, 82.4];
-    this.step = 0;
-    this.musicTimer = setInterval(() => {
-      const s = this.step++;
-      this.tone(notes[s % notes.length], .22, kind === "tensa" ? "sawtooth" : "triangle", .018);
-      if (s % 4 === 0) this.tone(bass[(s / 4 | 0) % bass.length], .5, "triangle", .05);
-      if (kind === "tensa" && s % 2 === 0) this.noise(.03, .02);
-    }, kind === "tensa" ? 180 : 260);
+    if (kind === "tensa") kind = "julgamento";
+    if (!THEMES[kind]) kind = "calma";
+    if ((kind === "julgamento" || kind === "investigacao") && typeof G !== "undefined" && G && !G.over && G.cred > 0 && G.cred <= 2) kind = "pressao";
+    this.want = kind; if (!this.music || !this.on) return;
+    const c = this.ensure(); if (!c) return;
+    if (this.cur && this.cur.name === kind) return;
+    if (this.cur) this._fade(this.cur, 1.4);
+    const s = this._seq(kind, this.mus, true); s.out.gain.setValueAtTime(.0001, c.currentTime); s.out.gain.linearRampToValueAtTime(1, c.currentTime + 1.4); this.cur = s;
   },
-  stopMusic() { clearInterval(this.musicTimer); this.musicTimer = null; },
+  stopMusic(keep) { if (!keep) this.want = null; if (this.cur) { this._fade(this.cur, .7); this.cur = null; } },
+  sync() {   // chamado pelos botões de som/música
+    if (!this.music || !this.on) this.stopMusic(true);
+    else if (!this.cur) this.startMusic(this.want || ($("#game").classList.contains("hidden") ? "principal" : "calma"));
+    if (!this.on) this._ambOff(); else if (this.ambK && !this.amb) this.ambiencia(this.ambLocal, true);
+  },
+  init() {   // navegadores só liberam áudio após um gesto: o primeiro clique/tecla liga a música do menu
+    const go = () => { this.ensure(); if (this.music && this.on && !this.cur) this.startMusic(this.want || "principal"); };
+    ["pointerdown", "keydown"].forEach(e => window.addEventListener(e, go, {once:true, capture:true}));
+  },
+  // ---- ambiência por local (bem baixa): forum (burburinho), rua (tráfego), bar (conversa e copos)
+  ambiencia(local, force) {
+    const kind = AMB_KIND[local] || null;
+    if (!force && kind === this.ambK && this.amb) return;
+    if (!force && kind === this.ambK && !kind) return;
+    this.ambK = kind; this.ambLocal = local; this._ambOff();
+    if (!kind || !this.on) return; const c = this.ensure(); if (!c) return;
+    const out = c.createGain(); out.gain.setValueAtTime(.0001, c.currentTime); out.gain.linearRampToValueAtTime(1, c.currentTime + 2.5); out.connect(this.ambBus);
+    const A = {out, nodes:[], timer:null}; this.amb = A; this._noiseBuf();
+    const layer = (type, f, q, v, lfo) => {
+      const s = c.createBufferSource(), fl = c.createBiquadFilter(), g = c.createGain();
+      s.buffer = this._nb; s.loop = true; fl.type = type; fl.frequency.value = f; fl.Q.value = q; g.gain.value = v;
+      s.connect(fl); fl.connect(g); g.connect(out); s.start(c.currentTime, Math.random()); A.nodes.push(s);
+      if (lfo) { const o = c.createOscillator(), og = c.createGain(); o.frequency.value = lfo; og.gain.value = v * .6; o.connect(og); og.connect(g.gain); o.start(); A.nodes.push(o); }
+    };
+    if (kind === "forum") { layer("bandpass", 450, .7, .05, .23); layer("bandpass", 1100, 1.2, .025, .31); layer("lowpass", 160, .5, .03, 0); }
+    if (kind === "rua") { layer("lowpass", 220, .6, .06, .07); layer("bandpass", 2500, .5, .012, .15);
+      A.timer = setInterval(() => { if (this.on && Math.random() < .6) this._noise(out, this.ctx.currentTime, 3.5, {type:"bandpass", f:180, f2:420, q:1.2, v:.07, a:1.6}); }, 6000); }
+    if (kind === "bar") { layer("bandpass", 500, .8, .06, .4); layer("bandpass", 1300, 1, .03, .27); layer("lowpass", 200, .5, .03, 0);
+      A.timer = setInterval(() => { if (this.on && Math.random() < .6) { const t = this.ctx.currentTime, f = 3000 + Math.random() * 900;
+        this._n(out, f, t, .12, {type:"sine", v:.02, a:.002, s:.01, r:.2, send:.4}); this._n(out, f * 1.25, t + .09, .12, {type:"sine", v:.015, a:.002, s:.01, r:.2, send:.4}); } }, 3500); }
+  },
+  _ambOff() {
+    const A = this.amb; if (!A) return; this.amb = null; clearInterval(A.timer);
+    const g = A.out.gain, t = this.ctx.currentTime; g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.0001, t + 1.2);
+    setTimeout(() => { A.nodes.forEach(n => { try { n.stop(); } catch {} }); try { A.out.disconnect(); } catch {} }, 1500);
+  },
+  // ---- efeitos
+  blip(pitch) { if (pitch) this.tone(pitch * (0.95 + Math.random() * .1), .045, "square", .025); },
+  select() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
+    this._n(d, 1300, t, .04, {type:"square", v:.025, lp:4000, a:.002, s:.05, r:.02}); this._n(d, 1950, t + .018, .05, {type:"triangle", v:.03, a:.002, s:.05, r:.03}); },
+  click() { this.select(); },
+  abrir() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // abrir os autos: folhas de papel
+    this._noise(d, t, .2, {f:1500, f2:4800, q:.8, v:.12}); this._noise(d, t + .1, .12, {f:3000, f2:5000, v:.07});
+    this._n(d, 150, t, .1, {type:"sine", v:.15, slide:-60, a:.003, s:.01}); },
+  fechar() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
+    this._noise(d, t, .13, {f:4500, f2:1200, q:.8, v:.1}); this._n(d, 120, t + .05, .1, {type:"sine", v:.16, slide:-50, a:.003, s:.01}); },
+  pegar() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;     // pegar uma prova
+    this._noise(d, t, .08, {f:2500, f2:4000, v:.06});
+    [988, 1319, 1760].forEach((f, i) => this._n(d, f, t + .04 + i * .06, .25, {type:"sine", v:.08, a:.003, s:.05, r:.25, send:.4})); },
+  protesto() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx; this._duck(1.2);
+    this._noise(d, t, .3, {f:1800, f2:400, q:.8, v:.35, send:.2});
+    [196, 247, 294, 392].forEach((f, i) => this._n(d, f, t + i * .015, .5, {type:["sawtooth", "square"], v:.05, lp:3200, lp2:700, a:.005, s:.4, r:.2, det:8, send:.3}));
+    this._n(d, 70, t, .6, {type:"sine", v:.3, slide:-35, a:.003, s:.01}); this._n(d, 392, t + .22, .35, {type:["sawtooth", "square"], v:.045, lp:3000, lp2:800, det:8, s:.3, send:.3}); },
+  ummomento() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx; this._duck(1);
+    this._noise(d, t, .18, {f:2500, f2:600, v:.2, send:.15});
+    [523, 659].forEach((f, i) => this._n(d, f, t + i * .08, .32, {type:["sawtooth", "square"], v:.05, lp:3000, lp2:900, det:6, s:.3, send:.25}));
+    this._n(d, 90, t, .35, {type:"sine", v:.2, slide:-30, a:.003, s:.01}); },
+  martelo() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx; this._duck(1.4);
+    [0, .28, .56].forEach(w => { const u = t + w;
+      this._n(d, 230, u, .12, {type:"triangle", v:.5, slide:-150, a:.001, s:.001, r:.03, send:.5}); this._n(d, 70, u, .3, {type:"sine", v:.45, slide:-35, a:.002, s:.01, send:.3});
+      this._noise(d, u, .05, {f:3000, q:1, v:.4, send:.4}); }); },
+  bater() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
+    this._n(d, 80, t, .35, {type:"sine", v:.5, slide:-45, a:.002, s:.01, send:.3}); this._noise(d, t, .14, {type:"lowpass", f:2500, f2:300, v:.3, send:.35}); },
+  tremor() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // abalo prolongado
+    this._noise(d, t, .9, {type:"lowpass", f:140, f2:60, v:.5, a:.05}); this._n(d, 48, t, .9, {type:"sine", v:.35, slide:-8, a:.05, s:.5, r:.2});
+    for (let i = 0; i < 4; i++) this._noise(d, t + .1 + Math.random() * .6, .05, {type:"highpass", f:2500, v:.08}); },
+  dano() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
+    this._n(d, 330, t, .5, {type:"sawtooth", v:.08, lp:2500, lp2:300, slide:-260, s:.4}); this._n(d, 233, t, .4, {type:"square", v:.04, lp:1200, s:.3});
+    this._noise(d, t, .3, {type:"lowpass", f:3000, f2:300, v:.18}); this._n(d, 60, t, .5, {type:"sine", v:.25, slide:-20, a:.003, s:.05, send:.3}); },
+  erro() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
+    this._n(d, 150, t, .16, {type:"square", v:.07, lp:900, s:.7}); this._n(d, 112, t + .17, .28, {type:"square", v:.07, lp:800, s:.5}); },
+  acerto() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
+    [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => this._n(d, f, t + i * .07, .3, {type:["triangle", "sine"], v:.07, a:.004, s:.2, r:.3, send:.3})); },
+  carimbo() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;    // carimbo do veredicto
+    this._n(d, 95, t, .2, {type:"sine", v:.45, slide:-50, a:.002, s:.01, send:.2}); this._noise(d, t, .08, {f:900, q:.8, v:.3, send:.3});
+    this._noise(d, t + .09, .05, {type:"highpass", f:3500, v:.12, send:.3}); },
+  passos(n = 4, w = 0) { const c = this._ok(); if (!c) return; const d = this.sfx;
+    for (let i = 0; i < n; i++) { const t = c.currentTime + w + i * .32;
+      this._noise(d, t, .09, {type:"lowpass", f:380, f2:140, v:.22}); this._n(d, i % 2 ? 82 : 95, t, .09, {type:"sine", v:.15, slide:-30, a:.003, s:.01});
+      this._noise(d, t, .03, {type:"highpass", f:3000, v:.04}); } },
+  porta() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
+    this._noise(d, t, .02, {type:"highpass", f:2500, v:.15}); this._n(d, 900, t, .03, {type:"triangle", v:.05, a:.001, s:.05});
+    this._n(d, 170, t + .05, .4, {type:"sawtooth", v:.03, lp:700, lp2:1400, slide:90, a:.08, s:.8, r:.1});
+    this._n(d, 70, t + .5, .3, {type:"sine", v:.3, slide:-25, a:.002, s:.01, send:.25}); this._noise(d, t + .5, .1, {type:"lowpass", f:900, v:.2}); },
+  entrar() { this.porta(); this.passos(3, .7); },    // porta + passos ao chegar num local de investigação
+  vitoria() { const c = this._ok(); if (!c) return; this._duck(3.8); this._seq("vitoria", this.sfx, false); },   // fanfarra curta (tema "vitoria", toca uma vez)
 };
+Sound.init();
 
 // ================================================================ bonequinhos (SVG gerado com cores e formas validadas)
 const HAIRS = ["curto", "topete", "longo", "coque", "rabo", "cacheado", "careca"];
 const OUTFITS = ["terno", "toga", "blazer", "avental", "casual", "farda"];
 const EXPRS = ["normal", "feliz", "bravo", "nervoso", "chocado", "pensativo", "triste", "confiante", "apontando"];
+// ---- cores auxiliares (sombreamento em 2 tons, cabelo grisalho => idade)
+function mixHex(a, b, k) {
+  const A = [1, 3, 5].map(i => parseInt(a.substr(i, 2), 16)), B = [1, 3, 5].map(i => parseInt(b.substr(i, 2), 16));
+  return "#" + A.map((x, i) => Math.round(x + (B[i] - x) * k).toString(16).padStart(2, "0")).join("");
+}
+const darken = (h, k) => mixHex(h, "#000000", k), lighten = (h, k) => mixHex(h, "#ffffff", k);
+function lumHex(h) { const [r, g, b] = [1, 3, 5].map(i => parseInt(h.substr(i, 2), 16)); return { l: .3 * r + .59 * g + .11 * b, sat: Math.max(r, g, b) - Math.min(r, g, b) }; }
 function characterSVG(v, expr = "normal") {
   v = v || {};
   const pele = col(v.pele, "#E0AC69"), cab = col(v.corCabelo, "#2a1a10"), roupa = col(v.corRoupa, "#1f2a44");
   const hair = pick(v.cabelo, HAIRS, "curto"), out = pick(v.roupa, OUTFITS, "terno");
   const tie = v.gravata && HEX.test(v.gravata) ? v.gravata : null;
   expr = pick(expr, EXPRS, "normal");
-  const dark = "#1a1a1a", shade = "rgba(0,0,0,.18)";
+  const ink = "#1b1410", O = `stroke="${ink}" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"`, O1 = `stroke="${ink}" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"`;
+  const peleS = darken(pele, .15), peleH = lighten(pele, .2);
+  const cabS = darken(cab, .3), cabH = lighten(cab, .32), HO = `stroke="${darken(cab, .6)}" stroke-width="2" stroke-linejoin="round"`;
+  const lc = lumHex(cab), old = lc.l > 130 && lc.sat < 40;
+  const roupaS = darken(roupa, .26), roupaH = lighten(roupa, .14), gold = "#c9a04a";
+  const browC = old ? mixHex(cab, "#777777", .35) : cab;
+  const iris = old ? "#56606e" : mixHex(cab, "#4a3b2c", .45);
+  const T = "M34 300 C36 228 70 204 120 200 C170 204 204 228 206 300Z";
+  const sleeve = out === "toga" ? "#14141c" : out === "avental" ? "#f5f5f3" : roupa;
+  const sleeveS = out === "toga" ? "#08080c" : out === "avental" ? "#d8d8d4" : roupaS;
+  const hand = (x, y, r = 11) => `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r + 1}" fill="${pele}" ${O1}/><path d="M${x - r + 3} ${y + 4} Q${x} ${y + r} ${x + r - 3} ${y + 4}" fill="none" stroke="${peleS}" stroke-width="2"/>`;
   // ------ corpo e roupa
   let body = "";
   if (out === "toga") {
-    body = `<path d="M40 300 C42 220 70 196 120 192 C170 196 198 220 200 300Z" fill="#111"/>
-      <path d="M96 196 L120 236 L144 196 Z" fill="#fff"/><path d="M108 200 L120 226 L132 200" fill="none" stroke="#ddd" stroke-width="2"/>
-      <path d="M70 216 Q120 236 170 216" fill="none" stroke="#333" stroke-width="3"/>`;
+    const sash = tie || "#8a1c1c";
+    body = `<path d="${T}" fill="#14141c" ${O}/><path d="M120 200 C170 204 204 228 206 300 L170 300 C178 262 170 226 150 206Z" fill="#08080c" opacity=".6"/>
+      <path d="M58 218 L100 204 L196 300 L150 300Z" fill="${sash}" ${O1}/><path d="M78 212 L186 300" stroke="${lighten(sash, .35)}" stroke-width="2" opacity=".7"/>
+      <path d="M96 200 L120 272 L144 200Z" fill="#f4f4f2" ${O1}/><path d="M108 212 L120 254 M132 212 L120 254 M120 206 L120 262" stroke="#cfcfca" stroke-width="2" fill="none"/>
+      <path d="M92 200 L110 300 M148 200 L130 300" stroke="${gold}" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="120" cy="204" r="3.5" fill="${gold}" ${O1}/>`;
   } else if (out === "avental") {
-    body = `<path d="M44 300 C46 222 72 198 120 194 C168 198 194 222 196 300Z" fill="#f4f4f4"/>
-      <path d="M78 236 L162 236 L168 300 L72 300Z" fill="#222"/><path d="M104 196 L120 218 L136 196" fill="none" stroke="#ccc" stroke-width="3"/>
-      ${tie ? `<path d="M112 200 L128 200 L124 208 L116 208Z" fill="${tie}"/><path d="M112 212 L128 212 L120 206Z" fill="${tie}"/>` : ""}`;
+    body = `<path d="${T}" fill="#f5f5f3" ${O}/><path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="#d8d8d4" opacity=".7"/>
+      <path d="M100 200 L120 252 L140 200Z" fill="${roupa}" ${O1}/>
+      ${tie ? `<path d="M114 204 L126 204 L123 212 L117 212Z" fill="${tie}"/><path d="M117 212 L123 212 L127 240 L120 246 L113 240Z" fill="${tie}"/>` : ""}
+      <path d="M96 198 L112 232 L120 214 L108 198Z M144 198 L128 232 L120 214 L132 198Z" fill="#fff" ${O1}/>
+      <path d="M120 252 L120 300" stroke="#c9c9c4" stroke-width="2"/>${[266, 284].map(y => `<circle cx="116" cy="${y}" r="2.6" fill="#b5b5ae"/>`).join("")}
+      <rect x="66" y="252" width="28" height="26" rx="4" fill="#f5f5f3" ${O1}/><rect x="76" y="246" width="3" height="14" rx="1.2" fill="#2f5fb3"/>`;
   } else if (out === "casual") {
-    body = `<path d="M44 300 C46 222 72 198 120 194 C168 198 194 222 196 300Z" fill="${roupa}"/>
-      <path d="M98 196 Q120 214 142 196" fill="none" stroke="${shade}" stroke-width="6"/>`;
+    body = `<path d="${T}" fill="${roupa}" ${O}/><path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
+      <path d="M70 262 Q120 276 170 262 M84 284 Q120 292 156 284" stroke="${roupaS}" stroke-width="2.4" fill="none" opacity=".7"/>
+      <path d="M96 202 Q120 232 144 202 Z" fill="${pele}"/><path d="M96 202 Q120 232 144 202" fill="none" stroke="${roupaH}" stroke-width="6" stroke-linecap="round"/><path d="M96 202 Q120 232 144 202" fill="none" stroke="${ink}" stroke-width="1.6"/>`;
   } else if (out === "farda") {
-    body = `<path d="M44 300 C46 222 72 198 120 194 C168 198 194 222 196 300Z" fill="${roupa}"/>
-      <path d="M100 196 L120 222 L140 196" fill="#2b3320"/><rect x="138" y="232" width="22" height="14" rx="3" fill="#c9a04a"/>
-      <rect x="80" y="232" width="24" height="6" rx="2" fill="#7f1d1d"/><rect x="80" y="240" width="24" height="6" rx="2" fill="#1d4f7f"/>`;
+    const dk = darken(roupa, .35);
+    body = `<path d="${T}" fill="${roupa}" ${O}/><path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
+      <path d="M98 200 L120 236 L142 200 L132 196 L120 210 L108 196Z" fill="${dk}" ${O1}/><path d="M114 208 L126 208 L123 232 L120 238 L117 232Z" fill="${tie || "#222"}"/>
+      <path d="M44 218 L76 206 L82 222 L50 236Z M196 218 L164 206 L158 222 L190 236Z" fill="${gold}" ${O1}/>
+      ${[246, 262, 278, 294].map(y => `<circle cx="108" cy="${y}" r="3" fill="${gold}" ${O1}/><circle cx="132" cy="${y}" r="3" fill="${gold}" ${O1}/>`).join("")}
+      <path d="M150 238 L166 238 L166 252 L158 260 L150 252Z" fill="${gold}" ${O1}/><rect x="70" y="240" width="26" height="6" rx="2" fill="#a32b22"/><rect x="70" y="248" width="26" height="6" rx="2" fill="#1d4f7f"/><rect x="70" y="256" width="26" height="6" rx="2" fill="#2e7d4f"/>`;
   } else { // terno / blazer
-    body = `<path d="M44 300 C46 222 72 198 120 194 C168 198 194 222 196 300Z" fill="${roupa}"/>
-      <path d="M98 196 L120 250 L142 196Z" fill="#f3f3f3"/>
-      <path d="M98 196 L112 236 L94 222Z M142 196 L128 236 L146 222Z" fill="${shade}"/>
-      ${out === "terno" && tie ? `<path d="M114 202 L126 202 L123 212 L117 212Z" fill="${tie}"/><path d="M117 212 L123 212 L128 246 L120 254 L112 246Z" fill="${tie}"/>` : ""}
-      ${out === "blazer" ? `<circle cx="120" cy="262" r="3" fill="${shade}"/>` : ""}
-      <rect x="146" y="228" width="16" height="3" rx="1" fill="#c9a04a" opacity=".8"/>`;
+    const shirt = out === "blazer" ? "#ece8df" : "#f4f4f2", lap = out === "blazer" ? roupaH : roupa;
+    body = `<path d="${T}" fill="${roupa}" ${O}/><path d="M120 200 C170 204 204 228 206 300 L172 300 C178 262 170 226 150 206Z" fill="${roupaS}" opacity=".55"/>
+      <path d="M97 200 L120 268 L143 200Z" fill="${shirt}" ${O1}/>
+      <path d="M97 198 L108 214 L120 204 L132 214 L143 198 L132 193 L120 202 L108 193Z" fill="#fff" ${O1}/>
+      ${out === "terno" && tie ? `<path d="M114 206 L126 206 L123 216 L117 216Z" fill="${tie}" ${O1}/><path d="M117 216 L123 216 L129 250 L120 260 L111 250Z" fill="${tie}" ${O1}/><path d="M120 218 L124 248" stroke="${darken(tie, .3)}" stroke-width="2"/>` : ""}
+      <path d="M97 198 L120 268 L110 292 L80 236 L88 214Z" fill="${lap}" ${O1}/><path d="M143 198 L120 268 L130 292 L160 236 L152 214Z" fill="${roupaS}" ${O1}/>
+      <path d="M88 214 L98 224 M152 214 L142 224" stroke="${ink}" stroke-width="1.6"/>
+      <circle cx="120" cy="${out === "blazer" ? 276 : 284}" r="3.2" fill="${darken(roupa, .45)}" ${O1}/>
+      <path d="M150 242 L166 240 L165 248 L151 249Z" fill="#fff" ${O1}/><path d="M148 250 L168 248" stroke="${roupaS}" stroke-width="2"/>
+      ${out === "blazer" ? `<circle cx="96" cy="232" r="3.5" fill="${gold}" ${O1}/>` : ""}`;
   }
-  // ------ braços
-  const sleeve = out === "toga" ? "#111" : out === "avental" ? "#f4f4f4" : roupa;
-  let arms = `<path d="M60 236 Q44 262 50 300 L72 300 Q70 268 80 244Z" fill="${sleeve}"/>`;
+  // ------ braços (atrás) e braços/mãos de pose (na frente)
+  const armL = `<path d="M54 226 Q26 262 36 292 L74 292 Q70 262 86 236Z" fill="${sleeve}" ${O}/><path d="M36 292 L74 292" stroke="${sleeveS}" stroke-width="6"/>`;
+  const armR = `<path d="M186 226 Q214 262 204 292 L166 292 Q170 262 154 236Z" fill="${sleeve}" ${O}/><path d="M166 292 L204 292" stroke="${sleeveS}" stroke-width="6"/>`;
+  const limb = (d, w = 24) => `<path d="${d}" fill="none" stroke="${ink}" stroke-width="${w + 5}" stroke-linecap="round"/><path d="${d}" fill="none" stroke="${sleeve}" stroke-width="${w}" stroke-linecap="round"/>`;
+  let armsBack = armL + armR, armsFront = "";
   if (expr === "apontando") {
-    arms += `<g class="arm-point"><path d="M160 228 Q200 206 236 196 L240 214 Q204 226 172 250Z" fill="${sleeve}"/>
-      <circle cx="244" cy="204" r="10" fill="${pele}"/><path d="M248 200 L274 194 L275 202 L250 210Z" fill="${pele}"/></g>`;
+    armsBack = armL;
+    armsFront = `<g class="arm-point">${limb("M170 238 Q204 222 236 206")}
+      <ellipse cx="246" cy="203" rx="11" ry="10" fill="${pele}" ${O1}/><path d="M250 198 L276 186 Q282 190 277 196 L252 210Z" fill="${pele}" ${O1}/><path d="M240 196 Q244 190 250 192" stroke="${peleS}" stroke-width="2" fill="none"/></g>`;
   } else if (expr === "pensativo") {
-    arms += `<path d="M164 236 Q182 214 156 176 L142 186 Q160 214 150 244Z" fill="${sleeve}"/><circle cx="146" cy="174" r="11" fill="${pele}"/>`;
-  } else if (expr === "bravo" || expr === "confiante") {
-    arms += `<path d="M180 236 Q196 262 190 300 L168 300 Q170 268 160 244Z" fill="${sleeve}"/><circle cx="170" cy="282" r="0"/>`;
-  } else {
-    arms += `<path d="M180 236 Q196 262 190 300 L168 300 Q170 268 160 244Z" fill="${sleeve}"/>`;
-  }
+    armsBack = armL;
+    armsFront = `${limb("M184 292 Q210 236 160 200", 22)}<ellipse cx="152" cy="186" rx="11" ry="12" fill="${pele}" ${O1}/><path d="M146 178 Q152 172 160 178 M144 186 Q150 180 158 186" stroke="${peleS}" stroke-width="2" fill="none"/>`;
+  } else if (expr === "confiante") {
+    armsFront = `${limb("M180 280 Q124 262 62 266", 22)}${hand(54, 266, 10)}${limb("M58 276 Q118 244 176 262", 22)}${hand(184, 262, 10)}`;
+  } else if (expr === "chocado") {
+    armsBack = "";
+    armsFront = `${limb("M62 236 Q28 230 32 192", 22)}${hand(32, 182, 12)}${limb("M178 236 Q212 230 208 192", 22)}${hand(208, 182, 12)}`;
+  } else if (expr === "bravo") {
+    armsFront = `${hand(55, 296, 12)}${hand(185, 296, 12)}<path d="M47 292 L63 292 M177 292 L193 292" stroke="${peleS}" stroke-width="2"/>`;
+  } else armsFront = `${hand(55, 298)}${hand(185, 298)}`;
+  const frontOver = expr === "apontando" || expr === "pensativo";
   // ------ cabeça
-  const hx = 120, hy = 112;
+  const F = "M64 112 Q62 62 120 58 Q178 62 176 112 Q176 150 152 172 Q138 186 120 186 Q102 186 88 172 Q64 150 64 112Z";
   let hairBack = "", hairFront = "";
-  if (hair === "longo") hairBack = `<path d="M66 110 Q62 196 82 214 L158 214 Q178 196 174 110Z" fill="${cab}"/>`;
-  if (hair === "rabo") hairBack = `<path d="M164 92 Q206 120 186 196 Q176 160 160 128Z" fill="${cab}"/>`;
-  if (hair === "coque") hairBack = `<circle cx="120" cy="48" r="20" fill="${cab}"/>`;
-  const top = `<path d="M66 108 Q64 56 120 52 Q176 56 174 108 Q160 80 120 80 Q80 80 66 108Z" fill="${cab}"/>`;
-  if (hair === "curto") hairFront = top + `<path d="M66 108 L70 128 L74 104Z M174 108 L170 128 L166 104Z" fill="${cab}"/>`;
-  else if (hair === "topete") hairFront = top + `<path d="M92 66 Q112 30 150 50 Q132 54 128 76Z" fill="${cab}"/>`;
-  else if (hair === "longo") hairFront = top + `<path d="M120 54 Q86 66 76 104 Q98 84 120 80Z" fill="${cab}"/>`;
-  else if (hair === "coque" || hair === "rabo") hairFront = top;
-  else if (hair === "cacheado") hairFront = [[72,92],[84,70],[104,58],[128,56],[150,62],[166,78],[172,98],[96,72],[140,70]].map(([x,y]) => `<circle cx="${x}" cy="${y}" r="15" fill="${cab}"/>`).join("");
-  else if (hair === "careca") hairFront = `<path d="M66 116 Q66 100 72 96 L74 124Z M174 116 Q174 100 168 96 L166 124Z" fill="${cab}"/><ellipse cx="104" cy="70" rx="14" ry="6" fill="#fff" opacity=".18"/>`;
+  const cap = `M60 116 Q52 46 120 42 Q188 46 180 116 Q176 92 160 84 Q146 98 120 92 Q94 98 80 84 Q64 92 60 116Z`;
+  const capHi = `<path d="M84 64 Q112 46 150 58" stroke="${cabH}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"/><path d="M96 86 Q102 70 110 58 M132 90 Q146 76 152 62" stroke="${cabS}" stroke-width="2.6" fill="none" opacity=".7"/>`;
+  if (hair === "longo") hairBack = `<path d="M54 112 Q44 204 76 226 L164 226 Q196 204 186 112Z" fill="${cab}" ${HO}/><path d="M150 140 Q172 190 160 224 L176 224 Q192 196 184 124Z" fill="${cabS}" opacity=".7"/>`;
+  if (hair === "rabo") hairBack = `<path d="M164 70 Q214 98 196 150 Q192 190 204 214 Q172 200 176 150 Q176 110 156 84Z" fill="${cab}" ${HO}/><path d="M190 120 Q196 170 200 204" stroke="${cabH}" stroke-width="3" fill="none" opacity=".5"/>`;
+  if (hair === "coque") hairBack = `<circle cx="120" cy="38" r="21" fill="${cab}" ${HO}/><path d="M106 30 Q120 22 134 30" stroke="${cabH}" stroke-width="4" fill="none" opacity=".55" stroke-linecap="round"/>`;
+  const fringe = `<path d="${cap}" fill="${cab}" ${HO}/>`;
+  if (hair === "curto") hairFront = fringe + capHi + `<path d="M60 116 L64 144 L74 112Z M180 116 L176 144 L166 112Z" fill="${cab}" ${HO}/>`;
+  else if (hair === "topete") hairFront = fringe + `<path d="M86 72 Q92 24 148 34 Q176 42 170 72 Q142 50 128 76Z" fill="${cab}" ${HO}/><path d="M100 54 Q124 34 152 44" stroke="${cabH}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"/><path d="M60 116 L64 140 L72 112Z M180 116 L176 140 L168 112Z" fill="${cab}" ${HO}/>`;
+  else if (hair === "longo") hairFront = fringe + capHi + `<path d="M60 112 Q54 160 68 196 Q80 150 86 106Z M180 112 Q186 160 172 196 Q160 150 154 106Z" fill="${cab}" ${HO}/>`;
+  else if (hair === "coque") hairFront = fringe + capHi + `<path d="M60 116 L64 138 L72 112Z M180 116 L176 138 L168 112Z" fill="${cab}" ${HO}/><rect x="98" y="52" width="44" height="7" rx="3" fill="${gold}" ${O1}/>`;
+  else if (hair === "rabo") hairFront = fringe + capHi + `<path d="M60 116 L64 138 L72 112Z" fill="${cab}" ${HO}/><ellipse cx="166" cy="82" rx="8" ry="10" fill="${gold}" ${O1} transform="rotate(30 166 82)"/>`;
+  else if (hair === "cacheado") {
+    const pts = [[66, 104], [74, 80], [92, 62], [118, 54], [146, 60], [166, 76], [176, 100], [96, 74], [140, 72], [60, 130], [180, 130]];
+    hairFront = pts.map(([x, y]) => `<circle cx="${x}" cy="${y + 3}" r="16" fill="${cabS}"/>`).join("") + pts.map(([x, y]) => `<circle cx="${x}" cy="${y}" r="15" fill="${cab}" ${HO}/>`).join("") + pts.slice(2, 6).map(([x, y]) => `<path d="M${x - 8} ${y - 6} Q${x} ${y - 11} ${x + 8} ${y - 6}" stroke="${cabH}" stroke-width="3" fill="none" opacity=".5" stroke-linecap="round"/>`).join("");
+  } else if (hair === "careca") hairFront = `<path d="M62 118 Q58 98 70 90 L72 134Z M178 118 Q182 98 170 90 L168 134Z" fill="${cab}" ${HO}/><ellipse cx="100" cy="72" rx="16" ry="7" fill="${peleH}" opacity=".5" transform="rotate(-18 100 72)"/>`;
   let hat = "";
-  if (out === "farda") hat = `<path d="M70 82 Q120 40 170 82 L176 90 L64 90Z" fill="#2b3320"/><rect x="62" y="86" width="116" height="10" rx="4" fill="#1d2416"/><circle cx="120" cy="70" r="7" fill="#c9a04a"/>`;
+  if (out === "farda") { const hc = darken(roupa, .3); hat = `<path d="M62 88 Q120 30 178 88 L182 96 L58 96Z" fill="${hc}" ${O}/><path d="M60 94 Q120 110 180 94 L180 102 Q120 118 60 102Z" fill="#14181a" ${O1}/><path d="M112 66 L128 66 L128 82 L120 90 L112 82Z" fill="${gold}" ${O1}/>`; }
   // ------ rosto por expressão
   const ex = {
-    normal:   {brow:"M88 100 L108 98 M132 98 L152 100", eyes:"n", mouth:"M108 152 Q120 158 132 152"},
-    feliz:    {brow:"M88 96 L108 94 M132 94 L152 96", eyes:"h", mouth:"M104 148 Q120 166 136 148Z"},
-    bravo:    {brow:"M86 94 L110 104 M130 104 L154 94", eyes:"n", mouth:"M106 158 Q120 150 134 158"},
-    nervoso:  {brow:"M88 96 L108 102 M132 102 L152 96", eyes:"n", mouth:"M106 156 Q112 150 118 156 Q124 162 130 156 Q134 152 136 154"},
-    chocado:  {brow:"M86 88 L108 92 M132 92 L154 88", eyes:"w", mouth:"O"},
-    pensativo:{brow:"M88 98 L108 96 M132 92 L152 96", eyes:"u", mouth:"M110 154 L130 152"},
-    triste:   {brow:"M88 100 L108 94 M132 94 L152 100", eyes:"n", mouth:"M106 158 Q120 148 134 158"},
-    confiante:{brow:"M88 98 L108 96 M132 92 L152 96", eyes:"n", mouth:"M106 150 Q124 160 136 146"},
-    apontando:{brow:"M86 94 L110 102 M130 102 L154 94", eyes:"n", mouth:"M106 148 Q120 162 134 148Z"},
+    normal:   {bl:"M86 103 Q98 96 110 100", br:"M130 100 Q142 96 154 103", eyes:"n", mouth:"M108 154 Q120 160 132 154"},
+    feliz:    {bl:"M86 98 Q98 90 110 96", br:"M130 96 Q142 90 154 98", eyes:"h", mouth:"M104 150 Q120 170 136 150Z"},
+    bravo:    {bl:"M84 94 Q98 98 112 106", br:"M128 106 Q142 98 156 94", eyes:"b", mouth:"M106 160 Q120 150 134 160"},
+    nervoso:  {bl:"M86 106 Q98 98 110 94", br:"M130 94 Q142 98 154 106", eyes:"s", mouth:"M106 158 Q112 152 118 158 Q124 164 130 158 Q134 154 136 156"},
+    chocado:  {bl:"M86 92 Q98 80 110 88", br:"M130 88 Q142 80 154 92", eyes:"w", mouth:"O"},
+    pensativo:{bl:"M86 102 Q98 98 110 102", br:"M130 92 Q142 84 154 94", eyes:"u", mouth:"M110 156 Q122 154 132 150"},
+    triste:   {bl:"M86 104 Q98 98 110 92", br:"M130 92 Q142 98 154 104", eyes:"t", mouth:"M106 162 Q120 150 134 162"},
+    confiante:{bl:"M86 104 Q98 98 110 100", br:"M130 92 Q142 88 154 96", eyes:"c", mouth:"M106 152 Q124 164 138 148"},
+    apontando:{bl:"M84 96 Q98 98 112 106", br:"M128 106 Q142 98 156 96", eyes:"b", mouth:"M106 150 Q120 168 134 150Z"},
   }[expr];
-  let eyes;
-  if (ex.eyes === "h") eyes = `<path d="M90 122 Q98 112 106 122 M134 122 Q142 112 150 122" stroke="${dark}" stroke-width="4" fill="none" stroke-linecap="round"/>`;
-  else if (ex.eyes === "w") eyes = `<g class="eyes"><ellipse cx="98" cy="120" rx="11" ry="13" fill="#fff" stroke="${dark}" stroke-width="2"/><ellipse cx="142" cy="120" rx="11" ry="13" fill="#fff" stroke="${dark}" stroke-width="2"/><circle cx="98" cy="121" r="3" fill="${dark}"/><circle cx="142" cy="121" r="3" fill="${dark}"/></g>`;
+  const lash = (cx, y0, y1) => `<path d="M${cx - 11} ${y1} Q${cx} ${y0} ${cx + 11} ${y1}" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
+  let eyes = "";
+  if (ex.eyes === "h") eyes = `<g class="eyes">${[98, 142].map(cx => `<path d="M${cx - 10} 126 Q${cx} 108 ${cx + 10} 126" stroke="${ink}" stroke-width="4.6" fill="none" stroke-linecap="round"/>`).join("")}</g>`;
   else {
-    const dx = ex.eyes === "u" ? 3 : 0, dy = ex.eyes === "u" ? -3 : 0;
-    eyes = `<g class="eyes"><ellipse cx="98" cy="120" rx="8" ry="10" fill="#fff"/><ellipse cx="142" cy="120" rx="8" ry="10" fill="#fff"/>
-      <circle cx="${99 + dx}" cy="${121 + dy}" r="5.5" fill="${dark}"/><circle cx="${143 + dx}" cy="${121 + dy}" r="5.5" fill="${dark}"/>
-      <circle cx="${101 + dx}" cy="${118 + dy}" r="1.8" fill="#fff"/><circle cx="${145 + dx}" cy="${118 + dy}" r="1.8" fill="#fff"/></g>`;
+    const big = ex.eyes === "w", sml = ex.eyes === "s";
+    const dx = ex.eyes === "u" ? 4 : 0, dy = ex.eyes === "u" ? -3 : 0;
+    const eye = (cx, side) => {
+      const lid = ex.eyes === "b" ? `<path d="M${side < 0 ? "84 100 L112 100 L112 120" : "128 100 L156 100 L128 120"}Z" fill="${pele}"/>`
+        : ex.eyes === "t" ? `<path d="M${side < 0 ? "84 100 L112 100 L84 122" : "128 100 L156 100 L156 122"}Z" fill="${pele}"/>`
+        : (ex.eyes === "u" || ex.eyes === "c") ? `<path d="M${cx - 13} 100 L${cx + 13} 100 L${cx + 13} ${ex.eyes === "c" ? 118 : 116} L${cx - 13} ${ex.eyes === "c" ? 118 : 116}Z" fill="${pele}"/>` : "";
+      const ly = ex.eyes === "u" ? 116 : ex.eyes === "c" ? 118 : 108;
+      const lashes = ex.eyes === "b" ? `<path d="M${side < 0 ? "86 112 Q98 112 110 120" : "130 120 Q142 112 154 112"}" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`
+        : ex.eyes === "t" ? `<path d="M${side < 0 ? "86 120 Q98 112 110 112" : "130 112 Q142 112 154 120"}" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`
+        : lash(cx, ly - (big ? 5 : 0), ly + 9);
+      return `<ellipse cx="${cx}" cy="122" rx="${big ? 11 : 10}" ry="${big ? 14 : 12}" fill="#fff"/>
+        <ellipse cx="${cx + dx}" cy="${123 + dy}" rx="${sml ? 6 : big ? 6 : 7.2}" ry="${sml ? 7.6 : big ? 8 : 9.4}" fill="${iris}"/>
+        <ellipse cx="${cx + dx}" cy="${118 + dy}" rx="${sml ? 5 : 6}" ry="4" fill="${darken(iris, .35)}" opacity=".7"/>
+        <circle cx="${cx + dx}" cy="${123 + dy}" r="${sml ? 2.2 : big ? 2.6 : 3.6}" fill="${ink}"/>
+        <circle cx="${cx + dx + 2.6}" cy="${119 + dy}" r="2.5" fill="#fff"/><circle cx="${cx + dx - 2.8}" cy="${127 + dy}" r="1.2" fill="#fff" opacity=".85"/>${lid}${lashes}`;
+    };
+    eyes = `<g class="eyes">${eye(98, -1)}${eye(142, 1)}</g>`;
   }
-  const mouthClosed = ex.mouth === "O" ? `<ellipse cx="120" cy="156" rx="9" ry="11" fill="#5a1d1d"/>`
-    : `<path d="${ex.mouth}" stroke="#5a1d1d" stroke-width="3.5" fill="${ex.mouth.endsWith("Z") ? "#7a2a2a" : "none"}" stroke-linecap="round"/>`;
-  const mouthOpen = `<ellipse cx="120" cy="155" rx="10" ry="${expr === "chocado" ? 12 : 7}" fill="#5a1d1d"/><ellipse cx="120" cy="159" rx="6" ry="3" fill="#c0504d"/>`;
-  const glasses = v.oculos ? `<g fill="none" stroke="#222" stroke-width="3"><circle cx="98" cy="120" r="15"/><circle cx="142" cy="120" r="15"/><path d="M113 120 L127 120 M83 118 L68 112 M157 118 L172 112"/></g>` : "";
-  const beard = v.barba ? `<path d="M76 130 Q80 184 120 188 Q160 184 164 130 Q156 168 120 170 Q84 168 76 130Z" fill="${cab}" opacity=".85"/>` : "";
-  const blush = expr === "feliz" || expr === "nervoso" ? `<ellipse cx="86" cy="140" rx="9" ry="5" fill="#ff7b7b" opacity=".35"/><ellipse cx="154" cy="140" rx="9" ry="5" fill="#ff7b7b" opacity=".35"/>` : "";
-  const sweat = expr === "nervoso" || expr === "chocado" ? `<path class="sweat" d="M168 96 Q176 110 168 116 Q160 110 168 96Z" fill="#8fd3ff"/>` : "";
-  const shock = expr === "chocado" ? `<g stroke="#fff" stroke-width="3" opacity=".8"><path d="M54 70 L40 56 M186 70 L200 56 M120 36 L120 18"/></g>` : "";
+  const mouthClosed = ex.mouth === "O" ? `<ellipse cx="120" cy="158" rx="8" ry="11" fill="#5a1d1d" ${O1}/><ellipse cx="120" cy="164" rx="5" ry="3" fill="#c0504d"/>`
+    : ex.mouth.endsWith("Z") ? `<path d="${ex.mouth}" fill="#6e2323" stroke="#4a1414" stroke-width="2.6" stroke-linejoin="round"/><path d="M110 152 Q120 156 130 152 L128 150 Q120 153 112 150Z" fill="#fff"/>`
+    : `<path d="${ex.mouth}" stroke="#7a2a2a" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
+  const mouthOpen = `<ellipse cx="120" cy="156" rx="10" ry="${expr === "chocado" ? 12 : 7}" fill="#5a1d1d" ${O1}/><ellipse cx="120" cy="${expr === "chocado" ? 162 : 159}" rx="6" ry="3" fill="#c0504d"/>`;
+  const glasses = v.oculos ? `<g fill="rgba(180,220,255,.12)" stroke="#23232b" stroke-width="3"><circle cx="98" cy="122" r="16"/><circle cx="142" cy="122" r="16"/><path d="M114 120 L126 120 M82 118 L66 112 M158 118 L174 112" fill="none"/></g><path d="M88 112 L96 108 M132 112 L140 108" stroke="#fff" stroke-width="2.4" opacity=".7" stroke-linecap="round"/>` : "";
+  const beard = v.barba ? `<path d="M70 126 Q72 186 120 192 Q168 186 170 126 Q160 170 120 172 Q80 170 70 126Z" fill="${cab}" ${HO}/><path d="M104 168 Q120 162 136 168 Q120 176 104 168Z" fill="${cabS}"/>` : "";
+  const blush = expr === "feliz" || expr === "nervoso" || expr === "confiante" ? `<ellipse cx="84" cy="144" rx="10" ry="5.5" fill="#ff7b7b" opacity=".32"/><ellipse cx="156" cy="144" rx="10" ry="5.5" fill="#ff7b7b" opacity=".32"/>` : "";
+  const sweat = expr === "nervoso" || expr === "chocado" ? `<path class="sweat" d="M170 94 Q180 110 170 118 Q160 110 170 94Z" fill="#8fd3ff" ${O1}/>` : "";
+  const shock = expr === "chocado" ? `<g stroke="#fff" stroke-width="3.2" opacity=".85" stroke-linecap="round"><path d="M50 66 L36 52 M190 66 L204 52 M120 34 L120 14"/></g>` : "";
+  const wrink = old ? `<g stroke="${darken(pele, .3)}" stroke-width="1.8" fill="none" opacity=".6" stroke-linecap="round"><path d="M76 118 L69 113 M76 124 L68 126 M164 118 L171 113 M164 124 L172 126"/><path d="M90 146 Q85 154 90 162 M150 146 Q155 154 150 162"/><path d="M94 86 Q120 80 146 86 M100 92 Q120 88 140 92" opacity=".7"/></g>` : "";
   return `<svg viewBox="0 0 280 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    ${hairBack}${body}${arms}
-    <rect x="106" y="160" width="28" height="40" rx="10" fill="${pele}"/><rect x="106" y="178" width="28" height="10" fill="${shade}"/>
-    <ellipse cx="66" cy="124" rx="9" ry="13" fill="${pele}"/><ellipse cx="174" cy="124" rx="9" ry="13" fill="${pele}"/>
-    <ellipse cx="${hx}" cy="${hy + 6}" rx="54" ry="64" fill="${pele}"/>
-    ${beard}${hairFront}${hat}
-    <path d="${ex.brow}" stroke="${cab === "#ffffff" ? "#999" : cab}" stroke-width="5" stroke-linecap="round" fill="none"/>
+    ${hairBack}
+    <g class="breath"><path d="M104 160 L104 208 Q120 222 136 208 L136 160Z" fill="${pele}" ${O1}/><path d="M104 176 Q120 196 136 176 L136 190 Q120 206 104 190Z" fill="${peleS}" opacity=".7"/>
+    ${armsBack}${body}${frontOver ? "" : armsFront}</g>
+    <g class="head">
+    <ellipse cx="63" cy="126" rx="9" ry="13" fill="${pele}" ${O1}/><ellipse cx="177" cy="126" rx="9" ry="13" fill="${pele}" ${O1}/><path d="M61 120 Q66 126 62 134 M179 120 Q174 126 178 134" stroke="${peleS}" stroke-width="2" fill="none"/>
+    <path d="${F}" fill="${pele}" ${O}/>
+    <path d="M176 112 Q176 150 152 172 Q138 186 120 186 Q152 176 164 150 Q170 128 166 98 Q172 100 176 112Z" fill="${peleS}" opacity=".5"/>
+    <ellipse cx="90" cy="146" rx="12" ry="7" fill="${peleH}" opacity=".35"/><path d="M70 98 Q120 78 170 98 L170 84 Q120 66 70 84Z" fill="${peleS}" opacity=".45"/>
+    ${wrink}${beard}${hairFront}${hat}
+    <path d="${ex.bl} ${ex.br}" stroke="${browC}" stroke-width="5.4" stroke-linecap="round" fill="none"/>
     ${eyes}${glasses}${blush}
-    <path d="M118 128 Q114 142 122 142" stroke="${shade}" stroke-width="3" fill="none"/>
+    <path d="M118 132 Q113 144 122 145" stroke="${peleS}" stroke-width="3" fill="none" stroke-linecap="round"/><circle cx="121" cy="139" r="1.6" fill="${peleH}" opacity=".7"/>
     <g class="m-closed">${mouthClosed}</g><g class="m-open">${mouthOpen}</g>
-    ${sweat}${shock}
+    ${sweat}${shock}</g>
+    ${frontOver ? armsFront : ""}
   </svg>`;
 }
 
@@ -1296,7 +1607,7 @@ async function doFx(fx) {
     $("#fx").append(g); Sound.martelo(); [0, 280, 560].forEach(t => setTimeout(shake, t)); await sleep(950); g.remove();
   }
   else if (fx === "bater") { Sound.bater(); shake(); const a = $("#actor"); a.classList.remove("slam"); void a.offsetWidth; a.classList.add("slam"); await sleep(300); }
-  else if (fx === "tremor") { Sound.bater(); shake(); const a = $("#actor"); a.classList.remove("shock"); void a.offsetWidth; a.classList.add("shock"); await sleep(350); }
+  else if (fx === "tremor") { Sound.tremor(); shake(); const a = $("#actor"); a.classList.remove("shock"); void a.offsetWidth; a.classList.add("shock"); await sleep(350); }
   else if (fx === "flash") { flash(); }
 }
 
@@ -1377,6 +1688,7 @@ function renderCred(breakIdx = -1) {
 async function damage(lines) {
   G.erros++; G.cred = Math.max(0, G.cred - 1);
   Sound.dano(); flash("redflash"); shake(); renderCred(G.cred);
+  if (G.cred > 0 && G.cred <= 2) Sound.startMusic("pressao");
   await sayAll(lines);
   if (G.cred <= 0) { G.over = true; await gameOver(); }
 }
@@ -1385,14 +1697,14 @@ async function damage(lines) {
 function receive(ids) {
   let n = 0;
   for (const id of ids) if (!G.autos.includes(id)) { G.autos.push(id); n++; }
-  if (n) { Sound.acerto(); const b = $("#btn-autos"); b.animate([{transform:"scale(1)"}, {transform:"scale(1.25)"}, {transform:"scale(1)"}], {duration:500, iterations:2}); }
+  if (n) { Sound.pegar(); const b = $("#btn-autos"); b.animate([{transform:"scale(1)"}, {transform:"scale(1.25)"}, {transform:"scale(1)"}], {duration:500, iterations:2}); }
 }
 function provaById(id) { return EP.provas.find(p => p.id === id); }
 function openAutos(mode) {
   // mode: null (só consulta) ou {titulo, onPick(id)}
   return new Promise(resolve => {
     let tab = "prova", sel = null;
-    const close = (v) => { m.remove(); document.removeEventListener("keydown", esc); resolve(v); };
+    const close = (v) => { Sound.fechar(); m.remove(); document.removeEventListener("keydown", esc); resolve(v); };
     const esc = (e) => { if (e.key === "Escape") { e.stopPropagation(); close(null); } };
     document.addEventListener("keydown", esc);
     const m = el("div", {class:"modal", role:"dialog", "aria-label":"Autos do processo"});
@@ -1418,7 +1730,7 @@ function openAutos(mode) {
       el("div", {class:"mbody"}, grid, detail),
       el("footer", {}, el("span", {class:"hint", textContent: mode ? mode.titulo : "Tudo o que você reuniu até agora."}),
         el("button", {class:"pbtn sec", textContent: mode ? "Voltar" : "Fechar", onclick:() => close(null)}), presentBtn));
-    $("#stage").append(m); draw();
+    $("#stage").append(m); draw(); Sound.abrir();
   });
 }
 function lawPopup(fs) {
@@ -1450,7 +1762,7 @@ async function runScene(id) {
 }
 async function investigate(c) {
   const opts = {local:c.local};
-  Sound.startMusic("calma");
+  Sound.startMusic("investigacao"); Sound.entrar(); Sound.ambiencia(c.local);
   await camera(null, null, null, c.local);
   $("#actor").innerHTML = ""; curChar = null;
   const title = el("div", {class:"inv-title", textContent:"🔎 " + (c.titulo || LOCAL_NOME[c.local] || "")});
@@ -1480,7 +1792,7 @@ async function investigate(c) {
       else { const cv = c.conversas[pick.conversa]; talked.add(pick.conversa); await sayAll(cv.falas, opts); }
       if (G.over) return null;
     }
-  } finally { title.remove(); }
+  } finally { title.remove(); Sound.ambiencia(null); }
   return c.proxima;
 }
 let CAR = null;  // carreira carregada no menu: numeração dos casos e aberturas de ato
@@ -1513,7 +1825,7 @@ async function titleCard(c) {
 async function testimony(c) {
   await sayAll(c.intro);
   hideDialog();
-  Sound.startMusic("tensa");
+  Sound.startMusic("julgamento");
   const b = banner("— Depoimento —", c.titulo, true); await sleep(1400); b.remove();
   for (const a of c.afirmacoes) { await say({q:c.testemunha, e:a.e, t:a.t}, {statement:true}); if (G.over) return null; }
   hideDialog();
@@ -1649,7 +1961,7 @@ async function verdict(c) {
     el("div", {class:"bigbtns"}, EP.final ? el("button", {class:"bigbtn", textContent:"🎬 Epílogo e créditos", onclick:credits}) : null,
       el("button", {class:EP.final ? "bigbtn sec" : "bigbtn", textContent:"Voltar à carreira", onclick:quitGame}),
       el("button", {class:"bigbtn sec", textContent:"Jogar de novo", onclick:() => startEpisode(EP.id)})));
-  $("#stage").append(box);
+  $("#stage").append(box); setTimeout(() => Sound.carimbo(), 450);
 }
 async function credits() {
   Sound.stopMusic(); Sound.startMusic("calma");
@@ -1716,7 +2028,7 @@ function saveProgress(sid) {
     .catch(() => {});
 }
 function quitGame() {
-  Sound.stopMusic(); G = null; advance = null;
+  Sound.ambiencia(null); Sound.startMusic("principal"); G = null; advance = null;
   $("#game").classList.add("hidden"); $("#menu").classList.remove("hidden");
   [...$("#stage").querySelectorAll(".full, .modal, .lawpop")].forEach(n => n.remove());
   loadMenu();
@@ -1767,7 +2079,7 @@ $("#av-save").onclick = async () => {
 };
 function toggleBtn(btn, key, prop) {
   const sync = () => { btn.setAttribute("aria-pressed", String(Sound[prop])); btn.style.opacity = Sound[prop] ? 1 : .55; };
-  btn.onclick = () => { Sound[prop] = !Sound[prop]; store.set(key, Sound[prop]); if (!Sound.music || !Sound.on) Sound.stopMusic(); sync(); };
+  btn.onclick = () => { Sound[prop] = !Sound[prop]; store.set(key, Sound[prop]); Sound.sync(); sync(); };
   sync();
 }
 toggleBtn($("#btn-sound"), "tribSom", "on"); toggleBtn($("#btn-music"), "tribMusica", "music");
