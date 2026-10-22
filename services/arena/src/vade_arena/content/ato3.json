@@ -60,9 +60,10 @@
     "oculos": false,
     "barba": false
    },
-   "bio": "Advogado de defesa do réu em um caso de Maria da Penha, sempre pronto com a tese da retratação. Tenta transformar o arrependimento da vítima em extinção do processo. A promotoria mostra por que a ação não pode depender de desistência.",
+   "bio": "Advogado de defesa do réu em um caso de Maria da Penha, sempre pronto com a tese da retratação. Afiado e insistente, procura cada brecha formal.",
    "personalidade": "formal, persuasivo, calculista, eloquente",
-   "motivacao": "Ganhar a causa explorando cada brecha formal."
+   "motivacao": "Ganhar a causa explorando cada brecha formal.",
+   "segredo": "Advogado de defesa do réu em um caso de Maria da Penha, sempre pronto com a tese da retratação. Tenta transformar o arrependimento da vítima em extinção do processo. A promotoria mostra por que a ação não pode depender de desistência."
   },
   "a3nilza": {
    "nome": "Nilza Ferreira",
@@ -93,9 +94,10 @@
     "oculos": false,
     "barba": true
    },
-   "bio": "Gerente operacional da Altavista Serviços, afirma que a empresa é séria e colaborativa sempre que um fiscal chega. Foi quem recebeu o aviso antes da vistoria que livrou o rio de ser flagrado. É peça de uma estrutura que despeja resíduos no rio da Vila do Cinzento.",
+   "bio": "Gerente operacional da Altavista Serviços, afirma que a empresa é séria e colaborativa sempre que um fiscal chega. Fala com segurança sobre a rotina da operação no rio da Vila do Cinzento.",
    "personalidade": "simpático, dissimulado, obediente, cínico",
-   "motivacao": "Manter o emprego e a boa vontade do patrão."
+   "motivacao": "Manter o emprego e a boa vontade do patrão.",
+   "segredo": "Gerente operacional da Altavista Serviços, afirma que a empresa é séria e colaborativa sempre que um fiscal chega. Foi quem recebeu o aviso antes da vistoria que livrou o rio de ser flagrado. É peça de uma estrutura que despeja resíduos no rio da Vila do Cinzento."
   },
   "a3eduardo": {
    "nome": "Eduardo Pimentel",
@@ -111,9 +113,10 @@
     "oculos": false,
     "barba": false
    },
-   "bio": "Secretário municipal de Obras que liberou alvarás para a Altavista Serviços num sábado, contra o parecer técnico, e cuja cunhada recebeu uma consultoria de R$ 380 mil. Defende que apenas deu celeridade, mas o dolo está nos horários. Exemplo de improbidade que só se prova no detalhe.",
+   "bio": "Secretário municipal de Obras, responsável pela liberação de alvarás da cidade. Defende que apenas dá celeridade aos processos e se apresenta como gestor eficiente.",
    "personalidade": "político, escorregadio, vaidoso, conciliador",
-   "motivacao": "Preservar o cargo e agradar a quem financia sua campanha."
+   "motivacao": "Preservar o cargo e a boa imagem.",
+   "segredo": "Secretário municipal de Obras que liberou alvarás para a Altavista Serviços num sábado, contra o parecer técnico, e cuja cunhada recebeu uma consultoria de R$ 380 mil. Defende que apenas deu celeridade, mas o dolo está nos horários. Exemplo de improbidade que só se prova no detalhe. Motivação oculta: Preservar o cargo e agradar a quem financia sua campanha."
   },
   "a3renata": {
    "nome": "Renata Guedes",
@@ -204,9 +207,10 @@
     "oculos": true,
     "barba": false
    },
-   "bio": "Contador da Altavista Serviços, que se apresenta como mero escriturador de empresas pequenas. Seus livros mostram caixa, laranjas e fluxo de dinheiro. É o elo contábil da organização criminosa que o jogador precisa provar.",
+   "bio": "Contador da Altavista Serviços, que se apresenta como mero escriturador de empresas pequenas. Educado e metódico, guarda os livros em ordem impecável.",
    "personalidade": "meticuloso, medroso, falso, cauteloso",
-   "motivacao": "Passar despercebido e jamais ser visto como parte do esquema."
+   "motivacao": "Passar despercebido e fazer só o seu trabalho.",
+   "segredo": "Contador da Altavista Serviços, que se apresenta como mero escriturador de empresas pequenas. Seus livros mostram caixa, laranjas e fluxo de dinheiro. É o elo contábil da organização criminosa que o jogador precisa provar. Motivação oculta: Passar despercebido e jamais ser visto como parte do esquema."
   },
   "a3debora": {
    "nome": "Débora Lemos",
@@ -222,9 +226,10 @@
     "oculos": false,
     "barba": false
    },
-   "bio": "Secretária executiva da Altavista Serviços, diz que só atende telefone e organiza agenda. Na prática conhece cada reunião, cada nome e cada código do grupo. Seu depoimento é o ponto fraco da muralha de silêncio.",
+   "bio": "Secretária executiva da Altavista Serviços, diz que só atende telefone e organiza agenda. Atenta, fala pouco e desvia perguntas com cortesia.",
    "personalidade": "reservada, discreta, assustada, leal",
-   "motivacao": "Proteger o emprego e escapar de qualquer consequência."
+   "motivacao": "Proteger o emprego.",
+   "segredo": "Secretária executiva da Altavista Serviços, diz que só atende telefone e organiza agenda. Na prática conhece cada reunião, cada nome e cada código do grupo. Seu depoimento é o ponto fraco da muralha de silêncio. Motivação oculta: Proteger o emprego e escapar de qualquer consequência."
   }
  },
  "episodios": [

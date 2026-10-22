@@ -24,9 +24,10 @@
         "oculos": true,
         "barba": false
       },
-      "bio": "Sócia-gestora da Vasconcelos & Duarte, Helena construiu o escritório com disciplina e pouca paciência para improviso. Treina cada estagiário como se fosse o último e esconde, atrás do blazer, o medo de perder o escritório e o sócio para a Altavista. Quando a pressão aperta, ela escolhe a lei, não o atalho.",
+      "bio": "Sócia-gestora da Vasconcelos & Duarte, Helena construiu o escritório com disciplina e pouca paciência para improviso. Treina cada estagiário como se fosse o último e mantém a calma mesmo sob pressão. Quando a pressão aperta, escolhe a lei, não o atalho.",
       "personalidade": "exigente, estratégica, protetora, irônica",
-      "motivacao": "Manter o escritório de pé e fazer de cada novo advogado alguém que nunca precise esconder um erro."
+      "motivacao": "Manter o escritório de pé e fazer de cada novo advogado alguém que nunca precise esconder um erro.",
+      "segredo": "Sócia-gestora da Vasconcelos & Duarte, Helena construiu o escritório com disciplina e pouca paciência para improviso. Treina cada estagiário como se fosse o último e esconde, atrás do blazer, o medo de perder o escritório e o sócio para a Altavista. Quando a pressão aperta, ela escolhe a lei, não o atalho."
     },
     "rafael": {
       "nome": "Rafael Duarte",
@@ -42,9 +43,10 @@
         "oculos": false,
         "barba": true
       },
-      "bio": "Sócio sênior e mentor do jogador, Rafael ensina que o processo se ganha na cena, antes da audiência. Carrega um segredo: foi coagido pela Altavista e, depois de ver a filha Sofia ameaçada, vira colaborador premiado, tentando desistir no último minuto. Seu arco é o da culpa que busca reparação.",
+      "bio": "Sócio sênior e mentor do jogador, Rafael ensina que o processo se ganha na cena, antes da audiência. Pai dedicado de Sofia, é acolhedor e experiente, com um jeito sereno de quem já viu muita coisa nos tribunais.",
       "personalidade": "carismático, brilhante, culpado, afetuoso",
-      "motivacao": "Proteger a filha e reparar o que ele mesmo ajudou a construir."
+      "motivacao": "Ensinar o jogador e cuidar da filha e do escritório.",
+      "segredo": "Sócio sênior e mentor do jogador, Rafael ensina que o processo se ganha na cena, antes da audiência. Carrega um segredo: foi coagido pela Altavista e, depois de ver a filha Sofia ameaçada, vira colaborador premiado, tentando desistir no último minuto. Seu arco é o da culpa que busca reparação. Motivação oculta: Proteger a filha e reparar o que ele mesmo ajudou a construir."
     },
     "lacerda": {
       "nome": "Dr. Otávio Lacerda",
@@ -60,9 +62,10 @@
         "oculos": true,
         "barba": false
       },
-      "bio": "Promotor de Justiça veterano, Lacerda começa como adversário firme na tribuna e termina como o maior aliado do jogador. Nunca soltou um processo por simpatia, mas também nunca acusou sem prova. É ele quem avisa que há alguém lá dentro e convida o jogador a prestar concurso para o Ministério Público.",
+      "bio": "Promotor de Justiça veterano, Lacerda é adversário firme na tribuna. Nunca soltou um processo por simpatia, mas também nunca acusou sem prova.",
       "personalidade": "íntegro, direto, paciente, firme",
-      "motivacao": "Que o Ministério Público seja aquilo que a lei prometeu, mesmo com traidores dentro."
+      "motivacao": "Que o Ministério Público seja aquilo que a lei prometeu.",
+      "segredo": "Promotor de Justiça veterano, Lacerda começa como adversário firme na tribuna e termina como o maior aliado do jogador. Nunca soltou um processo por simpatia, mas também nunca acusou sem prova. É ele quem avisa que há alguém lá dentro e convida o jogador a prestar concurso para o Ministério Público. Motivação oculta: Que o Ministério Público seja aquilo que a lei prometeu, mesmo com traidores dentro."
     },
     "beatriz": {
       "nome": "Dra. Beatriz Monteiro",
@@ -78,9 +81,10 @@
         "oculos": false,
         "barba": false
       },
-      "bio": "Juíza de Direito da vara criminal, Beatriz conduz as audiências com rigor e martelo certeiro. Foi ela quem decretou a preventiva de Henrique Altavista e a busca no escritório de Brandão, só para ver a decisão vazar. Não perdoa quem confunde esperteza com direito.",
+      "bio": "Juíza de Direito da vara criminal, Beatriz conduz as audiências com rigor e martelo certeiro. Não perdoa quem confunde esperteza com direito.",
       "personalidade": "rigorosa, justa, serena, atenta",
-      "motivacao": "Fazer a lei valer igual para quem pode pagar um grande escritório e para quem não pode."
+      "motivacao": "Fazer a lei valer igual para quem pode pagar um grande escritório e para quem não pode.",
+      "segredo": "Juíza de Direito da vara criminal, Beatriz conduz as audiências com rigor e martelo certeiro. Foi ela quem decretou a preventiva de Henrique Altavista e a busca no escritório de Brandão, só para ver a decisão vazar. Não perdoa quem confunde esperteza com direito."
     },
     "silvia": {
       "nome": "Dra. Sílvia Prado",
@@ -114,9 +118,10 @@
         "oculos": false,
         "barba": true
       },
-      "bio": "Garçom do Bar do Zé, Valdir adora se sentir importante e inventa o que não viu. No caso de Lucas, repete o que ouviu pelo salão como se tivesse presenciado. Sob pressão, admite que estava na outra ponta do bar.",
+      "bio": "Garçom do Bar do Zé, Valdir adora se sentir importante e gosta de contar o que viu no salão. É falante e quer ser levado a sério.",
       "personalidade": "nervoso, vaidoso, influenciável, falante",
-      "motivacao": "Ser levado a sério e não perder o emprego no bar."
+      "motivacao": "Ser levado a sério e não perder o emprego no bar.",
+      "segredo": "Garçom do Bar do Zé, Valdir adora se sentir importante e inventa o que não viu. No caso de Lucas, repete o que ouviu pelo salão como se tivesse presenciado. Sob pressão, admite que estava na outra ponta do bar."
     },
     "jorge": {
       "nome": "Jorge Almeida",
@@ -132,9 +137,10 @@
         "oculos": false,
         "barba": false
       },
-      "bio": "Pedestre que segurou Lucas na rua e se apresenta como herói do bairro. Para dar peso à história, exagerou uma agressão que nunca aconteceu e, pressionado, confessa que alguém lhe pediu para inflar o caso. Esse alguém é o primeiro fio solto que leva à Altavista.",
+      "bio": "Pedestre que segurou Lucas na rua e se apresenta como herói do bairro. Conta a história com gestos largos e orgulho da própria atitude.",
       "personalidade": "vaidoso, impressionável, medroso, exagerado",
-      "motivacao": "Ser reconhecido como herói sem ter de arcar com as consequências."
+      "motivacao": "Ser reconhecido como herói do bairro.",
+      "segredo": "Pedestre que segurou Lucas na rua e se apresenta como herói do bairro. Para dar peso à história, exagerou uma agressão que nunca aconteceu e, pressionado, confessa que alguém lhe pediu para inflar o caso. Esse alguém é o primeiro fio solto que leva à Altavista. Motivação oculta: Ser reconhecido como herói sem ter de arcar com as consequências."
     },
     "lucas": {
       "nome": "Lucas Ferreira",
@@ -150,9 +156,10 @@
         "oculos": false,
         "barba": false
       },
-      "bio": "Rapaz de 19 anos preso por roubo de um celular no primeiro caso do jogador. Errou ao pegar o aparelho, mas não empurrou ninguém, e a defesa prova isso. Volta no fim da carreira para agradecer a quem leu o processo até o fim.",
+      "bio": "Rapaz de 19 anos preso por roubo de um celular no primeiro caso do jogador. Nervoso e arrependido, jura que não empurrou ninguém.",
       "personalidade": "arrependido, assustado, grato, determinado",
-      "motivacao": "Recomeçar a vida sem carregar uma condenação que não merece."
+      "motivacao": "Recomeçar a vida sem carregar uma condenação injusta.",
+      "segredo": "Rapaz de 19 anos preso por roubo de um celular no primeiro caso do jogador. Errou ao pegar o aparelho, mas não empurrou ninguém, e a defesa prova isso. Volta no fim da carreira para agradecer a quem leu o processo até o fim. Motivação oculta: Recomeçar a vida sem carregar uma condenação que não merece."
     },
     "ana": {
       "nome": "Ana Ribeiro",
@@ -222,9 +229,10 @@
         "oculos": true,
         "barba": false
       },
-      "bio": "Assessora fiel que acompanha o jogador do Ministério Público até a toga, sempre lembrando um prazo ou uma suspeita que passou despercebida. Foi ela quem notou, antes de todos, o interesse do promotor Valadares pelo inquérito. Conhece cada corredor do fórum.",
+      "bio": "Assessora fiel que acompanha o jogador do Ministério Público até a toga, sempre lembrando um prazo ou uma suspeita que passou despercebida. Conhece cada corredor do fórum.",
       "personalidade": "atenta, leal, organizada, irônica",
-      "motivacao": "Proteger o trabalho de quem decide para que ninguém erre por pressa ou emoção."
+      "motivacao": "Proteger o trabalho de quem decide para que ninguém erre por pressa ou emoção.",
+      "segredo": "Assessora fiel que acompanha o jogador do Ministério Público até a toga, sempre lembrando um prazo ou uma suspeita que passou despercebida. Foi ela quem notou, antes de todos, o interesse do promotor Valadares pelo inquérito. Conhece cada corredor do fórum."
     },
     "narrador": {
       "nome": "",
@@ -246,9 +254,10 @@
         "oculos": true,
         "barba": false
       },
-      "bio": "Promotor de Justiça gentil e dedicado, o colega que todo novato quer ter. É o traidor que vazava decisões da sala 3 depois das onze da noite, começando com um pequeno favor para quitar a casa da mãe. Quando é desmascarado, avisa que Henrique voltou ao Brasil.",
+      "bio": "Promotor de Justiça gentil e dedicado, o colega que todo novato quer ter. Sempre disposto a ajudar, tem fama de ser o mais pontual da promotoria.",
       "personalidade": "cordial, dissimulado, endividado, arrependido",
-      "motivacao": "Salvar a própria pele e o nome da família, mesmo ao custo da instituição."
+      "motivacao": "Fazer um bom trabalho e ajudar os colegas.",
+      "segredo": "Promotor de Justiça gentil e dedicado, o colega que todo novato quer ter. É o traidor que vazava decisões da sala 3 depois das onze da noite, começando com um pequeno favor para quitar a casa da mãe. Quando é desmascarado, avisa que Henrique voltou ao Brasil. Motivação oculta: Salvar a própria pele e o nome da família, mesmo ao custo da instituição."
     },
     "henrique": {
       "nome": "Henrique Altavista",
@@ -264,9 +273,10 @@
         "oculos": false,
         "barba": true
       },
-      "bio": "Dono da Construtora Altavista, Henrique move a empresa e seus braços de lavagem e golpes por trás de advogados e laranjas. Fugiu de jatinho quando a preventiva saiu e retorna com identidade falsa. Ameaça a filha do colaborador para escapar e seu julgamento é o clímax da carreira.",
+      "bio": "Dono da Construtora Altavista, Henrique é empresário poderoso que raramente aparece em público e age por meio de advogados.",
       "personalidade": "calculista, frio, paciente, manipulador",
-      "motivacao": "Escapar da Justiça e manter o império que construiu com obras mal feitas e dinheiro sujo."
+      "motivacao": "Manter e ampliar o império da construtora.",
+      "segredo": "Dono da Construtora Altavista, Henrique move a empresa e seus braços de lavagem e golpes por trás de advogados e laranjas. Fugiu de jatinho quando a preventiva saiu e retorna com identidade falsa. Ameaça a filha do colaborador para escapar e seu julgamento é o clímax da carreira. Motivação oculta: Escapar da Justiça e manter o império que construiu com obras mal feitas e dinheiro sujo."
     },
     "sofia": {
       "nome": "Sofia Duarte",
@@ -282,9 +292,10 @@
         "oculos": false,
         "barba": false
       },
-      "bio": "Filha de Rafael, tem 9 anos e enxerga o pai como herói mesmo sem saber o que ele escondeu. Foi ameaçada para forçar o silêncio dele. No fim da carreira desenha o juiz de capa preta, com a balança e um laço azul.",
+      "bio": "Filha de Rafael, tem 9 anos e enxerga o pai como herói. Esperta e curiosa, adora desenhar.",
       "personalidade": "doce, observadora, corajosa, criativa",
-      "motivacao": "Ter o pai por perto e saber que ele está seguro."
+      "motivacao": "Ter o pai por perto.",
+      "segredo": "Filha de Rafael, tem 9 anos e enxerga o pai como herói mesmo sem saber o que ele escondeu. Foi ameaçada para forçar o silêncio dele. No fim da carreira desenha o juiz de capa preta, com a balança e um laço azul. Motivação oculta: Ter o pai por perto e saber que ele está seguro."
     }
   },
   "episodios": [
