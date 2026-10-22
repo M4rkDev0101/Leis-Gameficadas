@@ -197,8 +197,14 @@ def ensure_git(ui: UI) -> None:
 def sync_app(ui: UI) -> None:
     if (APP / ".git").exists():
         ui.set("Procurando atualizações do jogo…", 12)
-        r = git("pull", "--ff-only", "-q", cwd=APP, timeout=180)
-        ui.set(detail="jogo atualizado" if r.returncode == 0 else "sem internet ou sem atualização: usando a versão instalada")
+        # fetch + reset em vez de pull: uma atualização interrompida (arquivos novos soltos, objeto
+        # faltando no clone raso) se conserta sozinha na próxima abertura
+        quiet = ("-c", "gc.auto=0", "-c", "maintenance.auto=false")
+        r = git(*quiet, "fetch", "--depth", "1", "-q", "origin", "main", cwd=APP, timeout=300)
+        if r.returncode == 0:
+            r = git("reset", "-q", "--hard", "FETCH_HEAD", cwd=APP, timeout=120)
+            git("clean", "-fdq", cwd=APP, timeout=120)
+        ui.set(detail="jogo atualizado" if r.returncode == 0 else "sem internet: usando a versão instalada")
         return
     ui.set("Baixando o jogo…", 10, APP_REPO)
     BASE.mkdir(parents=True, exist_ok=True)
