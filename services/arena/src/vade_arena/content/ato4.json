@@ -15,9 +15,10 @@
     "oculos": true,
     "barba": false
    },
-   "bio": "Assessora do gabinete do juiz e braço direito do jogador na toga, Rita traz os autos com um resumo afiado e um aviso sobre quem está de olho na decisão. Percebe que as digitais do preso não batem com o nome que ele deu. Acompanha o jogador pelas decisões mais perigosas.",
+   "bio": "Assessora do gabinete do juiz e braço direito do jogador na toga, Rita traz os autos com um resumo afiado e um aviso sobre quem está de olho na decisão. Acompanha o jogador pelas decisões mais perigosas.",
    "personalidade": "eficiente, discreta, perspicaz, leal",
-   "motivacao": "Que o juiz decida com fundamento e não com medo do que dizem lá fora."
+   "motivacao": "Que o juiz decida com fundamento e não com medo do que dizem lá fora.",
+   "segredo": "Assessora do gabinete do juiz e braço direito do jogador na toga, Rita traz os autos com um resumo afiado e um aviso sobre quem está de olho na decisão. Percebe que as digitais do preso não batem com o nome que ele deu. Acompanha o jogador pelas decisões mais perigosas."
   },
   "a4tulio": {
    "nome": "Dr. Túlio Bastos",
@@ -105,9 +106,10 @@
     "oculos": true,
     "barba": false
    },
-   "bio": "Delegado de Polícia que mantém um pedreiro seis dias na carceragem sem flagrante e sem mandado. Defende a prisão como investigação e hesita quando o jogador chega à delegacia. É um exemplo de abuso por rotina, mais que por maldade.",
+   "bio": "Delegado de Polícia que defende a prisão como investigação e hesita quando o jogador chega à delegacia. Zeloso da autoridade da delegacia, não gosta de ser questionado.",
    "personalidade": "burocrático, resistente, defensivo, autoritário",
-   "motivacao": "Preservar a autoridade da delegacia e não ser desautorizado."
+   "motivacao": "Preservar a autoridade da delegacia.",
+   "segredo": "Delegado de Polícia que mantém um pedreiro seis dias na carceragem sem flagrante e sem mandado. Defende a prisão como investigação e hesita quando o jogador chega à delegacia. É um exemplo de abuso por rotina, mais que por maldade. Motivação oculta: Preservar a autoridade da delegacia e não ser desautorizado."
   },
   "a4des": {
    "nome": "Des. Ernesto Vilar",
@@ -201,9 +203,10 @@
     "oculos": true,
     "barba": false
    },
-   "bio": "Nome falso de Henrique Altavista, preso numa blitz com documentos falsos e apresentado como corretor de imóveis. Quando as digitais o denunciam, abandona o teatro e provoca o jogador com a ameaça velada à filha de Rafael. Seu julgamento nasce da audiência de custódia.",
+   "bio": "Preso numa blitz e apresentado como Jorge Antunes, corretor de imóveis. Educado e tranquilo, sustenta a versão de homem comum durante a audiência de custódia.",
    "personalidade": "frio, irônico, perigoso, paciente",
-   "motivacao": "Sair livre outra vez e lembrar ao juiz que sabe esperar."
+   "motivacao": "Sair livre e voltar à rotina.",
+   "segredo": "Nome falso de Henrique Altavista, preso numa blitz com documentos falsos e apresentado como corretor de imóveis. Quando as digitais o denunciam, abandona o teatro e provoca o jogador com a ameaça velada à filha de Rafael. Seu julgamento nasce da audiência de custódia. Motivação oculta: Sair livre outra vez e lembrar ao juiz que sabe esperar."
   }
  },
  "episodios": [

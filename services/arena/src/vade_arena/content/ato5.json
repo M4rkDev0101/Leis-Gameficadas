@@ -15,9 +15,10 @@
     "oculos": true,
     "barba": false
    },
-   "bio": "Advogado de Henrique Altavista e herdeiro do estilo de Brandão, mas mais calculado e menos teatral. Conduz a defesa com preliminares, laudos particulares e um olhar atento às brechas do processo. Sabe que a amizade de Brandão com o delator é uma tese que dói.",
+   "bio": "Advogado de Henrique Altavista e herdeiro do estilo de Brandão, mas mais calculado e menos teatral. Conduz a defesa com preliminares, laudos particulares e um olhar atento às brechas do processo.",
    "personalidade": "calculista, técnico, discreto, estratégico",
-   "motivacao": "Livrar Henrique da pena e derrubar o juiz se for preciso."
+   "motivacao": "Livrar Henrique da pena.",
+   "segredo": "Advogado de Henrique Altavista e herdeiro do estilo de Brandão, mas mais calculado e menos teatral. Conduz a defesa com preliminares, laudos particulares e um olhar atento às brechas do processo. Sabe que a amizade de Brandão com o delator é uma tese que dói. Motivação oculta: Livrar Henrique da pena e derrubar o juiz se for preciso."
   }
  },
  "episodios": [

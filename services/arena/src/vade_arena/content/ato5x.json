@@ -15,9 +15,10 @@
     "oculos": false,
     "barba": true
    },
-   "bio": "Advogado de Augusto Brandão no habeas corpus que tenta derrubar a preventiva do antigo colega. Cobra prazos e fundamentos com precisão. Representa a defesa que usa o Tribunal para pressionar o juiz de primeiro grau.",
+   "bio": "Advogado de Augusto Brandão no habeas corpus que tenta derrubar a preventiva do antigo colega. Cobra prazos e fundamentos com precisão.",
    "personalidade": "técnico, insistente, polido, hábil",
-   "motivacao": "Soltar Brandão e transformar a decisão do jogador em erro."
+   "motivacao": "Soltar Brandão.",
+   "segredo": "Advogado de Augusto Brandão no habeas corpus que tenta derrubar a preventiva do antigo colega. Cobra prazos e fundamentos com precisão. Representa a defesa que usa o Tribunal para pressionar o juiz de primeiro grau. Motivação oculta: Soltar Brandão e transformar a decisão do jogador em erro."
   },
   "a5xrel": {
    "nome": "Desa. Odete Fontoura",
@@ -51,9 +52,10 @@
     "oculos": true,
     "barba": false
    },
-   "bio": "Psiquiatra e assistente técnico da defesa de Henrique. Defende que há perturbação mental e pede o exame do art. 149. Seu laudo particular não resiste ao confronto com a ata e o exame toxicológico.",
+   "bio": "Psiquiatra e assistente técnico da defesa de Henrique. Defende que há perturbação mental e pede o exame do art. 149.",
    "personalidade": "elegante, convincente, cuidadoso, parcial",
-   "motivacao": "Sustentar que o cliente não tinha plena capacidade."
+   "motivacao": "Sustentar que o cliente não tinha plena capacidade.",
+   "segredo": "Psiquiatra e assistente técnico da defesa de Henrique. Defende que há perturbação mental e pede o exame do art. 149. Seu laudo particular não resiste ao confronto com a ata e o exame toxicológico."
   },
   "a5xmenezes": {
    "nome": "Dra. Lúcia Menezes",
@@ -69,9 +71,10 @@
     "oculos": false,
     "barba": false
    },
-   "bio": "Perita oficial e psiquiatra forense que examina Henrique no incidente de insanidade. Contraria o laudo particular com ata, cartório e exame toxicológico. Mostra que laudo bom sustenta a imputabilidade, não a defesa.",
+   "bio": "Perita oficial e psiquiatra forense que examina Henrique no incidente de insanidade. Metódica, apoia-se em ata, cartório e exame toxicológico.",
    "personalidade": "rigorosa, serena, objetiva, independente",
-   "motivacao": "Que a perícia diga o que o exame mostra, não o que o cliente paga."
+   "motivacao": "Que a perícia diga o que o exame mostra, não o que o cliente paga.",
+   "segredo": "Perita oficial e psiquiatra forense que examina Henrique no incidente de insanidade. Contraria o laudo particular com ata, cartório e exame toxicológico. Mostra que laudo bom sustenta a imputabilidade, não a defesa."
   }
  },
  "episodios": [
