@@ -753,10 +753,10 @@ function characterSVG(v, expr = "normal") {
   const cap = `M61 110 Q52 46 120 42 Q188 46 179 110 Q176 92 160 82 Q146 90 120 86 Q94 90 80 82 Q64 92 61 110Z`;
   const capHi = `<path d="M84 64 Q112 46 150 58" stroke="${cabH}" stroke-width="5" fill="none" stroke-linecap="round" opacity=".55"/><path d="M96 84 Q102 70 110 58 M132 86 Q146 76 152 62" stroke="${cabS}" stroke-width="2.6" fill="none" opacity=".7"/>`;
   // costeletas ficam entre a orelha e o rosto (nunca por cima da orelha)
-  const burns = (h = 144) => `<path d="M62 96 Q61 126 67 ${h} L73 ${h - 2} Q71 120 80 92Z M178 96 Q179 126 173 ${h} L167 ${h - 2} Q169 120 160 92Z" fill="${cab}" ${HO}/>`;
+  const burns = (h = 144) => `<path d="M62 96 Q61 124 65 ${h} L69 ${h - 3} Q67 118 74 92Z M178 96 Q179 124 175 ${h} L171 ${h - 3} Q173 118 166 92Z" fill="${cab}" ${HO}/>`;
   const locks = `<path d="M62 100 Q54 150 64 200 Q72 208 80 198 Q74 160 78 116 Q72 104 62 100Z M178 100 Q186 150 176 200 Q168 208 160 198 Q166 160 162 116 Q168 104 178 100Z" fill="${cab}" ${HO}/><path d="M68 130 Q66 166 72 192 M172 130 Q174 166 168 192" stroke="${cabS}" stroke-width="2.4" fill="none" opacity=".7"/>`;
   const curl = (x, y, r = 15) => `<circle cx="${x}" cy="${y + 3}" r="${r + 1}" fill="${cabS}"/><circle cx="${x}" cy="${y}" r="${r}" fill="${cab}" ${HO}/>`;
-  const sides = {curto:burns(), topete:burns(140), longo:locks, coque:burns(138), rabo:`<path d="M62 96 Q61 124 66 138 L72 136 Q71 120 80 92Z" fill="${cab}" ${HO}/>`,
+  const sides = {curto:burns(), topete:burns(140), longo:locks, coque:burns(138), rabo:`<path d="M62 96 Q61 122 65 138 L69 135 Q67 116 74 92Z" fill="${cab}" ${HO}/>`,
     cacheado:curl(63, 110, 10) + curl(65, 128, 10) + curl(177, 110, 10) + curl(175, 128, 10), careca:""}[hair];
   if (hair === "longo") hairBack = `<path d="M62 100 Q44 160 54 210 Q62 228 80 228 L160 228 Q178 228 186 210 Q196 160 178 100Z" fill="${cab}" ${HO}/><path d="M156 140 Q174 190 162 224 L176 224 Q192 196 182 124Z" fill="${cabS}" opacity=".7"/>`;
   if (hair === "rabo") hairBack = `<path d="M164 70 Q214 98 196 150 Q192 190 204 214 Q172 200 176 150 Q176 110 156 84Z" fill="${cab}" ${HO}/><path d="M190 120 Q196 170 200 204" stroke="${cabH}" stroke-width="3" fill="none" opacity=".5"/>`;
@@ -787,20 +787,20 @@ function characterSVG(v, expr = "normal") {
     confiante:{bl:"M86 104 Q98 98 110 100", br:"M130 95 Q142 90 154 98", eyes:"c", mouth:"M106 152 Q124 164 138 148"},
     apontando:{bl:"M84 96 Q98 98 112 106", br:"M128 106 Q142 98 156 96", eyes:"b", mouth:"M106 150 Q120 168 134 150Z"},
   }[expr];
-  const lash = (cx, y0, y1) => `<path d="M${cx - 11} ${y1} Q${cx} ${y0} ${cx + 11} ${y1}" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
   let eyes = "";
   if (ex.eyes === "h") eyes = `<g class="eyes">${[98, 142].map(cx => `<path d="M${cx - 10} 126 Q${cx} 108 ${cx + 10} 126" stroke="${ink}" stroke-width="4.6" fill="none" stroke-linecap="round"/>`).join("")}</g>`;
   else {
     const big = ex.eyes === "w", sml = ex.eyes === "s";
     const dx = ex.eyes === "u" ? 4 : 0, dy = ex.eyes === "u" ? -3 : 0;
     const eye = (cx, side) => {
-      const lid = ex.eyes === "b" ? `<path d="M${side < 0 ? "84 100 L112 100 L112 120" : "128 100 L156 100 L128 120"}Z" fill="${pele}"/>`
-        : ex.eyes === "t" ? `<path d="M${side < 0 ? "84 100 L112 100 L84 122" : "128 100 L156 100 L156 122"}Z" fill="${pele}"/>`
-        : (ex.eyes === "u" || ex.eyes === "c") ? `<path d="M${cx - 13} 100 L${cx + 13} 100 L${cx + 13} ${ex.eyes === "c" ? 118 : 116} L${cx - 13} ${ex.eyes === "c" ? 118 : 116}Z" fill="${pele}"/>` : "";
+      // pálpebra: a borda inferior é a própria curva do cílio (antes era reta e sobrava um filete branco por cima)
       const ly = ex.eyes === "u" ? 116 : ex.eyes === "c" ? 118 : 108;
-      const lashes = ex.eyes === "b" ? `<path d="M${side < 0 ? "86 112 Q98 112 110 120" : "130 120 Q142 112 154 112"}" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`
-        : ex.eyes === "t" ? `<path d="M${side < 0 ? "86 120 Q98 112 110 112" : "130 112 Q142 112 154 120"}" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`
-        : lash(cx, ly - (big ? 5 : 0), ly + 9);
+      const lashD = ex.eyes === "b" ? (side < 0 ? "M86 112 Q98 112 110 120" : "M130 120 Q142 112 154 112")
+        : ex.eyes === "t" ? (side < 0 ? "M86 120 Q98 112 110 112" : "M130 112 Q142 112 154 120")
+        : `M${cx - 11} ${ly + 9} Q${cx} ${ly - (big ? 5 : 0)} ${cx + 11} ${ly + 9}`;
+      const [x0, y0, qx, qy, x1, y1] = lashD.match(/[\d.]+/g).map(Number);
+      const lid = `<path d="M${x0 - 4} 96 L${x1 + 4} 96 L${x1 + 4} ${y1} L${x1} ${y1} Q${qx} ${qy} ${x0} ${y0} L${x0 - 4} ${y0}Z" fill="${pele}"/>`;
+      const lashes = `<path d="${lashD}" stroke="${ink}" stroke-width="3.6" fill="none" stroke-linecap="round"/>`;
       return `<ellipse cx="${cx}" cy="122" rx="${big ? 11 : 10}" ry="${big ? 14 : 12}" fill="#fff"/>
         <ellipse cx="${cx + dx}" cy="${123 + dy}" rx="${sml ? 6 : big ? 6 : 7.2}" ry="${sml ? 7.6 : big ? 8 : 9.4}" fill="${iris}"/>
         <ellipse cx="${cx + dx}" cy="${118 + dy}" rx="${sml ? 5 : 6}" ry="4" fill="${darken(iris, .35)}" opacity=".7"/>
