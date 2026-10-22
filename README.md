@@ -3,7 +3,7 @@
 Plataforma de estudo de legislação brasileira para concursos, OAB e faculdade: leitura
 estruturada + revisão espaçada (FSRS) + questões no estilo das bancas + gamificação + professor de
 IA ancorado no texto legal. O conteúdo vem do acervo aberto [ctresb/leis](https://github.com/ctresb/leis)
-(MIT, ~1,06 milhão de normas em Markdown com cabeçalho YAML).
+(~1,06 milhão de normas em Markdown com cabeçalho YAML; scripts sob MIT e textos legais sem proteção autoral, Lei 9.610, art. 8º, I).
 
 ## Jogar
 
@@ -98,6 +98,14 @@ python jogar.py validar --db catalogo.sqlite
 | [`services/learning`](services/learning) | ✅ núcleo de aprendizagem: FSRS-5, XP/níveis/streak/ligas/moedas, dificuldade dinâmica (21 testes) |
 | [`db/sqlite`](db/sqlite) | ✅ esquema multiusuário de progresso/gamificação e eventos mensais (4 testes) |
 | `services/api`, `apps/web`, `packages/*` | próximos (ver [roadmap](docs/06-roadmap.md)) |
+
+## Documentação do projeto
+
+- [Game Design Document](docs/GAME_DESIGN_DOCUMENT.md): visão, mecânicas, carreira e personagens
+- [Roadmap](docs/ROADMAP.md): o que foi feito, o que está em andamento e o próximo
+- [Changelog](docs/CHANGELOG.md): histórico de mudanças
+- [Licenças de assets](docs/ASSET_LICENSES.md): origem e licença de cada recurso
+- [Arquitetura](docs/ARCHITECTURE.md): componentes, conteúdo, validação e decisões
 
 ## Documentação
 
