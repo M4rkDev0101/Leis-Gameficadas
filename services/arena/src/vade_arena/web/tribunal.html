@@ -689,7 +689,7 @@ const Sound = {
       try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch { return null; }
       const c = this.ctx, mk = (v, to) => { const g = c.createGain(); g.gain.value = v; g.connect(to); return g; };
       const comp = c.createDynamicsCompressor(); comp.threshold.value = -20; comp.ratio.value = 4; comp.attack.value = .005; comp.release.value = .2; comp.connect(c.destination);
-      this.master = mk(.85, comp); this.sfx = mk(.9, this.master); this.musDuck = mk(1, this.master); this.mus = mk(.45, this.musDuck); this.ambBus = mk(.7, this.master);
+      this.master = mk(.85, comp); this.sfx = mk(.9, this.master); this.mus = mk(.45, this.master); this.ambBus = mk(.7, this.master);
       this.rev = c.createConvolver(); this.rev.buffer = this._ir(2.4); this.rev.connect(mk(.55, this.master));
     }
     if (this.ctx.state === "suspended") this.ctx.resume();
@@ -773,11 +773,6 @@ const Sound = {
   _duck(sec) {
     if (!this.ctx) return; const g = this.mus.gain, t = this.ctx.currentTime;
     g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.14, t + .15); g.setValueAtTime(.14, t + sec); g.linearRampToValueAtTime(.45, t + sec + 1.2);
-  },
-  // ducking da dublagem: a música cai ~-10 dB (x0,316) enquanto a fala toca; ataque .15 s, retorno .6 s (nó próprio, independe do _duck dos efeitos)
-  duckVoice(on) {
-    if (!this.ctx || !this.musDuck) return; const g = this.musDuck.gain, t = this.ctx.currentTime;
-    g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(on ? .316 : 1, t + (on ? .15 : .6));
   },
   // ---- música: troca de tema com crossfade. Temas: principal, investigacao, julgamento, pressao, vitoria, calma
   startMusic(kind = "calma") {
@@ -1867,26 +1862,6 @@ function waitAdvance() { return new Promise(r => { advance = r; }); }
 function epMarks() { return new Set(Object.values(EP.cenas).filter(c => c.livre).flatMap(c => c.opcoes.map(o => o.marca)).filter(Boolean)); }
 function hasMark(m) { return epMarks().has(m) ? G.marcas.includes(m) : (EP.marcas || []).includes(m); }
 function cond(se) { return !se || (se.startsWith("!") ? !hasMark(se.slice(1)) : hasMark(se)); }
-// dublagem: se existir <sha1("personagem|texto")[:12]>.mp3 na pasta de vozes, toca no lugar dos bipes
-let VOZES = new Set(), curVoice = null;
-fetch("/api/arena/vozes").then(r => r.json()).then(l => { VOZES = new Set(l); }).catch(() => {});
-async function voiceKey(q, t) {
-  const h = await crypto.subtle.digest("SHA-1", new TextEncoder().encode(q + "|" + t));
-  return [...new Uint8Array(h)].map(b => b.toString(16).padStart(2, "0")).join("").slice(0, 12);
-}
-function stopVoice() { if (curVoice) { const v = curVoice; curVoice = null; v.pause(); } Sound.duckVoice(false); }
-async function playVoice(q, t) {
-  stopVoice();
-  if (!VOZES.size || !Sound.on) return false;
-  const k = await voiceKey(q, t);
-  if (!VOZES.has(k)) return false;
-  curVoice = new Audio("/voz/" + k + ".mp3"); curVoice.volume = .95;
-  const v = curVoice, off = () => { if (curVoice === v) { curVoice = null; Sound.duckVoice(false); } };
-  v.addEventListener("ended", off); v.addEventListener("error", off);
-  Sound.ensure(); Sound.duckVoice(true);
-  v.play().catch(off);
-  return true;
-}
 // reduz a fonte do texto até a fala inteira caber na caixa (falas vão de 5 a 380 caracteres); deixa o texto vazio para a digitação
 function fitText(dlg, tx, text) {
   tx.style.fontSize = ""; tx.textContent = text;
@@ -1922,11 +1897,10 @@ async function say(line, opts = {}) {
   if (q !== "narrador") actor.classList.add("talking");
   let i = 0, skip = false;
   advance = () => { skip = true; };
-  const dubbed = await playVoice(q, text);
-  const voice = dubbed ? 0 : voiceOf(q);
+  const voice = voiceOf(q);
   while (i < text.length && !skip) {
     tx.textContent = text.slice(0, ++i);
-    if (!dubbed && i % 2 === 0 && /\S/.test(text[i - 1])) Sound.blip(voice);
+    if (i % 2 === 0 && /\S/.test(text[i - 1])) Sound.blip(voice);
     const ch = text[i - 1];
     await sleep(/[.!?…]/.test(ch) ? 140 : /,/.test(ch) ? 70 : 24);
   }
@@ -1935,7 +1909,6 @@ async function say(line, opts = {}) {
   if (opts.noWait) return;
   nx.classList.remove("hidden");
   await waitAdvance();
-  stopVoice();
   Sound.select();
 }
 async function sayAll(lines, opts) { for (const l of lines || []) { await say(l, opts); if (G && G.over) return; } }
@@ -2378,7 +2351,7 @@ function saveProgress(sid) {
     .catch(() => {});
 }
 function quitGame() {
-  stopVoice(); Sound.ambiencia(null); Sound.startMusic("principal"); G = null; advance = null;
+  Sound.ambiencia(null); Sound.startMusic("principal"); G = null; advance = null;
   $("#game").classList.add("hidden"); $("#menu").classList.remove("hidden");
   [...$("#stage").querySelectorAll(".full, .modal, .lawpop")].forEach(n => n.remove());
   loadMenu();
