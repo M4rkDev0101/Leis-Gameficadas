@@ -43,13 +43,11 @@ Meta do usuário: "o melhor jogo de advogado do mundo", viciante (AAA) sem padr�
 pessoalmente: agentes NÃO jogam episódios (só unittest, `jogar.py validar`, carga sem erro de console).
 - Já na main: desempenho (perf2), game feel (juice, docs/FEEL_TUNING.md), trilha (audio, GDD §9), recompensas backend
   (loop, docs/DOPAMINA.md), ganchos e mistério "A Carta de Paulo" (gancho, docs/NARRATIVA_GANCHOS.md), motor do Ato 6.
-- `C:/lx/wt-ato6` (equipe/ato6): 3 redatores escrevem ato6.json (1–5), ato6x.json (6–10), ato6y.json (11–15, e movem o
-  epílogo de a5-sentenca para a6-voto). Juiz que joga sujo dentro da lei no STF: Min. Ataulfo. Integrar quando
-  `jogar.py validar` der 0 erros.
-- `C:/lx/wt-twist` (equipe/twist): testemunha surpresa "comprada" em 2+ casos por ato (1–5) e juiz corrupto recorrente
-  no ato 3 ou 4.
-- Depois: interface das recompensas (nota S–C, combo — o cliente ainda não envia `combo_max` —, álbum, desafio do dia,
-  cerimônia de patente; ver DOPAMINA.md); cartas do álbum como "mão" no `argumento`; 2ª passada de arte (item 3).
+- Integrados em 23/10: Ato 6 "Supremo" (15 casos; epílogo e créditos no fim de a6-voto), testemunha comprada em 11
+  casos dos atos 1–5, juiz Sérgio Quadros (ato 3) e Min. Ataulfo (ato 6), interface das recompensas (combo, nota S–C,
+  baú, cartas, patente, álbum, desafio do dia, conquistas, argumento como cartas). Total: 59 casos, ~21,9 h.
+- Próximo: aguardar os bugs que o usuário reportar; 2ª passada de arte (item 3); revisão jurídica dos pontos marcados
+  em docs/NARRATIVA_GANCHOS.md (Lei 8.906, 9.296 e CPP 158-A–F fora do catálogo; perda de mandato CF 55).
 - `C:/lx/wt-antivirus` (equipe/antivirus, não comitado): PyInstaller --onedir + Inno Setup, Defender limpo; falta o
   teste de instalação limpa (o jogo do usuário aberto travou o setup; um `VadeTribunal.tmp` ficou preso). Usar
   PowerShell ou MSYS_NO_PATHCONV=1 para os flags do setup.
