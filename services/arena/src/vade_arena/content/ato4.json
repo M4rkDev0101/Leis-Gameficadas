@@ -343,6 +343,10 @@
      "falas": [
       {
        "q": "narrador",
+       "t": "O bilhete estava dobrado sobre a mesa antes mesmo de você sentar pela primeira vez: \"Quem solta ladrão é cúmplice.\""
+      },
+      {
+       "q": "narrador",
        "e": "normal",
        "t": "Vara Criminal. Uma sala de pé-direito alto, cheiro de papel velho e uma bandeira que ainda parece grande demais para você."
       },
@@ -1066,6 +1070,10 @@
     "s2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "O celular estava desbloqueado. Esse detalhe, sozinho, pode derrubar um processo inteiro ou condenar um homem."
+      },
       {
        "q": "a4rita",
        "e": "nervoso",
@@ -1821,6 +1829,10 @@
      "tipo": "dialogo",
      "falas": [
       {
+       "q": "narrador",
+       "t": "Seis dias numa carceragem sem que o juiz soubesse. Sem flagrante, sem mandado, sem nome em papel algum. Everton Ramos só existia para quem o amava."
+      },
+      {
        "q": "a4rita",
        "e": "nervoso",
        "t": "Excelência, urgente! Habeas corpus da Defensoria, protocolado às sete. Um pedreiro, Everton Ramos, está há seis dias preso numa delegacia e ninguém avisou ao juízo."
@@ -2563,6 +2575,10 @@
     "s2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "A carta não tinha assinatura nem selo. Só sabia o caminho que você faz todas as noites para casa."
+      },
       {
        "q": "a4rita",
        "e": "pensativo",
@@ -3400,6 +3416,10 @@
      "tipo": "dialogo",
      "falas": [
       {
+       "q": "narrador",
+       "t": "Uma porta, uma janela, duas versões. Numa delas, a Constituição foi respeitada. Na outra, foi pulada."
+      },
+      {
        "q": "a4rita",
        "e": "nervoso",
        "t": "Excelência, Brandão protocolou 120 páginas de nulidade: busca sem mandado, interceptação \"contaminada\", flagrante forjado. Pede a anulação de tudo."
@@ -4139,6 +4159,10 @@
     "s2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Um homem de óculos escuros dirige sem pressa pela rodovia, às três da manhã. Todos os documentos dele têm a foto dele. Nenhum tem o nome dele."
+      },
       {
        "q": "narrador",
        "e": "normal",
@@ -4896,6 +4920,16 @@
        "q": "voce",
        "e": "pensativo",
        "t": "Então o próximo julgamento é meu. Sem favor, sem atalho, sem vingança. Só a lei."
+      },
+      {
+       "q": "henrique",
+       "e": "bravo",
+       "t": "E antes de me julgar, doutor(a), pergunte ao seu mentor o que ele guarda desde o dia em que o Paulo morreu. Pergunte pela carta."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Registre-se que o preso fez uma declaração sem que lhe fosse perguntado nada. Não é prova: é provocação. Mas eu vou anotar."
       }
      ],
      "local": "tribunal",

@@ -144,6 +144,10 @@
      "falas": [
       {
        "q": "narrador",
+       "t": "Quatro anos de processo, catorze volumes e uma única petição, protocolada de propósito às 23h58, para ser lida a sós, de madrugada."
+      },
+      {
+       "q": "narrador",
        "t": "Gabinete da Vara Criminal. Nas ruas, repórteres de seis estados. Nos autos, 14 volumes. Hoje começa o julgamento que atravessou toda a sua carreira."
       },
       {
@@ -1096,6 +1100,16 @@
        "e": "normal",
        "t": "Fez bem. A amizade fica do lado de fora da sala. A sala é do processo.",
        "se": "a4_helena_proxima"
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Excelência, a Clara Seixas deixou isto na Secretaria: a imagem de uma câmera dos Correios, de um dia antes da morte do Paulo. Ele aparece postando um envelope."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Junte aos autos pela Secretaria e dê vista às partes. Se for pertinente, a prova diz por si. E, Dani, guarde uma cópia para mim."
       }
      ],
      "proxima": "c19"
@@ -1225,6 +1239,10 @@
      "tipo": "dialogo",
      "local": "escritorio",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Um bilhete dobrado, uma letra inconfundível, dez minutos pedidos em segredo. O pedido mais perigoso que o seu antigo mentor já lhe fez."
+      },
       {
        "q": "dani",
        "e": "pensativo",
@@ -1566,6 +1584,17 @@
        "q": "voce",
        "e": "pensativo",
        "t": "Essa prova não contradiz a data do pen drive."
+      }
+     ],
+     "proxima": "c8x"
+    },
+    "c8x": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Rafael procura alguém na galeria. Não encontra. Baixa os olhos e passa a falar mais baixo."
       }
      ],
      "proxima": "c9"
@@ -2097,6 +2126,10 @@
        "q": "voce",
        "e": "normal",
        "t": "A senhora ainda é uma testemunha, doutora. E eu ainda sou um juiz."
+      },
+      {
+       "q": "narrador",
+       "t": "Ao ser levado, Rafael se detém um instante diante da bancada e move os lábios sem som: \"Leia até o fim.\""
       }
      ],
      "proxima": "c18"
@@ -2225,6 +2258,10 @@
      "tipo": "dialogo",
      "local": "escritorio",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Oito milímetros, em vez de dez. Numa obra, dois milímetros a menos são a diferença entre uma laje e uma sepultura."
+      },
       {
        "q": "dani",
        "e": "normal",
@@ -3075,6 +3112,10 @@
      "tipo": "dialogo",
      "local": "escritorio",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Desde o enterro do irmão, Clara Seixas espera por esta manhã. Chegou ao fórum antes do porteiro e escolheu a primeira fila para não perder um minuto."
+      },
       {
        "q": "dani",
        "e": "nervoso",
@@ -3956,6 +3997,20 @@
        "q": "lacerda",
        "e": "triste",
        "t": "Excelência, o Ministério Público agradece o rigor com que conduziu este plenário."
+      },
+      {
+       "q": "narrador",
+       "t": "Ao fim da sessão, o oficial de justiça entrega à bancada um envelope pardo, deixado na Secretaria por alguém que não quis se identificar. Na frente, em letra firme: \"Só abra depois da sentença.\""
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Excelência, o que faço com isto?"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Cartório. Lacrado, com certidão de recebimento. Depois da sentença, eu decido o que fazer com ele."
       }
      ],
      "proxima": "c23"
@@ -4067,6 +4122,10 @@
      "tipo": "dialogo",
      "local": "escritorio",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "A sentença ainda não foi lida, mas o país inteiro já a escreveu nas manchetes. Só o juiz ainda não decidiu nada."
+      },
       {
        "q": "narrador",
        "t": "Madrugada. O último dia. Na sua mesa, a minuta que Dani preparou e uma xícara de café que ninguém bebeu."
@@ -4869,6 +4928,54 @@
        "q": "voce",
        "e": "feliz",
        "t": "Vou, Clara. Fora do gabinete, como cidadão(ã), com um girassol na mão."
+      }
+     ],
+     "proxima": "c13x"
+    },
+    "c13x": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Sobre a mesa, o envelope pardo continua lacrado desde o plenário. Dani o trouxe do cartório com a certidão. A sentença já foi lida."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Excelência, agora o processo acabou. Quer abrir?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Abro. Com a Dani de testemunha."
+      },
+      {
+       "q": "narrador",
+       "t": "Dentro, duas folhas. A primeira, amarelada, é datada de um dia antes da morte de Paulo Seixas: \"Rafael, se esta carta chegou às suas mãos e eu não estou mais aqui para cobrar, é porque eu perdi. O aço é de oito, a planilha prova quem aprovou, e o Henrique vai insistir. Escolhi você porque, de todos os advogados desta empresa, é o único que ainda lê um artigo até o fim. Entregue tudo a quem leia também.\""
+      },
+      {
+       "q": "narrador",
+       "t": "A segunda folha é de Rafael, de punho: \"Guardei esta carta com medo e com vergonha. Eu assinei doze anos de pagamentos e achava que isso me calava. Foi ela que me fez entregar tudo à juíza Beatriz, em março. Eu devia ter entregue antes. Leia até o fim. R.\""
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Era ele. A rubrica do aviso de recebimento era a dele. O Rafael guardou o recado do Paulo até o dia em que teve coragem de ser o advogado que o Paulo achava que ele era."
+      },
+      {
+       "q": "narrador",
+       "t": "No verso da carta de Paulo, um parágrafo que Rafael sublinhou duas vezes: \"Mesmo que o Henrique caia, não se iluda. Quem manda calar a obra não está na obra. Está em Brasília.\""
+      },
+      {
+       "q": "dani",
+       "e": "chocado",
+       "t": "Brasília, Excelência?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Henrique era só o braço, Dani. Guarde esta carta num cofre. Alguém, muito acima de nós, ainda não perdeu."
       }
      ],
      "proxima": "c14"

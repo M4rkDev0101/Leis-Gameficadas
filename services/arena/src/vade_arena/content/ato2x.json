@@ -271,6 +271,10 @@
      "local": "escritorio",
      "falas": [
       {
+       "q": "narrador",
+       "t": "Colaram no muro do prédio o nome de um senhor de setenta e um anos, com a palavra \"devedor\". Ele nunca devera um centavo a ninguém."
+      },
+      {
        "q": "a2xamaro",
        "e": "triste",
        "t": "Eu tenho setenta e um anos, doutor(a), e nunca devi nada a ninguém. Peguei dois mil reais emprestados para trocar o telhado e pensei que fosse só pagar em doze vezes."
@@ -1313,6 +1317,10 @@
      "local": "escritorio",
      "falas": [
       {
+       "q": "narrador",
+       "t": "Dezoito anos de portas abertas e, numa manhã, um lacre vermelho. Ninguém explicou o motivo."
+      },
+      {
        "q": "a2xcleide",
        "e": "triste",
        "t": "Dezoito anos de bar, doutor(a). Dezoito. Sempre paguei tudo, sempre passei na vistoria. Vinte dias atrás chegou o fiscal e colou um lacre na minha porta. Sem conversa."
@@ -2262,6 +2270,10 @@
      "tipo": "dialogo",
      "local": "escritorio",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Dona Lurdes sabe ler, escrever e fazer conta. Só não sabe para onde vai o próprio dinheiro."
+      },
       {
        "q": "a2xpedro",
        "e": "triste",

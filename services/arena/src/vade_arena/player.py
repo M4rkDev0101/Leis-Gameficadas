@@ -8,10 +8,13 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import random
 import sqlite3
 from pathlib import Path
 
 from vade_learning import gamification as g
+
+from . import recompensas as rw
 
 TITLES = [  # (nível mínimo, título)
     (1, "Estagiário(a)"), (3, "Bacharel"), (6, "Advogado(a) Júnior"), (10, "Advogado(a) Pleno"),
@@ -58,6 +61,31 @@ CREATE TABLE IF NOT EXISTS questao_vista (
   acertos INTEGER NOT NULL,
   ultima TEXT NOT NULL
 );
+CREATE TABLE IF NOT EXISTS nota_caso (
+  ep_id TEXT PRIMARY KEY,
+  nota TEXT NOT NULL,
+  erros INTEGER NOT NULL,
+  segundos INTEGER,
+  vezes INTEGER NOT NULL DEFAULT 1,
+  atualizado TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS carta (
+  chave TEXT PRIMARY KEY,
+  ep_id TEXT NOT NULL,
+  dourada INTEGER NOT NULL DEFAULT 0,
+  criado_em TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS contador (
+  nome TEXT PRIMARY KEY,
+  valor INTEGER NOT NULL DEFAULT 0
+);
+CREATE TABLE IF NOT EXISTS dia_resposta (
+  dia TEXT NOT NULL,
+  questao_id TEXT NOT NULL,
+  resposta TEXT,
+  correta INTEGER NOT NULL,
+  PRIMARY KEY (dia, questao_id)
+);
 """
 
 
@@ -86,6 +114,8 @@ class Player:
         cols = {r[1] for r in db.execute("PRAGMA table_info(jogador)")}
         if "avatar" not in cols:
             db.execute("ALTER TABLE jogador ADD COLUMN avatar TEXT")
+        if "protetor_semana" not in cols:  # idempotente: saves antigos ganham a coluna sem perder nada
+            db.execute("ALTER TABLE jogador ADD COLUMN protetor_semana TEXT")
 
     def save_trial(self, ep_id: str, estado: dict) -> None:
         db = self._db()
@@ -169,21 +199,156 @@ class Player:
         finally:
             db.close()
 
-    def record_trial(self, run_id: str, ep: dict, result: dict, today: dt.date | None = None) -> dict:
+    def record_trial(self, run_id: str, ep: dict, result: dict, today: dt.date | None = None,
+                     extras: dict | None = None, cartas: list[dict] | None = None) -> dict:
+        """Grava o caso e entrega as recompensas (nota, combo, baú, cartas). ``extras``: combo_max, certeiras, segundos."""
+        today = today or dt.date.today()
+        extras = extras or {}
         db = self._db()
         try:
             with db:
+                nota = rw.nota_do_caso(result["venceu"], result["erros"])
+                novo = db.execute("SELECT 1 FROM partida WHERE id = ?", (run_id,)).fetchone() is None
+                recomp = {"nota": nota, "combo_max": 0, "xp_combo": 0, "xp_melhora": 0, "xp_bau": 0, "bau": None,
+                          "recorde": None, "cartas_novas": [], "carta_dourada": None}
+                if novo and nota:
+                    recomp = self._recompensas(db, run_id, ep, result, nota, extras, cartas or [])
+                result["xp"] += recomp["xp_combo"] + recomp["xp_melhora"] + recomp["xp_bau"]
+                result["nota"] = nota
+                result["recompensas"] = recomp
                 resumo = {"titulo": ep["titulo"], "papel": ep["papel"], "carimbo": result["carimbo"], "modo": "tribunal",
-                          "credibilidade": result["credibilidade"], "erros": result["erros"]}
+                          "credibilidade": result["credibilidade"], "erros": result["erros"], "nota": nota}
                 db.execute("INSERT OR IGNORE INTO partida VALUES (?, 'caso', ?, ?, ?, ?, ?, ?, ?)",
                            (run_id, ep["id"], ep["nivel"], result["aproveitamento"], int(result["perfeito"]),
                             result["xp"], json.dumps(resumo, ensure_ascii=False), dt.datetime.now().isoformat(timespec="seconds")))
-                return self._register(db, result["xp"], today or dt.date.today())
+                prog = self._register(db, result["xp"] if novo else 0, today)
+                prog["recompensas"], prog["nota"] = recomp, nota
+                return prog
         finally:
             db.close()
 
-    def _register(self, db: sqlite3.Connection, xp: int, today: dt.date) -> dict:
+    def _recompensas(self, db, run_id, ep, result, nota, extras, cartas) -> dict:
+        agora = dt.datetime.now().isoformat(timespec="seconds")
+        combo = max(0, min(int(extras.get("combo_max") or 0), rw.COMBO_TETO))
+        segundos = extras.get("segundos")
+        segundos = max(0, min(int(segundos), 86400)) if isinstance(segundos, (int, float)) else None
+        base = result["xp"]
+        prev = db.execute("SELECT * FROM nota_caso WHERE ep_id = ?", (ep["id"],)).fetchone()
+        recorde = {"nota_anterior": prev["nota"] if prev else None, "melhorou_nota": False, "melhorou_tempo": False,
+                   "primeira_vez": prev is None, "tempo_s": segundos}
+        degraus = 0
+        if prev is None:
+            db.execute("INSERT INTO nota_caso VALUES (?, ?, ?, ?, 1, ?)", (ep["id"], nota, result["erros"], segundos, agora))
+        else:
+            degraus = max(0, rw.rank(nota) - rw.rank(prev["nota"]))
+            melhor_nota = nota if degraus else prev["nota"]
+            melhor_erros = result["erros"] if degraus or (nota == prev["nota"] and result["erros"] < prev["erros"]) else prev["erros"]
+            tempo_ant = prev["segundos"]
+            melhor_t = segundos if segundos is not None and (tempo_ant is None or segundos < tempo_ant) else tempo_ant
+            recorde["melhorou_nota"] = degraus > 0
+            recorde["melhorou_tempo"] = segundos is not None and tempo_ant is not None and segundos < tempo_ant
+            db.execute("UPDATE nota_caso SET nota = ?, erros = ?, segundos = ?, vezes = vezes + 1, atualizado = ? WHERE ep_id = ?",
+                       (melhor_nota, melhor_erros, melhor_t, agora, ep["id"]))
+        recorde["selo_dourado"] = nota == "S" or (prev is not None and prev["nota"] == "S")
+        # cartas: o dispositivo aplicado ao vencer o caso entra no álbum; caso perfeito = carta dourada
+        novas = []
+        for c in cartas:
+            if db.execute("SELECT 1 FROM carta WHERE chave = ?", (c["chave"],)).fetchone() is None:
+                db.execute("INSERT INTO carta VALUES (?, ?, ?, ?)", (c["chave"], ep["id"], int(nota == "S"), agora))
+                novas.append({**c, "dourada": nota == "S"})
+            elif nota == "S":
+                db.execute("UPDATE carta SET dourada = 1 WHERE chave = ?", (c["chave"],))
+        bau = rw.bau(run_id, nota)
+        dourada = None
+        if bau["carta_dourada"]:  # a carta rara do baú "banha a ouro" uma carta que o jogador já tem
+            cand = [r[0] for r in db.execute("SELECT chave FROM carta WHERE dourada = 0 ORDER BY chave")]
+            if cand:
+                dourada = random.Random(run_id).choice(cand)
+                db.execute("UPDATE carta SET dourada = 1 WHERE chave = ?", (dourada,))
+        self._add(db, "contradicoes", max(0, min(int(extras.get("certeiras") or 0), 50)))
+        self._max(db, "combo_max", combo)
+        return {"nota": nota, "combo_max": combo, "xp_combo": rw.bonus_combo(base, combo),
+                "xp_melhora": degraus * rw.BONUS_MELHORA, "xp_bau": bau["xp"], "bau": bau["tipo"],
+                "recorde": recorde, "cartas_novas": novas, "carta_dourada": dourada}
+
+    @staticmethod
+    def _add(db, nome: str, n: int) -> None:
+        db.execute("INSERT INTO contador VALUES (?, ?) ON CONFLICT(nome) DO UPDATE SET valor = valor + excluded.valor", (nome, n))
+
+    @staticmethod
+    def _max(db, nome: str, n: int) -> None:
+        db.execute("INSERT INTO contador VALUES (?, ?) ON CONFLICT(nome) DO UPDATE SET valor = max(valor, excluded.valor)", (nome, n))
+
+    def counters(self) -> dict[str, int]:
+        db = self._db()
+        try:
+            return {r[0]: r[1] for r in db.execute("SELECT nome, valor FROM contador")}
+        finally:
+            db.close()
+
+    def grades(self) -> dict[str, dict]:
+        db = self._db()
+        try:
+            return {r["ep_id"]: {"nota": r["nota"], "erros": r["erros"], "segundos": r["segundos"], "vezes": r["vezes"]}
+                    for r in db.execute("SELECT * FROM nota_caso")}
+        finally:
+            db.close()
+
+    def cards(self) -> dict[str, dict]:
+        db = self._db()
+        try:
+            return {r["chave"]: {"ep_id": r["ep_id"], "dourada": bool(r["dourada"]), "desde": r["criado_em"]}
+                    for r in db.execute("SELECT * FROM carta")}
+        finally:
+            db.close()
+
+    # ---------------------------------------------------------- desafio do dia
+    def day_answers(self, day: dt.date) -> dict[str, dict]:
+        db = self._db()
+        try:
+            return {r["questao_id"]: {"resposta": r["resposta"], "correta": bool(r["correta"])}
+                    for r in db.execute("SELECT * FROM dia_resposta WHERE dia = ?", (day.isoformat(),))}
+        finally:
+            db.close()
+
+    def days_completed(self) -> int:
+        db = self._db()
+        try:
+            return db.execute("SELECT count(*) FROM (SELECT dia FROM dia_resposta GROUP BY dia HAVING count(*) >= ?)",
+                              (rw.DIA_QUESTOES,)).fetchone()[0]
+        finally:
+            db.close()
+
+    def record_day_answer(self, day: dt.date, qid: str, resposta: str | None, correta: bool, total: int) -> dict:
+        """Grava uma resposta do desafio do dia (uma por questão) e paga o XP; ao fechar as três, o bônus do dia."""
+        db = self._db()
+        try:
+            with db:
+                if db.execute("SELECT 1 FROM dia_resposta WHERE dia = ? AND questao_id = ?", (day.isoformat(), qid)).fetchone():
+                    raise ValueError("questão do dia já respondida")
+                db.execute("INSERT INTO dia_resposta VALUES (?, ?, ?, ?)", (day.isoformat(), qid, resposta, int(correta)))
+                feitas = db.execute("SELECT count(*) FROM dia_resposta WHERE dia = ?", (day.isoformat(),)).fetchone()[0]
+                completo = feitas >= total
+                xp = (rw.DIA_XP_ACERTO if correta else 2) + (rw.DIA_XP_COMPLETO if completo else 0)
+                prog = self._register(db, xp, day)
+                prog.update({"xp": xp, "completo": completo, "feitas": feitas})
+                return prog
+        finally:
+            db.close()
+
+    def _refill(self, db: sqlite3.Connection, today: dt.date) -> sqlite3.Row:
+        """1 dia de folga grátis por semana (acumula até 2). Nada é tirado de quem some, além da sequência."""
         row = db.execute("SELECT * FROM jogador WHERE id = 1").fetchone()
+        sem = rw.semana(today)
+        if row["protetor_semana"] != sem:
+            primeira = row["protetor_semana"] is None
+            novo = row["protetores"] if primeira else min(rw.PROTETORES_MAX, row["protetores"] + 1)
+            db.execute("UPDATE jogador SET protetores = ?, protetor_semana = ? WHERE id = 1", (novo, sem))
+            row = db.execute("SELECT * FROM jogador WHERE id = 1").fetchone()
+        return row
+
+    def _register(self, db: sqlite3.Connection, xp: int, today: dt.date) -> dict:
+        row = self._refill(db, today)
         before = g.level_from_xp(row["xp_total"])
         streak = g.register_activity(
             g.Streak(row["streak_atual"], row["streak_max"],
@@ -193,7 +358,9 @@ class Player:
         db.execute("UPDATE jogador SET xp_total = ?, streak_atual = ?, streak_max = ?, streak_dia = ?, protetores = ? WHERE id = 1",
                    (total, streak.current, streak.longest, streak.last_day.isoformat(), streak.freezes))
         after = g.level_from_xp(total)
-        return {"subiu_de_nivel": after > before, "nivel": after, "titulo": title_for(after), "streak": streak.current}
+        return {"subiu_de_nivel": after > before, "nivel": after, "titulo": title_for(after), "streak": streak.current,
+                "patente_nova": title_for(after) != title_for(before), "protetores": streak.freezes,
+                "protetor_usado": streak.freezes < row["protetores"]}
 
     def record_exam(self, result: dict, today: dt.date | None = None) -> dict:
         db = self._db()
@@ -236,7 +403,8 @@ class Player:
         today = today or dt.date.today()
         db = self._db()
         try:
-            row = db.execute("SELECT * FROM jogador WHERE id = 1").fetchone()
+            with db:
+                row = self._refill(db, today)
             level = g.level_from_xp(row["xp_total"])
             floor, ceil = g.xp_for_level(level), g.xp_for_level(level + 1)
             stats = {r["tipo"]: dict(r) for r in db.execute(
@@ -251,6 +419,8 @@ class Player:
             return {
                 "nome": row["nome"], "avatar": json.loads(row["avatar"]) if row["avatar"] else None,
                 "xp": row["xp_total"], "nivel": level, "titulo": title_for(level),
+                "proxima_patente": next(({"nivel": lvl, "titulo": t, "faltam_xp": g.xp_for_level(lvl) - row["xp_total"]}
+                                         for lvl, t in TITLES if lvl > level), None),
                 "xp_nivel_atual": row["xp_total"] - floor, "xp_proximo_nivel": ceil - floor,
                 "streak": streak.current if g.is_alive(streak, today) else 0, "streak_max": streak.longest,
                 "jogou_hoje": streak.last_day == today, "protetores": streak.freezes,

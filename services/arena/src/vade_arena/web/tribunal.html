@@ -311,6 +311,9 @@
   .ev { cursor:pointer; box-shadow:0 .25cqw 0 rgba(138,90,43,.35); }
   .ev:hover, .ev:focus-visible { transform:translateY(-.4cqw) rotate(-.6deg); border-color:#8a5a2b; box-shadow:0 .8cqw 1.4cqw rgba(60,35,10,.3); }
   .detail { background:#fffaf0 repeating-linear-gradient(0deg, transparent 0 1.9cqw, rgba(138,90,43,.08) 1.9cqw 2cqw); }
+  html.aba-oculta *, html.aba-oculta *::before, html.aba-oculta *::after { animation-play-state:paused !important; }   /* aba em segundo plano: nada anima */
+  .ap, .ap * { animation-play-state:paused !important; }   /* fora da tela: sem animação (ver animIO) */
+  .tile:not(:hover):not(:focus-visible) .cover * { animation-play-state:paused !important; }   /* miniaturas: respiração/piscar de 1% não se vê e custa um re-render por quadro */
   @media (prefers-reduced-motion: reduce) { .breath, .head, .arm-point { animation:none !important; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; } }
   /* ============================================================ menu estilo streaming (identidade "Vade Tribunal": noite, vidro e âmbar) */
@@ -714,13 +717,43 @@ const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
 const AMB_KIND = {bar:"bar", mercado:"bar", rua:"rua", ponto:"rua", obra:"rua", delegacia:"forum", parlatorio:"forum", gabinete:"forum", juri:"forum"};
 const Sound = {
   ctx: null, on: store.get("tribSom", true), music: store.get("tribMusica", false), want: "principal", cur: null, amb: null, ambK: null, ambLocal: null,
+  MUSV: .24, LOOK: 2.4, seqs: new Set(),
+  // variação por ato: [transposição em semitons, timbre do lead]. O Ato 6 (STF) usa o tema "supremo" nos julgamentos.
+  ACT: {1:[0, null], 2:[2, ["triangle", "square"]], 3:[-2, ["sine", "sawtooth"]], 4:[3, ["square"]], 5:[-5, ["triangle", "sawtooth"]], 6:[0, ["sine", "triangle"]]},
+  // temas extras (mesmo formato de THEMES): abertura, interrogatorio (moderato), climax (virada), derrota, supremo (solene, Ato 6)
+  X: {
+    abertura: {bpm:92, pad:{t:"sawtooth", v:.026, lp:950}, bass:"1...5...", bt:"triangle", bv:.1, blp:600,
+      lead:{type:["triangle", "sawtooth"], v:.05, lp:2300, a:.04, s:.6, r:.3, send:.4}, k:"x.......", s:"........", h:"........", dv:.55, bars:[
+      [[50,53,57],38,[0,0,74,1,77,1,81,1]], [[58,62,65],34,[79,1,1,1,77,1,74,1]], [[55,58,62],31,[76,1,79,1,82,1,81,1]], [[57,61,64],33,[81,1,1,1,0,0,73,0]],
+      [[50,53,57],38,[74,1,77,1,81,1,86,1]], [[58,62,65],34,[84,1,82,1,79,1,77,1]], [[55,58,62],31,[79,1,77,1,74,1,77,1]], [[57,61,64],33,[76,1,73,1,74,1,1,0]]]},
+    interrogatorio: {bpm:100, pad:{t:"triangle", v:.026, lp:850}, bass:"1.5.8.5.", bt:"triangle", bv:.09, blp:520,
+      lead:{type:["square", "triangle"], v:.04, lp:2400, a:.005, s:.12, r:.2, send:.25}, arp:{p:[0,2,1,2,0,2,1,2], v:.02, type:"square", lp:1800},
+      k:"x...x...", s:"........", h:"..x...x.", dv:.5, bars:[
+      [[52,55,59],40,[0,0,83,0,79,0,76,0]], [[48,52,55],36,[0,0,84,0,79,0,76,0]], [[57,60,64],45,[0,0,81,0,84,0,81,0]], [[59,63,66,69],35,[83,1,0,0,78,0,75,0]],
+      [[52,55,59],40,[0,0,88,1,86,0,83,0]], [[48,52,55],36,[84,0,0,79,0,76,0,0]], [[57,60,64],45,[81,0,84,0,88,1,86,0]], [[59,63,66,69],35,[83,1,1,0,0,0,0,0]]]},
+    climax: {bpm:144, pad:{t:"sawtooth", v:.03, lp:1800}, bass:"1.1.5.1.", bt:"sawtooth", bv:.09, blp:900,
+      lead:{type:["square", "sawtooth"], v:.06, lp:3600, a:.008, s:.5, r:.25, send:.3, det:5}, arp:{p:[0,1,2,1,0,1,2,1], v:.026, type:"triangle", lp:3000},
+      k:"x.x.x.x.", s:"..x...x.", h:"xxxxxxxx", dv:.85, bars:[
+      [[60,64,67],36,[79,1,84,1,83,81,79,1]], [[55,59,62],43,[86,1,83,1,79,83,86,1]], [[53,57,60],41,[84,1,81,1,77,81,84,1]], [[55,59,62,65],43,[83,1,86,1,88,1,91,1]],
+      [[60,64,67,72],36,[96,1,1,1,1,1,1,1]]]},
+    derrota: {bpm:80, pad:{t:"triangle", v:.04, lp:600}, bass:"1.......", bt:"sine", bv:.12, blp:360,
+      lead:{type:["sine", "triangle"], v:.06, lp:1800, a:.05, s:.3, r:.7, send:.6}, k:"........", s:"........", h:"........", dv:0, bars:[
+      [[48,51,55],36,[75,1,1,1,72,1,1,1]], [[56,60,63],32,[68,1,1,1,67,1,1,1]], [[48,51,55],24,[60,1,1,1,1,1,1,1]]]},
+    supremo: {bpm:54, pad:{t:"triangle", v:.045, lp:700}, bass:"1.......", bt:"sine", bv:.13, blp:380,
+      lead:{type:["sine", "triangle"], v:.06, lp:2000, a:.08, s:.6, r:.7, send:.6}, k:"x.......", s:"........", h:"........", dv:.4, bars:[
+      [[50,57,62],38,[74,1,1,1,81,1,1,1]], [[55,59,62],43,[79,1,1,1,78,1,1,1]], [[59,62,66],35,[78,1,1,1,74,1,1,1]], [[57,61,64],45,[76,1,1,1,73,1,1,1]],
+      [[50,57,62],38,[74,1,81,1,86,1,1,1]], [[52,55,59],40,[83,1,1,1,79,1,1,1]], [[57,61,64],45,[81,1,1,1,76,1,1,1]], [[50,57,62],38,[74,1,1,1,1,1,1,1]]]},
+  },
+  temas() { return Object.keys(THEMES).concat(Object.keys(this.X)); },
+  _act() { try { const p = typeof careerPos === "function" && typeof EP !== "undefined" && EP ? careerPos(EP.id) : null; return p ? p.ato.numero : 0; } catch { return 0; } },
   // ---- infraestrutura: mestre -> compressor; barras de efeitos, música e ambiência; reverb por convolução gerada
   ensure() {
     if (!this.ctx) {
       try { this.ctx = new (window.AudioContext || window.webkitAudioContext)(); } catch { return null; }
       const c = this.ctx, mk = (v, to) => { const g = c.createGain(); g.gain.value = v; g.connect(to); return g; };
       const comp = c.createDynamicsCompressor(); comp.threshold.value = -20; comp.ratio.value = 4; comp.attack.value = .005; comp.release.value = .2; comp.connect(c.destination);
-      this.master = mk(.85, comp); this.sfx = mk(.9, this.master); this.mus = mk(.45, this.master); this.ambBus = mk(.7, this.master);
+      const lim = c.createDynamicsCompressor(); lim.threshold.value = -4; lim.knee.value = 0; lim.ratio.value = 20; lim.attack.value = .002; lim.release.value = .12; lim.connect(c.destination); comp.disconnect(); comp.connect(lim);
+      this.master = mk(.85, comp); this.sfx = mk(.9, this.master); this.mus = mk(this.MUSV, this.master); this.ambBus = mk(.7, this.master);
       this.rev = c.createConvolver(); this.rev.buffer = this._ir(2.4); this.rev.connect(mk(.55, this.master));
     }
     if (this.ctx.state === "suspended") this.ctx.resume();
@@ -767,28 +800,43 @@ const Sound = {
   noise(dur, vol = .2, when = 0) {
     const c = this._ok(); if (!c) return; this._noise(this.sfx, c.currentTime + when, dur, {type:"lowpass", f:6000, f2:800, v:vol});
   },
-  // ---- sequenciador: agenda as notas à frente no relógio do áudio (melodia, baixo, acordes, arpejo, percussão)
-  _seq(name, dest, loop) {
-    const c = this.ctx, T = THEMES[name], out = c.createGain(); out.connect(dest);
-    const s = {name, T, out, i:0, spb:30 / T.bpm, next:c.currentTime + .06, loop, dead:false};
+  // ---- sequenciador: agenda as notas à frente no relógio do áudio; um único setTimeout por faixa acorda só quando falta ~metade da janela
+  _theme(n) { return THEMES[n] || this.X[n]; },
+  _spb(s) {   // "pressao" acelera conforme a credibilidade cai (cred 2 → +12%, 1 → +24%, 0 → +36%)
+    let f = 1; if (s.name === "pressao" && typeof G !== "undefined" && G) f += Math.max(0, 3 - G.cred) * .12;
+    return 30 / (s.T.bpm * f);
+  },
+  _seq(name, dest, loop, o = {}) {
+    const c = this.ctx, T = this._theme(name), out = c.createGain(); out.connect(dest);
+    const a = this.ACT[this._act()] || [0, null];
+    const s = {name, T, out, i:0, spb:30 / T.bpm, next:o.at || c.currentTime + .06, loop, dead:false, tr:a[0], lt:a[1], bars:o.bars || T.bars.length, timer:0, stopAt:0};
+    this.seqs.add(s);
     const tick = () => {
-      if (s.dead) return;
-      while (s.next < c.currentTime + 1.1) {
-        if (!loop && s.i >= T.bars.length * 8) { s.dead = true; clearInterval(s.timer); setTimeout(() => { try { out.disconnect(); } catch {} }, 4000); return; }
-        this._step(s); s.next += s.spb; s.i++;
+      s.timer = 0; if (s.dead) return;
+      if (c.state === "running") {
+        if (s.next < c.currentTime - .05) s.next = c.currentTime + .05;
+        while (s.next < c.currentTime + this.LOOK) {
+          if ((s.stopAt && s.next >= s.stopAt) || (!loop && s.i >= s.bars * 8)) { this._end(s, 4000); return; }
+          this._step(s); s.spb = this._spb(s); s.next += s.spb; s.i++;
+        }
       }
+      s.timer = setTimeout(tick, c.state === "running" ? Math.max(250, (s.next - c.currentTime - this.LOOK * .5) * 1000) : 1000);
     };
-    s.timer = setInterval(tick, 150); tick(); return s;
+    s.tick = tick; tick(); return s;
+  },
+  _end(s, ms) {   // para o agendamento e desconecta os nós depois que a cauda terminar
+    s.dead = true; clearTimeout(s.timer); this.seqs.delete(s);
+    setTimeout(() => { try { s.out.disconnect(); } catch {} }, ms);
   },
   _step(s) {
-    const T = s.T, spb = s.spb, k = s.i & 7, [ch, br, mel] = T.bars[(s.i >> 3) % T.bars.length], t = s.next, o = s.out;
-    if (k === 0) ch.forEach(m => this._n(o, mtof(m), t, spb * 8, {type:T.pad.t, v:T.pad.v, lp:T.pad.lp, a:.35, s:.8, r:.5, det:7, send:.35}));
+    const T = s.T, spb = s.spb, k = s.i & 7, [ch, br, mel] = T.bars[(s.i >> 3) % T.bars.length], t = s.next, o = s.out, tr = s.tr, lead = s.lt ? {...T.lead, type:s.lt} : T.lead;
+    if (k === 0) ch.forEach(m => this._n(o, mtof(m + tr), t, spb * 8, {type:T.pad.t, v:T.pad.v, lp:T.pad.lp, a:.35, s:.8, r:.5, det:7, send:.35}));
     const b = T.bass[k];
     if (b !== ".") { let n = 1; while (k + n < 8 && T.bass[k + n] === "." && n < 4) n++;
-      this._n(o, mtof(br + (b === "5" ? 7 : b === "8" ? 12 : 0)), t, spb * n * .9, {type:T.bt, v:T.bv, lp:T.blp, a:.01, s:.5, r:.06}); }
+      this._n(o, mtof(br + tr + (b === "5" ? 7 : b === "8" ? 12 : 0)), t, spb * n * .9, {type:T.bt, v:T.bv, lp:T.blp, a:.01, s:.5, r:.06}); }
     const m = mel[k];
-    if (m > 1) { let n = 1; while (k + n < 8 && mel[k + n] === 1) n++; this._n(o, mtof(m), t, spb * n * .95, T.lead); }
-    if (T.arp && T.arp.p[k] >= 0) this._n(o, mtof(ch[T.arp.p[k] % ch.length] + 12), t, spb * .9, {type:T.arp.type, v:T.arp.v, lp:T.arp.lp, a:.003, s:.05, r:.15, send:.3});
+    if (m > 1) { let n = 1; while (k + n < 8 && mel[k + n] === 1) n++; this._n(o, mtof(m + tr), t, spb * n * .95, lead); }
+    if (T.arp && T.arp.p[k] >= 0) this._n(o, mtof(ch[T.arp.p[k] % ch.length] + tr + 12), t, spb * .9, {type:T.arp.type, v:T.arp.v, lp:T.arp.lp, a:.003, s:.05, r:.15, send:.3});
     const dv = T.dv;
     if (dv) {
       if (T.k[k] === "x") this._kick(o, t, .26 * dv);
@@ -796,29 +844,38 @@ const Sound = {
       if (T.h[k] === "x") this._noise(o, t, .045, {type:"highpass", f:7500, q:.7, v:(k % 2 ? .035 : .06) * dv});
     }
   },
-  _fade(s, sec) {
-    s.dead = true; clearInterval(s.timer); const c = this.ctx, g = s.out.gain, t = c.currentTime;
-    g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.0001, t + sec);
-    setTimeout(() => { try { s.out.disconnect(); } catch {} }, sec * 1000 + 1500);
+  _fade(s, sec, at) {   // continua agendando até "at" (tempo forte), então some em "sec" segundos
+    const c = this.ctx, now = c.currentTime, t = Math.max(at || now, now), g = s.out.gain;
+    s.stopAt = t; g.cancelScheduledValues(now); g.setValueAtTime(g.value, now); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.0001, t + sec);
+    if (t <= now + .02) this._end(s, sec * 1000 + 1500);
+    else { setTimeout(() => { if (!s.dead) this._end(s, 0); }, (t - now + sec + 1.5) * 1000); }
   },
+  _killAll() { for (const s of [...this.seqs]) { const g = s.out.gain; try { g.cancelScheduledValues(0); g.value = 0; } catch {} this._end(s, 100); } this.cur = null; },
   _duck(sec) {
-    if (!this.ctx) return; const g = this.mus.gain, t = this.ctx.currentTime;
-    g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.14, t + .15); g.setValueAtTime(.14, t + sec); g.linearRampToValueAtTime(.45, t + sec + 1.2);
+    if (!this.ctx) return; const g = this.mus.gain, t = this.ctx.currentTime, lo = this.MUSV * .3;
+    g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(lo, t + .15); g.setValueAtTime(lo, t + sec); g.linearRampToValueAtTime(this.MUSV, t + sec + 1.2);
   },
-  // ---- música: troca de tema com crossfade. Temas: principal, investigacao, julgamento, pressao, vitoria, calma
+  // ---- música: troca de tema com crossfade no próximo compasso. Temas: principal, investigacao, julgamento, interrogatorio, pressao, abertura, calma, supremo (Ato 6)
+  // (vitoria, climax e derrota são fanfarras de uma vez só: ver vitoria(), virada(), derrota())
   startMusic(kind = "calma") {
     if (kind === "tensa") kind = "julgamento";
-    if (!THEMES[kind]) kind = "calma";
-    if ((kind === "julgamento" || kind === "investigacao") && typeof G !== "undefined" && G && !G.over && G.cred > 0 && G.cred <= 2) kind = "pressao";
+    if (!this._theme(kind)) kind = "calma";
+    if (kind === "julgamento" && this._act() >= 6) kind = "supremo";
+    if ((kind === "julgamento" || kind === "investigacao" || kind === "interrogatorio") && typeof G !== "undefined" && G && !G.over && G.cred > 0 && G.cred <= 2) kind = "pressao";
     this.want = kind; if (!this.music || !this.on) return;
     const c = this.ensure(); if (!c) return;
     if (this.cur && this.cur.name === kind) return;
-    if (this.cur) this._fade(this.cur, 1.4);
-    const s = this._seq(kind, this.mus, true); s.out.gain.setValueAtTime(.0001, c.currentTime); s.out.gain.linearRampToValueAtTime(1, c.currentTime + 1.4); this.cur = s;
+    const now = c.currentTime, quick = kind === "pressao"; let at = now + .05, fin = .4;
+    if (this.cur) {
+      const o = this.cur, tb = o.next + ((8 - (o.i & 7)) & 7) * o.spb;
+      at = quick ? Math.max(o.next, now + .05) : (tb - now <= 3.5 ? Math.max(tb, now + .05) : now + .05);
+      this._fade(o, quick ? .8 : 1.6, at); fin = quick ? .25 : 1.2;
+    }
+    const s = this._seq(kind, this.mus, true, {at}); s.out.gain.setValueAtTime(.0001, now); s.out.gain.setValueAtTime(.0001, at); s.out.gain.linearRampToValueAtTime(1, at + fin); this.cur = s;
   },
   stopMusic(keep) { if (!keep) this.want = null; if (this.cur) { this._fade(this.cur, .7); this.cur = null; } },
   sync() {   // chamado pelos botões de som/música
-    if (!this.music || !this.on) this.stopMusic(true);
+    if (!this.on) this._killAll(); else if (!this.music) this.stopMusic(true);
     else if (!this.cur) this.startMusic(this.want || ($("#game").classList.contains("hidden") ? "principal" : "calma"));
     if (!this.on) this._ambOff(); else if (this.ambK && !this.amb) this.ambiencia(this.ambLocal, true);
   },
@@ -857,7 +914,7 @@ const Sound = {
   blip(pitch, kind) { if (!pitch) return;   // timbre por tipo de voz: m = quadrada, f = triangular aguda, j = juiz grave e encorpado
     const f = pitch * (0.95 + Math.random() * .1);
     if (kind === "f") this.tone(f * 1.25, .05, "triangle", .04); else if (kind === "j") { this.tone(f * .72, .07, "sawtooth", .018); this.tone(f * .36, .07, "sine", .03); }
-    else this.tone(f, .045, "square", .025); },
+    else this.tone(f, .045, "square", .035); },
   punch() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // impacto do balão: estalo + graves
     this._noise(d, t, .09, {type:"highpass", f:2800, v:.35, send:.2}); this._n(d, 55, t, .5, {type:"sine", v:.5, slide:-30, a:.002, s:.01, send:.3});
     this._n(d, 880, t, .12, {type:"square", v:.05, lp:2600, slide:-500, a:.002, s:.2}); },
@@ -909,7 +966,15 @@ const Sound = {
     this._n(d, 170, t + .05, .4, {type:"sawtooth", v:.03, lp:700, lp2:1400, slide:90, a:.08, s:.8, r:.1});
     this._n(d, 70, t + .5, .3, {type:"sine", v:.3, slide:-25, a:.002, s:.01, send:.25}); this._noise(d, t + .5, .1, {type:"lowpass", f:900, v:.2}); },
   entrar() { this.porta(); this.passos(3, .7); },    // porta + passos ao chegar num local de investigação
-  vitoria() { const c = this._ok(); if (!c) return; this._duck(3.8); this._seq("vitoria", this.sfx, false); },   // fanfarra curta (tema "vitoria", toca uma vez)
+  vitoria() { const c = this._ok(); if (!c) return;   // fanfarra curta (tema "vitoria", uma vez); no Ato 6 abre o tema solene "supremo"
+    if (this._act() >= 6) { this._duck(9); this._seq("supremo", this.sfx, false, {bars:2}); } else { this._duck(3.8); this._seq("vitoria", this.sfx, false); } },
+  revelar() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx; this._duck(1);   // stinger de revelação: varredura + 3 notas vítreas subindo
+    this._noise(d, t, .45, {f:500, f2:6000, q:1.2, v:.14, a:.25, send:.3}); this._n(d, 60, t + .3, .4, {type:"sine", v:.3, slide:-20, a:.003, s:.01});
+    [659.25, 987.77, 1318.5].forEach((f, i) => this._n(d, f, t + .25 + i * .07, .4, {type:["triangle", "sine"], v:.07, a:.004, s:.2, r:.35, send:.5})); },
+  abertura() { this.revelar(); this.startMusic("abertura"); },   // cartão do caso: stinger + tema de abertura do julgamento
+  virada() { const c = this._ok(); if (!c) return; this.acerto(); this._duck(9);   // contradição decisiva: acorde + tema de clímax (~8 s)
+    this._seq("climax", this.sfx, false, {at:c.currentTime + .3}); },
+  derrota() { const c = this._ok(); if (!c) return; this._duck(10); this._seq("derrota", this.sfx, false, {at:c.currentTime + .5}); },
 };
 Sound.init();
 
@@ -1899,7 +1964,7 @@ async function bubble(text, color = "#E5483B") {
 async function doFx(fx) {
   if (fx === "protesto") { Sound.protesto(); await bubble("PROTESTO!"); }
   else if (fx === "ummomento") { Sound.ummomento(); await bubble("UM MOMENTO!", "#4F7BFF"); }
-  else if (fx === "tomaisso") { Sound.ummomento(); await bubble("AQUI ESTÁ!", "#2FBF71"); }
+  else if (fx === "tomaisso") { Sound.revelar(); await bubble("AQUI ESTÁ!", "#2FBF71"); }
   else if (fx === "martelo") {
     const g = el("div", {class:"gavel"});
     g.innerHTML = `<svg viewBox="0 0 120 120"><rect x="20" y="20" width="56" height="30" rx="8" fill="#7a5232" stroke="#2a1a10" stroke-width="4" transform="rotate(-30 48 35)"/><rect x="52" y="44" width="10" height="66" rx="4" fill="#5a3a22" stroke="#2a1a10" stroke-width="3" transform="rotate(-30 57 77)"/></svg>`;
@@ -2209,7 +2274,7 @@ async function titleCard(c) {
   const label = pos ? `Ato ${pos.ato.numero} · Caso ${pos.numero}` + (pos.ultimo ? " · Final do ato" : "") : c.texto;
   const t = el("div", {class:"full titlecard"}, el("div", {class:"ep", textContent:label}), el("h1", {textContent:c.subtitulo}),
     el("p", {textContent:EP.sinopse}), el("p", {class:"hintkey", textContent:"toque, clique ou Enter para começar"}));
-  $("#stage").append(t); Sound.vitoria();
+  $("#stage").append(t); Sound.abertura();
   await waitAdvance(); t.remove(); Sound.startMusic("calma");
   return c.proxima;
 }
@@ -2220,7 +2285,7 @@ async function testimony(c) {
   const b = banner("— Depoimento —", c.titulo, true); await sleep(1400); b.remove();
   for (const a of c.afirmacoes) { await say({q:c.testemunha, e:a.e, t:a.t}, {statement:true}); if (G.over) return null; }
   hideDialog();
-  const b2 = banner("— Interrogatório —", "Pressione as afirmações ou apresente uma prova"); Sound.ummomento(); await sleep(1500); b2.remove();
+  const b2 = banner("— Interrogatório —", "Pressione as afirmações ou apresente uma prova"); Sound.ummomento(); Sound.startMusic("interrogatorio"); await sleep(1500); b2.remove();
   let idx = 0;
   while (!G.over) {
     const a = c.afirmacoes[idx];
@@ -2246,7 +2311,7 @@ async function testimony(c) {
       if (!id) continue;
       await presentAnim(id);
       if (idx === c.contradicao.afirmacao && c.contradicao.provas.includes(id)) {
-        Sound.stopMusic(); await contradictionFx(c.testemunha); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma"); return c.proxima;
+        Sound.stopMusic(); await contradictionFx(c.testemunha); await sayAll(c.acerto); Sound.virada(); Sound.startMusic("calma"); return c.proxima;
       }
       await damage(c.erro, c, {idx});
     }
@@ -2391,7 +2456,7 @@ async function credits() {
   $("#stage").append(box);
 }
 async function gameOver() {
-  hideDialog(); clearOverlay(); Sound.stopMusic(); Sound.dano();
+  hideDialog(); clearOverlay(); Sound.stopMusic(); Sound.dano(); Sound.derrota();
   await camera("juiz", Object.keys(EP.posicoes).find(k => EP.posicoes[k] === "juiz" && k !== "voce") || null, "bravo");
   await doFx("martelo");
   const r = await finish(false);
@@ -2601,7 +2666,15 @@ function playIntro() {
 // ------------------------------------------------ capas e cartões
 const coverFill = new WeakMap();
 const coverIO = "IntersectionObserver" in window ? new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) paintCover(e.target); }, {rootMargin:"300px 0px"}) : null;
-function paintCover(c) { const f = coverFill.get(c); if (!f) return; coverFill.delete(c); if (coverIO) coverIO.unobserve(c); c.insertAdjacentHTML("afterbegin", f()); }
+// animações infinitas dos personagens só rodam enquanto o elemento está na tela (fora dela, a classe .ap as pausa):
+// 30+ personagens animados com drop-shadow na grade de casos deixavam a página a ~13 fps e a CPU/GPU no máximo
+const animIO = "IntersectionObserver" in window ? new IntersectionObserver((es) => { for (const e of es) e.target.classList.toggle("ap", !e.isIntersecting); }) : null;
+// aba em segundo plano / minimizada: pausa animações CSS e suspende o áudio (o sequenciador para junto, pois o relógio do áudio congela)
+document.addEventListener("visibilitychange", () => {
+  document.documentElement.classList.toggle("aba-oculta", document.hidden);
+  try { if (Sound.ctx) { if (document.hidden) Sound.ctx.suspend(); else if (Sound.on) Sound.ctx.resume(); } } catch {}
+});
+function paintCover(c) { const f = coverFill.get(c); if (!f) return; coverFill.delete(c); if (coverIO) coverIO.unobserve(c); c.insertAdjacentHTML("afterbegin", f()); if (animIO) animIO.observe(c); }
 function lazyCover(c, f) { coverFill.set(c, f); if (coverIO) coverIO.observe(c); else paintCover(c); }
 const two = (n) => String(n).padStart(2, "0");
 function tileOf(it, perfil, nextId) {
@@ -2727,6 +2800,7 @@ async function openDetail(it, perfil) {
 // ------------------------------------------------ destaque
 function renderHero(it, perfil) {
   const {ep, ato, label} = it;
+  if (animIO) animIO.observe($("#hero-art"));
   $("#hero-art").replaceChildren(el("div", {class:"sky", innerHTML:skyline(seedOf("hero" + ep.id))}),
     el("div", {innerHTML:figs([{visual:youLook(ep.papel, perfil), cls:"you", expr:"confiante"}], "hero-figs")}));
   const verb = ep.salvo ? "Continue de onde parou" : (ep.status === "concluido" ? "Reveja este caso" : "Seu próximo caso");
