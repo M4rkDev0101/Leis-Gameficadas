@@ -402,9 +402,9 @@
        "id": "mesa",
        "nome": "Mesa com processos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -1116,9 +1116,9 @@
        "id": "mesa",
        "nome": "Mesa com processos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -1890,10 +1890,10 @@
       {
        "id": "livro",
        "nome": "Livro de registro (mesa)",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -1927,9 +1927,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",
@@ -2622,9 +2622,9 @@
        "id": "mesa",
        "nome": "Mesa com processos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -3454,9 +3454,9 @@
        "id": "janela",
        "nome": "Janela",
        "x": 34,
-       "y": 10,
+       "y": 13,
        "w": 25,
-       "h": 36,
+       "h": 34,
        "falas": [
         {
          "q": "voce",
@@ -3471,10 +3471,10 @@
       {
        "id": "comoda",
        "nome": "Cômoda",
-       "x": 64,
-       "y": 46,
-       "w": 16,
-       "h": 14,
+       "x": 63.5,
+       "y": 49,
+       "w": 16.5,
+       "h": 33,
        "falas": [
         {
          "q": "voce",
@@ -3490,9 +3490,9 @@
        "id": "mesa",
        "nome": "Mesa",
        "x": 30,
-       "y": 50,
-       "w": 12,
-       "h": 10,
+       "y": 50.5,
+       "w": 12.5,
+       "h": 12,
        "falas": [
         {
          "q": "voce",
@@ -4206,9 +4206,9 @@
        "id": "mesa",
        "nome": "Mesa com processos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -4265,10 +4265,10 @@
       {
        "id": "bandeira",
        "nome": "Bandeira",
-       "x": 90,
-       "y": 20,
-       "w": 8,
-       "h": 30,
+       "x": 92.5,
+       "y": 21,
+       "w": 7.5,
+       "h": 18,
        "falas": [
         {
          "q": "voce",

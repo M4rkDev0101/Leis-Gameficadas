@@ -219,9 +219,9 @@
        "id": "mesa",
        "nome": "Mesa com os autos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -314,10 +314,10 @@
       {
        "id": "bandeira",
        "nome": "Bandeira e crachá",
-       "x": 90,
-       "y": 20,
-       "w": 8,
-       "h": 30,
+       "x": 92.5,
+       "y": 21,
+       "w": 7.5,
+       "h": 18,
        "falas": [
         {
          "q": "voce",
@@ -2360,10 +2360,10 @@
       {
        "id": "escritorio",
        "nome": "Escritório da obra",
-       "x": 42,
+       "x": 41.5,
        "y": 30,
-       "w": 18,
-       "h": 24,
+       "w": 18.5,
+       "h": 27,
        "falas": [
         {
          "q": "voce",
@@ -2378,10 +2378,10 @@
       {
        "id": "andaime",
        "nome": "Andaime e lajes",
-       "x": 64,
-       "y": 6,
-       "w": 30,
-       "h": 26,
+       "x": 63,
+       "y": 3,
+       "w": 34,
+       "h": 34,
        "falas": [
         {
          "q": "voce",
@@ -4104,9 +4104,9 @@
        "id": "mesa",
        "nome": "Mesa com os autos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -4169,10 +4169,10 @@
       {
        "id": "bandeira",
        "nome": "Bandeira",
-       "x": 90,
-       "y": 20,
-       "w": 8,
-       "h": 30,
+       "x": 92.5,
+       "y": 21,
+       "w": 7.5,
+       "h": 18,
        "falas": [
         {
          "q": "voce",

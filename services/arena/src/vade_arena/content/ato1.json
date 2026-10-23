@@ -57,7 +57,7 @@
             {"id": "camera", "nome": "Câmera no canto do teto", "x": 76, "y": 8, "w": 12, "h": 14, "falas": [
               {"q": "voce", "e": "feliz", "t": "Uma câmera apontada justamente para a entrada! Pedi a gravação ao dono do bar."},
               {"q": "narrador", "t": "Você assistiu à gravação: o celular estava sozinho sobre a mesa 7.", "recebe": ["video"]}]},
-            {"id": "caixa", "nome": "Comandas no caixa", "x": 55, "y": 40, "w": 14, "h": 14, "falas": [
+            {"id": "caixa", "nome": "Comandas no caixa", "x": 55.5, "y": 45, "w": 14, "h": 10.5, "falas": [
               {"q": "voce", "e": "pensativo", "t": "As comandas da noite… às 23h o garçom Valdir anotou um pedido na mesa 3. Do outro lado do salão.", "recebe": ["comanda"]}]}
           ],
           "conversas": [
@@ -194,7 +194,7 @@
           "pontos": [
             {"id": "prateleira", "nome": "Prateleira de mercearia", "x": 8, "y": 30, "w": 22, "h": 30, "falas": [
               {"q": "voce", "e": "pensativo", "t": "Arroz a R$ 8,90 o pacote, leite em pó a R$ 12,70, fraldas a R$ 7,90… Somando os itens do processo: R$ 38,40.", "recebe": ["cupom"]}]},
-            {"id": "camera", "nome": "Monitor da segurança", "x": 70, "y": 12, "w": 16, "h": 18, "falas": [
+            {"id": "camera", "nome": "Monitor da segurança", "x": 71, "y": 18, "w": 16.5, "h": 19.5, "falas": [
               {"q": "voce", "e": "triste", "t": "Na gravação, Rosa hesita na frente das fraldas, olha para os lados e coloca tudo na sacola. Na saída, o segurança a para. Ela entrega tudo sem resistir."}]},
             {"id": "balcao", "nome": "Balcão do gerente", "x": 44, "y": 48, "w": 18, "h": 18, "falas": [
               {"q": "voce", "e": "apontando", "t": "Um termo de restituição assinado pelo próprio gerente: todos os produtos voltaram intactos para a loja.", "recebe": ["devolucao"]}]}
@@ -302,11 +302,11 @@
         "q3": {"tipo": "investigar", "local": "ponto", "titulo": "Ponto de ônibus da Av. Brasil",
           "intro": [{"q": "narrador", "t": "Um ponto de ônibus comum, uma padaria na esquina e um meio-fio alto demais."}],
           "pontos": [
-            {"id": "padaria", "nome": "Câmera da padaria", "x": 74, "y": 14, "w": 14, "h": 16, "falas": [
+            {"id": "padaria", "nome": "Câmera da padaria", "x": 73.5, "y": 23, "w": 12, "h": 9, "falas": [
               {"q": "voce", "e": "chocado", "t": "A câmera da padaria pegou tudo! Wellington puxa uma faca. Marcos empurra UMA vez. Wellington tropeça no meio-fio e cai.", "recebe": ["video2"]}]},
-            {"id": "sarjeta", "nome": "Sarjeta junto ao ponto", "x": 20, "y": 70, "w": 22, "h": 12, "falas": [
+            {"id": "sarjeta", "nome": "Sarjeta junto ao ponto", "x": 19, "y": 72, "w": 25, "h": 14, "falas": [
               {"q": "voce", "e": "pensativo", "t": "Foi aqui que a polícia encontrou uma faca. O laudo de papiloscopia saiu ontem: digitais do Wellington.", "recebe": ["faca"]}]},
-            {"id": "poste", "nome": "Poste com o número da linha", "x": 46, "y": 10, "w": 8, "h": 50, "falas": [
+            {"id": "poste", "nome": "Poste com o número da linha", "x": 46, "y": 10, "w": 8, "h": 54, "falas": [
               {"q": "voce", "e": "normal", "t": "Linha 412, último ônibus às 22h30. O Marcos esperava o ônibus depois de um turno de doze horas."}]}
           ],
           "conversas": [
@@ -403,11 +403,11 @@
         "r3": {"tipo": "investigar", "local": "delegacia", "titulo": "14º Distrito Policial",
           "intro": [{"q": "narrador", "t": "Ventilador barulhento, café requentado e um escrivão que evita olhar nos seus olhos."}],
           "pontos": [
-            {"id": "livro", "nome": "Livro de registro", "x": 40, "y": 44, "w": 18, "h": 14, "falas": [
+            {"id": "livro", "nome": "Livro de registro", "x": 39.5, "y": 49, "w": 18.5, "h": 8, "falas": [
               {"q": "voce", "e": "chocado", "t": "Entrada de Joana: dia 12, 21h40. Comunicação ao juiz e à família… dia 15? Três dias depois!", "recebe": ["registro"]}]},
             {"id": "mural", "nome": "Mural de avisos", "x": 72, "y": 14, "w": 18, "h": 24, "falas": [
               {"q": "voce", "e": "pensativo", "t": "Escala de plantão do dia 12: Delegado Fausto Rangel. Ao lado, um cartão de visitas: 'Dr. Augusto Brandão — Advocacia Empresarial'."}]},
-            {"id": "pasta", "nome": "Pasta do inquérito", "x": 10, "y": 46, "w": 16, "h": 16, "falas": [
+            {"id": "pasta", "nome": "Pasta do inquérito", "x": 10, "y": 47, "w": 16, "h": 14, "falas": [
               {"q": "voce", "e": "bravo", "t": "Um termo de confissão assinado às três da manhã, sem advogado. Nenhuma linha dizendo que ela foi informada do direito de ficar calada.", "recebe": ["termo"]}]}
           ],
           "conversas": [
@@ -499,12 +499,12 @@
         "s3": {"tipo": "investigar", "local": "apartamento", "titulo": "Apartamento de Seu Ivo",
           "intro": [{"q": "ivo", "e": "triste", "t": "Fica à vontade, doutor(a). Desculpe a bagunça. Desde que a Lurdes morreu, eu não ligo muito pra arrumação."}],
           "pontos": [
-            {"id": "gaveta", "nome": "Gaveta de documentos", "x": 64, "y": 46, "w": 16, "h": 14, "falas": [
+            {"id": "gaveta", "nome": "Gaveta de documentos", "x": 63.5, "y": 49, "w": 16.5, "h": 33, "falas": [
               {"q": "voce", "e": "chocado", "t": "Um prontuário do Hospital Municipal: Seu Ivo ficou internado de 3 a 6 de maio. O golpe foi no dia 4!", "recebe": ["prontuario"]}]},
-            {"id": "celular", "nome": "Celular velho na mesa", "x": 30, "y": 50, "w": 12, "h": 10, "falas": [
+            {"id": "celular", "nome": "Celular velho na mesa", "x": 30, "y": 50.5, "w": 12.5, "h": 12, "falas": [
               {"q": "voce", "e": "pensativo", "t": "Um aparelho antigo, sem nenhum aplicativo de banco. Na tela, um aviso de 4 de maio: 'Seu chip foi desativado'."},
               {"q": "narrador", "t": "Você pediu uma perícia digital urgente no aparelho e na operadora.", "recebe": ["pericia"]}]},
-            {"id": "carta", "nome": "Carta do banco", "x": 10, "y": 24, "w": 16, "h": 14, "falas": [
+            {"id": "carta", "nome": "Carta do banco", "x": 11, "y": 12.5, "w": 9.5, "h": 9.5, "falas": [
               {"q": "voce", "e": "bravo", "t": "Um extrato pelo correio: os R$ 9.800 entraram e saíram três minutos depois… para a 'Altavista Serviços Ltda.'!", "recebe": ["extrato"]}]}
           ],
           "conversas": [
@@ -602,7 +602,7 @@
               {"q": "voce", "e": "pensativo", "t": "O sistema da catraca registra o crachá do Tiago saindo às 18h02. Nenhuma entrada depois disso.", "recebe": ["catraca"]}]},
             {"id": "portao", "nome": "Portão dos fundos", "x": 78, "y": 36, "w": 16, "h": 28, "falas": [
               {"q": "voce", "e": "pensativo", "t": "Corrente grossa e cadeado. A perícia fotografou o portão trancado às 20h, sem nenhum sinal de arrombamento.", "recebe": ["cadeado"]}]},
-            {"id": "barraco", "nome": "Escritório do engenheiro", "x": 42, "y": 30, "w": 18, "h": 24, "falas": [
+            {"id": "barraco", "nome": "Escritório do engenheiro", "x": 41.5, "y": 30, "w": 18.5, "h": 27, "falas": [
               {"q": "voce", "e": "chocado", "t": "Um caderno do Paulo… 'Aço abaixo do especificado. Vou denunciar amanhã. Ronaldo sabe.'", "recebe": ["caderno"]},
               {"q": "voce", "e": "nervoso", "t": "(Paulo ia denunciar a obra. E morreu na véspera.)"}]}
           ],
