@@ -92,11 +92,3 @@ Cada ato abre com uma cena de promoção de cargo; o menu mostra conquistas e as
 
 `x, y, w, h` estão em % do palco (16:10) e batem com o desenho do local em `locationBG`. O validador
 exige que toda prova de `requer` seja entregue por um ponto ou conversa da própria cena.
-
-## Dublagem (opcional, ElevenLabs)
-
-`services/arena/tools/vozes.py exportar` gera `roteiro.csv` (uma fala por linha, com o nome do arquivo de
-áudio) e `elenco.csv` (personagens, caracteres e a coluna `voice_id` para preencher). `vozes.py gerar` lê a
-chave de `ELEVENLABS_API_KEY`, grava `<id>.mp3` e pode ser retomado aos poucos (`--limite`, `--so`,
-`--sem-voce`). O jogo toca os áudios de `%LOCALAPPDATA%\VadeTribunal\vozes` (ou `VADE_VOZES`) e usa os bipes
-quando uma fala ainda não tem áudio. O id é `sha1("personagem|texto")[:12]`, calculado igual no navegador.

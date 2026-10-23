@@ -24,19 +24,12 @@ em [06-roadmap.md](06-roadmap.md); este documento trata do jogo Vade Tribunal.
 
 ### Marco 4: distribuição
 - Instalador `VadeTribunal.exe` (PyInstaller) publicado pelo GitHub Actions, com atualização do jogo e do acervo.
-- Dublagem opcional com ElevenLabs: exportação do roteiro, geração retomável e áudio no jogo.
 
 ## Em andamento
 
-- Escalação das vozes da dublagem por gênero e faixa etária (`tools/escalar_vozes.py`, ainda não commitado).
 - Documentação do projeto (GDD, arquitetura, changelog, licenças de assets).
 
 ## Próximo
-
-### Dublagem local
-- Gerar as falas localmente com o VoiceStudio/OmniVoice, sem custo por caractere, no mesmo formato de arquivo
-  (`<id>.mp3`, id = `sha1("personagem|texto")[:12]`) lido pelo jogo.
-- Antes de distribuir, conferir a licença do modelo (CC-BY-NC) e a origem das vozes de referência.
 
 ### Trilha e efeitos
 - Ampliar a música procedural (hoje "calma" e "tensa") com temas por ato e por cena de clímax.

@@ -5,6 +5,9 @@ numeradas; as versões abaixo foram reconstruídas do histórico do git e agrupa
 
 ## [Não lançado]
 
+### Removido
+- Dublagem (mp3 por fala) e ferramentas de vozes; o jogo usa bipes de fala.
+
 ### Adicionado
 - Documentação do projeto: GDD, roadmap, changelog, licenças de assets e arquitetura.
 - Ferramenta `escalar_vozes.py` para escalar as vozes da dublagem por gênero e idade (em andamento).

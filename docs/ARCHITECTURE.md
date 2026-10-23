@@ -22,7 +22,6 @@ flowchart LR
   P --> D[(jogador.sqlite)]
   L[services/learning<br/>FSRS, XP, níveis] --> S
   S -->|HTML + JSON| W[Cliente web único<br/>web/tribunal.html<br/>SVG + WebAudio]
-  V[(vozes/*.mp3<br/>fora do repositório)] -->|/api/arena/voz| W
   I[Instalador VadeTribunal.exe] -. instala e atualiza .-> S
 ```
 
@@ -35,7 +34,6 @@ flowchart LR
 3. **Cliente.** Um único arquivo, `web/tribunal.html`, roda o motor das cenas no navegador: personagens e cenários em
    SVG, sons em WebAudio, menu da carreira e cenas (`say`, `testimony`, `investigate`, `choiceScene`,
    `dilemmaScene`, `verdict`, `credits`).
-4. **Dublagem.** O servidor lista e serve `<id>.mp3` de uma pasta externa; sem o arquivo, o cliente toca bipes.
 
 ## Modelo de conteúdo JSON
 
@@ -64,12 +62,6 @@ mesma verificação, o que denuncia conteúdo desatualizado quando uma lei muda.
 `.github/workflows/instalador.yml` roda em `windows-latest` a cada mudança em `instalador/`: executa os testes do
 arena e do learning, compila o executável e publica na Release `instalador`. O instalador baixa o jogo (fetch +
 reset), faz o clone parcial do acervo, importa o recorte e verifica leis novas a cada 30 minutos.
-
-## Dublagem
-
-`tools/vozes.py exportar` cria `roteiro.csv` e `elenco.csv`; `gerar` produz `<id>.mp3` via ElevenLabs de forma
-retomável; `escalar_vozes.py` preenche gênero, idade e `voice_id`. O id é `sha1("personagem|texto")[:12]`,
-calculado igual no navegador. O servidor lê a pasta `VADE_VOZES` (ou `%LOCALAPPDATA%\VadeTribunal\vozes`).
 
 ## Decisões (ADR curto)
 
