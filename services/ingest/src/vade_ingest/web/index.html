@@ -3,156 +3,355 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
 <title>Vade · Acervo</title>
 <style>
   :root {
-    --bg:#FAFAF7; --surface:#FFFFFF; --surface-2:#F2F2EE; --border:#E2E2DC;
-    --text:#16181D; --muted:#5D6470; --primary:#3D5BD9; --on-primary:#FFFFFF;
-    --success:#167A49; --danger:#B8321F; --xp:#8A6300; --streak:#AD4F00;
-    --radius:12px; --mono:ui-monospace,"JetBrains Mono","Cascadia Code",Consolas,monospace;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg:#0E1116; --surface:#161B22; --surface-2:#1F2630; --border:#2A3340;
-      --text:#E8ECF2; --muted:#9AA6B6; --primary:#6C8CFF; --on-primary:#0E1116;
-      --success:#34C47C; --danger:#FF6B5E; --xp:#F5B700; --streak:#FF8A2B;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg:#0E1116; --surface:#161B22; --surface-2:#1F2630; --border:#2A3340;
-    --text:#E8ECF2; --muted:#9AA6B6; --primary:#6C8CFF; --on-primary:#0E1116;
-    --success:#34C47C; --danger:#FF6B5E; --xp:#F5B700; --streak:#FF8A2B;
+    --v-bg:#0B0D11; --v-bg-2:#12151B; --v-surface:#181C24; --v-surface-2:#222833; --v-line:#2C3340;
+    --v-text:#ECEEF2; --v-muted:#9AA3B2; --v-faint:#6B7383;
+    --v-gold:#D4A24C; --v-gold-2:#E8BE6A; --v-on-gold:#16110A;
+    --v-steel:#5B7BA6; --v-ok:#3FBF7F; --v-bad:#E5534B; --v-warn:#E8A33D;
+    --v-r:10px; --v-r-lg:16px; --v-shadow:0 10px 30px rgba(0,0,0,.45);
+    --v-ease:cubic-bezier(.2,.7,.2,1);
+    --bad-text:#FF8F87;               /* erro legível (AA) sobre superfícies escuras */
+    --steel-text:#8FAAD0;             /* azul-aço legível (AA) em texto pequeno */
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+    --mono:ui-monospace,"Cascadia Code",Consolas,monospace;
+    --top:60px;
   }
   * { box-sizing:border-box; }
-  body { margin:0; background:var(--bg); color:var(--text);
-         font:15px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
-  main { max-width:980px; margin:0 auto; padding:24px 16px 64px; }
-  header { display:flex; align-items:center; gap:12px; margin-bottom:20px; flex-wrap:wrap; }
-  h1 { font-size:1.35rem; margin:0; letter-spacing:-.01em; }
-  h1 span { color:var(--muted); font-weight:500; }
-  h2 { font-size:1rem; margin:0 0 12px; }
-  .pill { margin-left:auto; padding:4px 12px; border-radius:999px; font-size:.82rem; font-weight:600;
-          border:1px solid var(--border); background:var(--surface-2); color:var(--muted); }
-  .pill.ok { color:var(--success); } .pill.new { color:var(--xp); } .pill.run { color:var(--primary); } .pill.err { color:var(--danger); }
-  .grid { display:grid; gap:16px; grid-template-columns:1fr; }
-  @media (min-width:860px) { .grid.two { grid-template-columns:1.25fr 1fr; } }
-  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:18px; min-width:0; }
-  .muted { color:var(--muted); } .mono { font-family:var(--mono); font-size:.85em; }
-  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-  button { font:inherit; font-weight:600; border-radius:10px; padding:9px 16px; cursor:pointer;
-           border:1px solid var(--border); background:var(--surface-2); color:var(--text); }
-  button.primary { background:var(--primary); border-color:var(--primary); color:var(--on-primary); }
-  button:disabled { opacity:.55; cursor:not-allowed; }
-  button.link { background:none; border:none; padding:2px 4px; color:var(--primary); font-weight:500; }
-  button:focus-visible, input:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
+  html { scroll-padding-top:calc(var(--top) + 16px); }
+  body { margin:0; background:var(--v-bg); color:var(--v-text); font:15px/1.55 var(--sans);
+         background-image:radial-gradient(1100px 420px at 78% -80px, rgba(212,162,76,.10), transparent 70%); background-repeat:no-repeat; }
+  a { color:var(--v-gold-2); }
+  :focus-visible { outline:2px solid var(--v-gold); outline-offset:3px; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
+  .skip { position:absolute; left:12px; top:-60px; z-index:100; background:var(--v-gold); color:var(--v-on-gold); padding:10px 16px; border-radius:var(--v-r); font-weight:700; text-decoration:none; }
+  .skip:focus { top:8px; }
+
+  /* ---------- barra superior ---------- */
+  .topbar { position:fixed; inset:0 0 auto 0; height:var(--top); z-index:50; display:flex; align-items:center; gap:20px; padding:0 20px;
+            background:rgba(11,13,17,.72); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid rgba(44,51,64,.7); }
+  .logo { font:700 1rem var(--sans); letter-spacing:.18em; color:var(--v-text); text-decoration:none; display:flex; flex-direction:column; line-height:1.1; }
+  .logo::after { content:""; display:block; width:100%; height:2px; margin-top:3px; background:var(--v-gold); border-radius:2px; }
+  .nav { display:flex; gap:4px; }
+  .nav a { color:var(--v-muted); text-decoration:none; font-weight:600; padding:8px 14px; border-radius:999px; min-height:36px; display:inline-flex; align-items:center; transition:color .2s var(--v-ease), background .2s var(--v-ease); }
+  .nav a:hover { color:var(--v-text); background:var(--v-surface); }
+  .nav a[aria-current="page"] { color:var(--v-gold-2); background:var(--v-surface); }
+  .sp { flex:1; }
+  .me { display:flex; align-items:center; gap:10px; }
+  .me[hidden] { display:none; }
+  .avatar { width:34px; height:34px; border-radius:50%; background:var(--v-surface-2); border:1px solid var(--v-gold); display:grid; place-items:center; font:700 .85rem var(--sans); color:var(--v-gold-2); }
+  .me small { display:block; color:var(--v-muted); font-size:.74rem; line-height:1.2; }
+  .me b { font-size:.85rem; line-height:1.2; }
+  .pill { padding:4px 12px; border-radius:999px; font-size:.8rem; font-weight:600; border:1px solid var(--v-line); background:var(--v-surface-2); color:var(--v-muted); white-space:nowrap; }
+  .pill.ok { color:var(--v-ok); } .pill.new { color:var(--v-gold-2); } .pill.run { color:var(--steel-text); } .pill.err { color:var(--bad-text); }
+  .menu-btn { display:none; }
+
+  /* ---------- estrutura ---------- */
+  .shell { max-width:1560px; margin:0 auto; padding:calc(var(--top) + 28px) 24px 80px; display:grid; grid-template-columns:230px minmax(0,1fr); gap:36px; }
+  .side { position:sticky; top:calc(var(--top) + 24px); align-self:start; max-height:calc(100vh - var(--top) - 48px); overflow:auto; }
+  .side h2 { font:700 .72rem var(--sans); letter-spacing:.18em; text-transform:uppercase; color:var(--v-muted); margin:0 0 10px; }
+  .side ol { list-style:none; margin:0 0 22px; padding:0; border-left:1px solid var(--v-line); }
+  .side a { display:block; padding:7px 12px; margin-left:-1px; border-left:2px solid transparent; color:var(--v-muted); text-decoration:none; font-size:.9rem; overflow-wrap:anywhere; }
+  .side a:hover { color:var(--v-text); }
+  .side a[aria-current="true"] { color:var(--v-gold-2); border-left-color:var(--v-gold); }
+  .side .count { color:var(--v-muted); font-variant-numeric:tabular-nums; font-size:.8rem; }
+  main { min-width:0; }
+  section { margin-bottom:48px; }
+  h1, h2.sec { font-family:var(--serif); letter-spacing:.02em; font-weight:400; }
+  h2.sec { font-size:1.45rem; margin:0 0 6px; }
+  .lead { color:var(--v-muted); margin:0 0 18px; max-width:68ch; }
+  .eyebrow { font:700 .72rem var(--sans); letter-spacing:.18em; text-transform:uppercase; color:var(--v-gold); margin:0 0 10px; }
+
+  /* ---------- busca em destaque ---------- */
+  .hero { padding:28px 0 8px; }
+  .hero h1 { font-size:clamp(1.9rem,4.2vw,3rem); line-height:1.1; margin:0 0 8px; }
+  .searchbox { position:relative; margin:22px 0 12px; max-width:860px; }
+  .searchbox svg { position:absolute; left:20px; top:50%; transform:translateY(-50%); color:var(--v-gold); pointer-events:none; }
+  #q { width:100%; height:64px; font:1.2rem var(--serif); letter-spacing:.01em; color:var(--v-text); background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r-lg);
+       padding:0 76px 0 56px; box-shadow:var(--v-shadow); transition:border-color .2s var(--v-ease); }
+  #q::placeholder { color:var(--v-muted); opacity:1; font-style:italic; }
+  #q:hover { border-color:var(--v-steel); }
+  #q:focus { outline:2px solid var(--v-gold); outline-offset:3px; border-color:var(--v-gold); }
+  #q::-webkit-search-cancel-button { filter:invert(.8); height:18px; width:18px; cursor:pointer; margin-right:2px; }
+  kbd { font:600 .8rem var(--mono); background:var(--v-surface-2); border:1px solid var(--v-line); border-bottom-width:2px; border-radius:6px; padding:1px 7px; color:var(--v-text); }
+  .searchbox kbd { position:absolute; right:18px; top:50%; transform:translateY(-50%); pointer-events:none; }
+  .searchbox:focus-within kbd { display:none; }
+  .suggest { display:flex; flex-wrap:wrap; gap:8px; align-items:center; color:var(--v-muted); font-size:.88rem; }
+  .tag { font:inherit; font-size:.88rem; font-weight:600; color:var(--v-text); background:var(--v-surface); border:1px solid var(--v-line); border-radius:999px; padding:7px 14px; min-height:36px; cursor:pointer; transition:border-color .2s var(--v-ease), transform .2s var(--v-ease); }
+  .tag:hover { border-color:var(--v-gold); transform:translateY(-2px); }
+
+  /* ---------- resultados e leitor ---------- */
+  .results-wrap { display:grid; grid-template-columns:minmax(0,1fr); gap:28px; margin-top:26px; }
+  .results-wrap.has-reader { grid-template-columns:minmax(300px,420px) minmax(0,1fr); align-items:start; }
+  #status-busca { color:var(--v-muted); font-size:.9rem; margin:0 0 12px; min-height:1.4em; }
+  .group { margin-bottom:26px; scroll-margin-top:calc(var(--top) + 16px); }
+  .group-h { display:flex; align-items:baseline; gap:10px; margin:0 0 10px; font:700 .76rem var(--sans); letter-spacing:.18em; text-transform:uppercase; color:var(--v-muted); }
+  .group-h b { color:var(--v-gold-2); font-size:.95rem; letter-spacing:.1em; }
+  .cards { display:grid; gap:12px; grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); }
+  .has-reader .cards { grid-template-columns:1fr; }
+  .card { display:block; width:100%; text-align:left; font:inherit; color:inherit; cursor:pointer; background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r); padding:16px 18px;
+          transition:transform .2s var(--v-ease), border-color .2s var(--v-ease), box-shadow .2s var(--v-ease); }
+  .card:hover, .card:focus-visible { transform:translateY(-3px); border-color:var(--v-gold); box-shadow:var(--v-shadow); }
+  .card[aria-current="true"] { border-color:var(--v-gold); background:var(--v-surface-2); }
+  .card .ref { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:baseline; margin-bottom:6px; }
+  .card .ref b { font:700 .9rem var(--sans); letter-spacing:.04em; color:var(--v-gold-2); }
+  .card .ref span { color:var(--v-muted); font-size:.82rem; }
+  .card .rub { font:italic 1rem var(--serif); color:var(--v-text); margin:0 0 6px; }
+  .card p { margin:0; font:1rem/1.6 var(--serif); color:var(--v-text); overflow-wrap:anywhere; }
+  mark { background:rgba(212,162,76,.30); color:var(--v-text); border-radius:3px; padding:0 2px; box-shadow:inset 0 -2px 0 var(--v-gold); }
+  .empty { background:var(--v-surface); border:1px dashed var(--v-line); border-radius:var(--v-r); padding:28px; color:var(--v-muted); max-width:60ch; }
+  .empty b { color:var(--v-text); font-family:var(--serif); font-size:1.1rem; font-weight:400; display:block; margin-bottom:4px; }
+  .skeleton { height:96px; border-radius:var(--v-r); background:linear-gradient(90deg,var(--v-surface) 25%,var(--v-surface-2) 50%,var(--v-surface) 75%); background-size:300% 100%; animation:sk 1.2s linear infinite; margin-bottom:12px; }
+  @keyframes sk { to { background-position:-300% 0; } }
+
+  .reader-col { position:sticky; top:calc(var(--top) + 20px); max-height:calc(100vh - var(--top) - 40px); overflow:auto; border-radius:var(--v-r-lg); }
+  .reader-col[hidden] { display:none; }
+  .reader { background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r-lg); box-shadow:var(--v-shadow); overflow:hidden; }
+  .reader-head { padding:22px 28px 18px; background:linear-gradient(0deg,var(--v-surface) 0%,rgba(212,162,76,.10) 100%); border-bottom:1px solid var(--v-line); }
+  .reader-head .rbar { display:flex; align-items:center; gap:8px; margin-bottom:12px; flex-wrap:wrap; }
+  .reader-head h2 { font:400 1.7rem/1.2 var(--serif); letter-spacing:.02em; margin:0; }
+  .reader-head .path { font:.8rem var(--mono); color:var(--v-muted); overflow-wrap:anywhere; margin-top:6px; }
+  .reader-body { padding:26px 28px 34px; font:1.12rem/1.8 var(--serif); }
+  .lei { max-width:70ch; margin:0 auto; }
+  .lei .art { font:700 1.05rem var(--sans); letter-spacing:.14em; text-transform:uppercase; color:var(--v-gold-2); margin:0 0 2px; scroll-margin-top:calc(var(--top) + 16px); }
+  .lei .rubrica { font:italic 1.2rem var(--serif); color:var(--v-muted); margin:0 0 14px; }
+  .lei .disp { margin:0 0 10px; }
+  .lei .disp .lbl { font-weight:700; margin-right:.5em; }
+  .lei .l-par { padding-left:1.6em; } .lei .l-inc { padding-left:3.2em; } .lei .l-ali { padding-left:4.8em; } .lei .l-item { padding-left:6.4em; }
+  .lei .ctx { color:var(--v-muted); font-size:.95rem; border-left:2px solid var(--v-line); padding-left:12px; margin:0 0 10px; }
+  .lei .alvo { background:rgba(212,162,76,.06); border-left:3px solid var(--v-gold); padding:6px 14px; margin-left:-17px; border-radius:0 var(--v-r) var(--v-r) 0; }
+  .lei .est { text-align:center; padding:14px; }
+  .lei .est-k { font:700 .85rem var(--sans); letter-spacing:.2em; text-transform:uppercase; color:var(--v-gold-2); }
+  .lei .est-t { font:400 1.4rem/1.3 var(--serif); letter-spacing:.02em; margin:6px 0 0; }
+  .lei .nota { font:.82rem var(--sans); color:var(--v-muted); margin-top:18px; }
+  .btn { font:inherit; font-weight:600; border-radius:999px; padding:9px 18px; min-height:40px; cursor:pointer; border:1px solid var(--v-line); background:rgba(255,255,255,.05); color:var(--v-text); transition:border-color .2s var(--v-ease), background .2s var(--v-ease), transform .2s var(--v-ease); }
+  .btn:hover { border-color:var(--v-gold); background:rgba(255,255,255,.09); }
+  .btn.primary { background:var(--v-gold); border-color:var(--v-gold); color:var(--v-on-gold); font-weight:700; }
+  .btn.primary:hover { background:var(--v-gold-2); }
+  .btn:disabled { opacity:.55; cursor:not-allowed; }
+  .btn.link { background:none; border:none; padding:6px 8px; min-height:36px; color:var(--v-gold-2); border-radius:6px; }
+  .btn.link:hover { background:var(--v-surface-2); }
+
+  /* ---------- fileiras ---------- */
+  .row-block { margin-bottom:30px; position:relative; }
+  .row-block h3 { font:700 .76rem var(--sans); letter-spacing:.18em; text-transform:uppercase; color:var(--v-muted); margin:0 0 12px; }
+  .rail { display:flex; gap:14px; overflow-x:auto; scroll-snap-type:x proximity; padding:4px 2px 14px; scrollbar-width:thin; scrollbar-color:var(--v-line) transparent; }
+  .tile { flex:0 0 clamp(220px,24vw,280px); scroll-snap-align:start; aspect-ratio:16/9; position:relative; overflow:hidden; text-align:left; font:inherit; color:var(--v-text); cursor:pointer;
+          border:1px solid var(--v-line); border-radius:var(--v-r); padding:14px 16px; display:flex; flex-direction:column; justify-content:flex-end;
+          background:linear-gradient(0deg,rgba(11,13,17,.9) 0%,transparent 70%), linear-gradient(135deg,var(--v-surface-2),var(--v-surface)); transition:transform .2s var(--v-ease), border-color .2s var(--v-ease); }
+  .tile::before { content:"§"; position:absolute; right:14px; top:-6px; font:700 4.4rem var(--serif); color:rgba(212,162,76,.16); }
+  .tile:hover, .tile:focus-visible { transform:translateY(-3px); border-color:var(--v-gold); }
+  .tile .k { font:700 .7rem var(--sans); letter-spacing:.16em; text-transform:uppercase; color:var(--v-gold-2); margin-bottom:4px; }
+  .tile .t { font:1rem/1.3 var(--serif); overflow:hidden; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow-wrap:anywhere; }
+  .arrow { position:absolute; top:calc(50% + 6px); z-index:3; width:44px; height:44px; border-radius:50%; border:1px solid var(--v-line); background:rgba(11,13,17,.85); color:var(--v-text); font-size:1.3rem; cursor:pointer; display:none; }
+  .arrow:hover { border-color:var(--v-gold); color:var(--v-gold-2); }
+  .arrow.l { left:-14px; } .arrow.r { right:-14px; }
+  @media (hover:hover) and (min-width:861px) { .row-block:hover .arrow, .row-block:focus-within .arrow { display:block; } }
+  .badge { display:inline-block; font:700 .66rem var(--sans); letter-spacing:.12em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--v-gold); color:var(--v-gold-2); margin-right:6px; }
+
+  /* ---------- manutenção ---------- */
+  .grid { display:grid; gap:18px; grid-template-columns:minmax(0,1fr); }
+  @media (min-width:1100px) { .grid.two { grid-template-columns:1.2fr 1fr; } }
+  .panel { background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r); padding:22px; min-width:0; }
+  .panel h2 { font:400 1.2rem var(--serif); letter-spacing:.02em; margin:0 0 12px; }
+  .muted { color:var(--v-muted); } .mono { font-family:var(--mono); font-size:.85em; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
   .stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin:14px 0; }
-  .stat { background:var(--surface-2); border-radius:10px; padding:10px 12px; }
-  .stat b { display:block; font-size:1.3rem; font-variant-numeric:tabular-nums; }
-  .stat small { color:var(--muted); }
-  .bar { height:8px; background:var(--surface-2); border-radius:999px; overflow:hidden; }
-  .bar > i { display:block; height:100%; width:0; background:var(--primary); transition:width .3s; }
+  .stat { background:var(--v-surface-2); border-radius:var(--v-r); padding:12px 14px; }
+  .stat b { display:block; font:400 1.5rem var(--serif); font-variant-numeric:tabular-nums; color:var(--v-gold-2); }
+  .stat small { color:var(--v-muted); }
+  .bar { height:8px; background:var(--v-surface-2); border-radius:999px; overflow:hidden; }
+  .bar > i { display:block; height:100%; width:0; background:var(--v-gold); transition:width .3s; }
   .areas { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 12px; font-size:.88rem; margin-top:8px; }
-  .areas .b { grid-column:1 / -1; height:4px; background:var(--surface-2); border-radius:4px; margin-bottom:4px; }
-  .areas .b > i { display:block; height:100%; background:var(--xp); border-radius:4px; }
+  .areas .b { grid-column:1 / -1; height:4px; background:var(--v-surface-2); border-radius:4px; margin-bottom:4px; }
+  .areas .b > i { display:block; height:100%; background:var(--v-gold); border-radius:4px; }
   ul.plain { list-style:none; padding:0; margin:8px 0 0; }
-  ul.plain li { padding:6px 0; border-top:1px solid var(--border); font-size:.88rem; overflow-wrap:anywhere; }
-  .chip { display:inline-flex; align-items:center; gap:6px; background:var(--surface-2); border:1px solid var(--border);
-          border-radius:999px; padding:3px 6px 3px 10px; font-family:var(--mono); font-size:.8rem; max-width:100%; overflow-wrap:anywhere; }
-  .chip button { padding:0 6px; border:none; background:none; color:var(--muted); font-size:1rem; line-height:1; }
-  input[type=search] { width:100%; font:inherit; padding:10px 12px; border-radius:10px; border:1px solid var(--border);
-                       background:var(--surface-2); color:var(--text); }
-  .hit { padding:10px 0; border-top:1px solid var(--border); }
-  .hit .ref { font-family:var(--mono); font-size:.8rem; color:var(--primary); }
-  .hit p { margin:4px 0 0; font-family:"Source Serif 4",Georgia,serif; font-size:1rem; }
-  mark { background:color-mix(in srgb, var(--xp) 28%, transparent); color:inherit; border-radius:3px; padding:0 2px; }
-  .msg { margin-top:10px; font-size:.9rem; } .msg.err { color:var(--danger); } .msg.ok { color:var(--success); }
-  details summary { cursor:pointer; color:var(--muted); font-size:.88rem; margin-top:10px; }
+  ul.plain li { padding:8px 0; border-top:1px solid var(--v-line); font-size:.88rem; overflow-wrap:anywhere; }
+  .chip { display:inline-flex; align-items:center; gap:4px; background:var(--v-surface-2); border:1px solid var(--v-line); border-radius:999px; padding:2px 4px 2px 12px; font-family:var(--mono); font-size:.8rem; max-width:100%; overflow-wrap:anywhere; }
+  .chip button { padding:0; width:32px; height:32px; border:none; background:none; color:var(--v-muted); font-size:1.1rem; cursor:pointer; border-radius:50%; }
+  .chip button:hover { color:var(--v-text); background:var(--v-line); }
+  .msg { margin-top:10px; font-size:.9rem; } .msg.err { color:var(--bad-text); } .msg.ok { color:var(--v-ok); }
+  details summary { cursor:pointer; color:var(--v-muted); font-size:.9rem; margin-top:10px; padding:6px 0; min-height:36px; }
+  details summary:hover { color:var(--v-text); }
   table { width:100%; border-collapse:collapse; font-size:.85rem; }
-  th, td { text-align:left; padding:6px 4px; border-top:1px solid var(--border); vertical-align:top; }
-  th { color:var(--muted); font-weight:500; }
+  th, td { text-align:left; padding:9px 6px; border-top:1px solid var(--v-line); vertical-align:top; }
+  th { color:var(--v-muted); font-weight:600; }
   .num { text-align:right; font-variant-numeric:tabular-nums; }
   .table-wrap { overflow-x:auto; }
-  label.toggle { display:flex; gap:8px; align-items:center; font-size:.88rem; color:var(--muted); margin-top:10px; }
-  .crumbs { font-family:var(--mono); font-size:.8rem; margin:8px 0; overflow-wrap:anywhere; }
+  label.toggle { display:flex; gap:10px; align-items:center; font-size:.9rem; color:var(--v-muted); margin-top:10px; min-height:36px; }
+  label.toggle input { width:18px; height:18px; accent-color:var(--v-gold); }
+  .crumbs { font-family:var(--mono); font-size:.8rem; margin:12px 0 4px; overflow-wrap:anywhere; }
   .browse li { display:flex; justify-content:space-between; gap:8px; align-items:center; }
+
+  /* ---------- celular ---------- */
+  @media (max-width:860px) {
+    .topbar { padding:0 12px; gap:10px; }
+    .nav { display:none; }
+    .menu-btn { display:inline-flex; align-items:center; gap:6px; }
+    .shell { grid-template-columns:minmax(0,1fr); padding:calc(var(--top) + 14px) 16px 60px; gap:0; }
+    .side { position:fixed; inset:var(--top) 0 auto 0; z-index:45; max-height:calc(100vh - var(--top)); background:rgba(11,13,17,.97); backdrop-filter:blur(12px); padding:18px 20px 8px; border-bottom:1px solid var(--v-line); transform:translateY(-110%); visibility:hidden; transition:transform .25s var(--v-ease), visibility .25s; }
+    .side.open { transform:none; visibility:visible; }
+    .side a { padding:12px 14px; }
+    .me small { display:none; } .me b { display:none; }
+    .pill { max-width:42vw; overflow:hidden; text-overflow:ellipsis; }
+    #q { height:58px; font-size:1.05rem; padding-left:50px; padding-right:16px; }
+    .searchbox kbd { display:none; }
+    .searchbox svg { left:16px; }
+    .results-wrap.has-reader { grid-template-columns:minmax(0,1fr); }
+    .reader-col { position:fixed; inset:var(--top) 0 0 0; z-index:60; max-height:none; border-radius:0; background:var(--v-bg); padding:0; }
+    .reader { border-radius:0; border:none; min-height:100%; }
+    .reader-head { padding:18px 18px 14px; } .reader-head h2 { font-size:1.4rem; }
+    .reader-body { padding:20px 18px 40px; font-size:1.05rem; }
+    .lei .l-par { padding-left:1em; } .lei .l-inc { padding-left:2em; } .lei .l-ali { padding-left:3em; } .lei .l-item { padding-left:4em; }
+    .cards { grid-template-columns:1fr; }
+    .tile { flex-basis:72vw; }
+    .btn, .tag, .btn.link, details summary, label.toggle { min-height:44px; }
+    .logo { min-height:44px; justify-content:center; }
+    .chip button { width:44px; height:44px; }
+    .stats { grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+    .stat b { font-size:1.2rem; }
+    .hero h1 { font-size:1.9rem; }
+  }
+  @media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } .card:hover, .tag:hover, .tile:hover { transform:none; } }
 </style>
 </head>
 <body>
-<main>
-  <header>
-    <h1>Vade <span>· acervo de leis</span></h1>
-    <span id="pill" class="pill" role="status" aria-live="polite">carregando…</span>
-  </header>
+<a class="skip" href="#sec-busca">Ir para a busca</a>
 
-  <div class="grid two">
-    <section class="card" aria-labelledby="sync-h">
-      <h2 id="sync-h">Sincronização com ctresb/leis</h2>
-      <div id="local" class="muted">—</div>
-      <div class="stats">
-        <div class="stat"><b id="c-normas">–</b><small>normas</small></div>
-        <div class="stat"><b id="c-disp">–</b><small>dispositivos</small></div>
-        <div class="stat"><b id="c-falhas">–</b><small>falhas</small></div>
-      </div>
-      <div class="row">
-        <button id="btn-check" class="primary">Verificar atualização</button>
-        <button id="btn-update" hidden>Atualizar agora</button>
-      </div>
-      <div id="progress" hidden style="margin-top:14px">
-        <div class="bar"><i id="bar"></i></div>
-        <div id="progress-txt" class="muted mono" style="margin-top:6px"></div>
-      </div>
-      <div id="check-msg" class="msg" aria-live="polite"></div>
-      <div id="check-detail" hidden>
-        <div class="stats">
-          <div class="stat"><b id="d-commits">0</b><small>commits novos</small></div>
-          <div class="stat"><b id="d-files">0</b><small>arquivos alterados</small></div>
-          <div class="stat"><b id="d-scope">0</b><small>no seu recorte</small></div>
-        </div>
-        <div class="muted" style="font-size:.85rem">Onde mudou:</div>
-        <div id="d-areas" class="areas"></div>
-        <details><summary>Commits</summary><ul id="d-commit-list" class="plain"></ul></details>
-      </div>
-      <label class="toggle"><input type="checkbox" id="auto-check"> verificar sozinho a cada 15 min enquanto esta página estiver aberta</label>
-      <label class="toggle"><input type="checkbox" id="auto-update"> e atualizar automaticamente quando houver mudança no recorte</label>
-      <details><summary>Opções avançadas</summary>
-        <div class="row" style="margin-top:8px">
-          <button id="btn-full">Reconciliar recorte inteiro</button>
-          <span class="muted" style="font-size:.82rem">compara tudo, não só o diff (use se algo parecer fora de sincronia)</span>
-        </div>
-      </details>
-    </section>
-
-    <section class="card" aria-labelledby="scope-h">
-      <h2 id="scope-h">Recorte</h2>
-      <p class="muted" style="margin:0 0 8px;font-size:.88rem">Só estas pastas são importadas. O resto do acervo continua sendo verificado, mas não é baixado.</p>
-      <div id="chips" class="row"></div>
-      <div class="row" style="margin-top:10px">
-        <button data-preset="min">Mínimo (teste)</button>
-        <button data-preset="essencial">Essencial federal</button>
-      </div>
-      <div class="crumbs" id="crumbs"></div>
-      <ul id="browse" class="plain browse"></ul>
-      <div class="row" style="margin-top:10px">
-        <button id="btn-save-scope" class="primary">Salvar recorte</button>
-        <span id="scope-msg" class="msg"></span>
-      </div>
-    </section>
+<header class="topbar">
+  <button class="btn menu-btn" id="menu-btn" aria-expanded="false" aria-controls="side" aria-label="Abrir índice da página">☰ Índice</button>
+  <a class="logo" href="/" aria-label="VADE, início">VADE</a>
+  <nav class="nav" aria-label="Seções do Vade">
+    <a href="/tribunal">Tribunal</a>
+    <a href="/">Estudo</a>
+    <a href="/acervo" aria-current="page">Acervo</a>
+  </nav>
+  <span class="sp"></span>
+  <span id="pill" class="pill" role="status" aria-live="polite">carregando…</span>
+  <div class="me" id="me" hidden>
+    <div class="avatar" id="me-av" aria-hidden="true">V</div>
+    <div><b id="me-name">Você</b><small id="me-rank"></small></div>
   </div>
+</header>
 
-  <section class="card" style="margin-top:16px" aria-labelledby="search-h">
-    <h2 id="search-h">Buscar no catálogo</h2>
-    <input id="q" type="search" placeholder="ex.: legítima defesa, ação popular, dados pessoais sensíveis" autocomplete="off">
-    <div id="hits"></div>
-  </section>
+<div class="shell">
+  <aside class="side" id="side" aria-label="Índice da página">
+    <h2>Nesta página</h2>
+    <ol id="toc">
+      <li><a href="#sec-busca">Busca</a></li>
+      <li><a href="#sec-explorar">Explorar</a></li>
+      <li><a href="#sec-sync">Sincronização</a></li>
+      <li><a href="#sec-recorte">Recorte</a></li>
+      <li><a href="#sec-hist">Histórico</a></li>
+    </ol>
+    <div id="toc-res" hidden>
+      <h2>Resultados por norma</h2>
+      <ol id="toc-norms"></ol>
+    </div>
+  </aside>
 
-  <section class="card" style="margin-top:16px" aria-labelledby="hist-h">
-    <h2 id="hist-h">Histórico de atualizações</h2>
-    <div class="table-wrap"><table>
-      <thead><tr><th>Quando</th><th>Commits</th><th class="num">Novas</th><th class="num">Alteradas</th><th class="num">Removidas</th><th class="num">Falhas</th></tr></thead>
-      <tbody id="hist"></tbody>
-    </table></div>
-  </section>
-</main>
+  <main id="main">
+    <section id="sec-busca" aria-labelledby="busca-h">
+      <div class="hero">
+        <p class="eyebrow">Acervo de leis</p>
+        <h1 id="busca-h">Encontre o artigo certo.</h1>
+        <p class="lead">Busque em todo o catálogo importado: leis, códigos, decretos e súmulas. Os termos buscados ficam destacados em dourado.</p>
+        <div class="searchbox" role="search">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <label for="q" class="sr">Buscar no catálogo</label>
+          <input id="q" type="search" placeholder="ex.: legítima defesa, ação popular, dados pessoais sensíveis" autocomplete="off" aria-describedby="status-busca">
+          <kbd aria-hidden="true">/</kbd>
+        </div>
+        <div class="suggest" id="suggest" aria-label="Sugestões de busca"><span>Experimente:</span></div>
+      </div>
+
+      <div class="results-wrap" id="results-wrap">
+        <div id="results-col">
+          <p id="status-busca" role="status" aria-live="polite"></p>
+          <div id="hits"></div>
+        </div>
+        <div class="reader-col" id="reader-col" hidden>
+          <article class="reader" id="reader" aria-labelledby="reader-title" tabindex="-1"></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sec-explorar" aria-labelledby="exp-h">
+      <h2 class="sec" id="exp-h">Explorar</h2>
+      <p class="lead">Atalhos para voltar ao que você já viu e ao que mudou no acervo.</p>
+      <div id="rows"></div>
+    </section>
+
+    <section id="sec-sync" aria-labelledby="sync-h">
+      <h2 class="sec" id="sync-h">Sincronização</h2>
+      <p class="lead">O catálogo acompanha o repositório ctresb/leis. Verifique se há novidades e atualize só o que está no seu recorte.</p>
+      <div class="panel">
+        <div id="local" class="muted">—</div>
+        <div class="stats">
+          <div class="stat"><b id="c-normas">–</b><small>normas</small></div>
+          <div class="stat"><b id="c-disp">–</b><small>dispositivos</small></div>
+          <div class="stat"><b id="c-falhas">–</b><small>falhas</small></div>
+        </div>
+        <div class="row">
+          <button id="btn-check" class="btn primary">Verificar atualização</button>
+          <button id="btn-update" class="btn" hidden>Atualizar agora</button>
+        </div>
+        <div id="progress" hidden style="margin-top:14px">
+          <div class="bar"><i id="bar"></i></div>
+          <div id="progress-txt" class="muted mono" style="margin-top:6px"></div>
+        </div>
+        <div id="check-msg" class="msg" aria-live="polite"></div>
+        <div id="check-detail" hidden>
+          <div class="stats">
+            <div class="stat"><b id="d-commits">0</b><small>commits novos</small></div>
+            <div class="stat"><b id="d-files">0</b><small>arquivos alterados</small></div>
+            <div class="stat"><b id="d-scope">0</b><small>no seu recorte</small></div>
+          </div>
+          <div class="muted" style="font-size:.85rem">Onde mudou:</div>
+          <div id="d-areas" class="areas"></div>
+          <details><summary>Commits</summary><ul id="d-commit-list" class="plain"></ul></details>
+        </div>
+        <label class="toggle"><input type="checkbox" id="auto-check"> verificar sozinho a cada 15 min enquanto esta página estiver aberta</label>
+        <label class="toggle"><input type="checkbox" id="auto-update"> e atualizar automaticamente quando houver mudança no recorte</label>
+        <details><summary>Opções avançadas</summary>
+          <div class="row" style="margin-top:8px">
+            <button id="btn-full" class="btn">Reconciliar recorte inteiro</button>
+            <span class="muted" style="font-size:.85rem">compara tudo, não só o diff (use se algo parecer fora de sincronia)</span>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="sec-recorte" aria-labelledby="scope-h">
+      <h2 class="sec" id="scope-h">Recorte</h2>
+      <p class="lead">Só estas pastas são importadas. O resto do acervo continua sendo verificado, mas não é baixado.</p>
+      <div class="panel">
+        <div id="chips" class="row"></div>
+        <div class="row" style="margin-top:14px">
+          <button class="btn" data-preset="min">Mínimo (teste)</button>
+          <button class="btn" data-preset="essencial">Essencial federal</button>
+        </div>
+        <div class="crumbs" id="crumbs"></div>
+        <ul id="browse" class="plain browse"></ul>
+        <div class="row" style="margin-top:14px">
+          <button id="btn-save-scope" class="btn primary">Salvar recorte</button>
+          <span id="scope-msg" class="msg" role="status"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="sec-hist" aria-labelledby="hist-h">
+      <h2 class="sec" id="hist-h">Histórico de atualizações</h2>
+      <div class="panel"><div class="table-wrap"><table>
+        <thead><tr><th>Quando</th><th>Commits</th><th class="num">Novas</th><th class="num">Alteradas</th><th class="num">Removidas</th><th class="num">Falhas</th></tr></thead>
+        <tbody id="hist"></tbody>
+      </table></div></div>
+    </section>
+  </main>
+</div>
 
 <script>
 const PRESETS = {
@@ -161,6 +360,7 @@ const PRESETS = {
               "federal/decretos-lei", "federal/leis-ordinarias", "jurisprudencia/stf/sumulas-vinculantes",
               "jurisprudencia/stf/sumulas", "jurisprudencia/stj/sumulas", "jurisprudencia/tst/sumulas"],
 };
+const SUGESTOES = ["legítima defesa", "prisão em flagrante", "dados pessoais sensíveis", "ação popular", "prescrição"];
 const $ = (id) => document.getElementById(id);
 const fmt = (n) => Number(n || 0).toLocaleString("pt-BR");
 const when = (iso) => iso ? new Date(iso).toLocaleString("pt-BR", {dateStyle:"short", timeStyle:"short"}) : "—";
@@ -168,7 +368,7 @@ const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch { return d; } },
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
 };
-let recorte = [], polling = null, autoTimer = null, browsePath = "";
+let recorte = [], polling = null, autoTimer = null, browsePath = "", historico = [];
 
 async function api(path, body) {
   const opt = body === undefined ? {} : { method:"POST", headers:{ "Content-Type":"application/json", "X-Vade":"1" }, body:JSON.stringify(body) };
@@ -197,7 +397,7 @@ function renderStatus(s) {
   $("c-disp").textContent = fmt(s.contagens.dispositivos);
   $("c-falhas").textContent = fmt(s.contagens.falhas);
   recorte = s.recorte; renderChips();
-  renderHistory(s.historico);
+  historico = s.historico; renderHistory(s.historico); renderRows();
   if (s.job.estado === "rodando") startPolling();
   else if (s.ultima_verificacao) renderCheck(s.ultima_verificacao, false);
   else pill(c ? "não verificado" : "vazio");
@@ -312,17 +512,17 @@ function renderChips() {
 async function browse(path) {
   browsePath = path;
   const parts = path ? path.split("/") : [];
-  const crumbs = [el("button", {className:"link", textContent:"acervo", onclick:() => browse("")})];
-  parts.forEach((p, i) => crumbs.push(" / ", el("button", {className:"link", textContent:p, onclick:() => browse(parts.slice(0, i + 1).join("/"))})));
+  const crumbs = [el("button", {className:"btn link", textContent:"acervo", onclick:() => browse("")})];
+  parts.forEach((p, i) => crumbs.push(" / ", el("button", {className:"btn link", textContent:p, onclick:() => browse(parts.slice(0, i + 1).join("/"))})));
   $("crumbs").replaceChildren(...crumbs);
   try {
     const items = await api("/api/arvore?prefixo=" + encodeURIComponent(path));
     $("browse").replaceChildren(...items.slice(0, 60).map(it => {
       const name = it.caminho.split("/").pop();
       const open = it.tipo === "pasta"
-        ? el("button", {className:"link", textContent:name + "/", onclick:() => browse(it.caminho)})
+        ? el("button", {className:"btn link", textContent:name + "/", onclick:() => browse(it.caminho)})
         : el("span", {className:"mono", textContent:name});
-      const add = el("button", {className:"link", textContent:recorte.includes(it.caminho) ? "✓ no recorte" : "+ adicionar",
+      const add = el("button", {className:"btn link", textContent:recorte.includes(it.caminho) ? "✓ no recorte" : "+ adicionar",
         onclick:(ev) => { if (!recorte.includes(it.caminho)) { recorte.push(it.caminho); renderChips(); ev.target.textContent = "✓ no recorte"; } }});
       return el("li", {}, open, add);
     }));
@@ -330,22 +530,232 @@ async function browse(path) {
 }
 
 // ---------------------------------------------------------------- busca
+const EST = { livro:"Livro", titulo:"Título", capitulo:"Capítulo", secao:"Seção", subsecao:"Subseção", parte:"Parte" };
+const roman = (n) => { const m = [[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]]; let r = ""; for (const [v, s] of m) while (n >= v) { r += s; n -= v; } return r; };
+const HIER = { art:"Art.", par:"§", inc:"Inciso", ali:"Alínea", item:"Item" };
+const ORD = (n) => n <= 9 ? `${n}º` : `${n}.`;
+function segLabel(seg) {
+  const [k, ...rest] = seg.split("-"); const v = rest.join("-");
+  if (k in EST) return `${EST[k]} ${/^\d+$/.test(v) && +v < 40 ? roman(+v) : v.toUpperCase()}`;
+  if (k === "art") { const m = v.match(/^(\d+)(.*)$/); return "Art. " + (m ? m[1] + (m[2] ? "-" + m[2].toUpperCase() : "") : v); }
+  if (k === "par") return v === "unico" ? "Parágrafo único" : `§ ${/^\d+$/.test(v) ? ORD(+v) : v}`;
+  if (k === "inc") return `Inciso ${v.toUpperCase()}`;
+  if (k === "ali") return `Alínea ${v})`;
+  if (k === "item") return `Item ${v}`;
+  return seg;
+}
+const isEst = (seg) => seg.split("-")[0] in EST;
+const lvlClass = (seg) => "l-" + (seg.split("-")[0] in HIER ? seg.split("-")[0] : "item");
+function markedText(tag, text, cls) {
+  const p = el(tag, cls ? {className:cls} : {});
+  // o servidor marca os termos com [ ]; montamos <mark> sem usar innerHTML
+  String(text || "").split(/(\[[^\]]*\])/).forEach(part => p.append(part.startsWith("[") && part.endsWith("]") ? el("mark", {textContent:part.slice(1, -1)}) : part));
+  return p;
+}
+function citacao(h) {
+  return [h.norma, ...h.caminho.split("/").map(segLabel)].join(", ");
+}
+
+let lastHits = [], openIdx = -1, lastFocus = null, searchSeq = 0;
+const isMobile = () => matchMedia("(max-width:860px)").matches;
+
+function showEmpty(title, text) {
+  $("hits").replaceChildren(el("div", {className:"empty"}, el("b", {textContent:title}), text));
+}
+async function doSearch(q, { remember = true } = {}) {
+  q = q.trim();
+  closeReader(false);
+  if (q.length < 2) { lastHits = []; $("hits").replaceChildren(); $("status-busca").textContent = ""; renderTocNorms(); return; }
+  const seq = ++searchSeq;
+  $("status-busca").textContent = "Buscando…";
+  $("hits").replaceChildren(el("div", {className:"skeleton"}), el("div", {className:"skeleton"}), el("div", {className:"skeleton"}));
+  let hits, failed = false;
+  try { hits = await api("/api/busca?q=" + encodeURIComponent(q)); } catch { hits = []; failed = true; }
+  if (seq !== searchSeq) return;
+  lastHits = hits;
+  if (!hits.length) {
+    $("status-busca").textContent = failed ? "A busca falhou." : "Nenhum resultado.";
+    showEmpty(failed ? "Não foi possível buscar agora" : "Nada encontrado no catálogo importado.",
+      failed ? "Verifique se o servidor está ativo e tente de novo." : "Tente outras palavras ou termos mais gerais. Se a lei procurada não foi importada, inclua-a no recorte e atualize.");
+    renderTocNorms(); return;
+  }
+  if (remember) rememberSearch(q);
+  $("status-busca").textContent = `${hits.length} resultado(s) em ${new Set(hits.map(h => h.norma_id || h.norma)).size} norma(s).`;
+  const groups = new Map();
+  hits.forEach((h, i) => { const k = h.norma_id || h.norma; if (!groups.has(k)) groups.set(k, []); groups.get(k).push([h, i]); });
+  let gi = 0;
+  $("hits").replaceChildren(...[...groups].map(([k, items]) => {
+    const g = el("section", {className:"group", id:`norma-${gi++}`, ariaLabel:items[0][0].norma});
+    g.append(el("h3", {className:"group-h"}, el("b", {textContent:items[0][0].norma}), `${items.length} dispositivo(s)`));
+    const cards = el("div", {className:"cards"});
+    items.forEach(([h, i]) => {
+      const b = el("button", {className:"card", type:"button", id:`hit-${i}`, onclick:() => openReader(i)});
+      b.append(el("div", {className:"ref"}, el("b", {textContent:h.caminho.split("/").map(segLabel).join(" › ")}), el("span", {textContent:h.norma})));
+      if (h.rubrica) b.append(el("p", {className:"rub", textContent:h.rubrica}));
+      b.append(markedText("p", h.trecho));
+      cards.append(b);
+    });
+    g.append(cards); return g;
+  }));
+  renderTocNorms(groups);
+}
+function renderTocNorms(groups) {
+  const box = $("toc-res");
+  if (!groups || !groups.size) { box.hidden = true; $("toc-norms").replaceChildren(); return; }
+  let i = 0;
+  $("toc-norms").replaceChildren(...[...groups].map(([k, items]) =>
+    el("li", {}, el("a", {href:`#norma-${i++}`}, items[0][0].norma, " ", el("span", {className:"count", textContent:`(${items.length})`})))));
+  box.hidden = false;
+}
 let searchTimer;
 $("q").addEventListener("input", () => {
   clearTimeout(searchTimer);
-  searchTimer = setTimeout(async () => {
-    const q = $("q").value.trim();
-    if (q.length < 2) { $("hits").replaceChildren(); return; }
-    const hits = await api("/api/busca?q=" + encodeURIComponent(q)).catch(() => []);
-    $("hits").replaceChildren(...(hits.length ? hits.map(h => {
-      const p = el("p");
-      // o servidor marca os termos com [ ]; montamos <mark> sem usar innerHTML
-      h.trecho.split(/(\[[^\]]*\])/).forEach(part => p.append(part.startsWith("[") ? el("mark", {textContent:part.slice(1, -1)}) : part));
-      return el("div", {className:"hit"},
-        el("div", {className:"ref", textContent:`${h.norma} · ${h.caminho}${h.rubrica ? " — " + h.rubrica : ""}`}), p);
-    }) : [el("p", {className:"muted", textContent:"Nada encontrado no catálogo importado."})]));
-  }, 250);
+  searchTimer = setTimeout(() => doSearch($("q").value), 250);
 });
+$("q").addEventListener("keydown", (ev) => {
+  if (ev.key === "Enter") { clearTimeout(searchTimer); doSearch($("q").value); }
+  if (ev.key === "ArrowDown" && lastHits.length) { ev.preventDefault(); const c = $("hit-0"); if (c) c.focus(); }
+});
+
+// ---------------------------------------------------------------- leitor
+function openReader(i) {
+  const h = lastHits[i]; if (!h) return;
+  lastFocus = $(`hit-${i}`); openIdx = i;
+  document.querySelectorAll(".card[aria-current]").forEach(c => c.removeAttribute("aria-current"));
+  if (lastFocus) lastFocus.setAttribute("aria-current", "true");
+  const segs = h.caminho.split("/");
+  const lei = el("div", {className:"lei"});
+  segs.forEach((seg, n) => {
+    const last = n === segs.length - 1, isArt = seg.startsWith("art-");
+    if (isArt) {
+      lei.append(el("h3", {className:"art", id:"alvo-art", textContent:segLabel(seg)}));
+      const rub = last ? h.rubrica : null;
+      if (rub) lei.append(el("p", {className:"rubrica", textContent:rub}));
+    }
+    if (last && isEst(seg)) {
+      const d = el("div", {className:"est alvo"}, el("div", {className:"est-k", textContent:h.rotulo || segLabel(seg)}));
+      d.append(markedText("h3", h.trecho, "est-t"));
+      lei.append(d);
+    } else if (last) {
+      const d = el("div", {className:`disp alvo ${isArt ? "" : lvlClass(seg)}`});
+      if (!isArt) d.append(el("span", {className:"lbl", textContent:h.rotulo || segLabel(seg)}));
+      d.append(markedText("span", h.trecho));
+      lei.append(d);
+    } else if (!isArt) {
+      lei.append(el("p", {className:`ctx ${lvlClass(seg)}`, textContent:segLabel(seg) + " (contexto)"}));
+    }
+  });
+  lei.append(el("p", {className:"nota", textContent:"Trecho exibido como retornado pela busca; o texto integral da norma está no repositório de leis."}));
+  const copy = el("button", {className:"btn", type:"button", textContent:"Copiar citação"});
+  copy.onclick = async () => { try { await navigator.clipboard.writeText(citacao(h)); copy.textContent = "Copiado ✓"; } catch { copy.textContent = citacao(h); } setTimeout(() => copy.textContent = "Copiar citação", 2200); };
+  const more = el("button", {className:"btn", type:"button", textContent:"Buscar relacionados"});
+  more.onclick = () => { $("q").value = h.norma + " " + (h.rubrica || "").trim(); $("q").focus(); doSearch($("q").value); };
+  const prev = el("button", {className:"btn", type:"button", textContent:"← Anterior", disabled:i === 0, onclick:() => { openReader(i - 1); }});
+  const next = el("button", {className:"btn", type:"button", textContent:"Próximo →", disabled:i === lastHits.length - 1, onclick:() => { openReader(i + 1); }});
+  const back = el("button", {className:"btn", type:"button", textContent:"← Voltar aos resultados", onclick:() => history.state && history.state.reader ? history.back() : closeReader(true)});
+  const head = el("div", {className:"reader-head"},
+    el("div", {className:"rbar"}, back, prev, next),
+    el("h2", {id:"reader-title", textContent:`${h.norma} · ${segs.map(segLabel).join(" › ")}`}),
+    el("div", {className:"path", textContent:h.norma_id || ""}),
+    el("div", {className:"rbar", style:"margin:14px 0 0"}, copy));
+  const wasOpen = !$("reader-col").hidden;
+  $("reader").replaceChildren(head, el("div", {className:"reader-body"}, lei));
+  $("reader-col").hidden = false; $("results-wrap").classList.add("has-reader");
+  if (!wasOpen) { try { history.pushState({reader:1}, ""); } catch {} }
+  if (lastFocus && !isMobile()) lastFocus.scrollIntoView({block:"nearest"});
+  $("reader-col").scrollTop = 0;
+  if (isMobile()) { document.body.style.overflow = "hidden"; $("reader").focus(); }
+  else { $("reader").focus({preventScroll:true}); }
+}
+function closeReader(restoreFocus = true) {
+  if ($("reader-col").hidden) return;
+  $("reader-col").hidden = true; $("results-wrap").classList.remove("has-reader");
+  document.body.style.overflow = "";
+  document.querySelectorAll(".card[aria-current]").forEach(c => c.removeAttribute("aria-current"));
+  if (restoreFocus && lastFocus) lastFocus.focus();
+  openIdx = -1;
+}
+window.addEventListener("popstate", () => closeReader(true));
+document.addEventListener("keydown", (ev) => {
+  const t = ev.target, typing = t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.isContentEditable);
+  if (ev.key === "/" && !typing && !ev.ctrlKey && !ev.metaKey && !ev.altKey) { ev.preventDefault(); closeReader(false); $("q").focus(); $("q").select(); window.scrollTo({top:0}); return; }
+  if (ev.key === "Escape") {
+    if (!$("reader-col").hidden) { history.state && history.state.reader ? history.back() : closeReader(true); }
+    else if ($("side").classList.contains("open")) toggleMenu(false);
+    else if (t === $("q") && $("q").value) { $("q").value = ""; doSearch(""); }
+    return;
+  }
+  // setas navegam entre cartões de resultado
+  if ((ev.key === "ArrowDown" || ev.key === "ArrowUp") && t && t.classList && t.classList.contains("card")) {
+    const cards = [...document.querySelectorAll(".card")], n = cards.indexOf(t) + (ev.key === "ArrowDown" ? 1 : -1);
+    if (cards[n]) { ev.preventDefault(); cards[n].focus(); }
+    else if (n < 0) { ev.preventDefault(); $("q").focus(); }
+  }
+});
+
+// ---------------------------------------------------------------- fileiras
+function rememberSearch(q) {
+  const l = [q, ...store.get("recentes", []).filter(x => x !== q)].slice(0, 12);
+  store.set("recentes", l); renderRows();
+}
+function makeRail(title, tiles, label) {
+  if (!tiles.length) return null;
+  const rail = el("div", {className:"rail", tabIndex:-1}, ...tiles);
+  const go = (d) => rail.scrollBy({left:d * rail.clientWidth * .8, behavior:"smooth"});
+  const l = el("button", {className:"arrow l", type:"button", textContent:"‹", ariaLabel:`${title}: anteriores`, onclick:() => go(-1)});
+  const r = el("button", {className:"arrow r", type:"button", textContent:"›", ariaLabel:`${title}: próximos`, onclick:() => go(1)});
+  return el("div", {className:"row-block", role:"group", ariaLabel:label || title}, el("h3", {textContent:title}), l, rail, r);
+}
+function tile(kind, text, onclick) {
+  return el("button", {className:"tile", type:"button", onclick}, el("span", {className:"k", textContent:kind}), el("span", {className:"t", textContent:text}));
+}
+function runSearch(q) { $("q").value = q; window.scrollTo({top:0, behavior:"smooth"}); doSearch(q); $("q").focus({preventScroll:true}); }
+function renderRows() {
+  const rec = store.get("recentes", []);
+  const mud = []; const seen = new Set();
+  for (const h of historico) for (const m of (h.mudancas || [])) { if (!seen.has(m.titulo)) { seen.add(m.titulo); mud.push(m); } if (mud.length >= 14) break; }
+  const blocks = [
+    makeRail("Buscas recentes", rec.map(q => tile("Busca", q, () => runSearch(q)))),
+    makeRail("Atualizadas recentemente", mud.map(m => tile(m.acao || "Norma", m.titulo, () => runSearch(m.titulo)))),
+    makeRail("Normas no recorte", recorte.map(p => tile(p.includes(".md") ? "Arquivo" : "Pasta", p.replace(/\.md$/, ""), () => {
+      browse(p.split("/").slice(0, -1).join("/")); $("sec-recorte").scrollIntoView(); }))),
+  ].filter(Boolean);
+  $("rows").replaceChildren(...(blocks.length ? blocks : [el("div", {className:"empty"}, el("b", {textContent:"Nada por aqui ainda."}), "Suas buscas e as normas atualizadas aparecem aqui.")]));
+}
+function renderSuggest() {
+  const box = $("suggest");
+  box.replaceChildren(el("span", {textContent:"Experimente:"}), ...SUGESTOES.map(s => el("button", {className:"tag", type:"button", textContent:s, onclick:() => runSearch(s)})));
+}
+
+// ---------------------------------------------------------------- índice lateral e menu
+function toggleMenu(open) {
+  const side = $("side"); open = open === undefined ? !side.classList.contains("open") : open;
+  side.classList.toggle("open", open); $("menu-btn").setAttribute("aria-expanded", String(open));
+  if (open) { const a = side.querySelector("a"); if (a) a.focus(); } else if (isMobile()) $("menu-btn").focus();
+}
+$("menu-btn").onclick = () => toggleMenu();
+$("side").addEventListener("click", (ev) => { if (ev.target.closest("a") && isMobile()) toggleMenu(false); });
+const SECS = ["sec-busca", "sec-explorar", "sec-sync", "sec-recorte", "sec-hist"];
+let spyBusy = false;
+function spyUpdate() {
+  spyBusy = false;
+  const atEnd = innerHeight + scrollY >= document.documentElement.scrollHeight - 4;
+  let cur = SECS[0];
+  for (const id of SECS) if ($(id).getBoundingClientRect().top <= innerHeight * .3) cur = id;
+  if (atEnd) cur = SECS[SECS.length - 1];
+  document.querySelectorAll("#side a[aria-current]").forEach(a => a.removeAttribute("aria-current"));
+  const a = document.querySelector(`#toc a[href="#${cur}"]`); if (a) a.setAttribute("aria-current", "true");
+}
+addEventListener("scroll", () => { if (!spyBusy) { spyBusy = true; setTimeout(spyUpdate, 60); } }, {passive:true});
+addEventListener("resize", spyUpdate); addEventListener("hashchange", () => setTimeout(spyUpdate, 80)); spyUpdate();
+
+// ---------------------------------------------------------------- perfil (só no servidor do jogo)
+api("/api/arena/perfil").then(p => {
+  if (!p || !p.nome) return;
+  $("me-av").textContent = (p.nome[0] || "V").toUpperCase();
+  $("me-name").textContent = p.nome; $("me-rank").textContent = `Nv ${p.nivel} · ${p.titulo} · ${fmt(p.xp)} XP`;
+  $("me").hidden = false;
+}).catch(() => {});
 
 // ---------------------------------------------------------------- ligações
 $("btn-check").onclick = check;
@@ -353,7 +763,7 @@ $("btn-update").onclick = () => startUpdate(false);
 $("btn-full").onclick = () => startUpdate(true);
 document.querySelectorAll("[data-preset]").forEach(b => b.onclick = () => { recorte = [...PRESETS[b.dataset.preset]]; renderChips(); });
 $("btn-save-scope").onclick = async () => {
-  try { const r = await api("/api/recorte", { prefixos: recorte }); recorte = r.recorte; renderChips();
+  try { const r = await api("/api/recorte", { prefixos: recorte }); recorte = r.recorte; renderChips(); renderRows();
         $("scope-msg").className = "msg ok"; $("scope-msg").textContent = "Salvo. Clique em Verificar."; }
   catch (e) { $("scope-msg").className = "msg err"; $("scope-msg").textContent = e.message; }
 };
@@ -367,6 +777,7 @@ $("auto-check").checked = store.get("autoCheck", true);
 $("auto-update").checked = store.get("autoUpdate", false);
 $("auto-check").onchange = setAuto; $("auto-update").onchange = setAuto;
 
+renderSuggest(); renderRows();
 refresh().then(() => { setAuto(); if ($("auto-check").checked) check(); }).catch(e => pill("servidor fora do ar", "err"));
 browse("");
 </script>
