@@ -39,24 +39,20 @@ testes (`unittest`), validação jurídica (`jogar.py validar`) e jogo no navega
 | 12 | Instalador: incluir dublagem opcional (baixar pacote de vozes) | programação | instalação limpa funciona | ✅ código e lançador novo publicados (instalação limpa testada em 30 s); o instalador não baixa mais vozes (dublagem removida) |
 
 ## Em andamento (23/10/2026) — retomar daqui
-- Dublagem removida por decisão do usuário (não reintroduzir).
-- Queixa do usuário: ao jogar, CPU/RAM/SSD vão a 100% ("parece mineração"); e o instalador é acusado como trojan.
-  - Agente `perf2`: worktree `C:/lx/wt-perf2`, branch `equipe/perf2` — mede (lançador, servidor, navegador) e corrige;
-    medições em `C:/lx/tmp-perf2-medicoes/`.
-  - Agente `antivirus`: worktree `C:/lx/wt-antivirus`, branch `equipe/antivirus` — reproduz com o Defender local,
-    troca por PyInstaller --onedir + Inno Setup e remove a autocópia/atalho do lançador.
-  - Ao retomar: `git log main..equipe/perf2` e `git log main..equipe/antivirus`; se houver commits, revisar, testar
-    (unittest, `jogar.py validar`, autoplay, instalação limpa isolada como em "Notas de ambiente") e integrar; se
-    não, recriar os agentes com o mesmo pedido. Os dois mexem em `instalador/vade_launcher.py` em funções diferentes.
-- 23/10 (2ª sessão): agentes perf2 e antivirus relançados; novo agente `juice` (game feel: protesto com
-  tremida/flash/hit-stop, speed lines, veredicto animado, confete, transições) em `C:/lx/wt-juice`, branch `equipe/juice`.
-- perf2 integrado na main (71a2d48). antivirus: build e Defender ok, falta instalação limpa (jogo do usuário aberto bloqueou).
-- Meta "AAA viciante" (sem padrões predatórios): agente `loop` (C:/lx/wt-loop: notas S–C, combo, patentes, álbum de
-  jurisprudência, desafio do dia; backend + docs/DOPAMINA.md; UI depois do juice) e agente `gancho` (C:/lx/wt-gancho:
-  mistério da temporada, cold open e cliffhanger por caso; só JSON + docs/NARRATIVA_GANCHOS.md).
-- Depois: item 3 (2ª passada de arte) e item 8 (QA de escolhas/conquistas/créditos).
-- Teste de instalação limpa sem tocar na do usuário: rodar o .exe com LOCALAPPDATA e USERPROFILE apontando para
-  `C:/lx/tmp-inst/...` e `BROWSER="cmd /c rem %s"`; o jogo sobe em 127.0.0.1:8765.
+Meta do usuário: "o melhor jogo de advogado do mundo", viciante (AAA) sem padrões predatórios. O usuário testa o jogo
+pessoalmente: agentes NÃO jogam episódios (só unittest, `jogar.py validar`, carga sem erro de console).
+- Já na main: desempenho (perf2), game feel (juice, docs/FEEL_TUNING.md), trilha (audio, GDD §9), recompensas backend
+  (loop, docs/DOPAMINA.md), ganchos e mistério "A Carta de Paulo" (gancho, docs/NARRATIVA_GANCHOS.md), motor do Ato 6.
+- `C:/lx/wt-ato6` (equipe/ato6): 3 redatores escrevem ato6.json (1–5), ato6x.json (6–10), ato6y.json (11–15, e movem o
+  epílogo de a5-sentenca para a6-voto). Juiz que joga sujo dentro da lei no STF: Min. Ataulfo. Integrar quando
+  `jogar.py validar` der 0 erros.
+- `C:/lx/wt-twist` (equipe/twist): testemunha surpresa "comprada" em 2+ casos por ato (1–5) e juiz corrupto recorrente
+  no ato 3 ou 4.
+- Depois: interface das recompensas (nota S–C, combo — o cliente ainda não envia `combo_max` —, álbum, desafio do dia,
+  cerimônia de patente; ver DOPAMINA.md); cartas do álbum como "mão" no `argumento`; 2ª passada de arte (item 3).
+- `C:/lx/wt-antivirus` (equipe/antivirus, não comitado): PyInstaller --onedir + Inno Setup, Defender limpo; falta o
+  teste de instalação limpa (o jogo do usuário aberto travou o setup; um `VadeTribunal.tmp` ficou preso). Usar
+  PowerShell ou MSYS_NO_PATHCONV=1 para os flags do setup.
 
 ## Notas de ambiente (descobertas que custaram tempo)
 - Agentes: `isolation: worktree` falha (MAX_PATH). Criar `git worktree add -b equipe/<x> C:/lx/wt-<x>` e mandar o
