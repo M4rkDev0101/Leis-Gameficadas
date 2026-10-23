@@ -11,6 +11,16 @@ O roteiro (``content/tribunal.json``) é um grafo de cenas:
 * ``decidir``     — o jogador é o juiz e decide o protesto (deferir/indeferir);
 * ``investigar``  — explorar um local: pontos para examinar e pessoas para conversar; algumas
   provas são obrigatórias para seguir;
+* ``audiencia``   — (juiz) a audiência corre fala a fala; o jogador decide quando intervir e como
+  (indeferir pergunta, advertir, cassar a palavra…). Intervir sem motivo ou se omitir custa credibilidade;
+* ``palavra``     — (juiz) conceder a palavra: ordem e tempo de cada orador (alegações finais, debates do júri);
+* ``sentenca``    — (juiz) montar a sentença escolhendo uma peça para cada parte (relatório, fundamentação…);
+* ``protesto``    — (advogado/promotor) a outra parte inquire; o jogador protesta na hora certa e dá o fundamento;
+* ``denuncia``    — (promotor) montar a denúncia: partes com opções e partes que exigem uma prova dos autos;
+* ``plenario``    — (STF) convencer os ministros um a um; o placar de votos decide. Com ``colegiado: "juri"`` são os
+  7 jurados do Conselho de Sentença (maioria 4): o jogador lê a reação de cada um ('rotulo', ex. "Jurada 3") nos debates;
+* ``tensao``      — (fora do tribunal) escolha no susto, com cronômetro; o tempo esgotado vale a opção 'padrao';
+* ``celular``     — (fora do tribunal) mensagens chegando no celular (provocações, ameaças), com resposta opcional;
 * ``veredicto``   — fim do episódio.
 
 O conteúdo é dividido em ``content/tribunal.json`` (personagens, normas e atos da carreira) e
@@ -34,9 +44,10 @@ from .recompensas import raridade_carta
 
 CREDIBILIDADE_MAX = 5
 SCENE_TYPES = {"titulo", "dialogo", "depoimento", "apresentar", "escolha", "decidir", "investigar", "veredicto",
-               "analisar", "convocar", "acareacao", "argumento", "intuicao", "blefe", "reviravolta"}
+               "analisar", "convocar", "acareacao", "argumento", "intuicao", "blefe", "reviravolta",
+               "audiencia", "palavra", "sentenca", "protesto", "denuncia", "plenario", "tensao", "celular"}
 EXPRESSIONS = {"normal", "feliz", "bravo", "nervoso", "chocado", "pensativo", "triste", "confiante", "apontando"}
-EFFECTS = {"protesto", "martelo", "tremor", "bater", "flash", "ummomento", "tomaisso"}
+EFFECTS = {"protesto", "martelo", "tremor", "bater", "flash", "ummomento", "tomaisso", "ordem"}
 LOCAIS = {"tribunal", "escritorio", "rua", "bar", "delegacia", "parlatorio", "apartamento", "gabinete", "obra",
           "mercado", "ponto", "juri", "loja", "clinica"}
 POSICOES = {"defesa", "acusacao", "juiz", "testemunha", "escritorio", "cena"}
@@ -45,7 +56,8 @@ XP_BASE = {"basico": 80, "intermediario": 120, "avancado": 170, "especialista": 
 # (ou a menos) soma (ou tira) DUR_XP_MIN, arredondado a múltiplos de 5 e limitado a [DUR_MIN, DUR_MAX].
 DUR_REF, DUR_XP_MIN, DUR_MIN, DUR_MAX = 12.0, 3.0, -20, 45
 INTERACTIVE = {"depoimento", "apresentar", "escolha", "decidir", "investigar", "analisar", "convocar", "acareacao",
-               "argumento", "intuicao", "blefe", "reviravolta"}
+               "argumento", "intuicao", "blefe", "reviravolta", "audiencia", "palavra", "sentenca",
+               "protesto", "denuncia", "plenario"}
 PERFIS = {"verdadeira", "mentirosa", "hostil"}
 RISCOS = {"baixo", "medio", "alto"}
 MARCAS_AUTOMATICAS = ("usou_falsa", "descartou_autentica", "hostil_revelou", "blefou", "blefe_descoberto")
@@ -79,6 +91,8 @@ def estimate_minutes(ep: dict) -> float:
             words += len(a["t"].split()) * 2  # lidas no depoimento e de novo no interrogatório
         if c["tipo"] in INTERACTIVE:
             decisions += 1
+        decisions += sum(1 for ln in c.get("linhas", []) if ln.get("incidente")) + max(0, len(c.get("partes", [])) - 1) \
+            + max(0, len(c.get("ministros", [])) - 1)
         spots += len(c.get("pontos", [])) + len(c.get("conversas", []))
     return round(words / 170 + decisions * 25 / 60 + spots * 40 / 60, 1)
 
@@ -199,7 +213,7 @@ def episode_marks(ep: dict) -> set[str]:
     if any(c.get("tipo") == "blefe" for c in ep["cenas"].values()):
         out |= {"blefou", "blefe_descoberto"}
     for c in ep["cenas"].values():
-        if c.get("tipo") == "intuicao":
+        if c.get("tipo") in ("intuicao", "tensao", "celular"):
             out |= {o["marca"] for o in c.get("opcoes", []) if o.get("marca")}
     return out
 
@@ -289,7 +303,10 @@ def all_fundamentos(data: dict):
         for sid, cena in ep["cenas"].items():
             for f in cena.get("fundamentos", []):
                 yield f"{ep['id']}/{sid}", f
-            for i, o in enumerate(cena.get("opcoes", [])):
+            for ln in cena.get("linhas", []):
+                for f in (ln.get("incidente") or {}).get("fundamentos", []):
+                    yield f"{ep['id']}/{sid}", f
+            for i, o in enumerate(_opcoes_com_fundamento(cena)):
                 for f in o.get("fundamentos", []):
                     yield f"{ep['id']}/{sid}#{i}", f
                 if o.get("dispositivo"):
@@ -314,6 +331,37 @@ def _falas(cena: dict) -> list[dict]:
         out += p.get("falas", [])
     for o in cena.get("opcoes", []):
         out += o.get("falas", [])
+    out += list(cena.get("erro_ordem", [])) + list(cena.get("erro_omissao", [])) + list(cena.get("erro_interromper", []))
+    for ln in cena.get("linhas", []):
+        out.append({k: v for k, v in ln.items() if k in ("q", "e", "t", "fx", "se")})
+        out += ln.get("cerceamento", [])
+        inc = ln.get("incidente") or {}
+        out += inc.get("omissao", [])
+        for o in inc.get("opcoes", []):
+            out += o.get("falas", [])
+    for pt in cena.get("partes", []):
+        out += pt.get("erro", [])
+        for o in pt.get("opcoes", []):
+            out += o.get("falas", [])
+    out += list(cena.get("depois", []))
+    for o in cena.get("opcoes", []):
+        out += [m for m in o.get("retorno", []) if m.get("q")]
+    for m in cena.get("ministros", []):
+        out += m.get("falas", [])
+        for a in m.get("argumentos", []):
+            out += a.get("falas", [])
+    return out
+
+
+def _opcoes_com_fundamento(cena: dict) -> list[dict]:
+    """Opções que podem citar lei: as da cena, as dos incidentes de audiência e as das partes da sentença."""
+    out = list(cena.get("opcoes", []))
+    for ln in cena.get("linhas", []):
+        out += (ln.get("incidente") or {}).get("opcoes", [])
+    for pt in cena.get("partes", []):
+        out += pt.get("opcoes", [])
+    for m in cena.get("ministros", []):
+        out += m.get("argumentos", [])
     return out
 
 
@@ -328,6 +376,8 @@ def _provas_exigidas(c: dict) -> set[str]:
         out |= set(ct.get("provas", []))
     for pr in c.get("pares", []):
         out |= set(_lista(pr.get("prova")))
+    for pt in c.get("partes", []):
+        out |= set(pt.get("provas", []))
     return out
 
 
@@ -537,6 +587,116 @@ def _validar_novas(c: dict, where: str, provas: dict, normas: dict, errs: list[s
                     received.add(b["prova"])
 
 
+def _uma_certa(ops: list, where: str, errs: list[str], minimo: int = 2) -> None:
+    if len(ops) < minimo or sum(1 for o in ops if o.get("certa")) != 1 or any(not o.get("t") for o in ops):
+        errs.append(f"{where}: precisa de {minimo}+ opções com texto e exatamente 1 certa")
+
+
+def _validar_juiz(c: dict, where: str, ep: dict, errs: list[str]) -> None:
+    """Mecânicas próprias de cada papel: audiencia, palavra e sentenca (juiz), protesto (partes), denuncia (promotor)
+    e plenario (STF)."""
+    pos = ep.get("posicoes", {})
+    papeis = {"audiencia": ("juiz",), "palavra": ("juiz",), "sentenca": ("juiz",), "protesto": ("advogado", "promotor"),
+              "denuncia": ("promotor",),
+              "plenario": ("advogado", "promotor") if c.get("colegiado") == "juri" else ("advogado", "juiz")}[c["tipo"]]
+    if ep.get("papel") not in papeis:
+        errs.append(f"{where}: {c['tipo']} só existe em episódio de {' ou '.join(papeis)}")
+    if c["tipo"] == "plenario":
+        juri = c.get("colegiado") == "juri"
+        if c.get("colegiado", "stf") not in ("stf", "juri"):
+            errs.append(f"{where}: colegiado deve ser 'stf' ou 'juri'")
+        mins, total = c.get("ministros", []), c.get("total", 7 if juri else 11)
+        fix = c.get("votos_fixos", {"favor": 0, "contra": 0})
+        maioria = c.get("maioria", total // 2 + 1)
+        if not mins:
+            errs.append(f"{where}: plenário sem ministros")
+        if fix.get("favor", 0) + fix.get("contra", 0) + len(mins) != total:
+            errs.append(f"{where}: votos fixos + ministros jogáveis devem somar {total}")
+        if fix.get("favor", 0) + len(mins) < maioria:
+            errs.append(f"{where}: a maioria ({maioria}) é inalcançável")
+        for k, m in enumerate(mins):
+            if (m.get("q") not in pos and not (juri and m.get("rotulo"))) or not m.get("preocupacao"):
+                errs.append(f"{where}/ministro {k}: precisa de 'q' com posição e 'preocupacao'")
+            if m.get("voto", "indeciso") not in ("indeciso", "contra"):
+                errs.append(f"{where}/ministro {k}: voto inicial deve ser 'indeciso' ou 'contra'")
+            _uma_certa(m.get("argumentos", []), f"{where}/ministro {k}", errs)
+        if not c.get("acerto"):
+            errs.append(f"{where}: plenário precisa de 'acerto'")
+        return
+    if c["tipo"] in ("audiencia", "protesto"):
+        linhas = c.get("linhas", [])
+        incs = [ln for ln in linhas if ln.get("incidente")]
+        if not incs or len(incs) == len(linhas):
+            errs.append(f"{where}: audiência precisa de falas regulares e de ao menos um incidente")
+        for k, ln in enumerate(linhas):
+            if ln.get("q") not in pos or ln.get("q") == "voce":
+                errs.append(f"{where}/linha {k}: orador precisa ter posição no episódio (e não ser o juiz)")
+            inc = ln.get("incidente")
+            if inc is not None:
+                if not isinstance(inc, dict):
+                    errs.append(f"{where}/linha {k}: incidente inválido")
+                    continue
+                _uma_certa(inc.get("opcoes", []), f"{where}/linha {k}", errs)
+                if not (inc.get("fundamentos") or any(o.get("fundamentos") for o in inc.get("opcoes", []) if o.get("certa"))):
+                    errs.append(f"{where}/linha {k}: incidente sem fundamento legal")
+    elif c["tipo"] == "palavra":
+        ors, passo = c.get("oradores", []), c.get("passo", 5)
+        if len(ors) < 2:
+            errs.append(f"{where}: palavra precisa de 2+ oradores")
+        for k, o in enumerate(ors):
+            lo, hi = o.get("min_ok", o.get("tempo")), o.get("max_ok", o.get("tempo"))
+            if o.get("q") not in pos or not o.get("papel"):
+                errs.append(f"{where}/orador {k}: precisa de 'q' com posição e 'papel'")
+            if not all(isinstance(x, int) and x >= 0 and x % passo == 0 for x in (lo, hi)) or lo > hi:
+                errs.append(f"{where}/orador {k}: 'tempo' (ou min_ok/max_ok) em minutos múltiplos de {passo}")
+        if not c.get("acerto") or not c.get("erro") or not c.get("fundamentos"):
+            errs.append(f"{where}: palavra precisa de 'acerto', 'erro' e 'fundamentos'")
+    else:
+        partes = c.get("partes", [])
+        if len(partes) < 2:
+            errs.append(f"{where}: {c['tipo']} precisa de 2+ partes")
+        for k, pt in enumerate(partes):
+            if not pt.get("nome"):
+                errs.append(f"{where}/parte {k}: sem nome")
+            if "provas" in pt:
+                if c["tipo"] != "denuncia" or not pt["provas"] or "opcoes" in pt:
+                    errs.append(f"{where}/parte {k}: parte com 'provas' só na denúncia, sem 'opcoes'")
+                if not pt.get("erro"):
+                    errs.append(f"{where}/parte {k}: parte com 'provas' precisa de 'erro'")
+            else:
+                _uma_certa(pt.get("opcoes", []), f"{where}/parte {k}", errs)
+        if not c.get("acerto"):
+            errs.append(f"{where}: {c['tipo']} precisa de 'acerto'")
+
+
+def _validar_fora(c: dict, where: str, errs: list[str]) -> None:
+    """tensao e celular: cenas fora do tribunal, sem resposta certa; cada opção tem consequência."""
+    ops = c.get("opcoes", [])
+    if c["tipo"] == "tensao":
+        if not c.get("pergunta") or len(ops) < 2:
+            errs.append(f"{where}: tensão precisa de pergunta e 2+ opções")
+        if not (isinstance(c.get("tempo", 8), int) and 3 <= c.get("tempo", 8) <= 20):
+            errs.append(f"{where}: 'tempo' da tensão deve ser inteiro entre 3 e 20 segundos")
+        if "padrao" in c and not (isinstance(c["padrao"], int) and 0 <= c["padrao"] < len(ops)):
+            errs.append(f"{where}: 'padrao' deve ser o índice de uma opção")
+    else:
+        msgs = c.get("mensagens", [])
+        if not msgs or any(not m.get("t") or m.get("de", "ele") not in ("ele", "voce") for m in msgs):
+            errs.append(f"{where}: celular precisa de mensagens com 't' e 'de' ('ele' ou 'voce')")
+    for o in ops:
+        if not o.get("t"):
+            errs.append(f"{where}: opção sem texto 't'")
+        if "cred" in o and not (isinstance(o["cred"], int) and -2 <= o["cred"] <= 1):
+            errs.append(f"{where}: 'cred' da opção deve ser inteiro entre -2 e 1")
+        if "certa" in o:
+            errs.append(f"{where}: {c['tipo']} não tem opção 'certa' (cada escolha tem consequência)")
+        if "marca" in o and not MARCA_RE.match(str(o["marca"])):
+            errs.append(f"{where}: marca inválida {o['marca']!r}")
+        for m in o.get("retorno", []):
+            if not m.get("t"):
+                errs.append(f"{where}: retorno sem texto")
+
+
 def _validar_acareacao(c: dict, where: str, cenas: dict, provas: dict, errs: list[str]) -> None:
     ds = []
     for k in ("a", "b"):
@@ -738,7 +898,7 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
                 if n_ok != 1 or len(c.get("opcoes", [])) < 2:
                     errs.append(f"{where}: escolha precisa de 2+ opções e exatamente 1 certa")
             for o in c.get("opcoes", []):
-                if "marca" in o and c["tipo"] != "intuicao" and (not c.get("livre") or not MARCA_RE.match(str(o["marca"]))):
+                if "marca" in o and c["tipo"] not in ("intuicao", "tensao", "celular") and (not c.get("livre") or not MARCA_RE.match(str(o["marca"]))):
                     errs.append(f"{where}: marca inválida {o['marca']!r} (só em escolha livre; a-z, 0-9 e _)")
             conds = [f.get("se") for f in _falas(c)] + [v.get("se") for v in c.get("variantes", [])]
             for cond in filter(None, conds):
@@ -753,7 +913,13 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
                     errs.append(f"{where}: 'dica' deve ser texto (ou [vaga, específica]) em cena com erro possível")
             if c["tipo"] == "decidir" and c.get("correta") not in ("deferir", "indeferir"):
                 errs.append(f"{where}: decisão correta deve ser deferir ou indeferir")
-            for f in c.get("fundamentos", []) + [f for o in c.get("opcoes", []) for f in o.get("fundamentos", [])]:
+            if c["tipo"] in ("audiencia", "palavra", "sentenca", "protesto", "denuncia", "plenario"):
+                _validar_juiz(c, where, ep, errs)
+            if c["tipo"] in ("tensao", "celular"):
+                _validar_fora(c, where, errs)
+            incs = [ln["incidente"] for ln in c.get("linhas", []) if isinstance(ln.get("incidente"), dict)]
+            for f in c.get("fundamentos", []) + [f for i in incs for f in i.get("fundamentos", [])] \
+                    + [f for o in _opcoes_com_fundamento(c) for f in o.get("fundamentos", [])]:
                 alias = f.get("chave", "").split("#", 1)[0]
                 if alias not in normas:
                     errs.append(f"{where}: alias de norma desconhecido {alias!r}")
@@ -818,6 +984,15 @@ def public_episode(data: dict, ep: dict, lookup, player_avatar: dict | None, pla
         for o in c.get("opcoes", []):
             if o.get("dispositivo") and "fundamentos" not in o:
                 o["fundamentos"] = [{"chave": o["dispositivo"], "trecho": o.get("trecho", "")}]
+            if "fundamentos" in o:
+                o["fundamentos"] = [enrich(f) for f in o["fundamentos"]]
+        for ln in c.get("linhas", []):
+            inc = ln.get("incidente") or {}
+            if "fundamentos" in inc:
+                inc["fundamentos"] = [enrich(f) for f in inc["fundamentos"]]
+        for o in [o for ln in c.get("linhas", []) for o in (ln.get("incidente") or {}).get("opcoes", [])] \
+                + [o for pt in c.get("partes", []) for o in pt.get("opcoes", [])] \
+                + [a for m in c.get("ministros", []) for a in m.get("argumentos", [])]:
             if "fundamentos" in o:
                 o["fundamentos"] = [enrich(f) for f in o["fundamentos"]]
     return {**ep, "cenas": cenas, "personagens": chars, "provas": provas}

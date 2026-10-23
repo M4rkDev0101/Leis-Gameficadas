@@ -357,3 +357,64 @@ class TestMecanicasAto6(unittest.TestCase):
         d = self._data()
         pub = tribunal.public_episode(d, d["episodios"][0], lambda k: {"texto": "Texto " + k, "rotulo": "Art"}, None, "X")
         self.assertEqual(pub["cenas"]["arg"]["opcoes"][0]["fundamentos"][0]["texto"], "Texto CPP#art-157")
+
+
+class TestMecanicasPapeis(unittest.TestCase):
+    """Mecânicas próprias de cada papel: juiz preside, promotor denuncia, partes protestam, STF vota."""
+
+    def _data(self, mut=None):
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent))
+        from papeis_fixture import episodes
+        eps = episodes()
+        if mut:
+            mut({e["id"]: e for e in eps})
+        return {**DATA, "episodios": eps}
+
+    def errs(self, mut=None):
+        return "\n".join(tribunal.validate(self._data(mut), NORMAS))
+
+    def test_fixture_is_valid(self):
+        self.assertEqual(tribunal.validate(self._data(), NORMAS), [])
+
+    def test_each_mechanic_belongs_to_its_role(self):
+        def troca(e):
+            e["t-juiz"]["cenas"]["den"] = e["t-promotor"]["cenas"]["den"]
+            e["t-juiz"]["cenas"]["ini"]["proxima"] = "den"
+            e["t-juiz"]["cenas"]["den"] = {**e["t-juiz"]["cenas"]["den"], "proxima": "aud"}
+        self.assertIn("só existe em episódio de promotor", self.errs(troca))
+        self.assertIn("só existe em episódio de juiz", self.errs(lambda e: e["t-juiz"].update(papel="advogado")))
+        self.assertIn("só existe em episódio de promotor", self.errs(lambda e: e["t-promotor"].update(papel="advogado")))
+
+    def test_audiencia_needs_regular_lines_and_legal_ground(self):
+        self.assertIn("falas regulares", self.errs(lambda e: e["t-juiz"]["cenas"]["aud"].update(
+            linhas=[l for l in e["t-juiz"]["cenas"]["aud"]["linhas"] if l.get("incidente")])))
+        self.assertIn("sem fundamento", self.errs(lambda e: e["t-juiz"]["cenas"]["aud"]["linhas"][1]["incidente"].pop("fundamentos")))
+        self.assertIn("não ser o juiz", self.errs(lambda e: e["t-juiz"]["cenas"]["aud"]["linhas"][0].update(q="voce")))
+
+    def test_palavra_and_peca_rules(self):
+        self.assertIn("múltiplos de 5", self.errs(lambda e: e["t-juiz"]["cenas"]["pal"]["oradores"][0].update(tempo=22)))
+        self.assertIn("exatamente 1 certa", self.errs(lambda e: e["t-juiz"]["cenas"]["sent"]["partes"][1]["opcoes"][1].update(certa=True)))
+        self.assertIn("precisa de 'erro'", self.errs(lambda e: e["t-promotor"]["cenas"]["den"]["partes"][1].pop("erro")))
+        self.assertIn("nunca é entregue", self.errs(lambda e: e["t-promotor"]["cenas"]["ini"]["falas"][0].update(recebe=["foto"])))
+
+    def test_plenario_math(self):
+        self.assertIn("somar 11", self.errs(lambda e: e["t-stf"]["cenas"]["plen"].update(votos_fixos={"favor": 4, "contra": 4})))
+        self.assertIn("inalcançável", self.errs(lambda e: e["t-stf"]["cenas"]["plen"].update(votos_fixos={"favor": 3, "contra": 6})))
+
+    def test_new_mechanics_count_as_decisions_and_laws_are_checked(self):
+        eps = {e["id"]: e for e in self._data()["episodios"]}
+        self.assertGreater(tribunal.estimate_minutes(eps["t-juiz"]), 0)
+        chaves = {f["chave"] for _, f in tribunal.all_fundamentos(self._data())}
+        for must in ("CPP#art-212", "CPP#art-403", "CPP#art-155", "CPP#art-400a/inc-ii", "CP#art-155"):
+            self.assertIn(must, chaves)
+        pub = tribunal.public_episode(DATA, eps["t-juiz"], lambda k: {"texto": "T:" + k, "rotulo": "r", "norma": "n"}, None, "x")
+        self.assertEqual(pub["cenas"]["aud"]["linhas"][1]["incidente"]["fundamentos"][0]["texto"], "T:CPP#art-212")
+
+    def test_off_court_and_jury(self):
+        eps = {e["id"]: e for e in self._data()["episodios"]}
+        self.assertTrue({"registrou_ameaca", "seguido_ate_casa"} <= tribunal.episode_marks(eps["t-promotor"]))
+        self.assertIn("entre 3 e 20", self.errs(lambda e: e["t-promotor"]["cenas"]["fuga"].update(tempo=60)))
+        self.assertIn("não tem opção 'certa'", self.errs(lambda e: e["t-promotor"]["cenas"]["fuga"]["opcoes"][0].update(certa=True)))
+        self.assertIn("'de'", self.errs(lambda e: e["t-promotor"]["cenas"]["zap"]["mensagens"][0].update(de="x")))
+        self.assertIn("somar 7", self.errs(lambda e: e["t-promotor"]["cenas"]["juri"].update(votos_fixos={"favor": 3, "contra": 3})))
