@@ -72,6 +72,8 @@ amar e odiar, quebra de confiança, decepção; (8) mais efeitos, música "de ve
 | P8 | Áudio: trilha mais rica, temas de tensão/perseguição/traição | a fazer (agente) |
 | P9 | Interface com cara de jogo (auditoria de legibilidade e game feel) | a fazer (agente) |
 | P10 | Arcos de personagem/mini-dramas atravessando os atos (traição, decepção, aliados) | dentro de P3–P6, coordenado por docs/NARRATIVA_GANCHOS.md |
+| P11 | Ato 7 "Sem Toga": motor (papel investigado, nível impossível, relógio) ✅; bíblia [ATO7_SEM_TOGA.md](ATO7_SEM_TOGA.md) ✅; 10 episódios de 1 h+ em `wt-a7a`…`wt-a7e` (2 por agente) | em andamento |
+| P12 | Integração do Ato 7: remover `"final": true` de a6-voto, conferir marcas declaradas × criadas, medir minutos (≥ 60 cada) | a fazer (coordenador) |
 
 ## Notas de ambiente (descobertas que custaram tempo)
 - Agentes: `isolation: worktree` falha (MAX_PATH). Criar `git worktree add -b equipe/<x> C:/lx/wt-<x>` e mandar o
