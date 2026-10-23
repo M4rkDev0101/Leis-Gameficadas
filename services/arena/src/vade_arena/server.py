@@ -10,6 +10,7 @@ recebe o que pode ver.
 
 from __future__ import annotations
 
+import datetime as dt
 import json
 import sqlite3
 import threading
@@ -26,6 +27,7 @@ import uuid
 
 from . import bank as bank_mod
 from . import cases, exam
+from . import recompensas as rw
 from . import tribunal as tribunal_mod
 from .player import Player
 
@@ -61,6 +63,7 @@ class Arena:
         if errors:
             raise ValueError("conteúdo da Arena inválido:\n" + "\n".join(errors))
         self.player = Player(player_db)
+        self.today = dt.date.today  # injetável nos testes
         self.sessions = Sessions()
         self.tribunal = tribunal_mod.load()
         terrs = tribunal_mod.validate(self.tribunal, self.bank.normas)
@@ -117,8 +120,80 @@ class Arena:
         out["marcas"] = sorted(marks)
         texts = tribunal_mod.choice_texts(self.tribunal)
         out["escolhas"] = [{"marca": m, **texts[m]} for m in sorted(marks) if m in texts]
-        out["conquistas"] = tribunal_mod.achievements(self.tribunal, won, self.player.perfect_cases(), marks)
+        notas = self.player.grades()
+        cont = self.player.counters()
+        prof = self.player.profile(self.today())
+        extras = {"contradicoes": cont.get("contradicoes", 0), "combo_max": cont.get("combo_max", 0),
+                  "cartas": len(self.player.cards()), "cartas_total": len(tribunal_mod.cards_catalog(self.tribunal)),
+                  "notas_s": sum(1 for n in notas.values() if n["nota"] == "S"), "streak_max": prof["streak_max"],
+                  "dias_completos": self.player.days_completed()}
+        out["conquistas"] = tribunal_mod.achievements(self.tribunal, won, self.player.perfect_cases(), marks, extras)
+        out["notas"] = notas
         return out
+
+    # ------------------------------------------------------------ álbum de cartas
+    def album(self) -> dict:
+        cat = tribunal_mod.cards_catalog(self.tribunal)
+        mine = self.player.cards()
+        titulos = {e["id"]: e["titulo"] for e in self.tribunal["episodios"]}
+        cartas = []
+        for k, c in cat.items():
+            m = mine.get(k)
+            item = {"chave": k, "raridade": c["raridade"], "ok": m is not None, "dourada": bool(m and m["dourada"]),
+                    "casos": [titulos[i] for i in c["casos"]]}
+            if m:  # só revela o texto da lei das cartas conquistadas
+                item["desde"] = m["desde"]
+                item.update(self.lookup(self.bank.resolve(k)) or {})
+            cartas.append(item)
+        por = {}
+        for c in cartas:
+            r = por.setdefault(c["raridade"], {"total": 0, "ok": 0})
+            r["total"] += 1
+            r["ok"] += c["ok"]
+        return {"cartas": cartas, "total": len(cartas), "ok": sum(c["ok"] for c in cartas),
+                "douradas": sum(c["dourada"] for c in cartas), "por_raridade": por}
+
+    # ------------------------------------------------------------ desafio do dia
+    def dia(self) -> dict:
+        hoje = self.today()
+        ids = rw.dia_questoes(self.bank.questoes, hoje)
+        feitas = self.player.day_answers(hoje)
+        prof = self.player.profile(hoje)
+        itens = []
+        for n, qid in enumerate(ids, start=1):
+            q = self.bank.by_id[qid]
+            item = {"n": n, "id": qid, "formato": q["formato"], "area": q["area"], "tema": q["tema"], "nivel": q["nivel"],
+                    "enunciado": q["enunciado"], "respondida": qid in feitas}
+            if q["formato"] == "multipla":
+                item["alternativas"] = q["alternativas"]
+            if qid in feitas:
+                item.update({"resposta": feitas[qid]["resposta"], "correta": feitas[qid]["correta"], "gabarito": q["gabarito"],
+                             "explicacao": q["explicacao"]})
+            itens.append(item)
+        return {"dia": hoje.isoformat(), "questoes": itens, "feitas": len(feitas), "total": len(ids),
+                "completo": len(feitas) >= len(ids), "xp_acerto": rw.DIA_XP_ACERTO, "xp_completo": rw.DIA_XP_COMPLETO,
+                "streak": prof["streak"], "streak_max": prof["streak_max"], "protetores": prof["protetores"],
+                "dias_completos": self.player.days_completed()}
+
+    def dia_responder(self, qid: str, resposta) -> dict:
+        hoje = self.today()
+        ids = rw.dia_questoes(self.bank.questoes, hoje)
+        if qid not in ids:
+            raise ValueError("essa questão não é do desafio de hoje")
+        q = self.bank.by_id[qid]
+        letra = resposta.strip().upper() if isinstance(resposta, str) and resposta.strip() else None
+        validas = q["alternativas"] if q["formato"] == "multipla" else ("C", "E")
+        if letra not in validas:
+            letra = None
+        correta = letra == q["gabarito"]
+        prog = self.player.record_day_answer(hoje, qid, letra, correta, len(ids))
+        fund = []
+        for f in q["fundamentos"]:
+            item = {"chave": f["chave"], "trecho": f["trecho"]}
+            item.update(self.lookup(self.bank.resolve(f["chave"])) or {})
+            fund.append(item)
+        return {"correta": correta, "gabarito": q["gabarito"], "explicacao": q["explicacao"], "pegadinha": q.get("pegadinha"),
+                "fundamentos": fund, "progresso": prog}
 
     def salvar_episodio(self, ep_id: str, estado: dict) -> dict:
         ep = tribunal_mod.episode(self.tribunal, ep_id)
@@ -133,12 +208,13 @@ class Arena:
         self.player.save_trial(ep_id, limpo)
         return limpo
 
-    def concluir_episodio(self, ep_id: str, credibilidade, erros, marcas=()) -> dict:
+    def concluir_episodio(self, ep_id: str, credibilidade, erros, marcas=(), extras: dict | None = None) -> dict:
         ep = tribunal_mod.episode(self.tribunal, ep_id)
         result = tribunal_mod.score(ep, credibilidade, erros)
         if result["venceu"]:  # só a escolha de quem chegou ao veredicto vale para a história
             self.player.set_marks(ep_id, tribunal_mod.episode_marks(ep), {str(m) for m in (marcas or [])})
-        result["progresso"] = self.player.record_trial(uuid.uuid4().hex, ep, result)
+        cartas = tribunal_mod.episode_cards(self.tribunal, ep_id) if result["venceu"] else []
+        result["progresso"] = self.player.record_trial(uuid.uuid4().hex, ep, result, self.today(), extras or {}, cartas)
         if result["venceu"]:
             self.player.clear_trial(ep_id)
         return result
@@ -187,6 +263,10 @@ class ArenaHandler(ingest_server._Handler):
                 return self._send(200, html, "text/html; charset=utf-8")
             if path == "/api/arena/tribunal":
                 return self._json(self.arena.episodios())
+            if path == "/api/arena/album":
+                return self._json(self.arena.album())
+            if path == "/api/arena/dia":
+                return self._json(self.arena.dia())
             if path == "/api/arena/carreira":
                 return self._json(self.arena.carreira())
             if path.startswith("/api/arena/tribunal/"):
@@ -220,7 +300,10 @@ class ArenaHandler(ingest_server._Handler):
                 return self._json(self.arena.entregar_simulado(str(body.get("sessao")), body.get("respostas") or {}))
             if path == "/api/arena/tribunal/concluir":
                 return self._json(self.arena.concluir_episodio(str(body.get("episodio")), body.get("credibilidade", 0),
-                                                               body.get("erros", 0), body.get("marcas") or []))
+                                                               body.get("erros", 0), body.get("marcas") or [],
+                                                               {k: body.get(k) for k in ("combo_max", "certeiras", "segundos")}))
+            if path == "/api/arena/dia/responder":
+                return self._json(self.arena.dia_responder(str(body.get("questao")), body.get("resposta")))
             if path == "/api/arena/tribunal/salvar":
                 return self._json(self.arena.salvar_episodio(str(body.get("episodio")), body.get("estado") or {}))
             if path == "/api/arena/tribunal/recomecar":
