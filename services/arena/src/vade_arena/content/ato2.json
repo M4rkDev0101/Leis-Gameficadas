@@ -391,7 +391,7 @@
     },
     {
       "id": "a2-guarda", "ato": "ato2", "ordem": 4, "numero": 10,
-      "titulo": "Theo, 6 anos", "papel": "advogado", "nivel": "avancado",
+      "titulo": "Theo, 6 anos", "papel": "advogado", "nivel": "intermediario",
       "sinopse": "Diego diz que ganha um salário mínimo e quer a guarda só para ele. Larissa só quer que o filho tenha os dois pais por perto e uma pensão justa. Uma SUV preta conta outra história.",
       "placas": {"acusacao": "Requerido"},
       "posicoes": {"voce": "defesa", "livia": "acusacao", "heitor": "juiz", "diego": "testemunha", "larissa": "defesa", "helena": "escritorio"},
@@ -620,7 +620,7 @@
     },
     {
       "id": "a2-rafael", "ato": "ato2", "ordem": 6, "numero": 12,
-      "titulo": "A Palavra de Rafael", "papel": "advogado", "nivel": "especialista",
+      "titulo": "A Palavra de Rafael", "papel": "advogado", "nivel": "avancado",
       "sinopse": "Final do Ato II. Rafael decidiu colaborar com a Justiça. No dia da homologação, ele quer desistir de tudo. Alguém o ameaçou, e você sabe quem.",
       "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "rafael": "testemunha", "guarda": "cena", "helena": "escritorio", "diego": "cena"},
       "provas": [
