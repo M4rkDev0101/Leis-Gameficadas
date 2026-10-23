@@ -67,39 +67,259 @@ NO_WINDOW = 0x08000000 if os.name == "nt" else 0  # git sem piscar janela de con
 
 # ======================================================================== interface (tkinter)
 class UI:
-    """Janela pequena com etapas e barra de progresso. Sem tkinter, cai para o console."""
+    """Janela do lançador no estilo do sistema (docs/design_vade.md): tela escura, logotipo dourado, etapas com
+    estado, barra fina e diálogos dentro da própria janela. Sem tkinter, cai para o console."""
+
+    # tokens do guia visual
+    BG, SURF, SURF2, LINE = "#0B0D11", "#181C24", "#222833", "#2C3340"
+    TEXT, MUTED, FAINT = "#ECEEF2", "#9AA3B2", "#6B7383"
+    GOLD, GOLD2, ON_GOLD = "#D4A24C", "#E8BE6A", "#16110A"
+    OK, BAD = "#3FBF7F", "#E5534B"
+    W, H = 640, 540
+    # etapas mostradas na lista: (rótulo, porcentagem em que começa)
+    STAGES = (("Verificar o computador", 0), ("Instalar e atualizar o jogo", 5), ("Acervo de leis", 25),
+              ("Importar as leis", 35), ("Dublagem (opcional)", 90), ("Abrir o tribunal", 97))
 
     def __init__(self) -> None:
         self.q: queue.Queue = queue.Queue()
         self.ok = False
         try:
-            import tkinter as tk
-            from tkinter import ttk
+            if os.name == "nt":  # DPI correto: sem isso o Windows estica a janela e o texto fica borrado
+                import ctypes
 
-            self.tk, self.ttk = tk, ttk
+                try:
+                    ctypes.windll.shcore.SetProcessDpiAwareness(2)
+                except Exception:
+                    ctypes.windll.user32.SetProcessDPIAware()
+            import tkinter as tk
+
+            self.tk = tk
             self.root = tk.Tk()
+            self.k = max(1.0, self.root.winfo_fpixels("1i") / 96)  # fator de escala de pixels
             self.root.title("Vade Tribunal")
-            self.root.geometry("560x330")
-            self.root.configure(bg="#14100c")
+            self.root.configure(bg=self.BG)
             self.root.resizable(False, False)
-            tk.Label(self.root, text="⚖  Vade Tribunal", font=("Georgia", 22, "bold"), fg="#F5B700", bg="#14100c").pack(pady=(22, 2))
-            tk.Label(self.root, text="Preparando o seu tribunal…", font=("Segoe UI", 10), fg="#d9c9a8", bg="#14100c").pack()
-            self.step = tk.Label(self.root, text="", font=("Segoe UI", 11, "bold"), fg="#fff4d6", bg="#14100c", wraplength=500)
-            self.step.pack(pady=(22, 8))
-            style = ttk.Style(self.root)
-            style.theme_use("default")
-            style.configure("V.Horizontal.TProgressbar", troughcolor="#2a1f16", background="#F5B700", thickness=14)
-            self.bar = ttk.Progressbar(self.root, length=480, mode="determinate", style="V.Horizontal.TProgressbar", maximum=100)
-            self.bar.pack()
-            self.detail = tk.Label(self.root, text="", font=("Consolas", 9), fg="#a3adbd", bg="#14100c", wraplength=500, justify="left")
-            self.detail.pack(pady=(10, 0))
-            self.btns = tk.Frame(self.root, bg="#14100c")
-            self.btns.pack(side="bottom", pady=16)
+            w, h = self.s(self.W), self.s(self.H)
+            x = max(0, (self.root.winfo_screenwidth() - w) // 2)
+            y = max(0, (self.root.winfo_screenheight() - h) // 3)
+            self.root.geometry(f"{w}x{h}+{x}+{y}")
+            self.cv = tk.Canvas(self.root, width=w, height=h, bg=self.BG, highlightthickness=0, bd=0)
+            self.cv.pack(fill="both", expand=True)
+            self.root.protocol("WM_DELETE_WINDOW", self._close)
+            self.stage_i, self.pct, self.shown = 0, 0.0, 0.0
+            self.step_txt = ""
+            self.detail_txt = ""
+            self.state = "run"  # run | done | fail
+            self.headline = "Preparando o seu tribunal…"
+            self.ask_state: tuple | None = None
+            self.hover: str | None = None
+            self.angle = 0
+            self.btns: list[tuple] = []  # (rótulo, tipo, tag, comando)
+            self._logo()
+            self._redraw_all()
+            self.root.bind("<Return>", lambda e: self._key("primary"))
+            self.root.bind("<Escape>", lambda e: self._key("secondary"))
             self.ok = True
         except Exception:
             self.root = None
 
-    # chamadas da thread de trabalho (thread-safe via fila)
+    # ------------------------------------------------------------------ desenho
+    def s(self, v: float) -> int:
+        return int(round(v * getattr(self, "k", 1.0)))
+
+    @staticmethod
+    def _font(fam: str, size: float, style: str = "") -> tuple:
+        return (fam, size, style) if style else (fam, size)
+
+    def _logo(self) -> None:
+        cv, s = self.cv, self.s
+        cx = s(self.W / 2)
+        cv.create_text(cx, s(66), text="V A D E     T R I B U N A L", fill=self.TEXT,
+                       font=self._font("Segoe UI", 15, "bold"), tags="logo")
+        cv.create_line(cx - s(26), s(94), cx + s(26), s(94), fill=self.GOLD, width=max(2, s(2)), capstyle="round", tags="logo")
+
+    @staticmethod
+    def _rr_pts(x1, y1, x2, y2, r) -> list:
+        r = min(r, (x2 - x1) / 2, (y2 - y1) / 2)
+        return [x1 + r, y1, x2 - r, y1, x2, y1, x2, y1 + r, x2, y2 - r, x2, y2, x2 - r, y2,
+                x1 + r, y2, x1, y2, x1, y2 - r, x1, y1 + r, x1, y1]
+
+    def _rr(self, x1, y1, x2, y2, r, **kw) -> int:
+        return self.cv.create_polygon(self._rr_pts(x1, y1, x2, y2, r), smooth=True, **kw)
+
+    def _redraw_all(self) -> None:
+        self._draw_head()
+        self._draw_steps()
+        self._draw_bar()
+        self._draw_buttons()
+        self._draw_ask()
+
+    def _draw_head(self) -> None:
+        cv, s = self.cv, self.s
+        cv.delete("head")
+        col = self.BAD if self.state == "fail" else self.GOLD2 if self.state == "done" else self.MUTED
+        cv.create_text(s(self.W / 2), s(128), text=self.headline, fill=col, font=self._font("Georgia", 12, "italic"), tags="head")
+
+    def _stage_state(self, i: int) -> str:
+        if self.state == "done" or i < self.stage_i:
+            return "ok"
+        if i == self.stage_i:
+            return "bad" if self.state == "fail" else "run"
+        return "pend"
+
+    def _draw_steps(self) -> None:
+        cv, s = self.cv, self.s
+        cv.delete("steps")
+        x0, y0, dy = s(96), s(186), s(36)
+        w2 = max(2, s(2))
+        for i, (label, _) in enumerate(self.STAGES):
+            st = self._stage_state(i)
+            y = y0 + i * dy
+            cx, r = x0 + s(10), s(9)
+            box = (cx - r, y - r, cx + r, y + r)
+            if st == "ok":
+                cv.create_oval(*box, fill=self.OK, outline="", tags="steps")
+                cv.create_line(cx - s(4), y, cx - s(1), y + s(3.5), cx + s(5), y - s(3.5), fill=self.BG, width=w2,
+                               capstyle="round", joinstyle="round", tags="steps")
+            elif st == "run":
+                cv.create_oval(*box, outline=self.LINE, width=w2, tags="steps")
+                cv.create_arc(*box, start=self.angle, extent=110, style="arc", outline=self.GOLD, width=w2, tags="steps")
+            elif st == "bad":
+                cv.create_oval(*box, fill=self.BAD, outline="", tags="steps")
+                d = s(3.5)
+                cv.create_line(cx - d, y - d, cx + d, y + d, fill=self.BG, width=w2, capstyle="round", tags="steps")
+                cv.create_line(cx - d, y + d, cx + d, y - d, fill=self.BG, width=w2, capstyle="round", tags="steps")
+            else:
+                cv.create_oval(*box, outline=self.LINE, width=max(1, s(1.5)), tags="steps")
+            active = st in ("run", "bad")
+            text = self.step_txt if (st == "run" and self.step_txt) else label
+            col = self.TEXT if active else self.MUTED if st == "ok" else self.FAINT
+            cv.create_text(x0 + s(34), y, text=text, anchor="w", fill=col,
+                           font=self._font("Segoe UI", 11, "bold" if active else ""), width=s(430), tags="steps")
+        cv.tag_raise("ov")
+
+    def _draw_bar(self) -> None:
+        cv, s = self.cv, self.s
+        cv.delete("bar")
+        cv.delete("detail")
+        x1, x2, y = s(96), s(self.W - 96), s(418)
+        wid = max(4, s(6))
+        cv.create_line(x1, y, x2, y, fill=self.SURF2, width=wid, capstyle="round", tags="bar")
+        frac = max(0.0, min(1.0, self.shown / 100))
+        if frac > 0.004:
+            cv.create_line(x1, y, x1 + (x2 - x1) * frac, y, fill=self.GOLD, width=wid, capstyle="round", tags="bar")
+        cv.create_text(x2, y + s(18), text=f"{int(self.shown)}%", anchor="ne", fill=self.FAINT,
+                       font=self._font("Segoe UI", 9), tags="bar")
+        cv.create_text(x1, y + s(18), text=self.detail_txt, anchor="nw", fill=self.MUTED if self.state == "fail" else self.FAINT,
+                       font=self._font("Segoe UI", 9), width=s(400), tags="detail")
+        cv.tag_raise("ov")
+
+    def _button(self, cx, cy, w, h, label, kind, tag, cmd) -> None:
+        cv, s = self.cv, self.s
+        hov = self.hover == tag
+        x1, y1, x2, y2 = cx - s(w / 2), cy - s(h / 2), cx + s(w / 2), cy + s(h / 2)
+        if kind == "primary":
+            self._rr(x1, y1, x2, y2, s(8), fill=self.GOLD2 if hov else self.GOLD, outline="", tags=(tag, "btns"))
+            fg = self.ON_GOLD
+        else:
+            self._rr(x1, y1, x2, y2, s(8), fill=self.SURF if hov else self.BG, outline=self.GOLD2 if hov else self.LINE,
+                     width=max(1, s(1.5)), tags=(tag, "btns"))
+            fg = self.TEXT
+        cv.create_text(cx, cy, text=label, fill=fg, font=self._font("Segoe UI", 10, "bold"), tags=(tag, "btns"))
+        cv.tag_bind(tag, "<Button-1>", lambda e, c=cmd: c())
+        cv.tag_bind(tag, "<Enter>", lambda e, t=tag: self._hover(t))
+        cv.tag_bind(tag, "<Leave>", lambda e: self._hover(None))
+
+    def _hover(self, tag: str | None) -> None:
+        self.hover = tag
+        self.cv.config(cursor="hand2" if tag else "")
+        self._draw_buttons()
+        self._draw_ask(relayout=False)
+
+    def _layout_buttons(self, cx, cy, specs) -> None:
+        widths = [max(112, 24 + 8 * len(sp[0])) for sp in specs]
+        gap = 14
+        x = cx - self.s((sum(widths) + gap * (len(specs) - 1)) / 2)
+        for sp, w in zip(specs, widths):
+            self._button(x + self.s(w / 2), cy, w, 40, sp[0], sp[1], sp[2], sp[3])
+            x += self.s(w + gap)
+
+    def _draw_buttons(self) -> None:
+        self.cv.delete("btns")
+        if self.ask_state or not self.btns:
+            return
+        self._layout_buttons(self.s(self.W / 2), self.s(500), self.btns)
+
+    def _draw_ask(self, relayout: bool = True) -> None:
+        cv, s = self.cv, self.s
+        cv.delete("ov")
+        if not self.ask_state:
+            return
+        title, msg, _ = self.ask_state
+        accent = self.BAD if self.state == "fail" else self.GOLD
+        cv.create_rectangle(0, s(112), s(self.W), s(self.H), fill=self.BG, outline="", tags="ov")
+        cx, x1, x2, top = s(self.W / 2), s(60), s(self.W - 60), s(170)
+        card = self._rr(x1, top, x2, top + 10, s(16), fill=self.SURF, outline=self.LINE, tags="ov")
+        cv.create_text(x1 + s(32), top + s(30), text=title, anchor="nw", fill=self.TEXT,
+                       font=self._font("Georgia", 16), width=s(456), tags="ov")
+        m = cv.create_text(x1 + s(32), top + s(72), text=msg, anchor="nw", fill=self.MUTED,
+                           font=self._font("Segoe UI", 10), width=s(456), tags="ov")
+        by = cv.bbox(m)[3] + s(46)
+        cv.coords(card, *self._rr_pts(x1, top, x2, by + s(34), s(16)))
+        cv.create_line(x1 + s(32), top + s(1), x2 - s(32), top + s(1), fill=accent, width=max(2, s(2)), tags="ov")
+        if self.state == "fail":
+            specs = [("Fechar", "primary", "b_close", self.root.destroy)]
+        else:
+            specs = [("Sim", "primary", "ask_yes", lambda: self._answer(True)),
+                     ("Agora não", "secondary", "ask_no", lambda: self._answer(False))]
+        self._layout_buttons(cx, by, specs)
+        cv.addtag_withtag("ov", "btns")
+
+    # ------------------------------------------------------------------ interação
+    def _answer(self, v: bool) -> None:
+        if not self.ask_state:
+            return
+        ev, box = self.ask_state[2]
+        box["v"] = v
+        self.ask_state = None
+        self.hover = None
+        self.cv.config(cursor="")
+        self._draw_ask()
+        self._draw_buttons()
+        ev.set()
+
+    def _key(self, which: str) -> None:
+        if self.state == "fail":
+            if which == "primary":
+                self.root.destroy()
+            return
+        if self.ask_state:
+            self._answer(which == "primary")
+            return
+        for _, kind, _, cmd in self.btns:
+            if kind == which:
+                cmd()
+                return
+
+    def _close(self) -> None:
+        if self.ask_state and self.state != "fail":  # quem espera a resposta não pode ficar preso
+            self._answer(False)
+        self.root.destroy()
+
+    def _tick(self) -> None:
+        try:
+            if self.state == "run":
+                self.angle = (self.angle - 14) % 360
+                self._draw_steps()
+            diff = self.pct - self.shown
+            if abs(diff) > 0.05:
+                self.shown += diff * 0.25 if abs(diff) > 0.4 else diff
+                self._draw_bar()
+            self.root.after(40, self._tick)
+        except self.tk.TclError:
+            pass  # janela fechada
+
+    # ------------------------------------------------------------------ API pública (thread-safe via fila)
     def set(self, step: str | None = None, pct: float | None = None, detail: str | None = None) -> None:
         if not self.ok:
             print(" · ".join(x for x in (step, f"{pct:.0f}%" if pct is not None else None, detail) if x))
@@ -127,48 +347,54 @@ class UI:
         self.q.put(("fail", msg))
 
     def _pump(self) -> None:
-        from tkinter import messagebox
-
         try:
             while True:
                 item = self.q.get_nowait()
                 if item[0] == "set":
                     _, step, pct, detail = item
-                    if step is not None:
-                        self.step.config(text=step)
                     if pct is not None:
-                        self.bar.config(mode="determinate")
-                        self.bar["value"] = pct
+                        self.pct = float(pct)
+                        idx = max(i for i, (_, p0) in enumerate(self.STAGES) if p0 <= self.pct)
+                        if idx != self.stage_i:
+                            self.stage_i, self.step_txt = idx, ""
+                    if step is not None:
+                        self.step_txt = step
                     if detail is not None:
-                        self.detail.config(text=detail)
+                        self.detail_txt = detail
+                    self._draw_steps()
+                    self._draw_bar()
                 elif item[0] == "ask":
                     _, title, msg, (ev, box) = item
-                    box["v"] = messagebox.askyesno(title, msg, parent=self.root)
-                    ev.set()
+                    self.ask_state = (title, msg, (ev, box))
+                    self._draw_buttons()
+                    self._draw_ask()
                 elif item[0] == "done":
                     url = item[1]
-                    self.step.config(text="Tudo pronto! O jogo abriu no seu navegador.")
-                    self.bar["value"] = 100
-                    self.detail.config(text=f"{url}\nDeixe esta janela aberta enquanto joga. Fechar a janela encerra o jogo.")
-                    self.tk.Button(self.btns, text="Abrir o jogo de novo", command=lambda: webbrowser.open(url),
-                                   bg="#F5B700", fg="#1a1206", font=("Segoe UI", 10, "bold"), relief="flat", padx=14, pady=6).pack(side="left", padx=6)
-                    self.tk.Button(self.btns, text="Sair", command=self.root.destroy, bg="#30384a", fg="#fff",
-                                   font=("Segoe UI", 10, "bold"), relief="flat", padx=14, pady=6).pack(side="left", padx=6)
+                    self.state, self.pct, self.step_txt = "done", 100.0, ""
+                    self.headline = "Tudo pronto. O jogo abriu no seu navegador."
+                    self.detail_txt = f"{url}\nDeixe esta janela aberta enquanto joga. Fechar a janela encerra o jogo."
+                    self.btns = [("Abrir o jogo de novo", "primary", "b_open", lambda: webbrowser.open(url)),
+                                 ("Sair", "secondary", "b_exit", self.root.destroy)]
+                    self._redraw_all()
                 elif item[0] == "fail":
-                    self.step.config(text="Não consegui terminar.", fg="#ff8a80")
-                    self.detail.config(text=item[1])
-                    self.tk.Button(self.btns, text="Fechar", command=self.root.destroy, bg="#30384a", fg="#fff",
-                                   relief="flat", padx=14, pady=6).pack()
+                    self.state = "fail"
+                    self.headline = "Não consegui terminar."
+                    self.ask_state = ("Não consegui terminar", str(item[1]), None)  # cartão de erro
+                    self.btns = []
+                    self._redraw_all()
         except queue.Empty:
             pass
-        self.root.after(120, self._pump)
+        except self.tk.TclError:
+            return  # janela fechada
+        self.root.after(100, self._pump)
 
     def run(self, worker) -> None:
         if not self.ok:
             worker()
             return
         threading.Thread(target=worker, daemon=True).start()
-        self.root.after(120, self._pump)
+        self.root.after(100, self._pump)
+        self.root.after(40, self._tick)
         self.root.mainloop()
 
 

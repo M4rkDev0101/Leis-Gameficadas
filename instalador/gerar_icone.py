@@ -7,7 +7,7 @@ import zlib
 from pathlib import Path
 
 N = 256
-BG, GOLD, GOLD2 = (20, 16, 12), (245, 183, 0), (201, 160, 74)
+BG, GOLD, GOLD2 = (11, 13, 17), (212, 162, 76), (232, 190, 106)  # tokens do guia visual (--v-bg, --v-gold, --v-gold-2)
 
 
 def render() -> list[list[tuple[int, int, int, int]]]:
