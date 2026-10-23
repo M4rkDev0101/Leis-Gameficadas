@@ -176,6 +176,10 @@
      "falas": [
       {
        "q": "narrador",
+       "t": "A capa azul do Tribunal traz uma palavra em vermelho: URGENTE. E, dentro, o seu nome aparece como autoridade coatora."
+      },
+      {
+       "q": "narrador",
        "t": "Entre a oitiva do colaborador e a perícia do aço, a Vara recebe um ofício do Tribunal de Justiça. Capa azul, carimbo de URGENTE e a assinatura da Desembargadora Odete Fontoura."
       },
       {
@@ -1035,6 +1039,11 @@
        "q": "voce",
        "e": "feliz",
        "t": "Em vermelho e em negrito. E com a sua rubrica ao lado, Dani."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Excelência, o doutor Moura deixou o fórum falando ao celular. Só ouvi uma frase: \"Então é a carta ou nada.\""
       }
      ],
      "proxima": "c15"
@@ -1159,6 +1168,10 @@
      "tipo": "dialogo",
      "local": "escritorio",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Sete dias para o júri. Sete dias para um homem que dormiu bem a vida inteira descobrir, de repente, que está louco."
+      },
       {
        "q": "narrador",
        "t": "Sete dias para o plenário do júri. Na mesa de Dani, uma pilha de pedidos novos e uma petição de capa preta."

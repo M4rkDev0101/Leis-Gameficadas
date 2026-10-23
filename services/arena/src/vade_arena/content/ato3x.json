@@ -369,6 +369,10 @@
      "falas": [
       {
        "q": "narrador",
+       "t": "Duas e meia da manhã, numa delegacia. Um rapaz de dezenove anos assina uma confissão e, horas depois, está num pronto-socorro."
+      },
+      {
+       "q": "narrador",
        "e": "normal",
        "t": "Manhã de segunda-feira, Promotoria Criminal. Sobre a mesa, um auto de prisão em flagrante e um ofício da Defensoria Pública com a palavra “urgente” sublinhada duas vezes."
       },
@@ -1626,6 +1630,10 @@
      "falas": [
       {
        "q": "narrador",
+       "t": "\"Monstro.\" A palavra aparece em letras vermelhas sobre um homem de joelhos no asfalto. Em uma noite, trinta e uma mil pessoas assistem."
+      },
+      {
+       "q": "narrador",
        "e": "normal",
        "t": "Terça-feira, 9h. A Promotoria amanhece com o telefone tocando e um vídeo se espalhando pelas redes: um homem ajoelhado no asfalto, algemado, sob uma luz branca, com um delegado sorrindo ao lado."
       },
@@ -2817,6 +2825,10 @@
     "x2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Um vigia, uma mochila pesada demais e uma pistola que não era dele. É assim que um canteiro de obras entrega os seus segredos."
+      },
       {
        "q": "narrador",
        "e": "normal",
