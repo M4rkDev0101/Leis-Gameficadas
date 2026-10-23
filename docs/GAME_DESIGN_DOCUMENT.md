@@ -172,3 +172,16 @@ Testemunhas, vítimas e réus dos casos (Valdir, Jorge, Ana, Bruno, Sargento Mor
 Sério, mas acessível. A trama tem tensão e dilemas morais, com toques de humor nos bastidores. A linguagem é
 clara, sem juridiquês gratuito; termos técnicos aparecem com o artigo que os sustenta. O jogo é informativo e não
 substitui a publicação oficial das leis nem a orientação de um profissional.
+
+## 9. Áudio (100% sintetizado em WebAudio, obra original)
+
+Objeto `Sound` em `tribunal.html`: temas em compassos de 8 colcheias (acorde, baixo, melodia, arpejo, percussão), agendados por
+lookahead de 2,4 s com um único `setTimeout` por faixa (nada roda com som desligado ou aba oculta). Troca de tema = crossfade de
+1,2–1,6 s entrando no próximo compasso. Master: compressor suave + limiter; música (bus 0,24) sempre abaixo de efeitos/bipes e
+abaixada (ducking) em protesto, martelo e fanfarras.
+- **principal** (menu), **calma** (cartões, entre cenas), **investigacao** (locais), **julgamento** (depoimento), **interrogatorio** (moderato, ao abrir o interrogatório), **abertura** (cartão do caso, após stinger).
+- **pressao**: ostinato tenso quando a credibilidade ≤ 2; o andamento sobe 12% por ponto perdido (até +36%).
+- **climax** (`Sound.virada`): ~8 s ao acertar a contradição decisiva; **vitoria**: fanfarra no veredicto e na abertura de ato; **derrota** (`Sound.derrota`): tema lento menor no game over.
+- **revelar**: stinger curto (varredura + 3 notas) em "AQUI ESTÁ!" e na abertura do caso.
+- **Variação por ato**: Atos 1–5 mudam tonalidade (0, +2, −2, +3, −5 semitons) e timbre do lead; **supremo**: tema solene para o futuro Ato 6 (STF), usado no lugar de "julgamento" e na fanfarra de ato.
+- Teste pelo console: `Sound.music=true; Sound.startMusic('nome')`, `Sound.virada()`, `Sound.derrota()`, `Sound.revelar()`; `Sound.temas()` lista os temas.
