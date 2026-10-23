@@ -204,6 +204,7 @@ class Arena:
         limpo = {"cena": cena, "credibilidade": max(1, min(5, int(estado.get("credibilidade", 5)))),
                  "erros": max(0, min(99, int(estado.get("erros", 0)))),
                  "autos": [a for a in estado.get("autos", []) if a in provas],
+                 "descartadas": [a for a in estado.get("descartadas", []) if a in provas],
                  "marcas": [m for m in estado.get("marcas", []) if m in tribunal_mod.episode_marks(ep)]}
         self.player.save_trial(ep_id, limpo)
         return limpo

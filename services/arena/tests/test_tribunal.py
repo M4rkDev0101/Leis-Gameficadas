@@ -12,6 +12,8 @@ from pathlib import Path
 
 from vade_arena import bank, tribunal
 
+F = lambda q, t, **kw: {"q": q, "t": t, **kw}
+
 DATA = tribunal.load()
 NORMAS = bank.load().normas
 
@@ -53,7 +55,8 @@ class TestRoteiro(unittest.TestCase):
         for ep in DATA["episodios"]:
             for c in ep["cenas"].values():
                 if c["tipo"] == "depoimento":
-                    self.assertLess(c["contradicao"]["afirmacao"], len(c["afirmacoes"]))
+                    for ct in tribunal.contradicoes_of(c):
+                        self.assertLess(ct["afirmacao"], len(c["afirmacoes"]))
 
     def test_laws_are_in_fundamentos_for_catalog_check(self):
         chaves = {f["chave"] for _, f in tribunal.all_fundamentos(DATA)}
@@ -265,3 +268,91 @@ class TestServidor(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestMecanicasAto6(unittest.TestCase):
+    def _data(self, mut=None):
+        import sys
+        sys.path.insert(0, str(Path(__file__).parent))
+        from ato6_fixture import episode
+        ep = episode()
+        if mut:
+            mut(ep)
+        return {**DATA, "episodios": [ep]}
+
+    def errs(self, mut=None):
+        return "\n".join(tribunal.validate(self._data(mut), NORMAS))
+
+    def test_fixture_is_valid(self):
+        self.assertEqual(tribunal.validate(self._data(), NORMAS), [])
+
+    def test_marks_from_new_mechanics(self):
+        ep = self._data()["episodios"][0]
+        m = tribunal.episode_marks(ep)
+        for x in ("chamou_valdir", "confiou_no_faro", "usou_falsa", "descartou_autentica", "blefou", "blefe_descoberto", "hostil_revelou"):
+            self.assertIn(x, m)
+
+    def test_false_proof_rules(self):
+        self.assertIn("indicios", self.errs(lambda e: e["provas"][1].pop("indicios")))
+        self.assertIn("indicios", self.errs(lambda e: e["provas"][0].update(indicios=["x"])))
+        self.assertIn("só uma prova", self.errs(lambda e: e["provas"][1].update(tipo="lei", chave="CPP#art-1", trecho="x")) or "só uma prova")
+
+        def so_falsa(e):
+            e["cenas"]["d_surp"]["contradicao"]["provas"] = ["pen"]
+        self.assertIn("só aceita provas falsas", self.errs(so_falsa))
+
+    def test_analisar_must_match_false_proofs(self):
+        self.assertIn("autentica: false", self.errs(lambda e: e["cenas"]["analise"].update(falsas=["real"])))
+
+    def test_convocar_references_and_profiles(self):
+        self.assertIn("cena de depoimento", self.errs(lambda e: e["cenas"]["conv"]["opcoes"][0].update(depoimento="nao_existe")))
+        self.assertIn("perfil verdadeira", self.errs(lambda e: e["cenas"]["conv"]["opcoes"][0].update(depoimento="d_mente")))
+        self.assertIn("perfil hostil", self.errs(lambda e: e["cenas"]["conv"]["opcoes"][2].update(depoimento="d_veraz")))
+        self.assertIn("limite", self.errs(lambda e: e["cenas"]["conv"].update(limite=9)))
+
+    def test_convocar_needs_a_winning_combination(self):
+        def mut(e):
+            for k in ("k1", "k2"):
+                e["provas"].append({"id": k, "tipo": "prova", "icone": "x", "nome": k, "descricao": "d"})
+            e["cenas"]["conv"]["opcoes"][0]["efeito"]["prova"] = "k1"
+            e["cenas"]["conv"]["opcoes"][1]["efeito"]["prova"] = "k2"
+            e["cenas"]["d_surp"]["afirmacoes"].append({"t": "Outra.", "e": "normal", "pressionar": [F("voce", "x")]})
+            e["cenas"]["d_surp"].pop("contradicao")
+            e["cenas"]["d_surp"]["contradicoes"] = [{"afirmacao": 0, "provas": ["k1"]}, {"afirmacao": 1, "provas": ["k2"]}]
+            e["cenas"]["conv"]["limite"] = 1
+        self.assertIn("nenhuma combinação", self.errs(mut))
+
+    def test_depoimento_multiple_contradictions_and_veracity(self):
+        self.assertIn("mesma afirmação", self.errs(lambda e: e["cenas"]["d_mente"]["contradicoes"][1].update(afirmacao=1)))
+        self.assertIn("sinal aponta", self.errs(lambda e: e["cenas"]["d_mente"]["veracidade"]["sinais"][0].update(afirmacao=9)))
+        self.assertIn("veraz não pode ter contradições", self.errs(lambda e: e["cenas"]["d_veraz"].update(contradicao={"afirmacao": 0, "provas": ["real"]})))
+        self.assertIn("precisa de ao menos um sinal", self.errs(lambda e: e["cenas"]["d_mente"]["veracidade"].update(sinais=[])))
+        self.assertIn("'exige'", self.errs(lambda e: e["cenas"]["d_mente"].update(exige=5)))
+        self.assertIn("sem contradição", self.errs(lambda e: e["cenas"]["d_surp"].pop("contradicao")))
+
+    def test_hostil_rules(self):
+        self.assertIn("hostil.revela", self.errs(lambda e: e["cenas"]["d_hostil"]["hostil"].update(revela="fantasma")))
+        self.assertIn("hostil.muda_versao", self.errs(lambda e: e["cenas"]["d_hostil"]["hostil"].update(muda_versao=7)))
+
+    def test_acareacao_rules(self):
+        self.assertIn("afirmação inexistente", self.errs(lambda e: e["cenas"]["acar"]["pares"][0].update(a=8)))
+        self.assertIn("cena de depoimento", self.errs(lambda e: e["cenas"]["acar"].update(b="ini")))
+
+    def test_argumento_intuicao_blefe_reviravolta(self):
+        self.assertIn("dispositivo", self.errs(lambda e: e["cenas"]["arg"]["opcoes"][1].update(dispositivo="XXX#art-1")))
+        self.assertIn("exatamente 1 certa", self.errs(lambda e: e["cenas"]["arg"]["opcoes"][1].update(certa=True)))
+        self.assertIn("revelacao", self.errs(lambda e: e["cenas"]["intu"].pop("revelacao")))
+        self.assertIn("consequencia", self.errs(lambda e: e["cenas"]["blefe"]["opcoes"][0]["blefe"].pop("consequencia")))
+        self.assertIn("honesta", self.errs(lambda e: e["cenas"]["blefe"]["opcoes"].pop(1)))
+        self.assertIn("'piso'", self.errs(lambda e: e["cenas"]["rev"].update(piso=0)))
+
+    def test_sub_scenes_are_reachable_without_proxima_and_orphans_are_caught(self):
+        def mut(e):
+            e["cenas"]["d_veraz"].pop("proxima")
+        self.assertEqual(self.errs(mut), "")
+        self.assertIn("inalcançável", self.errs(lambda e: e["cenas"]["conv"]["opcoes"].pop(0) and None))
+
+    def test_public_episode_exposes_dispositivo_as_fundamento(self):
+        d = self._data()
+        pub = tribunal.public_episode(d, d["episodios"][0], lambda k: {"texto": "Texto " + k, "rotulo": "Art"}, None, "X")
+        self.assertEqual(pub["cenas"]["arg"]["opcoes"][0]["fundamentos"][0]["texto"], "Texto CPP#art-157")

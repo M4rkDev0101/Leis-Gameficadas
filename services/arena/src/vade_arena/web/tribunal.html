@@ -551,6 +551,27 @@
   .bigbtn { background:var(--v-gold); color:var(--v-on-gold); box-shadow:0 .4cqw 0 #8a6a2c; }
   .bigbtn.sec { background:var(--v-surface-2); color:var(--v-text); box-shadow:inset 0 0 0 1px var(--v-line), 0 .4cqw 0 rgba(0,0,0,.5); }
   .bigbtn:hover { background:var(--v-gold-2); } .bigbtn.sec:hover { background:#2b323f; }
+  /* ---- mecânicas do Ato 6: medidor de veracidade, acareação, argumento, análise */
+  .vmeter { position:absolute; left:2%; top:17%; z-index:7; display:flex; align-items:center; gap:.5cqw; background:rgba(11,13,17,.86); border:1px solid var(--v-line); border-left:.3cqw solid var(--v-gold); padding:.6cqw 1cqw; border-radius:var(--v-r); color:var(--v-text); }
+  .vmeter small { font-size:max(11px, 1.1cqw); font-weight:700; letter-spacing:.14em; margin-right:.4cqw; }
+  .vmeter i { width:1.8cqw; height:1.1cqw; border-radius:.3cqw; background:var(--v-surface-2); box-shadow:inset 0 0 0 1px var(--v-line); transition:background .3s; }
+  .vmeter i.on { background:var(--v-bad); box-shadow:none; }
+  .menu .alvo { text-align:center; font-style:italic; font-size:max(13px, 1.7cqw); color:var(--v-text); background:rgba(212,162,76,.14); border:1px solid var(--v-gold); border-radius:var(--v-r); padding:.7cqw 1.4cqw; }
+  .opt span small { display:block; margin-top:.3cqw; font-size:max(11px, 1.2cqw); font-weight:400; color:var(--v-muted); line-height:1.35; }
+  .opt.used { opacity:.45; }
+  .pistas { margin:.3cqw 0 0; padding-left:2cqw; font-size:max(12px, 1.35cqw); color:var(--v-text); text-align:left; }
+  .menu .pistas { background:rgba(11,13,17,.7); border-radius:var(--v-r); padding:.6cqw 1.4cqw .6cqw 3cqw; }
+  .ev .tag { display:block; font-size:max(10px, 1cqw); color:var(--v-bad); letter-spacing:.1em; margin-top:.3cqw; }
+  .ev.disc { opacity:.6; border-color:var(--v-bad); }
+  .acar { position:absolute; left:2%; right:2%; top:10%; bottom:42%; z-index:8; display:grid; grid-template-columns:1fr 1fr; gap:1.4cqw; }
+  .acar section { background:rgba(18,21,27,.94); border:1px solid var(--v-line); border-radius:var(--v-r); padding:.8cqw; display:flex; flex-direction:column; gap:.5cqw; overflow-y:auto; min-height:0; }
+  .acar section.on { border-color:var(--v-gold); }
+  .acar h4 { margin:0; font-size:max(12px, 1.4cqw); color:var(--v-gold); letter-spacing:.06em; }
+  .acar .st { text-align:left; font-size:max(12px, 1.3cqw); line-height:1.3; padding:.55cqw .9cqw; border-radius:.8cqw; border:1px solid var(--v-line); background:var(--v-surface-2); color:var(--v-text); }
+  .acar .st:hover, .acar .st:focus-visible { border-color:var(--v-gold-2); }
+  .acar .st[aria-pressed="true"] { border-color:var(--v-gold); box-shadow:0 0 0 .2cqw var(--v-gold); }
+  .acar .st.done { opacity:.45; text-decoration:line-through; }
+  .acar .st:focus-visible, .vmeter:focus-visible { outline:.3cqw solid var(--focus); outline-offset:.2cqw; }
 </style>
 </head>
 <body>
@@ -781,7 +802,7 @@ const Sound = {
   startMusic(kind = "calma") {
     if (kind === "tensa") kind = "julgamento";
     if (!THEMES[kind]) kind = "calma";
-    if ((kind === "julgamento" || kind === "investigacao") && typeof G !== "undefined" && G && !G.over && G.cred > 0 && G.cred <= 2) kind = "pressao";
+    if ((kind === "julgamento" || kind === "investigacao") && typeof G !== "undefined" && G && !G.over && G.cred > 0 && (G.cred <= 2 || G.pressaoMusic)) kind = "pressao";
     this.want = kind; if (!this.music || !this.on) return;
     const c = this.ensure(); if (!c) return;
     if (this.cur && this.cur.name === kind) return;
@@ -1862,7 +1883,17 @@ async function doFx(fx) {
 let advance = null;
 function waitAdvance() { return new Promise(r => { advance = r; }); }
 // marcas: as deste episódio vêm da escolha feita agora; as outras, do histórico da carreira
-function epMarks() { return new Set(Object.values(EP.cenas).filter(c => c.livre).flatMap(c => c.opcoes.map(o => o.marca)).filter(Boolean)); }
+function epMarks() {
+  const cs = Object.values(EP.cenas), out = new Set(cs.filter(c => c.livre).flatMap(c => c.opcoes.map(o => o.marca)).filter(Boolean));
+  for (const c of cs) {  // espelha tribunal.episode_marks: efeitos de convocar, intuição e marcas automáticas
+    if (c.tipo === "convocar") c.opcoes.forEach(o => o.efeito && o.efeito.marca && out.add(o.efeito.marca));
+    if (c.tipo === "intuicao") c.opcoes.forEach(o => o.marca && out.add(o.marca));
+    if (c.tipo === "blefe") { out.add("blefou"); out.add("blefe_descoberto"); }
+    if (c.tipo === "depoimento" && c.hostil) out.add("hostil_revelou");
+  }
+  if (EP.provas.some(p => p.autentica === false)) { out.add("usou_falsa"); out.add("descartou_autentica"); }
+  return out;
+}
 function hasMark(m) { return epMarks().has(m) ? G.marcas.includes(m) : (EP.marcas || []).includes(m); }
 function cond(se) { return !se || (se.startsWith("!") ? !hasMark(se.slice(1)) : hasMark(se)); }
 // reduz a fonte do texto até a fala inteira caber na caixa (falas vão de 5 a 380 caracteres); deixa o texto vazio para a digitação
@@ -1932,12 +1963,13 @@ function hintFor(c, level, ctx) {
   const custom = c.dica ? [].concat(c.dica) : [];
   if (custom.length) return custom[Math.min(level - 1, custom.length - 1)];
   const nome = (f) => { const m = /^([^#]+)#art-(\d+[A-Za-z-]*)/.exec(f.chave || ""); return m ? `o art. ${m[2]} do ${m[1]}` : "a lei do caso"; };
-  const ids = c.tipo === "depoimento" ? c.contradicao.provas : c.provas;
+  const ct0 = (ctx && ctx.ct) || contradicoesOf(c)[0] || {provas:[], afirmacao:0};
+  const ids = c.tipo === "depoimento" ? ct0.provas : c.provas;
   const tipos = new Set((ids || []).map(id => (provaById(id) || {}).tipo));
-  const fund = ((c.tipo === "escolha" ? (c.opcoes.find(o => o.certa) || {}).fundamentos : c.fundamentos) || [])[0];
+  const fund = (((c.tipo === "escolha" || c.tipo === "argumento") ? (c.opcoes.find(o => o.certa) || {}).fundamentos : c.fundamentos) || [])[0];
   if (c.tipo === "depoimento") {
     if (level < 2) return "Nem toda afirmação é falsa. Procure a que não combina com o que está nos autos; pressionar pode revelar o ponto fraco.";
-    const n = ctx && ctx.idx != null ? ` Fique de olho na afirmação ${c.contradicao.afirmacao + 1} de ${c.afirmacoes.length}.` : "";
+    const n = ctx && ctx.idx != null ? ` Fique de olho na afirmação ${ct0.afirmacao + 1} de ${c.afirmacoes.length}.` : "";
     return (tipos.has("lei") && !tipos.has("prova") ? "A resposta é uma lei: confira a aba Leis dos autos." : "A resposta é um documento ou prova do caso, não uma lei: confira a aba Provas dos autos.") + n;
   }
   if (c.tipo === "apresentar") {
@@ -1949,7 +1981,9 @@ function hintFor(c, level, ctx) {
     if (level < 2 || !fund) return "Pergunte-se se o pedido tem amparo na lei e nos fatos do processo, e não apenas se ele parece justo.";
     return `Pense no que diz ${nome(fund)}: isso orienta esta decisão.`;
   }
-  if (c.tipo === "escolha") {
+  if (c.tipo === "analisar") return level < 2 ? "Examine cada prova com calma: procure datas, assinaturas e origem que não combinam." : "Nem toda prova duvidosa é falsa, e nem toda estranheza é fraude: descarte só as que têm indícios concretos.";
+  if (c.tipo === "acareacao") return level < 2 ? "Procure duas afirmações, uma de cada testemunha, que não podem ser verdade ao mesmo tempo." : "A prova certa desfaz o conflito entre as duas versões: confira a aba Provas.";
+  if (c.tipo === "escolha" || c.tipo === "argumento") {
     if (level < 2 || !fund) return "Releia as falas do caso: a melhor opção é a que a lei sustenta e que resolve o problema da parte, não a mais cômoda.";
     return `O caminho certo se apoia n${nome(fund)}.`;
   }
@@ -2018,7 +2052,7 @@ function openAutos(mode) {
       mbody.classList.toggle("cast", isCast);
       tabsEl.replaceChildren(...[["prova", "Provas"], ["lei", "Leis"], ["elenco", "Elenco"]].map(([k, l]) =>
         el("button", {"aria-pressed":String(tab === k), textContent:l, onclick:() => { tab = k; sel = null; Sound.select(); draw(); }})));
-      const items = G.autos.map(provaById).filter(p => p && p.tipo === tab);
+      const items = G.autos.map(provaById).filter(p => p && p.tipo === tab && !(mode && (G.descartadas || []).includes(p.id)));
       if (isCast) {
         grid.replaceChildren(...Object.keys(EP.personagens || {}).filter(q => q !== "narrador").map(castCard));
         if (presentBtn) { presentBtn.disabled = true; presentBtn.style.display = "none"; }
@@ -2026,12 +2060,15 @@ function openAutos(mode) {
       }
       if (presentBtn) presentBtn.style.display = "";
       grid.replaceChildren(...(items.length ? items.map(p => el("button", {class:"ev", "aria-pressed":String(sel === p.id),
-        onclick:() => { sel = p.id; Sound.select(); draw(); }}, el("span", {class:"ic", textContent:p.icone || "📄"}), p.nome))
+        onclick:() => { sel = p.id; Sound.select(); draw(); }}, el("span", {class:"ic", textContent:p.icone || "📄"}), p.nome,
+          (G.descartadas || []).includes(p.id) ? el("span", {class:"tag", textContent:"DESCARTADA"}) : null))
         : [el("p", {textContent:"Nada aqui ainda."})]));
       const p = sel && provaById(sel);
       // replaceChildren converte null em texto "null": filtra os itens vazios
       detail.replaceChildren(...(p ? [el("h3", {textContent:`${p.icone || ""} ${p.nome}`}),
         p.tipo === "lei" ? el("div", {class:"law", textContent:p.texto || ("“" + p.trecho + "”")}) : el("div", {textContent:p.descricao}),
+        p.detalhe && (G.examinadas || []).includes(p.id) ? el("p", {textContent:p.detalhe}) : null,
+        p.indicios && ((G.examinadas || []).includes(p.id) || (G.descartadas || []).includes(p.id)) ? el("ul", {class:"pistas"}, ...p.indicios.map(t => el("li", {textContent:"Indício: " + t}))) : null,
         p.tipo === "lei" ? el("div", {class:"ref", textContent:(p.texto ? "Texto vigente do catálogo · " : "Trecho citado · ") + p.chave}) : null].filter(Boolean)
         : [el("p", {textContent: mode ? "Escolha a prova ou a lei que você quer apresentar." : "Selecione um item para ver os detalhes."})]));
       if (presentBtn) presentBtn.disabled = !sel;
@@ -2069,6 +2106,13 @@ async function runScene(id) {
   if (c.tipo === "escolha") return choiceScene(c);
   if (c.tipo === "decidir") return decideScene(c);
   if (c.tipo === "investigar") return investigate(c);
+  if (c.tipo === "analisar") return analisarScene(c);
+  if (c.tipo === "convocar") return convocarScene(c);
+  if (c.tipo === "acareacao") return acareacaoScene(c);
+  if (c.tipo === "argumento") return argumentoScene(c);
+  if (c.tipo === "intuicao") return intuicaoScene(c);
+  if (c.tipo === "blefe") return blefeScene(c);
+  if (c.tipo === "reviravolta") return reviravoltaScene(c);
   if (c.tipo === "veredicto") { await verdict(c); return null; }
   return c.proxima;
 }
@@ -2148,7 +2192,26 @@ async function titleCard(c) {
   await waitAdvance(); t.remove(); Sound.startMusic("calma");
   return c.proxima;
 }
+function contradicoesOf(c) { return c.contradicoes && c.contradicoes.length ? c.contradicoes : (c.contradicao ? [c.contradicao] : []); }
+function addMark(m) { if (m && !G.marcas.includes(m)) G.marcas.push(m); }
+function addCred(n) { G.cred = Math.max(1, Math.min(5, G.cred + n)); renderCred(); }
+// prova falsa apresentada: custa credibilidade e deixa a marca "usou_falsa"
+async function falseProofPenalty(c, p) {
+  addMark("usou_falsa");
+  await damage([{q:"narrador", e:"nervoso", t:`O juiz examina “${p.nome}” e franze a testa: o documento não se sustenta. Apresentar prova duvidosa abala a sua credibilidade.`}], c);
+}
+function veracityMeter(ver, meter, scale, found, total) {
+  if (!ver) return null;
+  const box = el("div", {class:"vmeter", role:"img", "aria-label":`Sinais de falsidade: ${meter} de ${scale}`}, el("small", {textContent:"SINAIS DE FALSIDADE"}),
+    ...Array.from({length:scale}, (_, i) => el("i", {class:i < meter ? "on" : ""})));
+  return box;
+}
 async function testimony(c) {
+  const cts = contradicoesOf(c), ver = c.veracidade || null, veraz = !!(ver && ver.mente === false), hostil = c.hostil || null;
+  const sinais = (ver && ver.sinais) || [], totalSinais = sinais.reduce((n, s) => n + s.pressao, 0);
+  const scale = ver ? (ver.escala || totalSinais || 4) : 0, need = veraz ? 0 : (c.exige || cts.length);
+  const found = new Set(), seen = new Set();
+  let meter = 0, hostilDone = false, revealed = false;
   await sayAll(c.intro);
   hideDialog();
   Sound.startMusic("julgamento");
@@ -2161,29 +2224,54 @@ async function testimony(c) {
     const a = c.afirmacoes[idx];
     await say({q:c.testemunha, e:a.e, t:a.t}, {statement:true, noWait:true});
     const action = await new Promise(resolve => {
-      G.xkeys = resolve;
-      overlay(el("div", {class:"xbar"},
+      G.xkeys = (k) => { if (k === "dismiss" && !veraz) return; resolve(k); };
+      overlay(...[veracityMeter(ver, meter, scale), el("div", {class:"xbar"},
         el("button", {class:"xbtn x-nav", "aria-label":"Afirmação anterior", textContent:"◀", disabled:idx === 0, onclick:() => resolve("prev")}),
         el("button", {class:"xbtn x-press", textContent:"Pressionar (P)", onclick:() => resolve("press")}),
         el("button", {class:"xbtn x-present", textContent:"Apresentar (A)", onclick:() => resolve("present")}),
-        el("button", {class:"xbtn x-nav", "aria-label":"Próxima afirmação", textContent:"▶", onclick:() => resolve("next")})));
-      $("#keys").textContent = `Afirmação ${idx + 1} de ${c.afirmacoes.length}`;
+        veraz ? el("button", {class:"xbtn x-nav", textContent:"Dispensar (E)", onclick:() => resolve("dismiss")}) : null,
+        el("button", {class:"xbtn x-nav", "aria-label":"Próxima afirmação", textContent:"▶", onclick:() => resolve("next")}))].filter(Boolean));
+      $("#keys").textContent = `Afirmação ${idx + 1} de ${c.afirmacoes.length}` + (need > 1 ? ` · Contradições ${found.size}/${need}` : "");
     });
     G.xkeys = null; clearOverlay(); $("#keys").textContent = "";
     if (action === "prev") idx = Math.max(0, idx - 1);
     else if (action === "next") idx = (idx + 1) % c.afirmacoes.length;
+    else if (action === "dismiss") { Sound.stopMusic(); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma"); return G.over ? null : c.proxima; }
     else if (action === "press") {
       await say({q:"voce", e:"apontando", t:"UM MOMENTO!", fx:"ummomento"}, {noWait:true}); hideDialog();
-      await sayAll(a.pressionar);
+      if (hostil && !hostilDone && idx === hostil.muda_versao && (hostil.se === "sempre" || found.size === 0)) {
+        hostilDone = true; addMark("hostil_revelou");
+        const bh = banner("— A testemunha mudou a versão —", "Uma prova contra o seu cliente entrou nos autos"); Sound.ummomento(); shake();
+        receive([hostil.revela]);
+        const dano = hostil.dano == null ? 1 : hostil.dano;
+        if (dano <= 0) await sayAll(hostil.versao); else { await damage(hostil.versao); for (let k = 1; k < dano && !G.over; k++) await damage([]); }
+        bh.remove(); if (G.over) return null;
+      } else await sayAll(a.pressionar);
+      const sg = sinais.find(s => s.afirmacao === idx);
+      if (sg && !seen.has(idx) && !G.over) {
+        seen.add(idx); meter = Math.min(scale, meter + sg.pressao); Sound.select();
+        const bs = banner("Sinal de falsidade", sg.tipo); await sleep(1100); bs.remove();
+        if (!revealed && meter >= totalSinais && ver.revela) { revealed = true; await sayAll(ver.revela); }
+      }
       idx = (idx + 1) % c.afirmacoes.length;
     } else if (action === "present") {
       const id = await openAutos({titulo:"Qual prova contradiz esta afirmação?"});
       if (!id) continue;
       await presentAnim(id);
-      if (idx === c.contradicao.afirmacao && c.contradicao.provas.includes(id)) {
-        Sound.stopMusic(); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma"); return c.proxima;
+      const p = provaById(id);
+      if (p.autentica === false) { await falseProofPenalty(c, p); continue; }
+      if (veraz) { await damage(c.erro_veraz || c.erro, c, {idx}); continue; }
+      const ct = cts.find(x => x.afirmacao === idx && x.provas.includes(id) && !found.has(x));
+      if (ct) {
+        found.add(ct); Sound.acerto();
+        if (ct.acerto && found.size < need) await sayAll(ct.acerto);
+        if (found.size >= need) {
+          Sound.stopMusic(); if (ct.acerto) await sayAll(ct.acerto); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma"); return c.proxima;
+        }
+        const bc = banner("Contradição descoberta", `${found.size} de ${need}: continue o interrogatório`, true); await sleep(1300); bc.remove();
+        continue;
       }
-      await damage(c.erro, c, {idx});
+      await damage(c.erro, c, {idx, ct: cts.find(x => !found.has(x))});
     }
   }
   return null;
@@ -2201,6 +2289,7 @@ async function presentScene(c) {
     const id = await openAutos({titulo:c.pergunta});
     if (!id) { continue; }
     await presentAnim(id);
+    if (provaById(id).autentica === false) { await falseProofPenalty(c, provaById(id)); continue; }
     if (c.provas.includes(id)) { await sayAll(c.acerto); Sound.acerto(); lawPopup([provaById(id)]); return c.proxima; }
     await damage(c.erro, c);
   }
@@ -2256,6 +2345,193 @@ async function decideScene(c) {
     await damage(c.erro, c);
   }
   return null;
+}
+// ------------------------------------------------ mecânicas do Ato 6: argumento, intuição, blefe, reviravolta, análise, convocação, acareação
+function menuPick(title, items, opts = {}) {  // items: [{n (conteúdo), disabled}]; devolve o índice escolhido
+  return new Promise(resolve => {
+    G.choiceKeys = (i) => { if (i === -1) { const l = items.length - 1; if (items[l] && items[l].key === "0") i = l; else return; } if (items[i] && !items[i].disabled) resolve(i); };
+    overlay(el("div", {class:"menu" + (opts.cls ? " " + opts.cls : "")}, opts.alvo ? el("div", {class:"alvo", textContent:opts.alvo}) : null,
+      el("div", {class:"q", textContent:title}), ...(opts.extra || []),
+      ...items.map((it, k) => el("button", {class:"opt" + (it.disabled ? " used" : ""), disabled:!!it.disabled, onclick:() => resolve(k)},
+        el("b", {textContent:it.key || String(k + 1)}), el("span", {}, it.t, it.sub ? el("small", {textContent:it.sub}) : null)))));
+  }).then(i => { G.choiceKeys = null; clearOverlay(); Sound.select(); return i; });
+}
+async function argumentoScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  const tried = new Set();
+  while (!G.over) {
+    await say({q:"narrador", t:c.pergunta}, {noWait:true});
+    const i = await menuPick("⚖️ " + c.pergunta, c.opcoes.map((o, k) => {
+      const f = (o.fundamentos || [])[0] || {}, tx = f.texto || f.trecho || "";
+      return {t:o.t, disabled:tried.has(k), sub:(f.chave ? f.chave.replace("#", " · ") : "") + (tx ? " — " + (tx.length > 130 ? tx.slice(0, 127) + "…" : tx) : "")};
+    }), {cls:"argument", alvo:c.alvo ? "“" + c.alvo + "”" : null});
+    const o = c.opcoes[i];
+    if (o.certa) { await sayAll(o.falas); Sound.acerto(); await sayAll(c.acerto); lawPopup(o.fundamentos); return c.proxima; }
+    tried.add(i);
+    await damage(o.falas || [], c);
+  }
+  return null;
+}
+async function intuicaoScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  await say({q:"narrador", e:"pensativo", t:c.pergunta}, {noWait:true});
+  const extra = (c.pistas || []).length ? [el("ul", {class:"pistas"}, ...c.pistas.map(p => el("li", {textContent:p})))] : [];
+  const i = await menuPick("🧭 " + c.pergunta, c.opcoes.map(o => ({t:o.t})), {cls:"dilemma", extra:[el("small", {class:"dhint", textContent:"Sem prova suficiente: confie na sua leitura. O resultado só aparece depois."}), ...extra]});
+  const o = c.opcoes[i];
+  addMark(o.marca);
+  await sayAll(c.revelacao);
+  if (o.certa) {
+    const bonus = c.bonus == null ? 1 : c.bonus;
+    if (bonus && G.cred < 5) { addCred(bonus); const b = banner("Intuição certeira", `+${bonus} de credibilidade`, true); Sound.acerto(); await sleep(1300); b.remove(); } else Sound.acerto();
+    await sayAll(c.acerto);
+  } else await damage(c.erro, c);
+  return G.over ? null : c.proxima;
+}
+async function blefeScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  await say({q:"narrador", e:"pensativo", t:c.pergunta}, {noWait:true});
+  const i = await menuPick("🎭 " + c.pergunta, c.opcoes.map(o => ({t:o.t})), {cls:"dilemma", extra:[el("small", {class:"dhint", textContent:"Mentir em juízo tem preço. A escolha fica na sua ficha."})]});
+  const o = c.opcoes[i], bl = o.blefe;
+  if (!bl) { await sayAll(o.falas); return c.proxima; }
+  addMark("blefou");
+  await sayAll(bl.falas);
+  if (bl.prova) receive([bl.prova]);
+  if (bl.resultado === "funciona") { Sound.acerto(); return c.proxima; }
+  addMark("blefe_descoberto");
+  const b = banner("— Blefe descoberto —", "Estatuto da OAB, art. 34 · CPC, arts. 80-81"); Sound.ummomento(); shake(); flash("redflash");
+  const n = Math.abs(bl.cred == null ? -2 : bl.cred);
+  await damage(bl.consequencia, null);
+  for (let k = 1; k < n && !G.over; k++) await damage([]);
+  b.remove();
+  return G.over ? null : c.proxima;
+}
+async function reviravoltaScene(c) {
+  Sound.ummomento(); shake(); flash();
+  const b = banner(c.banner || "REVIRAVOLTA!", c.sub); await sleep(1700); b.remove();
+  G.cred = Math.max(c.piso || 2, Math.min(5, G.cred + (c.ajuste == null ? -1 : c.ajuste)));
+  G.fails = {}; G.pressaoMusic = true; renderCred(G.cred); Sound.dano();
+  Sound.startMusic("pressao");
+  await sayAll(c.falas, {local:c.local});
+  return c.proxima;
+}
+function openAnalisar(c) {  // devolve a lista de provas descartadas
+  return new Promise(resolve => {
+    let sel = null; const disc = new Set(), seen = new Set();
+    const prevFocus = document.activeElement;
+    const m = el("div", {class:"modal", role:"dialog", "aria-modal":"true", "aria-label":"Análise das provas"});
+    const grid = el("div", {class:"grid-ev"}), detail = el("div", {class:"detail"});
+    const toggle = el("button", {class:"pbtn sec", onclick:() => flip()}), done = el("button", {class:"pbtn", textContent:"Concluir análise (C)", onclick:() => close()});
+    const close = () => { seen.forEach(id => { if (!(G.examinadas || (G.examinadas = [])).includes(id)) G.examinadas.push(id); }); document.removeEventListener("keydown", key); m.remove(); Sound.fechar(); if (prevFocus && prevFocus.focus) prevFocus.focus({preventScroll:true}); resolve([...disc]); };
+    const flip = () => { if (!sel) return; if (disc.has(sel)) disc.delete(sel); else disc.add(sel); Sound.select(); paint(); };
+    const key = (e) => {
+      const k = e.key.toLowerCase();
+      if (k === "d") { e.preventDefault(); flip(); }
+      else if (k === "c") { e.preventDefault(); close(); }
+      else if (k === "arrowdown" || k === "arrowup") {
+        const i = c.provas.indexOf(sel); const j = Math.max(0, Math.min(c.provas.length - 1, (i < 0 ? 0 : i) + (k === "arrowdown" ? 1 : -1)));
+        e.preventDefault(); sel = c.provas[j]; seen.add(sel); Sound.select(); paint(); const bt = grid.children[j]; if (bt) bt.focus();
+      }
+    };
+    function paint() {
+      const fi = [...grid.children].indexOf(document.activeElement);
+      grid.replaceChildren(...c.provas.map(id => { const p = provaById(id);
+        return el("button", {class:"ev" + (disc.has(id) ? " disc" : ""), "aria-pressed":String(sel === id), onclick:() => { sel = id; seen.add(id); Sound.select(); paint(); }},
+          el("span", {class:"ic", textContent:p.icone || "📄"}), p.nome, disc.has(id) ? el("span", {class:"tag", textContent:"DESCARTADA"}) : null); }));
+      if (fi >= 0 && grid.children[fi]) grid.children[fi].focus();
+      const p = sel && provaById(sel);
+      detail.replaceChildren(...(p ? [el("h3", {textContent:`${p.icone || ""} ${p.nome}`}), el("div", {textContent:p.descricao}),
+        p.detalhe ? el("p", {textContent:p.detalhe}) : null,
+        p.indicios ? el("ul", {class:"pistas"}, ...p.indicios.map(t => el("li", {textContent:"Indício: " + t}))) : (p.autentica === false ? null : el("p", {class:"ref", textContent:"Nada de errado foi encontrado nesta prova."}))].filter(Boolean)
+        : [el("p", {textContent:"Examine cada prova: selecione-a para ver os detalhes. Descarte as que não resistem à análise."})]));
+      toggle.textContent = sel && disc.has(sel) ? "Manter esta prova (D)" : "Descartar esta prova (D)"; toggle.disabled = !sel;
+    }
+    document.addEventListener("keydown", key);
+    m.append(el("div", {class:"mcard"}, el("header", {}, el("h2", {textContent:"🔬 Análise das provas"}), el("span", {class:"sp"})),
+      el("div", {class:"mbody"}, grid, detail),
+      el("footer", {}, el("span", {class:"hint", textContent:c.pergunta || "Quais provas não resistem à análise?"}), toggle, done)));
+    $("#stage").append(m); paint(); Sound.abrir(); (grid.children[0] || m).focus({preventScroll:true});
+  });
+}
+async function analisarScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  receive(c.provas);
+  while (!G.over) {
+    await say({q:"narrador", e:"pensativo", t:c.pergunta || "Quais provas não resistem à análise?"}, {noWait:true});
+    const disc = await openAnalisar(c);
+    const ok = disc.length === c.falsas.length && disc.every(id => c.falsas.includes(id));
+    if (ok) { G.descartadas = [...new Set([...(G.descartadas || []), ...disc])]; Sound.acerto(); await sayAll(c.acerto); return c.proxima; }
+    if (disc.some(id => !c.falsas.includes(id))) addMark("descartou_autentica");
+    await damage(c.erro, c);
+  }
+  return null;
+}
+async function convocarScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  const used = new Set(); let n = 0;
+  while (!G.over && n < c.limite) {
+    await say({q:"narrador", t:c.pergunta}, {noWait:true});
+    const canEnd = n > 0 && n >= (c.minimo || 0);
+    const items = c.opcoes.map((o, k) => ({t:o.rotulo, disabled:used.has(k)}));
+    if (canEnd) items.push({t:c.encerrar || "Encerrar a convocação", key:"0"});
+    const i = await menuPick(`${c.pergunta}  (${n} de ${c.limite})`, items, {cls:"convoke"});
+    if (i >= c.opcoes.length) break;
+    used.add(i); n++;
+    const o = c.opcoes[i];
+    await sayAll(o.falas, {local:c.local});
+    if (G.over) return null;
+    await testimony(EP.cenas[o.depoimento]);
+    if (G.over) return null;
+    const ef = o.efeito || {};
+    addMark(ef.marca);
+    if (ef.prova) receive([ef.prova]);
+    if (ef.cred > 0) addCred(ef.cred);
+    for (let k = 0; k < -(ef.cred || 0) && !G.over; k++) await damage([]);
+  }
+  return G.over ? null : c.proxima;
+}
+function acareacaoPanel(c, A, B, st) {  // st: {selA, selB, done:Set(índices de pares)}
+  const col = (d, side) => el("section", {class:st.side === side ? "on" : "", "aria-label":"Afirmações de " + nameOf(d.testemunha)},
+    el("h4", {textContent:`${nameOf(d.testemunha)} (${side === "a" ? "←" : "→"})`}),
+    ...d.afirmacoes.map((a, k) => { const done = c.pares.some((pr, pi) => st.done.has(pi) && pr[side] === k);
+      return el("button", {class:"st" + (done ? " done" : ""), "aria-pressed":String(st["sel" + side.toUpperCase()] === k), disabled:done,
+        onclick:() => { st.side = side; st["sel" + side.toUpperCase()] = k; Sound.select(); st.redraw(); }},
+        el("b", {textContent:(k + 1) + ". "}), a.t); }));
+  return el("div", {class:"acar"}, col(A, "a"), col(B, "b"));
+}
+async function acareacaoScene(c) {
+  await sayAll(c.falas, {local:c.local});
+  const A = EP.cenas[c.a], B = EP.cenas[c.b], st = {selA:null, selB:null, done:new Set(), side:"a"};
+  Sound.startMusic("julgamento");
+  const b = banner("— Acareação —", `${nameOf(A.testemunha)} × ${nameOf(B.testemunha)}`); Sound.ummomento(); await sleep(1400); b.remove();
+  while (!G.over && st.done.size < c.pares.length) {
+    await say({q:"narrador", e:"pensativo", t:"Escolha uma afirmação de cada lado que se contradizem e apresente a prova que resolve o conflito."}, {noWait:true});
+    const action = await new Promise(resolve => {
+      const bar = el("div", {class:"xbar"},
+        el("button", {class:"xbtn x-present", textContent:"Confrontar com prova (A)", onclick:() => resolve("present")}),
+        el("button", {class:"xbtn x-nav", textContent:"Trocar de lado (Tab)", onclick:() => { st.side = st.side === "a" ? "b" : "a"; st.redraw(); }}));
+      st.redraw = () => overlay(acareacaoPanel(c, A, B, st), bar);
+      G.acKeys = (k) => {
+        if (k === "a" || k === "enter") resolve("present");
+        else if (k === "tab" || k === "arrowleft" || k === "arrowright") { st.side = k === "arrowleft" ? "a" : k === "arrowright" ? "b" : (st.side === "a" ? "b" : "a"); st.redraw(); }
+        else if (/^[1-9]$/.test(k)) { const d = st.side === "a" ? A : B, n = Number(k) - 1; if (n < d.afirmacoes.length) { st["sel" + st.side.toUpperCase()] = n; Sound.select(); st.redraw(); } }
+      };
+      st.redraw();
+      $("#keys").textContent = "Números escolhem a afirmação · ←/→ trocam de lado · A confronta";
+    });
+    G.acKeys = null; clearOverlay(); $("#keys").textContent = "";
+    if (st.selA == null || st.selB == null) { await say({q:"narrador", t:"Escolha uma afirmação de cada testemunha antes de confrontar."}); continue; }
+    const id = await openAutos({titulo:"Qual prova resolve este conflito?"});
+    if (!id) continue;
+    await presentAnim(id);
+    const p = provaById(id);
+    if (p.autentica === false) { await falseProofPenalty(c, p); continue; }
+    const pi = c.pares.findIndex((pr, k) => !st.done.has(k) && pr.a === st.selA && pr.b === st.selB && [].concat(pr.prova).includes(id));
+    if (pi >= 0) { st.done.add(pi); st.selA = st.selB = null; Sound.acerto(); await sayAll(c.pares[pi].falas); if (st.done.size < c.pares.length) { const bb = banner("Conflito resolvido", `${st.done.size} de ${c.pares.length}`, true); await sleep(1200); bb.remove(); } }
+    else await damage(c.erro, c, {acareacao:true});
+  }
+  if (G.over) return null;
+  Sound.stopMusic(); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma");
+  return c.proxima;
 }
 function stampSize(t) { return Math.min(6, 62 / Math.max(6, t.length)) + "cqw"; }  // cabe em qualquer carimbo
 function confetti() {
@@ -2334,7 +2610,7 @@ async function startEpisode(id, resume = false) {
   EP = await api("/api/arena/tribunal/" + encodeURIComponent(id));
   const s = resume ? EP.salvo : null;
   if (!CAR) { try { CAR = await api("/api/arena/carreira"); } catch (e) { /* jogo avulso */ } }
-  G = {resumed:!!s, cred:s ? Math.max(3, s.credibilidade) : 5, erros:s ? s.erros : 0, autos:s ? [...s.autos] : [], marcas:s ? [...(s.marcas || [])] : [], over:false, scene:null};
+  G = {resumed:!!s, cred:s ? Math.max(3, s.credibilidade) : 5, erros:s ? s.erros : 0, autos:s ? [...s.autos] : [], marcas:s ? [...(s.marcas || [])] : [], descartadas:s ? [...(s.descartadas || [])] : [], examinadas:[], over:false, scene:null};
   curPos = null; curChar = null;
   $("#menu").classList.add("hidden"); $("#game").classList.remove("hidden");
   [...$("#stage").querySelectorAll(".full, .modal, .lawpop, .inv-title")].forEach(n => n.remove());
@@ -2349,7 +2625,7 @@ async function startEpisode(id, resume = false) {
   }
 }
 function saveProgress(sid) {
-  api("/api/arena/tribunal/salvar", {episodio:EP.id, estado:{cena:sid, credibilidade:G.cred, erros:G.erros, autos:G.autos, marcas:G.marcas}})
+  api("/api/arena/tribunal/salvar", {episodio:EP.id, estado:{cena:sid, credibilidade:G.cred, erros:G.erros, autos:G.autos, marcas:G.marcas, descartadas:G.descartadas || []}})
     .then(() => { const t = el("div", {class:"saved-toast", textContent:"💾 progresso salvo"}); $("#stage").append(t); setTimeout(() => t.remove(), 2000); })
     .catch(() => {});
 }
@@ -2369,12 +2645,13 @@ document.addEventListener("keydown", (e) => {
   if ($("#game").classList.contains("hidden") || e.target.tagName === "INPUT") return;
   if ($("#stage").querySelector(".modal")) return;
   const k = e.key.toLowerCase();
+  if (G && G.acKeys) { if (["a", "enter", "tab", "arrowleft", "arrowright"].includes(k) || /^[1-9]$/.test(k)) { e.preventDefault(); G.acKeys(k); } return; }
   if (G && G.xkeys) {
-    const map = {arrowleft:"prev", arrowright:"next", p:"press", a:"present"};
+    const map = {arrowleft:"prev", arrowright:"next", p:"press", a:"present", e:"dismiss"};
     if (map[k]) { e.preventDefault(); G.xkeys(map[k]); }
     return;
   }
-  if (G && G.choiceKeys && /^[1-9]$/.test(k)) { G.choiceKeys(Number(k) - 1); return; }
+  if (G && G.choiceKeys && /^[0-9]$/.test(k)) { G.choiceKeys(k === "0" ? -1 : Number(k) - 1); return; }
   if (G && G.decideKeys && (k === "d" || k === "i")) { G.decideKeys(k === "d" ? "deferir" : "indeferir"); return; }
   if (k === "a" && G) { openAutos(null); return; }
   if ((k === "enter" || k === " ") && advance) { if (e.target.closest && e.target.closest("button")) return; e.preventDefault(); const a = advance; a(); }
