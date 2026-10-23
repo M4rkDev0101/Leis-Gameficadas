@@ -85,6 +85,23 @@ class _Handler(BaseHTTPRequestHandler):
                     return self._json([dict(r) for r in hits])
                 finally:
                     cat.close()
+            if url.path == "/api/norma":
+                qs = parse_qs(url.query)
+                nid = qs.get("id", [""])[0].strip()
+                if not nid:
+                    return self._json({"erro": "parâmetro id obrigatório"}, 400)
+
+                def num(name: str, default: int) -> int:
+                    try:
+                        return int(qs.get(name, [default])[0])
+                    except (TypeError, ValueError):
+                        return default
+                cat = Catalog(self.updater.db)
+                try:
+                    r = cat.norma_leitura(nid, num("inicio", 0), num("limite", 400), qs.get("alvo", [None])[0] or None)
+                finally:
+                    cat.close()
+                return self._json(r) if r else self._json({"erro": "norma não encontrada"}, 404)
             if url.path == "/api/arvore":
                 prefix = parse_qs(url.query).get("prefixo", [""])[0].strip("/")
                 return self._json(self.updater._source().children(prefix))
