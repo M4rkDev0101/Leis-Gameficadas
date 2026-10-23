@@ -47,7 +47,6 @@
   .me b { font-size:.85rem; line-height:1.2; }
   .pill { padding:4px 12px; border-radius:999px; font-size:.8rem; font-weight:600; border:1px solid var(--v-line); background:var(--v-surface-2); color:var(--v-muted); white-space:nowrap; }
   .pill.ok { color:var(--v-ok); } .pill.new { color:var(--v-gold-2); } .pill.run { color:var(--steel-text); } .pill.err { color:var(--bad-text); }
-  .menu-btn { display:none; }
 
   /* ---------- estrutura ---------- */
   .shell { max-width:1560px; margin:0 auto; padding:calc(var(--top) + 28px) 24px 80px; display:grid; grid-template-columns:230px minmax(0,1fr); gap:36px; }
@@ -57,7 +56,6 @@
   .side a { display:block; padding:7px 12px; margin-left:-1px; border-left:2px solid transparent; color:var(--v-muted); text-decoration:none; font-size:.9rem; overflow-wrap:anywhere; }
   .side a:hover { color:var(--v-text); }
   .side a[aria-current="true"] { color:var(--v-gold-2); border-left-color:var(--v-gold); }
-  .sysnav { display:none; }
   .side a[aria-current="page"] { color:var(--v-gold-2); border-left-color:var(--v-gold); }
   .side .count { color:var(--v-muted); font-variant-numeric:tabular-nums; font-size:.8rem; }
   main { min-width:0; }
@@ -175,7 +173,7 @@
   .arrow { position:absolute; top:calc(50% + 6px); z-index:3; width:44px; height:44px; border-radius:50%; border:1px solid var(--v-line); background:rgba(11,13,17,.85); color:var(--v-text); font-size:1.3rem; cursor:pointer; display:none; }
   .arrow:hover { border-color:var(--v-gold); color:var(--v-gold-2); }
   .arrow.l { left:-14px; } .arrow.r { right:-14px; }
-  @media (hover:hover) and (min-width:861px) { .row-block:hover .arrow, .row-block:focus-within .arrow { display:block; } }
+  @media (hover:hover) { .row-block:hover .arrow, .row-block:focus-within .arrow { display:block; } }
   .badge { display:inline-block; font:700 .66rem var(--sans); letter-spacing:.12em; text-transform:uppercase; padding:2px 8px; border-radius:999px; border:1px solid var(--v-gold); color:var(--v-gold-2); margin-right:6px; }
 
   /* ---------- manutenção ---------- */
@@ -213,35 +211,6 @@
   .browse li { display:flex; justify-content:space-between; gap:8px; align-items:center; }
 
   /* ---------- celular ---------- */
-  @media (max-width:860px) {
-    .topbar { padding:0 12px; gap:10px; }
-    .nav { display:none; }
-    .menu-btn { display:inline-flex; align-items:center; gap:6px; }
-    .shell { grid-template-columns:minmax(0,1fr); padding:calc(var(--top) + 14px) 16px 60px; gap:0; }
-    .side { position:fixed; inset:var(--top) 0 auto 0; z-index:45; max-height:calc(100vh - var(--top)); background:rgba(11,13,17,.97); backdrop-filter:blur(12px); padding:18px 20px 8px; border-bottom:1px solid var(--v-line); transform:translateY(-110%); visibility:hidden; transition:transform .25s var(--v-ease), visibility .25s; }
-    .side.open { transform:none; visibility:visible; }
-    .sysnav { display:block; }
-    .side a { padding:12px 14px; }
-    .me small { display:none; } .me b { display:none; }
-    .pill { max-width:42vw; overflow:hidden; text-overflow:ellipsis; }
-    #q { height:58px; font-size:1.05rem; padding-left:50px; padding-right:16px; }
-    .searchbox kbd { display:none; }
-    .searchbox svg { left:16px; }
-    .results-wrap.has-reader { grid-template-columns:minmax(0,1fr); }
-    .reader-col { position:fixed; inset:var(--top) 0 0 0; z-index:60; max-height:none; border-radius:0; background:var(--v-bg); padding:0; }
-    .reader { border-radius:0; border:none; min-height:100%; }
-    .reader-head { padding:18px 18px 14px; } .reader-head h2 { font-size:1.4rem; }
-    .reader-body { padding:20px 18px 40px; font-size:1.05rem; }
-    .lei .l-par { padding-left:1em; } .lei .l-inc { padding-left:2em; } .lei .l-ali { padding-left:3em; } .lei .l-item { padding-left:4em; }
-    .cards { grid-template-columns:1fr; }
-    .tile { flex-basis:72vw; }
-    .btn, .tag, .btn.link, details summary, label.toggle { min-height:44px; }
-    .logo { min-height:44px; justify-content:center; }
-    .chip button { width:44px; height:44px; }
-    .stats { grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
-    .stat b { font-size:1.2rem; }
-    .hero h1 { font-size:1.9rem; }
-  }
   @media (prefers-reduced-motion:reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } .card:hover, .tag:hover, .tile:hover { transform:none; } }
 </style>
 </head>
@@ -249,7 +218,6 @@
 <a class="skip" href="#sec-busca">Ir para a busca</a>
 
 <header class="topbar">
-  <button class="btn menu-btn" id="menu-btn" aria-expanded="false" aria-controls="side" aria-label="Abrir índice da página">☰ Índice</button>
   <a class="logo" href="/" aria-label="VADE, início">VADE</a>
   <nav class="nav" aria-label="Seções do Vade">
     <a href="/tribunal">Tribunal</a>
@@ -266,14 +234,6 @@
 
 <div class="shell">
   <aside class="side" id="side" aria-label="Índice da página">
-    <div class="sysnav">
-      <h2>Vade</h2>
-      <ol>
-        <li><a href="/tribunal">Tribunal</a></li>
-        <li><a href="/">Estudo</a></li>
-        <li><a href="/acervo" aria-current="page">Acervo</a></li>
-      </ol>
-    </div>
     <h2>Nesta página</h2>
     <ol id="toc">
       <li><a href="#sec-busca">Busca</a></li>
@@ -598,7 +558,6 @@ function citacao(h) {
 }
 
 let lastHits = [], openIdx = -1, lastFocus = null, searchSeq = 0;
-const isMobile = () => matchMedia("(max-width:860px)").matches;
 
 function showEmpty(title, text) {
   $("hits").replaceChildren(el("div", {className:"empty"}, el("b", {textContent:title}), text));
@@ -707,10 +666,9 @@ function openReader(i) {
   loadFull(h, body, snippetLei);
   $("reader-col").hidden = false; $("results-wrap").classList.add("has-reader");
   if (!wasOpen) { try { history.pushState({reader:1}, ""); } catch {} }
-  if (lastFocus && !isMobile()) lastFocus.scrollIntoView({block:"nearest"});
+  if (lastFocus) lastFocus.scrollIntoView({block:"nearest"});
   $("reader-col").scrollTop = 0;
-  if (isMobile()) { document.body.style.overflow = "hidden"; $("reader").focus(); }
-  else { $("reader").focus({preventScroll:true}); }
+  $("reader").focus({preventScroll:true});
 }
 
 // ---------------------------------------------------------------- leitura integral da norma
@@ -837,7 +795,6 @@ async function jumpTo(pos) {
 function closeReader(restoreFocus = true) {
   if ($("reader-col").hidden) return;
   $("reader-col").hidden = true; $("results-wrap").classList.remove("has-reader");
-  document.body.style.overflow = "";
   document.querySelectorAll(".card[aria-current]").forEach(c => c.removeAttribute("aria-current"));
   if (restoreFocus && lastFocus) lastFocus.focus();
   openIdx = -1;
@@ -848,7 +805,6 @@ document.addEventListener("keydown", (ev) => {
   if (ev.key === "/" && !typing && !ev.ctrlKey && !ev.metaKey && !ev.altKey) { ev.preventDefault(); closeReader(false); $("q").focus(); $("q").select(); window.scrollTo({top:0}); return; }
   if (ev.key === "Escape") {
     if (!$("reader-col").hidden) { history.state && history.state.reader ? history.back() : closeReader(true); }
-    else if ($("side").classList.contains("open")) toggleMenu(false);
     else if (t === $("q") && $("q").value) { $("q").value = ""; doSearch(""); }
     return;
   }
@@ -895,13 +851,6 @@ function renderSuggest() {
 }
 
 // ---------------------------------------------------------------- índice lateral e menu
-function toggleMenu(open) {
-  const side = $("side"); open = open === undefined ? !side.classList.contains("open") : open;
-  side.classList.toggle("open", open); $("menu-btn").setAttribute("aria-expanded", String(open));
-  if (open) { const a = side.querySelector("a"); if (a) a.focus(); } else if (isMobile()) $("menu-btn").focus();
-}
-$("menu-btn").onclick = () => toggleMenu();
-$("side").addEventListener("click", (ev) => { if (ev.target.closest("a") && isMobile()) toggleMenu(false); });
 const SECS = ["sec-busca", "sec-explorar", "sec-sync", "sec-recorte", "sec-hist"];
 let spyBusy = false;
 function spyUpdate() {
