@@ -30,6 +30,8 @@ import re
 from functools import lru_cache
 from importlib import resources
 
+from .recompensas import raridade_carta
+
 CREDIBILIDADE_MAX = 5
 SCENE_TYPES = {"titulo", "dialogo", "depoimento", "apresentar", "escolha", "decidir", "investigar", "veredicto"}
 EXPRESSIONS = {"normal", "feliz", "bravo", "nervoso", "chocado", "pensativo", "triste", "confiante", "apontando"}
@@ -172,26 +174,68 @@ def choice_texts(data: dict) -> dict[str, dict]:
             if c.get("livre") for o in c.get("opcoes", []) if o.get("marca")}
 
 
-def achievements(data: dict, won: dict[str, float], perfect: set[str], marks: set[str]) -> list[dict]:
-    """Conquistas calculadas do histórico (nada é gravado à parte: refazer um caso só melhora)."""
+RARIDADE_CONQUISTA = {"primeiro": "comum", "perfeito": "comum", "escolhas": "incomum", "perfeito10": "rara", "carreira": "lendaria"}
+
+
+def achievements(data: dict, won: dict[str, float], perfect: set[str], marks: set[str],
+                 extras: dict | None = None) -> list[dict]:
+    """Conquistas calculadas do histórico (nada é gravado à parte: refazer um caso só melhora).
+
+    Cada uma traz ``progresso`` {atual, meta} (para a barra "7/10") e ``raridade``. ``extras`` (opcional):
+    contradicoes, combo_max, cartas, cartas_total, notas_s, streak_max, dias_completos."""
+    ex = extras or {}
     atos = [(a, [e["id"] for e in data["episodios"] if e.get("ato") == a["id"]]) for a in data.get("atos", [])]
     done = {k for k, v in won.items() if v and v > 0}
     career_ids = [i for _, ids in atos for i in ids]
+
+    def conq(id_, icone, nome, desc, atual, meta, raridade):
+        return {"id": id_, "icone": icone, "nome": nome, "descricao": desc, "ok": atual >= meta,
+                "progresso": {"atual": min(atual, meta), "meta": meta}, "raridade": raridade}
+
     out = [
-        {"id": "primeiro", "icone": "⚖️", "nome": "Primeiro veredicto", "descricao": "Vença o seu primeiro caso.", "ok": bool(done)},
-        {"id": "perfeito", "icone": "✨", "nome": "Sem um arranhão", "descricao": "Vença um caso sem perder credibilidade.", "ok": bool(perfect)},
-        {"id": "perfeito10", "icone": "💎", "nome": "Mão firme", "descricao": "Dez casos perfeitos.", "ok": len(perfect) >= 10},
+        conq("primeiro", "⚖️", "Primeiro veredicto", "Vença o seu primeiro caso.", len(done), 1, "comum"),
+        conq("perfeito", "✨", "Sem um arranhão", "Vença um caso sem perder credibilidade.", len(perfect), 1, "comum"),
+        conq("perfeito10", "💎", "Mão firme", "Dez casos perfeitos.", len(perfect), 10, "rara"),
     ]
     for a, ids in atos:
         if ids:
-            out.append({"id": "ato-" + a["id"], "icone": "🏛️", "nome": f"{a['cargo']}", "descricao": f"Conclua o Ato {a['numero']}: {a['titulo']}.",
-                        "ok": all(i in done for i in ids)})
-            out.append({"id": "impecavel-" + a["id"], "icone": "🌟", "nome": f"Impecável no Ato {a['numero']}", "descricao": "Todos os casos do ato perfeitos.",
-                        "ok": all(i in perfect for i in ids)})
-    out.append({"id": "carreira", "icone": "👑", "nome": "Da toga ao veredicto final", "descricao": "Conclua o Modo Carreira.",
-                "ok": bool(career_ids) and all(i in done for i in career_ids)})
-    out.append({"id": "escolhas", "icone": "🧭", "nome": "Consciência", "descricao": "Tome cinco decisões morais na carreira.", "ok": len(marks) >= 5})
+            out.append(conq("ato-" + a["id"], "🏛️", f"{a['cargo']}", f"Conclua o Ato {a['numero']}: {a['titulo']}.",
+                            sum(i in done for i in ids), len(ids), "incomum"))
+            out.append(conq("impecavel-" + a["id"], "🌟", f"Impecável no Ato {a['numero']}", "Todos os casos do ato perfeitos.",
+                            sum(i in perfect for i in ids), len(ids), "epica"))
+    out.append(conq("carreira", "👑", "Da toga ao veredicto final", "Conclua o Modo Carreira.",
+                    sum(i in done for i in career_ids), max(1, len(career_ids)), "lendaria"))
+    out.append(conq("escolhas", "🧭", "Consciência", "Tome cinco decisões morais na carreira.", len(marks), 5, "incomum"))
+    out += [
+        conq("contradicoes10", "🔎", "Olho clínico", "Aponte dez contradições.", ex.get("contradicoes", 0), 10, "comum"),
+        conq("contradicoes50", "🕵️", "Inquisidor(a)", "Aponte cinquenta contradições.", ex.get("contradicoes", 0), 50, "rara"),
+        conq("combo8", "🔥", "Sem piscar", "Encadeie oito acertos seguidos em um julgamento.", ex.get("combo_max", 0), 8, "incomum"),
+        conq("notas_s5", "🏅", "Colecionador(a) de selos", "Selo dourado (nota S) em cinco casos.", ex.get("notas_s", 0), 5, "rara"),
+        conq("album25", "🃏", "Jurisprudência na mão", "Reúna 25 cartas no álbum.", ex.get("cartas", 0), 25, "incomum"),
+        conq("album-tudo", "📚", "Biblioteca completa", "Complete o álbum de cartas.", ex.get("cartas", 0), max(1, ex.get("cartas_total", 0)), "lendaria"),
+        conq("streak7", "📅", "Uma semana de toga", "Jogue em 7 dias seguidos.", ex.get("streak_max", 0), 7, "incomum"),
+        conq("dia10", "⚡", "Relâmpago", "Feche o desafio do dia dez vezes.", ex.get("dias_completos", 0), 10, "incomum"),
+    ]
     return out
+
+
+def cards_catalog(data: dict) -> dict[str, dict]:
+    """Cartas de jurisprudência: uma por dispositivo citado nos casos. Raridade = caso mais difícil que o cita."""
+    niveis: dict[str, list[str]] = {}
+    donos: dict[str, list[str]] = {}
+    ep_nivel = {e["id"]: e["nivel"] for e in data["episodios"]}
+    for dono, f in all_fundamentos(data):
+        ep_id = dono.split("/")[0]
+        niveis.setdefault(f["chave"], []).append(ep_nivel[ep_id])
+        donos.setdefault(f["chave"], [])
+        if ep_id not in donos[f["chave"]]:
+            donos[f["chave"]].append(ep_id)
+    return {k: {"chave": k, "raridade": raridade_carta(niveis[k], len(donos[k])), "casos": donos[k], "trecho": ""} for k in sorted(niveis)}
+
+
+def episode_cards(data: dict, ep_id: str) -> list[dict]:
+    cat = cards_catalog(data)
+    return [{"chave": k, "raridade": c["raridade"]} for k, c in cat.items() if ep_id in c["casos"]]
 
 
 def summary(ep: dict) -> dict:
