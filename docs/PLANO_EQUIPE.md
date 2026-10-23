@@ -38,6 +38,18 @@ testes (`unittest`), validação jurídica (`jogar.py validar`) e jogo no navega
 | 11 | Game design: balanceamento de dificuldade e XP por ato; dicas após 2 erros | game design | curva revisada e documentada no GDD | ✅ (XP por duração, 6 rótulos corrigidos, dicas progressivas) |
 | 12 | Instalador: incluir dublagem opcional (baixar pacote de vozes) | programação | instalação limpa funciona | ✅ código e lançador novo publicados (instalação limpa testada em 30 s); falta só publicar o pacote de vozes quando a dublagem terminar (com autorização) |
 
+## Estado ao pausar (22/10/2026, noite)
+- `main` está verde e publicado: interface nova em todo o sistema (menu estilo streaming, app de estudo, acervo com
+  leitura integral, telas do caso, cenários, lançador), XP por duração + dicas, sem código de celular. Instalador
+  novo publicado pela CI e testado numa instalação limpa.
+- Dublagem: código na branch `equipe/vozes` (commit 497a6b5, NÃO integrado — falta testar no navegador o seletor de
+  voz do protagonista). A geração roda em segundo plano a partir de `C:/lx/wt-vozes` (não apagar essa worktree),
+  vigiada por `C:/lx/supervisor_vozes.ps1` (reabre o VoiceStudio se cair). Log em
+  `%LOCALAPPDATA%\VadeTribunalozes\gerar.log`; perfis em `vozes_distintas.csv` (40/126 às 22h20).
+- Para retomar: (1) item 3, 2ª passada de arte expressão por expressão (agente + inspeção pessoal); (2) item 8,
+  QA de escolhas/conquistas/créditos (parcial: a troca de marca em a1x-transito → a1x-idosa funcionou);
+  (3) integrar `equipe/vozes` após teste; (4) publicar o pacote de vozes quando a geração acabar (pedir autorização).
+
 ## Notas de ambiente (descobertas que custaram tempo)
 - Agentes: `isolation: worktree` falha (MAX_PATH). Criar `git worktree add -b equipe/<x> C:/lx/wt-<x>` e mandar o
   agente trabalhar só lá, com porta própria (878x). Agentes Sonnet/Haiku com skills; coordenador revisa e integra.
