@@ -250,7 +250,8 @@ class TestServidor(unittest.TestCase):
         com_bio = [k for k, v in tut["personagens"].items() if v.get("bio")]
         self.assertTrue(com_bio)  # a tela de elenco depende de bio na API
         code, r = self.req("/api/arena/tribunal/concluir", {"episodio": "ep3-sentenca", "credibilidade": 4, "erros": 1})
-        self.assertEqual((code, r["xp"], r["carimbo"]), (200, tribunal.xp_base(tribunal.episode(DATA, "ep3-sentenca")) + 80, "SENTENÇA MANTIDA"))
+        extra = r["recompensas"]["xp_combo"] + r["recompensas"]["xp_melhora"] + r["recompensas"]["xp_bau"]  # baú é sorteado pelo run_id
+        self.assertEqual((code, r["xp"] - extra, r["carimbo"]), (200, tribunal.xp_base(tribunal.episode(DATA, "ep3-sentenca")) + 80, "SENTENÇA MANTIDA"))
         prof = self.req("/api/arena/perfil")[1]
         self.assertEqual((prof["xp"], prof["casos"]["jogadas"], prof["nome"]), (r["xp"], 1, "Dra. Teste"))
         self.assertEqual(self.req("/api/arena/tribunal/nao-existe")[0], 404)
