@@ -51,9 +51,9 @@
         "g3": {"tipo": "investigar", "local": "loja", "titulo": "MegaLar · Shopping Centro",
           "intro": [{"q": "narrador", "t": "Ar-condicionado gelado, música alta e um cartaz enorme oferecendo garantia estendida."}],
           "pontos": [
-            {"id": "balcao", "nome": "Balcão da assistência técnica", "x": 41, "y": 44, "w": 12, "h": 10, "falas": [
+            {"id": "balcao", "nome": "Balcão da assistência técnica", "x": 36, "y": 52.5, "w": 25.5, "h": 25, "falas": [
               {"q": "voce", "e": "apontando", "t": "Uma cópia da ordem de serviço nº 5521, aberta pela própria loja em 22 de março. A reclamação foi feita vinte dias depois da compra!", "recebe": ["os"]}]},
-            {"id": "monitor", "nome": "Monitor do sistema", "x": 52, "y": 39, "w": 8, "h": 9, "falas": [
+            {"id": "monitor", "nome": "Monitor do sistema", "x": 52, "y": 39.5, "w": 8.4, "h": 10.5, "falas": [
               {"q": "voce", "e": "chocado", "t": "O laudo do técnico da própria MegaLar está na tela: 'Falha no compressor. Defeito de fabricação. Instalação adequada.'", "recebe": ["laudo"]}]},
             {"id": "cartaz", "nome": "Cartaz da garantia estendida", "x": 70, "y": 12, "w": 18, "h": 20, "falas": [
               {"q": "voce", "e": "pensativo", "t": "'Garantia estendida: só R$ 299!' Como se o consumidor não tivesse garantia nenhuma sem pagar a mais. A lei já garante o direito de reclamar."}]},
@@ -178,7 +178,7 @@
               {"q": "voce", "e": "chocado", "t": "Um post-it colado no monitor do sistema de prontuários: 'login: admin / senha: vida123'. Qualquer pessoa no balcão consegue ler.", "recebe": ["postit"]}]},
             {"id": "lixeira", "nome": "Lixeira", "x": 15, "y": 59, "w": 8, "h": 20, "falas": [
               {"q": "voce", "e": "bravo", "t": "Fichas inteiras de pacientes no lixo comum. Nome, CPF, diagnóstico. Nem rasgaram.", "recebe": ["fichas"]}]},
-            {"id": "aviso", "nome": "Aviso no mural", "x": 72, "y": 13, "w": 18, "h": 23, "falas": [
+            {"id": "aviso", "nome": "Aviso no mural", "x": 71, "y": 14, "w": 19.5, "h": 24, "falas": [
               {"q": "voce", "e": "pensativo", "t": "'Novo sistema de prontuários implantado por Altavista Tech. Agradecemos a parceria.' Altavista… de novo."}]}
           ],
           "conversas": [
@@ -298,9 +298,9 @@
         "n3": {"tipo": "investigar", "local": "obra", "titulo": "Residencial Horizonte · Torre B",
           "intro": [{"q": "narrador", "t": "A mesma obra onde Paulo Seixas morreu. O andaime B continua de pé, com uma fita zebrada mal amarrada."}],
           "pontos": [
-            {"id": "andaime", "nome": "Andaime B", "x": 64, "y": 6, "w": 30, "h": 26, "falas": [
+            {"id": "andaime", "nome": "Andaime B", "x": 63, "y": 3, "w": 34, "h": 34, "falas": [
               {"q": "voce", "e": "chocado", "t": "Ainda tem um talabarte pendurado, rompido. A etiqueta de validade venceu há dois anos e a trava está quebrada.", "recebe": ["talabarte"]}]},
-            {"id": "barraco", "nome": "Escritório da obra", "x": 42, "y": 30, "w": 18, "h": 24, "falas": [
+            {"id": "barraco", "nome": "Escritório da obra", "x": 41.5, "y": 30, "w": 18.5, "h": 27, "falas": [
               {"q": "voce", "e": "apontando", "t": "Um arquivo com as folhas de ponto da Prisma. José Carlos: catorze meses, de segunda a sábado, das 7h às 17h.", "recebe": ["ponto"]}]},
             {"id": "catraca", "nome": "Catraca da portaria", "x": 8, "y": 40, "w": 16, "h": 22, "falas": [
               {"q": "voce", "e": "pensativo", "t": "No chão, perto da catraca, um crachá antigo: 'Prisma Mão de Obra · a serviço da Construtora Altavista · Armador · Matrícula 0413'.", "recebe": ["cracha"]}]}
@@ -417,11 +417,11 @@
         "f3": {"tipo": "investigar", "local": "rua", "titulo": "Rua de Larissa, sábado à tarde",
           "intro": [{"q": "narrador", "t": "Uma rua tranquila de bairro. Uma SUV preta, impecável, estacionada em frente à padaria."}],
           "pontos": [
-            {"id": "suv", "nome": "SUV preta", "x": 62, "y": 61, "w": 29, "h": 19, "falas": [
+            {"id": "suv", "nome": "SUV preta", "x": 40, "y": 62, "w": 29, "h": 22, "falas": [
               {"q": "voce", "e": "chocado", "t": "Pela placa, consultei o registro: SUV do ano, avaliada em R$ 280 mil, em nome de Diego Moraes. Comprada à vista.", "recebe": ["suv"]}]},
-            {"id": "padaria", "nome": "Padaria", "x": 39, "y": 29, "w": 29, "h": 28, "falas": [
+            {"id": "padaria", "nome": "Padaria", "x": 36, "y": 17, "w": 34, "h": 42, "falas": [
               {"q": "voce", "e": "pensativo", "t": "No celular do dono da padaria, que segue o Diego: Dubai, restaurantes caros, camarote no estádio. 'Trabalho duro dá resultado.'", "recebe": ["fotos"]}]},
-            {"id": "muro", "nome": "Muro da casa de Larissa", "x": 4, "y": 45, "w": 30, "h": 27, "falas": [
+            {"id": "muro", "nome": "Muro da casa de Larissa", "x": 4, "y": 46, "w": 30, "h": 27, "falas": [
               {"q": "voce", "e": "triste", "t": "Um desenho de giz no muro: três bonequinhos de mãos dadas. 'Eu, mamãe e papai.' O Theo desenhou esperando o pai."}]}
           ],
           "conversas": [
@@ -527,11 +527,11 @@
         "m3": {"tipo": "investigar", "local": "rua", "titulo": "Rua da obra antiga",
           "intro": [{"q": "narrador", "t": "O muro foi reconstruído às pressas, mas um pedaço antigo continua de pé, rachado."}],
           "pontos": [
-            {"id": "muro", "nome": "Pedaço do muro antigo", "x": 4, "y": 45, "w": 30, "h": 27, "falas": [
+            {"id": "muro", "nome": "Pedaço do muro antigo", "x": 4, "y": 46, "w": 30, "h": 27, "falas": [
               {"q": "voce", "e": "pensativo", "t": "Rachaduras diagonais de cima a baixo. Uma vizinha tirou fotos assim um mês antes da queda.", "recebe": ["fotos"]}]},
-            {"id": "padaria", "nome": "Padaria da esquina", "x": 39, "y": 29, "w": 29, "h": 28, "falas": [
+            {"id": "padaria", "nome": "Padaria da esquina", "x": 36, "y": 17, "w": 34, "h": 42, "falas": [
               {"q": "voce", "e": "apontando", "t": "O dono da padaria guardou os protocolos: três reclamações à Altavista em seis meses. 'O muro está rachado e inclinado. Vai cair.'", "recebe": ["reclamacoes"]}]},
-            {"id": "carro", "nome": "Carro estacionado", "x": 62, "y": 61, "w": 29, "h": 19, "falas": [
+            {"id": "carro", "nome": "Carro estacionado", "x": 40, "y": 62, "w": 29, "h": 22, "falas": [
               {"q": "voce", "e": "pensativo", "t": "No para-brisa, um panfleto da Defesa Civil com o histórico de chuvas do bairro. Naquele dia: 8 mm. Chuva fraca.", "recebe": ["chuva"]}]}
           ],
           "conversas": [
@@ -648,12 +648,12 @@
             {"q": "rafael", "e": "triste", "t": "Oi, estagiário(a). Desculpa. Doutor(a). Eu te devo uma explicação."}
           ],
           "pontos": [
-            {"id": "cabine", "nome": "Papel na cabine 2", "x": 36, "y": 41, "w": 9, "h": 9, "falas": [
+            {"id": "cabine", "nome": "Papel na cabine 2", "x": 36, "y": 42, "w": 9.3, "h": 10, "falas": [
               {"q": "voce", "e": "chocado", "t": "Rafael empurrou um papel pela fresta do vidro. 'Desista do acordo. Pense na Sofia. Ela sai da escola às 17h.'", "recebe": ["bilhete"]},
               {"q": "rafael", "e": "triste", "t": "Apareceu na minha cela anteontem. A Sofia tem nove anos."}]},
             {"id": "livro", "nome": "Livro de visitas", "x": 10, "y": 56, "w": 10, "h": 8, "falas": [
               {"q": "voce", "e": "bravo", "t": "Diego Moraes: quatro visitas no último mês, sempre com 'envelope de documentos jurídicos' do escritório de Brandão. Os envelopes de que ele falou!", "recebe": ["visitas"]}]},
-            {"id": "telefone", "nome": "Telefone da cabine 1", "x": 11, "y": 35, "w": 6, "h": 13, "falas": [
+            {"id": "telefone", "nome": "Telefone da cabine 1", "x": 11, "y": 36.5, "w": 6, "h": 13, "falas": [
               {"q": "voce", "e": "pensativo", "t": "As conversas aqui são gravadas. Brandão sabe disso. Por isso usa bilhetes."}]}
           ],
           "conversas": [
@@ -669,11 +669,11 @@
         "x4": {"tipo": "investigar", "local": "apartamento", "titulo": "Apartamento de Rafael",
           "intro": [{"q": "narrador", "t": "Poeira, porta-retratos de uma menina sorrindo e uma gaveta que alguém já revirou."}],
           "pontos": [
-            {"id": "comoda", "nome": "Cômoda", "x": 64, "y": 46, "w": 16, "h": 14, "falas": [
+            {"id": "comoda", "nome": "Cômoda", "x": 63.5, "y": 49, "w": 16.5, "h": 33, "falas": [
               {"q": "voce", "e": "pensativo", "t": "Alguém revirou as gavetas, mas não encontrou o fundo falso. Aqui está: o caderno de contas. 47 transferências, com datas, valores e contas.", "recebe": ["caderno"]}]},
-            {"id": "estante", "nome": "Estante", "x": 9, "y": 22, "w": 19, "h": 20, "falas": [
+            {"id": "estante", "nome": "Estante", "x": 9, "y": 22, "w": 19.5, "h": 24, "falas": [
               {"q": "voce", "e": "feliz", "t": "Atrás de um livro de Direito Civil, colado com fita: um pen drive. Planilhas do sistema financeiro da Altavista e e-mails de Henrique aprovando os pagamentos.", "recebe": ["pendrive"]}]},
-            {"id": "mesa", "nome": "Mesa", "x": 30, "y": 50, "w": 12, "h": 10, "falas": [
+            {"id": "mesa", "nome": "Mesa", "x": 30, "y": 50.5, "w": 12.5, "h": 12, "falas": [
               {"q": "voce", "e": "triste", "t": "Um desenho da Sofia: 'Papai, volta logo.' Rafael tem muito a perder."}]}
           ],
           "conversas": [],

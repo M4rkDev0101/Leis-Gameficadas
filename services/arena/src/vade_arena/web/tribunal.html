@@ -195,29 +195,38 @@
 
   /* ------------------------------------------------------------ investigação */
   .scene.loc .floor, .scene.loc .desk { display:none; }
-  .scene.loc .actor { bottom:0; width:36%; }
+  .scene.loc .actor { bottom:0; width:36%; left:var(--ax,50%); }
   .spot { position:absolute; z-index:7; border:.3cqw dashed rgba(255,224,138,.85); border-radius:1cqw; background:rgba(255,224,138,.08);
           animation:glow 1.8s ease-in-out infinite; display:flex; align-items:flex-end; justify-content:center; padding:0; }
   .spot span { transform:translateY(120%); background:rgba(0,0,0,.75); color:#ffe08a; font-weight:800; font-size:1.2cqw; padding:.2cqw .8cqw;
                border-radius:.5cqw; white-space:nowrap; opacity:0; transition:opacity .15s; pointer-events:none; }
+  .spot::before { content:""; position:absolute; inset:-10px; }
+  .spot.up span { transform:translateY(-120%); position:absolute; top:0; }
   .spot:hover span, .spot:focus-visible span { opacity:1; }
   .spot:hover { background:rgba(255,224,138,.22); }
   .spot.seen { border-color:rgba(124,242,154,.7); animation:none; background:rgba(124,242,154,.06); }
   .spot.seen::after { content:"✓"; position:absolute; top:-1.4cqw; right:-1cqw; background:#2FBF71; color:#04210f; font-weight:900;
                       font-size:1.2cqw; width:2.2cqw; height:2.2cqw; border-radius:50%; display:grid; place-items:center; }
   @keyframes glow { 50% { box-shadow:0 0 1.6cqw rgba(255,224,138,.55); } }
-  .inv-panel { position:absolute; right:2%; bottom:3%; width:30%; z-index:8; background:rgba(10,12,20,.9); border:.25cqw solid #d9d2c0;
-               border-radius:1.2cqw; padding:1.2cqw; display:grid; gap:.8cqw; }
-  .inv-panel h4 { margin:0; font-family:Georgia,serif; font-size:1.7cqw; color:#fff4d6; }
-  .inv-panel small { color:var(--muted); font-size:1.15cqw; }
-  .inv-panel button { text-align:left; font-size:1.35cqw; font-weight:800; padding:.7cqw 1cqw; border-radius:.8cqw; border:.2cqw solid #4a5570;
+  /* painel numa faixa baixa (84%-98% do palco): nenhum ponto de investigação passa de 82% de altura, então ele nunca tapa objeto */
+  .inv-panel { position:absolute; left:2%; right:2%; bottom:2%; z-index:8; background:rgba(10,12,20,.92); border:.25cqw solid #d9d2c0;
+               border-radius:1.2cqw; padding:.8cqw 1.2cqw; display:flex; flex-wrap:wrap; gap:.6cqw 1cqw; align-items:center; }
+  .inv-panel h4 { margin:0; font-family:Georgia,serif; font-size:max(1.7cqw,11px); color:#fff4d6; }
+  .inv-panel small { color:var(--muted); font-size:max(1.15cqw,9px); flex:1 1 12cqw; min-width:0; }
+  .inv-panel button { text-align:left; font-size:max(1.35cqw,9px); font-weight:800; padding:.5cqw 1cqw; border-radius:.8cqw; border:.2cqw solid #4a5570;
                       background:#1c2333; display:flex; gap:.8cqw; align-items:center; }
   .inv-panel button:hover { border-color:var(--gold); }
   .inv-panel button.done { opacity:.6; }
-  .inv-panel .go { background:var(--gold); color:#1a1206; border-color:var(--gold); justify-content:center; }
+  .inv-panel .go { background:var(--gold); color:#1a1206; border-color:var(--gold); justify-content:center; margin-left:auto; }
   .inv-panel .go:disabled { background:#30384a; color:#a3adbd; border-color:#30384a; cursor:not-allowed; }
-  .inv-title { position:absolute; left:2%; top:9%; z-index:8; background:rgba(0,0,0,.6); color:#fff4d6; font-family:Georgia,serif;
-               font-size:1.8cqw; padding:.4cqw 1.4cqw; border-radius:.6cqw; border-left:.4cqw solid var(--gold); }
+  .inv-title { position:absolute; left:50%; transform:translateX(-50%); top:1.5%; white-space:nowrap; z-index:8; background:rgba(0,0,0,.6); color:#fff4d6; font-family:Georgia,serif; pointer-events:none;
+               font-size:max(1.8cqw,11px); padding:.4cqw 1.4cqw; border-radius:.6cqw; border-left:.4cqw solid var(--gold); }
+  @container (max-width:520px) {   /* celular: faixa compacta de uma linha, só botões e contador */
+    .inv-panel { bottom:1%; padding:4px 6px; gap:4px; flex-wrap:nowrap; }
+    .inv-panel h4, .inv-panel small { display:none; }
+    .inv-panel button { flex:1 1 0; min-width:0; min-height:30px; font-size:10px; padding:2px 6px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; display:block; margin-left:0; }
+    .inv-title { font-size:10px; padding:2px 8px; }
+  }
   .saved-toast { position:absolute; left:50%; top:3%; transform:translateX(-50%); z-index:9; font-size:1.1cqw; color:#a8e6c4;
                  background:rgba(0,0,0,.55); padding:.2cqw 1cqw; border-radius:99px; animation:flash 2s ease-out forwards; pointer-events:none; }
   .dilemma .q { color:#ffe08a; } .dhint { text-align:center; color:#d9c9a8; font-size:1.3cqw; margin-top:-.4cqw; }
@@ -1012,7 +1021,7 @@ function background(pos) {
     <path d="M${x + .5} 17H${x + 22}Q${x + 20} 29 ${x + 22} 40H${x + .5}Z" fill="#1f9a4a"/><path d="M${x + 11} 20.5L${x + 19.5} 28.5L${x + 11} 36.5L${x + 2.5} 28.5Z" fill="#f2cf2a"/><circle cx="${x + 11}" cy="28.5" r="4.4" fill="#1f4aa0"/><path d="M${x + 6.8} 27.4Q${x + 11} 26 ${x + 15.2} 29.4" stroke="#fff" stroke-width=".7" fill="none"/>
     <path d="M${x + .5} 17H${x + 22}Q${x + 20} 29 ${x + 22} 40H${x + .5}Z" fill="#000" opacity=".08"/></g>`;
   const flagUF = x => `<g><rect x="${x - .5}" y="14" width="1" height="62" fill="#c9a04a"/><circle cx="${x}" cy="13" r="1.4" fill="#e2bf6a"/>
-    ${Array.from({length: 7}, (_, i) => `<rect x="${x + .5}" y="${17 + i * 3.3}" width="21" height="1.65" fill="${i % 2 ? "#f3f3f3" : "#b02a2a"}"/>`).join("")}<rect x="${x + .5}" y="17" width="9" height="11.5" fill="#15264d"/><path d="M${x + 5} 19.5l1 2.3 2.4.2-1.8 1.6.6 2.4-2.2-1.3-2.2 1.3.6-2.4-1.8-1.6 2.4-.2z" fill="#fff"/></g>`;
+    <path d="M${x + .5} 17H${x + 22}Q${x + 20} 29 ${x + 22} 40H${x + .5}Z" fill="#b02a2a"/><path d="M${x + .5} 17H${x + 22}Q${x + 21.4} 21 ${x + 21.4} 24L${x + .5} 40Z" fill="#f3f3f3"/><path d="M${x + .5} 17H${x + 11}L${x + .5} 28Z" fill="#15264d"/><circle cx="${x + 15}" cy="30.4" r="3.2" fill="#e2bf6a"/><path d="M${x + .5} 17H${x + 22}Q${x + 20} 29 ${x + 22} 40H${x + .5}Z" fill="#000" opacity=".08"/></g>`;
   const balanca = (cx, cy, s, o) => `<g transform="translate(${cx} ${cy}) scale(${s})" stroke="#e2bf6a" stroke-width="1" fill="none" opacity="${o}"><path d="M0 -9V8M-10 -5H10M-10 -5l-4 8h8zM10 -5l-4 8h8zM-4 8H4"/></g>`;
   const panels = (y0, y1) => Array.from({length: 8}, (_, i) => `<rect x="${3 + i * 20}" y="${y0}" width="14" height="${y1 - y0}" rx=".8" fill="#000" opacity=".07" stroke="#f0d28a" stroke-width=".3" stroke-opacity=".5"/>`).join("");
   const wainscot = () => `<rect y="56" width="160" height="44" fill="url(#wd${u})"/><rect y="56" width="160" height="44" fill="url(#wsh${u})"/>${panels(61, 100)}<rect y="54" width="160" height="3.4" fill="#2a1a10"/><rect y="54" width="160" height="1" fill="#e2bf6a" opacity=".6"/>`;
@@ -1046,7 +1055,7 @@ function background(pos) {
       ${[[8, 36, 5, 26], [14, 30, 6, 32], [21, 40, 5, 22], [27, 34, 7, 28], [35, 42, 5, 20], [41, 32, 6, 30]].map(([x, y, w, h], i) => `<rect x="${x}" y="${y + 6}" width="${w}" height="${h}" fill="${i % 2 ? "#1a2038" : "#232a48"}"/>${[0, 1, 2, 3].map(k => `<rect x="${x + 1}" y="${y + 9 + k * 5}" width="1.2" height="1.6" fill="#ffd27a" opacity="${(i + k) % 3 ? .9 : .2}"/>`).join("")}`).join("")}
       <path d="M27 10V62M6 34H48" stroke="#10161e" stroke-width="1.2"/><rect x="4" y="62" width="46" height="2.6" fill="#4a2e1a"/>
       <polygon points="8,62 46,62 76,100 -4,100" fill="#ffb060" opacity=".10"/></g>
-      ${prints.map((p, i) => `<g opacity=".7"><rect x="${58 + i * 17}" y="${16 + (i % 2) * 3}" width="13" height="${i === 1 ? 14 : 10}" fill="#3a2716" stroke="#c9a04a" stroke-width=".6"/><rect x="${59.3 + i * 17}" y="${17.3 + (i % 2) * 3}" width="10.4" height="${i === 1 ? 11.4 : 7.4}" fill="${p[1]}" opacity=".85"/><path d="M${59.3 + i * 17} ${28 + (i % 2) * 3}l3-4 3 3 2-2 2.4 3z" fill="${p[0]}" opacity=".8"/></g>`).join("")}
+      ${prints.map((p, i) => `<g opacity=".7"><rect x="${58 + i * 17}" y="${16 + (i % 2) * 3}" width="13" height="${i === 1 ? 14 : 10}" fill="#3a2716" stroke="#c9a04a" stroke-width=".6"/><rect x="${59.3 + i * 17}" y="${17.3 + (i % 2) * 3}" width="10.4" height="${i === 1 ? 11.4 : 7.4}" fill="${p[1]}" opacity=".85"/><path d="M${59.3 + i * 17} ${(i === 1 ? 28.4 : 24.6) + (i % 2) * 3}l3-4 3 3 2-2 2.4 3z" fill="${p[0]}" opacity=".8"/></g>`).join("")}
       ${shelf(118)}
       <g transform="translate(106 20)"><path d="M0 0V40" stroke="#c9a04a" stroke-width="1"/><path d="M-5 0Q-5 -6 0 -6Q5 -6 5 0Z" fill="#e8b84a"/><polygon points="-4,0 4,0 14,38 -14,38" fill="url(#cn${u})" opacity=".3"/></g>
       <g transform="translate(110 66)"><path d="M-5 0H5L4 14H-4Z" fill="#8a4a2a"/><path d="M0 0Q-14 -8 -12 -20Q-4 -16 0 0M0 0Q12 -10 10 -24Q2 -18 0 0M0 0Q-2 -14 4 -28Q6 -12 0 0M0 0Q-9 -3 -16 -9Q-9 -11 0 0" fill="#2f7a3f"/></g>
@@ -1113,7 +1122,7 @@ function locationBG(local) {
     return s;
   };
   const svg = (inner, defs = "") => `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"><defs>${rad("vg", [[.5, "#000", 0], [1, "#000", .55]], .5, .5, .78)}${defs}</defs>${inner}<rect width="160" height="100" fill="${F("vg")}"/></svg>`;
-  const cam = (x, y, s = 1) => `<g transform="translate(${x} ${y}) scale(${s})"><rect x="9" y="-3" width="2.6" height="5" fill="#2a2d33"/><rect x="0" y="1" width="16" height="7" rx="1.6" fill="#dfe3e8" stroke="#1a1c20" stroke-width=".5"/><rect x="1" y="2" width="14" height="1.6" fill="#fff" opacity=".7"/><circle cx="3" cy="5.2" r="2.3" fill="#10172a" stroke="#555" stroke-width=".5"/><circle cx="2.4" cy="4.6" r=".7" fill="#7ab0ff"/><circle cx="13.2" cy="4.4" r="1" fill="#ff3b3b"/><circle cx="13.2" cy="4.4" r="2.4" fill="#ff3b3b" opacity=".25"/></g>`;
+  const cam = (x, y, s = 1, mont = "parede") => `<g transform="translate(${x} ${y}) scale(${s})">${mont === "teto" ? '<rect x="9" y="-16" width="2.6" height="18" fill="#2a2d33"/>' : mont === "base" ? '<rect x="6" y="7" width="6" height="3.6" fill="#2a2d33"/>' : '<rect x="9" y="-3" width="2.6" height="5" fill="#2a2d33"/>'}<rect x="0" y="1" width="16" height="7" rx="1.6" fill="#dfe3e8" stroke="#1a1c20" stroke-width=".5"/><rect x="1" y="2" width="14" height="1.6" fill="#fff" opacity=".7"/><circle cx="3" cy="5.2" r="2.3" fill="#10172a" stroke="#555" stroke-width=".5"/><circle cx="2.4" cy="4.6" r=".7" fill="#7ab0ff"/><circle cx="13.2" cy="4.4" r="1" fill="#ff3b3b"/><circle cx="13.2" cy="4.4" r="2.4" fill="#ff3b3b" opacity=".25"/></g>`;
   switch (local) {
     // ------------------------------------------------------------------ BAR
     case "bar": return svg(`
@@ -1131,7 +1140,7 @@ function locationBG(local) {
       <!-- cartaz e relógio -->
       <g transform="translate(5 7.5) scale(.7)">      ${R(25, 25, 17, 21, "#e9d7a8", 'stroke="#2a1a10" stroke-width="1"')}${R(27, 27, 13, 8, "#b8402a")}<text x="33.5" y="32.5" font-size="3" fill="#ffe9a8" text-anchor="middle" font-weight="800">CHOPP</text>
       <text x="33.5" y="39.5" font-size="2.2" fill="#3a2212" text-anchor="middle">gelado</text><text x="33.5" y="43" font-size="2" fill="#3a2212" text-anchor="middle">R$ 9,90</text></g>
-      <circle cx="102" cy="14" r="4.6" fill="#2a1a10"/><circle cx="102" cy="14" r="3.8" fill="#f0e2c0"/><path d="M102 14V11M102 14L104 15" stroke="#222" stroke-width=".6"/>
+      <circle cx="111" cy="14" r="4.6" fill="#2a1a10"/><circle cx="111" cy="14" r="3.8" fill="#f0e2c0"/><path d="M111 14V11M111 14L113 15" stroke="#222" stroke-width=".6"/>
       <!-- neon -->
       ${E(80, 11, 30, 9, F("ng"))}
       <text x="80" y="14.2" font-size="8" text-anchor="middle" font-weight="900" fill="none" stroke="#ff6fb0" stroke-width=".9" font-family="Georgia,serif">BAR DO ZÉ</text>
@@ -1140,13 +1149,13 @@ function locationBG(local) {
       <!-- prateleira de garrafas -->
       ${R(84, 21, 71, 22, "#1d100a")}${R(84, 21, 71, 22, F("bk"))}
       ${[31, 41].map((y, r) => `${R(84, y, 71, 1.4, "#7a4a28")}${Array.from({ length: 14 }, (_, i) => { const h = 6 + (i * 5 + r * 3) % 4, c = ["#2a7a45", "#9a2a2a", "#d9a95a", "#6a4a2a", "#2d5fa8", "#c9c9a0"][(i + r * 2) % 6]; return `<rect x="${86 + i * 4.9}" y="${y - h}" width="2.8" height="${h}" rx=".9" fill="${c}"/><rect x="${87 + i * 4.9}" y="${y - h - 2}" width="1" height="2.4" fill="${c}"/><rect x="${86.5 + i * 4.9}" y="${y - h + 1}" width=".5" height="${h - 2}" fill="#fff" opacity=".35"/>`; }).join("")}`).join("")}
-      ${cam(122, 8)}<path d="M124 14L108 40H150Z" fill="#fff6cc" opacity=".04"/>
+      ${cam(122, 8, 1, "teto")}<path d="M124 14L108 40H150Z" fill="#fff6cc" opacity=".04"/>
       <!-- balcão -->
       ${R(76, 58, 80, 22, F("wp"))}${R(76, 58, 80, 22, "#000", 'opacity=".28"')}${R(76, 60, 80, 1, "#000", 'opacity=".5"')}
       ${R(78, 63, 17, 13, "none", 'stroke="#c9a04a" stroke-width=".4" opacity=".6"')}${R(98, 63, 17, 13, "none", 'stroke="#c9a04a" stroke-width=".4" opacity=".6"')}${R(118, 63, 17, 13, "none", 'stroke="#c9a04a" stroke-width=".4" opacity=".6"')}${R(138, 63, 15, 13, "none", 'stroke="#c9a04a" stroke-width=".4" opacity=".6"')}
       ${R(74, 53, 84, 5, F("bt"))}${R(74, 53, 84, 1, "#fff", 'opacity=".35"')}${R(77, 74, 80, 1.6, "#d9a95a")}${R(77, 74, 80, .6, "#fff", 'opacity=".5"')}
       ${R(90, 45, 18, 8.4, "#3a3f4a", 'stroke="#111" stroke-width=".5" rx="1"')}${R(92, 46.6, 10, 4, "#7CF29A", 'opacity=".8"')}${R(103, 46.4, 4, 4, "#222")}${R(90, 51.6, 18, 2, "#22262c")}
-      ${R(105, 52, 5, 1.4, "#ecd9b0")}${R(70, 50.4, 6, 2.6, "#111")}
+      ${R(105, 52, 5, 1.4, "#ecd9b0")}
       <g transform="translate(118 42)">${R(1, 0, 8, 10, "#c8ccd4", 'rx="1"')}${R(0, 9.4, 10, 1.6, "#8a8f98")}${[2, 4.4, 6.8].map((x, i) => `<rect x="${x}" y="-3" width="1.4" height="5.4" rx=".5" fill="${["#d9a95a", "#d9a95a", "#d9a95a"][i]}"/>`).join("")}</g>
       <path d="M133 51h3l-.6 2.6h-1.8z" fill="#f2e2a8"/><path d="M137 50.6h3.2l-.6 3h-2z" fill="#fff" opacity=".65"/>
       ${[122, 146].map(x => `${R(x - .6, 68, 1.2, 12, "#2a1a10")}${E(x, 66, 5, 1.8, "#7a2020")}${E(x, 65.2, 5, 1.4, "#a53030")}${R(x - 3, 80, 6, .8, "#000", 'opacity=".3"')}`).join("")}
@@ -1159,9 +1168,9 @@ function locationBG(local) {
       <ellipse cx="36" cy="58.6" rx="3" ry=".9" fill="#d9d9d9"/><circle cx="36" cy="58" r="1.2" fill="#ffb347"/><circle cx="36" cy="57" r="3" fill="#ffb347" opacity=".2"/>
       <!-- lustres -->
       ${[[36, 38], [80, 0]].map(([x, h]) => h ? "" : "").join("")}
-      <path d="M36 0V34" stroke="#1a1209" stroke-width=".5"/><path d="M30 41 Q36 30 42 41Z" fill="#3b2a18" stroke="#c9a04a" stroke-width=".4"/>${E(36, 41, 6, 1.2, "#ffe7a8")}
+      <path d="M36 0V34" stroke="#7a6a52" stroke-width=".6"/><path d="M30 41 Q36 30 42 41Z" fill="#3b2a18" stroke="#c9a04a" stroke-width=".4"/>${E(36, 41, 6, 1.2, "#ffe7a8")}
       <path d="M36 41L24 82H48Z" fill="url(#cn${u})" opacity=".6"/>
-      <path d="M126 0V4" stroke="#1a1209" stroke-width=".5"/>
+      
       ${E(36, 90, 28, 6, F("pl"))}${E(116, 86, 30, 5, F("pl"), 'opacity=".7"')}${E(80, 95, 50, 6, F("ngf"))}
       ${R(0, 0, 160, 100, "#14090a", 'opacity=".12"')}`,
       brick("br", "#7a3a2a", "#6d3224", "#24120c", 8, 4) +
@@ -1193,12 +1202,12 @@ function locationBG(local) {
       <path d="M31 28V30" stroke="#555" stroke-width=".4"/>
       ${R(11, 29, 2, 31, "#7a858f")}${R(49, 29, 2, 31, "#7a858f")}
       <!-- monitor de seguranca -->
-      ${R(124, 30, 2, 5, "#2a2d33")}${R(118, 33.4, 14, 1.6, "#2a2d33")}
+      <g transform="translate(2 6)">${R(124, -6, 2, 18.4, "#2a2d33")}${R(121, 11.6, 8, 1.6, "#2a2d33")}
       ${R(112, 12, 26, 19, "#0d1118", 'stroke="#2a2d33" stroke-width="1" rx="1.2"')}
       ${[0, 1, 2, 3].map(i => `${R(113.6 + (i % 2) * 11.4, 13.6 + Math.floor(i / 2) * 8, 10.6, 7.4, ["#2f4a3a", "#3a4a44", "#34463e", "#2c3e4a"][i])}${R(113.6 + (i % 2) * 11.4, 13.6 + Math.floor(i / 2) * 8, 10.6, 7.4, "none", 'stroke="#7CF29A" stroke-width=".25" opacity=".5"')}<circle cx="${119 + (i % 2) * 11.4}" cy="${16.6 + Math.floor(i / 2) * 8}" r="1" fill="#0d1118" opacity=".7"/>`).join("")}
       <path d="M113.6 21H124M113.6 29H124" stroke="#fff" stroke-width=".2" opacity=".35"/>
       <circle cx="135.8" cy="14.6" r=".8" fill="#ff3b3b"/><text x="116" y="12.2" font-size="1.9" fill="#7CF29A" font-family="monospace" opacity=".8">CAM 1-4 · REC</text>
-      ${R(112, 12, 26, 19, "#fff", 'opacity=".05"')}
+      ${R(112, 12, 26, 19, "#fff", 'opacity=".05"')}</g>
       <!-- balcao do gerente -->
       ${E(84, 68, 20, 2.2, "#000", 'opacity=".25"')}${R(70, 54, 29, 12, "#5b6670")}${R(70, 54, 29, 12, F("cn"))}${R(68, 49, 33, 5, "#e3e7eb", 'stroke="#aab3bb" stroke-width=".4"')}${R(68, 49, 33, 1, "#fff")}
       ${R(70, 66, 29, 1.6, "#3d454d")}${R(72, 56, 9, 6, "#c8281f")}<text x="76.5" y="60.4" font-size="2.2" fill="#fff" text-anchor="middle" font-weight="700">GERENTE</text>
@@ -1289,6 +1298,9 @@ function locationBG(local) {
       ${R(44, 10, 14, 18, "#d8cba5", 'stroke="#3a2a10" stroke-width=".8"')}${R(46, 12, 10, 8, "#7a8ab0")}<circle cx="51" cy="16" r="2.4" fill="#d9b58a"/>${R(47.6, 18.6, 7, 2, "#2a3a60")}<path d="M46 23H56M46 25H54" stroke="#6a5a3a" stroke-width=".5"/>
       <!-- relogio -->
       <circle cx="101" cy="22" r="5" fill="#222"/><circle cx="101" cy="22" r="4.2" fill="#f4f4ee"/><path d="M101 22V19M101 22L103 23" stroke="#222" stroke-width=".6"/>
+      <!-- piso -->
+      ${R(0, 64, 160, 36, F("tl"))}${floorLines(66, "#2a3a30", .35, 10)}${R(0, 66, 160, 34, F("fgl"))}
+      ${E(80, 90, 56, 7, F("fl"), 'opacity=".6"')}
       <!-- arquivo + pasta -->
       ${R(16, 52, 26, 28, "#7c8790")}${R(16, 52, 26, 1.8, "#a4aeb6")}${[0, 1].map(i => `${R(18, 56 + i * 11.4, 22, 9.6, "#8f9aa4", 'stroke="#4a545d" stroke-width=".5"')}${R(25, 59.4 + i * 11.4, 8, 1.8, "#e8eef2", 'rx=".5"')}${R(26.6, 60 + i * 11.4, 4.8, .8, "#4a545d")}`).join("")}
       ${R(16, 80, 26, 1.4, "#3a4148")}
@@ -1304,9 +1316,6 @@ function locationBG(local) {
       ${R(60, 60, 38, 1, "#000", 'opacity=".18"')}
       <!-- banco -->
       ${R(120, 62, 32, 3.4, "#4a3a2a")}${R(122, 65, 1.6, 12, "#2a2d33")}${R(148, 65, 1.6, 12, "#2a2d33")}${R(120, 62, 32, .8, "#8a6a42")}${E(136, 78.4, 16, 1.4, "#000", 'opacity=".25"')}
-      <!-- piso -->
-      ${R(0, 64, 160, 36, F("tl"))}${floorLines(66, "#2a3a30", .35, 10)}${R(0, 66, 160, 34, F("fgl"))}
-      ${E(80, 90, 56, 7, F("fl"), 'opacity=".6"')}
       ${R(0, 0, 160, 100, "#d4ffe0", 'opacity=".03"')}`,
       lin("dw", [[0, "#8aa893"], [1, "#4a6454"]]) + glowDef("fl", "#fffbe0", .55) +
       lin("wn", [[0, "#ffd9a0", .35], [1, "#ffd9a0", 0]]) + brick("ckp", "#c9a77a", "#c9a77a", "#c9a77a", 4, 2) +
@@ -1330,6 +1339,7 @@ function locationBG(local) {
       ${R(43, 2, 62, 2.6, "#3a2414")}${[46, 56, 66, 76, 86, 96].map(x => `<circle cx="${x}" cy="3.3" r="1.2" fill="#c9a04a"/>`).join("")}
       <g transform="translate(80 49)"><path d="M-3 0L-4 -5H4L3 0Z" fill="#a8603a"/><path d="M0 -5Q-6 -9 -7 -5M0 -5Q6 -10 7 -4M0 -5Q-2 -12 0 -13M0 -5Q3 -10 5 -12" stroke="#2f7a3f" stroke-width="1.4" fill="none" stroke-linecap="round"/></g>
       <!-- estante -->
+      <g transform="translate(18 13.4) rotate(-3 7 4)">${R(0, 0, 14, 7.6, "#f6f1e4", 'stroke="#bdb39a" stroke-width=".3"')}<path d="M0 0L7 4.8L14 0" stroke="#bdb39a" stroke-width=".35" fill="none"/>${R(0, 0, 14, .9, "#2f6fb0")}${R(0, 6.7, 14, .9, "#c8281f")}${R(10, 1.6, 2.8, 2.4, "#2a6a3a", 'rx=".3"')}<path d="M1.6 5.6H6M1.6 6.1H4" stroke="#6a7a9a" stroke-width=".3"/></g>
       ${R(14, 21, 31, 2, "#6a4a2a")}${R(14, 21, 31, 2, F("cn"))}
       ${R(14, 32, 31, 1.6, "#6a4a2a")}${R(14, 43, 31, 2, "#6a4a2a")}${R(14, 23, 31, 20, "#000", 'opacity=".1"')}
       ${Array.from({ length: 9 }, (_, i) => { const h = 6 + (i * 3) % 4; return R(15.6 + i * 2.7, 32 - h, 2.3, h, ["#8a1c1c", "#1c4a8a", "#c9a04a", "#2a6a3a", "#6a2a6a", "#d8d0b8"][i % 6]); }).join("")}
@@ -1354,11 +1364,14 @@ function locationBG(local) {
       <!-- tapete -->
       <path d="M32 100L40 84H120L132 100Z" fill="#7a3a3a" opacity=".85"/><path d="M36 97L43 86H117L127 97Z" fill="none" stroke="#e8c98a" stroke-width=".6" opacity=".7"/><path d="M44 97L48 88H112L118 97Z" fill="none" stroke="#e8c98a" stroke-width=".4" opacity=".5"/>
       <!-- sofa -->
+      <g transform="translate(131 0) scale(.81 1) translate(-129 0)">
       ${E(145, 77.6, 15, 1.8, "#000", 'opacity=".3"')}${R(131, 49, 29, 12, "#4d5c7e", 'rx="3"')}${R(131, 47, 29, 4, "#586a90", 'rx="2"')}
       ${R(129, 57, 8, 17, "#52628a", 'rx="3"')}${R(131, 58, 29, 14, "#6578a2", 'rx="2.5"')}${R(133, 58, 25, 3, "#7a8db4", 'rx="1.4"')}
       ${R(139, 59, 1, 13, "#000", 'opacity=".25"')}${R(150, 59, 1, 13, "#000", 'opacity=".25"')}${R(131, 72, 29, 3, "#3e4a68")}${R(132, 75, 2, 3, "#2a2018")}${R(156, 75, 2, 3, "#2a2018")}
       <g transform="translate(144 53) rotate(-8)">${R(0, 0, 8, 8, "#e5a64a", 'rx="1.6"')}<path d="M1 2L7 6M1 6L7 2" stroke="#fff" stroke-width=".5" opacity=".5"/></g>
       <path d="M133 66Q140 62 146 70L146 74H133Z" fill="#b5593a" opacity=".9"/>
+      ${R(152, 57, 8, 17, "#52628a", 'rx="3"')}</g>
+      <g transform="translate(135.6 62.4) rotate(-5)">${R(0, 0, 10.4, 6.6, "#2f6fb0", 'rx=".5" stroke="#1d4a7a" stroke-width=".3"')}${R(0, -1, 4.4, 1.4, "#2f6fb0", 'rx=".4"')}${R(2.4, 1.6, 5.6, 3.4, "#f4f6f8", 'rx=".3"')}<path d="M5.2 2.2V4.4M4.1 3.3H6.3" stroke="#c8281f" stroke-width=".7"/></g>
       ${R(0, 0, 160, 100, "#ff9a4a", 'opacity=".05"')}`,
       lin("wl", [[0, "#dccdaa"], [1, "#b09a7a"]]) +
       lin("ds", [[0, "#2a3a7a"], [.55, "#c0607a"], [1, "#ffb070"]]) +
@@ -1458,7 +1471,7 @@ function locationBG(local) {
       ${R(64, 44, 22, 13, "#2b1a10")}${R(65.6, 45.6, 18.8, 10.4, F("vd"))}${R(65.6, 52, 18.8, 4, "#7a4a22")}${[0, 1, 2, 3].map(i => `<ellipse cx="${69 + i * 4.6}" cy="51" rx="1.8" ry="1.2" fill="#d9a05a"/>`).join("")}${R(65.6, 45.6, 18.8, 10.4, "#fff", 'opacity=".08"')}
       ${R(90, 44, 15, 15, "#14100c")}${R(91.6, 45.6, 11.8, 11, F("vd"), 'opacity=".4"')}${R(91.6, 45.6, 11.8, 11, "none", 'stroke="#5a3a22" stroke-width=".6"')}<circle cx="102" cy="53" r=".7" fill="#c9a04a"/><text x="97.5" y="50.4" font-size="2.4" text-anchor="middle" fill="#ffe9a8" font-weight="800">ABERTO</text>
       ${R(60, 56.6, 50, 2.6, "#5a5e66")}${E(78, 52, 26, 8, F("wlt"), 'opacity=".5"')}
-      ${cam(95, 17.4, .9)}<path d="M96 22L76 62H108Z" fill="#fff6cc" opacity=".03"/>
+      ${cam(95, 17.4, .9, "base")}<path d="M96 22L76 62H108Z" fill="#fff6cc" opacity=".03"/>
       <!-- fios -->
       <path d="M0 4Q30 12 60 6T114 8T160 5" stroke="#0a0c16" stroke-width=".4" fill="none"/><path d="M0 9Q40 17 80 10T160 12" stroke="#0a0c16" stroke-width=".4" fill="none"/>
       <!-- calcada, rua -->
@@ -1475,14 +1488,22 @@ function locationBG(local) {
       ${R(56, 20, 1.6, 54, "#2d3138")}${R(56, 19.4, 12, 1.6, "#2d3138")}${R(65, 20.4, 6, 2.4, "#3a3f48", 'rx="1"')}${E(68, 23, 3.4, 1, "#fff2c0")}
       <path d="M66 23L52 78H86Z" fill="url(#lc${u})"/>${E(68, 21, 12, 7, F("lg"))}${E(68, 76, 24, 4, F("lg"), 'opacity=".5"')}
       <!-- carro -->
-      ${E(123, 80.4, 25, 2.4, "#000", 'opacity=".5"')}
-      <g transform="translate(99 61)"><path d="M1 14L4 5Q6 1 12 .6L30 .6Q36 1 40 6L45 10L47 14Q47.6 19 43 19H5Q1 19 1 14Z" fill="#161a22" stroke="#4a5060" stroke-width=".5"/>
+      ${E(87, 84.4, 25, 2.4, "#000", 'opacity=".5"')}
+      <g transform="translate(63 61)"><path d="M1 14L4 5Q6 1 12 .6L30 .6Q36 1 40 6L45 10L47 14Q47.6 19 43 19H5Q1 19 1 14Z" fill="#161a22" stroke="#4a5060" stroke-width=".5"/>
       <path d="M8 6L12 2.4L29 2.4L35.4 7.6L35.4 10H8Z" fill="#2a3a58"/><path d="M12 2.4L20 2.4L16 10H8Z" fill="#fff" opacity=".12"/><path d="M22 2.4V10" stroke="#161a22" stroke-width="1"/>
       <path d="M2 11H45" stroke="#fff" stroke-width=".3" opacity=".3"/><path d="M4 7.6Q18 4 36 8" stroke="#fff" stroke-width=".5" opacity=".2" fill="none"/>
       <rect x="41.6" y="10.6" width="5" height="2.6" rx=".8" fill="#ffe9a0"/><rect x="41.6" y="10.6" width="5" height="2.6" rx=".8" fill="#fff" opacity=".6"/><path d="M45 12L66 20L40 24Z" fill="#ffe9a0" opacity=".1" transform="translate(-4 -2)"/>
       <rect x=".4" y="11" width="3" height="2.2" rx=".6" fill="#ff3b3b"/><rect x="18" y="12" width="4" height=".8" fill="#4a5060"/>
       <circle cx="11" cy="19" r="4.6" fill="#0c0d10" stroke="#555" stroke-width=".7"/><circle cx="11" cy="19" r="2" fill="#6a707a"/><circle cx="37" cy="19" r="4.6" fill="#0c0d10" stroke="#555" stroke-width=".7"/><circle cx="37" cy="19" r="2" fill="#6a707a"/>
       <rect x="2" y="15" width="6" height="2.4" fill="#fff" opacity=".0"/></g>
+      <!-- caminhao-tanque -->
+      ${E(134, 84.6, 21, 2.2, "#000", 'opacity=".5"')}
+      <g transform="translate(111 4)"><rect x="1" y="72" width="36" height="3.4" fill="#1a1c22"/>
+      <path d="M2 66Q2 59 9 59H25Q32 59 32 66Q32 73 25 73H9Q2 73 2 66Z" fill="#aab4be" stroke="#59616a" stroke-width=".5"/><path d="M4 62Q17 59.6 30 62" stroke="#fff" stroke-width=".8" opacity=".5" fill="none"/><path d="M4 70Q17 72.4 30 70" stroke="#000" stroke-width=".8" opacity=".25" fill="none"/>
+      ${[10, 17, 24].map(x => `<rect x="${x}" y="59.6" width=".9" height="13" fill="#59616a" opacity=".6"/>`).join("")}<rect x="14" y="57.4" width="6" height="2.4" rx="1" fill="#59616a"/>
+      <rect x="2" y="66.2" width="30" height="1.6" fill="#e8c53a" opacity=".85"/>
+      <path d="M32 73V63Q32 61 34 61H41Q42.6 61 43.4 62.6L45 68V73Z" fill="#c8c0b0" stroke="#59616a" stroke-width=".5"/><path d="M35 63H41L43 67H35Z" fill="#2a3a58"/><rect x="43.6" y="69" width="1.8" height="2.2" rx=".5" fill="#ffe9a0"/>
+      ${[8, 16, 36].map(x => `<circle cx="${x}" cy="76.4" r="3.4" fill="#0c0d10" stroke="#555" stroke-width=".6"/><circle cx="${x}" cy="76.4" r="1.4" fill="#6a707a"/>`).join("")}</g>
       <!-- lixo -->
       ${E(57, 77, 3.4, 2.4, "#1a1c22")}${E(53, 78, 2.6, 1.8, "#22252c")}<path d="M56 74.6L57.4 72.8L58.6 74.6" stroke="#1a1c22" stroke-width=".6" fill="none"/>
       ${R(0, 0, 160, 100, "#0a1030", 'opacity=".1"')}`,
@@ -1522,7 +1543,7 @@ function locationBG(local) {
       <!-- faixa amarela e piso -->
       ${R(0, 78, 160, 22, F("cf"))}${floorLines(78, "#14181d", .5, 10)}${R(0, 78, 160, 22, F("fgl"))}${R(0, 77, 160, 1.4, "#e8c53a")}${R(0, 78.4, 160, .6, "#000", 'opacity=".4"')}
       ${[0, 1, 2, 3].map(i => `${E(24 + i * 40, 89, 11, 5, F("fl"), 'opacity=".5"')}`).join("")}
-      ${[0, 1, 2, 3].map(i => `${R(19 + i * 40, 66, 1.8, 11, "#2a2d33")}${E(20 + i * 40, 65.4, 6, 1.8, "#3a3f48")}${E(20 + i * 40, 64.8, 6, 1.4, "#5a626a")}${E(20 + i * 40, 78, 6, 1.1, "#000", 'opacity=".3"')}`).join("").replace(`${R(19, 66, 1.8, 11, "#2a2d33")}`, "")}
+      ${[1, 2, 3].map(i => `${R(19 + i * 40, 66, 1.8, 11, "#2a2d33")}${E(20 + i * 40, 65.4, 6, 1.8, "#3a3f48")}${E(20 + i * 40, 64.8, 6, 1.4, "#5a626a")}${E(20 + i * 40, 78, 6, 1.1, "#000", 'opacity=".3"')}`).join("")}
       ${R(0, 0, 160, 100, "#9ad0b0", 'opacity=".03"')}`,
       lin("cb0", [[0, "#8d969e"], [1, "#59616a"]]) +
       brick("cb", "#8b949c", "#828b93", "#59616a", 14, 6.4) + lin("cbs", [[0, "#000", .5], [.3, "#000", 0], [1, "#000", .25]]) +
@@ -1535,7 +1556,7 @@ function locationBG(local) {
       ${R(0, 0, 160, 80, F("wl"))}${R(0, 14, 160, 1.6, "#1f5aa6")}${R(0, 0, 160, 14, "#174a8a")}
       ${[16, 56, 96, 136].map(x => `${R(x - 8, 14.4, 16, 1.2, "#000", 'opacity=".15"')}${E(x, 18, 10, 6, F("sp2"))}`).join("")}
       ${[[16, 21], [56, 21], [96, 21], [136, 21]].map(([x, y]) => `<circle cx="${x}" cy="${y - 5}" r="1.4" fill="#fff"/>`).join("")}
-      ${R(0, 0, 160, 14, F("sh2"))}<text x="80" y="9.6" font-size="6" text-anchor="middle" fill="#fff" font-weight="900" font-family="Georgia,serif" letter-spacing=".4">MegaLar</text><text x="107" y="9.6" font-size="3" fill="#ffd866" font-weight="800">· Eletros</text>
+      ${R(0, 0, 160, 14, F("sh2"))}<text x="80" y="9" font-size="6" text-anchor="middle" fill="#fff" font-weight="900" font-family="Georgia,serif" letter-spacing=".4">MegaLar</text><text x="80" y="12.6" font-size="2" fill="#ffd866" font-weight="800" text-anchor="middle" letter-spacing=".5">ELETRODOMÉSTICOS</text>
       <path d="M52 3L56 7L52 11M108 3L104 7L108 11" stroke="#ffd866" stroke-width=".6" fill="none" opacity=".6"/>
       ${R(0, 60, 160, 20, "#dfe4e9", 'opacity=".5"')}${R(0, 58.6, 160, 1.4, "#1f5aa6", 'opacity=".5"')}
       <!-- vitrine de produtos -->
@@ -1687,13 +1708,13 @@ function desk(pos) {
   const defs = `<defs><pattern id="dp${u}" width="24" height="10" patternUnits="userSpaceOnUse"><rect width="24" height="10" fill="#a8744a"/><path d="M0 2Q7 1 12 2T24 2M0 6Q8 7.5 15 6T24 7" stroke="#2e1b0e" stroke-width=".5" fill="none" opacity=".5"/></pattern>
     <linearGradient id="dk${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".18"/><stop offset=".25" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></linearGradient>
     <linearGradient id="tp${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#cf9a64"/><stop offset="1" stop-color="#b07c4c"/></linearGradient></defs>`;
-  const svg = inner => `<svg viewBox="0 0 160 30" preserveAspectRatio="none" width="100%" height="100%">${defs}${inner}</svg>`;
+  const svg = inner => `<svg viewBox="0 0 160 30" preserveAspectRatio="none" width="100%" height="100%" style="overflow:visible">${defs}${inner}</svg>`;
   if (pos === "escritorio") return svg(`<rect y="6" width="160" height="24" fill="url(#dp${u})"/><rect y="6" width="160" height="24" fill="url(#dk${u})"/>
     <rect y="3" width="160" height="4" fill="url(#tp${u})"/><rect y="3" width="160" height="1" fill="#e0b27a" opacity=".6"/>
     <rect x="6" y="11" width="44" height="17" rx="1" fill="#000" opacity=".18"/><rect x="110" y="11" width="44" height="17" rx="1" fill="#000" opacity=".18"/><circle cx="28" cy="19" r="1.2" fill="#c9a04a"/><circle cx="132" cy="19" r="1.2" fill="#c9a04a"/>
-    <g transform="translate(16 0)"><path d="M0 4H14V-1H0Z" fill="#ecd9b0"/><rect x="2" y="-3" width="12" height="3" fill="#f4e7c4" transform="rotate(-4 8 -2)"/></g>
+    <g transform="translate(0 3.4) scale(1 1.58) translate(0 -3.4)"><g transform="translate(16 0)"><path d="M0 4H14V-1H0Z" fill="#ecd9b0"/><rect x="2" y="-3" width="12" height="3" fill="#f4e7c4" transform="rotate(-4 8 -2)"/></g>
     <g transform="translate(124 3)"><path d="M0 0V-3H6V0Z" fill="#2a6a3a"/><path d="M3 -3V-8Q8 -9 11 -6" stroke="#2a6a3a" stroke-width="1.2" fill="none"/><path d="M8 -9H14L12 -5H9Z" fill="#2a6a3a"/></g>
-    <rect x="144" y="-2" width="7" height="6" fill="#8a1c1c"/><rect x="145" y="-2" width="1" height="6" fill="#c9a04a"/>`);
+    <rect x="144" y="-2" width="7" height="6" fill="#8a1c1c"/><rect x="145" y="-2" width="1" height="6" fill="#c9a04a"/></g>`);
   const accent = {defesa: "#4a6fa5", acusacao: "#b0524a"}[pos] || "#c9a04a";
   let extra = "";
   if (pos === "juiz") extra = `<g transform="translate(116 -1)"><rect x="0" y="-3" width="12" height="4" rx="1.5" fill="#5a3a22"/><rect x="4.5" y="1" width="3" height="5" fill="#3e2716"/><rect x="-4" y="2.3" width="20" height="1.6" rx=".6" fill="#2a1a10"/></g>
@@ -1702,7 +1723,7 @@ function desk(pos) {
   else extra = `<g transform="translate(${pos === "defesa" ? 22 : 118} 0)"><rect x="0" y="-3" width="14" height="3.2" fill="#ecd9b0"/><rect x="2" y="-6" width="10" height="3" fill="#f4e7c4"/></g><g transform="translate(${pos === "defesa" ? 124 : 28} 0)"><rect x="0" y="-4" width="5" height="4" fill="#1c3a6a"/><rect x="5.4" y="-3" width="4" height="3" fill="#7a1c1c"/></g>`;
   return svg(`<rect y="5" width="160" height="25" fill="url(#dp${u})"/><rect y="5" width="160" height="25" fill="url(#dk${u})"/>
     ${Array.from({length: 7}, (_, i) => `<rect x="${5 + i * 22.5}" y="11" width="18" height="16" rx="1" fill="#000" opacity=".2" stroke="#e2bf6a" stroke-width=".3" stroke-opacity=".4"/>`).join("")}
-    <rect y="2.5" width="160" height="3.6" fill="url(#tp${u})"/><rect y="2.5" width="160" height=".9" fill="#e0b27a" opacity=".7"/><rect y="6" width="160" height=".8" fill="${accent}" opacity=".75"/>${extra}`);
+    <rect y="2.5" width="160" height="3.6" fill="url(#tp${u})"/><rect y="2.5" width="160" height=".9" fill="#e0b27a" opacity=".7"/><rect y="6" width="160" height=".8" fill="${accent}" opacity=".75"/><g transform="translate(0 3.4) scale(1 1.58) translate(0 -3.4)">${extra}</g>`);
 }
 
 // ================================================================ estado do jogo
@@ -1949,7 +1970,7 @@ async function investigate(c) {
   const opts = {local:c.local};
   Sound.startMusic("investigacao"); Sound.entrar(); Sound.ambiencia(c.local);
   await camera(null, null, null, c.local);
-  $("#actor").innerHTML = ""; curChar = null;
+  $("#actor").innerHTML = ""; curChar = null; $("#scene").style.removeProperty("--ax");
   const title = el("div", {class:"inv-title", textContent:"🔎 " + (c.titulo || LOCAL_NOME[c.local] || "")});
   $("#stage").append(title);
   await sayAll(c.intro, opts);
@@ -1959,7 +1980,7 @@ async function investigate(c) {
     while (!G.over) {
       hideDialog(); $("#actor").innerHTML = ""; curChar = null;
       const pick = await new Promise(resolve => {
-        const spots = c.pontos.map(p => el("button", {class:"spot" + (seen.has(p.id) ? " seen" : ""), "aria-label":"Examinar: " + p.nome,
+        const spots = c.pontos.map(p => el("button", {class:"spot" + (seen.has(p.id) ? " seen" : "") + (p.y + p.h > 76 ? " up" : ""), "aria-label":"Examinar: " + p.nome,
           style:{left:p.x + "%", top:p.y + "%", width:p.w + "%", height:p.h + "%"}, onclick:() => resolve({ponto:p})}, el("span", {textContent:p.nome})));
         const falta = missing().length;
         const panel = el("div", {class:"inv-panel"},
@@ -1973,7 +1994,8 @@ async function investigate(c) {
       });
       clearOverlay(); Sound.select();
       if (pick.seguir) break;
-      if (pick.ponto) { seen.add(pick.ponto.id); await sayAll(pick.ponto.falas, opts); }
+      if (pick.ponto) { seen.add(pick.ponto.id); $("#scene").style.setProperty("--ax", pick.ponto.x + pick.ponto.w / 2 < 50 ? "78%" : "22%");  // personagem sai da frente do objeto examinado
+        await sayAll(pick.ponto.falas, opts); }
       else { const cv = c.conversas[pick.conversa]; talked.add(pick.conversa); await sayAll(cv.falas, opts); }
       if (G.over) return null;
     }
@@ -2576,7 +2598,62 @@ async function loadMenu() {
     $("#eps").className = ""; $("#eps").replaceChildren(...out);
   } catch (e) { $("#eps").replaceChildren(el("p", {style:{padding:"20px var(--gutter)"}, textContent:"Não consegui carregar a carreira: " + e.message})); }
 }
-
+// seção sec=cenarios da galeria: tribunal nas 5 posições + locais de investigação, com personagem de referência e os pontos
+// de investigação de todos os casos desenhados por cima. Params: w=px (padrão 800) · ref=0,1,2,3 (personagens de referência) · f=filtro por local/posição · painel=1
+async function galeriaCenarios(P, root) {
+  const W = +P.get("w") || 800, filtro = (P.get("f") || "").toLowerCase(), painel = P.get("painel") === "1";
+  const REFS = [{pele:"#C68642", cabelo:"curto", corCabelo:"#2a1a10", roupa:"terno", corRoupa:"#1f2a44", gravata:"#8a1c1c"},
+    {pele:"#FFDBAC", cabelo:"curto", corCabelo:"#c9a227", roupa:"toga", corRoupa:"#111111", gravata:null},
+    {pele:"#F1C27D", cabelo:"curto", corCabelo:"#7b1e1e", roupa:"avental", corRoupa:"#ffffff", gravata:null},
+    {pele:"#8D5524", cabelo:"curto", corCabelo:"#111111", roupa:"casual", corRoupa:"#c0392b", gravata:null}];
+  const refs = (P.get("ref") || "0").split(",").map(Number).filter(i => REFS[i]);
+  const css = el("style", {textContent:`.galroot .cen { position:relative; width:${W}px; max-width:100%; aspect-ratio:16/10; overflow:hidden; container-type:inline-size; border-radius:6px; margin:6px 0 2px; background:#000; }
+    .galroot .cen .actor { position:absolute; } .galroot .cen .stg { position:absolute; inset:0; }
+    .galroot .gspot { position:absolute; z-index:7; border:.25cqw solid #ff2bd6; background:rgba(255,43,214,.14); box-sizing:border-box; pointer-events:none; }
+    .galroot .gspot b { position:absolute; left:0; top:0; background:#ff2bd6; color:#fff; font:700 1.05cqw/1.25 system-ui; padding:0 .4cqw; white-space:nowrap; max-width:30cqw; overflow:hidden; text-overflow:ellipsis; }
+    .galroot .gspot.alt b { top:auto; bottom:0; background:#00a6c8; } .galroot .gspot.alt { border-color:#00a6c8; background:rgba(0,166,200,.14); }`});
+  if (P.get("ator") === "0") css.textContent += ".galroot .cen .actor { display:none; }";
+  if (P.get("ax")) css.textContent += `.galroot .cen .scene.loc .actor { left:${+P.get("ax")}%; }`;
+  if (P.get("solo") === "1") css.textContent += ".galroot h1, .galroot .bar, .galroot h2, .galroot .who { display:none; } body.gal { padding:0 !important; overflow:hidden !important; }";
+  root.append(css, el("h2", {textContent:"Cenários: tribunal e locais de investigação (personagem de referência + pontos de todos os casos)"}));
+  const POS = ["defesa", "acusacao", "testemunha", "juiz", "escritorio"];
+  const mk = (kind, bg, extra, v, expr, spots) => {
+    const box = el("div", {class:"cen"});
+    box.innerHTML = `<div class="stg"><div class="scene${kind}"><div class="bg">${bg}</div>${kind ? "" : '<div class="floor"></div>'}<div class="actor idle">${characterSVG(v, expr)}</div>${extra}</div></div>`;
+    spots.forEach((s, i) => { const d = el("div", {class:"gspot" + (i % 2 ? " alt" : ""), style:{left:s.x + "%", top:s.y + "%", width:s.w + "%", height:s.h + "%"}}, el("b", {textContent:s.nomes}));
+      box.append(d); });
+    return box;
+  };
+  for (const pos of POS) {
+    if (filtro && !pos.includes(filtro)) continue;
+    root.append(el("div", {class:"who"}, el("b", {textContent:"Tribunal: " + pos})));
+    for (const ri of refs) {
+      const bx = mk("", background(pos), `<div class="desk">${desk(pos)}</div>`, REFS[ri], "normal", []);
+      const pl = (BGS[pos] || {}).plaque;
+      if (pl && pos !== "escritorio") bx.querySelector(".desk").append(el("div", {class:"plaque", textContent:pl}));
+      root.append(bx);
+    }
+  }
+  // pontos de todos os episódios, agrupados por local
+  const car = await api("/api/arena/carreira");
+  const ids = [...car.atos.flatMap(a => a.episodios.map(e => e.id)), ...car.avulsos.map(e => e.id)];
+  const eps = await Promise.all(ids.map(id => api("/api/arena/tribunal/" + id).catch(() => null)));
+  const porLocal = {};
+  for (const ep of eps) { if (!ep) continue;
+    for (const c of Object.values(ep.cenas || {})) { if (!c.pontos || !c.local) continue;
+      const m = porLocal[c.local] = porLocal[c.local] || {};
+      for (const p of c.pontos) { const k = [p.x, p.y, p.w, p.h].join(","); (m[k] = m[k] || {x:p.x, y:p.y, w:p.w, h:p.h, nomes:new Set()}).nomes.add(p.nome); } } }
+  for (const loc of Object.keys(LOCAL_NOME)) {
+    if (filtro && !loc.includes(filtro)) continue;
+    const spots = Object.values(porLocal[loc] || {}).map(s => ({...s, nomes:[...s.nomes].join(" / ")}));
+    root.append(el("div", {class:"who"}, el("b", {textContent:`Local: ${loc} (${LOCAL_NOME[loc]})`}), " ", el("code", {textContent:spots.length + " pontos distintos"})));
+    for (const ri of refs) {
+      const bx = mk(" loc", locationBG(loc), "", REFS[ri], "apontando", spots);
+      if (painel) bx.append(el("div", {class:"inv-panel"}, el("h4", {textContent:"Investigação"}), el("small", {textContent:"Examinados: 0 de " + spots.length}), el("button", {textContent:"💬 Conversar"}), el("button", {textContent:"Seguir ▶"})));
+      root.append(bx);
+    }
+  }
+}
 // ================================================================ galeria de QA de arte (?galeria=1)
 // Parâmetros: sec=elenco|combinatoria|palco|tudo (padrão tudo) · de/ate (índices do elenco) · fundo=ambos|claro|escuro
 // · tam=px da figura · f=filtro por nome/id · expr=lista de expressões. Serve para revisar todos os bonecos sem jogar.
@@ -2638,6 +2715,7 @@ async function galeriaQA(P) {
       }
     }
   }
+  if (sec === "cenarios") await galeriaCenarios(P, root);
   if (sec === "tudo" || sec === "combinatoria") {
     const PELES = ["#FFDBAC", "#F1C27D", "#E0AC69", "#C68642", "#8D5524", "#5C3A1E"];
     const ROUPA = {terno:"#1f2a44", toga:"#111111", blazer:"#4a2c6b", avental:"#ffffff", casual:"#c0392b", farda:"#3e4a2d"};

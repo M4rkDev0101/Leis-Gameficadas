@@ -436,10 +436,10 @@
       {
        "id": "livro",
        "nome": "Livro de registro",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -465,9 +465,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",
@@ -626,10 +626,10 @@
       {
        "id": "mural2",
        "nome": "Mural de avisos",
-       "x": 72,
-       "y": 13,
-       "w": 18,
-       "h": 23,
+       "x": 71,
+       "y": 14,
+       "w": 19.5,
+       "h": 24,
        "falas": [
         {
          "q": "voce",
@@ -641,9 +641,9 @@
       {
        "id": "cadeiras",
        "nome": "Cadeiras",
-       "x": 74,
+       "x": 73.5,
        "y": 62,
-       "w": 21,
+       "w": 22,
        "h": 18,
        "falas": [
         {
@@ -1694,10 +1694,10 @@
       {
        "id": "carro",
        "nome": "Viatura descaracterizada, apreendida",
-       "x": 62,
-       "y": 61,
+       "x": 40,
+       "y": 62,
        "w": 29,
-       "h": 19,
+       "h": 22,
        "falas": [
         {
          "q": "voce",
@@ -1722,10 +1722,10 @@
       {
        "id": "fachada",
        "nome": "Fachada da loja",
-       "x": 39,
-       "y": 29,
-       "w": 29,
-       "h": 28,
+       "x": 36,
+       "y": 17,
+       "w": 34,
+       "h": 42,
        "falas": [
         {
          "q": "voce",
@@ -1751,7 +1751,7 @@
        "id": "muro",
        "nome": "Muro do quarteirão",
        "x": 4,
-       "y": 45,
+       "y": 46,
        "w": 30,
        "h": 27,
        "falas": [
@@ -1837,9 +1837,9 @@
        "id": "janela",
        "nome": "Janela quebrada",
        "x": 34,
-       "y": 10,
+       "y": 13,
        "w": 25,
-       "h": 36,
+       "h": 34,
        "falas": [
         {
          "q": "voce",
@@ -1860,9 +1860,9 @@
        "id": "mesa",
        "nome": "Mesa de jantar",
        "x": 30,
-       "y": 50,
-       "w": 12,
-       "h": 10,
+       "y": 50.5,
+       "w": 12.5,
+       "h": 12,
        "falas": [
         {
          "q": "voce",
@@ -1892,8 +1892,8 @@
        "nome": "Estante",
        "x": 9,
        "y": 22,
-       "w": 19,
-       "h": 20,
+       "w": 19.5,
+       "h": 24,
        "falas": [
         {
          "q": "voce",
@@ -1910,10 +1910,10 @@
       {
        "id": "sofa",
        "nome": "Sofá",
-       "x": 82,
-       "y": 50,
-       "w": 16,
-       "h": 24,
+       "x": 81.5,
+       "y": 47,
+       "w": 16.5,
+       "h": 32,
        "falas": [
         {
          "q": "voce",
@@ -2946,10 +2946,10 @@
       {
        "id": "escritorio",
        "nome": "Escritório da obra",
-       "x": 42,
+       "x": 41.5,
        "y": 30,
-       "w": 18,
-       "h": 24,
+       "w": 18.5,
+       "h": 27,
        "falas": [
         {
          "q": "voce",
@@ -2980,10 +2980,10 @@
       {
        "id": "andaime",
        "nome": "Andaime",
-       "x": 64,
-       "y": 6,
-       "w": 30,
-       "h": 26,
+       "x": 63,
+       "y": 3,
+       "w": 34,
+       "h": 34,
        "falas": [
         {
          "q": "voce",
@@ -3054,10 +3054,10 @@
       {
        "id": "livro",
        "nome": "Livro de registro",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -3078,9 +3078,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",

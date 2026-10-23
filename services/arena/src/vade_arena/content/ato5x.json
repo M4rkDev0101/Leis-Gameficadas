@@ -220,9 +220,9 @@
        "id": "mesa",
        "nome": "Mesa com os autos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -317,10 +317,10 @@
       {
        "id": "bandeira",
        "nome": "Bandeira",
-       "x": 90,
-       "y": 20,
-       "w": 8,
-       "h": 30,
+       "x": 92.5,
+       "y": 21,
+       "w": 7.5,
+       "h": 18,
        "falas": [
         {
          "q": "voce",
@@ -406,10 +406,10 @@
       {
        "id": "livro",
        "nome": "Livro de registro (auto de prisão)",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -453,9 +453,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",
@@ -1205,9 +1205,9 @@
        "id": "mesa",
        "nome": "Mesa com o incidente",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -1307,10 +1307,10 @@
       {
        "id": "bandeira",
        "nome": "Bandeira",
-       "x": 90,
-       "y": 20,
-       "w": 8,
-       "h": 30,
+       "x": 92.5,
+       "y": 21,
+       "w": 7.5,
+       "h": 18,
        "falas": [
         {
          "q": "voce",
@@ -1689,10 +1689,10 @@
       {
        "id": "mural",
        "nome": "Mural de avisos",
-       "x": 72,
-       "y": 13,
-       "w": 18,
-       "h": 23,
+       "x": 71,
+       "y": 14,
+       "w": 19.5,
+       "h": 24,
        "falas": [
         {
          "q": "voce",
@@ -1724,9 +1724,9 @@
       {
        "id": "cadeiras",
        "nome": "Cadeiras da recepção",
-       "x": 74,
+       "x": 73.5,
        "y": 62,
-       "w": 21,
+       "w": 22,
        "h": 18,
        "falas": [
         {

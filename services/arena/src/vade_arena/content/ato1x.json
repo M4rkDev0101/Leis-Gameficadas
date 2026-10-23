@@ -349,9 +349,9 @@
        "id": "mesa",
        "nome": "Mesa de trabalho",
        "x": 30,
-       "y": 50,
-       "w": 12,
-       "h": 10,
+       "y": 50.5,
+       "w": 12.5,
+       "h": 12,
        "falas": [
         {
          "q": "voce",
@@ -377,8 +377,8 @@
        "nome": "Pasta de documentos na estante",
        "x": 9,
        "y": 22,
-       "w": 19,
-       "h": 20,
+       "w": 19.5,
+       "h": 24,
        "falas": [
         {
          "q": "voce",
@@ -398,10 +398,10 @@
       {
        "id": "comoda",
        "nome": "Celular velho na cômoda",
-       "x": 64,
-       "y": 46,
-       "w": 16,
-       "h": 14,
+       "x": 63.5,
+       "y": 49,
+       "w": 16.5,
+       "h": 33,
        "falas": [
         {
          "q": "voce",
@@ -422,9 +422,9 @@
        "id": "janela",
        "nome": "Janela com vista para a rua",
        "x": 34,
-       "y": 10,
+       "y": 13,
        "w": 25,
-       "h": 36,
+       "h": 34,
        "falas": [
         {
          "q": "voce",
@@ -539,9 +539,9 @@
        "id": "monitor",
        "nome": "Monitor do caixa",
        "x": 52,
-       "y": 39,
-       "w": 8,
-       "h": 9,
+       "y": 39.5,
+       "w": 8.4,
+       "h": 10.5,
        "falas": [
         {
          "q": "voce",
@@ -558,10 +558,10 @@
       {
        "id": "balcao",
        "nome": "Balcão da assistência",
-       "x": 41,
-       "y": 44,
-       "w": 12,
-       "h": 10,
+       "x": 36,
+       "y": 52.5,
+       "w": 25.5,
+       "h": 25,
        "falas": [
         {
          "q": "voce",
@@ -1323,10 +1323,10 @@
       {
        "id": "padaria",
        "nome": "Câmera da padaria",
-       "x": 39,
-       "y": 29,
-       "w": 29,
-       "h": 28,
+       "x": 36,
+       "y": 17,
+       "w": 34,
+       "h": 42,
        "falas": [
         {
          "q": "voce",
@@ -1347,7 +1347,7 @@
        "id": "muro",
        "nome": "Muro e restos da bicicleta",
        "x": 4,
-       "y": 45,
+       "y": 46,
        "w": 30,
        "h": 27,
        "falas": [
@@ -1369,10 +1369,10 @@
       {
        "id": "carro",
        "nome": "Carro em fila dupla",
-       "x": 62,
-       "y": 61,
+       "x": 40,
+       "y": 62,
        "w": 29,
-       "h": 19,
+       "h": 22,
        "falas": [
         {
          "q": "voce",
@@ -1448,10 +1448,10 @@
       {
        "id": "escritorio",
        "nome": "Escritório da obra",
-       "x": 42,
+       "x": 41.5,
        "y": 30,
-       "w": 18,
-       "h": 24,
+       "w": 18.5,
+       "h": 27,
        "falas": [
         {
          "q": "voce",
@@ -2299,8 +2299,8 @@
        "nome": "Caixa de recibos na estante",
        "x": 9,
        "y": 22,
-       "w": 19,
-       "h": 20,
+       "w": 19.5,
+       "h": 24,
        "falas": [
         {
          "q": "voce",
@@ -2321,9 +2321,9 @@
        "id": "mesa",
        "nome": "Mesa com papéis",
        "x": 30,
-       "y": 50,
-       "w": 12,
-       "h": 10,
+       "y": 50.5,
+       "w": 12.5,
+       "h": 12,
        "falas": [
         {
          "q": "voce",
@@ -2338,10 +2338,10 @@
       {
        "id": "comoda",
        "nome": "Cartas do banco na cômoda",
-       "x": 64,
-       "y": 46,
-       "w": 16,
-       "h": 14,
+       "x": 63.5,
+       "y": 49,
+       "w": 16.5,
+       "h": 33,
        "falas": [
         {
          "q": "voce",
@@ -2361,10 +2361,10 @@
       {
        "id": "sofa",
        "nome": "Pasta médica ao lado do sofá",
-       "x": 82,
-       "y": 50,
-       "w": 16,
-       "h": 24,
+       "x": 81.5,
+       "y": 47,
+       "w": 16.5,
+       "h": 32,
        "falas": [
         {
          "q": "voce",
@@ -2380,9 +2380,9 @@
        "id": "janela",
        "nome": "Janela e vasos de violeta",
        "x": 34,
-       "y": 10,
+       "y": 13,
        "w": 25,
-       "h": 36,
+       "h": 34,
        "falas": [
         {
          "q": "voce",
@@ -2502,10 +2502,10 @@
       {
        "id": "livro",
        "nome": "Livro de registro",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -2533,9 +2533,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",

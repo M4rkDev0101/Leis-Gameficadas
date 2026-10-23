@@ -279,10 +279,10 @@
       {
        "id": "balcao",
        "nome": "Balcão da assistência",
-       "x": 41,
-       "y": 44,
-       "w": 12,
-       "h": 10,
+       "x": 36,
+       "y": 52.5,
+       "w": 25.5,
+       "h": 25,
        "falas": [
         {
          "q": "voce",
@@ -332,9 +332,9 @@
        "id": "monitor",
        "nome": "Monitor de ordens de serviço",
        "x": 52,
-       "y": 39,
-       "w": 8,
-       "h": 9,
+       "y": 39.5,
+       "w": 8.4,
+       "h": 10.5,
        "falas": [
         {
          "q": "voce",

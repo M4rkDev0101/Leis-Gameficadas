@@ -423,10 +423,10 @@
       {
        "id": "registro",
        "nome": "Livro de registro",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -444,9 +444,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",
@@ -1248,7 +1248,7 @@
        "id": "muro",
        "nome": "Muro da obra",
        "x": 4,
-       "y": 45,
+       "y": 46,
        "w": 30,
        "h": 27,
        "falas": [
@@ -1267,10 +1267,10 @@
       {
        "id": "loja",
        "nome": "Peixaria da comunidade",
-       "x": 39,
-       "y": 29,
-       "w": 28,
-       "h": 28,
+       "x": 36,
+       "y": 17,
+       "w": 34,
+       "h": 42,
        "falas": [
         {
          "q": "a3nilza",
@@ -1285,10 +1285,10 @@
       {
        "id": "carro",
        "nome": "Caminhão estacionado",
-       "x": 62,
-       "y": 61,
-       "w": 19,
-       "h": 19,
+       "x": 72,
+       "y": 62,
+       "w": 27,
+       "h": 22,
        "falas": [
         {
          "q": "voce",
@@ -1410,10 +1410,10 @@
       {
        "id": "escritorio",
        "nome": "Escritório da obra",
-       "x": 42,
+       "x": 41.5,
        "y": 30,
-       "w": 18,
-       "h": 24,
+       "w": 18.5,
+       "h": 27,
        "falas": [
         {
          "q": "voce",
@@ -1454,10 +1454,10 @@
       {
        "id": "andaime",
        "nome": "Andaime",
-       "x": 64,
-       "y": 6,
-       "w": 30,
-       "h": 26,
+       "x": 63,
+       "y": 3,
+       "w": 34,
+       "h": 34,
        "falas": [
         {
          "q": "voce",
@@ -2113,9 +2113,9 @@
        "id": "mesa",
        "nome": "Mesa com processos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -2225,10 +2225,10 @@
       {
        "id": "caixa",
        "nome": "Caixa / balcão",
-       "x": 55,
-       "y": 40,
+       "x": 55.5,
+       "y": 45,
        "w": 14,
-       "h": 14,
+       "h": 10.5,
        "falas": [
         {
          "q": "voce",
@@ -3063,10 +3063,10 @@
       {
        "id": "registro",
        "nome": "Livro de registro",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -3087,9 +3087,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",
@@ -3177,8 +3177,8 @@
        "nome": "Estante",
        "x": 9,
        "y": 22,
-       "w": 19,
-       "h": 20,
+       "w": 19.5,
+       "h": 24,
        "falas": [
         {
          "q": "voce",
@@ -3190,10 +3190,10 @@
       {
        "id": "comoda",
        "nome": "Cômoda",
-       "x": 64,
-       "y": 46,
-       "w": 16,
-       "h": 14,
+       "x": 63.5,
+       "y": 49,
+       "w": 16.5,
+       "h": 33,
        "falas": [
         {
          "q": "voce",
@@ -3211,9 +3211,9 @@
        "id": "mesa",
        "nome": "Mesa",
        "x": 30,
-       "y": 50,
-       "w": 12,
-       "h": 10,
+       "y": 50.5,
+       "w": 12.5,
+       "h": 12,
        "falas": [
         {
          "q": "voce",
@@ -3228,10 +3228,10 @@
       {
        "id": "sofa",
        "nome": "Sofá",
-       "x": 82,
-       "y": 50,
-       "w": 16,
-       "h": 24,
+       "x": 81.5,
+       "y": 47,
+       "w": 16.5,
+       "h": 32,
        "falas": [
         {
          "q": "voce",
@@ -3969,10 +3969,10 @@
       {
        "id": "balcao",
        "nome": "Balcão da assistência",
-       "x": 41,
-       "y": 44,
-       "w": 12,
-       "h": 10,
+       "x": 36,
+       "y": 52.5,
+       "w": 25.5,
+       "h": 25,
        "falas": [
         {
          "q": "voce",
@@ -3993,9 +3993,9 @@
        "id": "monitor",
        "nome": "Monitor",
        "x": 52,
-       "y": 39,
-       "w": 8,
-       "h": 9,
+       "y": 39.5,
+       "w": 8.4,
+       "h": 10.5,
        "falas": [
         {
          "q": "voce",
@@ -4086,10 +4086,10 @@
       {
        "id": "registro",
        "nome": "Livro de registro",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -4120,9 +4120,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",
@@ -4863,9 +4863,9 @@
        "id": "mesa",
        "nome": "Mesa com processos",
        "x": 30,
-       "y": 56,
+       "y": 50,
        "w": 40,
-       "h": 24,
+       "h": 30,
        "falas": [
         {
          "q": "voce",
@@ -4958,10 +4958,10 @@
       {
        "id": "registro",
        "nome": "Livro de registro",
-       "x": 40,
-       "y": 44,
-       "w": 18,
-       "h": 14,
+       "x": 39.5,
+       "y": 49,
+       "w": 18.5,
+       "h": 8,
        "falas": [
         {
          "q": "voce",
@@ -4977,9 +4977,9 @@
        "id": "pasta",
        "nome": "Pasta sobre o arquivo",
        "x": 10,
-       "y": 46,
+       "y": 47,
        "w": 16,
-       "h": 16,
+       "h": 14,
        "falas": [
         {
          "q": "voce",
