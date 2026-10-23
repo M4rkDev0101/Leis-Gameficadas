@@ -115,6 +115,36 @@
   .card-fly .ic { font-size:5cqw; text-align:center; } .card-fly b { display:block; text-align:center; font-size:1.7cqw; }
   @keyframes fly { from { transform:translate(60%, 80%) scale(.3) rotate(20deg); opacity:0; } }
   .redflash { position:absolute; inset:0; background:radial-gradient(circle, transparent 40%, rgba(220,30,30,.65)); animation:flash .6s ease-out forwards; }
+  /* "juice": só transform/opacity, animações finitas; desligado por prefers-reduced-motion e pela opção "Efeitos de tela" */
+  .bubble.punch { animation:bubblepunch .55s cubic-bezier(.2,1.4,.3,1) both; }
+  @keyframes bubblepunch { 0% { transform:translate(-50%,-50%) rotate(-6deg) scale(3.4); opacity:0; } 35% { transform:translate(-50%,-50%) rotate(-6deg) scale(.88); opacity:1; }
+    55% { transform:translate(-50%,-50%) rotate(-6deg) scale(1.1); } 100% { transform:translate(-50%,-50%) rotate(-6deg) scale(1); } }
+  .whiteflash { position:absolute; inset:0; background:#fff; animation:flash .18s ease-out forwards; }
+  .stage.hitstop, .stage.hitstop * { animation-play-state:paused !important; }
+  .stage.shake.lite { animation:shakelite .28s ease-out; }
+  @keyframes shakelite { 20% { transform:translate(-3px,1px); } 40% { transform:translate(3px,-1px); } 60% { transform:translate(-2px,0); } 80% { transform:translate(1px,0); } }
+  .actor.zoomface { transform:translateX(-50%) scale(1.55); transform-origin:50% 22%; transition:transform .12s ease-out; }
+  .speed { position:absolute; inset:-25% -25% 32% -25%; pointer-events:none; animation:speedln .75s ease-out forwards;
+           background:repeating-conic-gradient(from 3deg at 50% 45%, rgba(255,255,255,.92) 0 .7deg, transparent .7deg 4.6deg);
+           -webkit-mask-image:radial-gradient(circle at 50% 45%, transparent 16%, #000 62%); mask-image:radial-gradient(circle at 50% 45%, transparent 16%, #000 62%); }
+  .speed.b { background:repeating-conic-gradient(from 0deg at 50% 45%, rgba(255,210,94,.85) 0 .4deg, transparent .4deg 3.1deg); animation-duration:.9s; }
+  @keyframes speedln { 0% { opacity:0; transform:scale(1.7); } 18% { opacity:1; } 100% { opacity:0; transform:scale(1); } }
+  .cred.hurt { animation:credhurt .8s ease-out; }
+  @keyframes credhurt { 0%,100% { background:rgba(11,13,17,.8); transform:none; } 12% { background:rgba(200,30,30,.9); transform:translateX(-4px); } 28% { transform:translateX(4px); } 40% { background:rgba(200,30,30,.8); transform:translateX(-2px); }
+    55% { background:rgba(130,20,20,.7); transform:none; } 75% { background:rgba(200,30,30,.6); } }
+  .cred i { position:relative; }
+  .cred i.break::after { content:""; position:absolute; left:50%; top:60%; width:.55cqw; height:.8cqw; margin-left:-.28cqw; border-radius:50% 50% 50% 50% / 30% 30% 70% 70%;
+                         background:#d11; animation:bleed 1s ease-in forwards; }
+  @keyframes bleed { 0% { transform:translateY(0) scale(.4); opacity:1; } 100% { transform:translateY(5cqw) scale(1.1,1.8); opacity:0; } }
+  .wipe { position:absolute; inset:0; z-index:40; pointer-events:none; transform:translateX(-101%); animation:wipein .24s ease-in forwards;
+          background:linear-gradient(90deg, #0b0d11 0 96%, #D4A24C 96% 98.5%, #0b0d11 98.5%); }
+  .wipe.out { animation:wipeout .3s ease-out forwards; background:linear-gradient(90deg, #0b0d11 0 1.5%, #D4A24C 1.5% 4%, #0b0d11 4%); }
+  @keyframes wipein { to { transform:translateX(0); } } @keyframes wipeout { from { transform:translateX(0); } to { transform:translateX(101%); } }
+  .stamp.letters { animation:none; }
+  .stamp .lt { display:inline-block; animation:ltslam .32s cubic-bezier(.2,1.6,.4,1) both; animation-delay:var(--d); }
+  @keyframes ltslam { from { transform:scale(3.4) translateY(-35%); opacity:0; } }
+  .tx-k { color:#ffd25e; font-weight:800; } .tx-k.cap { color:#ff8a78; } .tx-k.num { color:#8fd8ff; }
+  .confetti.paper { width:2cqw; height:2.6cqw; background:#f4ecd8 !important; box-shadow:inset 0 0 0 1px #c9a04a; }
 
   /* ------------------------------------------------------------ autos (provas) */
   .modal { position:absolute; inset:4%; z-index:30; background:linear-gradient(#f4ecd8,#e8dcbf); color:#2a1c12; border-radius:1.6cqw;
@@ -561,6 +591,7 @@
     <a class="navbtn" href="/">← Arena</a>
     <button class="iconbtn" id="btn-sound" aria-pressed="true" aria-label="Efeitos sonoros">🔊<span class="tx"> Som</span></button>
     <button class="iconbtn" id="btn-music" aria-pressed="false" aria-label="Música">🎵<span class="tx"> Música</span></button>
+    <button class="iconbtn" id="btn-fx" aria-pressed="true" aria-label="Efeitos de tela">✨<span class="tx"> Efeitos de tela</span></button>
     <button class="profile" id="btn-avatar" aria-label="Meu personagem"><span class="pf-av" id="pf-av"></span><span class="pf-tx"><b id="pf-name">Você</b><small id="pf-lv">&nbsp;</small><i class="pf-xp"><u id="pf-bar" style="width:0"></u></i></span></button>
   </header>
   <main id="main">
@@ -823,7 +854,14 @@ const Sound = {
     setTimeout(() => { A.nodes.forEach(n => { try { n.stop(); } catch {} }); try { A.out.disconnect(); } catch {} }, 1500);
   },
   // ---- efeitos
-  blip(pitch) { if (pitch) this.tone(pitch * (0.95 + Math.random() * .1), .045, "square", .025); },
+  blip(pitch, kind) { if (!pitch) return;   // timbre por tipo de voz: m = quadrada, f = triangular aguda, j = juiz grave e encorpado
+    const f = pitch * (0.95 + Math.random() * .1);
+    if (kind === "f") this.tone(f * 1.25, .05, "triangle", .04); else if (kind === "j") { this.tone(f * .72, .07, "sawtooth", .018); this.tone(f * .36, .07, "sine", .03); }
+    else this.tone(f, .045, "square", .025); },
+  punch() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // impacto do balão: estalo + graves
+    this._noise(d, t, .09, {type:"highpass", f:2800, v:.35, send:.2}); this._n(d, 55, t, .5, {type:"sine", v:.5, slide:-30, a:.002, s:.01, send:.3});
+    this._n(d, 880, t, .12, {type:"square", v:.05, lp:2600, slide:-500, a:.002, s:.2}); },
+  whoosh() { const c = this._ok(); if (!c) return; const t = c.currentTime; this._noise(this.sfx, t, .35, {f:600, f2:5200, q:.7, v:.12, a:.05}); },
   select() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
     this._n(d, 1300, t, .04, {type:"square", v:.025, lp:4000, a:.002, s:.05, r:.02}); this._n(d, 1950, t + .018, .05, {type:"triangle", v:.03, a:.002, s:.05, r:.03}); },
   click() { this.select(); },
@@ -1812,6 +1850,8 @@ async function camera(pos, q, expr, local) {
   const curPosBefore = curPos;
   if (target !== curPos) {
     const dir = ["defesa", "escritorio"].includes(target) ? "enter-l" : "enter-r";
+    let wp = null;
+    if (curPos && sceneGroup(curPos) !== sceneGroup(target) && fxOn()) { wp = el("div", {class:"wipe"}); $("#fx").append(wp); Sound.whoosh(); await sleep(250); }
     scene.classList.add(dir); await sleep(120);
     const loc = target.startsWith("L:");
     scene.classList.toggle("loc", loc);
@@ -1821,6 +1861,7 @@ async function camera(pos, q, expr, local) {
     if (plaque) $("#desk").append(el("div", {class:"plaque", textContent:plaque}));
     curPos = target;
     void scene.offsetWidth; scene.classList.remove(dir);
+    if (wp) { wp.classList.add("out"); setTimeout(() => wp.remove(), 350); }
   }
   const actor = $("#actor");
   if (q && q !== "narrador") {
@@ -1831,15 +1872,29 @@ async function camera(pos, q, expr, local) {
 }
 
 // ------------------------------------------------ efeitos
-function shake() { const s = $("#stage"); s.classList.remove("shake"); void s.offsetWidth; s.classList.add("shake"); }
-function flash(cls = "flash") { const f = el("div", {class:cls}); $("#fx").append(f); setTimeout(() => f.remove(), 700); }
+const fxOn = () => store.get("tribFx", true) && !(window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches);
+function shake(lite) { if (!fxOn()) return; const s = $("#stage"); s.classList.remove("shake", "lite"); void s.offsetWidth; s.classList.add("shake"); if (lite) s.classList.add("lite"); }
+async function hitstop(ms = 120) { if (!fxOn()) return; const s = $("#stage"); s.classList.add("hitstop"); await sleep(ms); s.classList.remove("hitstop"); }
+function speedLines() { if (!fxOn()) return; const fx = $("#fx"), a = el("div", {class:"speed"}), b = el("div", {class:"speed b"}); fx.prepend(a, b); setTimeout(() => { a.remove(); b.remove(); }, 1000); }
+// contradição/prova certa: linhas de velocidade, rosto do depoente em zoom com expressão de choque, tremida e flash
+async function contradictionFx(q) {
+  if (!fxOn()) return;
+  if (q && q !== "narrador") { await camera(posOf(q), q, "chocado"); }
+  const a = $("#actor"); Sound.whoosh(); speedLines(); flash("whiteflash"); shake();
+  a.classList.add("zoomface"); a.classList.remove("shock"); void a.offsetWidth; a.classList.add("shock");
+  await sleep(900); a.classList.remove("zoomface"); await sleep(140);
+}
+// transição entre grupos de cena (tribunal / investigação / escritório): cortina escura com filete dourado
+const sceneGroup = (t) => String(t).startsWith("L:") ? "L" : t === "escritorio" ? "E" : "T";
+function flash(cls = "flash") { if (cls !== "flash" && !fxOn()) return; const f = el("div", {class:cls}); $("#fx").append(f); setTimeout(() => f.remove(), 700); }
 async function bubble(text, color = "#E5483B") {
-  const w = el("div", {class:"bubble"});
+  const w = el("div", {class:"bubble" + (fxOn() ? " punch" : "")});
   w.innerHTML = `<svg viewBox="0 0 400 200"><path d="M200 6 L232 50 L290 18 L282 70 L350 60 L310 100 L380 128 L306 140 L334 192 L262 162 L228 196 L198 156 L150 194 L142 150 L70 176 L102 128 L20 118 L92 90 L40 46 L118 60 L120 10 L164 52Z" fill="#fff" stroke="#111" stroke-width="8" stroke-linejoin="round"/></svg>`;
   const t = el("div", {style:{position:"absolute", inset:"0", display:"grid", placeItems:"center", fontFamily:"Impact, 'Arial Black', sans-serif",
     fontSize:"7.4cqw", color, WebkitTextStroke:".45cqw #111", letterSpacing:".02em", textShadow:".5cqw .5cqw 0 #111"}, textContent:text});
-  w.append(t); $("#fx").append(w); flash(); shake();
-  await sleep(1000); w.remove();
+  w.append(t); $("#fx").append(w); flash();
+  if (fxOn()) { flash("whiteflash"); Sound.punch(); shake(); await sleep(150); await hitstop(120); await sleep(730); } else await sleep(1000);
+  w.remove();
 }
 async function doFx(fx) {
   if (fx === "protesto") { Sound.protesto(); await bubble("PROTESTO!"); }
@@ -1873,6 +1928,17 @@ function fitText(dlg, tx, text) {
   }
   tx.textContent = "";
 }
+// palavras-chave em destaque: artigos/leis, valores, números e palavras em CAIXA ALTA
+function keyMarks(text) {
+  const out = [], re = /\b[Aa]rt(?:igo|\.)?\s*\d+[º°]?(?:-[A-Z])?(?:,?\s*(?:§\s*\d+[º°]?|inciso\s+[IVXLC]+|caput))?|\b(?:Lei|Súmula|Decreto)\s+(?:n[º°.]*\s*)?[\d.\/]+|R\$\s*[\d.,]+|\b\d[\d.,]*\s*(?:dias|meses|anos|horas|%)|\b[A-ZÀ-Ú]{4,}\b/g;
+  let m; while ((m = re.exec(text))) out.push([m.index, m.index + m[0].length, /^[A-ZÀ-Ú]{4,}$/.test(m[0]) ? "cap" : /^(R\$|\d)/.test(m[0]) ? "num" : ""]);
+  return out;
+}
+function markedHTML(text, marks, n) {
+  const esc = (t) => t.replace(/[&<>]/g, (c) => ({"&":"&amp;", "<":"&lt;", ">":"&gt;"}[c])); let h = "", pos = 0;
+  for (const [a, b, k] of marks) { if (a >= n) break; const e = Math.min(b, n); h += esc(text.slice(pos, a)) + `<span class="tx-k ${k}">` + esc(text.slice(a, e)) + "</span>"; pos = e; }
+  return h + esc(text.slice(pos, n));
+}
 async function say(line, opts = {}) {
   if (!cond(line.se)) return;
   const q = line.q || "narrador";
@@ -1897,14 +1963,15 @@ async function say(line, opts = {}) {
   if (q !== "narrador") actor.classList.add("talking");
   let i = 0, skip = false;
   advance = () => { skip = true; };
-  const voice = voiceOf(q);
+  const voice = voiceOf(q), kind = q === "narrador" ? "m" : posOf(q) === "juiz" ? "j" : ["longo", "coque", "rabo"].includes((visualOf(q) || {}).cabelo) ? "f" : "m";
+  const marks = keyMarks(text), fancy = marks.length > 0;
   while (i < text.length && !skip) {
-    tx.textContent = text.slice(0, ++i);
-    if (i % 2 === 0 && /\S/.test(text[i - 1])) Sound.blip(voice);
-    const ch = text[i - 1];
-    await sleep(/[.!?…]/.test(ch) ? 140 : /,/.test(ch) ? 70 : 24);
+    ++i; if (fancy) tx.innerHTML = markedHTML(text, marks, i); else tx.textContent = text.slice(0, i);
+    if (i % 2 === 0 && /\S/.test(text[i - 1])) Sound.blip(voice, kind);
+    const ch = text[i - 1], nx2 = text[i] || "";
+    await sleep(ch === "…" ? 380 : ch === "." && nx2 === "." ? 160 : ch === "." && text[i - 2] === "." ? 400 : /[.!?]/.test(ch) ? (/[.!?]/.test(nx2) ? 60 : 160) : ch === "—" ? 220 : /[,;:]/.test(ch) ? 80 : 24);
   }
-  tx.textContent = text;
+  if (fancy) tx.innerHTML = markedHTML(text, marks, text.length); else tx.textContent = text;
   actor.classList.remove("talking");
   if (opts.noWait) return;
   nx.classList.remove("hidden");
@@ -1960,7 +2027,8 @@ async function damage(lines, c, ctx) {
   G.erros++; G.cred = Math.max(0, G.cred - 1);
   G.fails = G.fails || {};
   const fails = c ? (G.fails[G.scene] = (G.fails[G.scene] || 0) + 1) : 0;
-  Sound.dano(); Sound.erro(); flash("redflash"); shake(); renderCred(G.cred);
+  Sound.dano(); Sound.erro(); flash("redflash"); shake(true); renderCred(G.cred);
+  if (fxOn()) { const cb = $("#cred"); cb.classList.remove("hurt"); void cb.offsetWidth; cb.classList.add("hurt"); }
   if (G.cred > 0 && G.cred <= 2) Sound.startMusic("pressao");
   await sayAll(lines);
   if (G.cred <= 0) { G.over = true; await gameOver(); }
@@ -2178,7 +2246,7 @@ async function testimony(c) {
       if (!id) continue;
       await presentAnim(id);
       if (idx === c.contradicao.afirmacao && c.contradicao.provas.includes(id)) {
-        Sound.stopMusic(); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma"); return c.proxima;
+        Sound.stopMusic(); await contradictionFx(c.testemunha); await sayAll(c.acerto); Sound.acerto(); Sound.startMusic("calma"); return c.proxima;
       }
       await damage(c.erro, c, {idx});
     }
@@ -2198,7 +2266,7 @@ async function presentScene(c) {
     const id = await openAutos({titulo:c.pergunta});
     if (!id) { continue; }
     await presentAnim(id);
-    if (c.provas.includes(id)) { await sayAll(c.acerto); Sound.acerto(); lawPopup([provaById(id)]); return c.proxima; }
+    if (c.provas.includes(id)) { speedLines(); flash("whiteflash"); shake(true); await sayAll(c.acerto); Sound.acerto(); lawPopup([provaById(id)]); return c.proxima; }
     await damage(c.erro, c);
   }
   return null;
@@ -2254,11 +2322,24 @@ async function decideScene(c) {
   }
   return null;
 }
+// carimbo: as letras batem uma a uma (carimbo "inteiro" quando os efeitos estão desligados)
+function stampLetters(st, text) {
+  if (!fxOn()) return;
+  st.classList.add("letters"); st.setAttribute("aria-label", text); st.replaceChildren(...[...text].map((ch, i) => el("span", {class:"lt", style:{"--d":(i * .07) + "s"}, textContent:ch})));
+  [...text].forEach((ch, i) => { if (/\S/.test(ch)) setTimeout(() => { Sound.bater(); shake(true); }, i * 70 + 120); });
+}
+// XP sobe contando (passos finitos por setTimeout, sem rAF)
+function countUp(node, to) {
+  if (!fxOn() || !to) return; const n = 24; let k = 0; node.textContent = "+0 XP";
+  const step = () => { k++; node.textContent = `+${Math.round(to * k / n)} XP`; if (k < n) setTimeout(step, 40); else Sound.acerto(); };
+  setTimeout(step, 900);
+}
 function stampSize(t) { return Math.min(6, 62 / Math.max(6, t.length)) + "cqw"; }  // cabe em qualquer carimbo
 function confetti() {
+  if (!fxOn()) return;
   const colors = ["#F5B700", "#E5483B", "#4F7BFF", "#2FBF71", "#fff"];
   for (let i = 0; i < 80; i++) {
-    const p = el("div", {class:"confetti", style:{left:Math.random() * 100 + "%", background:colors[i % 5],
+    const p = el("div", {class:"confetti" + (i % 6 === 0 ? " paper" : ""), style:{left:Math.random() * 100 + "%", background:colors[i % 5],
       animationDuration:(2 + Math.random() * 2.5) + "s", animationDelay:(Math.random() * .8) + "s"}});
     $("#fx").append(p); setTimeout(() => p.remove(), 5200);
   }
@@ -2285,6 +2366,7 @@ async function verdict(c) {
       el("button", {class:EP.final ? "bigbtn sec" : "bigbtn", textContent:"Voltar à carreira", onclick:quitGame}),
       el("button", {class:"bigbtn sec", textContent:"Jogar de novo", onclick:() => startEpisode(EP.id)})));
   $("#stage").append(box); setTimeout(() => Sound.carimbo(), 450);
+  stampLetters(box.querySelector(".stamp"), c.carimbo); countUp(box.querySelector(".xp"), r.xp || 0);
 }
 async function credits() {
   Sound.stopMusic(); Sound.startMusic("calma");
@@ -2406,6 +2488,7 @@ function toggleBtn(btn, key, prop) {
   sync();
 }
 toggleBtn($("#btn-sound"), "tribSom", "on"); toggleBtn($("#btn-music"), "tribMusica", "music");
+{ const b = $("#btn-fx"), sync = () => b.setAttribute("aria-pressed", String(fxOn())); b.onclick = () => { store.set("tribFx", !store.get("tribFx", true)); sync(); }; sync(); }
 
 const ROLE = {advogado:"💼 Defesa", promotor:"🏛️ Acusação", juiz:"⚖️ Juiz(a)"};
 const COVER = {advogado:{pele:"#F1C27D", cabelo:"topete", corCabelo:"#3b2414", roupa:"terno", corRoupa:"#1f2a44", gravata:"#8a1c1c"},
