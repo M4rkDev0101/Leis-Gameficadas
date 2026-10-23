@@ -315,7 +315,7 @@
   .pf-xp u { display:block; height:100%; background:linear-gradient(90deg, var(--amber-d), var(--amber-2)); text-decoration:none; }
   /* destaque (hero) */
   .hero { position:relative; margin:0; padding:0; border:0; border-radius:0; overflow:hidden; height:min(74vh, 700px); min-height:470px; background:var(--night); display:flex; align-items:flex-end; }
-  .hero-art { position:absolute; inset:0; }
+  .hero-art { position:absolute; inset:0; -webkit-mask-image:linear-gradient(180deg, #000 0%, #000 52%, transparent 96%); mask-image:linear-gradient(180deg, #000 0%, #000 52%, transparent 96%); }
   .hero-art .sky, .dtl-art .sky, .intro .sky { position:absolute; inset:0; }
   .hero-art .sky svg, .dtl-art .sky svg, .intro .sky svg { width:100%; height:100%; display:block; }
   .hero-figs, .dtl-figs { position:absolute; right:clamp(0px, 3vw, 70px); bottom:0; height:70%; display:flex; align-items:flex-end; animation:figin .9s var(--v-ease) both .15s; }
@@ -369,12 +369,13 @@
           transition:transform .22s var(--v-ease), box-shadow .22s; transform-origin:50% 50%; border-radius:10px; }
   .tile:first-child { transform-origin:0 50%; } .tile:last-child { transform-origin:100% 50%; }
   .tile .cover { height:auto; aspect-ratio:16 / 9; border-radius:10px; position:relative; overflow:hidden; background:#101826; box-shadow:0 0 0 1px rgba(255,255,255,.1); }
-  .tile .cover > svg { position:absolute; inset:0; width:100%; height:100%; }
-  .tile .fig-one { position:absolute; inset:auto 0 0 0; height:86%; display:flex; justify-content:center; }
+  .tile .cover > svg, .tile .bgw { position:absolute; inset:0; width:100%; height:100%; } .tile .bgw svg { width:100%; height:100%; display:block; }
+  .tile .fig-one { position:absolute; inset:auto 0 0 0; height:88%; display:flex; justify-content:flex-end; padding-right:7%; }
   .tile .fig-one svg { height:100%; width:auto; position:static; }
-  .tile .cover::after { content:""; position:absolute; inset:0; pointer-events:none; background:linear-gradient(0deg, rgba(5,8,13,.88) 0%, rgba(5,8,13,.1) 48%, rgba(5,8,13,.35) 100%); }
+  .tile .cover::after { content:""; position:absolute; inset:0; z-index:2; pointer-events:none; background:linear-gradient(90deg, rgba(5,8,13,.82) 0%, rgba(5,8,13,.35) 50%, rgba(5,8,13,0) 78%), linear-gradient(0deg, rgba(5,8,13,.7) 0%, rgba(5,8,13,0) 45%); }
+  .tile .tt::before { content:""; display:block; width:26px; height:2px; background:var(--v-gold); margin-bottom:6px; }
   .tile .num { position:absolute; top:8px; left:8px; z-index:3; font-family:var(--v-serif); font-weight:700; font-size:.78rem; letter-spacing:.1em; color:var(--v-on-gold); background:var(--amber); padding:1px 9px; border-radius:4px; }
-  .tile .tt { position:absolute; left:10px; right:10px; bottom:9px; z-index:3; font-weight:800; font-size:.98rem; line-height:1.2; text-shadow:0 2px 8px #000; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+  .tile .tt { position:absolute; left:12px; width:60%; bottom:12px; z-index:3; font-family:var(--v-serif); text-transform:uppercase; letter-spacing:.05em; font-weight:700; font-size:.98rem; line-height:1.15; text-shadow:0 2px 10px #000, 0 0 2px #000; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }
   .tile .st { text-transform:uppercase; letter-spacing:.06em; font-size:.66rem !important; position:absolute; top:8px; right:8px; z-index:3; display:grid; place-items:center; min-width:26px; height:26px; padding:0 8px; border-radius:99px; font-size:.74rem; font-weight:800; background:rgba(5,8,13,.78); color:var(--ivory); border:1px solid rgba(255,255,255,.2); }
   .tile .st.ok { background:var(--amber); color:var(--v-on-gold); border-color:var(--amber); }
   .tile .st svg { width:13px; height:13px; }
@@ -415,7 +416,7 @@
   .dtl-art { position:relative; aspect-ratio:21 / 8; min-height:190px; overflow:hidden; background:var(--night); }
   .dtl-art::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, var(--night-2) 0%, rgba(13,18,28,0) 55%), linear-gradient(90deg, rgba(11,13,17,.8), rgba(11,13,17,0) 55%); }
   .dtl-figs { height:96%; right:4%; z-index:1; }
-  .dtl-x { position:absolute; top:12px; right:12px; z-index:5; width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,.3); background:rgba(11,13,17,.85); color:var(--ivory); font-size:1.1rem; }
+  .dtl-x { position:absolute; top:12px; right:12px; z-index:5; width:44px; height:44px; border-radius:50%; border:1px solid rgba(255,255,255,.3); background:rgba(11,13,17,.85); color:var(--ivory); font-size:1.1rem; }
   .dtl-x:hover { background:rgba(58,72,100,.95); }
   .dtl-x:focus-visible, .dtl .btn:focus-visible { outline:2px solid var(--v-gold); outline-offset:2px; }
   .dtl-body { padding:0 clamp(18px, 4vw, 36px) 30px; margin-top:-44px; position:relative; z-index:2; }
@@ -471,7 +472,7 @@
     .tile { width:min(72vw, 290px); }
     .btn { padding:12px 20px; }
   }
-  .brand { font-family:var(--v-sans); letter-spacing:.18em; }
+  .brand { font-family:var(--v-sans); letter-spacing:.18em; min-height:44px; }
   .brand b::after { content:""; display:inline-block; width:18px; height:2px; background:var(--v-gold); vertical-align:middle; margin-left:8px; }
   .nav .iconbtn, .profile, .navlinks button, .navbtn { min-height:44px; }
   .tile.novo .st { }
@@ -490,6 +491,7 @@
     <button class="iconbtn" id="btn-music" aria-pressed="false" aria-label="Música">🎵<span class="tx"> Música</span></button>
     <button class="profile" id="btn-avatar" aria-label="Meu personagem"><span class="pf-av" id="pf-av"></span><span class="pf-tx"><b id="pf-name">Você</b><small id="pf-lv">&nbsp;</small><i class="pf-xp"><u id="pf-bar" style="width:0"></u></i></span></button>
   </header>
+  <main id="main">
   <section class="hero" id="hero" aria-label="Destaque">
     <div class="hero-art" id="hero-art"></div><div class="hero-scrim"></div>
     <div class="hero-body" id="hero-body"><div class="hero-tag"><span>Carregando…</span></div></div>
@@ -510,6 +512,7 @@
       </div>
     </div>
   </div>
+</main>
 </div>
 
 <div id="dtl" class="dtl-ov hidden"></div>
@@ -2384,7 +2387,12 @@ function tileOf(it, perfil, nextId) {
   const {ep, label, n} = it, status = ep.status || "disponivel", locked = status === "bloqueado", done = status === "concluido";
   const cover = el("div", {class:"cover"});
   const look = perfil.avatar ? {...COVER[ep.papel], ...perfil.avatar, roupa:COVER[ep.papel].roupa} : COVER[ep.papel];
-  lazyCover(cover, () => background(ROLE_PLAQUE[ep.papel]) + `<div class="fig-one">${characterSVG(look, ep.papel === "juiz" ? "confiante" : "apontando")}</div>`);
+  // capa de pôster: personagem-chave do caso (campo `capa` da carreira) sobre o local principal (investigação) ou o tribunal
+  lazyCover(cover, () => {
+    const k = ep.capa || {};
+    const bg = k.local ? locationBG(k.local) : background(k.pos || ROLE_PLAQUE[ep.papel]);
+    return `<div class="bgw">${bg}</div><div class="fig-one">${k.visual ? characterSVG(k.visual, k.expr || "normal") : characterSVG(look, "confiante")}</div>`;
+  });
   cover.append(el("span", {class:"num", textContent:n != null ? two(n) : "EXTRA"}));
   cover.append(el("span", {class:"tt", textContent:ep.titulo}));
   if (locked) cover.append(el("div", {class:"lockic", innerHTML:ICON.lock}));
@@ -2392,8 +2400,8 @@ function tileOf(it, perfil, nextId) {
   else if (ep.salvo) cover.append(el("span", {class:"st", textContent:"Em andamento"}));
   else if (ep.id === nextId) cover.append(el("span", {class:"st", textContent:"Novo"}));
   if (done) cover.append(el("div", {class:"bar"}, el("i", {style:{width:"100%"}})));
-  else if (ep.salvo) cover.append(el("div", {class:"bar"}, el("i", {style:{width:"45%"}})));
-  if (!locked) cover.append(el("div", {class:"syn"}, el("b", {textContent:(ep.salvo ? "▶ Continuar" : done ? "↺ Jogar de novo" : "▶ Jogar") + " · detalhes"}), el("span", {textContent:ep.sinopse})));
+  else if (ep.salvo) cover.append(el("div", {class:"bar", role:"img", "aria-label":`${Math.round((ep.progresso || .05) * 100)}% percorrido`}, el("i", {style:{width:Math.round(Math.max(.05, ep.progresso || .05) * 100) + "%"}})));
+  if (!locked) cover.append(el("div", {class:"syn", "aria-hidden":"true"}, el("b", {textContent:(ep.salvo ? "▶ Continuar" : done ? "↺ Jogar de novo" : "▶ Jogar") + " · detalhes"}), el("span", {textContent:ep.sinopse})));
   const state = locked ? "bloqueado" : done ? "concluído" : ep.salvo ? "em andamento" : "disponível";
   const tile = el("button", {class:"tile" + (locked ? " locked" : "") + (ep.id === nextId ? " next" : ""), "data-id":ep.id, tabindex:"-1",
     "aria-label":`${label}: ${ep.titulo}. ${ROLE[ep.papel].replace(/^\S+ /, "")}, cerca de ${Math.round(ep.minutos || 0)} minutos, ${state}.`,
@@ -2402,8 +2410,8 @@ function tileOf(it, perfil, nextId) {
       ep.melhor != null ? el("span", {textContent:`· melhor ${Math.round(ep.melhor * 100)}%`}) : null));
   return tile;
 }
-function rail(tiles, cls = "") {
-  const r = el("div", {class:"rail " + cls, role: cls ? "list" : "group"}, ...tiles);
+function rail(tiles, cls = "", name = "Episódios") {
+  const r = el("div", {class:"rail " + cls, role: cls ? "list" : "group", "aria-label":name}, ...tiles);
   const by = (d) => () => r.scrollBy({left:d * r.clientWidth * .85, behavior:REDUCED() ? "auto" : "smooth"});
   const wrap = el("div", {class:"rail-wrap"}, r,
     el("button", {class:"rail-btn l", "aria-hidden":"true", tabindex:"-1", textContent:"‹", onclick:by(-1)}),
@@ -2546,19 +2554,19 @@ async function loadMenu() {
       el("div", {class:"pbar", role:"img", "aria-label":`${pct}% concluído`}, el("i", {style:{width:pct + "%"}})))];
     const head = (eyebrow, title, extra, desc) => el("div", {class:"s-head"}, el("span", {class:"eyebrow", textContent:eyebrow}), el("h2", {textContent:title}), ...extra, desc ? el("p", {textContent:desc}) : null);
     const saved = flat.filter(it => it.ep.salvo);
-    if (saved.length) out.push(el("section", {class:"season", "aria-label":"Continuar"}, head("Em andamento", "Continue de onde parou", []), rail(saved.map(it => tileOf(it, perfil, nextId)))));
+    if (saved.length) out.push(el("section", {class:"season", "aria-label":"Continuar"}, head("Retome", "Casos em andamento", []), rail(saved.map(it => tileOf(it, perfil, nextId)), "", "Casos em andamento")));
     let prevDone = true;
     for (const ato of car.atos) {
       const locked = !prevDone || !ato.episodios.length, items = flat.filter(it => it.ato === ato), doneN = ato.episodios.filter(e => e.status === "concluido").length;
       const sec = el("section", {class:"season" + (locked ? " locked" : ""), id:"ato-" + ato.numero, "aria-label":`Temporada ${ato.numero}: ${ato.titulo}`},
         head(`Temporada ${ato.numero}`, ato.titulo, [el("span", {class:"chip " + ato.papel, textContent:ato.cargo}), el("span", {class:"cnt", textContent:ato.episodios.length ? `${doneN} de ${ato.episodios.length} concluídos` : ""})], ato.sinopse));
-      sec.append(ato.episodios.length ? rail(items.map(it => tileOf(it, perfil, nextId))) : el("div", {class:"soon", textContent:"Em produção: novos casos chegam nas próximas atualizações do jogo."}));
+      sec.append(ato.episodios.length ? rail(items.map(it => tileOf(it, perfil, nextId)), "", `Temporada ${ato.numero}: ${ato.titulo}`) : el("div", {class:"soon", textContent:"Em produção: novos casos chegam nas próximas atualizações do jogo."}));
       out.push(sec);
       prevDone = prevDone && ato.episodios.length > 0 && ato.episodios.every(e => e.status === "concluido");
     }
     if (car.avulsos.length) out.push(el("section", {class:"season", id:"avulsos", "aria-label":"Casos avulsos"},
       head("Extra", "Avulsos", [], "Fora da campanha, sempre liberados: treine os papéis de promotor(a) e juiz(a)."),
-      rail(flat.filter(it => !it.ato).map(it => tileOf(it, perfil, nextId)))));
+      rail(flat.filter(it => !it.ato).map(it => tileOf(it, perfil, nextId)), "", "Casos avulsos")));
     const achs = car.conquistas || [];
     out.push(el("section", {class:"season", id:"achs", "aria-label":"Conquistas"}, head("Troféus", "Conquistas", [el("span", {class:"cnt", textContent:`${achs.filter(a => a.ok).length} de ${achs.length}`})]),
       el("div", {class:"rail-wrap"}, el("div", {class:"rail achrail", role:"list"}, ...achs.map(a => el("div", {class:"ach" + (a.ok ? "" : " off"), role:"listitem"},

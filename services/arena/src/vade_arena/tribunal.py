@@ -73,7 +73,50 @@ def estimate_minutes(ep: dict) -> float:
     return round(words / 170 + decisions * 25 / 60 + spots * 40 / 60, 1)
 
 
-def career(data: dict, won: dict[str, float], saves: set[str]) -> dict:
+def cover_info(data: dict, ep: dict) -> dict:
+    """Dados leves para a capa do menu: personagem-chave do caso, expressão típica, local principal e nº de cenas."""
+    chars, pos = data.get("personagens", {}), ep.get("posicoes", {})
+    score: dict[str, float] = {}
+    exprs: dict[str, list[str]] = {}
+    local = None
+    for c in ep["cenas"].values():
+        if c["tipo"] == "investigar" and c.get("local") and not local:
+            local = c["local"]
+        w = 3 if c["tipo"] == "depoimento" else 1
+        for f in _falas(c):
+            q = f.get("q")
+            if q in chars and q not in ("voce", "narrador"):
+                score[q] = score.get(q, 0) + w
+                exprs.setdefault(q, []).append(f.get("e", "normal"))
+    for q in pos:
+        if q in chars and q not in ("voce", "narrador"):
+            score[q] = score.get(q, 0) + {"testemunha": 4, "defesa": 2, "acusacao": 2, "juiz": -6}.get(pos[q], 0)
+    cands = [q for q in score if chars[q].get("visual")]
+    if not cands:
+        return {"cenas": len(ep["cenas"]), "local": local, "ordem": list(ep["cenas"])}
+    q = max(cands, key=lambda k: (score[k], k))
+    emot = [e for e in exprs.get(q, []) if e != "normal"]
+    # "nervoso" é a expressão padrão das testemunhas pressionadas: conta pela metade para as capas não ficarem todas iguais
+    expr = max(set(emot), key=lambda e: (emot.count(e) * (.5 if e == "nervoso" else 1), e)) if emot else "normal"
+    return {"q": q, "nome": chars[q].get("nome"), "visual": chars[q]["visual"], "expr": expr, "pos": pos.get(q, "testemunha"),
+            "local": local, "cenas": len(ep["cenas"]), "ordem": list(ep["cenas"])}
+
+
+def _cover(data: dict, ep: dict) -> dict:
+    c = cover_info(data, ep)
+    c.pop("ordem", None)
+    return c
+
+
+def _progress(ep: dict, scene: str | None) -> float | None:
+    """Fração do caso já percorrida, pela posição da cena salva na ordem do roteiro (None sem jogo salvo)."""
+    if not scene:
+        return None
+    order = list(ep["cenas"])
+    return round((order.index(scene) + 1) / len(order), 3) if scene in order else None
+
+
+def career(data: dict, won: dict[str, float], saves: set[str], save_scenes: dict[str, str] | None = None) -> dict:
     """Atos e episódios com estado: bloqueado, disponível (ou com jogo salvo) e concluído."""
     eps = sorted((e for e in data["episodios"] if e.get("ato")), key=lambda e: (e["ato"], e.get("ordem", 0)))
     out, unlocked, total_min, done_min = [], True, 0.0, 0.0
@@ -88,9 +131,11 @@ def career(data: dict, won: dict[str, float], saves: set[str]) -> dict:
                 done_min += minutes
             elif status == "disponivel":
                 unlocked = False  # só o próximo caso fica liberado
-            items.append({**summary(ep), "status": status, "melhor": best, "salvo": ep["id"] in saves, "minutos": minutes})
+            items.append({**summary(ep), "status": status, "melhor": best, "salvo": ep["id"] in saves, "minutos": minutes,
+                          "capa": _cover(data, ep), "progresso": _progress(ep, (save_scenes or {}).get(ep["id"]))})
         out.append({**ato, "episodios": items})
-    avulsos = [{**summary(e), "minutos": estimate_minutes(e), "melhor": won.get(e["id"]), "salvo": e["id"] in saves}
+    avulsos = [{**summary(e), "minutos": estimate_minutes(e), "melhor": won.get(e["id"]), "salvo": e["id"] in saves,
+                "capa": _cover(data, e), "progresso": _progress(e, (save_scenes or {}).get(e["id"]))}
                for e in data["episodios"] if e.get("avulso")]
     return {"atos": out, "avulsos": avulsos, "horas_total": round(total_min / 60, 1), "horas_jogadas": round(done_min / 60, 1),
             "concluidos": sum(1 for a in out for e in a["episodios"] if e["status"] == "concluido"),
