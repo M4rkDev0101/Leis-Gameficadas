@@ -309,7 +309,8 @@ class UI:
             if abs(diff) > 0.05:
                 self.shown += diff * 0.25 if abs(diff) > 0.4 else diff
                 self._draw_bar()
-            self.root.after(40, self._tick)
+            animating = self.state == "run" or abs(self.pct - self.shown) > 0.05
+            self.root.after(40 if animating else 250, self._tick)   # parado: não redesenha 25x por segundo
         except self.tk.TclError:
             pass  # janela fechada
 
@@ -507,7 +508,7 @@ def start_server(ui: UI) -> str:
     upd = Updater(ACERVO, CATALOGO)
     srv = make_server(upd, Arena(str(CATALOGO), str(JOGADOR)), port)
     threading.Thread(target=srv.serve_forever, daemon=True).start()
-    start_auto_check(upd, 30, auto_update=True)  # leis novas entram sozinhas a cada 30 min
+    start_auto_check(upd, 360, auto_update=True, first_delay=10, low_priority=True)  # leis novas entram sozinhas, a cada 6 h (1ª verificação após 10 min), com prioridade baixa
     return f"http://127.0.0.1:{port}/tribunal"
 
 
