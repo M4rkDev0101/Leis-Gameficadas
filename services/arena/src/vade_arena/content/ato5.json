@@ -19,6 +19,36 @@
    "personalidade": "calculista, técnico, discreto, estratégico",
    "motivacao": "Livrar Henrique da pena.",
    "segredo": "Advogado de Henrique Altavista e herdeiro do estilo de Brandão, mas mais calculado e menos teatral. Conduz a defesa com preliminares, laudos particulares e um olhar atento às brechas do processo. Sabe que a amizade de Brandão com o delator é uma tese que dói. Motivação oculta: Livrar Henrique da pena e derrubar o juiz se for preciso."
+  },
+  "twhumberto": {
+   "nome": "Humberto Salles",
+   "cargo": "Testemunha surpresa · engenheiro metalúrgico",
+   "voz": 260,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#777777",
+    "roupa": "terno",
+    "corRoupa": "#1b2631",
+    "gravata": "#c0392b",
+    "oculos": true,
+    "barba": true
+   }
+  },
+  "twedson": {
+   "nome": "Edson Valle",
+   "cargo": "Testemunha surpresa · preso por estelionato",
+   "voz": 310,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "careca",
+    "corCabelo": "#222222",
+    "roupa": "casual",
+    "corRoupa": "#d35400",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
   }
  },
  "episodios": [
@@ -1139,7 +1169,8 @@
     "rafael": "testemunha",
     "livia": "testemunha",
     "dani": "escritorio",
-    "valadares": "testemunha"
+    "valadares": "testemunha",
+    "twedson": "testemunha"
    },
    "provas": [
     {
@@ -1225,6 +1256,38 @@
      "nome": "CPP, art. 155: Livre convencimento",
      "chave": "CPP#art-155",
      "trecho": "O juiz formará sua convicção pela livre apreciação da prova produzida em contraditório judicial"
+    },
+    {
+     "id": "cp342",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 342 — Falso testemunho",
+     "chave": "CP#art-342",
+     "trecho": "Fazer afirmação falsa, ou negar ou calar a verdade, como testemunha"
+    },
+    {
+     "id": "cpp209",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 209 — Testemunhas do juiz",
+     "chave": "CPP#art-209",
+     "trecho": "poderá ouvir outras testemunhas, além das indicadas pelas partes"
+    },
+    {
+     "id": "cpp229",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 229 — Acareação",
+     "chave": "CPP#art-229",
+     "trecho": "A acareação será admitida entre acusados, entre acusado e testemunha, entre testemunhas"
+    },
+    {
+     "id": "cpp207",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 207 — Proibidos de depor",
+     "chave": "CPP#art-207",
+     "trecho": "São proibidas de depor as pessoas que, em razão de função, ministério, ofício ou profissão, devam guardar segredo"
     }
    ],
    "inicio": "c1",
@@ -2105,6 +2168,514 @@
        ]
       }
      ],
+     "proxima": "e1"
+    },
+    "e1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Excelência, o oficial de justiça acaba de me informar: a defesa de Henrique requer a oitiva de uma testemunha não arrolada, nos termos do art. 209 do CPP. Edson Valle, preso por estelionato, dividiu cela com Rafael Duarte por três meses."
+      },
+      {
+       "q": "a5pires",
+       "e": "confiante",
+       "t": "Excelência, o senhor Edson tem em mãos a verdade sobre o colaborador. Ele diz que Rafael confessou ter inventado tudo."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Excelência, o MP contradita a testemunha: é um estelionatário condenado, e quer benefícios na pena!"
+      },
+      {
+       "q": "brandao",
+       "e": "feliz",
+       "t": "Quando os réus falam, ninguém acredita. Quando os presos falam, de repente é bom ouvir."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Um preso por estelionato que sabe o segredo do colaborador. Isso é notícia ou é encomenda?)"
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "cp342",
+        "cpp209",
+        "cpp229",
+        "cpp207"
+       ]
+      }
+     ],
+     "proxima": "e1r"
+    },
+    "e1r": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "O colaborador é desmentido",
+     "ajuste": -2,
+     "piso": 2,
+     "falas": [
+      {
+       "q": "a5pires",
+       "e": "confiante",
+       "t": "A defesa chama Edson Valle."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Eu terminava a instrução do dia. Agora preciso começar outra.)"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "e2"
+    },
+    "e2": {
+     "tipo": "decidir",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "PROTESTO! Edson Valle foi condenado por estelionato, é indigno de fé! O MP pede que sua oitiva seja indeferida!",
+       "fx": "protesto"
+      },
+      {
+       "q": "a5pires",
+       "e": "apontando",
+       "t": "Excelência, a lei só afasta a testemunha nos casos dos arts. 207 e 208 do CPP. Condenação por estelionato não está entre eles!"
+      }
+     ],
+     "pergunta": "O MP pede que a testemunha seja impedida de depor por ser estelionatária. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-214",
+       "trecho": "só excluirá a testemunha ou não lhe deferirá compromisso nos casos previstos nos arts. 207 e 208"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Indefiro. A contradita será consignada, mas o art. 214 só me permite excluir a testemunha nos casos dos arts. 207 e 208, e não é esse o caso. A credibilidade do senhor Edson será valorada ao final.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Então o Ministério Público vai reperguntar com todo o cuidado."
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a contradita não exclui a testemunha fora dos arts. 207 e 208. Registre e valore depois."
+      }
+     ],
+     "proxima": "e3"
+    },
+    "e3": {
+     "tipo": "intuicao",
+     "local": "tribunal",
+     "pergunta": "Edson Valle conta o que ouviu ou o que lhe mandaram contar?",
+     "pistas": [
+      "Fala com muita precisão sobre datas, mas sem nenhum detalhe do dia a dia da cela.",
+      "Já abre a boca antes de a pergunta terminar, como quem tem pressa de chegar à parte importante.",
+      "Olha para Brandão, no fundo da sala, quando fala o nome 'Rafael'."
+     ],
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Preso há dois anos, mas sabe nomes e horários de um colaborador que estava em ala protegida.)"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Trouxe uma versão encomendada, para desacreditar o colaborador.",
+       "certa": true
+      },
+      {
+       "t": "Conta o que de fato ouviu, por consciência."
+      }
+     ],
+     "revelacao": [
+      {
+       "q": "narrador",
+       "t": "Na ficha do presídio, o nome de Edson Valle consta da lista de visitas de um advogado: A. Brandão Advocacia."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Quando a história tem pressa, geralmente tem dono."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "Deixei a sinceridade aparente me enganar."
+      }
+     ],
+     "bonus": 1,
+     "proxima": "e4"
+    },
+    "e4": {
+     "tipo": "depoimento",
+     "testemunha": "twedson",
+     "titulo": "O colega de cela",
+     "intro": [
+      {
+       "q": "twedson",
+       "e": "confiante",
+       "t": "Edson Valle. Errei na vida, mas não minto, doutor(a)."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Dividi cela com o Rafael por três meses. Ele me contou tudo, de coração.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Em que ala?"
+        },
+        {
+         "q": "twedson",
+         "e": "confiante",
+         "t": "Na ala dos presos comuns."
+        }
+       ]
+      },
+      {
+       "t": "Ele me disse que a planilha de pagamentos foi montada por ele, no computador dele, só para incriminar o doutor Brandão.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Montada no computador dele?"
+        },
+        {
+         "q": "twedson",
+         "e": "confiante",
+         "t": "Montou sozinho. Disse que ninguém ia conferir."
+        }
+       ]
+      },
+      {
+       "t": "A única verdade que ele contou a vocês foi que entregou o pen drive: foi dia 8, e não dia 3.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Ele lhe disse isso?"
+        },
+        {
+         "q": "twedson",
+         "e": "nervoso",
+         "t": "Disse. Riu da juíza."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "planilha"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Montada por Rafael, no computador dele? A planilha de pagamentos foi obtida por busca e apreensão no SERVIDOR DA ALTAVISTA e periciada pelo Dr. Kenji, sem nenhuma relação com a colaboração! Dezoito pagamentos a empresas de fachada, de fevereiro a junho. Rafael estava preso quando a maioria deles ocorreu!",
+       "fx": "protesto"
+      },
+      {
+       "q": "twedson",
+       "e": "chocado",
+       "t": "Ele… ele disse que tinha mexido na planilha…",
+       "fx": "tremor"
+      },
+      {
+       "q": "lacerda",
+       "e": "apontando",
+       "t": "Mexer em arquivo de servidor alheio, de dentro de uma cela?",
+       "fx": "bater"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação."
+      }
+     ],
+     "proxima": "e5",
+     "dica": [
+      "A testemunha afirma que a planilha foi montada por Rafael.",
+      "De onde veio a planilha, segundo os autos?"
+     ]
+    },
+    "e5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twedson",
+       "e": "nervoso",
+       "t": "Então foi outra coisa. O contrato social da Altavista Serviços. Aquele que a doutora Lívia assinou. Rafael me disse que mandou falsificar a assinatura dela, para incriminá-la."
+      },
+      {
+       "q": "livia",
+       "e": "chocado",
+       "t": "Excelência! Eu assinei aquele contrato. Eu estou aqui para dizer que assinei.",
+       "fx": "tremor"
+      },
+      {
+       "q": "a5pires",
+       "e": "nervoso",
+       "t": "Excelência, a testemunha tem direito a uma segunda versão."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(A cada versão, a mentira troca de documento. Mas os documentos ficam no mesmo lugar.)"
+      }
+     ],
+     "proxima": "e6"
+    },
+    "e6": {
+     "tipo": "depoimento",
+     "testemunha": "twedson",
+     "titulo": "O contrato social",
+     "intro": [
+      {
+       "q": "twedson",
+       "e": "nervoso",
+       "t": "Eu só repito o que ouvi, doutor(a)."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O contrato social foi falsificado por ordem do Rafael, depois que a doutora Lívia saiu da defesa.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Falsificado quando?"
+        },
+        {
+         "q": "twedson",
+         "e": "nervoso",
+         "t": "Depois da prisão dele."
+        }
+       ]
+      },
+      {
+       "t": "Rafael é um homem sem escrúpulos, que sacrificou até a amiga mais próxima.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Amiga? Ele disse o nome dela?"
+        },
+        {
+         "q": "twedson",
+         "e": "nervoso",
+         "t": "Disse 'a Lívia'."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca vi o doutor Brandão na vida.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nunca?"
+        },
+        {
+         "q": "twedson",
+         "e": "confiante",
+         "t": "Nunca."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "contrato"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Falsificado depois da prisão? O contrato social da Altavista Serviços traz uma alteração de 2 de fevereiro, REGISTRADA EM CARTÓRIO, assinada pela Dra. Lívia Sampaio. Um registro de cartório não se falsifica de dentro de uma cela!"
+      },
+      {
+       "q": "twedson",
+       "e": "chocado",
+       "t": "Eu… eu só sei o que me contaram…",
+       "fx": "tremor"
+      },
+      {
+       "q": "lacerda",
+       "e": "apontando",
+       "t": "Quem lhe contou, senhor Edson?",
+       "fx": "bater"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Esse documento não contradiz essa afirmação."
+      }
+     ],
+     "proxima": "e7",
+     "dica": [
+      "A testemunha afirma que o contrato foi falsificado depois da prisão.",
+      "Onde está registrada a alteração contratual?"
+     ]
+    },
+    "e7": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Excelência, Rafael Duarte e Edson Valle divergem frontalmente. O que o juízo faz?"
+      }
+     ],
+     "pergunta": "Como resolver a divergência entre as declarações de Rafael e de Edson?",
+     "opcoes": [
+      {
+       "t": "Decidir logo pela palavra de Rafael, porque ele tem um acordo homologado.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "(sussurrando) Excelência, ninguém é favorecido pelo acordo. O art. 155 manda valorar a prova em contraditório."
+        }
+       ]
+      },
+      {
+       "t": "Designar acareação entre os dois (art. 229) e confrontar ambos com a planilha, o contrato e o protocolo.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Designo a acareação entre Rafael Duarte e Edson Valle, nos termos do art. 229 do CPP, porque divergem em fatos relevantes. Reconduzam o senhor Rafael."
+        },
+        {
+         "q": "a5pires",
+         "e": "nervoso",
+         "t": "Excelência, a defesa protesta! O colaborador já depôs!"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-229",
+         "trecho": "A acareação será admitida entre acusados, entre acusado e testemunha, entre testemunhas"
+        }
+       ]
+      },
+      {
+       "t": "Excluir o depoimento de Edson sem justificar, para poupar tempo.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "brandao",
+         "e": "feliz",
+         "t": "Excelência, isso é cerceamento de defesa. Obrigado pelo recurso."
+        }
+       ]
+      }
+     ],
+     "proxima": "e8"
+    },
+    "e8": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Rafael Duarte é reconduzido à sala. Mais magro, grisalho. Não olha para Brandão. Olha para Edson, e depois para você."
+      },
+      {
+       "q": "rafael",
+       "e": "triste",
+       "t": "Edson, eu nunca falei com você por mais de cinco minutos. Eu estava na ala protegida. Você sabe quem é o único que me visitou lá? Os advogados do doutor Brandão."
+      },
+      {
+       "q": "twedson",
+       "e": "nervoso",
+       "t": "Eu… eu fui visitado pelo doutor Brandão, é verdade. Ele disse que, se eu contasse isso, eu ganhava um habeas corpus. Eu estou preso há dois anos, doutor(a)!"
+      },
+      {
+       "q": "brandao",
+       "e": "bravo",
+       "t": "Excelência, o preso está inventando por desespero! Eu nunca estive no presídio!",
+       "fx": "bater"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "A ficha de visitas do presídio indica o contrário, doutor Brandão. Será juntada aos autos. Edson Valle, o senhor responderá por falso testemunho (CP, art. 342). Doutor Brandão, o juízo oficiará à OAB e ao Ministério Público quanto ao art. 343."
+      },
+      {
+       "q": "twedson",
+       "e": "triste",
+       "t": "Ele disse mais uma coisa. Disse que, se o Rafael cair, a carta nunca aparece. Eu não sei de carta nenhuma."
+      },
+      {
+       "q": "rafael",
+       "e": "pensativo",
+       "t": "Hoje não, Excelência. Hoje eu apenas confirmo: tudo o que eu disse à Justiça é verdade. O resto eu devo a alguém que já não pode cobrar."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(A carta de novo. E Rafael sabe de algo. Eu estou chegando perto, e a Altavista também.)"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Reabertos os trabalhos de onde parei. Esta instrução não termina enquanto houver quem pague por mentiras.",
+       "fx": "martelo"
+      }
+     ],
      "proxima": "c17"
     },
     "c17": {
@@ -2159,7 +2730,8 @@
     "kenji": "testemunha",
     "marta": "testemunha",
     "ronaldo": "testemunha",
-    "dani": "escritorio"
+    "dani": "escritorio",
+    "twhumberto": "testemunha"
    },
    "provas": [
     {
@@ -2244,6 +2816,22 @@
      "nome": "CPP, art. 413: Pronúncia",
      "chave": "CPP#art-413",
      "trecho": "O juiz, fundamentadamente, pronunciará o acusado, se convencido da materialidade do fato e da existência de indícios suficientes de autoria ou de participação"
+    },
+    {
+     "id": "cp342",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 342 — Falso testemunho",
+     "chave": "CP#art-342",
+     "trecho": "Fazer afirmação falsa, ou negar ou calar a verdade, como testemunha"
+    },
+    {
+     "id": "cpp209",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 209 — Testemunhas do juiz",
+     "chave": "CPP#art-209",
+     "trecho": "poderá ouvir outras testemunhas, além das indicadas pelas partes"
     }
    ],
    "inicio": "c1",
@@ -2907,6 +3495,505 @@
        "q": "voce",
        "e": "pensativo",
        "t": "Essa prova não contradiz o que ele afirmou."
+      }
+     ],
+     "proxima": "k1"
+    },
+    "k1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "A Secretaria já preparava a ata de encerramento da instrução quando a porta lateral se abriu."
+      },
+      {
+       "q": "a5pires",
+       "e": "confiante",
+       "t": "Excelência, a defesa de Henrique Altavista requer, com base nos arts. 209 e 156, II, do CPP, a oitiva do engenheiro metalúrgico Humberto Salles, que revisou todo o material e discorda frontalmente do laudo oficial."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "PROTESTO! O Ministério Público nunca ouviu falar desse senhor! Ele não consta do rol de testemunhas nem da lista de assistentes técnicos!",
+       "fx": "protesto"
+      },
+      {
+       "q": "brandao",
+       "e": "confiante",
+       "t": "Excelência, a defesa quer apenas que a verdade apareça, e que o juízo não se esconda atrás de um perito de informática."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, ele é doutor em metalurgia, tem currículo extenso, e chegou com a mala cheia de laudos. Parece pronto demais."
+      },
+      {
+       "q": "kenji",
+       "e": "nervoso",
+       "t": "Excelência, conheço esse nome. Humberto Salles já foi derrubado em juízo por outro caso..."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "cp342",
+        "cpp209"
+       ]
+      }
+     ],
+     "proxima": "k1r"
+    },
+    "k1r": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "O laudo oficial é atacado",
+     "ajuste": -2,
+     "piso": 2,
+     "falas": [
+      {
+       "q": "a5pires",
+       "e": "confiante",
+       "t": "A defesa chama Humberto Salles."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Quando o caso parece resolvido, a Altavista traz um especialista que ninguém conhece. A pergunta é: de quem ele é amigo?)"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "k2"
+    },
+    "k2": {
+     "tipo": "decidir",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Excelência, o Ministério Público protesta: instrução encerrada, testemunha fora do rol!",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O MP protesta contra a oitiva do engenheiro. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-156/inc-ii",
+       "trecho": "determinar, no curso da instrução, ou antes de proferir sentença, a realização de diligências para dirimir dúvida sobre ponto relevante"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Indefiro o protesto. O art. 156, II, me permite determinar diligências para dirimir dúvida sobre ponto relevante antes de sentenciar. Ouvirei o engenheiro, com contraditório amplo para o Ministério Público.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Então o Ministério Público também vai se preparar, Excelência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, indeferir a oitiva seria cerceamento de defesa. Ouça-o, e depois confronte-o com os laudos."
+      }
+     ],
+     "proxima": "k3"
+    },
+    "k3": {
+     "tipo": "intuicao",
+     "local": "tribunal",
+     "pergunta": "O Dr. Humberto Salles fala por convicção técnica ou por encomenda?",
+     "pistas": [
+      "Cita normas técnicas de cabeça, mas confunde o nome do laboratório que fez o ensaio oficial.",
+      "Chegou com uma pasta inteira de laudos, todos escritos por ele mesmo.",
+      "Evita olhar para Marta Queiroz, a engenheira de segurança, que o encara desde a entrada."
+     ],
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Seu currículo é impecável. O resto, não.)"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Fala por encomenda e sabe o que quer provar.",
+       "certa": true
+      },
+      {
+       "t": "Fala por convicção técnica: é um especialista isento."
+      }
+     ],
+     "revelacao": [
+      {
+       "q": "narrador",
+       "t": "Quando o oficial recolhe a pasta, um recibo de honorários cai no chão: R$ 80 mil, pagos por uma firma em nome de A. Brandão Advocacia."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Quem tem especialistas demais para um único laudo geralmente tem um cliente."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "A credencial me cegou por um momento."
+      }
+     ],
+     "bonus": 1,
+     "proxima": "k4"
+    },
+    "k4": {
+     "tipo": "depoimento",
+     "testemunha": "twhumberto",
+     "titulo": "O engenheiro da defesa",
+     "intro": [
+      {
+       "q": "twhumberto",
+       "e": "confiante",
+       "t": "Humberto Salles, engenheiro metalúrgico, doutor, trinta anos de laboratório. Minha única lealdade é com o aço."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O laudo oficial é nulo. A barra foi colhida por uma engenheira de segurança, e não por um perito.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Colhida por quem?"
+        },
+        {
+         "q": "twhumberto",
+         "e": "confiante",
+         "t": "Pela Dra. Marta, sem testemunhas."
+        }
+       ]
+      },
+      {
+       "t": "Mais grave: não há contraprova. Sem contraprova lacrada, a cadeia de custódia é um colar quebrado.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Tem certeza de que não há contraprova?"
+        },
+        {
+         "q": "twhumberto",
+         "e": "confiante",
+         "t": "Absoluta. Examinei todos os autos."
+        }
+       ]
+      },
+      {
+       "t": "As barras que eu mediu há duas semanas, no canteiro, têm 10 mm exatos. É o que está no projeto.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Em que parte do canteiro?"
+        },
+        {
+         "q": "twhumberto",
+         "e": "confiante",
+         "t": "Em vários pontos da laje."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "amostra"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Não há contraprova? O termo de coleta registra, com todas as letras, uma SEGUNDA barra de contraprova, lacrada pelo próprio perito! O senhor 'examinou todos os autos' e não viu o termo de coleta?",
+       "fx": "protesto"
+      },
+      {
+       "q": "twhumberto",
+       "e": "chocado",
+       "t": "A contraprova… existe um registro, mas o número do lacre é outro!",
+       "fx": "tremor"
+      },
+      {
+       "q": "kenji",
+       "e": "apontando",
+       "t": "O erro de digitação do lacre já foi corrigido no próprio termo, Excelência.",
+       "fx": "bater"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação."
+      }
+     ],
+     "proxima": "k5",
+     "dica": [
+      "O engenheiro afirma que não existe contraprova.",
+      "O que o termo de coleta registra sobre uma segunda barra?"
+     ]
+    },
+    "k5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twhumberto",
+       "e": "nervoso",
+       "t": "Seja. A contraprova existe, mas o laudo oficial parte de um aço que nem chegou a ser entregue com 8 mm. A nota fiscal e o romaneio de entrega da Altavista dizem outra coisa."
+      },
+      {
+       "q": "a5pires",
+       "e": "confiante",
+       "t": "Excelência, o engenheiro vai demonstrar que a fraude, se existe, foi do fornecedor, e não da Altavista."
+      },
+      {
+       "q": "marta",
+       "e": "bravo",
+       "t": "Isso é mentira! Eu estava lá! Eu conferi a descarga ao lado do Paulo!"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Ele mudou o alvo: agora o aço é do fornecedor. Se eu aceitar que a nota e o romaneio dizem a mesma coisa, a Altavista escapa.)"
+      }
+     ],
+     "proxima": "k6"
+    },
+    "k6": {
+     "tipo": "depoimento",
+     "testemunha": "twhumberto",
+     "titulo": "A nota e o romaneio",
+     "intro": [
+      {
+       "q": "twhumberto",
+       "e": "confiante",
+       "t": "Eu conferi os documentos pessoalmente. Basta ler."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "A nota fiscal e o romaneio de entrega são idênticos: aço de 10 mm, nas duas pontas. Eu os li no escritório da Altavista.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Os dois dizem 10 mm?"
+        },
+        {
+         "q": "twhumberto",
+         "e": "confiante",
+         "t": "Os dois. Sem diferença nenhuma."
+        }
+       ]
+      },
+      {
+       "t": "O diário de obra de Paulo Seixas é um caderno pessoal, sem valor técnico.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Sem valor técnico?"
+        },
+        {
+         "q": "twhumberto",
+         "e": "nervoso",
+         "t": "Anotações de um engenheiro cansado."
+        }
+       ]
+      },
+      {
+       "t": "Nenhum alarme foi disparado antes da morte do Paulo, o que mostra que ninguém conhecia o problema.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Ninguém conhecia?"
+        },
+        {
+         "q": "twhumberto",
+         "e": "confiante",
+         "t": "Ninguém."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "notaaco"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Idênticos? A nota fiscal mostra que a Altavista PAGOU por aço de 10 mm, R$ 3,1 milhões. O romaneio de entrega, conferido no portão dos fundos, registra aço de 8 mm. Os documentos são DIFERENTES, senhor Humberto, e a diferença foi desviada para a Altavista Serviços!"
+      },
+      {
+       "q": "twhumberto",
+       "e": "chocado",
+       "t": "Eu li… eu li uma versão anterior…",
+       "fx": "tremor"
+      },
+      {
+       "q": "marta",
+       "e": "apontando",
+       "t": "Anterior a quê? Os dois documentos são do mesmo dia!",
+       "fx": "bater"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Esses documentos não contradizem essa afirmação."
+      }
+     ],
+     "proxima": "k7",
+     "dica": [
+      "O engenheiro afirma que a nota fiscal e o romaneio dizem o mesmo.",
+      "Compare o que foi pago com o que foi entregue."
+     ]
+    },
+    "k7": {
+     "tipo": "argumento",
+     "local": "tribunal",
+     "alvo": "O parecer do Dr. Humberto Salles contraria o laudo de Kenji e, por isso, obriga o juízo a duvidar da perícia oficial.",
+     "pergunta": "Que dispositivo permite ao juiz aceitar ou rejeitar o laudo, no todo ou em parte?",
+     "falas": [
+      {
+       "q": "a5pires",
+       "e": "confiante",
+       "t": "Excelência, são dois especialistas e duas conclusões. Na dúvida, o juízo deve preferir o réu."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "O art. 563 do CPP, que veda a nulidade sem prejuízo.",
+       "dispositivo": "CPP#art-563",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O art. 563 trata de nulidade sem prejuízo. Não é o dispositivo que o caso pede agora."
+        }
+       ]
+      },
+      {
+       "t": "O art. 182 do CPP: o juiz não fica adstrito ao laudo, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte.",
+       "dispositivo": "CPP#art-182",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "O art. 182: o juiz não fica adstrito ao laudo. Aceito o de Kenji, ensaiado em laboratório credenciado e sustentado por contraprova, e rejeito o do doutor Humberto, que se desfaz diante de documentos nos autos."
+        }
+       ]
+      },
+      {
+       "t": "O art. 158-A do CPP, que impõe a cadeia de custódia.",
+       "dispositivo": "CPP#art-158a",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A cadeia de custódia já foi examinada e preservada. O ponto agora é o valor do laudo."
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a5pires",
+       "e": "nervoso",
+       "t": "…O Dr. Humberto não tem mais perguntas, Excelência."
+      }
+     ],
+     "proxima": "k8"
+    },
+    "k8": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twhumberto",
+       "e": "triste",
+       "t": "Brandão me pagou oitenta mil reais. Dois dias atrás, na minha casa, ele me disse o que dizer. E me deu um conselho: o único papel que realmente importa nesse processo é uma carta que o Paulo Seixas mandou pelos Correios na véspera."
+      },
+      {
+       "q": "twhumberto",
+       "e": "triste",
+       "t": "Disse que, enquanto ninguém soubesse onde a carta foi parar, a Altavista dormia tranquila. Eu não entendi o que isso queria dizer."
+      },
+      {
+       "q": "marta",
+       "e": "chocado",
+       "t": "Uma carta? O Paulo me disse que mandaria o original a alguém de confiança. Eu nunca soube a quem.",
+       "fx": "tremor"
+      },
+      {
+       "q": "brandao",
+       "e": "bravo",
+       "t": "Excelência, protesto contra qualquer menção a papéis que não constam dos autos!",
+       "fx": "bater"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Dr. Brandão, o senhor protesta contra a menção a uma carta que, segundo o senhor mesmo, não existe? Registre-se tudo, escrivã. Dr. Humberto, o senhor responderá pelo art. 342 do Código Penal. O recibo de honorários que caiu da sua pasta será juntado aos autos."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Excelência... a carta. Fala sempre da carta."
+      },
+      {
+       "q": "kenji",
+       "e": "normal",
+       "t": "O laudo do aço fica de pé, Excelência. Não por mim: por oito milímetros de verdade."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "(Alguém no tribunal sabe onde está a carta. E quem a escondeu fez isso por medo. Eu preciso descobrir antes que a Altavista descubra.)"
       }
      ],
      "proxima": "c14"

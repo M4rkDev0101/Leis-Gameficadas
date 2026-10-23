@@ -230,6 +230,53 @@
    "personalidade": "reservada, discreta, assustada, leal",
    "motivacao": "Proteger o emprego.",
    "segredo": "Secretária executiva da Altavista Serviços, diz que só atende telefone e organiza agenda. Na prática conhece cada reunião, cada nome e cada código do grupo. Seu depoimento é o ponto fraco da muralha de silêncio. Motivação oculta: Proteger o emprego e escapar de qualquer consequência."
+  },
+  "a3quadros": {
+   "nome": "Dr. Sérgio Quadros",
+   "cargo": "Juiz de Direito substituto · \"o Metódico\"",
+   "voz": 230,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#9e9e9e",
+    "roupa": "toga",
+    "corRoupa": "#111111",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Juiz substituto itinerante. Nunca eleva a voz, nunca esquece um prazo, nunca descumpre a letra da lei. Só aplica a letra sempre do mesmo lado. Cumpre o regimento com a frieza de quem sabe que ninguém o pode punir por isso.",
+   "segredo": "Padrinho de batismo da filha dele é Henrique Altavista. Como juiz de plantão, mandou arquivar em 48 horas o primeiro pedido de investigação sobre o aço da obra, meses antes da morte de Paulo Seixas. Nunca aceitou um centavo: a bolsa da filha na Europa sai da Fundação Altavista. Jamais perde o cargo."
+  },
+  "twwilson": {
+   "nome": "Wilson Camargo",
+   "cargo": "Testemunha surpresa · analista de TI do MP",
+   "voz": 290,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "careca",
+    "corCabelo": "#222222",
+    "roupa": "casual",
+    "corRoupa": "#2c3e50",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "twildo": {
+   "nome": "Ildefonso Torres",
+   "cargo": "Testemunha surpresa · ex-sócio da consultoria",
+   "voz": 270,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#555555",
+    "roupa": "terno",
+    "corRoupa": "#4a4a4a",
+    "gravata": "#7f8c8d",
+    "oculos": false,
+    "barba": true
+   }
   }
  },
  "episodios": [
@@ -1103,7 +1150,8 @@
     "livia": "defesa",
     "a3ulisses": "testemunha",
     "a3nilza": "cena",
-    "voce": "acusacao"
+    "voce": "acusacao",
+    "a3quadros": "juiz"
    },
    "provas": [
     {
@@ -1187,6 +1235,30 @@
      "nome": "Lei de Crimes Ambientais, art. 60",
      "chave": "LCA#art-60",
      "trecho": "sem licença ou autorização dos órgãos ambientais competentes"
+    },
+    {
+     "id": "qcpp400",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 400, § 1º — Provas impertinentes",
+     "chave": "CPP#art-400/par-1",
+     "trecho": "podendo o juiz indeferir as consideradas irrelevantes, impertinentes ou protelatórias"
+    },
+    {
+     "id": "qcf5lv",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CF, art. 5º, LV — Contraditório e ampla defesa",
+     "chave": "CF#art-5/inc-lv",
+     "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa"
+    },
+    {
+     "id": "qcpp405",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 405 — Termo da audiência",
+     "chave": "CPP#art-405",
+     "trecho": "Do ocorrido em audiência será lavrado termo em livro próprio"
     }
    ],
    "inicio": "x1",
@@ -1518,6 +1590,253 @@
       "ordem",
       "nf",
       "licenca"
+     ],
+     "proxima": "q1"
+    },
+    "q1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Quarta-feira, 8h. A juíza Beatriz entrou de licença por um dia. Quem despacha o pedido de oitiva dos pescadores é o juiz substituto Sérgio Quadros: terno impecável, voz mansa, sorriso sem calor."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Bom dia, doutor(a). É uma honra. Li a sua petição com toda a atenção que ela merece, que, convenhamos, não é grande."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Indefiro a oitiva dos pescadores: impertinente. Os peixes mortos já falam por si, e o art. 400, § 1º, do CPP me autoriza a afastar o que seja irrelevante, impertinente ou protelatório."
+      },
+      {
+       "q": "a3quadros",
+       "e": "confiante",
+       "t": "A audiência de instrução fica marcada para amanhã às 8h. A lei fala em prazo máximo de sessenta dias, e jamais em prazo mínimo. Não há adiamento. Nada pessoal."
+      },
+      {
+       "q": "livia",
+       "e": "feliz",
+       "t": "Excelência, a defesa não poderia estar mais satisfeita com a celeridade."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Tudo dentro da lei. Nenhuma ilegalidade, nenhuma grosseria. É assim que se destrói um processo sem sujar as mãos.)"
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "qcpp400",
+        "qcf5lv",
+        "qcpp405"
+       ]
+      }
+     ],
+     "proxima": "q2"
+    },
+    "q2": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Excelência, com o devido respeito: pertinente é o que prova um fato relevante para a imputação."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Ora, doutor(a). Convença-me."
+      }
+     ],
+     "pergunta": "Que prova mostra que a oitiva dos pescadores é pertinente ao crime ambiental?",
+     "provas": [
+      "mortandade"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "O registro da mortandade foi feito pela própria colônia: três toneladas de peixes mortos em dois dias, espuma e cheiro de solvente. Quem fotografou e relatou é quem pode confirmar o fato, o horário, o odor e o cano. A prova é pertinente por definição, Excelência."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Brilhante exposição. Mantenho o indeferimento do mesmo jeito: a minha convicção não precisa de dois pescadores."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Doutor(a), isso não responde à pertinência. Continuo com a minha decisão."
+      }
+     ],
+     "proxima": "q2a"
+    },
+    "q2a": {
+     "tipo": "argumento",
+     "local": "tribunal",
+     "alvo": "O indeferimento é legal e a audiência amanhã é válida.",
+     "pergunta": "Que dispositivo constitucional garante à acusação o direito de produzir a prova que indeferiram?",
+     "falas": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "A lei me autoriza, doutor(a). Mostre-me o direito que me impede."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "O art. 400, § 1º do CPP garante o direito à prova.",
+       "dispositivo": "CPP#art-400/par-1",
+       "falas": [
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "Esse é o artigo que me dá o poder de indeferir, doutor(a). Obrigado por citá-lo."
+        }
+       ]
+      },
+      {
+       "t": "O art. 5º, LV da CF assegura contraditório e ampla defesa, que incluem os meios inerentes a ela.",
+       "dispositivo": "CF#art-5/inc-lv",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "O art. 5º, LV, Excelência: a ampla defesa e o contraditório vêm 'com os meios e recursos a ela inerentes', e isso vale para quem acusa também."
+        }
+       ]
+      },
+      {
+       "t": "O art. 405 do CPP veda o indeferimento de provas.",
+       "dispositivo": "CPP#art-405",
+       "falas": [
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "O art. 405 trata da ata, doutor(a). Nada nele me impede."
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Brilhante. E, no entanto, nada disso me obriga a mudar o dispositivo. Interessante, não?"
+      }
+     ],
+     "proxima": "q3"
+    },
+    "q3": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "O Ministério Público tem mais algum requerimento? O expediente está encerrado."
+      }
+     ],
+     "pergunta": "Como o Ministério Público reage ao indeferimento da prova?",
+     "opcoes": [
+      {
+       "t": "Aceitar em silêncio: o juiz tem poder de indeferir e brigar só pioraria.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "(por mensagem) Se você não registrar, ninguém poderá anular essa decisão depois. O silêncio vira concordância."
+        }
+       ]
+      },
+      {
+       "t": "Registrar o protesto em ata (CPP, art. 405), apontando cerceamento do direito de produzir prova (CF, art. 5º, LV) e requerer a reconsideração.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Requeiro que conste da ata o meu protesto: o indeferimento cerceia a atividade probatória da acusação, em ofensa ao contraditório e à ampla defesa (CF, art. 5º, LV). Requeiro a reconsideração e, subsidiariamente, o registro para posterior nulidade."
+        },
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "Registre-se, escrivã. Para a posteridade. Os arquivos são tão generosos com protestos…"
+        },
+        {
+         "q": "livia",
+         "e": "nervoso",
+         "t": "(Lívia anota algo, sem sorrir.)"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-405",
+         "trecho": "Do ocorrido em audiência será lavrado termo em livro próprio"
+        },
+        {
+         "chave": "CF#art-5/inc-lv",
+         "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa"
+        }
+       ]
+      },
+      {
+       "t": "Acusar o juiz de proteger a Altavista, em voz alta, diante da imprensa.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "Doutor(a), o art. 256 diz que a suspeição não pode ser reconhecida quando a parte injuria o juiz ou, de propósito, dá motivo para criá-la. Se me ofende, só me ajuda. Obrigado."
+        }
+       ]
+      }
+     ],
+     "proxima": "q4"
+    },
+    "q4": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "No dia seguinte, a juíza Beatriz reassume a vara. Ela lê a ata de ponta a ponta, em silêncio. Ao terminar, tira os óculos."
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Doutor(a), li o seu protesto. Li a decisão de ontem. Cada palavra dela cabe no art. 400, § 1º. E nenhuma delas cabe na minha ideia de Justiça."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Reconsidero: os pescadores serão ouvidos. A prova nunca foi impertinente. O protesto em ata evitou uma nulidade que o Tribunal reconheceria em cinco minutos."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "(no corredor, passando por você) Cumpri a lei, doutor(a). Se o resultado desagradou, não é culpa da lei. Passar bem."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Dr. Sérgio Quadros. Vou procurar saber de quem esse homem é amigo.)"
+      }
      ],
      "proxima": "x6"
     },
@@ -1970,7 +2289,8 @@
     "a3fabio": "defesa",
     "a3eduardo": "testemunha",
     "a3renata": "cena",
-    "voce": "acusacao"
+    "voce": "acusacao",
+    "twildo": "testemunha"
    },
    "provas": [
     {
@@ -2064,6 +2384,22 @@
      "nome": "Lei de Improbidade, art. 16",
      "chave": "LIA#art-16",
      "trecho": "indisponibilidade de bens dos réus"
+    },
+    {
+     "id": "cp342",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 342 — Falso testemunho",
+     "chave": "CP#art-342",
+     "trecho": "Fazer afirmação falsa, ou negar ou calar a verdade, como testemunha"
+    },
+    {
+     "id": "cpc370",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPC, art. 370 — Provas necessárias",
+     "chave": "CPC#art-370",
+     "trecho": "determinar as provas necessárias ao julgamento do mérito"
     }
    ],
    "inicio": "x1",
@@ -2845,6 +3181,296 @@
        ]
       }
      ],
+     "proxima": "w1"
+    },
+    "w1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Excelência, o Ministério Público agradece a decisão sobre a indisponibilidade. Peço que conste…"
+      },
+      {
+       "q": "a3fabio",
+       "e": "confiante",
+       "t": "Excelência, antes que isso fique decidido, a defesa requer a oitiva de uma testemunha que a Promotoria não conhece. Fato superveniente: o ex-sócio da consultoria, senhor Ildefonso Torres, aceitou depor."
+      },
+      {
+       "q": "heitor",
+       "e": "pensativo",
+       "t": "O art. 370 do CPC me permite determinar as provas necessárias ao julgamento do mérito, ainda que no fim da instrução. Ouvirei o senhor Ildefonso. O contraditório é garantido."
+      },
+      {
+       "q": "a3eduardo",
+       "e": "feliz",
+       "t": "(sussurrando) Eu disse que o senhor Ildefonso resolveria."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(O réu sorri. Quando o réu sorri depois de perder, é porque alguém lhe prometeu uma revanche.)"
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "cp342",
+        "cpc370"
+       ]
+      }
+     ],
+     "proxima": "w1r"
+    },
+    "w1r": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "O réu sorri",
+     "ajuste": -1,
+     "piso": 3,
+     "falas": [
+      {
+       "q": "a3fabio",
+       "e": "confiante",
+       "t": "Chamo o senhor Ildefonso Torres."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Quando o réu sorri depois de perder, alguém prometeu uma revanche.)"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "w2"
+    },
+    "w2": {
+     "tipo": "depoimento",
+     "testemunha": "twildo",
+     "titulo": "O sócio da consultoria",
+     "intro": [
+      {
+       "q": "twildo",
+       "e": "confiante",
+       "t": "Ildefonso Torres, contador, sócio da Pimentel & Torres por nove anos. Vim por dever."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O contrato com a Altavista foi assinado três meses ANTES dos alvarás. Trabalho técnico, sério, documentado.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Três meses antes? O senhor tem esse contrato?"
+        },
+        {
+         "q": "twildo",
+         "e": "confiante",
+         "t": "Eu me lembro da data. Foi no verão."
+        }
+       ]
+      },
+      {
+       "t": "Os R$ 380 mil foram pagamento antecipado pelo serviço. Marlene recebeu antes de os alvarás saírem.",
+       "e": "feliz",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Antes de os alvarás?"
+        },
+        {
+         "q": "twildo",
+         "e": "confiante",
+         "t": "Antes. Nada irregular."
+        }
+       ]
+      },
+      {
+       "t": "A Marlene é uma profissional séria. O parentesco com o secretário é mera coincidência.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Mera coincidência?"
+        },
+        {
+         "q": "twildo",
+         "e": "nervoso",
+         "t": "Totalmente."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "consultoria"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Antes dos alvarás? O contrato da Pimentel & Torres mostra que Marlene Torres recebeu os R$ 380 mil em duas parcelas QUINZE DIAS DEPOIS dos alvarás! O serviço descrito é 'apoio em licenciamento', exatamente o que o secretário liberou num sábado!",
+       "fx": "protesto"
+      },
+      {
+       "q": "twildo",
+       "e": "chocado",
+       "t": "Foi… foi o adiantamento do contrato anterior! Sim, de um contrato anterior!",
+       "fx": "tremor"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Senhor Ildefonso, o senhor acaba de inventar um contrato novo em plena audiência.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "w3",
+     "dica": [
+      "A testemunha diz que Marlene recebeu antes dos alvarás.",
+      "Quando foram pagas as parcelas, segundo o contrato?"
+     ]
+    },
+    "w3": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a3fabio",
+       "e": "nervoso",
+       "t": "Excelência, que a testemunha complete o raciocínio. O ponto central da defesa é outro: o parecer da arquiteta Renata Guedes foi manipulado."
+      },
+      {
+       "q": "twildo",
+       "e": "confiante",
+       "t": "Isso mesmo. A Renata tinha ressentimento do secretário e escreveu aquele parecer de vingança. O secretário nunca o viu."
+      },
+      {
+       "q": "a3renata",
+       "e": "chocado",
+       "t": "(da plateia) Eu?! Eu fui chamada por ele ao gabinete e ele me elogiou!",
+       "fx": "tremor"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(O parecer é a espinha dorsal do dolo. Se o juiz acreditar que o secretário nunca o viu, tudo vira erro de julgamento. Mas aquele parecer tem um carimbo.)"
+      }
+     ],
+     "proxima": "w4"
+    },
+    "w4": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twildo",
+       "e": "confiante",
+       "t": "Um parecer escrito de vingança por uma funcionária magoada. O secretário jamais o leu, Excelência."
+      },
+      {
+       "q": "a3fabio",
+       "e": "confiante",
+       "t": "A prova de dolo cai por terra: o réu não sabia do alerta técnico."
+      }
+     ],
+     "pergunta": "Que prova mostra que o secretário LEU o parecer da arquiteta e o aprovou?",
+     "provas": [
+      "parecer"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "O Parecer 118 traz, na própria folha, o despacho do secretário: 'De acordo. Arquive-se.' Ele leu, concordou e arquivou! Noventa dias depois, assinou os três alvarás num sábado, contra o próprio despacho!"
+      },
+      {
+       "q": "twildo",
+       "e": "chocado",
+       "t": "O despacho… eu não vi o despacho…",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3eduardo",
+       "e": "nervoso",
+       "t": "(sussurrando) Cala a boca, Ildefonso."
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "pensativo",
+       "t": "Esse documento não demonstra que o réu leu o parecer, doutor(a)."
+      }
+     ],
+     "proxima": "w5"
+    },
+    "w5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twildo",
+       "e": "triste",
+       "t": "Fui procurado por um senhor de terno que dizia ser da 'Assessoria da Altavista'. Me prometeu a quitação de uma dívida de R$ 90 mil que a minha firma deve a um banco. Eu só precisava inverter as datas."
+      },
+      {
+       "q": "a3renata",
+       "e": "triste",
+       "t": "(da plateia) Eu só queria que o rio e a cidade não pagassem pelo meu cargo."
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Senhor Ildefonso, a pena do falso testemunho, art. 342 do Código Penal, vai de dois a quatro anos de reclusão. Remeta-se cópia ao Ministério Público. E à defesa do réu: o senhor Fábio tem algo a dizer?"
+      },
+      {
+       "q": "a3fabio",
+       "e": "nervoso",
+       "t": "Excelência, a defesa não tinha conhecimento…"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Excelência: o dolo não estava só no secretário. Estava em quem precisou reescrever o calendário para salvá-lo."
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Doutor(a), ganhamos de novo. Anote: três testemunhas compradas em dez dias. Eles não têm mais para onde correr."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Mantenho a indisponibilidade e retomo a decisão cautelar.",
+       "fx": "martelo"
+      }
+     ],
      "proxima": "x12"
     },
     "x12": {
@@ -2923,7 +3549,8 @@
     "a3nogueira": "testemunha",
     "a3davi": "testemunha",
     "a3bianca": "testemunha",
-    "voce": "acusacao"
+    "voce": "acusacao",
+    "a3quadros": "juiz"
    },
    "provas": [
     {
@@ -3023,6 +3650,30 @@
      "nome": "CPP, art. 386, V",
      "chave": "CPP#art-386/inc-v",
      "trecho": "não existir prova de ter o réu concorrido para a infração penal"
+    },
+    {
+     "id": "qcf5lv",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CF, art. 5º, LV — Contraditório e ampla defesa",
+     "chave": "CF#art-5/inc-lv",
+     "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa"
+    },
+    {
+     "id": "qcpp405",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 405 — Termo da audiência",
+     "chave": "CPP#art-405",
+     "trecho": "Do ocorrido em audiência será lavrado termo em livro próprio"
+    },
+    {
+     "id": "qcpp256",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 256 — Suspeição provocada",
+     "chave": "CPP#art-256",
+     "trecho": "A suspeição não poderá ser declarada nem reconhecida, quando a parte injuriar o juiz"
     }
    ],
    "inicio": "x1",
@@ -3331,6 +3982,217 @@
       "universidade",
       "camera",
       "bianca"
+     ],
+     "proxima": "q1"
+    },
+    "q1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Quinta-feira. A juíza Beatriz participa de um curso em outra comarca. A pauta do dia fica com o juiz substituto Sérgio Quadros, que cumprimenta você como a um velho conhecido."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Doutor(a) promotor(a). Que prazer revê-lo(a). Aquele rio, não é? Uma tragédia. Mas já passou."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Pautei a audiência de instrução e julgamento do caso Davi Moreira para amanhã às 7h. O Ministério Público teve oito dias para se preparar. Negado o pedido de adiamento."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "Excelência, o laudo complementar da balança ainda não foi juntado, e o policial Nogueira está de plantão em outra cidade. O prejuízo para a acusação é concreto."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "A acusação se prepara com antecedência. E, para ganhar tempo, limitarei as perguntas da acusação a cinco minutos por testemunha. É o regimento."
+      },
+      {
+       "q": "a3cassio",
+       "e": "confiante",
+       "t": "A defesa apenas observa a eficiência do juízo, Excelência."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Prazo apertado, tempo cortado e adiamento negado. Nenhum item sozinho é ilegal. Juntos, formam um muro de papel.)"
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "qcf5lv",
+        "qcpp405",
+        "qcpp256"
+       ]
+      }
+     ],
+     "proxima": "q1a"
+    },
+    "q1a": {
+     "tipo": "argumento",
+     "local": "tribunal",
+     "alvo": "O prazo de 24 horas é legal porque a lei só fala em prazo máximo.",
+     "pergunta": "Que dispositivo constitucional sustenta a reclamação contra o prazo, o adiamento negado e o corte de perguntas?",
+     "falas": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "A lei fala em prazo máximo, doutor(a). Mínimo não existe."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "O art. 5º, LV da CF: contraditório e ampla defesa, com os meios e recursos inerentes.",
+       "dispositivo": "CF#art-5/inc-lv",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O art. 5º, LV: o contraditório não é um relógio, Excelência. É um direito."
+        }
+       ]
+      },
+      {
+       "t": "O art. 400 do CPP, que limita o juiz a sessenta dias.",
+       "dispositivo": "CPP#art-400",
+       "falas": [
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "Sessenta é o máximo. Não o mínimo. Releia."
+        }
+       ]
+      },
+      {
+       "t": "O art. 256 do CPP, que permite acusar o juiz.",
+       "dispositivo": "CPP#art-256",
+       "falas": [
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "O art. 256 proíbe o contrário, doutor(a). Não me ajuda a ajudá-lo."
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Registre-se que o Ministério Público tem uma boa memória constitucional."
+      }
+     ],
+     "proxima": "q2"
+    },
+    "q2": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "O Ministério Público tem algo a requerer antes que eu encerre a pauta?"
+      }
+     ],
+     "pergunta": "Como enfrentar o prazo apertado, o adiamento negado e o corte das perguntas?",
+     "opcoes": [
+      {
+       "t": "Boicotar a audiência: não comparecer, para provar que o prazo era inviável.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "(por mensagem) Faltar à audiência é entregar a absolvição de mão beijada. O Ministério Público não pode abandonar a ação."
+        }
+       ]
+      },
+      {
+       "t": "Registrar em ata o prejuízo concreto (laudo pendente, testemunha ausente), apontar o cerceamento (CF, art. 5º, LV) e, ao mesmo tempo, pedir ao Tribunal a correição parcial contra a inversão tumultuária do processo.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, requeiro o registro em ata do prejuízo concreto: o laudo da balança e a testemunha Nogueira. E informo que levarei a questão ao Tribunal, pela correição parcial, contra o ato que tumultua o andamento do processo."
+        },
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "Registre-se, escrivã. Tanto talento… quase dá pena de não aproveitar."
+        },
+        {
+         "q": "lacerda",
+         "e": "feliz",
+         "t": "(por mensagem) Foi o caminho certo. Quem registra, protege o processo."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CF#art-5/inc-lv",
+         "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa"
+        },
+        {
+         "chave": "CPP#art-405",
+         "trecho": "Do ocorrido em audiência será lavrado termo em livro próprio"
+        }
+       ]
+      },
+      {
+       "t": "Chamar o juiz de parcial e ameaçar uma representação pela imprensa.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "O art. 256 do CPP agradece a contribuição, doutor(a). Quem provoca a suspeição de propósito não pode invocá-la."
+        },
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "(por mensagem) Você acabou de jogar fora a nossa carta mais forte."
+        }
+       ]
+      }
+     ],
+     "proxima": "q3"
+    },
+    "q3": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "À noite, uma desembargadora de plantão, avisada pela correição parcial e lendo a ata, suspende a pauta de 7h e determina a remarcação para a data originalmente prevista."
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Reassumo a vara amanhã. A pauta volta a ter prazo humano, o laudo será juntado, e o policial Nogueira será ouvido sem cronômetro."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "(ao encontrar você no elevador) Uma correição parcial. Que gesto bonito, doutor(a). Sinto muito que a minha pauta tenha sido tão pouco compreendida."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Se algum dia precisar de um conselho: nenhum processo é tão grande que um juiz paciente não possa torná-lo pequeno."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Ele sorriu. Não de derrota: de quem tem tempo.)"
+      }
      ],
      "proxima": "x5"
     },
@@ -3866,7 +4728,8 @@
     "a3nelson": "testemunha",
     "a3debora": "testemunha",
     "fausto": "cena",
-    "voce": "acusacao"
+    "voce": "acusacao",
+    "a3quadros": "juiz"
    },
    "provas": [
     {
@@ -3951,6 +4814,21 @@
      "nome": "Lei das Organizações Criminosas, art. 4º, § 16",
      "chave": "LORC#art-4/par-16",
      "trecho": "com fundamento apenas nas declarações do colaborador"
+    },
+    {
+     "id": "batizado",
+     "tipo": "prova",
+     "icone": "✉️",
+     "nome": "Convite de batizado",
+     "descricao": "Convite impresso: 'Batizado de Marina Quadros'. No verso, a lista de padrinhos: 'Henrique Altavista e Esposa'. Foto: o juiz Sérgio Quadros e Henrique Altavista, abraçados, diante da pia batismal."
+    },
+    {
+     "id": "qcpp254",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 254, I — Suspeição",
+     "chave": "CPP#art-254/inc-i",
+     "trecho": "se for amigo íntimo ou inimigo capital de qualquer delas"
     }
    ],
    "inicio": "x1",
@@ -4697,6 +5575,281 @@
        ]
       }
      ],
+     "proxima": "q1"
+    },
+    "q1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Sexta, 6h. Beatriz está em férias. O juiz substituto Sérgio Quadros reexamina, de ofício, a ação controlada que ela autorizou, sob sigilo, na véspera."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Doutor(a), li novamente o pedido de ação controlada. Constato que a defesa dos investigados não foi cientificada. Em nome do contraditório, art. 5º, LV, determino a revogação da medida e a ciência imediata aos investigados."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "Excelência, o sigilo é da essência da ação controlada! A ciência prévia a destrói!",
+       "fx": "tremor"
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "A Constituição não exceptua o contraditório por conveniência da acusação, doutor(a). Decisão liminar, devidamente fundamentada."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "A defesa agradece a sensibilidade de Vossa Excelência."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) Doutor(a), nesta mesma manhã o ofício chega às mãos da delegacia. Fausto vai saber de tudo antes das 7h."
+      },
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "(Ele não precisou descumprir lei nenhuma. Bastou ler a Constituição do lado certo.)"
+      }
+     ],
+     "proxima": "q2"
+    },
+    "q2": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Doutor(a), há uma coisa que o Lacerda me pediu para lhe entregar. Chegou pela portaria agora cedo, sem remetente."
+      },
+      {
+       "q": "narrador",
+       "t": "Dani estende um envelope. Dentro, um convite de batizado antigo.",
+       "recebe": [
+        "batizado",
+        "qcpp254"
+       ]
+      },
+      {
+       "q": "dani",
+       "e": "triste",
+       "t": "A filha dele se chama Marina. A madrinha é uma amiga de Henrique Altavista. E o padrinho… o padrinho é o próprio Henrique."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Henrique Altavista não é parte formal deste processo: mas o 'Chefe' do organograma é ele, e a denúncia o alcança. Compadre do juiz que acaba de revogar a ação contra o seu bando.)"
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "(por mensagem) Suspeição, doutor(a). O art. 254, inciso I: amigo íntimo de qualquer das partes. Faça direito, sem ofensas, sem barulho."
+      }
+     ],
+     "proxima": "q2a"
+    },
+    "q2a": {
+     "tipo": "blefe",
+     "local": "tribunal",
+     "pergunta": "Como pressionar o juiz que acaba de revogar a ação controlada?",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Eu tenho o convite. Mas queria algo mais forte.)"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Blefar: 'Excelência, eu tenho uma foto sua na casa de Henrique, na noite anterior.'",
+       "blefe": {
+        "resultado": "descoberto",
+        "falas": [
+         {
+          "q": "a3quadros",
+          "e": "normal",
+          "t": "Uma foto? Excelente, doutor(a). Mostre-a. Não? Então registre-se o blefe do Ministério Público."
+         }
+        ],
+        "consequencia": [
+         {
+          "q": "lacerda",
+          "e": "bravo",
+          "t": "Doutor(a), o promotor não inventa prova. Um blefe descoberto custa a credibilidade de toda a acusação."
+         }
+        ],
+        "cred": -2
+       }
+      },
+      {
+       "t": "Usar só o que posso provar: o convite de batismo.",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Excelência, trago apenas o que está documentado."
+        }
+       ]
+      }
+     ],
+     "proxima": "q3"
+    },
+    "q3": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "O Ministério Público ainda quer falar? Já indeferi a reconsideração, com todo respeito."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Quero, Excelência. Quero opor exceção de suspeição."
+      }
+     ],
+     "pergunta": "Que dispositivo do CPP permite recusar o juiz que é amigo íntimo de qualquer das partes?",
+     "provas": [
+      "qcpp254"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Art. 254, I, do CPP: o juiz dar-se-á por suspeito, e, se não o fizer, poderá ser recusado por qualquer das partes, se for amigo íntimo de qualquer delas. O convite de batizado mostra que o 'Chefe' do organograma é padrinho da filha de Vossa Excelência."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Padrinho… de uma criança. Curioso(a). Não aceito a suspeição. Autue-se em apartado e remeta-se ao Tribunal, como o art. 100 do CPP manda.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Doutor(a), esse dispositivo não é o da suspeição por amizade íntima."
+      }
+     ],
+     "proxima": "q4"
+    },
+    "q4": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "(por mensagem) A exceção segue para o Tribunal. Como o MP conduz a petição agora?"
+      }
+     ],
+     "pergunta": "Como o Ministério Público conduz a exceção de suspeição?",
+     "opcoes": [
+      {
+       "t": "Fazer a exceção por petição escrita, com prova documental (o convite), e requerer a suspensão da decisão que revogou a ação controlada até o julgamento.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Petição escrita, o convite como prova, e pedido de efeito suspensivo da liminar até que o Tribunal diga quem pode decidir este processo."
+        },
+        {
+         "q": "lacerda",
+         "e": "feliz",
+         "t": "(por mensagem) É isso. Sem berros. Papel, prova e prazo."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-254/inc-i",
+         "trecho": "se for amigo íntimo ou inimigo capital de qualquer delas"
+        }
+       ]
+      },
+      {
+       "t": "Dar entrevista à imprensa acusando o juiz de comprar-se pela Altavista.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a3quadros",
+         "e": "normal",
+         "t": "Art. 256, doutor(a): quem injuria o juiz de propósito destrói a própria exceção. Sua entrevista me agradou muito."
+        }
+       ]
+      },
+      {
+       "t": "Desistir da exceção e aceitar a decisão: o juiz substituto vai embora amanhã.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "dani",
+         "e": "chocado",
+         "t": "Doutor(a), até amanhã Fausto já terá sumido com tudo."
+        }
+       ]
+      }
+     ],
+     "proxima": "q5"
+    },
+    "q5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Duas horas depois, a Câmara do Tribunal, por unanimidade, acolhe a exceção apenas para este processo e restabelece a ação controlada. Beatriz interrompe as férias e reassume a vara."
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Revogo a decisão liminar, restabeleço a ação controlada e mantenho o sigilo. Ciência apenas ao Ministério Público.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Parabéns, doutor(a). Foi tudo muito regular. Cumpri a lei como a vi. Se me permite o conselho: leia mais a Constituição, do começo ao fim."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Dr. Quadros, o Ministério Público apresentou hoje representação ao Conselho Nacional de Justiça contra Vossa Excelência."
+      },
+      {
+       "q": "narrador",
+       "t": "Semana seguinte. O CNJ arquiva a representação por unanimidade: 'Não há indício de infração disciplinar. Decisões fundamentadas, ainda que equivocadas, são matéria de recurso, e não de correição.' O juiz Quadros continua no cargo."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "(ao vê-lo(a) no corredor, com um sorriso mínimo) A Justiça é lenta, doutor(a). Mas é paciente. Eu também."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Doutor(a), levantei a ficha dele. Há dois anos, como juiz de plantão, ele arquivou em 48 horas o primeiro pedido de investigação sobre o aço do Residencial Horizonte. Antes da morte do Paulo Seixas."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Ele não perdeu a toga. Mas perdeu o processo. E eu ganhei um nome para o meu caderno.)"
+      }
+     ],
      "proxima": "x11"
     },
     "x11": {
@@ -4765,7 +5918,8 @@
     "valadares": "testemunha",
     "fausto": "testemunha",
     "bento": "cena",
-    "voce": "acusacao"
+    "voce": "acusacao",
+    "twwilson": "testemunha"
    },
    "provas": [
     {
@@ -4836,6 +5990,22 @@
      "nome": "Lei das Organizações Criminosas, art. 2º, § 7º",
      "chave": "LORC#art-2/par-7",
      "trecho": "a Corregedoria de Polícia instaurará inquérito policial"
+    },
+    {
+     "id": "cp342",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 342 — Falso testemunho",
+     "chave": "CP#art-342",
+     "trecho": "Fazer afirmação falsa, ou negar ou calar a verdade, como testemunha"
+    },
+    {
+     "id": "cpp209",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 209 — Testemunhas do juiz",
+     "chave": "CPP#art-209",
+     "trecho": "poderá ouvir outras testemunhas, além das indicadas pelas partes"
     }
    ],
    "inicio": "x1",
@@ -5511,6 +6681,408 @@
        "q": "beatriz",
        "e": "bravo",
        "t": "Isso não contradiz a negativa de vínculo econômico, promotor(a)."
+      }
+     ],
+     "proxima": "w1"
+    },
+    "w1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "valadares",
+       "e": "triste",
+       "t": "(abatido, na cadeira) Eu sei que os números parecem terríveis, doutor(a)."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, antes que o Ministério Público feche o seu requerimento, a defesa do delegado Rangel ouviu hoje uma testemunha de dentro da própria casa: o analista de TI Wilson Camargo. Peço, com base no art. 209 do CPP, que seja ouvido.",
+       "fx": "bater"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "O art. 209 me autoriza. Mas peço ao Ministério Público que não veja nisso um ataque. Veja como uma chance de blindar a sua tese."
+      },
+      {
+       "q": "lacerda",
+       "e": "nervoso",
+       "t": "Pode ser que tenhamos errado de colega, doutor(a)."
+      },
+      {
+       "q": "dani",
+       "e": "chocado",
+       "t": "Eu?! Doutor(a), eu estou no escritório desde as 8h de ontem! O que ele vai dizer de mim?",
+       "fx": "tremor"
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(A pessoa que mais me ajudou neste caso foi a Dani. Se a dúvida cair sobre ela, a minha tese desaba. Ou então é exatamente assim que alguém quer que eu pense.)"
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "cp342",
+        "cpp209"
+       ]
+      }
+     ],
+     "proxima": "w1r"
+    },
+    "w1r": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "Testemunha de dentro de casa",
+     "ajuste": -1,
+     "piso": 3,
+     "falas": [
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Chamo o analista Wilson Camargo."
+      },
+      {
+       "q": "dani",
+       "e": "chocado",
+       "t": "Doutor(a)... por que o meu nome está no papel dela?"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "w1i"
+    },
+    "w1i": {
+     "tipo": "intuicao",
+     "local": "tribunal",
+     "pergunta": "O analista de TI está dizendo a verdade?",
+     "pistas": [
+      "Wilson olha para Lívia antes de cada resposta, como quem espera aprovação.",
+      "Ele sabe a hora exata do acesso, mas não lembra o nome do próprio chefe de equipe.",
+      "As mãos tremem quando o nome de Dani é dito."
+     ],
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Preciso decidir em quem confiar antes de ouvi-lo.)"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Ele ensaiou o depoimento e quer incriminar Dani.",
+       "certa": true
+      },
+      {
+       "t": "Ele é sincero e vai ajudar a esclarecer."
+      }
+     ],
+     "revelacao": [
+      {
+       "q": "narrador",
+       "t": "Wilson Camargo havia recebido um roteiro por escrito na véspera. Cada frase foi decorada."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Minha intuição de promotor(a) apontava para um depoimento ensaiado, e estava certa."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "Confiei demais. Ele estava ensaiado, e eu quase não vi."
+      }
+     ],
+     "bonus": 1,
+     "proxima": "w2"
+    },
+    "w2": {
+     "tipo": "depoimento",
+     "testemunha": "twwilson",
+     "titulo": "O analista de TI",
+     "intro": [
+      {
+       "q": "twwilson",
+       "e": "confiante",
+       "t": "Wilson Camargo, analista de sistemas do Ministério Público. Doze anos de casa, ficha limpa."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O login do doutor Valadares ficou exposto numa lista interna. Qualquer pessoa da sala 3 podia usá-lo.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Quem teve acesso à lista?"
+        },
+        {
+         "q": "twwilson",
+         "e": "confiante",
+         "t": "Seis ou sete pessoas. Inclusive a Dani."
+        }
+       ]
+      },
+      {
+       "t": "Os depósitos na conta de dona Heloísa Valadares nunca foram dela. A conta foi aberta há seis meses pela Dani, em nome da mãe do doutor Valadares, só para receber.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A conta tem seis meses de existência?"
+        },
+        {
+         "q": "twwilson",
+         "e": "confiante",
+         "t": "Seis meses, no máximo. Eu vi o contrato."
+        }
+       ]
+      },
+      {
+       "t": "A Dani é quem tinha o hábito de ficar sozinha na sala 3 depois das onze.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor a viu lá?"
+        },
+        {
+         "q": "twwilson",
+         "e": "nervoso",
+         "t": "Várias vezes. Por isso eu falei."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "depositos"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Aberta há seis meses? O extrato mostra seis depósitos de R$ 40 mil, feitos pela Altavista Serviços ao longo de DOIS ANOS, cada um dias antes de uma operação que vazou! Uma conta que só existe há seis meses não recebe dinheiro de dois anos!",
+       "fx": "protesto"
+      },
+      {
+       "q": "twwilson",
+       "e": "chocado",
+       "t": "Eu… devo ter lido errado a data do contrato…",
+       "fx": "tremor"
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Doutor(a), eu nem sei abrir conta em banco com assinatura que não seja a minha."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "w3",
+     "dica": [
+      "Quanto tempo a testemunha diz que a conta existe?",
+      "Por quanto tempo os depósitos foram feitos, segundo os extratos?"
+     ]
+    },
+    "w3": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Excelência, a testemunha é um técnico, e não um contador. Um engano de data não apaga o que ele viu: o acesso a decisão sigilosa foi autorizado pelo Ministério Público."
+      },
+      {
+       "q": "twwilson",
+       "e": "confiante",
+       "t": "Isso mesmo. O doutor Valadares recebeu, de viva voz, a designação do doutor Lacerda para acompanhar o caso Altavista. Por isso abriu a decisão. Todos sabem disso na Promotoria."
+      },
+      {
+       "q": "lacerda",
+       "e": "chocado",
+       "t": "Eu? Eu jamais dei designação nenhuma, senhor Wilson!",
+       "fx": "bater"
+      },
+      {
+       "q": "twwilson",
+       "e": "nervoso",
+       "t": "Foi de viva voz… no corredor… o senhor deve ter esquecido."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "(Valadares abaixa os olhos. Por um segundo, parece que respira.)"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Ele jogou a última carta: um fato que ninguém consegue documentar. Mas todo sistema registra quem tem designação.)"
+      }
+     ],
+     "proxima": "w4"
+    },
+    "w4": {
+     "tipo": "depoimento",
+     "testemunha": "twwilson",
+     "titulo": "A designação de corredor",
+     "intro": [
+      {
+       "q": "twwilson",
+       "e": "nervoso",
+       "t": "Eu só repito o que ouvi, Excelência."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O doutor Valadares tinha designação verbal para acompanhar o caso, e por isso abriu a decisão da juíza.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Verbal? Em um sistema que registra tudo?"
+        },
+        {
+         "q": "twwilson",
+         "e": "nervoso",
+         "t": "É costume, quando há urgência."
+        }
+       ]
+      },
+      {
+       "t": "O Ministério Público tem cultura de abrir decisões sigilosas por colegialidade. Ninguém reparou.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Ninguém reparou, e mesmo assim o senhor sabe?"
+        },
+        {
+         "q": "twwilson",
+         "e": "nervoso",
+         "t": "Eu sei porque eu vi."
+        }
+       ]
+      },
+      {
+       "t": "Eu apaguei o histórico de pesquisas por 'Seixas' do sistema, porque alguém da Promotoria me pediu.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Quem pediu?"
+        },
+        {
+         "q": "twwilson",
+         "e": "triste",
+         "t": "Alguém importante."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "acessos"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Designação verbal? Os registros de acesso mostram que a decisão foi aberta às 23h47 no terminal da sala 3, com o login de R. Valadares, e que ele NÃO era o promotor do caso e NÃO tinha designação! O sistema registra tudo, senhor Wilson, inclusive quem tem e quem não tem designação!"
+      },
+      {
+       "q": "twwilson",
+       "e": "chocado",
+       "t": "Eu… eu só…",
+       "fx": "tremor"
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Fale, senhor Wilson. Quem lhe disse para vir aqui?",
+       "fx": "bater"
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+      }
+     ],
+     "proxima": "w5",
+     "dica": [
+      "A testemunha afirma que Valadares tinha designação.",
+      "O que o registro de acesso diz sobre a designação dele?"
+     ]
+    },
+    "w5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twwilson",
+       "e": "triste",
+       "t": "Foi o delegado Fausto. Pagou-me dez mil reais e disse que a Promotoria estava errada de colega, que eu só precisava mostrar que o login era 'de todo mundo'. E mandou apagar o que houvesse sobre Seixas."
+      },
+      {
+       "q": "twwilson",
+       "e": "triste",
+       "t": "Ele queria saber, acima de tudo, se algum procurador consultou o nome de Paulo Seixas no sistema nos últimos quatro anos. Eu não sei por quê. Mas ele tremia quando perguntou."
+      },
+      {
+       "q": "dani",
+       "e": "triste",
+       "t": "Doutor(a), eu quase fui a culpada de uma coisa que nunca fiz. Eu só queria ajudar."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Dani, a lealdade não prova nada. O que prova é o registro. E o registro é a razão de você estar sentada aqui ainda."
+      },
+      {
+       "q": "lacerda",
+       "e": "triste",
+       "t": "Eu hesitei, doutor(a). Por um instante, duvidei dela. Vou ter que viver com isso."
+      },
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "O depoimento será remetido à autoridade policial por falso testemunho (CPP, art. 211). E retomo o requerimento do Ministério Público de onde o interrompi.",
+       "fx": "martelo"
       }
      ],
      "proxima": "x10"

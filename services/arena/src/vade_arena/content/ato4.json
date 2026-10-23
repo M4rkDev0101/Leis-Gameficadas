@@ -207,6 +207,36 @@
    "personalidade": "frio, irônico, perigoso, paciente",
    "motivacao": "Sair livre e voltar à rotina.",
    "segredo": "Nome falso de Henrique Altavista, preso numa blitz com documentos falsos e apresentado como corretor de imóveis. Quando as digitais o denunciam, abandona o teatro e provoca o jogador com a ameaça velada à filha de Rafael. Seu julgamento nasce da audiência de custódia. Motivação oculta: Sair livre outra vez e lembrar ao juiz que sabe esperar."
+  },
+  "twaurelio": {
+   "nome": "Dr. Aurélio Matos",
+   "cargo": "Testemunha surpresa · médico cardiologista",
+   "voz": 250,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "curto",
+    "corCabelo": "#aaaaaa",
+    "roupa": "blazer",
+    "corRoupa": "#ecf0f1",
+    "gravata": "#2c3e50",
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "twevandro": {
+   "nome": "Evandro Lima",
+   "cargo": "Testemunha surpresa · porteiro do prédio",
+   "voz": 280,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#222222",
+    "roupa": "farda",
+    "corRoupa": "#34495e",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
   }
  },
  "episodios": [
@@ -3309,7 +3339,8 @@
     "brandao": "defesa",
     "a4barreto": "testemunha",
     "a4rita": "escritorio",
-    "a4zilda": "cena"
+    "a4zilda": "cena",
+    "twevandro": "testemunha"
    },
    "provas": [
     {
@@ -3402,6 +3433,22 @@
      "nome": "CPP, art. 212 — Perguntas às testemunhas",
      "chave": "CPP#art-212",
      "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+    },
+    {
+     "id": "cp342",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 342 — Falso testemunho",
+     "chave": "CP#art-342",
+     "trecho": "Fazer afirmação falsa, ou negar ou calar a verdade, como testemunha"
+    },
+    {
+     "id": "cpp209",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 209 — Testemunhas do juiz",
+     "chave": "CPP#art-209",
+     "trecho": "poderá ouvir outras testemunhas, além das indicadas pelas partes"
     }
    ],
    "inicio": "s1",
@@ -3920,6 +3967,456 @@
        "t": "(sussurrando) Excelência, a interceptação foi autorizada em procedimento próprio, antes da busca. É fonte independente."
       }
      ],
+     "proxima": "b1"
+    },
+    "b1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Excelência, antes da decisão final, o Ministério Público traz uma testemunha que muda o quadro: o porteiro do prédio, senhor Evandro Lima. Segundo ele, o morador abriu a porta e autorizou a entrada."
+      },
+      {
+       "q": "brandao",
+       "e": "bravo",
+       "t": "PROTESTO! O Ministério Público escondeu esta testemunha por semanas! Isso é emboscada processual!",
+       "fx": "protesto"
+      },
+      {
+       "q": "a4tulio",
+       "e": "nervoso",
+       "t": "Excelência, ele só se apresentou ontem à noite, à Corregedoria."
+      },
+      {
+       "q": "a4barreto",
+       "e": "confiante",
+       "t": "(da bancada, com ar tranquilo) O senhor Evandro é pessoa de bem, Excelência."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, o art. 209 do CPP permite ouvir outras testemunhas. Mas é estranho que o sargento tenha sido o único a mencionar o nome."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "cp342",
+        "cpp209"
+       ]
+      }
+     ],
+     "proxima": "b1r"
+    },
+    "b1r": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "O consentimento ressuscita",
+     "ajuste": -2,
+     "piso": 2,
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "confiante",
+       "t": "Chamo o porteiro Evandro Lima."
+      },
+      {
+       "q": "brandao",
+       "e": "chocado",
+       "t": "Isso é uma armação!"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "b2"
+    },
+    "b2": {
+     "tipo": "intuicao",
+     "local": "tribunal",
+     "pergunta": "O porteiro Evandro diz a verdade?",
+     "pistas": [
+      "Ele conhece o número exato da cômoda e da gaveta, mas hesita para dizer a cor da porta do apartamento.",
+      "Olha para o sargento Barreto antes de cada resposta importante.",
+      "Repete 'o doutor Elias abriu e disse: entrem' com as mesmas palavras todas as vezes."
+     ],
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Preciso decidir em que tom ouço esse homem antes de começar.)"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Foi preparado: o depoimento é decorado.",
+       "certa": true
+      },
+      {
+       "t": "É sincero e só está nervoso."
+      }
+     ],
+     "revelacao": [
+      {
+       "q": "narrador",
+       "t": "No bolso do porteiro, um papel dobrado com o roteiro, na letra do sargento Barreto."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Escutei o ritmo da frase e não o seu conteúdo. É assim que se desmonta uma testemunha."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "Eu me deixei levar pela sinceridade fingida."
+      }
+     ],
+     "bonus": 1,
+     "proxima": "b3"
+    },
+    "b3": {
+     "tipo": "depoimento",
+     "testemunha": "twevandro",
+     "titulo": "O porteiro e a civil",
+     "intro": [
+      {
+       "q": "twevandro",
+       "e": "confiante",
+       "t": "Evandro Lima, porteiro do prédio há onze anos. Vim por consciência."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Naquela noite eu subi com os policiais, como testemunha civil, e vi toda a diligência.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Subiu até o apartamento?"
+        },
+        {
+         "q": "twevandro",
+         "e": "confiante",
+         "t": "Subi sim, no terceiro andar."
+        }
+       ]
+      },
+      {
+       "t": "O doutor Elias abriu a porta sozinho, disse 'entrem', e eu vi tudo.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Quanto tempo ele levou para abrir?"
+        },
+        {
+         "q": "twevandro",
+         "e": "confiante",
+         "t": "Segundos, estava esperando."
+        }
+       ]
+      },
+      {
+       "t": "Os policiais não pularam janela nenhuma. A janela já estava quebrada há semanas.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A senhora Zilda diz o contrário."
+        },
+        {
+         "q": "twevandro",
+         "e": "nervoso",
+         "t": "Dona Zilda é muito idosa."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "comoda"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Testemunha civil? O auto de apreensão da cômoda registra a apreensão às 22h30, sem mandado e SEM TESTEMUNHA CIVIL! Se o senhor tivesse subido, o seu nome estaria no auto!",
+       "fx": "protesto"
+      },
+      {
+       "q": "twevandro",
+       "e": "chocado",
+       "t": "Eu… eu estava no térreo… mas vi pela câmera…",
+       "fx": "tremor"
+      },
+      {
+       "q": "brandao",
+       "e": "apontando",
+       "t": "Pela câmera, Excelência? Então o senhor não viu nada!",
+       "fx": "bater"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Esse documento não contradiz essa afirmação."
+      }
+     ],
+     "proxima": "b4",
+     "dica": [
+      "O porteiro afirma que acompanhou a diligência como testemunha civil.",
+      "O auto de apreensão menciona testemunha civil?"
+     ]
+    },
+    "b4": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twevandro",
+       "e": "nervoso",
+       "t": "Eu vi pela câmera do elevador. O doutor Elias abriu a porta sozinho. E a janela, sim, a janela já estava quebrada."
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "Excelência, a câmera pode ser requisitada."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(A câmera está mencionada pela primeira vez agora. E o prédio, de acordo com o perito, não tem câmera no elevador.)"
+      }
+     ],
+     "proxima": "b5"
+    },
+    "b5": {
+     "tipo": "depoimento",
+     "testemunha": "twevandro",
+     "titulo": "A janela quebrada há semanas",
+     "intro": [
+      {
+       "q": "twevandro",
+       "e": "nervoso",
+       "t": "Eu só repito o que vi, Excelência."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "A janela já estava quebrada há semanas. Eram os meninos jogando bola.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Quantas semanas?"
+        },
+        {
+         "q": "twevandro",
+         "e": "nervoso",
+         "t": "Umas três, quatro…"
+        }
+       ]
+      },
+      {
+       "t": "E a porta, o doutor Elias abriu com a própria mão. Ninguém forçou nada.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Ninguém forçou a porta?"
+        },
+        {
+         "q": "twevandro",
+         "e": "confiante",
+         "t": "Ninguém."
+        }
+       ]
+      },
+      {
+       "t": "Não houve gritos nem protestos de ninguém, tudo foi muito tranquilo.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nenhum grito?"
+        },
+        {
+         "q": "twevandro",
+         "e": "confiante",
+         "t": "Nenhum."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "janela",
+       "zilda"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Ninguém forçou nada? O laudo da janela mostra vidro quebrado e esquadria forçada de fora para dentro, sem sinais de que a porta tenha sido aberta pelo morador! E dona Zilda ouviu o morador gritar 'Eu não autorizei!'. O senhor disse que não houve gritos!"
+      },
+      {
+       "q": "twevandro",
+       "e": "chocado",
+       "t": "Dona Zilda… ela sempre foi enxerida… eu…",
+       "fx": "tremor"
+      },
+      {
+       "q": "brandao",
+       "e": "feliz",
+       "t": "Excelência, a defesa não tem perguntas. A testemunha da acusação se encarregou de se desmentir sozinha."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Esses documentos não contradizem essa afirmação."
+      }
+     ],
+     "proxima": "b6",
+     "dica": [
+      "A testemunha afirma que a porta foi aberta pelo morador.",
+      "Compare com o que o perito e a vizinha viram."
+     ]
+    },
+    "b6": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a4tulio",
+       "e": "triste",
+       "t": "Excelência, o Ministério Público foi enganado. Não sabia desse roteiro."
+      }
+     ],
+     "pergunta": "Como conduzir a testemunha que se desmentiu duas vezes?",
+     "opcoes": [
+      {
+       "t": "Mandar prender o porteiro em flagrante e encerrar a audiência.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) Excelência, o direito de defesa vale também para ele. Prender na hora é precipitação."
+        }
+       ]
+      },
+      {
+       "t": "Consignar as contradições, extrair cópia do depoimento para apurar o falso testemunho (CP, art. 342) e ouvir o sargento sobre a origem do roteiro.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Consigno as contradições. Extraia-se cópia do depoimento para apuração do falso testemunho. E o sargento Barreto, que estava presente, explicará de onde veio o roteiro."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "(sussurrando) Equilíbrio perfeito, Excelência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-342",
+         "trecho": "Fazer afirmação falsa, ou negar ou calar a verdade, como testemunha"
+        }
+       ]
+      },
+      {
+       "t": "Ignorar a testemunha: o ilícito já está provado de qualquer modo.",
+       "certa": false,
+       "falas": [
+        {
+         "q": "brandao",
+         "e": "feliz",
+         "t": "Excelência, ignorar não apaga. O Tribunal vai querer saber por que não se perguntou."
+        }
+       ]
+      }
+     ],
+     "proxima": "b7"
+    },
+    "b7": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twevandro",
+       "e": "triste",
+       "t": "O sargento Barreto me deu dois mil reais e o papel com as palavras. Disse que se a busca fosse anulada, ele perdia a farda e eu perdia o meu emprego na portaria."
+      },
+      {
+       "q": "twevandro",
+       "e": "nervoso",
+       "t": "E a denúncia anônima daquela noite… não veio de ninguém da rua. O sargento recebeu a ligação de um número que começava com o prefixo do fórum."
+      },
+      {
+       "q": "a4barreto",
+       "e": "nervoso",
+       "t": "Cale a boca, Evandro! Excelência, isso é mentira…",
+       "fx": "tremor"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Sargento, sente-se. O senhor ficou em silêncio durante toda a audiência e agora tem pressa de falar?"
+      },
+      {
+       "q": "brandao",
+       "e": "confiante",
+       "t": "Excelência, a defesa nada precisa dizer. A prova da ilicitude está produzida pelos que a defendem."
+      },
+      {
+       "q": "a4tulio",
+       "e": "triste",
+       "t": "Excelência, não tenho palavras. Há um policial que mentiu. Isso mancha uma instituição inteira."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Sargento Barreto, o senhor está dispensado. A Corregedoria o aguarda. Quanto a este juízo: o prefixo do fórum fica registrado em ata. Alguém aqui dentro passa endereços. Eu vou descobrir quem."
+      },
+      {
+       "q": "a4rita",
+       "e": "chocado",
+       "t": "(sussurrando) Excelência… o ramal que ligou para o sargento é interno do fórum. Mas a central diz que foi desviado. Ainda não sei por quem."
+      }
+     ],
      "proxima": "s11"
     },
     "s11": {
@@ -4037,7 +4534,8 @@
     "a4jorge": "testemunha",
     "henrique": "testemunha",
     "a4rita": "escritorio",
-    "helena": "escritorio"
+    "helena": "escritorio",
+    "twaurelio": "testemunha"
    },
    "provas": [
     {
@@ -4146,6 +4644,38 @@
      "nome": "CF, art. 5º, LXIII — Silêncio e advogado",
      "chave": "CF#art-5/inc-lxiii",
      "trecho": "o preso será informado de seus direitos, entre os quais o de permanecer calado, sendo-lhe assegurada a assistência da família e de advogado"
+    },
+    {
+     "id": "cp342",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 342 — Falso testemunho",
+     "chave": "CP#art-342",
+     "trecho": "Fazer afirmação falsa, ou negar ou calar a verdade, como testemunha"
+    },
+    {
+     "id": "cpp209",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 209 — Testemunhas do juiz",
+     "chave": "CPP#art-209",
+     "trecho": "poderá ouvir outras testemunhas, além das indicadas pelas partes"
+    },
+    {
+     "id": "cpp318ii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 318, II — Prisão domiciliar",
+     "chave": "CPP#art-318/inc-ii",
+     "trecho": "extremamente debilitado por motivo de doença grave"
+    },
+    {
+     "id": "cpp318pu",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 318, parágrafo único — Prova idônea",
+     "chave": "CPP#art-318/par-unico",
+     "trecho": "o juiz exigirá prova idônea dos requisitos estabelecidos neste artigo"
     }
    ],
    "inicio": "s1",
@@ -4883,6 +5413,511 @@
          "trecho": "deverá o órgão emissor da decisão revisar a necessidade de sua manutenção a cada 90 (noventa) dias, mediante decisão fundamentada, de ofício, sob pena de tornar a prisão ilegal"
         }
        ]
+      }
+     ],
+     "proxima": "j1"
+    },
+    "j1": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "A caneta já está sobre o dispositivo. Faltava só assinar."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, antes que Vossa Excelência assine, a defesa traz um fato novo e urgente: o estado de saúde do preso. O art. 318, II, do CPP autoriza a prisão domiciliar ao extremamente debilitado por doença grave."
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "O cardiologista dele, Dr. Aurélio Matos, está na sala ao lado e se dispõe a depor sobre o quadro clínico."
+      },
+      {
+       "q": "henrique",
+       "e": "triste",
+       "t": "(com a voz fraca, agarrado ao peito) Eu só queria morrer em casa, doutor(a)."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "PROTESTO, Excelência! Fuga de jatinho, passaporte, R$ 38 mil na bolsa: isso é um homem doente?",
+       "fx": "protesto"
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, a decisão está pronta. Se recusar ouvir o médico, a defesa vai falar em cerceamento até no Supremo."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "cp342",
+        "cpp209",
+        "cpp318ii",
+        "cpp318pu"
+       ]
+      }
+     ],
+     "proxima": "j1r"
+    },
+    "j1r": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "Henrique muda de estratégia",
+     "ajuste": -2,
+     "piso": 2,
+     "falas": [
+      {
+       "q": "henrique",
+       "e": "triste",
+       "t": "Doutor(a), a minha vida está nas suas mãos."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Um homem que fugiu de jatinho agora precisa de oxigênio. A pergunta é quem escreveu o roteiro.)"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "j2"
+    },
+    "j2": {
+     "tipo": "decidir",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Excelência, o Ministério Público protesta contra a oitiva do médico. Isso é manobra protelatória.",
+       "fx": "protesto"
+      }
+     ],
+     "pergunta": "O MP protesta contra a oitiva do cardiologista. Sua decisão?",
+     "correta": "indeferir",
+     "fundamentos": [
+      {
+       "chave": "CPP#art-209",
+       "trecho": "poderá ouvir outras testemunhas, além das indicadas pelas partes"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Indefiro o protesto. O juízo ouve o médico: a saúde do preso é matéria de fato, e o art. 318, parágrafo único, me obriga a exigir prova idônea. Quem quer me convencer terá de me convencer em audiência.",
+       "fx": "martelo"
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "…O Ministério Público registra o inconformismo, Excelência, e vai reperguntar."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, recusar ouvir o médico seria cerceamento de defesa. Ouça-o, e depois desmonte-o."
+      }
+     ],
+     "proxima": "j3"
+    },
+    "j3": {
+     "tipo": "intuicao",
+     "local": "tribunal",
+     "pergunta": "O cardiologista fala a verdade?",
+     "pistas": [
+      "Ele repete o diagnóstico em tom decorado, sem consultar nenhuma anotação.",
+      "Quando Lívia sai da sala, ele olha para a porta como quem espera instruções.",
+      "Nenhum atestado traz data nem número de CRM legível."
+     ],
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Antes de ouvi-lo, preciso decidir se vou tratá-lo como testemunha ou como encenação.)"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Está ensaiando um quadro mais grave do que o real.",
+       "certa": true
+      },
+      {
+       "t": "É um médico sincero e preocupado."
+      }
+     ],
+     "revelacao": [
+      {
+       "q": "narrador",
+       "t": "Havia um roteiro dobrado no bolso do jaleco do Dr. Aurélio. Alguém lhe escrevera cada sintoma."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Presumi o roteiro. A toga ensina a ouvir o que não está escrito."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "Subestimei o preparo da defesa. Precisarei ser mais atento(a)."
+      }
+     ],
+     "bonus": 1,
+     "proxima": "j4"
+    },
+    "j4": {
+     "tipo": "depoimento",
+     "testemunha": "twaurelio",
+     "titulo": "O laudo do cardiologista",
+     "intro": [
+      {
+       "q": "twaurelio",
+       "e": "triste",
+       "t": "Aurélio Matos, cardiologista há vinte e seis anos, CRM em dia. Venho a pedido da família do paciente."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Atendo o sr. Altavista há seis meses. É um paciente com insuficiência cardíaca grave.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Em que consultório?"
+        },
+        {
+         "q": "twaurelio",
+         "e": "nervoso",
+         "t": "No domiciliar. Ele não sai de casa."
+        }
+       ]
+      },
+      {
+       "t": "O quadro é gravíssimo: ele não pode se locomover sozinho, nem carregar peso, nem suportar viagens. Está acamado.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Acamado desde quando?"
+        },
+        {
+         "q": "twaurelio",
+         "e": "confiante",
+         "t": "Há mais de seis meses. Sem exceção."
+        }
+       ]
+      },
+      {
+       "t": "Qualquer estresse prolongado, como a prisão, pode ser fatal.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor tem exames recentes?"
+        },
+        {
+         "q": "twaurelio",
+         "e": "nervoso",
+         "t": "Estão em casa, a defesa os trará."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 1,
+      "provas": [
+       "mala"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "UM MOMENTO!",
+       "fx": "ummomento"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Acamado, incapaz de se locomover e de carregar peso? O preso foi detido numa blitz rodoviária carregando uma bolsa com R$ 38 mil, dois celulares e um passaporte estrangeiro com entrada no país há cinco dias por Foz do Iguaçu! Esse homem atravessou uma fronteira!",
+       "fx": "protesto"
+      },
+      {
+       "q": "twaurelio",
+       "e": "chocado",
+       "t": "Eu… não sabia da viagem. Ele me disse que estava em casa…",
+       "fx": "tremor"
+      },
+      {
+       "q": "lacerda",
+       "e": "apontando",
+       "t": "Em casa, doutor? A casa dele fica do outro lado da fronteira?",
+       "fx": "bater"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Esse documento não contradiz essa afirmação."
+      }
+     ],
+     "proxima": "j5",
+     "dica": [
+      "O médico diz que o preso não consegue se locomover.",
+      "Veja o que foi apreendido com ele na bolsa."
+     ]
+    },
+    "j5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twaurelio",
+       "e": "nervoso",
+       "t": "Bem… ele pode ter feito um esforço excepcional. Em momentos de risco, o corpo faz coisas incríveis."
+      },
+      {
+       "q": "livia",
+       "e": "pensativo",
+       "t": "Excelência, o doutor Aurélio esclarece o quadro: um paciente grave pode ter fases de melhora. Mas nunca viaja de avião."
+      },
+      {
+       "q": "twaurelio",
+       "e": "confiante",
+       "t": "Isso mesmo. Henrique Altavista não pega avião há anos. O coração não permite."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Não pega avião há anos. Eu li um registro de voo antes de abrir esta audiência.)"
+      }
+     ],
+     "proxima": "j6"
+    },
+    "j6": {
+     "tipo": "depoimento",
+     "testemunha": "twaurelio",
+     "titulo": "O paciente que não voa",
+     "intro": [
+      {
+       "q": "twaurelio",
+       "e": "confiante",
+       "t": "Posso garantir o que digo: eu o acompanho de perto."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O sr. Altavista não embarca em avião há mais de dois anos. A pressurização é um risco enorme.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Mais de dois anos? Nem um voo?"
+        },
+        {
+         "q": "twaurelio",
+         "e": "confiante",
+         "t": "Nenhum. Eu o proibi."
+        }
+       ]
+      },
+      {
+       "t": "Os exames mais recentes são do último mês, e todos confirmam a gravidade.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor os trouxe?"
+        },
+        {
+         "q": "twaurelio",
+         "e": "nervoso",
+         "t": "Estão no consultório."
+        }
+       ]
+      },
+      {
+       "t": "Eu o examinei pessoalmente na semana passada, na casa dele.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Em que endereço?"
+        },
+        {
+         "q": "twaurelio",
+         "e": "nervoso",
+         "t": "Prefiro não revelar por segurança dele."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "voo"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "Nenhum voo em dois anos? Há um registro nos autos: há oito meses, um jatinho da Altavista decolou de madrugada para o exterior, horas depois da decretação da preventiva anterior. Henrique Altavista estava a bordo!"
+      },
+      {
+       "q": "twaurelio",
+       "e": "chocado",
+       "t": "Eu… eu fui informado de que ele estava hospitalizado nessa época…",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4rita",
+       "e": "chocado",
+       "t": "(sussurrando) Excelência, a fuga de jatinho foi o fato mais noticiado do ano. O doutor Aurélio não leria jornal?"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Esse documento não contradiz essa afirmação."
+      }
+     ],
+     "proxima": "j7",
+     "dica": [
+      "O médico afirma que o preso não viaja de avião.",
+      "Qual registro mostra uma viagem de jatinho?"
+     ]
+    },
+    "j7": {
+     "tipo": "argumento",
+     "local": "tribunal",
+     "alvo": "O atestado médico basta para a substituição da preventiva por prisão domiciliar.",
+     "pergunta": "Que dispositivo condiciona a substituição à prova idônea dos requisitos?",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "Excelência, o doutor Aurélio é médico. O que mais o juízo exige?"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "O art. 312 do CPP, que trata do perigo gerado pela liberdade do imputado.",
+       "dispositivo": "CPP#art-312",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O art. 312 trata dos requisitos da preventiva, e não da substituição por domiciliar."
+        }
+       ]
+      },
+      {
+       "t": "O art. 318, parágrafo único, do CPP: para a substituição, o juiz exigirá prova idônea dos requisitos.",
+       "dispositivo": "CPP#art-318/par-unico",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Art. 318, parágrafo único: para a substituição, o juiz exigirá prova idônea. Um depoimento que se desfaz em dois minutos não é prova idônea."
+        }
+       ]
+      },
+      {
+       "t": "O art. 310 do CPP, que trata da audiência de custódia.",
+       "dispositivo": "CPP#art-310",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O art. 310 trata da custódia. Não é o dispositivo que exijo agora."
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "livia",
+       "e": "triste",
+       "t": "…Excelência, a defesa não tem mais perguntas ao doutor Aurélio."
+      }
+     ],
+     "proxima": "j8"
+    },
+    "j8": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "twaurelio",
+       "e": "triste",
+       "t": "Eu não vejo o Sr. Henrique há quatro anos. Um advogado me pagou vinte mil reais para atestar o que estava escrito num papel. Disse que era só um favor."
+      },
+      {
+       "q": "livia",
+       "e": "chocado",
+       "t": "Excelência… eu nunca vi esse papel! Quem trouxe o doutor Aurélio foi o escritório do Dr. Brandão!",
+       "fx": "tremor"
+      },
+      {
+       "q": "henrique",
+       "e": "bravo",
+       "t": "Cale-se, Aurélio. Cale-se!"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Registre-se que o preso, sem que lhe tenha sido perguntado, mandou a testemunha calar-se. Dr. Aurélio, o senhor responderá pelo art. 342 do Código Penal. Remeta-se cópia à autoridade policial."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Excelência, o Ministério Público nunca duvidou do senso de Vossa Excelência."
+      },
+      {
+       "q": "livia",
+       "e": "pensativo",
+       "t": "Excelência, eu defendo Henrique Altavista porque a lei me manda. A lei não me manda ser enganada por quem me contratou. Vou refletir muito sobre o meu lado."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "(A doutora Lívia acaba de ver quem paga os roteiros. Anote isso, Rita.)"
+      },
+      {
+       "q": "a4rita",
+       "e": "feliz",
+       "t": "Anotado, Excelência."
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Mantida a preventiva. Prisão domiciliar indeferida por falta de prova idônea. Em tempo: o juízo não tem pena nem pressa, apenas a lei.",
+       "fx": "martelo"
       }
      ],
      "proxima": "s14"
