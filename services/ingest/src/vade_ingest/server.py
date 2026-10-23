@@ -140,13 +140,27 @@ def make_server(updater: Updater, port: int = 8765, host: str = "127.0.0.1") -> 
     return ThreadingHTTPServer((host, port), handler)
 
 
-def start_auto_check(updater: Updater, minutes: float, auto_update: bool) -> threading.Thread:
+def _lower_priority() -> None:
+    """Windows: o processo passa a prioridade 'abaixo do normal' (git e importação não disputam CPU/disco com o jogo)."""
+    try:
+        import ctypes
+        ctypes.windll.kernel32.SetPriorityClass(ctypes.windll.kernel32.GetCurrentProcess(), 0x4000)
+    except Exception:
+        pass
+
+
+def start_auto_check(updater: Updater, minutes: float, auto_update: bool, first_delay: float = 0.0,
+                     low_priority: bool = False) -> threading.Thread:
     """Verifica a cada N minutos. Com auto_update, aplica sozinho quando há mudança no recorte.
 
     Como o acervo muda a cada poucos minutos, um intervalo de 15–60 min agrupa vários commits num
     único diff, o que é bem mais barato do que reagir a cada commit."""
 
     def loop() -> None:
+        if low_priority:
+            _lower_priority()
+        if first_delay > 0:
+            time.sleep(first_delay * 60)   # não verifica nem importa durante a abertura do jogo
         while True:
             try:
                 r = updater.check()

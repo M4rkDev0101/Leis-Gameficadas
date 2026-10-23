@@ -281,6 +281,9 @@
   .ev { cursor:pointer; box-shadow:0 .25cqw 0 rgba(138,90,43,.35); }
   .ev:hover, .ev:focus-visible { transform:translateY(-.4cqw) rotate(-.6deg); border-color:#8a5a2b; box-shadow:0 .8cqw 1.4cqw rgba(60,35,10,.3); }
   .detail { background:#fffaf0 repeating-linear-gradient(0deg, transparent 0 1.9cqw, rgba(138,90,43,.08) 1.9cqw 2cqw); }
+  html.aba-oculta *, html.aba-oculta *::before, html.aba-oculta *::after { animation-play-state:paused !important; }   /* aba em segundo plano: nada anima */
+  .ap, .ap * { animation-play-state:paused !important; }   /* fora da tela: sem animação (ver animIO) */
+  .tile:not(:hover):not(:focus-visible) .cover * { animation-play-state:paused !important; }   /* miniaturas: respiração/piscar de 1% não se vê e custa um re-render por quadro */
   @media (prefers-reduced-motion: reduce) { .breath, .head, .arm-point { animation:none !important; } }
   @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration:.01ms !important; animation-iteration-count:1 !important; transition:none !important; } }
   /* ============================================================ menu estilo streaming (identidade "Vade Tribunal": noite, vidro e âmbar) */
@@ -2518,7 +2521,15 @@ function playIntro() {
 // ------------------------------------------------ capas e cartões
 const coverFill = new WeakMap();
 const coverIO = "IntersectionObserver" in window ? new IntersectionObserver((es) => { for (const e of es) if (e.isIntersecting) paintCover(e.target); }, {rootMargin:"300px 0px"}) : null;
-function paintCover(c) { const f = coverFill.get(c); if (!f) return; coverFill.delete(c); if (coverIO) coverIO.unobserve(c); c.insertAdjacentHTML("afterbegin", f()); }
+// animações infinitas dos personagens só rodam enquanto o elemento está na tela (fora dela, a classe .ap as pausa):
+// 30+ personagens animados com drop-shadow na grade de casos deixavam a página a ~13 fps e a CPU/GPU no máximo
+const animIO = "IntersectionObserver" in window ? new IntersectionObserver((es) => { for (const e of es) e.target.classList.toggle("ap", !e.isIntersecting); }) : null;
+// aba em segundo plano / minimizada: pausa animações CSS e suspende o áudio (o sequenciador para junto, pois o relógio do áudio congela)
+document.addEventListener("visibilitychange", () => {
+  document.documentElement.classList.toggle("aba-oculta", document.hidden);
+  try { if (Sound.ctx) { if (document.hidden) Sound.ctx.suspend(); else if (Sound.on) Sound.ctx.resume(); } } catch {}
+});
+function paintCover(c) { const f = coverFill.get(c); if (!f) return; coverFill.delete(c); if (coverIO) coverIO.unobserve(c); c.insertAdjacentHTML("afterbegin", f()); if (animIO) animIO.observe(c); }
 function lazyCover(c, f) { coverFill.set(c, f); if (coverIO) coverIO.observe(c); else paintCover(c); }
 const two = (n) => String(n).padStart(2, "0");
 function tileOf(it, perfil, nextId) {
@@ -2644,6 +2655,7 @@ async function openDetail(it, perfil) {
 // ------------------------------------------------ destaque
 function renderHero(it, perfil) {
   const {ep, ato, label} = it;
+  if (animIO) animIO.observe($("#hero-art"));
   $("#hero-art").replaceChildren(el("div", {class:"sky", innerHTML:skyline(seedOf("hero" + ep.id))}),
     el("div", {innerHTML:figs([{visual:youLook(ep.papel, perfil), cls:"you", expr:"confiante"}], "hero-figs")}));
   const verb = ep.salvo ? "Continue de onde parou" : (ep.status === "concluido" ? "Reveja este caso" : "Seu próximo caso");
