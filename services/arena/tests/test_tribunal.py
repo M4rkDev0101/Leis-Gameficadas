@@ -65,6 +65,21 @@ class TestCarreira(unittest.TestCase):
         self.assertTrue(eps[2]["salvo"])
         self.assertGreater(c["horas_jogadas"], 0)
 
+    def test_cover_and_progress(self):
+        mid = list(tribunal.episode(DATA, "ep1-celular")["cenas"])[3]
+        c = tribunal.career(DATA, {}, {"ep1-celular"}, {"ep1-celular": mid})
+        eps = [e for a in c["atos"] for e in a["episodios"]] + c["avulsos"]
+        for e in eps:
+            self.assertIn("capa", e)
+            self.assertGreater(e["capa"]["cenas"], 2)
+        withkey = [e for e in eps if e["capa"].get("visual")]
+        self.assertGreater(len(withkey), len(eps) * 0.9)
+        self.assertNotIn("voce", {e["capa"].get("q") for e in eps})
+        e = next(e for e in eps if e["id"] == "ep1-celular")
+        self.assertTrue(0 < e["progresso"] < 1)
+        self.assertEqual(next(x for x in eps if x["id"] == "a1-tutorial")["progresso"], None)
+        self.assertGreater(len({e["capa"].get("q") for e in eps}), 15)
+
     def test_every_act_episode_has_unique_order(self):
         seen = set()
         for ep in DATA["episodios"]:

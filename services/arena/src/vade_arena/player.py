@@ -120,6 +120,13 @@ class Player:
         finally:
             db.close()
 
+    def saved_scenes(self) -> dict[str, str]:
+        db = self._db()
+        try:
+            return {r[0]: (json.loads(r[1]) or {}).get("cena") for r in db.execute("SELECT ep_id, estado FROM tribunal_save")}
+        finally:
+            db.close()
+
     def set_marks(self, ep_id: str, declared: set[str], chosen: set[str]) -> None:
         """Troca as marcas de um episódio: rejogar o caso com outra escolha muda a história."""
         db = self._db()

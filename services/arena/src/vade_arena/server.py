@@ -119,7 +119,7 @@ class Arena:
 
     def carreira(self) -> dict:
         won = self.player.profile()["melhor_por_caso"]
-        out = tribunal_mod.career(self.tribunal, won, self.player.saved_trials())
+        out = tribunal_mod.career(self.tribunal, won, self.player.saved_trials(), self.player.saved_scenes())
         marks = self.player.marks()
         out["marcas"] = sorted(marks)
         texts = tribunal_mod.choice_texts(self.tribunal)
