@@ -2370,7 +2370,7 @@ function openAutos(mode) {
       const p = sel && provaById(sel);
       // replaceChildren converte null em texto "null": filtra os itens vazios
       detail.replaceChildren(...(p ? [el("h3", {textContent:`${p.icone || ""} ${p.nome}`}),
-        p.tipo === "lei" ? el("div", {class:"law", textContent:p.texto || ("“" + p.trecho + "”")}) : el("div", {textContent:p.descricao}),
+        p.tipo === "lei" ? el("div", {class:"law", textContent:p.texto || (p.trecho ? "“" + p.trecho + "”" : "Texto indisponível.")}) : el("div", {textContent:p.descricao}),
         p.detalhe && (G.examinadas || []).includes(p.id) ? el("p", {textContent:p.detalhe}) : null,
         p.indicios && ((G.examinadas || []).includes(p.id) || (G.descartadas || []).includes(p.id)) ? el("ul", {class:"pistas"}, ...p.indicios.map(t => el("li", {textContent:"Indício: " + t}))) : null,
         p.tipo === "lei" ? el("div", {class:"ref", textContent:(p.texto ? "Texto vigente do catálogo · " : "Trecho citado · ") + p.chave}) : null].filter(Boolean)
@@ -2390,9 +2390,12 @@ function lawPopup(fs) {
   const items = (fs || []).filter(f => f);
   if (!items.length) return;
   const f = items[0];
-  const box = el("div", {class:"lawpop"}, el("b", {textContent:"📜 Fundamento"}),
-    el("div", {class:"law", textContent:f.texto || ("“" + f.trecho + "”")}),
-    el("div", {class:"ref", textContent:(f.norma ? f.norma + " · " : "") + (f.rotulo || "") + " · " + f.chave}));
+  // uma prova (documento, foto…) não tem texto de lei nem chave: mostra a descrição dela, sem "undefined"
+  const lei = f.tipo ? f.tipo === "lei" : !!f.chave, tx = lei ? (f.texto || (f.trecho ? "“" + f.trecho + "”" : "")) : (f.descricao || "");
+  if (!tx && !f.chave && !f.nome) return;
+  const ref = lei ? [f.norma, f.rotulo, f.chave].filter(Boolean).join(" · ") : f.nome || "";
+  const box = el("div", {class:"lawpop"}, el("b", {textContent:lei ? "📜 Fundamento" : `${f.icone || "📄"} Prova apresentada`}),
+    tx ? el("div", {class:"law", textContent:tx}) : null, ref ? el("div", {class:"ref", textContent:ref}) : null);
   $("#stage").append(box); setTimeout(() => box.remove(), 6500);
 }
 function banner(text, sub, green) { const b = el("div", {class:"banner" + (green ? " green" : "")}, el("span", {textContent:text}), sub ? el("small", {textContent:sub}) : null);
