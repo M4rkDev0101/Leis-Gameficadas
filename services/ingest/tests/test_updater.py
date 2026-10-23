@@ -186,6 +186,19 @@ class TestServer(UpdaterTestBase):
         names = [i["caminho"] for i in self.req("/api/arvore?prefixo=")[1]]
         self.assertEqual(names, ["federal", "jurisprudencia"])
 
+    def test_api_norma(self):
+        self.u.set_recorte(["federal"])
+        self.u.run_update_blocking()
+        nid = "federal/decretos-lei/1940/del-2848-1940-12-07"
+        code, r = self.req("/api/norma?id=" + urllib.request.quote(nid) + "&alvo=art-25/par-unico")
+        self.assertEqual(code, 200)
+        self.assertEqual(r["norma"]["id"], nid)
+        self.assertIn("art-25/par-unico", [d["caminho"] for d in r["dispositivos"]])
+        self.assertEqual(r["total"], len(r["dispositivos"]))
+        self.assertEqual(self.req("/api/norma?id=nao/existe")[0], 404)
+        self.assertEqual(self.req("/api/norma")[0], 400)
+        self.assertEqual(self.req("/api/norma?id=" + urllib.request.quote(nid) + "&inicio=abc&limite=x")[0], 200)
+
     def test_empty_scope_is_rejected(self):
         code, body = self.req("/api/atualizar", {})
         self.assertEqual(code, 400)

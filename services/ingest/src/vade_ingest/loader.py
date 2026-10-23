@@ -287,6 +287,42 @@ class Catalog:
             "falhas": self.db.execute("SELECT count(*) FROM falha_importacao").fetchone()[0],
         }
 
+    # ------------------------------------------------------------ leitura integral
+    def norma_leitura(self, norma_id: str, inicio: int = 0, limite: int = 400, alvo: str | None = None) -> dict | None:
+        """Norma para leitura: metadados, índice de divisões (com a posição de cada uma na ordem de leitura)
+        e uma janela de dispositivos [inicio, fim). Com ``alvo`` (caminho), a janela é posicionada para
+        conter esse dispositivo. Normas grandes (Código Civil) são lidas por janelas, não de uma vez."""
+        n = self.db.execute(
+            "SELECT id, titulo, tipo, numero, data, ementa, sigla, nome_popular, situacao, revogada, fonte, n_artigos "
+            "FROM norma WHERE id = ?", (norma_id,)).fetchone()
+        if n is None:
+            return None
+        limite = max(1, min(int(limite), 2000))
+        total = self.db.execute("SELECT count(*) FROM dispositivo WHERE norma_id = ?", (norma_id,)).fetchone()[0]
+        indice = [dict(r) for r in self.db.execute(
+            """SELECT caminho, rotulo, texto AS titulo, tipo_divisao, pos FROM (
+                 SELECT caminho, rotulo, texto, tipo, tipo_divisao, row_number() OVER (ORDER BY ordem) - 1 AS pos
+                   FROM dispositivo WHERE norma_id = ?) WHERE tipo = 'divisao' ORDER BY pos""", (norma_id,))]
+        alvo_pos = None
+        if alvo:
+            row = self.db.execute(
+                "SELECT count(*) FROM dispositivo WHERE norma_id = ? AND ordem < "
+                "(SELECT ordem FROM dispositivo WHERE norma_id = ? AND caminho = ?)", (norma_id, norma_id, alvo)).fetchone()
+            if self.db.execute("SELECT 1 FROM dispositivo WHERE norma_id = ? AND caminho = ?", (norma_id, alvo)).fetchone():
+                alvo_pos = row[0]
+                inicio = max(0, alvo_pos - limite // 4)
+        inicio = max(0, min(int(inicio), max(0, total - 1)))
+        disp = [dict(r) for r in self.db.execute(
+            """SELECT caminho, tipo, tipo_divisao, rotulo, rubrica, texto, revogado, vetado, ordem
+                 FROM dispositivo WHERE norma_id = ? ORDER BY ordem LIMIT ? OFFSET ?""", (norma_id, limite, inicio))]
+        fim = inicio + len(disp)
+        return {
+            "norma": dict(n), "total": total, "indice": indice, "dispositivos": disp,
+            "inicio": inicio, "fim": fim, "alvo_pos": alvo_pos,
+            "proximo": fim if fim < total else None,
+            "anterior": max(0, inicio - limite) if inicio > 0 else None,
+        }
+
     # ------------------------------------------------------------ consulta
     def search(self, query: str, limit: int = 10) -> list[sqlite3.Row]:
         """Busca em dispositivos, ordenada por BM25 e priorizando normas relevantes."""

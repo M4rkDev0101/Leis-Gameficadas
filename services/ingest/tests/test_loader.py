@@ -171,6 +171,81 @@ class TestCatalog(unittest.TestCase):
         self.assertIsNotNone(after)  # o id numérico pode mudar; a chave natural não
 
 
+LEI_DIV = """---
+titulo: "Lei nº 7 de 2020"
+tipo: "Lei Ordinária"
+numero: "7"
+data: 2020-01-02
+---
+# Lei nº 7 de 2020
+
+## TÍTULO I — DAS PESSOAS
+
+### CAPÍTULO I — DA CAPACIDADE
+
+**Art. 1º** Toda pessoa é capaz.
+
+**Art. 2º** A personalidade começa do nascimento.
+
+### CAPÍTULO II — DOS DIREITOS
+
+**Art. 3º** Os direitos são iguais:
+
+I - para todos;
+
+II - sem distinção.
+"""
+
+
+class TestNormaLeitura(unittest.TestCase):
+    """Leitura integral: metadados, índice de divisões e dispositivos paginados por ordem de leitura."""
+
+    def setUp(self):
+        self.tmp = Path(tempfile.mkdtemp())
+        self.root = self.tmp / "acervo"
+        self.nid = "federal/leis-ordinarias/2020/lei-7-2020"
+        write(self.root, self.nid + ".md", LEI_DIV)
+        self.cat = Catalog(self.tmp / "c.sqlite")
+        self.cat.sync(FsSource(self.root))
+
+    def tearDown(self):
+        self.cat.close()
+        shutil.rmtree(self.tmp, ignore_errors=True)
+
+    def test_unknown_norma(self):
+        self.assertIsNone(self.cat.norma_leitura("nao/existe"))
+
+    def test_index_and_full_page(self):
+        r = self.cat.norma_leitura(self.nid)
+        self.assertEqual(r["norma"]["titulo"], "Lei nº 7 de 2020")
+        self.assertEqual(r["total"], len(r["dispositivos"]))
+        self.assertEqual([d["caminho"] for d in r["indice"]],
+                         ["titulo-1", "titulo-1/capitulo-1", "titulo-1/capitulo-2"])
+        self.assertEqual([i["rotulo"] for i in r["indice"]][0], "TÍTULO I")
+        self.assertIn("DAS PESSOAS", r["indice"][0]["titulo"])
+        ords = [d["ordem"] for d in r["dispositivos"]]
+        self.assertEqual(ords, sorted(ords))
+        art3 = next(d for d in r["dispositivos"] if d["caminho"] == "art-3")
+        self.assertEqual(art3["rotulo"], "Art. 3º")
+        self.assertTrue(any(d["caminho"] == "art-3/inc-ii" for d in r["dispositivos"]))
+        self.assertIsNone(r["proximo"])
+
+    def test_pagination_and_target(self):
+        full = self.cat.norma_leitura(self.nid)["dispositivos"]
+        a = self.cat.norma_leitura(self.nid, inicio=0, limite=3)
+        self.assertEqual((len(a["dispositivos"]), a["inicio"], a["fim"], a["proximo"], a["anterior"]), (3, 0, 3, 3, None))
+        b = self.cat.norma_leitura(self.nid, inicio=a["proximo"], limite=3)
+        self.assertEqual(a["dispositivos"] + b["dispositivos"], full[:6])
+        self.assertEqual(b["anterior"], 0)
+        # janela que contém o dispositivo-alvo, mesmo no meio da norma
+        t = self.cat.norma_leitura(self.nid, alvo="art-3", limite=2)
+        self.assertIn("art-3", [d["caminho"] for d in t["dispositivos"]])
+        self.assertEqual(t["alvo_pos"], [d["caminho"] for d in full].index("art-3"))
+        # o índice aponta para a posição de cada divisão
+        cap2 = next(i for i in t["indice"] if i["caminho"].endswith("capitulo-2"))
+        self.assertEqual(full[cap2["pos"]]["caminho"], cap2["caminho"])
+
+
 @unittest.skipUnless(shutil.which("git"), "git não instalado")
 class TestGitIncremental(unittest.TestCase):
     def setUp(self):
