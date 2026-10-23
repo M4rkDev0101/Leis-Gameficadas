@@ -52,6 +52,27 @@ pessoalmente: agentes NÃO jogam episódios (só unittest, `jogar.py validar`, c
   teste de instalação limpa (o jogo do usuário aberto travou o setup; um `VadeTribunal.tmp` ficou preso). Usar
   PowerShell ou MSYS_NO_PATHCONV=1 para os flags do setup.
 
+## Frente "cada papel no seu papel" (23/10/2026, tarde) — retomar daqui
+Pedidos do usuário nesta sessão (autorização total para trabalhar sozinho): (1) na Toga o jogador agia como acusação,
+não como juiz; (2) "undefined" ao mostrar lei; (3) mecânicas próprias para advogado, promotor, juiz e Supremo;
+(4) mais história, complexidade crescente e cenários novos condizentes; (5) histórias fora do tribunal (provocações,
+perseguições) sem cansar; (6) casos de voto popular (júri) com atenção redobrada; (7) mini-dramas: personagens para
+amar e odiar, quebra de confiança, decepção; (8) mais efeitos, música "de verdade", momentos de tensão;
+(9) interface com cara de jogo; (10) commits sempre e tudo anotado aqui.
+
+| # | Tarefa | Estado |
+| --- | --- | --- |
+| P1 | Corrigir "undefined" (pop-up de fundamento recebia prova, não lei) | ✅ |
+| P2 | Motor: `audiencia`, `palavra`, `sentenca` (juiz), `protesto` (partes), `denuncia` (promotor), `plenario` (STF e júri), `tensao` e `celular` (fora do tribunal), efeito `ordem`, depoimento em modo juiz. Spec: [MECANICAS_PAPEIS.md](MECANICAS_PAPEIS.md) | ✅ testado no navegador com fixtures (`tests/papeis_fixture.py`) |
+| P3 | Ato 4 (Toga): reescrever os 9 casos com as mecânicas de juiz + casos novos de complexidade crescente (custódia, vítima/400-A, júri) | a fazer (agente) |
+| P4 | Ato 3 (promotor): denúncia, protesto, júri pela acusação, casos novos | a fazer (agente) |
+| P5 | Atos 1–2 (advogado): protesto, júri pela defesa, casos novos | a fazer (agente) |
+| P6 | Ato 5 (juiz) e Ato 6 (STF): tom de juiz, `plenario` no STF | a fazer (agente) |
+| P7 | Arte: cenários novos (plenário do STF, sala de audiência de custódia, gabinete da promotoria, garagem/estacionamento, carro à noite…) com QA rígido pessoal | a fazer (agente + coordenador) |
+| P8 | Áudio: trilha mais rica, temas de tensão/perseguição/traição | a fazer (agente) |
+| P9 | Interface com cara de jogo (auditoria de legibilidade e game feel) | a fazer (agente) |
+| P10 | Arcos de personagem/mini-dramas atravessando os atos (traição, decepção, aliados) | dentro de P3–P6, coordenado por docs/NARRATIVA_GANCHOS.md |
+
 ## Notas de ambiente (descobertas que custaram tempo)
 - Agentes: `isolation: worktree` falha (MAX_PATH). Criar `git worktree add -b equipe/<x> C:/lx/wt-<x>` e mandar o
   agente trabalhar só lá, com porta própria (878x). Agentes Sonnet/Haiku com skills; coordenador revisa e integra.
