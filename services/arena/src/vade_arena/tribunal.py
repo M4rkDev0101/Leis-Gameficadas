@@ -49,7 +49,9 @@ SCENE_TYPES = {"titulo", "dialogo", "depoimento", "apresentar", "escolha", "deci
 EXPRESSIONS = {"normal", "feliz", "bravo", "nervoso", "chocado", "pensativo", "triste", "confiante", "apontando"}
 EFFECTS = {"protesto", "martelo", "tremor", "bater", "flash", "ummomento", "tomaisso", "ordem"}
 LOCAIS = {"tribunal", "escritorio", "rua", "bar", "delegacia", "parlatorio", "apartamento", "gabinete", "obra",
-          "mercado", "ponto", "juri", "loja", "clinica"}
+          "mercado", "ponto", "juri", "loja", "clinica",
+          # cenários novos (frente "cada papel no seu papel"): até a arte chegar, usam o fundo genérico
+          "custodia", "stf", "promotoria", "garagem", "carro", "casa", "corredor", "praca", "cafe", "cemiterio"}
 POSICOES = {"defesa", "acusacao", "juiz", "testemunha", "escritorio", "cena"}
 XP_BASE = {"basico": 80, "intermediario": 120, "avancado": 170, "especialista": 230}
 # Ajuste de XP pela duração estimada: o XP base do nível vale para um caso de DUR_REF minutos; cada minuto a mais
