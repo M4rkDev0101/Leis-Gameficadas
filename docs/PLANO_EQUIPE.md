@@ -50,6 +50,10 @@ testes (`unittest`), validação jurídica (`jogar.py validar`) e jogo no navega
     não, recriar os agentes com o mesmo pedido. Os dois mexem em `instalador/vade_launcher.py` em funções diferentes.
 - 23/10 (2ª sessão): agentes perf2 e antivirus relançados; novo agente `juice` (game feel: protesto com
   tremida/flash/hit-stop, speed lines, veredicto animado, confete, transições) em `C:/lx/wt-juice`, branch `equipe/juice`.
+- perf2 integrado na main (71a2d48). antivirus: build e Defender ok, falta instalação limpa (jogo do usuário aberto bloqueou).
+- Meta "AAA viciante" (sem padrões predatórios): agente `loop` (C:/lx/wt-loop: notas S–C, combo, patentes, álbum de
+  jurisprudência, desafio do dia; backend + docs/DOPAMINA.md; UI depois do juice) e agente `gancho` (C:/lx/wt-gancho:
+  mistério da temporada, cold open e cliffhanger por caso; só JSON + docs/NARRATIVA_GANCHOS.md).
 - Depois: item 3 (2ª passada de arte) e item 8 (QA de escolhas/conquistas/créditos).
 - Teste de instalação limpa sem tocar na do usuário: rodar o .exe com LOCALAPPDATA e USERPROFILE apontando para
   `C:/lx/tmp-inst/...` e `BROWSER="cmd /c rem %s"`; o jogo sobe em 127.0.0.1:8765.
