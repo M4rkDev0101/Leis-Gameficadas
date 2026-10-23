@@ -3,220 +3,349 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
 <title>Vade Arena</title>
 <style>
   :root {
-    --bg:#FAFAF7; --surface:#FFFFFF; --surface-2:#F2F2EE; --border:#E2E2DC;
-    --text:#16181D; --muted:#5D6470; --primary:#3D5BD9; --on-primary:#FFFFFF;
-    --success:#167A49; --danger:#B8321F; --xp:#8A6300; --streak:#AD4F00; --juiz:#6B4FC8;
-    --success-bg:#E4F4EB; --danger-bg:#FBE7E3; --xp-bg:#FBF0D6; --primary-bg:#E6EBFC;
-    --law:#22252B; --radius:14px;
-    --mono:ui-monospace,"JetBrains Mono","Cascadia Code",Consolas,monospace;
-    --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg:#0E1116; --surface:#161B22; --surface-2:#1F2630; --border:#2A3340;
-      --text:#E8ECF2; --muted:#9AA6B6; --primary:#6C8CFF; --on-primary:#0E1116;
-      --success:#34C47C; --danger:#FF6B5E; --xp:#F5B700; --streak:#FF8A2B; --juiz:#B49BFF;
-      --success-bg:#12291E; --danger-bg:#331814; --xp-bg:#2E2508; --primary-bg:#18213D; --law:#D9DEE7;
-    }
-  }
-  :root[data-theme="dark"] {
-    --bg:#0E1116; --surface:#161B22; --surface-2:#1F2630; --border:#2A3340;
-    --text:#E8ECF2; --muted:#9AA6B6; --primary:#6C8CFF; --on-primary:#0E1116;
-    --success:#34C47C; --danger:#FF6B5E; --xp:#F5B700; --streak:#FF8A2B; --juiz:#B49BFF;
-    --success-bg:#12291E; --danger-bg:#331814; --xp-bg:#2E2508; --primary-bg:#18213D; --law:#D9DEE7;
+    --v-bg:#0B0D11; --v-bg-2:#12151B; --v-surface:#181C24; --v-surface-2:#222833; --v-line:#2C3340;
+    --v-text:#ECEEF2; --v-muted:#9AA3B2; --v-faint:#6B7383;
+    --v-gold:#D4A24C; --v-gold-2:#E8BE6A; --v-on-gold:#16110A;
+    --v-steel:#5B7BA6; --v-steel-t:#9DB6D9; --v-ok:#3FBF7F; --v-bad:#E5534B; --v-bad-t:#F28B85; --v-warn:#E8A33D;
+    --v-r:10px; --v-r-lg:16px; --v-shadow:0 10px 30px rgba(0,0,0,.45);
+    --v-serif:Georgia,"Times New Roman",serif; --v-sans:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+    --v-ease:cubic-bezier(.2,.7,.2,1);
+    --mono:ui-monospace,"Cascadia Code",Consolas,monospace;
+    --pad:clamp(16px, 4vw, 56px); --hh:64px;
   }
   * { box-sizing:border-box; }
-  html, body { margin:0; background:var(--bg); color:var(--text); }
-  body { font:15px/1.55 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  html { color-scheme:dark; }
+  html, body { margin:0; background:var(--v-bg); color:var(--v-text); }
+  body { font:15px/1.55 var(--v-sans); -webkit-font-smoothing:antialiased; overflow-x:hidden; }
+  body.lock { overflow:hidden; }
   button { font:inherit; cursor:pointer; color:inherit; }
-  button:focus-visible, a:focus-visible { outline:2px solid var(--primary); outline-offset:2px; }
-  a { color:var(--primary); }
-  .muted { color:var(--muted); } .mono { font-family:var(--mono); }
-  main { max-width:1040px; margin:0 auto; padding:16px 16px 80px; }
+  a { color:var(--v-gold-2); }
+  :is(button, a, summary, [tabindex]):focus-visible { outline:2px solid var(--v-gold); outline-offset:3px; }
+  h1, h2, h3 { font-family:var(--v-serif); letter-spacing:.02em; font-weight:700; margin:0; }
+  .muted { color:var(--v-muted); }
+  .skip { position:absolute; left:-999px; top:8px; background:var(--v-gold); color:var(--v-on-gold); padding:8px 14px;
+          border-radius:8px; font-weight:700; z-index:100; }
+  .skip:focus { left:8px; }
+  .sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; }
 
-  /* ---------- topo */
-  .top { position:sticky; top:0; z-index:5; background:color-mix(in srgb, var(--bg) 88%, transparent);
-         backdrop-filter:blur(10px); border-bottom:1px solid var(--border); }
-  .top-in { max-width:1040px; margin:0 auto; padding:10px 16px; display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
-  .brand { font-weight:800; letter-spacing:-.02em; font-size:1.1rem; display:flex; gap:6px; align-items:center; }
-  .brand small { font-weight:600; color:var(--muted); }
-  nav.tabs { display:flex; gap:4px; background:var(--surface-2); padding:4px; border-radius:12px; }
-  nav.tabs button, nav.tabs a { border:0; background:none; padding:7px 12px; border-radius:9px; font-weight:600;
-                                color:var(--muted); text-decoration:none; font-size:.92rem; }
-  nav.tabs [aria-current="page"] { background:var(--surface); color:var(--text); box-shadow:0 1px 2px rgba(0,0,0,.12); }
-  .hud { margin-left:auto; display:flex; gap:12px; align-items:center; }
-  .lvl { display:flex; gap:8px; align-items:center; }
-  .lvl-badge { width:34px; height:34px; border-radius:10px; display:grid; place-items:center; font-weight:800;
-               background:var(--primary); color:var(--on-primary); font-variant-numeric:tabular-nums; }
-  .lvl-info { min-width:120px; } .lvl-info b { display:block; font-size:.82rem; line-height:1.2; }
-  .xpbar { height:6px; background:var(--surface-2); border-radius:99px; overflow:hidden; margin-top:4px; }
-  .xpbar > i { display:block; height:100%; background:var(--xp); width:0; transition:width .8s cubic-bezier(.2,.8,.2,1); }
-  .streak { font-weight:800; color:var(--streak); display:flex; align-items:center; gap:4px; font-variant-numeric:tabular-nums; }
-  .streak.off { color:var(--muted); filter:grayscale(1); }
-  @media (max-width:640px) { .lvl-info { display:none; } .hud { margin-left:0; } }
+  /* ---------- barra superior */
+  .top { position:sticky; top:0; z-index:30; height:var(--hh); border-bottom:1px solid rgba(44,51,64,.6); }
+  /* o desfoque fica num pseudo-elemento: backdrop-filter no próprio .top prenderia a navegação fixa (celular) */
+  .top::before { content:""; position:absolute; inset:0; z-index:-1; background:rgba(11,13,17,.72);
+         -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); }
+  .top-in { height:100%; padding:0 var(--pad); display:flex; gap:clamp(14px,2.4vw,34px); align-items:center; }
+  .brand { min-height:44px; display:flex; align-items:center; gap:10px; text-decoration:none; color:var(--v-text); font-family:var(--v-sans);
+           font-weight:700; letter-spacing:.18em; text-transform:uppercase; font-size:1.05rem; }
+  .brand::after { content:""; width:26px; height:2px; background:var(--v-gold); order:1; }
+  .brand small { font-size:.7rem; color:var(--v-muted); letter-spacing:.22em; order:2; }
+  nav.tabs { display:flex; gap:2px; align-items:center; }
+  nav.tabs a, nav.tabs button { border:0; background:none; text-decoration:none; color:var(--v-muted); font-weight:600;
+      padding:0 14px; min-height:44px; display:inline-flex; align-items:center; gap:6px; border-radius:8px;
+      transition:color .2s var(--v-ease); font-size:.95rem; position:relative; }
+  nav.tabs :is(a, button):hover { color:var(--v-text); }
+  nav.tabs [aria-current="page"] { color:var(--v-text); }
+  nav.tabs [aria-current="page"]::after { content:""; position:absolute; left:14px; right:14px; bottom:4px; height:2px; background:var(--v-gold); }
+  nav.tabs .tribunal { color:var(--v-gold-2); }
+  .hud { margin-left:auto; display:flex; gap:14px; align-items:center; }
+  .streak { font-weight:700; color:var(--v-gold-2); display:flex; align-items:center; gap:4px; font-variant-numeric:tabular-nums; }
+  .streak.off { color:var(--v-muted); }
+  .profile { display:flex; align-items:center; gap:10px; background:none; border:1px solid transparent; border-radius:99px;
+             padding:3px 12px 3px 3px; min-height:44px; text-align:left; transition:border-color .2s var(--v-ease), background .2s; }
+  .profile:hover { border-color:var(--v-line); background:rgba(34,40,51,.6); }
+  .avatar-p { width:38px; height:38px; border-radius:50%; display:grid; place-items:center; font-weight:800; font-variant-numeric:tabular-nums;
+              background:radial-gradient(circle at 30% 25%, var(--v-gold-2), var(--v-gold) 60%, #9a712b); color:var(--v-on-gold); flex:none; }
+  .pinfo { min-width:116px; } .pinfo b { display:block; font-size:.82rem; line-height:1.2; font-weight:600; }
+  .xpbar { height:5px; background:var(--v-surface-2); border-radius:99px; overflow:hidden; margin-top:4px; }
+  .xpbar > i { display:block; height:100%; background:var(--v-gold); width:0; transition:width .8s var(--v-ease); }
 
-  /* ---------- blocos */
-  h1 { font-size:1.6rem; letter-spacing:-.02em; margin:8px 0 4px; }
-  h2 { font-size:1.15rem; margin:0 0 10px; letter-spacing:-.01em; }
-  .sub { color:var(--muted); margin:0 0 18px; }
-  .grid { display:grid; gap:14px; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); }
-  .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:16px; min-width:0; }
-  .card.click { cursor:pointer; transition:transform .15s, border-color .15s; text-align:left; width:100%; }
-  .card.click:hover { transform:translateY(-2px); border-color:var(--primary); }
-  .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(130px,1fr)); gap:10px; }
-  .stat { background:var(--surface); border:1px solid var(--border); border-radius:12px; padding:12px; }
-  .stat b { display:block; font-size:1.45rem; font-variant-numeric:tabular-nums; letter-spacing:-.02em; }
-  .stat small { color:var(--muted); }
-  .chip { display:inline-flex; align-items:center; gap:4px; font-size:.75rem; font-weight:700; padding:2px 8px;
-          border-radius:99px; background:var(--surface-2); color:var(--muted); border:1px solid var(--border); }
-  .chip.banca { background:var(--primary-bg); color:var(--primary); border-color:transparent; }
-  .chip.advogado { background:var(--primary-bg); color:var(--primary); border-color:transparent; }
-  .chip.promotor { background:var(--danger-bg); color:var(--danger); border-color:transparent; }
-  .chip.juiz { background:color-mix(in srgb, var(--juiz) 16%, transparent); color:var(--juiz); border-color:transparent; }
-  .btn { border:1px solid var(--border); background:var(--surface-2); padding:10px 16px; border-radius:11px; font-weight:700; }
-  .btn.primary { background:var(--primary); border-color:var(--primary); color:var(--on-primary); }
+  /* ---------- estrutura */
+  main { min-height:calc(100vh - var(--hh)); outline:none; }
+  .wrap { max-width:960px; margin:0 auto; padding:28px var(--pad) 90px; }
+  .wrap.wide { max-width:1180px; }
+  .page-head { padding:34px var(--pad) 6px; }
+  .page-head h1 { font-size:clamp(1.8rem,3.4vw,2.6rem); }
+  .page-head p { color:var(--v-muted); margin:8px 0 0; max-width:70ch; }
+  .rows { padding-bottom:90px; }
+  .btn { border:1px solid var(--v-line); background:var(--v-surface-2); color:var(--v-text); min-height:44px; padding:0 20px; border-radius:8px;
+         font-weight:700; display:inline-flex; align-items:center; gap:8px; text-decoration:none; transition:background .2s var(--v-ease), transform .2s var(--v-ease); }
+  .btn:hover:not(:disabled) { background:#2b3341; }
+  .btn.primary { background:var(--v-gold); border-color:var(--v-gold); color:var(--v-on-gold); }
+  .btn.primary:hover:not(:disabled) { background:var(--v-gold-2); }
+  .btn.glass { background:rgba(236,238,242,.14); border-color:rgba(236,238,242,.22); -webkit-backdrop-filter:blur(8px); backdrop-filter:blur(8px); }
+  .btn.glass:hover:not(:disabled) { background:rgba(236,238,242,.24); }
   .btn.ghost { background:none; }
-  .btn:disabled { opacity:.5; cursor:not-allowed; }
+  .btn:disabled { opacity:.45; cursor:not-allowed; }
   .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
   .spacer { flex:1; }
-  .levels { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:8px; margin-top:12px; }
-  .lvbtn { border:1px solid var(--border); background:var(--surface-2); border-radius:11px; padding:9px 10px; text-align:left; }
-  .lvbtn:hover:not(:disabled) { border-color:var(--primary); }
-  .lvbtn b { display:block; font-size:.9rem; } .lvbtn small { color:var(--muted); font-size:.75rem; }
-  .lvbtn:disabled { opacity:.45; cursor:not-allowed; }
-  .empty { text-align:center; padding:28px; color:var(--muted); }
+  .chip { display:inline-flex; align-items:center; gap:4px; font-size:.72rem; font-weight:700; padding:3px 9px; letter-spacing:.06em;
+          border-radius:99px; background:var(--v-surface-2); color:var(--v-muted); border:1px solid var(--v-line); text-transform:uppercase; }
+  .chip.gold { color:var(--v-gold-2); border-color:rgba(212,162,76,.45); background:rgba(212,162,76,.1); }
+  .chip.steel { color:var(--v-steel-t); border-color:rgba(91,123,166,.5); background:rgba(91,123,166,.12); }
+  .chip.bad { color:var(--v-bad-t); border-color:rgba(229,83,75,.5); background:rgba(229,83,75,.1); }
+  .chip.ok { color:var(--v-ok); border-color:rgba(63,191,127,.45); background:rgba(63,191,127,.1); }
+  .eyebrow { font:700 .74rem/1 var(--v-sans); letter-spacing:.18em; text-transform:uppercase; color:var(--v-gold-2); }
+  .empty { text-align:center; padding:30px; color:var(--v-muted); background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r); }
+  kbd { font-family:var(--mono); font-size:.75rem; border:1px solid var(--v-line); border-bottom-width:2px; border-radius:5px; padding:0 6px; background:var(--v-surface-2); color:var(--v-text); }
 
-  /* ---------- prova */
-  .examhead { display:flex; gap:12px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
-  .timer { font-family:var(--mono); font-weight:800; font-size:1.25rem; padding:6px 12px; border-radius:10px;
-           background:var(--surface-2); font-variant-numeric:tabular-nums; }
-  .timer.warn { color:var(--danger); background:var(--danger-bg); animation:pulse 1s infinite; }
+  /* ---------- arte */
+  .art { position:absolute; inset:0; overflow:hidden; background:#10141c; }
+  .art svg { width:100%; height:100%; display:block; }
+
+  /* ---------- destaque (hero) */
+  .hero { position:relative; margin-top:calc(-1 * var(--hh)); min-height:clamp(420px, 66vh, 640px); display:flex; align-items:flex-end; overflow:hidden; }
+  .hero::before { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(90deg, var(--v-bg) 0%, rgba(11,13,17,.6) 45%, transparent 75%); }
+  .hero::after { content:""; position:absolute; inset:0; z-index:1; background:linear-gradient(0deg, var(--v-bg) 0%, transparent 60%); }
+  .hero-in { position:relative; z-index:2; padding:calc(var(--hh) + 40px) var(--pad) clamp(28px,5vw,64px); max-width:760px; }
+  .hero h1 { font-size:clamp(2rem,4.6vw,3.6rem); line-height:1.08; margin:12px 0 12px; text-shadow:0 2px 24px rgba(0,0,0,.6); }
+  .hero .meta { display:flex; flex-wrap:wrap; gap:6px 14px; color:var(--v-text); font-size:.92rem; margin-bottom:12px; }
+  .hero .meta span + span::before { content:"·"; margin-right:14px; color:var(--v-gold); }
+  .hero p { color:#cfd4dd; max-width:58ch; margin:0 0 22px; font-size:1.02rem; }
+  .hero .cta { display:flex; gap:12px; flex-wrap:wrap; }
+  .hero .btn { min-height:48px; padding:0 26px; font-size:1rem; }
+
+  /* ---------- fileiras e cartões 16:9 */
+  .rowsec { margin:6px 0 22px; position:relative; }
+  .rowsec > h2 { padding:0 var(--pad); font-size:clamp(1.15rem,1.7vw,1.4rem); margin-bottom:4px; }
+  .rowsec > .rsub { padding:0 var(--pad); color:var(--v-muted); font-size:.85rem; margin:0 0 6px; }
+  .railwrap { position:relative; }
+  .rail { display:flex; gap:clamp(10px,1.2vw,18px); overflow-x:auto; padding:14px var(--pad) 22px; scroll-snap-type:x proximity;
+          scroll-padding:0 var(--pad); scroll-behavior:smooth; scrollbar-width:none; overscroll-behavior-x:contain; }
+  .rail::-webkit-scrollbar { display:none; }
+  .arrow { position:absolute; top:14px; bottom:22px; width:var(--pad); min-width:44px; z-index:3; border:0; color:var(--v-text); font-size:1.8rem;
+           background:linear-gradient(90deg, rgba(11,13,17,.92), transparent); opacity:0; transition:opacity .2s var(--v-ease); display:none; }
+  .arrow.r { right:0; background:linear-gradient(270deg, rgba(11,13,17,.92), transparent); }
+  .arrow.l { left:0; }
+  @media (hover:hover) and (min-width:760px) { .arrow { display:block; } .railwrap:hover .arrow:not([hidden]) { opacity:1; } }
+  .tile { position:relative; flex:0 0 clamp(250px, 24vw, 340px); aspect-ratio:16/9; border:1px solid var(--v-line); border-radius:var(--v-r);
+          overflow:hidden; background:var(--v-surface); text-align:left; padding:0; scroll-snap-align:start; color:var(--v-text); text-decoration:none; display:block;
+          transition:transform .22s var(--v-ease), box-shadow .22s var(--v-ease), border-color .22s var(--v-ease); }
+  .tile:hover, .tile:focus-visible { transform:translateY(-4%) scale(1.02); box-shadow:var(--v-shadow); border-color:rgba(212,162,76,.6); z-index:2; }
+  .tile::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, rgba(11,13,17,.97) 0%, rgba(11,13,17,.55) 42%, transparent 70%); pointer-events:none; }
+  .tile-body { position:absolute; left:0; right:0; bottom:0; padding:12px 14px 13px; z-index:2; }
+  .tile h3 { font-size:1.02rem; line-height:1.2; margin:3px 0 4px; text-shadow:0 1px 8px rgba(0,0,0,.8); }
+  .tile .kick { font:700 .66rem/1 var(--v-sans); letter-spacing:.14em; text-transform:uppercase; color:var(--v-gold-2); }
+  .tile .tmeta { font-size:.78rem; color:#c3c9d4; display:block; }
+  .tile .prog { position:absolute; left:0; right:0; bottom:0; height:4px; background:rgba(236,238,242,.15); z-index:3; }
+  .tile .prog i, .gbar i { display:block; height:100%; background:var(--v-gold); }
+  .selo { position:absolute; top:10px; left:10px; z-index:3; font:700 .64rem/1 var(--v-sans); letter-spacing:.12em; text-transform:uppercase;
+          padding:5px 8px; border-radius:99px; background:rgba(11,13,17,.82); border:1px solid var(--v-line); color:var(--v-text); }
+  .selo.novo { background:var(--v-gold); color:var(--v-on-gold); border-color:var(--v-gold); }
+  .selo.andamento { color:var(--v-steel-t); border-color:rgba(91,123,166,.7); }
+  .selo.concluido { color:var(--v-ok); border-color:rgba(63,191,127,.6); }
+  .tile.lock { opacity:.55; }
+  @media (max-width:760px) { .tile { flex-basis:72vw; } .tile:hover { transform:none; } }
+
+  /* ---------- progresso / conquistas / stats */
+  .stats { display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:12px; padding:6px var(--pad) 0; }
+  .stat { background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r); padding:14px; }
+  .stat b { display:block; font:700 1.6rem/1.2 var(--v-serif); font-variant-numeric:tabular-nums; }
+  .stat small { color:var(--v-muted); }
+  .stats.in { padding:0; grid-template-columns:repeat(auto-fit, minmax(120px,1fr)); }
+  .conq { flex:0 0 clamp(210px, 19vw, 260px); background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r); padding:16px;
+          scroll-snap-align:start; display:flex; flex-direction:column; gap:6px; min-height:132px; }
+  .conq .medal { width:40px; height:40px; border-radius:50%; display:grid; place-items:center; font-size:1.2rem; background:var(--v-surface-2);
+                 border:1px solid var(--v-line); color:var(--v-muted); }
+  .conq.done { border-color:rgba(212,162,76,.55); background:linear-gradient(160deg, rgba(212,162,76,.12), var(--v-surface) 60%); }
+  .conq.done .medal { background:var(--v-gold); color:var(--v-on-gold); border-color:var(--v-gold); }
+  .conq b { font-family:var(--v-serif); letter-spacing:.02em; }
+  .conq small { color:var(--v-muted); }
+  .gbar { height:5px; border-radius:99px; background:var(--v-surface-2); overflow:hidden; margin-top:auto; }
+  .gbar i { border-radius:99px; }
+  .block { padding:0 var(--pad); }
+
+  /* ---------- modal */
+  .modal-back { position:fixed; inset:0; z-index:60; background:rgba(5,6,9,.74); -webkit-backdrop-filter:blur(6px); backdrop-filter:blur(6px);
+                display:grid; place-items:center; padding:16px; overflow-y:auto; animation:fade .22s var(--v-ease) both; }
+  .modal { width:min(640px,100%); max-height:calc(100vh - 32px); overflow-y:auto; background:var(--v-surface); border:1px solid var(--v-line);
+           border-radius:var(--v-r-lg); box-shadow:var(--v-shadow); animation:rise .26s var(--v-ease) both; }
+  .modal-head { position:relative; min-height:150px; display:flex; align-items:flex-end; padding:18px 22px; overflow:hidden; border-radius:var(--v-r-lg) var(--v-r-lg) 0 0; }
+  .modal-head::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, var(--v-surface) 0%, transparent 70%); }
+  .modal-head > div.t { position:relative; z-index:2; }
+  .modal-head h2 { font-size:1.55rem; margin-top:6px; }
+  .modal-x { position:absolute; top:10px; right:10px; z-index:3; width:44px; height:44px; border-radius:50%; border:1px solid var(--v-line);
+             background:rgba(11,13,17,.72); font-size:1.2rem; line-height:1; }
+  .modal-body { padding:6px 22px 24px; }
+  .modal-body p { margin:0 0 12px; }
+  .levels { display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:10px; margin-top:14px; }
+  .lvbtn { border:1px solid var(--v-line); background:var(--v-surface-2); border-radius:var(--v-r); padding:12px 14px; text-align:left; min-height:60px;
+           transition:border-color .2s var(--v-ease), transform .2s var(--v-ease); }
+  .lvbtn:hover:not(:disabled) { border-color:var(--v-gold); transform:translateY(-2px); }
+  .lvbtn b { display:block; } .lvbtn small { color:var(--v-muted); font-size:.78rem; }
+  .lvbtn:disabled { opacity:.5; cursor:not-allowed; }
+  @media (max-width:520px) { .levels { grid-template-columns:1fr; } }
+  .recent { display:flex; gap:10px; align-items:center; padding:10px 0; border-top:1px solid var(--v-line); font-size:.9rem; }
+  .xpgain { font:700 1.5rem/1.2 var(--v-serif); color:var(--v-gold-2); font-variant-numeric:tabular-nums; }
+  @keyframes fade { from { opacity:0; } }
+  @keyframes rise { from { transform:translateY(14px); opacity:0; } }
+
+  /* ---------- prova imersiva */
+  .exam { max-width:900px; margin:0 auto; padding:22px var(--pad) 130px; }
+  .examhead { display:flex; gap:14px; align-items:center; flex-wrap:wrap; margin-bottom:12px; }
+  .examhead .tt { font-family:var(--v-serif); font-weight:700; font-size:1.05rem; }
+  .timer { font-family:var(--mono); font-weight:700; font-size:1.2rem; padding:6px 14px; border-radius:8px; background:var(--v-surface);
+           border:1px solid var(--v-line); font-variant-numeric:tabular-nums; }
+  .timer.warn { color:var(--v-bad-t); border-color:var(--v-bad); animation:pulse 1s infinite; }
   @keyframes pulse { 50% { opacity:.6; } }
-  .dots { display:flex; flex-wrap:wrap; gap:5px; margin:10px 0 16px; }
-  .dot { width:28px; height:28px; border-radius:8px; border:1px solid var(--border); background:var(--surface);
-         font-size:.72rem; font-weight:700; color:var(--muted); font-variant-numeric:tabular-nums; }
-  .dot.ans { background:var(--primary-bg); color:var(--primary); border-color:transparent; }
-  .dot.cur { outline:2px solid var(--primary); outline-offset:1px; }
-  .qcard { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px; }
-  .qmeta { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:12px; }
-  .enun { font-family:var(--serif); font-size:1.13rem; line-height:1.7; color:var(--law); margin:0 0 18px; max-width:68ch; }
-  .ce { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
-  .cebtn { padding:16px; border-radius:12px; border:2px solid var(--border); background:var(--surface-2); font-weight:800; font-size:1.05rem; }
-  .cebtn.c[aria-pressed="true"] { border-color:var(--success); background:var(--success-bg); color:var(--success); }
-  .cebtn.e[aria-pressed="true"] { border-color:var(--danger); background:var(--danger-bg); color:var(--danger); }
-  .alts { display:grid; gap:8px; }
-  .alt { display:flex; gap:12px; align-items:flex-start; text-align:left; padding:12px 14px; border-radius:12px;
-         border:2px solid var(--border); background:var(--surface); }
-  .alt .k { flex:none; width:28px; height:28px; border-radius:8px; display:grid; place-items:center; font-weight:800;
-            background:var(--surface-2); }
-  .alt[aria-pressed="true"] { border-color:var(--primary); background:var(--primary-bg); }
-  .alt[aria-pressed="true"] .k { background:var(--primary); color:var(--on-primary); }
-  .hint { font-size:.8rem; color:var(--muted); margin-top:12px; }
-  kbd { font-family:var(--mono); font-size:.75rem; border:1px solid var(--border); border-bottom-width:2px; border-radius:5px; padding:0 5px; }
+  .gprog { height:6px; background:var(--v-surface-2); border-radius:99px; overflow:hidden; }
+  .gprog i { display:block; height:100%; background:linear-gradient(90deg, var(--v-gold), var(--v-gold-2)); border-radius:99px; transition:width .35s var(--v-ease); }
+  .dots { display:flex; gap:6px; margin:14px 0 22px; overflow-x:auto; padding:4px 2px 8px; scrollbar-width:thin; }
+  .dot { flex:none; min-width:36px; height:36px; border-radius:8px; border:1px solid var(--v-line); background:var(--v-surface);
+         font-size:.78rem; font-weight:700; color:var(--v-muted); font-variant-numeric:tabular-nums; }
+  .dot.ans { background:rgba(212,162,76,.16); color:var(--v-gold-2); border-color:rgba(212,162,76,.5); }
+  .dot[aria-current="step"] { background:var(--v-gold); color:var(--v-on-gold); border-color:var(--v-gold); }
+  @media (max-width:760px) { .dot { min-width:44px; height:44px; } }
+  .qcard { background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r-lg); padding:clamp(18px,3vw,34px); box-shadow:var(--v-shadow);
+           animation:rise .3s var(--v-ease) both; }
+  .qcard.still { animation:none; }
+  .qmeta { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px; }
+  .enun { font-family:var(--v-serif); font-size:clamp(1.15rem,2.1vw,1.5rem); line-height:1.65; color:var(--v-text); margin:0 0 24px; max-width:68ch; outline:none; }
+  .alts, .ce { display:grid; gap:10px; }
+  .ce { grid-template-columns:1fr 1fr; }
+  .alt { display:flex; gap:14px; align-items:flex-start; text-align:left; padding:14px 16px; min-height:56px; border-radius:var(--v-r);
+         border:1.5px solid var(--v-line); background:var(--v-surface-2); transition:border-color .18s var(--v-ease), transform .18s var(--v-ease), background .18s; font-size:1.02rem; }
+  .alt:hover { border-color:var(--v-gold); transform:translateY(-2px); }
+  .alt .k { flex:none; min-width:34px; height:34px; border-radius:8px; display:grid; place-items:center; font-weight:700; background:var(--v-bg-2);
+            border:1px solid var(--v-line); font-variant-numeric:tabular-nums; gap:0; }
+  .alt .k small { display:none; }
+  .alt[aria-pressed="true"] { border-color:var(--v-gold); background:rgba(212,162,76,.12); box-shadow:inset 3px 0 0 var(--v-gold); }
+  .alt[aria-pressed="true"] .k { background:var(--v-gold); color:var(--v-on-gold); border-color:var(--v-gold); }
+  .alt.ce { align-items:center; justify-content:center; font-weight:700; font-size:1.15rem; min-height:76px; }
+  .hint { font-size:.82rem; color:var(--v-muted); margin-top:18px; }
+  .examnav { position:fixed; left:0; right:0; bottom:0; z-index:20; background:rgba(11,13,17,.86); -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px);
+             border-top:1px solid var(--v-line); padding:10px var(--pad); }
+  .examnav .row { max-width:900px; margin:0 auto; flex-wrap:nowrap; }
+  .examnav .btn { padding:0 16px; }
 
-  /* ---------- resultado */
-  .verdict { display:grid; grid-template-columns:auto 1fr; gap:22px; align-items:center; }
-  @media (max-width:640px) { .verdict { grid-template-columns:1fr; justify-items:center; text-align:center; } }
+  /* ---------- resultado e correção */
+  .verdict { display:grid; grid-template-columns:auto 1fr; gap:28px; align-items:center; background:var(--v-surface); border:1px solid var(--v-line);
+             border-radius:var(--v-r-lg); padding:clamp(18px,3vw,32px); }
+  @media (max-width:640px) { .verdict { grid-template-columns:1fr; justify-items:center; text-align:center; } .verdict .row { justify-content:center; } }
   .ring { width:150px; height:150px; border-radius:50%; display:grid; place-items:center; position:relative;
-          background:conic-gradient(var(--ring-color, var(--primary)) calc(var(--p, 0) * 1%), var(--surface-2) 0); }
-  .ring::after { content:""; position:absolute; inset:12px; border-radius:50%; background:var(--surface); }
-  .ring span { position:relative; z-index:1; font-size:1.9rem; font-weight:800; font-variant-numeric:tabular-nums; }
-  .stamp { display:inline-block; font-weight:900; letter-spacing:.08em; text-transform:uppercase; padding:6px 14px;
-           border:3px solid currentColor; border-radius:10px; transform:rotate(-6deg); font-size:1.25rem;
-           animation:stamp .45s cubic-bezier(.2,1.6,.4,1) both; }
-  .verdict .stamp { margin:4px 0 0 6px; }
-  .stamp.ok { color:var(--success); } .stamp.no { color:var(--danger); } .stamp.mid { color:var(--xp); }
-  @keyframes stamp { from { transform:rotate(-6deg) scale(2.2); opacity:0; } to { transform:rotate(-6deg) scale(1); opacity:1; } }
-  .xpgain { font-size:1.4rem; font-weight:900; color:var(--xp); font-variant-numeric:tabular-nums; }
-  .toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:var(--text); color:var(--bg);
-           padding:12px 18px; border-radius:12px; font-weight:800; z-index:20; box-shadow:0 8px 30px rgba(0,0,0,.3);
-           animation:rise .4s ease both; max-width:calc(100% - 32px); text-align:center; }
-  @keyframes rise { from { transform:translate(-50%, 20px); opacity:0; } }
-  .areas { display:grid; gap:8px; }
+          background:conic-gradient(var(--ring-color, var(--v-gold)) calc(var(--p, 0) * 1%), var(--v-surface-2) 0); }
+  .ring::after { content:""; position:absolute; inset:12px; border-radius:50%; background:var(--v-surface); }
+  .ring span { position:relative; z-index:1; font:700 1.9rem/1 var(--v-serif); font-variant-numeric:tabular-nums; }
+  .stamp { display:inline-block; font-weight:800; letter-spacing:.14em; text-transform:uppercase; padding:6px 14px; border:3px solid currentColor;
+           border-radius:8px; transform:rotate(-4deg); font-size:1.1rem; animation:stamp .45s var(--v-ease) both; }
+  .stamp.ok { color:var(--v-ok); } .stamp.no { color:var(--v-bad-t); } .stamp.mid { color:var(--v-warn); }
+  @keyframes stamp { from { transform:rotate(-4deg) scale(1.8); opacity:0; } to { transform:rotate(-4deg) scale(1); opacity:1; } }
+  .toast { position:fixed; left:50%; bottom:24px; transform:translateX(-50%); background:var(--v-gold); color:var(--v-on-gold);
+           padding:12px 18px; border-radius:10px; font-weight:700; z-index:80; box-shadow:var(--v-shadow); animation:rise .4s var(--v-ease) both; max-width:calc(100% - 32px); text-align:center; }
+  .panel { background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r); padding:18px; min-width:0; }
+  .panel h2 { font-size:1.15rem; margin-bottom:10px; }
+  .grid2 { display:grid; gap:14px; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); margin-top:14px; }
+  .areas { display:grid; gap:10px; }
   .abar { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:4px 10px; font-size:.88rem; }
-  .abar .b { grid-column:1/-1; height:6px; background:var(--surface-2); border-radius:6px; overflow:hidden; }
-  .abar .b > i { display:block; height:100%; background:var(--primary); }
-  .review { display:grid; gap:12px; margin-top:12px; }
-  .rv { border-left:4px solid var(--border); }
-  .rv.certa { border-left-color:var(--success); } .rv.errada { border-left-color:var(--danger); } .rv.branco { border-left-color:var(--muted); }
-  .rv .enun { font-size:1rem; margin-bottom:10px; }
-  .tag-ok { color:var(--success); font-weight:800; } .tag-no { color:var(--danger); font-weight:800; }
-  .law { margin:10px 0 0; padding:10px 12px; border-radius:10px; background:var(--surface-2); font-family:var(--serif);
-         color:var(--law); font-size:.95rem; }
-  .law .ref { display:block; font-family:var(--mono); font-size:.75rem; color:var(--primary); margin-bottom:4px; }
-  .trap { margin-top:8px; padding:8px 12px; border-radius:10px; background:var(--xp-bg); font-size:.9rem; }
-  .trap b { color:var(--xp); }
-  .altlist { margin:6px 0 0; padding:0; list-style:none; font-size:.92rem; }
-  .altlist li { padding:3px 0; } .altlist .is-gab { color:var(--success); font-weight:700; } .altlist .is-mine { text-decoration:underline; }
-  details.more summary { cursor:pointer; color:var(--primary); font-weight:600; margin-top:8px; }
+  .abar .b { grid-column:1/-1; height:6px; background:var(--v-surface-2); border-radius:6px; overflow:hidden; }
+  .abar .b > i { display:block; height:100%; background:var(--v-gold); }
+  .review { display:grid; gap:14px; margin-top:12px; }
+  .rv { border-left:4px solid var(--v-line); }
+  .rv.certa { border-left-color:var(--v-ok); } .rv.errada { border-left-color:var(--v-bad); } .rv.branco { border-left-color:var(--v-faint); }
+  .rv .enun { font-size:1.05rem; margin-bottom:10px; }
+  .tag-ok { color:var(--v-ok); font-weight:700; } .tag-no { color:var(--v-bad-t); font-weight:700; }
+  .law { margin:10px 0 0; padding:12px 14px; border-radius:var(--v-r); background:var(--v-bg-2); border:1px solid var(--v-line); font-family:var(--v-serif); font-size:.95rem; }
+  .law .ref { display:block; font-family:var(--mono); font-size:.75rem; color:var(--v-gold-2); margin-bottom:4px; }
+  .trap { margin-top:8px; padding:10px 12px; border-radius:var(--v-r); background:rgba(232,163,61,.1); border:1px solid rgba(232,163,61,.4); font-size:.9rem; }
+  .trap b { color:var(--v-warn); }
+  .altlist { margin:6px 0 10px; padding:0; list-style:none; font-size:.92rem; }
+  .altlist li { padding:3px 0; } .altlist .is-gab { color:var(--v-ok); font-weight:700; } .altlist .is-mine:not(.is-gab) { color:var(--v-bad-t); text-decoration:line-through; }
+  details.more summary { cursor:pointer; color:var(--v-gold-2); font-weight:600; margin-top:8px; min-height:32px; }
 
   /* ---------- casos */
-  .dossie { position:relative; overflow:hidden; }
-  .dossie::before { content:""; position:absolute; inset:0 auto 0 0; width:5px; background:var(--role, var(--primary)); }
-  .dossie h3 { margin:8px 0 6px; font-size:1.05rem; }
-  .dossie p { margin:0 0 10px; color:var(--muted); font-size:.9rem; }
-  .meters { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0 16px; }
-  .meter small { color:var(--muted); font-weight:700; font-size:.78rem; text-transform:uppercase; letter-spacing:.04em; }
-  .meter .val { font-weight:800; font-variant-numeric:tabular-nums; }
-  .mbar { height:8px; border-radius:99px; background:var(--surface-2); overflow:hidden; margin-top:4px; position:relative; }
-  .mbar > i { position:absolute; top:0; bottom:0; left:50%; transition:all .5s cubic-bezier(.2,.8,.2,1); }
-  .mbar > i.pos { background:var(--success); } .mbar > i.neg { background:var(--danger); }
-  .scene-local { font-family:var(--mono); font-size:.78rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; }
-  .bubbles { display:grid; gap:12px; margin:14px 0 18px; }
-  .bubble { display:grid; grid-template-columns:auto 1fr; gap:12px; animation:fadein .35s ease both; }
+  .case-art { position:relative; height:clamp(110px,18vw,170px); border-radius:var(--v-r-lg) var(--v-r-lg) 0 0; overflow:hidden; }
+  .case-art::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg, var(--v-surface) 0%, transparent 75%); }
+  .case-art .loc { position:absolute; left:clamp(18px,3vw,34px); bottom:10px; z-index:2; font:700 .74rem/1 var(--v-sans); letter-spacing:.18em; text-transform:uppercase; color:var(--v-gold-2); }
+  .scene { background:var(--v-surface); border:1px solid var(--v-line); border-radius:var(--v-r-lg); box-shadow:var(--v-shadow); overflow:hidden; }
+  .scene-in { padding:4px clamp(18px,3vw,34px) clamp(18px,3vw,30px); }
+  .meters { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:14px 0 18px; }
+  .meter small { color:var(--v-muted); font-weight:700; font-size:.72rem; text-transform:uppercase; letter-spacing:.14em; }
+  .meter .val { font-weight:700; font-variant-numeric:tabular-nums; }
+  .mbar { height:8px; border-radius:99px; background:var(--v-surface-2); overflow:hidden; margin-top:5px; position:relative; }
+  .mbar::after { content:""; position:absolute; left:50%; top:0; bottom:0; width:1px; background:var(--v-faint); }
+  .mbar > i { position:absolute; top:0; bottom:0; transition:all .5s var(--v-ease); }
+  .mbar > i.pos { background:var(--v-ok); } .mbar > i.neg { background:var(--v-bad); }
+  .bubbles { display:grid; gap:14px; margin:6px 0 22px; }
+  .bubble { display:grid; grid-template-columns:auto 1fr; gap:12px; animation:rise .35s var(--v-ease) both; }
+  .bubbles.still .bubble { animation:none; }
   .bubble:nth-child(2) { animation-delay:.12s; } .bubble:nth-child(3) { animation-delay:.24s; }
-  @keyframes fadein { from { opacity:0; transform:translateY(6px); } }
-  .avatar { width:40px; height:40px; border-radius:12px; display:grid; place-items:center; font-weight:800; font-size:.85rem;
-            background:var(--surface-2); color:var(--av, var(--text)); border:1px solid var(--border); }
-  .bubble .who b { font-size:.9rem; } .bubble .who small { color:var(--muted); font-size:.78rem; }
-  .bubble .say { margin-top:2px; font-size:1rem; }
-  .bubble.narr { grid-template-columns:1fr; } .bubble.narr .say { font-style:italic; color:var(--muted); }
-  .question { font-weight:800; font-size:1.05rem; margin:4px 0 10px; }
-  .choices { display:grid; gap:8px; }
-  .choice { text-align:left; padding:14px 16px; border-radius:12px; border:2px solid var(--border); background:var(--surface);
-            display:flex; gap:12px; align-items:flex-start; }
-  .choice:hover:not(:disabled) { border-color:var(--primary); }
-  .choice .k { flex:none; width:26px; height:26px; border-radius:8px; display:grid; place-items:center; font-weight:800;
-               background:var(--surface-2); font-size:.85rem; }
-  .choice:disabled { cursor:default; opacity:.55; } .choice.picked { opacity:1; border-color:var(--primary); background:var(--primary-bg); }
-  .feedback { margin-top:14px; padding:16px; border-radius:var(--radius); border:1px solid var(--border); background:var(--surface);
-              animation:fadein .3s ease both; }
-  .eff { display:inline-flex; gap:4px; font-weight:800; font-size:.85rem; padding:2px 8px; border-radius:99px; }
-  .eff.pos { color:var(--success); background:var(--success-bg); } .eff.neg { color:var(--danger); background:var(--danger-bg); }
-  .eff.zero { color:var(--muted); background:var(--surface-2); }
-  .best { color:var(--xp); font-weight:800; font-size:.85rem; }
-  .final { text-align:center; padding:28px 18px; }
-  .final .stamp { font-size:1.6rem; margin:6px 0 14px; }
-  .final p { max-width:60ch; margin:0 auto 14px; font-family:var(--serif); font-size:1.08rem; color:var(--law); }
+  .avatar { width:44px; height:44px; border-radius:50%; display:grid; place-items:center; font-weight:700; font-size:.85rem; background:var(--v-surface-2);
+            color:var(--av, var(--v-text)); border:1.5px solid var(--av, var(--v-line)); }
+  .bubble .who b { font-size:.92rem; } .bubble .who small { color:var(--v-muted); font-size:.78rem; }
+  .bubble .say { margin-top:2px; font:1.08rem/1.6 var(--v-serif); }
+  .bubble.narr { grid-template-columns:1fr; } .bubble.narr .say { font-style:italic; color:var(--v-muted); }
+  .question { font:700 clamp(1.15rem,2vw,1.4rem)/1.4 var(--v-serif); margin:6px 0 14px; }
+  .choices { display:grid; gap:10px; }
+  .choice { text-align:left; padding:14px 16px; min-height:56px; border-radius:var(--v-r); border:1.5px solid var(--v-line); background:var(--v-surface-2);
+            display:flex; gap:14px; align-items:flex-start; font-size:1.02rem; transition:border-color .18s var(--v-ease), transform .18s var(--v-ease); }
+  .choice .k { flex:none; width:34px; height:34px; border-radius:8px; display:grid; place-items:center; font-weight:700; background:var(--v-bg-2); border:1px solid var(--v-line); }
+  .choice:hover:not(:disabled) { border-color:var(--v-gold); transform:translateY(-2px); }
+  .choice:disabled { cursor:default; color:var(--v-muted); }
+  .choice.picked { border-color:var(--v-gold); color:var(--v-text); background:rgba(212,162,76,.12); }
+  .choice.picked.ok { border-color:var(--v-ok); background:rgba(63,191,127,.12); }
+  .choice.picked.bad { border-color:var(--v-bad); background:rgba(229,83,75,.12); }
+  .choice.picked.ok .k { background:var(--v-ok); color:#06150d; border-color:var(--v-ok); }
+  .choice.picked.bad .k { background:var(--v-bad); color:#1a0605; border-color:var(--v-bad); }
+  .choice .ctext { min-width:0; flex:1; } .choice .mark { display:block; margin-top:4px; font-weight:700; font-size:.85rem; }
+  .choice.ok .mark { color:var(--v-ok); } .choice.bad .mark { color:var(--v-bad-t); }
+  .feedback { margin-top:18px; padding:18px; border-radius:var(--v-r); border:1px solid var(--v-line); border-left:4px solid var(--v-gold); background:var(--v-bg-2); animation:rise .3s var(--v-ease) both; }
+  .feedback.ok { border-left-color:var(--v-ok); } .feedback.bad { border-left-color:var(--v-bad); }
+  .eff { display:inline-flex; gap:4px; font-weight:700; font-size:.85rem; padding:3px 10px; border-radius:99px; border:1px solid var(--v-line); }
+  .eff.pos { color:var(--v-ok); border-color:rgba(63,191,127,.5); } .eff.neg { color:var(--v-bad-t); border-color:rgba(229,83,75,.55); } .eff.zero { color:var(--v-muted); }
+  .best { color:var(--v-gold-2); font-weight:700; font-size:.85rem; }
+  .final { text-align:center; padding:0 0 28px; }
+  .final .fin-in { padding:0 clamp(18px,3vw,34px); }
+  .final h1 { font-size:clamp(1.6rem,3vw,2.3rem); margin:8px 0 12px; }
+  .final .stamp { font-size:1.5rem; margin:10px 0 14px; }
+  .final p { max-width:60ch; margin:0 auto 14px; font:1.1rem/1.65 var(--v-serif); }
 
-  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; transition:none !important; } }
+  /* ---------- celular: abas na base */
+  @media (max-width:760px) {
+    :root { --hh:56px; }
+    nav.tabs { position:fixed; left:0; right:0; bottom:0; z-index:40; justify-content:space-around; background:rgba(11,13,17,.9);
+               -webkit-backdrop-filter:blur(12px); backdrop-filter:blur(12px); border-top:1px solid var(--v-line); padding:4px 4px calc(4px + env(safe-area-inset-bottom)); }
+    nav.tabs a, nav.tabs button { padding:0 4px; font-size:.78rem; flex:1 1 auto; justify-content:center; min-height:48px; white-space:nowrap; }
+    nav.tabs [aria-current="page"]::after { left:20%; right:20%; bottom:2px; }
+    .pinfo { display:none; }
+    .profile { padding:3px; }
+    .hero { min-height:clamp(380px,62vh,520px); }
+    .hero::before { background:linear-gradient(90deg, var(--v-bg) 0%, rgba(11,13,17,.5) 80%, transparent 100%); }
+    .wrap { padding-bottom:110px; } .exam { padding-bottom:150px; }
+    .examnav { bottom:56px; }
+    .examnav .btn { padding:0 14px; font-size:.9rem; white-space:nowrap; } .examnav .lbl { display:none; }
+    .toast { bottom:72px; }
+    .meters { grid-template-columns:1fr; gap:10px; }
+    .ce { grid-template-columns:1fr; }
+  }
+  @media (max-width:400px) { .brand small { display:none; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation:none !important; transition:none !important; scroll-behavior:auto !important; } }
 </style>
 </head>
 <body>
-<header class="top">
+<a class="skip" href="#view">Pular para o conteúdo</a>
+<header class="top" id="top">
   <div class="top-in">
-    <div class="brand">⚖️ Vade <small>Arena</small></div>
+    <a class="brand" href="#inicio" aria-label="Vade Arena, início">Vade <small>Arena</small></a>
     <nav class="tabs" aria-label="Seções">
-      <a href="/tribunal" style="color:var(--xp)">⚖️ Tribunal</a>
+      <a class="tribunal" href="/tribunal">⚖ Tribunal</a>
       <button data-tab="inicio">Início</button>
       <button data-tab="simulados">Simulados</button>
       <button data-tab="casos">Casos</button>
       <a href="/acervo">Acervo</a>
     </nav>
     <div class="hud" aria-live="polite">
-      <div class="streak off" id="streak" title="Sequência de dias">🔥 <span>0</span></div>
-      <div class="lvl">
-        <div class="lvl-badge" id="lvl">1</div>
-        <div class="lvl-info"><b id="lvl-title">Estagiário(a)</b>
-          <div class="xpbar" title="XP até o próximo nível"><i id="xpbar"></i></div></div>
-      </div>
+      <div class="streak off" id="streak" title="Sequência de dias"><span aria-hidden="true">🔥</span> <span id="streak-n">0</span><span class="sr"> dia(s) de sequência</span></div>
+      <button class="profile" id="profile" aria-haspopup="dialog" aria-label="Abrir perfil">
+        <span class="avatar-p" id="lvl">1</span>
+        <span class="pinfo"><b id="lvl-title">Estagiário(a)</b>
+          <div class="xpbar" title="XP até o próximo nível"><i id="xpbar"></i></div></span>
+      </button>
     </div>
   </div>
 </header>
-<main id="view"></main>
+<main id="view" tabindex="-1"></main>
 
 <script>
 "use strict";
@@ -229,9 +358,9 @@ const AREAS = {"constitucional":"Constitucional","administrativo":"Administrativ
   "consumidor":"Consumidor","crianca-adolescente":"Criança e Adolescente","previdenciario":"Previdenciário",
   "transito":"Trânsito","ambiental":"Ambiental","eleitoral":"Eleitoral","direitos-humanos":"Direitos Humanos",
   "empresarial":"Empresarial","jurisprudencia":"Jurisprudência"};
-const ROLE = {advogado:{nome:"Advogado(a)", cor:"var(--primary)", ic:"💼"}, promotor:{nome:"Promotor(a)", cor:"var(--danger)", ic:"🏛️"}, juiz:{nome:"Juiz(a)", cor:"var(--juiz)", ic:"⚖️"}};
+const ROLE = {advogado:{nome:"Advogado(a)", cor:"var(--v-steel-t)", ic:"💼"}, promotor:{nome:"Promotor(a)", cor:"var(--v-bad-t)", ic:"🏛️"}, juiz:{nome:"Juiz(a)", cor:"var(--v-gold-2)", ic:"⚖️"}};
 const LV = {basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite"};
-const COR = {primary:"var(--primary)", danger:"var(--danger)", xp:"var(--xp)", success:"var(--success)", muted:"var(--muted)"};
+const COR = {primary:"var(--v-steel-t)", danger:"var(--v-bad-t)", xp:"var(--v-gold-2)", success:"var(--v-ok)", muted:"var(--v-muted)"};
 
 function el(tag, props = {}, ...kids) {
   const e = document.createElement(tag);
@@ -274,6 +403,74 @@ function lawBox(f) {
   return el("blockquote", {class:"law"}, el("span", {class:"ref", textContent:ref}), f.texto || ("“" + f.trecho + "”"));
 }
 
+// ---------------------------------------------------------------- arte original (SVG gerado)
+function hash(s) { let h = 2166136261; for (const c of String(s)) { h ^= c.charCodeAt(0); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { let a = seed; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; };
+const PALETAS = [["#16223a", "#3b2a1c"], ["#101a2e", "#4a3320"], ["#1a2236", "#2d2438"], ["#0f1c2b", "#3a3020"], ["#1b2030", "#4a2f26"], ["#12202c", "#2f3a45"]];
+let artN = 0;
+/* Skyline noturno com janelas âmbar e reflexos de vidro; determinístico pela semente. */
+function art(seed, motif, wide) {
+  const h = hash(seed), r = rng(h), id = "g" + (++artN);
+  const [c1, c2] = PALETAS[h % PALETAS.length];
+  const W = wide ? 400 : 160, H = wide ? 130 : 90, n = wide ? 30 : 14;
+  let s = `<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false"><defs>` +
+    `<linearGradient id="${id}s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c1}"/><stop offset="1" stop-color="${c2}"/></linearGradient>` +
+    `<radialGradient id="${id}m" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#E8BE6A" stop-opacity=".55"/><stop offset="1" stop-color="#E8BE6A" stop-opacity="0"/></radialGradient></defs>` +
+    `<rect width="${W}" height="${H}" fill="url(#${id}s)"/>`;
+  const mx = W * (.2 + r() * .6), my = H * (.18 + r() * .2);
+  s += `<circle cx="${mx}" cy="${my}" r="${H * .42}" fill="url(#${id}m)"/><circle cx="${mx}" cy="${my}" r="${H * .06}" fill="#F3DDA8" opacity=".85"/>`;
+  for (let layer = 0; layer < 2; layer++) {
+    const col = layer ? "#0B0D11" : "#131923", base = H, bw = W / n;
+    for (let i = 0; i < n + 1; i++) {
+      const bh = H * (layer ? .22 + r() * .34 : .34 + r() * .4), x = i * bw - (r() * bw * .4), w = bw * (.9 + r() * .5), y = base - bh;
+      s += `<rect x="${x.toFixed(1)}" y="${y.toFixed(1)}" width="${w.toFixed(1)}" height="${bh.toFixed(1)}" fill="${col}"/>`;
+      const cols = Math.max(1, Math.floor(w / 4.2)), rows = Math.floor(bh / 5);
+      for (let a = 0; a < cols; a++) for (let b = 1; b < rows; b++) if (r() < (layer ? .16 : .1))
+        s += `<rect x="${(x + 1.4 + a * 4.2).toFixed(1)}" y="${(y + 1.5 + b * 5).toFixed(1)}" width="2.2" height="2.6" fill="#E8BE6A" opacity="${(.35 + r() * .6).toFixed(2)}"/>`;
+    }
+  }
+  s += `<polygon points="${W * .55},0 ${W * .7},0 ${W * .42},${H} ${W * .27},${H}" fill="#fff" opacity=".035"/><polygon points="${W * .78},0 ${W * .84},0 ${W * .6},${H} ${W * .54},${H}" fill="#fff" opacity=".03"/>`;
+  if (motif) s += `<text x="${W - 8}" y="${H * .62}" text-anchor="end" font-family="Georgia,serif" font-size="${H * .62}" fill="#D4A24C" opacity=".16">${motif}</text>`;
+  return el("div", {class:"art", innerHTML:s + "</svg>"});
+}
+
+// ---------------------------------------------------------------- modal
+let modal = null;
+function openModal({kicker, title, seed, motif, body, onClose}) {
+  closeModal();
+  const prev = document.activeElement;
+  const back = el("div", {class:"modal-back", onmousedown:(e) => { if (e.target === back) closeModal(); }});
+  const x = el("button", {class:"modal-x", "aria-label":"Fechar", textContent:"✕", onclick:() => closeModal()});
+  const dlg = el("div", {class:"modal", role:"dialog", "aria-modal":"true", "aria-labelledby":"modal-t"},
+    el("div", {class:"modal-head"}, seed ? art(seed, motif, true) : null,
+      el("div", {class:"t"}, kicker && el("div", {class:"eyebrow", textContent:kicker}), el("h2", {id:"modal-t", textContent:title})), x),
+    el("div", {class:"modal-body"}, [body].flat(Infinity)));
+  back.append(dlg); document.body.append(back); document.body.classList.add("lock");
+  for (const s of ["#top", "#view"]) $(s).inert = true;
+  modal = {back, prev, onClose};
+  const first = $(".modal-body button:not(:disabled), .modal-body a", dlg) || x;
+  first.focus();
+}
+function closeModal(result) {
+  if (!modal) return;
+  const {back, prev, onClose} = modal; modal = null;
+  back.remove(); document.body.classList.remove("lock");
+  for (const s of ["#top", "#view"]) $(s).inert = false;
+  if (prev && prev.isConnected) prev.focus();
+  if (onClose) onClose(result);
+}
+function ask(message, okLabel = "Confirmar", title = "Confirmar") {
+  return new Promise((resolve) => {
+    let done = false;
+    const fin = (v) => { if (!done) { done = true; resolve(v); } };
+    openModal({kicker:"Atenção", title, onClose:() => fin(false),
+      body:[el("p", {textContent:message}),
+        el("div", {class:"row", style:{justifyContent:"flex-end", marginTop:"18px"}},
+          el("button", {class:"btn ghost", textContent:"Cancelar", onclick:() => closeModal()}),
+          el("button", {class:"btn primary", textContent:okLabel, onclick:() => { fin(true); closeModal(true); }}))]});
+  });
+}
+
 // ---------------------------------------------------------------- HUD
 let perfil = null;
 async function loadProfile() {
@@ -281,7 +478,7 @@ async function loadProfile() {
   $("#lvl").textContent = perfil.nivel;
   $("#lvl-title").textContent = perfil.titulo;
   $("#xpbar").style.width = Math.min(100, 100 * perfil.xp_nivel_atual / Math.max(1, perfil.xp_proximo_nivel)) + "%";
-  $("#streak span").textContent = perfil.streak;
+  $("#streak-n").textContent = perfil.streak;
   $("#streak").classList.toggle("off", !perfil.jogou_hoje);
   $("#streak").title = perfil.jogou_hoje ? `Sequência de ${perfil.streak} dia(s)` : "Jogue hoje para manter a sequência";
   return perfil;
@@ -292,71 +489,148 @@ function celebrate(progresso, xp) {
   else toast(`+${fmt(xp)} XP · 🔥 ${progresso.streak} dia(s) de sequência`);
   loadProfile();
 }
-
-// ---------------------------------------------------------------- INÍCIO
-async function viewInicio() {
-  setTab("inicio");
-  const [p, casos] = await Promise.all([loadProfile(), api("/api/arena/casos")]);
-  const proximo = casos.find(c => !c.melhor) || casos[0];
+function recentLine(r) {
+  return r.tipo === "simulado" ? `${r.resumo.concurso} · ${r.resumo.nivel_nome}` : r.resumo.titulo;
+}
+async function openProfile() {
+  let p = perfil;
+  try { p = await loadProfile(); } catch (e) { toast(e.message); return; }
   const acerto = p.questoes.respostas ? p.questoes.acertos / p.questoes.respostas : 0;
-  show(
-    el("h1", {textContent:`Olá, ${p.titulo}.`}),
-    el("p", {class:"sub", textContent: p.jogou_hoje ? "Você já treinou hoje. Que tal mais uma rodada?" : "Uma rodada rápida mantém sua sequência viva."}),
-    el("a", {class:"card click", href:"/tribunal", style:{display:"block", textDecoration:"none", color:"inherit", marginBottom:"14px",
-        background:"linear-gradient(120deg, #2a1c12, #4a2e18)", borderColor:"#c9a04a"}},
-      el("div", {class:"row"}, el("span", {class:"chip banca", textContent:"NOVO"}), el("span", {class:"chip", textContent:"3 julgamentos"})),
-      el("h2", {style:{marginTop:"10px", color:"#fff4d6", fontSize:"1.4rem"}, textContent:"⚖️ Tribunal: pressione testemunhas e grite PROTESTO!"}),
-      el("p", {style:{margin:0, color:"#e0cfa8"}, textContent:"Simulação de audiência com personagens, autos do processo, interrogatório e veredicto. Seja defesa, acusação ou juiz."})),
-    el("div", {class:"grid"},
-      el("button", {class:"card click", onclick:() => startExam("policial-cebraspe", "basico")},
-        el("div", {class:"row"}, el("span", {class:"chip banca", textContent:"CEBRASPE"}), el("span", {class:"chip", textContent:"🟢 Treino · 10 itens"})),
-        el("h2", {style:{marginTop:"10px"}, textContent:"Simulado rápido"}),
-        el("p", {class:"muted", style:{margin:0}, textContent:"Certo ou errado no estilo das carreiras policiais. Cada erro anula um acerto."})),
-      proximo && el("button", {class:"card click dossie", style:{"--role":ROLE[proximo.papel].cor}, onclick:() => startCase(proximo.id)},
-        el("div", {class:"row"}, el("span", {class:"chip " + proximo.papel, textContent:ROLE[proximo.papel].ic + " " + proximo.papel_nome}), el("span", {class:"chip", textContent:LV[proximo.nivel]})),
-        el("h2", {style:{marginTop:"10px"}, textContent:proximo.melhor ? "Rejogar: " + proximo.titulo : "Caso do dia: " + proximo.titulo}),
-        el("p", {class:"muted", style:{margin:0}, textContent:proximo.sinopse}))),
-    el("h2", {style:{marginTop:"26px"}, textContent:"Seu desempenho"}),
-    el("div", {class:"stats"},
-      stat(fmt(p.xp), "XP total"), stat(p.nivel, "nível"), stat(p.streak_max, "maior sequência"),
-      stat(fmt(p.simulados.jogadas), "simulados"), stat(fmt(p.simulados.sucessos || 0), "metas batidas"),
-      stat(fmt(p.casos.jogadas), "casos jogados"), stat(fmt(p.questoes.respostas), "questões respondidas"),
-      stat(p.questoes.respostas ? pct(acerto) : "—", "taxa de acerto")),
-    el("h2", {style:{marginTop:"26px"}, textContent:"Últimas partidas"}),
-    p.recentes.length ? el("div", {class:"card"}, ...p.recentes.map(r => el("div", {class:"row", style:{padding:"8px 0", borderTop:"1px solid var(--border)"}},
-        el("span", {textContent: r.tipo === "simulado" ? "📝" : (ROLE[r.resumo.papel] || ROLE.advogado).ic}),
-        el("span", {textContent: r.tipo === "simulado" ? `${r.resumo.concurso} · ${r.resumo.nivel_nome}` : r.resumo.titulo}),
-        el("span", {class:"spacer"}),
-        el("span", {class:r.sucesso ? "tag-ok" : "muted", textContent: r.tipo === "simulado" ? pct(r.nota) : r.resumo.carimbo}),
-        el("span", {class:"xpgain", style:{fontSize:".9rem"}, textContent:`+${r.xp} XP`}))))
-      : el("div", {class:"card empty", textContent:"Nenhuma partida ainda. Comece por um simulado rápido ou pelo caso do dia."}));
+  openModal({kicker:`Nível ${p.nivel}`, title:p.titulo, seed:"perfil-" + p.nivel, motif:"§",
+    body:[el("div", {class:"row", style:{marginBottom:"6px"}}, el("span", {class:"xpgain", textContent:`${fmt(p.xp)} XP`}),
+        el("span", {class:"muted", textContent:`${fmt(p.xp_nivel_atual)} / ${fmt(p.xp_proximo_nivel)} para o próximo nível`})),
+      el("div", {class:"gprog", role:"progressbar", "aria-label":"XP até o próximo nível", "aria-valuemin":0, "aria-valuemax":100,
+        "aria-valuenow":Math.round(100 * p.xp_nivel_atual / Math.max(1, p.xp_proximo_nivel))}, el("i", {style:{width:(100 * p.xp_nivel_atual / Math.max(1, p.xp_proximo_nivel)) + "%"}})),
+      el("div", {class:"stats in", style:{marginTop:"16px"}},
+        stat(p.streak, "dias de sequência"), stat(p.streak_max, "maior sequência"), stat(fmt(p.simulados.jogadas), "simulados"),
+        stat(fmt(p.casos.jogadas), "casos jogados"), stat(fmt(p.questoes.respostas), "questões respondidas"), stat(p.questoes.respostas ? pct(acerto) : "—", "taxa de acerto")),
+      el("h3", {style:{margin:"20px 0 4px"}, textContent:"Últimas partidas"}),
+      p.recentes.length ? p.recentes.slice(0, 5).map(r => el("div", {class:"recent"},
+          el("span", {"aria-hidden":"true", textContent:r.tipo === "simulado" ? "📝" : (ROLE[r.resumo.papel] || ROLE.advogado).ic}),
+          el("span", {textContent:recentLine(r)}), el("span", {class:"spacer"}),
+          el("span", {class:r.sucesso ? "tag-ok" : "muted", textContent:r.tipo === "simulado" ? pct(r.nota) : r.resumo.carimbo}),
+          el("b", {textContent:`+${r.xp} XP`})))
+        : el("p", {class:"muted", textContent:"Nenhuma partida ainda."})]});
 }
 function stat(v, label) { return el("div", {class:"stat"}, el("b", {textContent:v}), el("small", {textContent:label})); }
 
+// ---------------------------------------------------------------- componentes de streaming
+function selo(kind) {
+  const t = {novo:"Novo", andamento:"Em andamento", concluido:"Concluído"}[kind];
+  return t ? el("span", {class:"selo " + kind, textContent:(kind === "concluido" ? "✓ " : "") + t}) : null;
+}
+function tile({seed, motif, kicker, title, meta, kind, progress, onclick, href, locked}) {
+  const kids = [art(seed, motif), selo(kind),
+    el("div", {class:"tile-body"}, el("span", {class:"kick", textContent:kicker}), el("h3", {textContent:title}), meta && el("span", {class:"tmeta", textContent:meta})),
+    progress > 0 && el("div", {class:"prog", role:"progressbar", "aria-label":"Progresso", "aria-valuemin":0, "aria-valuemax":100, "aria-valuenow":Math.round(progress * 100)},
+      el("i", {style:{width:Math.min(100, progress * 100) + "%"}}))];
+  return href ? el("a", {class:"tile", href}, ...kids) : el("button", {class:"tile" + (locked ? " lock" : ""), onclick}, ...kids);
+}
+function rail(title, tiles, sub) {
+  const sc = el("div", {class:"rail"}, ...tiles);
+  const step = (d) => sc.scrollBy({left:d * sc.clientWidth * .85});
+  const l = el("button", {class:"arrow l", "aria-hidden":"true", tabindex:"-1", textContent:"‹", onclick:() => step(-1)});
+  const r = el("button", {class:"arrow r", "aria-hidden":"true", tabindex:"-1", textContent:"›", onclick:() => step(1)});
+  const upd = () => { l.hidden = sc.scrollLeft < 8; r.hidden = sc.scrollLeft + sc.clientWidth >= sc.scrollWidth - 8; };
+  sc.addEventListener("scroll", upd, {passive:true}); requestAnimationFrame(upd);
+  const id = "r" + (++artN);
+  return el("section", {class:"rowsec", "aria-labelledby":id}, el("h2", {id, textContent:title}), sub && el("p", {class:"rsub", textContent:sub}),
+    el("div", {class:"railwrap"}, l, sc, r));
+}
+
+// ---------------------------------------------------------------- INÍCIO
+const CONQUISTAS = [
+  {ic:"📝", t:"Primeira prova", d:"Entregue um simulado", v:p => p.simulados.jogadas, m:1},
+  {ic:"🎯", t:"Meta batida", d:"Atinja a meta de um simulado", v:p => p.simulados.sucessos || 0, m:1},
+  {ic:"⚖️", t:"Primeiro caso", d:"Conclua um caso prático", v:p => p.casos.jogadas, m:1},
+  {ic:"🔥", t:"Sequência de 3 dias", d:"Treine 3 dias seguidos", v:p => p.streak_max, m:3},
+  {ic:"📚", t:"100 questões", d:"Responda 100 questões", v:p => p.questoes.respostas, m:100},
+  {ic:"⭐", t:"Nível 5", d:"Chegue ao nível 5", v:p => p.nivel, m:5},
+];
+async function viewInicio() {
+  setTab("inicio");
+  const [p, casos, cc] = await Promise.all([loadProfile(), api("/api/arena/casos"), api("/api/arena/concursos")]);
+  const proximo = casos.find(c => !c.melhor) || casos[0];
+  const acerto = p.questoes.respostas ? p.questoes.acertos / p.questoes.respostas : 0;
+  const ultima = p.recentes[0];
+  const hero = proximo && el("section", {class:"hero", "aria-labelledby":"hero-t"}, art("hero-" + proximo.id, "⚖", true),
+    el("div", {class:"hero-in"},
+      el("div", {class:"eyebrow", textContent: ultima ? "Continue de onde parou" : "Comece por aqui"}),
+      el("h1", {id:"hero-t", textContent:proximo.titulo}),
+      el("div", {class:"meta"}, el("span", {textContent:"Caso"}), el("span", {textContent:`${ROLE[proximo.papel].ic} ${proximo.papel_nome}`}),
+        el("span", {textContent:`${proximo.cenas} cenas`}), el("span", {textContent:LV[proximo.nivel]})),
+      el("p", {textContent:proximo.sinopse}),
+      el("div", {class:"cta"},
+        el("button", {class:"btn primary", onclick:() => startCase(proximo.id)}, proximo.melhor ? "▶ Rejogar" : "▶ Jogar caso"),
+        el("a", {class:"btn glass", href:"/tribunal", textContent:"⚖ Entrar no Tribunal"}),
+        el("button", {class:"btn glass", onclick:() => startExam("policial-cebraspe", "basico"), textContent:"📝 Simulado rápido"})),
+      ultima && el("p", {class:"muted", style:{margin:"16px 0 0", fontSize:".85rem"}, textContent:`Última partida: ${recentLine(ultima)}`})));
+  const doneBy = {}; for (const r of p.recentes) if (r.tipo === "simulado" && !(r.ref in doneBy)) doneBy[r.ref] = r;
+  const simTiles = cc.concursos.map(c => simTile(c, doneBy[c.id] || doneBy[c.nome]));
+  const caseTiles = casos.map(caseTile);
+  const conq = CONQUISTAS.map(c => { const v = c.v(p), done = v >= c.m;
+    return el("div", {class:"conq" + (done ? " done" : "")}, el("div", {class:"medal", "aria-hidden":"true", textContent:done ? c.ic : "🔒"}),
+      el("b", {textContent:c.t}), el("small", {textContent:done ? "Conquistado" : `${c.d} · ${Math.min(v, c.m)}/${c.m}`}),
+      el("div", {class:"gbar", role:"progressbar", "aria-label":c.t, "aria-valuemin":0, "aria-valuemax":c.m, "aria-valuenow":Math.min(v, c.m)}, el("i", {style:{width:Math.min(100, 100 * v / c.m) + "%"}}))); });
+  const recTiles = p.recentes.map(r => tile({seed:r.ref + r.criado_em, motif:r.tipo === "simulado" ? "§" : "⚖", kicker:r.tipo === "simulado" ? "Simulado" : "Caso",
+    title:recentLine(r), meta:`${r.tipo === "simulado" ? pct(r.nota) : r.resumo.carimbo} · +${r.xp} XP`, kind:r.sucesso ? "concluido" : "andamento", progress:r.tipo === "simulado" ? r.nota : 0,
+    onclick:() => r.tipo === "simulado" ? openConcurso(cc, cc.concursos.find(c => c.id === r.ref || c.nome === r.ref)) : (r.tipo === "caso" ? startCase(r.ref) : (location.href = "/tribunal"))}));
+  show(hero || el("div", {class:"page-head"}, el("h1", {textContent:`Olá, ${p.titulo}.`})),
+    el("div", {class:"rows"},
+      rail("Simulados por concurso", [tile({seed:"tribunal", motif:"⚖", kicker:"Novo modo", title:"Tribunal: grite PROTESTO!", meta:"Audiência com testemunhas e veredicto", kind:"novo", href:"/tribunal"}), ...simTiles],
+        "Banca, formato e regra de pontuação de concursos reais, com questões originais."),
+      rail("Casos práticos", caseTiles, "Decida como advogado, promotor ou juiz."),
+      rail("Conquistas e progresso", conq, `${CONQUISTAS.filter(c => c.v(p) >= c.m).length} de ${CONQUISTAS.length} conquistadas`),
+      recTiles.length ? rail("Suas últimas partidas", recTiles) : null,
+      el("section", {class:"rowsec", "aria-labelledby":"desemp"}, el("h2", {id:"desemp", textContent:"Seu desempenho"}),
+        el("div", {class:"stats"},
+          stat(fmt(p.xp), "XP total"), stat(p.nivel, "nível"), stat(p.streak_max, "maior sequência"),
+          stat(fmt(p.simulados.jogadas), "simulados"), stat(fmt(p.simulados.sucessos || 0), "metas batidas"),
+          stat(fmt(p.casos.jogadas), "casos jogados"), stat(fmt(p.questoes.respostas), "questões respondidas"),
+          stat(p.questoes.respostas ? pct(acerto) : "—", "taxa de acerto")),
+        !recTiles.length && el("div", {class:"block", style:{marginTop:"14px"}}, el("div", {class:"empty", textContent:"Nenhuma partida ainda. Comece por um simulado rápido ou pelo caso em destaque."})))));
+  window.__cc = cc;
+}
+
 // ---------------------------------------------------------------- SIMULADOS
-async function viewSimulados() {
-  setTab("simulados");
-  const {niveis, concursos} = await api("/api/arena/concursos");
-  const order = ["basico", "intermediario", "avancado", "especialista"];
-  show(
-    el("h1", {textContent:"Simulados"}),
-    el("p", {class:"sub", textContent:"Estrutura de concursos reais (banca, formato e regra de pontuação) com questões originais, todas fundamentadas no texto vigente da lei."}),
-    el("div", {class:"grid"}, ...concursos.map(c => el("div", {class:"card"},
-      el("div", {class:"row"}, el("span", {class:"chip banca", textContent:c.banca}),
-        el("span", {class:"chip", textContent:c.formato === "certo_errado" ? "Certo / Errado" : `${c.alternativas} alternativas`})),
-      el("h2", {style:{margin:"10px 0 2px"}, textContent:c.nome}),
-      el("div", {class:"muted", style:{fontSize:".85rem"}, textContent:c.exemplos.join(" · ")}),
-      el("p", {class:"muted", style:{fontSize:".85rem", margin:"8px 0 0"}, textContent:c.regra_descricao}),
-      el("div", {class:"levels"}, ...order.map(lv => {
+const NIVEIS = ["basico", "intermediario", "avancado", "especialista"];
+function simTile(c, done) {
+  return tile({seed:c.id, motif:"§", kicker:c.banca, title:c.nome, meta:`${c.formato === "certo_errado" ? "Certo / Errado" : c.alternativas + " alternativas"} · ${c.questoes_no_banco} questões`,
+    kind: done ? (done.sucesso ? "concluido" : "andamento") : (c.nivel_minimo ? null : "novo"), progress:done ? done.nota : 0, onclick:() => openConcurso(window.__cc, c)});
+}
+function openConcurso(data, c) {
+  if (!c) return;
+  const {niveis} = data;
+  openModal({kicker:c.banca, title:c.nome, seed:c.id, motif:"§",
+    body:[el("div", {class:"row", style:{marginBottom:"10px"}},
+        el("span", {class:"chip gold", textContent:c.formato === "certo_errado" ? "Certo / Errado" : `${c.alternativas} alternativas`}),
+        el("span", {class:"chip", textContent:`${fmt(c.questoes_no_banco)} questões no banco`})),
+      el("p", {class:"muted", textContent:c.exemplos.join(" · ")}),
+      el("p", {textContent:c.regra_descricao}),
+      el("p", {class:"muted", style:{fontSize:".85rem"}, textContent:"Matérias: " + c.areas.map(a => AREAS[a] || a).join(", ") + "."}),
+      el("div", {class:"eyebrow", style:{marginTop:"16px"}, textContent:"Escolha a dificuldade"}),
+      el("div", {class:"levels"}, ...NIVEIS.map(lv => {
         const cfg = niveis[lv];
-        const locked = c.nivel_minimo && order.indexOf(lv) < order.indexOf(c.nivel_minimo);
+        const locked = c.nivel_minimo && NIVEIS.indexOf(lv) < NIVEIS.indexOf(c.nivel_minimo);
         const n = Math.min(cfg.questoes, c.questoes_no_banco);
         const min = Math.round(n * c.segundos_por_questao * cfg.fator_tempo / 60);
         return el("button", {class:"lvbtn", disabled:locked, title:locked ? "Este concurso começa no nível Difícil" : "",
-            onclick:() => startExam(c.id, lv)},
+            onclick:() => { closeModal(); startExam(c.id, lv); }},
           el("b", {textContent:`${cfg.icone} ${cfg.nome}`}),
           el("small", {textContent: locked ? "🔒 bloqueado" : `${n} questões · ${min} min · meta ${pct(c.meta_fixa ?? cfg.meta)}`}));
-      }))))));
+      }))]});
+}
+async function viewSimulados() {
+  setTab("simulados");
+  const data = await api("/api/arena/concursos"); window.__cc = data;
+  const {concursos} = data;
+  const p = perfil || await loadProfile();
+  const doneBy = {}; for (const r of p.recentes) if (r.tipo === "simulado" && !(r.ref in doneBy)) doneBy[r.ref] = r;
+  const grupos = [["Certo ou Errado", "Julgue itens no estilo CEBRASPE: cada erro anula um acerto.", concursos.filter(c => c.formato === "certo_errado")],
+    ["Múltipla escolha", "Alternativas no estilo FGV, FCC e VUNESP.", concursos.filter(c => c.formato !== "certo_errado")]];
+  show(el("div", {class:"page-head"}, el("h1", {textContent:"Simulados"}),
+      el("p", {textContent:"Estrutura de concursos reais (banca, formato e regra de pontuação) com questões originais, todas fundamentadas no texto vigente da lei."})),
+    el("div", {class:"rows", style:{paddingTop:"14px"}}, ...grupos.filter(g => g[2].length).map(g => rail(g[0], g[2].map(c => simTile(c, doneBy[c.id] || doneBy[c.nome])), g[1]))));
 }
 
 let prova = null, timerId = null;
@@ -378,90 +652,105 @@ function tick() {
 }
 function answer(qid, v) {
   prova.respostas[qid] = prova.respostas[qid] === v ? null : v;
-  renderQuestion();
+  renderQuestion({keep:true, focus:v});
 }
-function renderQuestion() {
+function renderQuestion(opt = {}) {
   const {s, i} = prova;
   const q = s.questoes[i];
   const mine = prova.respostas[q.id];
   const answered = Object.values(prova.respostas).filter(Boolean).length;
+  const ce = q.formato === "certo_errado";
   let body;
-  if (q.formato === "certo_errado") {
-    body = el("div", {class:"ce"},
-      el("button", {class:"cebtn c", "aria-pressed":String(mine === "C"), onclick:() => answer(q.id, "C"), textContent:"✓ Certo"}),
-      el("button", {class:"cebtn e", "aria-pressed":String(mine === "E"), onclick:() => answer(q.id, "E"), textContent:"✗ Errado"}));
+  if (ce) {
+    body = el("div", {class:"ce", role:"group", "aria-label":"Julgue o item"},
+      ...[["C", "✓ Certo", "1"], ["E", "✗ Errado", "2"]].map(([k, t, n]) =>
+        el("button", {class:"alt ce", "data-k":k, "aria-pressed":String(mine === k), onclick:() => answer(q.id, k)}, el("span", {class:"k", textContent:n}), el("span", {textContent:t}))));
   } else {
-    body = el("div", {class:"alts"}, ...Object.entries(q.alternativas).map(([k, txt]) =>
-      el("button", {class:"alt", "aria-pressed":String(mine === k), onclick:() => answer(q.id, k)}, el("span", {class:"k", textContent:k}), el("span", {textContent:txt}))));
+    body = el("div", {class:"alts", role:"group", "aria-label":"Alternativas"}, ...Object.entries(q.alternativas).map(([k, txt], idx) =>
+      el("button", {class:"alt", "data-k":k, "aria-pressed":String(mine === k), onclick:() => answer(q.id, k)},
+        el("span", {class:"k", textContent:k, "aria-hidden":"true"}), el("span", {class:"sr", textContent:`Alternativa ${k}: `}), el("span", {textContent:txt}))));
   }
-  show(
-    el("div", {class:"examhead"},
-      el("div", {}, el("div", {style:{fontWeight:800}, textContent:`${s.concurso} · ${s.nivel_icone} ${s.nivel_nome}`}),
-        el("div", {class:"muted", style:{fontSize:".82rem"}, textContent:`${s.banca} · ${s.regra}`})),
+  const dots = el("div", {class:"dots", role:"group", "aria-label":"Questões"}, ...s.questoes.map((x, j) =>
+    el("button", {class:"dot" + (prova.respostas[x.id] ? " ans" : ""), textContent:j + 1, "aria-current":j === i ? "step" : null,
+      "aria-label":`Questão ${j + 1}${prova.respostas[x.id] ? ", respondida" : ""}`, onclick:() => { prova.i = j; renderQuestion({focus:"q"}); }})));
+  const sy = window.scrollY;
+  const view = $("#view");
+  view.replaceChildren(
+    el("div", {class:"exam"},
+      el("div", {class:"examhead"},
+        el("div", {}, el("div", {class:"tt", textContent:`${s.concurso} · ${s.nivel_icone} ${s.nivel_nome}`}),
+          el("div", {class:"muted", style:{fontSize:".82rem"}, textContent:`${s.banca} · ${s.regra}`})),
+        el("span", {class:"spacer"}),
+        el("span", {class:"muted", "aria-live":"polite", textContent:`${answered}/${s.questoes.length} respondidas`}),
+        el("div", {class:"timer", id:"timer", role:"timer", "aria-label":"tempo restante", textContent:"--:--"})),
+      el("div", {class:"gprog", role:"progressbar", "aria-label":"Progresso da prova", "aria-valuemin":1, "aria-valuemax":s.questoes.length, "aria-valuenow":i + 1,
+        "aria-valuetext":`Questão ${i + 1} de ${s.questoes.length}`}, el("i", {style:{width:(100 * (i + 1) / s.questoes.length) + "%"}})),
+      dots,
+      el("div", {class:"qcard" + (opt.keep ? " still" : "")},
+        el("div", {class:"qmeta"}, el("span", {class:"chip gold", textContent:`Questão ${q.n} de ${s.questoes.length}`}), el("span", {class:"chip", textContent:AREAS[q.area] || q.area}),
+          el("span", {class:"chip", textContent:q.tema})),
+        el("p", {class:"enun", id:"enun", tabindex:"-1", textContent:q.enunciado}), body,
+        el("div", {class:"hint"}, "Atalhos: ",
+          ...(ce ? [el("kbd", {textContent:"1"}), " ou ", el("kbd", {textContent:"C"}), " certo · ", el("kbd", {textContent:"2"}), " ou ", el("kbd", {textContent:"E"}), " errado · "]
+                 : [el("kbd", {textContent:"1"}), "–", el("kbd", {textContent:String(Object.keys(q.alternativas).length)}), " ou ", el("kbd", {textContent:"A"}), "–",
+                    el("kbd", {textContent:Object.keys(q.alternativas).slice(-1)[0]}), " alternativas · "]),
+          el("kbd", {textContent:"←"}), " ", el("kbd", {textContent:"→"}), " navegar · repita a resposta para deixar em branco"))),
+    el("div", {class:"examnav"}, el("div", {class:"row"},
+      el("button", {class:"btn", "aria-label":"Questão anterior", disabled:i === 0, onclick:() => { prova.i--; renderQuestion({focus:"q"}); }}, "←", el("span", {class:"lbl", textContent:" Anterior"})),
+      el("button", {class:"btn", "aria-label":"Próxima questão", disabled:i === s.questoes.length - 1, onclick:() => { prova.i++; renderQuestion({focus:"q"}); }}, el("span", {class:"lbl", textContent:"Próxima "}), "→"),
       el("span", {class:"spacer"}),
-      el("span", {class:"muted", textContent:`${answered}/${s.questoes.length} respondidas`}),
-      el("div", {class:"timer", id:"timer", "aria-label":"tempo restante", textContent:"--:--"})),
-    el("div", {class:"dots", role:"navigation", "aria-label":"questões"}, ...s.questoes.map((x, j) =>
-      el("button", {class:"dot" + (prova.respostas[x.id] ? " ans" : "") + (j === i ? " cur" : ""), textContent:j + 1,
-        "aria-label":`questão ${j + 1}`, onclick:() => { prova.i = j; renderQuestion(); }}))),
-    el("div", {class:"qcard"},
-      el("div", {class:"qmeta"}, el("span", {class:"chip", textContent:`Questão ${q.n}`}), el("span", {class:"chip", textContent:AREAS[q.area] || q.area}),
-        el("span", {class:"chip", textContent:q.tema})),
-      el("p", {class:"enun", textContent:q.enunciado}), body,
-      el("div", {class:"hint"}, "Atalhos: ",
-        ...(q.formato === "certo_errado" ? [el("kbd", {textContent:"C"}), " certo · ", el("kbd", {textContent:"E"}), " errado · "]
-                                        : [el("kbd", {textContent:"A"}), "–", el("kbd", {textContent:Object.keys(q.alternativas).slice(-1)[0]}), " alternativas · "]),
-        el("kbd", {textContent:"←"}), " ", el("kbd", {textContent:"→"}), " navegar · clique de novo para deixar em branco")),
-    el("div", {class:"row", style:{marginTop:"14px"}},
-      el("button", {class:"btn", disabled:i === 0, onclick:() => { prova.i--; renderQuestion(); }, textContent:"← Anterior"}),
-      el("button", {class:"btn", disabled:i === s.questoes.length - 1, onclick:() => { prova.i++; renderQuestion(); }, textContent:"Próxima →"}),
-      el("span", {class:"spacer"}),
-      el("button", {class:"btn ghost", onclick:() => { if (confirm("Abandonar este simulado? As respostas serão perdidas.")) { prova = null; viewSimulados(); } }, textContent:"Sair"}),
-      el("button", {class:"btn primary", onclick:() => submitExam(false), textContent:"Entregar prova"})));
+      el("button", {class:"btn ghost", onclick:async () => { if (await ask("Abandonar este simulado? As respostas serão perdidas.", "Abandonar", "Sair do simulado")) { prova = null; clearInterval(timerId); viewSimulados(); } }, textContent:"Sair"}),
+      el("button", {class:"btn primary", onclick:() => submitExam(false), textContent:"Entregar prova"}))));
+  if (opt.keep) window.scrollTo({top:sy}); else window.scrollTo({top:0});
+  const cur = $(".dot[aria-current]"); if (cur) dots.scrollLeft = cur.offsetLeft - dots.clientWidth / 2;
+  if (opt.focus === "q") $("#enun").focus({preventScroll:true});
+  else if (opt.focus) { const b = $(`.alt[data-k="${opt.focus}"]`); if (b) b.focus({preventScroll:true}); }
   tick();
 }
 async function submitExam(auto) {
   if (!prova) return;
   const blanks = prova.s.questoes.filter(q => !prova.respostas[q.id]).length;
-  if (!auto && blanks && !confirm(`Há ${blanks} questão(ões) em branco. Entregar mesmo assim?`)) return;
+  if (!auto && !(await ask(blanks ? `Há ${blanks} questão(ões) em branco. Entregar mesmo assim?` : "Entregar a prova agora?", "Entregar", "Entregar prova"))) return;
+  if (!prova) return;
   clearInterval(timerId);
   const s = prova.s, respostas = prova.respostas;
   prova = null;
+  if (auto) closeModal();
   try { renderResult(await api("/api/arena/simulado/entregar", {sessao:s.sessao, respostas})); }
   catch (e) { toast(e.message); viewSimulados(); }
 }
 function renderResult(r) {
   const ok = r.aprovado;
-  const ring = el("div", {class:"ring", style:{"--p":Math.round(r.nota * 100), "--ring-color":ok ? "var(--success)" : "var(--danger)"}}, el("span", {textContent:pct(r.nota)}));
-  show(
-    el("div", {class:"card verdict"}, ring,
+  const ring = el("div", {class:"ring", style:{"--p":Math.round(r.nota * 100), "--ring-color":ok ? "var(--v-ok)" : "var(--v-bad)"}}, el("span", {textContent:pct(r.nota)}));
+  show(el("div", {class:"wrap"},
+    el("div", {class:"verdict"}, ring,
       el("div", {},
         el("div", {class:"stamp " + (ok ? "ok" : "no"), textContent:ok ? "Meta batida" : (r.tempo_esgotado ? "Tempo esgotado" : "Ainda não")}),
-        el("h1", {style:{marginTop:"12px"}, textContent:`${r.concurso} · ${r.nivel_nome}`}),
-        el("p", {class:"muted", style:{margin:"0 0 6px"}, textContent:
+        el("h1", {style:{marginTop:"14px", fontSize:"1.7rem"}, textContent:`${r.concurso} · ${r.nivel_nome}`}),
+        el("p", {class:"muted", style:{margin:"6px 0 10px"}, textContent:
           `${r.acertos} acerto(s), ${r.erros} erro(s), ${r.brancos} em branco · meta ${pct(r.meta)}` +
           (r.regra === "cebraspe" ? ` · ${r.pontos} ponto(s) líquido(s) (cada erro anula um acerto)` : "")}),
         el("div", {class:"row"}, el("span", {class:"xpgain", textContent:`+${fmt(r.xp)} XP`}),
-          r.melhor_combo > 1 && el("span", {class:"chip", textContent:`🔥 combo ×${r.melhor_combo}`}),
+          r.melhor_combo > 1 && el("span", {class:"chip gold", textContent:`🔥 combo ×${r.melhor_combo}`}),
           el("span", {class:"chip", textContent:`⏱ ${Math.floor(r.tempo_gasto_s / 60)} min ${r.tempo_gasto_s % 60} s`})))),
-    el("div", {class:"grid", style:{marginTop:"14px"}},
-      el("div", {class:"card"}, el("h2", {textContent:"Por área"}), el("div", {class:"areas"}, ...Object.entries(r.por_area).map(([a, v]) =>
+    el("div", {class:"grid2"},
+      el("div", {class:"panel"}, el("h2", {textContent:"Por área"}), el("div", {class:"areas"}, ...Object.entries(r.por_area).map(([a, v]) =>
         el("div", {class:"abar"}, el("span", {textContent:AREAS[a] || a}), el("b", {textContent:`${v.acertos}/${v.total}`}),
           el("div", {class:"b"}, el("i", {style:{width:(100 * v.acertos / v.total) + "%"}})))))),
-      el("div", {class:"card"}, el("h2", {textContent:"Próximo passo"}),
+      el("div", {class:"panel"}, el("h2", {textContent:"Próximo passo"}),
         el("p", {class:"muted", textContent: ok ? "Meta batida. Suba a dificuldade para ganhar mais XP." : "Revise as explicações abaixo e tente de novo: questões que você ainda não viu entram primeiro."}),
         el("div", {class:"row"}, el("button", {class:"btn primary", onclick:viewSimulados, textContent:"Novo simulado"}), el("button", {class:"btn", onclick:viewInicio, textContent:"Início"})))),
-    el("h2", {style:{marginTop:"22px"}, textContent:"Correção comentada"}),
-    el("div", {class:"review"}, ...r.questoes.map(reviewCard)));
+    el("h2", {style:{marginTop:"28px"}, textContent:"Correção comentada"}),
+    el("div", {class:"review"}, ...r.questoes.map(reviewCard))));
   celebrate(r.progresso, r.xp);
 }
 function reviewCard(q) {
   const label = q.status === "certa" ? el("span", {class:"tag-ok", textContent:"✓ Acertou"})
               : q.status === "errada" ? el("span", {class:"tag-no", textContent:"✗ Errou"}) : el("span", {class:"muted", textContent:"— Em branco"});
   const fmtAns = (v) => v === "C" && !q.alternativas ? "Certo" : v === "E" && !q.alternativas ? "Errado" : v;
-  return el("div", {class:"card rv " + q.status},
-    el("div", {class:"row"}, el("span", {class:"chip", textContent:`Questão ${q.n}`}), el("span", {class:"chip", textContent:q.tema}), el("span", {class:"spacer"}), label),
-    el("p", {class:"enun", style:{marginTop:"10px"}, textContent:q.enunciado}),
+  return el("div", {class:"panel rv " + q.status},
+    el("div", {class:"row"}, el("span", {class:"chip gold", textContent:`Questão ${q.n}`}), el("span", {class:"chip", textContent:q.tema}), el("span", {class:"spacer"}), label),
+    el("p", {class:"enun", style:{marginTop:"12px"}, textContent:q.enunciado}),
     q.alternativas && el("ul", {class:"altlist"}, ...Object.entries(q.alternativas).map(([k, t]) =>
       el("li", {class:(k === q.gabarito ? "is-gab " : "") + (k === q.resposta ? "is-mine" : ""), textContent:`${k}) ${t}`}))),
     el("div", {style:{fontSize:".9rem"}}, el("b", {textContent:"Gabarito: "}), fmtAns(q.gabarito),
@@ -472,17 +761,27 @@ function reviewCard(q) {
 }
 
 // ---------------------------------------------------------------- CASOS
+function caseTile(c) {
+  return tile({seed:c.id, motif:"⚖", kicker:`${ROLE[c.papel].ic} ${c.papel_nome}`, title:c.titulo,
+    meta:`${LV[c.nivel]} · ${c.cenas} cenas` + (c.melhor != null ? ` · melhor ${pct(c.melhor)}` : ""),
+    kind: c.melhor != null ? "concluido" : "novo", progress:c.melhor != null ? c.melhor : 0, onclick:() => openCaso(c)});
+}
+function openCaso(c) {
+  openModal({kicker:`${ROLE[c.papel].ic} ${c.papel_nome} · ${LV[c.nivel]}`, title:c.titulo, seed:c.id, motif:"⚖",
+    body:[el("p", {textContent:c.sinopse}),
+      el("div", {class:"row", style:{marginBottom:"16px"}}, el("span", {class:"chip", textContent:`${c.cenas} cenas`}),
+        c.melhor != null ? el("span", {class:"chip ok", textContent:`✓ melhor ${pct(c.melhor)}`}) : el("span", {class:"chip gold", textContent:"Novo"})),
+      el("div", {class:"row"}, el("button", {class:"btn primary", onclick:() => { closeModal(); startCase(c.id); }, textContent:c.melhor != null ? "▶ Rejogar" : "▶ Jogar caso"}),
+        el("button", {class:"btn ghost", onclick:() => closeModal(), textContent:"Agora não"}))]});
+}
 async function viewCasos() {
   setTab("casos");
   const casos = await api("/api/arena/casos");
-  show(
-    el("h1", {textContent:"Casos"}),
-    el("p", {class:"sub", textContent:"Vasconcelos & Duarte Advocacia. Você decide como advogado, promotor ou juiz. Cada escolha mexe no seu Argumento (técnica) e na sua Credibilidade (como a sala o enxerga)."}),
-    el("div", {class:"grid"}, ...casos.map(c => el("button", {class:"card click dossie", style:{"--role":ROLE[c.papel].cor}, onclick:() => startCase(c.id)},
-      el("div", {class:"row"}, el("span", {class:"chip " + c.papel, textContent:`${ROLE[c.papel].ic} ${c.papel_nome}`}), el("span", {class:"chip", textContent:LV[c.nivel]})),
-      el("h3", {textContent:c.titulo}), el("p", {textContent:c.sinopse}),
-      el("div", {class:"row", style:{fontSize:".82rem"}}, el("span", {class:"muted", textContent:`${c.cenas} cenas`}), el("span", {class:"spacer"}),
-        c.melhor !== null && c.melhor !== undefined ? el("span", {class:"best", textContent:`melhor: ${pct(c.melhor)}`}) : el("span", {class:"muted", textContent:"não jogado"}))))));
+  const grupos = ["advogado", "promotor", "juiz"].map(pp => [pp, casos.filter(c => c.papel === pp)]).filter(g => g[1].length);
+  const sub = {advogado:"Defenda seu cliente dentro do que a lei permite.", promotor:"Acuse com firmeza e dentro dos limites da lei.", juiz:"Decida com imparcialidade e fundamentação."};
+  show(el("div", {class:"page-head"}, el("h1", {textContent:"Casos"}),
+      el("p", {textContent:"Vasconcelos & Duarte Advocacia. Você decide como advogado, promotor ou juiz. Cada escolha mexe no seu Argumento (técnica) e na sua Credibilidade (como a sala o enxerga)."})),
+    el("div", {class:"rows", style:{paddingTop:"14px"}}, ...grupos.map(([pp, list]) => rail(`${ROLE[pp].ic} ${ROLE[pp].nome}`, list.map(caseTile), sub[pp]))));
 }
 let caso = null, continuar = null;
 async function startCase(id) {
@@ -493,44 +792,53 @@ async function startCase(id) {
 function meter(label, v) {
   const w = Math.min(50, Math.abs(v) * 4);
   return el("div", {class:"meter"}, el("div", {class:"row"}, el("small", {textContent:label}), el("span", {class:"spacer"}), el("span", {class:"val", textContent:(v > 0 ? "+" : "") + v})),
-    el("div", {class:"mbar"}, el("i", {class:v >= 0 ? "pos" : "neg", style:v >= 0 ? {left:"50%", width:w + "%"} : {left:(50 - w) + "%", width:w + "%"}})));
+    el("div", {class:"mbar", role:"img", "aria-label":`${label}: ${v}`}, el("i", {class:v >= 0 ? "pos" : "neg", style:v >= 0 ? {left:"50%", width:w + "%"} : {left:(50 - w) + "%", width:w + "%"}})));
 }
-function renderScene(sc, picked) {
-  const head = el("div", {class:"row"},
-    el("span", {class:"chip " + sc.caso.papel, textContent:`${ROLE[sc.caso.papel].ic} ${sc.caso.papel_nome}`}),
-    el("span", {class:"chip", textContent:`Cena ${sc.etapa} de ${sc.etapas}`}), el("span", {class:"spacer"}),
+function renderScene(sc, picked, verdict) {
+  const head = el("div", {class:"row", style:{marginBottom:"12px"}},
+    el("span", {class:"chip steel", textContent:`${ROLE[sc.caso.papel].ic} ${sc.caso.papel_nome}`}),
+    el("span", {class:"chip gold", textContent:`Cena ${sc.etapa} de ${sc.etapas}`}), el("span", {class:"spacer"}),
     el("button", {class:"btn ghost", onclick:viewCasos, textContent:"Sair do caso"}));
-  const choices = el("div", {class:"choices"}, ...sc.escolhas.map(c =>
-    el("button", {class:"choice" + (picked === c.indice ? " picked" : ""), disabled:picked !== null, onclick:() => choose(sc, c.indice)},
-      el("span", {class:"k", textContent:c.indice + 1}), el("span", {textContent:c.texto}))));
-  show(head,
-    el("h1", {textContent:sc.caso.titulo}),
+  const choices = el("div", {class:"choices", role:"group", "aria-label":"Escolhas"}, ...sc.escolhas.map(c => {
+    const isPick = picked === c.indice;
+    return el("button", {class:"choice" + (isPick ? " picked " + (verdict || "") : ""), disabled:picked !== null, "aria-pressed":isPick ? "true" : "false", onclick:() => choose(sc, c.indice)},
+      el("span", {class:"k", textContent:c.indice + 1}),
+      el("span", {class:"ctext"}, c.texto, isPick && verdict && el("span", {class:"mark", textContent:verdict === "ok" ? "✓ Boa jogada" : "✗ Arriscada"})));
+  }));
+  show(el("div", {class:"wrap"}, head,
+    el("div", {class:"gprog", role:"progressbar", "aria-label":"Progresso do caso", "aria-valuemin":1, "aria-valuemax":sc.etapas, "aria-valuenow":sc.etapa, style:{marginBottom:"14px"}},
+      el("i", {style:{width:(100 * sc.etapa / sc.etapas) + "%"}})),
+    el("h1", {style:{fontSize:"clamp(1.5rem,3vw,2.2rem)"}, textContent:sc.caso.titulo}),
     el("div", {class:"meters"}, meter("Argumento", sc.medidores.argumento), meter("Credibilidade", sc.medidores.credibilidade)),
-    el("div", {class:"card"},
-      el("div", {class:"scene-local", textContent:sc.local}),
-      el("div", {class:"bubbles"}, ...sc.falas.map(f => f.quem
-        ? el("div", {class:"bubble"}, el("div", {class:"avatar", style:{"--av":COR[f.cor] || "var(--text)"}, textContent:initials(f.quem)}),
-            el("div", {}, el("div", {class:"who"}, el("b", {textContent:f.quem}), " ", el("small", {textContent:f.cargo})), el("div", {class:"say", textContent:f.texto})))
-        : el("div", {class:"bubble narr"}, el("div", {class:"say", textContent:f.texto})))),
-      el("div", {class:"question", textContent:sc.pergunta}), choices,
-      picked === null && el("div", {class:"hint"}, "Atalhos: ", el("kbd", {textContent:"1"}), " ", el("kbd", {textContent:"2"}), " ", el("kbd", {textContent:"3"})),
-      el("div", {id:"fb"})));
+    el("div", {class:"scene"},
+      el("div", {class:"case-art"}, art(sc.caso.titulo + sc.etapa, "⚖", true), el("div", {class:"loc", textContent:sc.local})),
+      el("div", {class:"scene-in"},
+        el("div", {class:"bubbles" + (picked !== null ? " still" : "")}, ...sc.falas.map(f => f.quem
+          ? el("div", {class:"bubble"}, el("div", {class:"avatar", "aria-hidden":"true", style:{"--av":COR[f.cor] || "var(--v-text)"}, textContent:initials(f.quem)}),
+              el("div", {}, el("div", {class:"who"}, el("b", {textContent:f.quem}), " ", el("small", {textContent:f.cargo})), el("div", {class:"say", textContent:f.texto})))
+          : el("div", {class:"bubble narr"}, el("div", {class:"say", textContent:f.texto})))),
+        el("div", {class:"question", id:"pergunta", tabindex:"-1", textContent:sc.pergunta}), choices,
+        picked === null && el("div", {class:"hint"}, "Atalhos: ", ...sc.escolhas.flatMap((c, i) => [el("kbd", {textContent:String(i + 1)}), " "]), "escolher"),
+        el("div", {id:"fb", "aria-live":"polite"})))));
+  if (picked === null) $("#pergunta").focus({preventScroll:true});
 }
 async function choose(sc, idx) {
   if (!caso || caso.sessao !== sc.sessao || caso._busy) return;
   caso._busy = true;
   try {
     const r = await api("/api/arena/caso/escolher", {sessao:sc.sessao, indice:idx});
-    renderScene({...sc, medidores:r.medidores}, idx);
+    const total = (r.efeito.argumento || 0) + (r.efeito.credibilidade || 0);
+    const verdict = r.melhor_escolha || total > 0 ? "ok" : total < 0 ? "bad" : "";
+    renderScene({...sc, medidores:r.medidores}, idx, verdict);
     const eff = (n, label) => el("span", {class:"eff " + (n > 0 ? "pos" : n < 0 ? "neg" : "zero"), textContent:`${n > 0 ? "+" : ""}${n} ${label}`});
     const go = r.final ? () => { continuar = null; renderFinal(r); }
                        : () => { continuar = null; caso = r.proxima; renderScene(r.proxima, null); };
     const next = el("button", {class:"btn primary", onclick:go, textContent:r.final ? "Ver o desfecho →" : "Continuar →"});
-    $("#fb").replaceChildren(el("div", {class:"feedback"},
+    $("#fb").replaceChildren(el("div", {class:"feedback " + verdict},
       el("div", {class:"row"}, eff(r.efeito.argumento, "Argumento"), eff(r.efeito.credibilidade, "Credibilidade"), r.melhor_escolha && el("span", {class:"best", textContent:"★ Melhor jogada"})),
-      el("p", {style:{margin:"10px 0"}, textContent:r.feedback}),
+      el("p", {style:{margin:"12px 0"}, textContent:r.feedback}),
       ...r.fundamentos.map(lawBox),
-      el("div", {class:"row", style:{marginTop:"12px"}}, el("span", {class:"spacer"}), next)));
+      el("div", {class:"row", style:{marginTop:"14px"}}, el("span", {class:"spacer"}), next)));
     next.scrollIntoView({block:"nearest", behavior:"smooth"});
     next.focus({preventScroll:true});
     continuar = go;  // Enter/Espaço avançam mesmo se o botão perder o foco
@@ -540,43 +848,55 @@ async function choose(sc, idx) {
 function renderFinal(r) {
   const f = r.final;
   const cls = {otimo:"ok", medio:"mid", ruim:"no"}[f.faixa] || "mid";
-  show(el("div", {class:"card final"},
-    el("div", {class:"muted", textContent:"Desfecho"}),
-    el("div", {class:"stamp " + cls, textContent:f.carimbo}),
-    el("h1", {textContent:f.titulo}),
-    el("p", {textContent:f.texto}),
-    el("div", {class:"row", style:{justifyContent:"center"}},
-      el("span", {class:"chip", textContent:`Argumento ${f.argumento > 0 ? "+" : ""}${f.argumento}`}),
-      el("span", {class:"chip", textContent:`Credibilidade ${f.credibilidade > 0 ? "+" : ""}${f.credibilidade}`}),
-      el("span", {class:"chip", textContent:`Aproveitamento ${pct(f.aproveitamento)}`})),
-    el("div", {class:"xpgain", style:{margin:"14px 0"}, textContent:`+${fmt(f.xp)} XP`}),
-    el("div", {class:"row", style:{justifyContent:"center"}},
-      el("button", {class:"btn primary", onclick:viewCasos, textContent:"Outros casos"}),
-      el("button", {class:"btn", onclick:viewInicio, textContent:"Início"}))));
+  show(el("div", {class:"wrap"}, el("div", {class:"scene final"},
+    el("div", {class:"case-art"}, art(f.titulo, "⚖", true), el("div", {class:"loc", textContent:"Desfecho"})),
+    el("div", {class:"fin-in"},
+      el("div", {class:"stamp " + cls, textContent:f.carimbo}),
+      el("h1", {textContent:f.titulo}),
+      el("p", {textContent:f.texto}),
+      el("div", {class:"row", style:{justifyContent:"center"}},
+        el("span", {class:"chip", textContent:`Argumento ${f.argumento > 0 ? "+" : ""}${f.argumento}`}),
+        el("span", {class:"chip", textContent:`Credibilidade ${f.credibilidade > 0 ? "+" : ""}${f.credibilidade}`}),
+        el("span", {class:"chip gold", textContent:`Aproveitamento ${pct(f.aproveitamento)}`})),
+      el("div", {class:"xpgain", style:{margin:"16px 0"}, textContent:`+${fmt(f.xp)} XP`}),
+      el("div", {class:"row", style:{justifyContent:"center"}},
+        el("button", {class:"btn primary", onclick:viewCasos, textContent:"Outros casos"}),
+        el("button", {class:"btn", onclick:viewInicio, textContent:"Início"}))))));
   celebrate(r.progresso, f.xp);
 }
 
 // ---------------------------------------------------------------- teclado e navegação
 document.addEventListener("keydown", (ev) => {
+  if (modal) { if (ev.key === "Escape") { ev.preventDefault(); closeModal(); } return; }
   if (ev.ctrlKey || ev.metaKey || ev.altKey || /input|textarea/i.test(ev.target.tagName)) return;
   const k = ev.key.toUpperCase();
   if (prova) {
     const q = prova.s.questoes[prova.i];
-    if (q.formato === "certo_errado" && (k === "C" || k === "E")) answer(q.id, k);
+    const keys = q.formato === "certo_errado" ? ["C", "E"] : Object.keys(q.alternativas);
+    if (/^[1-9]$/.test(ev.key)) { if (keys[Number(ev.key) - 1]) answer(q.id, keys[Number(ev.key) - 1]); }
+    else if (q.formato === "certo_errado" && (k === "C" || k === "E")) answer(q.id, k);
     else if (q.formato === "multipla" && q.alternativas[k]) answer(q.id, k);
-    else if (ev.key === "ArrowRight" && prova.i < prova.s.questoes.length - 1) { prova.i++; renderQuestion(); }
-    else if (ev.key === "ArrowLeft" && prova.i > 0) { prova.i--; renderQuestion(); }
+    else if (ev.key === "ArrowRight" && prova.i < prova.s.questoes.length - 1) { prova.i++; renderQuestion({focus:"q"}); }
+    else if (ev.key === "ArrowLeft" && prova.i > 0) { prova.i--; renderQuestion({focus:"q"}); }
     return;
   }
-  if (continuar && (ev.key === "Enter" || ev.key === " ")) { ev.preventDefault(); continuar(); return; }
+  if (continuar && (ev.key === "Enter" || ev.key === " ")) {
+    const t = ev.target;
+    if (t === document.body || t.id === "view" || t.id === "pergunta" || (t.classList && (t.classList.contains("choice") || t.textContent.includes("→")))) { ev.preventDefault(); continuar(); }
+    return;
+  }
   if (caso && !caso._busy && !caso._next && /^[1-9]$/.test(ev.key)) {
     const opt = caso.escolhas && caso.escolhas[Number(ev.key) - 1];
     if (opt) choose(caso, opt.indice);
   }
 });
 const routes = {inicio:viewInicio, simulados:viewSimulados, casos:viewCasos};
-function navigate(tab) {
-  if (prova && !confirm("Sair do simulado em andamento?")) return false;
+let lastHash = location.hash.slice(1);
+async function navigate(tab) {
+  if (prova && !(await ask("Sair do simulado em andamento?", "Sair", "Sair do simulado"))) {
+    history.replaceState(null, "", "#" + lastHash); return false;
+  }
+  lastHash = tab;
   prova = null; caso = null; continuar = null; clearInterval(timerId);
   (routes[tab] || viewInicio)().catch(e => toast(e.message));
   return true;
@@ -585,9 +905,10 @@ document.querySelectorAll("nav.tabs [data-tab]").forEach(b => b.addEventListener
   if (location.hash.slice(1) === b.dataset.tab) navigate(b.dataset.tab);
   else location.hash = b.dataset.tab;  // dispara hashchange → navigate
 }));
+$("#profile").addEventListener("click", openProfile);
 window.addEventListener("hashchange", () => navigate(location.hash.slice(1)));
 loadProfile().catch(() => {});  // HUD (nível, XP, sequência) em qualquer aba de entrada
-(routes[location.hash.slice(1)] || viewInicio)().catch(e => show(el("div", {class:"card empty", textContent:"Não consegui falar com o servidor: " + e.message})));
+(routes[location.hash.slice(1)] || viewInicio)().catch(e => show(el("div", {class:"wrap"}, el("div", {class:"empty", textContent:"Não consegui falar com o servidor: " + e.message}))));
 </script>
 </body>
 </html>
