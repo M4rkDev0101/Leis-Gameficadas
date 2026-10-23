@@ -611,7 +611,9 @@
     .spots { top:var(--hud-h); bottom:auto; height:var(--art-h); }
     .spot { border-width:2px; }
     .inv-title { display:none; left:8px; right:auto; max-width:calc(100% - 16px); top:calc(var(--hud-h) + 6px); font-size:13px; padding:3px 10px; border-left-width:4px; pointer-events:none; }
-    .inv-panel { left:10px; right:10px; width:auto; top:calc(var(--art-b) + 10px); bottom:10px; overflow-y:auto; padding:12px; gap:8px; align-content:start; border-width:2px; border-radius:12px; }
+    .inv-panel { left:10px; right:10px; width:auto; top:calc(var(--art-b) + 10px); bottom:10px; overflow-y:auto; padding:12px; gap:8px; align-content:start; align-items:stretch; flex-wrap:wrap; flex-direction:column; justify-content:flex-start; border-width:2px; border-radius:12px; }
+    .inv-panel h4, .inv-panel small { display:block; }   /* retrato: o painel tem espaço; desfaz a faixa compacta de uma linha */
+    .inv-panel button { flex:0 0 auto; white-space:normal; overflow:visible; text-overflow:clip; display:flex; width:100%; }
     .inv-panel h4 { font-size:17px; }
     .inv-panel small { font-size:13px; color:#c4cddb; }
     .inv-panel button { font-size:15px; min-height:48px; padding:8px 12px; border-width:2px; border-radius:10px; gap:10px; }
