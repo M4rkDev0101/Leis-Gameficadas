@@ -85,7 +85,7 @@
   .xbtn { font-weight:900; font-size:1.7cqw; padding:.9cqw 2cqw; border-radius:1cqw; border:.3cqw solid #fff; box-shadow:0 .4cqw 0 rgba(0,0,0,.5);
           text-transform:uppercase; letter-spacing:.03em; }
   .xbtn:active { transform:translateY(.3cqw); box-shadow:none; }
-  .x-press { background:#2e6ae6; } .x-present { background:#d23a2f; } .x-nav { background:#30384a; min-width:5cqw; }
+  .x-press { background:#2e6ae6; } .x-present { background:#c43328; } .x-nav { background:#30384a; min-width:5cqw; }
   .x-defer { background:#1f8f55; } .x-indef { background:#a32b22; }
   .banner { position:absolute; top:12%; left:0; right:0; z-index:8; text-align:center; pointer-events:none; }
   .banner span { display:inline-block; font-family:Georgia,serif; font-weight:900; font-size:3.4cqw; letter-spacing:.12em; text-transform:uppercase;
@@ -485,6 +485,195 @@
   .brand b::after { content:""; display:inline-block; width:18px; height:2px; background:var(--v-gold); vertical-align:middle; margin-left:8px; }
   .nav .iconbtn, .profile, .navlinks button, .navbtn { min-height:44px; }
   .tile.novo .st { }
+  /* ============================================================ passe de interface dentro do caso (1366×768, 1920×1080, celular 375×812) */
+  .sr { position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
+  button { touch-action:manipulation; }
+  .hintkey { color:#e6d9bd; font-size:max(13px, 1.3cqw); margin:1.2cqw 0 0; }
+  .keys { background:rgba(0,0,0,.72); padding:.25cqw .9cqw; border-radius:99px; font-size:max(12px, 1.1cqw); color:#fff; }
+  .spots { position:absolute; inset:0; }
+  .keys:empty { display:none; }
+  .menu { top:10%; bottom:32%; transform:none; align-content:center; overflow-y:auto; gap:.8cqw; }
+  .menu .opt { padding:1cqw 1.6cqw; }
+  .inv-panel.left { right:auto; left:2%; }
+  .inv-panel.top { bottom:auto; top:11%; }
+  @media (min-width:701px), (orientation:landscape) { .stage:has(.lawpop) .menu { left:2%; width:57%; transform:none; } }
+  .xbar { bottom:32.5%; } .xbar.decide { bottom:32%; }
+  .tabs2 button { background:rgba(0,0,0,.28); }
+  .tabs2 button[aria-pressed="true"] { background:#fff4d6; color:#4a2c10; }
+  .saved-toast { background:rgba(0,0,0,.78); font-size:max(12px, 1.1cqw); }
+  .dhint { color:#e6d9bd; }
+  .stats small { color:#c4cddb; }
+  /* ---- guia visual Vade (C:/lx/design_vade.md): tokens --v-*, foco dourado, modais com blur, tipografia */
+  :root { --v-bg:#0B0D11; --v-bg-2:#12151B; --v-surface:#181C24; --v-surface-2:#222833; --v-line:#2C3340;
+          --v-text:#ECEEF2; --v-muted:#9AA3B2; --v-faint:#6B7383; --v-gold:#D4A24C; --v-gold-2:#E8BE6A; --v-on-gold:#16110A;
+          --v-steel:#5B7BA6; --v-ok:#3FBF7F; --v-bad:#E5534B; --v-warn:#E8A33D; --v-r:10px; --v-r-lg:16px;
+          --v-serif:Georgia,"Times New Roman",serif; --v-sans:"Segoe UI",system-ui,sans-serif; --v-ease:cubic-bezier(.2,.7,.2,1); }
+  .titlecard h1, .actcard h1, .verdict h2, .credits h2, .credits .big, .stamp, .modal header h2, .inv-title, .inv-panel h4, .banner span, .nameplate, .lawpop .law, .detail .law
+    { font-family:var(--v-serif); letter-spacing:.02em; }
+  .titlecard .ep, .actcard .num, .cred small { font-family:var(--v-sans); font-weight:700; letter-spacing:.18em; }
+  .hudbtn:focus-visible, .xbtn:focus-visible, .bigbtn:focus-visible, .opt:focus-visible, .inv-panel button:focus-visible, .pbtn:focus-visible,
+  .tabs2 button:focus-visible, .ev:focus-visible, .modal .x:focus-visible, .dialog:focus-visible, .spot:focus-visible, .modal :focus-visible, .modal header :focus-visible
+    { outline:2px solid var(--v-gold); outline-offset:3px; }
+  .hudbtn, .xbtn, .bigbtn, .opt, .ev, .pbtn, .tabs2 button, .inv-panel button { transition-duration:.2s; transition-timing-function:var(--v-ease); }
+  /* caixa de diálogo, HUD, escolhas, investigação */
+  .dialog { background:linear-gradient(180deg, rgba(24,28,36,.96), rgba(11,13,17,.97)); border-color:rgba(212,162,76,.75); }
+  .dialog::before { border-color:rgba(212,162,76,.3); }
+  .hudbtn { background:linear-gradient(var(--v-surface-2), var(--v-surface)); border-color:var(--v-gold); color:var(--v-text); box-shadow:0 .3cqw 0 rgba(0,0,0,.6); }
+  .cred { background:rgba(11,13,17,.8); }
+  .cred small { color:var(--v-text); }
+  .x-nav { background:var(--v-surface-2); }
+  .opt { background:linear-gradient(var(--v-surface-2), var(--v-surface)); border-color:var(--v-line); color:var(--v-text); }
+  .opt:hover, .opt:focus-visible { border-color:var(--v-gold); background:linear-gradient(#2b323f, var(--v-surface-2)); }
+  .opt b { background:var(--v-gold); color:var(--v-on-gold); }
+  .inv-panel { background:rgba(18,21,27,.94); border-color:rgba(212,162,76,.6); }
+  .inv-panel button { background:var(--v-surface-2); border-color:var(--v-line); color:var(--v-text); }
+  .inv-panel button:hover { border-color:var(--v-gold); }
+  .inv-panel .go { background:var(--v-gold); color:var(--v-on-gold); border-color:var(--v-gold); }
+  .inv-panel .go:disabled { background:var(--v-surface-2); color:var(--v-muted); border-color:var(--v-line); }
+  .inv-panel small { color:var(--v-muted); }
+  .inv-title { background:rgba(11,13,17,.82); border-left-color:var(--v-gold); }
+  .lawpop { background:var(--v-surface); color:var(--v-text); border:1px solid var(--v-gold); box-shadow:0 10px 30px rgba(0,0,0,.45); }
+  .lawpop .ref { color:var(--v-gold); }
+  .stage:has(.banner) .lawpop, .stage:has(.lawpop) .inv-title { visibility:hidden; }
+  /* autos do processo: cartão escuro sobre fundo desfocado */
+  .modal { inset:0; padding:4%; background:rgba(11,13,17,.62); -webkit-backdrop-filter:blur(10px); backdrop-filter:blur(10px); border:0; border-radius:0; box-shadow:none; display:block; overflow:visible; color:var(--v-text); }
+  .mcard { height:100%; display:grid; grid-template-rows:auto 1fr auto; overflow:hidden; background:var(--v-surface); border:1px solid var(--v-line);
+           border-radius:var(--v-r-lg); box-shadow:0 10px 30px rgba(0,0,0,.45); color:var(--v-text); min-height:0; }
+  .modal header { background:linear-gradient(180deg, var(--v-surface-2), var(--v-surface)); border-bottom:0; box-shadow:inset 0 -2px 0 var(--v-gold); color:var(--v-text); }
+  .modal header h2 { color:var(--v-text); }
+  .modal .x { color:var(--v-text); }
+  .tabs2 button { background:var(--v-surface-2); color:var(--v-text); box-shadow:inset 0 0 0 1px var(--v-line); }
+  .tabs2 button[aria-pressed="true"] { background:var(--v-gold); color:var(--v-on-gold); box-shadow:none; }
+  .mbody { min-height:0; }
+  .ev { background:var(--v-surface-2); color:var(--v-text); border-color:var(--v-line); box-shadow:0 .25cqw 0 rgba(0,0,0,.4); }
+  .ev:hover, .ev:focus-visible { border-color:var(--v-gold-2); box-shadow:0 .8cqw 1.4cqw rgba(0,0,0,.4); }
+  .ev[aria-pressed="true"] { border-color:var(--v-gold); box-shadow:0 0 0 .25cqw var(--v-gold); background:#2a2518; }
+  .detail { background:var(--v-bg-2); border-color:var(--v-line); color:var(--v-text); }
+  .detail .ref { color:var(--v-gold); }
+  .castcard { background:var(--v-surface-2); border-color:var(--v-line); color:var(--v-text); }
+  .castcard .pt { background:linear-gradient(#e8dcbf,#cdb98d); }
+  .castcard .tx .role { color:var(--v-gold); }
+  .castcard .tx .mot { color:#c2c9d6; }
+  .modal footer { background:var(--v-bg-2); border-top:1px solid var(--v-line); }
+  .modal footer .hint { color:var(--v-muted); }
+  .pbtn { background:var(--v-gold); color:var(--v-on-gold); box-shadow:0 .35cqw 0 #8a6a2c; }
+  .pbtn:hover:not(:disabled) { background:var(--v-gold-2); }
+  .pbtn.sec { background:var(--v-surface-2); color:var(--v-text); box-shadow:inset 0 0 0 1px var(--v-line), 0 .35cqw 0 rgba(0,0,0,.5); }
+  .pbtn:disabled { opacity:1; background:var(--v-surface-2); color:var(--v-muted); box-shadow:inset 0 0 0 1px var(--v-line); }
+  /* telas cheias: abertura de ato/caso, veredicto, game over, créditos */
+  .titlecard, .actcard { background:radial-gradient(circle at 50% 38%, #2a2012 0%, var(--v-bg) 72%); }
+  .verdict { background:radial-gradient(circle at 50% 35%, rgba(42,32,18,.94), rgba(11,13,17,.98) 70%); }
+  .credits { background:var(--v-bg); }
+  .titlecard .ep, .actcard .num { color:var(--v-gold); }
+  .actcard .cargo { color:var(--v-gold-2); border-color:var(--v-gold); }
+  .titlecard h1::after { background:linear-gradient(90deg, transparent, var(--v-gold), transparent); }
+  .credits h2, .xp { color:var(--v-gold); }
+  .stamp.ok { color:var(--v-ok); } .stamp.no { color:var(--v-bad); } .stamp.mid { color:var(--v-gold-2); }
+  .stats div { background:var(--v-surface); border-color:var(--v-line); }
+  .bigbtn { background:var(--v-gold); color:var(--v-on-gold); box-shadow:0 .4cqw 0 #8a6a2c; }
+  .bigbtn.sec { background:var(--v-surface-2); color:var(--v-text); box-shadow:inset 0 0 0 1px var(--v-line), 0 .4cqw 0 rgba(0,0,0,.5); }
+  .bigbtn:hover { background:var(--v-gold-2); } .bigbtn.sec:hover { background:#2b323f; }
+  @media (orientation:portrait) and (max-width:700px) {
+    #game { align-items:stretch; }
+    .stage-wrap { width:100vw; height:100vh; height:100dvh; aspect-ratio:auto;
+      --hud-h:56px; --art-h:62.5vw; --art-b:calc(var(--hud-h) + var(--art-h));
+      --dlg-h:clamp(170px, 30vh, 300px); --dlg-h:clamp(170px, 30dvh, 300px); --dlg-b:calc(var(--art-b) + 34px + var(--dlg-h)); }
+    .stage { background:linear-gradient(#0f1219,#07080c); }
+    .scene { inset:var(--hud-h) 0 auto 0; height:var(--art-h); overflow:hidden; }
+    /* HUD em faixa própria acima da arte */
+    .hud { top:0; left:0; right:0; height:var(--hud-h); padding:6px 10px; gap:8px; align-items:center; background:linear-gradient(#0b0d12,#10131b); border-bottom:1px solid #2a3242; }
+    .hudbtn { font-size:15px; min-height:44px; min-width:44px; padding:0 14px; border-width:2px; border-radius:10px; box-shadow:0 3px 0 #120b05; }
+    .cred { padding:4px 8px; gap:2px; }
+    .cred small { display:none; }
+    .cred i { width:24px; height:24px; font-size:18px; }
+    .keys { left:8px; top:calc(var(--art-b) - 28px); font-size:13px; padding:3px 12px; }
+    /* caixa de diálogo abaixo da arte */
+    .dialog { left:10px; right:10px; top:calc(var(--art-b) + 34px); bottom:auto; height:var(--dlg-h); padding:14px 16px 24px; border-width:2px; border-radius:12px; }
+    .dialog::before { inset:3px; border-width:1px; border-radius:9px; }
+    .nameplate { top:auto; bottom:calc(100% - 2px); left:14px; max-width:calc(100% - 28px); font-size:14px; padding:4px 12px; gap:6px; border-width:2px; border-radius:8px 8px 0 0; line-height:1.2; }
+    .nameplate::before { width:8px; height:8px; }
+    .text { font-size:16px; min-height:0; line-height:1.45; }
+    .next { font-size:18px; right:14px; bottom:6px; }
+    /* interrogatório e decisão */
+    .xbar { left:10px; right:10px; top:calc(var(--dlg-b) + 12px); bottom:auto; display:grid; grid-template-columns:48px 1fr 1fr 48px; gap:8px; }
+    .xbar.decide { top:calc(var(--dlg-b) + 12px); bottom:auto; grid-template-columns:1fr 1fr; }
+    .xbtn { font-size:13px; line-height:1.15; min-height:48px; padding:6px; border-width:2px; border-radius:12px; box-shadow:0 3px 0 rgba(0,0,0,.5); text-align:center; }
+    .x-nav { min-width:0; font-size:18px; }
+    /* escolhas e dilemas (a pergunta já aparece no menu, então a caixa de diálogo some) */
+    .stage:has(.menu) .dialog { display:none; }
+    .menu { left:10px; right:10px; top:calc(var(--art-b) + 10px); bottom:10px; transform:none; width:auto; overflow-y:auto; align-content:start; gap:10px; padding:2px 2px 6px; }
+    .menu .q { font-size:17px; text-align:left; margin:0 0 2px; }
+    .menu .opt { font-size:15px; padding:12px 14px; gap:12px; border-width:2px; border-radius:12px; min-height:48px; width:100%; }
+    .opt b { width:30px; height:30px; border-radius:8px; font-size:15px; }
+    .opt:hover, .opt:focus-visible { transform:none; }
+    .dhint { font-size:13px; margin:0; text-align:left; }
+    /* investigação */
+    .spots { top:var(--hud-h); bottom:auto; height:var(--art-h); }
+    .spot { border-width:2px; }
+    .inv-title { display:none; left:8px; right:auto; max-width:calc(100% - 16px); top:calc(var(--hud-h) + 6px); font-size:13px; padding:3px 10px; border-left-width:4px; pointer-events:none; }
+    .inv-panel { left:10px; right:10px; width:auto; top:calc(var(--art-b) + 10px); bottom:10px; overflow-y:auto; padding:12px; gap:8px; align-content:start; border-width:2px; border-radius:12px; }
+    .inv-panel h4 { font-size:17px; }
+    .inv-panel small { font-size:13px; color:#c4cddb; }
+    .inv-panel button { font-size:15px; min-height:48px; padding:8px 12px; border-width:2px; border-radius:10px; gap:10px; }
+    .spot.seen::after { top:-8px; right:-8px; width:20px; height:20px; font-size:13px; }
+    /* faixas, fundamentos e efeitos */
+    .banner { top:calc(var(--hud-h) + 10px); }
+    .banner span { font-size:18px; letter-spacing:.08em; padding:6px 24px; }
+    .banner small { font-size:14px; margin-top:4px; padding:0 12px; }
+    .lawpop { left:10px; right:10px; width:auto; top:calc(var(--hud-h) + 8px); max-height:calc(var(--art-h) - 40px); overflow-y:auto; font-size:14px; padding:12px 14px; border-width:3px; border-radius:12px; }
+    .lawpop b { font-size:15px; margin-bottom:4px; } .lawpop .ref { font-size:12px; }
+    .saved-toast { top:calc(var(--hud-h) + 6px); font-size:12px; padding:3px 10px; }
+    .bubble { top:calc(var(--hud-h) + var(--art-h) / 2); width:92%; }
+    .bubble div { font-size:11.5cqw !important; }
+    .gavel { top:calc(var(--hud-h) + 6px); width:30%; right:6%; }
+    .card-fly { top:calc(var(--hud-h) + var(--art-h) / 2); width:62%; padding:12px; border-width:3px; border-radius:12px; }
+    .card-fly .ic { font-size:44px; } .card-fly b { font-size:16px; }
+    /* autos do processo em tela cheia */
+    .modal { padding:0; }
+    .mcard { border-radius:0; border:0; }
+    .modal header { flex-wrap:wrap; padding:10px 12px; gap:8px; border-bottom-width:3px; }
+    .modal header h2 { font-size:18px; flex:1; }
+    .modal header .sp { display:none; }
+    .modal .x { font-size:30px; min-width:44px; min-height:44px; padding:0; order:2; }
+    .tabs2 { order:3; flex:1 0 100%; display:flex; gap:6px; }
+    .tabs2 button { flex:1; min-height:44px; font-size:15px; margin:0; padding:0 8px; border-radius:8px; }
+    .mbody { grid-template-columns:1fr; gap:12px; padding:12px; align-content:start; }
+    .grid-ev { grid-template-columns:repeat(auto-fill, minmax(104px, 1fr)); gap:8px; }
+    .ev { font-size:13px; padding:8px; border-width:2px; border-radius:10px; min-height:44px; }
+    .ev .ic { font-size:30px; }
+    .detail { font-size:15px; padding:12px; border-width:2px; border-radius:10px; }
+    .detail h3 { font-size:17px; margin-bottom:6px; } .detail .law { font-size:15px; } .detail .ref { font-size:12px; }
+    .mbody.cast .grid-ev { grid-template-columns:1fr; gap:10px; }
+    .castcard { gap:12px; padding:10px; border-width:2px; border-radius:10px; }
+    .castcard .pt { width:64px; border-radius:8px; }
+    .castcard .tx { font-size:14px; } .castcard .tx b { font-size:16px; } .castcard .tx .role { font-size:12px; margin-bottom:3px; } .castcard .tx p { margin-top:4px; }
+    .modal footer { padding:10px 12px; flex-wrap:wrap; gap:8px; }
+    .modal footer .hint { font-size:13px; flex:1 0 100%; margin:0; }
+    .pbtn { font-size:16px; min-height:48px; padding:0 20px; border-radius:10px; flex:1; box-shadow:0 3px 0 #8a6a2c; }
+    .pbtn.sec { box-shadow:inset 0 0 0 1px var(--v-line), 0 3px 0 rgba(0,0,0,.5); }
+    /* telas cheias */
+    .full { padding:24px 20px; justify-content:safe center; overflow-y:auto; }
+    .titlecard .ep { font-size:14px; letter-spacing:.28em; }
+    .titlecard h1 { font-size:clamp(30px, 9.5vw, 44px); margin:8px 0 0; }
+    .titlecard h1::after { height:3px; width:120px; margin:14px auto 0; }
+    .titlecard p, .actcard p, .verdict p { font-size:16px; }
+    .hintkey { font-size:14px; margin-top:12px; }
+    .actcard .num { font-size:15px; letter-spacing:.4em; }
+    .actcard h1 { font-size:clamp(34px, 12vw, 52px); margin:8px 0; text-shadow:0 3px 0 #6b3d10; }
+    .actcard .cargo { font-size:15px; border-radius:18px; padding:8px 18px; border-width:2px; margin:14px 0; }
+    .stamp { font-size:clamp(26px, 9vw, 40px) !important; white-space:normal; border-width:4px; border-radius:10px; padding:6px 18px; max-width:92%; line-height:1.1; text-align:center; }
+    .verdict h2 { font-size:22px; margin:18px 0 8px; }
+    .stats { gap:10px; margin:14px 0; } .stats div { padding:8px 14px; border-radius:10px; } .stats b { font-size:22px; } .stats small { font-size:13px; }
+    .xp { font-size:30px; }
+    .bigbtns { flex-direction:column; align-items:stretch; gap:10px; width:100%; max-width:340px; margin-top:16px; }
+    .bigbtn { font-size:16px; min-height:48px; padding:0 20px; border-radius:12px; box-shadow:0 3px 0 #8a6a2c; }
+    .bigbtn.sec { box-shadow:inset 0 0 0 1px var(--v-line), 0 3px 0 rgba(0,0,0,.5); }
+    .credits .roll { padding-top:60vh; }
+    .credits h2 { font-size:22px; margin:24px 0 6px; }
+    .credits p, .credits li { font-size:16px; margin:4px 0; }
+    .credits .big { font-size:40px; }
+    .credits .skip { right:12px; bottom:12px; width:auto; }
+  }
 </style>
 </head>
 <body>
@@ -531,7 +720,8 @@
   <button type="button" class="intro-skip" id="intro-skip">Pular ▸</button>
 </div>
 
-<div id="game" class="hidden" aria-live="polite">
+<div id="game" class="hidden">
+  <div id="sr" class="sr" aria-live="polite" aria-atomic="true"></div>
   <div class="stage-wrap">
     <div class="stage" id="stage">
       <div class="scene" id="scene"><div class="bg" id="bg"></div><div class="floor"></div><div class="actor idle" id="actor"></div><div class="desk" id="desk"></div></div>
@@ -1823,6 +2013,17 @@ async function playVoice(q, t) {
   v.play().catch(off);
   return true;
 }
+// reduz a fonte do texto até a fala inteira caber na caixa (falas vão de 5 a 380 caracteres); deixa o texto vazio para a digitação
+function fitText(dlg, tx, text) {
+  tx.style.fontSize = ""; tx.textContent = text;
+  const base = parseFloat(getComputedStyle(tx).fontSize), floor = Math.min(base, 13);
+  for (let k = 1; k > 0.5; k -= 0.06) {
+    const px = Math.max(floor, base * k);
+    tx.style.fontSize = px + "px";
+    if (dlg.scrollHeight <= dlg.clientHeight + 1 || px <= floor) break;
+  }
+  tx.textContent = "";
+}
 async function say(line, opts = {}) {
   if (!cond(line.se)) return;
   const q = line.q || "narrador";
@@ -1841,7 +2042,8 @@ async function say(line, opts = {}) {
   np.textContent = name; np.className = "nameplate np-" + (q === "narrador" ? "x" : posOf(q)); np.classList.toggle("hidden", !name);
   const text = line.t;
   tx.className = "text" + (q === "narrador" ? " narr" : "") + (/^\(.*\)$/.test(text.trim()) ? " thought" : "") + (opts.statement ? " statement" : "");
-  tx.textContent = ""; nx.classList.add("hidden");
+  fitText(dlg, tx, text); nx.classList.add("hidden");
+  $("#sr").textContent = (name ? name + ": " : "") + text;
   const actor = $("#actor");
   if (q !== "narrador") actor.classList.add("talking");
   let i = 0, skip = false;
@@ -1870,6 +2072,7 @@ function clearOverlay() { $("#overlay").replaceChildren(); }
 // ------------------------------------------------ credibilidade
 function renderCred(breakIdx = -1) {
   const c = $("#cred");
+  c.setAttribute("role", "img"); c.setAttribute("aria-label", `Credibilidade: ${G.cred} de 5`);
   c.replaceChildren(el("small", {textContent:"CREDIBILIDADE"}),
     ...Array.from({length:5}, (_, i) => el("i", {class:(i >= G.cred ? "lost" : "") + (i === breakIdx ? " break" : ""), textContent:"⚖️"})));
 }
@@ -1892,10 +2095,20 @@ function openAutos(mode) {
   // mode: null (só consulta) ou {titulo, onPick(id)}
   return new Promise(resolve => {
     let tab = "prova", sel = null;
-    const close = (v) => { Sound.fechar(); m.remove(); document.removeEventListener("keydown", esc); resolve(v); };
-    const esc = (e) => { if (e.key === "Escape") { e.stopPropagation(); close(null); } };
+    const prevFocus = document.activeElement;
+    const close = (v) => { Sound.fechar(); m.remove(); document.removeEventListener("keydown", esc);
+      if (prevFocus && prevFocus.isConnected && prevFocus.focus) prevFocus.focus({preventScroll:true}); resolve(v); };
+    const esc = (e) => {
+      if (e.key === "Escape") { e.stopPropagation(); close(null); return; }
+      if (e.key !== "Tab") return;  // mantém o foco dentro dos autos enquanto estiverem abertos
+      const f = [...m.querySelectorAll("button:not(:disabled)")].filter(b => b.offsetParent !== null);
+      if (!f.length) return;
+      const i = f.indexOf(document.activeElement);
+      if (e.shiftKey && i <= 0) { e.preventDefault(); f[f.length - 1].focus(); }
+      else if (!e.shiftKey && (i === -1 || i === f.length - 1)) { e.preventDefault(); f[0].focus(); }
+    };
     document.addEventListener("keydown", esc);
-    const m = el("div", {class:"modal", role:"dialog", "aria-label":"Autos do processo"});
+    const m = el("div", {class:"modal", role:"dialog", "aria-modal":"true", "aria-label":"Autos do processo"});
     const grid = el("div", {class:"grid-ev"}), detail = el("div", {class:"detail"});
     const presentBtn = mode ? el("button", {class:"pbtn", disabled:true, textContent:"Apresentar!", onclick:() => close(sel)}) : null;
     const tabsEl = el("div", {class:"tabs2"});
@@ -1909,7 +2122,12 @@ function openAutos(mode) {
           ch.bio ? el("p", {textContent:ch.bio}) : null,
           ch.motivacao ? el("p", {class:"mot", textContent:"Motivação: " + ch.motivacao}) : null));
     };
-    function draw() {
+    function draw() {  // repinta sem perder o foco do teclado (os botões são recriados)
+      const ae = document.activeElement, ti = [...tabsEl.children].indexOf(ae), gi = [...grid.children].indexOf(ae);
+      paint();
+      if (ti >= 0) tabsEl.children[ti].focus(); else if (gi >= 0 && grid.children[gi]) grid.children[gi].focus();
+    }
+    function paint() {
       const isCast = tab === "elenco";
       mbody.classList.toggle("cast", isCast);
       tabsEl.replaceChildren(...[["prova", "Provas"], ["lei", "Leis"], ["elenco", "Elenco"]].map(([k, l]) =>
@@ -1932,14 +2150,16 @@ function openAutos(mode) {
         : [el("p", {textContent: mode ? "Escolha a prova ou a lei que você quer apresentar." : "Selecione um item para ver os detalhes."})]));
       if (presentBtn) presentBtn.disabled = !sel;
     }
-    m.append(el("header", {}, el("h2", {textContent:"📁 Autos do processo"}), tabsEl, el("span", {class:"sp"}), el("button", {class:"x", "aria-label":"Fechar", textContent:"×", onclick:() => close(null)})),
+    m.append(el("div", {class:"mcard"}, el("header", {}, el("h2", {textContent:"📁 Autos do processo"}), tabsEl, el("span", {class:"sp"}), el("button", {class:"x", "aria-label":"Fechar", textContent:"×", onclick:() => close(null)})),
       mbody,
       el("footer", {}, el("span", {class:"hint", textContent: mode ? mode.titulo : "Tudo o que você reuniu até agora."}),
-        el("button", {class:"pbtn sec", textContent: mode ? "Voltar" : "Fechar", onclick:() => close(null)}), presentBtn));
+        el("button", {class:"pbtn sec", textContent: mode ? "Voltar" : "Fechar", onclick:() => close(null)}), presentBtn)));
     $("#stage").append(m); draw(); Sound.abrir();
+    (tabsEl.querySelector("[aria-pressed=true]") || m).focus({preventScroll:true});
   });
 }
 function lawPopup(fs) {
+  document.querySelectorAll("#stage .lawpop").forEach(n => n.remove());
   const items = (fs || []).filter(f => f);
   if (!items.length) return;
   const f = items[0];
@@ -1966,6 +2186,35 @@ async function runScene(id) {
   if (c.tipo === "veredicto") { await verdict(c); return null; }
   return c.proxima;
 }
+// alvo de toque mínimo de 44 px nos pontos de investigação (celular/touch), crescendo a partir do centro e sem sair da arte
+function fitSpots() {
+  const MIN = 44, small = matchMedia("(max-width:700px), (pointer:coarse)").matches;
+  for (const s of document.querySelectorAll("#overlay .spot")) {
+    s.style.minWidth = s.style.minHeight = s.style.marginLeft = s.style.marginTop = "";
+    if (!small) continue;
+    const r = s.getBoundingClientRect(), b = s.parentElement.getBoundingClientRect();
+    for (const [dim, size, lo, hi, m, min] of [["width", r.width, r.left - b.left, b.width, "marginLeft", "minWidth"], ["height", r.height, r.top - b.top, b.height, "marginTop", "minHeight"]]) {
+      if (size >= MIN) continue;
+      const start = Math.max(0, Math.min(hi - MIN, lo - (MIN - size) / 2));
+      s.style[min] = MIN + "px"; s.style[m] = (start - lo) + "px";
+    }
+  }
+}
+// no desktop o painel fica do lado (direito ou esquerdo) que menos cobre os pontos de investigação
+function placePanel(panel) {
+  if (matchMedia("(orientation:portrait) and (max-width:700px)").matches) return;
+  const cover = () => { const p = panel.getBoundingClientRect(); let a = 0;
+    for (const s of document.querySelectorAll("#overlay .spot")) { const r = s.getBoundingClientRect();
+      a += Math.max(0, Math.min(p.right, r.right) - Math.max(p.left, r.left)) * Math.max(0, Math.min(p.bottom, r.bottom) - Math.max(p.top, r.top)); }
+    return a; };
+  let best = null;
+  for (const pos of [[], ["left"], ["top"], ["top", "left"]]) {
+    panel.classList.remove("left", "top"); panel.classList.add(...pos);
+    const a = cover(); if (!best || a < best.a) best = {a, pos}; if (!a) break;
+  }
+  panel.classList.remove("left", "top"); panel.classList.add(...best.pos);
+}
+addEventListener("resize", () => { if (document.querySelector("#overlay .spots")) fitSpots(); });
 async function investigate(c) {
   const opts = {local:c.local};
   Sound.startMusic("investigacao"); Sound.entrar(); Sound.ambiencia(c.local);
@@ -1984,13 +2233,13 @@ async function investigate(c) {
           style:{left:p.x + "%", top:p.y + "%", width:p.w + "%", height:p.h + "%"}, onclick:() => resolve({ponto:p})}, el("span", {textContent:p.nome})));
         const falta = missing().length;
         const panel = el("div", {class:"inv-panel"},
-          el("h4", {textContent:"Investigação"}),
+          el("h4", {textContent:"Investigação" + (c.titulo || LOCAL_NOME[c.local] ? ": " + (c.titulo || LOCAL_NOME[c.local]) : "")}),
           el("small", {textContent:`Examinados: ${seen.size} de ${c.pontos.length}. Clique nos pontos brilhantes da cena.`}),
           ...(c.conversas || []).map((cv, i) => el("button", {class:talked.has(i) ? "done" : "", onclick:() => resolve({conversa:i})},
             "💬 ", cv.titulo || ("Conversar com " + nameOf(cv.q)))),
           el("button", {class:"go", disabled:falta > 0, onclick:() => resolve({seguir:true})},
             falta ? `Ainda falta encontrar ${falta} prova(s) importante(s)` : "Seguir ▶"));
-        overlay(...spots, panel);
+        overlay(el("div", {class:"spots"}, ...spots), panel); fitSpots(); placePanel(panel);
       });
       clearOverlay(); Sound.select();
       if (pick.seguir) break;
@@ -2014,7 +2263,7 @@ async function actIntro(a) {
   const roman = ["", "I", "II", "III", "IV", "V", "VI", "VII"][a.numero] || a.numero;
   const t = el("div", {class:"full actcard"}, el("div", {class:"num", textContent:"ATO " + roman}), el("h1", {textContent:a.titulo}),
     el("div", {class:"cargo", textContent:"Você agora é: " + a.cargo}), el("p", {textContent:a.sinopse}),
-    el("p", {style:{opacity:.6, fontSize:"1.2cqw"}, textContent:"clique ou Enter para continuar"}));
+    el("p", {class:"hintkey", textContent:"toque, clique ou Enter para continuar"}));
   $("#stage").append(t);
   await waitAdvance(); t.remove();
 }
@@ -2024,7 +2273,7 @@ async function titleCard(c) {
   if (pos && pos.primeiro && !G.resumed) await actIntro(pos.ato);
   const label = pos ? `Ato ${pos.ato.numero} · Caso ${pos.numero}` + (pos.ultimo ? " · Final do ato" : "") : c.texto;
   const t = el("div", {class:"full titlecard"}, el("div", {class:"ep", textContent:label}), el("h1", {textContent:c.subtitulo}),
-    el("p", {textContent:EP.sinopse}), el("p", {style:{opacity:.7, fontSize:"1.3cqw"}, textContent:"clique ou Enter para começar"}));
+    el("p", {textContent:EP.sinopse}), el("p", {class:"hintkey", textContent:"toque, clique ou Enter para começar"}));
   $("#stage").append(t); Sound.vitoria();
   await waitAdvance(); t.remove(); Sound.startMusic("calma");
   return c.proxima;
@@ -2128,7 +2377,7 @@ async function decideScene(c) {
     await say({q:"narrador", t:c.pergunta}, {noWait:true});
     const d = await new Promise(resolve => {
       G.decideKeys = resolve;
-      overlay(el("div", {class:"xbar", style:{bottom:"31%"}},
+      overlay(el("div", {class:"xbar decide"},
         el("button", {class:"xbtn x-defer", textContent:"🔨 Deferido (D)", onclick:() => resolve("deferir")}),
         el("button", {class:"xbtn x-indef", textContent:"🔨 Indeferido (I)", onclick:() => resolve("indeferir")})));
     });
@@ -2258,7 +2507,7 @@ document.addEventListener("keydown", (e) => {
   if (G && G.choiceKeys && /^[1-9]$/.test(k)) { G.choiceKeys(Number(k) - 1); return; }
   if (G && G.decideKeys && (k === "d" || k === "i")) { G.decideKeys(k === "d" ? "deferir" : "indeferir"); return; }
   if (k === "a" && G) { openAutos(null); return; }
-  if ((k === "enter" || k === " ") && advance) { e.preventDefault(); const a = advance; a(); }
+  if ((k === "enter" || k === " ") && advance) { if (e.target.closest && e.target.closest("button")) return; e.preventDefault(); const a = advance; a(); }
 });
 $("#btn-autos").onclick = () => openAutos(null);
 $("#btn-quit").onclick = () => { if (confirm("Sair do caso? Você continua da última cena salva.")) quitGame(); };
