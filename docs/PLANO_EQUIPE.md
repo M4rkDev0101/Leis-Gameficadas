@@ -38,12 +38,19 @@ testes (`unittest`), validação jurídica (`jogar.py validar`) e jogo no navega
 | 11 | Game design: balanceamento de dificuldade e XP por ato; dicas após 2 erros | game design | curva revisada e documentada no GDD | ✅ (XP por duração, 6 rótulos corrigidos, dicas progressivas) |
 | 12 | Instalador: incluir dublagem opcional (baixar pacote de vozes) | programação | instalação limpa funciona | ✅ código e lançador novo publicados (instalação limpa testada em 30 s); o instalador não baixa mais vozes (dublagem removida) |
 
-## Estado ao pausar (22/10/2026, noite)
-- `main` está verde e publicado: interface nova em todo o sistema (menu estilo streaming, app de estudo, acervo com
-  leitura integral, telas do caso, cenários, lançador), XP por duração + dicas, sem código de celular. Instalador
-  novo publicado pela CI e testado numa instalação limpa.
-- Para retomar: (1) item 3, 2ª passada de arte expressão por expressão (agente + inspeção pessoal); (2) item 8,
-  QA de escolhas/conquistas/créditos (parcial: a troca de marca em a1x-transito → a1x-idosa funcionou).
+## Em andamento (23/10/2026) — retomar daqui
+- Dublagem removida por decisão do usuário (não reintroduzir).
+- Queixa do usuário: ao jogar, CPU/RAM/SSD vão a 100% ("parece mineração"); e o instalador é acusado como trojan.
+  - Agente `perf2`: worktree `C:/lx/wt-perf2`, branch `equipe/perf2` — mede (lançador, servidor, navegador) e corrige;
+    medições em `C:/lx/tmp-perf2-medicoes/`.
+  - Agente `antivirus`: worktree `C:/lx/wt-antivirus`, branch `equipe/antivirus` — reproduz com o Defender local,
+    troca por PyInstaller --onedir + Inno Setup e remove a autocópia/atalho do lançador.
+  - Ao retomar: `git log main..equipe/perf2` e `git log main..equipe/antivirus`; se houver commits, revisar, testar
+    (unittest, `jogar.py validar`, autoplay, instalação limpa isolada como em "Notas de ambiente") e integrar; se
+    não, recriar os agentes com o mesmo pedido. Os dois mexem em `instalador/vade_launcher.py` em funções diferentes.
+- Depois: item 3 (2ª passada de arte) e item 8 (QA de escolhas/conquistas/créditos).
+- Teste de instalação limpa sem tocar na do usuário: rodar o .exe com LOCALAPPDATA e USERPROFILE apontando para
+  `C:/lx/tmp-inst/...` e `BROWSER="cmd /c rem %s"`; o jogo sobe em 127.0.0.1:8765.
 
 ## Notas de ambiente (descobertas que custaram tempo)
 - Agentes: `isolation: worktree` falha (MAX_PATH). Criar `git worktree add -b equipe/<x> C:/lx/wt-<x>` e mandar o
