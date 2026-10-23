@@ -319,6 +319,10 @@
      "tipo": "dialogo",
      "falas": [
       {
+       "q": "narrador",
+       "t": "Em execução penal, um erro de conta custa meses da vida de alguém. Hoje, a conta é a de Beto."
+      },
+      {
        "q": "a4rita",
        "e": "normal",
        "t": "Bom dia, Excelência. A pauta de hoje é da Vara de Execuções Penais, que o Tribunal lhe confiou além das varas comuns. São dezenas de processos, mas um deles está marcado com um post-it amarelo meu."
@@ -1574,6 +1578,10 @@
      "tipo": "dialogo",
      "falas": [
       {
+       "q": "narrador",
+       "t": "Um soco, um tapa e uma frase sussurrada que não consta de papel nenhum."
+      },
+      {
        "q": "a4rita",
        "e": "normal",
        "t": "Excelência, hoje o plantão do Juizado Especial Criminal ficou com Vossa Excelência. É a justiça da pressa: oralidade, informalidade, economia processual."
@@ -2732,6 +2740,10 @@
     "s2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "A lei mandou: duzentos metros. O rastreador encontrado na bolsa de Lorena dizia que a distância real era zero."
+      },
       {
        "q": "a4rita",
        "e": "nervoso",

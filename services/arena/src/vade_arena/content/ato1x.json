@@ -284,6 +284,10 @@
      "local": "escritorio",
      "falas": [
       {
+       "q": "narrador",
+       "t": "Quarenta notebooks desapareceram de um depósito numa só noite. Um deles estava na mesa de trabalho de Elias, com nota fiscal e garantia."
+      },
+      {
        "q": "helena",
        "e": "pensativo",
        "t": "Elias Moura, 27 anos, designer freelancer. O notebook dele quebrou no meio de um projeto grande, e ele comprou um recondicionado numa loja de bairro, a TecnoVolta, por R$ 1.900."
@@ -1258,6 +1262,10 @@
      "tipo": "dialogo",
      "local": "escritorio",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "21h10, garoa e uma avenida escura. O som do impacto foi a última coisa que Osvaldo Teles ouviu."
+      },
       {
        "q": "helena",
        "e": "pensativo",
@@ -2238,6 +2246,10 @@
      "tipo": "dialogo",
      "local": "escritorio",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "R$ 62.500: era o que o sobrinho dizia que a cuidadora tinha tirado da tia de 82 anos. Os recibos dela contavam outra história."
+      },
       {
        "q": "helena",
        "e": "pensativo",

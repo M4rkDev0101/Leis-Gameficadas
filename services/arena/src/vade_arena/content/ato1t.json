@@ -117,6 +117,10 @@
      "local": "escritorio",
      "falas": [
       {
+       "q": "narrador",
+       "t": "Seu nome ainda nem está na porta do escritório. Mas, do outro lado da cidade, alguém já o anotou numa caderneta."
+      },
+      {
        "q": "helena",
        "e": "feliz",
        "t": "Seja bem-vindo(a) à Vasconcelos & Duarte! Eu sou a Helena. Hoje você não pega um caso de verdade: hoje você aprende a pilotar."

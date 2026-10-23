@@ -38,6 +38,7 @@
       "cenas": {
         "a1": {"tipo": "titulo", "texto": "Caso 1", "subtitulo": "O Celular da Rua Augusta", "proxima": "a2"},
         "a2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "narrador", "t": "Uma noite na Rua Augusta. Um celular some de uma mesa de bar e, minutos depois, um garoto de dezenove anos está algemado na calçada."},
           {"q": "helena", "e": "normal", "t": "Treino encerrado. Agora é pra valer: aqui estagiário não serve café, estagiário trabalha."},
           {"q": "helena", "e": "pensativo", "t": "Lucas Ferreira, 19 anos, preso por roubo majorado de celular. Audiência amanhã cedo, com o Dr. Lacerda na acusação."},
           {"q": "rafael", "e": "confiante", "t": "Lacerda vai jurar que houve um empurrão. Sem empurrão, não tem roubo. É simples assim."},
@@ -115,7 +116,8 @@
         "a6": {"tipo": "dialogo", "local": "tribunal", "falas": [
           {"q": "lacerda", "e": "pensativo", "t": "Muito bem. Mesmo sem empurrão no bar, houve violência DEPOIS. O réu agrediu quem o segurou na rua."},
           {"q": "lacerda", "e": "apontando", "t": "Violência para garantir a coisa subtraída: roubo impróprio! Chamo Jorge Almeida, o pedestre que deteve o réu."},
-          {"q": "voce", "e": "nervoso", "t": "(Se ele provar violência depois da subtração, volta a ser roubo… Preciso ouvir com atenção.)"}
+          {"q": "voce", "e": "nervoso", "t": "(Se ele provar violência depois da subtração, volta a ser roubo… Preciso ouvir com atenção.)"},
+          {"q": "narrador", "t": "Jorge entra suando. Antes de sentar, olha para a porta e depois para o chão, como quem foi instruído a não olhar para ninguém."}
         ], "proxima": "a7"},
         "a7": {"tipo": "depoimento", "testemunha": "jorge", "titulo": "A versão de Jorge",
           "intro": [{"q": "jorge", "e": "confiante", "t": "Eu peguei o ladrão, doutora. Sou praticamente um herói."}],
@@ -181,6 +183,7 @@
       "cenas": {
         "p1": {"tipo": "titulo", "texto": "Caso 2", "subtitulo": "O Pão e a Lei", "proxima": "p2"},
         "p2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "narrador", "t": "Em casa, uma bebê de oito meses espera por leite e fraldas. A mãe dela, naquele momento, está sentada numa delegacia."},
           {"q": "helena", "e": "triste", "t": "Este chegou pela Defensoria, que está sobrecarregada. Rosa Aparecida, 41 anos. Furtou comida e fraldas num supermercado."},
           {"q": "rafael", "e": "pensativo", "t": "A filha dela tem oito meses. Ela perdeu o emprego há três."},
           {"q": "voce", "e": "triste", "t": "E o Ministério Público denunciou isso como furto?"},
@@ -269,7 +272,8 @@
           {"q": "beatriz", "e": "normal", "t": "Reconheço a insignificância e absolvo a ré: o fato não constitui infração penal, art. 386, III, do CPP.", "fx": "martelo"},
           {"q": "rosa", "e": "feliz", "t": "Obrigada… Deus te pague, doutor(a)."},
           {"q": "lacerda", "e": "normal", "t": "(passando por você) Bom trabalho. Não conte a ninguém que eu disse isso."},
-          {"q": "helena", "e": "feliz", "t": "Ah, e liguei para uma ONG de assistência social. Rosa sai daqui com um encaminhamento de emprego."}
+          {"q": "helena", "e": "feliz", "t": "Ah, e liguei para uma ONG de assistência social. Rosa sai daqui com um encaminhamento de emprego."},
+          {"q": "narrador", "t": "No saguão do fórum, um homem de terno cinza anota o seu nome numa caderneta e se afasta sem pressa."}
         ], "proxima": "p9"},
         "p9": {"tipo": "veredicto", "carimbo": "ABSOLVIDA", "titulo": "Insignificante para o Direito Penal", "texto": "Você provou com números o que a compaixão sozinha não provaria: lesão inexpressiva, bens devolvidos e ré primária. A lei penal é a última trincheira, não a primeira."}
       }
@@ -293,6 +297,7 @@
       "cenas": {
         "q1": {"tipo": "titulo", "texto": "Caso 3", "subtitulo": "Ponto Final", "proxima": "q2"},
         "q2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "narrador", "t": "Um estalo de osso, um grito, uma bicicleta caída no asfalto. Em segundos, um entregador virou réu e o outro, vítima. Um dos dois está mentindo."},
           {"q": "rafael", "e": "normal", "t": "Marcos Vieira, entregador. Acusado de lesão corporal grave: o braço do Wellington vai ficar 45 dias imobilizado."},
           {"q": "voce", "e": "pensativo", "t": "Mais de trinta dias de incapacidade… é o art. 129, § 1º, I."},
           {"q": "rafael", "e": "confiante", "t": "E o Marcos jura que o Wellington puxou uma faca para roubar a bicicleta dele."},
@@ -394,6 +399,7 @@
       "cenas": {
         "r1": {"tipo": "titulo", "texto": "Caso 4", "subtitulo": "Três Dias no Escuro", "proxima": "r2"},
         "r2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "narrador", "t": "Três dias. Setenta e duas horas em que ninguém no mundo sabia onde Joana Lima estava."},
           {"q": "helena", "e": "bravo", "t": "A mãe de Joana Lima rodou três dias por hospitais e IML atrás da filha. Ela estava presa numa delegacia. Ninguém avisou."},
           {"q": "rafael", "e": "pensativo", "t": "Acusada de furtar joias da patroa. E adivinha quem é a patroa: a esposa de Henrique Altavista."},
           {"q": "voce", "e": "chocado", "t": "Altavista de novo?!"},
@@ -490,6 +496,7 @@
       "cenas": {
         "s1": {"tipo": "titulo", "texto": "Caso 5", "subtitulo": "O Golpe do Pix", "proxima": "s2"},
         "s2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "narrador", "t": "R$ 9.800 deixaram a conta de Patrícia em segundos. Chegaram à de um aposentado de 68 anos que jura nunca ter tocado nesse dinheiro."},
           {"q": "helena", "e": "pensativo", "t": "Ivo Bernardes, 68 anos, aposentado. A vítima, Patrícia, transferiu R$ 9.800 achando que falava com a 'central do banco'. O dinheiro caiu na conta do Ivo."},
           {"q": "rafael", "e": "pensativo", "t": "Fraude eletrônica, art. 171, § 2º-A: quatro a oito anos. O Ministério Público acha que ele é o golpista."},
           {"q": "voce", "e": "pensativo", "t": "Mas para ser crime é preciso dolo. Só se pune o crime culposo quando a lei prevê expressamente."},
@@ -589,6 +596,7 @@
       "cenas": {
         "t1": {"tipo": "titulo", "texto": "Caso 6 · Final do Ato I", "subtitulo": "O Júri", "proxima": "t2"},
         "t2": {"tipo": "dialogo", "local": "escritorio", "falas": [
+          {"q": "narrador", "t": "Residencial Horizonte, de madrugada. Um capacete rolando no concreto e um engenheiro que nunca mais deu bom-dia a ninguém."},
           {"q": "rafael", "e": "normal", "t": "Paulo Seixas, engenheiro da Altavista, encontrado morto no canteiro da obra do Residencial Horizonte. Golpe na cabeça."},
           {"q": "rafael", "e": "pensativo", "t": "O acusado é Tiago Nunes, operário demitido na semana anterior. A acusação diz que ele voltou para se vingar."},
           {"q": "helena", "e": "normal", "t": "Homicídio doloso: quem julga é o júri popular, por determinação da Constituição. Sete jurados, e a decisão deles é soberana."},
@@ -706,7 +714,10 @@
           {"q": "narrador", "t": "Os jurados se recolhem à sala secreta. Vinte minutos depois, retornam."},
           {"q": "beatriz", "e": "normal", "t": "O Conselho de Sentença absolveu o réu Tiago Nunes. Oficie-se ao Ministério Público quanto ao crime de suborno de testemunha, art. 343 do Código Penal.", "fx": "martelo"},
           {"q": "tiago", "e": "feliz", "t": "Obrigado… eu achei que ia morrer na cadeia por uma coisa que eu não fiz."},
-          {"q": "lacerda", "e": "pensativo", "t": "(para você, em voz baixa) Brandão. Altavista. Eu também andei puxando esse fio. Precisamos conversar."}
+          {"q": "lacerda", "e": "pensativo", "t": "(para você, em voz baixa) Brandão. Altavista. Eu também andei puxando esse fio. Precisamos conversar."},
+          {"q": "lacerda", "e": "pensativo", "t": "Mais uma coisa. A Clara, irmã do Paulo, me entregou o comprovante de uma carta registrada que ele postou na véspera de morrer. O aviso de recebimento voltou assinado com uma rubrica: um \"R\" e um rabisco."},
+          {"q": "lacerda", "e": "bravo", "t": "A carta nunca apareceu em lugar nenhum. Quem a recebeu sumiu com ela."},
+          {"q": "voce", "e": "pensativo", "t": "(Ronaldo. Rangel. Há R demais neste caso.)"}
         ], "fundamentos": [{"chave": "CP#art-343", "trecho": "Dar, oferecer ou prometer dinheiro ou qualquer outra vantagem a testemunha"}], "proxima": "t10a"},
         "t10a": {"tipo": "dialogo", "local": "rua", "falas": [
           {"q": "narrador", "t": "Na calçada do fórum, entre repórteres e curiosos, alguém acena para você. É um rapaz de moletom, com um boné nas mãos."},

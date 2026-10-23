@@ -342,6 +342,10 @@
      "falas": [
       {
        "q": "narrador",
+       "t": "Na gaveta da mesa nova, o primeiro processo: uma mulher que quer retirar a queixa e marcas no corpo dela que não pediram permissão."
+      },
+      {
+       "q": "narrador",
        "e": "normal",
        "t": "Sala de posse do Ministério Público. Cheiro de café, toga nova e uma bandeira que parece mais pesada do que é."
       },
@@ -831,6 +835,17 @@
        "t": "Isso não contradiz a negativa de ameaça, promotor(a)."
       }
      ],
+     "proxima": "x7x"
+    },
+    "x7x": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Rogério sorri para alguém na plateia. Camila fecha os olhos. Nesta sala, quem está sendo julgado não é só ele."
+      }
+     ],
      "proxima": "x8"
     },
     "x8": {
@@ -1051,6 +1066,10 @@
        "q": "lacerda",
        "e": "confiante",
        "t": "Bem-vindo(a) ao Ministério Público."
+      },
+      {
+       "q": "narrador",
+       "t": "Na sua mesa, ao voltar para o gabinete, um envelope sem remetente: \"Bem-vindo(a). Cuidado com quem sorri demais.\""
       }
      ],
      "proxima": "x11",
@@ -1181,6 +1200,10 @@
     "x2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Primeiro, um peixe de barriga para cima. Depois cem. Ao amanhecer, o Rio Cinzento inteiro tinha a cor de coisa morta."
+      },
       {
        "q": "lacerda",
        "e": "normal",
@@ -1677,6 +1700,17 @@
        "t": "Isso não contradiz a afirmação sobre destinação dos resíduos."
       }
      ],
+     "proxima": "x8x"
+    },
+    "x8x": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Valadares consulta o relógio pela terceira vez. Quando percebe que você notou, sorri."
+      }
+     ],
      "proxima": "x9"
     },
     "x9": {
@@ -2043,6 +2077,10 @@
     "x2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Sábado, repartição vazia e um carimbo que ecoa pelos corredores: três alvarás assinados sem que ninguém fosse olhar a obra."
+      },
       {
        "q": "dani",
        "e": "feliz",
@@ -2846,6 +2884,11 @@
        "q": "valadares",
        "e": "confiante",
        "t": "Estamos aqui para isso."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Ele foi a única pessoa que me perguntou, hoje, a que horas o registro de acesso seria juntado. Quem pergunta o horário já conhece a resposta."
       }
      ],
      "proxima": "x13",
@@ -2993,6 +3036,10 @@
     "x2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Oito gramas pesam menos que um maço de cartas. Dois jovens podem passar anos presos por elas."
+      },
       {
        "q": "lacerda",
        "e": "normal",
@@ -3454,6 +3501,17 @@
        "t": "Promotor(a), isso não contradiz a existência de campana."
       }
      ],
+     "proxima": "x7x"
+    },
+    "x7x": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Valadares se levanta e sai da sala sem dizer palavra. Ao fundo, o Procurador anota alguma coisa."
+      }
+     ],
      "proxima": "x8"
     },
     "x8": {
@@ -3769,6 +3827,10 @@
        "q": "lacerda",
        "e": "feliz",
        "t": "Esse é o Ministério Público que eu quero."
+      },
+      {
+       "q": "narrador",
+       "t": "Na saída, o delegado Fausto Rangel atende uma ligação. Número pré-pago. Ele não diz uma palavra; só escuta, olhando para você."
       }
      ],
      "proxima": "x12",
@@ -3902,6 +3964,10 @@
     "x2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Seis pessoas, funções bem divididas e dinheiro vivo trocando de mãos antes do sol nascer. E alguém já avisou que a polícia vai chegar."
+      },
       {
        "q": "lacerda",
        "e": "normal",
@@ -4343,6 +4409,17 @@
        "t": "Promotor(a), essa prova não contradiz a afirmação de que ele não recebe ordens."
       }
      ],
+     "proxima": "x7x"
+    },
+    "x7x": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Na plateia, Fausto Rangel tira o celular do bolso, digita depressa e o guarda de novo, sem tirar os olhos de você."
+      }
+     ],
      "proxima": "x8"
     },
     "x8": {
@@ -4772,6 +4849,10 @@
     "x2": {
      "tipo": "dialogo",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Onze e doze da noite. O sistema registra o acesso. O login pertence a alguém que, amanhã, vai lhe desejar bom-dia com um sorriso."
+      },
       {
        "q": "narrador",
        "e": "normal",
@@ -5604,6 +5685,16 @@
        "q": "dani",
        "e": "feliz",
        "t": "Eu separo a apostila, doutor(a). E o café."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Comparei a rubrica do aviso de recebimento da carta do Paulo, a que o doutor Lacerda guarda desde o Horizonte, com a de Fausto Rangel e a de Valadares. Nenhuma bate."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Então a carta foi parar em mãos que a Altavista nunca alcançou. E que, por algum motivo, nunca a usaram."
       }
      ],
      "proxima": "x12a",
