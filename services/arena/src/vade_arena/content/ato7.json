@@ -1,0 +1,123 @@
+{
+  "ato": "ato7",
+  "personagens": {
+    "a7marina": {
+      "nome": "Cons. Marina Paiva",
+      "cargo": "Conselheira relatora do CNJ",
+      "voz": 500,
+      "visual": {
+        "pele": "#8D5524",
+        "cabelo": "coque",
+        "corCabelo": "#9e9e9e",
+        "roupa": "blazer",
+        "corRoupa": "#2b2f3a",
+        "gravata": null,
+        "oculos": true,
+        "barba": false
+      },
+      "bio": "Conselheira do CNJ e relatora do seu processo disciplinar. Ex-defensora pública, lê cada página e não perdoa atalho.",
+      "personalidade": "dura, justa, econômica nas palavras",
+      "motivacao": "Que o Judiciário puna quem erra, sem virar instrumento de quem persegue."
+    },
+    "a7edgar": {
+      "nome": "Min. Edgar Lobo",
+      "cargo": "Corregedor Nacional de Justiça",
+      "voz": 380,
+      "visual": {
+        "pele": "#F1C27D",
+        "cabelo": "careca",
+        "corCabelo": "#3b2414",
+        "roupa": "terno",
+        "corRoupa": "#1b1f2a",
+        "gravata": "#5a1a1a",
+        "oculos": true,
+        "barba": true
+      },
+      "bio": "Corregedor Nacional. Fala de imagem do Judiciário como quem fala de um filho doente.",
+      "personalidade": "político, cansado, orgulhoso",
+      "motivacao": "Dar um exemplo que acalme a imprensa."
+    },
+    "a7saulo": {
+      "nome": "Dr. Saulo Prado",
+      "cargo": "Advogado do reclamante",
+      "voz": 430,
+      "visual": {
+        "pele": "#FFDBAC",
+        "cabelo": "topete",
+        "corCabelo": "#1b1b1b",
+        "roupa": "terno",
+        "corRoupa": "#0f1420",
+        "gravata": "#c9a227",
+        "oculos": false,
+        "barba": false
+      },
+      "bio": "Advogado de tribuna impecável. Sorri quando acerta e quando erra, e quase nunca erra.",
+      "personalidade": "elegante, cruel na medida",
+      "motivacao": "Ganhar. Quem paga é detalhe."
+    },
+    "a7ronan": {
+      "nome": "Ronan Teles",
+      "cargo": "Presidente do Instituto Transparência Viva",
+      "voz": 410,
+      "visual": {
+        "pele": "#E0AC69",
+        "cabelo": "curto",
+        "corCabelo": "#7b4a24",
+        "roupa": "casual",
+        "corRoupa": "#4a5a3a",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      },
+      "bio": "Presidente de um instituto que ninguém conhecia até a semana passada. Assina a reclamação contra você.",
+      "personalidade": "nervoso, ensaiado",
+      "motivacao": "Pagar as próprias dívidas."
+    },
+    "a7joana": {
+      "nome": "Joana Ribas",
+      "cargo": "Jornalista investigativa",
+      "voz": 560,
+      "visual": {
+        "pele": "#C68642",
+        "cabelo": "rabo",
+        "corCabelo": "#1b1b1b",
+        "roupa": "casual",
+        "corRoupa": "#7a2a2a",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      },
+      "bio": "Repórter que publicou o dossiê contra você. Persistente, orgulhosa, odeia ser usada.",
+      "personalidade": "rápida, desconfiada, honesta",
+      "motivacao": "A verdade, mesmo quando ela atrapalha a manchete."
+    },
+    "a7taina": {
+      "nome": "Tainá Rocha",
+      "cargo": "Aluna do curso noturno",
+      "voz": 600,
+      "visual": {
+        "pele": "#5C3A1E",
+        "cabelo": "cacheado",
+        "corCabelo": "#1b1b1b",
+        "roupa": "casual",
+        "corRoupa": "#3a4fa0",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      },
+      "bio": "Mãe solo, operadora de caixa e aluna do curso noturno onde você passa a dar aula.",
+      "personalidade": "cansada, engraçada, teimosa",
+      "motivacao": "Que a filha não precise brigar tanto quanto ela."
+    }
+  },
+  "episodios": [],
+  "marcas_declaradas": [
+    "a7_perdoou_dani",
+    "a7_entregou_dani",
+    "a7_confiou_joana",
+    "a7_ajudou_taina_certo",
+    "a7_intimo_clara",
+    "a7_culpou_helena",
+    "a7_perdoou_helena"
+  ]
+}

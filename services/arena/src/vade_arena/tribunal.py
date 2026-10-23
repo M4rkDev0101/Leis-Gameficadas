@@ -77,6 +77,8 @@ def load() -> dict:
             ep.setdefault("ato", extra.get("ato"))
             data["episodios"].append(ep)
         data["personagens"].update(extra.get("personagens", {}))
+        # marcas que um ato declara para episódios escritos em paralelo (criadas num arquivo, usadas em outro)
+        data.setdefault("marcas_declaradas", set()).update(extra.get("marcas_declaradas", []))
     # carreira na ordem dos atos; episódios avulsos no fim
     data["episodios"].sort(key=lambda e: (not e.get("ato"), e.get("ato") or "", e.get("ordem", 0)))
     return data
@@ -777,7 +779,7 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
     seen_ids = set()
     atos = {a["id"] for a in data.get("atos", [])}
     ordens: set[tuple] = set()
-    all_marcas = {m for e in data["episodios"] for m in episode_marks(e)}
+    all_marcas = {m for e in data["episodios"] for m in episode_marks(e)} | set(data.get("marcas_declaradas", ()))
     for ep in data["episodios"]:
         if ep.get("ato"):
             if ep["ato"] not in atos:
