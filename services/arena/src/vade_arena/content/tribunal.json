@@ -1341,6 +1341,14 @@
       "papel": "juiz",
       "cargo": "Juiz(a) de Direito",
       "sinopse": "O julgamento que atravessa toda a sua carreira. Sem atalhos, sem favores — nem ao seu antigo mentor."
+    },
+    {
+      "id": "ato6",
+      "numero": 6,
+      "titulo": "Supremo",
+      "papel": "juiz",
+      "cargo": "Advogado(a) e juiz(a) instrutor(a) no STF",
+      "sinopse": "A carta de Paulo aponta para Brasília. No Supremo você alterna a beca de juiz(a) instrutor(a), convocado(a) pela relatora, e a tribuna de advogado(a) das famílias. Políticos poderosos, provas plantadas, testemunhas compradas e alguém que não para de seguir seus passos."
     }
   ]
 }
