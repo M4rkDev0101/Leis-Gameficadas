@@ -1349,6 +1349,14 @@
       "papel": "juiz",
       "cargo": "Advogado(a) e juiz(a) instrutor(a) no STF",
       "sinopse": "A carta de Paulo aponta para Brasília. No Supremo você alterna a beca de juiz(a) instrutor(a), convocado(a) pela relatora, e a tribuna de advogado(a) das famílias. Políticos poderosos, provas plantadas, testemunhas compradas e alguém que não para de seguir seus passos."
+    },
+    {
+      "id": "ato7",
+      "numero": 7,
+      "titulo": "Sem Toga",
+      "papel": "investigado",
+      "cargo": "Magistrado(a) afastado(a)",
+      "sinopse": "A Altavista achou a sua falha: você advogou enquanto ainda era juiz(a). Afastado(a) pelo CNJ, sem toga e sem carteira, com as condenações de Brasília ameaçadas de nulidade por sua culpa, você precisa reconquistar a confiança de todos — e provar quem armou a sua queda."
     }
   ]
 }

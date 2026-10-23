@@ -24,6 +24,7 @@
   .chip { display:inline-block; font-size:.75rem; font-weight:800; padding:2px 9px; border-radius:99px; background:var(--panel-2); color:var(--muted); }
   .chip.advogado { background:rgba(79,123,255,.18); color:#9db4ff; } .chip.promotor { background:rgba(229,72,59,.18); color:#ff9a90; }
   .chip.juiz { background:rgba(165,123,255,.18); color:#cbb3ff; }
+  .chip.investigado { background:rgba(160,160,170,.18); color:#d6d8de; }
   .best { color:var(--gold); font-weight:800; font-size:.85rem; }
 
   /* ------------------------------------------------------------ palco */
@@ -367,7 +368,7 @@
   .hero h1 { margin:0 0 12px; font-family:var(--v-serif); font-size:clamp(2.2rem, 5.4vw, 4.4rem); line-height:1.02; letter-spacing:-.01em; color:var(--ivory); text-shadow:0 4px 24px rgba(0,0,0,.7); }
   .meta { display:flex; flex-wrap:wrap; gap:8px 10px; align-items:center; margin:0 0 14px; font-size:.9rem; color:var(--mute); }
   .meta .chip { background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.14); color:var(--ivory); font-size:.78rem; padding:2px 10px; }
-  .meta .chip.advogado { color:#B9CBFF; } .meta .chip.promotor { color:#FFB8AF; } .meta .chip.juiz { color:#DCCBFF; }
+  .meta .chip.advogado { color:#B9CBFF; } .meta .chip.promotor { color:#FFB8AF; } .meta .chip.juiz { color:#DCCBFF; } .meta .chip.investigado { color:#E4E6EA; }
   .hero p.syn { margin:0 0 20px; color:#E4DDCD; font-size:clamp(.95rem, 1.5vw, 1.12rem); max-width:54ch; text-shadow:0 2px 12px rgba(0,0,0,.8); display:-webkit-box; -webkit-line-clamp:4; -webkit-box-orient:vertical; overflow:hidden; }
   .cta { display:flex; flex-wrap:wrap; gap:12px; }
   .btn { display:inline-flex; align-items:center; gap:9px; border:0; border-radius:8px; padding:12px 26px; font-weight:800; font-size:1.02rem; letter-spacing:.02em; transition:transform .15s, background .15s, box-shadow .15s; }
@@ -760,6 +761,9 @@
   .placar i { width:2.2cqw; height:2.2cqw; min-width:14px; min-height:14px; border-radius:50%; background:var(--v-surface-2); box-shadow:inset 0 0 0 1px var(--v-line); transition:background .4s; }
   .placar i.fav { background:var(--v-good, #2fbf71); box-shadow:none; } .placar i.con { background:var(--v-bad); box-shadow:none; }
   .placar small { width:100%; text-align:center; color:var(--v-text); font-weight:700; letter-spacing:.08em; font-size:max(11px, 1.2cqw); }
+  .dclock { position:absolute; left:2%; right:2%; top:2.2%; z-index:10; height:.7cqw; min-height:5px; border-radius:1cqw; background:rgba(255,255,255,.14); overflow:hidden; pointer-events:none; }
+  .dclock i { display:block; height:100%; background:linear-gradient(90deg, var(--v-gold), #ffd27a); transform-origin:left; }
+  .dclock.late i { background:linear-gradient(90deg, #e5483b, #ff8a3a); }
   /* fora do tribunal: tensão (cronômetro, vinheta pulsando) e celular */
   .stage.tense::after { content:""; position:absolute; inset:0; z-index:6; pointer-events:none; box-shadow:inset 0 0 12cqw rgba(160,10,10,.55); animation:pulso .8s ease-in-out infinite; }
   @keyframes pulso { 50% { box-shadow:inset 0 0 6cqw rgba(160,10,10,.25); } }
@@ -2129,7 +2133,7 @@ function desk(pos) {
 
 // ================================================================ estado do jogo
 let EP = null, G = null;
-const ROLE_PLAQUE = {advogado:"defesa", promotor:"acusacao", juiz:"juiz"};
+const ROLE_PLAQUE = {advogado:"defesa", promotor:"acusacao", juiz:"juiz", investigado:"defesa"};
 function posOf(q) { return (EP.posicoes || {})[q] || "testemunha"; }
 function visualOf(q) {
   const ch = EP.personagens[q] || {};
@@ -2367,6 +2371,7 @@ async function damage(lines, c, ctx) {
   if (G.cred > 0 && G.cred <= 2) Sound.startMusic("pressao");
   await sayAll(lines);
   if (G.cred <= 0) { G.over = true; await gameOver(); }
+  else if (EP && EP.nivel === "impossivel") { if (fails >= 3) { const h = hintFor(c, 1, ctx); if (h) await say({q:"narrador", e:"pensativo", t:"💡 " + h}); } }
   else if (fails >= 2) await giveHint(c, fails, ctx);
 }
 
@@ -2698,12 +2703,15 @@ async function choiceScene(c) {
   const tried = new Set();
   while (!G.over) {
     await say({q:"narrador", t:c.pergunta}, {noWait:true});
-    const i = await new Promise(resolve => {
+    const clk = startClock(c);
+    const i = await Promise.race([clk ? clk.p : NUNCA, new Promise(resolve => {
       G.choiceKeys = resolve;
       overlay(el("div", {class:"menu"}, el("div", {class:"q", textContent:c.pergunta}),
         ...c.opcoes.map((o, k) => el("button", {class:"opt", disabled:tried.has(k), style:tried.has(k) ? {opacity:.45} : {},
           onclick:() => resolve(k)}, el("b", {textContent:String(k + 1)}), el("span", {textContent:o.t})))));
-    });
+    })]);
+    if (clk) clk.stop();
+    if (i === "timeout") { await timeout(c); continue; }
     G.choiceKeys = null; clearOverlay(); Sound.select();
     const o = c.opcoes[i];
     if (o.certa) { await sayAll(o.falas); hit(); lawPopup(o.fundamentos); return c.proxima; }
@@ -2712,16 +2720,41 @@ async function choiceScene(c) {
   }
   return null;
 }
+// relógio das decisões: campo "tempo" (s) na cena; no nível impossível vale 40 s por padrão. Esgotar = erro e repete.
+const NUNCA = new Promise(() => {});
+function startClock(c) {
+  const s = c.tempo || (EP && EP.nivel === "impossivel" ? 40 : 0);
+  if (!s) return null;
+  const bar = el("i"), box = el("div", {class:"dclock", role:"timer", "aria-label":`${s} segundos para decidir`}, bar);
+  $("#stage").append(box);
+  let done, last = -1;
+  const p = new Promise(r => { done = r; }), t0 = performance.now();
+  // setInterval (e não rAF): o relógio corre mesmo com a aba em segundo plano
+  const iv = setInterval(() => {
+    const f = (performance.now() - t0) / (s * 1000);
+    bar.style.transform = `scaleX(${Math.max(0, 1 - f)})`; box.classList.toggle("late", f > .75);
+    const sec = Math.floor((1 - f) * s); if (f > .75 && sec !== last) { last = sec; Sound.coracao(); }
+    if (f >= 1) { clearInterval(iv); done("timeout"); }
+  }, 50);
+  return {p, stop() { clearInterval(iv); box.remove(); }};
+}
+async function timeout(c) {
+  G.choiceKeys = null; G.decideKeys = null; clearOverlay();
+  await damage([{q:"narrador", e:"nervoso", t:"O tempo acabou. Quem hesita na audiência entrega a decisão a outro."}], c);
+}
 async function decideScene(c) {
   await sayAll(c.falas, {local:c.local});
   while (!G.over) {
     await say({q:"narrador", t:c.pergunta}, {noWait:true});
-    const d = await new Promise(resolve => {
+    const clk = startClock(c);
+    const d = await Promise.race([clk ? clk.p : NUNCA, new Promise(resolve => {
       G.decideKeys = resolve;
       overlay(el("div", {class:"xbar decide"},
         el("button", {class:"xbtn x-defer", textContent:"🔨 Deferido (D)", onclick:() => resolve("deferir")}),
         el("button", {class:"xbtn x-indef", textContent:"🔨 Indeferido (I)", onclick:() => resolve("indeferir")})));
-    });
+    })]);
+    if (clk) clk.stop();
+    if (d === "timeout") { await timeout(c); continue; }
     G.decideKeys = null; clearOverlay();
     if (d === c.correta) { await sayAll(c.acerto); hit(); lawPopup(c.fundamentos); return c.proxima; }
     await damage(c.erro, c);
@@ -2914,15 +2947,14 @@ async function tensaoScene(c) {
       ...c.opcoes.map((o, k) => el("button", {class:"opt", onclick:() => fim(k)}, el("b", {textContent:String(k + 1)}), el("span", {textContent:o.t}))));
     overlay(box);
     (box.querySelector(".opt") || box).focus({preventScroll:true});
-    const tick = () => {
-      if (done) return;
+    const iv = setInterval(() => {   // setInterval: corre mesmo com a aba em segundo plano
+      if (done) { clearInterval(iv); return; }
       const f = Math.min(1, (performance.now() - t0) / tempo);
       bar.style.transform = `scaleX(${1 - f})`;
       const b = Math.floor((performance.now() - t0) / (f > .66 ? 420 : 760));   // o coração acelera no fim
       if (b !== beat) { beat = b; Sound.coracao(); }
-      if (f >= 1) fim(c.padrao != null ? c.padrao : c.opcoes.length - 1); else requestAnimationFrame(tick);
-    };
-    requestAnimationFrame(tick);
+      if (f >= 1) { clearInterval(iv); fim(c.padrao != null ? c.padrao : c.opcoes.length - 1); }
+    }, 50);
   });
   G.choiceKeys = null; clearOverlay(); stage.classList.remove("tense"); Sound.select();
   const o = c.opcoes[i], esgotou = performance.now() - t0 >= tempo;
@@ -2990,7 +3022,8 @@ async function argumentoScene(c) {
   const tried = new Set();
   while (!G.over) {
     await say({q:"narrador", t:c.pergunta}, {noWait:true});
-    const i = await menuPick("⚖️ " + c.pergunta, c.opcoes.map((o, k) => {
+    const clk = startClock(c);
+    const i = await Promise.race([clk ? clk.p : NUNCA, menuPick("⚖️ " + c.pergunta, c.opcoes.map((o, k) => {
       const f = (o.fundamentos || [])[0] || {}, tx = f.texto || f.trecho || "";
       return {t:o.t, disabled:tried.has(k), sub:(f.chave ? f.chave.replace("#", " · ") : "") + (tx ? " — " + (tx.length > 130 ? tx.slice(0, 127) + "…" : tx) : "")};
     }), {cls:"argument cartas", alvo:c.alvo ? "“" + c.alvo + "”" : null, card:(it, k, pick) => {   // opções como cartas do álbum (as já conquistadas brilham)
@@ -2999,7 +3032,9 @@ async function argumentoScene(c) {
         "aria-label":`Opção ${k + 1}: ${it.t}. ${f.chave ? fmtChave(f.chave) : ""}${al.ok ? ", carta já conquistada" : ""}`},
         el("span", {class:"ch"}, el("b", {textContent:String(k + 1)}), el("small", {textContent:al.ok ? "★ NO ÁLBUM" : (f.chave ? rr[1] : "")})),
         el("span", {class:"ct", textContent:it.t}), f.chave ? el("span", {class:"cn", textContent:fmtChave(f.chave)}) : null,
-        (f.texto || f.trecho) ? el("span", {class:"cx", textContent:f.texto || f.trecho}) : null); }});
+        (f.texto || f.trecho) ? el("span", {class:"cx", textContent:f.texto || f.trecho}) : null); }})]);
+    if (clk) clk.stop();
+    if (i === "timeout") { await timeout(c); continue; }
     const o = c.opcoes[i];
     if (o.certa) { await sayAll(o.falas); hit(); await sayAll(c.acerto); lawPopup(o.fundamentos); return c.proxima; }
     tried.add(i);
@@ -3456,11 +3491,12 @@ function toggleBtn(btn, key, prop) {
 toggleBtn($("#btn-sound"), "tribSom", "on"); toggleBtn($("#btn-music"), "tribMusica", "music");
 { const b = $("#btn-fx"), sync = () => { b.setAttribute("aria-pressed", String(fxOn())); document.body.classList.toggle("nofx", !fxOn()); }; b.onclick = () => { store.set("tribFx", !store.get("tribFx", true)); sync(); }; sync(); }
 
-const ROLE = {advogado:"💼 Defesa", promotor:"🏛️ Acusação", juiz:"⚖️ Juiz(a)"};
+const ROLE = {advogado:"💼 Defesa", promotor:"🏛️ Acusação", juiz:"⚖️ Juiz(a)", investigado:"🔎 Investigado(a)"};
 const COVER = {advogado:{pele:"#F1C27D", cabelo:"topete", corCabelo:"#3b2414", roupa:"terno", corRoupa:"#1f2a44", gravata:"#8a1c1c"},
                promotor:{pele:"#C68642", cabelo:"rabo", corCabelo:"#111", roupa:"terno", corRoupa:"#7a1f1f", gravata:"#111111"},
-               juiz:{pele:"#8D5524", cabelo:"coque", corCabelo:"#1b1b1b", roupa:"toga", corRoupa:"#111111", oculos:true}};
-const NIVEL = {basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite"};
+               juiz:{pele:"#8D5524", cabelo:"coque", corCabelo:"#1b1b1b", roupa:"toga", corRoupa:"#111111", oculos:true},
+               investigado:{pele:"#E0AC69", cabelo:"curto", corCabelo:"#2a1a10", roupa:"terno", corRoupa:"#3a3f48", gravata:"#3a3f48"}};
+const NIVEL = {basico:"🟢 Treino", intermediario:"🟡 Padrão", avancado:"🔴 Difícil", especialista:"⚫ Elite", impossivel:"☠️ Impossível"};
 // ------------------------------------------------ identidade visual do menu (logotipo, horizonte, retratos): tudo gerado por código
 let MUID = 0;
 const ICON = {

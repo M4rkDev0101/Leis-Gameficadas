@@ -418,3 +418,16 @@ class TestMecanicasPapeis(unittest.TestCase):
         self.assertIn("não tem opção 'certa'", self.errs(lambda e: e["t-promotor"]["cenas"]["fuga"]["opcoes"][0].update(certa=True)))
         self.assertIn("'de'", self.errs(lambda e: e["t-promotor"]["cenas"]["zap"]["mensagens"][0].update(de="x")))
         self.assertIn("somar 7", self.errs(lambda e: e["t-promotor"]["cenas"]["juri"].update(votos_fixos={"favor": 3, "contra": 3})))
+
+    def test_relogio_e_nivel_impossivel(self):
+        self.assertIn("relógio", self.errs(lambda e: e["t-juiz"]["cenas"]["aud"].update(tempo=30)))
+        self.assertIn("relógio", self.errs(lambda e: e["t-juiz"]["cenas"]["pal"].update(tempo=5)))
+        def investigado(e):  # o investigado protesta e enfrenta plenário, mas não oferece denúncia nem fala ao júri
+            ep = e["t-promotor"]
+            ep.update(papel="investigado", nivel="impossivel")
+            ep["cenas"].pop("den")
+            ep["cenas"]["ini"]["proxima"] = "prot"
+            ep["cenas"]["fuga"]["proxima"] = "fim"
+            ep["cenas"].pop("juri")
+        self.assertEqual(self.errs(investigado), "")
+        self.assertEqual(tribunal.XP_BASE["impossivel"], 300)

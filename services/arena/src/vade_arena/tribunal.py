@@ -53,7 +53,7 @@ LOCAIS = {"tribunal", "escritorio", "rua", "bar", "delegacia", "parlatorio", "ap
           # cenários novos (frente "cada papel no seu papel"): até a arte chegar, usam o fundo genérico
           "custodia", "stf", "promotoria", "garagem", "carro", "casa", "corredor", "praca", "cafe", "cemiterio"}
 POSICOES = {"defesa", "acusacao", "juiz", "testemunha", "escritorio", "cena"}
-XP_BASE = {"basico": 80, "intermediario": 120, "avancado": 170, "especialista": 230}
+XP_BASE = {"basico": 80, "intermediario": 120, "avancado": 170, "especialista": 230, "impossivel": 300}
 # Ajuste de XP pela duração estimada: o XP base do nível vale para um caso de DUR_REF minutos; cada minuto a mais
 # (ou a menos) soma (ou tira) DUR_XP_MIN, arredondado a múltiplos de 5 e limitado a [DUR_MIN, DUR_MAX].
 DUR_REF, DUR_XP_MIN, DUR_MIN, DUR_MAX = 12.0, 3.0, -20, 45
@@ -598,9 +598,9 @@ def _validar_juiz(c: dict, where: str, ep: dict, errs: list[str]) -> None:
     """Mecânicas próprias de cada papel: audiencia, palavra e sentenca (juiz), protesto (partes), denuncia (promotor)
     e plenario (STF)."""
     pos = ep.get("posicoes", {})
-    papeis = {"audiencia": ("juiz",), "palavra": ("juiz",), "sentenca": ("juiz",), "protesto": ("advogado", "promotor"),
+    papeis = {"audiencia": ("juiz",), "palavra": ("juiz",), "sentenca": ("juiz",), "protesto": ("advogado", "promotor", "investigado"),
               "denuncia": ("promotor",),
-              "plenario": ("advogado", "promotor") if c.get("colegiado") == "juri" else ("advogado", "juiz")}[c["tipo"]]
+              "plenario": ("advogado", "promotor") if c.get("colegiado") == "juri" else ("advogado", "juiz", "investigado")}[c["tipo"]]
     if ep.get("papel") not in papeis:
         errs.append(f"{where}: {c['tipo']} só existe em episódio de {' ou '.join(papeis)}")
     if c["tipo"] == "plenario":
@@ -793,7 +793,7 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
         if eid in seen_ids:
             errs.append(f"{eid}: id repetido")
         seen_ids.add(eid)
-        if ep.get("papel") not in ("advogado", "promotor", "juiz"):
+        if ep.get("papel") not in ("advogado", "promotor", "juiz", "investigado"):
             errs.append(f"{eid}: papel inválido")
         if ep.get("nivel") not in XP_BASE:
             errs.append(f"{eid}: nível inválido")
@@ -913,6 +913,9 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
                 dicas = c["dica"] if isinstance(c["dica"], list) else [c["dica"]]
                 if c["tipo"] not in INTERACTIVE - {"investigar", "convocar", "intuicao", "blefe", "reviravolta"} or not 1 <= len(dicas) <= 2                         or not all(isinstance(d, str) and d.strip() for d in dicas):
                     errs.append(f"{where}: 'dica' deve ser texto (ou [vaga, específica]) em cena com erro possível")
+            if "tempo" in c and c["tipo"] != "tensao" and (c["tipo"] not in ("decidir", "escolha", "argumento") or c.get("livre")
+                                 or not (isinstance(c["tempo"], int) and 10 <= c["tempo"] <= 120)):
+                errs.append(f"{where}: 'tempo' (relógio) só em decidir/escolha/argumento, inteiro de 10 a 120 s")
             if c["tipo"] == "decidir" and c.get("correta") not in ("deferir", "indeferir"):
                 errs.append(f"{where}: decisão correta deve ser deferir ou indeferir")
             if c["tipo"] in ("audiencia", "palavra", "sentenca", "protesto", "denuncia", "plenario"):
