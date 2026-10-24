@@ -800,6 +800,72 @@
   .sentenca legend { color:var(--v-gold); font-weight:900; letter-spacing:.08em; text-transform:uppercase; font-size:max(11px, 1.2cqw); padding:0 .4cqw; }
   .sentenca .opt { font-size:max(12px, 1.35cqw); padding:.7cqw 1.1cqw; }
   .sentenca .opt.on { border-color:var(--v-gold); background:linear-gradient(#3a3220, #262014); }
+  /* ============================================================ ui2: polimento das telas de jogo (desktop 1366×768 e 1920×1080) */
+  /* HUD: botões com tecla visível; credibilidade em perigo ganha contorno vermelho */
+  .hud { align-items:center; gap:.8cqw; }
+  .hudbtn { display:inline-flex; align-items:center; gap:.6cqw; font-size:max(13px, 1.35cqw); padding:.55cqw 1.1cqw; border-width:1px; border-radius:var(--v-r); }
+  #btn-autos::after { content:"A"; font:800 max(10px, .95cqw)/1 var(--v-sans); padding:.25cqw .5cqw; border-radius:.35cqw; background:rgba(212,162,76,.18); border:1px solid rgba(212,162,76,.55); color:var(--v-gold-2); }
+  .cred { border:1px solid var(--v-line); padding:.5cqw 1.1cqw; transition:border-color .3s; }
+  .cred i { font-size:max(14px, 1.7cqw); }
+  .cred:has(i:nth-of-type(4).lost) { border-color:var(--v-warn); } .cred:has(i:nth-of-type(2).lost) { border-color:var(--v-bad); box-shadow:0 0 1.2cqw rgba(229,83,75,.45); }
+  .keys { left:50%; right:auto; transform:translateX(-50%); top:2.6%; z-index:6; background:rgba(11,13,17,.88); color:var(--v-text); border:1px solid rgba(212,162,76,.45); font-size:max(12px, 1.2cqw); padding:.35cqw 1.2cqw; white-space:nowrap; }
+  /* caixa de diálogo: dica da tecla que avança */
+  .next { display:flex; align-items:center; gap:.6cqw; font-size:max(12px, 1.5cqw); }
+  .next::before { content:"Enter"; font:800 max(10px, .95cqw)/1 var(--v-sans); letter-spacing:.06em; color:var(--v-muted); border:1px solid var(--v-line); border-radius:.35cqw; padding:.25cqw .5cqw; }
+  /* a placa da mesa cede lugar às barras de ação, menus e ao celular */
+  .stage:has(.xbar, .menu, .phone) .plaque { opacity:0; transition:opacity .15s; }
+  /* barra de ação (interrogatório, decidir, audiência): painel de vidro, ícone + rótulo + tecla */
+  .xbar { left:50%; right:auto; transform:translateX(-50%); width:max-content; max-width:96%; gap:.8cqw; padding:.7cqw .9cqw; background:rgba(11,13,17,.84); border:1px solid rgba(212,162,76,.45);
+          border-radius:var(--v-r-lg); box-shadow:var(--v-shadow); animation:barin .2s var(--v-ease) both; }
+  @keyframes barin { from { opacity:0; transform:translateX(-50%) translateY(1cqw); } }
+  .xbtn { display:inline-flex; align-items:center; justify-content:center; gap:.7cqw; font-size:max(13px, 1.5cqw); padding:.7cqw 1.4cqw; border:1px solid rgba(255,255,255,.3); border-bottom:.3cqw solid rgba(0,0,0,.45);
+          border-radius:var(--v-r); box-shadow:none; text-transform:none; letter-spacing:.01em; color:#fff; white-space:nowrap; }
+  .xbtn .ic { font-size:1.15em; line-height:1; }
+  .xbtn kbd, .hudbtn kbd { font:800 max(10px, .95cqw)/1 var(--v-sans); padding:.25cqw .5cqw; border-radius:.35cqw; background:rgba(0,0,0,.35); border:1px solid rgba(255,255,255,.4); }
+  .xbtn:hover { box-shadow:0 0 0 .2cqw rgba(255,255,255,.22); } .xbtn:active { transform:scale(.97); }
+  .xbtn:disabled { opacity:.35; cursor:not-allowed; filter:none; transform:none; box-shadow:none; }
+  .x-nav { min-width:4.2cqw; }
+  /* títulos e dicas dos menus ganham fundo: nada de texto solto sobre o rosto do personagem */
+  .menu .q { justify-self:center; max-width:100%; background:rgba(11,13,17,.9); border:1px solid rgba(212,162,76,.55); border-radius:var(--v-r); padding:.7cqw 1.8cqw; margin:0;
+             font-family:var(--v-serif); font-size:max(15px, 2cqw); color:var(--v-gold-2); text-shadow:none; }
+  .menu.judge .q, .menu.tension .q, .menu.palavra .q, .menu.sentenca .q { background:none; border:0; padding:0 0 .3cqw; }
+  .menu > .dhint { justify-self:center; margin:0; padding:.3cqw 1.2cqw; border-radius:99px; background:rgba(11,13,17,.82); font-size:max(12px, 1.3cqw); }
+  .opt { box-shadow:0 .2cqw 0 rgba(0,0,0,.35); } .opt:active { transform:scale(.99); }
+  .opt b { font-size:max(13px, 1.6cqw); font-weight:900; }
+  /* painéis (juiz, tensão): abraçam o conteúdo, centrados na faixa livre acima da caixa de diálogo */
+  .menu.judge, .menu.tension { top:39%; bottom:auto; max-height:58%; transform:translate(-50%,-50%); width:min(72%, 76cqw); align-content:start; gap:.7cqw; padding:1.2cqw 1.6cqw;
+                               box-shadow:var(--v-shadow); animation:panelin .22s var(--v-ease) both; }
+  @keyframes panelin { from { opacity:0; transform:translate(-50%,-47%); } }
+  .stage:has(.lawpop) .menu.judge, .stage:has(.lawpop) .menu.tension { transform:translateY(-50%); }
+  .menu.judge, .menu.palavra, .menu.sentenca { background:rgba(11,13,17,.97); }
+  body.nofx .xbar, body.nofx .menu.judge, body.nofx .menu.tension { animation:none; }
+  .sentenca .opt.on::after { content:"✓"; margin-left:auto; color:var(--v-gold-2); font-weight:900; }
+  .sentenca .parte.bad { animation:nope .32s; } .sentenca .parte.bad legend::after { content:" · revise"; color:#ff9a90; }
+  @keyframes nope { 25% { transform:translateX(-.6cqw); } 50% { transform:translateX(.6cqw); } 75% { transform:translateX(-.3cqw); } }
+  /* plenário e júri: placar legível sem depender só da cor */
+  .placar { gap:.6cqw; padding:.7cqw 1.2cqw; }
+  .placar i { width:2.6cqw; height:2.6cqw; display:inline-grid; place-items:center; font-style:normal; font-weight:900; font-size:max(9px, 1.3cqw); color:#06210f; }
+  .placar i.fav::after { content:"✓"; } .placar i.con { color:#2a0a07; } .placar i.con::after { content:"✕"; }
+  .placar small { font-size:max(12px, 1.45cqw); }
+  /* tensão: rótulo de urgência e cronômetro mais grosso */
+  .menu.tension::before { content:"DECIDA AGORA"; justify-self:center; font:900 max(10px, 1.05cqw)/1 var(--v-sans); letter-spacing:.22em; color:#ff9a90; }
+  .menu.tension .timer { height:1cqw; min-height:8px; border:1px solid rgba(255,255,255,.2); }
+  .menu.tension .opt { border-color:#7a1d16; } .menu.tension .opt:hover, .menu.tension .opt:focus-visible { border-color:var(--v-gold); }
+  /* celular: cabeçalho com avatar, entalhe e balões maiores */
+  .phone { border-width:.4cqw; border-color:#2a303a; width:min(34%, 31cqw); }
+  .phone::before { content:""; align-self:center; flex:none; width:28%; height:.9cqw; min-height:6px; margin:.8cqw 0 .2cqw; border-radius:99px; background:#000; }
+  .phone header { display:grid; grid-template-columns:auto 1fr; column-gap:1cqw; align-items:center; }
+  .phone header::before { content:"👤"; grid-row:1 / 3; width:3.6cqw; height:3.6cqw; border-radius:50%; background:#2b3340; display:grid; place-items:center; font-size:max(14px, 1.8cqw); }
+  .phone .msg { font-size:max(13px, 1.45cqw); }
+  .phone .replies .opt { font-size:max(13px, 1.35cqw); }
+  /* banners: faixa com filete dourado e subtítulo em pílula */
+  .banner span { font-size:max(18px, 3.2cqw); text-shadow:0 .2cqw .5cqw rgba(0,0,0,.6); border-block:1px solid rgba(255,224,138,.45); }
+  .banner small { display:table; margin:.7cqw auto 0; padding:.3cqw 1.4cqw; border-radius:99px; background:rgba(11,13,17,.82); font-size:max(13px, 1.6cqw); }
+  /* investigação: ponto ainda não examinado tem "?" (não depende só do pontilhado) */
+  .spot:not(.seen)::after { content:"?"; position:absolute; top:-1.4cqw; right:-1cqw; width:2.2cqw; height:2.2cqw; min-width:16px; min-height:16px; border-radius:50%; background:var(--v-gold); color:var(--v-on-gold);
+                            font:900 max(11px, 1.3cqw)/1 var(--v-sans); display:grid; place-items:center; box-shadow:0 .2cqw .6cqw rgba(0,0,0,.5); }
+  .inv-panel small { font-size:max(11px, 1.25cqw); }
+  .inv-panel button.done { opacity:.75; } .inv-panel button.done::after { content:"✓"; color:var(--v-ok); font-weight:900; }
 </style>
 </head>
 <body>
@@ -4049,6 +4115,17 @@ document.addEventListener("keydown", (e) => {
   if (k === "a" && G) { openAutos(null); return; }
   if ((k === "enter" || k === " ") && advance) { if (e.target.closest && e.target.closest("button")) return; e.preventDefault(); const a = advance; a(); }
 });
+// teclas visíveis nos botões de ação: "Texto (P)" vira ícone + texto + <kbd>P</kbd> (a tecla já funcionava; aqui só aparece)
+function keycap(b) {
+  if (b.dataset.kc || b.textContent.trim().length < 3) return; b.dataset.kc = "1";
+  let t = b.textContent.trim(), ic = "", key = "", m = /^(\p{Extended_Pictographic}️?)\s+/u.exec(t);
+  if (m) { ic = m[1]; t = t.slice(m[0].length); }
+  m = /\s*\(([A-Za-z]+)\)$/.exec(t);
+  if (m) { key = m[1]; t = t.slice(0, m.index); } else if (/^Seguir/.test(t)) key = "Enter";
+  b.replaceChildren(...[ic && el("span", {class:"ic", "aria-hidden":"true", textContent:ic}), el("span", {textContent:t}), key && el("kbd", {"aria-hidden":"true", textContent:key})].filter(Boolean));
+  if (key) b.setAttribute("aria-keyshortcuts", key);
+}
+new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => n.querySelectorAll && n.querySelectorAll(".xbtn").forEach(keycap)))).observe($("#overlay"), {childList:true, subtree:true});
 $("#btn-autos").onclick = () => openAutos(null);
 $("#btn-quit").onclick = () => { if (confirm("Sair do caso? Você continua da última cena salva.")) quitGame(); };
 
