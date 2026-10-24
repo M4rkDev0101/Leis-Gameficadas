@@ -432,3 +432,19 @@ class TestMecanicasPapeis(unittest.TestCase):
             ep["cenas"].pop("juri")
         self.assertEqual(self.errs(investigado), "")
         self.assertEqual(tribunal.XP_BASE["impossivel"], 300)
+
+    def test_desvio_por_marca(self):
+        def ramo(e):
+            ep = e["t-juiz"]
+            ep["cenas"]["alt"] = {"tipo": "dialogo", "falas": [F("narrador", "Outro caminho.")], "proxima": "fim"}
+            ep["cenas"]["ini"]["desvio"] = [{"se": "usou_falsa", "proxima": "alt"}]
+        self.assertEqual(self.errs(ramo), "")
+        def sem_ramo(e):
+            ep = e["t-juiz"]
+            ep["cenas"]["alt"] = {"tipo": "dialogo", "falas": [F("narrador", "Outro caminho.")], "proxima": "fim"}
+        self.assertIn("alt inalcançável", self.errs(sem_ramo))
+        self.assertIn("desvio inválido", self.errs(lambda e: e["t-juiz"]["cenas"]["ini"].update(desvio=[{"se": "x"}])))
+        def marca_inexistente(e):
+            ramo(e)
+            e["t-juiz"]["cenas"]["ini"]["desvio"][0]["se"] = "marca_que_nao_existe"
+        self.assertIn("condição usa marca", self.errs(marca_inexistente))

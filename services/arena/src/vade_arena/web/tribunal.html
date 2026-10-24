@@ -4089,7 +4089,9 @@ async function startEpisode(id, resume = false) {
   if (s) Sound.startMusic("calma");
   const token = G;
   while (sid && token === G && !G.over) {
-    sid = await runScene(sid);
+    const cur = sid; sid = await runScene(sid);
+    // desvio condicional: uma escolha anterior (marca) leva a história para outra cena
+    if (sid && token === G && !G.over) { const dv = (EP.cenas[cur].desvio || []).find(d => cond(d.se)); if (dv) sid = dv.proxima; }
     if (sid && token === G && !G.over && EP.cenas[sid].tipo !== "veredicto") saveProgress(sid);
   }
 }

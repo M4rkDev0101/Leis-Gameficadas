@@ -23,6 +23,9 @@ O roteiro (``content/tribunal.json``) é um grafo de cenas:
 * ``celular``     — (fora do tribunal) mensagens chegando no celular (provocações, ameaças), com resposta opcional;
 * ``veredicto``   — fim do episódio.
 
+Qualquer cena pode ter ``desvio``: ``[{"se": "marca", "proxima": "cena"}]`` — ao terminar a cena, a primeira
+condição verdadeira troca a próxima cena (ramificação da história pelas escolhas anteriores).
+
 O conteúdo é dividido em ``content/tribunal.json`` (personagens, normas e atos da carreira) e
 ``content/atoN.json`` (episódios de cada ato). Nomes curtos de propósito: o Windows limita
 caminhos a 260 caracteres.
@@ -838,6 +841,9 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
                 continue
             if c.get("local") and c["local"] not in LOCAIS:
                 errs.append(f"{where}: local inválido {c['local']}")
+            for dv in c.get("desvio", []):   # desvio condicional: se a marca existe, segue para outra cena
+                if not isinstance(dv, dict) or dv.get("proxima") not in cenas or not dv.get("se"):
+                    errs.append(f"{where}: desvio inválido {dv!r} (precisa de 'se' e de 'proxima' existente)")
             if c["tipo"] != "veredicto" and sid not in subs and c.get("proxima") not in cenas:
                 errs.append(f"{where}: próxima cena inexistente {c.get('proxima')!r}")
             for f in _falas(c):
@@ -906,7 +912,7 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
             for o in c.get("opcoes", []):
                 if "marca" in o and c["tipo"] not in ("intuicao", "tensao", "celular") and (not c.get("livre") or not MARCA_RE.match(str(o["marca"]))):
                     errs.append(f"{where}: marca inválida {o['marca']!r} (só em escolha livre; a-z, 0-9 e _)")
-            conds = [f.get("se") for f in _falas(c)] + [v.get("se") for v in c.get("variantes", [])]
+            conds = [f.get("se") for f in _falas(c)] + [v.get("se") for v in c.get("variantes", [])]                 + [d.get("se") for d in c.get("desvio", []) if isinstance(d, dict)]
             for cond in filter(None, conds):
                 if cond.lstrip("!") not in all_marcas and cond.lstrip("!") not in MARCAS_AUTOMATICAS:
                     errs.append(f"{where}: condição usa marca que nenhuma escolha cria {cond!r}")
@@ -950,6 +956,7 @@ def validate(data: dict, normas: dict[str, str]) -> list[str]:
             nxt = cenas[s].get("proxima")
             if nxt:
                 stack.append(nxt)
+            stack += [d.get("proxima") for d in cenas[s].get("desvio", []) if isinstance(d, dict)]
             if cenas[s].get("tipo") == "convocar":
                 stack += [o.get("depoimento") for o in cenas[s].get("opcoes", [])]
             elif cenas[s].get("tipo") == "acareacao":
