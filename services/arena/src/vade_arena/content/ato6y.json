@@ -972,8 +972,72 @@
        "t": "A acusação pode convocar duas testemunhas. Escolham bem."
       }
      ],
-     "proxima": "c11",
+     "proxima": "c10t",
      "local": "tribunal"
+    },
+    "c10t": {
+     "tipo": "tensao",
+     "local": "praca",
+     "tempo": 7,
+     "padrao": 0,
+     "pergunta": "Os microfones se fecham em círculo. A imprensa quer uma frase, qualquer uma. O que você diz?",
+     "opcoes": [
+      {
+       "t": "Recusar com educação: “Falo nos autos. Obrigado(a).” E seguir caminhando.",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Falo nos autos. Obrigado(a)."
+        },
+        {
+         "q": "narrador",
+         "t": "A manchete da noite será: “Advogado(a) calado(a)”. É um preço baixo."
+        }
+       ],
+       "cred": 1,
+       "marca": "a6_nada_imprensa"
+      },
+      {
+       "t": "Dar uma declaração firme, sem citar nomes nem provas.",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Abuso de autoridade é crime quando há finalidade específica de prejudicar. Respeito a Polícia, mas ninguém está acima da lei."
+        },
+        {
+         "q": "narrador",
+         "t": "A frase vira chamada de jornal. Vera sorri como quem guarda uma carta na manga."
+        }
+       ],
+       "marca": "a6_declarou_imprensa"
+      },
+      {
+       "t": "Responder à provocação: “O delegado Nery sabe o que fez, e o chefe dele também.”",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "(pensando) “O chefe dele também.” Falei mais do que podia. Agora o Arquiteto sabe que eu sei."
+        }
+       ],
+       "cred": -1,
+       "marca": "a6_acusou_imprensa"
+      }
+     ],
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Saída do fórum federal, Praça dos Três Poderes. Quatro câmeras, seis microfones, uma repórter que você conhece de nome: Vera Lins. Ela vem direto."
+      },
+      {
+       "q": "narrador",
+       "t": "“Doutor(a)! É verdade que o senhor(a) foi juiz(a) do caso Altavista e agora processa um delegado? O senhor(a) tem raiva da Polícia Federal?”"
+      }
+     ],
+     "proxima": "c11"
     },
     "c11": {
      "tipo": "convocar",
@@ -2465,8 +2529,16 @@
      ]
     },
     "c8": {
-     "tipo": "dialogo",
+     "tipo": "audiencia",
+     "local": "gabinete",
+     "titulo": "Audiência de apresentação",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Sala de audiências do gabinete. Os acusados em frente, as partes dos lados, o instrutor ao centro. Lauro, sempre de gravata, esfrega as mãos."
+      }
+     ],
+     "linhas": [
       {
        "q": "a6icaro",
        "e": "apontando",
@@ -2476,10 +2548,94 @@
        "q": "a6teresa",
        "e": "bravo",
        "t": "Fantasia que ele mesmo provou existir, doutor, com três certidões fabricadas. A acusação convoca testemunhas."
+      },
+      {
+       "q": "a6lauro",
+       "e": "bravo",
+       "t": "Isto é uma farsa! O Ministério Público fabrica um golpe de Estado porque não consegue provar um desvio de merenda! Eu sou um representante do povo!",
+       "fx": "bater",
+       "incidente": {
+        "pergunta": "O acusado grita no meio da audiência. Como o juízo intervém?",
+        "chamada": "Deputado, ordem!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-794",
+          "trecho": "A polícia das audiências e das sessões compete aos respectivos juízes ou ao presidente do tribunal, câmara, ou turma"
+         },
+         {
+          "chave": "CPP#art-251",
+          "trecho": "Ao juiz incumbirá prover à regularidade do processo e manter a ordem no curso dos respectivos atos, podendo, para tal"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Ele gritou por quase um minuto, Excelência. Se o juiz não age, o gesto vira rotina."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar passar: ele é parlamentar e tem prerrogativa de falar.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Prerrogativa de foro não é imunidade de ordem, Excelência. Em audiência, a polícia é do juiz (art. 794)."
+           }
+          ]
+         },
+         {
+          "t": "Advertir o acusado: sua fala será por meio do advogado, e nova desordem implicará retirada da sala.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Deputado, ordem. Sua defesa fala por meio do advogado. Nova manifestação desordenada implicará a sua retirada da sala, com registro em ata.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a6icaro",
+            "e": "nervoso",
+            "t": "O Deputado compreende, Excelência. Compreende, não é, Deputado?"
+           },
+           {
+            "q": "a6lauro",
+            "e": "triste",
+            "t": "...Compreendo."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Mandar prendê-lo em flagrante por desacato.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Parlamentar só é preso em flagrante de crime inafiançável (CF 53, § 2º). Desacato não é. Advertir basta."
+           }
+          ]
+         }
+        ]
+       }
       }
      ],
-     "proxima": "c9",
-     "local": "gabinete"
+     "erro_interromper": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "A fala era regular. Interromper a defesa sem motivo cerceia o advogado."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "A ordem foi restabelecida. Ouvidas as partes, a acusação convoca testemunhas."
+      }
+     ],
+     "proxima": "c9"
     },
     "c9": {
      "tipo": "convocar",
@@ -3404,7 +3560,12 @@
     "henrique": "testemunha",
     "a6yedmundo": "testemunha",
     "a6teresa": "escritorio",
-    "dani": "escritorio"
+    "dani": "escritorio",
+    "a6zmiolanda": "juiz",
+    "a6zmteodoro": "juiz",
+    "a6zmrosalvo": "juiz",
+    "a6zmeunice": "juiz",
+    "a6zmbenicio": "juiz"
    },
    "provas": [
     {
@@ -3595,8 +3756,68 @@
        "t": "Eu entreguei o número do pré-pago em um aditivo, meses atrás. Está nos autos. Mais do que isso não sei."
       }
      ],
-     "proxima": "c4",
+     "proxima": "c3c",
      "local": "escritorio"
+    },
+    "c3c": {
+     "tipo": "celular",
+     "contato": "Lívia Sampaio",
+     "status": "online",
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Preciso falar com o senhor(a) antes da audiência. Sozinha."
+      },
+      {
+       "de": "ele",
+       "t": "Café da rodoviária, 6h. Sem Dani, sem Helena, sem ninguém."
+      },
+      {
+       "de": "ele",
+       "t": "Eu fiz uma coisa que não consigo desfazer. Mas ainda posso desfazer outra."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Avisar Helena do encontro e pedir que ela fique a duas mesas de distância.",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Helena, vou ao café da rodoviária falar com a Lívia. Fique a duas mesas, sem se aproximar."
+        }
+       ],
+       "marca": "a6_avisou_encontro_livia",
+       "cred": 1,
+       "resposta": false
+      },
+      {
+       "t": "Ir sozinho(a), como ela pediu.",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "O café cheira a pão queimado e a viagem. Lívia está no fundo, de óculos escuros, com as mãos em volta de uma xícara que já esfriou."
+        },
+        {
+         "q": "livia",
+         "e": "triste",
+         "t": "Obrigada por ter vindo sozinho(a). Eu não ia contar a mais ninguém."
+        }
+       ],
+       "marca": "a6_foi_sozinho_livia",
+       "cred": -1,
+       "resposta": false
+      }
+     ],
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Cinco da manhã. O celular vibra no criado-mudo do hotel, e a tela acende o quarto."
+      }
+     ],
+     "local": "cafe",
+     "proxima": "c4"
     },
     "c4": {
      "tipo": "investigar",
@@ -3891,64 +4112,249 @@
      "local": "gabinete"
     },
     "c7": {
-     "tipo": "argumento",
+     "tipo": "plenario",
+     "colegiado": "stf",
+     "local": "tribunal",
+     "titulo": "Plenário: a rescisão",
      "falas": [
+      {
+       "q": "a6helga",
+       "e": "normal",
+       "t": "Levo ao Plenário o incidente de rescisão, dada a repercussão sobre processos já julgados. Onze ministros, maioria de seis."
+      },
       {
        "q": "a6yhugo",
        "e": "bravo",
        "t": "Excelência, o colaborador mentiu, e basta quebrar a confiança para rescindir. A Corte não pode ser refém de quem só conta o que quer!"
       }
      ],
-     "alvo": "«Basta quebrar a confiança para rescindir o acordo de colaboração.»",
-     "pergunta": "Que dispositivo estabelece em que hipótese o acordo homologado pode ser rescindido?",
-     "opcoes": [
+     "votos_fixos": {
+      "favor": 3,
+      "contra": 4
+     },
+     "ministros": [
       {
-       "t": "Art. 4º, § 10: as partes podem retratar-se da proposta.",
-       "dispositivo": "LORC#art-4/par-10",
+       "q": "a6helga",
+       "preocupacao": "A rescisão exige dolo: omissão dolosa sobre fatos objeto da colaboração.",
        "falas": [
-        {
-         "q": "rafael",
-         "e": "nervoso",
-         "t": "(sussurrando) Retratação é das partes, não a base do pedido do Senador."
-        }
-       ]
-      },
-      {
-       "t": "Art. 4º, § 17: o acordo homologado pode ser rescindido em caso de omissão dolosa sobre os fatos objeto da colaboração.",
-       "dispositivo": "LORC#art-4/par-17",
-       "falas": [
-        {
-         "q": "voce",
-         "e": "confiante",
-         "t": "A lei fala em omissão DOLOSA sobre FATOS OBJETO da colaboração. Não basta quebra de confiança. Quem alega o dolo carrega o ônus de prová-lo."
-        },
         {
          "q": "a6helga",
          "e": "pensativo",
-         "t": "O ônus é de quem pede, doutor Hugo."
+         "t": "O Senador diz que Rafael “quebrou a confiança”. Confiança é conceito moral. Qual a hipótese legal de rescisão?"
         }
        ],
-       "certa": true
-      },
-      {
-       "t": "Art. 4º, § 18: o colaborador deve cessar o envolvimento em conduta ilícita.",
-       "dispositivo": "LORC#art-4/par-18",
-       "falas": [
+       "pergunta": "Que dispositivo estabelece em que hipótese o acordo homologado pode ser rescindido?",
+       "argumentos": [
         {
-         "q": "rafael",
-         "e": "nervoso",
-         "t": "(sussurrando) Esse trata de continuar delinquindo, e o Senador não alegou isso."
+         "t": "Art. 4º, § 10: as partes podem retratar-se da proposta.",
+         "falas": [
+          {
+           "q": "rafael",
+           "e": "nervoso",
+           "t": "(sussurrando) Retratação é das partes, não a base do pedido do Senador."
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "Art. 4º, § 17: o acordo homologado pode ser rescindido em caso de omissão dolosa sobre os fatos objeto da colaboração.",
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "A lei fala em omissão DOLOSA sobre FATOS OBJETO da colaboração. Não basta quebra de confiança. Quem alega o dolo carrega o ônus de prová-lo."
+          },
+          {
+           "q": "a6helga",
+           "e": "pensativo",
+           "t": "O ônus é de quem pede, doutor Hugo."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "LORC#art-4/par-17",
+           "trecho": "O acordo homologado poderá ser rescindido em caso de omissão dolosa sobre os fatos objeto da colaboração."
+          }
+         ]
+        },
+        {
+         "t": "Art. 4º, § 18: o colaborador deve cessar o envolvimento em conduta ilícita.",
+         "falas": [
+          {
+           "q": "rafael",
+           "e": "nervoso",
+           "t": "(sussurrando) Esse trata de continuar delinquindo, e o Senador não alegou isso."
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "Art. 4º, § 16: nenhuma medida pode se fundar apenas nas declarações do colaborador.",
+         "falas": [
+          {
+           "q": "rafael",
+           "e": "nervoso",
+           "t": "(sussurrando) Boa norma, mas não é a que define a rescisão."
+          }
+         ],
+         "endurece": false
         }
        ]
       },
       {
-       "t": "Art. 4º, § 16: nenhuma medida pode se fundar apenas nas declarações do colaborador.",
-       "dispositivo": "LORC#art-4/par-16",
+       "q": "a6zmbenicio",
+       "preocupacao": "Palavra de colaborador não condena nem rescinde: exige corroboração.",
        "falas": [
         {
-         "q": "rafael",
-         "e": "nervoso",
-         "t": "(sussurrando) Boa norma, mas não é a que define a rescisão."
+         "q": "a6zmbenicio",
+         "e": "pensativo",
+         "t": "Doutor(a), a nova colaboradora diz que Rafael omitiu um depósito. Palavra de colaboradora contra colaborador. O que basta?"
+        }
+       ],
+       "pergunta": "A palavra da nova colaboradora, sozinha, basta para rescindir o acordo de Rafael?",
+       "argumentos": [
+        {
+         "t": "Não: nenhuma medida pode se fundar apenas nas declarações de colaborador; é preciso corroboração.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "normal",
+           "t": "Palavra solta não rescinde. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "LORC#art-4/par-16",
+           "trecho": "Nenhuma das seguintes medidas será decretada ou proferida com fundamento apenas nas declarações do colaborador"
+          }
+         ]
+        },
+        {
+         "t": "Sim: quem confessa um crime merece fé até prova em contrário.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "bravo",
+           "t": "Fé é virtude, prova é requisito. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Sim, porque o Senador tem direito de ver o acordo desfeito.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "normal",
+           "t": "Direito do Senador é à prova, não ao resultado."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmrosalvo",
+       "preocupacao": "Rescindir produz efeitos em outros processos: precisa de segurança.",
+       "falas": [
+        {
+         "q": "a6zmrosalvo",
+         "e": "pensativo",
+         "t": "Se rescindirmos, o que acontece com a condenação do Henrique e com as provas já usadas? Preocupa-me o efeito dominó."
+        }
+       ],
+       "pergunta": "A rescisão do acordo atinge automaticamente os processos em que a colaboração já foi usada?",
+       "argumentos": [
+        {
+         "t": "Não: a rescisão exige omissão dolosa sobre fatos objeto da colaboração, apurada caso a caso; não se presume nem se estende por efeito dominó.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Cada caso com a sua prova do dolo. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "LORC#art-4/par-17",
+           "trecho": "O acordo homologado poderá ser rescindido em caso de omissão dolosa sobre os fatos objeto da colaboração."
+          }
+         ]
+        },
+        {
+         "t": "Sim: acordo rescindido apaga tudo o que dele derivou, em todos os processos.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "bravo",
+           "t": "Não há essa automaticidade na lei. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Sim, mas só se o Senador pedir em cada um dos processos.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "O ponto não é o pedido, é o dolo. Não me convence."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmiolanda",
+       "preocupacao": "A homologação verifica regularidade, legalidade e voluntariedade, e depois disso o acordo é estável.",
+       "falas": [
+        {
+         "q": "a6zmiolanda",
+         "e": "pensativo",
+         "t": "Doutor(a), o acordo foi homologado com a verificação do art. 4º, § 7º. Que estabilidade ele tem agora?"
+        }
+       ],
+       "pergunta": "O que a homologação verificou, e por que isso importa agora?",
+       "argumentos": [
+        {
+         "t": "Regularidade, legalidade e voluntariedade: o acordo homologado só se desfaz nas hipóteses da lei, não por simples pedido de quem foi delatado.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "Estabilidade é a razão do instituto. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "LORC#art-4/par-7",
+           "trecho": "Realizado o acordo na forma do § 6º deste artigo, serão remetidos ao juiz, para análise, o respectivo termo, as"
+          }
+         ]
+        },
+        {
+         "t": "Só a regularidade formal: o mérito da colaboração pode ser reexaminado a qualquer tempo.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "bravo",
+           "t": "Reexame livre mataria o instituto. Não."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Nada: a homologação é ato do MP, não da Corte.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "A homologação é judicial, doutor(a). Releia a lei."
+          }
+         ]
         }
        ]
       }
@@ -3960,12 +4366,7 @@
        "t": "Isso. Obrigado."
       }
      ],
-     "proxima": "c8",
-     "local": "gabinete",
-     "dica": [
-      "A pergunta é sobre a hipótese legal de rescisão, não sobre retratação ou prova.",
-      "O § 17 fala em omissão dolosa."
-     ]
+     "proxima": "c8"
     },
     "c8": {
      "tipo": "dialogo",
@@ -4854,7 +5255,12 @@
     "a6yassessor": "testemunha",
     "a6ysilene": "testemunha",
     "a6ymedico": "testemunha",
-    "dani": "escritorio"
+    "dani": "escritorio",
+    "a6zmiolanda": "juiz",
+    "a6zmteodoro": "juiz",
+    "a6zmrosalvo": "juiz",
+    "a6zmeunice": "juiz",
+    "a6zmbenicio": "juiz"
    },
    "provas": [
     {
@@ -5230,65 +5636,319 @@
      "local": "escritorio"
     },
     "c7": {
-     "tipo": "argumento",
+     "tipo": "plenario",
+     "colegiado": "stf",
+     "local": "tribunal",
+     "titulo": "Plenário: o flagrante",
      "falas": [
+      {
+       "q": "a6helga",
+       "e": "normal",
+       "t": "Levo ao Plenário, em sessão extraordinária, a regularidade da prisão em flagrante de um Senador. Onze ministros, maioria de seis."
+      },
       {
        "q": "a6yhugo",
        "e": "bravo",
        "t": "Excelência, o flagrante foi PREPARADO: a delegada colocou uma equipe na rua e Clara atendeu ao telefone para montar a armadilha. Não se pune a tentativa quando o meio é impossível de consumar o crime (CP, art. 17)!"
+      },
+      {
+       "q": "a6yhugo",
+       "e": "bravo",
+       "t": "Ainda que válido, Excelência: Senador só pode ser preso em flagrante de crime inafiançável. Tentativa de homicídio é afiançável!"
       }
      ],
-     "alvo": "«O flagrante foi preparado pela polícia: é crime impossível e a prisão é nula.»",
-     "pergunta": "Que dispositivo mostra que houve flagrante legítimo, e não crime provocado?",
-     "opcoes": [
+     "votos_fixos": {
+      "favor": 3,
+      "contra": 3
+     },
+     "ministros": [
       {
-       "t": "CP, art. 17: não se pune a tentativa quando é impossível consumar o crime.",
-       "dispositivo": "CP#art-17",
+       "q": "a6zmteodoro",
+       "preocupacao": "Flagrante esperado não é flagrante preparado.",
        "falas": [
         {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) É a tese da defesa. A pergunta é sobre a regra do flagrante."
-        }
-       ]
-      },
-      {
-       "t": "CPP, art. 302, I: considera-se em flagrante quem está cometendo a infração penal: Otto começou a execução por conta própria; a polícia apenas esperou.",
-       "dispositivo": "CPP#art-302/inc-i",
-       "falas": [
-        {
-         "q": "voce",
-         "e": "confiante",
-         "t": "A delegada não induziu ninguém: Otto chegou por conta própria, arrebentou a porta e mirou a arma. Quem está cometendo a infração está em flagrante (art. 302, I). Flagrante esperado, não preparado."
-        },
-        {
-         "q": "a6helga",
-         "e": "normal",
-         "t": "Acolho a distinção. A espera da polícia não cria o crime.",
-         "fx": "martelo"
+         "q": "a6zmteodoro",
+         "e": "pensativo",
+         "t": "A defesa diz que a Polícia montou a armadilha e que o crime era impossível de consumar. Quando o flagrante é legítimo?"
         }
        ],
-       "certa": true
-      },
-      {
-       "t": "CF, art. 5º, LXI: ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada.",
-       "dispositivo": "CF#art-5/inc-lxi",
-       "falas": [
+       "pergunta": "Que dispositivo mostra que houve flagrante legítimo, e não crime provocado?",
+       "argumentos": [
         {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) Essa é a regra geral da prisão. Falta o dispositivo que define o flagrante."
+         "t": "CP, art. 17: não se pune a tentativa quando é impossível consumar o crime.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) É a tese da defesa. A pergunta é sobre a regra do flagrante."
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CPP, art. 302, I: considera-se em flagrante quem está cometendo a infração penal: Otto começou a execução por conta própria; a polícia apenas esperou.",
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "A delegada não induziu ninguém: Otto chegou por conta própria, arrebentou a porta e mirou a arma. Quem está cometendo a infração está em flagrante (art. 302, I). Flagrante esperado, não preparado."
+          },
+          {
+           "q": "a6helga",
+           "e": "normal",
+           "t": "Acolho a distinção. A espera da polícia não cria o crime.",
+           "fx": "martelo"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-302/inc-i",
+           "trecho": "está cometendo a infração penal"
+          }
+         ]
+        },
+        {
+         "t": "CF, art. 5º, LXI: ninguém será preso senão em flagrante delito ou por ordem escrita e fundamentada.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) Essa é a regra geral da prisão. Falta o dispositivo que define o flagrante."
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CPP, art. 301: qualquer do povo poderá prender quem for encontrado em flagrante.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) Isso diz quem pode prender, não por que há flagrante aqui."
+          }
+         ],
+         "endurece": false
         }
        ]
       },
       {
-       "t": "CPP, art. 301: qualquer do povo poderá prender quem for encontrado em flagrante.",
-       "dispositivo": "CPP#art-301",
+       "q": "a6zmiolanda",
+       "preocupacao": "Parlamentar só é preso em flagrante de crime inafiançável.",
        "falas": [
         {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) Isso diz quem pode prender, não por que há flagrante aqui."
+         "q": "a6zmiolanda",
+         "e": "pensativo",
+         "t": "Doutor(a), a defesa lembra que Senador só pode ser preso em flagrante de crime inafiançável. Tentativa de homicídio é afiançável?"
+        }
+       ],
+       "pergunta": "Que dispositivo faz do homicídio qualificado tentado um crime inafiançável?",
+       "argumentos": [
+        {
+         "t": "CF, art. 53, § 3º: a Casa pode sustar o andamento da ação.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) É sobre sustar a ação penal, e não sobre inafiançabilidade."
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CF, art. 5º, XLIII, e Lei dos Crimes Hediondos: crimes hediondos, entre eles o homicídio qualificado, consumado ou tentado, são inafiançáveis.",
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "Homicídio qualificado, consumado ou tentado, é crime hediondo (Lei 8.072, art. 1º, I), e crime hediondo é inafiançável (CF, art. 5º, XLIII). O requisito do art. 53, § 2º, está cumprido."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-5/inc-xliii",
+           "trecho": "a lei considerará crimes inafiançáveis e insuscetíveis de graça ou anistia a prática da tortura, o tráfico ilícito de"
+          }
+         ]
+        },
+        {
+         "t": "CF, art. 55, § 2º: a Casa decide sobre a perda do mandato.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) Perda do mandato é outra coisa. Aqui o assunto é a prisão em flagrante."
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CP, art. 14, parágrafo único: pune-se a tentativa com a pena do crime, reduzida de 1/3 a 2/3.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) Pena da tentativa não decide se o crime é inafiançável."
+          }
+         ],
+         "endurece": false
+        }
+       ]
+      },
+      {
+       "q": "a6zmbenicio",
+       "preocupacao": "A comunicação à Casa em vinte e quatro horas é requisito, não favor.",
+       "falas": [
+        {
+         "q": "a6zmbenicio",
+         "e": "pensativo",
+         "t": "Para que o flagrante valha, os autos precisam chegar à Casa em vinte e quatro horas. Isso foi cumprido?"
+        }
+       ],
+       "pergunta": "Qual o prazo e a consequência do envio à Casa legislativa?",
+       "argumentos": [
+        {
+         "t": "Vinte e quatro horas para a remessa; a Casa resolve, pelo voto da maioria de seus membros, sobre a prisão.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "normal",
+           "t": "Prazo cumprido, regra atendida. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-53/par-2",
+           "trecho": "Desde a expedição do diploma, os membros do Congresso Nacional não poderão ser presos, salvo em flagrante de crime"
+          }
+         ]
+        },
+        {
+         "t": "Setenta e duas horas, para que o Tribunal faça antes o juízo de mérito.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "bravo",
+           "t": "O prazo constitucional é de vinte e quatro horas. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Não há prazo: a Casa decide quando quiser.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "normal",
+           "t": "Sem prazo, a prisão seria arbitrária. Não."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmrosalvo",
+       "preocupacao": "O que o Tribunal pode fazer se a Casa soltar o Senador?",
+       "falas": [
+        {
+         "q": "a6zmrosalvo",
+         "e": "pensativo",
+         "t": "Se o Senado relaxar a prisão, a vítima fica desprotegida? Qual a saída que a lei oferece ao Tribunal?"
+        }
+       ],
+       "pergunta": "Que medidas o Supremo pode adotar para proteger as testemunhas sem tocar na deliberação da Casa?",
+       "argumentos": [
+        {
+         "t": "Medidas cautelares diversas da prisão, como proibição de contato e monitoração eletrônica.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "A cautelar protege sem invadir a deliberação. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-319",
+           "trecho": "São medidas cautelares diversas da prisão"
+          }
+         ]
+        },
+        {
+         "t": "Converter de ofício o flagrante em preventiva e manter a prisão.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "bravo",
+           "t": "Isso contornaria a Casa, e a Constituição não permite. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Nenhuma: a decisão do Senado esgota a competência do Tribunal.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "A Casa decide sobre a prisão, não sobre a proteção da vítima."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmeunice",
+       "preocupacao": "O Supremo não substitui o Senado.",
+       "falas": [
+        {
+         "q": "a6zmeunice",
+         "e": "pensativo",
+         "t": "Se aceitarmos transformar a decisão da Casa numa formalidade, abrimos uma porta perigosa. Quem decide sobre a prisão do parlamentar?"
+        }
+       ],
+       "pergunta": "A quem cabe, em última análise, decidir sobre a manutenção da prisão do Senador?",
+       "argumentos": [
+        {
+         "t": "À Casa a que pertence, por maioria de seus membros, depois de receber os autos em vinte e quatro horas.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "normal",
+           "t": "Cada Poder no seu lugar. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-53/par-2",
+           "trecho": "Desde a expedição do diploma, os membros do Congresso Nacional não poderão ser presos, salvo em flagrante de crime"
+          }
+         ]
+        },
+        {
+         "t": "Ao Supremo, que homologa o flagrante e decide sozinho.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "bravo",
+           "t": "Isso esvazia o § 2º do art. 53. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Ao delegado que fez a prisão, que decide se solta ou mantém.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "normal",
+           "t": "A prisão ilegal é relaxada pela autoridade judicial, não pelo delegado."
+          }
+         ]
         }
        ]
       }
@@ -5298,86 +5958,14 @@
        "q": "dani",
        "e": "feliz",
        "t": "Flagrante esperado, não provocado."
-      }
-     ],
-     "proxima": "c8",
-     "local": "tribunal",
-     "dica": [
-      "A defesa diz «provocado». O que o CPP diz sobre quem está cometendo a infração?",
-      "O art. 302, I."
-     ]
-    },
-    "c8": {
-     "tipo": "argumento",
-     "falas": [
-      {
-       "q": "a6yhugo",
-       "e": "bravo",
-       "t": "Ainda que válido, Excelência: Senador só pode ser preso em flagrante de crime inafiançável. Tentativa de homicídio é afiançável!"
-      }
-     ],
-     "alvo": "«Tentativa de homicídio é crime afiançável: o Senador é imune à prisão.»",
-     "pergunta": "Que dispositivo faz do homicídio qualificado tentado um crime inafiançável?",
-     "opcoes": [
-      {
-       "t": "CF, art. 53, § 3º: a Casa pode sustar o andamento da ação.",
-       "dispositivo": "CF#art-53/par-3",
-       "falas": [
-        {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) É sobre sustar a ação penal, e não sobre inafiançabilidade."
-        }
-       ]
       },
-      {
-       "t": "CF, art. 5º, XLIII, e Lei dos Crimes Hediondos: crimes hediondos, entre eles o homicídio qualificado, consumado ou tentado, são inafiançáveis.",
-       "dispositivo": "CF#art-5/inc-xliii",
-       "falas": [
-        {
-         "q": "voce",
-         "e": "confiante",
-         "t": "Homicídio qualificado, consumado ou tentado, é crime hediondo (Lei 8.072, art. 1º, I), e crime hediondo é inafiançável (CF, art. 5º, XLIII). O requisito do art. 53, § 2º, está cumprido."
-        }
-       ],
-       "certa": true
-      },
-      {
-       "t": "CF, art. 55, § 2º: a Casa decide sobre a perda do mandato.",
-       "dispositivo": "CF#art-55/par-2",
-       "falas": [
-        {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) Perda do mandato é outra coisa. Aqui o assunto é a prisão em flagrante."
-        }
-       ]
-      },
-      {
-       "t": "CP, art. 14, parágrafo único: pune-se a tentativa com a pena do crime, reduzida de 1/3 a 2/3.",
-       "dispositivo": "CP#art-14/par-unico",
-       "falas": [
-        {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) Pena da tentativa não decide se o crime é inafiançável."
-        }
-       ]
-      }
-     ],
-     "acerto": [
       {
        "q": "a6helga",
        "e": "normal",
        "t": "Flagrante de crime inafiançável: prisão regular. Os autos seguem ao Senado."
       }
      ],
-     "proxima": "c9",
-     "local": "tribunal",
-     "dica": [
-      "Procure o dispositivo da Constituição que lista os crimes inafiançáveis.",
-      "O art. 5º, XLIII, e o conceito de crime hediondo."
-     ]
+     "proxima": "c9"
     },
     "c9": {
      "tipo": "dialogo",
@@ -6544,6 +7132,18 @@
        "q": "a6helga",
        "e": "normal",
        "t": "Excelência, a Constituição não lhe pede palavras bonitas, pede voto fundamentado. Dois ministros se declararam impedidos, e a presidência convocou o(a) senhor(a), que conhece a prova inteira desde o primeiro volume, para completar a Turma."
+      },
+      {
+       "q": "a6teresa",
+       "e": "triste",
+       "t": "Antes da denúncia, Excelência, uma palavra a sós. Não peço perdão: peço que me deixe sustentar esta acusação até o fim. É a única forma de consertar o que eu fiz.",
+       "se": "a6z_teresa_traiu"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "A acusação é do Ministério Público, Dra. Teresa, não é minha. Mas eu leio os autos até o fim, e pretendo ler os seus também.",
+       "se": "a6z_teresa_traiu"
       },
       {
        "q": "a6teresa",
@@ -8225,6 +8825,12 @@
        "q": "clara",
        "e": "feliz",
        "t": "Meu irmão ganhou, Excelência. Ele perdeu a vida, mas ganhou o processo."
+      },
+      {
+       "q": "a6teresa",
+       "e": "triste",
+       "t": "(a você, baixo) A Procuradoria-Geral aceitou o meu afastamento do processo disciplinar, mas autorizou-me a concluir a sustentação. Não é redenção. É dívida.",
+       "se": "a6z_teresa_traiu"
       },
       {
        "q": "a6teresa",

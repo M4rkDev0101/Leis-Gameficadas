@@ -1315,31 +1315,164 @@
      "proxima": "c10"
     },
     "c10": {
-     "tipo": "dialogo",
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Audiência de instrução: a emergência",
      "falas": [
       {
        "q": "narrador",
-       "t": "Sala de audiências do Anexo. Sexta-feira, nove da manhã. O público é pequeno, mas na primeira fila há um assessor de Ataulfo tomando nota.",
-       "e": "normal"
-      },
+       "t": "Sala de audiências do Anexo. Sexta-feira, nove da manhã. O público é pequeno, mas na primeira fila há um assessor de Ataulfo tomando nota. O instrutor preside: dá a palavra, mantém a ordem, protege os atos."
+      }
+     ],
+     "linhas": [
       {
        "q": "a6teresa",
-       "t": "O Ministério Público Federal sustenta que a emergência foi real, mas que o réu a ampliou de seis para quatorze pontes, contra parecer jurídico e contra o ofício da engenheira, com sobrepreço e repasse de R$ 3 milhões.",
-       "e": "normal"
+       "e": "normal",
+       "t": "O Ministério Público Federal sustenta que a emergência foi real, mas que o réu a ampliou de seis para quatorze pontes, contra parecer jurídico."
       },
       {
        "q": "a6xnobre",
-       "t": "A defesa sustenta que a emergência matou 41 pessoas e que a Lei 14.230 só pune quem quis o ilícito. Ricardo Veloso quis salvar vidas. O resto é interpretação de contas, Excelência.",
-       "e": "confiante"
+       "e": "confiante",
+       "t": "A defesa sustenta que a emergência matou 41 pessoas e que a Lei 14.230 só pune quem quis o ilícito. Ricardo Veloso quis salvar vidas."
       },
       {
+       "q": "a6teresa",
+       "e": "bravo",
+       "t": "Excelência, esse réu é um assassino de quarenta e uma pessoas por omissão! Peço que fique registrado!",
+       "incidente": {
+        "pergunta": "A Subprocuradora excede na linguagem diante do réu. Como o juízo intervém?",
+        "chamada": "Dra. Teresa, ordem.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-251",
+          "trecho": "Ao juiz incumbirá prover à regularidade do processo e manter a ordem no curso dos respectivos atos, podendo, para tal"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Sem o juiz, a expressão fica na ata e a defesa a usa no recurso."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar passar: a acusação é parte e a gravidade dos fatos explica o tom.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) A acusação também responde pela linguagem em audiência, Excelência. “Assassino” é juízo de culpa antes da sentença."
+           }
+          ]
+         },
+         {
+          "t": "Advertir a acusação e mandar riscar a expressão: ninguém é chamado de assassino antes de sentença.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Dra. Teresa, a expressão será riscada. A acusação argumenta com a prova. O juízo de culpa vem depois, e é meu.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a6teresa",
+            "e": "normal",
+            "t": "Retiro, Excelência."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Cassar a palavra do MP e encerrar a audiência.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Desproporcional. Para uma expressão basta advertir e riscar."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(sussurrando) Excelência, na primeira fila, o assessor do Ministro Ataulfo ergueu o celular na altura do peito, com a câmera voltada para a mesa.",
+       "incidente": {
+        "pergunta": "Alguém filma a audiência sem autorização. O que o juízo faz?",
+        "chamada": "Senhor, com licença.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-794",
+          "trecho": "A polícia das audiências e das sessões compete aos respectivos juízes ou ao presidente do tribunal, câmara, ou turma"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Alguém está filmando a mesa, Excelência."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Ignorar: a audiência é pública e filmar é direito de qualquer um.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Publicidade não é gravação irrestrita, Excelência. A polícia da audiência é do juiz (art. 794)."
+           }
+          ]
+         },
+         {
+          "t": "Determinar que cesse a gravação e que o celular seja guardado, sem retirar o público da sala.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "O senhor da primeira fila: guarde o celular. A audiência é pública, mas a polícia da sala é deste juízo. Quem desobedecer será retirado.",
+            "fx": "ordem"
+           },
+           {
+            "q": "narrador",
+            "e": "normal",
+            "t": "O assessor sorri, guarda o celular e continua a anotar à mão. A mesma letra miúda do bilhete da portaria."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Mandar prender o assessor por intimidação.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Sem desobediência, prisão é excesso, Excelência. Primeiro a ordem de cessar."
+           }
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "A fala era regular. Interromper as partes à toa tumultua a audiência."
+      }
+     ],
+     "acerto": [
+      {
        "q": "voce",
-       "t": "Interpretação de contas é com a auditoria. Quem quis o quê é com este juízo. Chamo o réu.",
        "e": "normal",
+       "t": "Interpretação de contas é com a auditoria. Quem quis o quê é com este juízo. Chamo o réu.",
        "fx": "martelo"
       }
      ],
-     "local": "tribunal",
      "proxima": "c11"
     },
     "c11": {
@@ -3656,31 +3789,112 @@
      "proxima": "c9"
     },
     "c9": {
-     "tipo": "dialogo",
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Audiência do incidente de falsidade",
      "falas": [
       {
        "q": "narrador",
-       "t": "Sala de audiências, vinte e quatro horas depois. A Ministra Helga acompanha pela transmissão.",
-       "e": "normal"
-      },
+       "t": "Sala de audiências, vinte e quatro horas depois. A Ministra Helga acompanha pela transmissão. O incidente envolve você; por isso a ordem da sala precisa ser exemplar."
+      }
+     ],
+     "linhas": [
       {
        "q": "a6xmoreno",
-       "t": "Excelência, a defesa do Senador Otto Barbacena não plantou coisa alguma. Mas o recibo é um documento, e documentos nos autos deveriam ser examinados, não escondidos em saco lacrado.",
-       "e": "confiante"
+       "e": "confiante",
+       "t": "Excelência, a defesa do Senador Otto Barbacena não plantou coisa alguma. Mas o recibo é um documento, e documentos nos autos deveriam ser examinados."
       },
       {
        "q": "a6teresa",
-       "t": "O MPF requer a instauração do incidente de falsidade (art. 145 do CPP) e a apuração da fraude processual. A questão não é o que o recibo diz, mas quem o pôs na mesa do instrutor.",
-       "e": "apontando"
+       "e": "apontando",
+       "t": "O MPF requer a instauração do incidente de falsidade (art. 145 do CPP) e a apuração da fraude processual. A questão não é o que o recibo diz, mas quem o fez aparecer."
       },
       {
+       "q": "a6nery",
+       "e": "feliz",
+       "t": "Excelência, uma palavra só: a Polícia Federal se coloca à disposição para guardar o pen drive em cofre seguro.",
+       "incidente": {
+        "pergunta": "O delegado, que não é parte, oferece custodiar a prova. O que o juízo decide?",
+        "chamada": "Delegado, a palavra não foi concedida.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-158a",
+          "trecho": "Considera-se cadeia de custódia o conjunto de todos os procedimentos utilizados para manter e documentar a história"
+         },
+         {
+          "chave": "CPP#art-251",
+          "trecho": "Ao juiz incumbirá prover à regularidade do processo e manter a ordem no curso dos respectivos atos, podendo, para tal"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Ele ofereceu a custódia da prova, Excelência. Alguém precisa decidir."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Aceitar: a Polícia Federal tem cofres melhores que os do Tribunal.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) O delegado é o mesmo que pediu a apreensão antes de ela existir, Excelência. A cadeia de custódia já nasceria torta."
+           }
+          ]
+         },
+         {
+          "t": "Indeferir: a guarda é do Tribunal, com lacre, registro e acompanhamento das partes; a Polícia não tem a palavra.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Indeferido. A guarda da mídia é do Tribunal, lacrada e registrada, com ciência das partes. Delegado, a palavra não foi concedida.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a6nery",
+            "e": "feliz",
+            "t": "Como queira, Excelência."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Aceitar em parte: a Polícia guarda uma cópia.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Cópia fora da cadeia de custódia é cópia sem origem. Melhor que ninguém tenha cópia além da perícia oficial."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a6xmoreno",
+       "e": "confiante",
+       "t": "A defesa não se opõe à instauração do incidente. Aguarda, apenas, a oitiva do instrutor como testemunha, se for o caso."
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "A fala era regular. Interromper as partes sem motivo tumultua o incidente e levanta suspeita contra você."
+      }
+     ],
+     "acerto": [
+      {
        "q": "voce",
-       "t": "O incidente está instaurado. A instrução é minha, a decisão sobre o conteúdo que me envolve é da Ministra relatora. Ouço primeiro quem encontrou a mídia.",
        "e": "normal",
+       "t": "O incidente está instaurado. A instrução é minha, a decisão sobre o conteúdo que me envolve é da Ministra relatora. Ouço primeiro quem encontrou o pen drive.",
        "fx": "martelo"
       }
      ],
-     "local": "tribunal",
      "proxima": "c10"
     },
     "c10": {
@@ -6833,7 +7047,12 @@
     "a6xbruna": "testemunha",
     "a6xanselmo": "testemunha",
     "a6ataulfo": "escritorio",
-    "dani": "escritorio"
+    "dani": "escritorio",
+    "a6zmiolanda": "juiz",
+    "a6zmteodoro": "juiz",
+    "a6zmrosalvo": "juiz",
+    "a6zmeunice": "juiz",
+    "a6zmbenicio": "juiz"
    },
    "placas": {
     "defesa": "Reclamante (Helena)",
@@ -7807,8 +8026,10 @@
      "proxima": "c14"
     },
     "c14": {
-     "tipo": "argumento",
+     "tipo": "plenario",
+     "colegiado": "stf",
      "local": "tribunal",
+     "titulo": "Plenário: o referendo da liminar",
      "falas": [
       {
        "q": "a6xmesquita",
@@ -7816,50 +8037,221 @@
        "e": "normal"
       }
      ],
-     "alvo": "O pedido de vista suspende a eficácia da liminar pendente de referendo.",
-     "pergunta": "Qual dispositivo diz que a tutela provisória conserva sua eficácia na pendência do processo?",
-     "opcoes": [
+     "votos_fixos": {
+      "favor": 3,
+      "contra": 4
+     },
+     "ministros": [
       {
-       "t": "CPC, art. 296: a tutela provisória conserva sua eficácia na pendência do processo, mas pode ser revogada ou modificada",
-       "dispositivo": "CPC#art-296",
-       "trecho": "A tutela provisória conserva sua eficácia na pendência do processo, mas pode, a qualquer tempo, ser revogada ou modificada",
+       "q": "a6ataulfo",
+       "preocupacao": "A vista é prerrogativa; mas ela não pode servir para esvaziar uma liminar.",
        "falas": [
         {
-         "q": "voce",
-         "t": "A liminar conserva a eficácia na pendência do processo, e só pode ser revogada ou modificada. Pedido de vista não revoga nada.",
-         "e": "confiante"
+         "q": "a6ataulfo",
+         "e": "normal",
+         "t": "Ministra, serei breve: a vista suspende o referendo. A liminar, portanto, fica em suspenso até o fim do estudo."
         }
        ],
-       "certa": true
-      },
-      {
-       "t": "CPC, art. 995: os recursos não impedem a eficácia da decisão",
-       "dispositivo": "CPC#art-995",
-       "trecho": "Os recursos não impedem a eficácia da decisão, salvo disposição legal ou decisão judicial em sentido diverso",
-       "falas": [
+       "pergunta": "Qual dispositivo diz que a tutela provisória conserva sua eficácia na pendência do processo?",
+       "argumentos": [
         {
-         "q": "dani",
-         "t": "(sussurrando) O art. 995 fala de recursos, e vista não é recurso. A regra da eficácia da tutela provisória é o art. 296.",
-         "e": "pensativo"
+         "t": "CPC, art. 296: a tutela provisória conserva sua eficácia na pendência do processo, mas pode ser revogada ou modificada",
+         "falas": [
+          {
+           "q": "voce",
+           "t": "A liminar conserva a eficácia na pendência do processo, e só pode ser revogada ou modificada. Pedido de vista não revoga nada.",
+           "e": "confiante"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPC#art-296",
+           "trecho": "A tutela provisória conserva sua eficácia na pendência do processo, mas pode, a qualquer tempo, ser revogada ou"
+          }
+         ]
+        },
+        {
+         "t": "CPC, art. 995: os recursos não impedem a eficácia da decisão",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) O art. 995 fala de recursos, e vista não é recurso. A regra da eficácia da tutela provisória é o art. 296.",
+           "e": "pensativo"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CPC, art. 300: requisitos da tutela de urgência",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) O 300 trata de quando se concede. O que mantém é o art. 296.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
         }
        ]
       },
       {
-       "t": "CPC, art. 300: requisitos da tutela de urgência",
-       "dispositivo": "CPC#art-300",
-       "trecho": "A tutela de urgência será concedida quando houver elementos que evidenciem a probabilidade do direito e o perigo de dano ou o risco ao resultado útil do processo",
+       "q": "a6zmteodoro",
+       "preocupacao": "A competência é de quem agiu primeiro.",
        "falas": [
         {
-         "q": "dani",
-         "t": "(sussurrando) O 300 trata de quando se concede. O que mantém é o art. 296.",
-         "e": "nervoso"
+         "q": "a6zmteodoro",
+         "e": "pensativo",
+         "t": "Duas decisões sobre a mesma busca. Uma da Ministra Helga, outra do Ministro Ataulfo. A distribuição manda no mais antigo ou no mais cedo?"
+        }
+       ],
+       "pergunta": "Qual dispositivo fixa a competência por prevenção, e não pela distribuição?",
+       "argumentos": [
+        {
+         "t": "CPP, art. 83: prevenção quando um dos juízes antecedeu aos outros na prática de algum ato ou medida relativa ao processo",
+         "falas": [
+          {
+           "q": "voce",
+           "t": "A Ministra Helga antecedeu na medida: foi dela a primeira decisão sobre a busca. A competência é dela por prevenção, e a liminar do Ministro Ataulfo é de juízo incompetente.",
+           "e": "confiante"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-83",
+           "trecho": "Verificar-se-á a competência por prevenção toda vez que, concorrendo dois ou mais juízes igualmente competentes ou com"
+          }
+         ]
+        },
+        {
+         "t": "CPP, art. 75: a precedência da distribuição fixa a competência",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) O 75 vale quando ninguém antecedeu em ato algum. Aqui a Ministra Helga já tinha decidido.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CPP, art. 76: a competência será determinada pela conexão",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) A conexão ajuda, mas o que dá preferência a quem agiu primeiro é a prevenção do art. 83.",
+           "e": "pensativo"
+          }
+         ],
+         "endurece": false
+        }
+       ]
+      },
+      {
+       "q": "a6zmiolanda",
+       "preocupacao": "Escritório de advocacia não é qualquer imóvel.",
+       "falas": [
+        {
+         "q": "a6zmiolanda",
+         "e": "pensativo",
+         "t": "Doutor(a), a Força-Tarefa diz que buscou um endereço comercial como outro qualquer. O que o precedente da Corte protege no escritório do advogado?"
+        }
+       ],
+       "pergunta": "Que garantia constitucional protege o escritório do advogado contra buscas arbitrárias?",
+       "argumentos": [
+        {
+         "t": "A inviolabilidade do advogado no exercício da profissão (art. 133): a busca no escritório exige cautelas próprias, para não expor os clientes.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "A garantia é do cliente também. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-133",
+           "trecho": "O advogado é indispensável à administração da justiça, sendo inviolável por seus atos e manifestações no exercício da"
+          }
+         ]
+        },
+        {
+         "t": "A publicidade dos julgamentos (art. 93, IX).",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "bravo",
+           "t": "A publicidade nada tem a ver com o ponto, doutor(a)."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "A presunção de inocência, que se aplica ao escritório.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "Presunção de inocência é da pessoa, não do imóvel."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmrosalvo",
+       "preocupacao": "Se a busca foi nula, o que se faz com o material apreendido?",
+       "falas": [
+        {
+         "q": "a6zmrosalvo",
+         "e": "pensativo",
+         "t": "Se anularmos a busca, há material de centenas de clientes na Força-Tarefa. Qual o destino dele?"
+        }
+       ],
+       "pergunta": "Que efeito tem a busca nula sobre o material apreendido?",
+       "argumentos": [
+        {
+         "t": "É prova ilícita: desentranhamento, devolução integral e inutilização das cópias, sob fiscalização da Ordem.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Devolução e destruição. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-157",
+           "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas, assim entendidas as obtidas em violação"
+          }
+         ]
+        },
+        {
+         "t": "Aproveita-se, porque nenhum ato é nulo sem prejuízo (art. 563).",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "bravo",
+           "t": "O prejuízo aqui é evidente: sigilo de clientes. Não."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Fica sob a guarda da Polícia, até o fim do inquérito.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Guarda policial do material nulo é continuar a violação."
+          }
+         ]
         }
        ]
       }
-     ],
-     "dica": [
-      "A palavra-chave é \"eficácia na pendência do processo\".",
-      "Art. 296."
      ],
      "acerto": [
       {
@@ -7872,66 +8264,7 @@
        "q": "a6ataulfo",
        "t": "Naturalmente, Ministra. Nunca me ocorreu o contrário.",
        "e": "pensativo"
-      }
-     ],
-     "proxima": "c15"
-    },
-    "c15": {
-     "tipo": "argumento",
-     "local": "tribunal",
-     "falas": [
-      {
-       "q": "a6ataulfo",
-       "t": "Quanto à minha liminar, Ministra, a petição da PF foi distribuída a mim, e a regra é a precedência da distribuição.",
-       "e": "normal"
-      }
-     ],
-     "alvo": "A precedência da distribuição fixa a competência: a petição ficou com o Min. Ataulfo.",
-     "pergunta": "Qual dispositivo fixa a competência por prevenção, e não pela distribuição?",
-     "opcoes": [
-      {
-       "t": "CPP, art. 83: prevenção quando um dos juízes antecedeu aos outros na prática de algum ato ou medida relativa ao processo",
-       "dispositivo": "CPP#art-83",
-       "trecho": "Verificar-se-á a competência por prevenção toda vez que, concorrendo dois ou mais juízes igualmente competentes ou com jurisdição cumulativa, um deles tiver antecedido aos outros na prática de algum",
-       "falas": [
-        {
-         "q": "voce",
-         "t": "A Ministra Helga antecedeu na medida: foi dela a primeira decisão sobre a busca. A competência é dela por prevenção, e a liminar do Ministro Ataulfo é de juízo incompetente.",
-         "e": "confiante"
-        }
-       ],
-       "certa": true
       },
-      {
-       "t": "CPP, art. 75: a precedência da distribuição fixa a competência",
-       "dispositivo": "CPP#art-75",
-       "trecho": "A precedência da distribuição fixará a competência quando, na mesma circunscrição judiciária, houver mais de um juiz igualmente competente",
-       "falas": [
-        {
-         "q": "dani",
-         "t": "(sussurrando) O 75 vale quando ninguém antecedeu em ato algum. Aqui a Ministra Helga já tinha decidido.",
-         "e": "nervoso"
-        }
-       ]
-      },
-      {
-       "t": "CPP, art. 76: a competência será determinada pela conexão",
-       "dispositivo": "CPP#art-76",
-       "trecho": "A competência será determinada pela conexão",
-       "falas": [
-        {
-         "q": "dani",
-         "t": "(sussurrando) A conexão ajuda, mas o que dá preferência a quem agiu primeiro é a prevenção do art. 83.",
-         "e": "pensativo"
-        }
-       ]
-      }
-     ],
-     "dica": [
-      "A competência vem de quem agiu primeiro.",
-      "Art. 83, prevenção."
-     ],
-     "acerto": [
       {
        "q": "a6helga",
        "t": "Torno sem efeito a liminar do Ministro Ataulfo e remeto a petição da PF à minha relatoria, por prevenção.",
@@ -8857,7 +9190,12 @@
     "a6helga": "testemunha",
     "dani": "testemunha",
     "rafael": "testemunha",
-    "a6xgilberto": "testemunha"
+    "a6xgilberto": "testemunha",
+    "a6zmiolanda": "juiz",
+    "a6zmteodoro": "juiz",
+    "a6zmrosalvo": "juiz",
+    "a6zmeunice": "juiz",
+    "a6zmbenicio": "juiz"
    },
    "placas": {
     "defesa": "Arguído (você)",
@@ -9532,6 +9870,65 @@
          "e": "feliz"
         }
        ]
+      }
+     ],
+     "proxima": "c8c"
+    },
+    "c8c": {
+     "tipo": "celular",
+     "contato": "Dani",
+     "status": "online",
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Doutor(a), o Rafael mandou avisar pela escolta: não vá visitá-lo agora."
+      },
+      {
+       "de": "ele",
+       "t": "Disse que querem usar a visita contra o senhor(a). Que o Ataulfo tem um assessor no presídio."
+      },
+      {
+       "de": "ele",
+       "t": "Ele mandou repetir a frase: “Eu estou bem. Leia até o fim.”"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Respeitar o pedido de Rafael e não ir ao presídio.",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "(pensando) Mais uma vez, a distância é a única forma de cuidado que posso oferecer a ele."
+        }
+       ],
+       "marca": "a6_nao_visitou_rafael",
+       "cred": 1,
+       "resposta": false
+      },
+      {
+       "t": "Ir ao presídio mesmo assim, discretamente, na hora do almoço.",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "triste",
+         "t": "A fila de visitas é curta. Na terceira cabine, Rafael não levanta os olhos. “Eu pedi que não viesse”, ele diz, e aperta o vidro com a palma da mão."
+        },
+        {
+         "q": "narrador",
+         "e": "nervoso",
+         "t": "Do outro lado da rua, alguém tira uma foto da porta do presídio."
+        }
+       ],
+       "marca": "a6_visitou_rafael",
+       "cred": -1,
+       "resposta": false
+      }
+     ],
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O celular de Dani vibra no seu bolso: ela configurou as mensagens para chegarem a você."
       }
      ],
      "proxima": "c9"
@@ -10456,13 +10853,339 @@
      "proxima": "c21"
     },
     "c21": {
-     "tipo": "dialogo",
+     "tipo": "plenario",
+     "colegiado": "stf",
+     "local": "tribunal",
+     "titulo": "Plenário: a arguição",
      "falas": [
       {
        "q": "narrador",
        "t": "O Plenário vota. Um a um, os ministros passam os olhos pela mesa. Onze cadeiras, e a de Ataulfo agora vazia por impedimento.",
        "e": "normal"
+      }
+     ],
+     "votos_fixos": {
+      "favor": 2,
+      "contra": 2
+     },
+     "ministros": [
+      {
+       "q": "a6helga",
+       "preocupacao": "A petição precisa ter forma: sem poderes especiais, nem se conhece.",
+       "falas": [
+        {
+         "q": "a6helga",
+         "e": "pensativo",
+         "t": "Antes do mérito, a forma. A procuração é geral. A lei admite a recusa do juiz por procurador sem poderes especiais?"
+        }
+       ],
+       "pergunta": "Qual dispositivo exige poderes especiais do procurador para recusar o juiz?",
+       "argumentos": [
+        {
+         "t": "CPP, art. 98: a recusa se faz em petição assinada pela parte ou por procurador com poderes especiais",
+         "falas": [
+          {
+           "q": "voce",
+           "t": "O art. 98 exige poderes especiais. A procuração é geral \"ad judicia\". A petição é inepta, Presidente.",
+           "e": "confiante"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-98",
+           "trecho": "Quando qualquer das partes pretender recusar o juiz, deverá fazê-lo em petição assinada por ela própria ou por"
+          }
+         ]
+        },
+        {
+         "t": "CPP, art. 146: a arguição de falsidade, feita por procurador, exige poderes especiais",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) O 146 é a regra equivalente para a arguição de falsidade de documento. Para a recusa do juiz, é o art. 98.",
+           "e": "pensativo"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CPP, art. 97: o juiz que espontaneamente afirmar suspeição deverá fazê-lo por escrito",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) O 97 é a suspeição declarada pelo próprio juiz. A regra da recusa pela parte é o art. 98.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        }
+       ]
       },
+      {
+       "q": "a6zmiolanda",
+       "preocupacao": "Suspeição provocada de propósito não se reconhece.",
+       "falas": [
+        {
+         "q": "a6zmiolanda",
+         "e": "pensativo",
+         "t": "Doutor(a), a defesa diz que a inimizade existe, seja quem for o culpado. Existe regra contra a suspeição fabricada?"
+        }
+       ],
+       "pergunta": "Qual dispositivo veda reconhecer suspeição criada de propósito pela parte?",
+       "argumentos": [
+        {
+         "t": "CPP, art. 256: a suspeição não pode ser declarada nem reconhecida quando a parte injuriar o juiz ou de propósito der motivo para criá-la",
+         "falas": [
+          {
+           "q": "voce",
+           "t": "A defesa do Senador gravou um colega num bar, editou a frase e plantou prova no meu gabinete. Se há inimizade, ela foi provocada de propósito, e o art. 256 a afasta.",
+           "e": "confiante"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-256",
+           "trecho": "A suspeição não poderá ser declarada nem reconhecida, quando a parte injuriar o juiz ou de propósito der motivo para"
+          }
+         ]
+        },
+        {
+         "t": "CPP, art. 254, I: o juiz será suspeito se for amigo íntimo ou inimigo capital",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) Esse é o fundamento da arguição. O que a derruba é a exceção do art. 256.",
+           "e": "pensativo"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CPP, art. 101: julgada procedente a suspeição, ficam nulos os atos do processo principal",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) O 101 trata dos efeitos do julgamento. A vedação à suspeição provocada é o art. 256.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        }
+       ]
+      },
+      {
+       "q": "a6zmteodoro",
+       "preocupacao": "Quem foi testemunha não julga.",
+       "falas": [
+        {
+         "q": "a6zmteodoro",
+         "e": "pensativo",
+         "t": "O Ministro Ataulfo é testemunha e foi distribuído como relator. A regra do impedimento alcança a distribuição?"
+        }
+       ],
+       "pergunta": "Qual dispositivo impede de funcionar o juiz que serviu como testemunha?",
+       "argumentos": [
+        {
+         "t": "CPP, art. 252, II: o juiz não pode exercer jurisdição no processo em que ele próprio houver servido como testemunha",
+         "falas": [
+          {
+           "q": "voce",
+           "t": "O art. 252, II, é cristalino: quem serviu como testemunha não funciona como juiz. O Ministro depôs, portanto não pode relatar nem votar esta arguição.",
+           "e": "confiante"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-252/inc-ii",
+           "trecho": "ele próprio houver desempenhado qualquer dessas funções ou servido como testemunha"
+          }
+         ]
+        },
+        {
+         "t": "CPP, art. 252, IV: o juiz não funciona se for parte ou diretamente interessado no feito",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) O inciso IV trata de interesse direto. A regra da testemunha está no inciso II.",
+           "e": "pensativo"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "CPP, art. 254, I: suspeição por amigo íntimo ou inimigo capital",
+         "falas": [
+          {
+           "q": "dani",
+           "t": "(sussurrando) Isso seria suspeição, e o impedimento por ter sido testemunha é o art. 252, II.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        }
+       ]
+      },
+      {
+       "q": "a6zmrosalvo",
+       "preocupacao": "Rejeitada a arguição, que efeitos ficam sobre o processo principal?",
+       "falas": [
+        {
+         "q": "a6zmrosalvo",
+         "e": "pensativo",
+         "t": "Se rejeitarmos a arguição, os atos do instrutor, praticados desde o afastamento cautelar, valem? Preocupa-me a segurança da AP 1.388."
+        }
+       ],
+       "pergunta": "Rejeitada a suspeição, que efeito tem sobre os atos do processo principal?",
+       "argumentos": [
+        {
+         "t": "Os atos permanecem válidos: só a procedência anularia os atos do processo principal, e a malícia do excipiente pode gerar multa.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Segurança do processo preservada. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-101",
+           "trecho": "Julgada procedente a suspeição, ficarão nulos os atos do processo principal, pagando o juiz as custas, no caso de erro"
+          }
+         ]
+        },
+        {
+         "t": "Os atos ficam todos em suspenso, até o trânsito em julgado da arguição.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "bravo",
+           "t": "A arguição não suspende o processo principal por si. Não."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Os atos são anulados desde o afastamento do instrutor.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Anular atos de quem a Corte afastou apenas cautelarmente seria contraditório."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmeunice",
+       "preocupacao": "O Tribunal precisa seguir o rito, ou vira palco.",
+       "falas": [
+        {
+         "q": "a6zmeunice",
+         "e": "pensativo",
+         "t": "Doutor(a), qual o rito de uma arguição que o instrutor não aceita? Se a Corte abre exceção aqui, abre sempre."
+        }
+       ],
+       "pergunta": "Qual o rito quando o juiz não aceita a suspeição?",
+       "argumentos": [
+        {
+         "t": "O juiz autua a petição em apartado, responde em três dias e remete ao tribunal; o processo principal segue.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "normal",
+           "t": "Rito é garantia. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-100",
+           "trecho": "Não aceitando a suspeição, o juiz mandará autuar em apartado a petição, dará sua resposta dentro em três dias, podendo"
+          }
+         ]
+        },
+        {
+         "t": "O juiz decide sozinho a própria suspeição e comunica depois.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "bravo",
+           "t": "Ninguém julga a própria causa. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "O processo se suspende até o tribunal decidir.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "normal",
+           "t": "Isso só ocorre se o juiz reconhece a suspeição. Aqui não."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmbenicio",
+       "preocupacao": "A arguição é direito da parte; rejeitá-la exige respeitar a ampla defesa dela.",
+       "falas": [
+        {
+         "q": "a6zmbenicio",
+         "e": "pensativo",
+         "t": "Doutor(a), a defesa do Senador teve oportunidade de produzir prova? Rejeitar não pode ser cerceamento de defesa."
+        }
+       ],
+       "pergunta": "A rejeição da arguição respeita o contraditório e a ampla defesa do excipiente?",
+       "argumentos": [
+        {
+         "t": "Sim: o excipiente foi ouvido, juntou documentos e gravação, e teve contraditório; rejeitar a arguição com motivos não é cercear.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "normal",
+           "t": "Rejeitar com motivos não é cercear. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-5/inc-lv",
+           "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla"
+          }
+         ]
+        },
+        {
+         "t": "Não: a defesa do Senador não pôde produzir prova e a arguição deve ser admitida.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "bravo",
+           "t": "Ela produziu. A fita e as fotos estão nos autos."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "O contraditório não se aplica a incidentes de suspeição.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "normal",
+           "t": "Aplica-se a todo processo. Não posso aceitar isso."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
       {
        "q": "a6helga",
        "t": "Voto pela rejeição. A petição é inepta (art. 98), a suspeição foi provocada de propósito (art. 256), a gravação é editada e o único ministro que a testemunha está impedido (art. 252, II). Aplico a multa do art. 101 ao excipiente.",
@@ -10490,7 +11213,8 @@
        "e": "chocado"
       }
      ],
-     "local": "tribunal",
+     "total": 10,
+     "maioria": 6,
      "proxima": "c22"
     },
     "c22": {

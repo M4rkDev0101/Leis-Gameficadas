@@ -1,0 +1,2020 @@
+{
+  "ato": "ato6",
+  "personagens": {
+    "a6zmiolanda": {
+      "nome": "Min. Iolanda Queiroz Brito",
+      "cargo": "Ministra do STF",
+      "voz": 410,
+      "visual": {
+        "pele": "#8D5524",
+        "cabelo": "cacheado",
+        "corCabelo": "#555555",
+        "roupa": "toga",
+        "corRoupa": "#111111",
+        "gravata": null,
+        "oculos": true,
+        "barba": false
+      },
+      "bio": "Ministra da escola do precedente: só vota depois de achar o julgado que diz o que o caso pede. Detesta decisões que parecem inventadas na hora.",
+      "personalidade": "metódica, avessa a surpresas, justa",
+      "motivacao": "Que a Corte decida igual para casos iguais."
+    },
+    "a6zmteodoro": {
+      "nome": "Min. Teodoro Valença",
+      "cargo": "Ministro do STF",
+      "voz": 160,
+      "visual": {
+        "pele": "#E0AC69",
+        "cabelo": "careca",
+        "corCabelo": "#444444",
+        "roupa": "toga",
+        "corRoupa": "#111111",
+        "gravata": null,
+        "oculos": false,
+        "barba": true
+      },
+      "bio": "Ministro literalista da competência: para ele, o rol do art. 102 é tão fechado quanto uma porta de cofre. Não gosta de atalhos, nem os bons.",
+      "personalidade": "formalista, seco, honesto",
+      "motivacao": "Que o Supremo julgue só o que a Constituição lhe deu."
+    },
+    "a6zmrosalvo": {
+      "nome": "Min. Rosalvo Quintanilha",
+      "cargo": "Ministro do STF",
+      "voz": 140,
+      "visual": {
+        "pele": "#F1C27D",
+        "cabelo": "curto",
+        "corCabelo": "#9a9a9a",
+        "roupa": "toga",
+        "corRoupa": "#111111",
+        "gravata": null,
+        "oculos": true,
+        "barba": false
+      },
+      "bio": "Ministro que pensa nas consequências: o que acontece com os atos já praticados, com quem confiou na lei, com o prazo que corre. Vive pedindo modulação de efeitos.",
+      "personalidade": "ponderado, prático, cauteloso",
+      "motivacao": "Que nenhuma decisão destrua o que a lei protegia."
+    },
+    "a6zmeunice": {
+      "nome": "Min. Eunice Maranhão",
+      "cargo": "Ministra do STF",
+      "voz": 440,
+      "visual": {
+        "pele": "#C68642",
+        "cabelo": "rabo",
+        "corCabelo": "#2b2b2b",
+        "roupa": "toga",
+        "corRoupa": "#111111",
+        "gravata": null,
+        "oculos": false,
+        "barba": false
+      },
+      "bio": "Ministra da repercussão geral: mede cada voto pelo que ele fará com os outros trezentos processos que vão citá-lo. Pergunta sempre: e se todo mundo pedir o mesmo?",
+      "personalidade": "estratégica, firme, atenta ao impacto",
+      "motivacao": "Que o Tribunal não vire fábrica de exceções."
+    },
+    "a6zmbenicio": {
+      "nome": "Min. Benício Arruda",
+      "cargo": "Ministro do STF",
+      "voz": 170,
+      "visual": {
+        "pele": "#D9A066",
+        "cabelo": "topete",
+        "corCabelo": "#6b6b6b",
+        "roupa": "toga",
+        "corRoupa": "#111111",
+        "gravata": null,
+        "oculos": true,
+        "barba": false
+      },
+      "bio": "Garantista de convicção: desconfia de todo atalho contra o réu, mesmo quando o réu é detestável. Seu voto é dos mais difíceis, e dos mais respeitados.",
+      "personalidade": "garantista, firme, incorruptível",
+      "motivacao": "Que ninguém seja condenado por um atalho."
+    }
+  },
+  "episodios": [
+    {
+      "id": "a6z-noite",
+      "ordem": 12.5,
+      "numero": 58,
+      "titulo": "Brasília à Noite",
+      "papel": "advogado",
+      "nivel": "especialista",
+      "sinopse": "Uma mensagem de um número que não existe, um cemitério à meia-noite e um delegado que seguiu você por quarenta e um dias e agora pede para ser seguido. Um documento muda de mãos entre as lápides, e alguém vigia o portão.",
+      "placas": {
+        "defesa": "Advogado(a)",
+        "acusacao": "Delegado Nery"
+      },
+      "posicoes": {
+        "voce": "defesa",
+        "a6nery": "testemunha",
+        "helena": "escritorio",
+        "dani": "escritorio"
+      },
+      "provas": [
+        {
+          "id": "orb",
+          "tipo": "prova",
+          "icone": "📄",
+          "nome": "Ordem de serviço nº 77/24",
+          "descricao": "«Vigilância preventiva do instrutor», com três letras de rubrica: O.R.B. Datada de março, antes de a Corte convocar você.",
+          "detalhe": "O papel é do gabinete de um ministro, mas a rubrica não é do ministro: é de quem manda acima dele."
+        },
+        {
+          "id": "diario",
+          "tipo": "prova",
+          "icone": "📓",
+          "nome": "Caderno de vigilância",
+          "descricao": "Quarenta e um dias de endereços, placas e horários. Fotos 98 a 131, quase todas suas, em lugares comuns.",
+          "detalhe": "Foto 114: você, na tribuna do Supremo, às 10h12. Ao lado, a caneta de Nery: «guardar»."
+        },
+        {
+          "id": "bilhete",
+          "tipo": "prova",
+          "icone": "✉️",
+          "nome": "Bilhete «do Ministro Ataulfo»",
+          "descricao": "Bilhete datilografado, assinado «A. Pessoa», que autorizaria a vigilância do instrutor.",
+          "autentica": false,
+          "indicios": [
+            "papel timbrado de 2023 num bilhete datado de 2021",
+            "assinatura idêntica, ponto por ponto, à do ofício 14/22"
+          ],
+          "detalhe": "Ataulfo usaria caneta-tinteiro; a assinatura aqui é de caneta esferográfica."
+        },
+        {
+          "id": "ordemjud",
+          "tipo": "lei",
+          "chave": "CPP#art-157",
+          "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+        }
+      ],
+      "inicio": "c1",
+      "cenas": {
+        "c1": {
+          "tipo": "titulo",
+          "texto": "Ato VI · Brasília à Noite",
+          "subtitulo": "Brasília à Noite",
+          "proxima": "c2"
+        },
+        "c2": {
+          "tipo": "dialogo",
+          "local": "apartamento",
+          "proxima": "c3",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "A mensagem chegou às 23h07, de um número que não existe. A companhia telefônica confirmou depois: a linha foi ativada e apagada no mesmo minuto."
+            },
+            {
+              "q": "voce",
+              "e": "nervoso",
+              "t": "(pensando) Hotel funcional, janela para a Esplanada, as luzes dos Três Poderes acesas como se ninguém dormisse. E alguém que sabe exatamente em que quarto eu estou."
+            },
+            {
+              "q": "dani",
+              "e": "nervoso",
+              "t": "Doutor(a), eu fiquei de olho no celular. Se algo chegar, não responda sozinho(a), por favor."
+            }
+          ]
+        },
+        "c3": {
+          "tipo": "celular",
+          "contato": "Número desconhecido",
+          "status": "online",
+          "mensagens": [
+            {
+              "de": "ele",
+              "t": "Cemitério Jardim da Paz. Meia-noite. Portão lateral."
+            },
+            {
+              "de": "ele",
+              "t": "Sozinho(a). Eu sigo o(a) senhor(a) há quarenta e um dias. Hoje eu quero ser seguido."
+            },
+            {
+              "de": "ele",
+              "t": "Não é armadilha. Se fosse, eu não teria escrito “por favor”."
+            },
+            {
+              "de": "ele",
+              "t": "Cássio Nery."
+            }
+          ],
+          "opcoes": [
+            {
+              "t": "Avisar Helena e combinar que ela espere no carro, a duas quadras.",
+              "falas": [
+                {
+                  "q": "helena",
+                  "e": "normal",
+                  "t": "Vou estar na esquina, com o motor ligado. Se você não ligar em uma hora, eu entro."
+                }
+              ],
+              "marca": "a6z_avisou_helena",
+              "cred": 1,
+              "resposta": false
+            },
+            {
+              "t": "Responder: “Vou. Sozinho(a).”",
+              "falas": [
+                {
+                  "q": "dani",
+                  "e": "nervoso",
+                  "t": "Doutor(a)... pelo menos leve o celular carregado."
+                }
+              ],
+              "marca": "a6z_foi_sozinho",
+              "cred": -1,
+              "envia": "Vou. Sozinho(a).",
+              "retorno": [
+                {
+                  "de": "ele",
+                  "t": "Obrigado."
+                }
+              ]
+            },
+            {
+              "t": "Não responder, mas ir assim mesmo e deixar Dani com o endereço num envelope.",
+              "falas": [
+                {
+                  "q": "dani",
+                  "e": "nervoso",
+                  "t": "Se o senhor(a) não voltar até as duas, eu abro o envelope."
+                }
+              ],
+              "marca": "a6z_deixou_envelope",
+              "resposta": false
+            }
+          ],
+          "falas": [
+            {
+              "q": "narrador",
+              "e": "nervoso",
+              "t": "O celular vibra duas vezes no criado-mudo. A tela acende o quarto inteiro."
+            }
+          ],
+          "local": "apartamento",
+          "proxima": "c4"
+        },
+        "c4": {
+          "tipo": "tensao",
+          "local": "carro",
+          "tempo": 8,
+          "padrao": 1,
+          "pergunta": "O utilitário preto cola, depois afasta, depois cola de novo. Quem dirige sabe seu destino. A via L2 está vazia. O que você faz?",
+          "opcoes": [
+            {
+              "t": "Entrar no túnel e dar duas voltas completas na quadra.",
+              "falas": [
+                {
+                  "q": "narrador",
+                  "e": "normal",
+                  "t": "Na segunda volta o utilitário não aparece. Você respira. Ele estava lá para saber se você iria, não para impedir."
+                }
+              ],
+              "marca": "a6z_deu_voltas"
+            },
+            {
+              "t": "Acelerar até o cemitério e deixar o carro bem à vista.",
+              "falas": [
+                {
+                  "q": "narrador",
+                  "e": "normal",
+                  "t": "Chega ao portão lateral sem que o utilitário o pare. Ele passa devagar e vai embora."
+                }
+              ],
+              "marca": "a6z_acelerou"
+            },
+            {
+              "t": "Parar no acostamento, acender o pisca-alerta e esperar.",
+              "falas": [
+                {
+                  "q": "narrador",
+                  "e": "nervoso",
+                  "t": "O utilitário para trinta metros atrás. Ninguém desce. Passados quatro minutos, ele arranca e some. Seu corpo tremia. Fora um recado."
+                }
+              ],
+              "cred": -1,
+              "marca": "a6z_esperou_acostamento"
+            }
+          ],
+          "falas": [
+            {
+              "q": "narrador",
+              "e": "nervoso",
+              "t": "A garagem do hotel. Você aluga um carro na recepção, não o seu. Mesmo assim, ao sair, um utilitário preto acende os faróis atrás."
+            }
+          ],
+          "hesitou": "Você hesitou. O utilitário emparelhou e o motorista fez sinal para você seguir.",
+          "proxima": "c5"
+        },
+        "c5": {
+          "tipo": "dialogo",
+          "local": "cemiterio",
+          "proxima": "c6",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Cemitério Jardim da Paz, meia-noite e dez. Cipreste, lâmpada amarela e o cheiro de terra molhada. Ao fundo, um homem de sobretudo está de pé diante de uma lápide, sem guarda-chuva."
+            },
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "Obrigado por vir. Eu sei que não devia pedir nada ao senhor(a). O senhor(a) tem todo o motivo para me odiar."
+            },
+            {
+              "q": "voce",
+              "e": "normal",
+              "t": "Eu não vim por você, delegado. Vim pelo que o senhor tem nas mãos."
+            },
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "Esta é a Márcia. Minha mulher. Nove anos. Eu venho toda quinta-feira, às onze da noite, porque é a única hora em que ninguém me liga."
+            }
+          ]
+        },
+        "c6": {
+          "tipo": "investigar",
+          "local": "cemiterio",
+          "titulo": "Cemitério Jardim da Paz",
+          "requer": [
+            "orb",
+            "diario",
+            "bilhete"
+          ],
+          "proxima": "c7",
+          "intro": [
+            {
+              "q": "narrador",
+              "t": "Quadra 12, jazigo 44. Um vaso, um terço, flores secas e um envelope pardo que Nery diz ter deixado sob a lápide antes de você chegar."
+            }
+          ],
+          "pontos": [
+            {
+              "id": "lapide",
+              "nome": "Lápide de Márcia Nery",
+              "x": 40,
+              "y": 44,
+              "w": 18,
+              "h": 24,
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "triste",
+                  "t": "«Márcia Nery. Esposa, mãe, enfermeira.» Há uma segunda data riscada a canivete: a da clínica onde ela morreu."
+                },
+                {
+                  "q": "a6nery",
+                  "e": "triste",
+                  "t": "A conta da clínica da nossa filha, a Bianca, é paga por um homem que nunca apareceu. Só assina com três letras.",
+                  "recebe": [
+                    "orb"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "vaso",
+              "nome": "Vaso de flores secas",
+              "x": 12,
+              "y": 60,
+              "w": 14,
+              "h": 18,
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "pensativo",
+                  "t": "Sob o vaso, o envelope pardo. Dentro, o caderno que Nery chama de «meu diário de cão de guarda».",
+                  "recebe": [
+                    "diario"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "capela",
+              "nome": "Capela do cemitério",
+              "x": 70,
+              "y": 22,
+              "w": 22,
+              "h": 30,
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "pensativo",
+                  "t": "Na caixa de velas, dobrado em quatro, um bilhete em papel de carta timbrado. A assinatura é «A. Pessoa».",
+                  "recebe": [
+                    "bilhete"
+                  ]
+                },
+                {
+                  "q": "voce",
+                  "e": "nervoso",
+                  "t": "Se aquilo for verdadeiro, o Ministro Ataulfo mandou me seguir. Preciso conferir antes de acreditar."
+                }
+              ]
+            },
+            {
+              "id": "portao",
+              "nome": "Portão lateral",
+              "x": 84,
+              "y": 66,
+              "w": 14,
+              "h": 28,
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "nervoso",
+                  "t": "Pelo vão do portão, o utilitário preto estacionado no meio-fio, motor desligado, vidros fechados. Alguém espera."
+                }
+              ]
+            }
+          ],
+          "conversas": [
+            {
+              "q": "a6nery",
+              "titulo": "Perguntar a Nery por que ele me seguiu",
+              "falas": [
+                {
+                  "q": "a6nery",
+                  "e": "triste",
+                  "t": "Porque me mandaram. Quarenta e um dias, quatro carros, dois colegas. Eu entregava as fotos num envelope e recebia o pagamento da clínica."
+                },
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "E hoje?"
+                },
+                {
+                  "q": "a6nery",
+                  "e": "triste",
+                  "t": "Hoje eu entendi que a próxima foto era a de uma cova. A do(a) senhor(a) ou a minha."
+                }
+              ]
+            }
+          ]
+        },
+        "c7": {
+          "tipo": "analisar",
+          "local": "cemiterio",
+          "proxima": "c8",
+          "falas": [
+            {
+              "q": "voce",
+              "e": "pensativo",
+              "t": "Três papéis, uma lanterna de celular e um delegado que quer ser acreditado. Antes de pensar em usar qualquer um, preciso saber em quê posso confiar."
+            }
+          ],
+          "pergunta": "Quais destas peças não resistem a um exame e devem ser descartadas?",
+          "provas": [
+            "orb",
+            "diario",
+            "bilhete"
+          ],
+          "falsas": [
+            "bilhete"
+          ],
+          "dica": [
+            "Veja o papel e a tinta de cada documento, não o nome de quem assina.",
+            "O bilhete «do Ministro» tem sinais de ter sido feito depois."
+          ],
+          "acerto": [
+            {
+              "q": "voce",
+              "e": "confiante",
+              "t": "Papel timbrado de 2023 num bilhete de 2021 e uma assinatura que é cópia perfeita do ofício 14/22. Quem plantou isto quer me ver acusando o Ataulfo antes da hora."
+            },
+            {
+              "q": "a6nery",
+              "e": "nervoso",
+              "t": "Eu não plantei. Mas alguém plantou na minha capela."
+            }
+          ],
+          "erro": [
+            {
+              "q": "dani",
+              "e": "nervoso",
+              "t": "(por mensagem) Doutor(a), duas dessas peças parecem de quem as escreveu sem pressa. A terceira parece de quem as escreveu depois."
+            }
+          ]
+        },
+        "c8": {
+          "tipo": "intuicao",
+          "local": "cemiterio",
+          "proxima": "c9",
+          "falas": [
+            {
+              "q": "voce",
+              "e": "pensativo",
+              "t": "(pensando) Um homem que me seguiu por quarenta e um dias chora diante de uma lápide e me entrega um caderno. Pode ser arrependimento. Pode ser mais uma foto."
+            }
+          ],
+          "pergunta": "Nery está sendo sincero ou está me conduzindo a uma armadilha?",
+          "pistas": [
+            "Ele chegou meia hora antes e escolheu o jazigo da mulher, não um lugar neutro.",
+            "As mãos tremem, mas a voz não: a fala é ensaiada, a dor não."
+          ],
+          "bonus": 1,
+          "opcoes": [
+            {
+              "t": "É sincero: o caderno e a lápide são o que ele tem de mais verdadeiro.",
+              "certa": true,
+              "marca": "a6z_confiou_nery"
+            },
+            {
+              "t": "Está me conduzindo: tudo isto é encenação.",
+              "marca": "a6z_desconfiou_nery"
+            }
+          ],
+          "revelacao": [
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "Eu posso ser muita coisa, doutor(a). Mas a minha mulher não entra em nenhuma encenação."
+            }
+          ],
+          "acerto": [
+            {
+              "q": "voce",
+              "e": "normal",
+              "t": "A dor não se ensaia. Ele quer sair do buraco em que se meteu."
+            }
+          ],
+          "erro": [
+            {
+              "q": "voce",
+              "e": "triste",
+              "t": "(pensando) Eu li a lápide como cenário. Era a única coisa verdadeira da noite."
+            }
+          ]
+        },
+        "c9": {
+          "tipo": "dialogo",
+          "local": "cemiterio",
+          "proxima": "c10",
+          "falas": [
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "A Bianca tem vinte e dois anos e faz hemodiálise três vezes por semana. A clínica custa o que eu ganho em dois anos."
+            },
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "Um dia me procuraram. «Uma colaboração de rotina.» Primeiro foi seguir. Depois, plantar uma escuta. Depois, ensinar a uma delegada como dizer que não viu nada."
+            },
+            {
+              "q": "voce",
+              "e": "normal",
+              "t": "E por que o senhor está aqui hoje?"
+            },
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "Porque na semana passada a clínica recebeu um comunicado: o pagamento está suspenso «por determinação superior». A Bianca tem quinze dias."
+            },
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "Eu sirvo ao senhor(a) a cabeça de quem me comprou. E o senhor(a), se me aceitar, me serve a minha filha.",
+              "se": "a6z_confiou_nery"
+            },
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "Eu entendo se o senhor(a) não acreditar em mim. Eu também não acreditaria.",
+              "se": "a6z_desconfiou_nery"
+            }
+          ]
+        },
+        "c10": {
+          "tipo": "tensao",
+          "local": "cemiterio",
+          "tempo": 7,
+          "padrao": 0,
+          "pergunta": "As lanternas estão a trinta metros. Nery sussurra: “São os homens do utilitário”. O envelope está na sua mão. O que você faz?",
+          "opcoes": [
+            {
+              "t": "Esconder-se atrás do mausoléu, com o envelope contra o peito, e esperar que passem.",
+              "falas": [
+                {
+                  "q": "narrador",
+                  "e": "normal",
+                  "t": "Os dois passam rente ao jazigo. Um deles comenta, sem baixar a voz: “Ele vem toda quinta. Hoje demorou.” E se afastam."
+                }
+              ],
+              "cred": 1,
+              "marca": "a6z_escondeu_cemiterio"
+            },
+            {
+              "t": "Entregar o envelope a Nery para ele levar e sair em direção oposta.",
+              "falas": [
+                {
+                  "q": "a6nery",
+                  "e": "nervoso",
+                  "t": "Eu levo. Eu sei fugir melhor do que o senhor(a)."
+                },
+                {
+                  "q": "narrador",
+                  "e": "nervoso",
+                  "t": "Ele sai correndo por entre os túmulos, e as lanternas viram-se atrás dele. Você fica com um envelope vazio e uma promessa."
+                }
+              ],
+              "cred": -1,
+              "marca": "a6z_deu_envelope_nery"
+            },
+            {
+              "t": "Sair da sombra e dizer em voz alta: “Boa noite. Sou advogado(a) do Supremo.”",
+              "falas": [
+                {
+                  "q": "narrador",
+                  "e": "confiante",
+                  "t": "As lanternas hesitam. Um dos homens baixa o facho. “Boa noite, doutor(a). Estamos apenas fazendo a ronda.” Eles se afastam sem pressa e sem convicção."
+                }
+              ],
+              "marca": "a6z_encarou_ronda"
+            }
+          ],
+          "falas": [
+            {
+              "q": "narrador",
+              "e": "nervoso",
+              "t": "Um clarão passa entre os jazigos. Depois outro. Dois homens com lanternas descem a alameda principal, sem pressa, olhando para a lápide."
+            }
+          ],
+          "hesitou": "Você hesitou. As lanternas já varriam o jazigo de Márcia.",
+          "proxima": "c11"
+        },
+        "c11": {
+          "tipo": "escolha",
+          "livre": true,
+          "local": "cemiterio",
+          "proxima": "c12",
+          "falas": [
+            {
+              "q": "a6nery",
+              "e": "triste",
+              "t": "Eu vou ser preso, doutor(a). Mas, antes, quero que a Bianca esteja viva. O senhor(a) pode ajudar?"
+            }
+          ],
+          "pergunta": "O que você diz a Nery sobre a filha dele?",
+          "opcoes": [
+            {
+              "t": "Prometer pedir proteção a Helga para ele e a Bianca, pelas vias legais, sem garantir nada.",
+              "marca": "a6z_prometeu_nery",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "Não prometo resultado. Prometo que a Ministra Helga saberá de tudo amanhã, e que a lei protege quem colabora."
+                },
+                {
+                  "q": "a6nery",
+                  "e": "triste",
+                  "t": "É mais do que eu esperava."
+                }
+              ]
+            },
+            {
+              "t": "Dizer que não pode prometer nada e que ele deve se apresentar à Corregedoria.",
+              "marca": "a6z_nada_nery",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "O senhor deve se apresentar à Corregedoria. Eu não ofereço o que não posso cumprir."
+                },
+                {
+                  "q": "a6nery",
+                  "e": "triste",
+                  "t": "Justo. Muito justo."
+                }
+              ]
+            }
+          ]
+        },
+        "c12": {
+          "tipo": "celular",
+          "contato": "Cássio Nery",
+          "status": "visto por último há 1 minuto",
+          "mensagens": [
+            {
+              "de": "ele",
+              "t": "Cheguei. Obrigado por ter vindo.",
+              "se": "a6z_prometeu_nery"
+            },
+            {
+              "de": "ele",
+              "t": "Cheguei. O senhor(a) foi justo(a), e eu mereci.",
+              "se": "a6z_nada_nery"
+            },
+            {
+              "de": "ele",
+              "t": "Antes de apagar este número: a foto 114 foi pedida por alguém que não gosta que o senhor(a) fale de pé. Cuidado com quem sorri para a câmera."
+            }
+          ],
+          "opcoes": [
+            {
+              "t": "Salvar o número e apagar a conversa.",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "pensativo",
+                  "t": "(pensando) A foto 114. «Quem não gosta que eu fale de pé.» Anotado."
+                }
+              ],
+              "marca": "a6z_salvou_nery",
+              "resposta": false
+            }
+          ],
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Uma da manhã. No carro, de volta, o celular vibra uma última vez."
+            }
+          ],
+          "proxima": "c13"
+        },
+        "c13": {
+          "tipo": "dialogo",
+          "local": "casa",
+          "proxima": "c14",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Duas da manhã. O hotel, o elevador, a porta que ninguém tentou abrir. Na mesa, o envelope pardo. Dani espera acordada, de pijama, com um bule de café frio."
+            },
+            {
+              "q": "dani",
+              "e": "chocado",
+              "t": "Doutor(a)! Eu abri o envelope às duas em ponto, como combinado... não abri, não, só olhei por baixo da porta. Quase morri de susto.",
+              "se": "a6z_deixou_envelope"
+            },
+            {
+              "q": "helena",
+              "e": "nervoso",
+              "t": "Eu estava a duas quadras. Vi o utilitário preto passar três vezes. Da próxima, me deixe entrar.",
+              "se": "a6z_avisou_helena"
+            },
+            {
+              "q": "dani",
+              "e": "nervoso",
+              "t": "O senhor(a) foi sozinho(a), e eu não dormi. Prometa que não faz mais isso.",
+              "se": "a6z_foi_sozinho"
+            },
+            {
+              "q": "voce",
+              "e": "pensativo",
+              "t": "(pensando) Uma ordem de serviço com três letras. Um caderno com a minha vida. Um bilhete falso que alguém quer que eu use. E uma foto minha na tribuna, guardada para depois."
+            },
+            {
+              "q": "voce",
+              "e": "nervoso",
+              "t": "(pensando) Quem manda não é o Ataulfo. É quem o usa de escada."
+            }
+          ]
+        },
+        "c14": {
+          "tipo": "veredicto",
+          "carimbo": "DOCUMENTO NA MÃO",
+          "titulo": "A noite em que o perseguidor pediu para ser seguido",
+          "texto": "Você foi a um cemitério à meia-noite, examinou três papéis antes de acreditar em qualquer um, descartou o bilhete que queria jogá-lo(a) contra o Ministro Ataulfo e saiu com a ordem de serviço rubricada O.R.B. e o caderno de Nery. Quem manda está acima do gabinete.",
+          "variantes": [
+            {
+              "se": "a6z_confiou_nery",
+              "carimbo": "A DOR NÃO SE ENSAIA",
+              "titulo": "Um perseguidor com uma filha doente",
+              "texto": "Você viu a dor de Nery pelo que era e decidiu ouvi-lo. A lei protege quem colabora, e Bianca ainda tem quinze dias."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a6z-virada",
+      "ordem": 13.5,
+      "numero": 59,
+      "titulo": "A Virada",
+      "papel": "advogado",
+      "nivel": "especialista",
+      "sinopse": "Seis votos garantidos na véspera. No Plenário do Supremo, a assistência pede a busca no apartamento do homem que sumiu. Quando o placar parece fechado, quem você mais confiava retira o apoio e uma ministra muda de lado. Um voto virado em um minuto.",
+      "placas": {
+        "acusacao": "Assistência da vítima",
+        "defesa": "Defesa do Senador"
+      },
+      "posicoes": {
+        "voce": "acusacao",
+        "a6teresa": "acusacao",
+        "a6helga": "juiz",
+        "a6yhugo": "defesa",
+        "helena": "escritorio",
+        "clara": "escritorio",
+        "dani": "escritorio",
+        "a6ataulfo": "defesa",
+        "a6zmiolanda": "juiz",
+        "a6zmteodoro": "juiz",
+        "a6zmrosalvo": "juiz",
+        "a6zmeunice": "juiz",
+        "a6zmbenicio": "juiz"
+      },
+      "provas": [
+        {
+          "id": "pedido",
+          "tipo": "prova",
+          "icone": "📑",
+          "nome": "Pedido da assistência",
+          "descricao": "Busca e apreensão no apartamento do ex-chefe de gabinete e nos servidores do gabinete: dispositivos de trabalho e registros de telefonia."
+        },
+        {
+          "id": "parecer",
+          "tipo": "prova",
+          "icone": "⚖️",
+          "nome": "Parecer do MPF (Teresa)",
+          "descricao": "Favorável ao pedido, assinado ontem: «fundadas razões, mandado específico e controle da Corte»."
+        },
+        {
+          "id": "relpf",
+          "tipo": "prova",
+          "icone": "🕵️",
+          "nome": "Relatório da PF sobre o apartamento",
+          "descricao": "Apartamento esvaziado em 48 horas, sem sinal de arrombamento; no lixo, restos de um celular quebrado."
+        },
+        {
+          "id": "ligacoes",
+          "tipo": "prova",
+          "icone": "☎️",
+          "nome": "Planilha de ligações do pré-pago",
+          "descricao": "Cinquenta e duas chamadas entre o pré-pago e o ex-chefe de gabinete, às vésperas dos três votos que beneficiaram o Arquiteto."
+        },
+        {
+          "id": "logcofre",
+          "tipo": "prova",
+          "icone": "🗄️",
+          "nome": "Registro de acessos ao cofre digital",
+          "descricao": "Quem abriu a decisão sigilosa do caso do delator: Helga, Dani, você e a credencial de Teresa, às 21h47."
+        },
+        {
+          "id": "telefonia",
+          "tipo": "prova",
+          "icone": "📞",
+          "nome": "Extrato de telefonia da assessoria",
+          "descricao": "21h55: ligação de oito minutos do celular da assessoria da Subprocuradora para o celular da repórter Vera Lins."
+        },
+        {
+          "id": "print",
+          "tipo": "prova",
+          "icone": "📱",
+          "nome": "«Print» de conversa entre Teresa e Otto",
+          "descricao": "Imagem de uma conversa em que Teresa combinaria «retirar tudo».",
+          "autentica": false,
+          "indicios": [
+            "fotografia da tela de outro aparelho, não captura",
+            "relógio da conversa marca 25h"
+          ],
+          "detalhe": "Chegou por mensagem anônima, sem origem."
+        },
+        {
+          "id": "l271",
+          "tipo": "lei",
+          "chave": "CPP#art-271",
+          "trecho": "Ao assistente será permitido propor meios de prova"
+        },
+        {
+          "id": "l242",
+          "tipo": "lei",
+          "chave": "CPP#art-242",
+          "trecho": "A busca poderá ser determinada de ofício ou a requerimento de qualquer das partes"
+        },
+        {
+          "id": "l240",
+          "tipo": "lei",
+          "chave": "CPP#art-240/par-1",
+          "trecho": "Proceder-se-á à busca domiciliar, quando fundadas razões a autorizarem"
+        }
+      ],
+      "inicio": "c1",
+      "cenas": {
+        "c1": {
+          "tipo": "titulo",
+          "texto": "Ato VI · A Virada",
+          "subtitulo": "A Virada",
+          "proxima": "c2"
+        },
+        "c2": {
+          "tipo": "dialogo",
+          "local": "escritorio",
+          "proxima": "c3",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Seis votos. Era o que a assistência tinha contado na véspera, ministro por ministro, em um caderno que Dani se recusa a chamar de “planilha de sorte”."
+            },
+            {
+              "q": "helena",
+              "e": "nervoso",
+              "t": "Lívia deu o nome. A PF achou o apartamento do Pimentel vazio, com um celular quebrado no lixo. Se o Plenário não autorizar a busca hoje, as provas viram pó amanhã."
+            },
+            {
+              "q": "clara",
+              "e": "triste",
+              "t": "Meu irmão dizia que quem tem pressa de apagar tem o que esconder."
+            },
+            {
+              "q": "voce",
+              "e": "confiante",
+              "t": "Hoje eu falo em pé diante de onze ministros. Seis votos garantidos. A Teresa vai ratificar o pedido da assistência. Está tudo no lugar."
+            },
+            {
+              "q": "dani",
+              "e": "pensativo",
+              "t": "Doutor(a), tudo no lugar é a frase que o senhor(a) mais repete antes de algo sair do lugar."
+            }
+          ]
+        },
+        "c3": {
+          "tipo": "investigar",
+          "local": "stf",
+          "titulo": "Corredor do Plenário, uma hora antes",
+          "proxima": "c4",
+          "requer": [
+            "pedido",
+            "parecer",
+            "relpf",
+            "ligacoes",
+            "l271",
+            "l242",
+            "l240"
+          ],
+          "intro": [
+            {
+              "q": "narrador",
+              "t": "Mármore, silêncio e o cheiro de café das copeiras. Em uma hora o Plenário se enche. Antes, uma última leitura."
+            }
+          ],
+          "pontos": [
+            {
+              "id": "mesa",
+              "nome": "Mesa de apoio da assistência",
+              "x": 30,
+              "y": 52,
+              "w": 14,
+              "h": 14,
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "O pedido, tal como o protocolamos, e o parecer favorável do MPF, assinado ontem pela Subprocuradora.",
+                  "recebe": [
+                    "pedido",
+                    "parecer"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "estante",
+              "nome": "Estante do Código",
+              "x": 66,
+              "y": 42,
+              "w": 16,
+              "h": 20,
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "pensativo",
+                  "t": "Art. 271: o assistente pode propor meios de prova. Art. 242: a busca pode ser requerida por qualquer das partes. Art. 240: fundadas razões.",
+                  "recebe": [
+                    "l271",
+                    "l242",
+                    "l240"
+                  ]
+                }
+              ]
+            },
+            {
+              "id": "janela",
+              "nome": "Janela para a Praça",
+              "x": 8,
+              "y": 16,
+              "w": 20,
+              "h": 34,
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "nervoso",
+                  "t": "Lá embaixo, na calçada, a imprensa. Entre os microfones, o paletó marrom de alguém que parece o Bento Carvalho, da Vara Criminal. Quando eu pisco, ele já não está."
+                }
+              ]
+            }
+          ],
+          "conversas": [
+            {
+              "q": "helena",
+              "titulo": "Conversar com Helena",
+              "falas": [
+                {
+                  "q": "helena",
+                  "e": "normal",
+                  "t": "A PF mandou o relatório do apartamento esta madrugada, e a planilha das ligações do pré-pago chegou do laboratório.",
+                  "recebe": [
+                    "relpf",
+                    "ligacoes"
+                  ]
+                },
+                {
+                  "q": "helena",
+                  "e": "pensativo",
+                  "t": "Mais uma coisa. A Teresa saiu da sala duas vezes para atender o celular. Ela nunca atende o celular em plenário."
+                }
+              ]
+            }
+          ]
+        },
+        "c4": {
+          "tipo": "dialogo",
+          "local": "corredor",
+          "proxima": "c5",
+          "falas": [
+            {
+              "q": "a6teresa",
+              "e": "feliz",
+              "t": "Doutor(a). Trouxe café. Sem açúcar, como o senhor(a) gosta."
+            },
+            {
+              "q": "voce",
+              "e": "normal",
+              "t": "A senhora vai ratificar o pedido da assistência, não vai?"
+            },
+            {
+              "q": "a6teresa",
+              "e": "normal",
+              "t": "Está no parecer, assinado e protocolado. O MPF ratifica, Excelência. Fale devagar, e olhe para a Ministra Iolanda: ela vai decidir o sexto voto."
+            },
+            {
+              "q": "narrador",
+              "t": "O celular dela vibra na bolsa. Ela olha a tela, guarda o aparelho sem atender e sorri um segundo tarde demais."
+            },
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Boa sorte."
+            }
+          ]
+        },
+        "c5": {
+          "tipo": "dialogo",
+          "local": "stf",
+          "proxima": "c6",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Plenário do Supremo, 14h. Onze cadeiras de couro, a bandeira, a transmissão no ar. A Ministra Helga, relatora, abre os trabalhos."
+            },
+            {
+              "q": "a6helga",
+              "e": "normal",
+              "t": "Pedido da assistência, ratificado pelo MPF: busca e apreensão no apartamento do ex-chefe de gabinete e nos dispositivos do gabinete. A defesa do Senador se opõe. Doutor Hugo."
+            },
+            {
+              "q": "a6yhugo",
+              "e": "apontando",
+              "t": "Excelência, a assistência não tem legitimidade para requerer medida invasiva. Quem tem é o Ministério Público. O mais, é gabinete de ministro: invioláveis, e com razão."
+            },
+            {
+              "q": "a6ataulfo",
+              "e": "pensativo",
+              "t": "Registro, Ministra, que o gabinete a que se refere é o meu. Não me oponho a nada. Apenas rogo cautela."
+            }
+          ]
+        },
+        "c6": {
+          "tipo": "argumento",
+          "local": "stf",
+          "proxima": "c7",
+          "alvo": "A assistência da acusação não tem legitimidade para requerer meios de prova, e a busca é exclusiva do Ministério Público.",
+          "pergunta": "Que dispositivo permite ao assistente propor meios de prova?",
+          "dica": [
+            "Procure a regra que fala nos poderes do assistente, e não na sua admissão.",
+            "Art. 271 do CPP."
+          ],
+          "falas": [
+            {
+              "q": "a6yhugo",
+              "e": "bravo",
+              "t": "A lei diz que o assistente intervém. Não diz que ele investiga."
+            }
+          ],
+          "opcoes": [
+            {
+              "t": "Art. 271 do CPP: ao assistente será permitido propor meios de prova, requerer perguntas às testemunhas e participar do debate.",
+              "dispositivo": "CPP#art-271",
+              "certa": true,
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "Excelência, o art. 271 diz expressamente: ao assistente será permitido propor meios de prova. A busca é meio de prova. O MPF, ademais, ratificou."
+                }
+              ]
+            },
+            {
+              "t": "Art. 268 do CPP: o ofendido pode intervir como assistente do Ministério Público.",
+              "dispositivo": "CPP#art-268",
+              "falas": [
+                {
+                  "q": "helena",
+                  "e": "pensativo",
+                  "t": "(sussurrando) O 268 fala da admissão do assistente. A regra dos poderes dele é o artigo seguinte do capítulo: o 271."
+                }
+              ]
+            },
+            {
+              "t": "Art. 269 do CPP: o assistente recebe a causa no estado em que se achar.",
+              "dispositivo": "CPP#art-269",
+              "falas": [
+                {
+                  "q": "helena",
+                  "e": "pensativo",
+                  "t": "(sussurrando) Esse fala do momento da admissão. O que a defesa nega é o poder de requerer prova."
+                }
+              ]
+            },
+            {
+              "t": "Art. 242 do CPP: a busca poderá ser determinada de ofício ou a requerimento de qualquer das partes.",
+              "dispositivo": "CPP#art-242",
+              "falas": [
+                {
+                  "q": "helena",
+                  "e": "pensativo",
+                  "t": "(sussurrando) O 242 fala das partes em geral. O que dá poder ao assistente é o 271."
+                }
+              ]
+            }
+          ],
+          "acerto": [
+            {
+              "q": "a6helga",
+              "e": "normal",
+              "t": "A legitimidade está reconhecida. Passemos ao mérito da medida."
+            },
+            {
+              "q": "a6yhugo",
+              "e": "bravo",
+              "t": "Registro o inconformismo."
+            }
+          ]
+        },
+        "c7": {
+          "tipo": "plenario",
+          "colegiado": "stf",
+          "local": "stf",
+          "titulo": "Plenário: a busca",
+          "falas": [
+            {
+              "q": "a6helga",
+              "e": "normal",
+              "t": "Onze ministros, maioria de seis. A assistência responderá à dúvida de cada Excelência."
+            }
+          ],
+          "votos_fixos": {
+            "favor": 3,
+            "contra": 3
+          },
+          "ministros": [
+            {
+              "q": "a6zmteodoro",
+              "preocupacao": "Quem julga o pedido: o chefe de gabinete não tem foro.",
+              "falas": [
+                {
+                  "q": "a6zmteodoro",
+                  "e": "pensativo",
+                  "t": "Doutor(a), o Pimentel é servidor, sem foro. Por que o Supremo decide a busca em casa de servidor?"
+                }
+              ],
+              "pergunta": "Por que este Tribunal pode autorizar a busca na casa do ex-chefe de gabinete?",
+              "argumentos": [
+                {
+                  "t": "Porque a competência se determina pela conexão: os fatos ligam o servidor aos ministros e ao Senador, que têm foro aqui.",
+                  "falas": [
+                    {
+                      "q": "a6zmteodoro",
+                      "e": "normal",
+                      "t": "Conexão bem identificada. Acompanho."
+                    }
+                  ],
+                  "certa": true,
+                  "fundamentos": [
+                    {
+                      "chave": "CPP#art-76",
+                      "trecho": "A competência será determinada pela conexão"
+                    }
+                  ]
+                },
+                {
+                  "t": "Porque o Supremo julga qualquer servidor de seu gabinete.",
+                  "falas": [
+                    {
+                      "q": "a6zmteodoro",
+                      "e": "bravo",
+                      "t": "O art. 102 não diz isso. Divirjo."
+                    }
+                  ],
+                  "endurece": true
+                },
+                {
+                  "t": "Porque a Polícia Federal pediu e o relator concordou.",
+                  "falas": [
+                    {
+                      "q": "a6zmteodoro",
+                      "e": "normal",
+                      "t": "Pedido e concordância não criam competência."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "q": "a6zmiolanda",
+              "preocupacao": "Busca exige fundadas razões, e não curiosidade.",
+              "falas": [
+                {
+                  "q": "a6zmiolanda",
+                  "e": "pensativo",
+                  "t": "O que o pedido mostra, concretamente, a não ser uma hipótese? A Corte precisa de fundadas razões, não de desconfiança."
+                }
+              ],
+              "pergunta": "Que fatos concretos dão fundadas razões para a busca?",
+              "argumentos": [
+                {
+                  "t": "O apartamento esvaziado em 48 horas e a planilha de cinquenta e duas ligações entre o pré-pago e o servidor, às vésperas de votos de interesse do Arquiteto.",
+                  "falas": [
+                    {
+                      "q": "a6zmiolanda",
+                      "e": "normal",
+                      "t": "Fatos, e não suposições. Acompanho."
+                    }
+                  ],
+                  "certa": true,
+                  "fundamentos": [
+                    {
+                      "chave": "CPP#art-240/par-1",
+                      "trecho": "Proceder-se-á à busca domiciliar, quando fundadas razões a autorizarem, para"
+                    }
+                  ]
+                },
+                {
+                  "t": "A fama do Arquiteto e a repercussão do caso na imprensa.",
+                  "falas": [
+                    {
+                      "q": "a6zmiolanda",
+                      "e": "bravo",
+                      "t": "Fama não é fundada razão. Divirjo."
+                    }
+                  ],
+                  "endurece": true
+                },
+                {
+                  "t": "O fato de ele ser chefe de gabinete de um ministro.",
+                  "falas": [
+                    {
+                      "q": "a6zmiolanda",
+                      "e": "normal",
+                      "t": "O cargo não é indício de crime."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "q": "a6zmrosalvo",
+              "preocupacao": "Proporcionalidade: a medida é necessária e adequada?",
+              "falas": [
+                {
+                  "q": "a6zmrosalvo",
+                  "e": "pensativo",
+                  "t": "Existe medida menos gravosa para obter o mesmo resultado? Uma ordem de preservação de dados, por exemplo?"
+                }
+              ],
+              "pergunta": "Por que a busca é a medida necessária e adequada, e não uma medida mais branda?",
+              "argumentos": [
+                {
+                  "t": "Porque o celular já foi destruído e o apartamento esvaziado; a preservação de dados chegaria tarde, e a medida é a única adequada.",
+                  "falas": [
+                    {
+                      "q": "a6zmrosalvo",
+                      "e": "normal",
+                      "t": "Necessária e adequada. Acompanho."
+                    }
+                  ],
+                  "certa": true,
+                  "fundamentos": [
+                    {
+                      "chave": "CPP#art-282",
+                      "trecho": "As medidas cautelares previstas neste Título deverão ser aplicadas observando-se a"
+                    }
+                  ]
+                },
+                {
+                  "t": "Porque a busca é sempre a primeira medida cabível, e a mais eficaz.",
+                  "falas": [
+                    {
+                      "q": "a6zmrosalvo",
+                      "e": "bravo",
+                      "t": "Sempre é palavra que a lei não usa. Divirjo."
+                    }
+                  ],
+                  "endurece": true
+                },
+                {
+                  "t": "Porque o Senador não merece medidas brandas.",
+                  "falas": [
+                    {
+                      "q": "a6zmrosalvo",
+                      "e": "normal",
+                      "t": "Merecimento não é critério de cautelar."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "q": "a6zmeunice",
+              "preocupacao": "A busca não pode virar pescaria nos arquivos do gabinete de um ministro.",
+              "falas": [
+                {
+                  "q": "a6zmeunice",
+                  "e": "pensativo",
+                  "t": "Um gabinete de ministro guarda sigilo de centenas de outros processos. Como evitamos a pescaria?"
+                }
+              ],
+              "pergunta": "Como limitar a busca ao que interessa à investigação?",
+              "argumentos": [
+                {
+                  "t": "Mandado específico, indicando o local com precisão e os motivos e fins da diligência, com triagem acompanhada pelo relator e pela OAB quando couber.",
+                  "falas": [
+                    {
+                      "q": "a6zmeunice",
+                      "e": "normal",
+                      "t": "Mandado específico, controle do relator. Acompanho."
+                    }
+                  ],
+                  "certa": true,
+                  "fundamentos": [
+                    {
+                      "chave": "CPP#art-243",
+                      "trecho": "O mandado de busca deverá"
+                    }
+                  ]
+                },
+                {
+                  "t": "Carta branca à PF para varrer o prédio, com a promessa de reportar depois.",
+                  "falas": [
+                    {
+                      "q": "a6zmeunice",
+                      "e": "bravo",
+                      "t": "Carta branca é a definição de pescaria. Divirjo."
+                    }
+                  ],
+                  "endurece": true
+                },
+                {
+                  "t": "Nenhum limite: o gabinete pode ser examinado inteiro.",
+                  "falas": [
+                    {
+                      "q": "a6zmeunice",
+                      "e": "normal",
+                      "t": "Sem limite, o Tribunal vira alvo. Não."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "q": "a6zmbenicio",
+              "preocupacao": "O Ministro Ataulfo tem direito de ser ouvido?",
+              "falas": [
+                {
+                  "q": "a6zmbenicio",
+                  "e": "pensativo",
+                  "t": "O Ministro Ataulfo é citado de forma indireta. A defesa teve oportunidade de se manifestar? Não se pode decidir surpreendendo ninguém."
+                }
+              ],
+              "pergunta": "A decisão respeita o contraditório e a ampla defesa dos atingidos?",
+              "argumentos": [
+                {
+                  "t": "Sim: a defesa do Senador e o próprio Ministro foram ouvidos em plenário, e podem recorrer; o mandado é específico.",
+                  "falas": [
+                    {
+                      "q": "a6zmbenicio",
+                      "e": "normal",
+                      "t": "Ouvidos e com recurso. Acompanho."
+                    }
+                  ],
+                  "certa": true,
+                  "fundamentos": [
+                    {
+                      "chave": "CF#art-5/inc-lv",
+                      "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla"
+                    }
+                  ]
+                },
+                {
+                  "t": "Dispensa-se a manifestação da defesa por causa do risco de destruição de provas.",
+                  "falas": [
+                    {
+                      "q": "a6zmbenicio",
+                      "e": "bravo",
+                      "t": "O risco justifica a surpresa da medida, não a supressão da defesa. Divirjo."
+                    }
+                  ],
+                  "endurece": true
+                },
+                {
+                  "t": "O contraditório não se aplica a medidas de busca.",
+                  "falas": [
+                    {
+                      "q": "a6zmbenicio",
+                      "e": "normal",
+                      "t": "Aplica-se ao menos de forma diferida. Não posso aceitar isso."
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "acerto": [
+            {
+              "q": "a6helga",
+              "e": "confiante",
+              "t": "Seis votos. A relatora proclama: deferida a busca, nos termos do voto.",
+              "fx": "martelo"
+            }
+          ],
+          "proxima": "c8"
+        },
+        "c8": {
+          "tipo": "dialogo",
+          "local": "stf",
+          "proxima": "c9",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "O martelo está erguido. Clara aperta a mão de Helena. Dani sorri pela primeira vez em três dias."
+            },
+            {
+              "q": "a6helga",
+              "e": "normal",
+              "t": "Antes de encerrar, concedo a palavra ao MPF."
+            }
+          ]
+        },
+        "c9": {
+          "tipo": "reviravolta",
+          "banner": "REVIRAVOLTA!",
+          "sub": "O MPF retira o apoio e uma ministra muda o voto",
+          "ajuste": -1,
+          "piso": 2,
+          "musica": "pressao",
+          "proxima": "c9a",
+          "falas": [
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Excelência, o Ministério Público reconsidera. Fatos novos, sob sigilo, chegaram ao meu conhecimento. Retiro a ratificação e, por cautela institucional, oponho-me à busca."
+            },
+            {
+              "q": "voce",
+              "e": "chocado",
+              "t": "(pensando) A mão que me trouxe o café retirou o chão."
+            },
+            {
+              "q": "a6yhugo",
+              "e": "feliz",
+              "t": "A defesa agradece a ponderação do Ministério Público."
+            },
+            {
+              "q": "a6zmiolanda",
+              "e": "pensativo",
+              "t": "Diante de nova manifestação do MPF, peço a palavra para rever o meu voto. Não posso decidir de olhos fechados."
+            }
+          ]
+        },
+        "c9a": {
+          "tipo": "celular",
+          "contato": "Helga",
+          "status": "online",
+          "mensagens": [
+            {
+              "de": "ele",
+              "t": "Pare de olhar para a Teresa. Olhe para a Iolanda."
+            },
+            {
+              "de": "ele",
+              "t": "Ela mudou de lado por escrúpulo, não por maldade. Convença-a com a lei, não com raiva."
+            },
+            {
+              "de": "ele",
+              "t": "Sobre a Teresa: depois."
+            }
+          ],
+          "opcoes": [
+            {
+              "t": "Guardar o celular e respirar fundo.",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "nervoso",
+                  "t": "(pensando) Depois. Primeiro o voto."
+                }
+              ],
+              "marca": "a6z_teresa_traiu",
+              "resposta": false
+            }
+          ],
+          "falas": [
+            {
+              "q": "narrador",
+              "e": "nervoso",
+              "t": "O celular vibra sobre a tribuna, três vezes seguidas, protegido pela pasta."
+            }
+          ],
+          "proxima": "c10"
+        },
+        "c10": {
+          "tipo": "plenario",
+          "colegiado": "stf",
+          "local": "stf",
+          "titulo": "Plenário: o último minuto",
+          "falas": [
+            {
+              "q": "a6helga",
+              "e": "normal",
+              "t": "Placar atualizado: cinco a quatro, a favor. A Ministra Iolanda se declara em dúvida. Onze ministros, seis votos. A assistência tem a palavra."
+            }
+          ],
+          "votos_fixos": {
+            "favor": 4,
+            "contra": 4
+          },
+          "ministros": [
+            {
+              "q": "a6zmiolanda",
+              "preocupacao": "Sem o MPF, falta legitimidade e justa causa para a medida?",
+              "falas": [
+                {
+                  "q": "a6zmiolanda",
+                  "e": "pensativo",
+                  "t": "O Ministério Público retirou o apoio. Medida invasiva sem o titular da ação pública. Tenho dúvida sincera."
+                }
+              ],
+              "pergunta": "A retirada do apoio do MPF impede o Tribunal de deferir a busca?",
+              "argumentos": [
+                {
+                  "t": "Não: a assistência tem o poder de propor meios de prova, e a busca pode ser determinada a requerimento de qualquer das partes; o parecer do MP não vincula o Tribunal.",
+                  "falas": [
+                    {
+                      "q": "a6zmiolanda",
+                      "e": "normal",
+                      "t": "A lei é clara. Volto a acompanhar a relatora."
+                    }
+                  ],
+                  "certa": true,
+                  "fundamentos": [
+                    {
+                      "chave": "CPP#art-242",
+                      "trecho": "A busca poderá ser determinada de ofício ou a requerimento de qualquer das partes."
+                    }
+                  ]
+                },
+                {
+                  "t": "Sim: sem o MP, o Tribunal só pode arquivar o pedido.",
+                  "falas": [
+                    {
+                      "q": "a6zmiolanda",
+                      "e": "bravo",
+                      "t": "Isso transforma o assistente em figurante. Não me convence."
+                    }
+                  ],
+                  "endurece": true
+                },
+                {
+                  "t": "O Tribunal pode deferir de ofício, independente de qualquer parte.",
+                  "falas": [
+                    {
+                      "q": "a6zmiolanda",
+                      "e": "normal",
+                      "t": "De ofício, na fase investigativa, fere a estrutura acusatória. Não."
+                    }
+                  ]
+                }
+              ],
+              "voto": "contra"
+            },
+            {
+              "q": "a6zmrosalvo",
+              "preocupacao": "Os “fatos novos e sigilosos” do MPF podem fundamentar a retirada?",
+              "falas": [
+                {
+                  "q": "a6zmrosalvo",
+                  "e": "pensativo",
+                  "t": "O MPF alega fatos sigilosos que a assistência e a defesa não conhecem. Pode o Tribunal decidir com base em fatos que as partes não viram?"
+                }
+              ],
+              "pergunta": "Os fatos sigilosos alegados pelo MPF afastam as fundadas razões já demonstradas?",
+              "argumentos": [
+                {
+                  "t": "Não: as fundadas razões estão nos autos e foram debatidas; fatos que ninguém pode contraditar não as afastam, e o sigilo não é fundamento para decidir contra a prova.",
+                  "falas": [
+                    {
+                      "q": "a6zmrosalvo",
+                      "e": "normal",
+                      "t": "Prova contraditada pesa mais que sigilo. Acompanho."
+                    }
+                  ],
+                  "certa": true,
+                  "fundamentos": [
+                    {
+                      "chave": "CPP#art-240/par-1",
+                      "trecho": "Proceder-se-á à busca domiciliar, quando fundadas razões a autorizarem, para"
+                    }
+                  ]
+                },
+                {
+                  "t": "Sim: fato sigiloso do MPF sempre prevalece.",
+                  "falas": [
+                    {
+                      "q": "a6zmrosalvo",
+                      "e": "bravo",
+                      "t": "Sempre é palavra perigosa. Divirjo."
+                    }
+                  ],
+                  "endurece": true
+                },
+                {
+                  "t": "Sim, até que o MP os apresente.",
+                  "falas": [
+                    {
+                      "q": "a6zmrosalvo",
+                      "e": "normal",
+                      "t": "Decidir adiando não é decidir."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "q": "a6zmbenicio",
+              "preocupacao": "O contraditório permite decidir contra a defesa com fato oculto?",
+              "falas": [
+                {
+                  "q": "a6zmbenicio",
+                  "e": "pensativo",
+                  "t": "Sou garantista, e por isso pergunto: a assistência está pedindo a quebra do contraditório do Senador com um pedido surpresa?"
+                }
+              ],
+              "pergunta": "O pedido da assistência respeita o contraditório?",
+              "argumentos": [
+                {
+                  "t": "Sim: a defesa do Senador foi ouvida em plenário, tem recurso e o mandado será específico, com controle posterior da Corte.",
+                  "falas": [
+                    {
+                      "q": "a6zmbenicio",
+                      "e": "normal",
+                      "t": "Contraditório preservado. Acompanho."
+                    }
+                  ],
+                  "certa": true,
+                  "fundamentos": [
+                    {
+                      "chave": "CF#art-5/inc-lv",
+                      "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla"
+                    }
+                  ]
+                },
+                {
+                  "t": "Não, e por isso o pedido deve ser arquivado.",
+                  "falas": [
+                    {
+                      "q": "a6zmbenicio",
+                      "e": "bravo",
+                      "t": "Se não há violação, o pedido não se arquiva por isso."
+                    }
+                  ],
+                  "endurece": true
+                },
+                {
+                  "t": "O contraditório não vale em medida investigativa.",
+                  "falas": [
+                    {
+                      "q": "a6zmbenicio",
+                      "e": "normal",
+                      "t": "Vale, ao menos de forma diferida. Não posso aceitar isso."
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "acerto": [
+            {
+              "q": "a6helga",
+              "e": "normal",
+              "t": "Seis votos. Mantida a busca, nos termos do voto da relatora. Registre-se.",
+              "fx": "martelo"
+            },
+            {
+              "q": "a6yhugo",
+              "e": "bravo",
+              "t": "A defesa recorrerá."
+            },
+            {
+              "q": "narrador",
+              "t": "Na galeria, Teresa abaixa a cabeça. Quando levanta, está com os olhos molhados e sem defesa nenhuma."
+            }
+          ],
+          "proxima": "c11"
+        },
+        "c11": {
+          "tipo": "analisar",
+          "local": "escritorio",
+          "proxima": "c12",
+          "falas": [
+            {
+              "q": "dani",
+              "e": "nervoso",
+              "t": "Doutor(a), o sistema devolveu o registro do cofre. E chegou uma mensagem anônima com um «print» da Teresa. Veja o que serve."
+            }
+          ],
+          "pergunta": "Quais destas peças não resistem a um exame e devem ser descartadas?",
+          "provas": [
+            "logcofre",
+            "telefonia",
+            "print"
+          ],
+          "falsas": [
+            "print"
+          ],
+          "dica": [
+            "Uma das peças chegou sem origem e com horário impossível.",
+            "Os dois registros oficiais não mentem."
+          ],
+          "acerto": [
+            {
+              "q": "voce",
+              "e": "confiante",
+              "t": "A conversa de Teresa com o Senador tem relógio de 25h e é foto de outra tela. Quem enviou queria me ver acusando-a com papel falso. Os registros oficiais bastam."
+            },
+            {
+              "q": "dani",
+              "e": "pensativo",
+              "t": "Cofre: a credencial dela às 21h47. Telefonia: oito minutos com a repórter às 21h55. Ninguém precisa inventar nada."
+            }
+          ],
+          "erro": [
+            {
+              "q": "dani",
+              "e": "nervoso",
+              "t": "Algo não bate. Procure o que não tem origem e o que tem horário impossível."
+            }
+          ]
+        },
+        "c12": {
+          "tipo": "tensao",
+          "local": "corredor",
+          "tempo": 8,
+          "padrao": 2,
+          "pergunta": "Teresa é a pessoa que você mais admirou em Brasília. Ela se aproxima. Você tem o log do cofre, o extrato e a mão ainda tremendo. O que você faz?",
+          "opcoes": [
+            {
+              "t": "Ouvir sem interromper, até o fim.",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "triste",
+                  "t": "Estou ouvindo, Teresa."
+                },
+                {
+                  "q": "a6teresa",
+                  "e": "triste",
+                  "t": "Obrigada. É mais do que eu mereço."
+                }
+              ],
+              "cred": 1,
+              "marca": "a6z_ouviu_teresa"
+            },
+            {
+              "t": "Confrontá-la na hora com o log e o extrato, diante de Clara e Helena que vêm chegando.",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "bravo",
+                  "t": "Cofre, 21h47. Telefonia, 21h55. A repórter, oito minutos. A senhora vai explicar agora?"
+                },
+                {
+                  "q": "a6teresa",
+                  "e": "triste",
+                  "t": "Eu... explico. Mas não precisava ser na frente delas."
+                }
+              ],
+              "cred": -1,
+              "marca": "a6z_expos_teresa"
+            },
+            {
+              "t": "Dizer apenas: “Fale com a Ministra Helga”, e virar as costas.",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "A senhora fala com a Ministra Helga. Eu não posso ouvir isto fora dos autos."
+                },
+                {
+                  "q": "a6teresa",
+                  "e": "triste",
+                  "t": "Eu falarei. Mas queria que o senhor(a) ouvisse primeiro."
+                }
+              ],
+              "marca": "a6z_mandou_helga"
+            }
+          ],
+          "falas": [
+            {
+              "q": "narrador",
+              "e": "nervoso",
+              "t": "Corredor dos fundos do Plenário, depois da sessão. A Subprocuradora Teresa espera encostada à parede, com o casaco no braço. Ninguém mais está por perto."
+            },
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Eu preciso dizer uma coisa, e não tenho muito tempo antes de perder a coragem."
+            }
+          ],
+          "hesitou": "Você hesitou. Teresa, com a voz quebrada, começou sozinha.",
+          "proxima": "c13"
+        },
+        "c13": {
+          "tipo": "dialogo",
+          "local": "corredor",
+          "proxima": "c14",
+          "falas": [
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Minha filha tem catorze anos. No dia em que a decisão sigilosa do delator saiu, a Júlia recebeu, na porta da escola, uma foto dela mesma dentro do ônibus escolar, tirada de dentro do ônibus."
+            },
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Depois, uma ligação. Uma voz educada: «A senhora tem acesso a informações que podem proteger a sua filha. Um nome só.» Eu disse a mim mesma que seria só uma vez."
+            },
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Eu abri a decisão, li a cláusula do regime aberto em voz alta ao telefone e disse que não sabia mais nada. Falei para a repórter porque a voz educada mandou. Hoje de manhã mandaram retirar o parecer."
+            },
+            {
+              "q": "voce",
+              "e": "normal",
+              "t": "A senhora podia ter pedido proteção à Ministra Helga no primeiro dia."
+            },
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Eu sou a Subprocuradora que manda os outros pedirem proteção. Eu não sabia pedir."
+            },
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Não vou me defender. Só queria que o senhor(a) soubesse que eu não vendi ninguém. Eu fui comprada com o medo da minha filha.",
+              "se": "a6z_ouviu_teresa"
+            },
+            {
+              "q": "narrador",
+              "t": "Helena chega ao corredor com Clara. Vê o rosto de Teresa e para a dois metros. Ninguém diz nada.",
+              "se": "a6z_expos_teresa"
+            },
+            {
+              "q": "a6teresa",
+              "e": "triste",
+              "t": "Eu vou procurar a Ministra agora. Obrigada por ouvir só o que cabia ao senhor(a).",
+              "se": "a6z_mandou_helga"
+            }
+          ]
+        },
+        "c14": {
+          "tipo": "escolha",
+          "livre": true,
+          "local": "corredor",
+          "proxima": "c15",
+          "falas": [
+            {
+              "q": "voce",
+              "e": "triste",
+              "t": "(pensando) Ela me deu o café e o chão ao mesmo tempo. E, apesar de tudo, ela é a mãe de uma menina de catorze anos."
+            }
+          ],
+          "pergunta": "O que você faz com a confissão de Teresa?",
+          "opcoes": [
+            {
+              "t": "Levar a confissão à Ministra Helga hoje, com o log e o extrato, e pedir proteção para Júlia.",
+              "marca": "a6z_levou_helga",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "A Júlia precisa de proteção hoje. A confissão é o caminho para isso, Teresa, não o contrário."
+                },
+                {
+                  "q": "a6teresa",
+                  "e": "triste",
+                  "t": "Eu vou com o(a) senhor(a)."
+                }
+              ]
+            },
+            {
+              "t": "Dar a Teresa 24 horas para se apresentar sozinha à Corregedoria, com a promessa de que você não procurará a imprensa.",
+              "marca": "a6z_deu_prazo",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "Vinte e quatro horas. Depois disso, eu mesmo(a) levo ao Corregedor."
+                },
+                {
+                  "q": "a6teresa",
+                  "e": "triste",
+                  "t": "É mais do que o Estado me ofereceu em três semanas."
+                }
+              ]
+            },
+            {
+              "t": "Pedir que ela continue no cargo e passe a repassar à assistência o que o Arquiteto lhe mandar.",
+              "marca": "a6z_usou_teresa",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "A senhora ainda tem acesso e o Arquiteto ainda acha que a tem no bolso. Isso pode ser uma arma."
+                },
+                {
+                  "q": "a6teresa",
+                  "e": "triste",
+                  "t": "Eu vou ter medo todos os dias. Mas faço, se a Júlia estiver segura."
+                }
+              ]
+            }
+          ]
+        },
+        "c15": {
+          "tipo": "dialogo",
+          "local": "casa",
+          "proxima": "c16",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Casa de Helena, à noite. O jantar que ninguém comeu. Clara mexe o chá devagar; Dani recolhe as xícaras."
+            },
+            {
+              "q": "helena",
+              "e": "pensativo",
+              "t": "Seis votos, e quase perdemos. Você sabe o que me assusta? Não é o voto virado. É que a Teresa sabia exatamente qual voto virar."
+            },
+            {
+              "q": "clara",
+              "e": "triste",
+              "t": "Ela chorou no corredor. Meu irmão diria que quem chora ainda tem consciência."
+            },
+            {
+              "q": "voce",
+              "e": "nervoso",
+              "t": "O Arquiteto não precisa de muitos aliados. Precisa de uma boa dose de medo, distribuída com cuidado."
+            },
+            {
+              "q": "dani",
+              "e": "pensativo",
+              "t": "Doutor(a), mais cedo, no corredor, um moço de paletó marrom me perguntou onde ficava a sala do escrivão do Supremo. Eu disse que não sabia."
+            },
+            {
+              "q": "voce",
+              "e": "nervoso",
+              "t": "(pensando) Um paletó marrom, de novo. Anote isso também, Dani."
+            }
+          ]
+        },
+        "c16": {
+          "tipo": "veredicto",
+          "carimbo": "VOTO VIRADO",
+          "titulo": "Seis votos, um minuto",
+          "texto": "Você garantiu a legitimidade da assistência pelo art. 271 do CPP, respondeu a cinco ministros com a lei, perdeu a Subprocuradora e uma ministra no último minuto e os recuperou pelo art. 242. A busca foi mantida. E a traição de quem lhe trouxe café ficou registrada no cofre, no extrato e no seu coração.",
+          "variantes": [
+            {
+              "se": "usou_falsa",
+              "carimbo": "VOTO VIRADO, COM RESSALVA",
+              "titulo": "O Print Anônimo",
+              "texto": "A busca foi mantida, mas você chegou a usar o print que a perícia desmente. A Corte anotou o descuido."
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

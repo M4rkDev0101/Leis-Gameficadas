@@ -443,7 +443,12 @@
     "a6tales": "testemunha",
     "a6marilda": "testemunha",
     "a6lauro": "testemunha",
-    "a6osmar": "testemunha"
+    "a6osmar": "testemunha",
+    "a6zmiolanda": "juiz",
+    "a6zmteodoro": "juiz",
+    "a6zmrosalvo": "juiz",
+    "a6zmeunice": "juiz",
+    "a6zmbenicio": "juiz"
    },
    "provas": [
     {
@@ -960,6 +965,10 @@
        "q": "voce",
        "t": "(em voz baixa) A Casa também não esquece quem monta papel velho com carimbo novo.",
        "e": "bravo"
+      },
+      {
+       "q": "narrador",
+       "t": "Ao fundo da galeria, um clarão discreto: alguém fotografa a tribuna. Quando você olha, só há um celular sendo baixado, e um paletó marrom que sai sem pressa."
       }
      ],
      "proxima": "c6"
@@ -1243,9 +1252,16 @@
      "proxima": "c11"
     },
     "c11": {
-     "tipo": "argumento",
+     "tipo": "plenario",
+     "colegiado": "stf",
      "local": "tribunal",
+     "titulo": "Plenário: a questão de ordem",
      "falas": [
+      {
+       "q": "a6helga",
+       "e": "normal",
+       "t": "Dada a divergência, submeto a questão de ordem ao Plenário. Onze ministros, maioria de seis. Cada Excelência tem uma dúvida; a assistência as responderá, uma a uma."
+      },
       {
        "q": "a6helga",
        "t": "O Dr. Ícaro invoca a unidade de processo. A assistência pede a separação. Qual a base legal para o Tribunal separar o que a defesa quer manter junto?",
@@ -1258,70 +1274,295 @@
        "fx": "protesto"
       }
      ],
-     "alvo": "Tudo o que o Deputado fez, em qualquer data, deve ser julgado pelo Supremo, porque a jurisdição de maior graduação prevalece.",
-     "pergunta": "Qual dispositivo permite ao Tribunal separar os processos quando os fatos se deram em tempos diferentes?",
-     "opcoes": [
+     "votos_fixos": {
+      "favor": 3,
+      "contra": 3
+     },
+     "ministros": [
       {
-       "t": "Art. 78, III do CPP: no concurso de jurisdições de categorias diferentes, prevalece a de maior graduação.",
-       "dispositivo": "CPP#art-78/inc-iii",
+       "q": "a6zmteodoro",
+       "preocupacao": "Só a Constituição define a competência do Supremo; extensão por lei processual é usurpação.",
        "falas": [
         {
-         "q": "helena",
-         "t": "(sussurrando) Esse é o artigo que a defesa invoca. Ele regula a atração por conexão, e mesmo havendo conexão o artigo 80 permite separar.",
-         "e": "nervoso"
-        }
-       ]
-      },
-      {
-       "t": "Art. 80 do CPP: é facultativa a separação dos processos quando as infrações tiverem sido praticadas em circunstâncias de tempo ou de lugar diferentes, ou por outro motivo relevante.",
-       "dispositivo": "CPP#art-80",
-       "falas": [
-        {
-         "q": "voce",
-         "t": "Excelência, o artigo 80 do Código de Processo Penal torna facultativa a separação quando as infrações foram praticadas em tempos diferentes. Os fatos de 2019 distam mais de três anos dos de 2023, e a separação respeita a regra constitucional de que o foro é para crime no cargo e em razão dele.",
-         "e": "confiante",
-         "fx": "protesto"
+         "q": "a6zmteodoro",
+         "e": "pensativo",
+         "t": "Doutor(a), o art. 102 é rol fechado. Se a lei processual manda este Tribunal julgar o que a Constituição não lhe deu, quem manda é quem?"
         }
        ],
-       "certa": true
-      },
-      {
-       "t": "Art. 79 do CPP: a conexão importa unidade de processo e julgamento, salvo as exceções legais, que não incluem esta hipótese.",
-       "dispositivo": "CPP#art-79",
-       "falas": [
+       "pergunta": "Qual dispositivo permite ao Tribunal separar os processos quando os fatos se deram em tempos diferentes?",
+       "argumentos": [
         {
-         "q": "helena",
-         "t": "(sussurrando) O artigo 79 reforça a unidade e lista as exceções, sem tratar de tempo diferente. Quem separa por tempo é o artigo 80.",
-         "e": "nervoso"
+         "t": "Art. 78, III do CPP: no concurso de jurisdições de categorias diferentes, prevalece a de maior graduação.",
+         "falas": [
+          {
+           "q": "helena",
+           "t": "(sussurrando) Esse é o artigo que a defesa invoca. Ele regula a atração por conexão, e mesmo havendo conexão o artigo 80 permite separar.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "Art. 80 do CPP: é facultativa a separação dos processos quando as infrações tiverem sido praticadas em circunstâncias de tempo ou de lugar diferentes, ou por outro motivo relevante.",
+         "falas": [
+          {
+           "q": "voce",
+           "t": "Excelência, o artigo 80 do Código de Processo Penal torna facultativa a separação quando as infrações foram praticadas em tempos diferentes. Os fatos de 2019 distam mais de três anos dos de 2023, e a separação respeita a regra constitucional de que o foro é para crime no cargo e em razão dele.",
+           "e": "confiante",
+           "fx": "protesto"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-80",
+           "trecho": "Será facultativa a separação dos processos quando as infrações tiverem sido praticadas em circunstâncias de tempo ou de"
+          }
+         ]
+        },
+        {
+         "t": "Art. 79 do CPP: a conexão importa unidade de processo e julgamento, salvo as exceções legais, que não incluem esta hipótese.",
+         "falas": [
+          {
+           "q": "helena",
+           "t": "(sussurrando) O artigo 79 reforça a unidade e lista as exceções, sem tratar de tempo diferente. Quem separa por tempo é o artigo 80.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "Art. 53, § 1º da CF: obriga o Supremo a julgar tudo que envolva o parlamentar, pelo simples fato de ele ser deputado.",
+         "falas": [
+          {
+           "q": "a6helga",
+           "t": "Doutor(a), o artigo 53, § 1º delimita o foro, ele não o amplia. A Questão de Ordem da AP 937 já decidiu que ele alcança os crimes cometidos no cargo e em razão dele, e não tudo o que o parlamentar fez na vida.",
+           "e": "bravo"
+          }
+         ],
+         "endurece": false
         }
        ]
       },
       {
-       "t": "Art. 53, § 1º da CF: obriga o Supremo a julgar tudo que envolva o parlamentar, pelo simples fato de ele ser deputado.",
-       "dispositivo": "CF#art-53/par-1",
+       "q": "a6zmiolanda",
+       "preocupacao": "O foro é exceção, e o Tribunal já fixou até onde vai (a Questão de Ordem da AP 937).",
        "falas": [
         {
-         "q": "a6helga",
-         "t": "Doutor(a), o artigo 53, § 1º delimita o foro, ele não o amplia. A Questão de Ordem da AP 937 já decidiu que ele alcança os crimes cometidos no cargo e em razão dele, e não tudo o que o parlamentar fez na vida.",
-         "e": "bravo"
+         "q": "a6zmiolanda",
+         "e": "pensativo",
+         "t": "Antes de separar, preciso saber se o precedente que esta Corte firmou sobre o foro alcança fatos anteriores ao mandato."
+        }
+       ],
+       "pergunta": "O que o precedente do foro (AP 937) permite concluir sobre os fatos de 2019?",
+       "argumentos": [
+        {
+         "t": "O foro vale só para crimes cometidos durante o exercício do cargo e em razão dele: fatos de 2019, de secretário municipal, não têm foro no Supremo.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "Precedente é para ser aplicado, não relido. Acompanho a assistência."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-102/inc-i/ali-b",
+           "trecho": "nas infrações penais comuns, o Presidente da República, o Vice-Presidente, os membros do Congresso Nacional, seus"
+          }
+         ]
+        },
+        {
+         "t": "Qualquer crime do parlamentar fica no Supremo enquanto durar o mandato, porque a prerrogativa é da pessoa.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "bravo",
+           "t": "A prerrogativa é do cargo, doutor(a), não da pessoa. O precedente diz o contrário."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "O foro acompanha o político por toda a vida, mesmo para fatos anteriores à diplomação.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "Isso faria do Tribunal juízo universal de ex-prefeitos. Não é o que o precedente diz."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmrosalvo",
+       "preocupacao": "Segurança jurídica: o que a Corte já instruiu não pode virar pó.",
+       "falas": [
+        {
+         "q": "a6zmrosalvo",
+         "e": "pensativo",
+         "t": "A instrução dos fatos de 2019 já avançou aqui. Se mandarmos para a primeira instância, tudo cai? Preocupa-me quem confiou nos atos praticados."
+        }
+       ],
+       "pergunta": "Que efeito tem a declaração de incompetência sobre os atos já praticados?",
+       "argumentos": [
+        {
+         "t": "A incompetência anula só os atos decisórios; os atos de instrução podem ser aproveitados pelo juízo competente, com remessa dos autos.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "A modulação já está na lei: anulam-se as decisões, aproveita-se a prova. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-567",
+           "trecho": "A incompetência do juízo anula somente os atos decisórios, devendo o processo, quando for declarada a nulidade, ser"
+          }
+         ]
+        },
+        {
+         "t": "Anula-se tudo desde a denúncia e recomeça-se do zero.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "bravo",
+           "t": "Anulação total, sem prejuízo demonstrado, é o contrário de segurança jurídica."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Nada se anula e a instrução feita basta: o Supremo fica com o caso inteiro.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Então voltamos ao problema inicial: o Tribunal julgando o que não é seu."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmeunice",
+       "preocupacao": "O precedente não pode virar fábrica de desmembramentos.",
+       "falas": [
+        {
+         "q": "a6zmeunice",
+         "e": "pensativo",
+         "t": "Doutor(a), há trezentos inquéritos esperando neste Tribunal. Se separarmos aqui, amanhã todo réu pede para ser separado?"
+        }
+       ],
+       "pergunta": "Por que o desmembramento deste caso não vira regra geral?",
+       "argumentos": [
+        {
+         "t": "Porque a separação é facultativa e depende de circunstâncias concretas (tempo diferente, número de acusados): aqui há mais de três anos entre os fatos e a mudança de cargo.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "normal",
+           "t": "Critério concreto, não regra. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-80",
+           "trecho": "Será facultativa a separação dos processos quando as infrações tiverem sido praticadas em circunstâncias de tempo ou de"
+          }
+         ]
+        },
+        {
+         "t": "Porque a lei proíbe qualquer outro desmembramento.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "bravo",
+           "t": "A lei diz “facultativa”, doutor(a). Releia."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Porque o Tribunal escolhe quando quer, sem critério.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "normal",
+           "t": "Discricionariedade sem critério é arbítrio. Não me convence."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmbenicio",
+       "preocupacao": "Juiz natural: ninguém é julgado por quem a lei não designou.",
+       "falas": [
+        {
+         "q": "a6zmbenicio",
+         "e": "pensativo",
+         "t": "A defesa diz que separar os processos tira do réu o seu juiz natural. Separar não é escolher o juiz?"
+        }
+       ],
+       "pergunta": "O desmembramento viola o juiz natural?",
+       "argumentos": [
+        {
+         "t": "Não: juiz natural é o competente segundo a lei, e a lei de competência manda cada fato ao seu juízo; separar cumpre o juiz natural, não o escolhe.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "normal",
+           "t": "Juiz natural é o da lei, não o da conveniência. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-5/inc-liii",
+           "trecho": "ninguém será processado nem sentenciado senão pela autoridade competente"
+          }
+         ]
+        },
+        {
+         "t": "Sim, mas é um mal necessário em nome da eficiência.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "bravo",
+           "t": "Eficiência não é fundamento para violar garantia. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Não, porque em casos políticos o Tribunal pode escolher o juiz livremente.",
+         "falas": [
+          {
+           "q": "a6zmbenicio",
+           "e": "normal",
+           "t": "Em caso nenhum se escolhe juiz. Seria a negação do juiz natural."
+          }
+         ]
         }
        ]
       }
      ],
-     "dica": [
-      "Procure o dispositivo que fala em tempo ou lugar diferentes e em separação facultativa.",
-      "O artigo 80 do CPP é o que trata da separação, quando os fatos ocorrem em circunstâncias diferentes."
-     ],
      "acerto": [
       {
        "q": "a6icaro",
-       "t": "A lei diz 'facultativa', Excelência. É uma faculdade, não um dever!",
-       "e": "bravo"
+       "e": "bravo",
+       "t": "A lei diz “facultativa”, Excelência. É uma faculdade, não um dever!"
       },
       {
        "q": "a6helga",
-       "t": "Exatamente, doutor. E o Tribunal a exerce quando o processo único arrastaria uma imputação sem foro para o Supremo. Prossiga, doutor(a).",
-       "e": "normal"
+       "e": "normal",
+       "t": "Exatamente, doutor. E o Plenário a exerce quando o processo único arrastaria uma imputação sem foro para o Supremo."
       }
      ],
      "proxima": "c12"
@@ -1332,8 +1573,8 @@
      "falas": [
       {
        "q": "a6helga",
-       "t": "O Tribunal está inclinado a acolher a separação: os fatos de 2019 saem para a Justiça de primeiro grau; os de 2023 e 2024, em razão do cargo, permanecem. Encerrada a instrução do incidente. Publique-se.",
-       "e": "normal"
+       "e": "normal",
+       "t": "O Plenário acolheu a separação: os fatos de 2019 saem para a Justiça de primeiro grau; os de 2023 e 2024, em razão do cargo, permanecem. Encerrada a instrução do incidente. Publique-se."
       },
       {
        "q": "a6teresa",
@@ -1746,6 +1987,64 @@
        "e": "nervoso"
       }
      ],
+     "proxima": "c16t"
+    },
+    "c16t": {
+     "tipo": "tensao",
+     "local": "carro",
+     "tempo": 8,
+     "padrao": 1,
+     "pergunta": "O carro preto cola na sua traseira, depois recua, depois cola. Você tem um semáforo à frente e uma avenida larga. O que faz?",
+     "opcoes": [
+      {
+       "t": "Entrar no túnel e mudar de pista até perdê-lo.",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "nervoso",
+         "t": "Duas curvas bruscas, um retorno proibido. O carro preto fica três carros para trás e some na luz do túnel. Seu coração demora a descer."
+        }
+       ],
+       "marca": "a6_despistou_carro"
+      },
+      {
+       "t": "Anotar a placa sem diminuir a velocidade e ligar para Helena.",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "A placa tem uma letra apagada. Helena atende no segundo toque: “Anota tudo e vai direto para o hotel. Amanhã registramos.”"
+        }
+       ],
+       "cred": 1,
+       "marca": "a6_anotou_placa"
+      },
+      {
+       "t": "Parar o carro e descer para encarar o motorista.",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "nervoso",
+         "t": "O carro preto passa devagar, vidros fechados. Alguém levanta um celular e fotografa o seu rosto. Depois acelera e some."
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "(pensando) Foi exatamente o que ele queria: uma foto minha, de pé, no meio da rua, às onze da noite."
+        }
+       ],
+       "cred": -1,
+       "marca": "a6_encarou_carro"
+      }
+     ],
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Você entra no carro. No retrovisor, o outro carro também. A Esplanada à noite é um corredor de luz amarela e silêncio."
+      }
+     ],
+     "hesitou": "Você hesitou. O carro preto emparelhou e ficou ao seu lado por um semáforo inteiro.",
      "proxima": "c17"
     },
     "c17": {
@@ -2788,28 +3087,114 @@
      "proxima": "c5"
     },
     "c5": {
-     "tipo": "dialogo",
+     "tipo": "audiencia",
      "local": "tribunal",
+     "titulo": "Audiência de instrução delegada",
      "falas": [
       {
        "q": "narrador",
-       "t": "Sala de audiências improvisada no gabinete do juiz instrutor. Duas mesas, um microfone e uma bandeira pequena."
-      },
+       "t": "Sala de audiências improvisada no gabinete do instrutor. Duas mesas, um microfone e uma bandeira pequena. A relatora delegou a instrução (Lei 8.038/90, art. 9º, § 1º), mas a ordem da sala é sua: ninguém fala sem a palavra concedida."
+      }
+     ],
+     "linhas": [
       {
        "q": "a6icaro",
-       "t": "Doutor(a), a defesa requer o imediato desentranhamento do 'laudo contábil', peça anônima, sem perito e sem contraditório. E, em sendo assim, a rejeição de toda a denúncia, que se sustenta nele.",
        "e": "bravo",
-       "fx": "protesto"
+       "t": "Doutor(a), a defesa requer o imediato desentranhamento do “laudo contábil”, peça anônima, sem perito e sem contraditório."
       },
       {
        "q": "a6teresa",
-       "t": "A denúncia não se sustenta no laudo, Excelência. Se o Tribunal quiser desentranhar uma peça sem assinatura, que desentranhe. O Ministério Público não pediu esse laudo.",
-       "e": "bravo"
+       "e": "bravo",
+       "t": "A denúncia não se sustenta no laudo, Excelência. Se o Tribunal quiser desentranhar uma peça sem assinatura, que desentranhe. O Ministério Público não a defende."
       },
       {
        "q": "a6nery",
-       "t": "Excelência, o laudo foi elaborado pelo setor técnico da Polícia Federal e traduz o consenso da equipe.",
-       "e": "nervoso"
+       "e": "nervoso",
+       "t": "Excelência, com a sua licença: o laudo é rascunho, sim, e o Dr. Ícaro sabe disso, porque recebeu uma cópia no gabinete do Deputado!",
+       "incidente": {
+        "pergunta": "O delegado fala sem a palavra e joga uma acusação no ar. Como o juízo intervém?",
+        "chamada": "Delegado, a palavra não foi concedida.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-251",
+          "trecho": "Ao juiz incumbirá prover à regularidade do processo e manter a ordem no curso dos respectivos atos, podendo, para tal"
+         },
+         {
+          "chave": "CPP#art-794",
+          "trecho": "A polícia das audiências e das sessões compete aos respectivos juízes ou ao presidente do tribunal, câmara, ou turma"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Quem preside responde pelo que acontece em audiência, Excelência. O delegado falou sem a palavra."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar o delegado falar: a informação pode ser útil.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) O delegado não é parte nem foi inquirido, Excelência. E a informação é uma acusação solta, sem prova. A ordem é sua (arts. 251 e 794)."
+           }
+          ]
+         },
+         {
+          "t": "Cassar a palavra do delegado e dizer que, se tiver informação, a preste por escrito, nos autos, ao Ministério Público.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Delegado, a palavra não foi concedida. Quem não é parte nem testemunha inquirida não fala em audiência. O que o senhor sabe, diga por escrito, nos autos, ao Ministério Público.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a6nery",
+            "e": "nervoso",
+            "t": "Foi só uma colaboração, Excelência."
+           },
+           {
+            "q": "a6icaro",
+            "e": "confiante",
+            "t": "O que ele disse consta da ata, Excelência?"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Mandar prender o delegado por desacato.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Desproporcional, Excelência. Basta cassar a palavra e registrar. Prisão por interrupção só em desobediência persistente."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a6icaro",
+       "e": "confiante",
+       "t": "Registro, então, que o delegado Nery foi o primeiro a dizer, em audiência, que o laudo é rascunho."
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Nada de irregular nesta fala. Interromper a parte sem motivo cerceia a defesa ou a acusação."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Está na ata. Passo a decidir o pedido de desentranhamento."
       }
      ],
      "proxima": "c6"
@@ -3672,12 +4057,55 @@
       }
      ],
      "livre": true,
+     "proxima": "c17c"
+    },
+    "c17c": {
+     "tipo": "celular",
+     "contato": "Min. Ataulfo Pessoa",
+     "status": "online",
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Prezado(a) colega, boa noite. Li o seu relatório. Elegante.",
+       "se": "a6_almoco_ataulfo"
+      },
+      {
+       "de": "ele",
+       "t": "Compreendo a sua reserva em almoçar. Fica o convite em aberto, como a minha porta.",
+       "se": "a6_recusou_ataulfo"
+      },
+      {
+       "de": "ele",
+       "t": "Um conselho de quem conhece a Casa: cuidado com quem o elogia demais. Inclusive eu."
+      },
+      {
+       "de": "ele",
+       "t": "Boa noite. E durma com a porta trancada. Brasília é uma cidade de portas abertas demais."
+      }
+     ],
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O celular vibra enquanto você junta os papéis. Quatro mensagens do Ministro, uma a uma, sem pressa."
+      }
+     ],
+     "depois": [
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(pensando) Cordial demais para ser inofensivo. “Durma com a porta trancada.” Isso é conselho ou aviso?"
+      }
+     ],
      "proxima": "c18"
     },
     "c18": {
      "tipo": "dialogo",
      "local": "gabinete",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "No elevador do anexo, de costas, um homem de paletó marrom e crachá de escrivão carrega uma pasta que você conhece. Parece o Bento Carvalho, da Vara Criminal de lá. Impossível: ele deveria estar a mil quilômetros. As portas se fecham antes de você ter certeza."
+      },
       {
        "q": "a6helga",
        "t": "A Turma recebeu a denúncia só pela corrupção passiva, na linha do seu relatório. A lavagem foi rejeitada. A Polícia Federal abriu procedimento sobre o laudo. Bom trabalho.",
@@ -4152,7 +4580,12 @@
     "a6vitor": "testemunha",
     "a6lidia": "testemunha",
     "a6anselmo": "testemunha",
-    "dani": "escritorio"
+    "dani": "escritorio",
+    "a6zmiolanda": "juiz",
+    "a6zmteodoro": "juiz",
+    "a6zmrosalvo": "juiz",
+    "a6zmeunice": "juiz",
+    "a6zmbenicio": "juiz"
    },
    "provas": [
     {
@@ -4753,6 +5186,73 @@
      "requer": [
       "oferta"
      ],
+     "proxima": "c6g"
+    },
+    "c6g": {
+     "tipo": "tensao",
+     "local": "garagem",
+     "tempo": 7,
+     "padrao": 0,
+     "pergunta": "Seu carro não está na oficina. Nery sabe disso, e sabe onde você estaciona. A porta do carro dele está aberta. O que faz?",
+     "opcoes": [
+      {
+       "t": "Recusar com educação e esperar o elevador, de costas para a parede.",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Obrigado(a), delegado. Prefiro o elevador."
+        },
+        {
+         "q": "a6nery",
+         "e": "feliz",
+         "t": "Como quiser. Brasília é perigosa para quem anda a pé."
+        }
+       ],
+       "cred": 1,
+       "marca": "a6_recusou_carona_nery"
+      },
+      {
+       "t": "Aceitar a carona para ouvir o que ele quer.",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "nervoso",
+         "t": "O carro de Nery cheira a lavanda. Ele não diz uma palavra sobre o caso, e descreve a rua onde você mora. “Bonita, a sua rua.”"
+        }
+       ],
+       "cred": -1,
+       "marca": "a6_aceitou_carona_nery"
+      },
+      {
+       "t": "Gravar a conversa no celular, discretamente, e responder com perguntas.",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Que oficina, delegado? O senhor sabe de que oficina eu preciso?"
+        },
+        {
+         "q": "a6nery",
+         "e": "feliz",
+         "t": "Eu sei de muita coisa, Excelência. Sou um homem informado."
+        }
+       ],
+       "marca": "a6_gravou_nery"
+      }
+     ],
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Subsolo da garagem do Anexo. Cheiro de óleo, luz fluorescente, um elevador que demora. Passos atrás de você."
+      },
+      {
+       "q": "a6nery",
+       "e": "feliz",
+       "t": "Doutor(a)! Que coincidência. Posso lhe dar uma carona? Ouvi dizer que o seu carro está na oficina."
+      }
+     ],
      "proxima": "c7"
     },
     "c7": {
@@ -4819,9 +5319,16 @@
      "proxima": "c8"
     },
     "c8": {
-     "tipo": "argumento",
+     "tipo": "plenario",
+     "colegiado": "stf",
      "local": "tribunal",
+     "titulo": "Plenário: a gravação",
      "falas": [
+      {
+       "q": "a6ataulfo",
+       "e": "normal",
+       "t": "A questão é grave e envolve a sala de uma Ministra desta Corte. Submeto-a ao Plenário."
+      },
       {
        "q": "a6nery",
        "t": "Excelência, ainda que o Tribunal não reconheça a autorização, a gravação já existe. A prova é boa porque a Polícia Federal agiu no interesse público e o conteúdo é relevante.",
@@ -4834,70 +5341,290 @@
        "e": "normal"
       }
      ],
-     "alvo": "A gravação pode ser usada no inquérito porque foi feita no interesse público e é relevante.",
-     "pergunta": "Qual dispositivo constitucional torna inadmissível, no processo, a prova obtida por meio ilícito?",
-     "opcoes": [
+     "votos_fixos": {
+      "favor": 3,
+      "contra": 3
+     },
+     "ministros": [
       {
-       "t": "Art. 5º, LVI da CF: são inadmissíveis, no processo, as provas obtidas por meios ilícitos.",
-       "dispositivo": "CF#art-5/inc-lvi",
+       "q": "a6zmbenicio",
+       "preocupacao": "Prova obtida por meio ilícito não entra no processo, ainda que o fim seja nobre.",
        "falas": [
         {
-         "q": "voce",
-         "t": "Excelência, o artigo 5º, LVI da Constituição é categórico: são inadmissíveis, no processo, as provas obtidas por meios ilícitos. Interesse público e relevância não legitimam a escuta sem ordem judicial. A prova e tudo que dela derivou saem dos autos.",
-         "e": "confiante",
-         "fx": "protesto"
+         "q": "a6zmbenicio",
+         "e": "pensativo",
+         "t": "Delegado, o interesse público é argumento de acusação. Qual é o fundamento constitucional para a inadmissibilidade, doutor(a)?"
         }
        ],
-       "certa": true
-      },
-      {
-       "t": "Art. 5º, XII da CF: é inviolável o sigilo das comunicações, salvo ordem judicial.",
-       "dispositivo": "CF#art-5/inc-xii",
-       "falas": [
+       "pergunta": "Qual dispositivo constitucional torna inadmissível, no processo, a prova obtida por meio ilícito?",
+       "argumentos": [
         {
-         "q": "helena",
-         "t": "(sussurrando) Esse trata do sigilo das comunicações, e é um fundamento aplicável, mas a pergunta é sobre a inadmissibilidade da prova ilícita no processo. Esse é o inciso LVI.",
-         "e": "nervoso"
+         "t": "Art. 5º, LVI da CF: são inadmissíveis, no processo, as provas obtidas por meios ilícitos.",
+         "falas": [
+          {
+           "q": "voce",
+           "t": "Excelência, o artigo 5º, LVI da Constituição é categórico: são inadmissíveis, no processo, as provas obtidas por meios ilícitos. Interesse público e relevância não legitimam a escuta sem ordem judicial. A prova e tudo que dela derivou saem dos autos.",
+           "e": "confiante",
+           "fx": "protesto"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-5/inc-lvi",
+           "trecho": "são inadmissíveis, no processo, as provas obtidas por meios ilícitos"
+          }
+         ]
+        },
+        {
+         "t": "Art. 5º, XII da CF: é inviolável o sigilo das comunicações, salvo ordem judicial.",
+         "falas": [
+          {
+           "q": "helena",
+           "t": "(sussurrando) Esse trata do sigilo das comunicações, e é um fundamento aplicável, mas a pergunta é sobre a inadmissibilidade da prova ilícita no processo. Esse é o inciso LVI.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "Art. 5º, X da CF: são invioláveis a intimidade e a vida privada.",
+         "falas": [
+          {
+           "q": "helena",
+           "t": "(sussurrando) A intimidade é o bem violado. A regra de exclusão da prova é outro inciso.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "Art. 5º, LXV da CF: a prisão ilegal será imediatamente relaxada.",
+         "falas": [
+          {
+           "q": "a6ataulfo",
+           "t": "Doutor(a), isso trata da prisão. A pergunta é sobre a prova.",
+           "e": "pensativo"
+          }
+         ],
+         "endurece": false
         }
        ]
       },
       {
-       "t": "Art. 5º, X da CF: são invioláveis a intimidade e a vida privada.",
-       "dispositivo": "CF#art-5/inc-x",
+       "q": "a6zmteodoro",
+       "preocupacao": "Quem pode autorizar escuta em ambiente de autoridade com foro: só o juízo competente.",
        "falas": [
         {
-         "q": "helena",
-         "t": "(sussurrando) A intimidade é o bem violado. A regra de exclusão da prova é outro inciso.",
-         "e": "nervoso"
+         "q": "a6zmteodoro",
+         "e": "pensativo",
+         "t": "Estamos falando da sala de uma Ministra. Se não há ordem do relator competente, isso nem é investigação: é arbítrio. Quem autoriza?"
+        }
+       ],
+       "pergunta": "Quem pode autorizar a interceptação envolvendo autoridade com foro no Supremo?",
+       "argumentos": [
+        {
+         "t": "O relator do Supremo, juízo competente, por decisão fundamentada; a Polícia não se autoriza.",
+         "falas": [
+          {
+           "q": "a6zmteodoro",
+           "e": "normal",
+           "t": "Sem ordem do juízo competente, escuta é ilicitude. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-102/inc-i/ali-b",
+           "trecho": "nas infrações penais comuns, o Presidente da República, o Vice-Presidente, os membros do Congresso Nacional, seus"
+          }
+         ]
+        },
+        {
+         "t": "O delegado, em caso de urgência, desde que depois comunique ao Tribunal.",
+         "falas": [
+          {
+           "q": "a6zmteodoro",
+           "e": "bravo",
+           "t": "Urgência não cria competência. Não é o que a Constituição diz."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Qualquer juiz de primeira instância da capital.",
+         "falas": [
+          {
+           "q": "a6zmteodoro",
+           "e": "normal",
+           "t": "Investigação sobre ministra é do Supremo. A regra de competência não é facultativa."
+          }
+         ]
         }
        ]
       },
       {
-       "t": "Art. 5º, LXV da CF: a prisão ilegal será imediatamente relaxada.",
-       "dispositivo": "CF#art-5/inc-lxv",
+       "q": "a6zmiolanda",
+       "preocupacao": "As provas derivadas da escuta ilícita também caem, salvo fonte independente.",
        "falas": [
         {
-         "q": "a6ataulfo",
-         "t": "Doutor(a), isso trata da prisão. A pergunta é sobre a prova.",
-         "e": "pensativo"
+         "q": "a6zmiolanda",
+         "e": "pensativo",
+         "t": "O ofício 14/22 autorizava interceptação telefônica. A gravação ambiental é outra coisa. E o que dela derivou?"
+        }
+       ],
+       "pergunta": "O que acontece com as provas derivadas da gravação ilícita?",
+       "argumentos": [
+        {
+         "t": "São também inadmissíveis, salvo se não houver nexo de causalidade ou se puderem ser obtidas por fonte independente.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "A teoria é a da lei. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-157/par-1",
+           "trecho": "São também inadmissíveis as provas derivadas das ilícitas, salvo quando não evidenciado o nexo de causalidade entre"
+          }
+         ]
+        },
+        {
+         "t": "Valem todas, porque a ilicitude de um ato nunca contamina outro.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "bravo",
+           "t": "O § 1º do art. 157 diz o contrário, doutor(a)."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Caem todas, sempre, sem exceção, mesmo as de fonte independente.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "A lei prevê a exceção da fonte independente. Falta-lhe leitura do § 2º."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmeunice",
+       "preocupacao": "Se o interesse público dispensasse ordem judicial, toda polícia grava quem quiser.",
+       "falas": [
+        {
+         "q": "a6zmeunice",
+         "e": "pensativo",
+         "t": "A Polícia Federal diz que agiu no interesse público. Se o Tribunal aceitar, qual é o limite? Amanhã grampeiam o Plenário."
+        }
+       ],
+       "pergunta": "O interesse público dispensa a ordem judicial para quebrar o sigilo de comunicações?",
+       "argumentos": [
+        {
+         "t": "Não: o sigilo das comunicações só cede por ordem judicial, nas hipóteses e na forma da lei; interesse público não é exceção constitucional.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "normal",
+           "t": "Sem limite, a Casa vira vitrine. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-5/inc-xii",
+           "trecho": "é inviolável o sigilo da correspondência e das comunicações telegráficas, de dados e das comunicações telefônicas"
+          }
+         ]
+        },
+        {
+         "t": "Sim, desde que a Polícia comunique o juiz em vinte e quatro horas.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "bravo",
+           "t": "Comunicação posterior não supre a ordem prévia. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Sim, quando a prova for relevante para um inquérito grave.",
+         "falas": [
+          {
+           "q": "a6zmeunice",
+           "e": "normal",
+           "t": "Gravidade do crime não é autorização para violar a Constituição."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmrosalvo",
+       "preocupacao": "Efeito prático: o que se faz com a gravação e com o inquérito?",
+       "falas": [
+        {
+         "q": "a6zmrosalvo",
+         "e": "pensativo",
+         "t": "Admitida a ilicitude, o que se faz com a gravação? Apaga-se? Guarda-se? Quem a apaga?"
+        }
+       ],
+       "pergunta": "Qual o destino da prova declarada ilícita?",
+       "argumentos": [
+        {
+         "t": "Desentranhamento do processo e, preclusa a decisão, inutilização por decisão judicial.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Desentranha-se e, no tempo certo, inutiliza-se. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-157",
+           "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas, assim entendidas as obtidas em violação"
+          }
+         ]
+        },
+        {
+         "t": "Guarda-se em sigilo na Polícia, para o caso de um dia a prova ser reabilitada.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "bravo",
+           "t": "Guardar prova ilícita é uma forma de aproveitá-la. Não."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Entrega-se à defesa, e ela decide se usa.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "A defesa não é depositária de prova ilícita. Não é o que a lei diz."
+          }
+         ]
         }
        ]
       }
      ],
-     "dica": [
-      "O inciso que fala em 'provas obtidas por meios ilícitos' é o que as torna inadmissíveis.",
-      "Artigo 5º, LVI da Constituição."
-     ],
      "acerto": [
       {
-       "q": "a6nery",
-       "t": "...A Polícia Federal discorda, Excelência.",
-       "e": "nervoso"
-      },
-      {
        "q": "a6ataulfo",
-       "t": "Registre-se a divergência. Mas o texto constitucional não deixa muita margem, delegado.",
-       "e": "pensativo"
+       "e": "pensativo",
+       "t": "Registre-se a divergência. Mas o texto constitucional não deixa muita margem, delegado."
       }
      ],
      "proxima": "c9"
@@ -5424,6 +6151,16 @@
        "q": "voce",
        "t": "Então tudo que combinamos na sala das partes, desde o primeiro dia, foi ouvido. A carta, o Rafael, a Clara... a próxima vez que alguém quiser me ouvir, vai ter que pedir.",
        "e": "bravo"
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Doutor(a), deixei o seu token de assinatura digital comigo, guardado, para agilizar as petições de amanhã. O senhor(a) nem precisa abrir o notebook."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Obrigado(a), Dani. Guarde bem."
       }
      ],
      "proxima": "c18"
@@ -6166,6 +6903,175 @@
        "q": "a6rui",
        "t": "Registre-se que a vontade do meu cliente foi respeitada.",
        "e": "nervoso"
+      }
+     ],
+     "proxima": "c3a"
+    },
+    "c3a": {
+     "tipo": "audiencia",
+     "local": "gabinete",
+     "titulo": "Oitiva sigilosa do colaborador",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Gabinete fechado. Presentes: o juiz instrutor, o colaborador, o defensor e a Subprocuradora. A oitiva verifica regularidade, legalidade e voluntariedade do acordo (Lei 12.850, art. 4º, § 7º). O juiz não negocia: confere."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a6adalberto",
+       "e": "nervoso",
+       "t": "Excelência, o termo diz que fui bem tratado. Eu fui, durante seis dias. Mas o termo não diz o que me disseram na porta da Polícia."
+      },
+      {
+       "q": "a6teresa",
+       "e": "normal",
+       "t": "Dr. Adalberto, o senhor não foi coagido por ninguém na negociação, correto?",
+       "incidente": {
+        "pergunta": "A pergunta da Subprocuradora traz a resposta embutida. Como o juízo intervém?",
+        "chamada": "Um instante, Dra. Teresa.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a"
+         },
+         {
+          "chave": "LORC#art-4/par-7",
+          "trecho": "Realizado o acordo na forma do § 6º deste artigo, serão remetidos ao juiz, para análise, o respectivo termo, as"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) A pergunta já traz a resposta, Excelência. Em oitiva sigilosa, ainda mais: a voluntariedade é do juiz."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar a pergunta: é a Subprocuradora, e ela é aliada.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Aliada não é critério, Excelência. A pergunta induz a resposta (art. 212) e a voluntariedade é matéria do juiz."
+           }
+          ]
+         },
+         {
+          "t": "Indeferir por indutiva e reformular o ponto como pergunta aberta: “Como foi a negociação?”",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Indeferida a pergunta, Dra. Teresa: induz a resposta. Peço ao colaborador que descreva livremente como foi a negociação.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a6teresa",
+            "e": "normal",
+            "t": "Compreendo, Excelência."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Responder eu mesmo(a) pelo colaborador: “Ele disse que não foi coagido.”",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Isso é falar pelo depoente, e ainda por cima na direção da acusação (art. 3º-A). Aqui o juiz verifica; não afirma."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a6adalberto",
+       "e": "triste",
+       "t": "Disseram que, se eu falasse do Arquiteto, eu dormiria de lado na terra. Eu sei que não foi a Polícia. Mas eu preciso ouvir isso do senhor(a)."
+      },
+      {
+       "q": "a6nery",
+       "e": "feliz",
+       "t": "Excelência, pelo bem do sigilo, eu poderia ficar na sala, ao fundo, apenas para auxiliar o MP.",
+       "incidente": {
+        "pergunta": "O delegado que negociou o acordo quer assistir à oitiva sigilosa. O que o juízo decide?",
+        "chamada": "Delegado, um momento.",
+        "fundamentos": [
+         {
+          "chave": "LORC#art-4/par-7",
+          "trecho": "Realizado o acordo na forma do § 6º deste artigo, serão remetidos ao juiz, para análise, o respectivo termo, as"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Ele pediu para ficar, Excelência, e a oitiva é sigilosa. Alguém precisa decidir."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Permitir: ele auxilia o MP e conhece os fatos.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) A oitiva é sigilosa, do juiz com o colaborador e o defensor (§ 7º). Quem negociou o acordo não deve estar na sala."
+           }
+          ]
+         },
+         {
+          "t": "Indeferir: a oitiva sigilosa é do juiz com o colaborador e o defensor; o delegado se retira.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Indeferido. A oitiva é sigilosa, e quem negociou o acordo não deve ouvir o colaborador quando este fala sobre a voluntariedade. O senhor se retira, delegado.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a6nery",
+            "e": "feliz",
+            "t": "Naturalmente, Excelência. A Polícia respeita a decisão."
+           },
+           {
+            "q": "narrador",
+            "e": "nervoso",
+            "t": "Ele sai, sorrindo. O sorriso não chega aos olhos."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Permitir, mas só se ele ficar calado.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Presença já é interferência na voluntariedade de quem tem medo. Melhor que ele se retire."
+           }
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Nada de irregular nesta fala. Em oitiva sigilosa, interromper o colaborador à toa é pressioná-lo, e isso fere a voluntariedade que você veio verificar."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Registro: a oitiva foi conduzida sem a presença de quem negociou o acordo. Prosseguimos com a verificação documental."
       }
      ],
      "proxima": "c4"
@@ -7226,7 +8132,7 @@
       },
       {
        "q": "narrador",
-       "t": "Fim do dia. A decisão está lacrada e trancada num cofre do gabinete. Só quatro pessoas a viram."
+       "t": "Fim do dia. A decisão está lacrada e trancada num cofre do gabinete. Só quatro pessoas a viram: a Ministra Helga, Dani, a Subprocuradora Teresa e você."
       },
       {
        "q": "dani",
@@ -7247,6 +8153,84 @@
        "q": "voce",
        "t": "Quem vazou sabia exatamente o que procurar. Alguém tem a chave do cofre... ou do nosso silêncio.",
        "e": "bravo"
+      }
+     ],
+     "proxima": "c17c"
+    },
+    "c17c": {
+     "tipo": "celular",
+     "contato": "Vera Lins · Repórter",
+     "status": "online",
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Boa noite, doutor(a). Vera Lins, do Jornal do Planalto."
+      },
+      {
+       "de": "ele",
+       "t": "Tenho a informação de que o STF devolveu hoje a delação do Arquiteto às partes. Confirma?"
+      },
+      {
+       "de": "ele",
+       "t": "Não preciso de nome. Preciso só de um “sem comentários” ou de um “vá em frente”."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Não responder e comunicar o vazamento à Ministra Helga.",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Dani, anote a hora e o número. A Ministra Helga precisa saber hoje que a decisão sigilosa saiu do cofre."
+        }
+       ],
+       "marca": "a6_comunicou_vazamento",
+       "cred": 1,
+       "resposta": false
+      },
+      {
+       "t": "Responder: “Sem comentários.”",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "(pensando) “Sem comentários” confirma pelo silêncio. Eu sabia disso e respondi mesmo assim. Cansaço."
+        }
+       ],
+       "marca": "a6_sem_comentarios",
+       "cred": -1,
+       "envia": "Sem comentários.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Obrigada. Isso, para mim, já é uma resposta."
+        }
+       ]
+      },
+      {
+       "t": "Perguntar: “Quem lhe contou?”",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "(pensando) A cláusula do regime aberto só constava da decisão lacrada. Quem a conhece, vazou. Quatro pessoas..."
+        }
+       ],
+       "marca": "a6_perguntou_fonte",
+       "envia": "Quem lhe contou?",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Fontes da Casa. Não posso dizer mais. Mas elas sabiam da cláusula do regime aberto."
+        }
+       ]
+      }
+     ],
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O celular vibra. Número que você não conhece, perfil de jornalista."
       }
      ],
      "proxima": "c18"
@@ -7776,7 +8760,12 @@
     "a6gilson": "testemunha",
     "a6anacleto": "testemunha",
     "sofia": "escritorio",
-    "rafael": "escritorio"
+    "rafael": "escritorio",
+    "a6zmiolanda": "juiz",
+    "a6zmteodoro": "juiz",
+    "a6zmrosalvo": "juiz",
+    "a6zmeunice": "juiz",
+    "a6zmbenicio": "juiz"
    },
    "provas": [
     {
@@ -8215,9 +9204,16 @@
      "proxima": "c6"
     },
     "c6": {
-     "tipo": "argumento",
+     "tipo": "plenario",
+     "colegiado": "stf",
      "local": "tribunal",
+     "titulo": "Plenário: a coação",
      "falas": [
+      {
+       "q": "a6helga",
+       "e": "normal",
+       "t": "Dada a gravidade, submeto ao Plenário a questão da coação à testemunha. Onze ministros, maioria de seis."
+      },
       {
        "q": "voce",
        "t": "Excelência, a assistência sustenta que a testemunha foi ameaçada, e não comprada. Há três áudios íntegros, um boletim de ocorrência e um relato objetivo.",
@@ -8230,59 +9226,232 @@
        "fx": "protesto"
       }
      ],
-     "alvo": "A recusa da testemunha em depor é falso testemunho, e a assistência a protege indevidamente.",
-     "pergunta": "Qual dispositivo tipifica a conduta de quem ameaça a testemunha para que ela se cale ou minta?",
-     "opcoes": [
+     "votos_fixos": {
+      "favor": 3,
+      "contra": 4
+     },
+     "ministros": [
       {
-       "t": "Art. 344 do Código Penal: usar de violência ou grave ameaça, com o fim de favorecer interesse próprio ou alheio, contra quem funciona ou é chamado a intervir em processo.",
-       "dispositivo": "CP#art-344",
+       "q": "a6zmbenicio",
+       "preocupacao": "Presunção de inocência também protege quem acusa um parlamentar?",
        "falas": [
         {
-         "q": "voce",
-         "t": "Excelência, quem ameaça uma testemunha de morte do filho para que ela se cale comete coação no curso do processo, artigo 344. A retratação provocada por essa ameaça não é falso testemunho: é o efeito do crime. Requeiro a proteção da testemunha e a apuração do coator.",
-         "e": "confiante",
-         "fx": "protesto"
+         "q": "a6zmbenicio",
+         "e": "pensativo",
+         "t": "Doutor(a), a defesa diz que a testemunha se retratou por vontade própria. Qual o tipo penal de quem a faz calar?"
         }
        ],
-       "certa": true
-      },
-      {
-       "t": "Art. 342 do Código Penal: fazer afirmação falsa, ou negar ou calar a verdade, como testemunha, em processo judicial.",
-       "dispositivo": "CP#art-342",
-       "falas": [
+       "pergunta": "Qual dispositivo tipifica a conduta de quem ameaça a testemunha para que ela se cale ou minta?",
+       "argumentos": [
         {
-         "q": "helena",
-         "t": "(sussurrando) O artigo 342 pune a testemunha que mente. Quem ameaça a testemunha comete outro crime, o do artigo 344.",
-         "e": "nervoso"
+         "t": "Art. 344 do Código Penal: usar de violência ou grave ameaça, com o fim de favorecer interesse próprio ou alheio, contra quem funciona ou é chamado a intervir em processo.",
+         "falas": [
+          {
+           "q": "voce",
+           "t": "Excelência, quem ameaça uma testemunha de morte do filho para que ela se cale comete coação no curso do processo, artigo 344. A retratação provocada por essa ameaça não é falso testemunho: é o efeito do crime. Requeiro a proteção da testemunha e a apuração do coator.",
+           "e": "confiante",
+           "fx": "protesto"
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CP#art-344",
+           "trecho": "Usar de violência ou grave ameaça, com o fim de favorecer interesse próprio ou alheio, contra autoridade, parte, ou"
+          }
+         ]
+        },
+        {
+         "t": "Art. 342 do Código Penal: fazer afirmação falsa, ou negar ou calar a verdade, como testemunha, em processo judicial.",
+         "falas": [
+          {
+           "q": "helena",
+           "t": "(sussurrando) O artigo 342 pune a testemunha que mente. Quem ameaça a testemunha comete outro crime, o do artigo 344.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "Art. 343 do Código Penal: dar, oferecer ou prometer dinheiro ou vantagem a testemunha para que faça afirmação falsa.",
+         "falas": [
+          {
+           "q": "helena",
+           "t": "(sussurrando) Esse trata de pagar para mentir. Aqui o meio foi a ameaça, e o crime é o do artigo 344. Em outro momento, o 343 pode aparecer.",
+           "e": "nervoso"
+          }
+         ],
+         "endurece": false
+        },
+        {
+         "t": "Art. 340 do Código Penal: comunicar falsamente a ocorrência de crime.",
+         "falas": [
+          {
+           "q": "a6helga",
+           "t": "Doutor(a), a comunicação falsa de crime não se aplica. O que está em exame é a ameaça à testemunha.",
+           "e": "normal"
+          }
+         ],
+         "endurece": false
         }
        ]
       },
       {
-       "t": "Art. 343 do Código Penal: dar, oferecer ou prometer dinheiro ou vantagem a testemunha para que faça afirmação falsa.",
-       "dispositivo": "CP#art-343",
+       "q": "a6zmiolanda",
+       "preocupacao": "A retratação isenta de pena o falso testemunho, mas não a ameaça que a provocou.",
        "falas": [
         {
-         "q": "helena",
-         "t": "(sussurrando) Esse trata de pagar para mentir. Aqui o meio foi a ameaça, e o crime é o do artigo 344. Em outro momento, o 343 pode aparecer.",
-         "e": "nervoso"
+         "q": "a6zmiolanda",
+         "e": "pensativo",
+         "t": "O art. 342, § 2º, diz que o fato deixa de ser punível se o agente se retrata. A retratação dela, portanto, não a livra de nada? Ou a condena?"
+        }
+       ],
+       "pergunta": "A retratação da testemunha, provocada por ameaça, configura falso testemunho?",
+       "argumentos": [
+        {
+         "t": "Não: sob grave ameaça a vontade de calar a verdade não é livre; a retratação é efeito do crime de coação (art. 344), e o falso nem se configura.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "A vítima da coação não é autora do falso. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CP#art-344",
+           "trecho": "Usar de violência ou grave ameaça, com o fim de favorecer interesse próprio ou alheio, contra autoridade, parte, ou"
+          }
+         ]
+        },
+        {
+         "t": "Sim, e a retratação só a livra de pena se for espontânea, o que não foi o caso.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "bravo",
+           "t": "A retratação nem é o problema. O problema é o que a provocou. Não me convence."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Sim: o falso testemunho é crime de mão própria e a ameaça é irrelevante.",
+         "falas": [
+          {
+           "q": "a6zmiolanda",
+           "e": "normal",
+           "t": "Ameaça é relevantíssima. O dolo exige vontade livre."
+          }
+         ]
         }
        ]
       },
       {
-       "t": "Art. 340 do Código Penal: comunicar falsamente a ocorrência de crime.",
-       "dispositivo": "CP#art-340",
+       "q": "a6zmteodoro",
+       "preocupacao": "A competência para a coação é do Supremo?",
        "falas": [
         {
-         "q": "a6helga",
-         "t": "Doutor(a), a comunicação falsa de crime não se aplica. O que está em exame é a ameaça à testemunha.",
-         "e": "normal"
+         "q": "a6zmteodoro",
+         "e": "pensativo",
+         "t": "Doutor(a), a ameaça foi praticada por alguém que pode nem ter foro. O Supremo é competente para apurar a coação?"
+        }
+       ],
+       "pergunta": "Por que este Tribunal pode apurar a coação à testemunha?",
+       "argumentos": [
+        {
+         "t": "Por conexão com a ação penal em curso, de que a coação é meio de embaraço (a competência se determina pela conexão).",
+         "falas": [
+          {
+           "q": "a6zmteodoro",
+           "e": "normal",
+           "t": "A conexão aqui é nítida. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-76",
+           "trecho": "A competência será determinada pela conexão"
+          }
+         ]
+        },
+        {
+         "t": "Porque o Supremo julga qualquer crime que envolva testemunha de processo seu.",
+         "falas": [
+          {
+           "q": "a6zmteodoro",
+           "e": "bravo",
+           "t": "O rol do art. 102 não diz isso. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Porque a testemunha tem direito a juiz de sua escolha.",
+         "falas": [
+          {
+           "q": "a6zmteodoro",
+           "e": "normal",
+           "t": "Ninguém escolhe o juiz. Isso seria a negação da competência."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "q": "a6zmrosalvo",
+       "preocupacao": "E o áudio que a defesa juntou? O que vale uma gravação de origem anônima?",
+       "falas": [
+        {
+         "q": "a6zmrosalvo",
+         "e": "pensativo",
+         "t": "A defesa exibe um áudio em que a testemunha aceitaria dinheiro. Origem anônima. Que efeito tem sobre o que decidimos?"
+        }
+       ],
+       "pergunta": "Como tratar o áudio de origem anônima?",
+       "argumentos": [
+        {
+         "t": "Exigir cadeia de custódia: sem origem e sem preservação documentadas, o áudio não serve de base à decisão.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Prova sem origem não sustenta decisão. Acompanho."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-158a",
+           "trecho": "Considera-se cadeia de custódia o conjunto de todos os procedimentos utilizados para manter e documentar a história"
+          }
+         ]
+        },
+        {
+         "t": "Valorá-lo como indício principal, porque a defesa tem direito de apresentá-lo.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "bravo",
+           "t": "Direito de apresentar não é direito de ser acreditado. Divirjo."
+          }
+         ],
+         "endurece": true
+        },
+        {
+         "t": "Desentranhá-lo imediatamente, sem examinar nada.",
+         "falas": [
+          {
+           "q": "a6zmrosalvo",
+           "e": "normal",
+           "t": "Examinar a origem é o mínimo. Desentranhar sem exame é apressado."
+          }
+         ]
         }
        ]
       }
-     ],
-     "dica": [
-      "A conduta é ameaçar quem funciona em processo para obter vantagem.",
-      "O Código Penal tem um artigo chamado 'coação no curso do processo'."
      ],
      "acerto": [
       {
