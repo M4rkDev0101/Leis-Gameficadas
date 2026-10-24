@@ -451,7 +451,7 @@
        ]
       }
      ],
-     "proxima": "x3",
+     "proxima": "cf1",
      "local": "gabinete"
     },
     "x3": {
@@ -585,7 +585,7 @@
       "audio",
       "portaria"
      ],
-     "proxima": "x4"
+     "proxima": "dc1"
     },
     "x4": {
      "tipo": "dialogo",
@@ -660,7 +660,7 @@
        "t": "Promotor(a), isso não impede o pedido da defesa. O que afasta a exigência de representação nos crimes domésticos?"
       }
      ],
-     "proxima": "x6"
+     "proxima": "pr1"
     },
     "x6": {
      "tipo": "depoimento",
@@ -671,6 +671,11 @@
        "q": "beatriz",
        "e": "normal",
        "t": "Chamo a testemunha de defesa, Ilda Barreto. Prestou o compromisso legal?"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Doutor(a), as perguntas são feitas diretamente à testemunha, sem induzir a resposta e sem fugir do objeto do processo (CPP, art. 212)."
       },
       {
        "q": "a3ilda",
@@ -1119,7 +1124,7 @@
        "t": "Na sua mesa, ao voltar para o gabinete, um envelope sem remetente: \"Bem-vindo(a). Cuidado com quem sorri demais.\""
       }
      ],
-     "proxima": "x11",
+     "proxima": "ce1",
      "local": "tribunal"
     },
     "x11": {
@@ -1127,6 +1132,569 @@
      "carimbo": "CONDENADO",
      "titulo": "Camila está segura",
      "texto": "Você impediu que a retratação encerrasse uma ação pública, desmontou duas testemunhas e pediu a pena certa. Valadares parece o colega ideal. Parece."
+    },
+    "cf1": {
+     "tipo": "dialogo",
+     "local": "cafe",
+     "proxima": "cf2",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Café do térreo, 17h40. A posse acabou, a toga ainda parece emprestada, e um colega estende uma xícara antes de você pedir."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Sem açúcar, né? Dá para ver que você vem de escritório: açúcar é para quem ainda acredita em intervalo."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Como o senhor adivinhou?"
+      },
+      {
+       "q": "valadares",
+       "e": "normal",
+       "t": "Vinte anos de promotoria. Adivinho café, prazo e mentira de testemunha. Nessa ordem de dificuldade."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "Quando cheguei aqui, ninguém me trouxe café. Filho de costureira, primeiro da família na faculdade. Prometi que ninguém ia entrar neste prédio sozinho de novo."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Minha mãe, dona Heloísa, mandou uma fatia de bolo de fubá para o(a) novo(a) colega. Ela pergunta de todo mundo se está comendo direito."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Diga a ela que o bolo está melhor do que a minha posse."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Sexta tem comemoração com o pessoal da Polícia Civil, gente de confiança. Você vai?"
+      }
+     ]
+    },
+    "cf2": {
+     "tipo": "escolha",
+     "livre": true,
+     "local": "cafe",
+     "pergunta": "Valadares põe a mão no seu ombro e repete o convite. O que você responde?",
+     "opcoes": [
+      {
+       "t": "Vou, sim. Obrigado(a) por me receber assim.",
+       "marca": "a3_val_cafe",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Vou, sim. Obrigado(a) por me receber assim, doutor Renato."
+        },
+        {
+         "q": "valadares",
+         "e": "feliz",
+         "t": "Renato, por favor. Aqui dentro, quem come o bolo da minha mãe é de casa."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Na primeira semana de um cargo novo, alguém que sorri para você é um tesouro. Você guarda esse sorriso."
+        }
+       ]
+      },
+      {
+       "t": "Agradeço, mas prefiro manter distância da polícia: o Ministério Público a fiscaliza, não bebe com ela.",
+       "marca": "a3_val_distante",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Agradeço, doutor Valadares, mas prefiro manter distância. O Ministério Público fiscaliza a polícia; não senta à mesa dela."
+        },
+        {
+         "q": "valadares",
+         "e": "pensativo",
+         "t": "Respeito. Tem promotor que envelhece de tanto purismo, e promotor que fica perigoso de tanta amizade. Eu fico no meio, com a minha xícara."
+        },
+        {
+         "q": "valadares",
+         "e": "feliz",
+         "t": "Mas o café continua valendo. Esse é por minha conta."
+        }
+       ]
+      }
+     ],
+     "proxima": "x3"
+    },
+    "dc1": {
+     "tipo": "escolha",
+     "local": "gabinete",
+     "pergunta": "O que o Ministério Público faz com este inquérito?",
+     "proxima": "dc2",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Inquérito concluído, doutor(a). O Ministério Público é o titular da ação penal: denuncia, arquiva ou propõe acordo. E fundamenta qualquer das três."
+      },
+      {
+       "q": "a3camila",
+       "e": "triste",
+       "t": "(por telefone, baixinho) Eu escrevi o bilhete porque ele chorou. Se o senhor(a) o prender, ele vai se vingar. Só quero que isso acabe."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Arquivar (CPP, art. 28), em respeito à retratação da vítima.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "Retratação não é fundamento de arquivamento. O crime é de ação pública incondicionada e há laudo, áudio e portaria. Arquivar com prova na mão é abrir mão do dever."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28",
+         "trecho": "Ordenado o arquivamento do inquérito policial"
+        }
+       ]
+      },
+      {
+       "t": "Propor acordo de não persecução penal (art. 28-A): ele é primário e a pena é baixa.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "O art. 28-A, § 2º, IV, proíbe o acordo nos crimes de violência doméstica. E ele ainda descumpriu medida protetiva: acordo aqui não seria nem necessário nem suficiente."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a/par-2/inc-iv",
+         "trecho": "nos crimes praticados no âmbito de violência doméstica ou familiar"
+        }
+       ]
+      },
+      {
+       "t": "Oferecer denúncia: há prova da materialidade e da autoria, a ação é pública incondicionada e o acordo é vedado.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Há laudo, áudio e livro da portaria. Denúncia. Quanto à retratação, a Lei Maria da Penha já responde a ela."
+        },
+        {
+         "q": "lacerda",
+         "e": "feliz",
+         "t": "Então descreva o fato como ele aconteceu, ponto a ponto. A denúncia é o seu contrato com a verdade."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-41",
+         "trecho": "A denúncia ou queixa conterá a exposição do fato criminoso"
+        }
+       ]
+      }
+     ]
+    },
+    "dc2": {
+     "tipo": "denuncia",
+     "local": "gabinete",
+     "titulo": "Denúncia contra Rogério Pacheco",
+     "proxima": "x4",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O art. 41 manda expor o fato com todas as suas circunstâncias, qualificar o acusado, classificar o crime e, quando necessário, arrolar as testemunhas."
+      }
+     ],
+     "partes": [
+      {
+       "nome": "Classificação do crime",
+       "opcoes": [
+        {
+         "t": "Lesão corporal no âmbito doméstico (CP, art. 129, § 9º) e descumprimento de medida protetiva (LMP, art. 24-A), em concurso material.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "Duas condutas, dois crimes: a lesão que o laudo prova e o descumprimento que a portaria prova."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "CP#art-129/par-9",
+           "trecho": "com quem conviva ou tenha convivido"
+          },
+          {
+           "chave": "LMP#art-24a",
+           "trecho": "Descumprir decisão judicial que defere medidas protetivas de urgência"
+          }
+         ]
+        },
+        {
+         "t": "Apenas ameaça (CP, art. 147), porque o áudio é a peça mais clara.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "pensativo",
+           "t": "O áudio prova a ameaça, mas o laudo prova a lesão e a portaria prova o descumprimento. Denunciar um fato só é deixar dois sem resposta."
+          }
+         ]
+        },
+        {
+         "t": "Vias de fato (Lei das Contravenções Penais, art. 21), porque a lesão foi leve.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "bravo",
+           "t": "Vias de fato é quando não há lesão. O laudo registra equimoses nos dois braços: é lesão corporal."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "Materialidade",
+       "provas": [
+        "laudo"
+       ],
+       "pergunta": "Que peça dos autos prova que a lesão existiu?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não prova a lesão. A materialidade da lesão corporal está no exame de corpo de delito."
+        }
+       ]
+      },
+      {
+       "nome": "Autoria e descumprimento",
+       "provas": [
+        "portaria",
+        "audio"
+       ],
+       "pergunta": "Que peça põe Rogério no prédio, apesar da medida protetiva?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não coloca Rogério no prédio, nem mostra que ele agiu sabendo da medida."
+        }
+       ]
+      },
+      {
+       "nome": "Rol de testemunhas",
+       "opcoes": [
+        {
+         "t": "A vítima, o perito do IML que assinou o laudo e a síndica que fotografou a página da portaria.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "feliz",
+           "t": "Quem viu, quem periciou e quem guardou o registro. Prova em volta da palavra dela."
+          }
+         ]
+        },
+        {
+         "t": "Só a vítima, para não expô-la a mais pessoas.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "pensativo",
+           "t": "Uma denúncia apoiada só na palavra da vítima fragiliza o caso exatamente onde a defesa vai atacar."
+          }
+         ]
+        },
+        {
+         "t": "Rogério, como testemunha da acusação.",
+         "falas": [
+          {
+           "q": "voce",
+           "e": "pensativo",
+           "t": "Réu não é testemunha de ninguém. Ele será interrogado, com direito ao silêncio."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Ofereço a denúncia."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Distribuída. A Camila vai ouvir seu nome no corredor do fórum como o de alguém que não desistiu dela."
+      }
+     ]
+    },
+    "pr1": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "titulo": "A defesa inquire a vítima",
+     "proxima": "x6",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Com a palavra a defesa, para inquirir a vítima. Doutor Cássio, perguntas diretas. E o Ministério Público protesta no momento da pergunta, não depois da resposta."
+      }
+     ],
+     "dica": [
+      "Duas perguntas da defesa não são legítimas. Veja o que cada uma já traz pronto na boca da vítima.",
+      "Uma induz a resposta; a outra ofende a dignidade da vítima e nada tem a ver com os fatos."
+     ],
+     "linhas": [
+      {
+       "q": "a3cassio",
+       "e": "normal",
+       "t": "Dona Camila, a senhora e o senhor Rogério foram casados por quanto tempo?"
+      },
+      {
+       "q": "a3camila",
+       "e": "triste",
+       "t": "Seis anos, doutor."
+      },
+      {
+       "q": "a3cassio",
+       "e": "apontando",
+       "t": "A senhora concorda que ele sempre foi um pai exemplar e que só o denunciou por raiva, não é verdade?",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "puderem induzir a resposta"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta é indutiva: já traz a resposta que a defesa quer ouvir (CPP, art. 212).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPP#art-212",
+            "trecho": "puderem induzir a resposta"
+           }
+          ],
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Acolho. Reformule, doutor, sem induzir.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a3cassio",
+            "e": "nervoso",
+            "t": "Reformulo, Excelência."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é repetida.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Não é repetição: é a primeira vez que ela é feita. Indeferido."
+           }
+          ]
+         },
+         {
+          "t": "A vítima não é obrigada a responder.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "pensativo",
+            "t": "Ela responde ao que for legal, promotor(a). Qual o fundamento?"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a3cassio",
+       "e": "normal",
+       "t": "A senhora trabalhava fora durante o casamento?"
+      },
+      {
+       "q": "a3camila",
+       "e": "normal",
+       "t": "Sim, sempre."
+      },
+      {
+       "q": "a3cassio",
+       "e": "apontando",
+       "t": "E essa vida noturna que a senhora levava, as roupas curtas, a bebida: isso também irritava o senhor Rogério, não irritava?",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-400a/inc-ii",
+          "trecho": "a utilização de linguagem, de informações ou de material que ofendam a dignidade da vítima ou de testemunhas"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta ofende a dignidade da vítima e não tem relação com os fatos (CPP, art. 400-A).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPP#art-400a/inc-ii",
+            "trecho": "a utilização de linguagem, de informações ou de material que ofendam a dignidade da vítima ou de testemunhas"
+           }
+          ],
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Acolhido. Doutor Cássio, a vítima não está sendo julgada. Mais uma dessas e retiro a sua palavra.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a3camila",
+            "e": "triste",
+            "t": "(respirando fundo) Obrigada."
+           }
+          ]
+         },
+         {
+          "t": "O fato já foi provado pelo laudo.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "pensativo",
+            "t": "A pergunta nem toca no laudo, promotor(a). O fundamento é outro."
+           }
+          ]
+         },
+         {
+          "t": "A vítima está cansada.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Se ela precisar de pausa, pede. Cansaço não é fundamento de protesto."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a3cassio",
+       "e": "normal",
+       "t": "Quando o senhor Rogério foi ao prédio, a senhora o recebeu na porta?"
+      },
+      {
+       "q": "a3camila",
+       "e": "nervoso",
+       "t": "Não. Eu estava trancada no quarto. Depois a síndica me mandou a foto do livro da portaria."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Vítima dispensada. Obrigada, dona Camila."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Camila sai da sala sem olhar para trás. Na plateia, Valadares levanta o polegar para você."
+      }
+     ]
+    },
+    "ce1": {
+     "tipo": "celular",
+     "local": "casa",
+     "contato": "Camila Furtado",
+     "status": "online",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Noite do mesmo dia. O celular vibra na sua mesa, quando você já ia apagar a luz."
+      }
+     ],
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Doutor(a), é a Camila. Desculpe mandar mensagem a essa hora."
+      },
+      {
+       "de": "ele",
+       "t": "Tem um carro parado na frente do prédio desde o fim da tarde. Parecido com o do Rogério."
+      },
+      {
+       "de": "ele",
+       "t": "Pode ser coisa da minha cabeça."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Ligar para ela e acionar a Patrulha Maria da Penha",
+       "marca": "a3_camila_patrulha",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Camila, tranque a porta e fique comigo na linha. A viatura está a caminho."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "A patrulha chega em onze minutos. O carro era de um vizinho, que estaciona ali todo dia. Camila ri, chora, e agradece."
+        }
+       ]
+      },
+      {
+       "t": "Responder: “Deve ser coisa da sua cabeça. Fique tranquila.”",
+       "envia": "Deve ser coisa da sua cabeça. Fique tranquila.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Tá bom, doutor(a). Obrigada."
+        }
+       ],
+       "marca": "a3_camila_ignorou",
+       "cred": -1,
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "De manhã o carro estava lá de novo. Era mesmo do vizinho, desta vez. Mas Camila passou a noite acordada, sem ninguém para dizer que o medo dela era sério."
+        }
+       ]
+      }
+     ],
+     "depois": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você guarda o celular. Alguns casos terminam na sentença; os medos, não."
+      }
+     ],
+     "proxima": "x11"
     }
    },
    "placas": {
@@ -1428,7 +1996,7 @@
       "mortandade",
       "laudo"
      ],
-     "proxima": "x4"
+     "proxima": "vj1"
     },
     "x4": {
      "tipo": "dialogo",
@@ -1591,7 +2159,7 @@
       "nf",
       "licenca"
      ],
-     "proxima": "q1"
+     "proxima": "x5d"
     },
     "q1": {
      "tipo": "dialogo",
@@ -1908,7 +2476,7 @@
        "t": "Promotor(a), esse fundamento não responde à tese de que pessoa jurídica não pode ser ré."
       }
      ],
-     "proxima": "x8"
+     "proxima": "pr1"
     },
     "x8": {
      "tipo": "depoimento",
@@ -2144,7 +2712,7 @@
       {
        "q": "beatriz",
        "e": "normal",
-       "t": "Ministério Público, encerrada a instrução, quem é denunciado e por qual crime?"
+       "t": "Ministério Público, encerrada a instrução, em alegações finais: contra quem pede a condenação, e por qual crime?"
       },
       {
        "q": "livia",
@@ -2152,7 +2720,7 @@
        "t": "A defesa insiste: se for condenar, que seja só o gerente. Ele já confessou."
       }
      ],
-     "pergunta": "Sua denúncia:",
+     "pergunta": "Seu pedido final:",
      "opcoes": [
       {
        "t": "Só o gerente, Ulisses Prado, pelo art. 60 (funcionamento sem licença).",
@@ -2183,12 +2751,12 @@
         {
          "q": "voce",
          "e": "confiante",
-         "t": "Denuncio a empresa e o gerente, em concurso, pelo art. 54, § 2º, V. O art. 3º e seu parágrafo único autorizam, e a pena qualificada reflete o lançamento de resíduos em desacordo com a lei."
+         "t": "Peço a condenação da empresa e do gerente, em concurso, pelo art. 54, § 2º, V. O art. 3º e seu parágrafo único autorizam, e a pena qualificada reflete o lançamento de resíduos em desacordo com a lei."
         },
         {
          "q": "beatriz",
          "e": "normal",
-         "t": "Recebo a denúncia nos exatos termos.",
+         "t": "Registrado o pedido, nos exatos termos da denúncia.",
          "fx": "martelo"
         }
        ],
@@ -2234,7 +2802,7 @@
       {
        "q": "beatriz",
        "e": "normal",
-       "t": "Aceita a denúncia, determino a interdição do tanque, a limpeza imediata do córrego a cargo da ré e o bloqueio de bens suficientes para a reparação.",
+       "t": "Acolhido o pedido do Ministério Público, determino a interdição do tanque, a limpeza imediata do córrego a cargo da ré e o bloqueio de bens suficientes para a reparação.",
        "fx": "martelo"
       },
       {
@@ -2266,6 +2834,379 @@
      "carimbo": "RECEBIDA",
      "titulo": "O rio vai voltar",
      "texto": "A pessoa jurídica e o gerente respondem juntos. Mas a obra foi avisada antes da vistoria, e só quatro pessoas sabiam o horário. Uma delas disse que ia “olhar nos registros”."
+    },
+    "vj1": {
+     "tipo": "dialogo",
+     "local": "promotoria",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Quarta à noite, promotoria quase vazia. A vistoria sai quinta, às seis. Na mesa, a petição de busca com três erros de digitação e uma escada entre você e o sono."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Ainda aqui? Trouxe marmita. Arroz, feijão e a fúria da minha mãe com quem não come."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Doutor Valadares, o senhor é uma instituição."
+      },
+      {
+       "q": "valadares",
+       "e": "normal",
+       "t": "Sou um homem que já perdeu um caso por causa de uma vírgula. Passa a petição para cá."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "Aqui: troque “em tese” por “em tese e em concreto”, e cite o art. 54, § 2º, V. Boa. Vistoria de surpresa só vale se for surpresa: o horário fica só entre nós."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Já combinamos. Só nós três sabemos."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "E é por isso que vai dar certo."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O celular dele vibra. Ele olha a tela, hesita um segundo e atende de costas, perto da janela."
+      },
+      {
+       "q": "valadares",
+       "e": "triste",
+       "t": "(baixo) Calma, mãe. Tomou o remédio? … Eu sei. Eu resolvo. Resolvo, sim."
+      },
+      {
+       "q": "valadares",
+       "e": "normal",
+       "t": "Desculpe. Dona Heloísa. O coração dela anda caprichoso. Vai ver é por isso que o meu nunca aprendeu a desconfiar de ninguém."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Se precisar ir, vá. A petição eu termino."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Nada disso. Café e petição. Depois a gente vê o coração."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Amanhã o canteiro estará lavado. Mas nesta quarta à noite ainda não há suspeito: só uma marmita quente e um colega que não deixa você sozinho."
+      }
+     ],
+     "proxima": "x4"
+    },
+    "x5d": {
+     "tipo": "denuncia",
+     "local": "gabinete",
+     "titulo": "Denúncia ambiental",
+     "proxima": "q1",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Laudo, ordem de serviço, catraca e cano. Agora é transformar isso em denúncia: quem, qual crime e com que prova."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Lembre-se do art. 41: exposição do fato com todas as circunstâncias. Denúncia vaga é denúncia rejeitada."
+      }
+     ],
+     "partes": [
+      {
+       "nome": "Quem será denunciado",
+       "opcoes": [
+        {
+         "t": "A Altavista Serviços (pessoa jurídica) e Ulisses Prado (gerente), em concurso.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "A empresa agiu por decisão da diretoria e em seu benefício; o gerente executou. Uma não exclui o outro."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "LCA#art-3",
+           "trecho": "no interesse ou benefício da sua entidade"
+          },
+          {
+           "chave": "LCA#art-3/par-unico",
+           "trecho": "não exclui a das pessoas físicas"
+          }
+         ]
+        },
+        {
+         "t": "Só Ulisses Prado, porque pessoa jurídica não comete crime.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "bravo",
+           "t": "Na seara ambiental, comete. O art. 3º da Lei 9.605 prevê a responsabilidade penal da empresa."
+          }
+         ]
+        },
+        {
+         "t": "Só a empresa: o gerente apenas cumpria ordens.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "pensativo",
+           "t": "Quem concorre para o crime responde por ele. O parágrafo único do art. 3º diz que uma responsabilidade não exclui a outra."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "Classificação do crime",
+       "opcoes": [
+        {
+         "t": "Poluição qualificada por lançamento de resíduos em desacordo com a lei (LCA, art. 54, § 2º, V).",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "Poluição que causa mortandade de peixes e dano à saúde, com lançamento de resíduos líquidos: a qualificadora do inciso V."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "LCA#art-54/par-2/inc-v",
+           "trecho": "lançamento de resíduos sólidos, líquidos ou gasosos"
+          }
+         ]
+        },
+        {
+         "t": "Apenas funcionamento sem licença (LCA, art. 60).",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "pensativo",
+           "t": "A licença vencida é um crime; o rio morto é outro, muito maior. Denunciar só o primeiro é minimizar."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "Materialidade",
+       "provas": [
+        "laudo",
+        "mortandade"
+       ],
+       "pergunta": "Que peça prova que o rio foi poluído e que isso matou os peixes?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não demonstra a poluição do rio nem seus efeitos."
+        }
+       ]
+      },
+      {
+       "nome": "Autoria e decisão da empresa",
+       "provas": [
+        "ordem",
+        "nf"
+       ],
+       "pergunta": "Que peça liga a empresa e o gerente ao despejo?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não liga a empresa e o gerente ao despejo no valão."
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Ofereço a denúncia contra a empresa e o gerente."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Boa. Agora é ver se o juiz vai deixar os pescadores falarem."
+      }
+     ]
+    },
+    "pr1": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "titulo": "A defesa inquire a pescadora",
+     "proxima": "x8",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Antes do interrogatório, a defesa inquire a testemunha Nilza Ferreira, da comunidade. Doutora Lívia."
+      }
+     ],
+     "dica": [
+      "Há uma pergunta fora do assunto do processo e outra que apenas repete uma resposta já dada.",
+      "Procure a pergunta que nada tem a ver com o rio e a que volta a perguntar a mesma coisa."
+     ],
+     "linhas": [
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Dona Nilza, a senhora vive da pesca há quanto tempo?"
+      },
+      {
+       "q": "a3nilza",
+       "e": "normal",
+       "t": "Quarenta anos, doutora."
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "A senhora declara o imposto de renda da sua banca de peixe?",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não tiverem relação com a causa"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta não tem relação com a causa, que é a poluição do rio (CPP, art. 212).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPP#art-212",
+            "trecho": "não tiverem relação com a causa"
+           }
+          ],
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Acolho. A situação fiscal da testemunha não é objeto desta ação.",
+            "fx": "martelo"
+           },
+           {
+            "q": "livia",
+            "e": "nervoso",
+            "t": "Retiro a pergunta."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Ela não sugere resposta nenhuma; apenas foge do assunto. Indeferido, promotor(a)."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta já foi respondida.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "pensativo",
+            "t": "É a primeira vez que se pergunta isso, promotor(a)."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "A senhora coletou a água do rio em que frasco?"
+      },
+      {
+       "q": "a3nilza",
+       "e": "normal",
+       "t": "Num de vidro, que a agência ambiental mandou."
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Voltando ao começo: há quanto tempo a senhora pesca, mesmo?",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "importarem na repetição de outra já respondida"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta repete outra já respondida (CPP, art. 212).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPP#art-212",
+            "trecho": "importarem na repetição de outra já respondida"
+           }
+          ],
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Acolho. A testemunha já disse: quarenta anos.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a3nilza",
+            "e": "bravo",
+            "t": "Quarenta, doutora. Quarenta."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta ofende a dignidade da testemunha.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Não ofende ninguém: apenas se repete. Fundamento errado."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Nada mais, Excelência."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Testemunha dispensada. Obrigada, dona Nilza."
+      }
+     ]
     }
    },
    "placas": {
@@ -2290,7 +3231,8 @@
     "a3eduardo": "testemunha",
     "a3renata": "cena",
     "voce": "acusacao",
-    "twildo": "testemunha"
+    "twildo": "testemunha",
+    "twwilson": "escritorio"
    },
    "provas": [
     {
@@ -2675,7 +3617,7 @@
       "jantar",
       "consultoria"
      ],
-     "proxima": "x5"
+     "proxima": "ph1"
     },
     "x5": {
      "tipo": "dialogo",
@@ -2745,7 +3687,7 @@
        "t": "Promotor(a), esse dispositivo não responde à preliminar de ilegitimidade."
       }
      ],
-     "proxima": "x7"
+     "proxima": "pr1"
     },
     "x7": {
      "tipo": "depoimento",
@@ -3525,6 +4467,275 @@
      "carimbo": "DEFERIDA",
      "titulo": "Bens bloqueados",
      "texto": "Você provou o dolo, escolheu o art. 9º e pediu a cautelar certa, sem confundir a ação civil com um processo penal. O registro de acesso de Valadares ficou no seu caderno."
+    },
+    "ph1": {
+     "tipo": "dialogo",
+     "local": "promotoria",
+     "proxima": "ph2",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "17h12. O sistema de protocolo cai justamente no dia em que vence o prazo da indisponibilidade de bens. Quarenta e oito minutos para salvar o dinheiro que o secretário pretende sumir."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Doutor(a), não é lentidão: o protocolo eletrônico está fora do ar e o balcão fechou às 17h. Se perdermos o prazo, o juiz lê desinteresse e o dinheiro some do banco."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "Não posso perder esse prazo. Dani, quem resolve o sistema?"
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "O TI do MP: o plantonista, o Wilson. Ou o coordenador, que tem acesso de administrador. O doutor Valadares."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Alguém falou de mim? Vi a cara de vocês pelo corredor e vim ver quem morreu."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "O protocolo caiu e o prazo vence em quarenta minutos."
+      }
+     ]
+    },
+    "ph2": {
+     "tipo": "escolha",
+     "livre": true,
+     "local": "promotoria",
+     "pergunta": "Como você garante o protocolo?",
+     "proxima": "x5",
+     "opcoes": [
+      {
+       "t": "Aceitar a ajuda de Valadares: ele protocola com o login de coordenador.",
+       "marca": "a3_val_ajudou",
+       "falas": [
+        {
+         "q": "valadares",
+         "e": "confiante",
+         "t": "Me dá o arquivo. Pronto: com a minha senha entra pelo sistema de contingência. Nada de burocracia."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "17h58. O recibo de protocolo pisca no monitor de Dani."
+        },
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Doutor Renato, o senhor me salvou o dia."
+        },
+        {
+         "q": "valadares",
+         "e": "feliz",
+         "t": "Me paga um café na próxima. Ou melhor: eu pago, que a mesada de promotor novato eu conheço."
+        },
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "(baixinho) Ele foi direto ao sistema de contingência sem eu ter dito onde ficava."
+        }
+       ]
+      },
+      {
+       "t": "Chamar o plantão do TI e esperar o analista Wilson.",
+       "marca": "a3_val_ti",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Wilson Camargo chega em oito minutos, óculos tortos, notebook debaixo do braço. Reinicia o servidor, resmunga e protocola às 17h57."
+        },
+        {
+         "q": "twwilson",
+         "e": "nervoso",
+         "t": "Fora do horário, só o coordenador mexe nesse sistema, doutor(a). O doutor Valadares, que é tão prestativo."
+        },
+        {
+         "q": "valadares",
+         "e": "feliz",
+         "t": "Eu bem avisei que o Wilson resolvia. Confio mais nele do que em mim."
+        }
+       ]
+      }
+     ]
+    },
+    "pr1": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "titulo": "A defesa inquire a arquiteta",
+     "proxima": "x7",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Inquirição da testemunha de acusação, a arquiteta Renata Guedes. Com a palavra o doutor Fábio. O CPC rege a inquirição aqui: perguntas diretas, sem indução."
+      }
+     ],
+     "dica": [
+      "Uma pergunta carrega a resposta que a defesa quer; outra invade a vida pessoal da testemunha sem relação com a ação.",
+      "Nem toda pergunta incômoda é ilegal: protesto é pela forma ou pela pertinência."
+     ],
+     "linhas": [
+      {
+       "q": "a3fabio",
+       "e": "normal",
+       "t": "Doutora Renata, a senhora é arquiteta da prefeitura há quantos anos?"
+      },
+      {
+       "q": "a3renata",
+       "e": "normal",
+       "t": "Onze."
+      },
+      {
+       "q": "a3fabio",
+       "e": "apontando",
+       "t": "A senhora ficou magoada quando o secretário não a promoveu, não ficou? E por isso escreveu o parecer contrário, como vingança?",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPC#art-459",
+          "trecho": "puderem induzir a resposta"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta é indutiva: traz a resposta pronta (CPC, art. 459).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPC#art-459",
+            "trecho": "puderem induzir a resposta"
+           }
+          ],
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "normal",
+            "t": "Acolho. A imparcialidade da testemunha pode ser explorada, doutor Fábio, mas sem sugerir a resposta.",
+            "fx": "martelo"
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é impertinente: a imparcialidade da testemunha não interessa.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "pensativo",
+            "t": "Interessa, sim: toca a credibilidade dela. O problema é a forma da pergunta, promotor(a)."
+           }
+          ]
+         },
+         {
+          "t": "Testemunha de acusação não pode ser questionada pela defesa.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Pode, e deve: é o contraditório. Fundamento errado."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a3fabio",
+       "e": "normal",
+       "t": "A senhora participou de alguma reunião interna sobre o alvará, no sábado?"
+      },
+      {
+       "q": "a3renata",
+       "e": "nervoso",
+       "t": "Não, nem fui chamada."
+      },
+      {
+       "q": "a3fabio",
+       "e": "normal",
+       "t": "A senhora é mãe solteira e mora de aluguel, não é? Quem paga as despesas dos seus filhos?",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPC#art-459",
+          "trecho": "não tiverem relação com as questões de fato objeto da atividade probatória"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta não tem relação com os fatos da ação e invade a vida privada da testemunha (CPC, art. 459).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPC#art-459",
+            "trecho": "não tiverem relação com as questões de fato objeto da atividade probatória"
+           }
+          ],
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Acolho. A vida pessoal da testemunha não é objeto desta ação.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a3renata",
+            "e": "triste",
+            "t": "(baixinho) Eu moro de aluguel mesmo, doutor. Mas não vim aqui por dinheiro."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "normal",
+            "t": "Não induz: pergunta o que não interessa. Fundamento errado."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta repete outra já respondida.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "normal",
+            "t": "Não houve pergunta igual antes, promotor(a)."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a3fabio",
+       "e": "normal",
+       "t": "Nada mais, Excelência."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Testemunha dispensada. Obrigado, doutora Renata."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Renata sai de cabeça erguida. Fábio fecha a pasta, e Eduardo anota alguma coisa no guardanapo."
+      }
+     ]
     }
    },
    "placas": {
@@ -4194,7 +5405,7 @@
        "t": "(Ele sorriu. Não de derrota: de quem tem tempo.)"
       }
      ],
-     "proxima": "x5"
+     "proxima": "q3h"
     },
     "x5": {
      "tipo": "dialogo",
@@ -4703,6 +5914,73 @@
      "carimbo": "DESCLASSIFICADO",
      "titulo": "Justiça, não estatística",
      "texto": "Você diferenciou usuário de traficante pelos critérios do art. 28, § 2º, pediu a desclassificação e absolveu quem não tinha concorrido. Valadares não gostou, e anotou o seu nome."
+    },
+    "q3h": {
+     "tipo": "dialogo",
+     "local": "corredor",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Fim da tarde, corredor do fórum. A máquina de café engole a moeda e devolve só barulho. Alguém bate nela com a palma da mão, duas vezes, com a paciência de quem já bateu muitas."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Ela só obedece a quem não tem pressa, doutor(a). Tente."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O senhor? Falando sem ironia?"
+      },
+      {
+       "q": "a3quadros",
+       "e": "pensativo",
+       "t": "Eu também me canso da ironia. Posso lhe contar uma coisa que não consta de nenhuma ata?"
+      },
+      {
+       "q": "a3quadros",
+       "e": "triste",
+       "t": "Fui promotor, doutor(a). Em 2009 pedi a preventiva de um rapaz de dezenove anos com base num reconhecimento por foto, às pressas, porque o prazo vencia na sexta e o chefe queria resposta. Ele ficou quatorze meses preso. Era o primo do verdadeiro autor."
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "O senhor nunca contou isso?"
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Anos depois ele me procurou. Não pediu nada: só queria saber se eu lembrava do rosto dele. Eu lembrava do número do processo. Foi a pior resposta que já dei."
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Desde então só assino o que está perfeito: prazo, intimação, assinatura. O que o(a) senhor(a) chama de obstáculo, eu chamo de penitência."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "E o prazo de amanhã às 7h, doutor? Era rigor ou era pressa?"
+      },
+      {
+       "q": "a3quadros",
+       "e": "normal",
+       "t": "Pressa, doutor(a). Rigor é para quem eu escolho. Aprendi a pior forma de compensar um erro: errar para o outro lado."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A máquina, enfim, devolve o café. Ele o pega e vai embora sem esperar resposta."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Não pediu desculpas. Mas me contou o que nunca dirá em plenário. Isso também é uma confissão.)"
+      }
+     ],
+     "proxima": "x5"
     }
    },
    "placas": {
@@ -5106,7 +6384,7 @@
       "cancelamento",
       "agenda"
      ],
-     "proxima": "x5"
+     "proxima": "x4d"
     },
     "x5": {
      "tipo": "dialogo",
@@ -5412,10 +6690,10 @@
       {
        "q": "beatriz",
        "e": "normal",
-       "t": "Ministério Público, que crime imputa a Nelson, Débora e aos demais?"
+       "t": "Ministério Público, em alegações finais, que crime sustenta contra Nelson, Débora e os demais?"
       }
      ],
-     "pergunta": "Sua imputação:",
+     "pergunta": "Seu pedido nas alegações finais:",
      "opcoes": [
       {
        "t": "Associação criminosa (art. 288 do CP), para ser mais fácil de provar.",
@@ -5451,7 +6729,7 @@
         {
          "q": "beatriz",
          "e": "normal",
-         "t": "Recebo a imputação.",
+         "t": "Anotado, e mantida a classificação da denúncia.",
          "fx": "martelo"
         }
        ],
@@ -5850,7 +7128,7 @@
        "t": "(Ele não perdeu a toga. Mas perdeu o processo. E eu ganhei um nome para o meu caderno.)"
       }
      ],
-     "proxima": "x11"
+     "proxima": "gar1"
     },
     "x11": {
      "tipo": "dialogo",
@@ -5894,6 +7172,299 @@
      "carimbo": "RECEBIDA",
      "titulo": "A firma tem chefe",
      "texto": "Seis pessoas, funções definidas, hierarquia e dinheiro vivo: organização criminosa, não associação. E um ofício cancelando a ação na véspera aponta para alguém de dentro."
+    },
+    "x4d": {
+     "tipo": "denuncia",
+     "local": "gabinete",
+     "titulo": "Denúncia contra a organização",
+     "proxima": "x5",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Organograma, planilha, agenda e fachadas. Seis pessoas, seis funções. Hora de dizer à Justiça o que isso é."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Art. 41, doutor(a): fato, circunstâncias, classificação e rol de testemunhas. O resto é torcida."
+      }
+     ],
+     "partes": [
+      {
+       "nome": "Classificação do crime",
+       "opcoes": [
+        {
+         "t": "Organização criminosa (Lei 12.850, art. 2º), com agravação para quem comanda (§ 3º).",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "Seis integrantes, estrutura ordenada, divisão de tarefas e vantagem ilícita: não é bando, é firma."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "LORC#art-2",
+           "trecho": "Promover, constituir, financiar ou integrar"
+          },
+          {
+           "chave": "LORC#art-2/par-3",
+           "trecho": "exerce o comando, individual ou coletivo"
+          }
+         ]
+        },
+        {
+         "t": "Associação criminosa (CP, art. 288), mais simples de provar.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "pensativo",
+           "t": "O art. 288 pede três pessoas e nenhuma estrutura. Aqui há seis, com chefe, caixa e logística. O fato é mais grave que o tipo escolhido."
+          }
+         ]
+        },
+        {
+         "t": "Só lavagem de dinheiro contra o contador.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "bravo",
+           "t": "O contador é uma peça. Isolar uma peça é deixar a máquina funcionando."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "Materialidade: existência da organização",
+       "provas": [
+        "organograma",
+        "fachada"
+       ],
+       "pergunta": "Que peça mostra a estrutura e a divisão de tarefas?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não demonstra a estrutura ordenada nem a divisão de tarefas."
+        }
+       ]
+      },
+      {
+       "nome": "Autoria: dinheiro e comando",
+       "provas": [
+        "planilha",
+        "agenda"
+       ],
+       "pergunta": "Que peça mostra o dinheiro e quem o distribui?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não liga os denunciados ao fluxo do dinheiro."
+        }
+       ]
+      },
+      {
+       "nome": "Rol de testemunhas",
+       "opcoes": [
+        {
+         "t": "O perito que analisou os metadados da planilha e o policial que cumpriu o mandado na loja.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "feliz",
+           "t": "Quem periciou e quem viu. Testemunha de verdade."
+          }
+         ]
+        },
+        {
+         "t": "Só Nelson e Débora, que contarão tudo no interrogatório.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "bravo",
+           "t": "Réu não é testemunha: fala se quiser, e o que disser não vira prova contra o outro sem contraditório."
+          }
+         ]
+        },
+        {
+         "t": "O doutor Valadares, que acompanha a operação desde o começo.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "pensativo",
+           "t": "O Renato nem está no caso, doutor(a). Quem acompanha de longe sabe de ouvir dizer."
+          },
+          {
+           "q": "voce",
+           "e": "pensativo",
+           "t": "(Por que eu tinha pensado nele?)"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Ofereço a denúncia."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Protocolada. Agora a defesa vai gritar. É bom sinal."
+      }
+     ]
+    },
+    "gar1": {
+     "tipo": "tensao",
+     "local": "garagem",
+     "tempo": 8,
+     "padrao": 2,
+     "proxima": "gar2",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Dez da noite. O subsolo da promotoria cheira a óleo e a concreto frio. Seu carro está na vaga 14, no fundo, longe das câmeras, porque ninguém imagina que um promotor precise delas."
+      },
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Você destrava o carro. Atrás de você, um motor liga. Faróis altos, placa coberta, fechando a rampa."
+      }
+     ],
+     "pergunta": "Um sedã escuro bloqueia a saída. Dois vultos dentro. O que você faz?",
+     "hesitou": "Você hesitou. O sedã avançou devagar, até encostar o para-choque no seu.",
+     "opcoes": [
+      {
+       "t": "Entrar no carro, trancar e acelerar rampa acima",
+       "marca": "a3_perseguido_fugiu",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Você acelera. O sedã cola na sua traseira por dois quarteirões e só desiste quando você corta o sinal em frente ao quartel da PM. O coração só desacelera na garagem de casa."
+        }
+       ]
+      },
+      {
+       "t": "Ficar de frente para o carro, acender a lanterna do celular e anotar a placa",
+       "marca": "a3_placa_anotada",
+       "cred": 1,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Boa noite! Ministério Público. Vou anotar a placa e gravar este encontro."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "O sedã trava. Um vulto levanta a mão: “é só uma conversa”. Você não se mexe. O carro recua de ré, sem luz, e some. Mas o vídeo pegou o rosto de um dos homens."
+        }
+       ]
+      },
+      {
+       "t": "Correr de volta ao elevador e chamar a segurança",
+       "marca": "a3_bilhete_garagem",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "O elevador demora uma eternidade. Quando você volta com o vigilante, o sedã se foi. Na vaga 14, sob o limpador, um bilhete: “Ação controlada se cancela. Promotor também.”"
+        }
+       ]
+      }
+     ]
+    },
+    "gar2": {
+     "tipo": "celular",
+     "local": "carro",
+     "contato": "Número desconhecido",
+     "status": "visto agora",
+     "proxima": "x11",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "No caminho de casa, o celular vibra no console. Um número que você nunca viu."
+      }
+     ],
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Boa noite, doutor(a). A garagem é um lugar perigoso para quem trabalha até tarde."
+      },
+      {
+       "de": "ele",
+       "t": "Dizem que o(a) senhor(a) estudou para o concurso dentro do carro, fugindo do barulho de casa. A casa está silenciosa hoje?"
+      },
+      {
+       "de": "ele",
+       "t": "Cuide de quem mora com o(a) senhor(a). A Firma cuida dos dela."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Não responder: tirar print, ligar para Lacerda e registrar ocorrência",
+       "marca": "a3_ameaca_registrada",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Doutor Lacerda, é tarde, mas preciso registrar uma ameaça."
+        },
+        {
+         "q": "lacerda",
+         "e": "triste",
+         "t": "Vá para casa com escolta. Mando uma viatura agora. Quem ameaça família confessa que perdeu a discussão."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "A viatura chega antes de você. O print vai para o inquérito. O medo continua, mas agora tem protocolo."
+        }
+       ]
+      },
+      {
+       "t": "Responder: “Ameaçar membro do Ministério Público é crime. Continuem.”",
+       "envia": "Ameaçar membro do Ministério Público é crime. Continuem.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Continuaremos."
+        }
+       ],
+       "marca": "a3_ameaca_respondida",
+       "cred": -1,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Se querem me assustar, vão ter de se esforçar mais."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "O print foi para o inquérito mesmo assim. Mas o número, desta vez, já foi desligado."
+        }
+       ]
+      }
+     ],
+     "depois": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Em casa, você olha pela janela antes de acender a luz. É a primeira vez."
+      }
+     ]
     }
    },
    "placas": {
@@ -6044,9 +7615,33 @@
        "t": "Sempre depois das onze da noite. Sempre da sala 3. Sempre com o login do doutor Valadares."
       },
       {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Aliás, o homem da garagem que o(a) senhor(a) filmou: reconheci o rosto no cadastro. Investigador, lotado com o doutor Fausto.",
+       "se": "a3_placa_anotada"
+      },
+      {
        "q": "voce",
        "e": "triste",
        "t": "Valadares me ensinou a achar o café. Me apresentou ao pessoal. Me chamou de colega."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Aceitei o convite dele. Comi o bolo da mãe dele. Agradeci. Eu agradeci.",
+       "se": "a3_val_cafe"
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Ele protocolou aquela petição por mim, com o login de coordenador, e eu o abracei.",
+       "se": "a3_val_ajudou"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Mantive distância desde o primeiro dia. Cautela ou instinto? Hoje queria ter me enganado.",
+       "se": "a3_val_distante"
       },
       {
        "q": "lacerda",
@@ -6466,7 +8061,7 @@
        "t": "Isso não contradiz a negativa de contato com Brandão, promotor(a)."
       }
      ],
-     "proxima": "x8"
+     "proxima": "cr1"
     },
     "x8": {
      "tipo": "depoimento",
@@ -7185,6 +8780,18 @@
        "t": "(vencido) Eu comecei com um favor. Um pequeno favor, para quitar a casa da minha mãe. Depois já não tinha como parar."
       },
       {
+       "q": "voce",
+       "e": "triste",
+       "t": "A sua mãe me mandou bolo, Renato. O dinheiro era para o coração dela?",
+       "se": "a3_val_cafe"
+      },
+      {
+       "q": "valadares",
+       "e": "triste",
+       "t": "Era para a casa. A hipoteca. Depois, para o coração. Não me peça para ter orgulho de nenhum dos dois.",
+       "se": "a3_val_cafe"
+      },
+      {
        "q": "lacerda",
        "e": "triste",
        "t": "Eu apresentei você ao Brandão numa festa, Renato. Eu fui o primeiro a te aproximar deles."
@@ -7420,6 +9027,49 @@
       }
      ],
      "proxima": "x13"
+    },
+    "cr1": {
+     "tipo": "dialogo",
+     "local": "corredor",
+     "proxima": "x8",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Intervalo de dez minutos. No corredor, a máquina de café. E o homem que você vai interrogar daqui a pouco, segurando dois copos."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Sem açúcar. Vai ser pesado lá dentro, não vai? Acusar colega é a pior parte da toga. Fiz isso uma vez, em 2014, e dormi mal por um ano."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Doutor Renato, não posso aceitar isso agora."
+      },
+      {
+       "q": "valadares",
+       "e": "normal",
+       "t": "Claro. Só queria que soubesse: seja qual for o resultado, o(a) senhor(a) está certo(a) em perguntar. Eu confio em você."
+      },
+      {
+       "q": "valadares",
+       "e": "pensativo",
+       "t": "E o bolo de fubá da mamãe continua de pé. Ela pergunta se você está comendo direito.",
+       "se": "a3_val_cafe"
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Ele deixa o copo no parapeito e entra na sala sem esperar resposta. O café esfria ao lado de uma fotografia de formatura que você já viu, em outra gaveta, com outro sentido."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "(Ele está tranquilo. Ou é ótimo em parecer.)"
+      }
+     ]
     }
    },
    "placas": {

@@ -1,0 +1,3468 @@
+{
+ "ato": "ato3",
+ "personagens": {
+  "a3yenio": {
+   "nome": "Ênio Moraes",
+   "cargo": "Investigador de Polícia Civil",
+   "voz": 310,
+   "bio": "Investigador com vinte anos de rua, carismático e leal a quem o trata bem. Filho de caminhoneiro assaltado quatro vezes, acredita que a lei é lenta demais para quem sofre. Apresentado por Valadares como gente de confiança.",
+   "personalidade": "carismático, leal, impulsivo, convicto",
+   "motivacao": "Pôr na cadeia quem fez mal aos seus.",
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#222222",
+    "roupa": "casual",
+    "corRoupa": "#5d6d7e",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3ygabriel": {
+   "nome": "Gabriel Teodoro",
+   "cargo": "Investigado · 22 anos",
+   "voz": 340,
+   "bio": "Entregador de aplicativo, acusado de assaltar uma farmácia.",
+   "personalidade": "calado, assustado",
+   "motivacao": "Sair da cadeia.",
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#1b1b1b",
+    "roupa": "casual",
+    "corRoupa": "#34495e",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3ykaique": {
+   "nome": "Kaique Matos",
+   "cargo": "Investigado · 21 anos",
+   "voz": 350,
+   "bio": "Estudante, primário, que aplicou o golpe do falso aluguel para pagar uma dívida.",
+   "personalidade": "arrependido, assustado",
+   "motivacao": "Reparar o dano e não perder a faculdade.",
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "cacheado",
+    "corCabelo": "#2a1a10",
+    "roupa": "casual",
+    "corRoupa": "#2e7d6b",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3ymarta": {
+   "nome": "Dra. Marta Siqueira",
+   "cargo": "Advogada",
+   "voz": 460,
+   "bio": "Advogada de defesa objetiva, que negocia acordos com dureza e boa-fé.",
+   "personalidade": "objetiva, direta, protetora",
+   "motivacao": "Garantir que o acordo cumpra a lei.",
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "coque",
+    "corCabelo": "#2a1a10",
+    "roupa": "blazer",
+    "corRoupa": "#7b241c",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3yosvaldo": {
+   "nome": "Osvaldo Reis",
+   "cargo": "Noticiante · 71 anos",
+   "voz": 240,
+   "bio": "Aposentado que briga com o vizinho por causa de uma cerca há dez anos.",
+   "personalidade": "teimoso, orgulhoso",
+   "motivacao": "Ser ouvido.",
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "careca",
+    "corCabelo": "#9e9e9e",
+    "roupa": "casual",
+    "corRoupa": "#7f8c8d",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   }
+  },
+  "a3yamaral": {
+   "nome": "Dr. Ubirajara Amaral",
+   "cargo": "Advogado de defesa no júri",
+   "voz": 200,
+   "bio": "Tribuno de plenário, gestos largos e frases de efeito. Conhece cada nulidade do rito do júri e aposta que o promotor vai cair em alguma.",
+   "personalidade": "teatral, afiado, vaidoso",
+   "motivacao": "Ganhar o júri, de qualquer jeito legal.",
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "topete",
+    "corCabelo": "#8a8a8a",
+    "roupa": "terno",
+    "corRoupa": "#1d2a44",
+    "gravata": "#7a1f1f",
+    "oculos": false,
+    "barba": true
+   }
+  },
+  "a3ytiao": {
+   "nome": "Sebastião Alves, o Tião",
+   "cargo": "Testemunha de defesa · garçom",
+   "voz": 280,
+   "bio": "Garçom do bar, amigo de infância do réu. Disposto a lembrar o que lhe pedem.",
+   "personalidade": "leal, assustado",
+   "motivacao": "Proteger o amigo.",
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#1b1b1b",
+    "roupa": "avental",
+    "corRoupa": "#ecf0f1",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3ycaio": {
+   "nome": "Caio Meneses",
+   "cargo": "Réu · 29 anos",
+   "voz": 270,
+   "bio": "Pedreiro, pai de uma menina de oito meses. Matou um homem por causa de vinte reais.",
+   "personalidade": "orgulhoso, arrependido",
+   "motivacao": "Voltar para casa.",
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#1b1b1b",
+    "roupa": "casual",
+    "corRoupa": "#ffffff",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3ymarlene": {
+   "nome": "Dona Marlene Braga",
+   "cargo": "Mãe da vítima",
+   "voz": 470,
+   "bio": "Costureira, mãe de Wellington. Não quer vingança, quer que o nome do filho seja dito com respeito.",
+   "personalidade": "digna, cansada",
+   "motivacao": "Que o filho não seja esquecido.",
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "coque",
+    "corCabelo": "#9e9e9e",
+    "roupa": "casual",
+    "corRoupa": "#6c3483",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  },
+  "a3yluana": {
+   "nome": "Luana Meneses",
+   "cargo": "Esposa do réu",
+   "voz": 500,
+   "bio": "Esposa de Caio, com a filha pequena no colo.",
+   "personalidade": "triste, firme",
+   "motivacao": "Manter a família de pé.",
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "rabo",
+    "corCabelo": "#3b2414",
+    "roupa": "casual",
+    "corRoupa": "#f1c40f",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   }
+  }
+ },
+ "episodios": [
+  {
+   "id": "a3y-triagem",
+   "ato": "ato3",
+   "ordem": 1.5,
+   "numero": 34,
+   "titulo": "Três Pastas",
+   "papel": "promotor",
+   "nivel": "basico",
+   "sinopse": "Três inquéritos sobre a mesa: um casal, um falso aluguel e três sacos de ração. O Ministério Público decide: denunciar, propor acordo de não persecução ou arquivar.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "dani": "escritorio",
+    "a3ykaique": "testemunha",
+    "a3ymarta": "defesa",
+    "a3yosvaldo": "cena",
+    "a3yenio": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "bo1",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Boletim de Telma",
+     "descricao": "Telma Alcântara, 34 anos, registra que o marido, Rubens, a empurrou contra a quina da mesa durante uma discussão, na noite de sábado. Hoje diz à Promotoria que quer “resolver em casa”."
+    },
+    {
+     "id": "laudo1",
+     "tipo": "prova",
+     "icone": "🩺",
+     "nome": "Laudo de lesão",
+     "descricao": "Hematoma extenso no braço esquerdo e escoriação no quadril. Perito: lesões compatíveis com empurrão violento contra um móvel."
+    },
+    {
+     "id": "msg1",
+     "tipo": "prova",
+     "icone": "💬",
+     "nome": "Mensagens de Rubens",
+     "descricao": "“Se você me expuser de novo, eu não respondo por mim.” Enviada no domingo, depois do boletim."
+    },
+    {
+     "id": "termo2",
+     "tipo": "prova",
+     "icone": "✍️",
+     "nome": "Confissão de Kaique",
+     "descricao": "Termo assinado diante da delegada, com a advogada Marta Siqueira presente: Kaique Matos, 21 anos, admite ter anunciado um apartamento que não era dele e recebido R$ 1.800 de duas pessoas."
+    },
+    {
+     "id": "extrato2",
+     "tipo": "prova",
+     "icone": "🏦",
+     "nome": "Extrato dos pagamentos",
+     "descricao": "Dois Pix de R$ 900 cada, para a conta de Kaique, com o anúncio do falso aluguel em anexo."
+    },
+    {
+     "id": "recibo2",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Devolução parcial",
+     "descricao": "Comprovante: Kaique devolveu R$ 900 a uma das vítimas e propôs devolver o restante."
+    },
+    {
+     "id": "ant2",
+     "tipo": "prova",
+     "icone": "📑",
+     "nome": "Certidão de antecedentes",
+     "descricao": "Nada consta. Kaique é primário e nunca respondeu a processo."
+    },
+    {
+     "id": "decl3",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Declaração de seu Osvaldo",
+     "descricao": "Osvaldo Reis, 71 anos, afirma que o vizinho Dirceu levou três sacos de ração do seu quintal. Não viu o furto: “só sei que foi ele”. Os dois brigam por causa de uma cerca há dez anos."
+    },
+    {
+     "id": "auto3",
+     "tipo": "prova",
+     "icone": "🔎",
+     "nome": "Auto de busca na casa de Dirceu",
+     "descricao": "Busca na casa e no quintal de Dirceu: nenhuma ração, nenhum saco, nenhuma marca. Nada foi apreendido."
+    },
+    {
+     "id": "cam3",
+     "tipo": "prova",
+     "icone": "📹",
+     "nome": "Câmera do quintal",
+     "descricao": "Laudo do técnico: a câmera de seu Osvaldo estava desligada da tomada havia mais de um mês."
+    },
+    {
+     "id": "cpp28",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 28: Arquivamento",
+     "chave": "CPP#art-28",
+     "trecho": "Ordenado o arquivamento do inquérito policial"
+    },
+    {
+     "id": "cpp28a",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 28-A: Acordo",
+     "chave": "CPP#art-28a",
+     "trecho": "o Ministério Público poderá propor acordo de não persecução penal"
+    },
+    {
+     "id": "cpp28a4",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 28-A, § 2º, IV",
+     "chave": "CPP#art-28a/par-2/inc-iv",
+     "trecho": "nos crimes praticados no âmbito de violência doméstica ou familiar"
+    },
+    {
+     "id": "cpp28a3",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 28-A, § 3º",
+     "chave": "CPP#art-28a/par-3",
+     "trecho": "será formalizado por escrito e será firmado pelo membro do Ministério Público, pelo investigado e por seu defensor"
+    },
+    {
+     "id": "cpp41",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 41: Denúncia",
+     "chave": "CPP#art-41",
+     "trecho": "A denúncia ou queixa conterá a exposição do fato criminoso"
+    },
+    {
+     "id": "cpp395",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 395, III",
+     "chave": "CPP#art-395/inc-iii",
+     "trecho": "faltar justa causa para o exercício da ação penal"
+    },
+    {
+     "id": "cpp18",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 18: Novas provas",
+     "chave": "CPP#art-18",
+     "trecho": "se de outras provas tiver notícia"
+    }
+   ],
+   "inicio": "t1",
+   "cenas": {
+    "t1": {
+     "tipo": "titulo",
+     "texto": "Episódio 34",
+     "subtitulo": "Três Pastas",
+     "proxima": "t2"
+    },
+    "t2": {
+     "tipo": "dialogo",
+     "local": "promotoria",
+     "proxima": "t3",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Três pastas de capa amarela. Três vidas. E uma regra que ninguém ensina na faculdade: nem todo inquérito vira processo."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Segunda de manhã na Promotoria. A triagem é a parte menos glamourosa do cargo e a que mais pesa: o Ministério Público denuncia, arquiva ou propõe acordo. Os três caminhos têm que ser fundamentados."
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Pasta um: um casal, lesão corporal. Pasta dois: um falso aluguel pela internet. Pasta três: três sacos de ração. Sim, ração."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Regra de ouro do velho Renato: nunca decida pelo nome do investigado. Decida pelo papel. O resto é consciência, e a minha eu deixo guardada na gaveta da minha mãe."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Doutor Renato, um dia o senhor me conta o que tem na gaveta da dona Heloísa."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Uma foto minha de beca, aos 23 anos. Com cara de quem acha que a lei cabe numa pasta amarela."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados com os três inquéritos e as regras da triagem.",
+       "recebe": [
+        "cpp28",
+        "cpp28a",
+        "cpp28a4",
+        "cpp28a3",
+        "cpp41",
+        "cpp395",
+        "cpp18"
+       ]
+      }
+     ]
+    },
+    "t3": {
+     "tipo": "investigar",
+     "local": "promotoria",
+     "titulo": "Mesa de triagem",
+     "proxima": "p1",
+     "requer": [
+      "laudo1",
+      "msg1",
+      "termo2",
+      "extrato2",
+      "decl3",
+      "auto3"
+     ],
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Três pastas abertas sobre a mesa, o ventilador do teto girando devagar e uma xícara de café pela metade, que Dani jura não ser dela."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Antes de decidir, quero ler o que há em cada pasta. Não o que dizem sobre ela."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "pasta1",
+       "nome": "Pasta 1: Rubens e Telma",
+       "x": 8,
+       "y": 40,
+       "w": 22,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O boletim de Telma, o laudo do IML e as mensagens de Rubens, mandadas depois do boletim. O hematoma é grande: não é de quem tropeça."
+        },
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Telma diz que quer “resolver em casa”. Mas a mensagem de domingo é de quem já resolveu como quer.",
+         "recebe": [
+          "bo1",
+          "laudo1",
+          "msg1"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pasta2",
+       "nome": "Pasta 2: Kaique",
+       "x": 38,
+       "y": 40,
+       "w": 22,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Duas vítimas, R$ 900 cada, um anúncio falso. Confissão assinada diante da delegada e da advogada, sem pressão. E uma certidão limpa: nunca respondeu a nada.",
+         "recebe": [
+          "termo2",
+          "extrato2",
+          "recibo2",
+          "ant2"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pasta3",
+       "nome": "Pasta 3: Dirceu e a ração",
+       "x": 68,
+       "y": 40,
+       "w": 22,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Seu Osvaldo não viu nada. A busca na casa de Dirceu não achou nada. A câmera do quintal estava desligada havia um mês. Dez anos de briga por causa de uma cerca.",
+         "recebe": [
+          "decl3",
+          "auto3",
+          "cam3"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural da Promotoria",
+       "x": 40,
+       "y": 8,
+       "w": 20,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Um cartaz antigo: “Arquivar não é perdoar. Denunciar não é vingar. Acordar não é fraquejar.” Alguém sublinhou a segunda frase."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Falar com Dani",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "normal",
+         "t": "Doutor(a), uma dica de quem já viu muita triagem: a pergunta é sempre a mesma. Há justa causa? Se sim, cabe acordo? Se não cabe, denuncia."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E se não há justa causa?"
+        },
+        {
+         "q": "dani",
+         "e": "normal",
+         "t": "Arquiva, e comunica a vítima, o investigado e a polícia. Mas arquivo por falta de prova não é para sempre: surgindo prova nova, o inquérito volta."
+        }
+       ]
+      }
+     ]
+    },
+    "p1": {
+     "tipo": "escolha",
+     "local": "promotoria",
+     "pergunta": "Pasta 1, Rubens e Telma. O que o Ministério Público faz?",
+     "proxima": "p1d",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Primeira pasta. Telma pediu para “resolver em casa”. Decida com a lei, não com o desejo de quem tem medo."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Ela está assustada. E ele sabe disso.)"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Arquivar (art. 28): a própria vítima não quer o processo.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "A lesão corporal doméstica é de ação pública incondicionada. A vontade da vítima não retira a justa causa, que está no laudo e nas mensagens."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28",
+         "trecho": "Ordenado o arquivamento do inquérito policial"
+        }
+       ]
+      },
+      {
+       "t": "Propor acordo de não persecução (art. 28-A): Rubens é primário e confessou ao delegado.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "O § 2º, IV, do art. 28-A veda o acordo em violência doméstica. A lei já ponderou isso por você."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a/par-2/inc-iv",
+         "trecho": "nos crimes praticados no âmbito de violência doméstica ou familiar"
+        }
+       ]
+      },
+      {
+       "t": "Denunciar: há prova da lesão e da autoria, a ação é pública incondicionada e o acordo é vedado.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Denúncia. O art. 28-A, § 2º, IV, fecha a porta do acordo, e o laudo com as mensagens sustentam a acusação."
+        },
+        {
+         "q": "valadares",
+         "e": "feliz",
+         "t": "Boa. Lembre-se: o Ministério Público não acusa a vítima de nada, nem a deixa sozinha com o agressor."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-41",
+         "trecho": "A denúncia ou queixa conterá a exposição do fato criminoso"
+        }
+       ]
+      }
+     ]
+    },
+    "p1d": {
+     "tipo": "denuncia",
+     "local": "promotoria",
+     "titulo": "Denúncia: lesão corporal doméstica",
+     "proxima": "p2",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Agora faça o que o art. 41 manda: o fato, a classificação, as provas e as testemunhas."
+      }
+     ],
+     "partes": [
+      {
+       "nome": "Classificação do crime",
+       "opcoes": [
+        {
+         "t": "Lesão corporal no âmbito doméstico (CP, art. 129, § 9º).",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "O crime foi praticado contra a esposa, com quem o réu convive."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "CP#art-129/par-9",
+           "trecho": "com quem conviva ou tenha convivido"
+          }
+         ]
+        },
+        {
+         "t": "Ameaça (CP, art. 147), pela mensagem de domingo.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "pensativo",
+           "t": "A mensagem agrava o quadro, mas o fato principal é a lesão que o laudo comprova."
+          }
+         ]
+        },
+        {
+         "t": "Lesão corporal leve comum (CP, art. 129, caput).",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "bravo",
+           "t": "Sendo contra a esposa, o parágrafo 9º é o que se aplica: pena maior e sem acordo."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "Materialidade",
+       "provas": [
+        "laudo1"
+       ],
+       "pergunta": "Que peça prova a lesão?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não demonstra a lesão corporal. Falta o exame de corpo de delito."
+        }
+       ]
+      },
+      {
+       "nome": "Autoria",
+       "provas": [
+        "bo1",
+        "msg1"
+       ],
+       "pergunta": "Que peça aponta Rubens como autor?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não indica que foi Rubens quem causou a lesão."
+        }
+       ]
+      },
+      {
+       "nome": "Rol de testemunhas",
+       "opcoes": [
+        {
+         "t": "A vítima Telma e o perito do IML que assinou o laudo.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "feliz",
+           "t": "Quem sofreu e quem periciou. Com medida protetiva, se ela quiser."
+          }
+         ]
+        },
+        {
+         "t": "Somente Rubens, para dar a sua versão.",
+         "falas": [
+          {
+           "q": "voce",
+           "e": "pensativo",
+           "t": "Réu não é testemunha da acusação. Ele será interrogado."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Ofereço a denúncia."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "Primeira pasta resolvida. E sem acordo, porque a lei já sabia o que fazer."
+      }
+     ]
+    },
+    "p2": {
+     "tipo": "escolha",
+     "local": "promotoria",
+     "pergunta": "Pasta 2, Kaique. O que o Ministério Público faz?",
+     "proxima": "p2a",
+     "falas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Segunda pasta. Estelionato de baixo valor, investigado primário, confissão com advogada. Quais são os requisitos do acordo?"
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Confissão formal, infração sem violência, pena mínima abaixo de quatro anos. O estelionato simples tem pena mínima de um ano."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Denunciar direto: fraude é fraude, e a devolução parcial não apaga o crime.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "Todos os requisitos do art. 28-A estão preenchidos. O acordo repara a vítima, evita um processo longo para um crime de pouca gravidade concreta e dá resposta mais rápida. Denunciar seria ignorar uma ferramenta que a lei pôs na sua mão."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a",
+         "trecho": "o Ministério Público poderá propor acordo de não persecução penal"
+        }
+       ]
+      },
+      {
+       "t": "Propor acordo de não persecução penal (art. 28-A): requisitos preenchidos e reparação do dano ainda possível.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Confissão formal, sem violência, pena mínima abaixo de quatro anos, primário. Acordo, com reparação integral à vítima."
+        },
+        {
+         "q": "valadares",
+         "e": "feliz",
+         "t": "Acordo bom é o que a vítima sente no bolso e o investigado sente na consciência."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a",
+         "trecho": "o Ministério Público poderá propor acordo de não persecução penal"
+        }
+       ]
+      },
+      {
+       "t": "Arquivar: ele já devolveu parte do dinheiro.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "Devolver parte não extingue o crime nem tira a justa causa. Arquivamento é para quando falta base para a denúncia, não quando sobra boa vontade."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28",
+         "trecho": "Ordenado o arquivamento do inquérito policial"
+        }
+       ]
+      }
+     ]
+    },
+    "p2a": {
+     "tipo": "escolha",
+     "local": "promotoria",
+     "pergunta": "Que condições o Ministério Público propõe a Kaique?",
+     "proxima": "p3",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sala de reuniões. Kaique, de camisa de botão emprestada, ao lado da advogada Marta Siqueira. Ele não levanta os olhos da mesa."
+      },
+      {
+       "q": "a3ykaique",
+       "e": "triste",
+       "t": "Eu fiz, doutor(a). Foi dívida de jogo, uma besteira atrás da outra. Só quero devolver tudo e não perder a minha vaga na faculdade."
+      },
+      {
+       "q": "a3ymarta",
+       "e": "normal",
+       "t": "Doutor(a), o meu cliente aceita um acordo, com todas as garantias que a lei exige."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Devolver os R$ 900 restantes e prestar serviço à comunidade por período definido, tudo por escrito, assinado pelo Ministério Público, por ele e pela defensora.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Reparação integral e prestação de serviço à comunidade, por escrito e assinada pelos três. Se descumprir, o acordo é rescindido e a denúncia é oferecida."
+        },
+        {
+         "q": "a3ykaique",
+         "e": "feliz",
+         "t": "Eu aceito. Obrigado, doutor(a)."
+        },
+        {
+         "q": "a3ymarta",
+         "e": "feliz",
+         "t": "Uma saída proporcional, e sem o estigma de uma condenação."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a/inc-i",
+         "trecho": "reparar o dano ou restituir a coisa à vítima"
+        },
+        {
+         "chave": "CPP#art-28a/par-3",
+         "trecho": "será formalizado por escrito e será firmado pelo membro do Ministério Público, pelo investigado e por seu defensor"
+        }
+       ]
+      },
+      {
+       "t": "Seis meses de prisão em regime aberto, convertidos depois em multa.",
+       "falas": [
+        {
+         "q": "a3ymarta",
+         "e": "bravo",
+         "t": "O acordo de não persecução não impõe pena privativa de liberdade. As condições são ajustadas, não são penas."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a/inc-v",
+         "trecho": "cumprir, por prazo determinado, outra condição indicada pelo Ministério Público"
+        }
+       ]
+      },
+      {
+       "t": "Nova confissão por escrito, sem a presença da defensora, para ganhar tempo.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "O acordo precisa da assinatura do investigado e do defensor. Sem a defensora, é nulo e vira motivo de recurso."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a/par-3",
+         "trecho": "será formalizado por escrito e será firmado pelo membro do Ministério Público, pelo investigado e por seu defensor"
+        }
+       ]
+      }
+     ]
+    },
+    "p3": {
+     "tipo": "escolha",
+     "local": "promotoria",
+     "pergunta": "Pasta 3, a ração de seu Osvaldo. O que o Ministério Público faz?",
+     "proxima": "p3c",
+     "falas": [
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Terceira pasta. Seu Osvaldo vem todo dia perguntar se já foi denunciado. Tem um jeito de dizer não que não magoe?"
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "O jeito é dizer a verdade, com a lei na mão."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Propor acordo de não persecução penal, para encerrar logo a briga.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "Acordo pressupõe confissão e justa causa. Aqui não há nem uma nem outra."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28a",
+         "trecho": "o Ministério Público poderá propor acordo de não persecução penal"
+        }
+       ]
+      },
+      {
+       "t": "Promover o arquivamento (art. 28): não há indício mínimo de autoria, só a palavra de um desafeto. Se surgir prova nova, o inquérito pode ser reaberto.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Sem testemunha, sem apreensão, sem imagem, só uma desavença de dez anos. Falta justa causa. Arquivamento, comunicando vítima, investigado e polícia."
+        },
+        {
+         "q": "valadares",
+         "e": "pensativo",
+         "t": "Arquivar por falta de prova é a decisão mais impopular e a mais honesta. Se amanhã aparecer prova, o inquérito volta."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-28",
+         "trecho": "Ordenado o arquivamento do inquérito policial"
+        },
+        {
+         "chave": "CPP#art-18",
+         "trecho": "se de outras provas tiver notícia"
+        }
+       ]
+      },
+      {
+       "t": "Denunciar Dirceu e deixar que o juiz decida.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "A denúncia será rejeitada por falta de justa causa. E um cidadão carregaria o título de réu por causa de uma cerca."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-395/inc-iii",
+         "trecho": "faltar justa causa para o exercício da ação penal"
+        }
+       ]
+      }
+     ]
+    },
+    "p3c": {
+     "tipo": "dialogo",
+     "local": "promotoria",
+     "proxima": "bar",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Seu Osvaldo recebe a decisão no balcão, de boné na mão. Lê duas vezes. Depois olha para você como quem perdeu uma coisa que nunca teve."
+      },
+      {
+       "q": "a3yosvaldo",
+       "e": "triste",
+       "t": "Então o Dirceu leva e fica por isso mesmo."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Não, seu Osvaldo. O senhor não perdeu o direito: se aparecer prova nova, o inquérito volta. Hoje, o que o Ministério Público não pode é acusar sem prova."
+      },
+      {
+       "q": "a3yosvaldo",
+       "e": "pensativo",
+       "t": "Ração é pouco. Mas era o que me restava de respeito por aquele terreno."
+      },
+      {
+       "q": "dani",
+       "e": "triste",
+       "t": "(baixinho) A decisão certa nem sempre deixa o dono da ração feliz."
+      }
+     ]
+    },
+    "bar": {
+     "tipo": "dialogo",
+     "local": "bar",
+     "proxima": "fim",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sexta, 21h. Um bar de calçada, cheiro de torresmo e pagode baixinho. A comemoração do pessoal da Polícia Civil."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "Aí está! Estou apresentando o(a) nosso(a) colega a todo mundo. Esse é o Ênio, investigador. O melhor faro de rua da Polícia Civil."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "Prazer, Ênio.",
+       "se": "a3_val_cafe"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Prazer, investigador. Só passei para cumprimentar: em dez minutos eu vou embora.",
+       "se": "a3_val_distante"
+      },
+      {
+       "q": "a3yenio",
+       "e": "feliz",
+       "t": "O prazer é meu, doutor(a). Quando precisar de gente de campo, que não tenha medo de sujar o sapato, é só ligar. Já ajudei três promotores a fechar processo."
+      },
+      {
+       "q": "a3yenio",
+       "e": "normal",
+       "t": "Cresci vendo meu pai, caminhoneiro, ser assaltado quatro vezes. Prometi que ia pôr essa gente na cadeia. Alguns acham exagero. Eu acho dever."
+      },
+      {
+       "q": "valadares",
+       "e": "feliz",
+       "t": "O Ênio é a prova de que dá para ser polícia e ser gente."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Ele entrega um cartão sem nome de delegacia: só um número e o desenho de uma coruja. Você o guarda no bolso sem pensar. É assim que se começa a confiar."
+      }
+     ]
+    },
+    "fim": {
+     "tipo": "veredicto",
+     "carimbo": "TRIAGEM FEITA",
+     "titulo": "Denunciar, acordar, arquivar",
+     "texto": "Você denunciou onde havia prova e o acordo era vedado, propôs o acordo onde a lei o permitia e arquivou onde faltava justa causa. Três caminhos, três fundamentos. Na sexta, conheceu um investigador que promete ajudar sempre que você precisar."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3y-amigo",
+   "ato": "ato3",
+   "ordem": 4.5,
+   "numero": 35,
+   "titulo": "O Presente do Amigo",
+   "papel": "promotor",
+   "nivel": "avancado",
+   "sinopse": "O investigador que você conheceu no bar entrega um inquérito pronto: pistola, print e confissão. Só falta assinar. Você precisa descobrir o que é verdadeiro, recusar o que é ilícito e decidir o que fazer com um amigo.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "valadares": "escritorio",
+    "dani": "escritorio",
+    "a3yenio": "testemunha",
+    "a3ygabriel": "cena",
+    "fausto": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "video",
+     "tipo": "prova",
+     "icone": "🎥",
+     "nome": "Vídeo da farmácia",
+     "descricao": "Câmera interna da Droga Fácil, 22h41: homem de moletom e capuz, rosto parcialmente visível, rende a atendente e leva R$ 3.200. Na cintura, um objeto escuro que ele nunca saca. Não há tiro, nem arma nas mãos."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🔬",
+     "nome": "Laudo de local",
+     "descricao": "Perícia da farmácia: nenhum projétil, nenhuma marca de arma, impressões digitais parciais no balcão compatíveis com as de Gabriel Teodoro."
+    },
+    {
+     "id": "erb",
+     "tipo": "prova",
+     "icone": "📡",
+     "nome": "Localização do celular",
+     "descricao": "Dados de localização, requisitados com ordem judicial: o aparelho de Gabriel esteve na antena da farmácia entre 22h30 e 22h50."
+    },
+    {
+     "id": "mandado",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Mandado de busca",
+     "descricao": "Mandado de busca e apreensão na casa e no carro de Gabriel, expedido pela juíza às 15h02 da quinta-feira."
+    },
+    {
+     "id": "pistola",
+     "tipo": "prova",
+     "icone": "🔫",
+     "nome": "Auto de apreensão da pistola",
+     "descricao": "Auto da 14ª DP: uma pistola .380 “encontrada no porta-luvas do carro de Gabriel”. Lavrado às 14h20 da quinta-feira. Assinado pelo investigador Ênio Moraes.",
+     "autentica": false,
+     "indicios": [
+      "lavrado às 14h20, quarenta minutos antes de o mandado de busca ser expedido",
+      "o número de série descrito no auto não confere com o da arma fotografada"
+     ]
+    },
+    {
+     "id": "print",
+     "tipo": "prova",
+     "icone": "💬",
+     "nome": "Print da “confissão”",
+     "descricao": "Captura de tela de uma conversa de WhatsApp em que Gabriel diria: “fui eu na farmácia, dei sorte de ninguém reagir”. Anexada ao inquérito pelo investigador Ênio.",
+     "autentica": false,
+     "indicios": [
+      "o horário do print é posterior ao da última mensagem registrada no servidor",
+      "o nome do contato aparece com uma grafia que nunca existiu na agenda do aparelho"
+     ]
+    },
+    {
+     "id": "extracao",
+     "tipo": "prova",
+     "icone": "📱",
+     "nome": "Relatório de extração do celular",
+     "descricao": "Relatório da 14ª DP: extração completa do celular de Gabriel, feita no gabinete do delegado Fausto Rangel às 23h12 de quarta, com ele já preso e sem acesso ao aparelho. A ordem judicial só saiu na quinta, às 10h.",
+     "detalhe": "A extração foi feita por software forense, sem senha: o preso não entregou o celular nem a senha."
+    },
+    {
+     "id": "cp157",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 157: Roubo",
+     "chave": "CP#art-157",
+     "trecho": "Subtrair coisa móvel alheia, para si ou para outrem, mediante grave ameaça"
+    },
+    {
+     "id": "cp157a",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 157, § 2º-A: Majorante",
+     "chave": "CP#art-157/par-2a",
+     "trecho": "A pena aumenta-se de 2/3 (dois terços)"
+    },
+    {
+     "id": "cpp157",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 157: Provas ilícitas",
+     "chave": "CPP#art-157",
+     "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+    },
+    {
+     "id": "cp347",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 347, parágrafo único",
+     "chave": "CP#art-347/par-unico",
+     "trecho": "Se a inovação se destina a produzir efeito em processo penal, ainda que não iniciado, as penas aplicam-se em dobro."
+    }
+   ],
+   "inicio": "a1",
+   "cenas": {
+    "a1": {
+     "tipo": "titulo",
+     "texto": "Episódio 35",
+     "subtitulo": "O Presente do Amigo",
+     "proxima": "a2"
+    },
+    "a2": {
+     "tipo": "dialogo",
+     "local": "promotoria",
+     "proxima": "a3",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O presente chegou numa caixa de papelão, com laço de barbante e uma pizza ainda quente em cima."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sexta, 19h40. A Promotoria vazia, o corredor às escuras e, no fundo, uma silhueta conhecida com uma caixa nas mãos."
+      },
+      {
+       "q": "a3yenio",
+       "e": "feliz",
+       "t": "Doutor(a)! Pizza de calabresa, que promotor novo não almoça. E um presente: fechei o caso do assalto à farmácia. Pistola, print da confissão, vídeo e localização. É só assinar a denúncia."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "(baixinho) Doutor(a), o caso é da 14ª DP, do doutor Fausto. Por que um investigador de outra delegacia está trazendo as provas para cá?"
+      },
+      {
+       "q": "a3yenio",
+       "e": "normal",
+       "t": "Pedi emprestado ao Fausto. A atendente é minha prima. Dormi mal desde terça. Esse garoto precisa pegar o que merece, doutor(a)."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Obrigado(a), Ênio. Vou ler tudo com calma."
+      },
+      {
+       "q": "a3yenio",
+       "e": "feliz",
+       "t": "Claro. Qualquer coisa, é só ligar."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "cp157",
+        "cp157a",
+        "cpp157",
+        "cp347"
+       ]
+      }
+     ]
+    },
+    "a3": {
+     "tipo": "investigar",
+     "local": "promotoria",
+     "titulo": "A caixa do Ênio",
+     "proxima": "a4",
+     "requer": [
+      "video",
+      "laudo",
+      "erb",
+      "mandado",
+      "pistola",
+      "print",
+      "extracao"
+     ],
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A caixa de papelão aberta sobre a mesa, a pizza esfriando ao lado. Dentro, tudo arrumadinho demais: pastas numeradas, post-its com setas, o caso inteiro mastigado para você engolir."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Quando um caso chega embrulhado em laço, eu leio duas vezes. Primeiro o que está escrito. Depois o que está faltando."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "pasta",
+       "nome": "Pasta do inquérito",
+       "x": 10,
+       "y": 42,
+       "w": 20,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O vídeo da farmácia, o laudo da perícia e a localização do celular. Esta parte é sólida: ordem judicial, perito, cadeia de custódia.",
+         "recebe": [
+          "video",
+          "laudo",
+          "erb"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E o mandado de busca, expedido às 15h02 da quinta.",
+         "recebe": [
+          "mandado"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "arma",
+       "nome": "Saco de evidência",
+       "x": 40,
+       "y": 55,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O auto de apreensão da pistola .380. Lavrado às 14h20. O mandado só saiu às 15h02. Anote, Dani: quarenta minutos de diferença.",
+         "recebe": [
+          "pistola"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A foto da pistola mostra um número de série. O auto descreve outro."
+        }
+       ]
+      },
+      {
+       "id": "print",
+       "nome": "Pendrive com o “print”",
+       "x": 68,
+       "y": 40,
+       "w": 18,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A captura de tela da conversa em que Gabriel confessa. Parece boa demais para ser verdade.",
+         "recebe": [
+          "print"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "rel",
+       "nome": "Relatório da extração",
+       "x": 70,
+       "y": 12,
+       "w": 20,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "A extração do celular foi feita no gabinete do delegado Fausto, na quarta à noite, às 23h12, com o preso na cela. A ordem judicial só veio na quinta de manhã.",
+         "recebe": [
+          "extracao"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "dani",
+       "titulo": "Falar com Dani",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "Doutor(a), eu conferi duas vezes. O mandado é das 15h02 e o auto da pistola é das 14h20. O auto foi escrito antes de a arma ser encontrada."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Ou a arma já estava na caixa antes da busca."
+        }
+       ]
+      },
+      {
+       "q": "a3yenio",
+       "titulo": "Falar com Ênio",
+       "falas": [
+        {
+         "q": "a3yenio",
+         "e": "feliz",
+         "t": "O garoto assaltou minha prima com uma arma na cintura. Isso aí é roubo com arma de fogo, doutor(a), e eu quero ver a pena maior."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "No vídeo ele nunca saca nada, Ênio."
+        },
+        {
+         "q": "a3yenio",
+         "e": "normal",
+         "t": "Mas estava armado. Eu sei. A gente sabe."
+        }
+       ]
+      }
+     ]
+    },
+    "a4": {
+     "tipo": "celular",
+     "local": "casa",
+     "contato": "Dr. Renato Valadares",
+     "status": "online",
+     "proxima": "a5",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Noite de sexta, em casa. Você revê o auto da pistola pela terceira vez. Um colega, só um, entende de caso assim."
+      }
+     ],
+     "mensagens": [
+      {
+       "de": "voce",
+       "t": "Renato, estranhei o caso da farmácia. O auto da pistola é de 14h20 e o mandado só saiu às 15h02."
+      },
+      {
+       "de": "ele",
+       "t": "Calma, colega! O Ênio é gente fina. Deve ser erro de relógio da delegacia, acontece todo dia."
+      },
+      {
+       "de": "ele",
+       "t": "Não mexa em nada antes de eu conversar com ele, combinado? Eu cuido disso."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Contar tudo: o print também parece adulterado",
+       "envia": "O print também parece adulterado. Os horários não batem.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Fez bem em me contar. Durma tranquilo(a)."
+        }
+       ],
+       "marca": "a3y_contou_valadares",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Você dorme mal. A frase “durma tranquilo(a)” tem um efeito contrário ao pretendido."
+        }
+       ]
+      },
+      {
+       "t": "Agradecer e dizer que vai ler os autos com calma",
+       "envia": "Obrigado(a), Renato. Vou ler tudo com calma e falo contigo amanhã.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Combinado. Boa noite!"
+        }
+       ],
+       "marca": "a3y_guardou_segredo",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "(Prefiro ler os autos sozinho(a) esta noite. Não sei por quê.)"
+        }
+       ]
+      }
+     ]
+    },
+    "a5": {
+     "tipo": "analisar",
+     "local": "escritorio",
+     "provas": [
+      "video",
+      "laudo",
+      "erb",
+      "pistola",
+      "print"
+     ],
+     "falsas": [
+      "pistola",
+      "print"
+     ],
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sábado de manhã. Café, os autos abertos e a pergunta que o laço do presente tentou esconder."
+      }
+     ],
+     "pergunta": "Quais peças do presente não resistem à perícia?",
+     "dica": [
+      "Duas peças foram fabricadas depois do fato. Compare horários e números.",
+      "O auto da pistola e o print têm indícios próprios: examine cada um."
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Auto da pistola lavrado antes do mandado e com número de série trocado. Print com horário posterior ao do servidor. Alguém montou essas duas peças."
+      },
+      {
+       "q": "dani",
+       "e": "triste",
+       "t": "Doutor(a)... o Ênio?"
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Doutor(a), vale reler. Se ficar uma peça falsa, a denúncia cai; se descartar uma verdadeira, o caso perde a sustentação."
+      }
+     ],
+     "proxima": "a6"
+    },
+    "a6": {
+     "tipo": "dialogo",
+     "local": "promotoria",
+     "proxima": "a7",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Segunda, 8h. Ênio chega pontual, de camisa passada, com um sorriso de quem espera um agradecimento."
+      },
+      {
+       "q": "a3yenio",
+       "e": "feliz",
+       "t": "Doutor(a)! Já assinou? A prima chorou de alívio quando soube."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Ênio, vou colher suas declarações sobre a investigação. Pergunto de forma direta e sem sugerir resposta, como manda o art. 212. Sente-se."
+      },
+      {
+       "q": "a3yenio",
+       "e": "normal",
+       "t": "Claro, doutor(a). Pode perguntar o que quiser."
+      }
+     ]
+    },
+    "a7": {
+     "tipo": "depoimento",
+     "testemunha": "a3yenio",
+     "titulo": "Declarações do investigador Ênio",
+     "proxima": "a8",
+     "intro": [
+      {
+       "q": "a3yenio",
+       "e": "confiante",
+       "t": "Sou investigador há vinte anos, doutor(a). Nunca tive uma advertência."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O auto da pistola foi lavrado depois da busca, como manda o procedimento.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Depois da busca, o senhor diz?"
+        },
+        {
+         "q": "a3yenio",
+         "e": "normal",
+         "t": "Depois. Foi no carro dele, no porta-luvas. Sou meticuloso."
+        }
+       ]
+      },
+      {
+       "t": "O celular de Gabriel foi desbloqueado por ele mesmo, de livre vontade, na minha frente.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "De livre vontade?"
+        },
+        {
+         "q": "a3yenio",
+         "e": "nervoso",
+         "t": "Entregou a senha na hora. Garoto colaborativo."
+        }
+       ]
+      },
+      {
+       "t": "Eu só conheço o doutor Valadares de confraternização. Nada além disso.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Nada além disso?"
+        },
+        {
+         "q": "a3yenio",
+         "e": "nervoso",
+         "t": "Já levei alguns documentos para ele, mas isso é rotina, doutor(a). Rotina."
+        }
+       ]
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "mandado"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O mandado foi expedido às 15h02, Ênio. O auto está lavrado às 14h20. Como o senhor apreendeu a pistola quarenta minutos antes de ter autorização?"
+        },
+        {
+         "q": "a3yenio",
+         "e": "chocado",
+         "t": "Foi… erro de horário. Do sistema.",
+         "fx": "tremor"
+        }
+       ]
+      },
+      {
+       "afirmacao": 1,
+       "provas": [
+        "extracao"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O relatório diz que a extração foi feita na quarta, às 23h12, no gabinete do delegado, com Gabriel preso na cela e sem senha. Ele não entregou nada."
+        },
+        {
+         "q": "a3yenio",
+         "e": "chocado",
+         "t": "Eu… foi o doutor Fausto que mandou fazer. Eu só levei o aparelho.",
+         "fx": "tremor"
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Ênio. Pare. O auto, o print e a extração não resistem. Eu li tudo."
+      },
+      {
+       "q": "a3yenio",
+       "e": "triste",
+       "t": "A atendente é minha prima, doutor(a). Eu vi a menina tremendo. Aquele moleque merecia o máximo e o juiz ia dar o mínimo. Eu só ajudei a lei a pesar."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Isso não é ajudar a lei. Isso é fraude processual, e eu sou obrigado(a) a comunicar."
+      },
+      {
+       "q": "a3yenio",
+       "e": "bravo",
+       "t": "Você é obrigado(a). Eu fiz por você."
+      }
+     ],
+     "erro": [
+      {
+       "q": "a3yenio",
+       "e": "confiante",
+       "t": "Essa prova não tem nada a ver com o que eu disse, doutor(a)."
+      }
+     ]
+    },
+    "a8": {
+     "tipo": "denuncia",
+     "local": "gabinete",
+     "titulo": "Denúncia contra Gabriel Teodoro",
+     "proxima": "a9",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Ênio sai da sala sem se despedir. Sobra a pizza fria e o dever de escrever uma denúncia com só o que é verdadeiro."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "E sem a pistola, o que sobra?"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Sobra um roubo. Provado por vídeo, laudo e localização. Só não é o roubo mais grave que alguém queria."
+      }
+     ],
+     "partes": [
+      {
+       "nome": "Classificação do crime",
+       "opcoes": [
+        {
+         "t": "Roubo simples (CP, art. 157, caput), sem a majorante de arma de fogo, porque a única arma apresentada é falsa.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "Grave ameaça por gesto, sem arma comprovada. A pena é menor, mas é a que a verdade permite."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "CP#art-157",
+           "trecho": "Subtrair coisa móvel alheia, para si ou para outrem, mediante grave ameaça"
+          }
+         ]
+        },
+        {
+         "t": "Roubo majorado por arma de fogo (art. 157, § 2º-A), usando a pistola apreendida por Ênio.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "chocado",
+           "t": "Doutor(a), essa pistola é fraude. Se o senhor(a) a usar, vira cúmplice dela."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "CP#art-157/par-2a",
+           "trecho": "A pena aumenta-se de 2/3 (dois terços)"
+          }
+         ]
+        },
+        {
+         "t": "Furto, porque ninguém se feriu.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "bravo",
+           "t": "Rendeu a atendente e levou o dinheiro sob ameaça. Isso é roubo, com ou sem sangue."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "Materialidade",
+       "provas": [
+        "video",
+        "laudo"
+       ],
+       "pergunta": "Que peça prova que o roubo aconteceu?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não demonstra a ocorrência do roubo."
+        }
+       ]
+      },
+      {
+       "nome": "Autoria",
+       "provas": [
+        "erb",
+        "laudo"
+       ],
+       "pergunta": "Que peça autêntica coloca Gabriel na farmácia?",
+       "erro": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não coloca Gabriel na farmácia no horário do roubo."
+        }
+       ]
+      },
+      {
+       "nome": "Rol de testemunhas",
+       "opcoes": [
+        {
+         "t": "A atendente da farmácia e o perito que examinou o local.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "feliz",
+           "t": "Quem viu e quem periciou."
+          }
+         ]
+        },
+        {
+         "t": "O investigador Ênio Moraes, que “conhece bem o caso”.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "triste",
+           "t": "Doutor(a)... não."
+          }
+         ]
+        },
+        {
+         "t": "O delegado Fausto Rangel, que determinou a extração do celular.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "bravo",
+           "t": "Testemunha da prova ilícita contamina a denúncia."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Ofereço a denúncia só com o que se sustenta."
+      },
+      {
+       "q": "lacerda",
+       "e": "feliz",
+       "t": "É assim que se constrói um processo que não cai no Tribunal."
+      }
+     ]
+    },
+    "a9": {
+     "tipo": "escolha",
+     "local": "gabinete",
+     "pergunta": "O delegado manda recado: “Junte a extração do celular, a confissão está lá”. O que o Ministério Público faz?",
+     "proxima": "a10",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O telefone do gabinete toca. É o delegado Fausto Rangel, sem se apresentar."
+      },
+      {
+       "q": "fausto",
+       "e": "confiante",
+       "t": "Doutor(a), a extração do celular do garoto tem a confissão dele. Junte aos autos. A defesa nunca vai saber como foi obtida."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "(baixinho) Doutor(a), o senhor(a) sabe que sem ordem judicial ela é ilícita."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Juntar a extração: confissão é confissão.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "Prova ilícita não vira lícita porque ninguém vai descobrir. O art. 157 manda desentranhá-la, e a ilicitude contamina as derivadas."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-157",
+         "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+        }
+       ]
+      },
+      {
+       "t": "Recusar a extração, informar à juíza que não será usada e requerer o seu desentranhamento (CPP, art. 157).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Delegado, a extração foi feita sem ordem judicial. O Ministério Público não vai usá-la, e vai pedir à juíza que a retire dos autos."
+        },
+        {
+         "q": "fausto",
+         "e": "bravo",
+         "t": "Você está se complicando sozinho(a), doutor(a)."
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Prefiro me complicar com a lei do que me facilitar com ela."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-157",
+         "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+        }
+       ]
+      },
+      {
+       "t": "Juntar, mas só como “indício”, sem valor de prova.",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "pensativo",
+         "t": "Prova ilícita não vale nem como indício. Ou está nos autos, ou está fora."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-157",
+         "trecho": "São inadmissíveis, devendo ser desentranhadas do processo, as provas ilícitas"
+        }
+       ]
+      }
+     ]
+    },
+    "a10": {
+     "tipo": "escolha",
+     "livre": true,
+     "local": "promotoria",
+     "pergunta": "Como você trata o Ênio?",
+     "proxima": "a11",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Fim de tarde. Dani deixa na sua mesa o formulário de comunicação à Corregedoria. Fraude processual contra processo penal tem pena em dobro. Mas Ênio foi, também, o primeiro a chamá-lo(a) de colega."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Comunicar já, por ofício à Corregedoria, e requisitar inquérito por fraude processual (CP, art. 347, parágrafo único), sem conversar antes.",
+       "marca": "a3y_enio_oficio",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Dani, pode protocolar. Hoje."
+        },
+        {
+         "q": "dani",
+         "e": "triste",
+         "t": "Protocolado. O senhor(a) fez o que tinha de fazer."
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Fiz. Mas não sinto que ganhei nada."
+        }
+       ]
+      },
+      {
+       "t": "Olhá-lo nos olhos na garagem, dar-lhe uma hora para se apresentar à Corregedoria, e comunicar de qualquer jeito.",
+       "marca": "a3y_enio_garagem",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Vou falar com ele antes. Eu devo isso a quem ainda não sabe que deixou de ser meu amigo."
+        },
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "E o ofício?"
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Sai amanhã às oito. Com ou sem ele."
+        }
+       ]
+      }
+     ]
+    },
+    "a11": {
+     "tipo": "tensao",
+     "local": "garagem",
+     "tempo": 8,
+     "padrao": 1,
+     "proxima": "a12",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Garagem da promotoria, 20h. Ênio está encostado no seu carro, braços cruzados, a coruja do cartão tatuada no pulso. Não parece ter vindo conversar."
+      },
+      {
+       "q": "a3yenio",
+       "e": "bravo",
+       "t": "Eu confiei em você. O doutor Valadares falou que você ia abrir o bico, e eu não quis acreditar."
+      },
+      {
+       "q": "a3yenio",
+       "e": "bravo",
+       "t": "Ele me ligou ontem à noite avisando que você tinha estranhado o horário do auto. Só duas pessoas sabiam disso. Nenhuma era eu.",
+       "se": "a3y_contou_valadares"
+      },
+      {
+       "q": "a3yenio",
+       "e": "bravo",
+       "t": "Ele me ligou ontem à noite avisando que você tinha estranhado o horário do auto. Você não contou a ninguém, doutor(a)? Então como ele sabia?",
+       "se": "a3y_guardou_segredo"
+      }
+     ],
+     "pergunta": "Ele dá um passo na sua direção e baixa a voz: “Ainda dá tempo de rasgar esse papel”.",
+     "hesitou": "Você hesitou. Ênio sorriu, como quem acha que venceu.",
+     "opcoes": [
+      {
+       "t": "Gravar a conversa no celular e deixá-lo falar",
+       "marca": "a3y_enio_gravado",
+       "cred": 1,
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Você aperta o botão com o polegar dentro do bolso. Ênio, achando que fala a um amigo, solta mais do que devia: nomes, favores, o “Valadares me ensinou como agradar o delegado”."
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Obrigado(a), Ênio. Isto aqui vai para o inquérito."
+        }
+       ]
+      },
+      {
+       "t": "Gritar pelo vigilante do térreo",
+       "marca": "a3y_enio_gritou",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "O eco do grito sobe a rampa. Ênio recua, olha para os lados e sai pelo corredor lateral sem dizer mais nada. Dura dez segundos, e ele ainda parece ofendido."
+        }
+       ]
+      },
+      {
+       "t": "Dizer: “Se o senhor encostar em mim, vira um crime a mais”, e entrar no carro",
+       "marca": "a3y_enio_enfrentou",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Se o senhor encostar em mim, vira um crime a mais. Saia da frente."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Ele hesita, e por um instante é o rapaz que cresceu vendo o pai ser assaltado. Depois dá um passo para o lado. “Você vai se arrepender”, diz. Parece pedir desculpas."
+        }
+       ]
+      }
+     ]
+    },
+    "a12": {
+     "tipo": "dialogo",
+     "local": "gabinete",
+     "proxima": "a13",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Na manhã seguinte, Dani chega antes de você com café e cara de quem não dormiu."
+      },
+      {
+       "q": "dani",
+       "e": "nervoso",
+       "t": "Doutor(a), olhei o registro de acessos do sistema. Alguém consultou o seu rascunho do ofício à Corregedoria às 23h47 de ontem, antes de ser protocolado. Com o login do doutor Valadares."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Às 23h47."
+      },
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "Sempre às 23h47, doutor(a)."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Alguém, dentro do prédio, sabe das suas decisões antes de você. E alguém sorriu para você ontem, no café."
+      }
+     ]
+    },
+    "a13": {
+     "tipo": "veredicto",
+     "carimbo": "PROVA RECUSADA",
+     "titulo": "O presente que você devolveu",
+     "texto": "Você descartou a pistola e o print plantados, recusou a extração ilícita do delegado, denunciou Gabriel só pelo que a prova sustenta e comunicou a fraude do amigo. Perdeu um aliado. Descobriu que alguém no prédio vazava o que você pensava em segredo."
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  },
+  {
+   "id": "a3y-juri",
+   "ato": "ato3",
+   "ordem": 5.7,
+   "numero": 36,
+   "titulo": "Sete Cadeiras",
+   "papel": "promotor",
+   "nivel": "especialista",
+   "sinopse": "Plenário do júri: você acusa Caio Meneses pela morte de um homem por vinte reais. Cuidado com a pronúncia, com o silêncio do réu, com documentos fora do prazo e com a jurada que quer conversar.",
+   "posicoes": {
+    "lacerda": "escritorio",
+    "dani": "escritorio",
+    "beatriz": "juiz",
+    "a3yamaral": "defesa",
+    "a3ytiao": "testemunha",
+    "a3ycaio": "cena",
+    "a3ymarlene": "cena",
+    "a3yluana": "cena",
+    "voce": "acusacao"
+   },
+   "provas": [
+    {
+     "id": "video",
+     "tipo": "prova",
+     "icone": "🎥",
+     "nome": "Vídeo do bar",
+     "descricao": "Câmera da porta do bar, 23h12: Wellington “Neto” Braga recua com as duas mãos vazias; uma garrafa está no chão, a dois metros dele. Caio Meneses avança, saca a faca e desfere um golpe no peito. Neto cai de frente. Nada na mão da vítima."
+    },
+    {
+     "id": "necro",
+     "tipo": "prova",
+     "icone": "🩺",
+     "nome": "Laudo necroscópico",
+     "descricao": "Ferida única, no hemitórax esquerdo, com trajetória de frente e levemente de cima para baixo. Morte por hemorragia aguda. Sem lesões de defesa nos braços da vítima."
+    },
+    {
+     "id": "local",
+     "tipo": "prova",
+     "icone": "🔬",
+     "nome": "Laudo de local",
+     "descricao": "Perícia da calçada: garrafa inteira, sem marcas de uso, a dois metros do ponto onde Neto caiu. A faca foi lavada na caixa de gordura do bar."
+    },
+    {
+     "id": "faca",
+     "tipo": "prova",
+     "icone": "🔪",
+     "nome": "Faca apreendida",
+     "descricao": "Faca de cozinha de lâmina de 18 cm, apreendida na casa de Caio, com resíduos de sangue compatíveis com o da vítima."
+    },
+    {
+     "id": "conta",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Comanda do bar",
+     "descricao": "Comanda de Caio: R$ 20,00 de cerveja fiada, anotada à caneta pelo dono do bar. Na margem, a anotação de Neto, que cobrava a dívida: “vinte reais, hoje”."
+    },
+    {
+     "id": "cp121",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 121: Homicídio",
+     "chave": "CP#art-121",
+     "trecho": "Matar alguém"
+    },
+    {
+     "id": "cp121f",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 121, § 2º, II",
+     "chave": "CP#art-121/par-2/inc-ii",
+     "trecho": "por motivo fútil"
+    },
+    {
+     "id": "cp25",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 25: Legítima defesa",
+     "chave": "CP#art-25",
+     "trecho": "repele injusta agressão, atual ou iminente"
+    },
+    {
+     "id": "p478i",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 478, I",
+     "chave": "CPP#art-478/inc-i",
+     "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+    },
+    {
+     "id": "p478ii",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 478, II",
+     "chave": "CPP#art-478/inc-ii",
+     "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento"
+    },
+    {
+     "id": "p479",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 479",
+     "chave": "CPP#art-479",
+     "trecho": "não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
+    },
+    {
+     "id": "p477",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 477",
+     "chave": "CPP#art-477",
+     "trecho": "uma hora para a réplica"
+    },
+    {
+     "id": "p466",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 466, § 1º",
+     "chave": "CPP#art-466/par-1",
+     "trecho": "não poderão comunicar-se entre si e com outrem"
+    }
+   ],
+   "inicio": "j1",
+   "cenas": {
+    "j1": {
+     "tipo": "titulo",
+     "texto": "Episódio 36",
+     "subtitulo": "Sete Cadeiras",
+     "proxima": "j2"
+    },
+    "j2": {
+     "tipo": "dialogo",
+     "local": "promotoria",
+     "proxima": "j3",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sete cadeiras. Sete pessoas que nunca viram o réu, a vítima ou este processo. É com elas que o Ministério Público tem de falar amanhã."
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Plenário do júri às nove. Caio Meneses, pedreiro, vinte e nove anos, um golpe de faca no peito de Wellington Braga, o Neto, na porta de um bar. A pronúncia transitou há meses. Hoje é a vez dos jurados."
+      },
+      {
+       "q": "lacerda",
+       "e": "pensativo",
+       "t": "Quatro regras, doutor(a), que anulam um júri inteiro. Primeira: não use a pronúncia como argumento de autoridade (art. 478, I). Segunda: não faça do silêncio do réu um argumento contra ele (art. 478, II). Terceira: não mostre documento que não esteja nos autos há três dias úteis (art. 479). Quarta: jurado não se fala, e nem ele fala com o senhor(a) (art. 466, § 1º)."
+      },
+      {
+       "q": "dani",
+       "e": "feliz",
+       "t": "Eu já deixei o vídeo pronto na sala, doutor(a). A defesa é o doutor Ubirajara Amaral. Faz teatro, mas conhece cada vírgula da lei."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Teatro eu enfrento. Nulidade eu evito."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram atualizados.",
+       "recebe": [
+        "cp121",
+        "cp121f",
+        "cp25",
+        "p478i",
+        "p478ii",
+        "p479",
+        "p477",
+        "p466"
+       ]
+      }
+     ]
+    },
+    "j3": {
+     "tipo": "investigar",
+     "local": "promotoria",
+     "titulo": "Preparação do plenário",
+     "proxima": "j4",
+     "requer": [
+      "video",
+      "necro",
+      "local",
+      "faca",
+      "conta"
+     ],
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Véspera do júri. A sala de reuniões virou trincheira: pastas, o notebook com o vídeo parado no quadro em que tudo muda, e a foto do rapaz morto que ninguém tem coragem de virar para baixo."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O jurado não é jurista. Preciso de poucos fatos, bem escolhidos, e que um pedreiro, uma professora e um taxista entendam sem dicionário."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "video",
+       "nome": "Notebook com o vídeo",
+       "x": 12,
+       "y": 40,
+       "w": 22,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Quarto 23h12. Neto recua, de mãos vazias. A garrafa está no chão, a dois metros dele. Caio avança. Depois, o golpe. É só olhar onde está a garrafa.",
+         "recebe": [
+          "video"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta dos laudos",
+       "x": 42,
+       "y": 45,
+       "w": 20,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O laudo necroscópico: ferida de frente, sem lesões de defesa. O laudo de local: garrafa inteira, sem uso. A faca lavada na caixa de gordura.",
+         "recebe": [
+          "necro",
+          "local"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "sacos",
+       "nome": "Saco de evidências",
+       "x": 68,
+       "y": 45,
+       "w": 20,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A faca de 18 cm, com resíduos compatíveis com o sangue de Neto. E a comanda do bar: R$ 20 fiados, e a anotação de Neto na margem.",
+         "recebe": [
+          "faca",
+          "conta"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a3ymarlene",
+       "titulo": "Falar com Dona Marlene",
+       "falas": [
+        {
+         "q": "a3ymarlene",
+         "e": "triste",
+         "t": "Meu filho era bom de briga e ruim de dívida, doutor(a). Mas nunca levantou a mão para quem estava de costas."
+        },
+        {
+         "q": "a3ymarlene",
+         "e": "triste",
+         "t": "Eu não quero vingança. Só quero que alguém diga o nome dele sem gritar."
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "A senhora vai ouvir o nome dele, dona Marlene. Dito com respeito."
+        }
+       ]
+      },
+      {
+       "q": "dani",
+       "titulo": "Falar com Dani",
+       "falas": [
+        {
+         "q": "dani",
+         "e": "normal",
+         "t": "Doutor(a), lembra: a defesa vai falar de legítima defesa. Quem mata para se defender não comete crime. Mas o vídeo mostra a vítima recuando, desarmada."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Então a pergunta que o jurado tem de responder é: havia agressão atual, ou só um homem que estava sendo cobrado?"
+        }
+       ]
+      }
+     ]
+    },
+    "j4": {
+     "tipo": "dialogo",
+     "local": "juri",
+     "proxima": "j5",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sala do júri, 9h07. Sorteio concluído: quatro mulheres, três homens. A juíza Beatriz, de toga, adverte o Conselho."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Senhores jurados, a partir de agora vocês não poderão se comunicar entre si nem com ninguém, nem manifestar opinião sobre o processo, sob pena de exclusão do Conselho e multa (art. 466, § 1º).",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3yamaral",
+       "e": "confiante",
+       "t": "Excelência, a defesa de Caio Meneses assegura ao Conselho que este homem vai falar pela voz dos autos."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Instrução plenária aberta. Intervalo de vinte minutos antes da primeira testemunha."
+      }
+     ]
+    },
+    "j5": {
+     "tipo": "tensao",
+     "local": "cafe",
+     "tempo": 8,
+     "padrao": 0,
+     "proxima": "j6",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Intervalo. Cafeteria do fórum, fila de seis pessoas. Você pega o copo e, ao se virar, quase esbarra numa mulher de blusa verde, crachá de jurada pendurado no pescoço."
+      }
+     ],
+     "pergunta": "A Jurada 3 se aproxima e sussurra: “Doutor(a), me tira uma dúvida rápida: esse rapaz já fez isso antes?”",
+     "hesitou": "Você hesitou. A jurada, interpretando o silêncio como permissão, repetiu a pergunta, mais alto.",
+     "opcoes": [
+      {
+       "t": "Responder só uma frase: “Pelo que sei, não.”",
+       "marca": "a3y_jurada_conversou",
+       "cred": -2,
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "O oficial de justiça viu de longe. Vinte minutos depois a juíza chama as partes: a defesa pede a dissolução do Conselho, e a Jurada 3 é excluída e multada. Você escapa de uma nulidade por uma vírgula, e ganha uma advertência por escrito."
+        }
+       ]
+      },
+      {
+       "t": "Levantar a mão e dizer: “Não posso falar com a senhora”, e se afastar",
+       "marca": "a3y_jurada_afastou",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A senhora desculpe, eu não posso falar com a senhora. A juíza explicou: ninguém conversa com o Conselho."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Ela corre os olhos, envergonhada, e some atrás de uma coluna. Ninguém viu. O processo está limpo, por pouco."
+        }
+       ]
+      },
+      {
+       "t": "Afastar-se e avisar o oficial de justiça, para constar em ata",
+       "marca": "a3y_jurada_avisou",
+       "cred": 1,
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Você avisa o oficial de justiça com discrição. A juíza registra em ata a advertência à jurada, sem excluí-la. A defesa nada tem a alegar, e você acabou de fechar uma porta antes que alguém a abrisse."
+        }
+       ]
+      }
+     ]
+    },
+    "j6": {
+     "tipo": "depoimento",
+     "testemunha": "a3ytiao",
+     "titulo": "Tião, o garçom do bar (testemunha de defesa)",
+     "proxima": "j7",
+     "intro": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Chamo a testemunha de defesa, Sebastião Alves, o Tião, garçom do bar. Ministério Público, perguntas diretas, sem induzir a resposta (art. 212)."
+      },
+      {
+       "q": "a3ytiao",
+       "e": "nervoso",
+       "t": "Eu conheço o Caio desde menino, doutora. Trabalhei a noite toda."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O Neto estava com uma garrafa quebrada na mão, ameaçando o Caio, antes do golpe.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Uma garrafa quebrada na mão?"
+        },
+        {
+         "q": "a3ytiao",
+         "e": "nervoso",
+         "t": "Quebrada, afiada. Eu vi, mesmo estando do outro lado do salão."
+        }
+       ]
+      },
+      {
+       "t": "O Caio só deu um golpe para se proteger, de baixo para cima.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "De baixo para cima?"
+        },
+        {
+         "q": "a3ytiao",
+         "e": "normal",
+         "t": "Só pra espantar. De baixo pra cima, igual quem se defende."
+        }
+       ]
+      },
+      {
+       "t": "A briga foi por causa de uma ofensa da vítima, e não por dívida.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Não houve cobrança de dívida?"
+        },
+        {
+         "q": "a3ytiao",
+         "e": "nervoso",
+         "t": "Dívida? Nunca ouvi falar. Foi só ofensa."
+        }
+       ]
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "video"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O vídeo, quadro a quadro, senhor Tião. A garrafa está no chão, inteira, a dois metros do Neto. E as mãos dele estão vazias."
+        },
+        {
+         "q": "a3ytiao",
+         "e": "chocado",
+         "t": "Eu… devo ter me confundido com outro dia…",
+         "fx": "tremor"
+        }
+       ]
+      },
+      {
+       "afirmacao": 1,
+       "provas": [
+        "necro"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O laudo diz que a ferida entrou de frente e levemente de cima para baixo. Não é golpe de baixo para cima. E não há lesão de defesa nos braços da vítima."
+        },
+        {
+         "q": "a3ytiao",
+         "e": "nervoso",
+         "t": "O doutor Caio mandou eu dizer…",
+         "fx": "tremor"
+        }
+       ]
+      },
+      {
+       "afirmacao": 2,
+       "provas": [
+        "conta"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A comanda do bar: vinte reais fiados e a anotação de Neto na margem, “vinte reais, hoje”. A briga foi por dívida, sim."
+        },
+        {
+         "q": "a3ytiao",
+         "e": "triste",
+         "t": "…foi por vinte reais. Eu sinto muito, dona Marlene.",
+         "fx": "tremor"
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Testemunha, o senhor está sob compromisso. Falso testemunho é crime. O Conselho avaliará o que ouviu.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3yamaral",
+       "e": "nervoso",
+       "t": "Excelência, nada mais por ora."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz essa afirmação, promotor(a)."
+      }
+     ]
+    },
+    "j7": {
+     "tipo": "dialogo",
+     "local": "juri",
+     "proxima": "j8",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Interrogatório do réu. Caio, de camisa branca emprestada, mãos juntas sobre a mesa, olha para a mulher que segura a filha no colo, na plateia."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Acusado, o senhor tem direito de permanecer calado, e o silêncio não será interpretado em prejuízo da defesa."
+      },
+      {
+       "q": "a3ycaio",
+       "e": "triste",
+       "t": "Vou ficar calado, Excelência. Por orientação do meu advogado."
+      },
+      {
+       "q": "a3yamaral",
+       "e": "confiante",
+       "t": "O réu falará pelos autos. A defesa se manifestará nos debates."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O silêncio ocupa a sala por alguns segundos. É um silêncio que alguém, em algum momento, vai ter a tentação de usar."
+      }
+     ]
+    },
+    "j8": {
+     "tipo": "escolha",
+     "local": "juri",
+     "pergunta": "Como o Ministério Público abre a sustentação?",
+     "proxima": "j8b",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Com a palavra o Ministério Público, uma hora e meia (art. 477)."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sete rostos olham para você. Dona Marlene, na primeira fila, aperta a bolsa contra o peito."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "“A juíza já reconheceu na pronúncia que ele matou: os senhores só precisam confirmar.”",
+       "falas": [
+        {
+         "q": "a3yamaral",
+         "e": "bravo",
+         "t": "Protesto, Excelência! O Ministério Público invoca a pronúncia como argumento de autoridade! Art. 478, inciso I, sob pena de nulidade!",
+         "fx": "protesto"
+        },
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Acolho. Jurados, desconsiderem. Doutor(a), conste em ata. Mais uma, e dissolvo o Conselho.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-478/inc-i",
+         "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+        }
+       ]
+      },
+      {
+       "t": "Contar o que o vídeo mostra, quadro a quadro e em linguagem simples: um homem de mãos vazias recuando, outro avançando com uma faca.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Senhoras e senhores jurados, vou dizer só o que os senhores podem ver. Neto está recuando, de mãos vazias. A garrafa está no chão. Caio avança. Esse é o fato. O resto é o que os senhores vão decidir."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Prossiga, promotor(a)."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-476",
+         "trecho": "Encerrada a instrução, será concedida a palavra ao Ministério Público, que fará a acusação, nos limites da pronúncia"
+        }
+       ]
+      },
+      {
+       "t": "Projetar a foto do corpo tirada ontem pela família, que não consta dos autos.",
+       "falas": [
+        {
+         "q": "a3yamaral",
+         "e": "bravo",
+         "t": "Protesto! Documento não juntado aos autos com três dias úteis de antecedência! Art. 479!",
+         "fx": "protesto"
+        },
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Acolho. Retire a imagem, doutor(a). Jurados, desconsiderem. Conste em ata.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-479",
+         "trecho": "não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
+        }
+       ]
+      }
+     ]
+    },
+    "j8b": {
+     "tipo": "escolha",
+     "local": "juri",
+     "pergunta": "O réu ficou em silêncio. Como o Ministério Público trata isso na sustentação?",
+     "proxima": "j9",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você já falou há quarenta minutos. Falta o ponto em que é mais fácil errar: o homem que não quis explicar nada."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "“Quem não nega, confessa. O silêncio dele fala por si.”",
+       "falas": [
+        {
+         "q": "a3yamaral",
+         "e": "bravo",
+         "t": "Protesto, Excelência! O silêncio do acusado usado em seu prejuízo! Art. 478, inciso II!",
+         "fx": "protesto"
+        },
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Acolho. Jurados, desconsiderem. O silêncio é direito do acusado.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-478/inc-ii",
+         "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento"
+        }
+       ]
+      },
+      {
+       "t": "Não mencionar o silêncio e sustentar a acusação só com o vídeo, o laudo e a testemunha que se contradisse.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Os senhores têm três coisas: o que a câmera registrou, o que o perito escreveu e o que uma testemunha de defesa não conseguiu sustentar. Basta olhar para elas."
+        },
+        {
+         "q": "a3yamaral",
+         "e": "pensativo",
+         "t": "(Ele esperava que o promotor caísse. Anota algo, contrariado.)"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-478/inc-ii",
+         "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento"
+        }
+       ]
+      },
+      {
+       "t": "Pedir aos jurados que “imaginem o que ele esconde” por ter calado.",
+       "falas": [
+        {
+         "q": "a3yamaral",
+         "e": "bravo",
+         "t": "Protesto! Isso é o silêncio do acusado como argumento de acusação! Art. 478, II!",
+         "fx": "protesto"
+        },
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Acolho. Última advertência, promotor(a).",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-478/inc-ii",
+         "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento"
+        }
+       ]
+      }
+     ]
+    },
+    "j9": {
+     "tipo": "protesto",
+     "local": "juri",
+     "titulo": "A sustentação da defesa",
+     "proxima": "j10",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Com a palavra a defesa, uma hora e meia. Promotor(a), o Ministério Público intervém no momento da irregularidade, não depois."
+      }
+     ],
+     "dica": [
+      "Há três irregularidades nos debates da defesa: referência à pronúncia, exibição de documento sem prazo e excesso de linguagem.",
+      "O direito ao silêncio, quando invocado pela própria defesa, não é irregularidade: não proteste contra ele."
+     ],
+     "linhas": [
+      {
+       "q": "a3yamaral",
+       "e": "confiante",
+       "t": "Senhoras e senhores jurados, o Caio é pedreiro. Acorda às cinco, volta às sete, tem uma filha de oito meses."
+      },
+      {
+       "q": "a3yamaral",
+       "e": "normal",
+       "t": "Naquela noite ele foi tomar uma cerveja, e voltou para casa com a vida marcada para sempre."
+      },
+      {
+       "q": "a3yamaral",
+       "e": "apontando",
+       "t": "E a pronúncia, que o Ministério Público tanto lembra? É apenas um palpite provisório da juíza, que sabe que pode estar errada.",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-478/inc-i",
+          "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Referência à pronúncia como argumento de autoridade que beneficia o acusado (CPP, art. 478, I).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPP#art-478/inc-i",
+            "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+           }
+          ],
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Acolho. Jurados, desconsiderem a referência à pronúncia. Conste em ata, doutor Amaral.",
+            "fx": "martelo"
+           }
+          ]
+         },
+         {
+          "t": "A defesa não pode falar da pronúncia porque ela favorece a acusação.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "pensativo",
+            "t": "A vedação alcança a referência que beneficie ou prejudique o acusado. Qual o fundamento exato?"
+           }
+          ]
+         },
+         {
+          "t": "O tempo da defesa acabou.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Faltam quarenta minutos. O tempo é de uma hora e meia (art. 477)."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a3yamaral",
+       "e": "normal",
+       "t": "O vídeo é escuro e granulado. Cada um vê o que quer ver. O que eu vejo é um homem acuado, de costas para a parede."
+      },
+      {
+       "q": "a3yamaral",
+       "e": "apontando",
+       "t": "E aqui, senhores, a fotografia de uma garrafa quebrada que meu cliente encontrou ontem na calçada, e que prova a ameaça que ele sofreu.",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-479",
+          "trecho": "não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Exibição de documento não juntado aos autos com antecedência de três dias úteis (CPP, art. 479).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPP#art-479",
+            "trecho": "não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
+           }
+          ],
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Acolho. Retire a fotografia, doutor. Jurados, desconsiderem.",
+            "fx": "martelo"
+           }
+          ]
+         },
+         {
+          "t": "A fotografia é falsa.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "pensativo",
+            "t": "Não há nada nos autos que diga isso. O fundamento é de prazo, promotor(a)."
+           }
+          ]
+         },
+         {
+          "t": "A defesa não pode usar imagens.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Pode, se estiverem nos autos no prazo. Qual o fundamento?"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a3yamaral",
+       "e": "normal",
+       "t": "Legítima defesa, senhores, é usar com moderação os meios necessários para repelir injusta agressão, atual ou iminente."
+      },
+      {
+       "q": "a3yamaral",
+       "e": "normal",
+       "t": "E se o Caio calou na audiência, foi porque a Constituição lhe garante o silêncio, e porque confia em vocês."
+      },
+      {
+       "q": "a3yamaral",
+       "e": "bravo",
+       "t": "O Ministério Público quer a cabeça desse rapaz num prato, para engordar estatística e agradar a imprensa!",
+       "incidente": {
+        "pergunta": "Qual o fundamento do protesto?",
+        "chamada": "Protesto, Excelência!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-497/inc-iii",
+          "trecho": "intervindo em caso de abuso, excesso de linguagem"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Excesso de linguagem ofensivo à acusação: cabe ao juiz presidente intervir (CPP, art. 497, III).",
+          "certa": true,
+          "fundamentos": [
+           {
+            "chave": "CPP#art-497/inc-iii",
+            "trecho": "intervindo em caso de abuso, excesso de linguagem"
+           }
+          ],
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Acolho. Doutor Amaral, a palavra é dura, o respeito é inegociável. Retire a expressão.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a3yamaral",
+            "e": "nervoso",
+            "t": "Retiro, Excelência."
+           }
+          ]
+         },
+         {
+          "t": "A defesa mencionou o silêncio do réu.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "O silêncio foi invocado em favor do réu, não em prejuízo dele. Não é irregularidade."
+           }
+          ]
+         },
+         {
+          "t": "A defesa mencionou a pronúncia.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "pensativo",
+            "t": "Nesta fala, não. O fundamento é outro, promotor(a)."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a3yamaral",
+       "e": "normal",
+       "t": "Peço aos senhores que absolvam o Caio. Ele tem uma filha esperando em casa."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Encerrados os debates da defesa. Réplica do Ministério Público."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O Conselho se mexe nas cadeiras. Duas jurados olham para o réu. Um jurado olha o relógio."
+      }
+     ]
+    },
+    "j10": {
+     "tipo": "escolha",
+     "local": "juri",
+     "pergunta": "Como o Ministério Público usa a réplica?",
+     "proxima": "j11",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Com a palavra o Ministério Público para a réplica: uma hora (art. 477)."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Uma hora para desfazer o que o teatro da defesa deixou no ar."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Exibir a foto nova que a família trouxe, agora que a defesa mostrou a dela.",
+       "falas": [
+        {
+         "q": "a3yamaral",
+         "e": "bravo",
+         "t": "Protesto! Mesmo vício, Excelência! Art. 479!",
+         "fx": "protesto"
+        },
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Acolho. A irregularidade da defesa não autoriza a da acusação. Conste em ata.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-479",
+         "trecho": "não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
+        }
+       ]
+      },
+      {
+       "t": "Responder à legítima defesa, ponto a ponto, com o vídeo e os laudos que já estão nos autos, e requerer a reinquirição de Tião, se necessário (art. 476, § 4º).",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A defesa falou de acuado e de garrafa. Os senhores viram: a garrafa estava no chão e as mãos de Neto, vazias. Quem acua não recua de mãos abertas."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Anotado o requerimento. Prossiga."
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-476/par-4",
+         "trecho": "A acusação poderá replicar e a defesa treplicar"
+        },
+        {
+         "chave": "CPP#art-477",
+         "trecho": "uma hora para a réplica"
+        }
+       ]
+      },
+      {
+       "t": "Atacar pessoalmente o doutor Amaral e o seu estilo teatral.",
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "Promotor(a), o excesso de linguagem vale para os dois lados. Modere-se.",
+         "fx": "martelo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CPP#art-497/inc-iii",
+         "trecho": "intervindo em caso de abuso, excesso de linguagem"
+        }
+       ]
+      }
+     ]
+    },
+    "j11": {
+     "tipo": "plenario",
+     "colegiado": "juri",
+     "local": "juri",
+     "titulo": "Conselho de Sentença",
+     "proxima": "j12",
+     "votos_fixos": {
+      "favor": 2,
+      "contra": 1
+     },
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você fala diante de sete rostos. Alguns já decidiram. Outros ainda procuram a pergunta que os incomoda. Não se fala com jurado: observa-se, e responde-se a todos, com um só discurso."
+      }
+     ],
+     "ministros": [
+      {
+       "rotulo": "Jurada 2",
+       "preocupacao": "Franze a testa toda vez que ouve “laudo” e olha o vídeo granulado com desconfiança.",
+       "voto": "indeciso",
+       "argumentos": [
+        {
+         "t": "Mostrar o quadro do vídeo e dizer: “É só olhar onde está a garrafa. No chão, inteira, a dois metros dele. Ninguém ameaça com uma garrafa que está no chão.”",
+         "certa": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "A Jurada 2 se inclina para a tela. Franze menos a testa. Depois assente, devagar."
+          }
+         ]
+        },
+        {
+         "t": "Ler em voz alta os termos técnicos do laudo necroscópico.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "A Jurada 2 desvia o olhar. Longe da vida, a frase fica ainda mais longe."
+          }
+         ]
+        },
+        {
+         "t": "Dizer que quem duvida do vídeo não entende de imagem.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "A Jurada 2 cruza os braços. Ninguém gosta de ser chamado de leigo na sua vez de decidir."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rotulo": "Jurado 4",
+       "preocupacao": "Olha para o réu com pena. A foto da filha de oito meses, que a defesa mostrou, ainda está na sua frente.",
+       "voto": "indeciso",
+       "argumentos": [
+        {
+         "t": "Reconhecer a família do réu e lembrar que a vítima também tinha uma mãe: “Ninguém aqui pede vingança. Pede-se que a vida de Neto valha o que valia.”",
+         "certa": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "O Jurado 4 olha para a primeira fila, onde Dona Marlene aperta a bolsa. Respira fundo e baixa a cabeça."
+          }
+         ]
+        },
+        {
+         "t": "Chamar o réu de monstro.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "O Jurado 4 balança a cabeça: aquilo não é o homem que ele vê, de camisa branca emprestada."
+          }
+         ]
+        },
+        {
+         "t": "Ignorar a família do réu e voltar às provas.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "O Jurado 4 não se move. A pergunta que ele tinha continua sem resposta."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rotulo": "Jurada 5",
+       "preocupacao": "Balança a cabeça sempre que a defesa diz “legítima defesa”. Parece achar que a vítima provocou.",
+       "voto": "contra",
+       "argumentos": [
+        {
+         "t": "Explicar em palavras simples: “Defender-se é reagir ao que ameaça agora, com o necessário. Quem já está desarmado, recuando, não ameaça mais.”",
+         "certa": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "A Jurada 5 deixa de balançar a cabeça. Anota alguma coisa na palma da mão."
+          }
+         ]
+        },
+        {
+         "t": "Dizer que a vítima era santa.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "A Jurada 5 ergue a sobrancelha. Ninguém é santo em porta de bar, e todos sabem."
+          }
+         ]
+        },
+        {
+         "t": "Dizer que legítima defesa nunca existe em briga de bar.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "A Jurada 5 sorri sem humor: ‘nunca’ é palavra que júri não perdoa."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rotulo": "Jurado 7",
+       "preocupacao": "Cruza os braços e olha o relógio. Parece achar que a briga foi uma coisa banal, de bar.",
+       "voto": "indeciso",
+       "argumentos": [
+        {
+         "t": "Mostrar o motivo: “Foram vinte reais, fiados, numa comanda. Uma vida custou vinte reais. Isso não é banal, é fútil.”",
+         "certa": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "O Jurado 7 descruza os braços. Ele agora olha para a comanda projetada, e não mais para o relógio."
+          }
+         ]
+        },
+        {
+         "t": "Gritar que o réu é um perigo para a sociedade.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "O Jurado 7 recua na cadeira. Quem grita costuma ter pouco a mostrar."
+          }
+         ]
+        },
+        {
+         "t": "Pedir pressa ao Conselho.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "narrador",
+           "e": "normal",
+           "t": "O Jurado 7 olha para a juíza. Júri não aceita ordens de promotor."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A sala secreta fecha as portas. O oficial recolhe as cédulas. Sete votos, quesito por quesito, sem que ninguém veja os rostos."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "O Conselho de Sentença, por maioria, reconheceu a materialidade, a autoria, afastou a legítima defesa e reconheceu o motivo fútil.",
+       "fx": "martelo"
+      }
+     ]
+    },
+    "j12": {
+     "tipo": "dialogo",
+     "local": "juri",
+     "proxima": "j13",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Em atenção ao veredicto dos jurados, condeno Caio Meneses por homicídio qualificado pelo motivo fútil, à pena de doze anos e seis meses de reclusão, em regime inicial fechado.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a3yamaral",
+       "e": "triste",
+       "t": "A defesa recorrerá, Excelência."
+      },
+      {
+       "q": "a3ycaio",
+       "e": "triste",
+       "t": "(para a mulher, na plateia) Cuida da nossa filha."
+      },
+      {
+       "q": "a3ymarlene",
+       "e": "triste",
+       "t": "Obrigada. Pelo menos agora dizem o nome dele sem gritar."
+      }
+     ]
+    },
+    "j13": {
+     "tipo": "dialogo",
+     "local": "praca",
+     "proxima": "j14",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Fim de tarde, praça em frente ao fórum. Os bancos têm pombos e tristeza. Uma mulher de camisa amarela, com um bebê no colo, espera por você."
+      },
+      {
+       "q": "a3yluana",
+       "e": "triste",
+       "t": "Doutor(a), eu sou a Luana, esposa do Caio. Eu só queria dizer que o senhor(a) foi duro com ele."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Eu fui duro com o que ele fez, dona Luana. Não com quem ele é."
+      },
+      {
+       "q": "a3yluana",
+       "e": "triste",
+       "t": "O Caio nunca tinha machucado ninguém. Ele fez um erro que vai custar doze anos de uma filha sem pai."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A sua filha vai crescer sabendo que o pai errou. E que o Estado tratou o erro com seriedade, não com ódio. É o único consolo que eu tenho para oferecer."
+      },
+      {
+       "q": "a3yluana",
+       "e": "triste",
+       "t": "Não adianta de nada, mas obrigada por não ter gritado."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A mulher se afasta devagar, com o bebê no colo. Na outra ponta da praça, Dona Marlene a vê passar. As duas mães não se cumprimentam. Mas cada uma abaixa a cabeça um pouquinho."
+      }
+     ]
+    },
+    "j14": {
+     "tipo": "celular",
+     "local": "casa",
+     "contato": "Dona Marlene",
+     "status": "online",
+     "proxima": "j15",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Noite. Você chega em casa e o celular vibra."
+      }
+     ],
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Doutor(a), é a Marlene. Hoje eu dormi pela primeira vez em oito meses."
+      },
+      {
+       "de": "ele",
+       "t": "Meu filho não volta. Mas o senhor(a) falou o nome dele sem gritar. Obrigada."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Responder: “O nome dele merecia ser dito assim, dona Marlene.”",
+       "envia": "O nome dele merecia ser dito assim, dona Marlene.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Deus lhe pague."
+        }
+       ],
+       "marca": "a3y_marlene_resposta",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Você coloca o celular sobre a mesa e fica olhando para ele por um bom tempo."
+        }
+       ]
+      },
+      {
+       "t": "Não responder: o dever está cumprido e a dor, essa, não é sua",
+       "marca": "a3y_marlene_silencio",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Você apaga a luz. Mas a frase fica na parede do quarto, como luz de poste."
+        }
+       ]
+      }
+     ],
+     "depois": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Há casos que se encerram com a sentença. E há os que ficam tocando em você como o celular de alguém que perdeu o filho."
+      }
+     ]
+    },
+    "j15": {
+     "tipo": "veredicto",
+     "carimbo": "CONDENADO",
+     "titulo": "O Conselho decidiu",
+     "texto": "Você respeitou a incomunicabilidade dos jurados, não usou a pronúncia nem o silêncio do réu, desmontou a testemunha de defesa e respondeu à dúvida de cada cadeira com fatos simples. Caio foi condenado por homicídio qualificado. Dona Marlene dormiu pela primeira vez em oito meses.",
+     "variantes": [
+      {
+       "se": "a3y_jurada_conversou",
+       "carimbo": "CONDENADO",
+       "titulo": "O Conselho decidiu, por pouco",
+       "texto": "Você conseguiu a condenação de Caio, mas conversou com uma jurada no intervalo e quase anulou o julgamento. A juíza a excluiu e o processo foi salvo por um fio. Incomunicabilidade não é detalhe: é a garantia de que o júri decide só com o que viu em plenário."
+      }
+     ]
+    }
+   },
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   }
+  }
+ ]
+}

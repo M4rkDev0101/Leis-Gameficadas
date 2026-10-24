@@ -2031,7 +2031,7 @@
        "t": "Então vamos ao tribunal. Quem acusa precisa provar. E hoje, a prova está do nosso lado."
       }
      ],
-     "proxima": "x6",
+     "proxima": "im1",
      "local": "escritorio"
     },
     "x6": {
@@ -2449,7 +2449,10 @@
      "proxima": "x10"
     },
     "x10": {
-     "tipo": "escolha",
+     "tipo": "denuncia",
+     "local": "tribunal",
+     "titulo": "Denúncia contra o delegado",
+     "proxima": "x11",
      "falas": [
       {
        "q": "beatriz",
@@ -2462,81 +2465,158 @@
        "t": "Foi só uma transmissão, Excelência!"
       }
      ],
-     "pergunta": "Como o Ministério Público enquadra a transmissão do delegado?",
-     "opcoes": [
+     "partes": [
       {
-       "t": "Art. 38 da Lei 13.869: antecipou, em rede social, a atribuição de culpa, antes de concluídas as apurações e formalizada a acusação, com a finalidade específica de beneficiar a si (campanha) e a terceiro (§ 1º do art. 1º).",
-       "certa": true,
-       "falas": [
+       "nome": "Classificação do crime",
+       "opcoes": [
         {
-         "q": "voce",
-         "e": "confiante",
-         "t": "Excelência, o art. 38, com a finalidade do art. 1º, § 1º: o delegado, responsável pelas investigações, chamou Rui de “monstro” e de culpado, ao vivo, antes de qualquer sentença, para ganhar votos e para satisfazer um terceiro que lhe agradeceu por mensagem. É o tipo e é o dolo específico."
+         "t": "Art. 38 da Lei 13.869: antecipou, em rede social, a atribuição de culpa, antes de concluídas as apurações e formalizada a acusação, com a finalidade específica de beneficiar a si (campanha) e a terceiro (§ 1º do art. 1º).",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "Excelência, o art. 38, com a finalidade do art. 1º, § 1º: o delegado, responsável pelas investigações, chamou Rui de “monstro” e de culpado, ao vivo, antes de qualquer sentença, para ganhar votos e para satisfazer um terceiro que lhe agradeceu por mensagem. É o tipo e é o dolo específico."
+          },
+          {
+           "q": "beatriz",
+           "e": "normal",
+           "t": "Recebo a denúncia. A prova de finalidade é robusta.",
+           "fx": "martelo"
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "LAA#art-38",
+           "trecho": "Antecipar o responsável pelas investigações, por meio de comunicação, inclusive rede social, atribuição de culpa"
+          },
+          {
+           "chave": "LAA#art-1/par-1",
+           "trecho": "com a finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou a terceiro"
+          }
+         ]
         },
         {
-         "q": "beatriz",
-         "e": "normal",
-         "t": "Recebo a denúncia. A prova de finalidade é robusta.",
-         "fx": "martelo"
-        }
-       ],
-       "fundamentos": [
-        {
-         "chave": "LAA#art-38",
-         "trecho": "Antecipar o responsável pelas investigações, por meio de comunicação, inclusive rede social, atribuição de culpa"
+         "t": "Nenhum crime: foi mera divulgação de ato público de polícia, de relevo social, que só gera infração disciplinar.",
+         "certa": false,
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "bravo",
+           "t": "Divulgar o ato é uma coisa. Antecipar a culpa, com a finalidade de promoção própria e de terceiro, é a conduta que o art. 38 descreve."
+          },
+          {
+           "q": "lacerda",
+           "e": "normal",
+           "t": "Há uma diferença entre prestar contas e fazer propaganda, doutor(a)."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "LAA#art-1/par-2",
+           "trecho": "A divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso de autoridade"
+          }
+         ]
         },
         {
-         "chave": "LAA#art-1/par-1",
-         "trecho": "com a finalidade específica de prejudicar outrem ou beneficiar a si mesmo ou a terceiro"
+         "t": "Art. 13, I: constrangeu o preso a ser exibido à curiosidade pública, porque o algemou.",
+         "certa": false,
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "pensativo",
+           "t": "O art. 13 exige constrangimento por violência, grave ameaça ou redução da capacidade de resistência. Algemar quem se rende não é, por si, o que o tipo descreve. O ponto central aqui é a atribuição antecipada de culpa."
+          },
+          {
+           "q": "voce",
+           "e": "normal",
+           "t": "O enquadramento exato importa, e eu queria o mais seguro."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "LAA#art-13/inc-i",
+           "trecho": "exibir-se ou ter seu corpo ou parte dele exibido à curiosidade pública"
+          }
+         ]
         }
        ]
       },
       {
-       "t": "Nenhum crime: foi mera divulgação de ato público de polícia, de relevo social, que só gera infração disciplinar.",
-       "certa": false,
-       "falas": [
-        {
-         "q": "beatriz",
-         "e": "bravo",
-         "t": "Divulgar o ato é uma coisa. Antecipar a culpa, com a finalidade de promoção própria e de terceiro, é a conduta que o art. 38 descreve."
-        },
-        {
-         "q": "lacerda",
-         "e": "normal",
-         "t": "Há uma diferença entre prestar contas e fazer propaganda, doutor(a)."
-        }
+       "nome": "Materialidade: a transmissão",
+       "provas": [
+        "live",
+        "camloja"
        ],
-       "fundamentos": [
+       "pergunta": "Que peça prova o que foi transmitido e por quanto tempo o preso ficou exposto?",
+       "erro": [
         {
-         "chave": "LAA#art-1/par-2",
-         "trecho": "A divergência na interpretação de lei ou na avaliação de fatos e provas não configura abuso de autoridade"
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não registra o conteúdo da transmissão nem a duração da exposição do preso."
         }
        ]
       },
       {
-       "t": "Art. 13, I: constrangeu o preso a ser exibido à curiosidade pública, porque o algemou.",
-       "certa": false,
-       "falas": [
+       "nome": "Finalidade de promoção pessoal",
+       "provas": [
+        "cartaz",
+        "agenda",
+        "mensagem"
+       ],
+       "pergunta": "Que peça mostra que a live tinha fim de promoção própria?",
+       "erro": [
         {
-         "q": "beatriz",
-         "e": "pensativo",
-         "t": "O art. 13 exige constrangimento por violência, grave ameaça ou redução da capacidade de resistência. Algemar quem se rende não é, por si, o que o tipo descreve. O ponto central aqui é a atribuição antecipada de culpa."
+         "q": "narrador",
+         "e": "normal",
+         "t": "Essa peça não demonstra a finalidade específica exigida pelo art. 1º, § 1º, da Lei de Abuso de Autoridade."
+        }
+       ]
+      },
+      {
+       "nome": "Rol de testemunhas",
+       "opcoes": [
+        {
+         "t": "O cabo Brum, que segurou o celular, e o dono da loja, que guardou a gravação da câmera.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "feliz",
+           "t": "Quem presenciou e quem guardou a prova. É o que sustenta o processo."
+          }
+         ]
         },
         {
-         "q": "voce",
-         "e": "normal",
-         "t": "O enquadramento exato importa, e eu queria o mais seguro."
-        }
-       ],
-       "fundamentos": [
+         "t": "O próprio delegado Márcio, para explicar a live.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "bravo",
+           "t": "Réu não é testemunha da acusação. Ele será interrogado, com direito ao silêncio."
+          }
+         ]
+        },
         {
-         "chave": "LAA#art-13/inc-i",
-         "trecho": "exibir-se ou ter seu corpo ou parte dele exibido à curiosidade pública"
+         "t": "Dezenas de seguidores que assistiram à live.",
+         "falas": [
+          {
+           "q": "lacerda",
+           "e": "pensativo",
+           "t": "Trinta e uma mil pessoas viram. O que importa é quem estava lá e quem guardou o registro."
+          }
+         ]
         }
        ]
       }
      ],
-     "proxima": "x11"
+     "acerto": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A denúncia está nos autos, com a materialidade e a finalidade demonstradas."
+      }
+     ]
     },
     "x11": {
      "tipo": "escolha",
@@ -2672,6 +2752,64 @@
      "carimbo": "ABUSO DENUNCIADO",
      "titulo": "Sem câmera, sem palanque",
      "texto": "Você separou o flagrante regular da live ilegal, usou a finalidade específica para distinguir abuso de erro, e pediu só os efeitos que a lei permitia. Brandão também perdeu a sua vitrine, e o vigia da obra Horizonte voltou a ser testemunha, e não ré."
+    },
+    "im1": {
+     "tipo": "tensao",
+     "local": "praca",
+     "tempo": 9,
+     "padrao": 2,
+     "proxima": "x6",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Praça em frente ao fórum, 8h50. Duas emissoras, um repórter de microfone em riste e a hashtag do delegado com quarenta mil menções."
+      }
+     ],
+     "pergunta": "O repórter te cerca: “Doutor(a), vai processar o delegado Márcio pela live? Ele diz que o senhor(a) persegue um candidato. O que tem a dizer?”",
+     "hesitou": "Você hesitou. O repórter completou por você, na manchete: “Promotoria se cala sobre delegado”.",
+     "opcoes": [
+      {
+       "t": "“O delegado é um oportunista e vai responder por isso.”",
+       "marca": "a3x_imprensa_atacou",
+       "cred": -1,
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "A frase vira manchete em quinze minutos. A defesa já a imprimiu: “Promotor pré-julga o investigado”. Você acaba de fazer, em escala menor, aquilo de que o acusa."
+        },
+        {
+         "q": "lacerda",
+         "e": "bravo",
+         "t": "(por mensagem) Quem acusa antecipação de culpa não pode antecipar a culpa dos outros."
+        }
+       ]
+      },
+      {
+       "t": "“Os fatos estão nos autos. A hora de falar é em juízo.”",
+       "marca": "a3x_imprensa_autos",
+       "cred": 1,
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "O repórter abaixa o microfone, decepcionado, e as câmeras seguem para outra pauta. O silêncio do Ministério Público não faz manchete, mas também não faz recurso."
+        }
+       ]
+      },
+      {
+       "t": "“Sem comentários.” Entrar sem olhar para as câmeras",
+       "marca": "a3x_imprensa_calou",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Sem comentário, sem erro, sem direção: o repórter reescreve a pergunta como resposta. “Promotor evita câmeras”, diz o rodapé."
+        }
+       ]
+      }
+     ]
     }
    },
    "placas": {
@@ -3804,7 +3942,7 @@
        ]
       }
      ],
-     "proxima": "x12"
+     "proxima": "ame1"
     },
     "x12": {
      "tipo": "dialogo",
@@ -3854,6 +3992,68 @@
      "carimbo": "ARMAS APREENDIDAS",
      "titulo": "Cada arma, o seu tipo",
      "texto": "Você separou a pistola registrada do revólver raspado, individualizou a conduta de cada acusado, e mostrou que a Altavista armava os seus canteiros sem deixar o nome na arma. O lote que nunca foi destruído aponta, de novo, para a delegacia de Fausto Rangel. Falta pouco para ligar os pontos."
+    },
+    "ame1": {
+     "tipo": "celular",
+     "local": "corredor",
+     "contato": "Número desconhecido",
+     "status": "visto agora",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "No intervalo da audiência, no corredor, o celular volta a vibrar no bolso. Um número que você conhece pelo ritmo, e não pelo dígito."
+      }
+     ],
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Belo trabalho, doutor(a). Duas armas numa semana."
+      },
+      {
+       "de": "ele",
+       "t": "A pistola era descartável. O(A) senhor(a) não é, mas dizem que ninguém é insubstituível."
+      },
+      {
+       "de": "ele",
+       "t": "Ainda tem criança brincando no quintal daquela casa barulhenta onde o(a) senhor(a) estudava no carro? Rua de terra é traiçoeira."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Mostrar a mensagem a Lacerda e pedir proteção para a família",
+       "marca": "a3_familia_protegida",
+       "falas": [
+        {
+         "q": "lacerda",
+         "e": "triste",
+         "t": "Isso passou de todos os limites. Peço proteção ao Gaeco e escolta para a sua casa hoje. Medo não é vergonha, doutor(a): é sinal de que o(a) senhor(a) está vivo(a)."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "À noite, uma viatura estaciona discretamente na sua rua. Na janela da cozinha, uma criança acena para ela, sem saber por quê."
+        }
+       ]
+      },
+      {
+       "t": "Guardar o aparelho e não contar a ninguém: não vão me intimidar",
+       "marca": "a3_familia_sozinho",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "(Eles que mexam comigo. Em casa, ninguém precisa saber.)"
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Em casa, você ensaia um sorriso para o jantar. Ninguém pergunta por que você fechou a janela da cozinha."
+        }
+       ]
+      }
+     ],
+     "proxima": "x12"
     }
    },
    "placas": {
