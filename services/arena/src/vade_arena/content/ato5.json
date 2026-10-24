@@ -49,6 +49,25 @@
     "oculos": false,
     "barba": true
    }
+  },
+  "a5oficial": {
+   "nome": "Aurélio",
+   "cargo": "Oficial de justiça",
+   "voz": 270,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#2b2b2b",
+    "roupa": "terno",
+    "corRoupa": "#3a3a46",
+    "gravata": "#555555",
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Oficial de justiça do plenário. Discreto, atento ao relógio e aos jurados; é ele quem avisa o presidente quando algo foge à regra.",
+   "personalidade": "discreto, pontual, observador",
+   "motivacao": "Garantir que o júri corra sem nulidades.",
+   "segredo": "Guarda no armário o bilhete de uma jurada que quase desistiu."
   }
  },
  "episodios": [
@@ -699,96 +718,120 @@
      "proxima": "c10"
     },
     "c10": {
-     "tipo": "dialogo",
+     "tipo": "audiencia",
      "local": "tribunal",
+     "titulo": "A isca de Brandão",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Brandão não vai ganhar a exceção na lei. Vai tentar ganhá-la no nervo: cada palavra dele é uma isca para que a suspeição deixe de ser fantasia. Quem preside responde pela ordem da audiência (CPP, art. 251)."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a5pires",
+       "e": "normal",
+       "t": "Excelência, a defesa de Henrique Altavista não adere à exceção do colega. Aguarda o rito."
+      },
       {
        "q": "brandao",
        "e": "bravo",
        "t": "Hipócrita! Toga emprestada! Vossa Excelência foi posta aí pelo Rafael Duarte e vai me condenar para pagar a dívida de gratidão!",
-       "fx": "bater"
+       "fx": "bater",
+       "incidente": {
+        "pergunta": "Como o juízo reage ao ataque pessoal de Brandão?",
+        "chamada": "Doutor Brandão, ordem!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-256",
+          "trecho": "quando a parte injuriar o juiz ou de propósito der motivo para criá-la"
+         },
+         {
+          "chave": "CPP#art-251",
+          "trecho": "manter a ordem no curso dos respectivos atos"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Deixar passar é dar ao Brandão a cena que ele quer. Quem preside responde pela ordem da audiência (art. 251)."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Mandar prender Brandão por desacato e retirá-lo à força.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "chocado",
+            "t": "(sussurrando) Era exatamente o que ele queria, Excelência: a prova de que o juízo está pessoalmente irritado. Advertir e registrar basta."
+           }
+          ]
+         },
+         {
+          "t": "Advertir, registrar a ofensa em ata e lembrar que, pelo art. 256, a suspeição não nasce da injúria que a própria parte provoca.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Doutor Brandão, está registrado em ata. Advirto que o art. 256 do CPP afasta a suspeição quando a parte injuria o juiz ou, de propósito, dá motivo para criá-la.",
+            "fx": "ordem"
+           },
+           {
+            "q": "brandao",
+            "e": "bravo",
+            "t": "Eu exerço o meu direito de defesa!"
+           },
+           {
+            "q": "voce",
+            "e": "normal",
+            "t": "Defesa se exerce com argumento. O que o senhor acabou de fazer é outra coisa."
+           },
+           {
+            "q": "lacerda",
+            "e": "confiante",
+            "t": "O MP agradece a serenidade, Excelência."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Declarar-me suspeito(a) para evitar tumulto e passar o processo ao substituto.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "pensativo",
+            "t": "(sussurrando) Se Vossa Excelência sair agora, o Brandão ganha o que queria. E o art. 256 diz que essa suspeição nem pode ser reconhecida."
+           }
+          ]
+         }
+        ]
+       }
       },
       {
        "q": "lacerda",
        "e": "chocado",
-       "t": "Excelência, isso é um desacato!"
+       "t": "Excelência, o Ministério Público apenas registra que a exceção está formalizada e aguarda o rito do Código."
       },
       {
        "q": "a5pires",
        "e": "nervoso",
        "t": "(sussurrando a Brandão) O senhor está criando a suspeição de propósito, doutor."
-      },
-      {
-       "q": "narrador",
-       "t": "Brandão quer que você se exalte. Cada palavra dele é uma isca para que a suspeição deixe de ser fantasia."
       }
      ],
-     "proxima": "c11"
-    },
-    "c11": {
-     "tipo": "escolha",
-     "local": "tribunal",
-     "falas": [
+     "erro_interromper": [
       {
        "q": "narrador",
-       "t": "Insultar o juiz para ser considerado suspeito não funciona assim."
+       "e": "nervoso",
+       "t": "Nada de irregular nesta fala. Interromper sem motivo cerceia a parte e dá a Brandão o que ele quer: um juiz de nervos à flor da pele."
       }
      ],
-     "pergunta": "Como reagir ao ataque pessoal de Brandão?",
-     "opcoes": [
+     "acerto": [
       {
-       "t": "Mandar prender Brandão por desacato e retirá-lo à força: ele ofendeu o Judiciário.",
-       "certa": false,
-       "falas": [
-        {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) Era exatamente o que ele queria, Excelência: a prova de que Vossa Excelência está pessoalmente irritado(a). Registre a ofensa; não se vingue."
-        }
-       ]
-      },
-      {
-       "t": "Manter a serenidade, advertir, registrar a ofensa em ata e lembrar que, pelo art. 256, a suspeição não pode ser reconhecida quando a parte injuria o juiz ou de propósito dá motivo para criá-la.",
-       "certa": true,
-       "falas": [
-        {
-         "q": "voce",
-         "e": "normal",
-         "t": "Doutor Brandão, está registrado em ata. Advirto que o art. 256 do CPP afasta a suspeição quando a parte injuria o juiz ou, de propósito, dá motivo para criá-la."
-        },
-        {
-         "q": "brandao",
-         "e": "nervoso",
-         "t": "Eu exerço o meu direito de defesa!"
-        },
-        {
-         "q": "voce",
-         "e": "confiante",
-         "t": "Defesa se exerce com argumento. O que o senhor acabou de fazer é outra coisa."
-        },
-        {
-         "q": "lacerda",
-         "e": "feliz",
-         "t": "O MP agradece a serenidade, Excelência."
-        }
-       ],
-       "fundamentos": [
-        {
-         "chave": "CPP#art-256",
-         "trecho": "A suspeição não poderá ser declarada nem reconhecida, quando a parte injuriar o juiz ou de propósito der motivo para criá-la"
-        }
-       ]
-      },
-      {
-       "t": "Declarar-me suspeito(a) para evitar tumulto e passar o processo ao substituto.",
-       "certa": false,
-       "falas": [
-        {
-         "q": "dani",
-         "e": "chocado",
-         "t": "(sussurrando) Se Vossa Excelência sair agora, o Brandão ganha o que queria. E o art. 256 diz que essa suspeição nem pode ser reconhecida."
-        }
-       ]
+       "q": "voce",
+       "e": "normal",
+       "t": "Sigamos. A ofensa está registrada, a exceção será processada em apartado e a audiência continua."
       }
      ],
      "proxima": "c12"
@@ -1142,6 +1185,95 @@
        "t": "Junte aos autos pela Secretaria e dê vista às partes. Se for pertinente, a prova diz por si. E, Dani, guarde uma cópia para mim."
       }
      ],
+     "proxima": "c18t"
+    },
+    "c18t": {
+     "tipo": "tensao",
+     "local": "corredor",
+     "tempo": 8,
+     "padrao": 1,
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Fim da tarde. O corredor dos fundos do fórum está vazio, e a lâmpada de emergência treme. A escolta recuou dois passos para o réu poder passar. Brandão para diante de você."
+      },
+      {
+       "q": "brandao",
+       "e": "normal",
+       "t": "Excelência. Dois minutos. Sem câmera, sem ata. Eu tenho uma coisa sobre o Rafael que o senhor precisa ouvir antes de amanhã."
+      }
+     ],
+     "pergunta": "Brandão está a um passo e a escolta não ouve. Um juiz não conversa com réu fora dos autos. O que você faz?",
+     "hesitou": "Você hesitou. Brandão aproveitou o silêncio para falar baixo, muito perto.",
+     "opcoes": [
+      {
+       "t": "Cortar na hora: “Doutor Brandão, só nos autos.” E chamar a escolta.",
+       "cred": 1,
+       "marca": "a5_cortou_brandao",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Doutor Brandão, não falo com o senhor fora dos autos. Se há algo a dizer, junte por petição, com ciência do Ministério Público."
+        },
+        {
+         "q": "brandao",
+         "e": "triste",
+         "t": "Sempre a lei, Excelência. A lei é muito fria para quem está do lado de dentro dela."
+        },
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "A escolta o leva. Dani surge na porta, pálida: viu a cena inteira e vai anotar o horário para a ata."
+        }
+       ]
+      },
+      {
+       "t": "Ouvir só uma frase, para saber do que se trata.",
+       "cred": -1,
+       "marca": "a5_ouviu_brandao",
+       "falas": [
+        {
+         "q": "brandao",
+         "e": "normal",
+         "t": "Quem tem a carta pode destruí-la, Excelência. Pergunte ao seu mentor por que ele nunca a mostrou."
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Chega. Escolta! Dani, registre em ata o que ele disse e dê ciência a todas as partes amanhã cedo.",
+         "fx": "ordem"
+        },
+        {
+         "q": "narrador",
+         "e": "nervoso",
+         "t": "Foi uma frase só. Mas você ouviu o réu sozinho, e isso vai pesar na balança da sua própria imparcialidade."
+        }
+       ]
+      },
+      {
+       "t": "Seguir andando e dizer, sem parar: “Junte aos autos.”",
+       "marca": "a5_autos_brandao",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Junte aos autos, doutor."
+        },
+        {
+         "q": "brandao",
+         "e": "bravo",
+         "t": "Vossa Excelência vai se arrepender de não ter escutado."
+        },
+        {
+         "q": "narrador",
+         "e": "pensativo",
+         "t": "Os passos dele ficam para trás. A palavra “carta” fica na sua cabeça mais tempo do que você queria."
+        }
+       ]
+      }
+     ],
      "proxima": "c19"
     },
     "c19": {
@@ -1482,56 +1614,115 @@
        "q": "rafael",
        "e": "triste",
        "t": "Entendi, Excelência. Vou dizer a verdade, mesmo que ela me custe tudo o que me resta."
-      },
-      {
-       "q": "lacerda",
-       "e": "confiante",
-       "t": "Doutor Rafael, o senhor trabalhou com Henrique Altavista por doze anos, não foi?"
       }
      ],
      "proxima": "c7"
     },
     "c7": {
-     "tipo": "decidir",
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Inquirição do colaborador pelo MP",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Primeiro as partes perguntam; o juiz só barra o que a lei manda barrar e, no fim, complementa o que ficou obscuro. Perguntar no lugar da acusação, nunca (CPP, art. 3º-A)."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Doutor Rafael, o senhor trabalhou com Henrique Altavista por doze anos, não foi?"
+      },
+      {
+       "q": "rafael",
+       "e": "triste",
+       "t": "Doze anos, Excelência. Doze anos assinando o que não devia."
+      },
       {
        "q": "lacerda",
        "e": "apontando",
-       "t": "Não é verdade que o Dr. Brandão foi quem ordenou todos os pagamentos de fachada, e que o senhor apenas os executava?"
+       "t": "Não é verdade que o Dr. Brandão foi quem ordenou todos os pagamentos de fachada, e que o senhor apenas os executava?",
+       "incidente": {
+        "pergunta": "A defesa se mexe na cadeira: como o juízo intervém na pergunta do MP?",
+        "chamada": "Um instante, doutor Lacerda.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "a5pires",
+          "e": "nervoso",
+          "t": "(levantando-se) Excelência, a pergunta já traz a resposta!"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar responder: o MP é parte e pergunta como quiser.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "chocado",
+            "t": "(sussurrando) A pergunta já traz a resposta, Excelência. Art. 212: o juiz não admite as que puderem induzir a resposta."
+           }
+          ]
+         },
+         {
+          "t": "Indeferir por induzir a resposta e mandar o MP reformular.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Indeferida, doutor Lacerda. A pergunta traz a resposta embutida, e isso vale para o colaborador também. Reformule.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a5pires",
+            "e": "normal",
+            "t": "Obrigado, Excelência."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Reformular eu mesmo(a) a pergunta, para chegar à resposta que falta ao MP.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "chocado",
+            "t": "(sussurrando) Isso é substituir a atuação probatória da acusação, Excelência. O art. 3º-A veda. O juiz barra a pergunta ruim; quem refaz é o Ministério Público."
+           }
+          ]
+         }
+        ]
+       }
       },
       {
-       "q": "a5pires",
-       "e": "bravo",
-       "t": "PROTESTO! A pergunta induz a resposta e põe na boca do depoente o que o MP quer ouvir!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "A defesa protesta contra a pergunta do MP. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
+       "q": "lacerda",
+       "e": "normal",
+       "t": "…Doutor Rafael, quem ordenava os pagamentos?"
+      },
       {
-       "chave": "CPP#art-212",
-       "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+       "q": "rafael",
+       "e": "triste",
+       "t": "Henrique decidia. Brandão cuidava dos advogados do grupo. A minha mão assinava."
       }
      ],
      "acerto": [
       {
        "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. Reformule, doutor Lacerda. A pergunta traz a resposta embutida, e isso vale para o colaborador também.",
-       "fx": "martelo"
-      },
-      {
-       "q": "lacerda",
-       "e": "nervoso",
-       "t": "…Doutor Rafael, quem ordenava os pagamentos?"
+       "e": "normal",
+       "t": "O juízo tem alguns pontos a esclarecer, doutor Rafael, e só eles (CPP, art. 212, parágrafo único)."
       }
      ],
-     "erro": [
+     "erro_interromper": [
       {
-       "q": "dani",
+       "q": "narrador",
        "e": "nervoso",
-       "t": "(sussurrando) A pergunta já traz a resposta, Excelência. Art. 212. Amizade com a acusação não muda a regra."
+       "t": "A pergunta era regular. Interromper a parte sem motivo é cerceamento, e quem preside responde por isso."
       }
      ],
      "proxima": "c8"
@@ -1622,9 +1813,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "PROTESTO!",
-       "fx": "protesto"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -1707,46 +1898,109 @@
      "proxima": "c10"
     },
     "c10": {
-     "tipo": "decidir",
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Inquirição pela defesa de Brandão",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Agora é a vez da defesa. Brandão pergunta duro: o juiz não protege o colaborador de perguntas incômodas, só de perguntas ilegais."
+      }
+     ],
+     "linhas": [
       {
        "q": "brandao",
        "e": "bravo",
-       "t": "Doutor Rafael, quanto o senhor ganhou de desconto de pena para entregar os seus amigos? Dois terços? O senhor vendeu a alma por quantos anos?"
+       "t": "Doutor Rafael, que desconto de pena o senhor ganhou para entregar os seus amigos? Dois terços?"
       },
       {
-       "q": "lacerda",
-       "e": "bravo",
-       "t": "PROTESTO! A pergunta é ofensiva e não tem relação com a causa!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "O MP protesta contra a pergunta sobre os benefícios do acordo. Sua decisão?",
-     "correta": "indeferir",
-     "fundamentos": [
+       "q": "rafael",
+       "e": "triste",
+       "t": "Redução de pena e regime aberto. Nada disso me devolve o escritório, nem o respeito da minha filha, Excelência."
+      },
       {
-       "chave": "CPP#art-212",
-       "trecho": "não tiverem relação com a causa"
+       "q": "brandao",
+       "e": "bravo",
+       "t": "Responda: o senhor é um canalha ou apenas um covarde?",
+       "incidente": {
+        "pergunta": "Como o juízo reage à pergunta de Brandão?",
+        "chamada": "Doutor Brandão, ordem.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não tiverem relação com a causa"
+         },
+         {
+          "chave": "CPP#art-251",
+          "trecho": "manter a ordem no curso dos respectivos atos"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Passou, Excelência. A pergunta é só ofensa, e sem protesto do MP alguém precisa barrá-la."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar responder: o depoente é colaborador e não merece proteção especial.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Toda testemunha tem a dignidade protegida, Excelência. Pergunta ofensiva e sem relação com a causa se indefere, art. 212."
+           }
+          ]
+         },
+         {
+          "t": "Indeferir a pergunta por ofensiva e sem relação com a causa, e pedir que a defesa prossiga.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Indefiro. A pergunta é ofensiva e não tem relação com a causa. Os benefícios do acordo podem ser explorados; o insulto, não. Prossiga, doutor.",
+            "fx": "ordem"
+           },
+           {
+            "q": "brandao",
+            "e": "normal",
+            "t": "Registro o meu inconformismo."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Retirar Brandão do plenário por desacato.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Desproporcional, Excelência: advertência primeiro. E ele é réu: a ausência pode gerar nulidade."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "brandao",
+       "e": "normal",
+       "t": "Sem mais perguntas ao colaborador, Excelência."
       }
      ],
      "acerto": [
       {
        "q": "voce",
        "e": "normal",
-       "t": "Indefiro o protesto. Os benefícios do acordo têm relação direta com a credibilidade do colaborador. Pode responder, doutor Rafael; o senhor Brandão apenas tente falar sem ofender.",
-       "fx": "martelo"
-      },
-      {
-       "q": "rafael",
-       "e": "triste",
-       "t": "Redução de pena e regime aberto. Nada disso me devolve o escritório, nem o respeito da minha filha, Excelência."
+       "t": "A inquirição está encerrada. Os benefícios do acordo ficam registrados e serão pesados na valoração, nem aceitos nem descartados de antemão."
       }
      ],
-     "erro": [
+     "erro_interromper": [
       {
-       "q": "dani",
-       "e": "pensativo",
-       "t": "(sussurrando) A pergunta é dura, mas pertinente: o interesse do colaborador no acordo é matéria de credibilidade. Pode responder."
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "A pergunta sobre o desconto de pena era legítima: o interesse do colaborador mede a sua credibilidade. Cercear a defesa aqui é erro de quem preside."
       }
      ],
      "proxima": "c11"
@@ -2075,9 +2329,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "PROTESTO!",
-       "fx": "protesto"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -2397,9 +2651,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "UM MOMENTO!",
-       "fx": "ummomento"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -2531,9 +2785,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "PROTESTO!",
-       "fx": "protesto"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -2703,6 +2957,105 @@
        "t": "Ao ser levado, Rafael se detém um instante diante da bancada e move os lábios sem som: \"Leia até o fim.\""
       }
      ],
+     "proxima": "c17r"
+    },
+    "c17r": {
+     "tipo": "dialogo",
+     "local": "corredor",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Corredor dos fundos, a caminho do estacionamento do juízo. A escolta traz Rafael de volta ao presídio, e o corredor é estreito demais para duas pessoas que não podem se tocar."
+      },
+      {
+       "q": "narrador",
+       "t": "Rafael vem de cabeça baixa, o agente penitenciário um passo atrás. As algemas brilham na luz fria. Ele levanta os olhos, vê você e diminui o passo. É o primeiro a desviar o rosto."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "(pensando) Doze anos de almoços de domingo. A primeira vez que falei em pé no tribunal sem tremer foi porque ele me ensinou a respirar antes da primeira frase."
+      },
+      {
+       "q": "rafael",
+       "e": "triste",
+       "t": "Excelência."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Doutor Rafael."
+      },
+      {
+       "q": "rafael",
+       "e": "triste",
+       "t": "Não pare, por favor. Se Vossa Excelência parar, o Brandão faz disso uma fotografia, a fotografia vira nulidade, e o Paulo perde de novo."
+      },
+      {
+       "q": "narrador",
+       "t": "Ele passa rente à parede, para não roçar a sua manga. Você sente falta do cheiro de café e papel velho que ele tinha. Agora ele cheira a sabão de presídio."
+      },
+      {
+       "q": "narrador",
+       "t": "No bolso do paletó emprestado, a ponta de um papel dobrado com um barquinho colorido. Ele o ajeita como quem guarda o último endereço.",
+       "se": "a2_sofia_promessa"
+      },
+      {
+       "q": "narrador",
+       "t": "Ele leva a mão ao peito, procura a foto da filha no forro do paletó e não encontra. Só o pano, vazio.",
+       "se": "!a2_sofia_promessa"
+      }
+     ],
+     "proxima": "c17t"
+    },
+    "c17t": {
+     "tipo": "tensao",
+     "local": "corredor",
+     "tempo": 5,
+     "padrao": 1,
+     "pergunta": "Rafael já está a dois passos. Você tem um segundo para decidir o que o seu rosto faz. Juiz não cumprimenta testemunha, mas é um homem que o formou.",
+     "hesitou": "Você hesitou, e o corredor engoliu o momento.",
+     "opcoes": [
+      {
+       "t": "Um aceno mínimo de cabeça, sem uma palavra.",
+       "marca": "a5_acenou_rafael",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "triste",
+         "t": "Um centímetro de queixo para baixo. Rafael não olha, mas os ombros dele descem como se alguém tirasse um peso de cima."
+        }
+       ]
+      },
+      {
+       "t": "Virar o rosto e seguir em frente, como a lei pede.",
+       "marca": "a5_virou_rosto",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "triste",
+         "t": "Você olha a parede, o relógio, qualquer coisa. Atrás de você, os passos dele não mudam de ritmo. Essa foi a parte mais difícil do dia."
+        }
+       ]
+      },
+      {
+       "t": "Dizer baixinho: “Cuide-se.”",
+       "cred": -1,
+       "marca": "a5_falou_rafael",
+       "falas": [
+        {
+         "q": "rafael",
+         "e": "triste",
+         "t": "(sem parar) O senhor também."
+        },
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "(pensando) Duas palavras. Nenhuma sobre o processo. Ainda assim, um juiz que fala com a testemunha entre dois depoimentos deixou uma porta aberta para o recurso."
+        }
+       ]
+      }
+     ],
      "proxima": "c18"
     },
     "c18": {
@@ -2731,7 +3084,8 @@
     "marta": "testemunha",
     "ronaldo": "testemunha",
     "dani": "escritorio",
-    "twhumberto": "testemunha"
+    "twhumberto": "testemunha",
+    "clara": "acusacao"
    },
    "provas": [
     {
@@ -3062,6 +3416,66 @@
       "diario",
       "amostra"
      ],
+     "proxima": "c4t"
+    },
+    "c4t": {
+     "tipo": "tensao",
+     "local": "carro",
+     "tempo": 8,
+     "padrao": 0,
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Fim da diligência. Anoitece. Você dirige de volta pela estrada de terra do Horizonte; Dani cochila no banco do carona, a cabeça no vidro."
+      }
+     ],
+     "pergunta": "Dois faróis altos colam na sua traseira desde a saída do canteiro. Acendem, apagam, acendem. Quem dirige quer ser visto.",
+     "hesitou": "Você hesitou. O carro de trás encostou ainda mais perto.",
+     "opcoes": [
+      {
+       "t": "Acelerar e sair da estrada de terra para a avenida iluminada.",
+       "marca": "a5_fugiu_farois",
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "A avenida chega em quatro minutos que parecem quarenta. O carro de trás pisca uma última vez e vira numa rua escura. Dani acorda: “Já chegamos?”"
+        }
+       ]
+      },
+      {
+       "t": "Parar no posto de gasolina e esperar o outro carro passar.",
+       "cred": 1,
+       "marca": "a5_parou_posto",
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "Sob as luzes frias do posto, o carro desacelera, passa devagar e some. Você anota a placa parcial no verso de uma nota fiscal, com a mão firme, e o horário."
+        },
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "Excelência… o senhor viu? A placa tem a mesma letra final de um carro que passou pela Secretaria ontem."
+        }
+       ]
+      },
+      {
+       "t": "Reduzir e deixar o carro emparelhar.",
+       "cred": -1,
+       "marca": "a5_emparelhou",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "nervoso",
+         "t": "O vidro escuro do outro carro desce dez centímetros. Ninguém fala. Um celular é erguido e filma o seu rosto. Depois o vidro sobe e o carro some na curva."
+        },
+        {
+         "q": "dani",
+         "e": "chocado",
+         "t": "Excelência… eles estavam filmando a gente?"
+        }
+       ]
+      }
+     ],
      "proxima": "c5"
     },
     "c5": {
@@ -3176,51 +3590,110 @@
      "proxima": "c8"
     },
     "c8": {
-     "tipo": "decidir",
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Inquirição do perito",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "O perito responde a quesitos técnicos (CPP, art. 160). O juiz pode complementar a inquirição só nos pontos obscuros e nunca faz a pergunta que cabe à acusação (art. 3º-A)."
+      }
+     ],
+     "linhas": [
       {
        "q": "lacerda",
        "e": "confiante",
-       "t": "Doutor Kenji, com base nessa perícia, o senhor acha que Henrique Altavista sabia do aço e quis matar o engenheiro que descobriu?"
+       "t": "Doutor Kenji, em que laboratório foi feito o ensaio de tração das barras?"
+      },
+      {
+       "q": "kenji",
+       "e": "normal",
+       "t": "No laboratório credenciado do instituto de tecnologia. Duas amostras, laudo assinado por mim e pelo responsável técnico."
       },
       {
        "q": "a5pires",
        "e": "bravo",
-       "t": "PROTESTO! O perito responde a quesitos técnicos, e não opina sobre dolo!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "A defesa protesta contra a pergunta que pede opinião sobre dolo. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
+       "t": "O senhor é perito em computação forense, doutor. Quem mediu o aço?"
+      },
       {
-       "chave": "CPP#art-160",
-       "trecho": "Os peritos elaborarão o laudo pericial, onde descreverão minuciosamente o que examinarem, e responderão aos quesitos formulados"
-      }
-     ],
-     "acerto": [
+       "q": "kenji",
+       "e": "normal",
+       "t": "O ensaio mecânico foi do laboratório; eu coordenei a perícia e respondo pelo laudo."
+      },
       {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. O perito descreve e responde a quesitos técnicos. Conclusão sobre dolo é matéria para a prova e, no caso do homicídio, para o júri.",
-       "fx": "martelo"
+       "q": "lacerda",
+       "e": "confiante",
+       "t": "Com base nessa perícia, o senhor acha que Henrique Altavista sabia do aço e quis matar o engenheiro que descobriu?",
+       "incidente": {
+        "pergunta": "A defesa protesta contra a pergunta que pede opinião sobre dolo. Como o juízo decide?",
+        "chamada": "Um instante, doutor Lacerda.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-160",
+          "trecho": "descreverão minuciosamente o que examinarem, e responderão aos quesitos formulados"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "a5pires",
+          "e": "bravo",
+          "t": "(erguendo a mão) Excelência, o perito não é testemunha de intenção!"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar o perito responder: ele é auxiliar do juízo e pode opinar.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Perito responde a quesitos técnicos (art. 160). Opinião sobre intenção do réu não é perícia, Excelência."
+           }
+          ]
+         },
+         {
+          "t": "Indeferir: perito responde a quesitos técnicos; dolo é matéria para a prova e, no homicídio, para o júri.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Indeferida. O perito descreve e responde a quesitos técnicos. Conclusão sobre dolo é matéria de prova e, no homicídio, do Conselho de Sentença.",
+            "fx": "ordem"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Reformular eu mesmo(a): “Perito, o aço foi trocado de propósito?”",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "chocado",
+            "t": "(sussurrando) Isso é fazer a pergunta da acusação, e ainda com a mesma armadilha do dolo. Art. 3º-A, Excelência."
+           }
+          ]
+         }
+        ]
+       }
       },
       {
        "q": "kenji",
        "e": "normal",
        "t": "O que posso afirmar é isto: o aço entregue não é o aço pago, e essa troca foi feita com planilha adulterada em março."
-      },
+      }
+     ],
+     "acerto": [
       {
        "q": "lacerda",
-       "e": "nervoso",
+       "e": "normal",
        "t": "Sem mais perguntas, Excelência."
       }
      ],
-     "erro": [
+     "erro_interromper": [
       {
-       "q": "dani",
+       "q": "narrador",
        "e": "nervoso",
-       "t": "(sussurrando) Perito responde a quesitos técnicos (art. 160). Opinião sobre intenção do réu não é perícia, Excelência."
+       "t": "A pergunta era técnica e regular. Interrompê-la é cercear a parte e atrapalhar a perícia."
       }
      ],
      "proxima": "c9"
@@ -3463,9 +3936,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "PROTESTO!",
-       "fx": "protesto"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -3724,9 +4197,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "UM MOMENTO!",
-       "fx": "ummomento"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -3857,9 +4330,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "PROTESTO!",
-       "fx": "protesto"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -4018,72 +4491,223 @@
        "t": "O Ministério Público concorda, Excelência."
       }
      ],
+     "proxima": "c14p"
+    },
+    "c14p": {
+     "tipo": "palavra",
+     "local": "tribunal",
+     "titulo": "Debates orais (art. 411)",
+     "ordenar": true,
+     "passo": 5,
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Encerrada a instrução, passo aos debates orais da primeira fase do júri. Concedo a palavra às partes, com o tempo que a lei determina.",
+       "fx": "martelo"
+      }
+     ],
+     "pergunta": "Conceda a palavra: ponha os oradores na ordem da lei e fixe o tempo de cada um.",
+     "oradores": [
+      {
+       "q": "lacerda",
+       "papel": "Acusação (MP)",
+       "min_ok": 20,
+       "max_ok": 30
+      },
+      {
+       "q": "clara",
+       "papel": "Assistente de acusação",
+       "tempo": 10
+      },
+      {
+       "q": "a5pires",
+       "papel": "Defesa de Henrique",
+       "min_ok": 30,
+       "max_ok": 40
+      },
+      {
+       "q": "brandao",
+       "papel": "Defesa de Brandão",
+       "min_ok": 30,
+       "max_ok": 40
+      }
+     ],
+     "fundamentos": [
+      {
+       "chave": "CPP#art-411/par-4",
+       "trecho": "pelo prazo de 20 (vinte) minutos, prorrogáveis por mais 10 (dez)"
+      },
+      {
+       "chave": "CPP#art-411/par-6",
+       "trecho": "serão concedidos 10 (dez) minutos, prorrogando-se por igual período o tempo de manifestação da defesa"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Palavra concedida nos termos da lei: acusação, assistente e, por último, as defesas. Ninguém é cortado e ninguém abusa do tempo."
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "(sussurrando) O art. 411, § 4º dá 20 minutos, prorrogáveis por mais 10. E o § 6º: ao assistente, 10 minutos, e a defesa ganha o mesmo tempo a mais."
+      }
+     ],
+     "erro_ordem": [
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "(sussurrando) Na ordem da lei, Excelência: primeiro a acusação, depois o assistente, por último a defesa."
+      }
+     ],
      "proxima": "c15"
     },
     "c15": {
-     "tipo": "escolha",
+     "tipo": "sentenca",
      "local": "tribunal",
+     "titulo": "Decisão de pronúncia",
      "falas": [
       {
        "q": "narrador",
-       "t": "Chegou a hora da pronúncia, a decisão que leva Henrique e Brandão ao Tribunal do Júri."
+       "t": "Chegou a hora da pronúncia, a decisão que leva Henrique e Brandão ao Tribunal do Júri. É decisão de admissibilidade: nem condena, nem adianta culpa."
       }
      ],
-     "pergunta": "Qual é a sua decisão sobre o homicídio de Paulo Seixas?",
-     "opcoes": [
+     "pergunta": "Redija a pronúncia: escolha o que vai em cada parte e assine.",
+     "partes": [
       {
-       "t": "Pronuncio os acusados e afirmo que são culpados, com prova irrefutável, para orientar os jurados.",
-       "certa": false,
-       "falas": [
+       "nome": "Capitulação do crime",
+       "opcoes": [
         {
-         "q": "dani",
-         "e": "chocado",
-         "t": "(sussurrando) Excelência! A pronúncia se limita a indicar materialidade e indícios suficientes de autoria. Dizer 'culpados' e 'irrefutável' é excesso de linguagem: nulidade certa e influência sobre os jurados."
+         "t": "Homicídio qualificado (art. 121, § 2º, I e V), com as qualificadoras descritas.",
+         "falas": [],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-413/par-1",
+           "trecho": "devendo o juiz declarar o dispositivo legal em que julgar incurso o acusado"
+          }
+         ]
+        },
+        {
+         "t": "Homicídio simples: o júri decide as qualificadoras depois.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "pensativo",
+           "t": "(sussurrando) A pronúncia deve declarar o dispositivo e as qualificadoras que a acusação descreveu, Excelência (art. 413, § 1º)."
+          }
+         ]
+        },
+        {
+         "t": "Latrocínio: houve morte e vantagem econômica.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "pensativo",
+           "t": "(sussurrando) Não há subtração violenta. A acusação é de homicídio qualificado por paga e impunidade de outro crime."
+          }
+         ]
         }
        ]
       },
       {
-       "t": "Pronuncio por homicídio qualificado, com materialidade e indícios suficientes de autoria e participação, descrevendo as qualificadoras (paga e impunidade de outro crime), sem adiantar juízo de culpa.",
-       "certa": true,
-       "falas": [
+       "nome": "Fundamentação",
+       "opcoes": [
         {
-         "q": "voce",
-         "e": "confiante",
-         "t": "PRONUNCIO Henrique Altavista e Augusto Brandão por homicídio qualificado (art. 121, § 2º, I e V). Há prova da materialidade e indícios suficientes de autoria e participação. As qualificadoras, não manifestamente improcedentes, serão decididas pelo Conselho de Sentença.",
-         "fx": "martelo"
+         "t": "Materialidade provada e indícios suficientes de autoria e participação, sem afirmar certeza.",
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "PRONUNCIO Henrique Altavista e Augusto Brandão por homicídio qualificado (art. 121, § 2º, I e V). Há prova da materialidade e indícios suficientes de autoria e participação. As qualificadoras estão descritas nos autos; o mérito é do Conselho de Sentença.",
+           "fx": "martelo"
+          },
+          {
+           "q": "a5pires",
+           "e": "normal",
+           "t": "A defesa recorrerá, Excelência."
+          },
+          {
+           "q": "voce",
+           "e": "normal",
+           "t": "É seu direito. O júri é a casa da dúvida, e é lá que ela se resolve."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-413",
+           "trecho": "se convencido da materialidade do fato e da existência de indícios suficientes de autoria ou de participação"
+          }
+         ]
         },
         {
-         "q": "a5pires",
-         "e": "pensativo",
-         "t": "A defesa recorrerá, Excelência."
+         "t": "Afirmar que são culpados, com prova irrefutável, para orientar os jurados.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "chocado",
+           "t": "(sussurrando) A pronúncia se limita a indicar materialidade e indícios suficientes de autoria. Dizer “culpados” e “irrefutável” contamina o júri (art. 413, § 1º)."
+          }
+         ]
         },
         {
-         "q": "voce",
-         "e": "normal",
-         "t": "É seu direito. O júri é a casa da dúvida, e é lá que ela se resolve."
-        }
-       ],
-       "fundamentos": [
-        {
-         "chave": "CPP#art-413",
-         "trecho": "O juiz, fundamentadamente, pronunciará o acusado, se convencido da materialidade do fato e da existência de indícios suficientes de autoria ou de participação"
-        },
-        {
-         "chave": "CP#art-121/par-2/inc-v",
-         "trecho": "para assegurar a execução, a ocultação, a impunidade ou vantagem de outro crime"
+         "t": "Impronunciar: só há a palavra de Rafael e de Ronaldo, e os dois são pouco confiáveis.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "pensativo",
+           "t": "(sussurrando) Há perícia, diário, registros telefônicos e planilhas. A impronúncia exige falta de materialidade ou de indícios, e não é o caso (art. 414)."
+          }
+         ]
         }
        ]
       },
       {
-       "t": "Impronuncio os acusados: só há a palavra de Rafael e de Ronaldo, e os dois são pouco confiáveis.",
-       "certa": false,
-       "falas": [
+       "nome": "Prisão",
+       "opcoes": [
         {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) Há perícia, diário, registros telefônicos e planilhas. A impronúncia exige falta de materialidade ou de indícios, e não desconfiança de testemunhas."
+         "t": "Manter a preventiva, motivada nos fatos concretos (fuga de jatinho, identidade falsa).",
+         "falas": [],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-413/par-3",
+           "trecho": "O juiz decidirá, motivadamente, no caso de manutenção, revogação ou substituição da prisão ou medida restritiva"
+          }
+         ]
+        },
+        {
+         "t": "Revogar a preventiva: a pronúncia é mera admissibilidade e o réu é primário.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "pensativo",
+           "t": "(sussurrando) A fuga e a identidade falsa são fatos concretos. Revogar sem motivo seria desprezar o art. 312."
+          }
+         ]
+        },
+        {
+         "t": "Decretar já a perda dos bens dos réus, por segurança.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "chocado",
+           "t": "(sussurrando) Isso é condenação antecipada, Excelência. Medidas assecuratórias dependem de requerimento e fundamentação própria."
+          }
+         ]
         }
        ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "narrador",
+       "t": "A decisão é lavrada, assinada e lida em audiência. O processo segue para o plenário."
       }
      ],
      "proxima": "c16"
@@ -4113,7 +4737,8 @@
     "brandao": "defesa",
     "henrique": "defesa",
     "kenji": "testemunha",
-    "dani": "escritorio"
+    "dani": "escritorio",
+    "a5oficial": "testemunha"
    },
    "provas": [
     {
@@ -4247,6 +4872,89 @@
        "se": "a4_helena_proxima"
       }
      ],
+     "proxima": "c2c"
+    },
+    "c2c": {
+     "tipo": "celular",
+     "local": "escritorio",
+     "contato": "Clara Seixas",
+     "status": "online às 6h02",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O celular vibra duas vezes sobre a mesa, antes de Dani sair da sala. Não é número de Secretaria."
+      }
+     ],
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Bom dia, Excelência. Sei que não posso escrever para o senhor. Pode não responder. Só preciso que alguém saiba."
+      },
+      {
+       "de": "ele",
+       "t": "Hoje o Paulo faria 41 anos. Comprei um girassol. Ele odiava rosa."
+      },
+      {
+       "de": "ele",
+       "t": "Vou ficar na primeira fila. Prometo não chorar alto."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Não responder e pedir à Secretaria que junte a mensagem aos autos, com ciência às partes.",
+       "cred": 1,
+       "marca": "a5_clara_autos",
+       "resposta": false,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Dani, junte a mensagem aos autos e dê ciência às partes. Ela não fez nada de errado, mas o juiz não conversa com a parte fora do processo, nem com quem sofre."
+        },
+        {
+         "q": "dani",
+         "e": "pensativo",
+         "t": "Sim, Excelência. Eu sei que dói."
+        }
+       ]
+      },
+      {
+       "t": "Guardar o celular e não responder.",
+       "marca": "a5_clara_silencio",
+       "resposta": false,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "(pensando) Não respondi. Também não juntei aos autos. Isso, se alguém um dia perguntar, vai ter de ser explicado."
+        }
+       ]
+      },
+      {
+       "t": "Responder: “Sinto muito. Estarei lá.”",
+       "envia": "Sinto muito. Estarei lá.",
+       "cred": -1,
+       "marca": "a5_respondeu_clara",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Obrigada. Eu sabia."
+        }
+       ],
+       "falas": [
+        {
+         "q": "dani",
+         "e": "chocado",
+         "t": "(da porta) Excelência, o senhor respondeu à Clara? O Dr. Pires pode usar essa mensagem para pedir a suspeição do presidente do júri."
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Eu sei. Foi uma frase, mas foi a frase errada."
+        }
+       ]
+      }
+     ],
      "proxima": "c3"
     },
     "c3": {
@@ -4300,6 +5008,11 @@
         {
          "q": "narrador",
          "t": "Sete vozes respondem, uma de cada vez: 'Assim o prometo.'"
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Advirto ainda os senhores jurados: uma vez sorteados, não poderão comunicar-se entre si nem com outrem, nem manifestar opinião sobre o processo, sob pena de exclusão do Conselho e multa (art. 466, § 1º)."
         }
        ],
        "fundamentos": [
@@ -4579,68 +5292,106 @@
        "t": "(sussurrando) Nulidade exige prejuízo, Excelência (art. 563). A advertência e a orientação já protegeram o julgamento."
       }
      ],
-     "proxima": "c11"
+     "proxima": "c11p"
     },
     "c11": {
      "tipo": "dialogo",
      "local": "juri",
      "falas": [
       {
-       "q": "voce",
-       "e": "normal",
-       "t": "Encerrada a instrução. Passemos aos debates: o Ministério Público tem a palavra, por uma hora e meia (art. 477)."
-      },
-      {
        "q": "lacerda",
        "e": "confiante",
        "t": "Jurados, Paulo Seixas morreu para que o aço de 8 milímetros continuasse a valer o preço de 10."
-      },
-      {
-       "q": "lacerda",
-       "e": "apontando",
-       "t": "E lembrem-se: o juiz já pronunciou os réus, ou seja, já se convenceu de que existem provas suficientes!"
       }
      ],
      "proxima": "c12"
     },
     "c12": {
-     "tipo": "decidir",
+     "tipo": "audiencia",
+     "local": "juri",
+     "titulo": "Debates: a acusação",
      "falas": [
       {
-       "q": "a5pires",
+       "q": "narrador",
+       "t": "O plenário escuta. O presidente dirige os debates e só intervém em abuso, excesso de linguagem ou a requerimento (art. 497, III), e barra as referências vedadas pelo art. 478."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "lacerda",
        "e": "apontando",
-       "t": "PROTESTO! O promotor está usando a decisão de pronúncia como argumento de autoridade!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "A defesa protesta contra a referência à pronúncia. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-478/inc-i",
-       "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação ou à determinação do uso de algemas como argumento de autoridade que beneficiem ou prejudiquem o acusado"
-      }
-     ],
-     "acerto": [
-      {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. Doutor Lacerda, está vedado referir-se à pronúncia nos debates. Senhores jurados, desconsiderem essa parte. Prossiga sem ela.",
-       "fx": "martelo"
+       "t": "E lembrem-se: o juiz já pronunciou os réus, ou seja, já se convenceu de que existem provas suficientes!",
+       "incidente": {
+        "pergunta": "A defesa protesta contra a referência à pronúncia. Como o presidente decide?",
+        "chamada": "Um instante, doutor Lacerda.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-478/inc-i",
+          "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "a5pires",
+          "e": "confiante",
+          "t": "(sussurrando a Brandão) Isso é nulidade. Se o juiz deixar, a gente aproveita no recurso."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar passar: o MP só relembrou o processo.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) O art. 478, I proíbe a referência à pronúncia como argumento de autoridade, sob pena de nulidade, Excelência."
+           }
+          ]
+         },
+         {
+          "t": "Dissolver o Conselho de Sentença de ofício.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "pensativo",
+            "t": "(sussurrando) Exagero, Excelência: primeiro se manda parar e se orienta os jurados. Nulidade exige prejuízo (art. 563)."
+           }
+          ]
+         },
+         {
+          "t": "Intervir: é vedado referir-se à pronúncia nos debates; mandar desconsiderar e prosseguir.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Doutor Lacerda, está vedado referir-se à pronúncia nos debates. Senhores jurados, desconsiderem essa parte. Prossiga sem ela.",
+            "fx": "ordem"
+           },
+           {
+            "q": "lacerda",
+            "e": "normal",
+            "t": "…Retiro a referência, Excelência. Jurados, as provas falam por si."
+           }
+          ],
+          "certa": true
+         }
+        ]
+       }
       },
       {
        "q": "lacerda",
-       "e": "nervoso",
-       "t": "…Retiro a referência, Excelência. Jurados, as provas falam por si."
+       "e": "confiante",
+       "t": "A planilha periciada, o diário de Paulo e as quatorze ligações para o escritório de Brandão contam a mesma história, jurados."
       }
      ],
-     "erro": [
+     "erro_interromper": [
       {
-       "q": "dani",
+       "q": "narrador",
        "e": "nervoso",
-       "t": "(sussurrando) O art. 478, I proíbe a referência à pronúncia como argumento de autoridade, sob pena de nulidade, Excelência."
+       "t": "A fala era regular. Interromper a acusação sem motivo, diante dos jurados, cerceia a parte e parece parcialidade."
       }
      ],
+     "acerto": [],
      "proxima": "c13"
     },
     "c13": {
@@ -4663,108 +5414,230 @@
        "e": "triste",
        "t": "(voz seca) Minha mãe morreu e eu ouvi a notícia pela grade. Não peço compaixão, jurados. Só peço que se lembrem de que o Estado também erra quando se esquece de que preso é gente.",
        "se": "a5x_brandao_sem_saida"
-      },
-      {
-       "q": "brandao",
-       "e": "apontando",
-       "t": "E para mostrar quem é Henrique Altavista, mostro uma reportagem de 2019 que o chama de filantropo."
       }
      ],
      "proxima": "c14"
     },
     "c14": {
-     "tipo": "decidir",
+     "tipo": "audiencia",
+     "local": "juri",
+     "titulo": "Debates: defesa, réplica e tréplica",
      "falas": [
       {
-       "q": "lacerda",
-       "e": "bravo",
-       "t": "PROTESTO! Esse recorte não foi juntado aos autos! Eu nunca o vi!",
-       "fx": "protesto"
-      },
+       "q": "narrador",
+       "t": "Agora a defesa, a réplica e a tréplica. É aqui que os júris se perdem: documento sem juntada, excesso de linguagem, jurado distraído."
+      }
+     ],
+     "linhas": [
       {
        "q": "brandao",
-       "e": "nervoso",
-       "t": "É um jornal público, Excelência!"
-      }
-     ],
-     "pergunta": "A acusação protesta contra a exibição do recorte de jornal. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-479",
-       "trecho": "Durante o julgamento não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
-      }
-     ],
-     "acerto": [
-      {
-       "q": "voce",
        "e": "normal",
-       "t": "Deferido. O art. 479 exige a juntada aos autos com três dias úteis de antecedência, com ciência à outra parte. Doutor Brandão, não exiba o recorte.",
-       "fx": "martelo"
+       "t": "Jurados, a defesa não pede compaixão. Pede dúvida, que é o direito de todo acusado."
       },
       {
        "q": "brandao",
-       "e": "bravo",
-       "t": "Isso é cerceamento de defesa!"
+       "e": "nervoso",
+       "t": "E para mostrar quem é Henrique Altavista, mostro uma reportagem de 2019 que o chama de filantropo.",
+       "incidente": {
+        "pergunta": "O MP protesta contra a exibição do recorte. Como o presidente decide?",
+        "chamada": "Um instante, doutor Brandão.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-479",
+          "trecho": "Durante o julgamento não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "lacerda",
+          "e": "bravo",
+          "t": "(protestando) Excelência, esse recorte nunca foi juntado aos autos!",
+          "fx": "protesto"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar exibir: é um jornal público.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) O art. 479 vale para a defesa também, Excelência. Sem 3 dias úteis de antecedência, com ciência à outra parte, não pode exibir."
+           }
+          ]
+         },
+         {
+          "t": "Indeferir a exibição: o documento não foi juntado com três dias úteis de antecedência.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Deferido o protesto. O art. 479 exige a juntada aos autos com três dias úteis de antecedência e ciência à outra parte. Doutor Brandão, não exiba o recorte.",
+            "fx": "ordem"
+           },
+           {
+            "q": "brandao",
+            "e": "bravo",
+            "t": "Isso é cerceamento de defesa!"
+           },
+           {
+            "q": "voce",
+            "e": "normal",
+            "t": "É o Código, doutor."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Permitir só para os jurados verem, sem ler em voz alta.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "pensativo",
+            "t": "(sussurrando) Exibir é exibir, Excelência. O art. 479 proíbe a leitura e a exibição sem a juntada."
+           }
+          ]
+         }
+        ]
+       }
       },
       {
-       "q": "voce",
-       "e": "bravo",
-       "t": "É o Código, doutor."
-      }
-     ],
-     "erro": [
-      {
-       "q": "dani",
+       "q": "a5oficial",
        "e": "nervoso",
-       "t": "(sussurrando) O art. 479 vale para a defesa também, Excelência. Sem 3 dias úteis de antecedência, não pode exibir."
-      }
-     ],
-     "proxima": "c15"
-    },
-    "c15": {
-     "tipo": "decidir",
-     "falas": [
+       "t": "Excelência, a jurada da terceira cadeira cochicha com o jurado ao lado desde o início da réplica.",
+       "incidente": {
+        "pergunta": "Os jurados trocam palavras durante os debates. O que o presidente faz?",
+        "chamada": "Com licença, senhores jurados.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-466/par-1",
+          "trecho": "não poderão comunicar-se entre si e com outrem, nem manifestar sua opinião sobre o processo"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, o oficial avisou. Se o presidente não age, o julgamento corre risco."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Excluir a jurada e dissolver o Conselho na hora.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Primeiro advertência, Excelência. Excluir sem necessidade pode anular o júri inteiro."
+           }
+          ]
+         },
+         {
+          "t": "Advertir os jurados da incomunicabilidade e determinar que o oficial acompanhe o Conselho de perto.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Senhores jurados, lembro-lhes: estão incomunicáveis entre si e com outrem, e não podem manifestar opinião sobre o processo, sob pena de exclusão do Conselho e multa. O oficial acompanhará de perto.",
+            "fx": "ordem"
+           },
+           {
+            "q": "narrador",
+            "e": "normal",
+            "t": "A jurada de óculos redondos cora e junta as mãos no colo. O plenário volta ao silêncio."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixar passar: é só um comentário de intervalo.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) A incomunicabilidade vale durante todo o julgamento. Qualquer opinião manifestada pode macular o Conselho."
+           }
+          ]
+         }
+        ]
+       }
+      },
       {
        "q": "lacerda",
        "e": "bravo",
-       "t": "Jurados, Henrique é um câncer! Se vocês o absolverem, a próxima criança sem pai vai chorar na porta do cemitério por culpa de vocês! Ele é um monstro, um verme!"
+       "t": "Jurados, Henrique é um câncer! Se vocês o absolverem, a próxima criança sem pai vai chorar na porta do cemitério por culpa de vocês! Ele é um monstro, jurados!",
+       "incidente": {
+        "pergunta": "A defesa protesta contra o excesso de linguagem do MP. Como o presidente decide?",
+        "chamada": "Um instante, doutor Lacerda.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-497/inc-iii",
+          "trecho": "dirigir os debates, intervindo em caso de abuso, excesso de linguagem"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "a5pires",
+          "e": "bravo",
+          "t": "(batendo na mesa) Protesto! Excesso de linguagem!",
+          "fx": "protesto"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar passar: é o calor do júri, e o MP é parte.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) O presidente dirige os debates e intervém no excesso de linguagem (art. 497, III), mesmo que venha do aliado."
+           }
+          ]
+         },
+         {
+          "t": "Intervir: o júri não se faz com insultos nem ameaças ao Conselho; mandar retirar as expressões.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Deferido. Doutor Lacerda, o júri não se faz com insultos nem com ameaças ao Conselho. Retire as expressões e argumente com a prova.",
+            "fx": "ordem"
+           },
+           {
+            "q": "lacerda",
+            "e": "normal",
+            "t": "Retiro os termos, Excelência. Os fatos já bastam."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Cassar a palavra do MP pelo resto do julgamento.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Desproporcional, Excelência. A lei autoriza intervir, não calar a acusação."
+           }
+          ]
+         }
+        ]
+       }
       },
       {
        "q": "a5pires",
-       "e": "apontando",
-       "t": "PROTESTO! Excesso de linguagem! O promotor está ofendendo o acusado e constrangendo os jurados!",
-       "fx": "protesto"
+       "e": "confiante",
+       "t": "Jurados, na tréplica a defesa pede uma só coisa: olhem para as provas, não para as manchetes."
       }
      ],
-     "pergunta": "A defesa protesta contra o excesso de linguagem do MP. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
+     "erro_interromper": [
       {
-       "chave": "CPP#art-497/inc-iii",
-       "trecho": "dirigir os debates, intervindo em caso de abuso, excesso de linguagem ou mediante requerimento de uma das partes"
-      }
-     ],
-     "acerto": [
-      {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. Doutor Lacerda, o júri não se faz com insultos nem com ameaças ao Conselho. Retire as expressões e argumente com a prova.",
-       "fx": "martelo"
-      },
-      {
-       "q": "lacerda",
+       "q": "narrador",
        "e": "nervoso",
-       "t": "Retiro os termos, Excelência. Os fatos já bastam."
+       "t": "Nada de irregular nesta fala. O presidente que interrompe sem motivo desequilibra os debates."
       }
      ],
-     "erro": [
-      {
-       "q": "dani",
-       "e": "nervoso",
-       "t": "(sussurrando) O presidente dirige os debates e intervém no excesso de linguagem (art. 497, III), mesmo que o excesso venha do aliado."
-      }
-     ],
+     "acerto": [],
      "proxima": "c16"
     },
     "c16": {
@@ -5107,6 +5980,73 @@
      "carimbo": "CONSELHO DECIDIU",
      "titulo": "O povo falou, e você só conduziu",
      "texto": "Você tirou as algemas, barrou a jurada que perguntou além dos autos, controlou o excesso da acusação e a tentativa de exibir documento fora do prazo, protegeu o plenário do grito de Clara sem prender uma irmã enlutada e quesitou na ordem do art. 483, em séries distintas. O Conselho condenou. Amanhã é a sua vez."
+    },
+    "c11p": {
+     "tipo": "palavra",
+     "local": "juri",
+     "titulo": "Debates em plenário (art. 477)",
+     "ordenar": true,
+     "passo": 5,
+     "pergunta": "Fixe a ordem e o tempo dos debates. São dois acusados: a lei muda os números.",
+     "oradores": [
+      {
+       "q": "lacerda",
+       "papel": "Acusação (MP)",
+       "tempo": 150,
+       "inicial": 90
+      },
+      {
+       "q": "a5pires",
+       "papel": "Defesa (Henrique e Brandão)",
+       "tempo": 150,
+       "inicial": 90
+      },
+      {
+       "q": "lacerda",
+       "papel": "Réplica do MP",
+       "tempo": 120,
+       "inicial": 60
+      },
+      {
+       "q": "brandao",
+       "papel": "Tréplica da defesa",
+       "tempo": 120,
+       "inicial": 60
+      }
+     ],
+     "fundamentos": [
+      {
+       "chave": "CPP#art-477",
+       "trecho": "uma hora e meia para cada, e de uma hora para a réplica e outro tanto para a tréplica"
+      },
+      {
+       "chave": "CPP#art-477/par-2",
+       "trecho": "acrescido de 1 (uma) hora e elevado ao dobro o da réplica e da tréplica"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Fixados: duas horas e meia para a acusação e para a defesa, duas horas para réplica e tréplica. Declaro abertos os debates. Doutor Lacerda, tem a palavra.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "(sussurrando) Art. 477: uma hora e meia para cada lado e uma hora para réplica e tréplica. Com mais de um acusado, soma-se uma hora, e réplica e tréplica dobram (§ 2º)."
+      }
+     ],
+     "erro_ordem": [
+      {
+       "q": "dani",
+       "e": "pensativo",
+       "t": "(sussurrando) Acusação, defesa, réplica, tréplica: nessa ordem, Excelência."
+      }
+     ],
+     "proxima": "c11"
     }
    }
   },
@@ -5698,121 +6638,166 @@
      "proxima": "c10"
     },
     "c10": {
-     "tipo": "escolha",
+     "tipo": "sentenca",
      "local": "tribunal",
+     "titulo": "Dispositivo: efeitos, regime e fundamentação",
      "falas": [
       {
        "q": "narrador",
-       "t": "Brandão: homicídio, organização criminosa, embaraço à investigação e lavagem. Júri e processo principal."
+       "t": "As penas estão somadas: Henrique 16 anos mais 4a8m mais 5a4m de lavagem; Brandão 14 mais 3a6m, 3 e 4. Falta redigir o dispositivo, com os efeitos da condenação, o regime e a fundamentação. A sentença só vale se for fundamentada (CF, art. 93, IX)."
       }
      ],
-     "pergunta": "Quais efeitos da condenação aplicar a Brandão?",
-     "opcoes": [
+     "pergunta": "Redija o dispositivo: escolha o que vai em cada parte e assine.",
+     "partes": [
       {
-       "t": "Perda do cargo e interdição de 8 anos para função pública (art. 2º, § 6º da Lei 12.850).",
-       "certa": false,
-       "falas": [
+       "nome": "Efeitos da condenação de Brandão",
+       "opcoes": [
         {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) Essa consequência é para funcionário público. Brandão é advogado, e não ocupa cargo público."
+         "t": "Perda do cargo e interdição de 8 anos para função pública (art. 2º, § 6º da Lei 12.850).",
+         "certa": false,
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) Essa consequência é para funcionário público. Brandão é advogado, e não ocupa cargo público."
+          }
+         ]
+        },
+        {
+         "t": "Perda dos bens que constituam proveito do crime (art. 91, II, b), valor mínimo para reparação dos danos (art. 387, IV) e comunicação à OAB e ao tribunal.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "Decreto a perda dos bens que constituam proveito do crime, fixo reparação mínima de R$ 18 milhões às famílias do Horizonte e comunico a sentença à OAB para as providências disciplinares."
+          },
+          {
+           "q": "brandao",
+           "e": "triste",
+           "t": "…Trinta anos de advocacia, e acaba assim."
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "CP#art-91/inc-ii/ali-b",
+           "trecho": "do produto do crime ou de qualquer bem ou valor que constitua proveito auferido pelo agente com a prática do fato criminoso"
+          },
+          {
+           "chave": "CPP#art-387/inc-iv",
+           "trecho": "fixará valor mínimo para reparação dos danos causados pela infração, considerando os prejuízos sofridos pelo ofendido"
+          }
+         ]
+        },
+        {
+         "t": "Nenhum efeito: a lei não prevê efeitos para advogado.",
+         "certa": false,
+         "falas": [
+          {
+           "q": "dani",
+           "e": "pensativo",
+           "t": "(sussurrando) Os efeitos genéricos do art. 91 valem para todos, Excelência, e a reparação do art. 387, IV também."
+          }
+         ]
         }
        ]
       },
       {
-       "t": "Perda dos bens que constituam proveito do crime (art. 91, II, b), valor mínimo para reparação dos danos (art. 387, IV) e comunicação à OAB e ao tribunal.",
-       "certa": true,
-       "falas": [
+       "nome": "Regime e prisão (Henrique, 26 anos)",
+       "opcoes": [
         {
-         "q": "voce",
-         "e": "confiante",
-         "t": "Decreto a perda dos bens que constituam proveito do crime, fixo reparação mínima de R$ 18 milhões às famílias do Horizonte e comunico a sentença à OAB para as providências disciplinares."
+         "t": "Regime semiaberto, e aguardar o trânsito em julgado em liberdade: ele é primário.",
+         "certa": false,
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) Pena superior a oito anos começa em regime fechado (art. 33, § 2º, a). E há risco de fuga demonstrado."
+          }
+         ]
         },
         {
-         "q": "brandao",
-         "e": "triste",
-         "t": "…Trinta anos de advocacia, e acaba assim."
-        }
-       ],
-       "fundamentos": [
-        {
-         "chave": "CP#art-91/inc-ii/ali-b",
-         "trecho": "do produto do crime ou de qualquer bem ou valor que constitua proveito auferido pelo agente com a prática do fato criminoso"
+         "t": "Regime inicial fechado; as penas se somam (concurso material), o limite de 40 anos só vale para cumprimento; mantenho a prisão e, como a pena é superior a 15 anos, determino a execução provisória, descontada a detração.",
+         "certa": true,
+         "falas": [
+          {
+           "q": "voce",
+           "e": "confiante",
+           "t": "Regime inicial fechado. As penas se somam (art. 69); o limite de quarenta anos é do cumprimento (art. 75). Mantenho a prisão e, sendo a pena superior a quinze anos, determino a execução provisória. Computa-se o tempo de prisão provisória.",
+           "fx": "martelo"
+          }
+         ],
+         "fundamentos": [
+          {
+           "chave": "CP#art-33/par-2/ali-a",
+           "trecho": "o condenado a pena superior a oito anos deverá começar a cumpri-la em regime fechado"
+          },
+          {
+           "chave": "CPP#art-492/inc-i/ali-e",
+           "trecho": "determinará a execução provisória das penas, com expedição do mandado de prisão, se for o caso"
+          }
+         ]
         },
         {
-         "chave": "CPP#art-387/inc-iv",
-         "trecho": "fixará valor mínimo para reparação dos danos causados pela infração, considerando os prejuízos sofridos pelo ofendido"
+         "t": "Regime fechado, mas reduzo a pena a 40 anos total, pois é o limite do art. 75.",
+         "certa": false,
+         "falas": [
+          {
+           "q": "dani",
+           "e": "pensativo",
+           "t": "(sussurrando) O limite de 40 anos do art. 75 é para cumprimento, e não para a soma que se aplica na sentença."
+          }
+         ]
         }
        ]
       },
       {
-       "t": "Nenhum efeito: a lei não prevê efeitos para advogado.",
-       "certa": false,
-       "falas": [
+       "nome": "Fundamentação da dosimetria",
+       "opcoes": [
         {
-         "q": "dani",
-         "e": "pensativo",
-         "t": "(sussurrando) Os efeitos genéricos do art. 91 valem para todos, Excelência, e a reparação do art. 387, IV também."
+         "t": "Fundamentar cada fração com os fatos e a lei de cada fase (arts. 59 e 68).",
+         "falas": [],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-93/inc-ix",
+           "trecho": "fundamentadas todas as decisões, sob pena de nulidade"
+          },
+          {
+           "chave": "CP#art-68",
+           "trecho": "A pena-base será fixada atendendo-se ao critério do art. 59 deste Código"
+          }
+         ]
+        },
+        {
+         "t": "Remeter aos “critérios do art. 59” em termos genéricos: pena fixada “atendidos os critérios legais”.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "nervoso",
+           "t": "(sussurrando) Fundamentação genérica é fundamentação nenhuma, Excelência. A pena sem motivo é nula (CF, art. 93, IX)."
+          }
+         ]
+        },
+        {
+         "t": "Fundamentar só a pena-base; as demais frações dispensam motivação.",
+         "falas": [
+          {
+           "q": "dani",
+           "e": "pensativo",
+           "t": "(sussurrando) Cada fase do critério trifásico exige motivação. Sem isso, o tribunal reforma ou anula."
+          }
+         ]
         }
        ]
       }
      ],
-     "proxima": "c11"
-    },
-    "c11": {
-     "tipo": "escolha",
-     "local": "tribunal",
-     "falas": [
+     "acerto": [
       {
-       "q": "narrador",
-       "t": "As penas somadas: Henrique 16 + 4a8m + 5a4m de lavagem. Brandão 14 + 3a6m + 3 + 4. Resta o regime e a prisão."
-      }
-     ],
-     "pergunta": "Qual é o regime e a situação prisional após a condenação de Henrique a 26 anos?",
-     "opcoes": [
-      {
-       "t": "Regime semiaberto, e aguardar o trânsito em julgado em liberdade: ele é primário.",
-       "certa": false,
-       "falas": [
-        {
-         "q": "dani",
-         "e": "nervoso",
-         "t": "(sussurrando) Pena superior a oito anos começa em regime fechado (art. 33, § 2º, a). E há risco de fuga demonstrado."
-        }
-       ]
-      },
-      {
-       "t": "Regime inicial fechado; as penas se somam (concurso material), o limite de 40 anos só vale para cumprimento; mantenho a prisão e, como a pena é superior a 15 anos, determino a execução provisória, descontada a detração.",
-       "certa": true,
-       "falas": [
-        {
-         "q": "voce",
-         "e": "confiante",
-         "t": "Regime inicial fechado. As penas se somam (art. 69); o limite de quarenta anos é do cumprimento (art. 75). Mantenho a prisão e, sendo a pena superior a quinze anos, determino a execução provisória. Computa-se o tempo de prisão provisória.",
-         "fx": "martelo"
-        }
-       ],
-       "fundamentos": [
-        {
-         "chave": "CP#art-33/par-2/ali-a",
-         "trecho": "o condenado a pena superior a oito anos deverá começar a cumpri-la em regime fechado"
-        },
-        {
-         "chave": "CPP#art-492/inc-i/ali-e",
-         "trecho": "determinará a execução provisória das penas, com expedição do mandado de prisão, se for o caso"
-        }
-       ]
-      },
-      {
-       "t": "Regime fechado, mas reduzo a pena a 40 anos total, pois é o limite do art. 75.",
-       "certa": false,
-       "falas": [
-        {
-         "q": "dani",
-         "e": "pensativo",
-         "t": "(sussurrando) O limite de 40 anos do art. 75 é para cumprimento, e não para a soma que se aplica na sentença."
-        }
-       ]
+       "q": "voce",
+       "e": "confiante",
+       "t": "Lavre-se a sentença, com a fundamentação de cada fase. Publique-se em audiência.",
+       "fx": "martelo"
       }
      ],
      "proxima": "c12"
@@ -5873,6 +6858,24 @@
        "se": "a5x_brandao_sem_saida"
       },
       {
+       "q": "brandao",
+       "e": "triste",
+       "t": "Excelência, no corredor eu tentei lhe dizer algo. O senhor me mandou calar, e a Secretaria anotou. Estava certo(a). Eu não esqueço.",
+       "se": "a5_cortou_brandao"
+      },
+      {
+       "q": "brandao",
+       "e": "triste",
+       "t": "Eu disse uma frase no corredor, Excelência. Uma só. E o senhor, ainda assim, mandou registrar em ata. Isso não é frieza. É o que me faz acreditar que a sentença foi lida sem pressa.",
+       "se": "a5_ouviu_brandao"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "O que o senhor disse está nos autos, doutor, com ciência de todos. Foi o que me permitiu julgar sem esconder nada.",
+       "se": "a5_ouviu_brandao"
+      },
+      {
        "q": "henrique",
        "e": "bravo",
        "t": "Isto não acaba aqui!"
@@ -5907,6 +6910,36 @@
        "q": "rafael",
        "e": "feliz",
        "t": "Cumpri a primeira etapa do acordo. Hoje dou aulas de ética profissional na faculdade, em regime aberto. Sabe qual a primeira aula? 'No processo em que'."
+      },
+      {
+       "q": "rafael",
+       "e": "feliz",
+       "t": "Eu vi o aceno no corredor, Excelência. Um centímetro de queixo. Foi o que me sustentou até a leitura da sentença.",
+       "se": "a5_acenou_rafael"
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Eu estava proibido de fazer mais do que isso, Rafael. Mas não consegui não fazer nada.",
+       "se": "a5_acenou_rafael"
+      },
+      {
+       "q": "rafael",
+       "e": "triste",
+       "t": "Eu entendi por que o senhor virou o rosto no corredor. Foi a aula mais dura que eu já recebi, e a que eu mais devia a Paulo.",
+       "se": "a5_virou_rosto"
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "Aprendi com o melhor professor que eu tive, Rafael. Com a pior despedida que eu podia fazer.",
+       "se": "a5_virou_rosto"
+      },
+      {
+       "q": "rafael",
+       "e": "triste",
+       "t": "O senhor me disse “cuide-se” no corredor. Duas palavras. Eu as li mil vezes na cela. Obrigado, e perdão por tê-las feito custar caro.",
+       "se": "a5_falou_rafael"
       },
       {
        "q": "sofia",
@@ -6063,6 +7096,84 @@
        "q": "voce",
        "e": "pensativo",
        "t": "Henrique era só o braço, Dani. Guarde esta carta num cofre. Alguém, muito acima de nós, ainda não perdeu."
+      }
+     ],
+     "proxima": "c13y"
+    },
+    "c13y": {
+     "tipo": "celular",
+     "local": "escritorio",
+     "contato": "Número oculto",
+     "status": "digitando…",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Quando o gabinete esvazia, o celular vibra uma vez sobre o envelope aberto. Número oculto."
+      }
+     ],
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Parabéns, Excelência. Vinte e seis anos para um, vinte e quatro para o outro. Tão bonito de ler."
+      },
+      {
+       "de": "ele",
+       "t": "O senhor acha que acabou porque dois peões caíram? A carta já tem leitor. Eu também sou um leitor."
+      },
+      {
+       "de": "ele",
+       "t": "Brasília é bonita no inverno. Eu cuido de quem chega."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Não responder: registrar o número e levar a mensagem à Polícia Federal.",
+       "cred": 1,
+       "marca": "a5_denunciou_ameaca",
+       "resposta": false,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Dani, print, data e hora. Polícia Federal hoje, com a certidão. Ameaça a juiz não se apaga."
+        },
+        {
+         "q": "dani",
+         "e": "nervoso",
+         "t": "Já estou ligando, Excelência."
+        }
+       ]
+      },
+      {
+       "t": "Responder: “Quem é você?”",
+       "envia": "Quem é você?",
+       "marca": "a5_respondeu_anonimo",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Alguém que lê até o fim, doutor."
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "(pensando) A frase de Rafael. A frase que só quem esteve na minha vida sabe. Ele me deu a dica de propósito: quer que eu saiba que está perto."
+        }
+       ]
+      },
+      {
+       "t": "Apagar a conversa e esquecer.",
+       "cred": -1,
+       "marca": "a5_ignorou_anonimo",
+       "resposta": false,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "(pensando) Apaguei. Hoje eu só quero dormir. Mas ameaça não se apaga; ela volta quando a gente está distraído."
+        }
+       ]
       }
      ],
      "proxima": "c13v"

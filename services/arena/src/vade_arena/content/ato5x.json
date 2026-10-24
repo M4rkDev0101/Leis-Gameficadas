@@ -555,32 +555,115 @@
      "proxima": "c7"
     },
     "c7": {
-     "tipo": "dialogo",
+     "tipo": "audiencia",
      "local": "tribunal",
+     "titulo": "Audiência de revisão da preventiva",
      "falas": [
       {
        "q": "narrador",
-       "t": "Audiência de revisão da preventiva. Brandão entra pela porta lateral, de camisa azul, sem gravata. Parece ter envelhecido dez anos."
-      },
+       "t": "Audiência de revisão da preventiva. Brandão entra pela porta lateral, de camisa azul, sem gravata. Parece menor do que no júri de ontem. Quem preside deve ouvir as partes e manter a ordem, dos dois lados."
+      }
+     ],
+     "linhas": [
       {
        "q": "a5xmoura",
        "e": "bravo",
-       "t": "Excelência, o decreto de preventiva é de sete meses atrás. Qual fato contemporâneo ainda justifica a prisão? Nenhum! O art. 312, § 2º, exige fatos novos ou contemporâneos."
+       "t": "Excelência, o decreto de preventiva é de sete meses atrás. Qual fato contemporâneo ainda justifica a prisão do meu cliente?"
       },
       {
        "q": "lacerda",
        "e": "confiante",
-       "t": "Os fatos são concretos, Excelência: a fuga, o dinheiro em espécie, os celulares e o vazamento de uma decisão sigilosa que só quem tinha acesso ao gabinete e ao escritório poderia ter transmitido."
+       "t": "Os fatos são concretos, Excelência: a fuga, o dinheiro em espécie, os celulares e o vazamento de uma decisão sigilosa."
       },
       {
        "q": "brandao",
        "e": "triste",
-       "t": "Doutor Lacerda, o senhor já foi meu colega de júri. Por favor, não me trate como bandido de novela. Eu apenas viajei."
+       "t": "Doutor Lacerda, o senhor já foi meu colega de júri. Por favor, não me trate como bandido de novela."
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "Bandido de novela, não, doutor Brandão: bandido de carne e osso, com passaporte falso no bolso!",
+       "fx": "bater",
+       "incidente": {
+        "pergunta": "Lacerda responde com ofensa a um réu preso. Como o juízo intervém?",
+        "chamada": "Doutor Lacerda, ordem.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-251",
+          "trecho": "manter a ordem no curso dos respectivos atos"
+         },
+         {
+          "chave": "CPP#art-794",
+          "trecho": "A polícia das audiências e das sessões compete aos respectivos juízes"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Quem preside responde pela ordem. Se o MP ofende o réu e o juiz deixa, o Brandão ganha a narrativa."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Deixar passar: o MP só rebate a provocação do réu.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) A ordem vale para todos, Excelência. O Ministério Público também responde ao juízo pela linguagem (arts. 251 e 794)."
+           }
+          ]
+         },
+         {
+          "t": "Advertir o MP: sem ofensas, de nenhum dos lados, e prosseguir.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Doutor Lacerda, sem ofensas. A ordem da audiência é deste juízo e vale para todos, inclusive para quem acusa. Doutor Brandão, o senhor terá a palavra, como a lei garante.",
+            "fx": "ordem"
+           },
+           {
+            "q": "lacerda",
+            "e": "normal",
+            "t": "Retiro a expressão, Excelência."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Cassar a palavra de Lacerda por toda a audiência.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "pensativo",
+            "t": "(sussurrando) Desproporcional. A lei autoriza advertir e ordenar, não calar a acusação."
+           }
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "A fala era regular. Interromper a parte sem motivo é cerceamento."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Doutor Moura, uma pergunta objetiva ao senhor, para esclarecer o ponto: indique nos autos qual fato concreto o senhor entende superado."
       },
       {
        "q": "voce",
        "e": "normal",
-       "t": "Doutor Brandão, o senhor terá a palavra, como a lei garante. Mas antes, uma pergunta objetiva ao Dr. Moura."
+       "t": "Anotado. Sigamos para a prova."
       }
      ],
      "proxima": "c8"
@@ -713,9 +796,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "PROTESTO!",
-       "fx": "protesto"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -1453,33 +1536,150 @@
      "proxima": "c6"
     },
     "c6": {
-     "tipo": "dialogo",
+     "tipo": "audiencia",
      "local": "tribunal",
+     "titulo": "A reação de Henrique",
      "falas": [
+      {
+       "q": "narrador",
+       "t": "Henrique levanta o rosto pela primeira vez em três horas. O juiz deve proteger o réu e a regularidade do ato; nunca antecipar o que a perícia vai dizer."
+      }
+     ],
+     "linhas": [
       {
        "q": "henrique",
        "e": "bravo",
-       "t": "Eu não preciso de curador! Eu sou um homem de negócios, e me tratam como criança!"
-      },
-      {
-       "q": "voce",
-       "e": "normal",
-       "t": "Silêncio, doutor Henrique. Não é uma ofensa: é uma garantia. A lei quer proteger o senhor, caso a perícia conclua o que a sua defesa afirma."
+       "t": "Eu não preciso de curador! Eu sou um homem de negócios, e me tratam como criança!",
+       "incidente": {
+        "pergunta": "Henrique interrompe a audiência aos gritos. Como o juízo reage?",
+        "chamada": "Doutor Henrique, silêncio.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-251",
+          "trecho": "manter a ordem no curso dos respectivos atos"
+         },
+         {
+          "chave": "CPP#art-149",
+          "trecho": "o juiz ordenará, de ofício ou a requerimento do Ministério Público"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) A audiência ficou sem rumo, Excelência. O ato precisa de ordem."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Mandar retirá-lo da sala por desacato e prosseguir sem ele.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) O exame é para protegê-lo, Excelência. Retirar o réu agora pode ferir a defesa. Primeiro advertir e explicar."
+           }
+          ]
+         },
+         {
+          "t": "Advertir com calma e explicar que o exame é uma garantia, não uma ofensa.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Silêncio, doutor Henrique. Não é uma ofensa: é uma garantia. A lei quer proteger o senhor, caso a perícia conclua que há doença.",
+            "fx": "ordem"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Ignorar: um réu rico precisa aprender a ouvir.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "pensativo",
+            "t": "(sussurrando) Quem preside responde pela ordem da audiência, Excelência. Ignorar abre a porta ao tumulto e ao recurso."
+           }
+          ]
+         }
+        ]
+       }
       },
       {
        "q": "a5pires",
        "e": "nervoso",
-       "t": "(sussurrando a Henrique) O senhor não deveria ter falado. A defesa precisa que o senhor pareça confuso, e não furioso."
+       "t": "(sussurrando a Henrique) O senhor não deveria ter falado. A defesa precisa que o senhor pareça confuso."
       },
       {
        "q": "lacerda",
        "e": "confiante",
-       "t": "Tomo nota, Excelência. A fúria dele é a de um homem plenamente consciente de que o plenário se aproxima."
-      },
+       "t": "Tomo nota, Excelência. A fúria dele é a de um homem plenamente consciente de que o plenário se aproxima.",
+       "incidente": {
+        "pergunta": "O MP já opina sobre a saúde mental do réu antes do laudo. O que o juízo faz?",
+        "chamada": "Um instante, doutor Lacerda.",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-149",
+          "trecho": "quando houver dúvida sobre a integridade mental do acusado"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "dani",
+          "e": "nervoso",
+          "t": "(sussurrando) Passou um juízo de valor sobre o réu, Excelência. Sem protesto da defesa, alguém precisa conter."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Concordar: a reação mostra que ele está lúcido e acelera o exame.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "nervoso",
+            "t": "(sussurrando) Isso é pré-julgar o laudo, Excelência. Quem diz o que Henrique é, é a perícia."
+           }
+          ]
+         },
+         {
+          "t": "Registrar sem juízo de valor: a decisão sobre o que Henrique é virá da perícia, não do humor.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "normal",
+            "t": "Registre-se, sem juízo de valor. A decisão sobre o que Henrique é virá da perícia, e não do humor.",
+            "fx": "ordem"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Pedir que o MP se cale até o laudo chegar.",
+          "falas": [
+           {
+            "q": "dani",
+            "e": "pensativo",
+            "t": "(sussurrando) O MP pode se manifestar. O que não pode é substituir o laudo, e o juiz também não."
+           }
+          ]
+         }
+        ]
+       }
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "narrador",
+       "e": "nervoso",
+       "t": "Nada de irregular nesta fala. Interromper sem motivo cerceia a parte."
+      }
+     ],
+     "acerto": [
       {
        "q": "voce",
        "e": "normal",
-       "t": "Registre-se, sem juízo de valor. A decisão sobre o que Henrique é virá da perícia, e não do humor."
+       "t": "Sigamos. As providências do exame serão fixadas agora."
       }
      ],
      "proxima": "c7"
@@ -1883,9 +2083,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "PROTESTO!",
-       "fx": "protesto"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
@@ -2007,9 +2207,9 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "PROTESTO!",
-       "fx": "protesto"
+       "e": "pensativo",
+       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
