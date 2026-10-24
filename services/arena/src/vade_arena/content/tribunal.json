@@ -1357,6 +1357,14 @@
       "papel": "investigado",
       "cargo": "Magistrado(a) afastado(a)",
       "sinopse": "A Altavista achou a sua falha: você advogou enquanto ainda era juiz(a). Afastado(a) pelo CNJ, sem toga e sem carteira, com as condenações de Brasília ameaçadas de nulidade por sua culpa, você precisa reconquistar a confiança de todos — e provar quem armou a sua queda."
+    },
+    {
+      "id": "ato8",
+      "numero": 8,
+      "titulo": "A Presidência",
+      "papel": "juiz",
+      "cargo": "Ministro(a) e Presidente do STF",
+      "sinopse": "Do estágio à sabatina no Senado, onde o seu passado vira arma. Ministro(a) do Supremo e, anos depois, eleito(a) pelos pares Presidente do STF e do CNJ — o mesmo Conselho que um dia afastou você. Um único dia decide o que a sua carreira inteira significou."
     }
   ]
 }
