@@ -23,7 +23,7 @@ class TestRoteiro(unittest.TestCase):
         self.assertEqual(tribunal.validate(DATA, NORMAS), [])
 
     def test_one_episode_per_role(self):
-        self.assertEqual({ep["papel"] for ep in DATA["episodios"]}, {"advogado", "promotor", "juiz"})
+        self.assertEqual({ep["papel"] for ep in DATA["episodios"]}, {"advogado", "promotor", "juiz", "investigado"})
 
     def test_dica_field_is_validated(self):
         d = copy.deepcopy(DATA)

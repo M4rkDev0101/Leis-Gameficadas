@@ -3893,7 +3893,7 @@ function confetti() {
   }
 }
 // ------------------------------------------------ laço de recompensa: combo, nota, baú, cartas, patente (DOPAMINA.md)
-const RAR = {comum:["#9AA3B2", "COMUM"], incomum:["#5FBF8F", "INCOMUM"], rara:["#5B9BD5", "RARA"], epica:["#B07CFF", "ÉPICA"], dourada:["#FFD25E", "DOURADA"]};
+const RAR = {comum:["#9AA3B2", "COMUM"], incomum:["#5FBF8F", "INCOMUM"], rara:["#5B9BD5", "RARA"], epica:["#B07CFF", "ÉPICA"], lendaria:["#FF7A3D", "LENDÁRIA"], dourada:["#FFD25E", "DOURADA"]};
 function fmtChave(k) {   // "CC#art-206/par-3/inc-v" -> "CC · art. 206 § 3 inc. V"
   const [norma, rest] = String(k || "").split("#");
   if (!rest) return String(k || "");
@@ -4023,7 +4023,7 @@ function renderVerdict(c, r) {
       rew.append(row);
       for (let i = 0; i < show.length; i++) {
         if (!box.isConnected) return;
-        const cd = lawCard(show[i], {cls:"flip", attrs:{role:"listitem"}}); row.append(cd); Sound.carta(show[i].dourada || show[i].raridade === "epica");
+        const cd = lawCard(show[i], {cls:"flip", attrs:{role:"listitem"}}); row.append(cd); Sound.carta(show[i].dourada || show[i].raridade === "epica" || show[i].raridade === "lendaria");
         await sleep(fxOn() ? 380 : 30);
       }
       if (novas.length > show.length) row.append(el("span", {class:"rchip", textContent:`+${novas.length - show.length} cartas`}));
@@ -4499,7 +4499,7 @@ function hojeSection(perfil, dia, alb) {
     cards.push(el("article", {class:"hcard album"},
       el("span", {class:"hk", textContent:"Álbum de jurisprudência"}),
       el("h3", {textContent:`${alb.ok}/${alb.total} cartas`}),
-      el("div", {class:"rbars"}, ...["comum", "incomum", "rara", "epica"].filter(k => pr[k]).map(k => el("div", {title:`${RAR[k][1]}: ${pr[k].ok}/${pr[k].total}`, style:{"--rc":RAR[k][0]}},
+      el("div", {class:"rbars"}, ...["comum", "incomum", "rara", "epica", "lendaria"].filter(k => pr[k]).map(k => el("div", {title:`${RAR[k][1]}: ${pr[k].ok}/${pr[k].total}`, style:{"--rc":RAR[k][0]}},
         el("small", {textContent:RAR[k][1]}), el("span", {class:"rb"}, el("i", {style:{width:Math.round(100 * pr[k].ok / Math.max(1, pr[k].total)) + "%"}})), el("em", {textContent:`${pr[k].ok}/${pr[k].total}`})))),
       el("p", {textContent:`${alb.douradas || 0} dourada${alb.douradas === 1 ? "" : "s"}. Cada vitória guarda os artigos que você usou; nota S banha a carta de ouro.`}),
       el("button", {class:"btn pri", id:"btn-album", textContent:"Abrir o álbum", onclick:() => openAlbum(alb)})));
@@ -4517,7 +4517,7 @@ function hojeSection(perfil, dia, alb) {
 }
 // ---- álbum
 function openAlbum(alb) {
-  const s = openScreen("Álbum de jurisprudência", "Coleção", null), ORD = ["comum", "incomum", "rara", "epica"];
+  const s = openScreen("Álbum de jurisprudência", "Coleção", null), ORD = ["comum", "incomum", "rara", "epica", "lendaria"];
   let filtro = "todas";
   const info = el("div", {class:"alb-info", "aria-live":"polite"}, el("p", {textContent:"Escolha uma carta para ver o texto da lei."}));
   const filt = el("div", {class:"alb-f", role:"group", "aria-label":"Filtrar cartas"});
@@ -4530,7 +4530,7 @@ function openAlbum(alb) {
       : [el("b", {textContent:nm}), el("p", {textContent:"Carta bloqueada. Ela aparece quando você vence " + (c.casos && c.casos.length ? "o caso «" + c.casos[0] + "»" : "um caso que exige este dispositivo") + ". O texto da lei é revelado ao conquistar."})]).filter(Boolean));
   };
   const draw = () => {
-    filt.replaceChildren(...[["todas", "Todas"], ["comum", "Comum"], ["incomum", "Incomum"], ["rara", "Rara"], ["epica", "Épica"], ["douradas", "Douradas"], ["minhas", "Conquistadas"]].map(([k, l]) =>
+    filt.replaceChildren(...[["todas", "Todas"], ["comum", "Comum"], ["incomum", "Incomum"], ["rara", "Rara"], ["epica", "Épica"], ["lendaria", "Lendária"], ["douradas", "Douradas"], ["minhas", "Conquistadas"]].map(([k, l]) =>
       el("button", {class:"pill", "aria-pressed":String(filtro === k), textContent:l, onclick:() => { filtro = k; Sound.select(); draw(); filt.children[[...filt.children].findIndex(b => b.textContent === l)].focus(); }})));
     const sections = [];
     for (const r of ORD) {

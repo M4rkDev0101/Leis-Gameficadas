@@ -18,7 +18,8 @@ DIA_QUESTOES = 3
 DIA_XP_ACERTO = 10
 DIA_XP_COMPLETO = 20
 PROTETORES_MAX = 2
-RARIDADE_POR_NIVEL = {"basico": "incomum", "intermediario": "incomum", "avancado": "rara", "especialista": "epica"}
+RARIDADE_POR_NIVEL = {"basico": "incomum", "intermediario": "incomum", "avancado": "rara", "especialista": "epica",
+                      "impossivel": "lendaria"}
 
 
 def nota_do_caso(venceu: bool, erros: int) -> str | None:

@@ -204,3 +204,10 @@ class TestApi(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class TestNivelImpossivel(unittest.TestCase):
+    def test_carta_de_caso_impossivel_e_lendaria(self):
+        from vade_arena.recompensas import raridade_carta
+        self.assertEqual(raridade_carta(["especialista", "impossivel"]), "lendaria")
+        self.assertEqual(raridade_carta(["impossivel"], n_casos=2), "comum")
