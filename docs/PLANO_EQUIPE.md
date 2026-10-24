@@ -66,7 +66,7 @@ amar e odiar, quebra de confiança, decepção; (8) mais efeitos, música "de ve
 | P2 | Motor: `audiencia`, `palavra`, `sentenca` (juiz), `protesto` (partes), `denuncia` (promotor), `plenario` (STF e júri), `tensao` e `celular` (fora do tribunal), efeito `ordem`, depoimento em modo juiz. Spec: [MECANICAS_PAPEIS.md](MECANICAS_PAPEIS.md) | ✅ testado no navegador com fixtures (`tests/papeis_fixture.py`) |
 | P3 | Ato 4 (Toga): 9 casos reescritos + 3 novos (custódia, vítima/400-A, júri); arco de Rita | ✅ integrado (0c1b9bf) |
 | P4 | Ato 3 (promotor): denúncia, ANPP/arquivamento, protesto, júri pela acusação, arco de Valadares, 3 casos novos | ✅ integrado (f92aec3) |
-| P5 | Atos 1–2 (advogado): protesto, júri pela defesa, casos novos | a fazer (agente) |
+| P5 | Atos 1–2 (advogado): protesto, ética do cliente, arcos de Rafael/Sofia/Helena/Lívia, 3 casos novos | ✅ integrado |
 | P6 | Ato 5 (juiz) e Ato 6 (STF): tom de juiz, plenário de ministros, traição de Teresa, 2 casos novos | ✅ integrado (52b4550) |
 | P7 | Arte: 10 cenários novos com QA rígido pessoal | ✅ integrado (e357ff5); 4 correções do QA pessoal ✅; detalhe pendente: no corredor as longarinas ficam na frente da base das portas (mover para entre as portas) |
 | P8 | Áudio: trilha mais rica, 8 temas novos, efeitos e ambiências | ✅ integrado (d25c942); pendente: ouvir o volume das ambiências carro e cemitério |
