@@ -1752,7 +1752,8 @@ function locationBG(local) {
   const svg = (inner, defs = "") => `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%"><defs>${rad("vg", [[.5, "#000", 0], [1, "#000", .55]], .5, .5, .78)}${defs}</defs>${inner}<rect width="160" height="100" fill="${F("vg")}"/></svg>`;
   const cam = (x, y, s = 1, mont = "parede") => `<g transform="translate(${x} ${y}) scale(${s})">${mont === "teto" ? '<rect x="9" y="-16" width="2.6" height="18" fill="#2a2d33"/>' : mont === "base" ? '<rect x="6" y="7" width="6" height="3.6" fill="#2a2d33"/>' : '<rect x="9" y="-3" width="2.6" height="5" fill="#2a2d33"/>'}<rect x="0" y="1" width="16" height="7" rx="1.6" fill="#dfe3e8" stroke="#1a1c20" stroke-width=".5"/><rect x="1" y="2" width="14" height="1.6" fill="#fff" opacity=".7"/><circle cx="3" cy="5.2" r="2.3" fill="#10172a" stroke="#555" stroke-width=".5"/><circle cx="2.4" cy="4.6" r=".7" fill="#7ab0ff"/><circle cx="13.2" cy="4.4" r="1" fill="#ff3b3b"/><circle cx="13.2" cy="4.4" r="2.4" fill="#ff3b3b" opacity=".25"/></g>`;
   // silhueta de pessoa em pé (pés em y; altura ~30·s): corpo, cabeça, e "ex" para boné, algemas etc.
-  const sil = (x, y, s, body, head = "#2a1a14", ex = "", bow = 0) => `<g transform="translate(${x} ${y}) scale(${s})"><path d="M-4.6 0L-5 -15Q-5.4 -22 0 -22.4Q5.4 -22 5 -15L4.6 0Z" fill="${body}"/><path d="M-5 -15Q-5.4 -22 0 -22.4" stroke="#fff" stroke-width=".4" opacity=".18" fill="none"/>${R(-.4, -9, .8, 9, "#000", 'opacity=".25"')}<ellipse cx="${bow}" cy="${-25.6 + (bow ? 1.2 : 0)}" rx="3" ry="3.5" fill="${head}"/>${ex}</g>`;
+  const face = (cx, cy, k, down) => { const d = down ? 1.1 : 0, my = cy + 1.7 + d; return `<g stroke="#1a100c" stroke-linecap="round" fill="none"><circle cx="${cx - 1.15}" cy="${cy - .2 + d}" r=".38" fill="#1a100c" stroke="none"/><circle cx="${cx + 1.15}" cy="${cy - .2 + d}" r=".38" fill="#1a100c" stroke="none"/><path d="M${cx - 1.9} ${cy - 1.2 + d + (k === 2 ? .4 : 0)}L${cx - .5} ${cy - 1.2 + d - (k === 2 ? .3 : 0)}M${cx + .5} ${cy - 1.2 + d - (k === 2 ? .3 : 0)}L${cx + 1.9} ${cy - 1.2 + d + (k === 2 ? .4 : 0)}" stroke-width=".35"/>${k === 1 ? `<path d="M${cx - .9} ${my}Q${cx} ${my + .5} ${cx + .9} ${my}" stroke-width=".35"/>` : `<path d="M${cx - .8} ${my}H${cx + .8}" stroke-width=".35"/>`}</g>`; };
+  const sil = (x, y, s, body, head = "#2a1a14", ex = "", bow = 0, fc = null) => `<g transform="translate(${x} ${y}) scale(${s})"><path d="M-4.6 0L-5 -15Q-5.4 -22 0 -22.4Q5.4 -22 5 -15L4.6 0Z" fill="${body}"/><path d="M-5 -15Q-5.4 -22 0 -22.4" stroke="#fff" stroke-width=".4" opacity=".18" fill="none"/>${R(-.4, -9, .8, 9, "#000", 'opacity=".25"')}<ellipse cx="${bow}" cy="${-25.6 + (bow ? 1.2 : 0)}" rx="3" ry="3.5" fill="${head}"/>${fc == null ? "" : face(bow, -25.6 + (bow ? 1.2 : 0), fc, bow)}${ex}</g>`;
   switch (local) {
     // ------------------------------------------------------------------ BAR
     case "bar": return svg(`
@@ -2344,15 +2345,15 @@ function locationBG(local) {
       <!-- vidro da sala de espera: reu e escolta -->
       ${R(5, 12, 38, 54, "#27303a")}${R(7, 14, 34, 50, "#9fb0ba")}${R(7, 14, 34, 50, "#000", 'opacity=".22"')}
       ${R(7, 54, 34, 3, "#6a7780")}${R(7, 54, 34, .6, "#c3ced4")}
-      ${sil(15, 56, 1.22, "#1d2735", "#6a4a38", `${R(-4.2, -29.6, 8.4, 2.2, "#14192a")}${R(-5.4, -27.8, 10.8, .8, "#14192a")}${R(-1, -14, 2, 5, "#e8c46a", 'opacity=".8"')}`)}
-      ${sil(30, 56, 1.12, "#c8ccd2", "#8a5a3a", `${R(-3.4, -29.6, 6.8, 1.6, "#1a1210", 'rx=".8"')}${R(-2.6, -12, 5.2, 1.6, "#2a2a30", 'rx=".6"')}`, 1.1)}
+      ${sil(15, 56, 1.22, "#1d2735", "#6a4a38", `${R(-4.2, -29.6, 8.4, 2.2, "#14192a")}${R(-5.4, -27.8, 10.8, .8, "#14192a")}${R(-1, -14, 2, 5, "#e8c46a", 'opacity=".8"')}`, 0, 0)}
+      ${sil(30, 56, 1.12, "#c8ccd2", "#8a5a3a", `${R(-3.4, -29.6, 6.8, 1.6, "#1a1210", 'rx=".8"')}${R(-2.6, -12, 5.2, 1.6, "#2a2a30", 'rx=".6"')}`, 1.1, 2)}
       ${R(7, 14, 34, 50, F("gl"))}
       <path d="M11 64L22 14H27L16 64ZM30 64L38 14H40L33 64Z" fill="#fff" opacity=".13"/>
       ${R(5, 12, 38, 2.4, "#3a444e")}${R(5, 63.6, 38, 2.4, "#3a444e")}${R(23, 14, 1.4, 50, "#3a444e")}${R(5, 12, 38, .6, "#8a97a0")}
       ${E(24, 67.6, 23, 1.8, "#000", 'opacity=".4"')}${R(5, 66, 38, 1.4, "#1e252c")}
       <!-- tv de videoconferencia -->
       ${R(96, 5, 52, 31, "#0e1218", 'stroke="#3a424c" stroke-width=".8" rx="1"')}${R(98, 7, 48, 27, F("tv"))}
-      ${[[0, 0, "#b08a6a", "#3a4a6a"], [1, 0, "#d8b08a", "#6a3a3a"], [0, 1, "#8a5a3a", "#cfcfd6"], [1, 1, "#c9a27a", "#3a5a4a"]].map(([cx, cy, hc, bc]) => { const x = 99 + cx * 23.4, y = 8 + cy * 12.8; return `${R(x, y, 22.2, 12, "#223446", 'rx=".6"')}${R(x, y + 7.6, 22.2, 4.4, "#000", 'opacity=".15"')}<path d="M${x + 5} ${y + 12}Q${x + 5} ${y + 7.6} ${x + 11.1} ${y + 7.6}Q${x + 17} ${y + 7.6} ${x + 17} ${y + 12}Z" fill="${bc}"/><ellipse cx="${x + 11.1}" cy="${y + 5}" rx="2.4" ry="2.9" fill="${hc}"/><rect x="${x}" y="${y}" width="22.2" height="12" fill="none" stroke="#7ab0ff" stroke-width=".25" opacity=".55"/>`; }).join("")}
+      ${[[0, 0, "#b08a6a", "#3a4a6a"], [1, 0, "#d8b08a", "#6a3a3a"], [0, 1, "#8a5a3a", "#cfcfd6"], [1, 1, "#c9a27a", "#3a5a4a"]].map(([cx, cy, hc, bc]) => { const x = 99 + cx * 23.4, y = 8 + cy * 12.8; return `${R(x, y, 22.2, 12, "#223446", 'rx=".6"')}${R(x, y + 7.6, 22.2, 4.4, "#000", 'opacity=".15"')}<path d="M${x + 5} ${y + 12}Q${x + 5} ${y + 7.6} ${x + 11.1} ${y + 7.6}Q${x + 17} ${y + 7.6} ${x + 17} ${y + 12}Z" fill="${bc}"/><ellipse cx="${x + 11.1}" cy="${y + 5}" rx="2.4" ry="2.9" fill="${hc}"/>${face(x + 11.1, y + 5, 0, 0).replace(/<g /, `<g transform="translate(${x + 11.1} ${y + 5}) scale(.8) translate(${-(x + 11.1)} ${-(y + 5)})" `)}<rect x="${x}" y="${y}" width="22.2" height="12" fill="none" stroke="#7ab0ff" stroke-width=".25" opacity=".55"/>`; }).join("")}
       ${R(98, 7, 48, 27, "#fff", 'opacity=".05"')}<path d="M98 34L110 7H122L110 34Z" fill="#fff" opacity=".06"/>
       ${R(117, 2.4, 14, 2.6, "#22262c", 'rx=".8"')}<circle cx="124" cy="3.7" r=".9" fill="#10172a" stroke="#555" stroke-width=".3"/><circle cx="129.4" cy="3.7" r=".5" fill="#ff3b3b"/>
       <circle cx="143.8" cy="35" r=".6" fill="#7CF29A"/>
@@ -2393,7 +2394,7 @@ function locationBG(local) {
       ${R(0, 56, 160, 44, F("cp"))}${R(0, 56, 160, 44, F("cps"))}
       <!-- cadeiras de couro e ministros -->
       ${Array.from({ length: 9 }, (_, i) => { const x = 16 + i * 16, y = arcY(x), big = i === 4, w = big ? 15 : 12.6, h = big ? 25 : 21; return `${R(x - w / 2, y - h, w, h + 3, "#15171c", 'rx="3.4"')}${R(x - w / 2 + 1.4, y - h + 1.4, w - 2.8, h - 3, "#20242c", 'rx="2.4"')}${R(x - w / 2 + 2, y - h + 2, w - 4, 3, "#323946", 'rx="1.4"')}${[0, 1].map(k => `<circle cx="${x - w / 2 + 3.4 + k * (w - 6.8)}" cy="${y - h + 8}" r=".45" fill="#c9a04a" opacity=".7"/>`).join("")}`; }).join("")}
-      ${ministers.map((i, k) => { const x = 16 + i * 16, y = arcY(x); return sil(x, y + 3.4, .98, "#0c0d12", skins[k], `<path d="M-1.8 -22.3L0 -18.4L1.8 -22.3Z" fill="#f3f3f0"/><path d="M-3 -29Q0 -31.4 3 -29" stroke="${hairs[k]}" stroke-width="1.4" fill="none"/>`); }).join("")}
+      ${ministers.map((i, k) => { const x = 16 + i * 16, y = arcY(x); return sil(x, y + 3.4, .98, "#0c0d12", skins[k], `<path d="M-1.8 -22.3L0 -18.4L1.8 -22.3Z" fill="#f3f3f0"/><path d="M-3 -29Q0 -31.4 3 -29" stroke="${hairs[k]}" stroke-width="1.4" fill="none"/>`, 0, [0, 1, 0, 2, 1, 0, 2][k]); }).join("")}
       <!-- bancada em arco -->
       <path d="M4 68.4Q80 56.6 156 68.4L156 71.4Q80 59.6 4 71.4Z" fill="#000" opacity=".28"/>
       <path d="M4 58Q80 46 156 58L156 69.4Q80 57.4 4 69.4Z" fill="${F("wb")}"/><path d="M4 58Q80 46 156 58L156 69.4Q80 57.4 4 69.4Z" fill="#000" opacity=".2"/>
@@ -2494,7 +2495,7 @@ function locationBG(local) {
     }
     // ------------------------------------------------------------------ CARRO
     case "carro": {
-      const bok = [[16, 18, 5, "#ff4a4a"], [30, 30, 4, "#ffd27a"], [44, 14, 6, "#6fb0ff"], [58, 36, 4.4, "#ffd27a"], [72, 22, 3.6, "#ff6a4a"], [88, 32, 5.4, "#ffe9a0"], [104, 16, 4, "#7affb0"], [118, 28, 6, "#ff4a4a"], [132, 36, 4.2, "#ffd27a"], [144, 20, 5, "#6fb0ff"], [96, 40, 3.2, "#ffd27a"], [24, 42, 3.4, "#7affb0"]];
+      const bok = [[10, 30, 2.2, "#ffb347"], [22, 33, 1.8, "#fff3d8"], [34, 29, 2.4, "#ffb347"], [46, 34, 1.6, "#ff3b30"], [58, 31, 1.4, "#fff3d8"], [102, 33, 1.5, "#ffb347"], [128, 30, 2.4, "#fff3d8"], [140, 34, 2, "#ffb347"], [152, 28, 2.6, "#ff3b30"], [18, 24, 1.3, "#ffb347"], [120, 26, 1.2, "#fff3d8"], [70, 35, 1.1, "#ff3b30"]];
       const drops = Array.from({ length: 70 }, (_, i) => { const x = (i * 53) % 150 + 5, y = (i * 29) % 50 + 1, r = .35 + (i % 4) * .22;
         return `<ellipse cx="${x}" cy="${y}" rx="${r}" ry="${r * 1.3}" fill="#cfe4ff" opacity=".4"/><circle cx="${x - r * .3}" cy="${y - r * .4}" r="${r * .35}" fill="#fff" opacity=".7"/>${i % 5 === 0 ? `<path d="M${x} ${y + r}Q${x + .6} ${y + 5} ${x - .2} ${y + 9}" stroke="#cfe4ff" stroke-width=".3" opacity=".3" fill="none"/>` : ""}`; }).join("");
       return svg(`
@@ -2502,9 +2503,16 @@ function locationBG(local) {
       <!-- rua desfocada ao fundo -->
       <g filter="url(#bl${u})">${skyline(36, "#0d1224", 23, true)}</g>${R(0, 36, 160, 24, F("rd"), 'opacity=".85"')}
       <path d="M0 60Q80 38 160 60Z" fill="#06080e" opacity=".0"/>
-      ${bok.map(([x, y, r, c]) => E(x, y, r, r, c, 'opacity=".55"') + E(x, y, r * 2.4, r * 2.4, c, 'opacity=".12"')).join("")}
-      ${[[20, 4, "#ff4a4a"], [44, 6, "#ffd27a"], [92, 5, "#6fb0ff"], [128, 6, "#ff4a4a"]].map(([x, h, c]) => R(x - 1, 44, 2, 16 + h, c, 'opacity=".22"')).join("")}
-      ${E(80, 54, 70, 5, "#ffd27a", 'opacity=".1"')}${E(34, 50, 12, 6, "#ff4a4a", 'opacity=".16"')}${E(118, 50, 14, 6, "#6fb0ff", 'opacity=".14"')}
+      <!-- pista molhada e carro da frente -->
+      <path d="M72 38.6H88L196 60H-36Z" fill="#0b0e17"/><path d="M72 38.6H88L196 60H-36Z" fill="url(#rf${u})"/>
+      <path d="M-4 60L72 38.6M164 60L88 38.6" stroke="#cfd6e4" stroke-width=".5" opacity=".4"/>
+      ${[[40, 1], [43.6, 1.6], [48, 2.4], [54, 3.6]].map(([y, h]) => `<path d="M${80 - h * .12} ${y}h${h * .24}l.0 ${h}h${-h * .24}z" fill="#e8e4d4" opacity=".55"/>`).join("")}
+      ${E(80, 52, 40, 4, "#ff3b30", 'opacity=".05"')}
+      <g transform="translate(92 36)">${E(5, 11.4, 10, 1.4, "#000", 'opacity=".4"')}<path d="M0 10L1 4Q2 1.6 5 1.4Q8 1.6 9 4L10 10Z" fill="#0d1018"/><path d="M1.6 4.6Q2.4 2.6 5 2.4Q7.6 2.6 8.4 4.6Z" fill="#1c2a3e"/>${E(1.8, 7.4, 2.8, 2.2, F("tl2"))}${E(8.2, 7.4, 2.8, 2.2, F("tl2"))}<rect x=".6" y="6.6" width="2.4" height="1.4" rx=".4" fill="#ff3b30"/><rect x="7" y="6.6" width="2.4" height="1.4" rx=".4" fill="#ff3b30"/>${R(3.4, 8.8, 3.2, 1, "#d8d4c4", 'opacity=".7"')}</g>
+      ${E(97, 47, 10, 3.4, "#ff3b30", 'opacity=".22"')}
+      ${bok.map(([x, y, r, c]) => E(x, y, r, r, c, 'opacity=".7"') + E(x, y, r * 2, r * 2, c, 'opacity=".1"')).join("")}
+      
+      ${E(34, 52, 12, 3, "#ffb347", 'opacity=".08"')}
       <!-- chuva no vidro -->
       ${drops}
       <path d="M0 0H160V60H0Z" fill="#9ab4d8" opacity=".05"/>
@@ -2535,7 +2543,7 @@ function locationBG(local) {
       <path d="M0 100V88Q20 86 40 92L50 100Z" fill="#3a4250" opacity=".05"/>
       ${R(0, 0, 160, 100, "#04060c", 'opacity=".12"')}`,
       lin("rs", [[0, "#060912"], [.7, "#141c3c"], [1, "#2a2a52"]]) + lin("rd", [[0, "#101830"], [1, "#05070d"]]) +
-      glowDef("hf", "#fff3b0", .85) + lin("rm", [[0, "#1c2434"], [1, "#0a0e18"]]) + lin("db", [[0, "#171a21"], [1, "#07090d"]]) +
+      glowDef("tl2", "#ff3b30", .8) + lin("rf", [[0, "#3a4258", .0], [.4, "#1c2236", .5], [1, "#06080e", .6]]) + glowDef("hf", "#fff3b0", .85) + lin("rm", [[0, "#1c2434"], [1, "#0a0e18"]]) + lin("db", [[0, "#171a21"], [1, "#07090d"]]) +
       `<filter id="bl${u}"><feGaussianBlur stdDeviation="1.3"/></filter>` + glowDef("gg", "#ff9a3a", .5) + lin("sc", [[0, "#1d3a66"], [1, "#0e1e3a"]]) + glowDef("tg", "#7ab0ff", .35));
     }
     // ------------------------------------------------------------------ CASA
@@ -2598,9 +2606,11 @@ function locationBG(local) {
           ${poly([wp(side, xa + dx * .12, .78), wp(side, xb - dx * .12, .78), wp(side, xb - dx * .12, .91), wp(side, xa + dx * .12, .91)], "#c9a04a", 'stroke="#6a5224" stroke-width=".25"')}
           <text x="0" y="${(fs * .35).toFixed(2)}" font-size="${fs.toFixed(2)}" text-anchor="middle" font-weight="900" fill="#3a2410" font-family="Georgia,serif" transform="translate(${cx.toFixed(2)} ${cy.toFixed(2)}) skewY(${(Math.atan(side > 0 ? sl : -sl) * 180 / Math.PI).toFixed(1)}) scale(.72 1)">${num}</text>`;
       };
-      const bench = (side, xa, xb) => {
-        const d = (xb - xa) * .5 * (side < 0 ? -1 : 1), P1 = wp(side, xa, .2), P2 = wp(side, xb, .2), Q1 = [P1[0] + d, P1[1] + Math.abs(d) * .35], Q2 = [P2[0] + d * .8, P2[1] + Math.abs(d) * .28], h1 = Hh(xa) * .2, h2 = Hh(xb) * .2;
-        return `${poly([P1, P2, wp(side, xb, .44), wp(side, xa, .44)], "#4a2e18")}${poly([P1, P2, Q2, Q1], "#8a5a32")}${poly([Q1, Q2, [Q2[0], Q2[1] + h2 * .28], [Q1[0], Q1[1] + h1 * .28]], "#4a2e18")}<path d="M${Q1[0] + 1} ${Q1[1] + h1 * .2}V${Q1[1] + h1}M${Q2[0] - 1} ${Q2[1] + h2 * .2}V${Q2[1] + h2}" stroke="#2a170c" stroke-width=".7"/><line x1="${Q1[0]}" y1="${Q1[1]}" x2="${Q2[0]}" y2="${Q2[1]}" stroke="#c28a4a" stroke-width=".4"/>`;
+      const bench = (side, xa, xb) => {   // longarina de espera de 3 lugares: assento baixo, encosto e pernas de metal
+        const sg = side < 0 ? -1 : 1, d = (xb - xa) * .3 * sg, fs = .13, fb0 = .17, fb1 = .33, P1 = wp(side, xa, fs), P2 = wp(side, xb, fs), Q1 = [P1[0] + d, P1[1] + Math.abs(d) * .3], Q2 = [P2[0] + d * .85, P2[1] + Math.abs(d) * .25];
+        const leg = (Q, x) => `<path d="M${Q[0]} ${Q[1]}V${Q[1] + Hh(x) * fs * 1.05}" stroke="#2a2d33" stroke-width=".55"/>`;
+        const dv = [1, 2].map(k => { const t = k / 3, a = [P1[0] + (P2[0] - P1[0]) * t, P1[1] + (P2[1] - P1[1]) * t], b = [Q1[0] + (Q2[0] - Q1[0]) * t, Q1[1] + (Q2[1] - Q1[1]) * t]; return `<line x1="${a[0]}" y1="${a[1]}" x2="${b[0]}" y2="${b[1]}" stroke="#1c2a38" stroke-width=".3"/>`; }).join("");
+        return `${leg(Q1, xa)}${leg(Q2, xb)}${poly([wp(side, xa, fb0), wp(side, xb, fb0), wp(side, xb, fb1), wp(side, xa, fb1)], "#3a5068")}${poly([wp(side, xa, fb0 + .07), wp(side, xb, fb0 + .07), wp(side, xb, fb0 + .08), wp(side, xa, fb0 + .08)], "#1c2a38")}${poly([P1, P2, Q2, Q1], "#4a6688")}${dv}<line x1="${Q1[0]}" y1="${Q1[1]}" x2="${Q2[0]}" y2="${Q2[1]}" stroke="#8aa4c0" stroke-width=".4"/>`;
       };
       return svg(`
       ${R(0, 0, 160, 100, "#2a2418")}
