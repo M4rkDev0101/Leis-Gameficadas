@@ -59,6 +59,16 @@ Consequências que o jogador enfrenta:
   advogado de Otto), Delegado Nery (`a6nery`), **Bento Carvalho** (`bento`, o escrivão discreto do Ato 1 — o arquivista
   que anotou a sua vida desde o primeiro caso e a vendeu), Lívia, Brandão, Henrique (da cela).
 
+
+## Continuidade vinda do Ato 6 (integrada em 24/10)
+- **Teresa traiu** (`a6z-virada`, marca `a6z_teresa_traiu`; escolha livre `a6z_levou_helga` / `a6z_deu_prazo` /
+  `a6z_usou_teresa`). No Ato 7 ela continua sendo a subprocuradora responsável pela ação de Otto: é ela quem tem de
+  defender a condenação (ep. 2) e quem denuncia no fim (ep. 10). O(a) protagonista precisa trabalhar com quem o(a)
+  traiu — mini-drama obrigatório: desconfiança, um momento em que ela explica por que fez (sem se absolver) e uma
+  reconstrução de confiança, que pode ou não acontecer conforme as escolhas. Use `se` com as marcas acima.
+- Bento Carvalho é o id `bento` (escrivão do Ato 1). Ele aparece de relance no Ato 6.
+- Sementes plantadas no Ato 6: foto 114 no caderno de Nery (tribuna), token de assinatura com Dani (`a6-grampo`).
+
 ## Os 10 episódios
 | # | id · título | papel | núcleo jurídico | drama / gancho |
 | --- | --- | --- | --- | --- |
