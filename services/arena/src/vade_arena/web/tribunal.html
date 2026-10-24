@@ -929,9 +929,46 @@ const THEMES = {
     k:"........", s:"........", h:"........", dv:0, bars:[
     [[60,64,67],36,[0,0,76,1,1,0,79,1]], [[57,60,64],45,[81,1,1,1,0,0,76,1]], [[53,57,60],41,[0,0,77,1,1,1,0,0]], [[55,59,62],43,[0,0,74,1,79,1,1,1]],
     [[60,64,67],36,[0,0,76,0,79,0,84,1]], [[52,55,59],40,[83,1,1,1,0,0,79,1]], [[53,57,60],41,[77,1,81,1,1,1,0,0]], [[55,59,62],43,[79,1,1,1,74,1,1,0]]]},
+  // ---- temas dramáticos (lead.inst = instrumento sintetizado: piano, ep, bell, strings, brass, organ)
+  perseguicao: {bpm:150, pad:{t:"sawtooth", v:.02, lp:900}, bass:"11511511", bt:"sawtooth", bv:.075, blp:480,
+    lead:{type:["square"], v:.042, lp:3000, a:.004, s:.25, r:.06, send:.12}, arp:{p:[0,1,2,1,0,1,2,1], v:.02, type:"square", lp:2200},
+    k:"x.x.x.x.", s:"..x...x.", h:"xxxxxxxx", dv:.95, bars:[
+    [[57,60,64],33,[81,0,81,84,0,81,79,0]], [[53,57,60],29,[81,0,81,84,0,81,77,0]], [[55,59,62],31,[83,0,83,86,0,83,79,0]], [[52,56,59],28,[83,0,82,0,80,0,76,0]],
+    [[57,60,64],33,[88,0,88,86,0,84,81,0]], [[53,57,60],29,[89,0,88,86,0,84,81,0]], [[50,53,57],26,[86,0,86,89,0,86,84,0]], [[52,56,59],28,[83,0,80,0,83,0,88,0]]]},
+  traicao: {bpm:56, pad:{t:"sawtooth", v:.02, lp:700}, bass:"1.......", bt:"sine", bv:.12, blp:360,
+    lead:{type:["triangle"], inst:"piano", v:.1, send:.45}, k:"........", s:"........", h:"........", dv:0, bars:[
+    [[50,53,57],38,[74,0,0,0,77,0,81,0]], [[58,62,65],34,[79,0,0,0,77,0,74,0]], [[55,58,62],31,[77,0,0,81,0,0,79,0]], [[57,61,64],33,[76,0,73,0,76,0,81,0]],
+    [[50,53,57],38,[74,0,77,0,81,0,86,0]], [[53,57,60],41,[84,0,81,0,77,0,81,0]], [[55,58,62],31,[82,0,0,79,0,0,77,0]], [[57,61,64,67],33,[76,0,0,73,0,0,69,0]]]},
+  luto: {bpm:48, pad:{t:"triangle", v:.034, lp:600}, bass:"1.......", bt:"sine", bv:.11, blp:320,
+    lead:{type:["sine"], inst:"bell", v:.07, send:.7}, k:"x.......", s:"........", h:"........", dv:.35, bars:[
+    [[52,55,59],40,[0,0,76,0,0,0,71,0]], [[48,52,55],36,[0,0,0,0,72,0,0,0]], [[57,60,64],33,[0,0,76,0,0,0,72,0]], [[59,63,66,69],35,[0,0,75,0,0,0,0,0]],
+    [[52,55,59],40,[0,0,79,0,76,0,0,0]], [[48,52,55],36,[0,0,0,0,76,0,72,0]], [[57,60,64],33,[0,0,81,0,0,0,76,0]], [[59,63,66],35,[0,0,75,0,0,0,0,0]]]},
+  plenario: {bpm:60, pad:{t:"sawtooth", v:.024, lp:800}, bass:"1.......", bt:"sine", bv:.13, blp:380,
+    lead:{type:["sawtooth"], inst:"brass", v:.05, send:.5}, k:"x...x...", s:"........", h:"........", dv:.5, bars:[
+    [[50,54,57],38,[74,1,1,1,78,1,1,1]], [[57,61,64],37,[81,1,1,1,76,1,1,1]], [[59,62,66],35,[78,1,1,1,74,1,1,1]], [[55,59,62],43,[79,1,1,1,74,1,1,1]],
+    [[50,54,57],38,[74,1,78,1,81,1,1,1]], [[57,61,64],33,[76,1,1,1,81,1,1,1]], [[55,59,62],43,[79,1,1,1,78,1,1,1]], [[57,61,64],45,[76,1,1,1,0,0,0,0]]]},
+  juri: {bpm:72, pad:{t:"sawtooth", v:.024, lp:520}, bass:"1.......", bt:"sawtooth", bv:.09, blp:300,
+    lead:{type:["sawtooth"], inst:"strings", v:.04, lp:1400, send:.5}, arp:{p:[0,-1,0,-1,1,-1,0,-1], v:.02, type:"triangle", lp:900},
+    k:"x..x....", s:"........", h:"......x.", dv:.6, bars:[
+    [[48,51,55],36,[0,0,0,0,67,1,66,1]], [[56,60,63],44,[68,1,1,1,67,1,1,1]], [[53,56,60],41,[65,1,1,1,63,1,1,1]], [[55,59,62,68],43,[62,1,63,1,62,1,1,0]],
+    [[48,51,55],36,[0,0,72,1,71,1,1,1]], [[49,53,56],37,[73,1,1,1,72,1,1,1]], [[47,50,53],35,[71,1,1,1,68,1,1,1]], [[55,59,62],43,[67,1,1,1,0,0,0,0]]]},
+  noite: {bpm:64, pad:{t:"triangle", v:.03, lp:700}, bass:"1.......", bt:"sine", bv:.09, blp:320,
+    lead:{type:["sine"], inst:"ep", v:.07, send:.5}, arp:{p:[0,-1,1,-1,2,-1,3,-1], v:.018, type:"sine", lp:1800},
+    k:"x.......", s:"........", h:"..x...x.", dv:.25, bars:[
+    [[52,55,59,62],40,[76,0,0,74,0,0,71,0]], [[48,52,55,59],36,[72,0,0,71,0,0,67,0]], [[57,60,64,67],33,[69,0,0,72,0,0,76,0]], [[59,64,66,69],35,[71,0,0,74,0,0,73,0]],
+    [[52,55,59,62],40,[79,0,0,76,0,0,74,0]], [[48,52,55,59],36,[76,0,0,74,0,0,72,0]], [[57,60,64,67],33,[72,0,0,69,0,0,67,0]], [[59,63,66,69],35,[71,0,75,0,0,0,0,0]]]},
+  vitoria_amarga: {bpm:84, pad:{t:"triangle", v:.03, lp:1200}, bass:"1...5...", bt:"triangle", bv:.1, blp:520,
+    lead:{type:["sawtooth"], inst:"strings", v:.05, lp:2400, send:.45}, k:"x.......", s:"..x.....", h:"x.x.x.x.", dv:.4, bars:[
+    [[60,64,67],36,[79,1,1,76,1,79,84,1]], [[55,59,62],43,[83,1,1,79,1,83,86,1]], [[57,60,64],45,[84,1,1,81,1,84,88,1]], [[53,57,60],41,[84,1,81,1,77,1,81,1]],
+    [[53,56,60],41,[80,1,1,1,77,1,1,1]], [[55,60,64],43,[84,1,1,1,79,1,1,1]], [[53,56,60],41,[80,1,77,1,72,1,1,1]], [[55,59,62,65],43,[74,1,1,1,0,0,0,0]]]},
+  audiencia: {bpm:76, pad:{t:"triangle", v:.026, lp:700}, bass:"1.......", bt:"sine", bv:.08, blp:320,
+    lead:{type:["triangle"], inst:"piano", v:.05, send:.4}, k:"........", s:"........", h:"........", dv:0, bars:[
+    [[55,59,62],43,[0,0,79,0,0,0,74,0]], [[52,55,59],40,[0,0,76,0,0,0,71,0]], [[48,52,55],36,[0,0,72,0,0,0,76,0]], [[50,54,57],38,[0,0,74,0,78,0,0,0]],
+    [[55,59,62],43,[0,0,79,0,0,0,83,0]], [[57,60,64],45,[0,0,81,0,0,0,76,0]], [[50,54,57],38,[0,0,78,0,74,0,0,0]], [[55,59,62],43,[79,0,0,0,74,0,0,0]]]},
 };
 const mtof = m => 440 * Math.pow(2, (m - 69) / 12);
-const AMB_KIND = {bar:"bar", mercado:"bar", rua:"rua", ponto:"rua", obra:"rua", delegacia:"forum", parlatorio:"forum", gabinete:"forum", juri:"forum"};
+const AMB_KIND = {bar:"bar", mercado:"bar", rua:"rua", ponto:"rua", obra:"rua", delegacia:"forum", parlatorio:"forum", gabinete:"forum", juri:"forum",
+  custodia:"custodia", stf:"forum", promotoria:"forum", garagem:"garagem", carro:"carro", casa:"casa", corredor:"corredor", praca:"praca", cafe:"cafe", cemiterio:"cemiterio"};
 const Sound = {
   ctx: null, on: store.get("tribSom", true), music: store.get("tribMusica", false), want: "principal", cur: null, amb: null, ambK: null, ambLocal: null,
   MUSV: .24, LOOK: 2.4, seqs: new Set(),
@@ -994,8 +1031,10 @@ const Sound = {
     fl.type = "lowpass"; fl.frequency.setValueAtTime(o.lp || 5000, t); if (o.lp2) fl.frequency.exponentialRampToValueAtTime(o.lp2, t + d);
     g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(v, t + a);
     g.gain.exponentialRampToValueAtTime(Math.max(.0001, v * (o.s ?? .6)), t + d); g.gain.exponentialRampToValueAtTime(.0001, t + d + r);
+    let lf = null;   // vibrato opcional: o.vib = [Hz, cents]; entra suave depois do ataque
+    if (o.vib) { lf = c.createOscillator(); const lg = c.createGain(); lf.frequency.value = o.vib[0]; lg.gain.setValueAtTime(0, t); lg.gain.linearRampToValueAtTime(o.vib[1], t + Math.min(d * .6, .4)); lf.connect(lg); lf.start(t); lf.stop(t + d + r + .05); lf.g = lg; }
     for (const ty of [].concat(o.type || "triangle")) for (const dt of o.det ? [o.det, -o.det] : [0]) {
-      const x = c.createOscillator(); x.type = ty; x.frequency.setValueAtTime(f, t); x.detune.value = dt;
+      const x = c.createOscillator(); x.type = ty; x.frequency.setValueAtTime(f, t); x.detune.value = dt; if (lf) lf.g.connect(x.detune);
       if (o.slide) x.frequency.exponentialRampToValueAtTime(Math.max(30, f + o.slide), t + d);
       x.connect(fl); x.start(t); x.stop(t + d + r + .05);
     }
@@ -1020,7 +1059,7 @@ const Sound = {
   // ---- sequenciador: agenda as notas à frente no relógio do áudio; um único setTimeout por faixa acorda só quando falta ~metade da janela
   _theme(n) { return THEMES[n] || this.X[n]; },
   _spb(s) {   // "pressao" acelera conforme a credibilidade cai (cred 2 → +12%, 1 → +24%, 0 → +36%)
-    let f = 1; if (s.name === "pressao" && typeof G !== "undefined" && G) f += Math.max(0, 3 - G.cred) * .12;
+    let f = 1; if ((s.name === "pressao" || s.name === "perseguicao") && typeof G !== "undefined" && G) f += Math.max(0, 3 - G.cred) * .12;
     return 30 / (s.T.bpm * f);
   },
   _seq(name, dest, loop, o = {}) {
@@ -1046,20 +1085,56 @@ const Sound = {
     setTimeout(() => { try { s.out.disconnect(); } catch {} }, ms);
   },
   _step(s) {
-    const T = s.T, spb = s.spb, k = s.i & 7, [ch, br, mel] = T.bars[(s.i >> 3) % T.bars.length], t = s.next, o = s.out, tr = s.tr, lead = s.lt ? {...T.lead, type:s.lt} : T.lead;
-    if (k === 0) ch.forEach(m => this._n(o, mtof(m + tr), t, spb * 8, {type:T.pad.t, v:T.pad.v, lp:T.pad.lp, a:.35, s:.8, r:.5, det:7, send:.35}));
+    const T = s.T, spb = s.spb, k = s.i & 7, nb = T.bars.length, bi = (s.i >> 3) % nb;
+    const [ch, br, mel] = T.bars[bi], t = s.next, o = s.out, tr = s.tr, lead = s.lt ? {...T.lead, type:s.lt} : T.lead;
+    // humanização leve: a melodia e o chimbal chegam alguns ms depois da grade, com velocidade variando ~±10%; swing opcional (T.sw)
+    const hu = () => Math.random() * .014, vr = () => .9 + Math.random() * .2, sw = T.sw && (k & 1) ? spb * T.sw : 0;
+    if (k === 0) ch.forEach((m, j) => { const f = mtof(m + tr);   // pad: duas vozes desafinadas + filtro que abre ao longo do compasso
+      this._n(o, f, t, spb * 8, {type:T.pad.t, v:T.pad.v * (j ? .85 : 1), lp:T.pad.lp * .7, lp2:T.pad.lp * 1.3, a:.4, s:.8, r:.6, det:7, send:.4});
+      if (j === 0) this._n(o, f / 2, t, spb * 8, {type:"sine", v:T.pad.v * .6, a:.5, s:.8, r:.6}); });
     const b = T.bass[k];
     if (b !== ".") { let n = 1; while (k + n < 8 && T.bass[k + n] === "." && n < 4) n++;
-      this._n(o, mtof(br + tr + (b === "5" ? 7 : b === "8" ? 12 : 0)), t, spb * n * .9, {type:T.bt, v:T.bv, lp:T.blp, a:.01, s:.5, r:.06}); }
+      this._n(o, mtof(br + tr + (b === "5" ? 7 : b === "8" ? 12 : 0)), t, spb * n * .9, {type:T.bt, v:T.bv * (k ? .85 : 1), lp:T.blp, lp2:T.blp * .6, a:.012, s:.5, r:.06}); }
     const m = mel[k];
-    if (m > 1) { let n = 1; while (k + n < 8 && mel[k + n] === 1) n++; this._n(o, mtof(m + tr), t, spb * n * .95, lead); }
-    if (T.arp && T.arp.p[k] >= 0) this._n(o, mtof(ch[T.arp.p[k] % ch.length] + tr + 12), t, spb * .9, {type:T.arp.type, v:T.arp.v, lp:T.arp.lp, a:.003, s:.05, r:.15, send:.3});
+    if (m > 1) { let n = 1; while (k + n < 8 && mel[k + n] === 1) n++;
+      const tt = t + sw + hu(), dur = spb * n * .95, v = lead.v * vr(), f = mtof(m + tr);
+      if (lead.inst && this["_i_" + lead.inst]) this["_i_" + lead.inst](o, f, tt, dur, v, lead);
+      else this._n(o, f, tt, dur, {...lead, v, vib:n >= 3 && lead.vib !== false ? [5.2, 9] : null}); }
+    if (T.arp && T.arp.p[k] >= 0) this._n(o, mtof(ch[T.arp.p[k] % ch.length] + tr + 12), t + sw + hu(), spb * .9, {type:T.arp.type, v:T.arp.v * vr(), lp:T.arp.lp, a:.003, s:.05, r:.15, send:.3});
     const dv = T.dv;
     if (dv) {
-      if (T.k[k] === "x") this._kick(o, t, .26 * dv);
-      if (T.s[k] === "x") { this._noise(o, t, .14, {type:"bandpass", f:1900, q:.8, v:.12 * dv, send:.15}); this._n(o, 190, t, .08, {type:"triangle", v:.08 * dv, a:.002, s:.01, r:.02}); }
-      if (T.h[k] === "x") this._noise(o, t, .045, {type:"highpass", f:7500, q:.7, v:(k % 2 ? .035 : .06) * dv});
+      const fill = s.loop && bi === nb - 1 && dv >= .6 && k >= 6, crash = s.loop && s.i > 0 && bi === 0 && k === 0 && dv >= .6;   // virada de bateria no fim do ciclo; prato marca a volta do loop
+      if (T.k[k] === "x") this._kick(o, t, .26 * dv * vr());
+      if (T.s[k] === "x" || (fill && (k === 7 || (k === 6 && T.s[7] !== "x")))) { this._noise(o, t, .14, {type:"bandpass", f:1900, q:.8, v:.12 * dv * vr(), send:.2}); this._n(o, 190, t, .08, {type:"triangle", v:.08 * dv, a:.002, s:.01, r:.02}); }
+      if (fill && k >= 6) this._n(o, k === 6 ? 160 : 118, t + spb * .5, .14, {type:"sine", v:.12 * dv, slide:-70, a:.002, s:.01, send:.2});
+      if (T.h[k] === "x") this._noise(o, t + sw + hu() * .5, .045, {type:"highpass", f:7500, q:.7, v:(k % 2 ? .035 : .06) * dv * vr()});
+      if (crash) this._noise(o, t, 1.1, {type:"highpass", f:6200, q:.6, v:.05 * dv, send:.3});
     }
+  },
+  // ---- instrumentos sintetizados dos temas dramáticos (todos: (destino, freq, início, duração, volume, opções))
+  _i_piano(d, f, t, dur, v, L) {   // martelo (estalo) + fundamental + harmônicos que morrem mais rápido
+    const dd = Math.max(dur, 1.1), s = L.send ?? .4;
+    this._n(d, f, t, dd, {type:"sine", v, a:.003, s:.04, r:.5, send:s});
+    this._n(d, f * 2, t, dd * .5, {type:"triangle", v:v * .38, a:.002, s:.02, r:.3, lp:3600, send:s});
+    this._n(d, f * 3.01, t, dd * .25, {type:"sine", v:v * .14, a:.002, s:.02, r:.2});
+    this._noise(d, t, .03, {type:"lowpass", f:3500, v:v * .3});
+  },
+  _i_ep(d, f, t, dur, v, L) {   // piano elétrico: corpo suave + "tine" brilhante que apaga rápido
+    const dd = Math.max(dur, 1.2), s = L.send ?? .4;
+    this._n(d, f, t, dd, {type:"sine", v, a:.004, s:.06, r:.5, send:s});
+    this._n(d, f * 2, t, dd * .6, {type:"sine", v:v * .3, a:.003, s:.03, r:.3, send:s});
+    this._n(d, f * 7.02, t, .18, {type:"sine", v:v * .12, a:.002, s:.01, r:.1});
+  },
+  _i_bell(d, f, t, dur, v, L) {   // sino: parciais inarmônicas com decaimentos diferentes
+    [[1, 1, 4], [2, .55, 3], [2.76, .5, 2.4], [5.4, .22, 1.2], [8.93, .1, .6]].forEach(([r, a, dc]) => { if (f * r < 9000) this._n(d, f * r, t, dc, {type:"sine", v:v * a, a:.002, s:.001, r:.4, send:L.send ?? .7}); });
+  },
+  _i_strings(d, f, t, dur, v, L) {   // cordas: serra desafinada, ataque lento, vibrato tardio
+    this._n(d, f, t, Math.max(dur, .4), {type:"sawtooth", det:8, v:v * .75, lp:L.lp || 1800, a:.22, s:.85, r:.5, vib:[5.1, 11], send:L.send ?? .5});
+    this._n(d, f / 2, t, Math.max(dur, .4), {type:"triangle", v:v * .3, a:.3, s:.85, r:.5});
+  },
+  _i_brass(d, f, t, dur, v, L) {   // metais: filtro que abre no ataque
+    this._n(d, f, t, Math.max(dur, .5), {type:"sawtooth", det:4, v, lp:600, lp2:2300, a:.07, s:.75, r:.35, send:L.send ?? .4});
+    this._n(d, f / 2, t, Math.max(dur, .5), {type:"square", v:v * .25, lp:700, a:.09, s:.7, r:.3});
   },
   _fade(s, sec, at) {   // continua agendando até "at" (tempo forte), então some em "sec" segundos
     const c = this.ctx, now = c.currentTime, t = Math.max(at || now, now), g = s.out.gain;
@@ -1076,6 +1151,7 @@ const Sound = {
   // (vitoria, climax e derrota são fanfarras de uma vez só: ver vitoria(), virada(), derrota())
   startMusic(kind = "calma") {
     if (kind === "tensa") kind = "julgamento";
+    if (this.scMusic && this._theme(this.scMusic) && kind !== "principal" && kind !== "abertura") kind = this.scMusic;   // "musica" da cena manda sobre o tema padrão
     if (!this._theme(kind)) kind = "calma";
     if (kind === "julgamento" && this._act() >= 6) kind = "supremo";
     if ((kind === "julgamento" || kind === "supremo" || kind === "investigacao" || kind === "interrogatorio") && typeof G !== "undefined" && G && !G.over && G.cred > 0 && (G.cred <= 2 || G.pressaoMusic)) kind = "pressao";
@@ -1121,7 +1197,56 @@ const Sound = {
     if (kind === "bar") { layer("bandpass", 500, .8, .06, .4); layer("bandpass", 1300, 1, .03, .27); layer("lowpass", 200, .5, .03, 0);
       A.timer = setInterval(() => { if (this.on && Math.random() < .6) { const t = this.ctx.currentTime, f = 3000 + Math.random() * 900;
         this._n(out, f, t, .12, {type:"sine", v:.02, a:.002, s:.01, r:.2, send:.4}); this._n(out, f * 1.25, t + .09, .12, {type:"sine", v:.015, a:.002, s:.01, r:.2, send:.4}); } }, 3500); }
+    // locais novos: camadas contínuas + eventos esporádicos (um único setInterval de 1 s por ambiência; n = segundos desde a entrada)
+    const ev = (fn) => { let n = 0; A.timer = setInterval(() => { if (this.on && this.ctx.state === "running") fn(++n, this.ctx.currentTime); }, 1000); };
+    const R = (p) => Math.random() < p;
+    if (kind === "carro") {   // motor em marcha lenta + chuva no vidro + limpador + carros passando
+      layer("lowpass", 95, 1.2, .05, .6); layer("highpass", 4500, .4, .012, .2); layer("bandpass", 9000, .5, .008, .13); layer("bandpass", 700, .6, .006, .3);
+      ev((n, t) => { if (n % 3 === 0) this._noise(out, t, .6, {f:2600, f2:900, q:.6, v:.025, a:.15});
+        if (n % 9 === 4 && R(.6)) this._noise(out, t, 2.4, {f:300, f2:900, q:1, v:.05, a:1.2}); }); }
+    if (kind === "cemiterio") {   // vento, folhas e sino distante
+      layer("bandpass", 320, 1.6, .02, .08); layer("bandpass", 1800, 4, .005, .12); layer("highpass", 5000, .3, .004, .18);
+      ev((n, t) => { if (n % 17 === 8 && R(.75)) this.sino(R(.5) ? 2 : 3, out, true); if (n % 11 === 3 && R(.4)) this._noise(out, t, 1.2, {f:1500, f2:3500, q:1.5, v:.015, a:.5}); }); }
+    if (kind === "praca") {   // multidão murmurando, pássaros, passos
+      layer("bandpass", 420, .9, .05, .31); layer("bandpass", 950, 1.3, .028, .47); layer("lowpass", 160, .5, .03, .05);
+      ev((n, t) => { if (R(.55)) this._voz(out, t, .02 + Math.random() * .025);
+        if (n % 4 === 1 && R(.5)) { const f = 2600 + Math.random() * 900; this._n(out, f, t, .09, {type:"sine", v:.012, a:.005, s:.1, r:.05, slide:700, send:.3}); this._n(out, f * 1.1, t + .13, .08, {type:"sine", v:.01, a:.005, s:.1, r:.05, slide:500, send:.3}); }
+        if (n % 12 === 6) this.passos(2, 0, {gap:.45, v:.25, dest:out}); }); }
+    if (kind === "garagem") {   // concreto: zumbido de lâmpada, eco, pingos, pneu ao longe
+      layer("lowpass", 75, .8, .05, 0); layer("bandpass", 100, 8, .012, 0); layer("bandpass", 600, .5, .01, .1);
+      ev((n, t) => { if (n % 5 === 2 && R(.7)) this._n(out, 1700 + Math.random() * 400, t, .06, {type:"sine", v:.03, a:.002, s:.01, r:.1, slide:-700, send:.9});
+        if (n % 19 === 9 && R(.6)) this._noise(out, t, 1.1, {f:1600, f2:2600, q:6, v:.03, a:.1, send:.7}); }); }
+    if (kind === "casa") {   // silêncio habitado: geladeira, relógio, rua longe
+      layer("lowpass", 120, .7, .035, 0); layer("bandpass", 60, 5, .012, .11); layer("bandpass", 350, .5, .006, .09);
+      ev((n, t) => { this._n(out, n % 2 ? 2300 : 1900, t, .02, {type:"square", v:.012, lp:3500, a:.001, s:.01, r:.02, send:.15}); if (n % 23 === 11 && R(.6)) this._noise(out, t, 3, {f:160, f2:400, q:1, v:.03, a:1.4}); }); }
+    if (kind === "corredor") {   // corredor de fórum: eco, passos distantes, porta
+      layer("bandpass", 450, .7, .04, .2); layer("lowpass", 140, .5, .03, 0);
+      ev((n, t) => { if (n % 6 === 2 && R(.6)) this.passos(3 + (R(.4) ? 2 : 0), 0, {gap:.5, v:.2, dest:out, f:300}); if (n % 21 === 10 && R(.5)) this._n(out, 80, t, .25, {type:"sine", v:.06, slide:-25, a:.003, s:.01, send:.8}); }); }
+    if (kind === "cafe") {   // murmúrio baixo, xícaras, máquina de espresso
+      layer("bandpass", 520, .8, .035, .35); layer("bandpass", 1200, 1, .018, .22); layer("lowpass", 180, .5, .02, 0);
+      ev((n, t) => { if (n % 4 === 1 && R(.6)) this._voz(out, t, .015 + Math.random() * .015);
+        if (n % 7 === 3 && R(.5)) { const f = 3300 + Math.random() * 600; this._n(out, f, t, .08, {type:"sine", v:.018, a:.002, s:.01, r:.15, send:.5}); }
+        if (n % 29 === 14) this._noise(out, t, 2, {type:"highpass", f:5500, v:.025, a:.3}); }); }
+    if (kind === "custodia") {   // carceragem: zumbido de lâmpada, metal, ecos
+      layer("lowpass", 90, .8, .045, 0); layer("bandpass", 120, 9, .012, 0); layer("bandpass", 800, .6, .02, .15);
+      ev((n, t) => { if (n % 10 === 4 && R(.7)) { this._n(out, 520 + Math.random() * 120, t, .5, {type:["sine", "square"], v:.012, lp:1800, a:.001, s:.001, r:.3, send:.8}); this._noise(out, t, .06, {type:"highpass", f:3000, v:.05, send:.8}); }
+        if (n % 14 === 9 && R(.5)) this._voz(out, t, .025); }); }
   },
+  _voz(dest, t, v) {   // uma "voz" indistinta: ruído filtrado com formante que desliza (murmúrio de gente)
+    const f = 350 + Math.random() * 450, d = .25 + Math.random() * .4;
+    this._noise(dest, t, d, {f, f2:f * (.8 + Math.random() * .5), q:3.5, v, a:.07, send:.3});
+    this._noise(dest, t + .02, d, {f:f * 2.4, f2:f * 2, q:4, v:v * .5, a:.08});
+  },
+  // sustentado (rampa linear de entrada e saída), ao contrário de _noise, que decai
+  _bed(dest, t, dur, o = {}) {
+    const c = this.ctx, s = c.createBufferSource(), fl = c.createBiquadFilter(), g = c.createGain(), v = o.v || .1, a = o.a || .3, r = o.r || .4;
+    s.buffer = this._noiseBuf(); s.loop = true; fl.type = o.type || "bandpass"; fl.frequency.setValueAtTime(o.f || 2000, t); fl.Q.value = o.q || .7; if (o.f2) fl.frequency.linearRampToValueAtTime(o.f2, t + dur);
+    g.gain.setValueAtTime(.0001, t); g.gain.linearRampToValueAtTime(v, t + a); g.gain.setValueAtTime(v, Math.max(t + a, t + dur - r)); g.gain.linearRampToValueAtTime(.0001, t + dur);
+    s.connect(fl); fl.connect(g); g.connect(dest); this._send(g, o.send); s.start(t, Math.random() * 1.5); s.stop(t + dur + .05); return g;
+  },
+  // sino (n badaladas); "longe" = abafado e com muita reverberação (cemitério). dest opcional (ambiência)
+  sino(n = 2, dest, longe) { const c = this._ok(); if (!c) return; const t = c.currentTime, d = dest || this.sfx;
+    for (let i = 0; i < n; i++) this._i_bell(d, 196 * (i % 2 ? .75 : 1), t + i * 2.4, 4, longe ? .035 : .08, {send:longe ? .95 : .7}); },
   _ambOff() {
     const A = this.amb; if (!A) return; this.amb = null; clearInterval(A.timer);
     const g = A.out.gain, t = this.ctx.currentTime; g.cancelScheduledValues(t); g.setValueAtTime(g.value, t); g.linearRampToValueAtTime(.0001, t + 1.2);
@@ -1163,8 +1288,15 @@ const Sound = {
     this._n(d, 80, t, .35, {type:"sine", v:.5, slide:-45, a:.002, s:.01, send:.3}); this._noise(d, t, .14, {type:"lowpass", f:2500, f2:300, v:.3, send:.35}); },
   coracao() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // batida de coração (tensão)
     this._n(d, 62, t, .14, {type:"sine", v:.4, slide:-14, a:.004, s:.2, r:.08}); this._n(d, 56, t + .17, .16, {type:"sine", v:.3, slide:-12, a:.004, s:.2, r:.1}); },
-  vibrar() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // celular vibrando na mesa
-    for (let i = 0; i < 2; i++) this._n(d, 150, t + i * .22, .16, {type:"sawtooth", v:.05, lp:400, s:.8}); },
+  vibrar(n = 2) { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx; this._duck(n * .45 + .5);   // celular vibrando na mesa: motor excêntrico (~170 Hz) com trepidação (AM ~27 Hz), chocalho do corpo e batida na madeira
+    for (let i = 0; i < n; i++) { const u = t + i * .46, dur = .34, ctx = this.ctx;
+      const env = ctx.createGain(), am = ctx.createGain(), lfo = ctx.createOscillator(), lg = ctx.createGain(), fl = ctx.createBiquadFilter();
+      env.gain.setValueAtTime(.0001, u); env.gain.linearRampToValueAtTime(1, u + .03); env.gain.setValueAtTime(1, u + dur - .05); env.gain.linearRampToValueAtTime(.0001, u + dur);
+      am.gain.value = .04; lfo.frequency.value = 26 + Math.random() * 3; lg.gain.value = .035; lfo.connect(lg); lg.connect(am.gain);
+      fl.type = "lowpass"; fl.frequency.value = 1100; fl.connect(am); am.connect(env); env.connect(d);
+      [168, 172.5].forEach(fr => { const x = ctx.createOscillator(); x.type = "sawtooth"; x.frequency.setValueAtTime(fr * .9, u); x.frequency.linearRampToValueAtTime(fr, u + .05); x.connect(fl); x.start(u); x.stop(u + dur + .05); });
+      lfo.start(u); lfo.stop(u + dur + .05);
+      this._bed(d, u, dur, {f:2300, q:2.2, v:.05, a:.03, r:.06}); this._n(d, 98, u, .1, {type:"sine", v:.12, slide:-30, a:.002, s:.01, send:.15}); } },
   tremor() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // abalo prolongado
     this._noise(d, t, .9, {type:"lowpass", f:140, f2:60, v:.5, a:.05}); this._n(d, 48, t, .9, {type:"sine", v:.35, slide:-8, a:.05, s:.5, r:.2});
     for (let i = 0; i < 4; i++) this._noise(d, t + .1 + Math.random() * .6, .05, {type:"highpass", f:2500, v:.08}); },
@@ -1196,15 +1328,36 @@ const Sound = {
   carimbo() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;    // carimbo do veredicto
     this._n(d, 95, t, .2, {type:"sine", v:.45, slide:-50, a:.002, s:.01, send:.2}); this._noise(d, t, .08, {f:900, q:.8, v:.3, send:.3});
     this._noise(d, t + .09, .05, {type:"highpass", f:3500, v:.12, send:.3}); },
-  passos(n = 4, w = 0) { const c = this._ok(); if (!c) return; const d = this.sfx;
-    for (let i = 0; i < n; i++) { const t = c.currentTime + w + i * .32;
-      this._noise(d, t, .09, {type:"lowpass", f:380, f2:140, v:.22}); this._n(d, i % 2 ? 82 : 95, t, .09, {type:"sine", v:.15, slide:-30, a:.003, s:.01});
-      this._noise(d, t, .03, {type:"highpass", f:3000, v:.04}); } },
+  passos(n = 4, w = 0, o = {}) { const c = this._ok(); if (!c) return; const d = o.dest || this.sfx, gap = o.gap || .32, K = o.v || 1;   // o: {gap, v (volume relativo), dest, f}
+    for (let i = 0; i < n; i++) { const t = c.currentTime + w + i * gap * (.94 + Math.random() * .12), k = K * (.85 + Math.random() * .3);
+      this._noise(d, t, .09, {type:"lowpass", f:(o.f || 380) * (i % 2 ? .9 : 1), f2:140, v:.22 * k, send:o.dest ? .5 : 0}); this._n(d, i % 2 ? 82 : 95, t, .09, {type:"sine", v:.15 * k, slide:-30, a:.003, s:.01});
+      this._noise(d, t, .03, {type:"highpass", f:3000, v:.04 * k}); } },
+  passosCorrer(n = 9, w = 0) { const c = this._ok(); if (!c) return; const d = this.sfx;   // passos apressados: passada curta, calcanhar duro, ganhando volume (quem se aproxima)
+    for (let i = 0; i < n; i++) { const t = c.currentTime + w + i * .17 + (i % 2 ? .012 : 0), k = .55 + .6 * i / n;
+      this._noise(d, t, .06, {type:"lowpass", f:520, f2:160, v:.2 * k, send:.15}); this._n(d, i % 2 ? 105 : 125, t, .06, {type:"sine", v:.14 * k, slide:-40, a:.002, s:.01});
+      this._noise(d, t, .02, {type:"highpass", f:3400, v:.07 * k}); } },
+  portaBate() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // porta batendo (ou porta de carro): estrondo + batente vibrando
+    this._noise(d, t, .16, {type:"lowpass", f:2200, f2:200, v:.5, send:.4}); this._n(d, 62, t, .4, {type:"sine", v:.45, slide:-28, a:.002, s:.01, send:.3});
+    this._noise(d, t, .03, {type:"highpass", f:2500, v:.25}); this._n(d, 210, t + .02, .22, {type:"triangle", v:.08, lp:900, slide:-60, a:.002, s:.02, send:.5});
+    this._noise(d, t + .06, .35, {f:700, f2:300, q:6, v:.05, send:.5}); },
+  carroFreia() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx; this._duck(2);   // freada: pneu cantando + trepidação + baque
+    this._n(d, 1250, t, 1, {type:["sawtooth", "square"], v:.025, lp:3200, lp2:1800, slide:-380, a:.04, s:.5, r:.12, det:15, vib:[22, 60]});
+    this._noise(d, t, 1.05, {f:2400, f2:1500, q:5, v:.12, a:.04}); this._noise(d, t, 1, {type:"lowpass", f:400, f2:150, v:.2, a:.1});
+    this._n(d, 55, t + 1.05, .5, {type:"sine", v:.35, slide:-20, a:.003, s:.01, send:.3}); this._noise(d, t + 1.05, .15, {type:"lowpass", f:900, v:.25, send:.3}); },
+  carroAcelera() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // motor subindo de giro e se afastando
+    this._n(d, 52, t, 1.8, {type:["sawtooth", "square"], v:.05, lp:260, lp2:1900, slide:130, a:.1, s:.8, r:.5, det:9, send:.15});
+    this._noise(d, t, 1.8, {type:"lowpass", f:300, f2:1800, v:.1, a:.2}); this._noise(d, t + .3, 1.6, {f:900, f2:3200, q:.6, v:.04, a:.5}); },
+  multidao(sec = 4) { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // praça: burburinho que cresce e some
+    this._bed(d, t, sec, {f:480, q:.8, v:.14, a:sec * .35, r:sec * .4, send:.25});
+    for (let i = 0; i < sec * 4; i++) this._voz(d, t + Math.random() * (sec - .5), .07 + Math.random() * .05); },
+  chuva(sec = 5) { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;   // chuva no vidro/telhado
+    this._bed(d, t, sec, {type:"highpass", f:4200, q:.4, v:.07, a:1, r:1.5}); this._bed(d, t, sec, {f:1400, q:.5, v:.03, a:1, r:1.5, send:.2});
+    for (let i = 0; i < sec * 6; i++) this._n(d, 2400 + Math.random() * 2400, t + Math.random() * sec, .02, {type:"sine", v:.012, a:.001, s:.01, r:.03, slide:-600}); },
   porta() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx;
     this._noise(d, t, .02, {type:"highpass", f:2500, v:.15}); this._n(d, 900, t, .03, {type:"triangle", v:.05, a:.001, s:.05});
     this._n(d, 170, t + .05, .4, {type:"sawtooth", v:.03, lp:700, lp2:1400, slide:90, a:.08, s:.8, r:.1});
     this._n(d, 70, t + .5, .3, {type:"sine", v:.3, slide:-25, a:.002, s:.01, send:.25}); this._noise(d, t + .5, .1, {type:"lowpass", f:900, v:.2}); },
-  entrar() { this.porta(); this.passos(3, .7); },    // porta + passos ao chegar num local de investigação
+  entrar(local) { if (local === "carro") { this.portaBate(); return; } this.porta(); this.passos(3, .7); },    // porta + passos ao chegar num local de investigação
   vitoria() { const c = this._ok(); if (!c) return;   // fanfarra curta (tema "vitoria", uma vez); no Ato 6 abre o tema solene "supremo"
     if (this._act() >= 6) { this._duck(9); this._seq("supremo", this.sfx, false, {bars:2}); } else { this._duck(3.8); this._seq("vitoria", this.sfx, false); } },
   revelar() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx; this._duck(1);   // stinger de revelação: varredura + 3 notas vítreas subindo
@@ -2468,6 +2621,7 @@ async function runScene(id) {
   const c = EP.cenas[id];
   G.scene = id;
   clearOverlay();
+  Sound.scMusic = c.musica || null; if (c.musica) Sound.startMusic(c.musica);   // campo opcional "musica": tema da cena (ver docs/MECANICAS_PAPEIS.md)
   if (c.tipo === "titulo") return titleCard(c);
   if (c.tipo === "dialogo") { await sayAll(c.falas, {local:c.local}); if (c.fundamentos) lawPopup(c.fundamentos); return c.proxima; }
   if (c.tipo === "depoimento") return testimony(c);
@@ -2507,7 +2661,7 @@ function placePanel(panel) {
 }
 async function investigate(c) {
   const opts = {local:c.local};
-  Sound.startMusic("investigacao"); Sound.entrar(); Sound.ambiencia(c.local);
+  Sound.startMusic("investigacao"); Sound.entrar(c.local); Sound.ambiencia(c.local);
   await camera(null, null, null, c.local);
   $("#actor").innerHTML = ""; curChar = null; $("#scene").style.removeProperty("--ax");
   const title = el("div", {class:"inv-title", textContent:"🔎 " + (c.titulo || LOCAL_NOME[c.local] || "")});
@@ -2734,6 +2888,7 @@ async function decideScene(c) {
 // "protesto" é o mesmo motor do lado das partes: a outra parte inquire, você protesta e o juiz decide.
 async function audienciaScene(c) {
   const prot = c.tipo === "protesto";
+  Sound.startMusic("audiencia");
   await sayAll(c.falas, {local:c.local});
   hideDialog();
   const b = prot ? banner("— Inquirição da parte contrária —", c.titulo || "Proteste só quando a pergunta for ilegal")
@@ -2865,6 +3020,7 @@ async function pecaScene(c) {
 // no júri (colegiado "juri") são 7 jurados e basta maioria de 4 (CPP, art. 489); ninguém fala com jurado à parte:
 // o jogador lê a reação de cada um nos debates e responde à dúvida que ela revela.
 async function plenarioScene(c) {
+  Sound.startMusic(c.colegiado === "juri" ? "juri" : "plenario");
   await sayAll(c.falas, {local:c.local});
   const juri = c.colegiado === "juri", quem = juri ? "jurado" : "ministro";
   const total = c.total || (juri ? 7 : 11), maioria = c.maioria || Math.floor(total / 2) + 1;
@@ -2901,7 +3057,8 @@ async function plenarioScene(c) {
 async function tensaoScene(c) {
   await sayAll(c.falas, {local:c.local});
   const tempo = Math.max(3, c.tempo || 8) * 1000, stage = $("#stage");
-  stage.classList.add("tense"); Sound.startMusic("pressao");
+  stage.classList.add("tense"); Sound.startMusic("perseguicao");
+  if (c.local === "carro") Sound.carroAcelera(); else if (c.local !== "casa") Sound.passosCorrer(8, .2);
   await say({q:"narrador", e:"nervoso", t:c.pergunta}, {noWait:true, local:c.local});
   const t0 = performance.now();
   let beat = 0;
@@ -2937,6 +3094,8 @@ async function tensaoScene(c) {
 }
 // celular: mensagens chegam uma a uma (provocações, ameaças, recados). Opcionalmente o jogador responde.
 async function celularScene(c) {
+  const noite = c.local === "casa" || c.local === "carro";
+  if (noite) Sound.startMusic("noite");
   await sayAll(c.falas, {local:c.local});
   hideDialog();
   const feed = el("div", {class:"feed", "aria-live":"polite"});
@@ -2972,6 +3131,7 @@ async function celularScene(c) {
     clearOverlay();
   }
   await sayAll(c.depois, {local:c.local});
+  if (noite) Sound.startMusic("calma");
   return G.over ? null : c.proxima;
 }
 // ------------------------------------------------ mecânicas do Ato 6: argumento, intuição, blefe, reviravolta, análise, convocação, acareação
@@ -3397,7 +3557,7 @@ function saveProgress(sid) {
     .catch(() => {});
 }
 function quitGame() {
-  Sound.ambiencia(null); Sound.startMusic("principal"); G = null; advance = null;
+  Sound.ambiencia(null); Sound.scMusic = null; Sound.startMusic("principal"); G = null; advance = null;
   $("#game").classList.add("hidden"); $("#menu").classList.remove("hidden");
   [...$("#stage").querySelectorAll(".full, .modal, .lawpop")].forEach(n => n.remove());
   loadMenu();
