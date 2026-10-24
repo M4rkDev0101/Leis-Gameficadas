@@ -121,7 +121,7 @@ class TestEscolhas(unittest.TestCase):
     def _with_dilemma(self):
         d = copy.deepcopy(DATA)
         ep = tribunal.episode(d, "ep1-celular")
-        ep["cenas"]["a9"]["proxima"] = "dil"
+        ep["cenas"]["zc3"]["proxima"] = "dil"
         ep["cenas"]["dil"] = {"tipo": "escolha", "livre": True, "pergunta": "Ajudar o Lucas?", "falas": [], "proxima": "a10",
                               "opcoes": [{"t": "Sim", "marca": "a1_lucas", "falas": [{"q": "voce", "t": "Vamos."}]},
                                          {"t": "Não", "falas": [{"q": "voce", "t": "Não."}]}]}
@@ -131,7 +131,8 @@ class TestEscolhas(unittest.TestCase):
     def test_dilemma_is_valid_and_marks_are_declared(self):
         d, ep = self._with_dilemma()
         self.assertEqual(tribunal.validate(d, NORMAS), [])
-        self.assertEqual(tribunal.episode_marks(ep), {"a1_lucas"})
+        self.assertIn("a1_lucas", tribunal.episode_marks(ep))
+        self.assertIn("a1_festa_vou", tribunal.episode_marks(ep))
         self.assertEqual(tribunal.choice_texts(d)["a1_lucas"]["texto"], "Sim")
 
     def test_conditions_need_a_declared_mark(self):

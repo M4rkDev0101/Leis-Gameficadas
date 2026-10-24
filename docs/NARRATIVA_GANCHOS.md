@@ -45,6 +45,9 @@ Na véspera de morrer, o engenheiro Paulo Seixas postou uma **carta registrada**
 | a2x-lacre | Lacre vermelho depois de 18 anos | Altavista compra o terreno ao lado |
 | a2-muro | Muro cai em 5 s, justiça leva 4 anos | Ameaça de Brandão a Rafael |
 | a2x-idosa | Sabe fazer conta, não sabe do dinheiro | 11 casas de repouso, ~400 idosos |
+| a2y-pensao (1.5) | Cliente reclama da recepção, do café e da chuva | Camila: "só queria que o senhor respondesse uma mensagem" |
+| a2y-cliente (3.5) | Bolo de fubá e uma procuração já assinada | Lívia (sozinha, sem Brandão): "não conte que estive aqui" |
+| a2y-juri (5.7) | Cozinha com a mesa caída e uma mulher de mãos vazias | Rafael decidiu colaborar (liga ao `a2-rafael`) |
 | a2-rafael | Rafael não dorme, ameaça a Sofia | Carta: "escondi uma coisa de você" |
 | a3-posse | Mulher quer retirar a queixa | Envelope: "cuidado com quem sorri demais" |
 | a3-rio | Rio inteiro cor de coisa morta | "Quem avisou a obra?" Valadares sorri |
@@ -71,6 +74,8 @@ Na véspera de morrer, o engenheiro Paulo Seixas postou uma **carta registrada**
 | a5x-insanidade | Sete dias para o júri, "louco" | Sem escapatória |
 | a5-juri | Clara na primeira fila desde o enterro | Envelope lacrado: "só abra depois da sentença" |
 | a5-sentenca | País já escreveu a sentença | **Carta de Paulo a Rafael**; "Está em Brasília" |
+
+**Mini-dramas fora do tribunal (frente "cada papel no seu papel", Atos I-II).** Plantio no Ato I: café com Rafael (Vade Mecum com "Leia o artigo até o fim", Sofia quer ser "juíza de capa preta", convite à festa junina; marcas `a1_festa_vou`/`a1_festa_estudo`), noite com Helena (`a1_helena_ficou`/`a1_helena_casa`, sigilo diante do repórter), homem de terno cinza na praça (`a1_terno_*`), SMS de Brandão (`a1_respondeu_brandao`, `a1_mostrou_rafael`, `a1_bloqueou_brandao`), festa junina (Rafael vira o celular, medo) e, no júri, Helena assume a tribuna (Estatuto) e a prisão de Rafael é seguida de Sofia na porta de casa (`a1_prometeu_sofia`/`a1_foi_sincero_sofia`). Pagamento no Ato II: Helena em `a2-geladeira`, SUV preta (`carro`, `a2_seguido_*`; `garagem` com Brandão, `a2_suv_*`), Lívia que avisa no corredor (`a2_livia_*`) e, em `a2y-cliente`, defende o tio e retira o pedido de má-fé (`a2y_livia_*`), recado de Rafael no celular (`a2_vai_procurar_carta` etc.), `a2-rafael` varia falas por `a1_prometeu_sofia`, `a1_festa_vou`, `a2_suv_filmou`/`entrou`. Mais: Kátia (`a2_katia_*`, conflito de interesse) em `a2-dados`.
 
 Reviravoltas no meio do julgamento (cenas novas curtas, sem alterar respostas): `a2-geladeira` (Fabrício olha Lívia), `a2-andaime`, `a2-guarda` (SUV preta), `a2-muro` (Brandão dá prazo), `a3-posse`, `a3-rio` e `a3-gramas` (Valadares), `a3-firma` (Fausto no celular), `a5-colaborador`, mais falas em `ep1-celular` e `a2-dados`.
 

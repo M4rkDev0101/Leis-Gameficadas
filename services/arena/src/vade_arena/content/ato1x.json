@@ -630,6 +630,169 @@
        "t": "(Diego está a serviço de quem? Ele me disse que não sabia de nada. Vamos ver o que ele diz agora, sob compromisso.)"
       }
      ],
+     "proxima": "zq3"
+    },
+    "zq3": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "titulo": "A acusação inquire o vendedor",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Rafael ao seu lado, na bancada. O promotor inquire a testemunha. Proteste só o ilegal."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Senhor Diego, há quanto tempo o senhor trabalha na TecnoVolta?"
+      },
+      {
+       "q": "lacerda",
+       "e": "bravo",
+       "t": "O senhor sabe que o réu é desses jovens que vivem de aparência, sem emprego fixo, não sabe?",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não tiverem relação com a causa"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "rafael",
+          "e": "nervoso",
+          "t": "(sussurrando) A vida profissional do Elias não é o fato imputado. Isso não tem relação com a causa."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta não tem relação com a causa e pede apreciação pessoal.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Deferido. O que se apura é a compra do notebook, doutor Lacerda."
+           },
+           {
+            "q": "lacerda",
+            "e": "normal",
+            "t": "Retiro a pergunta."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro por esse fundamento. O defeito é outro: a pergunta não tem relação com a causa."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é repetida.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. Ninguém a fez antes."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "Quanto o réu pagou pelo aparelho?"
+      },
+      {
+       "q": "lacerda",
+       "e": "apontando",
+       "t": "O senhor já disse que ele pagou R$ 1.900. Pergunto de novo: R$ 1.900, em dinheiro, no balcão?",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "ou importarem na repetição de outra já respondida"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "rafael",
+          "e": "nervoso",
+          "t": "(sussurrando) A testemunha já respondeu o preço duas vezes. A terceira é só para martelar."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta repete outra já respondida.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Deferido. A testemunha já respondeu. Passe adiante, doutor Lacerda."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. O problema não é a indução, doutor(a): é a repetição."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta pede opinião.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. É sobre fato, não opinião."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "lacerda",
+       "e": "normal",
+       "t": "O aparelho tinha nota fiscal em nome da loja?"
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protesto sem fundamento custa credibilidade."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Prossiga o depoimento."
+      },
+      {
+       "q": "rafael",
+       "e": "feliz",
+       "t": "(sussurrando) Bom ouvido. Repetição é o método preferido de quem quer cansar a defesa."
+      }
+     ],
      "proxima": "a5"
     },
     "a5": {
@@ -2148,7 +2311,8 @@
     "a1xrita": "cena",
     "a1xangela": "defesa",
     "helena": "escritorio",
-    "rafael": "escritorio"
+    "rafael": "escritorio",
+    "sofia": "cena"
    },
    "provas": [
     {
@@ -3220,6 +3384,68 @@
        "q": "rafael",
        "e": "nervoso",
        "t": "(no escritório, mais tarde) Você está chegando perto demais. Eles não vão perdoar."
+      }
+     ],
+     "proxima": "zf1"
+    },
+    "zf1": {
+     "tipo": "dialogo",
+     "local": "praca",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Sábado. Bandeirinhas, fogueira de papel crepom e uma quadrilheira de nove anos que erra todos os passos com a maior seriedade.",
+       "se": "a1_festa_vou"
+      },
+      {
+       "q": "sofia",
+       "e": "feliz",
+       "t": "Você veio! O papai disse que você ia chegar atrasado(a), mas eu apostei um brigadeiro que não.",
+       "se": "a1_festa_vou"
+      },
+      {
+       "q": "rafael",
+       "e": "feliz",
+       "t": "Ela ganhou a aposta. Eu estou falido de brigadeiros.",
+       "se": "a1_festa_vou"
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "(chegando com um saco de pipoca) Escapei do escritório por uma hora. Só uma, Rafael.",
+       "se": "a1_festa_vou"
+      },
+      {
+       "q": "sofia",
+       "e": "confiante",
+       "t": "Quando eu for juíza, de capa preta, vou mandar prender quem não leva brigadeiro.",
+       "se": "a1_festa_vou"
+      },
+      {
+       "q": "rafael",
+       "e": "pensativo",
+       "t": "Está vendo esse rabo de cavalo torto? Vale mais que todos os honorários que eu já recebi.",
+       "se": "a1_festa_vou"
+      },
+      {
+       "q": "narrador",
+       "t": "O celular de Rafael vibra no bolso. Ele olha, guarda, e o sorriso chega meio segundo atrasado. Pela primeira vez, você vê medo nos olhos dele.",
+       "se": "a1_festa_vou"
+      },
+      {
+       "q": "narrador",
+       "t": "Sábado, nove da noite. O seu celular apita: uma foto de Sofia fantasiada de caipira, mostrando a língua. Legenda de Rafael: 'Ela mandou dizer que você me deve um brigadeiro.'",
+       "se": "a1_festa_estudo"
+      },
+      {
+       "q": "narrador",
+       "t": "No fundo da foto, Rafael aparece de costas, ao telefone, longe de todos. Os ombros estão duros.",
+       "se": "a1_festa_estudo"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Duas vezes que eu o vejo de costas para o mundo, falando baixo. O que ele não está nos contando?)"
       }
      ],
      "proxima": "c13"
