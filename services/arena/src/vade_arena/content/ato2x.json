@@ -2524,6 +2524,169 @@
        "t": "Excelência, tudo foi feito dentro da lei."
       }
      ],
+     "proxima": "zq9"
+    },
+    "zq9": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "titulo": "A ré inquire a diretora",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Lívia conduz a inquirição da diretora. Proteste só o que for ilegal."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Dra. Heloísa, há quanto tempo a senhora dirige a Casa Boa Estação?"
+      },
+      {
+       "q": "livia",
+       "e": "confiante",
+       "t": "A Casa sempre agiu com o consentimento da família, não é verdade?",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPC#art-459",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "pensativo",
+          "t": "(sussurrando) 'Não é verdade?' Ela quer a resposta pronta de quem trouxe."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta é indutiva: contém a resposta que se espera da testemunha.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "normal",
+            "t": "Deferido. Reformule, doutora."
+           },
+           {
+            "q": "livia",
+            "e": "normal",
+            "t": "A Casa colheu a assinatura de quem, nos contratos?"
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é repetida.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro. Ainda não foi feita."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta não tem relação com a causa.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro. O consentimento é tema central da ação."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "A retenção do cartão foi a pedido de quem?"
+      },
+      {
+       "q": "livia",
+       "e": "apontando",
+       "t": "Repito: a retenção do cartão foi a pedido da própria idosa?",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPC#art-459",
+          "trecho": "ou importarem repetição de outra já respondida"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "pensativo",
+          "t": "(sussurrando) A diretora acabou de responder isso. Repetir só serve para marcar a versão."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta repete outra já respondida.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "normal",
+            "t": "Deferido. A testemunha já respondeu. Prossiga, doutora."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro por esse fundamento. O defeito é a repetição."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta pede opinião.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro. Não é opinião; é fato já respondido."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "A Casa recebeu a visita de algum fiscal este ano?"
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protestar sem fundamento custa credibilidade."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Prossiga o depoimento."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "(sussurrando) Boa. Com a repetição, ela tentava fixar a versão. Agora a diretora vai ter de explicar sem ensaio."
+      }
+     ],
      "proxima": "c6"
     },
     "c6": {
@@ -3169,6 +3332,90 @@
        "q": "voce",
        "e": "bravo",
        "t": "A Altavista não mexe só com concreto. Mexe com idosos, com dados e com lavagem de dinheiro. E tem alguém lá dentro do sistema que a protege."
+      }
+     ],
+     "proxima": "zr5"
+    },
+    "zr5": {
+     "tipo": "celular",
+     "contato": "Helena Vasconcelos",
+     "status": "online",
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Rafael conseguiu mandar um bilhete pelo agente Dirceu. Copio aqui, sem mexer numa vírgula:"
+      },
+      {
+       "de": "ele",
+       "t": "'Diga ao(à) doutor(a) que a Sofia está bem.'"
+      },
+      {
+       "de": "ele",
+       "t": "'Diga também que aquela festa junina foi a última vez que eu fui feliz de verdade.'",
+       "se": "a1_festa_vou"
+      },
+      {
+       "de": "ele",
+       "t": "'Diga também que ainda guardo um brigadeiro para quem estuda demais.'",
+       "se": "a1_festa_estudo"
+      },
+      {
+       "de": "ele",
+       "t": "'O Brandão quer um envelope. Quem procura o que ele quer perde o sono e depois o resto. Não procure.'"
+      },
+      {
+       "de": "ele",
+       "t": "'E diga: leia até o fim. Eu não li o primeiro artigo da minha vida. — R.'"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Responder: 'Diga a ele que eu cuido da Sofia e do escritório. E que vou procurar, sim.'",
+       "marca": "a2_vai_procurar_carta",
+       "envia": "Diga a ele que eu cuido da Sofia e do escritório. E que vou procurar, sim.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Ele vai ficar furioso. E orgulhoso. Os dois."
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "(Rafael pediu que eu não procure. Mas há coisas que a gente só protege procurando.)"
+        }
+       ]
+      },
+      {
+       "t": "Responder: 'Diga a ele que eu obedeço. Não vou procurar a carta.'",
+       "marca": "a2_nao_procura_carta",
+       "envia": "Diga a ele que eu obedeço. Não vou procurar a carta.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Ele vai dormir melhor hoje. Eu não."
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "(Prometer não é a mesma coisa que não pensar.)"
+        }
+       ]
+      },
+      {
+       "t": "Ir ao presídio amanhã, em vez de responder.",
+       "marca": "a2_visitou_rafael_cedo",
+       "resposta": false,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "(Há mensagens que só se respondem olhando nos olhos.)"
+        }
+       ]
       }
      ],
      "proxima": "c17"

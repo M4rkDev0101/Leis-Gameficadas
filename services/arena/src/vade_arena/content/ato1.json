@@ -47,7 +47,8 @@
           {"q": "voce", "e": "pensativo", "t": "Roubo exige violência ou grave ameaça. Sem isso, a subtração é furto…"},
           {"q": "helena", "e": "feliz", "t": "Exato. Peguei o boletim de ocorrência e o laudo de uma testemunha. O resto, você vai buscar no bar."},
           {"q": "narrador", "t": "Os autos do processo foram atualizados. Abra a pasta 📁 sempre que precisar.", "recebe": ["bo", "laudo", "cp155", "cp157", "cp157p1", "cp155p6", "cpp155"]},
-          {"q": "rafael", "e": "apontando", "t": "Regra de ouro: quem chega na cena antes do processo, ganha o processo. Vá ao bar."}
+          {"q": "rafael", "e": "apontando", "t": "Regra de ouro: quem chega na cena antes do processo, ganha o processo. Vá ao bar."},
+          {"q": "rafael", "e": "normal", "t": "E amanhã eu sento ao seu lado na bancada: pelo Estatuto da OAB, estagiário atua em conjunto com advogado, que assina e responde. Fale você; eu fico de olho."}
         ], "proxima": "a2b"},
         "a2b": {"tipo": "investigar", "local": "bar", "titulo": "Bar do Zé, Rua Augusta",
           "intro": [
@@ -75,7 +76,144 @@
           {"q": "lacerda", "e": "confiante", "t": "A acusação está pronta, Excelência. O réu empurrou a vítima e arrancou o celular da mão dela. Simples."},
           {"q": "voce", "e": "confiante", "t": "A defesa está pronta, Excelência."},
           {"q": "lacerda", "e": "apontando", "t": "Chamo a primeira testemunha: Valdir Souza, garçom do bar."}
-        ], "proxima": "a4"},
+        ], "proxima": "zq1"},
+        "zq1": {
+          "tipo": "protesto",
+          "local": "tribunal",
+          "titulo": "A acusação inquire o garçom",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "A acusação começa a inquirir o garçom. Proteste só quando a pergunta for ilegal: indutiva, sem relação com a causa, repetida ou pedindo opinião."
+            }
+          ],
+          "linhas": [
+            {"q": "lacerda", "e": "normal", "t": "Senhor Valdir, há quanto tempo o senhor trabalha no Bar do Zé?"},
+            {
+              "q": "lacerda",
+              "e": "apontando",
+              "t": "O senhor viu o rapaz empurrar a moça com força, não foi?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [{"chave": "CPP#art-212", "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"}],
+                "omissao": [
+                  {
+                    "q": "rafael",
+                    "e": "nervoso",
+                    "t": "(sussurrando) Ela já deu a resposta pronta na pergunta: 'não foi?'. Isso é indução, doutor(a)."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta é indutiva: já traz a resposta que a acusação quer ouvir.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "normal",
+                        "t": "Deferido. Doutor Lacerda, pergunte o que a testemunha viu, sem dizer a ela o que responder."
+                      },
+                      {"q": "lacerda", "e": "normal", "t": "Reformulo. O que o senhor viu na mesa 7?"}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é impertinente: não tem relação com a causa.",
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Indefiro. Tem relação direta com a causa, doutor(a): é o fato imputado."
+                      }
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida: a testemunha já respondeu.",
+                    "falas": [{"q": "beatriz", "e": "bravo", "t": "Indefiro. Ela ainda não foi feita antes, doutor(a)."}]
+                  }
+                ]
+              }
+            },
+            {"q": "lacerda", "e": "normal", "t": "Onde o senhor estava posicionado no salão, às onze da noite?"},
+            {
+              "q": "lacerda",
+              "e": "bravo",
+              "t": "E o rapaz tem cara de quem rouba, não tem? O senhor, que tem olho de garçom, sabe reconhecer.",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [
+                  {
+                    "chave": "CPP#art-213",
+                    "trecho": "O juiz não permitirá que a testemunha manifeste suas apreciações pessoais"
+                  }
+                ],
+                "omissao": [
+                  {
+                    "q": "rafael",
+                    "e": "nervoso",
+                    "t": "(sussurrando) 'Cara de quem rouba' é opinião, não fato. Isso não pode entrar nos autos."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A testemunha deve narrar fatos, não dar apreciações pessoais.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "normal",
+                        "t": "Deferido. A testemunha relata o que viu, não o que acha. O garçom não é perito em rostos."
+                      },
+                      {"q": "valdir", "e": "nervoso", "t": "Eu… vi o rapaz, só isso."}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é indutiva.",
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Indefiro. O problema não é a indução, doutor(a): é o pedido de opinião."
+                      }
+                    ]
+                  },
+                  {
+                    "t": "A pergunta ofende a dignidade da vítima.",
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Indefiro. A vítima não é o assunto da pergunta, doutor(a)."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {"q": "lacerda", "e": "normal", "t": "O senhor reconheceu o réu na delegacia, no mesmo dia?"}
+          ],
+          "erro_interromper": [
+            {
+              "q": "beatriz",
+              "e": "bravo",
+              "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protestar por protestar custa a sua credibilidade, não a do promotor."
+            }
+          ],
+          "acerto": [
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "Prossiga, senhor promotor. A testemunha será ouvida sobre o que presenciou."
+            },
+            {
+              "q": "rafael",
+              "e": "feliz",
+              "t": "(sussurrando) Protesto na hora certa vale mais que cinco na hora errada. Anote o ritmo."
+            }
+          ],
+          "proxima": "a4"
+        },
         "a4": {"tipo": "depoimento", "testemunha": "valdir", "titulo": "O que Valdir viu",
           "intro": [
             {"q": "valdir", "e": "nervoso", "t": "B-boa tarde. Eu vi tudo, doutora. Tudinho."},
@@ -164,7 +302,104 @@
           {"q": "lucas", "e": "feliz", "t": "Obrigado… obrigado, doutor(a). Eu errei, mas não fiz o que disseram."},
           {"q": "helena", "e": "feliz", "t": "Bom trabalho. Vindo de mim, é uma promoção."},
           {"q": "rafael", "e": "pensativo", "t": "Só uma coisa me incomoda: o Jorge disse que 'mandaram' ele mentir. Quem manda uma testemunha mentir num furto de celular?"}
-        ], "fundamentos": [{"chave": "CPP#art-383", "trecho": "poderá atribuir-lhe definição jurídica diversa"}], "proxima": "a10"},
+        ], "fundamentos": [{"chave": "CPP#art-383", "trecho": "poderá atribuir-lhe definição jurídica diversa"}], "proxima": "zc1"},
+        "zc1": {
+          "tipo": "dialogo",
+          "local": "cafe",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Fim de tarde. Rafael insiste em pagar o café da esquina do fórum: 'tradição de quem ganha o primeiro caso'."
+            },
+            {
+              "q": "rafael",
+              "e": "feliz",
+              "t": "Primeira vitória a gente comemora. A segunda, a gente estuda. A terceira, a gente desconfia."
+            },
+            {"q": "voce", "e": "feliz", "t": "E a quarta?"},
+            {"q": "rafael", "e": "confiante", "t": "A quarta você já é velho(a) demais para comemorar."},
+            {
+              "q": "rafael",
+              "e": "pensativo",
+              "t": "Tome. É o meu primeiro Vade Mecum, com a capa descolando. Leia o que está escrito na primeira página."
+            },
+            {
+              "q": "narrador",
+              "t": "Na letra apertada de Rafael, a tinta já desbotando: 'Leia o artigo até o fim. Inclusive o parágrafo, o inciso e a exceção. O erro mora na exceção.'"
+            },
+            {
+              "q": "rafael",
+              "e": "normal",
+              "t": "Quem me escreveu foi a minha primeira chefe. Fique com ele. Quando eu esquecer o que me ensinaram, você me lembra."
+            },
+            {
+              "q": "voce",
+              "e": "pensativo",
+              "t": "(Uma frase simples. É a primeira vez que a leio como uma ordem, e não como um conselho.)"
+            },
+            {
+              "q": "rafael",
+              "e": "feliz",
+              "t": "Essa é a minha sócia mais nova: a Sofia, nove anos. Diz que vai ser juíza, 'de capa preta'."
+            },
+            {
+              "q": "narrador",
+              "t": "O fundo de tela do celular de Rafael é uma menina de rabo de cavalo, de dentes faltando, segurando um desenho torto de uma balança."
+            },
+            {
+              "q": "rafael",
+              "e": "feliz",
+              "t": "Sábado tem festa junina na escola dela. Ela dança quadrilha e pediu que eu levasse 'o(a) estagiário(a) que ganhou do promotor'."
+            }
+          ],
+          "proxima": "zc2"
+        },
+        "zc2": {
+          "tipo": "escolha",
+          "livre": true,
+          "local": "cafe",
+          "falas": [{"q": "rafael", "e": "normal", "t": "Sem compromisso. Ela vai entender se você tiver que estudar."}],
+          "pergunta": "Você aceita o convite de Rafael?",
+          "opcoes": [
+            {
+              "t": "Aceitar: ir à festa junina da Sofia no sábado.",
+              "marca": "a1_festa_vou",
+              "falas": [
+                {"q": "voce", "e": "feliz", "t": "Eu vou. Só não me peça para dançar."},
+                {"q": "rafael", "e": "feliz", "t": "Ela vai ficar insuportável de tanta alegria. Obrigado."}
+              ]
+            },
+            {
+              "t": "Agradecer, mas ficar estudando para a próxima audiência.",
+              "marca": "a1_festa_estudo",
+              "falas": [
+                {"q": "voce", "e": "pensativo", "t": "Obrigado(a), Rafael. Tenho muito que ler antes de segunda."},
+                {
+                  "q": "rafael",
+                  "e": "pensativo",
+                  "t": "Entendo. O Vade Mecum não se lê sozinho. Eu levo um brigadeiro para você."
+                }
+              ]
+            }
+          ],
+          "proxima": "zc3"
+        },
+        "zc3": {
+          "tipo": "dialogo",
+          "local": "cafe",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "O celular de Rafael vibra sobre a mesa. Ele lê o nome na tela, vira o aparelho para baixo e sorri um pouco tarde demais."
+            },
+            {
+              "q": "voce",
+              "e": "pensativo",
+              "t": "(Rafael nunca vira o celular para baixo. E o Jorge disse que 'mandaram' mentir. Duas coisas que não encaixam.)"
+            }
+          ],
+          "proxima": "a10"
+        },
         "a10": {"tipo": "veredicto", "carimbo": "DESCLASSIFICADO", "titulo": "Furto, não roubo", "texto": "Você derrubou duas testemunhas e a tese do roubo. A pena de Lucas será a do furto de celular, sem a violência que a acusação inventou."}
       }
     },
@@ -217,7 +452,126 @@
           {"q": "lacerda", "e": "normal", "t": "Excelência, o Ministério Público não se move pela compaixão, mas pela lei. A ré subtraiu coisa alheia móvel. É o art. 155."},
           {"q": "rosa", "e": "triste", "t": "(baixinho) Eu só queria que ela não passasse fome…"},
           {"q": "lacerda", "e": "apontando", "t": "Chamo o gerente do supermercado, senhor Antônio Prates."}
-        ], "proxima": "p5"},
+        ], "proxima": "zq2"},
+        "zq2": {
+          "tipo": "protesto",
+          "local": "tribunal",
+          "titulo": "A acusação inquire o gerente",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Rafael senta ao seu lado na bancada: o estagiário atua em conjunto com um advogado, que assina e responde. Mas o protesto, hoje, é seu."
+            }
+          ],
+          "linhas": [
+            {"q": "lacerda", "e": "normal", "t": "O senhor é gerente do Bom Preço há quantos anos?"},
+            {
+              "q": "lacerda",
+              "e": "apontando",
+              "t": "A ré saiu da loja carregando mercadoria sem pagar, não é verdade?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [{"chave": "CPP#art-212", "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"}],
+                "omissao": [
+                  {
+                    "q": "rafael",
+                    "e": "nervoso",
+                    "t": "(sussurrando) 'Não é verdade?' O promotor entregou a resposta. Proteste, doutor(a)."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta é indutiva: sugere a resposta à testemunha.",
+                    "certa": true,
+                    "falas": [
+                      {"q": "beatriz", "e": "normal", "t": "Deferido. Reformule, doutor Lacerda."},
+                      {"q": "lacerda", "e": "normal", "t": "O que a ré fez ao sair da loja?"}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "beatriz", "e": "bravo", "t": "Indefiro. É a primeira vez que se pergunta."}]
+                  },
+                  {
+                    "t": "A testemunha não pode responder sobre o que não viu.",
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Indefiro. O gerente estava na loja, doutor(a). O momento de contestar é outro."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {"q": "lacerda", "e": "normal", "t": "Quanto custavam, na etiqueta, os produtos retirados?"},
+            {
+              "q": "lacerda",
+              "e": "bravo",
+              "t": "Pelo que o senhor conhece dessa gente, ela voltaria a furtar, não é?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [
+                  {
+                    "chave": "CPP#art-213",
+                    "trecho": "O juiz não permitirá que a testemunha manifeste suas apreciações pessoais"
+                  }
+                ],
+                "omissao": [
+                  {
+                    "q": "rafael",
+                    "e": "nervoso",
+                    "t": "(sussurrando) 'Essa gente' e adivinhar o futuro? Isso não é prova de nada."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta pede opinião e especulação, não fato.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "normal",
+                        "t": "Deferido. A testemunha depõe sobre fatos que presenciou, não sobre o que 'essa gente' faria. E o termo está dispensado."
+                      },
+                      {"q": "lacerda", "e": "normal", "t": "…Retiro a expressão, Excelência."}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "beatriz", "e": "bravo", "t": "Indefiro. Ninguém perguntou isso antes."}]
+                  },
+                  {
+                    "t": "A pergunta é impertinente: nada a ver com o crime.",
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Indefiro por esse fundamento. O problema é outro, doutor(a): é a opinião sem fato."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {"q": "lacerda", "e": "normal", "t": "O senhor presenciou a prisão em flagrante da ré?"}
+          ],
+          "erro_interromper": [
+            {
+              "q": "beatriz",
+              "e": "bravo",
+              "t": "Indefiro, doutor(a). A pergunta é regular. Protesto sem fundamento custa credibilidade."
+            }
+          ],
+          "acerto": [
+            {"q": "beatriz", "e": "normal", "t": "Siga, doutor Lacerda."},
+            {"q": "lacerda", "e": "normal", "t": "Sem mais perguntas por ora. Que o gerente conte o prejuízo."}
+          ],
+          "proxima": "p5"
+        },
         "p5": {"tipo": "depoimento", "testemunha": "antonio", "titulo": "O prejuízo do supermercado",
           "intro": [{"q": "antonio", "e": "confiante", "t": "Trabalho no varejo há vinte anos. Sei reconhecer um prejuízo."}],
           "afirmacoes": [
@@ -276,7 +630,69 @@
           {"q": "lacerda", "e": "normal", "t": "(passando por você) Bom trabalho. Não conte a ninguém que eu disse isso."},
           {"q": "helena", "e": "feliz", "t": "Ah, e liguei para uma ONG de assistência social. Rosa sai daqui com um encaminhamento de emprego."},
           {"q": "narrador", "t": "No saguão do fórum, um homem de terno cinza anota o seu nome numa caderneta e se afasta sem pressa."}
-        ], "proxima": "p9"},
+        ], "proxima": "zt1"},
+        "zt1": {
+          "tipo": "tensao",
+          "local": "praca",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Duas horas depois, na praça em frente ao fórum. Rosa já foi levada pela ONG. Um homem de terno cinza está num banco, de costas, fechando uma caderneta."
+            },
+            {
+              "q": "voce",
+              "e": "pensativo",
+              "t": "(O mesmo paletó do saguão. Ele anotou meu nome. Agora anota o quê?)"
+            }
+          ],
+          "tempo": 8,
+          "padrao": 2,
+          "pergunta": "O homem de terno cinza se levanta e vem na sua direção. Para a dois metros e guarda a caderneta no bolso. O que você faz?",
+          "hesitou": "Você hesitou. Ele sorriu, tocou a aba de um chapéu invisível e foi embora sem pressa.",
+          "opcoes": [
+            {
+              "t": "Encará-lo: 'O senhor está me seguindo?'",
+              "marca": "a1_terno_enfrentou",
+              "falas": [
+                {"q": "narrador", "t": "Ele não se altera. Ajeita a gravata cinza."},
+                {
+                  "q": "narrador",
+                  "t": "— Seguindo? Estou sentado numa praça pública, doutor(a). Gosto de saber com quem o escritório Vasconcelos & Duarte anda se metendo. O seu nome eu já tenho."
+                },
+                {"q": "narrador", "t": "Ele vai embora sem pressa. Nenhuma palavra sobre quem o mandou."}
+              ]
+            },
+            {
+              "t": "Tirar o celular e fotografá-lo.",
+              "marca": "a1_terno_fotografou",
+              "cred": 1,
+              "falas": [
+                {"q": "narrador", "t": "O clique sai. Ele para, vira só o rosto e sorri, sem nenhum constrangimento."},
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "(O rosto está na foto. A data, também. Se ele aparecer de novo, não será mais um desconhecido.)"
+                }
+              ]
+            },
+            {
+              "t": "Voltar depressa ao saguão do fórum e ficar perto dos seguranças.",
+              "marca": "a1_terno_recuou",
+              "falas": [
+                {
+                  "q": "narrador",
+                  "t": "Você atravessa a porta giratória sem olhar para trás. Quando espia pelo vidro, o banco está vazio."
+                },
+                {
+                  "q": "voce",
+                  "e": "nervoso",
+                  "t": "(Não sei se fui prudente ou covarde. Ele aprendeu o meu nome e eu não aprendi nada dele.)"
+                }
+              ]
+            }
+          ],
+          "proxima": "p9"
+        },
         "p9": {"tipo": "veredicto", "carimbo": "ABSOLVIDA", "titulo": "Insignificante para o Direito Penal", "texto": "Você provou com números o que a compaixão sozinha não provaria: lesão inexpressiva, bens devolvidos e ré primária. A lei penal é a última trincheira, não a primeira."}
       }
     },
@@ -323,7 +739,79 @@
               {"q": "narrador", "t": "Você pediu à delegacia o registro da ligação ao 190.", "recebe": ["ligacao"]}]}
           ],
           "requer": ["video2", "faca"],
-          "proxima": "q4"},
+          "proxima": "zr1"},
+        "zr1": {
+          "tipo": "dialogo",
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Véspera da audiência. Marcos aparece no escritório com um primo, Júnior, de boné e olhar desviado."
+            },
+            {
+              "q": "marcos",
+              "e": "nervoso",
+              "t": "Doutor(a), o Wellington jura que eu não tinha motivo. O Júnior topou ajudar: diz que viu a faca. Ele não tava lá, mas ajuda."
+            },
+            {"q": "voce", "e": "chocado", "t": "(Uma testemunha que não viu nada, para jurar que viu tudo.)"},
+            {"q": "rafael", "e": "pensativo", "t": "Respire. Você está na frente e eu, ao seu lado. Responda a ele."}
+          ],
+          "proxima": "zr2"
+        },
+        "zr2": {
+          "tipo": "escolha",
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "marcos",
+              "e": "triste",
+              "t": "Não vai prejudicar ninguém. A faca existiu, doutor(a). Só a testemunha é que não."
+            }
+          ],
+          "pergunta": "O que você diz a Marcos?",
+          "opcoes": [
+            {
+              "t": "Aceitar: uma testemunha a mais não faz mal, se a faca existiu.",
+              "falas": [
+                {
+                  "q": "rafael",
+                  "e": "bravo",
+                  "t": "Não. Testemunha que não viu é falso testemunho, e quem a leva responde junto. Releia o que diz o Código Penal."
+                }
+              ]
+            },
+            {
+              "t": "Recusar e explicar: mentir em juízo é crime, derruba a defesa, e o que ele me contou fica só entre nós.",
+              "certa": true,
+              "fundamentos": [
+                {
+                  "chave": "CP#art-342",
+                  "trecho": "Fazer afirmação falsa, ou negar ou calar a verdade, como testemunha"
+                }
+              ],
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "Marcos, eu não vou levar o Júnior. É falso testemunho, e a sua defesa é forte sem isso: o vídeo e a faca falam por você. O que você me contou aqui não sai desta sala."
+                },
+                {"q": "marcos", "e": "triste", "t": "…Tá bom. Desculpa, doutor(a). Tive medo de perder."},
+                {"q": "rafael", "e": "feliz", "t": "Sigilo e verdade andam juntos. Gostei da firmeza."}
+              ]
+            },
+            {
+              "t": "Fingir que não ouviu e mudar de assunto.",
+              "falas": [
+                {
+                  "q": "rafael",
+                  "e": "pensativo",
+                  "t": "Calar diante de uma mentira anunciada é aceitá-la. Responda a ele."
+                }
+              ]
+            }
+          ],
+          "proxima": "q4"
+        },
         "q4": {"tipo": "dialogo", "local": "tribunal", "falas": [
           {"q": "beatriz", "e": "normal", "t": "Aberta a audiência. Réu: Marcos Vieira. Acusação: lesão corporal grave.", "fx": "martelo"},
           {"q": "lacerda", "e": "confiante", "t": "Um braço quebrado, 45 dias de incapacidade. A acusação ouvirá a própria vítima."}
@@ -477,7 +965,141 @@
           {"q": "joana", "e": "feliz", "t": "Mãe… eu vou ver a minha mãe!"},
           {"q": "fausto", "e": "bravo", "t": "(saindo, ao celular) …Doutor Brandão? Deu errado. O estagiário do Duarte."},
           {"q": "voce", "e": "chocado", "t": "(Brandão… o mesmo nome do cartão no mural.)"}
-        ], "proxima": "r9"},
+        ], "proxima": "zk1"},
+        "zk1": {
+          "tipo": "dialogo",
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Onze da noite. O escritório vazio tem cheiro de café requentado. Só a luz da sala de Helena ainda está acesa."
+            },
+            {
+              "q": "helena",
+              "e": "normal",
+              "t": "Você ainda aqui? A Joana está solta, a mãe dela já a abraçou. Pedi uma pizza; eu não ia comer sozinha."
+            }
+          ],
+          "proxima": "zk2"
+        },
+        "zk2": {
+          "tipo": "escolha",
+          "livre": true,
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "helena",
+              "e": "pensativo",
+              "t": "Fique. Ou vá dormir, que eu entendo. Mas hoje estou com vontade de contar uma história."
+            }
+          ],
+          "pergunta": "Você fica com Helena?",
+          "opcoes": [
+            {
+              "t": "Ficar para a pizza e ouvir a história.",
+              "marca": "a1_helena_ficou",
+              "falas": [
+                {"q": "voce", "e": "feliz", "t": "Fico. Só se tiver borda recheada."},
+                {"q": "helena", "e": "feliz", "t": "Tem. Eu sou chefe, não monstro."}
+              ]
+            },
+            {
+              "t": "Agradecer e ir para casa descansar.",
+              "marca": "a1_helena_casa",
+              "falas": [
+                {"q": "voce", "e": "normal", "t": "Obrigado(a), Helena. Amanhã eu rendo mais."},
+                {"q": "helena", "e": "normal", "t": "Boa noite. Na dúvida, durma."}
+              ]
+            }
+          ],
+          "proxima": "zk3"
+        },
+        "zk3": {
+          "tipo": "dialogo",
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "helena",
+              "e": "pensativo",
+              "t": "Quinze anos atrás, quando eu e o Rafael abrimos isto aqui, os bancos riram da gente. Ele foi o primeiro que acreditou em mim.",
+              "se": "a1_helena_ficou"
+            },
+            {
+              "q": "helena",
+              "e": "triste",
+              "t": "Eu fico duas horas além do expediente porque, se eu parar, começo a pensar que tudo isto pode acabar. Esse nome, Altavista, me dá um aperto que não sei explicar.",
+              "se": "a1_helena_ficou"
+            },
+            {
+              "q": "helena",
+              "e": "confiante",
+              "t": "Mas o cuidado que você teve hoje com a Joana, de ler tudo, é o motivo de eu ainda ter coragem. Obrigada.",
+              "se": "a1_helena_ficou"
+            },
+            {
+              "q": "narrador",
+              "t": "Você pega o casaco. Helena apaga a luz da sala devagar, e você percebe que ela vai ficar ali mais um pouco.",
+              "se": "a1_helena_casa"
+            },
+            {"q": "narrador", "t": "O celular vibra. Número desconhecido."}
+          ],
+          "proxima": "zk4"
+        },
+        "zk4": {
+          "tipo": "celular",
+          "contato": "Ricardo Lessa · repórter",
+          "status": "online",
+          "mensagens": [
+            {
+              "de": "ele",
+              "t": "Boa noite, doutor(a). Soube que a Joana Lima ficou 3 dias presa sem audiência. Você é do escritório dela?"
+            },
+            {"de": "ele", "t": "Pode me contar o que ela disse? Prometo uma manchete boa para ela."}
+          ],
+          "opcoes": [
+            {
+              "t": "Contar o que a cliente lhe disse, para a imprensa ajudá-la.",
+              "marca": "a1_vazou_joana",
+              "envia": "Ela disse que não sabia onde estava e que foi coagida a assinar.",
+              "retorno": [{"de": "ele", "t": "Ótimo! Sai amanhã."}],
+              "cred": -1,
+              "falas": [
+                {
+                  "q": "helena",
+                  "e": "bravo",
+                  "t": "(ao telefone, na manhã seguinte) Saiu na primeira página o que a Joana lhe contou em confiança. O que a cliente diz a você é dela, não do jornal."
+                }
+              ]
+            },
+            {
+              "t": "Responder: 'O que a cliente me disse é sigiloso. O que consta dos autos é público.'",
+              "marca": "a1_guardou_sigilo",
+              "envia": "Não posso falar sobre o que a cliente me disse. O que consta dos autos é público.",
+              "retorno": [{"de": "ele", "t": "Entendi. Obrigado."}],
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "(A confiança do cliente é a única coisa que ele não pode perder de nós.)"
+                }
+              ]
+            },
+            {
+              "t": "Não responder: avisar Helena de manhã.",
+              "marca": "a1_encaminhou_reporter",
+              "resposta": false,
+              "falas": [
+                {
+                  "q": "helena",
+                  "e": "feliz",
+                  "t": "(no dia seguinte) Fez bem em não improvisar. Imprensa é com a sócia, e sigilo é com todos."
+                }
+              ]
+            }
+          ],
+          "depois": [{"q": "voce", "e": "pensativo", "t": "(Sigilo não é etiqueta: é o que faz o cliente confiar em você.)"}],
+          "proxima": "r9"
+        },
         "r9": {"tipo": "veredicto", "carimbo": "PRISÃO RELAXADA", "titulo": "A lei vale para quem prende", "texto": "Prisão sem comunicação imediata e confissão sem aviso do direito ao silêncio: você mostrou que garantias não são formalidade. Joana dorme em casa hoje."}
       }
     },
@@ -583,7 +1205,55 @@
           {"q": "lacerda", "e": "pensativo", "t": "O Ministério Público vai requisitar a quebra de sigilo da Altavista Serviços Ltda. (para você) Isso fica entre nós, por enquanto."},
           {"q": "ivo", "e": "feliz", "t": "Doutor(a), a Lurdes ia gostar de você."},
           {"q": "rafael", "e": "nervoso", "t": "(no escritório, mais tarde) …Não mexa com a Altavista. Eu conheço essa gente. É sério."}
-        ], "proxima": "s9"},
+        ], "proxima": "zb1"},
+        "zb1": {
+          "tipo": "celular",
+          "contato": "Número desconhecido",
+          "status": "digitando…",
+          "mensagens": [
+            {"de": "ele", "t": "Parabéns pela absolvição do seu Ivo. Bela estreia."},
+            {
+              "de": "ele",
+              "t": "Um conselho de colega: processos como esse têm dono. O sr. Wagner morava num imóvel que não era dele."
+            },
+            {"de": "ele", "t": "Às vezes um bom advogado sabe a hora de parar de ler os autos. — A. Brandão"}
+          ],
+          "opcoes": [
+            {
+              "t": "Não responder e mostrar a mensagem a Rafael.",
+              "marca": "a1_mostrou_rafael",
+              "resposta": false,
+              "falas": [
+                {
+                  "q": "rafael",
+                  "e": "bravo",
+                  "t": "Brandão. Guarde o print e nunca responda a quem quer te medir. Ele quer o seu erro."
+                }
+              ]
+            },
+            {
+              "t": "Responder: 'Aprendi com meus mentores a ler até o fim.'",
+              "marca": "a1_respondeu_brandao",
+              "envia": "Aprendi com meus mentores a ler até o fim.",
+              "retorno": [{"de": "ele", "t": "Bonito. Veremos até onde vai a leitura."}],
+              "cred": -1,
+              "falas": [
+                {
+                  "q": "rafael",
+                  "e": "nervoso",
+                  "t": "Você respondeu? Ele queria isso: saber que a flecha chegou. Não dê aula a quem quer cobrar a sua conta."
+                }
+              ]
+            },
+            {
+              "t": "Bloquear o número.",
+              "marca": "a1_bloqueou_brandao",
+              "resposta": false,
+              "falas": [{"q": "voce", "e": "nervoso", "t": "(Bloqueado. O número muda amanhã, mas hoje eu durmo.)"}]
+            }
+          ],
+          "proxima": "s9"
+        },
         "s9": {"tipo": "veredicto", "carimbo": "ABSOLVIDO", "titulo": "Laranja não é golpista", "texto": "Prontuário, perícia digital e o art. 18: sem dolo, não há crime. E o rastro do dinheiro leva, de novo, à Altavista."}
       }
     },
@@ -591,7 +1261,7 @@
       "id": "a1-juri", "ato": "ato1", "ordem": 6, "numero": 6,
       "titulo": "O Júri", "papel": "advogado", "nivel": "avancado",
       "sinopse": "Final do Ato I. Um engenheiro da Altavista foi morto no canteiro de obras. O acusado é um operário demitido. Rafael vai à tribuna com você — até que o celular dele toca.",
-      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "ronaldo": "testemunha", "tiago": "defesa", "clara": "cena", "lucas": "cena", "rafael": "escritorio", "helena": "escritorio", "brandao": "cena", "twedvaldo": "testemunha"},
+      "posicoes": {"voce": "defesa", "lacerda": "acusacao", "beatriz": "juiz", "ronaldo": "testemunha", "tiago": "defesa", "clara": "cena", "lucas": "cena", "rafael": "escritorio", "helena": "escritorio", "brandao": "cena", "twedvaldo": "testemunha", "sofia": "cena"},
       "provas": [
         {"id": "catraca", "tipo": "prova", "icone": "🕒", "nome": "Registro da catraca", "descricao": "Crachá de Tiago Nunes: saída às 18h02. Nenhuma entrada depois disso. A morte ocorreu por volta das 19h30."},
         {"id": "cadeado", "tipo": "prova", "icone": "🔒", "nome": "Foto do portão dos fundos", "descricao": "Portão dos fundos trancado com corrente e cadeado, foto da perícia tirada às 20h. Sem sinais de arrombamento."},
@@ -613,6 +1283,8 @@
           {"q": "rafael", "e": "pensativo", "t": "O acusado é Tiago Nunes, operário demitido na semana anterior. A acusação diz que ele voltou para se vingar."},
           {"q": "helena", "e": "normal", "t": "Homicídio doloso: quem julga é o júri popular, por determinação da Constituição. Sete jurados, e a decisão deles é soberana."},
           {"q": "rafael", "e": "confiante", "t": "Eu faço a sustentação. Você me acompanha na tribuna. E hoje à noite vamos à obra."},
+          {"q": "rafael", "e": "feliz", "t": "Sábado você dançou quadrilha com a Sofia. Hoje dança com o Lacerda. Os passos são parecidos: um para trás, dois para frente.", "se": "a1_festa_vou"},
+          {"q": "helena", "e": "normal", "t": "E lembrem: no júri, sustentar é ato de advogado. Estagiário só atua em conjunto, e quem assina sou eu ou o Rafael."},
           {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cf5juri", "cpp478", "cpp214", "cp343"]}
         ], "proxima": "t3"},
         "t3": {"tipo": "investigar", "local": "obra", "titulo": "Canteiro do Residencial Horizonte",
@@ -633,7 +1305,9 @@
               {"q": "narrador", "t": "Clara entregou um comprovante de depósito.", "recebe": ["deposito"]}]},
             {"q": "brandao", "titulo": "Falar com o homem de terno na portaria", "falas": [
               {"q": "brandao", "e": "confiante", "t": "Augusto Brandão, advogado da construtora. Esta é uma área privada, doutor(a)."},
-              {"q": "brandao", "e": "feliz", "t": "Mande lembranças ao Rafael. Diga que eu disse: alguns casos não valem a carreira de ninguém."}]}
+              {"q": "brandao", "e": "feliz", "t": "Mande lembranças ao Rafael. Diga que eu disse: alguns casos não valem a carreira de ninguém."},
+              {"q": "brandao", "e": "confiante", "t": "Li a sua resposta, aliás. Ler até o fim é um hábito caro, doutor(a).", "se": "a1_respondeu_brandao"},
+              {"q": "brandao", "e": "normal", "t": "Soube que mostrou a minha mensagem ao Rafael. Leal. Pena que lealdade não pague as contas dele.", "se": "a1_mostrou_rafael"}]}
           ],
           "requer": ["catraca", "cadeado", "deposito"],
           "proxima": "t4"},
@@ -641,8 +1315,10 @@
           {"q": "beatriz", "e": "normal", "t": "Está instalada a sessão do Tribunal do Júri. Senhores jurados, o réu Tiago Nunes é acusado de homicídio.", "fx": "martelo"},
           {"q": "rafael", "e": "confiante", "t": "(sussurrando) Respira. Eu cuido da abertura e…"},
           {"q": "narrador", "t": "O celular de Rafael vibra. Ele lê a mensagem e empalidece."},
-          {"q": "rafael", "e": "chocado", "t": "Eu… preciso sair. Agora. Você assume. Confio em você."},
-          {"q": "voce", "e": "chocado", "t": "EU?!", "fx": "tremor"},
+          {"q": "rafael", "e": "chocado", "t": "Eu… preciso sair. Agora. Confio em você."},
+          {"q": "rafael", "e": "triste", "t": "(baixinho) Diga à Sofia que… não. Eu mesmo digo.", "se": "a1_festa_vou"},
+          {"q": "voce", "e": "chocado", "t": "Rafael?! E a tribuna?", "fx": "tremor"},
+          {"q": "helena", "e": "confiante", "t": "(entrando às pressas, com a beca no braço) A tribuna é minha. Sustentação oral no júri é ato de advogada, e você atua em conjunto comigo: interroga ao meu lado e eu assino e respondo por tudo."},
           {"q": "lacerda", "e": "confiante", "t": "A acusação chama o mestre de obras Ronaldo Freitas."}
         ], "proxima": "t5"},
         "t5": {"tipo": "apresentar", "local": "tribunal", "falas": [
@@ -657,7 +1333,153 @@
             {"q": "ronaldo", "e": "nervoso", "t": "Isso é… um empréstimo. É."}
           ],
           "erro": [{"q": "beatriz", "e": "bravo", "t": "Esse dispositivo não trata da contradita, doutor(a)."}],
-          "proxima": "t6"},
+          "proxima": "zq4"},
+        "zq4": {
+          "tipo": "protesto",
+          "local": "tribunal",
+          "titulo": "A acusação inquire o mestre de obras",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "No plenário, o promotor inquire a testemunha. Proteste só o que for ilegal. Lembre: em júri, a nulidade precisa ser levantada na hora."
+            }
+          ],
+          "linhas": [
+            {"q": "lacerda", "e": "normal", "t": "Senhor Ronaldo, qual era a sua função na obra?"},
+            {
+              "q": "lacerda",
+              "e": "bravo",
+              "t": "O senhor, que conhecia bem o Tiago, acha que ele é um homem violento por natureza, não acha?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [
+                  {
+                    "chave": "CPP#art-213",
+                    "trecho": "O juiz não permitirá que a testemunha manifeste suas apreciações pessoais"
+                  }
+                ],
+                "omissao": [
+                  {
+                    "q": "rafael",
+                    "e": "nervoso",
+                    "t": "(sussurrando) 'Violento por natureza' é opinião sobre o caráter dele. Os jurados não podem ouvir isso como prova."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta pede apreciação pessoal sobre o caráter do réu, não um fato.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "normal",
+                        "t": "Deferido. Jurados, desconsiderem a pergunta. A testemunha responde sobre fatos."
+                      },
+                      {"q": "lacerda", "e": "normal", "t": "Reformulo: o que o senhor presenciou naquela tarde?"}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "beatriz", "e": "bravo", "t": "Indefiro. Não foi feita antes."}]
+                  },
+                  {
+                    "t": "A pergunta é indutiva e viola o silêncio do réu.",
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Indefiro. Não há silêncio do réu em jogo nesta pergunta, doutor(a)."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {"q": "lacerda", "e": "normal", "t": "A que horas o senhor encerrou o expediente?"},
+            {
+              "q": "lacerda",
+              "e": "apontando",
+              "t": "Jurados, este é o capacete do engenheiro, ainda com a marca do golpe.",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [
+                  {
+                    "chave": "CPP#art-479",
+                    "trecho": "não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
+                  }
+                ],
+                "omissao": [
+                  {
+                    "q": "rafael",
+                    "e": "nervoso",
+                    "t": "(sussurrando) Esse capacete não foi juntado aos autos com três dias de antecedência. Pode protestar."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "O objeto não foi juntado aos autos com 3 dias úteis de antecedência e a defesa não teve ciência.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Deferido. Retire o objeto da vista dos jurados, doutor Lacerda. Jurados, não levem em conta o que viram."
+                      },
+                      {"q": "lacerda", "e": "nervoso", "t": "…Retiro, Excelência."}
+                    ]
+                  },
+                  {
+                    "t": "O objeto viola o silêncio do réu.",
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Indefiro. Não se trata de silêncio, doutor(a): leia o art. 479."
+                      }
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é indutiva.",
+                    "falas": [
+                      {
+                        "q": "beatriz",
+                        "e": "bravo",
+                        "t": "Indefiro. Não houve pergunta; houve exibição. O problema é de prazo."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {
+              "q": "lacerda",
+              "e": "normal",
+              "t": "Obrigado, senhor Ronaldo. A acusação ouvirá agora a versão da testemunha sobre a noite do crime."
+            }
+          ],
+          "erro_interromper": [
+            {
+              "q": "beatriz",
+              "e": "bravo",
+              "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protestar sem fundamento diante do júri custa a sua credibilidade."
+            }
+          ],
+          "acerto": [
+            {
+              "q": "beatriz",
+              "e": "normal",
+              "t": "Prossiga o depoimento. Jurados, atenção ao que a testemunha afirmar."
+            },
+            {
+              "q": "helena",
+              "e": "feliz",
+              "t": "(sussurrando) O capacete foi uma bela captura. Ele jogou para a plateia, e você lembrou a regra."
+            }
+          ],
+          "proxima": "t6"
+        },
         "t6": {"tipo": "depoimento", "testemunha": "ronaldo", "titulo": "O que Ronaldo viu",
           "intro": [{"q": "ronaldo", "e": "confiante", "t": "Eu tava na obra até tarde naquele dia, conferindo material."}],
           "afirmacoes": [
@@ -710,25 +1532,25 @@
           "erro": [{"q": "beatriz", "e": "bravo", "t": "Esse dispositivo não trata do que o promotor disse."}],
           "proxima": "t9"},
         "t9": {"tipo": "escolha", "local": "tribunal", "falas": [
-          {"q": "beatriz", "e": "normal", "t": "Com a palavra, a defesa, para a sustentação final aos jurados."}
+          {"q": "beatriz", "e": "normal", "t": "Com a palavra, a defesa, para a sustentação final aos jurados."}, {"q": "helena", "e": "confiante", "t": "(sussurrando) Eu sustento, mas a tese é sua. O que eu peço a eles?"}
         ], "pergunta": "O que você pede aos jurados?",
           "opcoes": [
             {"t": "Que reconheçam que Tiago agiu sob violenta emoção e reduzam a pena.", "certa": false,
              "falas": [{"q": "tiago", "e": "chocado", "t": "Mas eu não fiz nada, doutor(a)!"}, {"q": "voce", "e": "nervoso", "t": "(Pedir privilégio é admitir que ele matou. Não é isso.)"}]},
             {"t": "A absolvição: Tiago não estava na obra (catraca), ninguém entrou pelos fundos (cadeado) e a única testemunha confessou ter sido paga para mentir.", "certa": true,
              "fundamentos": [{"chave": "CF#art-5/inc-xxxviii/ali-d", "trecho": "a competência para o julgamento dos crimes dolosos contra a vida"}],
-             "falas": [{"q": "voce", "e": "confiante", "t": "Senhores jurados: o crachá saiu às 18h02 e não voltou. O portão estava trancado. E a acusação se apoiava numa testemunha que acabou de confessar que foi paga. A decisão é de vocês, e é soberana. Absolvam Tiago Nunes."}]},
+             "falas": [{"q": "helena", "e": "confiante", "t": "Senhores jurados: o crachá saiu às 18h02 e não voltou. O portão estava trancado. E a acusação se apoiava numa testemunha que acabou de confessar que foi paga. A decisão é de vocês, e é soberana. Absolvam Tiago Nunes."}]},
             {"t": "Que o juiz anule o júri e marque outro.", "certa": false,
              "falas": [{"q": "beatriz", "e": "pensativo", "t": "Doutor(a), a defesa tem provas fortes nas mãos. Por que jogaria fora este julgamento?"}]}
           ],
           "proxima": "tw1"},
-        "tw1": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "narrador", "t": "Os jurados já estão de pé. O oficial de justiça abre a porta da sala secreta. Você sente o peito aliviado pela primeira vez em horas."}, {"q": "lacerda", "e": "nervoso", "t": "Excelência, um instante. Peço a palavra antes do recolhimento do Conselho.", "fx": "bater"}, {"q": "beatriz", "e": "pensativo", "t": "Doutor Lacerda, a instrução está encerrada."}, {"q": "lacerda", "e": "pensativo", "t": "Está. Mas hoje, no intervalo, um homem me procurou no corredor do fórum. É o vigia noturno do Residencial Horizonte. Diz que viu tudo e que teve medo de falar até agora."}, {"q": "voce", "e": "chocado", "t": "(Vigia noturno? Ninguém falou em vigia noturno em nenhum depoimento…)", "fx": "tremor"}, {"q": "beatriz", "e": "pensativo", "t": "O art. 209 do Código de Processo Penal permite ao juiz ouvir outras testemunhas, além das indicadas pelas partes. Em nome da verdade real, e só por isso, eu a ouvirei. Doutor(a), a defesa terá a palavra para reperguntar."}, {"q": "narrador", "t": "No fundo da galeria, um homem de terno e óculos escuros ajeita a gravata e sorri para o chão. Quando você olha de novo, a cadeira está vazia."}, {"q": "tiago", "e": "nervoso", "t": "Doutor(a)… eu não conheço esse homem. Nunca vi ele na obra. Eu juro."}, {"q": "voce", "e": "confiante", "t": "(Quando a verdade precisa de uma segunda testemunha, é porque a primeira já caiu. Respira. Escute cada palavra dele.)"}, {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cp342", "cpp209"]}], "proxima": "tw1r"},
+        "tw1": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "narrador", "t": "Os jurados já estão de pé. O oficial de justiça abre a porta da sala secreta. Você sente o peito aliviado pela primeira vez em horas."}, {"q": "lacerda", "e": "nervoso", "t": "Excelência, um instante. Peço a palavra antes do recolhimento do Conselho.", "fx": "bater"}, {"q": "beatriz", "e": "pensativo", "t": "Doutor Lacerda, a instrução está encerrada."}, {"q": "lacerda", "e": "pensativo", "t": "Está. Mas hoje, no intervalo, um homem me procurou no corredor do fórum. É o vigia noturno do Residencial Horizonte. Diz que viu tudo e que teve medo de falar até agora."}, {"q": "voce", "e": "chocado", "t": "(Vigia noturno? Ninguém falou em vigia noturno em nenhum depoimento…)", "fx": "tremor"}, {"q": "beatriz", "e": "pensativo", "t": "O art. 209 do Código de Processo Penal permite ao juiz ouvir outras testemunhas, além das indicadas pelas partes. Em nome da verdade real, e só por isso, eu a ouvirei. Doutor(a), a defesa terá a palavra para reperguntar."}, {"q": "narrador", "t": "No fundo da galeria, um homem de terno e óculos escuros ajeita a gravata e sorri para o chão. Quando você olha de novo, a cadeira está vazia."}, {"q": "voce", "e": "chocado", "t": "(É ele. O mesmo da foto que tirei na praça, no dia da Rosa.)", "se": "a1_terno_fotografou"}, {"q": "voce", "e": "nervoso", "t": "(Ele me disse que já tinha o meu nome. Agora tem a minha atenção.)", "se": "a1_terno_enfrentou"}, {"q": "voce", "e": "nervoso", "t": "(O homem da praça. Eu me afastei dele uma vez; hoje ele se sentou a dez metros de mim.)", "se": "a1_terno_recuou"}, {"q": "tiago", "e": "nervoso", "t": "Doutor(a)… eu não conheço esse homem. Nunca vi ele na obra. Eu juro."}, {"q": "voce", "e": "confiante", "t": "(Quando a verdade precisa de uma segunda testemunha, é porque a primeira já caiu. Respira. Escute cada palavra dele.)"}, {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cp342", "cpp209"]}], "proxima": "tw1r"},
         "tw1r": {"tipo": "reviravolta", "banner": "REVIRAVOLTA!", "sub": "Testemunha surpresa", "ajuste": 0, "piso": 3, "falas": [{"q": "lacerda", "e": "pensativo", "t": "Chamo ao plenário o senhor Edvaldo Pinheiro, vigia noturno do Residencial Horizonte."}, {"q": "voce", "e": "nervoso", "t": "(Quando você acha que ganhou, a Altavista abre outra porta.)"}], "local": "tribunal", "proxima": "tw2"},
         "tw2": {"tipo": "depoimento", "testemunha": "twedvaldo", "titulo": "O vigia que apareceu no intervalo", "intro": [{"q": "twedvaldo", "e": "nervoso", "t": "Edvaldo Pinheiro, vigia noturno, doze anos de obra. Eu falo a verdade, doutora Beatriz."}], "afirmacoes": [{"t": "Ninguém me chamou antes porque eu fiquei com medo do que ia acontecer comigo. Hoje eu criei coragem.", "e": "triste", "pressionar": [{"q": "voce", "e": "pensativo", "t": "E por que o senhor não foi à polícia no dia do crime?"}, {"q": "twedvaldo", "e": "nervoso", "t": "Eu... achei que não era problema meu."}]}, {"t": "Às 19h35 eu vi o Tiago saindo correndo pela catraca, passando o crachá, com a camisa suja.", "e": "bravo", "pressionar": [{"q": "voce", "e": "apontando", "t": "Passando o crachá? O senhor viu o crachá dele encostar na catraca?"}, {"q": "twedvaldo", "e": "confiante", "t": "Vi sim. A luzinha ficou verde e tudo."}]}, {"t": "Ele jogou o capacete no chão e sumiu pela rua. Nunca vi alguém correr tanto.", "e": "chocado", "pressionar": [{"q": "voce", "e": "normal", "t": "E o senhor não chamou ninguém?"}, {"q": "twedvaldo", "e": "nervoso", "t": "Eu tava com medo. Disse, né?"}]}], "contradicao": {"afirmacao": 1, "provas": ["catraca"]}, "acerto": [{"q": "voce", "e": "apontando", "t": "UM MOMENTO!", "fx": "ummomento"}, {"q": "voce", "e": "apontando", "t": "Às 19h35 o Tiago saiu pela catraca passando o crachá? O registro da catraca mostra que o crachá dele SAIU às 18h02 e nunca mais entrou! Ninguém sai duas vezes do mesmo lugar sem ter entrado antes!", "fx": "protesto"}, {"q": "twedvaldo", "e": "chocado", "t": "É que… eu me enganei… eu quis dizer… pelos fundos! Saiu pelos fundos!", "fx": "tremor"}, {"q": "beatriz", "e": "bravo", "t": "Testemunha, o senhor acabou de trocar a porta em que viu o réu. Cuidado.", "fx": "martelo"}], "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}], "proxima": "tw3", "dica": ["Pense no horário que a testemunha deu para a saída.", "Tiago só passou na catraca uma vez, e foi para sair."]},
         "tw3": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "lacerda", "e": "pensativo", "t": "Excelência, a testemunha se corrigiu sozinha. Saiu pelos fundos, como o MP sempre sustentou."}, {"q": "twedvaldo", "e": "confiante", "t": "Pelos fundos, sim. Eu mesmo abri o cadeado com a minha chave quando ele gritou, e fechei de novo depois. Por isso a foto da perícia mostra tudo trancado."}, {"q": "narrador", "t": "Um murmúrio atravessa o plenário. A única brecha que a defesa tinha acaba de ser tapada, com uma explicação pronta."}, {"q": "voce", "e": "nervoso", "t": "(Ele já sabia da foto do cadeado! Alguém ensinou a história a este homem, e ensinou bem. Preciso de uma segunda rachadura.)"}, {"q": "clara", "e": "triste", "t": "(da primeira fila, sussurrando) Eu vi aquele homem ontem na porta de um hotel perto do fórum, conversando com um senhor de terno. Achei que era coincidência."}, {"q": "beatriz", "e": "normal", "t": "A defesa pode prosseguir com a inquirição."}], "proxima": "tw4"},
         "tw4": {"tipo": "depoimento", "testemunha": "twedvaldo", "titulo": "O almoço com o engenheiro", "intro": [{"q": "twedvaldo", "e": "confiante", "t": "Agora que eu lembrei de tudo, eu conto o resto. O doutor Paulo era meu amigo."}], "afirmacoes": [{"t": "O doutor Paulo almoçava comigo toda terça, e dizia que tinha medo do Tiago.", "e": "triste", "pressionar": [{"q": "voce", "e": "pensativo", "t": "Medo do Tiago? Ele disse por quê?"}, {"q": "twedvaldo", "e": "nervoso", "t": "Por causa das brigas… das ameaças…"}]}, {"t": "Ele até anotou no caderno dele, na minha frente: 'Tiago sabe'. Eu vi quando escreveu.", "e": "normal", "pressionar": [{"q": "voce", "e": "apontando", "t": "O senhor leu o que ele escreveu?"}, {"q": "twedvaldo", "e": "confiante", "t": "Li. Estava bem clarinho: Tiago sabe."}]}, {"t": "Já o Ronaldo, coitado, chorou na guarita quando o Paulo morreu. É um homem bom, de coração mole.", "e": "triste", "pressionar": [{"q": "voce", "e": "normal", "t": "O senhor conhece bem o Ronaldo?"}, {"q": "twedvaldo", "e": "confiante", "t": "Conheço, trabalhamos juntos."}]}], "contradicao": {"afirmacao": 1, "provas": ["caderno"]}, "acerto": [{"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"}, {"q": "voce", "e": "apontando", "t": "'Tiago sabe'? O caderno do engenheiro está nos autos: 'Aço abaixo do especificado. Vou denunciar amanhã. RONALDO sabe.' O senhor viu o Paulo escrever, mas não leu. Quem lhe contou o que estava no caderno nunca viu a letra dele!"}, {"q": "twedvaldo", "e": "chocado", "t": "Eles me disseram que estava escrito Tiago! Eu não… eu só repeti o que…", "fx": "tremor"}, {"q": "lacerda", "e": "chocado", "t": "Eles? Quem são eles, senhor Edvaldo?", "fx": "bater"}, {"q": "beatriz", "e": "bravo", "t": "ORDEM!", "fx": "martelo"}], "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}], "proxima": "tw5", "dica": ["O que a testemunha disse estar escrito no caderno?", "Compare com o que está no caderno do engenheiro nos autos."]},
         "tw5": {"tipo": "apresentar", "local": "tribunal", "falas": [{"q": "beatriz", "e": "bravo", "t": "Senhor Edvaldo, o senhor prestou o compromisso de dizer a verdade. Mudou de porta, mudou de caderno e agora fala em 'eles'."}, {"q": "lacerda", "e": "triste", "t": "Excelência, o Ministério Público se sente enganado."}], "pergunta": "A testemunha mentiu sob compromisso. Que crime ela pode ter cometido? (Não é o do art. 343, que pune quem paga.)", "provas": ["cp342"], "acerto": [{"q": "voce", "e": "apontando", "t": "Falso testemunho, art. 342 do Código Penal: fazer afirmação falsa, ou negar ou calar a verdade, como testemunha em processo judicial."}, {"q": "voce", "e": "confiante", "t": "E o homem que a pagou responde pelo suborno do art. 343, Excelência."}, {"q": "beatriz", "e": "bravo", "t": "Tomo nota. Remeterei cópia do depoimento à autoridade policial para a instauração de inquérito (CPP, art. 211).", "fx": "martelo"}], "erro": [{"q": "beatriz", "e": "pensativo", "t": "Esse não é o crime de quem mente sob compromisso, doutor(a). O art. 343 pune quem paga ou promete vantagem à testemunha."}], "proxima": "tw6"},
-        "tw6": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "twedvaldo", "e": "triste", "t": "Me deram cinco mil reais e a promessa de um emprego fixo em outra obra. Um homem de terno e óculos escuros, que nunca disse o nome."}, {"q": "twedvaldo", "e": "nervoso", "t": "Ele me ensinou o horário, a porta, a foto do cadeado e o que dizer do caderno. Só não me ensinou o que fazer quando o senhor perguntasse da catraca."}, {"q": "twedvaldo", "e": "triste", "t": "E perguntou três vezes se o doutor Paulo tinha deixado algum envelope guardado no barracão. Eu disse que não sei de envelope nenhum. Era isso o que ele queria saber, no fundo."}, {"q": "voce", "e": "pensativo", "t": "(Um envelope. A carta registrada que voltou com a rubrica 'R'. A Altavista não está só tentando condenar o Tiago. Está procurando o que o Paulo escreveu.)"}, {"q": "lacerda", "e": "triste", "t": "Excelência… doutor(a)… fui enganado, e quase conduzi um inocente à prisão. O Ministério Público pede escusas à defesa."}, {"q": "voce", "e": "confiante", "t": "Jurados: a acusação trouxe a primeira testemunha comprada. E, no último minuto, a segunda. Quem precisa de duas mentiras não tem uma verdade. A decisão é de vocês."}, {"q": "beatriz", "e": "bravo", "t": "O Conselho de Sentença se recolhe. Oficial, conduza o senhor Edvaldo. E que alguém procure o homem de terno.", "fx": "martelo"}], "proxima": "t10"},
+        "tw6": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "twedvaldo", "e": "triste", "t": "Me deram cinco mil reais e a promessa de um emprego fixo em outra obra. Um homem de terno e óculos escuros, que nunca disse o nome."}, {"q": "twedvaldo", "e": "nervoso", "t": "Ele me ensinou o horário, a porta, a foto do cadeado e o que dizer do caderno. Só não me ensinou o que fazer quando o senhor perguntasse da catraca."}, {"q": "twedvaldo", "e": "triste", "t": "E perguntou três vezes se o doutor Paulo tinha deixado algum envelope guardado no barracão. Eu disse que não sei de envelope nenhum. Era isso o que ele queria saber, no fundo."}, {"q": "voce", "e": "pensativo", "t": "(Um envelope. A carta registrada que voltou com a rubrica 'R'. A Altavista não está só tentando condenar o Tiago. Está procurando o que o Paulo escreveu.)"}, {"q": "lacerda", "e": "triste", "t": "Excelência… doutor(a)… fui enganado, e quase conduzi um inocente à prisão. O Ministério Público pede escusas à defesa."}, {"q": "helena", "e": "confiante", "t": "Jurados: a acusação trouxe a primeira testemunha comprada. E, no último minuto, a segunda. Quem precisa de duas mentiras não tem uma verdade. A decisão é de vocês."}, {"q": "beatriz", "e": "bravo", "t": "O Conselho de Sentença se recolhe. Oficial, conduza o senhor Edvaldo. E que alguém procure o homem de terno.", "fx": "martelo"}], "proxima": "t10"},
         "t10": {"tipo": "dialogo", "local": "tribunal", "falas": [
           {"q": "narrador", "t": "Os jurados se recolhem à sala secreta. Vinte minutos depois, retornam."},
           {"q": "beatriz", "e": "normal", "t": "O Conselho de Sentença absolveu o réu Tiago Nunes. Oficie-se ao Ministério Público quanto ao crime de suborno de testemunha, art. 343 do Código Penal.", "fx": "martelo"},
@@ -766,7 +1588,71 @@
         "t10c": {"tipo": "dialogo", "local": "tribunal", "falas": [
           {"q": "helena", "e": "triste", "t": "(ao telefone, na saída) …Você precisa vir ao escritório. É sobre o Rafael. Ele foi levado pela Polícia Federal."},
           {"q": "voce", "e": "chocado", "t": "O quê?!", "fx": "tremor"}
-        ], "proxima": "t11"},
+        ], "proxima": "zj1"},
+        "zj1": {
+          "tipo": "escolha",
+          "livre": true,
+          "local": "casa",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Casa de Rafael, 22h. A vizinha abriu a porta; a mãe de Sofia ainda está no segundo emprego. Uma menina de pijama aperta um desenho contra o peito."
+            },
+            {
+              "q": "sofia",
+              "e": "normal",
+              "t": "Cadê o papai? Ele disse que ia assistir um júri de verdade e me contar tudo."
+            },
+            {
+              "q": "sofia",
+              "e": "feliz",
+              "t": "Você viu a minha quadrilha, né? O papai chorou no final, mas disse que era poeira.",
+              "se": "a1_festa_vou"
+            },
+            {
+              "q": "sofia",
+              "e": "normal",
+              "t": "O papai falou que você tinha que estudar. Eu desenhei você estudando. Ficou feio, mas você é a que tem mais livros.",
+              "se": "a1_festa_estudo"
+            },
+            {"q": "helena", "e": "triste", "t": "Ele precisou viajar a trabalho, meu amor. Dorme comigo aqui?"},
+            {
+              "q": "sofia",
+              "e": "pensativo",
+              "t": "(olhando para você) A tia Helena fala com a voz de quando mente. Você sabe a verdade?"
+            }
+          ],
+          "pergunta": "O que você diz a Sofia?",
+          "opcoes": [
+            {
+              "t": "Prometer: 'Ele volta amanhã, eu garanto.'",
+              "marca": "a1_prometeu_sofia",
+              "falas": [
+                {"q": "voce", "e": "triste", "t": "Ele volta amanhã. Eu garanto."},
+                {"q": "sofia", "e": "feliz", "t": "Promete de dedinho?"},
+                {"q": "voce", "e": "nervoso", "t": "(Prometi o que não sei se posso cumprir.)"}
+              ]
+            },
+            {
+              "t": "Ser sincero(a) na medida: 'Não sei quando, mas eu vou estar aqui até ele voltar.'",
+              "marca": "a1_foi_sincero_sofia",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "triste",
+                  "t": "Eu não sei quando ele volta, Sofia. Mas eu vou estar aqui até ele voltar."
+                },
+                {
+                  "q": "sofia",
+                  "e": "triste",
+                  "t": "Tá bom. Eu prefiro quando as pessoas falam a verdade, mesmo quando dói."
+                },
+                {"q": "helena", "e": "pensativo", "t": "(baixinho) Obrigada."}
+              ]
+            }
+          ],
+          "proxima": "t11"
+        },
         "t11": {"tipo": "veredicto", "carimbo": "ABSOLVIDO", "titulo": "Fim do Ato I — O Estágio", "texto": "Seu primeiro júri, sozinho(a), contra uma testemunha comprada. Tiago está livre. Mas Rafael, o seu mentor, acaba de ser preso. E o nome por trás de tudo é o mesmo: Altavista. Continua no Ato II."}
       }
     }

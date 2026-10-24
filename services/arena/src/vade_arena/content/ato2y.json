@@ -1,0 +1,3960 @@
+{
+ "ato": "ato2",
+ "personagens": {
+  "a2ygilberto": {
+   "nome": "Gilberto Aranha",
+   "cargo": "Cliente · representante comercial, 52 anos",
+   "voz": 250,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "curto",
+    "corCabelo": "#7a7a7a",
+    "roupa": "blazer",
+    "corRoupa": "#2c3e50",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Representante comercial orgulhoso, paga pensão à filha e quer ser exonerado. Cliente difícil: confunde advogado com empregado."
+  },
+  "a2ycamila": {
+   "nome": "Camila Aranha",
+   "cargo": "Requerida · estudante de Nutrição, 19 anos",
+   "voz": 520,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "longo",
+    "corCabelo": "#2a1a10",
+    "roupa": "casual",
+    "corRoupa": "#16a085",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Filha de Gilberto, estuda e estagia. Só queria que o pai respondesse uma mensagem."
+  },
+  "a2yvera": {
+   "nome": "Dra. Vera Lúcia Cunha",
+   "cargo": "Defensora Pública",
+   "voz": 460,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "coque",
+    "corCabelo": "#1b1b1b",
+    "roupa": "blazer",
+    "corRoupa": "#1e5a4a",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Defensora direta e sem vaidade: negocia duro e não humilha ninguém."
+  },
+  "a2ymarlene": {
+   "nome": "Marlene Aranha",
+   "cargo": "Testemunha · mãe de Camila",
+   "voz": 440,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "cacheado",
+    "corCabelo": "#5a3b22",
+    "roupa": "casual",
+    "corRoupa": "#c0392b",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Ex-esposa de Gilberto. Exagera o que não sabe, mas tem razão no essencial."
+  },
+  "a2yclaudio": {
+   "nome": "Cláudio Tavares",
+   "cargo": "Cliente · dono da Padaria Trigo Real, 44 anos",
+   "voz": 270,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "topete",
+    "corCabelo": "#3b2414",
+    "roupa": "casual",
+    "corRoupa": "#2874a6",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   },
+   "bio": "Gentil, generoso e convincente. Tudo isso é parte do método."
+  },
+  "a2yanselmo": {
+   "nome": "Anselmo Barbosa",
+   "cargo": "Réu · ex-sócio, 66 anos",
+   "voz": 210,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "careca",
+    "corCabelo": "#999999",
+    "roupa": "avental",
+    "corRoupa": "#ffffff",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Padeiro há quarenta anos. Passou três semanas internado e voltou para as contas bloqueadas."
+  },
+  "a2yrute": {
+   "nome": "Rute Andrade",
+   "cargo": "Testemunha · contadora",
+   "voz": 500,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "curto",
+    "corCabelo": "#8a8a8a",
+    "roupa": "blazer",
+    "corRoupa": "#7f8c8d",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Contadora meticulosa, onze anos de livros-caixa. Fala pouco e só do que sabe."
+  },
+  "a2yregina": {
+   "nome": "Regina Matos",
+   "cargo": "Ré · cozinheira, 36 anos",
+   "voz": 450,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "rabo",
+    "corCabelo": "#2a1a10",
+    "roupa": "casual",
+    "corRoupa": "#8e44ad",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Mãe de dois filhos. Tem vergonha das marcas e mais vergonha ainda de contar."
+  },
+  "a2ymarcio": {
+   "nome": "Dr. Márcio Brito",
+   "cargo": "Promotor de Justiça",
+   "voz": 240,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "topete",
+    "corCabelo": "#222222",
+    "roupa": "terno",
+    "corRoupa": "#34495e",
+    "gravata": "#7a1f1f",
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Orador de plenário. Gosta de uma frase de efeito e de passar um pouco da linha."
+  },
+  "a2yheraldo": {
+   "nome": "Dr. Heraldo Quintino",
+   "cargo": "Testemunha · perito legista",
+   "voz": 230,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "curto",
+    "corCabelo": "#9e9e9e",
+    "roupa": "blazer",
+    "corRoupa": "#ecf0f1",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Perito do IML: preciso, mas aceita a versão da acusação sem examinar os detalhes."
+  },
+  "a2yzilda": {
+   "nome": "Dona Zilda Carneiro",
+   "cargo": "Testemunha · vizinha",
+   "voz": 430,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "coque",
+    "corCabelo": "#cfcfcf",
+    "roupa": "casual",
+    "corRoupa": "#d35400",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Vizinha que ouve tudo e prefere não ter ouvido."
+  }
+ },
+ "episodios": [
+  {
+   "id": "a2y-pensao",
+   "ato": "ato2",
+   "ordem": 1.5,
+   "numero": 7,
+   "titulo": "A Pensão que Ninguém Queria",
+   "papel": "advogado",
+   "nivel": "avancado",
+   "sinopse": "Gilberto quer deixar de pagar pensão à filha de 19 anos e pede que você diga ao juiz o que não é verdade. Cliente difícil, conflito de sigilo e uma negociação em que a lei dá o limite.",
+   "placas": {
+    "defesa": "Requerente",
+    "acusacao": "Requerida"
+   },
+   "posicoes": {
+    "voce": "defesa",
+    "a2ygilberto": "defesa",
+    "a2ycamila": "acusacao",
+    "a2yvera": "acusacao",
+    "a2ymarlene": "testemunha",
+    "heitor": "juiz",
+    "helena": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "matricula",
+     "tipo": "prova",
+     "icone": "🎓",
+     "nome": "Comprovante de matrícula",
+     "descricao": "Camila Aranha, Nutrição, 6º período. Mensalidade de R$ 1.850,00."
+    },
+    {
+     "id": "irpf",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Declaração de Imposto de Renda de Gilberto",
+     "descricao": "Rendimentos médios de R$ 11.800,00 por mês, em comissões. Nenhum registro de demissão."
+    },
+    {
+     "id": "empresa",
+     "tipo": "prova",
+     "icone": "🏢",
+     "nome": "Contrato social da GA Representações",
+     "descricao": "Sócia-administradora: Sueli Aranha, atual esposa. Pró-labore dela: R$ 4.000,00. Gilberto aparece só como procurador."
+    },
+    {
+     "id": "mensagens",
+     "tipo": "prova",
+     "icone": "📱",
+     "nome": "Mensagens ignoradas",
+     "descricao": "Seis mensagens de Camila em dois meses: 'Pai, a mensalidade venceu. Posso falar com você? Não é pra brigar.' Nenhuma respondida."
+    },
+    {
+     "id": "perfil",
+     "tipo": "prova",
+     "icone": "💼",
+     "nome": "Perfil público de Camila",
+     "descricao": "'Estagiária de nutrição na NutriVida, 20h semanais.' Bolsa-estágio de R$ 900,00."
+    },
+    {
+     "id": "cc1694p1",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CC, art. 1.694, § 1º — Proporção",
+     "chave": "CC#art-1694/par-1",
+     "trecho": "na proporção das necessidades do reclamante e dos recursos da pessoa obrigada"
+    },
+    {
+     "id": "cc1699",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CC, art. 1.699 — Revisão",
+     "chave": "CC#art-1699",
+     "trecho": "poderá o interessado reclamar ao juiz, conforme as circunstâncias, exoneração, redução ou majoração do encargo"
+    },
+    {
+     "id": "cpc77i",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPC, art. 77, I — Dever de verdade",
+     "chave": "CPC#art-77/inc-i",
+     "trecho": "expor os fatos em juízo conforme a verdade"
+    },
+    {
+     "id": "cpc694",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPC, art. 694 — Ações de família",
+     "chave": "CPC#art-694",
+     "trecho": "todos os esforços serão empreendidos para a solução consensual da controvérsia"
+    }
+   ],
+   "inicio": "p1",
+   "cenas": {
+    "p1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "A Pensão que Ninguém Queria",
+     "proxima": "p2"
+    },
+    "p2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Gilberto Aranha chega vinte minutos adiantado e reclama da recepção, do café e da chuva, nessa ordem."
+      },
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Gilberto, 52 anos, representante comercial. Paga R$ 3.200 de pensão à filha Camila, de 19, que cursa Nutrição. Quer ser exonerado."
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "bravo",
+       "t": "Ela fez dezoito, acabou! Nem me liga. No meu aniversário postou foto com o namorado e me chamou de 'fonte pagadora'."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Maioridade não encerra a pensão sozinha, e filha que estuda ainda pode precisar. Preciso ouvir o resto antes de prometer qualquer coisa.)"
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "confiante",
+       "t": "Eu pago bem pelo serviço, doutor(a). Quero resultado. Se for para perder, contrato outro escritório."
+      },
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "A Camila é representada pela Defensoria. A defensora é a doutora Vera Cunha: direta, sem vaidade."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "matricula",
+        "cc1694p1",
+        "cc1699",
+        "cpc77i",
+        "cpc694"
+       ]
+      }
+     ],
+     "proxima": "p3"
+    },
+    "p3": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "livre": true,
+     "falas": [
+      {
+       "q": "a2ygilberto",
+       "e": "confiante",
+       "t": "E então? Vamos ganhar ou não vamos?"
+      }
+     ],
+     "pergunta": "Como você conduz o atendimento a este cliente difícil?",
+     "opcoes": [
+      {
+       "t": "Ouvir até o fim e explicar o que a lei permite e o que não permite, sem prometer vitória.",
+       "marca": "a2y_cliente_calma",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Seu Gilberto, a maioridade sozinha não encerra a pensão: filho que estuda e precisa pode continuar recebendo. O que dá para discutir é o valor, pelo que o senhor ganha e pelo que ela precisa."
+        },
+        {
+         "q": "a2ygilberto",
+         "e": "pensativo",
+         "t": "Hum. Isso o outro advogado não me disse."
+        },
+        {
+         "q": "helena",
+         "e": "feliz",
+         "t": "(sussurrando) Franqueza também é serviço."
+        }
+       ]
+      },
+      {
+       "t": "Prometer: 'Pode deixar, a gente ganha.' Cliente satisfeito volta sempre.",
+       "marca": "a2y_prometeu_vitoria",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Pode deixar, Seu Gilberto. A gente ganha."
+        },
+        {
+         "q": "a2ygilberto",
+         "e": "feliz",
+         "t": "É disso que eu gosto!"
+        },
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "(sussurrando) Promessa de resultado é falha ética e armadilha: você acabou de comprar uma dívida com esse homem."
+        }
+       ]
+      },
+      {
+       "t": "Ser seco(a): 'Maioridade não acaba pensão. Se quer perder, siga em frente.'",
+       "marca": "a2y_cliente_seco",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Maioridade não acaba pensão. Se quer perder, siga em frente."
+        },
+        {
+         "q": "a2ygilberto",
+         "e": "bravo",
+         "t": "Que tom é esse? Eu pago!"
+        },
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "(sussurrando) Cliente difícil não se cura com grosseria."
+        }
+       ]
+      }
+     ],
+     "proxima": "p4"
+    },
+    "p4": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Antes de assinar a procuração, uma questão de ética. Há seis anos a Marlene, mãe da Camila, passou aqui numa consulta de uma hora com o Rafael. Sobre o inventário do pai dela, não sobre a pensão. Não contratou."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "A pasta ainda está no arquivo, com tudo o que ela contou sobre as finanças dela."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Quem só consulta também confia. O dever de sigilo vale para ela como se fosse cliente.)"
+      }
+     ],
+     "proxima": "p5"
+    },
+    "p5": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "falas": [],
+     "pergunta": "O que fazer com a pasta de Marlene?",
+     "opcoes": [
+      {
+       "t": "Abrir a pasta: sabendo quanto ela ganha, ficará mais fácil negociar.",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "Não. Sigilo vale para quem só consultou. Usar a pasta contra ela seria trair uma confiança."
+        }
+       ]
+      },
+      {
+       "t": "Não abrir nem usar nada, e avisar o cliente de que o caso será conduzido só com o que consta dos autos.",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "A pasta fica fechada. Vou conduzir o caso só com o que está nos autos e avisar o Seu Gilberto."
+        },
+        {
+         "q": "helena",
+         "e": "feliz",
+         "t": "É isso. E registre que ninguém acessa aquela pasta."
+        }
+       ]
+      },
+      {
+       "t": "Recusar o caso: qualquer ligação com a Marlene gera conflito.",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "A consulta foi sobre outro assunto e ela nunca foi cliente nossa. O cuidado é não usar nada do que ela contou, e não abandonar o cliente por isso."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "Sigilo não pergunta se a pessoa contratou: pergunta se ela confiou.",
+      "Não usar a pasta resolve o problema sem abandonar o cliente."
+     ],
+     "proxima": "p6"
+    },
+    "p6": {
+     "tipo": "investigar",
+     "local": "casa",
+     "titulo": "Apartamento de Gilberto",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Apartamento de classe média, varanda de plantas bem cuidadas e um escritório improvisado no quarto de hóspedes. Gilberto faz questão de mostrar tudo, menos uma pasta azul."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "escr",
+       "nome": "Escritório em casa",
+       "x": 12,
+       "y": 38,
+       "w": 24,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Imposto de Renda do ano passado: rendimentos médios de R$ 11.800 por mês. Bem acima dos 'quatro mil, no aperto' que ele disse no escritório.",
+         "recebe": [
+          "irpf"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pasta",
+       "nome": "Pasta azul na estante",
+       "x": 66,
+       "y": 22,
+       "w": 18,
+       "h": 22,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "Contrato social da GA Representações: sócia-administradora, Sueli, a atual esposa, com pró-labore de R$ 4.000. Gilberto aparece só como procurador. Ele escondia isso por orgulho.",
+         "recebe": [
+          "empresa"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "cel",
+       "nome": "Celular na mesa",
+       "x": 40,
+       "y": 62,
+       "w": 14,
+       "h": 12,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Seis mensagens da Camila em dois meses: 'Pai, a mensalidade venceu. Posso falar com você? Não é pra brigar.' Ele não respondeu nenhuma.",
+         "recebe": [
+          "mensagens"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "No perfil público dela: 'Estagiária de nutrição na NutriVida, 20h semanais'. Bolsa de R$ 900.",
+         "recebe": [
+          "perfil"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2ygilberto",
+       "titulo": "Conversar com Gilberto",
+       "falas": [
+        {
+         "q": "a2ygilberto",
+         "e": "bravo",
+         "t": "Viu? É tudo pressão da mãe dela. A Camila era doce até a Marlene botar caraminholas."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Seu Gilberto, essa pasta azul…"
+        },
+        {
+         "q": "a2ygilberto",
+         "e": "nervoso",
+         "t": "Aquilo é da Sueli. Assunto dela."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "irpf",
+      "empresa",
+      "mensagens"
+     ],
+     "proxima": "p7"
+    },
+    "p7": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "a2ygilberto",
+       "e": "bravo",
+       "t": "Vamos direto ao ponto, doutor(a). Diga ao juiz que fui demitido em janeiro e que vivo de bicos. A empresa é da Sueli, a pensão da Camila não precisa saber disso."
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "bravo",
+       "t": "O senhor(a) me prometeu que ganhava. Então faça o que for preciso.",
+       "se": "a2y_prometeu_vitoria"
+      },
+      {
+       "q": "voce",
+       "e": "chocado",
+       "t": "(Pede que eu afirme em juízo o que acabei de ver desmentido em papel.)"
+      }
+     ],
+     "proxima": "p8"
+    },
+    "p8": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "falas": [],
+     "pergunta": "O que você responde a Gilberto?",
+     "opcoes": [
+      {
+       "t": "Atender: afirmar que ele está desempregado e que a empresa é só da esposa.",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "Não. Afirmar o que sabemos falso é litigância de má-fé: multa e processo ético. O dever de verdade é do advogado também."
+        }
+       ]
+      },
+      {
+       "t": "Recusar afirmar o que sabe ser falso, explicar os riscos a ele e propor um pedido de redução baseado na renda real.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPC#art-77/inc-i",
+         "trecho": "expor os fatos em juízo conforme a verdade"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Seu Gilberto, não posso afirmar em juízo o que os papéis desmentem. Se o senhor me obrigar, eu renuncio. Mas há caminho legítimo: os R$ 11.800 são reais, a filha estuda e estagia. Podemos pedir redução proporcional."
+        },
+        {
+         "q": "a2ygilberto",
+         "e": "pensativo",
+         "t": "…Está bem. Pelo menos o senhor(a) é franco(a).",
+         "se": "a2y_cliente_calma"
+        },
+        {
+         "q": "a2ygilberto",
+         "e": "bravo",
+         "t": "Sempre achei que era moleza. Se perder, a culpa é sua.",
+         "se": "a2y_prometeu_vitoria"
+        }
+       ]
+      },
+      {
+       "t": "Contar ao juiz que o cliente mentiu para o escritório.",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "Também não. O que o cliente confia a você é sigiloso. A saída é não afirmar a mentira; se ele insistir, o escritório renuncia, sem revelar nada."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "Mentira não se afirma, e segredo não se conta.",
+      "O caminho é pedir o que os fatos reais sustentam."
+     ],
+     "proxima": "p9"
+    },
+    "p9": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Vara de Família. Revisão de alimentos. Requerente: Gilberto Aranha. Requerida: Camila Aranha. Antes da prova, tento a solução consensual, como manda o CPC.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a2yvera",
+       "e": "normal",
+       "t": "Defensoria Pública, pela requerida. Excelência, a Camila quer um pai, não uma briga. A proposta: manter os R$ 3.200 e o pai pagar a mensalidade de R$ 1.850 direto à faculdade."
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "bravo",
+       "t": "Quanto?! Isso é um assalto!"
+      },
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Senhor Gilberto, a palavra é do seu advogado."
+      },
+      {
+       "q": "a2ycamila",
+       "e": "triste",
+       "t": "Eu não queria estar aqui."
+      }
+     ],
+     "proxima": "p10"
+    },
+    "p10": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Doutor(a), a contraproposta do requerente?"
+      }
+     ],
+     "pergunta": "Que contraproposta é realista e sustentável?",
+     "opcoes": [
+      {
+       "t": "Exoneração total: ela é maior e capaz.",
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "A maioridade não encerra, por si, o dever, doutor(a): a filha estuda e precisa. Seja realista."
+        }
+       ]
+      },
+      {
+       "t": "Reduzir a pensão para 20% da renda comprovada (R$ 2.360) e pagar a mensalidade direto à faculdade até a formatura.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CC#art-1694/par-1",
+         "trecho": "na proporção das necessidades do reclamante e dos recursos da pessoa obrigada"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Vinte por cento da renda comprovada, R$ 2.360, e a mensalidade paga direto à faculdade até a formatura. Proporção entre o que ela precisa e o que ele pode."
+        },
+        {
+         "q": "a2yvera",
+         "e": "pensativo",
+         "t": "É um começo. Preciso ouvir a Camila."
+        }
+       ]
+      },
+      {
+       "t": "Aceitar tudo: R$ 3.200 e a mensalidade, sem discutir.",
+       "falas": [
+        {
+         "q": "a2ygilberto",
+         "e": "chocado",
+         "t": "Doutor(a), eu pago para o senhor(a) me defender!"
+        },
+        {
+         "q": "heitor",
+         "e": "pensativo",
+         "t": "Acordo que o cliente não consegue cumprir vira nova ação. Reflita, doutor(a)."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "Nem tudo nem nada: a lei fala em proporção.",
+      "Compare as necessidades dela com a renda real dele."
+     ],
+     "proxima": "p11"
+    },
+    "p11": {
+     "tipo": "celular",
+     "contato": "Gilberto Aranha (cliente)",
+     "status": "digitando…",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Recesso de dez minutos. O seu celular vibra três vezes seguidas."
+      }
+     ],
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "NÃO ACEITE NADA."
+      },
+      {
+       "de": "ele",
+       "t": "Eu quero a exoneração. Se fechar acordo, está demitido(a)."
+      },
+      {
+       "de": "ele",
+       "t": "E a Marlene que vá trabalhar."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Responder com calma: 'Vamos conversar pessoalmente. Um acordo realista protege o senhor.'",
+       "marca": "a2y_explicou_cliente",
+       "envia": "Vamos conversar pessoalmente. Um acordo realista protege o senhor.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Tá. Cinco minutos."
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "(Cliente nervoso por mensagem não é cliente decidido.)"
+        }
+       ]
+      },
+      {
+       "t": "Não responder até a audiência recomeçar.",
+       "marca": "a2y_silenciou_cliente",
+       "resposta": false,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "(Quem responde na pressa dos outros decide na pressa dos outros.)"
+        }
+       ]
+      },
+      {
+       "t": "Ceder: 'Tá bom, não aceito nada.'",
+       "marca": "a2y_cedeu_cliente",
+       "envia": "Tá bom, não aceito nada.",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Assim que se fala!"
+        }
+       ],
+       "cred": -1,
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "(por mensagem) Quem obedece o cliente contra a lei do caso perde os dois."
+        }
+       ]
+      }
+     ],
+     "proxima": "p12"
+    },
+    "p12": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Retomo. Houve acordo?"
+      },
+      {
+       "q": "a2yvera",
+       "e": "normal",
+       "t": "Por ora não, Excelência. A Defensoria quer provar que o requerente oculta renda. Arrolo a mãe da requerida, Marlene Aranha."
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "bravo",
+       "t": "Não tem acordo e pronto!",
+       "se": "a2y_cedeu_cliente"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Ouço a testemunha."
+      }
+     ],
+     "proxima": "p13"
+    },
+    "p13": {
+     "tipo": "depoimento",
+     "testemunha": "a2ymarlene",
+     "titulo": "A renda escondida",
+     "intro": [
+      {
+       "q": "a2ymarlene",
+       "e": "bravo",
+       "t": "Conheço esse homem há vinte e cinco anos. Ele só sabe esconder."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O Gilberto ganha mais de trinta mil por mês e esconde o resto em nome da mulher.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A senhora viu o contracheque dele?"
+        },
+        {
+         "q": "a2ymarlene",
+         "e": "nervoso",
+         "t": "Não preciso ver. Eu sinto no bolso."
+        }
+       ]
+      },
+      {
+       "t": "Desde que a Camila fez dezoito anos, ele não paga um centavo além da pensão.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Nem a mensalidade?"
+        },
+        {
+         "q": "a2ymarlene",
+         "e": "normal",
+         "t": "Nem isso. Ela se vira."
+        }
+       ]
+      },
+      {
+       "t": "A Camila não tem renda nenhuma e vive só da pensão.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nenhuma?"
+        },
+        {
+         "q": "a2ymarlene",
+         "e": "nervoso",
+         "t": "Que eu saiba, nenhuma."
+        }
+       ]
+      },
+      {
+       "t": "Ele nunca responde as mensagens da filha.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Nunca?"
+        },
+        {
+         "q": "a2ymarlene",
+         "e": "triste",
+         "t": "Nunca. Nem um 'oi'."
+        }
+       ]
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "irpf",
+        "empresa"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Trinta mil? O Imposto de Renda do próprio Gilberto mostra R$ 11.800 por mês, e a empresa da esposa paga R$ 4.000 à Sueli, que é dela. A defesa junta os dois documentos: ninguém precisa adivinhar."
+        },
+        {
+         "q": "a2ymarlene",
+         "e": "chocado",
+         "t": "Eu… ouvi dizer…",
+         "fx": "tremor"
+        }
+       ]
+      },
+      {
+       "afirmacao": 2,
+       "provas": [
+        "perfil"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "A Camila é estagiária remunerada, R$ 900 por mês, vinte horas semanais. Ela trabalha, e isso é louvável."
+        },
+        {
+         "q": "a2yvera",
+         "e": "pensativo",
+         "t": "Anote-se, Excelência."
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Registre-se: renda comprovada do requerente de R$ 11.800, e renda da requerida de R$ 900. Os números, não as impressões, guiam o juízo."
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Essa prova não contradiz o que a testemunha disse agora."
+      }
+     ],
+     "proxima": "p14"
+    },
+    "p14": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "titulo": "A defensora inquire o seu cliente",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "A defensora inquire o seu cliente. Proteste o que for ilegal, e segure a mão do Gilberto."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a2yvera",
+       "e": "normal",
+       "t": "Senhor Gilberto, qual a sua profissão?"
+      },
+      {
+       "q": "a2yvera",
+       "e": "bravo",
+       "t": "O senhor trocou a família por uma mulher mais nova, não foi? O senhor é um péssimo pai, admita.",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPC#art-459",
+          "trecho": "não tiverem relação com as questões de fato objeto da atividade probatória"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "bravo",
+          "t": "(sussurrando) Isso não é pergunta: é ofensa. O que se apura é a renda e a necessidade."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta não tem relação com os fatos da causa e é ofensiva ao depoente.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Deferido. A vida afetiva do requerente não é objeto desta ação. Doutora Vera, atenha-se à renda e à necessidade."
+           },
+           {
+            "q": "a2yvera",
+            "e": "normal",
+            "t": "Retiro."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro por esse fundamento. O defeito é outro: não tem relação com a causa."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é repetida.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro. Não foi feita antes."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a2yvera",
+       "e": "normal",
+       "t": "O senhor paga a mensalidade da faculdade da sua filha?"
+      },
+      {
+       "q": "a2yvera",
+       "e": "apontando",
+       "t": "O senhor já disse que ganha R$ 11.800. Pergunto de novo: onze mil e oitocentos, e só isso?",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPC#art-459",
+          "trecho": "ou importarem repetição de outra já respondida"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "pensativo",
+          "t": "(sussurrando) Ele acabou de responder isso. Ela repete para tentar derrubá-lo."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta repete outra já respondida.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "normal",
+            "t": "Deferido. Já respondeu, doutora."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro. O defeito é a repetição."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta pede opinião.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro. Não é opinião."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a2yvera",
+       "e": "normal",
+       "t": "O senhor respondeu às mensagens da sua filha?"
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protesto sem fundamento custa credibilidade."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Prossiga."
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "bravo",
+       "t": "Eu respondi o que tinha que responder!",
+       "se": "a2y_cliente_seco"
+      }
+     ],
+     "proxima": "p15"
+    },
+    "p15": {
+     "tipo": "argumento",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a2yvera",
+       "e": "bravo",
+       "t": "Excelência, o pedido é inadmissível: a maioridade não extingue o dever e a necessidade da Camila é evidente."
+      }
+     ],
+     "alvo": "Pedido de revisão do valor da pensão",
+     "pergunta": "Que dispositivo permite pedir redução quando mudam as situações financeiras?",
+     "opcoes": [
+      {
+       "t": "Art. 1.699 do Código Civil: mudança na situação financeira autoriza pedir exoneração, redução ou majoração.",
+       "dispositivo": "CC#art-1699",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "O art. 1.699 do Código Civil: se mudar a situação de quem paga ou de quem recebe, qualquer um pode pedir revisão. Não pedimos exoneração, e sim redução proporcional."
+        }
+       ]
+      },
+      {
+       "t": "Art. 1.696 do Código Civil: a reciprocidade entre pais e filhos.",
+       "dispositivo": "CC#art-1696",
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "A reciprocidade fundamenta o dever, não a revisão do valor."
+        }
+       ]
+      },
+      {
+       "t": "Art. 227 da Constituição: prioridade absoluta da criança e do adolescente.",
+       "dispositivo": "CF#art-227",
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "A Camila tem 19 anos, doutor(a), e o artigo não trata de revisão de valor."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "Procure o artigo que fale de mudança na situação financeira.",
+      "Ele diz: exoneração, redução ou majoração."
+     ],
+     "acerto": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "A revisão é cabível. Examinarei a proporção."
+      }
+     ],
+     "proxima": "p16"
+    },
+    "p16": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "livre": true,
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Há espaço para acordo: a requerida aceita pensão de R$ 2.600 e a mensalidade paga direto à faculdade até a formatura. Doutor(a), o que o senhor recomenda ao seu cliente?"
+      },
+      {
+       "q": "a2yvera",
+       "e": "normal",
+       "t": "É o que a Camila precisa para fechar o curso, Excelência. Nada mais."
+      }
+     ],
+     "pergunta": "O que você recomenda ao seu cliente?",
+     "opcoes": [
+      {
+       "t": "Aceitar o acordo: próximo do que ele pagaria, encerra o litígio e preserva a relação com a filha.",
+       "marca": "a2y_acordo",
+       "fundamentos": [
+        {
+         "chave": "CPC#art-3/par-3",
+         "trecho": "A conciliação, a mediação e outros métodos de solução consensual de conflitos deverão ser estimulados"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Seu Gilberto, é um bom acordo. Paga um pouco menos que hoje, cumpre o que a lei pede e termina o desgaste. A decisão é sua."
+        },
+        {
+         "q": "a2ygilberto",
+         "e": "pensativo",
+         "t": "…Fechado. Mas não gostei de ouvir."
+        }
+       ]
+      },
+      {
+       "t": "Seguir até a sentença: pode sair mais ou menos, mas o juiz decide.",
+       "marca": "a2y_sentenca",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Também é legítimo seguir. O juiz pode fixar menos, mas pode também fixar mais, e a mensalidade vem junto."
+        },
+        {
+         "q": "a2ygilberto",
+         "e": "bravo",
+         "t": "Então vamos até o fim."
+        }
+       ]
+      }
+     ],
+     "proxima": "p17"
+    },
+    "p17": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Homologo o acordo: pensão de R$ 2.600 e mensalidade direto à faculdade até a formatura. Extinto o processo, art. 487, III, do CPC.",
+       "se": "a2y_acordo",
+       "fx": "martelo"
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Julgo parcialmente procedente: pensão fixada em R$ 2.400 (20% da renda comprovada) e mensalidade direto à faculdade, até a formatura. Sem exoneração.",
+       "se": "a2y_sentenca",
+       "fx": "martelo"
+      },
+      {
+       "q": "a2ycamila",
+       "e": "triste",
+       "t": "Pai… eu só queria que o senhor respondesse uma mensagem."
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "triste",
+       "t": "O senhor(a) me explicou lá no começo e eu não quis ouvir. Eu fui orgulhoso, Camila.",
+       "se": "a2y_cliente_calma"
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "bravo",
+       "t": "O senhor(a) me prometeu que eu ganhava!",
+       "se": "a2y_prometeu_vitoria"
+      },
+      {
+       "q": "a2ygilberto",
+       "e": "triste",
+       "t": "Pelo menos você não me enrolou. Eu… não sei como pedir desculpa.",
+       "se": "a2y_cliente_seco"
+      },
+      {
+       "q": "a2ycamila",
+       "e": "feliz",
+       "t": "Começa respondendo, pai. Só isso."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Cliente difícil: ele aprendeu algo e você também. Anote: nunca prometa, nunca minta, nunca abra a pasta."
+      }
+     ],
+     "proxima": "p18"
+    },
+    "p18": {
+     "tipo": "veredicto",
+     "carimbo": "REVISÃO PARCIAL",
+     "titulo": "O dever de verdade",
+     "texto": "Você recusou a mentira, guardou o sigilo da pasta de Marlene e negociou o que a lei permitia. Nem exoneração, nem manutenção cega: proporção.",
+     "variantes": [
+      {
+       "se": "a2y_acordo",
+       "carimbo": "ACORDO HOMOLOGADO",
+       "titulo": "Pensão em paz",
+       "texto": "A pensão caiu um pouco, a mensalidade passou a ser paga direto e uma filha ouviu 'respondi' do pai. Acordo lícito e sensato."
+      },
+      {
+       "se": "a2y_sentenca",
+       "carimbo": "PARCIALMENTE PROCEDENTE",
+       "titulo": "Sentença proporcional",
+       "texto": "O juiz reduziu a pensão para 20% da renda comprovada e manteve a mensalidade. A verdade deu o limite do pedido."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a2y-cliente",
+   "ato": "ato2",
+   "ordem": 3.5,
+   "numero": 9,
+   "titulo": "Cliente de Confiança",
+   "papel": "advogado",
+   "nivel": "avancado",
+   "sinopse": "Cláudio é o cliente mais gentil que você já teve, e você ganha a liminar dele. Só depois descobre quem foi usado e contra quem.",
+   "placas": {
+    "defesa": "Requerente",
+    "acusacao": "Requerido"
+   },
+   "posicoes": {
+    "voce": "defesa",
+    "a2yclaudio": "defesa",
+    "a2yanselmo": "acusacao",
+    "a2yrute": "testemunha",
+    "livia": "acusacao",
+    "heitor": "juiz",
+    "helena": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "extrato",
+     "tipo": "prova",
+     "icone": "🏦",
+     "nome": "Extrato da conta da sociedade",
+     "descricao": "Seis saques em dinheiro que somam R$ 140.000,00, entre 3 e 21 de março, no caixa eletrônico da padaria."
+    },
+    {
+     "id": "email",
+     "tipo": "prova",
+     "icone": "📧",
+     "nome": "E-mail de Anselmo a Cláudio",
+     "descricao": "'Cláudio, saquei o que era meu. Me perdoe. Anselmo.' Enviado em 22 de março, às 03h12."
+    },
+    {
+     "id": "internacao",
+     "tipo": "prova",
+     "icone": "🏥",
+     "nome": "Ficha de internação de Anselmo",
+     "descricao": "Internado de 1º a 24 de março no Hospital Santa Rita. Sem alta nem saída nesse período."
+    },
+    {
+     "id": "metadados",
+     "tipo": "prova",
+     "icone": "🖥️",
+     "nome": "Metadados do e-mail",
+     "descricao": "A conta foi criada em 21 de março, às 23h40, de um IP residencial. O mesmo IP do wi-fi da casa de Cláudio."
+    },
+    {
+     "id": "cpc300",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPC, art. 300 — Tutela de urgência",
+     "chave": "CPC#art-300",
+     "trecho": "probabilidade do direito e o perigo de dano ou o risco ao resultado útil do processo"
+    },
+    {
+     "id": "cpc77i",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPC, art. 77, I — Dever de verdade",
+     "chave": "CPC#art-77/inc-i",
+     "trecho": "expor os fatos em juízo conforme a verdade"
+    },
+    {
+     "id": "cp299",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 299 — Falsidade ideológica",
+     "chave": "CP#art-299",
+     "trecho": "inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita"
+    }
+   ],
+   "inicio": "c1",
+   "cenas": {
+    "c1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "Cliente de Confiança",
+     "proxima": "c2"
+    },
+    "c2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Cláudio Tavares chega com um bolo de fubá, uma procuração já assinada e o sorriso de quem nunca perdeu uma discussão."
+      },
+      {
+       "q": "a2yclaudio",
+       "e": "feliz",
+       "t": "Doutor(a), me indicaram o senhor(a) como o(a) único(a) advogado(a) honesto(a) da cidade."
+      },
+      {
+       "q": "a2yclaudio",
+       "e": "triste",
+       "t": "Meu sócio de quarenta anos de padaria, o Anselmo, sacou R$ 140 mil do caixa e escreveu pedindo perdão. Vai vender o ponto. Quatorze funcionários vão ficar sem nada."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "Precisamos de tutela de urgência para bloquear as contas dele antes que o dinheiro suma. Documentos?"
+      },
+      {
+       "q": "a2yclaudio",
+       "e": "confiante",
+       "t": "Tudo aqui: extrato e o e-mail dele."
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "extrato",
+        "email",
+        "cpc300",
+        "cpc77i",
+        "cp299"
+       ]
+      }
+     ],
+     "proxima": "c3"
+    },
+    "c3": {
+     "tipo": "argumento",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Antes de pedir qualquer bloqueio, diga: o que a lei exige para uma tutela de urgência?"
+      }
+     ],
+     "alvo": "Pedido de bloqueio liminar das contas de Anselmo",
+     "pergunta": "Que dispositivo exige probabilidade do direito e perigo de dano?",
+     "opcoes": [
+      {
+       "t": "Art. 300 do CPC: tutela de urgência exige probabilidade do direito e perigo de dano.",
+       "dispositivo": "CPC#art-300",
+       "certa": true,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Art. 300: probabilidade do direito e perigo de dano. O extrato e o e-mail mostram a primeira; os 14 empregos e a venda do ponto, o segundo."
+        }
+       ]
+      },
+      {
+       "t": "Art. 311 do CPC: tutela da evidência.",
+       "dispositivo": "CPC#art-311",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "Evidência dispensa o perigo de dano, mas exige hipóteses específicas. Aqui o que temos é urgência."
+        }
+       ]
+      },
+      {
+       "t": "Art. 303 do CPC: tutela antecipada requerida em caráter antecedente.",
+       "dispositivo": "CPC#art-303",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "Esse trata do procedimento da tutela antecedente, não do que se exige para deferi-la."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "Procure o artigo que fala em 'probabilidade do direito'."
+     ],
+     "acerto": [
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "É isso. Agora confira a padaria."
+      }
+     ],
+     "proxima": "c4"
+    },
+    "c4": {
+     "tipo": "investigar",
+     "local": "loja",
+     "titulo": "Padaria Trigo Real",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Cheiro de pão saindo do forno às cinco da tarde, quatorze funcionários de avental e um avental pendurado sozinho num gancho."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "gancho",
+       "nome": "Avental no gancho",
+       "x": 8,
+       "y": 40,
+       "w": 14,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Escrito a caneta, na barra: 'Anselmo'. Está limpo, passado e pendurado como se esperasse o dono voltar."
+        }
+       ]
+      },
+      {
+       "id": "caixa",
+       "nome": "Caixa registradora",
+       "x": 52,
+       "y": 46,
+       "w": 20,
+       "h": 22,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O livro-caixa tem uma letra miúda e metódica. A contadora, Rute Andrade, assina todas as páginas."
+        }
+       ]
+      },
+      {
+       "id": "mural",
+       "nome": "Mural dos funcionários",
+       "x": 70,
+       "y": 12,
+       "w": 18,
+       "h": 24,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Quatorze nomes e a escala. No rodapé, a frase do Cláudio: 'Aqui ninguém fica sem pão.'"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2yclaudio",
+       "titulo": "Conversar com Cláudio",
+       "falas": [
+        {
+         "q": "a2yclaudio",
+         "e": "feliz",
+         "t": "É a minha segunda casa, doutor(a). O Anselmo me ensinou a sovar massa."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E o senhor não foi ao hospital visitá-lo, em março?"
+        },
+        {
+         "q": "a2yclaudio",
+         "e": "nervoso",
+         "t": "…Hospital? Eu não soube de hospital nenhum."
+        }
+       ]
+      }
+     ],
+     "proxima": "c5"
+    },
+    "c5": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Tutela de urgência. Requerente: Cláudio Tavares. Requerido: Anselmo Barbosa.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Dra. Lívia Sampaio, Excelência. Sem procuração do escritório: o Seu Anselmo é meu tio. Me chamou ontem, de cama. Vim por conta própria."
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "E já aviso o colega: respeito a defesa, mas vou fazer o que for preciso por ele."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Lívia Sampaio sem Brandão. Hoje ela parece outra pessoa.)"
+      }
+     ],
+     "proxima": "c6"
+    },
+    "c6": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "O que demonstra o desvio e a urgência, doutor(a)?"
+      }
+     ],
+     "pergunta": "Que prova mostra o desvio e a urgência?",
+     "provas": [
+      "extrato",
+      "email"
+     ],
+     "dica": [
+      "O pedido se apoia em saques e numa confissão."
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Seis saques em dinheiro que somam R$ 140 mil, e um e-mail em que o sócio pede perdão. A urgência: o ponto está à venda e há quatorze empregos em risco."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Defiro a tutela: bloqueio de até R$ 140.000 nas contas do requerido."
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Isso não demonstra o desvio, doutor(a)."
+      }
+     ],
+     "proxima": "c7"
+    },
+    "c7": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a2yclaudio",
+       "e": "feliz",
+       "t": "Eu sabia! Doutor(a), o senhor(a) é um artista. Jantar por minha conta, o lugar que escolher!"
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Parabéns. De verdade. Você leu o processo melhor que eu."
+      },
+      {
+       "q": "voce",
+       "e": "feliz",
+       "t": "(Venci a primeira batalha. Quatorze empregos salvos, penso.)"
+      }
+     ],
+     "proxima": "c8"
+    },
+    "c8": {
+     "tipo": "escolha",
+     "local": "praca",
+     "livre": true,
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Uma semana depois, numa praça perto da padaria, um senhor de avental amassado caminha direto até você. Tem a pele cinza de quem não dorme."
+      },
+      {
+       "q": "a2yanselmo",
+       "e": "triste",
+       "t": "Doutor(a), eu não saquei nada. Fiquei três semanas internado. A folha dos quatorze não foi paga e minha conta está congelada. O Cláudio…"
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Ele tem advogada. Qualquer conversa sobre o caso deveria passar por ela.)"
+      }
+     ],
+     "pergunta": "O que você faz?",
+     "opcoes": [
+      {
+       "t": "Interromper com gentileza e encaminhá-lo à advogada dele.",
+       "marca": "a2y_anselmo_encaminhado",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Seu Anselmo, o senhor tem advogada e eu represento a outra parte. Não posso ouvir isso sem ela. Fale com a doutora Lívia, hoje."
+        },
+        {
+         "q": "a2yanselmo",
+         "e": "triste",
+         "t": "…Entendi. Obrigado por não me ouvir."
+        }
+       ]
+      },
+      {
+       "t": "Ouvir tudo: a verdade importa mais que a formalidade.",
+       "marca": "a2y_anselmo_ouviu",
+       "falas": [
+        {
+         "q": "a2yanselmo",
+         "e": "triste",
+         "t": "Os saques foram com o cartão do Cláudio, no caixa da padaria. Eu estava no hospital."
+        },
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "(depois, por mensagem) Conversar com a parte contrária sem a advogada dela é falta ética, ainda que bem-intencionada."
+        }
+       ]
+      }
+     ],
+     "proxima": "c9"
+    },
+    "c9": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Excelência, a defesa requer a revogação da tutela e a responsabilização por má-fé, e traz uma testemunha."
+      },
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "O requerente é ouvido antes. Doutor(a), a pergunta é da parte contrária ao seu cliente."
+      }
+     ],
+     "proxima": "c10"
+    },
+    "c10": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "titulo": "A parte contrária inquire o seu cliente",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Lívia inquire o seu cliente. Proteste só o que for ilegal."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Seu Cláudio, o senhor visitou o Anselmo no hospital?"
+      },
+      {
+       "q": "livia",
+       "e": "apontando",
+       "t": "O senhor sabia que ele estava internado quando escreveu a ação, não sabia?",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPC#art-459",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "pensativo",
+          "t": "(sussurrando) 'Não sabia?' dá a resposta pronta."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta é indutiva.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "normal",
+            "t": "Deferido. Reformule, doutora."
+           },
+           {
+            "q": "livia",
+            "e": "normal",
+            "t": "O que o senhor sabia da saúde do Anselmo em março?"
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é repetida.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro. Não foi feita antes."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta não tem relação com a causa.",
+          "falas": [
+           {
+            "q": "heitor",
+            "e": "bravo",
+            "t": "Indefiro. É o centro da causa."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "O senhor foi ao banco em março?"
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "O senhor lembra quem estava no caixa?"
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Indefiro. A pergunta é regular. Protesto sem fundamento custa credibilidade."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Prossiga."
+      },
+      {
+       "q": "a2yclaudio",
+       "e": "nervoso",
+       "t": "Eu… não me lembro."
+      }
+     ],
+     "proxima": "c11"
+    },
+    "c11": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "A defesa traz uma testemunha que você não esperava",
+     "falas": [
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Chamo a contadora Rute Andrade."
+      },
+      {
+       "q": "a2yclaudio",
+       "e": "nervoso",
+       "t": "Doutor(a)… eu não sei o que ela vai dizer."
+      }
+     ],
+     "ajuste": -1,
+     "piso": 2,
+     "proxima": "c12"
+    },
+    "c12": {
+     "tipo": "depoimento",
+     "testemunha": "a2yrute",
+     "titulo": "Os livros-caixa",
+     "intro": [
+      {
+       "q": "a2yrute",
+       "e": "normal",
+       "t": "Onze anos de livros-caixa dos dois sócios. Falo do que está nos livros."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Os saques foram feitos com o cartão do Cláudio, no caixa da própria padaria.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A senhora tem certeza?"
+        },
+        {
+         "q": "a2yrute",
+         "e": "normal",
+         "t": "Está no extrato: o terminal é o da loja, o cartão é o da conta dele."
+        }
+       ]
+      },
+      {
+       "t": "O Anselmo estava internado nesses dias, entre 1º e 24 de março.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Como a senhora sabe?"
+        },
+        {
+         "q": "a2yrute",
+         "e": "triste",
+         "t": "Eu mesma levei as roupas dele ao hospital."
+        }
+       ]
+      },
+      {
+       "t": "Eu nunca recebi nem escrevi nenhum e-mail pedindo perdão. A conta que enviou é recente.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "A conta é recente?"
+        },
+        {
+         "q": "a2yrute",
+         "e": "normal",
+         "t": "Foi criada em 21 de março."
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a2yrute",
+       "e": "normal",
+       "t": "É tudo o que sei, doutor(a). O resto o senhor deve perguntar ao seu cliente."
+      }
+     ],
+     "erro": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "A testemunha não foi contraditada, doutor(a)."
+      }
+     ],
+     "veracidade": {
+      "mente": false
+     },
+     "erro_veraz": [
+      {
+       "q": "a2yrute",
+       "e": "triste",
+       "t": "Não é preciso provar o que já disse com os livros, doutor(a)."
+      }
+     ],
+     "proxima": "c13"
+    },
+    "c13": {
+     "tipo": "escolha",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "bravo",
+       "t": "Doutor(a), a tutela foi deferida com base num e-mail que a testemunha desmente. A sua parte sabia?"
+      }
+     ],
+     "pergunta": "O que você responde ao juiz?",
+     "opcoes": [
+      {
+       "t": "Afirmar que o e-mail é autêntico: o cliente garantiu.",
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "Cuidado, doutor(a). Afirmar o que se desconhece como se fosse certo é o primeiro passo para a litigância de má-fé."
+        }
+       ]
+      },
+      {
+       "t": "Dizer que não tinha ciência e pedir 48 horas para se manifestar após conferir os documentos.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPC#art-77/inc-i",
+         "trecho": "expor os fatos em juízo conforme a verdade"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "nervoso",
+         "t": "Excelência, não tinha ciência. Peço 48 horas para conferir a origem dos documentos e me manifestar."
+        },
+        {
+         "q": "heitor",
+         "e": "pensativo",
+         "t": "Concedo. A tutela fica suspensa."
+        },
+        {
+         "q": "livia",
+         "e": "normal",
+         "t": "…Sem oposição."
+        }
+       ]
+      },
+      {
+       "t": "Revelar que o cliente já teria confessado a fraude.",
+       "falas": [
+        {
+         "q": "heitor",
+         "e": "bravo",
+         "t": "Doutor(a), o que o cliente lhe confia não se revela em audiência. E o senhor nem sabe ainda se é verdade."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "Não sabe, não afirma. Também não revela o que o cliente disse em confiança."
+     ],
+     "proxima": "c14"
+    },
+    "c14": {
+     "tipo": "investigar",
+     "local": "escritorio",
+     "titulo": "Escritório de contabilidade de Rute",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Estantes de livros-caixa, uma calculadora de bobina e uma xícara de chá frio. Rute espera você sem cerimônia."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "ficha",
+       "nome": "Ficha do hospital",
+       "x": 14,
+       "y": 40,
+       "w": 18,
+       "h": 26,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "chocado",
+         "t": "A internação de Anselmo: de 1º a 24 de março. Sem saída. Os saques foram feitos enquanto ele estava na UTI.",
+         "recebe": [
+          "internacao"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "meta",
+       "nome": "Cabeçalho do e-mail",
+       "x": 56,
+       "y": 34,
+       "w": 22,
+       "h": 28,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "A conta foi criada em 21 de março, às 23h40, de um IP residencial. É o IP do wi-fi da casa de Cláudio.",
+         "recebe": [
+          "metadados"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2yrute",
+       "titulo": "Conversar com Rute",
+       "falas": [
+        {
+         "q": "a2yrute",
+         "e": "triste",
+         "t": "O Anselmo lavava as bandejas da família da Lívia quando ela era criança. O Cláudio sabe disso. Escolheu a vítima certa."
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "(E eu escolhi o lado errado sem perguntar.)"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "internacao",
+      "metadados"
+     ],
+     "proxima": "c15"
+    },
+    "c15": {
+     "tipo": "dialogo",
+     "local": "garagem",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Noite. O carro de Cláudio está parado atrás do seu, na garagem do escritório. Ele desce e bate no vidro, ainda sorrindo."
+      },
+      {
+       "q": "voce",
+       "e": "bravo",
+       "t": "Cláudio, a contadora, a ficha do hospital e o IP da sua casa. O e-mail é falso."
+      },
+      {
+       "q": "a2yclaudio",
+       "e": "feliz",
+       "t": "Falso? É um bom e-mail. Ninguém convence um juiz como um(a) advogado(a) que acredita no cliente. Você foi perfeito(a)."
+      },
+      {
+       "q": "a2yclaudio",
+       "e": "normal",
+       "t": "Continue. O Anselmo é velho, vai ceder. Quatorze empregos podem esperar. Eu pago o dobro."
+      },
+      {
+       "q": "voce",
+       "e": "triste",
+       "t": "(Eu acreditei nele. Eu quis acreditar.)"
+      }
+     ],
+     "proxima": "c16"
+    },
+    "c16": {
+     "tipo": "tensao",
+     "local": "garagem",
+     "falas": [
+      {
+       "q": "a2yclaudio",
+       "e": "bravo",
+       "t": "Ou você continua, ou eu digo ao juiz que você sabia de tudo desde o começo."
+      }
+     ],
+     "tempo": 8,
+     "padrao": 1,
+     "pergunta": "Cláudio trava a porta do seu carro com o próprio corpo. O que você faz?",
+     "hesitou": "Você hesitou. Cláudio sorriu e foi embora, com a certeza de que o medo trabalharia por ele.",
+     "opcoes": [
+      {
+       "t": "Empurrar a porta, dizer que renuncia e subir pelo elevador.",
+       "marca": "a2y_renunciou_firme",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Eu renuncio ao mandato. Amanhã o senhor recebe a notificação. Saia da frente."
+        },
+        {
+         "q": "narrador",
+         "t": "Ele recua. A garagem fica em silêncio."
+        }
+       ]
+      },
+      {
+       "t": "Gravar a conversa no celular, discretamente, e manter a calma.",
+       "marca": "a2y_gravou_cliente",
+       "cred": 1,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "(O microfone está ligado. O que o cliente me diz com ameaça já não é segredo de defesa; é prova contra mim.)"
+        },
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "(depois) Gravar o próprio cliente é medida extrema: só para proteger a sua honra, e com muita cautela."
+        }
+       ]
+      },
+      {
+       "t": "Ligar para Helena no viva-voz.",
+       "marca": "a2y_ligou_helena",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "(no viva-voz) Cláudio, saia do carro do meu advogado. Eu registro tudo."
+        },
+        {
+         "q": "narrador",
+         "t": "Ele hesita e se afasta."
+        }
+       ]
+      }
+     ],
+     "proxima": "c17"
+    },
+    "c17": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "falas": [],
+     "pergunta": "Qual é a providência correta com o processo?",
+     "opcoes": [
+      {
+       "t": "Continuar defendendo: o cliente tem direito à defesa, e o segredo é dele.",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "Defesa tem limite: não se usa documento falso que se sabe falso."
+        }
+       ]
+      },
+      {
+       "t": "Revelar tudo ao juiz e à imprensa.",
+       "falas": [
+        {
+         "q": "helena",
+         "e": "bravo",
+         "t": "O sigilo não é uma opção que se abandona por raiva."
+        }
+       ]
+      },
+      {
+       "t": "Desistir da tutela, pedir a liberação das contas e renunciar ao mandato, sem revelar o que o cliente contou.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPC#art-77/inc-i",
+         "trecho": "expor os fatos em juízo conforme a verdade"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Peço a desistência da tutela e a liberação das contas, e renuncio ao mandato. Não vou afirmar o falso nem revelar o que ouvi em confiança."
+        },
+        {
+         "q": "helena",
+         "e": "feliz",
+         "t": "É o difícil e o certo. Os dois ao mesmo tempo."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "Não use o falso; não revele o segredo."
+     ],
+     "proxima": "c18"
+    },
+    "c18": {
+     "tipo": "escolha",
+     "local": "corredor",
+     "livre": true,
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Dia seguinte. No hall do fórum, Cláudio espera com o semblante ferido, como se ele fosse a vítima."
+      }
+     ],
+     "pergunta": "Como você encerra com Cláudio?",
+     "opcoes": [
+      {
+       "t": "Frio e curto: 'Renunciei. Procure outro advogado.'",
+       "marca": "a2y_cliente_frio",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Renunciei. Procure outro advogado."
+        },
+        {
+         "q": "a2yclaudio",
+         "e": "bravo",
+         "t": "Você me traiu!"
+        },
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "(Ele diz isso com sinceridade. É o que dói.)"
+        }
+       ]
+      },
+      {
+       "t": "Dar a ele a chance de corrigir: 'Pague os quatorze salários e peça desculpa ao Anselmo.'",
+       "marca": "a2y_cliente_chance",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Pague os quatorze salários e peça desculpa ao Anselmo. Ainda dá."
+        },
+        {
+         "q": "a2yclaudio",
+         "e": "bravo",
+         "t": "Desculpa? Eu não preciso de desculpa."
+        },
+        {
+         "q": "narrador",
+         "t": "Ele vai embora sem olhar para trás."
+        }
+       ]
+      }
+     ],
+     "proxima": "c19"
+    },
+    "c19": {
+     "tipo": "dialogo",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "heitor",
+       "e": "normal",
+       "t": "Homologo a desistência da tutela. Libere-se o bloqueio. Oficie-se ao Ministério Público quanto à possível falsidade ideológica do e-mail.",
+       "fx": "martelo"
+      },
+      {
+       "q": "livia",
+       "e": "normal",
+       "t": "Excelência, retiro o pedido de má-fé quanto ao patrono. Ele não sabia: eu vi o rosto dele no dia em que a contadora depôs."
+      },
+      {
+       "q": "heitor",
+       "e": "pensativo",
+       "t": "A advogada reconhece a boa-fé do colega. Registre-se."
+      }
+     ],
+     "proxima": "c20"
+    },
+    "c20": {
+     "tipo": "escolha",
+     "local": "corredor",
+     "livre": true,
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "No corredor, Lívia espera o elevador, sem o ar de adversária. Pela primeira vez, parece cansada."
+      },
+      {
+       "q": "livia",
+       "e": "triste",
+       "t": "Ele lavava as bandejas da minha casa quando eu era criança. Eu não ia deixar. Nem tive de lutar muito: você desistiu."
+      },
+      {
+       "q": "livia",
+       "e": "nervoso",
+       "t": "Não conte ao Brandão que estive aqui. Eu não pedi licença."
+      }
+     ],
+     "pergunta": "Como você responde a Lívia?",
+     "opcoes": [
+      {
+       "t": "Agradecer: 'Obrigado(a) por falar por mim ao juiz.'",
+       "marca": "a2y_livia_agradeceu",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "feliz",
+         "t": "Obrigado(a) por falar por mim ao juiz."
+        },
+        {
+         "q": "livia",
+         "e": "normal",
+         "t": "Não foi por você. Foi pelo Anselmo. Mas de nada."
+        }
+       ]
+      },
+      {
+       "t": "Manter a distância: 'Cada um no seu lado.'",
+       "marca": "a2y_livia_distante",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Cada um no seu lado, Lívia."
+        },
+        {
+         "q": "livia",
+         "e": "normal",
+         "t": "É o que o escritório gosta de ouvir."
+        }
+       ]
+      }
+     ],
+     "proxima": "c21"
+    },
+    "c21": {
+     "tipo": "veredicto",
+     "carimbo": "TUTELA REVOGADA",
+     "titulo": "Um cliente que mentia",
+     "texto": "A liminar que você ganhou tinha sido construída sobre um e-mail falso. Você desistiu dela, recusou-se a usar o falso, guardou o sigilo e libertou as contas de Anselmo. A advogada rival confiou na sua boa-fé.",
+     "variantes": [
+      {
+       "se": "a2y_livia_agradeceu",
+       "carimbo": "TUTELA REVOGADA",
+       "titulo": "Quem cuidou do Anselmo",
+       "texto": "A tutela caiu e as contas foram liberadas. Lívia viu a sua boa-fé e a respeitou. Uma rival nunca é só rival."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a2y-juri",
+   "ato": "ato2",
+   "ordem": 5.7,
+   "numero": 11,
+   "titulo": "A Noite de Março",
+   "papel": "advogado",
+   "nivel": "especialista",
+   "sinopse": "Júri pela defesa: Regina matou o marido numa noite de março. Você tem sete jurados para ler, um promotor que passa da linha e o art. 478 para proteger o julgamento.",
+   "posicoes": {
+    "voce": "defesa",
+    "a2yregina": "defesa",
+    "a2ymarcio": "acusacao",
+    "a2yheraldo": "testemunha",
+    "a2yzilda": "testemunha",
+    "beatriz": "juiz",
+    "helena": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "audio",
+     "tipo": "prova",
+     "icone": "🔊",
+     "nome": "Áudio da câmera do corredor",
+     "descricao": "22h41: 31 segundos de gritos. 'Me solta!', batidas, uma cadeira caindo. Depois, silêncio."
+    },
+    {
+     "id": "lesoes",
+     "tipo": "prova",
+     "icone": "🩺",
+     "nome": "Laudo de lesões de Regina",
+     "descricao": "Feito às 23h50 da mesma noite: marcas de dedos no pescoço, lábio cortado, hematomas nos braços."
+    },
+    {
+     "id": "necro",
+     "tipo": "prova",
+     "icone": "⚰️",
+     "nome": "Laudo cadavérico de Wilson",
+     "descricao": "Ferida única, frontal, no tórax. Vítima em pé, de frente para a ré. Alcoolemia de 2,1 g/L."
+    },
+    {
+     "id": "bos",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Boletins de ocorrência anteriores",
+     "descricao": "Dois BOs de Regina contra Wilson (2022 e 2023), ambos por agressão. Nenhum seguiu adiante."
+    },
+    {
+     "id": "cp25",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CP, art. 25 — Legítima defesa",
+     "chave": "CP#art-25",
+     "trecho": "usando moderadamente dos meios necessários, repele injusta agressão, atual ou iminente"
+    },
+    {
+     "id": "cpp478i",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 478, I — Pronúncia",
+     "chave": "CPP#art-478/inc-i",
+     "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+    },
+    {
+     "id": "cpp478ii",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 478, II — Silêncio do acusado",
+     "chave": "CPP#art-478/inc-ii",
+     "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento, em seu prejuízo"
+    },
+    {
+     "id": "cpp479",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 479 — Documento novo em plenário",
+     "chave": "CPP#art-479",
+     "trecho": "não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
+    },
+    {
+     "id": "cf5a",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CF, art. 5º, XXXVIII, a — Plenitude de defesa",
+     "chave": "CF#art-5/inc-xxxviii/ali-a",
+     "trecho": "a plenitude de defesa"
+    },
+    {
+     "id": "cpp483",
+     "tipo": "lei",
+     "icone": "📜",
+     "nome": "CPP, art. 483, III — Quesito de absolvição",
+     "chave": "CPP#art-483/inc-iii",
+     "trecho": "se o acusado deve ser absolvido"
+    }
+   ],
+   "inicio": "j1",
+   "cenas": {
+    "j1": {
+     "tipo": "titulo",
+     "texto": "Caso extra",
+     "subtitulo": "A Noite de Março",
+     "proxima": "j2"
+    },
+    "j2": {
+     "tipo": "dialogo",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Uma cozinha com a mesa de pé quebrado caída de lado e uma faca no chão. Na sala, um homem de bruços. Na porta, uma mulher de pijama, com as mãos abertas e vazias."
+      },
+      {
+       "q": "helena",
+       "e": "normal",
+       "t": "Regina Matos, 36 anos, cozinheira, acusada de matar o marido, Wilson, com uma facada. Júri em três semanas, e o primeiro júri que você faz como advogado(a)."
+      },
+      {
+       "q": "helena",
+       "e": "pensativo",
+       "t": "A defesa sustenta legítima defesa. A Constituição garante a plenitude de defesa; no plenário, quem decide é o povo."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Se o Rafael estivesse livre, ele me diria para ler o laudo três vezes.)"
+      },
+      {
+       "q": "narrador",
+       "t": "Os autos do processo foram atualizados.",
+       "recebe": [
+        "bos",
+        "audio",
+        "lesoes",
+        "necro",
+        "cp25",
+        "cpp478i",
+        "cpp478ii",
+        "cpp479",
+        "cf5a",
+        "cpp483"
+       ]
+      }
+     ],
+     "proxima": "j3"
+    },
+    "j3": {
+     "tipo": "escolha",
+     "local": "escritorio",
+     "livre": true,
+     "falas": [
+      {
+       "q": "a2yregina",
+       "e": "triste",
+       "t": "Doutor(a), eu não quero contar das surras. Meus filhos vão ouvir. Prefiro que digam que foi um acidente. Ou que eu me declare culpada de uma vez."
+      }
+     ],
+     "pergunta": "Como você atende Regina?",
+     "opcoes": [
+      {
+       "t": "Respeitar o desejo e omitir as agressões.",
+       "marca": "a2y_regina_calada",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "A decisão é sua. Mas sem as agressões, a defesa fica sem tese."
+        },
+        {
+         "q": "a2yregina",
+         "e": "triste",
+         "t": "Então… que seja o que Deus quiser."
+        }
+       ]
+      },
+      {
+       "t": "Explicar que a verdade é a defesa e que ela decide até onde contar.",
+       "marca": "a2y_regina_decide",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "A verdade é a sua defesa, Regina. Eu conto o que for preciso, e a senhora diz até onde. Não vou expor seus filhos além do necessário."
+        },
+        {
+         "q": "a2yregina",
+         "e": "pensativo",
+         "t": "…Isso eu consigo."
+        }
+       ]
+      },
+      {
+       "t": "Insistir com firmeza: 'Ou a senhora conta tudo, ou eu não defendo.'",
+       "marca": "a2y_regina_pressionada",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "Ou a senhora conta tudo, ou eu não defendo."
+        },
+        {
+         "q": "a2yregina",
+         "e": "chocado",
+         "t": "Eu… tá bom, doutor(a). Eu conto."
+        },
+        {
+         "q": "helena",
+         "e": "pensativo",
+         "t": "(depois) Convencer é mais que mandar: a decisão é dela."
+        }
+       ]
+      }
+     ],
+     "proxima": "j4"
+    },
+    "j4": {
+     "tipo": "investigar",
+     "local": "casa",
+     "titulo": "Casa de Regina",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Um apartamento pequeno com a cozinha ainda interditada. Dois colchonetes de criança no quarto e um cinto de couro jogado no corredor."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "pescoco",
+       "nome": "Fotos da perícia",
+       "x": 8,
+       "y": 30,
+       "w": 22,
+       "h": 26,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Na foto do laudo, marcas de dedos no pescoço de Regina. Do lado da mesa, a cadeira caída está de frente para a porta, e a faca, a um metro do corpo."
+        }
+       ]
+      },
+      {
+       "id": "cinto",
+       "nome": "Cinto no corredor",
+       "x": 64,
+       "y": 62,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Uma fivela pesada, grande como um punho. Dois fios do cabelo de Regina presos nela."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a2yzilda",
+       "titulo": "Conversar com Dona Zilda",
+       "falas": [
+        {
+         "q": "a2yzilda",
+         "e": "nervoso",
+         "t": "Eu não vi nada, doutor(a). Eu só ouvi. Sempre ouvi. Mas é difícil dizer em juízo o que se ouve atrás de uma parede."
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "(O medo dela é parte da prova.)"
+        }
+       ]
+      }
+     ],
+     "requer": [],
+     "proxima": "j5"
+    },
+    "j5": {
+     "tipo": "dialogo",
+     "local": "juri",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Está instalada a sessão do Tribunal do Júri. Sorteados os sete jurados, a defesa usou as suas recusas.",
+       "fx": "martelo"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Advirto os jurados: estão incomunicáveis entre si e com terceiros, e não podem manifestar opinião sobre o processo, sob pena de exclusão do Conselho e multa."
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "confiante",
+       "t": "Senhores jurados, a acusação é simples: uma mulher, uma faca, um homem morto. E a Justiça já olhou isto uma vez e concluiu que há indícios suficientes: foi a pronúncia."
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Ele acabou de usar a pronúncia como argumento de autoridade. Aqui a nulidade se levanta na hora.)"
+      }
+     ],
+     "proxima": "j6"
+    },
+    "j6": {
+     "tipo": "protesto",
+     "local": "juri",
+     "titulo": "Os debates: a acusação fala aos jurados",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O promotor abre os debates. Em júri, o protesto é imediato e tem de constar em ata."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a2ymarcio",
+       "e": "confiante",
+       "t": "A Regina matou o marido com uma facada no peito. A materialidade está nos autos, e a autoria, confessada."
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "bravo",
+       "t": "E atenção: um juiz já examinou este processo e a pronúncia afirmou que há indícios suficientes de que ela é culpada. Não sou eu quem diz: é o Poder Judiciário.",
+       "incidente": {
+        "chamada": "Protesto, Excelência! Art. 478.",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-478/inc-i",
+          "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "nervoso",
+          "t": "(sussurrando) 'A pronúncia afirma que há indícios': é argumento de autoridade. Art. 478, I. Proteste e peça que conste em ata."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Referência à pronúncia como argumento de autoridade (art. 478, I). Requeiro que conste em ata e que os jurados sejam advertidos.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Acolho. Jurados, desconsiderem a referência à decisão de pronúncia: ela não é argumento de culpa. Consigne-se em ata. Doutor Márcio, atenha-se à prova."
+           },
+           {
+            "q": "a2ymarcio",
+            "e": "nervoso",
+            "t": "…Prossigo, Excelência."
+           }
+          ]
+         },
+         {
+          "t": "Referência ao silêncio do acusado (art. 478, II).",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. O promotor não falou do silêncio, doutor(a)."
+           }
+          ]
+         },
+         {
+          "t": "Exibição de documento sem juntada prévia (art. 479).",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. Não há documento exibido."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "normal",
+       "t": "A prova pericial mostra um golpe único e preciso no tórax."
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Indefiro. A fala é regular, doutor(a). Interromper o debate sem fundamento perde a confiança dos jurados."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Prossiga, doutor Márcio, nos limites da prova."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "(sussurrando) A nulidade ficou registrada na ata. Em júri, quem não protesta na hora perde o direito de reclamar."
+      }
+     ],
+     "proxima": "j7"
+    },
+    "j7": {
+     "tipo": "protesto",
+     "local": "juri",
+     "titulo": "A acusação inquire a vizinha",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O promotor inquire a vizinha. Proteste o que for ilegal."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a2ymarcio",
+       "e": "normal",
+       "t": "Dona Zilda, a senhora mora ao lado da ré há quanto tempo?"
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "apontando",
+       "t": "A senhora nunca ouviu briga naquela casa, não é? Era um casal tranquilo.",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "pensativo",
+          "t": "(sussurrando) 'Não é?': a resposta já veio na pergunta."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta é indutiva: contém a resposta que se espera.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "normal",
+            "t": "Deferido. Reformule, doutor Márcio."
+           },
+           {
+            "q": "a2ymarcio",
+            "e": "normal",
+            "t": "O que a senhora ouvia na casa ao lado?"
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é repetida.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. Ainda não foi feita."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta não tem relação com a causa.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. O comportamento do casal é tema do processo."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "normal",
+       "t": "A senhora viu alguma marca no corpo da ré em algum momento?"
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "bravo",
+       "t": "A Regina tinha amante, não tinha? A senhora ouviu falar de homens naquela casa.",
+       "incidente": {
+        "chamada": "Protesto, Excelência!",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não tiverem relação com a causa"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "bravo",
+          "t": "(sussurrando) Isso não tem relação nenhuma com a morte do Wilson."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "A pergunta não tem relação com a causa e ofende a dignidade da ré.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Deferido. A vida privada da ré não é objeto deste julgamento. Jurados, desconsiderem."
+           },
+           {
+            "q": "a2ymarcio",
+            "e": "nervoso",
+            "t": "Retiro."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro por esse fundamento. O defeito é a falta de relação com a causa."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é repetida.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. É a primeira vez."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "normal",
+       "t": "Muito obrigado, Dona Zilda."
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Indefiro. A pergunta é regular. Protesto sem fundamento custa credibilidade."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "A testemunha responde a quem a inquire. Prossigam."
+      }
+     ],
+     "proxima": "j8"
+    },
+    "j8": {
+     "tipo": "depoimento",
+     "testemunha": "a2yzilda",
+     "titulo": "A vizinha",
+     "intro": [
+      {
+       "q": "a2yzilda",
+       "e": "nervoso",
+       "t": "Eu ouvi coisas, mas nunca vi. É a primeira vez que digo em voz alta."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Nunca vi briga naquele apartamento. Eram vizinhos calados.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nunca?"
+        },
+        {
+         "q": "a2yzilda",
+         "e": "nervoso",
+         "t": "Que eu tenha visto… nunca."
+        }
+       ]
+      },
+      {
+       "t": "Naquela noite eu ouvi um grito só. Depois, silêncio.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Um grito só?"
+        },
+        {
+         "q": "a2yzilda",
+         "e": "triste",
+         "t": "Um. E depois nada."
+        }
+       ]
+      },
+      {
+       "t": "A Regina saiu e disse 'matei ele'.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "triste",
+         "t": "Disse mesmo?"
+        },
+        {
+         "q": "a2yzilda",
+         "e": "triste",
+         "t": "Disse. E chorava."
+        }
+       ]
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "bos"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Dois boletins de ocorrência, de 2022 e 2023, ambos por agressão. A vizinha ouviu briga durante anos."
+        },
+        {
+         "q": "a2yzilda",
+         "e": "nervoso",
+         "t": "…Eu tinha medo de me meter.",
+         "fx": "tremor"
+        }
+       ]
+      },
+      {
+       "afirmacao": 1,
+       "provas": [
+        "audio"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O áudio da câmera do corredor registra 31 segundos de gritos, 'me solta' e uma cadeira caindo. Não foi um grito só."
+        },
+        {
+         "q": "a2yzilda",
+         "e": "chocado",
+         "t": "Foi… foi mais tempo.",
+         "fx": "tremor"
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "beatriz",
+       "e": "pensativo",
+       "t": "Anotado: a testemunha corrige-se diante dos jurados."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz o que a testemunha disse agora."
+      }
+     ],
+     "proxima": "j9"
+    },
+    "j9": {
+     "tipo": "depoimento",
+     "testemunha": "a2yheraldo",
+     "titulo": "O perito",
+     "intro": [
+      {
+       "q": "a2yheraldo",
+       "e": "confiante",
+       "t": "Eu fiz a necropsia. Posso responder qualquer pergunta técnica."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "A facada foi dada com a vítima sentada, sem chance de defesa.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Sentada?"
+        },
+        {
+         "q": "a2yheraldo",
+         "e": "normal",
+         "t": "É o que a acusação me informou."
+        }
+       ]
+      },
+      {
+       "t": "Não há nenhuma lesão na ré compatível com agressão.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Nenhuma?"
+        },
+        {
+         "q": "a2yheraldo",
+         "e": "nervoso",
+         "t": "Eu examinei a vítima, não a ré."
+        }
+       ]
+      },
+      {
+       "t": "O golpe foi dado com precisão, o que indica intenção de matar.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Com precisão?"
+        },
+        {
+         "q": "a2yheraldo",
+         "e": "normal",
+         "t": "Um golpe só, no tórax."
+        }
+       ]
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "necro"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "Seu próprio laudo diz: ferida frontal, vítima em pé, de frente para a ré. Não estava sentado."
+        },
+        {
+         "q": "a2yheraldo",
+         "e": "chocado",
+         "t": "Eu… a trajetória, sim, é frontal.",
+         "fx": "tremor"
+        }
+       ]
+      },
+      {
+       "afirmacao": 1,
+       "provas": [
+        "lesoes"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "e": "apontando",
+         "t": "O laudo da ré, feito às 23h50: marcas de dedos no pescoço, lábio cortado, hematomas nos braços."
+        },
+        {
+         "q": "a2yheraldo",
+         "e": "nervoso",
+         "t": "Isso… eu não examinei."
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "apontando",
+       "t": "PROTESTO!",
+       "fx": "protesto"
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Os jurados tomarão nota da divergência."
+      }
+     ],
+     "erro": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Essa prova não contradiz o que a testemunha disse agora."
+      }
+     ],
+     "proxima": "j10"
+    },
+    "j10": {
+     "tipo": "tensao",
+     "local": "corredor",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Intervalo. No corredor do fórum, um homem corpulento de camisa social para na sua frente. É Jair, o irmão do Wilson."
+      }
+     ],
+     "tempo": 7,
+     "padrao": 1,
+     "pergunta": "Jair chega perto demais: 'Você vai tirar essa mulher da cadeia?' Há jurados passando a alguns metros. O que você faz?",
+     "hesitou": "Você hesitou. Jair resmungou algo e foi embora, mas um jurado viu a cena.",
+     "opcoes": [
+      {
+       "t": "Dar um passo para trás, calmo(a), e chamar o oficial de justiça.",
+       "marca": "a2y_jair_oficial",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor pode conversar com o oficial. Eu não converso com o irmão da vítima antes do veredito."
+        },
+        {
+         "q": "narrador",
+         "t": "O oficial se aproxima. Jair levanta as mãos, vencido."
+        }
+       ]
+      },
+      {
+       "t": "Responder com firmeza: 'Estou aqui para que o povo decida.'",
+       "marca": "a2y_jair_firme",
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Estou aqui para que o povo decida. O senhor também, espero."
+        },
+        {
+         "q": "narrador",
+         "t": "Jair respira fundo e, por um instante, só parece cansado."
+        }
+       ]
+      },
+      {
+       "t": "Ignorar e seguir andando.",
+       "marca": "a2y_jair_ignorou",
+       "cred": -1,
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "Jair segura o seu braço. Um jurado vira o rosto. Você solta o braço e entra, trêmulo(a), tendo perdido a imagem de calma."
+        }
+       ]
+      }
+     ],
+     "proxima": "j11"
+    },
+    "j11": {
+     "tipo": "escolha",
+     "local": "juri",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Com a palavra, a defesa, para o interrogatório da ré."
+      },
+      {
+       "q": "a2yregina",
+       "e": "triste",
+       "t": "(baixinho) Doutor(a), eu tô com vergonha."
+      }
+     ],
+     "pergunta": "Como você conduz o interrogatório de Regina?",
+     "opcoes": [
+      {
+       "t": "Perguntar apenas: 'A senhora matou o seu marido?'",
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "Doutor(a), essa pergunta reduz a defesa a um sim ou não. Conduza o jurado pela história."
+        }
+       ]
+      },
+      {
+       "t": "Pedir que conte em ordem: as duas denúncias que ninguém levou adiante, a noite de março e como a faca foi parar na mão dela.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CF#art-5/inc-xxxviii/ali-a",
+         "trecho": "a plenitude de defesa"
+        }
+       ],
+       "falas": [
+        {
+         "q": "a2yregina",
+         "e": "triste",
+         "t": "Ele me chamou de nomes que não conto aqui. Depois puxou o cinto. Quando o pegou, eu já estava sem ar. A faca estava na pia e eu… só queria que ele soltasse."
+        },
+        {
+         "q": "a2yregina",
+         "e": "triste",
+         "t": "Eu não queria matar. Eu queria parar.",
+         "se": "a2y_regina_decide"
+        },
+        {
+         "q": "a2yregina",
+         "e": "triste",
+         "t": "Eu não ia contar isso, mas o doutor(a) insistiu. Mas era verdade.",
+         "se": "a2y_regina_pressionada"
+        },
+        {
+         "q": "a2yregina",
+         "e": "triste",
+         "t": "Foi acidente… ele caiu na faca.",
+         "se": "a2y_regina_calada"
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Anote-se."
+        }
+       ]
+      },
+      {
+       "t": "Recomendar que ela fique em silêncio para evitar contradições.",
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "pensativo",
+         "t": "O silêncio é um direito, doutor(a), mas aqui a defesa precisa de voz. O promotor vai tentar tirar proveito dele."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "Plenitude de defesa é deixar o jurado ouvir a história inteira."
+     ],
+     "proxima": "j12"
+    },
+    "j12": {
+     "tipo": "dialogo",
+     "local": "juri",
+     "falas": [
+      {
+       "q": "a2ymarcio",
+       "e": "bravo",
+       "t": "Jurados, se ela fosse inocente, teria falado desde a delegacia! Por que ficou calada naquela noite? Quem cala, consente."
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "apontando",
+       "t": "E vejam esta foto do corpo, que apresento agora para vocês! (ergue a foto)"
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "(Silêncio dela como prova, e uma foto nova. Dois protestos de uma só vez.)"
+      }
+     ],
+     "proxima": "j13"
+    },
+    "j13": {
+     "tipo": "protesto",
+     "local": "juri",
+     "titulo": "A réplica da acusação",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Última chance da acusação. Proteste o que violar o art. 478 ou o art. 479, e peça que conste em ata."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a2ymarcio",
+       "e": "bravo",
+       "t": "Por que ficou calada naquela noite? Quem cala, consente.",
+       "incidente": {
+        "chamada": "Protesto, Excelência! Art. 478, II.",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-478/inc-ii",
+          "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento, em seu prejuízo"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "nervoso",
+          "t": "(sussurrando) Silêncio da ré usado contra ela: art. 478, II. De novo!"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Referência ao silêncio do acusado em seu prejuízo (art. 478, II). Requeiro que conste em ata e que os jurados sejam advertidos.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Acolho. Jurados, o silêncio é direito da ré e não pode ser tomado contra ela. Consigne-se em ata. Doutor Márcio, a nulidade do júri está à vista."
+           },
+           {
+            "q": "a2ymarcio",
+            "e": "nervoso",
+            "t": "…Retiro."
+           }
+          ]
+         },
+         {
+          "t": "Referência à pronúncia (art. 478, I).",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. Não houve referência à pronúncia agora."
+           }
+          ]
+         },
+         {
+          "t": "Exibição de documento novo (art. 479).",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. A fala foi sobre o silêncio, não sobre documento."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "normal",
+       "t": "Senhores jurados, a vida é o bem maior."
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "apontando",
+       "t": "E vejam esta foto do corpo, que apresento agora.",
+       "incidente": {
+        "chamada": "Protesto, Excelência! Art. 479.",
+        "pergunta": "Qual o fundamento do protesto?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-479",
+          "trecho": "não será permitida a leitura de documento ou a exibição de objeto que não tiver sido juntado aos autos com a antecedência mínima de 3 (três) dias úteis"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "helena",
+          "e": "nervoso",
+          "t": "(sussurrando) A foto não foi juntada aos autos com três dias de antecedência."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Exibição de documento que não foi juntado aos autos com 3 dias úteis de antecedência (art. 479). Que conste em ata.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Acolho. Retire a foto, doutor Márcio. Jurados, não levem em conta o que viram. Consigne-se em ata."
+           }
+          ]
+         },
+         {
+          "t": "Referência ao silêncio da ré (art. 478, II).",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. O defeito aqui é o documento sem juntada prévia."
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva.",
+          "falas": [
+           {
+            "q": "beatriz",
+            "e": "bravo",
+            "t": "Indefiro. Não houve pergunta."
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "normal",
+       "t": "Condenem a ré, porque a justiça não é vingança, nem acobertamento."
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "beatriz",
+       "e": "bravo",
+       "t": "Indefiro. A fala é regular. Interromper sem fundamento perde a confiança dos jurados."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Encerrados os debates. Os jurados vão ao Conselho de Sentença."
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "(sussurrando) Duas nulidades registradas. Se o júri condenar, esta ata sustenta um recurso."
+      }
+     ],
+     "proxima": "j14"
+    },
+    "j14": {
+     "tipo": "plenario",
+     "colegiado": "juri",
+     "local": "juri",
+     "titulo": "Conselho de Sentença",
+     "votos_fixos": {
+      "favor": 1,
+      "contra": 2
+     },
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Com a palavra a defesa, por uma hora e meia. Jurados, atenção."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Não falo ao jurado a sós: leio as caras enquanto sustento, e respondo a cada dúvida em linguagem simples.)"
+      }
+     ],
+     "pergunta": "Observe os jurados: que reação você enfrenta agora, no debate?",
+     "ministros": [
+      {
+       "rotulo": "Jurada 1 · a professora aposentada",
+       "preocupacao": "Balança a cabeça quando ouve 'ela poderia ter saído de casa'.",
+       "voto": "indeciso",
+       "argumentos": [
+        {
+         "t": "Sair para onde, com a porta trancada e ele na frente? A lei não exige fuga: exige que a pessoa se defenda com o meio que tinha na hora.",
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CP#art-25",
+           "trecho": "repele injusta agressão, atual ou iminente"
+          }
+         ],
+         "falas": [
+          {
+           "q": "a2yregina",
+           "e": "triste",
+           "t": "(baixinho) A porta estava trancada."
+          }
+         ]
+        },
+        {
+         "t": "Ele merecia, por tudo o que fez antes.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "bravo",
+           "t": "A defesa não pede vingança aos jurados, doutor(a)."
+          }
+         ]
+        },
+        {
+         "t": "Ela tinha medo, então vale tudo.",
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "pensativo",
+           "t": "A lei diz 'moderadamente', doutor(a)."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rotulo": "Jurado 2 · o senhor de óculos escuros",
+       "preocupacao": "Cruza os braços quando o promotor diz que a facada foi 'só uma, mas bem dada'.",
+       "voto": "contra",
+       "argumentos": [
+        {
+         "t": "Um golpe só, de frente, no peito: é o de quem quer parar o ataque, não o de quem quer matar com crueldade. Ela parou quando ele caiu.",
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CP#art-25",
+           "trecho": "usando moderadamente dos meios necessários"
+          }
+         ],
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "normal",
+           "t": "Consigne-se."
+          }
+         ]
+        },
+        {
+         "t": "Ela nem sabia para onde a faca ia.",
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "pensativo",
+           "t": "Isso enfraquece a tese do meio necessário, doutor(a)."
+          }
+         ]
+        },
+        {
+         "t": "Não adianta discutir o golpe, o importante é o coração dela.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "bravo",
+           "t": "O jurado quer fatos, doutor(a)."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rotulo": "Jurada 3 · a moça da bolsa",
+       "preocupacao": "Olha para as marcas no pescoço da ré nas fotos e desvia o olhar.",
+       "voto": "indeciso",
+       "argumentos": [
+        {
+         "t": "O laudo feito às 23h50 daquela noite registra as marcas dos dedos no pescoço dela: a agressão era atual, não passada.",
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CP#art-25",
+           "trecho": "injusta agressão, atual ou iminente"
+          }
+         ],
+         "falas": [
+          {
+           "q": "voce",
+           "e": "triste",
+           "t": "(Ela fecha os olhos por um instante.)"
+          }
+         ]
+        },
+        {
+         "t": "Ela já tinha apanhado antes, então qualquer reação é permitida.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "bravo",
+           "t": "Agressão passada não autoriza reação futura, doutor(a)."
+          }
+         ]
+        },
+        {
+         "t": "Vocês não imaginam o que é viver assim.",
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "pensativo",
+           "t": "Apelo emocional sem prova rende pouco, doutor(a)."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "rotulo": "Jurado 4 · o rapaz que olha o relógio",
+       "preocupacao": "Se mexe na cadeira quando falam em 'plenitude de defesa', como se fosse truque.",
+       "voto": "indeciso",
+       "argumentos": [
+        {
+         "t": "Plenitude de defesa é o direito de a ré contar a história inteira, e é o povo, e não o juiz, quem decide se ela se defendeu. Vocês estão aí por isso.",
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CF#art-5/inc-xxxviii/ali-a",
+           "trecho": "a plenitude de defesa"
+          }
+         ],
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "normal",
+           "t": "Anote-se."
+          }
+         ]
+        },
+        {
+         "t": "É um detalhe técnico que o juiz resolve.",
+         "endurece": true,
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "bravo",
+           "t": "No júri, quem julga os fatos são vocês, jurados."
+          }
+         ]
+        },
+        {
+         "t": "Se vocês não absolverem, ela perde os filhos.",
+         "falas": [
+          {
+           "q": "beatriz",
+           "e": "bravo",
+           "t": "Isso é pressão indevida sobre o Conselho, doutor(a)."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Encerrados os debates. Os jurados se recolhem à sala secreta, com os quesitos do art. 483."
+      }
+     ],
+     "proxima": "j15"
+    },
+    "j15": {
+     "tipo": "escolha",
+     "local": "juri",
+     "falas": [
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "Antes de os jurados votarem, as partes têm a palavra sobre os quesitos."
+      }
+     ],
+     "pergunta": "O que a defesa requer sobre os quesitos?",
+     "opcoes": [
+      {
+       "t": "Que o quesito de absolvição (art. 483, III) seja formulado de modo genérico, onde cabe a legítima defesa, sem fragmentá-la.",
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPP#art-483/inc-iii",
+         "trecho": "se o acusado deve ser absolvido"
+        }
+       ],
+       "falas": [
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Requeiro o quesito genérico: 'O jurado absolve a acusada?'. A legítima defesa se discute nos debates, e não se fragmenta em perguntas que confundam."
+        },
+        {
+         "q": "beatriz",
+         "e": "normal",
+         "t": "Deferido."
+        }
+       ]
+      },
+      {
+       "t": "Que o juiz decida a legítima defesa sozinho, sem os jurados.",
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "A competência para julgar o crime doloso contra a vida é do Conselho de Sentença, doutor(a)."
+        }
+       ]
+      },
+      {
+       "t": "Que os jurados votem em voz alta, para dar transparência.",
+       "falas": [
+        {
+         "q": "beatriz",
+         "e": "bravo",
+         "t": "O sigilo das votações é garantia constitucional, doutor(a). Rejeitado."
+        }
+       ]
+      }
+     ],
+     "dica": [
+      "No júri, o voto é secreto e o quesito absolutório é genérico."
+     ],
+     "proxima": "j16"
+    },
+    "j16": {
+     "tipo": "dialogo",
+     "local": "juri",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Quarenta minutos na sala secreta. Quando a porta abre, os jurados não olham para ninguém."
+      },
+      {
+       "q": "beatriz",
+       "e": "normal",
+       "t": "O Conselho de Sentença respondeu SIM, por cinco votos a dois, ao quesito: o jurado absolve a acusada? Absolvo a ré, Regina Matos, nos termos do art. 492 do CPP.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a2yregina",
+       "e": "chocado",
+       "t": "Eu posso ir… pra casa?"
+      },
+      {
+       "q": "helena",
+       "e": "feliz",
+       "t": "Pode. Seus filhos estão no corredor."
+      },
+      {
+       "q": "a2ymarcio",
+       "e": "normal",
+       "t": "(guardando os papéis) O Ministério Público respeita o veredicto. A ata, doutor(a), faria o recurso mais difícil do que o meu discurso."
+      },
+      {
+       "q": "a2yregina",
+       "e": "feliz",
+       "t": "Doutor(a), eu nunca pensei que ia dormir tranquila de novo.",
+       "se": "a2y_regina_decide"
+      },
+      {
+       "q": "a2yregina",
+       "e": "feliz",
+       "t": "Doutor(a), obrigada por me obrigar a falar. Doeu, mas valeu.",
+       "se": "a2y_regina_pressionada"
+      },
+      {
+       "q": "a2yregina",
+       "e": "triste",
+       "t": "Doutor(a), a verdade estava no laudo e eu não deixei o senhor(a) usar. Mas o senhor(a) achou o caminho.",
+       "se": "a2y_regina_calada"
+      }
+     ],
+     "proxima": "j17"
+    },
+    "j17": {
+     "tipo": "dialogo",
+     "local": "praca",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Fim de tarde. Helena caminha com você pela escadaria do fórum. O telefone dela toca. Ela escuta, empalidece e entrega o aparelho a você."
+      },
+      {
+       "q": "helena",
+       "e": "triste",
+       "t": "É o agente Dirceu, do presídio. O Rafael pediu para falar com você. Hoje à noite ele decidiu colaborar com o Ministério Público."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "(Uma ré que decidiu falar. Um mentor que decidiu falar. A verdade custa caro, e quem a diz costuma pagar primeiro.)"
+      }
+     ],
+     "proxima": "j18"
+    },
+    "j18": {
+     "tipo": "veredicto",
+     "carimbo": "ABSOLVIDA",
+     "titulo": "O povo decide",
+     "texto": "Você mostrou o laudo, protestou contra a pronúncia, o silêncio e a foto sem juntada, e leu as caras dos jurados. Cinco votos a dois: legítima defesa.",
+     "variantes": [
+      {
+       "se": "a2y_regina_calada",
+       "carimbo": "ABSOLVIDA",
+       "titulo": "Mesmo calada, ela venceu",
+       "texto": "Regina quase perdeu a defesa por vergonha. Você achou o caminho dentro do laudo e do plenário."
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

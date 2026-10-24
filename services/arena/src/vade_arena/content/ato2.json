@@ -51,7 +51,31 @@
           {"q": "voce", "e": "pensativo", "t": "Produto durável: o prazo para reclamar de vício aparente é de noventa dias. Quando a senhora reclamou?"},
           {"q": "cida", "e": "pensativo", "t": "Vinte dias depois de comprar. Eles levaram a geladeira e nunca mais devolveram."},
           {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["nota", "receita", "cdc18", "cdc18p1", "cdc18p3", "cdc26", "cdc6"]}
-        ], "proxima": "g3"},
+        ], "proxima": "zh1"},
+        "zh1": {
+          "tipo": "dialogo",
+          "local": "escritorio",
+          "falas": [
+            {
+              "q": "helena",
+              "e": "feliz",
+              "t": "Seis meses atrás você ficou até meia-noite comendo pizza fria comigo. Hoje assina sozinho(a). Eu devo ter feito alguma coisa certa.",
+              "se": "a1_helena_ficou"
+            },
+            {
+              "q": "helena",
+              "e": "feliz",
+              "t": "Seis meses atrás eu mandei você para casa dormir. Hoje te mando para o Juizado. As duas foram boas ideias.",
+              "se": "a1_helena_casa"
+            },
+            {
+              "q": "helena",
+              "e": "triste",
+              "t": "A Sofia pergunta por você. Quando puder, apareça. Ela está desenhando juízas de capa preta no caderno inteiro."
+            }
+          ],
+          "proxima": "g3"
+        },
         "g3": {"tipo": "investigar", "local": "loja", "titulo": "MegaLar · Shopping Centro",
           "intro": [{"q": "narrador", "t": "Ar-condicionado gelado, música alta e um cartaz enorme oferecendo garantia estendida."}],
           "pontos": [
@@ -75,7 +99,134 @@
           {"q": "heitor", "e": "normal", "t": "Juizado Especial Cível. Autora: Aparecida Souza. Ré: MegaLar Comércio. Tentada a conciliação, sem acordo.", "fx": "martelo"},
           {"q": "livia", "e": "confiante", "t": "Dra. Lívia Sampaio, pela ré. Excelência, o caso é simples: prazo vencido e mau uso. Ouvimos o gerente."},
           {"q": "voce", "e": "pensativo", "t": "(Brandão & Associados… num processo de geladeira?)"}
-        ], "proxima": "g5"},
+        ], "proxima": "zq5"},
+        "zq5": {
+          "tipo": "protesto",
+          "local": "tribunal",
+          "titulo": "A ré inquire o próprio gerente",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "A ré inquire o gerente que arrolou. Proteste o que for ilegal: indução, pergunta sem relação com os fatos, repetição."
+            }
+          ],
+          "linhas": [
+            {"q": "livia", "e": "normal", "t": "Senhor Fabrício, o senhor é gerente da MegaLar há quanto tempo?"},
+            {
+              "q": "livia",
+              "e": "confiante",
+              "t": "A geladeira foi entregue funcionando perfeitamente, não foi? O senhor mesmo a testou na loja, certo?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [{"chave": "CPC#art-459", "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"}],
+                "omissao": [
+                  {
+                    "q": "helena",
+                    "e": "pensativo",
+                    "t": "(sussurrando) Ela está ditando a resposta ao próprio gerente: 'não foi?', 'certo?'. Proteste."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta é indutiva: sugere a resposta à testemunha da própria parte.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "normal",
+                        "t": "Deferido. Doutora Lívia, quem arrola a testemunha pergunta o que ela viu, sem soprar a resposta."
+                      },
+                      {"q": "livia", "e": "normal", "t": "Reformulo. Qual o estado do aparelho na entrega?"}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "heitor", "e": "bravo", "t": "Indefiro. Não foi feita antes."}]
+                  },
+                  {
+                    "t": "A pergunta não tem relação com a causa.",
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "bravo",
+                        "t": "Indefiro. O estado do aparelho é o centro da causa, doutor(a)."
+                      }
+                    ]
+                  }
+                ]
+              }
+            },
+            {"q": "livia", "e": "normal", "t": "Qual é o procedimento da loja quando recebe uma reclamação?"},
+            {
+              "q": "livia",
+              "e": "confiante",
+              "t": "O senhor não acha que pessoas dessa idade costumam instalar mal os aparelhos?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [
+                  {
+                    "chave": "CPC#art-459",
+                    "trecho": "não tiverem relação com as questões de fato objeto da atividade probatória"
+                  }
+                ],
+                "omissao": [
+                  {
+                    "q": "helena",
+                    "e": "pensativo",
+                    "t": "(sussurrando) 'Pessoas dessa idade' é estereótipo, não fato. A testemunha foi chamada para contar o que viu."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta pede opinião e estereótipo, sem relação com os fatos que se provam.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "normal",
+                        "t": "Deferido. A testemunha responde sobre fatos, e não sobre o que 'pessoas dessa idade' fazem."
+                      },
+                      {"q": "livia", "e": "nervoso", "t": "…Retiro, Excelência."}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é indutiva.",
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "bravo",
+                        "t": "Indefiro por esse fundamento. O defeito é outro: opinião e estereótipo."
+                      }
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "heitor", "e": "bravo", "t": "Indefiro. Não foi feita antes."}]
+                  }
+                ]
+              }
+            },
+            {"q": "livia", "e": "normal", "t": "A autora foi atendida na loja no mesmo dia da reclamação?"}
+          ],
+          "erro_interromper": [
+            {
+              "q": "heitor",
+              "e": "bravo",
+              "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protestar sem fundamento custa credibilidade."
+            }
+          ],
+          "acerto": [
+            {"q": "heitor", "e": "normal", "t": "Prossiga o depoimento."},
+            {
+              "q": "helena",
+              "e": "feliz",
+              "t": "(sussurrando) Lívia perde pouco, mas hoje perdeu duas. Mantenha o ritmo."
+            }
+          ],
+          "proxima": "g5"
+        },
         "g5": {"tipo": "depoimento", "testemunha": "fabricio", "titulo": "A versão da MegaLar",
           "intro": [{"q": "fabricio", "e": "confiante", "t": "A MegaLar respeita o consumidor. Mas tudo tem limite."}],
           "afirmacoes": [
@@ -274,7 +425,83 @@
           {"q": "kenji", "e": "pensativo", "t": "(na saída) Doutor(a)… o arquivo vendido no fórum foi comprado por uma única conta. Ela paga em nome de 'Altavista Serviços Ltda.'"},
           {"q": "voce", "e": "chocado", "t": "A mesma empresa que recebeu o dinheiro do golpe do Seu Ivo…", "fx": "tremor"},
           {"q": "kenji", "e": "normal", "t": "A Altavista Tech instala o sistema, a Altavista Serviços compra os dados, os golpistas usam. Alguém montou uma fábrica."}
-        ], "proxima": "d11"},
+        ], "proxima": "zd1"},
+        "zd1": {
+          "tipo": "escolha",
+          "livre": true,
+          "local": "corredor",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "No corredor do fórum, Kátia, a recepcionista da clínica, espera perto do bebedouro. Está de olhos vermelhos."
+            },
+            {
+              "q": "katia",
+              "e": "nervoso",
+              "t": "Doutor(a), a clínica vai me demitir e dizer que o vazamento foi culpa minha. A senha era de todos nós! Posso contar tudo pra você? Não tenho advogado."
+            },
+            {
+              "q": "voce",
+              "e": "pensativo",
+              "t": "(Ela está do lado da parte contrária e pode ter interesse oposto ao de Bruna. Tudo o que eu disser pode soar como orientação jurídica.)"
+            }
+          ],
+          "pergunta": "O que você responde a Kátia?",
+          "opcoes": [
+            {
+              "t": "Dizer com gentileza que não pode orientá-la, porque os interesses podem colidir, e indicar a Defensoria ou o sindicato.",
+              "marca": "a2_katia_orientada",
+              "falas": [
+                {
+                  "q": "voce",
+                  "e": "normal",
+                  "t": "Kátia, eu represento a Bruna. Se eu a aconselhar, posso prejudicar uma de vocês duas. Procure a Defensoria, ou o sindicato, ainda hoje."
+                },
+                {"q": "katia", "e": "triste", "t": "Obrigada por ser honesto(a). Vou amanhã cedo."},
+                {
+                  "q": "helena",
+                  "e": "feliz",
+                  "t": "(depois, por mensagem) Quem tem cliente não aconselha a parte contrária. Foi o certo."
+                }
+              ]
+            },
+            {
+              "t": "Ouvir tudo como amigo(a) e aconselhá-la sobre o que dizer na Justiça.",
+              "marca": "a2_katia_aconselhada",
+              "falas": [
+                {
+                  "q": "katia",
+                  "e": "nervoso",
+                  "t": "A senha ficava num papel no balcão. Todos sabiam. Eu disse ao doutor Otávio, mas ele mandou eu ficar quieta."
+                },
+                {
+                  "q": "voce",
+                  "e": "nervoso",
+                  "t": "(Ela falou, e eu aconselhei. Agora tenho uma informação que não sei se posso usar, de alguém que pode ser acusada no mesmo caso.)"
+                },
+                {
+                  "q": "helena",
+                  "e": "bravo",
+                  "t": "(depois) Quem aconselha a parte contrária pode ter de sair do processo. Você a avisou de que não é advogado dela?"
+                }
+              ]
+            },
+            {
+              "t": "Prometer ajuda se ela depuser a favor da Bruna.",
+              "marca": "a2_katia_barganha",
+              "falas": [
+                {"q": "katia", "e": "chocado", "t": "Isso é… uma troca?"},
+                {"q": "voce", "e": "nervoso", "t": "(Barganhei com uma testemunha. Isso tem nome, e não é elogio.)"},
+                {
+                  "q": "helena",
+                  "e": "bravo",
+                  "t": "(depois) Prometer vantagem a testemunha acaba em processo ético. Desfaça isso por escrito amanhã."
+                }
+              ]
+            }
+          ],
+          "proxima": "d11"
+        },
         "d11": {"tipo": "veredicto", "carimbo": "PROCEDENTE", "titulo": "Dado de saúde não é mercadoria", "texto": "Senha num post-it, fichas no lixo e um incidente escondido: a LGPD cobrou a conta. E agora você sabe que a Altavista não é só uma construtora."}
       }
     },
@@ -510,7 +737,123 @@
           ],
           "proxima": "g1"},
         "g1": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "heitor", "e": "normal", "t": "Antes da sentença, a requerida manifesta-se?"}, {"q": "livia", "e": "confiante", "t": "Excelência, requeiro, com base no art. 370 do CPC, a oitiva da vizinha Telma Rocha. Ela presencia a rotina do menino, e a autora jamais a mencionou."}, {"q": "larissa", "e": "chocado", "t": "Eu mal conheço essa mulher, doutor(a)! Moramos lado a lado e ela nem me cumprimenta.", "fx": "tremor"}, {"q": "heitor", "e": "pensativo", "t": "Defiro, com o contraditório do art. 10. O interesse do menino prevalece sobre o ritmo do processo."}, {"q": "voce", "e": "nervoso", "t": "(Quando o pai some e a Brandão & Associados aparece com uma vizinha prestativa, não é coincidência.)"}, {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cp342", "cpc370"]}], "proxima": "g1r"},
-        "g1r": {"tipo": "reviravolta", "banner": "REVIRAVOLTA!", "sub": "Testemunha surpresa", "ajuste": -1, "piso": 3, "falas": [{"q": "livia", "e": "confiante", "t": "Chamo a senhora Telma Rocha."}, {"q": "larissa", "e": "chocado", "t": "Mas eu mal falo com essa mulher!"}], "local": "tribunal", "proxima": "g2"},
+        "g1r": {"tipo": "reviravolta", "banner": "REVIRAVOLTA!", "sub": "Testemunha surpresa", "ajuste": -1, "piso": 3, "falas": [{"q": "livia", "e": "confiante", "t": "Chamo a senhora Telma Rocha."}, {"q": "larissa", "e": "chocado", "t": "Mas eu mal falo com essa mulher!"}], "local": "tribunal", "proxima": "zq7"},
+        "zq7": {
+          "tipo": "protesto",
+          "local": "tribunal",
+          "titulo": "A ré inquire a vizinha",
+          "falas": [{"q": "narrador", "t": "Lívia inquire a vizinha que ela mesma arrolou. Proteste o que for ilegal."}],
+          "linhas": [
+            {"q": "livia", "e": "normal", "t": "Dona Telma, há quanto tempo a senhora mora ao lado da autora?"},
+            {
+              "q": "livia",
+              "e": "confiante",
+              "t": "Conte ao juízo o que a senhora pensa da vida íntima da autora e dos homens que ela recebe.",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [
+                  {
+                    "chave": "CPC#art-459",
+                    "trecho": "não tiverem relação com as questões de fato objeto da atividade probatória"
+                  }
+                ],
+                "omissao": [
+                  {
+                    "q": "helena",
+                    "e": "bravo",
+                    "t": "(sussurrando) A vida íntima da Larissa não é o objeto do processo. Isso é para humilhar. Proteste."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta não tem relação com os fatos da causa (guarda e alimentos) e invade a intimidade da autora.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "bravo",
+                        "t": "Deferido. A vida íntima da autora não é objeto desta ação. Doutora Lívia, a dignidade das partes também é dever do advogado."
+                      },
+                      {"q": "livia", "e": "nervoso", "t": "…Retiro a pergunta, Excelência."}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é indutiva.",
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "bravo",
+                        "t": "Indefiro por esse fundamento. O defeito é outro: nada tem a ver com a guarda."
+                      }
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "heitor", "e": "bravo", "t": "Indefiro. Não foi feita antes."}]
+                  }
+                ]
+              }
+            },
+            {"q": "livia", "e": "normal", "t": "A senhora vê o requerido buscar o menino aos sábados?"},
+            {
+              "q": "livia",
+              "e": "apontando",
+              "t": "O requerido vem buscar o menino todo sábado, pontualíssimo, não vem? Nunca faltou?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [{"chave": "CPC#art-459", "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"}],
+                "omissao": [
+                  {
+                    "q": "helena",
+                    "e": "pensativo",
+                    "t": "(sussurrando) 'Todo sábado, pontualíssimo, não vem?' Ela entregou o texto da testemunha."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta é indutiva: contém a resposta que se quer ouvir.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "normal",
+                        "t": "Deferido. A testemunha dirá com que frequência viu o requerido, sem sugestão."
+                      },
+                      {"q": "twtelma", "e": "nervoso", "t": "Bom… eu acho que ele vem… quase todo sábado."}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "heitor", "e": "bravo", "t": "Indefiro. Ainda não foi feita."}]
+                  },
+                  {
+                    "t": "A pergunta pede opinião da testemunha.",
+                    "falas": [{"q": "heitor", "e": "bravo", "t": "Indefiro. Pergunta fato, não opinião."}]
+                  }
+                ]
+              }
+            },
+            {"q": "livia", "e": "normal", "t": "A senhora presenciou a rotina do menino aos sábados?"}
+          ],
+          "erro_interromper": [
+            {
+              "q": "heitor",
+              "e": "bravo",
+              "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protestar sem fundamento custa credibilidade."
+            }
+          ],
+          "acerto": [
+            {"q": "heitor", "e": "normal", "t": "Prossiga o depoimento."},
+            {
+              "q": "helena",
+              "e": "pensativo",
+              "t": "(sussurrando) 'Quase todo sábado' já é bem diferente de 'todo sábado'. Guarde a diferença."
+            }
+          ],
+          "proxima": "g2"
+        },
         "g2": {"tipo": "depoimento", "testemunha": "twtelma", "titulo": "A vizinha prestativa", "intro": [{"q": "twtelma", "e": "confiante", "t": "Telma Rocha, do lar. Moro ao lado da Larissa há cinco anos e vejo tudo."}], "afirmacoes": [{"t": "Todo sábado às dez o menino fica sozinho na janela. A mãe sai e deixa.", "e": "bravo", "pressionar": [{"q": "voce", "e": "pensativo", "t": "A senhora vê o menino sozinho, ou vê o menino na janela?"}, {"q": "twtelma", "e": "confiante", "t": "Sozinho. Na janela."}]}, {"t": "O Diego vem buscar o menino todo sábado, pontualíssimo. Nunca vi o homem faltar a uma visita.", "e": "feliz", "pressionar": [{"q": "voce", "e": "apontando", "t": "Nunca, nesses dez últimos fins de semana?"}, {"q": "twtelma", "e": "confiante", "t": "Nunca. Ele é um pai exemplar."}]}, {"t": "A Larissa é quem atrapalha: some com o menino e inventa desculpa.", "e": "bravo", "pressionar": [{"q": "voce", "e": "normal", "t": "A senhora ouviu isso dela?"}, {"q": "twtelma", "e": "nervoso", "t": "Todo mundo no prédio sabe."}]}], "contradicao": {"afirmacao": 1, "provas": ["mensagens"]}, "acerto": [{"q": "voce", "e": "apontando", "t": "UM MOMENTO!", "fx": "ummomento"}, {"q": "voce", "e": "apontando", "t": "Nunca faltou a uma visita? Nos últimos dez fins de semana, o próprio Diego cancelou NOVE por mensagem: 'Hoje não dá, tô viajando.' O menino na janela não espera a mãe sair. Espera o pai que não vem!", "fx": "protesto"}, {"q": "twtelma", "e": "chocado", "t": "Eu… quis dizer que ele é pontual quando vem!", "fx": "tremor"}, {"q": "larissa", "e": "triste", "t": "Todo sábado ele olha para a rua e pergunta se hoje o papai vem."}], "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}], "proxima": "g3", "dica": ["A testemunha diz que o pai nunca faltou.", "O que as mensagens de Diego mostram sobre as últimas visitas?"]},
         "g3": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "twtelma", "e": "nervoso", "t": "Bom… não é todo sábado. Mas o Diego é um homem humilde, coitado, vive de ônibus. Não tem nem carro."}, {"q": "livia", "e": "pensativo", "t": "Excelência, a testemunha apenas descreve a realidade de um pai de poucos recursos, como já sustentamos."}, {"q": "diego", "e": "nervoso", "t": "(para você, em voz baixa) Eu não pedi essa mulher. Eu juro. Eu já tô enrolado demais."}, {"q": "voce", "e": "pensativo", "t": "(Sem carro. Alguém escreveu essa frase para ela. Só não olhou o registro da garagem.)"}], "proxima": "g4"},
         "g4": {"tipo": "depoimento", "testemunha": "twtelma", "titulo": "O pai sem carro", "intro": [{"q": "twtelma", "e": "confiante", "t": "Não tenho nada contra ninguém. Só digo o que vejo."}], "afirmacoes": [{"t": "O Diego não tem carro nenhum. Vai e volta de ônibus, sempre.", "e": "triste", "pressionar": [{"q": "voce", "e": "pensativo", "t": "Nunca viu o Diego chegar de carro?"}, {"q": "twtelma", "e": "confiante", "t": "Nunca. Nunquinha."}]}, {"t": "Coitado, o salário mal paga o aluguel dele.", "e": "triste", "pressionar": [{"q": "voce", "e": "normal", "t": "A senhora conhece o salário dele?"}, {"q": "twtelma", "e": "nervoso", "t": "Ele mesmo me contou."}]}, {"t": "A Larissa é que vive bem demais para quem diz precisar de pensão.", "e": "bravo", "pressionar": [{"q": "voce", "e": "apontando", "t": "A senhora está dizendo que ela esconde dinheiro?"}, {"q": "twtelma", "e": "nervoso", "t": "Eu só digo o que acho."}]}], "contradicao": {"afirmacao": 0, "provas": ["suv"]}, "acerto": [{"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"}, {"q": "voce", "e": "apontando", "t": "Nenhum carro? Existe uma SUV preta, ano atual, avaliada em R$ 280 mil, registrada em nome de Diego Moraes e comprada à vista há quatro meses!"}, {"q": "twtelma", "e": "chocado", "t": "Aquele carro… eu achei que era de um amigo dele!", "fx": "tremor"}, {"q": "heitor", "e": "bravo", "t": "Dona Telma, a SUV estacionou em fila dupla na porta do fórum hoje de manhã.", "fx": "martelo"}], "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}], "proxima": "g5", "dica": ["A testemunha afirma que Diego não tem carro.", "Veja o registro do veículo nos autos."]},
@@ -521,7 +864,67 @@
           {"q": "diego", "e": "nervoso", "t": "Envelopes para o presídio. Para alguém chamado Rafael."},
           {"q": "voce", "e": "chocado", "t": "!!!", "fx": "tremor"},
           {"q": "diego", "e": "nervoso", "t": "O Brandão vive perguntando pelo presídio se o amigo \"já entregou o que o Paulo mandou\". Eu não sei o que é. Sei que ele fica nervoso quando pergunta."}
-        ], "fundamentos": [{"chave": "CC#art-1583/par-2", "trecho": "o tempo de convívio com os filhos deve ser dividido de forma equilibrada com a mãe e com o pai"}], "proxima": "f9"},
+        ], "fundamentos": [{"chave": "CC#art-1583/par-2", "trecho": "o tempo de convívio com os filhos deve ser dividido de forma equilibrada com a mãe e com o pai"}], "proxima": "zt2"},
+        "zt2": {
+          "tipo": "tensao",
+          "local": "carro",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "Noite. Você dirige para casa com a frase de Diego martelando na cabeça: 'envelopes para o presídio'."
+            },
+            {
+              "q": "voce",
+              "e": "nervoso",
+              "t": "(No retrovisor, faróis altos demais. Faz quatro quarteirões que o carro atrás de mim é a mesma SUV preta da porta do fórum.)"
+            }
+          ],
+          "tempo": 7,
+          "padrao": 0,
+          "pergunta": "A SUV preta mantém dois carros de distância. Você vira à direita; ela vira. O sinal da próxima esquina vai fechar. O que você faz?",
+          "hesitou": "Você hesitou. O sinal fechou e a SUV parou colada na sua traseira, com os faróis acesos dentro do seu carro.",
+          "opcoes": [
+            {
+              "t": "Parar no posto de gasolina iluminado e esperar.",
+              "marca": "a2_seguido_posto",
+              "falas": [
+                {
+                  "q": "narrador",
+                  "t": "Você entra no posto, sob as luzes brancas, e desliga o motor. A SUV passa devagar, vidro fumê, sem acelerar."
+                },
+                {"q": "voce", "e": "pensativo", "t": "(Anotei a placa. Não prova nada, mas agora é registro.)"}
+              ]
+            },
+            {
+              "t": "Fazer o retorno proibido e despistar.",
+              "marca": "a2_seguido_despistou",
+              "cred": -1,
+              "falas": [
+                {
+                  "q": "narrador",
+                  "t": "Buzinas, um freio, um motociclista que xinga a sua família inteira. A SUV continua reta e some na avenida."
+                },
+                {"q": "voce", "e": "nervoso", "t": "(Perdi a SUV, quase perdi o carro. Heroísmo não é estratégia.)"}
+              ]
+            },
+            {
+              "t": "Encostar, descer e bater no vidro da SUV.",
+              "marca": "a2_seguido_encarou",
+              "falas": [
+                {
+                  "q": "narrador",
+                  "t": "O vidro desce meio palmo. Um homem de terno cinza olha para você por cima dos óculos escuros."
+                },
+                {
+                  "q": "narrador",
+                  "t": "— Boa noite, doutor(a). Ainda não é hora. — O vidro sobe, e a SUV vai embora sem pressa."
+                },
+                {"q": "voce", "e": "nervoso", "t": "(Ainda não é hora. De quê?)"}
+              ]
+            }
+          ],
+          "proxima": "f9"
+        },
         "f9": {"tipo": "veredicto", "carimbo": "GUARDA COMPARTILHADA", "titulo": "Pai é presença, não ausência", "texto": "Theo tem os dois pais e uma pensão proporcional aos recursos reais. E Diego deixou escapar: Brandão manda 'envelopes' para Rafael no presídio."}
       }
     },
@@ -643,7 +1046,119 @@
           ],
           "proxima": "u1"},
         "u1": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "heitor", "e": "normal", "t": "Encerrada a instrução. Passo à fundamentação da sentença."}, {"q": "brandao", "e": "confiante", "t": "Excelência, um único minuto. Surgiu uma testemunha ocular que ninguém havia ouvido. Dona Dalva Menezes, moradora da rua da obra, estava internada quando a ação foi proposta."}, {"q": "heitor", "e": "pensativo", "t": "O art. 370 do CPC me permite determinar provas necessárias ao julgamento do mérito. Mas o art. 10 exige contraditório. Ouvirei a testemunha, e o(a) senhor(a) poderá reperguntar."}, {"q": "caio", "e": "nervoso", "t": "Doutor(a), eu não me lembro de nenhuma dona Dalva. A rua estava vazia."}, {"q": "helena", "e": "pensativo", "t": "(mensagem no seu celular) Testemunha que aparece depois que o caso parece ganho tem sempre um dono. Procure o dono."}, {"q": "brandao", "e": "feliz", "t": "(baixinho, para você) Eu disse que o jogo era longo, colega."}, {"q": "narrador", "t": "Os autos do processo foram atualizados.", "recebe": ["cp342", "cpc370", "cpc80"]}], "proxima": "u1r"},
-        "u1r": {"tipo": "reviravolta", "banner": "REVIRAVOLTA!", "sub": "Testemunha surpresa", "ajuste": -1, "piso": 3, "falas": [{"q": "brandao", "e": "confiante", "t": "Chamo a senhora Dalva Menezes."}, {"q": "caio", "e": "nervoso", "t": "Doutor(a)... quem é ela?"}], "local": "tribunal", "proxima": "u2"},
+        "u1r": {"tipo": "reviravolta", "banner": "REVIRAVOLTA!", "sub": "Testemunha surpresa", "ajuste": -1, "piso": 3, "falas": [{"q": "brandao", "e": "confiante", "t": "Chamo a senhora Dalva Menezes."}, {"q": "caio", "e": "nervoso", "t": "Doutor(a)... quem é ela?"}], "local": "tribunal", "proxima": "zq8"},
+        "zq8": {
+          "tipo": "protesto",
+          "local": "tribunal",
+          "titulo": "Brandão inquire a testemunha que arrolou",
+          "falas": [{"q": "narrador", "t": "Brandão inquire a testemunha que ele mesmo trouxe. Proteste o que for ilegal."}],
+          "linhas": [
+            {"q": "brandao", "e": "normal", "t": "Dona Dalva, há quantos anos a senhora mora na rua do muro?"},
+            {
+              "q": "brandao",
+              "e": "confiante",
+              "t": "A senhora viu o garoto, que já era um rapaz de dezoito anos, escalando o muro, não foi?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [{"chave": "CPC#art-459", "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"}],
+                "omissao": [
+                  {
+                    "q": "helena",
+                    "e": "pensativo",
+                    "t": "(sussurrando) Ele colocou a idade e a escalada dentro da pergunta. A testemunha só precisa dizer 'sim'."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta é indutiva: afirma os fatos e pede só a confirmação.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "normal",
+                        "t": "Deferido. Doutor Brandão, quem arrola a testemunha pergunta; não lhe dita fatos."
+                      },
+                      {"q": "brandao", "e": "normal", "t": "Reformulo. O que a senhora viu, Dona Dalva?"}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "heitor", "e": "bravo", "t": "Indefiro. É a primeira vez que se pergunta."}]
+                  },
+                  {
+                    "t": "A pergunta não tem relação com a causa.",
+                    "falas": [{"q": "heitor", "e": "bravo", "t": "Indefiro. A conduta do autor é tema da defesa, doutor(a)."}]
+                  }
+                ]
+              }
+            },
+            {"q": "brandao", "e": "normal", "t": "Em que dias da semana a senhora costuma passar por ali?"},
+            {
+              "q": "brandao",
+              "e": "feliz",
+              "t": "Na sua opinião de moradora, nenhuma construção do bairro aguentaria aquela chuva, certo?",
+              "incidente": {
+                "chamada": "Protesto, Excelência!",
+                "pergunta": "Qual o fundamento do protesto?",
+                "fundamentos": [
+                  {
+                    "chave": "CPC#art-459",
+                    "trecho": "não tiverem relação com as questões de fato objeto da atividade probatória"
+                  }
+                ],
+                "omissao": [
+                  {
+                    "q": "helena",
+                    "e": "pensativo",
+                    "t": "(sussurrando) Isso é conclusão técnica de uma leiga. O que se prova aqui é o estado do muro, não o que ela acha das construções."
+                  }
+                ],
+                "opcoes": [
+                  {
+                    "t": "A pergunta pede conclusão técnica e opinião, não fatos presenciados.",
+                    "certa": true,
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "normal",
+                        "t": "Deferido. A testemunha informa o que viu; a conclusão técnica é para o perito."
+                      },
+                      {"q": "brandao", "e": "normal", "t": "…Sem mais, Excelência."}
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é indutiva.",
+                    "falas": [
+                      {
+                        "q": "heitor",
+                        "e": "bravo",
+                        "t": "Indefiro por esse fundamento. O defeito é outro: opinião técnica."
+                      }
+                    ]
+                  },
+                  {
+                    "t": "A pergunta é repetida.",
+                    "falas": [{"q": "heitor", "e": "bravo", "t": "Indefiro. Não foi feita antes."}]
+                  }
+                ]
+              }
+            },
+            {"q": "brandao", "e": "normal", "t": "A senhora viu o muro no mês anterior?"}
+          ],
+          "erro_interromper": [
+            {
+              "q": "heitor",
+              "e": "bravo",
+              "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protestar sem fundamento custa credibilidade."
+            }
+          ],
+          "acerto": [
+            {"q": "heitor", "e": "normal", "t": "Prossiga o depoimento."},
+            {"q": "helena", "e": "feliz", "t": "(sussurrando) Brandão odeia ser corrigido na frente do juiz. Gravou?"}
+          ],
+          "proxima": "u2"
+        },
         "u2": {"tipo": "depoimento", "testemunha": "twdalva", "titulo": "A senhora da varanda", "intro": [{"q": "twdalva", "e": "confiante", "t": "Dalva Menezes, dona de casa, moradora da rua da obra há trinta anos. Vi tudo da minha varanda."}], "afirmacoes": [{"t": "O rapaz já era grande, uns dezoito anos, forte, barbudo. Sabia muito bem o que estava fazendo.", "e": "bravo", "pressionar": [{"q": "voce", "e": "apontando", "t": "Dezoito? A senhora consegue ver barba daquela distância?"}, {"q": "twdalva", "e": "confiante", "t": "Consigo. Tenho olho bom."}]}, {"t": "Ele estava escalando e pulando no muro como se fosse brinquedo.", "e": "bravo", "pressionar": [{"q": "voce", "e": "normal", "t": "Escalando? Quanto tempo ele ficou ali?"}, {"q": "twdalva", "e": "nervoso", "t": "Uns dez minutos, pelo menos."}]}, {"t": "E o muro estava firme como rocha. Eu passava ali todo dia e nunca vi uma rachadura.", "e": "normal", "pressionar": [{"q": "voce", "e": "pensativo", "t": "Todos os dias, nos últimos seis meses?"}, {"q": "twdalva", "e": "confiante", "t": "Todos, sem falta."}]}], "contradicao": {"afirmacao": 0, "provas": ["certidao"]}, "acerto": [{"q": "voce", "e": "apontando", "t": "UM MOMENTO!", "fx": "ummomento"}, {"q": "voce", "e": "apontando", "t": "Dezoito anos, barbudo e forte? A certidão de nascimento prova que Caio tinha QUATORZE anos no dia do desabamento! Um menino de uniforme, voltando da escola, não um adulto que 'sabia o que fazia'!", "fx": "protesto"}, {"q": "twdalva", "e": "nervoso", "t": "Era… era alto para a idade… eu me confundi…", "fx": "tremor"}, {"q": "caio", "e": "triste", "t": "Eu tinha quatorze anos, dona Dalva. Eu voltava da escola."}], "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}], "proxima": "u3", "dica": ["A testemunha deu uma idade para o Caio.", "Qual documento mostra a idade real dele no dia?"]},
         "u3": {"tipo": "dialogo", "local": "tribunal", "falas": [{"q": "brandao", "e": "confiante", "t": "Excelência, a idade é um detalhe. O relevante é que o menino escalou o muro: culpa exclusiva da vítima, art. 945 do Código Civil."}, {"q": "twdalva", "e": "confiante", "t": "Isso mesmo. E o muro, esse sim, estava perfeito. Perfeito!"}, {"q": "voce", "e": "pensativo", "t": "(Ela insiste no muro perfeito. Esse é o ponto que ela decorou. Preciso quebrá-lo com o que a vizinha fotografou.)"}, {"q": "heitor", "e": "normal", "t": "A defesa pode prosseguir."}], "proxima": "u4"},
         "u4": {"tipo": "depoimento", "testemunha": "twdalva", "titulo": "O muro perfeito", "intro": [{"q": "twdalva", "e": "confiante", "t": "Posso garantir: o muro era a melhor coisa daquela obra."}], "afirmacoes": [{"t": "Eu passei por ali todo dia e, no mês anterior, nem uma rachadura, nem uma inclinação.", "e": "normal", "pressionar": [{"q": "voce", "e": "pensativo", "t": "Nem no mês anterior ao desabamento?"}, {"q": "twdalva", "e": "confiante", "t": "Nem no mês anterior. Nada."}]}, {"t": "Se ele tivesse caído sozinho, eu teria visto antes.", "e": "normal", "pressionar": [{"q": "voce", "e": "apontando", "t": "A senhora viu a queda?"}, {"q": "twdalva", "e": "nervoso", "t": "Vi. O menino empurrou."}]}, {"t": "A Altavista sempre cuidou direitinho da obra, bem cuidadosa.", "e": "feliz", "pressionar": [{"q": "voce", "e": "normal", "t": "A senhora conhece bem a Altavista?"}, {"q": "twdalva", "e": "nervoso", "t": "Conheço de vista."}]}], "contradicao": {"afirmacao": 0, "provas": ["fotos"]}, "acerto": [{"q": "voce", "e": "apontando", "t": "PROTESTO!", "fx": "protesto"}, {"q": "voce", "e": "apontando", "t": "Nem uma rachadura no mês anterior? As fotos tiradas por uma vizinha um mês antes da queda mostram rachaduras diagonais de cima a baixo e o muro visivelmente torto! Qualquer pessoa que passasse ali todos os dias teria visto!"}, {"q": "twdalva", "e": "chocado", "t": "Eu… passava de carro… tinha muito sol…", "fx": "tremor"}, {"q": "heitor", "e": "bravo", "t": "Dona Dalva, a senhora disse que o via todos os dias, e agora diz que passava de carro.", "fx": "martelo"}], "erro": [{"q": "heitor", "e": "bravo", "t": "Essa prova não contradiz essa afirmação, doutor(a)."}], "proxima": "u5", "dica": ["A testemunha diz que não havia nenhum defeito no muro.", "Quem registrou o muro antes da queda?"]},
@@ -656,7 +1171,158 @@
           {"q": "brandao", "e": "feliz", "t": "Mande lembranças a ele. Enquanto ele ainda fala com alguém."},
           {"q": "voce", "e": "bravo", "t": "Isso é uma ameaça, doutor Brandão?"},
           {"q": "brandao", "e": "normal", "t": "É um conselho. De graça. O último."}
-        ], "proxima": "m10"},
+        ], "proxima": "zl1"},
+        "zl1": {
+          "tipo": "dialogo",
+          "local": "corredor",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "No corredor do fórum, Lívia Sampaio espera o elevador sem olhar para você. Brandão acabou de sair."
+            },
+            {"q": "livia", "e": "nervoso", "t": "Eu não sabia que ele diria aquilo. Não estava no meu roteiro."},
+            {"q": "livia", "e": "normal", "t": "Você foi justo(a) comigo no caso do meu tio. É por isso que estou falando.", "se": "a2y_livia_agradeceu"},
+            {
+              "q": "livia",
+              "e": "normal",
+              "t": "Isto não é um favor. Eu trabalho para ele e vou continuar trabalhando. Mas ele costuma continuar as conversas no subsolo, onde a câmera é ruim."
+            },
+            {"q": "livia", "e": "normal", "t": "Não desça sozinho(a). Ou desça pela escada, com alguém."},
+            {
+              "q": "voce",
+              "e": "pensativo",
+              "t": "(Ela me avisa. A mesma que escreveu um relatório sobre mim depois da geladeira.)"
+            }
+          ],
+          "proxima": "zl2"
+        },
+        "zl2": {
+          "tipo": "escolha",
+          "livre": true,
+          "local": "corredor",
+          "falas": [
+            {
+              "q": "livia",
+              "e": "normal",
+              "t": "Pense o que quiser de mim. Mas pense antes de entrar naquele elevador."
+            }
+          ],
+          "pergunta": "O que você faz com o aviso de Lívia?",
+          "opcoes": [
+            {
+              "t": "Agradecer e pedir a um segurança do fórum que o(a) acompanhe.",
+              "marca": "a2_livia_ouviu",
+              "falas": [
+                {"q": "voce", "e": "normal", "t": "Obrigado(a), Lívia."},
+                {"q": "livia", "e": "nervoso", "t": "Não agradeça. Eu nunca falei com você."}
+              ]
+            },
+            {
+              "t": "Desconfiar: 'Por que você me avisa?'",
+              "marca": "a2_livia_desconfiou",
+              "falas": [
+                {"q": "voce", "e": "pensativo", "t": "Por que você me avisa?"},
+                {
+                  "q": "livia",
+                  "e": "triste",
+                  "t": "Porque há coisas que nem o melhor salário da cidade paga. Pense o que quiser."
+                }
+              ]
+            },
+            {
+              "t": "Ignorar e descer sozinho(a).",
+              "marca": "a2_livia_ignorou",
+              "falas": [
+                {"q": "voce", "e": "normal", "t": "Eu sei me cuidar."},
+                {"q": "livia", "e": "normal", "t": "Como quiser. Eu avisei uma vez."}
+              ]
+            }
+          ],
+          "proxima": "zg1"
+        },
+        "zg1": {
+          "tipo": "tensao",
+          "local": "garagem",
+          "falas": [
+            {
+              "q": "narrador",
+              "t": "O elevador abre num subsolo de concreto, meio vazio. Uma SUV preta está atravessada na saída da sua vaga, de motor ligado.",
+              "se": "a2_livia_ignorou"
+            },
+            {
+              "q": "narrador",
+              "t": "O segurança do fórum desce com você. Isso não impede que uma SUV preta esteja atravessada na saída da sua vaga, de motor ligado.",
+              "se": "a2_livia_ouviu"
+            },
+            {
+              "q": "narrador",
+              "t": "Você desce já desconfiado(a) dela. A SUV preta está exatamente onde ela disse que algo estaria: atravessada na sua vaga, de motor ligado.",
+              "se": "a2_livia_desconfiou"
+            },
+            {
+              "q": "narrador",
+              "t": "O vidro de trás desce devagar. Augusto Brandão, calmo, uma perna cruzada sobre a outra."
+            },
+            {
+              "q": "brandao",
+              "e": "feliz",
+              "t": "Uma carona, doutor(a). Só dois minutos. Dois homens esperam do lado de fora, sem fazer nada. É só uma conversa."
+            }
+          ],
+          "tempo": 8,
+          "padrao": 1,
+          "pergunta": "A porta de trás da SUV está aberta. O que você faz?",
+          "hesitou": "Você hesitou. Brandão sorriu, bateu duas vezes no vidro e a SUV foi embora, deixando só o cheiro de couro e a sensação de ter sido medido.",
+          "opcoes": [
+            {
+              "t": "Entrar na SUV e ouvir.",
+              "marca": "a2_suv_entrou",
+              "cred": -1,
+              "falas": [
+                {
+                  "q": "brandao",
+                  "e": "confiante",
+                  "t": "R$ 40 mil por mês, sala de esquina, nenhum cliente que o(a) incomode. Em troca, uma única coisa: quando o Rafael falar com o Ministério Público, você esquece o endereço do apartamento dele."
+                },
+                {"q": "brandao", "e": "feliz", "t": "Pense. Eu espero até sexta."},
+                {
+                  "q": "voce",
+                  "e": "nervoso",
+                  "t": "(Entrei no carro dele. Mesmo recusando depois, já estou na fotografia.)"
+                }
+              ]
+            },
+            {
+              "t": "Recuar para o elevador e chamar a segurança do fórum.",
+              "marca": "a2_suv_seguranca",
+              "falas": [
+                {"q": "brandao", "e": "feliz", "t": "Segurança… a de lá me cumprimenta pelo nome."},
+                {
+                  "q": "narrador",
+                  "t": "A SUV sai sem pressa. O vigilante chega ao subsolo quando só restam as marcas de pneu."
+                }
+              ]
+            },
+            {
+              "t": "Anotar a placa e filmar com o celular.",
+              "marca": "a2_suv_filmou",
+              "cred": 1,
+              "falas": [
+                {
+                  "q": "brandao",
+                  "e": "confiante",
+                  "t": "Esse vídeo vai ter doze segundos e nenhuma ilegalidade, doutor(a). Boa noite."
+                },
+                {
+                  "q": "voce",
+                  "e": "confiante",
+                  "t": "(Doze segundos, uma placa e a hora. Às vezes é tudo o que um processo precisa.)"
+                }
+              ]
+            }
+          ],
+          "proxima": "m10"
+        },
         "m10": {"tipo": "veredicto", "carimbo": "PROCEDENTE", "titulo": "Nunca é tarde para um incapaz", "texto": "A prescrição não corria contra o Caio, o muro rachado era conhecido e a chuva era fraca. Você venceu Brandão em pessoa. E ele acabou de ameaçar Rafael."}
       }
     },
@@ -799,7 +1465,32 @@
           {"q": "lacerda", "e": "pensativo", "t": "Tem alguém lá dentro, doutor(a). No Ministério Público ou na polícia. Vazaram a decisão."},
           {"q": "lacerda", "e": "confiante", "t": "Abriu o concurso para promotor de Justiça. Eu preciso de gente honesta do lado de dentro. Gente que conhece a Altavista melhor do que ninguém."},
           {"q": "voce", "e": "pensativo", "t": "(Do outro lado da tribuna… para pegar quem está do lado de dentro.)"}
-        ], "proxima": "x10b"},
+        ], "proxima": "zr4"},
+        "zr4": {
+          "tipo": "dialogo",
+          "local": "tribunal",
+          "falas": [
+            {
+              "q": "lacerda",
+              "e": "confiante",
+              "t": "O seu vídeo da SUV no subsolo: a placa leva a uma empresa de fachada. É a primeira ponta de fio que a PF tem.",
+              "se": "a2_suv_filmou"
+            },
+            {
+              "q": "helena",
+              "e": "triste",
+              "t": "Eu soube da carona na SUV. Não vou julgar. Mas daqui em diante, nenhuma conversa com ele sem testemunha.",
+              "se": "a2_suv_entrou"
+            },
+            {
+              "q": "helena",
+              "e": "feliz",
+              "t": "Boa ideia a segurança do fórum. Brandão não gosta de plateia.",
+              "se": "a2_suv_seguranca"
+            }
+          ],
+          "proxima": "x10b"
+        },
         "x10b": {"tipo": "dialogo", "local": "parlatorio", "falas": [
           {"q": "narrador", "t": "Parlatório do presídio. Última visita antes de Rafael ser transferido para uma ala protegida."},
           {"q": "rafael", "e": "triste", "t": "Eu sei que você vai embora para estudar e que a sua vida vai mudar. Mas preciso pedir uma coisa que não é de advogado."},
@@ -818,7 +1509,32 @@
             {"q": "voce", "e": "pensativo", "t": "Rafael, vou ser sincero(a): daqui para frente a minha vida será o concurso, a Altavista e provas de que ninguém me veja perto de colaboradores. Misturar as coisas pode prejudicar você e ela."},
             {"q": "rafael", "e": "triste", "t": "Eu entendo. Você tem razão: ninguém deveria ser arrastado para o meio dos meus erros. Cuide-se."}
           ]}
-        ], "proxima": "x10d"},
+        ], "proxima": "zr3"},
+        "zr3": {
+          "tipo": "dialogo",
+          "local": "parlatorio",
+          "falas": [
+            {
+              "q": "rafael",
+              "e": "triste",
+              "t": "A Sofia me contou: você prometeu que eu voltaria 'amanhã'. Já faz seis meses. Ela nunca te cobra. Eu cobro de mim.",
+              "se": "a1_prometeu_sofia"
+            },
+            {
+              "q": "rafael",
+              "e": "feliz",
+              "t": "A Sofia me contou que você falou a verdade na noite em que me levaram. Ela repete: 'prefiro quando falam a verdade'. Você a ensinou mais que eu.",
+              "se": "a1_foi_sincero_sofia"
+            },
+            {
+              "q": "rafael",
+              "e": "pensativo",
+              "t": "Eu guardo aquela noite de quadrilha como a última vez que fui feliz de verdade.",
+              "se": "a1_festa_vou"
+            }
+          ],
+          "proxima": "x10d"
+        },
         "x10d": {"tipo": "dialogo", "local": "tribunal", "falas": [
           {"q": "rafael", "e": "feliz", "t": "(por carta, uma semana depois) Vá, doutor(a). Você já é melhor do que eu fui. E a Sofia mandou um desenho para você.", "se": "a2_sofia_promessa"},
           {"q": "rafael", "e": "feliz", "t": "(por carta, uma semana depois) Vá, doutor(a). Você já é melhor do que eu fui. Que a vida lhe devolva em dobro o que me deu.", "se": "a2_sofia_distancia"},
