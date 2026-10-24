@@ -311,7 +311,7 @@
    "cenas": {
     "s1": {
      "tipo": "titulo",
-     "texto": "Caso 25 · Ato IV: A Toga",
+     "texto": "Caso 23 · Ato IV: A Toga",
      "subtitulo": "Pena a Cumprir",
      "proxima": "s2"
     },
@@ -561,7 +561,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Você decide ir à unidade e ver o que os papéis não mostram. O parlatório é onde os presos falam com advogados e visitas, e onde ficam vestígios de quem entra e sai."
+       "t": "Como juiz da execução, você tem o dever de fiscalizar a unidade (LEP, art. 66). Vai ver o que os papéis não mostram, e as partes acompanham o que você registra."
       },
       {
        "q": "a4xbeto",
@@ -707,7 +707,7 @@
       {
        "q": "voce",
        "e": "confiante",
-       "t": "Declaro aberta a audiência de justificação na execução. Ouvidos o apenado, a defesa e o Ministério Público, decidirei sobre a progressão de regime.",
+       "t": "Declaro aberta a audiência de justificação na execução. Ouvidos o apenado, a defesa e o Ministério Público, decidirei sobre a progressão de regime. Eu pergunto só o que restar obscuro; a prova é das partes.",
        "fx": "martelo"
       },
       {
@@ -725,49 +725,85 @@
      "proxima": "s7"
     },
     "s7": {
-     "tipo": "decidir",
-     "falas": [
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Inquirição do apenado",
+     "falas": [],
+     "linhas": [
+      {
+       "q": "a4nadia",
+       "e": "normal",
+       "t": "Beto, há quanto tempo o senhor trabalha na oficina de marcenaria?"
+      },
+      {
+       "q": "a4xbeto",
+       "e": "normal",
+       "t": "Quinze meses, Excelência. Sem faltar um dia, fora a reforma de março."
+      },
       {
        "q": "a4tulio",
        "e": "apontando",
-       "t": "Beto, você já respondeu que não era o seu armário. Mas o senhor foi o único que teve celular apreendido naquele corredor, não foi? Repito: o celular era ou não era seu?"
+       "t": "Beto, você já respondeu que não era o seu armário. Mas o senhor foi o único que teve celular apreendido naquele corredor, não foi? Repito: o celular era ou não era seu?",
+       "incidente": {
+        "pergunta": "A pergunta é repetida. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro a pergunta: é repetida (art. 212). Reformule, doutor(a).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Deferido. A pergunta já foi respondida. Passemos adiante, doutor.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4tulio",
+            "e": "nervoso",
+            "t": "…Como queira, Excelência. Dispenso a pergunta."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo a pergunta passar: a testemunha responde se quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, o art. 212 não admite a repetição de pergunta já respondida."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor(a).",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, o art. 212 não admite a repetição de pergunta já respondida."
+         }
+        ]
+       }
       },
       {
        "q": "a4nadia",
-       "e": "apontando",
-       "t": "PROTESTO! Excelência, a pergunta já foi respondida duas vezes! O promotor repete a mesma pergunta para pressionar o apenado!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "A defensora protesta: pergunta repetida. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-212",
-       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+       "e": "normal",
+       "t": "Sem mais perguntas, Excelência."
       }
      ],
      "acerto": [
       {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. A pergunta já foi respondida. Passemos adiante, doutor.",
-       "fx": "martelo"
-      },
-      {
-       "q": "a4tulio",
-       "e": "nervoso",
-       "t": "…Como queira, Excelência. Dispenso a pergunta."
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
       }
      ],
-     "erro": [
-      {
-       "q": "a4rita",
-       "e": "nervoso",
-       "t": "(sussurrando) Excelência, o art. 212 não admite a repetição de pergunta já respondida."
-      }
-     ],
-     "local": "tribunal",
      "proxima": "s8"
     },
     "s8": {
@@ -789,7 +825,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Ouvido pelo senhor. E o defensor?"
+         "t": "Esclareça, Diretor: o apenado teve defensor na apuração da falta?"
         },
         {
          "q": "a4xosvaldo",
@@ -805,7 +841,7 @@
         {
          "q": "voce",
          "e": "apontando",
-         "t": "Pessoalmente. Mesmo em março, quando houve reforma?"
+         "t": "Consta que a oficina esteve fechada em março. Como o senhor conferiu a lista nesse mês?"
         },
         {
          "q": "a4xosvaldo",
@@ -821,7 +857,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Nunca fora das reuniões formais?"
+         "t": "O senhor recebeu alguém da empresa fora das reuniões formais? Esclareça."
         },
         {
          "q": "a4xosvaldo",
@@ -837,7 +873,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Unicamente a falta. Então, sem ela, o atestado seria outro."
+         "t": "Se não houvesse a falta, o atestado seria outro?"
         },
         {
          "q": "a4xosvaldo",
@@ -856,14 +892,14 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "UM MOMENTO, Diretor!",
-       "fx": "ummomento"
+       "e": "pensativo",
+       "t": "Diretor, consta dos autos o livro de visitas da direção.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "O senhor diz que nunca recebeu representante da empresa fora das reuniões formais. Mas o livro de visitas da direção registra um representante comercial da Altavista Serviços dentro da sua sala por duas horas, dois dias antes da busca no armário do corredor. Onde está a ata dessa reunião?"
+       "e": "normal",
+       "t": "Ele registra um representante da Altavista Serviços dentro da sua sala por duas horas, dois dias antes da busca no armário do corredor. O senhor disse que nunca recebeu representante fora das reuniões formais. Onde está a ata dessa reunião?"
       },
       {
        "q": "a4xosvaldo",
@@ -886,14 +922,84 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Isso não contradiz o depoimento, Diretor. Pense no livro de visitas da direção: com quem o senhor se reuniu na sala dois dias antes da busca?"
+       "t": "Esse documento não esclarece o ponto, Diretor. Vejamos com quem o senhor se reuniu dois dias antes da busca."
       }
      ],
+     "proxima": "s8c"
+    },
+    "s8c": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O Diretor negou a visita e agora a admite. Duas versões, na mesma audiência."
+      }
+     ],
+     "pergunta": "O que o juízo faz com as duas versões do Diretor?",
+     "opcoes": [
+      {
+       "t": "Consigno a contradição, advirto o Diretor do compromisso (art. 210) e passo a ouvir a agente que fez a revista; se persistir a divergência, determino acareação (art. 229).",
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "feliz",
+         "t": "A defesa concorda, Excelência."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Isso: advertência agora, acareação se precisar, e a remessa ao MP só na decisão final, art. 211."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPP#art-229",
+         "trecho": "A acareação será admitida entre acusados, entre acusado e testemunha"
+        }
+       ]
+      },
+      {
+       "t": "Decreto a prisão do Diretor por falso testemunho, agora.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) O juiz não prende por conta própria, Excelência. A apuração é do Ministério Público."
+        }
+       ]
+      },
+      {
+       "t": "Passo adiante sem registrar nada: ele corrigiu quando perguntado.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) A correção precisa constar da ata, Excelência. Sem registro, o Tribunal não saberá da contradição."
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
      "proxima": "s9"
     },
     "s9": {
-     "tipo": "decidir",
-     "falas": [
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Perguntas ao Diretor",
+     "falas": [],
+     "linhas": [
+      {
+       "q": "a4nadia",
+       "e": "normal",
+       "t": "Diretor, a conduta ruim atestada decorre só da falta, como o senhor disse?"
+      },
+      {
+       "q": "a4xosvaldo",
+       "e": "normal",
+       "t": "Sim, Excelência."
+      },
       {
        "q": "a4nadia",
        "e": "apontando",
@@ -903,38 +1009,101 @@
        "q": "a4tulio",
        "e": "bravo",
        "t": "PROTESTO! Excelência, a pergunta não tem relação com a causa! Almoços do diretor não são objeto da execução!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "O promotor protesta: pergunta sem relação com a causa. Sua decisão?",
-     "correta": "indeferir",
-     "fundamentos": [
+       "fx": "protesto",
+       "incidente": {
+        "pergunta": "Protesto da parte: pergunta sem relação com a causa. Sua decisão?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro o protesto: a pergunta é regular. Responda.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Indeferido. A relação do diretor com a empresa interessa à credibilidade do atestado que sustenta a negativa. Responda, Diretor.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4xosvaldo",
+            "e": "nervoso",
+            "t": "Algumas… quatro ou cinco vezes. Assuntos de contrato."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Defiro o protesto e barro a pergunta.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, o atestado do diretor é o fundamento da oposição do MP. O interesse dele nele é parte da causa."
+           }
+          ]
+         }
+        ],
+        "chamada": "O protesto está em exame.",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, o atestado do diretor é o fundamento da oposição do MP. O interesse dele nele é parte da causa."
+         }
+        ]
+       }
+      },
       {
-       "chave": "CPP#art-212",
-       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Excelência, o MP requer que o juízo pergunte o que o Diretor sabe sobre a oficina e sobre outros presos, porque nossa investigação é frágil. Pode Vossa Excelência fazê-lo?",
+       "incidente": {
+        "pergunta": "O MP pede que o juiz produza a prova que lhe falta. Como o juízo responde?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-3a",
+          "trecho": "a substituição da atuação probatória do órgão de acusação"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro: o juiz só complementa pontos obscuros (art. 212, parágrafo único); investigar a oficina cabe ao MP (art. 3º-A).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Indeferido. A oficina será apurada por quem tem atribuição, a pedido do Ministério Público, com ofício que o próprio MP formular.",
+            "fx": "ordem"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Defiro: a execução penal é fiscalizada pelo juiz, que pode perguntar o que quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Fiscalizar a unidade é uma coisa, Excelência; suprir a investigação do Ministério Público é outra."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor."
+       }
       }
      ],
      "acerto": [
       {
-       "q": "voce",
-       "e": "confiante",
-       "t": "Indeferido. A relação do diretor com a empresa interessa à credibilidade do atestado que sustenta a negativa. Responda, Diretor.",
-       "fx": "martelo"
-      },
-      {
-       "q": "a4xosvaldo",
-       "e": "nervoso",
-       "t": "Algumas… quatro ou cinco vezes. Assuntos de contrato."
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
       }
      ],
-     "erro": [
-      {
-       "q": "a4rita",
-       "e": "nervoso",
-       "t": "(sussurrando) Excelência, o atestado do diretor é o fundamento da oposição do MP. O interesse dele nele é parte da causa."
-      }
-     ],
-     "local": "tribunal",
      "proxima": "s10"
     },
     "s10": {
@@ -956,7 +1125,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Sem saber quem era o alvo. Quem deu a ordem?"
+         "t": "Esclareça, Agente: quem deu a ordem de revista e o que foi dito sobre o alvo?"
         },
         {
          "q": "a4xsonia",
@@ -972,7 +1141,7 @@
         {
          "q": "voce",
          "e": "apontando",
-         "t": "Individual? Com chave?"
+         "t": "O armário era individual? Havia chave?"
         },
         {
          "q": "a4xsonia",
@@ -988,7 +1157,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Confessou? Está registrado em algum lugar?"
+         "t": "A confissão consta de algum registro assinado?"
         },
         {
          "q": "a4xsonia",
@@ -1007,14 +1176,14 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "UM MOMENTO, Agente!",
-       "fx": "ummomento"
+       "e": "pensativo",
+       "t": "Agente, o procedimento disciplinar registra que o aparelho foi achado no armário coletivo do corredor da cela 7, usado por seis presos.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "A senhora afirma que o celular estava no armário individual do apenado. Mas o procedimento disciplinar registra que o aparelho foi achado no armário coletivo do corredor da cela 7, usado por seis presos. Qual dos seis era o dono?"
+       "e": "normal",
+       "t": "A senhora disse que estava no armário individual do apenado. Como concilia as duas coisas?"
       },
       {
        "q": "a4xsonia",
@@ -1032,60 +1201,91 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Isso não contradiz o depoimento, Agente. Releia o procedimento disciplinar: onde exatamente o aparelho foi achado?"
+       "t": "Esse documento não esclarece o ponto, Agente. Releia onde exatamente o aparelho foi achado."
       }
      ],
      "proxima": "s11"
     },
     "s11": {
-     "tipo": "decidir",
-     "falas": [
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Perguntas do MP à agente",
+     "falas": [],
+     "linhas": [
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Agente, a senhora acompanhou a revista do início ao fim?"
+      },
+      {
+       "q": "a4xsonia",
+       "e": "normal",
+       "t": "Sim, Excelência."
+      },
       {
        "q": "a4tulio",
        "e": "apontando",
-       "t": "Agente Sônia, é claro que o senhor Adalberto era o responsável pelo armário do corredor, não é verdade? Ele era o preso mais antigo da cela."
-      },
-      {
-       "q": "a4nadia",
-       "e": "apontando",
-       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor já entrega a resposta!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "A defensora protesta: pergunta indutiva. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-212",
-       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+       "t": "Agente Sônia, é claro que o senhor Adalberto era o responsável pelo armário do corredor, não é verdade? Ele era o preso mais antigo da cela.",
+       "incidente": {
+        "pergunta": "A pergunta é indutiva. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro a pergunta: é indutiva (art. 212). Reformule, doutor(a).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Deferido. Reformule, doutor. A testemunha não é obrigada a responder ao que a pergunta já afirma.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4tulio",
+            "e": "nervoso",
+            "t": "…Agente, quem tinha a chave do armário do corredor?"
+           },
+           {
+            "q": "a4xsonia",
+            "e": "triste",
+            "t": "Ninguém, Excelência. Era aberto."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo a pergunta passar: a testemunha responde se quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor(a).",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+         }
+        ]
+       }
       }
      ],
      "acerto": [
       {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. Reformule, doutor. A testemunha não é obrigada a responder ao que a pergunta já afirma.",
-       "fx": "martelo"
-      },
-      {
-       "q": "a4tulio",
-       "e": "nervoso",
-       "t": "…Agente, quem tinha a chave do armário do corredor?"
-      },
-      {
-       "q": "a4xsonia",
-       "e": "triste",
-       "t": "Ninguém, Excelência. Era aberto."
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
       }
      ],
-     "erro": [
-      {
-       "q": "a4rita",
-       "e": "nervoso",
-       "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
-      }
-     ],
-     "local": "tribunal",
      "proxima": "s12"
     },
     "s12": {
@@ -1124,132 +1324,146 @@
      "proxima": "s13"
     },
     "s13": {
-     "tipo": "escolha",
+     "tipo": "sentenca",
+     "local": "gabinete",
+     "titulo": "Decisão na execução",
      "falas": [
       {
        "q": "a4rita",
        "e": "normal",
        "t": "Excelência, a questão da falta grave é o ponto central. Como tratá-la na decisão?"
-      }
-     ],
-     "pergunta": "Qual o efeito do procedimento disciplinar sem defesa?",
-     "opcoes": [
-      {
-       "t": "Considero a falta grave válida: o aparelho foi achado na cela, o diretor atestou má conduta, e o prazo recomeça (art. 112, § 6º).",
-       "falas": [
-        {
-         "q": "a4rita",
-         "e": "chocado",
-         "t": "Excelência, uma falta apurada sem defensor viola o art. 59 da LEP e o contraditório (CF, art. 5º, LV). Ela não pode produzir os efeitos do § 6º."
-        }
-       ],
-       "certa": false
       },
-      {
-       "t": "Reconheço a nulidade do procedimento disciplinar, por ausência de defesa (LEP, art. 59 e CF, art. 5º, LV); a falta não pode servir para negar a conduta nem para interromper o prazo, sem prejuízo de nova apuração com defesa técnica.",
-       "falas": [
-        {
-         "q": "a4nadia",
-         "e": "feliz",
-         "t": "É exatamente o que a Defensoria pediu, Excelência."
-        },
-        {
-         "q": "a4tulio",
-         "e": "pensativo",
-         "t": "O Ministério Público registra o inconformismo, mas reconhece o vício de forma."
-        }
-       ],
-       "certa": true,
-       "fundamentos": [
-        {
-         "chave": "LEP#art-59",
-         "trecho": "Praticada a falta disciplinar, deverá ser instaurado o procedimento para sua apuração, conforme regulamento, assegurado o direito de defesa."
-        },
-        {
-         "chave": "CF#art-5/inc-lv",
-         "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa, com os meios e recursos a ela inerentes;"
-        }
-       ]
-      },
-      {
-       "t": "Eu mesmo(a) aplico ao apenado a sanção da falta, para suprir o defeito do procedimento do diretor.",
-       "falas": [
-        {
-         "q": "a4rita",
-         "e": "nervoso",
-         "t": "O poder disciplinar é da autoridade administrativa (LEP, art. 47). O juiz decide sobre incidentes da execução, não faz as vezes do diretor."
-        }
-       ],
-       "certa": false
-      }
-     ],
-     "proxima": "s14"
-    },
-    "s14": {
-     "tipo": "escolha",
-     "falas": [
       {
        "q": "a4rita",
        "e": "pensativo",
        "t": "Instrução encerrada, Excelência. O promotor, a defensora e o apenado aguardam. Quais serão os termos da decisão?"
       }
      ],
-     "pergunta": "Qual é a decisão?",
-     "opcoes": [
+     "partes": [
       {
-       "t": "Indefiro a progressão: há conduta ruim atestada pelo diretor, e a falta grave interrompeu o prazo.",
-       "falas": [
+       "nome": "1. Qual o efeito do procedimento disciplinar sem defesa?",
+       "opcoes": [
         {
-         "q": "a4rita",
-         "e": "chocado",
-         "t": "O atestado e a falta se apoiam em procedimento nulo. Indeferir seria dar efeito jurídico a um ato que a lei não admite."
-        }
-       ],
-       "certa": false
-      },
-      {
-       "t": "Defiro a progressão ao regime semiaberto: cumpridos 25% da pena, com detração e remição, exame criminológico favorável e conduta carcerária regular, já que a falta é nula; ouvidos o Ministério Público e a defesa; sem prejuízo de nova apuração com defesa técnica.",
-       "falas": [
-        {
-         "q": "a4xbeto",
-         "e": "feliz",
-         "t": "Doutor(a)… obrigado. Eu vou trabalhar. Eu juro que vou."
+         "t": "Considero a falta grave válida: o aparelho foi achado na cela, o diretor atestou má conduta, e o prazo recomeça (art. 112, § 6º).",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "chocado",
+           "t": "Excelência, uma falta apurada sem defensor viola o art. 59 da LEP e o contraditório (CF, art. 5º, LV). Ela não pode produzir os efeitos do § 6º."
+          }
+         ],
+         "certa": false
         },
         {
-         "q": "a4nadia",
-         "e": "feliz",
-         "t": "É a decisão que a lei exige, Excelência."
-        }
-       ],
-       "certa": true,
-       "fundamentos": [
-        {
-         "chave": "LEP#art-112",
-         "trecho": "A pena privativa de liberdade será executada de forma progressiva com a transferência para regime menos rigoroso, a ser determinada pelo juiz, quando o preso tiver cumprido ao menos 1/6 (um sexto) da"
+         "t": "Reconheço a nulidade do procedimento disciplinar, por ausência de defesa (LEP, art. 59 e CF, art. 5º, LV); a falta não pode servir para negar a conduta nem para interromper o prazo, sem prejuízo de nova apuração com defesa técnica.",
+         "falas": [
+          {
+           "q": "a4nadia",
+           "e": "feliz",
+           "t": "É exatamente o que a Defensoria pediu, Excelência."
+          },
+          {
+           "q": "a4tulio",
+           "e": "pensativo",
+           "t": "O Ministério Público registra o inconformismo, mas reconhece o vício de forma."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "LEP#art-59",
+           "trecho": "Praticada a falta disciplinar, deverá ser instaurado o procedimento para sua apuração, conforme regulamento, assegurado o direito de defesa."
+          },
+          {
+           "chave": "CF#art-5/inc-lv",
+           "trecho": "aos litigantes, em processo judicial ou administrativo, e aos acusados em geral são assegurados o contraditório e ampla defesa, com os meios e recursos a ela inerentes;"
+          }
+         ]
         },
         {
-         "chave": "LEP#art-112/par-1",
-         "trecho": "Em todos os casos, o apenado somente terá direito à progressão de regime se ostentar boa conduta carcerária, comprovada pelo diretor do estabelecimento, e pelos resultados do exame criminológico,"
-        },
-        {
-         "chave": "LEP#art-112/par-2",
-         "trecho": "A decisão do juiz que determinar a progressão de regime será sempre motivada e precedida de manifestação do Ministério Público e do defensor, procedimento que também será adotado na concessão de"
+         "t": "Eu mesmo(a) aplico ao apenado a sanção da falta, para suprir o defeito do procedimento do diretor.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "O poder disciplinar é da autoridade administrativa (LEP, art. 47). O juiz decide sobre incidentes da execução, não faz as vezes do diretor."
+          }
+         ],
+         "certa": false
         }
        ]
       },
       {
-       "t": "Defiro a progressão direto ao regime aberto, para compensar o tempo perdido com o procedimento irregular.",
-       "falas": [
+       "nome": "2. Qual é a decisão sobre a progressão?",
+       "opcoes": [
         {
-         "q": "a4rita",
-         "e": "nervoso",
-         "t": "A progressão é do regime fechado para o semiaberto, e só depois para o aberto. A execução é progressiva, e a lei não autoriza saltos."
+         "t": "Indefiro a progressão: há conduta ruim atestada pelo diretor, e a falta grave interrompeu o prazo.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "chocado",
+           "t": "O atestado e a falta se apoiam em procedimento nulo. Indeferir seria dar efeito jurídico a um ato que a lei não admite."
+          }
+         ],
+         "certa": false
+        },
+        {
+         "t": "Defiro a progressão ao regime semiaberto: cumpridos 25% da pena, com detração e remição, exame criminológico favorável e conduta carcerária regular, já que a falta é nula; ouvidos o Ministério Público e a defesa; sem prejuízo de nova apuração com defesa técnica.",
+         "falas": [
+          {
+           "q": "a4xbeto",
+           "e": "feliz",
+           "t": "Doutor(a)… obrigado. Eu vou trabalhar. Eu juro que vou."
+          },
+          {
+           "q": "a4nadia",
+           "e": "feliz",
+           "t": "É a decisão que a lei exige, Excelência."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "LEP#art-112",
+           "trecho": "A pena privativa de liberdade será executada de forma progressiva com a transferência para regime menos rigoroso, a ser determinada pelo juiz, quando o preso tiver cumprido ao menos 1/6 (um sexto) da"
+          },
+          {
+           "chave": "LEP#art-112/par-1",
+           "trecho": "Em todos os casos, o apenado somente terá direito à progressão de regime se ostentar boa conduta carcerária, comprovada pelo diretor do estabelecimento, e pelos resultados do exame criminológico,"
+          },
+          {
+           "chave": "LEP#art-112/par-2",
+           "trecho": "A decisão do juiz que determinar a progressão de regime será sempre motivada e precedida de manifestação do Ministério Público e do defensor, procedimento que também será adotado na concessão de"
+          }
+         ]
+        },
+        {
+         "t": "Defiro a progressão direto ao regime aberto, para compensar o tempo perdido com o procedimento irregular.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "A progressão é do regime fechado para o semiaberto, e só depois para o aberto. A execução é progressiva, e a lei não autoriza saltos."
+          }
+         ],
+         "certa": false
         }
-       ],
-       "certa": false
+       ]
       }
      ],
-     "proxima": "s15"
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Assino a decisão.",
+       "fx": "martelo"
+      }
+     ],
+     "proxima": "s15",
+     "dica": [
+      "Falta apurada sem defesa viola o art. 59 da LEP.",
+      "A execução é progressiva: fechado, semiaberto, aberto, sem saltos."
+     ]
     },
     "s15": {
      "tipo": "dialogo",
@@ -1287,6 +1501,64 @@
       }
      ],
      "local": "gabinete",
+     "proxima": "rd"
+    },
+    "rd": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Excelência, preciso lhe dizer uma coisa antes que descubra por outra pessoa. Meu irmão, Davi Camargo, cumpre pena nessa mesma penitenciária. Ala B."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Não é parte deste processo. Mas ontem o Diretor Osvaldo me ligou perguntando se Vossa Excelência ia deferir. Eu disse que não sei. Disse a verdade, e desliguei."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Você fez bem em me contar. E o Diretor não devia ter ligado para o gabinete."
+      }
+     ],
+     "pergunta": "O irmão de Rita está sob a mesma unidade. Como preservar a imparcialidade do juízo e a confiança em quem trabalha ao seu lado?",
+     "opcoes": [
+      {
+       "t": "Manter Rita no gabinete, mas fora de qualquer processo de Davi, e registrar a ligação do Diretor na ata.",
+       "marca": "a4_irmao_fluxo",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Fico fora de tudo que for dele, Excelência. Obrigada por confiar."
+        },
+        {
+         "q": "voce",
+         "e": "confiante",
+         "t": "Confiança é o que sobra quando a lei já foi cumprida. Conte comigo."
+        }
+       ]
+      },
+      {
+       "t": "Pedir à Corregedoria que acompanhe os processos de Davi com outro juiz e afastar Rita da pauta da execução.",
+       "marca": "a4_irmao_substituto",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "triste",
+         "t": "Entendo, Excelência. É o certo. Só peço que ninguém ache que fiz algo errado."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Ninguém acha. É para que ninguém possa achar."
+        }
+       ]
+      }
+     ],
+     "local": "corredor",
+     "livre": true,
      "proxima": "s16"
     },
     "s16": {
@@ -1370,6 +1642,12 @@
        "q": "voce",
        "e": "confiante",
        "t": "Então este caso era só o primeiro fio. Vamos puxar."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "E, Excelência… eu preciso ir à unidade na quinta. Visita. Posso sair mais cedo?",
+       "se": "a4_irmao_fluxo"
       }
      ],
      "local": "gabinete",
@@ -1570,7 +1848,7 @@
    "cenas": {
     "s1": {
      "tipo": "titulo",
-     "texto": "Caso 26 · Ato IV: A Toga",
+     "texto": "Caso 25 · Ato IV: A Toga",
      "subtitulo": "Briga de Bar",
      "proxima": "s2"
     },
@@ -1915,6 +2193,81 @@
        "certa": false
       }
      ],
+     "proxima": "cf"
+    },
+    "cf": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Quinze para as nove, copa do juizado. Rita chega com atraso, óculos escuros e o café na mão que não é dela."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Bom dia, Excelência. Perdão o atraso. Dor de cabeça."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "O celular dela vibra sobre a mesa: \"Davi\". Ela vira a tela para baixo sem atender."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Rita, a tela virou sozinha?"
+      }
+     ],
+     "local": "cafe",
+     "proxima": "cf2"
+    },
+    "cf2": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "É só cansaço, Excelência. Vamos para a audiência?"
+      }
+     ],
+     "pergunta": "Rita está com os olhos vermelhos e esconde o celular. O que o juízo faz?",
+     "opcoes": [
+      {
+       "t": "Perguntar com franqueza se ela precisa de ajuda e dizer que o que ela contar não sai do gabinete.",
+       "marca": "a4_perguntou_rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "triste",
+         "t": "Agradeço, Excelência. De verdade. Mas é coisa de família, e eu resolvo."
+        },
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "Se deixar de ser só de família, você me diz."
+        },
+        {
+         "q": "a4rita",
+         "e": "triste",
+         "t": "Digo."
+        }
+       ]
+      },
+      {
+       "t": "Respeitar o silêncio dela, oferecer o resto da manhã de folga e seguir com a pauta.",
+       "marca": "a4_respeitou_rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "triste",
+         "t": "Não precisa, Excelência. Prefiro trabalhar. Obrigada por não perguntar."
+        }
+       ]
+      }
+     ],
+     "local": "cafe",
+     "livre": true,
      "proxima": "s6"
     },
     "s6": {
@@ -1923,7 +2276,7 @@
       {
        "q": "voce",
        "e": "confiante",
-       "t": "Declaro aberta a audiência preliminar do Juizado Especial Criminal. Presentes o Ministério Público, o autor do fato, a vítima e seu advogado, passo a esclarecer sobre a possibilidade de composição dos danos e de proposta de pena não privativa de liberdade.",
+       "t": "Declaro aberta a audiência preliminar do Juizado Especial Criminal. Presentes o Ministério Público, o autor do fato, a vítima e seus advogados, esclareço sobre a composição dos danos e a proposta de pena não privativa de liberdade. A palavra é das partes; eu preservo a ordem.",
        "fx": "martelo"
       },
       {
@@ -1941,49 +2294,129 @@
      "proxima": "s7"
     },
     "s7": {
-     "tipo": "decidir",
-     "falas": [
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Perguntas à vítima",
+     "falas": [],
+     "linhas": [
+      {
+       "q": "a4xcelio",
+       "e": "normal",
+       "t": "Sr. Cícero, o que o senhor estava fazendo no bar naquela noite?"
+      },
+      {
+       "q": "a4xcelio",
+       "e": "pensativo",
+       "t": "Sr. Cícero, o senhor é sindicalista; é normal ver gente de cabeça quente em sua companhia, não é? E uma mulher como a sua deve ter vergonha de um marido assim.",
+       "incidente": {
+        "pergunta": "A pergunta ofende a dignidade da vítima e foge dos fatos. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-400a/inc-ii",
+          "trecho": "a utilização de linguagem, de informações ou de material que ofendam a dignidade da vítima ou de testemunhas"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro e advirto o defensor: a pergunta ofende a vítima e não tem relação com a causa (art. 400-A).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Indeferida, doutor. O juízo zela pela integridade da vítima. Faça perguntas sobre os fatos.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a4xcelio",
+            "e": "nervoso",
+            "t": "Retiro, Excelência."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Admito: a defesa pode explorar o contexto social do ofendido.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) A vida familiar da vítima não tem relação com a briga, Excelência, e o art. 400-A manda o juiz zelar por ela."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, um instante."
+       }
+      },
+      {
+       "q": "a4xcicero",
+       "e": "normal",
+       "t": "Conversava com colegas do sindicato, Excelência."
+      },
       {
        "q": "a4xcelio",
        "e": "apontando",
-       "t": "Sr. Cícero, o senhor tinha bebido naquela noite? Quantas cervejas o senhor tomou?"
+       "t": "Sr. Cícero, o senhor tinha bebido naquela noite? Quantas cervejas o senhor tomou?",
+       "incidente": {
+        "pergunta": "A pergunta é repetida. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro a pergunta: é repetida (art. 212). Reformule, doutor(a).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Deferido. A pergunta já foi respondida. Siga adiante, doutor.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4xcicero",
+            "e": "triste",
+            "t": "Duas cervejas, Excelência. Eu como o que sobra do salário. O Wagner veio por outra coisa."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo a pergunta passar: a testemunha responde se quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, o art. 212 não admite a repetição de pergunta já respondida."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor(a).",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, o art. 212 não admite a repetição de pergunta já respondida."
+         }
+        ]
+       }
       },
       {
        "q": "a4tulio",
-       "e": "bravo",
-       "t": "PROTESTO! Excelência, a vítima já respondeu a essa pergunta duas vezes ao termo e já respondeu agora! É repetição!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "O promotor protesta: pergunta repetida. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-212",
-       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+       "e": "normal",
+       "t": "Sem mais perguntas, Excelência."
       }
      ],
      "acerto": [
       {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. A pergunta já foi respondida. Siga adiante, doutor.",
-       "fx": "martelo"
-      },
-      {
-       "q": "a4xcicero",
-       "e": "triste",
-       "t": "Duas cervejas, Excelência. Eu como o que sobra do salário. O Wagner veio por outra coisa."
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
       }
      ],
-     "erro": [
-      {
-       "q": "a4rita",
-       "e": "nervoso",
-       "t": "(sussurrando) Excelência, o art. 212 não admite a repetição de pergunta já respondida."
-      }
-     ],
-     "local": "tribunal",
      "proxima": "s8"
     },
     "s8": {
@@ -2005,7 +2438,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Atacou como?"
+         "t": "Esclareça, Sr. Wagner: de que forma o senhor entende que o Sr. Cícero o atacou?"
         },
         {
          "q": "a4xwagner",
@@ -2021,7 +2454,7 @@
         {
          "q": "voce",
          "e": "apontando",
-         "t": "Só um empurrão? E o laudo?"
+         "t": "O laudo registra equimose e escoriação. Como o senhor explica as lesões?"
         },
         {
          "q": "a4xwagner",
@@ -2037,7 +2470,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Mas o senhor sabia o nome dele."
+         "t": "Consta do termo que o senhor sabia o nome da vítima. Por quê?"
         },
         {
          "q": "a4xwagner",
@@ -2053,7 +2486,7 @@
         {
          "q": "voce",
          "e": "apontando",
-         "t": "Nunca?"
+         "t": "O senhor nega ter falado sobre repórter com a vítima? Registro a resposta."
         },
         {
          "q": "a4xwagner",
@@ -2072,14 +2505,14 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "UM MOMENTO, Senhor Wagner!",
-       "fx": "ummomento"
+       "e": "pensativo",
+       "t": "Sr. Wagner, a câmera do bar, que consta dos autos, mostra o Sr. Cícero de costas, tentando sair.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "O senhor diz que Cícero o atacou primeiro e que só se defendeu. Mas a câmera do bar mostra o contrário: Cícero de costas, tentando sair, e o senhor vindo por trás, empurrando-o contra o balcão e atingindo-o no rosto. E o áudio: “Fala mais uma vez com repórter e eu volto”."
+       "e": "normal",
+       "t": "O senhor aparece vindo por trás, empurrando-o contra o balcão e atingindo-o no rosto, e o áudio registra: \"Fala mais uma vez com repórter e eu volto\". O senhor tem direito de não se autoincriminar, mas as imagens estão nos autos. O senhor quer esclarecer algo?"
       },
       {
        "q": "a4xwagner",
@@ -2102,14 +2535,79 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Isso não contradiz o depoimento. Veja o que a câmera do bar registrou: quem tinha as costas viradas antes do golpe?"
+       "t": "Esse documento não esclarece o ponto. Veja o que a câmera registrou: quem estava de costas antes do golpe?"
       }
      ],
+     "proxima": "s8c"
+    },
+    "s8c": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O autor do fato foi interrogado, e as imagens desmentem parte da versão dele."
+      }
+     ],
+     "pergunta": "O que o juízo faz diante da versão desmentida do autor do fato?",
+     "opcoes": [
+      {
+       "t": "Consigno as contradições para valorá-las na decisão, sem advertência de falso testemunho: o acusado não presta compromisso e tem direito de não se autoincriminar.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Isso. Réu não comete falso testemunho ao mentir; o juízo apenas valora a versão contra a prova."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CF#art-5/inc-lxiii",
+         "trecho": "permanecer calado"
+        }
+       ]
+      },
+      {
+       "t": "Advirto o autor do fato das penas do falso testemunho (art. 210) e o submeto a compromisso.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) Acusado não é testemunha, Excelência. Compromisso e falso testemunho são para quem depõe como testemunha."
+        }
+       ]
+      },
+      {
+       "t": "Decreto a prisão preventiva dele pela mentira.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) Mentir não é fundamento de preventiva, Excelência. E o rito aqui é o do Juizado."
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
      "proxima": "s9"
     },
     "s9": {
-     "tipo": "decidir",
-     "falas": [
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Perguntas finais ao autor do fato",
+     "falas": [],
+     "linhas": [
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Sr. Wagner, o senhor tem alguma ligação com a Altavista Serviços?"
+      },
+      {
+       "q": "a4xwagner",
+       "e": "normal",
+       "t": "Sou empregado da empresa, Excelência."
+      },
       {
        "q": "a4tulio",
        "e": "apontando",
@@ -2119,43 +2617,67 @@
        "q": "a4xcelio",
        "e": "bravo",
        "t": "PROTESTO! Excelência, a pergunta não tem relação com a causa! Isso é uma pescaria contra o empregador do meu cliente!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "O defensor protesta: pergunta sem relação com a causa. Sua decisão?",
-     "correta": "indeferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-212",
-       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+       "fx": "protesto",
+       "incidente": {
+        "pergunta": "Protesto da parte: pergunta sem relação com a causa. Sua decisão?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro o protesto: a pergunta é regular. Responda.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "confiante",
+            "t": "Indeferido. A pergunta tem relação direta com a causa: o motivo e a autoria do recado. Responda, Senhor Wagner.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4xwagner",
+            "e": "nervoso",
+            "t": "Foi… o supervisor da empresa. Disse que o Cícero estava “dando trabalho” e que alguém tinha que conversar com ele."
+           },
+           {
+            "q": "a4xcelio",
+            "e": "chocado",
+            "t": "Wagner, cale-se…"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Defiro o protesto e barro a pergunta.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, o motivo do recado é a própria ameaça. Isso tem relação com a causa."
+           }
+          ]
+         }
+        ],
+        "chamada": "O protesto está em exame.",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, o motivo do recado é a própria ameaça. Isso tem relação com a causa."
+         }
+        ]
+       }
       }
      ],
      "acerto": [
       {
-       "q": "voce",
-       "e": "confiante",
-       "t": "Indeferido. A pergunta tem relação direta com a causa: o motivo e a autoria do recado. Responda, Senhor Wagner.",
-       "fx": "martelo"
-      },
-      {
-       "q": "a4xwagner",
-       "e": "nervoso",
-       "t": "Foi… o supervisor da empresa. Disse que o Cícero estava “dando trabalho” e que alguém tinha que conversar com ele."
-      },
-      {
-       "q": "a4xcelio",
-       "e": "chocado",
-       "t": "Wagner, cale-se…"
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
       }
      ],
-     "erro": [
-      {
-       "q": "a4rita",
-       "e": "nervoso",
-       "t": "(sussurrando) Excelência, o motivo do recado é a própria ameaça. Isso tem relação com a causa."
-      }
-     ],
-     "local": "tribunal",
      "proxima": "s10"
     },
     "s10": {
@@ -2365,54 +2887,80 @@
      "proxima": "s14"
     },
     "s14": {
-     "tipo": "decidir",
-     "falas": [
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Perguntas do MP à vítima",
+     "falas": [],
+     "linhas": [
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Sr. Cícero, como o senhor reagiu quando o autor do fato falou do repórter?"
+      },
       {
        "q": "a4tulio",
        "e": "apontando",
-       "t": "Sr. Cícero, o senhor sentiu medo de morrer quando o Wagner o ameaçou, não foi verdade?"
-      },
-      {
-       "q": "a4xcelio",
-       "e": "apontando",
-       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor já entrega a resposta à vítima!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "O defensor protesta: pergunta indutiva. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-212",
-       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+       "t": "Sr. Cícero, o senhor sentiu medo de morrer quando o Wagner o ameaçou, não foi verdade?",
+       "incidente": {
+        "pergunta": "A pergunta é indutiva. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro a pergunta: é indutiva (art. 212). Reformule, doutor(a).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Deferido. Reformule, doutor. A vítima deve contar o que sentiu com as próprias palavras.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4tulio",
+            "e": "nervoso",
+            "t": "…Sr. Cícero, como o senhor se sentiu ao ouvir a frase do recado?"
+           },
+           {
+            "q": "a4xcicero",
+            "e": "triste",
+            "t": "Com medo, Excelência. Não só de mim: da minha mulher e das crianças. Ele sabe onde eu moro."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo a pergunta passar: a testemunha responde se quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor(a).",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+         }
+        ]
+       }
       }
      ],
      "acerto": [
       {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. Reformule, doutor. A vítima deve contar o que sentiu com as próprias palavras.",
-       "fx": "martelo"
-      },
-      {
-       "q": "a4tulio",
-       "e": "nervoso",
-       "t": "…Sr. Cícero, como o senhor se sentiu ao ouvir a frase do recado?"
-      },
-      {
-       "q": "a4xcicero",
-       "e": "triste",
-       "t": "Com medo, Excelência. Não só de mim: da minha mulher e das crianças. Ele sabe onde eu moro."
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
       }
      ],
-     "erro": [
-      {
-       "q": "a4rita",
-       "e": "nervoso",
-       "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
-      }
-     ],
-     "local": "tribunal",
      "proxima": "s15"
     },
     "s15": {
@@ -2816,7 +3364,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Você vai ao apartamento, com escolta. Alguns juízes nunca verão o que vê hoje: o lugar onde uma mulher mudou o caminho de casa, trocou o número e parou de abrir a janela."
+       "t": "Você vai ao apartamento, com escolta e na presença das partes, para verificar as condições de cumprimento da medida (LMP, art. 22, § 3º). Alguns juízes nunca verão o que vê hoje: o lugar onde uma mulher mudou o caminho de casa, trocou o número e parou de abrir a janela."
       },
       {
        "q": "a4xlorena",
@@ -3110,7 +3658,7 @@
       {
        "q": "voce",
        "e": "confiante",
-       "t": "Declaro aberta a audiência para apreciar o pedido de prisão preventiva por descumprimento de medidas protetivas. Ouvidos o Ministério Público, a defesa, a ofendida e o requerido.",
+       "t": "Declaro aberta a audiência para apreciar o pedido de prisão preventiva por descumprimento de medidas protetivas. Ouvidos o Ministério Público, a defesa, a ofendida e o requerido. A ofendida será ouvida em sala separada, sem contato com o requerido (CPP, art. 201, § 4º).",
        "fx": "martelo"
       },
       {
@@ -3128,54 +3676,94 @@
      "proxima": "s7"
     },
     "s7": {
-     "tipo": "decidir",
-     "falas": [
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Inquirição da ofendida",
+     "falas": [],
+     "linhas": [
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Sra. Lorena, a senhora pode contar à Justiça o que viu na noite de anteontem?"
+      },
+      {
+       "q": "a4xlorena",
+       "e": "normal",
+       "t": "O carro dele parado embaixo do prédio, por quase uma hora. Olhando para a minha janela."
+      },
       {
        "q": "a4nadia",
        "e": "apontando",
-       "t": "Sra. Lorena, com quem a senhora tem saído desde o fim do relacionamento? A senhora tem namorado?"
+       "t": "Sra. Lorena, com quem a senhora tem saído desde o fim do relacionamento? A senhora tem namorado?",
+       "incidente": {
+        "pergunta": "A pergunta é sem relação com a causa. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-400a/inc-i",
+          "trecho": "a manifestação sobre circunstâncias ou elementos alheios aos fatos objeto de apuração nos autos"
+         },
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não tiverem relação com a causa"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro a pergunta: é sem relação com a causa (art. 212). Reformule, doutor(a).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Deferido. A vida afetiva da ofendida não tem relação com o descumprimento da ordem. A pergunta está indeferida, doutora.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4nadia",
+            "e": "nervoso",
+            "t": "…Retiro a pergunta, Excelência."
+           },
+           {
+            "q": "a4xlorena",
+            "e": "triste",
+            "t": "Obrigada, Excelência. Eu me sinto sendo julgada, e a vítima aqui sou eu."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo a pergunta passar: a testemunha responde se quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, a pergunta não tem relação com o descumprimento. É uma tentativa de desviar a atenção, e o art. 212 permite ao juiz impedi-la."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor(a).",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, a pergunta não tem relação com o descumprimento. É uma tentativa de desviar a atenção, e o art. 212 permite ao juiz impedi-la."
+         }
+        ]
+       }
       },
       {
-       "q": "a4tulio",
-       "e": "bravo",
-       "t": "PROTESTO! Excelência, a vida afetiva da ofendida não tem relação com a causa! Estamos julgando o descumprimento de uma ordem judicial!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "O promotor protesta: pergunta sem relação com a causa. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-212",
-       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+       "q": "a4nadia",
+       "e": "normal",
+       "t": "Sem mais perguntas, Excelência."
       }
      ],
      "acerto": [
       {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. A vida afetiva da ofendida não tem relação com o descumprimento da ordem. A pergunta está indeferida, doutora.",
-       "fx": "martelo"
-      },
-      {
-       "q": "a4nadia",
-       "e": "nervoso",
-       "t": "…Retiro a pergunta, Excelência."
-      },
-      {
-       "q": "a4xlorena",
-       "e": "triste",
-       "t": "Obrigada, Excelência. Eu me sinto sendo julgada, e a vítima aqui sou eu."
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
       }
      ],
-     "erro": [
-      {
-       "q": "a4rita",
-       "e": "nervoso",
-       "t": "(sussurrando) Excelência, a pergunta não tem relação com o descumprimento. É uma tentativa de desviar a atenção, e o art. 212 permite ao juiz impedi-la."
-      }
-     ],
-     "local": "tribunal",
      "proxima": "s8"
     },
     "s8": {
@@ -3197,7 +3785,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Nunca? Nem uma vez?"
+         "t": "Consta da decisão que o senhor foi intimado pessoalmente. Desde então, não se aproximou da ofendida?"
         },
         {
          "q": "a4xmarcio",
@@ -3213,7 +3801,7 @@
         {
          "q": "voce",
          "e": "apontando",
-         "t": "A academia é para o outro lado da cidade, segundo o seu próprio cadastro."
+         "t": "O senhor reside a dois quilômetros do prédio. Qual é o caminho da sua academia?"
         },
         {
          "q": "a4xmarcio",
@@ -3229,7 +3817,7 @@
         {
          "q": "voce",
          "e": "pensativo",
-         "t": "Os chips foram ativados com o endereço comercial do senhor."
+         "t": "Os chips foram ativados com o endereço comercial do senhor. Tem algo a esclarecer?"
         },
         {
          "q": "a4xmarcio",
@@ -3245,7 +3833,7 @@
         {
          "q": "voce",
          "e": "apontando",
-         "t": "O número de série foi pareado ao celular do senhor."
+         "t": "O número de série do aparelho foi pareado ao seu celular. Como o senhor explica?"
         },
         {
          "q": "a4xmarcio",
@@ -3264,14 +3852,14 @@
      "acerto": [
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "UM MOMENTO, Senhor Márcio!",
-       "fx": "ummomento"
+       "e": "pensativo",
+       "t": "Sr. Márcio, o senhor tem direito de permanecer calado e de não se autoincriminar. Mas consta dos autos a câmera da fachada.",
+       "fx": "ordem"
       },
       {
        "q": "voce",
-       "e": "apontando",
-       "t": "O senhor afirma que, desde que foi intimado, nunca se aproximou de Lorena. Mas a câmera da fachada do prédio registra, 17 dias depois da decisão, o seu carro parado por 40 minutos a cerca de 18 metros do portão e o senhor olhando para a janela dela. A ordem proibia menos de 200 metros."
+       "e": "normal",
+       "t": "Ela registra, dezessete dias depois da decisão, o seu carro parado por quarenta minutos a cerca de 18 metros do portão, e o senhor olhando para a janela da ofendida. A ordem proibia menos de 200 metros. O senhor quer esclarecer?"
       },
       {
        "q": "a4xmarcio",
@@ -3287,16 +3875,68 @@
       {
        "q": "a4tulio",
        "e": "bravo",
-       "t": "A frase “ver se ela estava bem” é exatamente o que a violência psicológica chama de cuidado, Excelência."
+       "t": "\"Ver se ela estava bem\" é exatamente o que a violência psicológica chama de cuidado, Excelência."
       }
      ],
      "erro": [
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Isso não contradiz o depoimento, Senhor Márcio. Olhe de novo o que a câmera da fachada do prédio registrou, e a que distância."
+       "t": "Esse documento não esclarece o ponto. Veja o que a câmera da fachada registrou, e a que distância."
       }
      ],
+     "proxima": "s8c"
+    },
+    "s8c": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O requerido negou o que a câmera mostra. Ele é o investigado, não uma testemunha."
+      }
+     ],
+     "pergunta": "O que o juízo faz com a versão desmentida do requerido?",
+     "opcoes": [
+      {
+       "t": "Consigno a contradição para valorá-la na decisão. Ele não presta compromisso nem comete falso testemunho ao negar a acusação: o juízo confronta a versão com a prova.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "Isso. Quem responde pela acusação não é testemunha. A mentira dele pesa na valoração, não vira crime à parte."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CF#art-5/inc-lxiii",
+         "trecho": "permanecer calado"
+        }
+       ]
+      },
+      {
+       "t": "Advirto o requerido das penas do falso testemunho e o submeto a compromisso.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) O compromisso é de testemunha, Excelência. O requerido tem direito ao silêncio e a negar."
+        }
+       ]
+      },
+      {
+       "t": "Decreto a preventiva pelo simples fato de ele ter mentido.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) Mentir não é fundamento de preventiva, Excelência. O que fundamenta é o descumprimento concreto da ordem."
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
      "proxima": "s9"
     },
     "s9": {
@@ -3385,192 +4025,237 @@
      "proxima": "s11"
     },
     "s11": {
-     "tipo": "decidir",
-     "falas": [
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Perguntas finais à ofendida",
+     "falas": [],
+     "linhas": [
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Sra. Lorena, desde quando a senhora usa o chaveiro que foi achado na bolsa?"
+      },
+      {
+       "q": "a4xlorena",
+       "e": "normal",
+       "t": "Nunca usei. Não era meu, Excelência."
+      },
       {
        "q": "a4tulio",
        "e": "apontando",
-       "t": "Sra. Lorena, é claro que o Márcio colocou o rastreador na sua bolsa para saber a hora de te matar, não é verdade?"
-      },
-      {
-       "q": "a4nadia",
-       "e": "apontando",
-       "t": "PROTESTO! Pergunta indutiva, Excelência! O promotor entrega a resposta, e ainda uma resposta que ninguém provou!",
-       "fx": "protesto"
-      }
-     ],
-     "pergunta": "A defensora protesta: pergunta indutiva. Sua decisão?",
-     "correta": "deferir",
-     "fundamentos": [
-      {
-       "chave": "CPP#art-212",
-       "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+       "t": "Sra. Lorena, é claro que o Márcio colocou o rastreador na sua bolsa para saber a hora de te matar, não é verdade?",
+       "incidente": {
+        "pergunta": "A pergunta é indutiva. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "As perguntas serão formuladas pelas partes diretamente à testemunha, não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro a pergunta: é indutiva (art. 212). Reformule, doutor(a).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Deferido. Reformule, doutor. O Ministério Público tem provas suficientes e não precisa pôr palavras na boca da vítima.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4tulio",
+            "e": "nervoso",
+            "t": "…Sra. Lorena, o que a senhora pensou ao encontrar o aparelho?"
+           },
+           {
+            "q": "a4xlorena",
+            "e": "triste",
+            "t": "Que ele nunca ia me deixar em paz. Eu pensei nos meus pais, no meu trabalho… em mim."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo a pergunta passar: a testemunha responde se quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor(a).",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
+         }
+        ]
+       }
       }
      ],
      "acerto": [
       {
-       "q": "voce",
-       "e": "bravo",
-       "t": "Deferido. Reformule, doutor. O Ministério Público tem provas suficientes e não precisa pôr palavras na boca da vítima.",
-       "fx": "martelo"
-      },
-      {
-       "q": "a4tulio",
-       "e": "nervoso",
-       "t": "…Sra. Lorena, o que a senhora pensou ao encontrar o aparelho?"
-      },
-      {
-       "q": "a4xlorena",
-       "e": "triste",
-       "t": "Que ele nunca ia me deixar em paz. Eu pensei nos meus pais, no meu trabalho… em mim."
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
       }
      ],
-     "erro": [
-      {
-       "q": "a4rita",
-       "e": "nervoso",
-       "t": "(sussurrando) Excelência, a pergunta já traz a resposta. Art. 212."
-      }
-     ],
-     "local": "tribunal",
      "proxima": "s12"
     },
     "s12": {
-     "tipo": "escolha",
+     "tipo": "sentenca",
+     "local": "gabinete",
+     "titulo": "Decisão sobre a liberdade do requerido",
      "falas": [
       {
        "q": "a4rita",
        "e": "pensativo",
        "t": "Excelência, instrução encerrada. O Ministério Público pede a preventiva, a defesa pede cautelares. Qual será a decisão?"
-      }
-     ],
-     "pergunta": "Qual a decisão sobre a liberdade do requerido?",
-     "opcoes": [
-      {
-       "t": "Mantenho apenas as medidas protetivas já deferidas e advirto o requerido, para evitar excessos: ele é primário e tem emprego.",
-       "falas": [
-        {
-         "q": "a4rita",
-         "e": "chocado",
-         "t": "As medidas já foram descumpridas duas vezes, e ele ainda escondeu um rastreador na bolsa da vítima. Insistir no que não funcionou é abandonar a ofendida (CPP, art. 282, § 4º; LMP, art. 19, § 2º)."
-        }
-       ],
-       "certa": false
       },
-      {
-       "t": "Decreto a preventiva, com fundamento no descumprimento concreto e contemporâneo das medidas (CPP, art. 312, § 1º e art. 313, III; LMP, art. 20), justificando de forma individualizada por que outras cautelares, como a monitoração eletrônica, não bastam, já que ele burlou os controles e voltou depois de advertido (art. 282, § 6º).",
-       "falas": [
-        {
-         "q": "a4tulio",
-         "e": "confiante",
-         "t": "O Ministério Público agradece, Excelência."
-        },
-        {
-         "q": "a4xlorena",
-         "e": "feliz",
-         "t": "Eu vou conseguir dormir. Obrigada."
-        },
-        {
-         "q": "a4nadia",
-         "e": "pensativo",
-         "t": "A defesa registra que a decisão está fundamentada em fatos, Excelência."
-        }
-       ],
-       "certa": true,
-       "fundamentos": [
-        {
-         "chave": "CPP#art-313/inc-iii",
-         "trecho": "se o crime envolver violência doméstica e familiar contra a mulher, criança, adolescente, idoso, enfermo ou pessoa com deficiência, para garantir a execução das medidas protetivas de urgência;"
-        },
-        {
-         "chave": "CPP#art-282/par-4",
-         "trecho": "No caso de descumprimento de qualquer das obrigações impostas, o juiz, mediante requerimento do Ministério Público, de seu assistente ou do querelante, poderá substituir a medida, impor outra em"
-        },
-        {
-         "chave": "CPP#art-282/par-6",
-         "trecho": "A prisão preventiva somente será determinada quando não for cabível a sua substituição por outra medida cautelar, observado o art. 319 deste Código, e o não cabimento da substituição por outra medida"
-        }
-       ]
-      },
-      {
-       "t": "Decreto a preventiva porque Márcio trabalha na Altavista Serviços e a empresa é suspeita de crimes muito graves.",
-       "falas": [
-        {
-         "q": "a4rita",
-         "e": "nervoso",
-         "t": "Presumir periculosidade pela empresa em que ele trabalha é fundamentação genérica. A preventiva exige fatos concretos e contemporâneos relativos a este investigado (CPP, art. 315, § 1º)."
-        }
-       ],
-       "certa": false
-      }
-     ],
-     "proxima": "s13"
-    },
-    "s13": {
-     "tipo": "escolha",
-     "falas": [
       {
        "q": "a4rita",
        "e": "normal",
        "t": "E a ofendida, Excelência? A prisão do agressor não encerra a proteção dela."
       }
      ],
-     "pergunta": "Qual a providência complementar de proteção à ofendida?",
-     "opcoes": [
+     "partes": [
       {
-       "t": "Determino o afastamento da ofendida do lar, para ficar em local sigiloso, já que é a forma mais simples de protegê-la.",
-       "falas": [
+       "nome": "1. Qual a decisão sobre a liberdade do requerido?",
+       "opcoes": [
         {
-         "q": "a4rita",
-         "e": "nervoso",
-         "t": "É a medida mais pesada para a vítima: ela perderia casa e rotina. O art. 22, II prevê o afastamento do agressor, e o do lar da ofendida é último recurso (art. 23, III)."
-        }
-       ],
-       "certa": false
-      },
-      {
-       "t": "Mantenho as medidas protetivas enquanto persistir o risco (art. 19, § 6º), requisito patrulhamento policial na região (art. 22, § 3º) e encaminho a ofendida a programa de proteção e atendimento (art. 23, I).",
-       "falas": [
-        {
-         "q": "a4xlorena",
-         "e": "feliz",
-         "t": "Obrigada, Excelência. Eu quero continuar morando na minha casa."
+         "t": "Mantenho apenas as medidas protetivas já deferidas e advirto o requerido, para evitar excessos: ele é primário e tem emprego.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "chocado",
+           "t": "As medidas já foram descumpridas duas vezes, e ele ainda escondeu um rastreador na bolsa da vítima. Insistir no que não funcionou é abandonar a ofendida (CPP, art. 282, § 4º; LMP, art. 19, § 2º)."
+          }
+         ],
+         "certa": false
         },
         {
-         "q": "a4anselmo",
-         "e": "confiante",
-         "t": "A PM acompanhará, Excelência. Ronda reforçada."
-        }
-       ],
-       "certa": true,
-       "fundamentos": [
-        {
-         "chave": "LMP#art-19/par-6",
-         "trecho": "As medidas protetivas de urgência vigorarão enquanto persistir risco à integridade física, psicológica, sexual, patrimonial ou moral da ofendida ou de seus dependentes."
+         "t": "Decreto a preventiva, com fundamento no descumprimento concreto e contemporâneo das medidas (CPP, art. 312, § 1º e art. 313, III; LMP, art. 20), justificando de forma individualizada por que outras cautelares, como a monitoração eletrônica, não bastam, já que ele burlou os controles e voltou depois de advertido (art. 282, § 6º).",
+         "falas": [
+          {
+           "q": "a4tulio",
+           "e": "confiante",
+           "t": "O Ministério Público agradece, Excelência."
+          },
+          {
+           "q": "a4xlorena",
+           "e": "feliz",
+           "t": "Eu vou conseguir dormir. Obrigada."
+          },
+          {
+           "q": "a4nadia",
+           "e": "pensativo",
+           "t": "A defesa registra que a decisão está fundamentada em fatos, Excelência."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-313/inc-iii",
+           "trecho": "se o crime envolver violência doméstica e familiar contra a mulher, criança, adolescente, idoso, enfermo ou pessoa com deficiência, para garantir a execução das medidas protetivas de urgência;"
+          },
+          {
+           "chave": "CPP#art-282/par-4",
+           "trecho": "No caso de descumprimento de qualquer das obrigações impostas, o juiz, mediante requerimento do Ministério Público, de seu assistente ou do querelante, poderá substituir a medida, impor outra em"
+          },
+          {
+           "chave": "CPP#art-282/par-6",
+           "trecho": "A prisão preventiva somente será determinada quando não for cabível a sua substituição por outra medida cautelar, observado o art. 319 deste Código, e o não cabimento da substituição por outra medida"
+          }
+         ]
         },
         {
-         "chave": "LMP#art-22/par-3",
-         "trecho": "Para garantir a efetividade das medidas protetivas de urgência, poderá o juiz requisitar, a qualquer momento, auxílio da força policial."
-        },
-        {
-         "chave": "LMP#art-23/inc-i",
-         "trecho": "encaminhar a ofendida e seus dependentes a programa oficial ou comunitário de proteção ou de atendimento;"
+         "t": "Decreto a preventiva porque Márcio trabalha na Altavista Serviços e a empresa é suspeita de crimes muito graves.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "Presumir periculosidade pela empresa em que ele trabalha é fundamentação genérica. A preventiva exige fatos concretos e contemporâneos relativos a este investigado (CPP, art. 315, § 1º)."
+          }
+         ],
+         "certa": false
         }
        ]
       },
       {
-       "t": "Considero a proteção encerrada, já que o agressor está preso e não há mais risco.",
-       "falas": [
+       "nome": "2. Qual a providência complementar de proteção à ofendida?",
+       "opcoes": [
         {
-         "q": "a4rita",
-         "e": "chocado",
-         "t": "As medidas vigoram enquanto persistir o risco (art. 19, § 6º). A preventiva pode ser revogada, e a ofendida precisa continuar protegida."
+         "t": "Determino o afastamento da ofendida do lar, para ficar em local sigiloso, já que é a forma mais simples de protegê-la.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "É a medida mais pesada para a vítima: ela perderia casa e rotina. O art. 22, II prevê o afastamento do agressor, e o do lar da ofendida é último recurso (art. 23, III)."
+          }
+         ],
+         "certa": false
+        },
+        {
+         "t": "Mantenho as medidas protetivas enquanto persistir o risco (art. 19, § 6º), requisito patrulhamento policial na região (art. 22, § 3º) e encaminho a ofendida a programa de proteção e atendimento (art. 23, I).",
+         "falas": [
+          {
+           "q": "a4xlorena",
+           "e": "feliz",
+           "t": "Obrigada, Excelência. Eu quero continuar morando na minha casa."
+          },
+          {
+           "q": "a4anselmo",
+           "e": "confiante",
+           "t": "A PM acompanhará, Excelência. Ronda reforçada."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "LMP#art-19/par-6",
+           "trecho": "As medidas protetivas de urgência vigorarão enquanto persistir risco à integridade física, psicológica, sexual, patrimonial ou moral da ofendida ou de seus dependentes."
+          },
+          {
+           "chave": "LMP#art-22/par-3",
+           "trecho": "Para garantir a efetividade das medidas protetivas de urgência, poderá o juiz requisitar, a qualquer momento, auxílio da força policial."
+          },
+          {
+           "chave": "LMP#art-23/inc-i",
+           "trecho": "encaminhar a ofendida e seus dependentes a programa oficial ou comunitário de proteção ou de atendimento;"
+          }
+         ]
+        },
+        {
+         "t": "Considero a proteção encerrada, já que o agressor está preso e não há mais risco.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "chocado",
+           "t": "As medidas vigoram enquanto persistir o risco (art. 19, § 6º). A preventiva pode ser revogada, e a ofendida precisa continuar protegida."
+          }
+         ],
+         "certa": false
         }
-       ],
-       "certa": false
+       ]
       }
      ],
-     "proxima": "s14"
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Assino a decisão.",
+       "fx": "martelo"
+      }
+     ],
+     "proxima": "s14",
+     "dica": [
+      "Medidas já descumpridas duas vezes não bastam: a preventiva se justifica por fatos concretos e atuais.",
+      "A proteção da ofendida continua enquanto houver risco; afastá-la do lar é o último recurso."
+     ]
     },
     "s14": {
      "tipo": "dialogo",
@@ -3595,6 +4280,110 @@
        "q": "a4tulio",
        "e": "pensativo",
        "t": "Receberei, Excelência. Em sigilo. Aqueles depósitos a um diretor de presídio me interessam muito."
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "ca1"
+    },
+    "ca1": {
+     "tipo": "tensao",
+     "local": "carro",
+     "tempo": 8,
+     "padrao": 1,
+     "pergunta": "Dois faróis altos no retrovisor, desde a saída do fórum. O carro vira onde você vira.",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Noite. Você sai do fórum depois do último despacho."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Parar no posto iluminado e ligar para a Polícia Militar",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "O carro passa devagar e some. O frentista anota a placa sem que você peça."
+        }
+       ],
+       "cred": 1,
+       "marca": "a4_seguido_pm"
+      },
+      {
+       "t": "Acelerar até em casa",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "Você chega em casa em oito minutos. O carro faz o retorno na esquina, sem pressa."
+        }
+       ],
+       "marca": "a4_seguido_ate_casa"
+      },
+      {
+       "t": "Anotar a placa sem diminuir e mudar de caminho",
+       "falas": [
+        {
+         "q": "narrador",
+         "e": "normal",
+         "t": "A placa tem uma letra coberta com fita. Mas o modelo, a cor e o horário ficam registrados."
+        }
+       ],
+       "marca": "a4_anotou_placa"
+      }
+     ],
+     "hesitou": "Você hesitou. Os faróis colam no seu vidro traseiro.",
+     "proxima": "ca2"
+    },
+    "ca2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Em casa, a luz da varanda está acesa, e você não a deixou assim. Sob a porta, um envelope sem selo."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Dentro: um chaveiro de GPS idêntico ao achado na bolsa de Lorena, e um bilhete em letra de forma: \"ELA TAMBÉM ACHOU O DELA.\""
+      },
+      {
+       "q": "voce",
+       "e": "nervoso",
+       "t": "Eles sabem onde moro. Isso não se explica por adivinhação: alguém passa a minha rotina para eles."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você leva o envelope à Polícia na mesma noite, sem tocar mais do que o necessário.",
+       "se": "a4_anotou_placa"
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você tranca todas as portas e liga para a Polícia Militar, que manda uma viatura ficar na rua até de manhã.",
+       "se": "a4_seguido_pm"
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Você entrou direto e trancou a porta, e eles viram. Já sabiam onde era; agora sabem que você viu.",
+       "se": "a4_seguido_ate_casa"
+      }
+     ],
+     "local": "casa",
+     "proxima": "ca3"
+    },
+    "ca3": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, o setor de segurança diz que só quem está no gabinete conhece o seu horário de saída. Vou levantar quem consultou a sua agenda."
       },
       {
        "q": "a4rita",

@@ -1,0 +1,3136 @@
+{
+ "ato": "ato4",
+ "personagens": {
+  "a4zassist": {
+   "nome": "Dr. Rui Faria",
+   "cargo": "Advogado · assistente de acusação",
+   "voz": 270,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#2a1a10",
+    "roupa": "terno",
+    "corRoupa": "#3a3a4a",
+    "gravata": "#5a2a2a",
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Advogado de vítimas que acompanha a acusação sem querer ocupar o lugar do promotor. Fala pouco, cobra o tempo que a lei lhe dá e sabe a hora de se calar.",
+   "personalidade": "pontual, sóbrio, solidário",
+   "motivacao": "Que a vítima seja ouvida sem ser transformada em prova."
+  },
+  "a4zmaicon": {
+   "nome": "Maicon Teixeira",
+   "cargo": "Preso em flagrante · ajudante de mercado",
+   "voz": 330,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#1b1b1b",
+    "roupa": "casual",
+    "corRoupa": "#7a7a7a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Rapaz de 22 anos, primário, preso em flagrante ao sair de um mercado com mercadorias que não pagou. Assustado, sem entender tudo o que lhe dizem na tela.",
+   "personalidade": "assustado, educado, calado",
+   "motivacao": "Voltar para casa a tempo de levar a filha à escola."
+  },
+  "a4zmari": {
+   "nome": "Mariana Coutinho",
+   "cargo": "Vítima · estudante, 17 anos",
+   "voz": 520,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "longo",
+    "corCabelo": "#3b2414",
+    "roupa": "casual",
+    "corRoupa": "#6a8caf",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Estudante de 17 anos que fala baixo e olha pouco para os lados. Prefere responder por escrito, mas aprende que a sua palavra também vale diante de quem a intimida.",
+   "personalidade": "tímida, firme quando acuada, observadora",
+   "motivacao": "Ser acreditada e voltar a dormir sem luz acesa."
+  },
+  "a4zcleide": {
+   "nome": "Dona Cleide Coutinho",
+   "cargo": "Mãe da vítima",
+   "voz": 480,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "coque",
+    "corCabelo": "#5a5a5a",
+    "roupa": "blazer",
+    "corRoupa": "#7a5c3a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Mãe de Mariana. Trabalha em dois turnos e vai a todas as audiências de pé, porque a cadeira da sala de espera está sempre ocupada.",
+   "personalidade": "protetora, cansada, digna",
+   "motivacao": "Ver a filha sair da sala inteira."
+  },
+  "a4zosmar": {
+   "nome": "Osmar Ledo",
+   "cargo": "Réu · ex-treinador de atletismo",
+   "voz": 230,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "curto",
+    "corCabelo": "#8a8a8a",
+    "roupa": "terno",
+    "corRoupa": "#2a2a2a",
+    "gravata": "#333333",
+    "oculos": false,
+    "barba": true
+   },
+   "bio": "Ex-treinador respeitado no bairro, acusado por uma ex-aluna. Mantém a pose de homem de bem e não entende por que a lei pede que ele saia da sala.",
+   "personalidade": "contido, arrogante, ofendido",
+   "motivacao": "Preservar o nome que construiu."
+  },
+  "a4zperic": {
+   "nome": "Dr. Péricles Aragão",
+   "cargo": "Advogado de defesa",
+   "voz": 220,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "topete",
+    "corCabelo": "#4a4a4a",
+    "roupa": "terno",
+    "corRoupa": "#1a1a2a",
+    "gravata": "#6a1a1a",
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Criminalista de plenário que confunde combatividade com crueldade. Tem talento de sobra e, quando o juiz o interrompe, sabe recuar sem perder a pose.",
+   "personalidade": "brilhante, ácido, provocador",
+   "motivacao": "Vencer sem perder a plateia."
+  },
+  "a4ztania": {
+   "nome": "Dra. Tânia Moraes",
+   "cargo": "Advogada · assistente de acusação",
+   "voz": 500,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "cacheado",
+    "corCabelo": "#1b1b1b",
+    "roupa": "blazer",
+    "corRoupa": "#4a2c6b",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Advogada de vítimas de violência sexual. Fala devagar e não admite que a vítima seja julgada pela roupa, pelo horário ou pelo silêncio.",
+   "personalidade": "serena, firme, protetora",
+   "motivacao": "Que nenhuma vítima se arrependa de ter denunciado."
+  },
+  "a4zjonas": {
+   "nome": "Jonas Ferraz",
+   "cargo": "Réu · mecânico",
+   "voz": 260,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "curto",
+    "corCabelo": "#1b1b1b",
+    "roupa": "casual",
+    "corRoupa": "#4a5a3a",
+    "gravata": null,
+    "oculos": false,
+    "barba": true
+   },
+   "bio": "Mecânico de 31 anos, acusado de matar um homem numa briga de rua. Fala pouco e jura que só quis tirar o irmão da confusão.",
+   "personalidade": "calado, leal, assustado",
+   "motivacao": "Proteger o irmão, mesmo quando custa caro."
+  },
+  "a4zrenan": {
+   "nome": "Renan Ferraz",
+   "cargo": "Réu · irmão de Jonas",
+   "voz": 300,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "topete",
+    "corCabelo": "#1b1b1b",
+    "roupa": "casual",
+    "corRoupa": "#8a3a3a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Irmão de Jonas, 26 anos. Admite o soco, nega a faca e muda de versão quando o advogado pede.",
+   "personalidade": "impulsivo, orgulhoso, medroso",
+   "motivacao": "Sair do plenário sem carregar a culpa de ninguém."
+  },
+  "a4zsandro": {
+   "nome": "Dr. Sandro Vilhena",
+   "cargo": "Advogado de defesa",
+   "voz": 240,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "curto",
+    "corCabelo": "#7a5a2a",
+    "roupa": "terno",
+    "corRoupa": "#2b3a4a",
+    "gravata": "#2a2a5a",
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Defensor particular de Renan. Elegante, calculista, disposto a salvar o cliente apontando o irmão.",
+   "personalidade": "calculista, correto, frio",
+   "motivacao": "Que o seu cliente não seja o último a responder."
+  },
+  "a4zmonica": {
+   "nome": "Mônica Prates",
+   "cargo": "Viúva da vítima",
+   "voz": 490,
+   "visual": {
+    "pele": "#FFDBAC",
+    "cabelo": "rabo",
+    "corCabelo": "#3b2414",
+    "roupa": "blazer",
+    "corRoupa": "#2a2a2a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Viúva de Luciano Prates. Lê no plenário a carta que escreveu à noite e carrega o retrato dele no bolso.",
+   "personalidade": "enlutada, digna, dura",
+   "motivacao": "Que o marido não seja só um nome na pauta."
+  },
+  "a4zperito": {
+   "nome": "Dr. Heitor Lins",
+   "cargo": "Perito criminal",
+   "voz": 235,
+   "visual": {
+    "pele": "#F1C27D",
+    "cabelo": "careca",
+    "corCabelo": "#000000",
+    "roupa": "avental",
+    "corRoupa": "#e8e8e8",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Perito do Instituto de Criminalística. Responde em frases curtas e só afirma o que o laudo permite.",
+   "personalidade": "metódico, seco, honesto",
+   "motivacao": "Que ninguém use o laudo para dizer o que ele não diz."
+  },
+  "a4zedmil": {
+   "nome": "Edmilson Rocha",
+   "cargo": "Auxiliar técnico do clube",
+   "voz": 285,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "curto",
+    "corCabelo": "#1b1b1b",
+    "roupa": "casual",
+    "corRoupa": "#2f5f7a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Auxiliar técnico do clube, amigo de Osmar há vinte anos. Chega a depor com pressa de ir embora e a lembrança preparada.",
+   "personalidade": "leal, nervoso, defensivo",
+   "motivacao": "Não ser o homem que derrubou o amigo."
+  }
+ },
+ "episodios": [
+  {
+   "id": "a4y-custodia",
+   "ato": "ato4",
+   "ordem": 0.5,
+   "numero": 28,
+   "titulo": "Audiência de Custódia",
+   "papel": "juiz",
+   "nivel": "basico",
+   "sinopse": "Sua primeira noite de plantão. Um jovem de 22 anos, preso por furtar leite em pó e fraldas, aparece numa tela. Presida a audiência de custódia: intervenha só quando a lei mandar, lembre o preso do direito ao silêncio, registre o que ele relata e decida entre relaxar, converter em preventiva ou conceder liberdade.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4nadia": "defesa",
+    "a4zmaicon": "testemunha",
+    "a4rita": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "apf",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Auto de prisão em flagrante",
+     "descricao": "Maicon Teixeira, 22 anos, preso ao sair de um mercado com R$ 86 em mercadorias que não pagou: duas caixas de leite em pó e um pacote de fraldas. Sem arma, sem violência. Furto simples."
+    },
+    {
+     "id": "antec",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Certidão de antecedentes e residência",
+     "descricao": "Nada consta. Mora com a companheira e a filha de 2 anos, endereço fixo; trabalha como ajudante num depósito, sem carteira assinada."
+    },
+    {
+     "id": "lesao",
+     "tipo": "prova",
+     "icone": "🩹",
+     "nome": "Relato de lesões na delegacia",
+     "descricao": "O escrivão anotou \"escoriação no punho esquerdo, alegada pelo conduzido, que atribui o fato à abordagem\". Sem exame de corpo de delito requisitado."
+    },
+    {
+     "id": "cpp310",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 310 — Audiência de custódia",
+     "chave": "CPP#art-310",
+     "trecho": "o juiz deverá promover, por meio de videoconferência em tempo real, audiência de custódia"
+    },
+    {
+     "id": "cpp310i",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 310, I — Relaxar a prisão ilegal",
+     "chave": "CPP#art-310/inc-i",
+     "trecho": "relaxar a prisão ilegal"
+    },
+    {
+     "id": "cpp310ii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 310, II — Converter em preventiva",
+     "chave": "CPP#art-310/inc-ii",
+     "trecho": "converter a prisão em flagrante em preventiva"
+    },
+    {
+     "id": "cpp310iii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 310, III — Liberdade provisória",
+     "chave": "CPP#art-310/inc-iii",
+     "trecho": "conceder liberdade provisória, com ou sem fiança"
+    },
+    {
+     "id": "cpp312",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 312 — Requisitos da preventiva",
+     "chave": "CPP#art-312",
+     "trecho": "perigo gerado pelo estado de liberdade do imputado"
+    },
+    {
+     "id": "cpp319",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 319 — Cautelares diversas da prisão",
+     "chave": "CPP#art-319/inc-i",
+     "trecho": "comparecimento periódico em juízo"
+    },
+    {
+     "id": "cpp186",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 186 — Direito ao silêncio",
+     "chave": "CPP#art-186",
+     "trecho": "do seu direito de permanecer calado"
+    },
+    {
+     "id": "cf5lxiii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, LXIII — Silêncio e advogado",
+     "chave": "CF#art-5/inc-lxiii",
+     "trecho": "o preso será informado de seus direitos, entre os quais o de permanecer calado"
+    },
+    {
+     "id": "cf5xlix",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CF, art. 5º, XLIX — Integridade do preso",
+     "chave": "CF#art-5/inc-xlix",
+     "trecho": "é assegurado aos presos o respeito à integridade física e moral"
+    },
+    {
+     "id": "cpp158",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 158 — Exame de corpo de delito",
+     "chave": "CPP#art-158",
+     "trecho": "será indispensável o exame de corpo de delito"
+    }
+   ],
+   "placas": {
+    "defesa": "Defensoria Pública",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "c1",
+   "cenas": {
+    "c1": {
+     "tipo": "titulo",
+     "texto": "Caso 19 · Ato IV: A Toga",
+     "subtitulo": "Audiência de Custódia",
+     "proxima": "c2"
+    },
+    "c2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Às onze e quarenta de um domingo, um homem de 22 anos espera numa sala de vidro para saber se dorme em casa ou na cadeia."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Plantão do fórum. É a sua primeira noite de toga. Café frio, uma bandeira e a luz de uma mesa de assessora."
+      },
+      {
+       "q": "a4rita",
+       "e": "feliz",
+       "t": "Boa noite, Excelência. Rita Camargo, assessora do gabinete. Trouxe café, que no plantão é o único benefício funcional."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "O primeiro ato é a audiência de custódia: em até 24 horas da prisão em flagrante, o juiz ouve o preso, com defensor e Ministério Público, e decide se a prisão é legal e se precisa continuar (CPP, art. 310)."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "O juiz tem três saídas: relaxar a prisão ilegal, converter em preventiva ou conceder liberdade provisória, com ou sem cautelares. E, no meio da audiência, quem preside é Vossa Excelência."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Presidir é intervir só quando a lei manda, deixar correr o resto e decidir com fundamento. Entendi o desenho. E o preso?"
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Maicon Teixeira. Furto de leite em pó e fraldas num mercado. Primário."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram juntados.",
+       "recebe": [
+        "apf",
+        "antec",
+        "lesao",
+        "cpp310",
+        "cpp310i",
+        "cpp310ii",
+        "cpp310iii",
+        "cpp312",
+        "cpp319",
+        "cpp186",
+        "cf5lxiii",
+        "cf5xlix",
+        "cpp158"
+       ]
+      }
+     ],
+     "local": "custodia",
+     "proxima": "c3"
+    },
+    "c3": {
+     "tipo": "investigar",
+     "local": "custodia",
+     "titulo": "Custódia · Antes da audiência",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Antes de abrir a audiência, você confere os papéis do flagrante."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Auto de prisão em flagrante",
+       "x": 30,
+       "y": 50,
+       "w": 40,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O flagrante: Maicon saiu do mercado com leite em pó e fraldas, R$ 86 no total. Sem violência, sem arma.",
+         "recebe": [
+          "apf"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Antecedentes: nada consta. Mora com a companheira e a filha, endereço fixo.",
+         "recebe": [
+          "antec"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pc",
+       "nome": "Computador",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O escrivão anotou escoriação no punho do conduzido, atribuída à abordagem. Exame de corpo de delito: nenhum requisitado.",
+         "recebe": [
+          "lesao"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4rita",
+       "titulo": "Conversar com Rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "Regra de ouro da custódia: não é o julgamento do fato. O juiz não pergunta \"o senhor furtou?\"; pergunta pela legalidade da prisão, pelas condições do preso e pela necessidade de mantê-lo preso."
+        },
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "E qualquer relato de maus-tratos é registrado na hora. Isso é dever do juiz, não favor."
+        }
+       ]
+      },
+      {
+       "q": "a4nadia",
+       "titulo": "Ouvir a defensora",
+       "falas": [
+        {
+         "q": "a4nadia",
+         "e": "confiante",
+         "t": "Excelência, a Defensoria já fez a entrevista reservada, como a lei garante (art. 310, § 9º). Maicon é primário, trabalha, tem filha pequena. Peço o relaxamento ou, no máximo, liberdade provisória."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "apf",
+      "antec",
+      "lesao"
+     ],
+     "proxima": "c4"
+    },
+    "c4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência de custódia. O preso foi informado de que tem direito de permanecer calado, e o silêncio não será interpretado em seu prejuízo (CPP, art. 186).",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Ministério Público presente, Excelência. Dr. Túlio Bastos."
+      },
+      {
+       "q": "a4nadia",
+       "e": "normal",
+       "t": "Defensoria presente, Excelência. Dra. Nádia Quirino."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "As falas vão correr. Eu intervenho quando a pergunta ou a conduta violar a lei. Fora disso, cada um trabalha."
+      }
+     ],
+     "local": "custodia",
+     "proxima": "c5"
+    },
+    "c5": {
+     "tipo": "audiencia",
+     "local": "custodia",
+     "titulo": "Audiência de custódia · Maicon Teixeira",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Na tela, Maicon aparece algemado, de camiseta branca emprestada, com o olhar no chão."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a4nadia",
+       "e": "normal",
+       "t": "Maicon, o senhor foi informado do motivo da prisão e conversou com a Defensoria antes desta audiência?"
+      },
+      {
+       "q": "a4zmaicon",
+       "e": "triste",
+       "t": "Fui, doutora. Conversei sim."
+      },
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "Maicon, conte à Justiça como foi o furto: o que o senhor pegou, por quê, e se tinha combinado com alguém.",
+       "incidente": {
+        "pergunta": "A custódia não trata do mérito, e o preso pode calar. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-186",
+          "trecho": "do seu direito de permanecer calado e de não responder perguntas"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Intervenho: a audiência não examina o mérito. Lembro ao preso que pode permanecer calado (art. 186) e indefiro a pergunta.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Doutor, a custódia examina a legalidade da prisão e a necessidade de mantê-la, não a autoria. Maicon, o senhor pode calar-se quanto aos fatos, e isso não será usado contra o senhor.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a4tulio",
+            "e": "nervoso",
+            "t": "…Reformulo: Maicon, o senhor tem endereço fixo?"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo o preso responder: quanto mais cedo contar tudo, melhor para ele.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Excelência, ele não precisa se incriminar, e a custódia não é interrogatório de mérito. Isso pode virar nulidade."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor.",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, o preso ainda nem foi lembrado de que pode calar. Pergunta de mérito aqui é indevida."
+         }
+        ]
+       }
+      },
+      {
+       "q": "a4zmaicon",
+       "e": "triste",
+       "t": "Moro com a minha mulher e a minha filha na Vila Nova. Trabalho no depósito do Seu Armando."
+      },
+      {
+       "q": "a4zmaicon",
+       "e": "triste",
+       "t": "E os policiais me bateram na viatura, doutor. Torceram meu braço. Eu só queria levar o leite pra minha filha.",
+       "incidente": {
+        "pergunta": "O preso relata violência policial. Qual a providência do juízo?",
+        "fundamentos": [
+         {
+          "chave": "CF#art-5/inc-xlix",
+          "trecho": "é assegurado aos presos o respeito à integridade física e moral"
+         },
+         {
+          "chave": "CPP#art-158",
+          "trecho": "será indispensável o exame de corpo de delito"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Registro o relato, determino exame de corpo de delito e comunico o Ministério Público e a Corregedoria para apurar.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "normal",
+            "t": "Registre-se o relato na ata. Determino o exame de corpo de delito imediato e oficio ao Ministério Público e à Corregedoria da Polícia.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4nadia",
+            "e": "feliz",
+            "t": "A Defensoria agradece, Excelência."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Não anoto nada: a violência não é o objeto da custódia.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) É dever do juiz da custódia registrar relato de maus-tratos, Excelência. Sem isso, a prova se perde."
+           }
+          ]
+         },
+         {
+          "t": "Mando a fala do preso ser desconsiderada: ele só devia responder o que lhe perguntassem.",
+          "falas": [
+           {
+            "q": "a4nadia",
+            "e": "bravo",
+            "t": "Excelência, a defesa protesta: o preso relata violência, e o juiz tem o dever de registrar.",
+            "fx": "protesto"
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, Maicon. Isso precisa constar."
+       }
+      },
+      {
+       "q": "a4nadia",
+       "e": "normal",
+       "t": "Excelência, o auto de prisão registra uma escoriação no punho do meu assistido. Peço o exame de corpo de delito."
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "Excelência, o Ministério Público também considera que o preso é um ladrão de mercado e que a defensora está apenas encenando para...",
+       "incidente": {
+        "pergunta": "O promotor interrompe a defensora e ataca a fala dela. Como o juízo mantém a ordem?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-251",
+          "trecho": "manter a ordem no curso dos respectivos atos"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Cassar a palavra do promotor por um instante: a palavra estava com a defesa, e cada parte fala na sua vez.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Doutor, a defesa tinha a palavra. O senhor falará quando eu a conceder. Prossiga, doutora.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4tulio",
+            "e": "nervoso",
+            "t": "Perdão, Excelência. Retiro a interrupção."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo o promotor concluir: a acusação pode falar quando quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Quem preside dá e tira a palavra, Excelência. Sem isso, a audiência vira bate-boca."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, a palavra não é sua."
+       }
+      }
+     ],
+     "acerto": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+      }
+     ],
+     "proxima": "c6",
+     "dica": [
+      "Quem preside deve intervir quando a pergunta ou a conduta viola a lei, e só nesses casos.",
+      "Maus-tratos, pergunta de mérito e interrupção de quem tem a palavra pedem intervenção."
+     ]
+    },
+    "c6": {
+     "tipo": "sentenca",
+     "local": "custodia",
+     "titulo": "Decisão na custódia",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Ouvidos o preso, a Defensoria e o Ministério Público, passo a decidir."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Excelência, a custódia decide em três passos: o flagrante é legal? Há requisito para a preventiva? Qual é a saída adequada?"
+      }
+     ],
+     "partes": [
+      {
+       "nome": "1. Legalidade do flagrante",
+       "opcoes": [
+        {
+         "t": "O flagrante é legal: Maicon foi preso ao sair do mercado com a mercadoria, em situação de flagrância; não é caso de relaxar a prisão.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "feliz",
+           "t": "Exato: o flagrante é formalmente regular. Se fosse ilegal, o juiz relaxaria (art. 310, I)."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-310/inc-i",
+           "trecho": "relaxar a prisão ilegal"
+          }
+         ]
+        },
+        {
+         "t": "Relaxo a prisão: a mercadoria era pouca e o flagrante, por isso, é ilegal.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "O valor pequeno pode pesar na necessidade, Excelência, mas não torna o flagrante ilegal."
+          }
+         ]
+        },
+        {
+         "t": "Reconheço o flagrante, mas só depois de ouvir o preso sobre o mérito.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "O mérito não é objeto da custódia, Excelência."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "2. Requisitos da preventiva",
+       "opcoes": [
+        {
+         "t": "Não há perigo gerado pela liberdade: furto simples, sem violência, primário, endereço e trabalho fixos; a preventiva não se justifica (art. 312).",
+         "falas": [
+          {
+           "q": "a4tulio",
+           "e": "pensativo",
+           "t": "O Ministério Público reconhece, Excelência: não há requisito concreto."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-312",
+           "trecho": "perigo gerado pelo estado de liberdade do imputado"
+          }
+         ]
+        },
+        {
+         "t": "A preventiva é cabível: ele foi pego em flagrante, e flagrante basta.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "Flagrante não basta, Excelência. É preciso perigo concreto da liberdade (art. 312)."
+          }
+         ]
+        },
+        {
+         "t": "A preventiva é cabível pela repercussão do furto no bairro.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "Repercussão e clamor são gravidade abstrata, que o art. 312, § 4º, proíbe."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "3. Dispositivo",
+       "opcoes": [
+        {
+         "t": "Concedo liberdade provisória, mediante comparecimento periódico em juízo (art. 319, I), com a advertência de que a falta pode levar à preventiva; determino exame de corpo de delito e comunico à Corregedoria.",
+         "falas": [
+          {
+           "q": "a4zmaicon",
+           "e": "feliz",
+           "t": "Doutor(a)… obrigado. Eu volto pro trabalho amanhã."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-310/inc-iii",
+           "trecho": "conceder liberdade provisória, com ou sem fiança"
+          },
+          {
+           "chave": "CPP#art-319/inc-i",
+           "trecho": "comparecimento periódico em juízo"
+          }
+         ]
+        },
+        {
+         "t": "Converto em preventiva, por cautela, para que ele pense antes de reincidir.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "\"Por cautela\" é motivo que serviria a qualquer decisão, Excelência. Fundamentação vazia."
+          }
+         ]
+        },
+        {
+         "t": "Concedo liberdade sem nenhuma condição e arquivo a violência policial: não é meu assunto.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "O relato de maus-tratos exige exame e comunicação, Excelência. Isso é dever do juiz da custódia."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Assino a decisão e determino a expedição do alvará.",
+       "fx": "martelo"
+      }
+     ],
+     "proxima": "c7",
+     "dica": [
+      "O flagrante regular não torna a preventiva automática.",
+      "Furto simples, primário, com endereço e trabalho: raramente há perigo concreto da liberdade."
+     ]
+    },
+    "c7": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4zmaicon",
+       "e": "feliz",
+       "t": "Doutor(a)… eu entendi tudo, no fim. Obrigado por me explicar o que eu podia e o que eu não precisava dizer."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Madrugada. No corredor do fórum, Rita atende o telefone de costas. \"Davi\", lê-se na tela. Ela não diz mais que três palavras e desliga."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Meu irmão, Excelência. Ele costuma ligar a essa hora, é o único horário em que tem acesso ao telefone."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Ele está bem?"
+      },
+      {
+       "q": "a4rita",
+       "e": "feliz",
+       "t": "Está, sim. Obrigada por perguntar. Amanhã é a sua primeira audiência de instrução. Durma um pouco. Se aparecer alguma coisa estranha na sua mesa, me avise primeiro."
+      }
+     ],
+     "local": "corredor",
+     "proxima": "c8"
+    },
+    "c8": {
+     "tipo": "veredicto",
+     "carimbo": "CUSTÓDIA CONDUZIDA",
+     "titulo": "A primeira noite de toga",
+     "texto": "Você presidiu uma audiência de custódia sem perguntar sobre o mérito, lembrou o preso do direito ao silêncio, registrou a denúncia de violência, manteve a ordem da sala e concedeu a liberdade provisória com fundamento. Amanhã começa a vara de verdade, e há algo estranho esperando na sua mesa."
+    }
+   }
+  },
+  {
+   "id": "a4y-vitima",
+   "ato": "ato4",
+   "ordem": 1.5,
+   "numero": 29,
+   "titulo": "A Voz de Mariana",
+   "papel": "juiz",
+   "nivel": "intermediario",
+   "sinopse": "Uma adolescente precisa depor contra o ex-treinador, e o advogado dele quer humilhá-la. Prepare a sala (CPP, arts. 201, § 4º, e 217), proteja a vítima na inquirição (art. 400-A) sem cercear a defesa, conceda a palavra nas alegações finais (art. 403) e sentencie.",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4ztania": "acusacao",
+    "a4zperic": "defesa",
+    "a4zosmar": "defesa",
+    "a4zmari": "testemunha",
+    "a4zcleide": "cena",
+    "a4zedmil": "testemunha",
+    "a4rita": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "denuncia",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "Denúncia",
+     "descricao": "Osmar Ledo, 52 anos, ex-treinador de atletismo, é acusado de ter constrangido, mediante grave ameaça, a ex-aluna Mariana Coutinho, 17 anos, a praticar ato libidinoso, no vestiário do clube, em 14 de março (CP, art. 213)."
+    },
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🧠",
+     "nome": "Laudo psicológico",
+     "descricao": "A psicóloga do juízo observa relato consistente, sofrimento psíquico compatível e alerta: a exposição à presença do acusado e a perguntas sobre a vida pessoal da vítima aumentam o risco de revitimização."
+    },
+    {
+     "id": "mensagens",
+     "tipo": "prova",
+     "icone": "💬",
+     "nome": "Mensagens do acusado",
+     "descricao": "Duas mensagens enviadas por Osmar à vítima no dia seguinte: \"Fica quieta. Ninguém vai acreditar em você.\" e \"Se contar, acabo com os teus treinos.\""
+    },
+    {
+     "id": "portaria",
+     "tipo": "prova",
+     "icone": "🚪",
+     "nome": "Registro da catraca do clube",
+     "descricao": "Osmar entrou no setor dos vestiários às 17h45 do dia 14 e saiu às 18h12. Edmilson, o auxiliar técnico, saiu do clube às 17h30, conforme o mesmo registro."
+    },
+    {
+     "id": "cpp400a",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 400-A — Dignidade da vítima na audiência",
+     "chave": "CPP#art-400a",
+     "trecho": "todas as partes e demais sujeitos processuais presentes no ato deverão zelar pela integridade física e psicológica da vítima"
+    },
+    {
+     "id": "cpp400a2",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 400-A, II — Linguagem ofensiva",
+     "chave": "CPP#art-400a/inc-ii",
+     "trecho": "a utilização de linguagem, de informações ou de material que ofendam a dignidade da vítima ou de testemunhas"
+    },
+    {
+     "id": "cpp217",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 217 — Videoconferência ou retirada do réu",
+     "chave": "CPP#art-217",
+     "trecho": "fará a inquirição por videoconferência e, somente na impossibilidade dessa forma, determinará a retirada do réu"
+    },
+    {
+     "id": "cpp201p4",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 201, § 4º — Espaço separado",
+     "chave": "CPP#art-201/par-4",
+     "trecho": "será reservado espaço separado para o ofendido"
+    },
+    {
+     "id": "cpp201p6",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 201, § 6º — Intimidade da ofendida",
+     "chave": "CPP#art-201/par-6",
+     "trecho": "preservação da intimidade, vida privada, honra e imagem do ofendido"
+    },
+    {
+     "id": "cpp212",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 212 — Perguntas",
+     "chave": "CPP#art-212",
+     "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+    },
+    {
+     "id": "cpp155",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 155 — Convicção do juiz",
+     "chave": "CPP#art-155",
+     "trecho": "livre apreciação da prova produzida em contraditório judicial"
+    },
+    {
+     "id": "cpp403",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 403 — Alegações finais orais",
+     "chave": "CPP#art-403",
+     "trecho": "alegações finais orais por 20 (vinte) minutos"
+    },
+    {
+     "id": "cpp403p2",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 403, § 2º — Assistente",
+     "chave": "CPP#art-403/par-2",
+     "trecho": "Ao assistente do Ministério Público, após a manifestação desse, serão concedidos 10 (dez) minutos"
+    }
+   ],
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "v1",
+   "cenas": {
+    "v1": {
+     "tipo": "titulo",
+     "texto": "Caso 21 · Ato IV: A Toga",
+     "subtitulo": "A Voz de Mariana",
+     "proxima": "v2"
+    },
+    "v2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Ela escreveu a resposta no celular porque a voz não saiu. Era a quinta vez que tentava dizer a mesma frase a um adulto."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Vara Criminal. Uma audiência marcada às dez, e uma menina de 17 anos esperando no corredor ao lado da mãe."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Excelência, Mariana Coutinho, 17 anos, é a ofendida. O acusado é o ex-treinador dela, Osmar Ledo, que a defesa descreve como \"pilar da comunidade\"."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "O advogado dele é o Dr. Péricles Aragão: brilhante e cruel. Já pediu que a vítima responda de frente para o acusado, \"para que o juízo veja a sinceridade\"."
+      },
+      {
+       "q": "a4ztania",
+       "e": "pensativo",
+       "t": "Excelência, Tânia Moraes, assistente de acusação. A menina ficou sem dormir. Peço que a lei seja cumprida até o último parágrafo."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Será, doutora. Rita, os autos."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram juntados.",
+       "recebe": [
+        "denuncia",
+        "cpp400a",
+        "cpp400a2",
+        "cpp217",
+        "cpp201p4",
+        "cpp201p6",
+        "cpp212",
+        "cpp155",
+        "cpp403",
+        "cpp403p2"
+       ]
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "v3"
+    },
+    "v3": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "Gabinete · Autos do caso Mariana",
+     "intro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Antes de abrir a audiência, você precisa saber o que a lei espera de quem preside uma inquirição como esta."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "mesa",
+       "nome": "Mesa com os autos",
+       "x": 30,
+       "y": 50,
+       "w": 40,
+       "h": 30,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "A denúncia: art. 213, constrangimento mediante grave ameaça. Fato de março, vestiário do clube. Ela tinha 17 anos.",
+         "recebe": [
+          "denuncia"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "bravo",
+         "t": "As mensagens do acusado no dia seguinte: \"Fica quieta, ninguém vai acreditar em você\". Isso é ameaça por escrito.",
+         "recebe": [
+          "mensagens"
+         ]
+        }
+       ]
+      },
+      {
+       "id": "pc",
+       "nome": "Computador",
+       "x": 46,
+       "y": 46,
+       "w": 10,
+       "h": 10,
+       "falas": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O laudo psicológico: relato consistente e um alerta de revitimização se ela for exposta ao réu ou a perguntas sobre a vida pessoal.",
+         "recebe": [
+          "laudo"
+         ]
+        },
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "E o registro da catraca: Osmar no setor dos vestiários às 17h45; Edmilson, o auxiliar, já fora do clube às 17h30.",
+         "recebe": [
+          "portaria"
+         ]
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a4ztania",
+       "titulo": "Ouvir a assistente de acusação",
+       "falas": [
+        {
+         "q": "a4ztania",
+         "e": "confiante",
+         "t": "Ela vai responder a tudo, Excelência, mas não a qualquer coisa. A lei dá ao juiz o dever de zelar pela dignidade dela. Não é favor: é o art. 400-A."
+        }
+       ]
+      },
+      {
+       "q": "a4rita",
+       "titulo": "Conversar com Rita",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "pensativo",
+         "t": "Se o réu estiver na sala, o laudo prevê que ela trava. O art. 217 permite a videoconferência e, só se não der, a retirada do réu, mantido o defensor."
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "denuncia",
+      "laudo",
+      "mensagens",
+      "portaria"
+     ],
+     "proxima": "v4"
+    },
+    "v4": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Primeiro a sala. Depois a audiência."
+      }
+     ],
+     "pergunta": "Como preparar a inquirição da ofendida?",
+     "opcoes": [
+      {
+       "t": "Reservo espaço separado para a ofendida (art. 201, § 4º) e determino que ela seja ouvida por videoconferência, com o réu e o defensor em outra sala; só se isso for impossível retiro o réu, mantido o defensor (art. 217).",
+       "falas": [
+        {
+         "q": "a4ztania",
+         "e": "feliz",
+         "t": "A assistência agradece, Excelência. É exatamente o que a lei prevê."
+        },
+        {
+         "q": "a4zperic",
+         "e": "pensativo",
+         "t": "A defesa registra o inconformismo, mas não vê ilegalidade."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPP#art-217",
+         "trecho": "fará a inquirição por videoconferência e, somente na impossibilidade dessa forma, determinará a retirada do réu"
+        },
+        {
+         "chave": "CPP#art-201/par-4",
+         "trecho": "será reservado espaço separado para o ofendido"
+        }
+       ]
+      },
+      {
+       "t": "Mantenho tudo como pediu a defesa: ela depõe de frente para o acusado, para que o juízo veja a sinceridade.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) O laudo alerta para o risco, Excelência, e o art. 217 foi feito para isso. Sem proteção, o depoimento pode ficar prejudicado."
+        }
+       ]
+      },
+      {
+       "t": "Retiro o réu do fórum e ouço a ofendida sozinha, sem defensor.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) Se for retirado, o defensor precisa ficar, Excelência (art. 217, parte final). Sem defesa, a prova é nula."
+        }
+       ]
+      }
+     ],
+     "proxima": "v5",
+     "dica": [
+      "A primeira escolha é a videoconferência; a retirada do réu é a segunda, e o defensor sempre fica."
+     ]
+    },
+    "v5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "No corredor, Mariana está sentada na ponta de um banco, com a mochila no colo. A mãe, Dona Cleide, em pé, segura a bolsa com as duas mãos."
+      },
+      {
+       "q": "a4rita",
+       "e": "feliz",
+       "t": "Mariana, eu sou a Rita. Trouxe água. Quer ficar na sala ao lado, com a janela? Dá para ouvir os pássaros do pátio."
+      },
+      {
+       "q": "a4zmari",
+       "e": "triste",
+       "t": "Pode ser."
+      },
+      {
+       "q": "a4zcleide",
+       "e": "nervoso",
+       "t": "Excelência, ela não come desde ontem. O advogado do homem me parou na entrada e disse que a minha filha \"não vai aguentar\"."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Dona Cleide, ninguém vai fazer a sua filha passar por mais do que a lei autoriza. Se qualquer pergunta passar do limite, eu paro a audiência."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Meu irmão está preso, Dona Cleide. Eu sei como é ficar do outro lado do vidro, esperando alguém dizer que não foi culpa nossa."
+      }
+     ],
+     "local": "corredor",
+     "proxima": "v6"
+    },
+    "v6": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Declaro aberta a audiência de instrução e julgamento. A ofendida será ouvida em espaço separado, por videoconferência, com o acusado e o defensor em outra sala. Os doutores zelarão pela integridade da ofendida (art. 400-A); eu intervenho se isso não ocorrer.",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Ministério Público presente, Excelência."
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "v7"
+    },
+    "v7": {
+     "tipo": "audiencia",
+     "local": "tribunal",
+     "titulo": "Inquirição da ofendida, Mariana Coutinho",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A ofendida aparece na tela, com a mãe ao lado e uma jarra de água. O acusado está em outra sala, com o defensor."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Mariana, no seu tempo, conte ao juízo o que aconteceu no dia 14 de março."
+      },
+      {
+       "q": "a4zmari",
+       "e": "triste",
+       "t": "Eu estava no vestiário depois do treino. Ele fechou a porta e disse que, se eu contasse, acabava com meus treinos."
+      },
+      {
+       "q": "a4zperic",
+       "e": "pensativo",
+       "t": "Mariana, você sempre usava aquela roupa de ginástica curtinha nos treinos, não usava? E tinha fama de gostar de chamar a atenção dos homens do clube.",
+       "incidente": {
+        "pergunta": "A pergunta ofende a dignidade da vítima e foge dos fatos. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-400a/inc-ii",
+          "trecho": "a utilização de linguagem, de informações ou de material que ofendam a dignidade da vítima ou de testemunhas"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro e advirto o defensor: a pergunta ofende a dignidade da vítima e não tem relação com os fatos (art. 400-A).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Indeferida, doutor. A roupa e a fama da ofendida não são objeto desta causa, e o juízo zela pela integridade dela. Pergunte sobre os fatos.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a4zperic",
+            "e": "nervoso",
+            "t": "Registro o meu inconformismo, Excelência. Retiro a pergunta."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Admito: a defesa precisa explorar a credibilidade da ofendida.",
+          "falas": [
+           {
+            "q": "a4ztania",
+            "e": "bravo",
+            "t": "Excelência, a assistência protesta: é exatamente a utilização de informações que ofendem a dignidade, vedada pelo art. 400-A.",
+            "fx": "protesto"
+           },
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Credibilidade se prova com os fatos, Excelência, não com o que ela veste."
+           }
+          ]
+         },
+         {
+          "t": "Deixo a pergunta passar, mas peço à ofendida que responda só se quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Peça ao advogado para reformular, Excelência. Responder já é a humilhação."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, um instante. A dignidade da ofendida é minha responsabilidade.",
+        "omissao": [
+         {
+          "q": "a4rita",
+          "e": "nervoso",
+          "t": "(sussurrando) Excelência, o art. 400-A manda o juiz garantir isso. Se calar, a ofendida terá de responder."
+         }
+        ]
+       }
+      },
+      {
+       "q": "a4zperic",
+       "e": "normal",
+       "t": "Mariana, no depoimento à polícia a senhorita disse que o fato ocorreu às 18h, e agora disse que foi mais cedo. Qual é o horário certo?"
+      },
+      {
+       "q": "a4zmari",
+       "e": "triste",
+       "t": "Foi perto das seis. Eu não olhei o relógio. Estava com medo."
+      },
+      {
+       "q": "a4zosmar",
+       "e": "bravo",
+       "t": "MENTIROSA! Você inventou isso para me destruir! Eu te dei tudo no clube!",
+       "fx": "bater",
+       "incidente": {
+        "pergunta": "O acusado grita da outra sala e a voz chega à ofendida. Como o juízo mantém a ordem?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-217",
+          "trecho": "Se o juiz verificar que a presença do réu poderá causar humilhação, temor, ou sério constrangimento à testemunha ou ao ofendido"
+         },
+         {
+          "chave": "CPP#art-251",
+          "trecho": "manter a ordem no curso dos respectivos atos"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Mando cortar o áudio do réu, advirto o defensor de que um novo excesso levará à retirada do réu da sala, mantida a defesa técnica.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Silêncio, Sr. Osmar. O áudio da sua sala fica cortado até que eu autorize. Doutor Péricles, oriente o seu cliente: mais um excesso e o retiro da sala, com o senhor ao lado dele.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4zmari",
+            "e": "triste",
+            "t": "(baixinho) Obrigada."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo o acusado desabafar: o direito de defesa é amplo.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Direito de defesa não inclui intimidar a ofendida em plena audiência, Excelência (art. 217)."
+           }
+          ]
+         },
+         {
+          "t": "Encerro a audiência e mando o acusado preso.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Desproporcional, Excelência. A medida é cortar o áudio e advertir; retirada vem depois, e a prisão é outra decisão."
+           }
+          ]
+         }
+        ],
+        "chamada": "Silêncio na sala!"
+       }
+      },
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Mariana, depois dessa mensagem, o que você sentiu?"
+      },
+      {
+       "q": "a4zmari",
+       "e": "triste",
+       "t": "Que ia acontecer de novo se eu não fizesse o que ele queria. Mas eu contei pra minha mãe."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+      }
+     ],
+     "proxima": "v8",
+     "dica": [
+      "Proteger a vítima não é cercear a defesa: pergunta sobre horário e versão é legítima.",
+      "Intervenha em ofensa à dignidade e em gritos do acusado; não em perguntas de mérito."
+     ]
+    },
+    "v8": {
+     "tipo": "depoimento",
+     "testemunha": "a4zedmil",
+     "titulo": "Edmilson Rocha, auxiliar técnico",
+     "intro": [
+      {
+       "q": "a4zedmil",
+       "e": "nervoso",
+       "t": "Doutor(a), eu vim dizer a verdade. O Osmar é um homem de bem."
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu estava com o Osmar o tempo todo, até as sete da noite, no estacionamento.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "O senhor esteve com ele até as sete? Em que local, exatamente?"
+        },
+        {
+         "q": "a4zedmil",
+         "e": "nervoso",
+         "t": "No estacionamento, perto do portão."
+        }
+       ]
+      },
+      {
+       "t": "Ele jamais entrou no vestiário depois do treino. Não era do feitio dele.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "pensativo",
+         "t": "Como o senhor sabe que ele nunca entrou?"
+        },
+        {
+         "q": "a4zedmil",
+         "e": "nervoso",
+         "t": "Porque eu estava com ele!"
+        }
+       ]
+      },
+      {
+       "t": "A menina sempre foi problemática e inventava histórias.",
+       "e": "bravo",
+       "pressionar": [
+        {
+         "q": "voce",
+         "e": "normal",
+         "t": "O senhor presenciou alguma dessas histórias? Fale somente de fatos."
+        },
+        {
+         "q": "a4zedmil",
+         "e": "nervoso",
+         "t": "Eu… ouvi dizer."
+        }
+       ]
+      }
+     ],
+     "contradicao": {
+      "afirmacao": 0,
+      "provas": [
+       "portaria"
+      ]
+     },
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Sr. Edmilson, consta dos autos o registro da catraca do clube: o senhor saiu às 17h30.",
+       "fx": "ordem"
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "O mesmo registro mostra o Sr. Osmar entrando no setor dos vestiários às 17h45 e saindo às 18h12. O senhor afirmou que estava com ele até as sete, no estacionamento. Como concilia?"
+      },
+      {
+       "q": "a4zedmil",
+       "e": "chocado",
+       "t": "Eu… saí antes. Ele me pediu que eu dissesse que estava junto…",
+       "fx": "tremor"
+      },
+      {
+       "q": "a4zperic",
+       "e": "nervoso",
+       "t": "Excelência, a defesa pede um momento para conferenciar com o cliente."
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Esse documento não esclarece o ponto, Sr. Edmilson. Veja o horário da sua saída no registro da catraca."
+      }
+     ],
+     "proxima": "v8c"
+    },
+    "v8c": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "A testemunha de defesa reconheceu que o álibi foi combinado."
+      }
+     ],
+     "pergunta": "Qual a providência do juízo?",
+     "opcoes": [
+      {
+       "t": "Registro a retratação, advirto a testemunha das penas do falso testemunho (art. 210) e, na sentença, remeto cópia à autoridade (art. 211) para apurar o pedido do acusado.",
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "O Ministério Público toma nota, Excelência. Há indício de coação no curso do processo."
+        },
+        {
+         "q": "a4ztania",
+         "e": "feliz",
+         "t": "A assistência agradece."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPP#art-211",
+         "trecho": "remeterá cópia do depoimento à autoridade policial"
+        }
+       ]
+      },
+      {
+       "t": "Mando prender a testemunha agora, em flagrante de falso testemunho.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) Ele se retratou ainda no depoimento, Excelência, e o juiz não prende por conta própria."
+        }
+       ]
+      },
+      {
+       "t": "Ignoro: o álibi só pesa contra o acusado se o MP provar.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) A retratação e o pedido do réu precisam ficar na ata, Excelência."
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "v9"
+    },
+    "v9": {
+     "tipo": "palavra",
+     "local": "tribunal",
+     "titulo": "Alegações finais orais",
+     "ordenar": true,
+     "passo": 5,
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Encerrada a instrução, concedo a palavra para as alegações finais orais. Há assistente de acusação habilitada."
+      }
+     ],
+     "oradores": [
+      {
+       "q": "a4tulio",
+       "papel": "Acusação (MP)",
+       "min_ok": 20,
+       "max_ok": 30
+      },
+      {
+       "q": "a4ztania",
+       "papel": "Assistente de acusação",
+       "tempo": 10
+      },
+      {
+       "q": "a4zperic",
+       "papel": "Defesa",
+       "tempo": 30
+      }
+     ],
+     "fundamentos": [
+      {
+       "chave": "CPP#art-403",
+       "trecho": "alegações finais orais por 20 (vinte) minutos"
+      },
+      {
+       "chave": "CPP#art-403/par-2",
+       "trecho": "Ao assistente do Ministério Público, após a manifestação desse, serão concedidos 10 (dez) minutos"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Com a palavra o Ministério Público. Depois a assistente, por dez minutos. A defesa fala por último, por trinta.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Tempo fora da lei: 20 minutos (prorrogáveis por 10) para a acusação; 10 para a assistente; a defesa, 20 + 10 quando há assistente."
+      }
+     ],
+     "erro_ordem": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Ordem trocada: acusação, assistente, defesa."
+      }
+     ],
+     "dica": [
+      "A defesa fala por último e ganha o mesmo tempo da assistente a mais."
+     ],
+     "proxima": "v10"
+    },
+    "v10": {
+     "tipo": "sentenca",
+     "local": "tribunal",
+     "titulo": "Sentença",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Passo a sentenciar. A ofendida é adolescente: a sentença preserva a identidade dela."
+      }
+     ],
+     "partes": [
+      {
+       "nome": "1. Relatório e proteção da ofendida",
+       "opcoes": [
+        {
+         "t": "Resumo neutro dos autos, com o nome da ofendida preservado e segredo de justiça sobre dados e depoimentos que a exponham (art. 201, § 6º).",
+         "falas": [
+          {
+           "q": "a4ztania",
+           "e": "feliz",
+           "t": "Obrigada, Excelência. Isso é parte do respeito."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-201/par-6",
+           "trecho": "preservação da intimidade, vida privada, honra e imagem do ofendido"
+          }
+         ]
+        },
+        {
+         "t": "Relatório com o nome completo e o endereço da ofendida, para dar transparência.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "(sussurrando) Isso a expõe, Excelência. O § 6º do art. 201 manda proteger a intimidade e a imagem."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "2. Fundamentação da autoria",
+       "opcoes": [
+        {
+         "t": "A palavra da ofendida, coerente em juízo, é corroborada pelas mensagens do acusado, pelo laudo psicológico e pela retratação da testemunha de defesa; o conjunto, produzido em contraditório, basta (art. 155).",
+         "falas": [
+          {
+           "q": "a4tulio",
+           "e": "pensativo",
+           "t": "O Ministério Público registra a concordância."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-155",
+           "trecho": "livre apreciação da prova produzida em contraditório judicial"
+          }
+         ]
+        },
+        {
+         "t": "Absolvo: não houve testemunha ocular, e a palavra da menina sozinha não vale.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "A palavra da ofendida tem especial valor nesses crimes, quando coerente e corroborada. Aqui há mensagens, laudo e a retratação, Excelência."
+          }
+         ]
+        },
+        {
+         "t": "Condeno só porque ela é adolescente e o acusado é adulto.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "(sussurrando) Condenação não se funda em quem é quem, mas na prova do contraditório, Excelência."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "3. Dispositivo",
+       "opcoes": [
+        {
+         "t": "Condeno Osmar Ledo pelo art. 213 do Código Penal, com pena fixada em três fases, fundamentada, fixo valor mínimo de reparação (art. 387, IV) e mantenho medidas de proteção à ofendida.",
+         "falas": [
+          {
+           "q": "a4zcleide",
+           "e": "feliz",
+           "t": "Excelência… obrigada. Ela vai dormir hoje."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-387/inc-iv",
+           "trecho": "fixará valor mínimo para reparação dos danos causados pela infração"
+          }
+         ]
+        },
+        {
+         "t": "Condeno pela pena máxima, por exemplaridade e pelo clamor da comunidade.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "(sussurrando) Clamor não fundamenta pena, Excelência. Cada fase exige fatos."
+          }
+         ]
+        },
+        {
+         "t": "Condeno e determino que o nome do réu seja divulgado e o da ofendida também, para a comunidade saber.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "chocado",
+           "t": "(sussurrando) A identidade da ofendida é protegida (art. 201, § 6º), Excelência."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Assino a sentença.",
+       "fx": "martelo"
+      }
+     ],
+     "proxima": "v11"
+    },
+    "v11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Fim de tarde. No balcão do gabinete, um bilhete dobrado, letra miúda de adolescente:"
+      },
+      {
+       "q": "a4zmari",
+       "e": "feliz",
+       "t": "Obrigada por deixar eu falar sem olhar para ele. Eu achei que ia ter que escolher entre ficar calada e me humilhar. Foi a primeira vez que a lei me deu uma terceira opção."
+      },
+      {
+       "q": "a4rita",
+       "e": "feliz",
+       "t": "Excelência, ela deixou também isto: um desenho do pátio do fórum. Dá para ver os pássaros."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Pendure ali, ao lado da bandeira, Rita. Para a gente lembrar quem esperava do outro lado da tela."
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "v12"
+    },
+    "v12": {
+     "tipo": "veredicto",
+     "carimbo": "VÍTIMA PROTEGIDA",
+     "titulo": "A palavra de Mariana",
+     "texto": "Você preparou a sala, protegeu a ofendida de perguntas humilhantes, manteve a ordem sem cercear a defesa, concedeu a palavra na ordem e nos tempos da lei e sentenciou preservando a identidade dela. Próximo caso: um celular aberto sem ordem judicial e o advogado Augusto Brandão, diante de você."
+    }
+   }
+  },
+  {
+   "id": "a4y-juri",
+   "ato": "ato4",
+   "ordem": 5.5,
+   "numero": 30,
+   "titulo": "O Júri dos Ferraz",
+   "papel": "juiz",
+   "nivel": "especialista",
+   "sinopse": "Você preside o Tribunal do Júri: sorteio e recusas (CPP, arts. 468 e 469), incomunicabilidade dos jurados, debates com dois acusados (art. 477, § 2º), nulidades do art. 478, quesitos (art. 483) e sentença (art. 492).",
+   "posicoes": {
+    "voce": "juiz",
+    "a4tulio": "acusacao",
+    "a4zsandro": "defesa",
+    "a4zperito": "testemunha",
+    "a4zmonica": "testemunha",
+    "a4zrenan": "defesa",
+    "a4rita": "escritorio"
+   },
+   "provas": [
+    {
+     "id": "laudo",
+     "tipo": "prova",
+     "icone": "🩻",
+     "nome": "Laudo de necropsia",
+     "descricao": "Luciano Prates, 38 anos, morreu por facada no tórax, dada de baixo para cima, durante briga na saída de um bar. Uma só lesão; nenhuma lesão de defesa."
+    },
+    {
+     "id": "faca",
+     "tipo": "prova",
+     "icone": "🔪",
+     "nome": "Faca apreendida",
+     "descricao": "Faca de cozinha encontrada na caçamba da oficina de Jonas Ferraz, sem sangue visível. A perícia não achou digitais de ninguém."
+    },
+    {
+     "id": "video",
+     "tipo": "prova",
+     "icone": "🎥",
+     "nome": "Imagem do bar",
+     "descricao": "A câmera mostra Renan e Luciano trocando empurrões; Jonas aparece depois, tentando separar. O ângulo corta o momento da facada."
+    },
+    {
+     "id": "pronuncia",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Decisão de pronúncia",
+     "descricao": "Os irmãos Jonas e Renan Ferraz foram pronunciados por homicídio simples, em coautoria ou participação. A qualificadora de motivo fútil foi afastada."
+    },
+    {
+     "id": "cpp468",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 468 — Recusas",
+     "chave": "CPP#art-468",
+     "trecho": "poderão recusar os jurados sorteados, até 3 (três) cada parte, sem motivar a recusa"
+    },
+    {
+     "id": "cpp469",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 469 — Mais de um acusado",
+     "chave": "CPP#art-469",
+     "trecho": "as recusas poderão ser feitas por um só defensor"
+    },
+    {
+     "id": "cpp466",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 466, § 1º — Incomunicabilidade",
+     "chave": "CPP#art-466/par-1",
+     "trecho": "não poderão comunicar-se entre si e com outrem, nem manifestar sua opinião sobre o processo"
+    },
+    {
+     "id": "cpp448",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 448, IV — Impedimentos entre jurados",
+     "chave": "CPP#art-448/inc-iv",
+     "trecho": "irmãos e cunhados, durante o cunhadio"
+    },
+    {
+     "id": "cpp474",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 474, § 2º — Perguntas dos jurados",
+     "chave": "CPP#art-474/par-2",
+     "trecho": "Os jurados formularão perguntas por intermédio do juiz presidente"
+    },
+    {
+     "id": "cpp477",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 477 — Tempo dos debates",
+     "chave": "CPP#art-477",
+     "trecho": "uma hora e meia para cada, e de uma hora para a réplica e outro tanto para a tréplica"
+    },
+    {
+     "id": "cpp477p2",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 477, § 2º — Mais de um acusado",
+     "chave": "CPP#art-477/par-2",
+     "trecho": "o tempo para a acusação e a defesa será acrescido de 1 (uma) hora e elevado ao dobro o da réplica e da tréplica"
+    },
+    {
+     "id": "cpp478",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 478 — Referências proibidas",
+     "chave": "CPP#art-478",
+     "trecho": "sob pena de nulidade, fazer referências"
+    },
+    {
+     "id": "cpp478i",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 478, I — Pronúncia",
+     "chave": "CPP#art-478/inc-i",
+     "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+    },
+    {
+     "id": "cpp478ii",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 478, II — Silêncio",
+     "chave": "CPP#art-478/inc-ii",
+     "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento, em seu prejuízo"
+    },
+    {
+     "id": "cpp483",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 483 — Quesitos",
+     "chave": "CPP#art-483",
+     "trecho": "Os quesitos serão formulados na seguinte ordem, indagando sobre"
+    },
+    {
+     "id": "cpp492",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 492 — Sentença do presidente",
+     "chave": "CPP#art-492",
+     "trecho": "o presidente proferirá sentença"
+    },
+    {
+     "id": "cpp497",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 497, III — Direção dos debates",
+     "chave": "CPP#art-497/inc-iii",
+     "trecho": "dirigir os debates, intervindo em caso de abuso, excesso de linguagem"
+    },
+    {
+     "id": "cpp474a",
+     "tipo": "lei",
+     "icone": "⚖️",
+     "nome": "CPP, art. 474-A — Dignidade da vítima no plenário",
+     "chave": "CPP#art-474a",
+     "trecho": "todas as partes e demais sujeitos processuais presentes no ato deverão respeitar a dignidade da vítima"
+    }
+   ],
+   "placas": {
+    "defesa": "Defesa",
+    "acusacao": "Ministério Público"
+   },
+   "inicio": "j1",
+   "cenas": {
+    "j1": {
+     "tipo": "titulo",
+     "texto": "Caso 29 · Ato IV: A Toga",
+     "subtitulo": "O Júri dos Ferraz",
+     "proxima": "j2"
+    },
+    "j2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Sete desconhecidos vão decidir se dois irmãos voltam para casa. E quem preside a sessão é você, que não vota."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Plenário do Tribunal do Júri. Vinte e cinco jurados convocados; sete escolherão o destino de Jonas e Renan Ferraz, acusados da morte de Luciano Prates numa briga de bar."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Excelência, a lista de jurados está aqui. Mãos geladas, desculpe. O Davi mudou de ala sem aviso ontem à noite e eu não consegui dormir."
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Se precisar sair, Rita, saia. Mas hoje preciso do gabinete inteiro: júri tem nulidade para todo lado."
+      },
+      {
+       "q": "a4rita",
+       "e": "pensativo",
+       "t": "Estou aqui. O Dr. Túlio acusa; o Dr. Sandro defende o Renan e o Jonas, que concordaram em ter um só defensor; e a viúva, Mônica, assiste da primeira fila."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Os autos foram juntados.",
+       "recebe": [
+        "laudo",
+        "faca",
+        "video",
+        "pronuncia",
+        "cpp468",
+        "cpp469",
+        "cpp466",
+        "cpp448",
+        "cpp474",
+        "cpp477",
+        "cpp477p2",
+        "cpp478",
+        "cpp478i",
+        "cpp478ii",
+        "cpp483",
+        "cpp492",
+        "cpp497",
+        "cpp474a"
+       ]
+      }
+     ],
+     "local": "juri",
+     "proxima": "j3"
+    },
+    "j3": {
+     "tipo": "audiencia",
+     "local": "juri",
+     "titulo": "Sorteio do Conselho de Sentença",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Aberta a sessão, procedo ao sorteio dos jurados. Antes, esclareço os impedimentos e as incompatibilidades (art. 466).",
+       "fx": "martelo"
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a4zsandro",
+       "e": "normal",
+       "t": "A defesa recusa o jurado número 3, Excelência, sem motivação."
+      },
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "O Ministério Público recusa o jurado número 9, sem motivação."
+      },
+      {
+       "q": "a4zsandro",
+       "e": "pensativo",
+       "t": "Excelência, são dois acusados, então cada um tem direito às suas três recusas: peço mais três.",
+       "incidente": {
+        "pergunta": "A defesa pede seis recusas porque são dois acusados. Como o juízo decide?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-468",
+          "trecho": "poderão recusar os jurados sorteados, até 3 (três) cada parte, sem motivar a recusa"
+         },
+         {
+          "chave": "CPP#art-469",
+          "trecho": "as recusas poderão ser feitas por um só defensor"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro: o limite é de três recusas por parte, e havendo mais de um acusado elas podem ser feitas por um só defensor (arts. 468 e 469).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "normal",
+            "t": "Indeferido, doutor. A parte tem três recusas imotivadas; com dois acusados, um só defensor as exerce em conjunto.",
+            "fx": "martelo"
+           },
+           {
+            "q": "a4zsandro",
+            "e": "nervoso",
+            "t": "Entendido, Excelência. Prosseguimos."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Defiro: dois acusados, seis recusas.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) O limite é de três por parte, Excelência, e com mais de um acusado as recusas são feitas por um só defensor (art. 469)."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, um instante."
+       }
+      },
+      {
+       "q": "a4zsandro",
+       "e": "normal",
+       "t": "Jurado número 12, Excelência, é sorteado. Aceitamos."
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "Excelência, a jurada número 5 me informa que o jurado número 14 é seu cunhado. Ambos foram sorteados para o mesmo Conselho.",
+       "incidente": {
+        "pergunta": "Dois jurados cunhados não podem servir no mesmo Conselho. Como o juízo age?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-448/inc-iv",
+          "trecho": "irmãos e cunhados, durante o cunhadio"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Excluo um deles, na ordem do sorteio: cunhados não servem no mesmo Conselho (art. 448, IV).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "normal",
+            "t": "Consta o impedimento. O jurado 14, sorteado depois, é excluído, e o sorteio prossegue.",
+            "fx": "martelo"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Mantenho ambos: o parentesco só impede entre juiz e parte.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) O art. 448, II, impede cunhados no mesmo Conselho, Excelência."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, um instante. Pelo art. 448..."
+       }
+      }
+     ],
+     "acerto": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+      }
+     ],
+     "proxima": "j4",
+     "dica": [
+      "As recusas imotivadas são três por parte (arts. 468 e 469).",
+      "Parentes não servem no mesmo Conselho."
+     ]
+    },
+    "j4": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Formado o Conselho: sete cidadãos, sorteados entre professores, comerciantes e aposentados. De pé, em silêncio."
+      }
+     ],
+     "pergunta": "Como o juiz presidente adverte os jurados sobre a incomunicabilidade?",
+     "opcoes": [
+      {
+       "t": "Advirto que, uma vez sorteados, não podem comunicar-se entre si nem com terceiros, nem manifestar opinião sobre o processo, sob pena de exclusão do Conselho e multa (art. 466, § 1º).",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "É isso. E o oficial vai recolher os celulares na hora do almoço."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPP#art-466/par-1",
+         "trecho": "sob pena de exclusão do Conselho e multa"
+        }
+       ]
+      },
+      {
+       "t": "Peço apenas que evitem comentar o caso com a imprensa.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) A incomunicabilidade é total, Excelência: entre eles e com qualquer pessoa."
+        }
+       ]
+      },
+      {
+       "t": "Digo a eles que condenem pela consciência e pela gravidade do crime.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "chocado",
+         "t": "(sussurrando) O presidente não induz o voto, Excelência. A exortação do art. 472 manda decidir pela consciência e pela justiça, sem sugerir o resultado."
+        }
+       ]
+      }
+     ],
+     "local": "juri",
+     "proxima": "j5"
+    },
+    "j5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Hora do almoço. Na praça em frente ao fórum, o oficial de justiça faz a fila dos jurados. Um homem de boné se aproxima da jurada número 2 com uma bandeja de café."
+      },
+      {
+       "q": "a4rita",
+       "e": "nervoso",
+       "t": "Excelência, olha ali. O homem de boné está falando com a Jurada 2. Eu não o conheço."
+      }
+     ],
+     "local": "praca",
+     "proxima": "j5b"
+    },
+    "j5b": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Desconhecido, jurada sorteada, vinte metros. Preciso decidir agora."
+      }
+     ],
+     "pergunta": "Como o juiz presidente trata a aproximação a uma jurada?",
+     "opcoes": [
+      {
+       "t": "Mando o oficial afastar o homem, ouço a jurada na presença das partes sobre o que foi dito e, se houve comunicação sobre o caso, excluo-a e a substituo por suplente.",
+       "falas": [
+        {
+         "q": "a4tulio",
+         "e": "pensativo",
+         "t": "O Ministério Público não se opõe, Excelência."
+        },
+        {
+         "q": "a4rita",
+         "e": "feliz",
+         "t": "O homem era do jornal. A jurada disse que só agradeceu o café, e não houve palavra sobre o caso. Segue o Conselho."
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPP#art-466/par-1",
+         "trecho": "não poderão comunicar-se entre si e com outrem"
+        }
+       ]
+      },
+      {
+       "t": "Ignoro: foi só um café na praça.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) Contato não vigiado pode virar nulidade, Excelência."
+        }
+       ]
+      },
+      {
+       "t": "Dissolvo o Conselho sem ouvir ninguém.",
+       "falas": [
+        {
+         "q": "a4rita",
+         "e": "nervoso",
+         "t": "(sussurrando) Excessivo. Só se dissolve o Conselho se a quebra for comprovada e essencial (art. 481)."
+        }
+       ]
+      }
+     ],
+     "local": "praca",
+     "proxima": "j6"
+    },
+    "j6": {
+     "tipo": "audiencia",
+     "local": "juri",
+     "titulo": "Instrução em plenário",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Passo à instrução em plenário. Os jurados podem formular perguntas por meu intermédio (art. 474, § 2º).",
+       "fx": "martelo"
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Dr. Heitor, o perito, o que o laudo diz sobre a posição do golpe?"
+      },
+      {
+       "q": "a4zperito",
+       "e": "normal",
+       "t": "Uma só lesão, no tórax, de baixo para cima. O laudo não diz quem desferiu."
+      },
+      {
+       "q": "a4zsandro",
+       "e": "apontando",
+       "t": "Dr. Heitor, o senhor confirma que o laudo prova que foi o Renan que feriu a vítima, não é verdade?",
+       "incidente": {
+        "pergunta": "A pergunta sugere uma conclusão que o laudo não traz. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro: a pergunta é indutiva e o laudo não diz quem desferiu o golpe.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Indeferida. O perito diz o que o laudo contém. A autoria é do Conselho.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a4zsandro",
+            "e": "nervoso",
+            "t": "Reformulo: Dr. Heitor, o laudo indica o autor?"
+           },
+           {
+            "q": "a4zperito",
+            "e": "normal",
+            "t": "Não indica."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo responder: o perito sabe do que fala.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) A pergunta sugere uma autoria que o laudo não afirma, Excelência."
+           }
+          ]
+         }
+        ],
+        "chamada": "Um instante, doutor."
+       }
+      },
+      {
+       "q": "a4zsandro",
+       "e": "pensativo",
+       "t": "Dona Mônica, a senhora sabe que seu marido bebia e já tinha brigado com a senhora e com outros? Que vida ele levava?",
+       "incidente": {
+        "pergunta": "A pergunta ofende a vítima morta e a viúva. Como o juízo intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-474a",
+          "trecho": "todas as partes e demais sujeitos processuais presentes no ato deverão respeitar a dignidade da vítima"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro: a pergunta ofende a dignidade da vítima e é alheia aos fatos (art. 474-A). Pergunte sobre o que aconteceu naquela noite.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Indeferida, doutor. O juízo zela pela dignidade da vítima e da viúva. Perguntas sobre a vida dele só entram se tiverem relação direta com os fatos.",
+            "fx": "ordem"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Admito: o passado da vítima ajuda a defesa.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) Passado alheio ao fato é vedado pelo art. 474-A, Excelência."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, um instante."
+       }
+      },
+      {
+       "q": "a4zmonica",
+       "e": "triste",
+       "t": "Meu marido saiu para tomar uma cerveja e voltou numa maca. Os irmãos nunca pediram desculpa."
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "Excelência, peço que o juízo mande o perito refazer agora o exame da faca, para suprir o que a perícia não trouxe.",
+       "incidente": {
+        "pergunta": "O MP quer que o juiz produza prova. Como o juízo responde?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-3a",
+          "trecho": "a substituição da atuação probatória do órgão de acusação"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Indefiro: perícia nova é requerimento do MP, sujeito à decisão sobre dissolução do Conselho (art. 481); o juiz não supre a acusação (art. 3º-A).",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Indeferido, doutor. Se o Ministério Público considera a diligência essencial, requeira-a na forma do art. 481; o juízo não substitui a atuação probatória da acusação.",
+            "fx": "ordem"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Defiro: o presidente do júri pode determinar o que quiser.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "nervoso",
+            "t": "(sussurrando) O art. 3º-A vale também no plenário, Excelência."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, um instante."
+       }
+      },
+      {
+       "q": "a4zrenan",
+       "e": "nervoso",
+       "t": "Eu dei o soco. A faca eu nunca vi. Mas o Jonas só tentou me tirar da briga."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+      }
+     ],
+     "proxima": "j7"
+    },
+    "j7": {
+     "tipo": "palavra",
+     "local": "juri",
+     "titulo": "Debates em plenário",
+     "ordenar": true,
+     "passo": 30,
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Encerrada a instrução, concedo a palavra para os debates. Há dois acusados e um só defensor para ambos."
+      }
+     ],
+     "oradores": [
+      {
+       "q": "a4tulio",
+       "papel": "Acusação",
+       "tempo": 150
+      },
+      {
+       "q": "a4zsandro",
+       "papel": "Defesa (Jonas e Renan)",
+       "tempo": 150
+      },
+      {
+       "q": "a4tulio",
+       "papel": "Réplica da acusação",
+       "tempo": 120
+      },
+      {
+       "q": "a4zsandro",
+       "papel": "Tréplica da defesa",
+       "tempo": 120
+      }
+     ],
+     "fundamentos": [
+      {
+       "chave": "CPP#art-477",
+       "trecho": "uma hora e meia para cada, e de uma hora para a réplica e outro tanto para a tréplica"
+      },
+      {
+       "chave": "CPP#art-477/par-2",
+       "trecho": "o tempo para a acusação e a defesa será acrescido de 1 (uma) hora e elevado ao dobro o da réplica e da tréplica"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Acusação por duas horas e meia; defesa por igual tempo; réplica e tréplica por duas horas cada, porque há dois acusados.",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Com um só acusado seriam 1h30, réplica e tréplica de 1h. Com mais de um: +1h para acusação e defesa e réplica e tréplica em dobro (art. 477, § 2º)."
+      }
+     ],
+     "erro_ordem": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Ordem trocada: acusação, defesa, réplica da acusação, tréplica da defesa."
+      }
+     ],
+     "dica": [
+      "Dois acusados: +1 hora nos debates e o dobro na réplica e na tréplica."
+     ],
+     "proxima": "j8"
+    },
+    "j8": {
+     "tipo": "audiencia",
+     "local": "juri",
+     "titulo": "Debates · o presidente vigia as nulidades",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Com a palavra a acusação. Os senhores jurados atentem, eu cuido da ordem dos debates."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a4tulio",
+       "e": "normal",
+       "t": "Senhores jurados, estamos diante de dois irmãos que levaram a morte a uma família. Peço que olhem para a foto de Luciano."
+      },
+      {
+       "q": "a4tulio",
+       "e": "apontando",
+       "t": "E lembro que o juiz já os pronunciou: já há decisão dizendo que eles devem ser julgados por esse crime.",
+       "incidente": {
+        "pergunta": "O promotor invoca a pronúncia como argumento de autoridade. Como o juiz presidente intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-478/inc-i",
+          "trecho": "à decisão de pronúncia, às decisões posteriores que julgaram admissível a acusação"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Interrompo: proíbo a referência à pronúncia como argumento de autoridade (art. 478, I), advirto o promotor, e oriento os jurados a desconsiderar a frase, registrando em ata.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Doutor, a pronúncia não pode ser usada como argumento (art. 478, I). Senhores jurados, desconsiderem a referência. Registre-se em ata.",
+            "fx": "ordem"
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo seguir: é fato público do processo.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "chocado",
+            "t": "(sussurrando) É nulidade, Excelência. O art. 478, I, veda sob pena de nulidade."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, pela ordem!"
+       }
+      },
+      {
+       "q": "a4zsandro",
+       "e": "normal",
+       "t": "Senhores jurados, o Ministério Público foi buscar testemunha no almoço. Mas e a faca? Ninguém achou sangue."
+      },
+      {
+       "q": "a4tulio",
+       "e": "bravo",
+       "t": "E o Jonas, que escolheu ficar calado diante dos senhores: quem não tem o que esconder responde às perguntas.",
+       "incidente": {
+        "pergunta": "O promotor usa o silêncio do réu em seu prejuízo. Como o juiz presidente intervém?",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-478/inc-ii",
+          "trecho": "ao silêncio do acusado ou à ausência de interrogatório por falta de requerimento, em seu prejuízo"
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Interrompo e advirto o promotor: o silêncio é direito e não pode ser usado em prejuízo do acusado (art. 478, II); oriento os jurados a desconsiderar e registro em ata.",
+          "falas": [
+           {
+            "q": "voce",
+            "e": "bravo",
+            "t": "Doutor, o silêncio do acusado é garantia constitucional e não pode ser invocado contra ele. Jurados, desconsiderem a frase. Registre-se.",
+            "fx": "ordem"
+           },
+           {
+            "q": "a4zsandro",
+            "e": "feliz",
+            "t": "A defesa agradece e requer registro em ata."
+           }
+          ],
+          "certa": true
+         },
+         {
+          "t": "Deixo seguir: a defesa também poderá responder na tréplica.",
+          "falas": [
+           {
+            "q": "a4rita",
+            "e": "chocado",
+            "t": "(sussurrando) Remediar na tréplica não afasta a nulidade, Excelência (art. 478, II)."
+           }
+          ]
+         }
+        ],
+        "chamada": "Doutor, pela ordem!"
+       }
+      },
+      {
+       "q": "a4zsandro",
+       "e": "normal",
+       "t": "Os jurados devem lembrar que ele tem trabalho e filho. A prova não é perfeita, e a dúvida favorece o acusado."
+      }
+     ],
+     "acerto": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+      }
+     ],
+     "proxima": "j9",
+     "dica": [
+      "Em plenário, não se pode invocar a pronúncia nem o silêncio do acusado em prejuízo dele (art. 478).",
+      "Intervenção do presidente ocorre em abuso, excesso de linguagem ou nulidade (art. 497, III)."
+     ]
+    },
+    "j9": {
+     "tipo": "sentenca",
+     "local": "juri",
+     "titulo": "Formulação dos quesitos",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Encerrados os debates, formulo os quesitos na ordem da lei e os leio às partes (art. 484)."
+      }
+     ],
+     "partes": [
+      {
+       "nome": "1º quesito",
+       "opcoes": [
+        {
+         "t": "\"No dia 12 de março, na saída do bar, Luciano Prates sofreu uma facada no tórax que causou a sua morte?\" (materialidade)",
+         "falas": [
+          {
+           "q": "a4zsandro",
+           "e": "normal",
+           "t": "Sem reclamações, Excelência."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-483/inc-i",
+           "trecho": "a materialidade do fato"
+          }
+         ]
+        },
+        {
+         "t": "\"Jonas e Renan são culpados pela morte de Luciano?\"",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "(sussurrando) Culpa é conclusão jurídica, Excelência; o quesito pergunta sobre fatos, e a ordem começa pela materialidade."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "2º quesito",
+       "opcoes": [
+        {
+         "t": "\"Jonas concorreu para o crime, desferindo a facada ou ajudando de qualquer modo? E Renan?\" (autoria ou participação, um quesito para cada acusado)",
+         "falas": [
+          {
+           "q": "a4tulio",
+           "e": "normal",
+           "t": "O Ministério Público concorda."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-483/inc-ii",
+           "trecho": "a autoria ou participação"
+          }
+         ]
+        },
+        {
+         "t": "\"Os réus são irmãos e agiram juntos?\"",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "(sussurrando) Quesito complexo e sugestivo, Excelência: separa-se a autoria de cada acusado."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "3º quesito",
+       "opcoes": [
+        {
+         "t": "\"O jurado absolve o acusado?\" (art. 483, § 2º): obrigatório, em seguida aos dois primeiros se afirmados por mais de três.",
+         "falas": [
+          {
+           "q": "a4zsandro",
+           "e": "pensativo",
+           "t": "A defesa registra que o quesito está na redação da lei."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-483/inc-iii",
+           "trecho": "se o acusado deve ser absolvido"
+          }
+         ]
+        },
+        {
+         "t": "Dispenso o quesito de absolvição: a defesa não alegou tese de absolvição genérica.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "chocado",
+           "t": "(sussurrando) O quesito é obrigatório, Excelência. Sem ele, a sentença é nula."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "Quesitos seguintes",
+       "opcoes": [
+        {
+         "t": "Só formulo o de causa de diminuição ou o de qualificadora se o Conselho não absolver e se a tese tiver sido apresentada ou reconhecida na pronúncia. Aqui não há qualificadora pronunciada.",
+         "falas": [
+          {
+           "q": "a4tulio",
+           "e": "pensativo",
+           "t": "O Ministério Público concorda: a qualificadora foi afastada."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-483/inc-v",
+           "trecho": "se existe circunstância qualificadora ou causa de aumento de pena reconhecidas na pronúncia"
+          }
+         ]
+        },
+        {
+         "t": "Formulo o de motivo fútil mesmo assim, para prevenir recurso do MP.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "(sussurrando) A qualificadora foi afastada na pronúncia, Excelência; o quesito não cabe."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "Leio os quesitos às partes e pergunto se há requerimento ou reclamação (art. 484). Sem manifestações, passo à votação na sala especial.",
+       "fx": "martelo"
+      }
+     ],
+     "proxima": "j10",
+     "dica": [
+      "Ordem do art. 483: materialidade, autoria, absolvição, diminuição, qualificadora."
+     ]
+    },
+    "j10": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "Na sala secreta, sete cédulas por quesito. Quando as urnas se abrem, o oficial lê o resultado em voz baixa."
+      },
+      {
+       "q": "voce",
+       "e": "normal",
+       "t": "O Conselho de Sentença, por maioria, reconhece a materialidade; por maioria, absolve Jonas Ferraz; e, por maioria, reconhece a autoria de Renan Ferraz, rejeitando a absolvição. Não há quesito de qualificadora. Passo à sentença (art. 492).",
+       "fx": "martelo"
+      },
+      {
+       "q": "a4zmonica",
+       "e": "triste",
+       "t": "(chora baixinho) Ao menos um deles vai responder."
+      },
+      {
+       "q": "a4zrenan",
+       "e": "triste",
+       "t": "Eu dei o soco, doutor. A faca eu nunca vi."
+      }
+     ],
+     "local": "juri",
+     "proxima": "j11"
+    },
+    "j11": {
+     "tipo": "sentenca",
+     "local": "juri",
+     "titulo": "Sentença do presidente (art. 492)",
+     "falas": [
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "O presidente do júri não reexamina a prova: sentencia nos limites da decisão dos jurados."
+      }
+     ],
+     "partes": [
+      {
+       "nome": "1. Quanto a Jonas Ferraz",
+       "opcoes": [
+        {
+         "t": "Absolvido por decisão dos jurados; mando colocá-lo em liberdade, se por outro motivo não estiver preso, e revogo as medidas restritivas (art. 492, II).",
+         "falas": [
+          {
+           "q": "a4zsandro",
+           "e": "feliz",
+           "t": "Obrigado, Excelência."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-492/inc-ii",
+           "trecho": "no caso de absolvição"
+          }
+         ]
+        },
+        {
+         "t": "Condeno Jonas por participação, embora o Conselho o tenha absolvido, porque a prova me convenceu.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "chocado",
+           "t": "(sussurrando) A decisão do Conselho é soberana, Excelência. O presidente não a contraria."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "2. Quanto a Renan Ferraz: pena",
+       "opcoes": [
+        {
+         "t": "Condeno Renan pelo art. 121, caput, do Código Penal (homicídio simples), fixando a pena-base com fundamento nos fatos e sem usar a qualificadora afastada, depois atenuantes e agravantes e, por fim, causas de aumento e de diminuição.",
+         "falas": [
+          {
+           "q": "a4tulio",
+           "e": "pensativo",
+           "t": "O Ministério Público registra a dosimetria fundamentada."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-492/inc-i/ali-a",
+           "trecho": "fixará a pena-base"
+          },
+          {
+           "chave": "CP#art-121",
+           "trecho": "Matar alguém"
+          }
+         ]
+        },
+        {
+         "t": "Condeno Renan por homicídio qualificado, para dar exemplo.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "chocado",
+           "t": "(sussurrando) O Conselho não reconheceu qualificadora, Excelência. O presidente não a inventa."
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "nome": "3. Leitura e publicidade",
+       "opcoes": [
+        {
+         "t": "Leio a sentença em plenário, antes de encerrar a sessão (art. 493), e mando registrar em ata os requerimentos e as decisões.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "feliz",
+           "t": "Cumprido o art. 493, Excelência."
+          }
+         ],
+         "certa": true,
+         "fundamentos": [
+          {
+           "chave": "CPP#art-493",
+           "trecho": "A sentença será lida em plenário pelo presidente antes de encerrada a sessão de instrução e julgamento."
+          }
+         ]
+        },
+        {
+         "t": "Leio só o dispositivo e publico o resto depois, em cartório.",
+         "falas": [
+          {
+           "q": "a4rita",
+           "e": "nervoso",
+           "t": "(sussurrando) O art. 493 manda ler a sentença em plenário, Excelência."
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "e": "confiante",
+       "t": "Assino a sentença e dou por encerrada a sessão do júri.",
+       "fx": "martelo"
+      }
+     ],
+     "proxima": "j12"
+    },
+    "j12": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a4zsandro",
+       "e": "feliz",
+       "t": "Excelência, o Jonas pode ir para casa. Obrigado pela condução limpa. Não houve uma nulidade para arguir."
+      },
+      {
+       "q": "a4tulio",
+       "e": "pensativo",
+       "t": "O Ministério Público respeita o veredicto. E respeita o presidente."
+      },
+      {
+       "q": "narrador",
+       "e": "normal",
+       "t": "No corredor dos fundos, Rita está sentada, de olhos fechados. Ao lado dela, um envelope sem selo: o nome do Diretor Osvaldo Peçanha no remetente."
+      },
+      {
+       "q": "a4rita",
+       "e": "triste",
+       "t": "Excelência… isto veio por malote da penitenciária. Eu não abri. Posso levar para casa e ver depois?"
+      },
+      {
+       "q": "voce",
+       "e": "pensativo",
+       "t": "Leve, Rita. E me conte o que estiver aí dentro, seja o que for."
+      }
+     ],
+     "local": "corredor",
+     "proxima": "j13"
+    },
+    "j13": {
+     "tipo": "veredicto",
+     "carimbo": "CONSELHO RESPEITADO",
+     "titulo": "A soberania do júri",
+     "texto": "Você sorteou o Conselho, lembrou a incomunicabilidade, barrou perguntas indevidas, conteve a pronúncia e o silêncio dos acusados nos debates, formulou os quesitos na ordem da lei e sentenciou nos limites do veredicto. O último caso do ato traz um preso sem nome, e um envelope que Rita não abriu."
+    }
+   }
+  }
+ ]
+}
