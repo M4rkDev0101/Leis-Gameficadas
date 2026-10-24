@@ -68,7 +68,7 @@ amar e odiar, quebra de confiança, decepção; (8) mais efeitos, música "de ve
 | P4 | Ato 3 (promotor): denúncia, protesto, júri pela acusação, casos novos | a fazer (agente) |
 | P5 | Atos 1–2 (advogado): protesto, júri pela defesa, casos novos | a fazer (agente) |
 | P6 | Ato 5 (juiz) e Ato 6 (STF): tom de juiz, `plenario` no STF | a fazer (agente) |
-| P7 | Arte: 10 cenários novos com QA rígido pessoal | ✅ integrado (e357ff5); QA pessoal pediu 4 correções: rostos no STF e na custódia, bokeh do carro, bancos do corredor — em andamento em wt-arte2 |
+| P7 | Arte: 10 cenários novos com QA rígido pessoal | ✅ integrado (e357ff5); 4 correções do QA pessoal ✅; detalhe pendente: no corredor as longarinas ficam na frente da base das portas (mover para entre as portas) |
 | P8 | Áudio: trilha mais rica, 8 temas novos, efeitos e ambiências | ✅ integrado (d25c942); pendente: ouvir o volume das ambiências carro e cemitério |
 | P9 | Interface com cara de jogo | ✅ integrado (cd3c07e); pendentes do agente: veredicto não revisto, motivo do botão de assinar desabilitado, menu comum ainda cobre o rosto |
 | P10 | Arcos de personagem/mini-dramas atravessando os atos (traição, decepção, aliados) | dentro de P3–P6, coordenado por docs/NARRATIVA_GANCHOS.md |
