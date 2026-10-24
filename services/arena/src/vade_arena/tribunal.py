@@ -630,6 +630,8 @@ def _validar_juiz(c: dict, where: str, ep: dict, errs: list[str]) -> None:
     if c["tipo"] in ("audiencia", "protesto"):
         linhas = c.get("linhas", [])
         incs = [ln for ln in linhas if ln.get("incidente")]
+        if any(ln.get("se") and ln.get("incidente") for ln in linhas):
+            errs.append(f"{where}: incidente não pode depender de marca ('se'): o jogador poderia nunca vê-lo")
         if not incs or len(incs) == len(linhas):
             errs.append(f"{where}: audiência precisa de falas regulares e de ao menos um incidente")
         for k, ln in enumerate(linhas):

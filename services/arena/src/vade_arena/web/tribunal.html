@@ -3437,6 +3437,7 @@ async function audienciaScene(c) {
   let k = 0;
   while (k < linhas.length && !G.over) {
     const l = linhas[k], inc = l.incidente;
+    if (!cond(l.se)) { k++; continue; }   // fala condicionada a uma marca da história
     await say({q:l.q, e:l.e, t:l.t, fx:l.fx}, {noWait:true, local:c.local});
     $("#keys").textContent = `Fala ${k + 1} de ${linhas.length} · X ${prot ? "protesta" : "intervém"} · Enter segue`;
     const act = await new Promise(resolve => {
