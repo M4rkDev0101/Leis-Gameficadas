@@ -65,7 +65,7 @@
    "titulo": "A Assinatura",
    "papel": "investigado",
    "nivel": "impossivel",
-   "sinopse": "Quatro petições com a sua assinatura digital foram protocoladas em horários em que você presidia audiência no Supremo. Sem toga e sem poder advogar, você precisa descobrir quem usou o seu token, sem acusar a pessoa errada. Todas as pistas apontam para Helena. Todas, menos uma.",
+   "sinopse": "Três petições com a sua assinatura digital foram protocoladas em horários em que você presidia audiência no Supremo. Sem toga e sem poder advogar, você precisa descobrir quem usou o seu token, sem acusar a pessoa errada. Todas as pistas apontam para Helena. Todas, menos uma.",
    "posicoes": {
     "voce": "defesa",
     "rafael": "escritorio",
@@ -89,7 +89,7 @@
      "id": "peticoes",
      "tipo": "prova",
      "icone": "📑",
-     "nome": "As quatro petições assinadas",
+     "nome": "As três petições assinadas",
      "descricao": "Quatro peças protocoladas no inquérito de Brasília sob a sua assinatura digital (ICP-Brasil): terça 14h02, terça 15h40, quinta 16h11 e sexta 09h07. O certificado é válido; o conteúdo declara que o signatário «atua simultaneamente como juiz e como patrono da assistência»."
     },
     {
@@ -173,7 +173,7 @@
      "tipo": "prova",
      "icone": "🖥️",
      "nome": "Log original do servidor (STI)",
-     "descricao": "O log autêntico mostra as quatro assinaturas com o host GAB-214-WS, a estação do gabinete, e com sequência 118, 119, 121 e 124. O seu diário só registra 117, 120, 122 e 123. As outras quatro não são suas.",
+     "descricao": "O log autêntico mostra as três assinaturas com o host GAB-214-WS, a estação do gabinete, e com sequência 118, 119, 121 e 124. O seu diário só registra 117, 120, 122 e 123. As outras quatro não são suas.",
      "detalhe": "Extraído do servidor com termo de coleta e hash registrado. É o original."
     },
     {
@@ -181,7 +181,7 @@
      "tipo": "prova",
      "icone": "🔬",
      "nome": "Laudo do Dr. Kenji Sato",
-     "descricao": "Conclusão: o hash do log de Valério não confere com o original (…a91c); a cópia dele teve 3 linhas editadas; as quatro assinaturas partiram da estação do gabinete, com o token plugado fisicamente ali."
+     "descricao": "Conclusão: o hash do log de Valério não confere com o original (…a91c); a cópia dele teve 3 linhas editadas; as três assinaturas partiram da estação do gabinete, com o token plugado fisicamente ali."
     },
     {
      "id": "protocolo_corr",
@@ -226,7 +226,7 @@
       },
       {
        "q": "rafael",
-       "t": "A Corregedoria mandou isto de madrugada. Quatro petições no inquérito de Brasília. Todas com a sua assinatura digital, certificado válido, tudo em ordem.",
+       "t": "A Corregedoria mandou isto de madrugada. Três petições no inquérito de Brasília. Todas com a sua assinatura digital, certificado válido, tudo em ordem.",
        "e": "triste",
        "recebe": [
         "peticoes"
@@ -360,7 +360,7 @@
      "pergunta": "Como você prova, sem advogar, que não foi quem assinou?",
      "opcoes": [
       {
-       "t": "Pedir ao Supremo, por conta própria, o desentranhamento das quatro petições.",
+       "t": "Pedir ao Supremo, por conta própria, o desentranhamento das três petições.",
        "falas": [
         {
          "q": "rafael",
@@ -433,7 +433,7 @@
      "pontos": [
       {
        "id": "p_pet",
-       "nome": "As quatro petições impressas",
+       "nome": "As três petições impressas",
        "x": 6,
        "y": 24,
        "w": 18,
@@ -868,7 +868,7 @@
      "acerto": [
       {
        "q": "helena",
-       "t": "Está bem. Peguei o token em março e menti agora porque tive medo do que você ia pensar. Não assinei nada nestas quatro petições, juro.",
+       "t": "Está bem. Peguei o token em março e menti agora porque tive medo do que você ia pensar. Não assinei nada nestas três petições, juro.",
        "e": "triste"
       },
       {
@@ -3052,7 +3052,7 @@
      "tipo": "veredicto",
      "carimbo": "O TOKEN ESTAVA COM DANI",
      "titulo": "A Assinatura",
-     "texto": "Você provou que o log que acusava Helena era uma montagem, que o laudo de Valério não resistia à cadeia de custódia e que as quatro assinaturas partiram da sua própria estação, com o token na mão de alguém de dentro. Não era a pessoa que as provas apontavam. Era a que você mais protegeu.",
+     "texto": "Você provou que o log que acusava Helena era uma montagem, que o laudo de Valério não resistia à cadeia de custódia e que as três assinaturas partiram da sua própria estação, com o token na mão de alguém de dentro. Não era a pessoa que as provas apontavam. Era a que você mais protegeu.",
      "variantes": [
       {
        "se": "blefe_descoberto",
@@ -3124,7 +3124,7 @@
      "tipo": "prova",
      "icone": "📰",
      "nome": "O dossiê publicado por Joana",
-     "descricao": "Reportagem de capa: «O juiz que advogava». Cita «fontes do Instituto» e traz os horários das quatro petições, sem dizer de onde veio nenhum documento.",
+     "descricao": "Reportagem de capa: «O juiz que advogava». Cita «fontes do Instituto» e traz os horários das três petições, sem dizer de onde veio nenhum documento.",
      "detalhe": "A reportagem existe e foi publicada. O que pesa nela não é a existência: é a origem dos documentos."
     },
     {
@@ -3859,7 +3859,7 @@
       {
        "q": "a7saulo",
        "e": "normal",
-       "t": "A senhora publicou os horários das quatro petições. De onde vieram esses horários?"
+       "t": "A senhora publicou os horários das três petições. De onde vieram esses horários?"
       },
       {
        "q": "a7joana",
@@ -5659,7 +5659,7 @@
        "falas": [
         {
          "q": "voce",
-         "t": "A denunciação exige que o autor saiba inocente quem acusa. Eu não sou inocente da incompatibilidade: sou inocente das quatro petições. Dessas, ele sabia.",
+         "t": "A denunciação exige que o autor saiba inocente quem acusa. Eu não sou inocente da incompatibilidade: sou inocente das três petições. Dessas, ele sabia.",
          "e": "confiante"
         },
         {
