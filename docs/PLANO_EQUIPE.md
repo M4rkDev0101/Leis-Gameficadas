@@ -74,11 +74,13 @@ amar e odiar, quebra de confiança, decepção; (8) mais efeitos, música "de ve
 | P10 | Arcos de personagem/mini-dramas atravessando os atos (traição, decepção, aliados) | dentro de P3–P6, coordenado por docs/NARRATIVA_GANCHOS.md |
 | P7b | QA de arte dos personagens novos (a3y*, a4z*, a6zm*, a5oficial, a7*) | amostra dos ministros ✅; varredura completa pendente |
 | P11 | Ato 7 "Sem Toga": 10 episódios de 1 h+ (10,7 h), nível impossível, desvio por marca no ep. 9 | ✅ integrado; nomes ajustados contra colisões; falta jogar no navegador (servidor de preview indisponível na sessão) |
-| P13 | Ato 8 "A Presidência": episódio único de 2 h+ (sabatina, Presidente do STF e do CNJ, epílogo e créditos) em `wt-a8`; plano [ATO8_PRESIDENCIA.md](ATO8_PRESIDENCIA.md) | em andamento |
-| P12 | Integração do Ato 7: remover `"final": true` de a6-voto, conferir marcas declaradas × criadas, medir minutos (≥ 60 cada) | a fazer (coordenador) |
+| P13 | Ato 8 "A Presidência": episódio único de 2 h (126 min) com epílogo e créditos | ✅ integrado |
+| P12 | Fim do jogo movido para o Ato 8; a6-voto fecha o Ato 6 com o gancho da queda | ✅ |
 
 
 Limite de uso: com 13 agentes em paralelo a cota acaba antes de qualquer um terminar. Retomar em lotes de 5 (SendMessage ao agente, que continua de onde parou). Lote 1 (24/10): toga, mp, adv, supremo, a7a. Lote 2: a7b, a7c, a7d, a7e, a8.
+
+Estado em 24/10: 81 casos, ~40,5 h (Ato 1 2,9 h · 2 3,6 · 3 4,6 · 4 4,3 · 5 3,0 · 6 9,2 · 7 10,7 · 8 2,1). Pendentes: jogar no navegador os casos novos (o servidor de preview ficou indisponível), QA de arte dos personagens novos, detalhe do corredor, volume das ambiências carro/cemitério.
 
 ## Notas de ambiente (descobertas que custaram tempo)
 - Agentes: `isolation: worktree` falha (MAX_PATH). Criar `git worktree add -b equipe/<x> C:/lx/wt-<x>` e mandar o
