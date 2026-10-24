@@ -40,7 +40,7 @@
    "segredo": "Gerente de operações da Vidal Cargas por seis anos. Foi demitida na véspera do episódio que a trouxe ao fórum."
   },
   "a7drui": {
-   "nome": "Rui Camargo",
+   "nome": "Rui Fontes",
    "cargo": "Conferente do depósito",
    "voz": 350,
    "visual": {
@@ -135,7 +135,7 @@
    "segredo": "Defensora pública da central de custódia. Chega cedo, sai tarde, e conhece o nome de todos os presos que passam pelas suas mãos."
   },
   "a7ddavi": {
-   "nome": "Davi Lima",
+   "nome": "Josué Lima",
    "cargo": "Custodiado",
    "voz": 420,
    "visual": {
@@ -4067,7 +4067,7 @@
       {
        "q": "a7dyara",
        "e": "normal",
-       "t": "Bom dia, Excelência. Dra. Yara, da Defensoria. Davi Lima, preso em flagrante às 23h, por furto de um celular em ônibus. Primário. Mora com a mãe."
+       "t": "Bom dia, Excelência. Dra. Yara, da Defensoria. Josué Lima, preso em flagrante às 23h, por furto de um celular em ônibus. Primário. Mora com a mãe."
       },
       {
        "q": "lacerda",
@@ -4085,7 +4085,7 @@
     },
     "k2": {
      "tipo": "audiencia",
-     "titulo": "Audiência de custódia: Davi Lima",
+     "titulo": "Audiência de custódia: Josué Lima",
      "falas": [
       {
        "q": "voce",
@@ -4157,7 +4157,7 @@
       {
        "q": "a7ddavi",
        "e": "nervoso",
-       "t": "Davi Lima, 19 anos, ajudante de pedreiro. Moro com minha mãe, em Ceilândia."
+       "t": "Josué Lima, 19 anos, ajudante de pedreiro. Moro com minha mãe, em Ceilândia."
       },
       {
        "q": "lacerda",
@@ -4172,7 +4172,7 @@
       {
        "q": "a7dyara",
        "e": "normal",
-       "t": "Davi, houve algum problema no tratamento da polícia?"
+       "t": "Josué, houve algum problema no tratamento da polícia?"
       },
       {
        "q": "a7ddavi",
@@ -4180,7 +4180,7 @@
        "t": "Dei uma resposta torta no caminho e o cabo me deu um tapa no rosto, dentro da viatura. Está inchado aqui.",
        "incidente": {
         "pergunta": "O custodiado relata agressão. O que fazer?",
-        "chamada": "Registro o seu relato, Davi.",
+        "chamada": "Registro o seu relato, Josué.",
         "fundamentos": [
          {
           "chave": "CPP#art-158",
@@ -4270,7 +4270,7 @@
        "t": "Resta decidir. O art. 310 me dá três caminhos, e a repercussão do caso não é um deles."
       }
      ],
-     "pergunta": "Qual a decisão correta sobre a prisão em flagrante de Davi?",
+     "pergunta": "Qual a decisão correta sobre a prisão em flagrante de Josué?",
      "opcoes": [
       {
        "t": "Converter em preventiva: a repercussão do furto na cidade exige resposta firme.",
@@ -4312,7 +4312,7 @@
         {
          "q": "voce",
          "e": "confiante",
-         "t": "Concedo liberdade provisória, com comparecimento periódico em juízo (arts. 310, III, e 319, I). Expeça-se o alvará. Davi, volte para casa e compareça quando for chamado."
+         "t": "Concedo liberdade provisória, com comparecimento periódico em juízo (arts. 310, III, e 319, I). Expeça-se o alvará. Josué, volte para casa e compareça quando for chamado."
         }
        ],
        "certa": true,
@@ -4356,7 +4356,7 @@
       },
       {
        "q": "narrador",
-       "t": "Davi sai pela porta lateral. O juiz que acabou de decidir por regra, e não por medo, olha para a câmera sem saber que a câmera olhava de volta."
+       "t": "Josué sai pela porta lateral. O juiz que acabou de decidir por regra, e não por medo, olha para a câmera sem saber que a câmera olhava de volta."
       }
      ],
      "proxima": "c4",
@@ -4471,7 +4471,7 @@
         {
          "q": "voce",
          "e": "normal",
-         "t": "A defesa prévia anexou o ponto de Rui Camargo, para provar presença no dia 9. A folha marca saída às 13h40. Ironia involuntária de quem quis ajudar.",
+         "t": "A defesa prévia anexou o ponto de Rui Fontes, para provar presença no dia 9. A folha marca saída às 13h40. Ironia involuntária de quem quis ajudar.",
          "recebe": [
           "ponto"
          ]
@@ -5539,7 +5539,7 @@
       {
        "q": "a6yhugo",
        "e": "apontando",
-       "t": "O senhor Rui Camargo vai afirmar que a senhora tropeçou. A senhora vai chamá-lo de mentiroso?",
+       "t": "O senhor Rui Fontes vai afirmar que a senhora tropeçou. A senhora vai chamá-lo de mentiroso?",
        "incidente": {
         "pergunta": "Hugo pede que a ofendida avalie outro depoente. O que fazer?",
         "chamada": "A pergunta pede apreciação pessoal da ofendida, doutor.",
@@ -5653,7 +5653,7 @@
       {
        "q": "a6yhugo",
        "e": "confiante",
-       "t": "A defesa chama Rui Camargo, conferente do depósito, que viu tudo."
+       "t": "A defesa chama Rui Fontes, conferente do depósito, que viu tudo."
       }
      ],
      "proxima": "c15",
@@ -5662,7 +5662,7 @@
     "c15": {
      "tipo": "depoimento",
      "testemunha": "a7drui",
-     "titulo": "Rui Camargo, conferente da Vidal Cargas",
+     "titulo": "Rui Fontes, conferente da Vidal Cargas",
      "intro": [
       {
        "q": "a7drui",
@@ -5855,7 +5855,7 @@
       {
        "q": "voce",
        "e": "normal",
-       "t": "A testemunha corrigiu o horário, a existência da câmera e o motivo da demissão. Há dever de dizer a verdade, senhor Camargo (art. 203). Fique à disposição do juízo."
+       "t": "A testemunha corrigiu o horário, a existência da câmera e o motivo da demissão. Há dever de dizer a verdade, senhor Fontes (art. 203). Fique à disposição do juízo."
       },
       {
        "q": "a7drui",
