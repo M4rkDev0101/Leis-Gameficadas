@@ -76,6 +76,9 @@ amar e odiar, quebra de confiança, decepção; (8) mais efeitos, música "de ve
 | P13 | Ato 8 "A Presidência": episódio único de 2 h+ (sabatina, Presidente do STF e do CNJ, epílogo e créditos) em `wt-a8`; plano [ATO8_PRESIDENCIA.md](ATO8_PRESIDENCIA.md) | em andamento |
 | P12 | Integração do Ato 7: remover `"final": true` de a6-voto, conferir marcas declaradas × criadas, medir minutos (≥ 60 cada) | a fazer (coordenador) |
 
+
+Limite de uso: com 13 agentes em paralelo a cota acaba antes de qualquer um terminar. Retomar em lotes de 5 (SendMessage ao agente, que continua de onde parou). Lote 1 (24/10): toga, mp, adv, supremo, a7a. Lote 2: a7b, a7c, a7d, a7e, a8.
+
 ## Notas de ambiente (descobertas que custaram tempo)
 - Agentes: `isolation: worktree` falha (MAX_PATH). Criar `git worktree add -b equipe/<x> C:/lx/wt-<x>` e mandar o
   agente trabalhar só lá, com porta própria (878x). Agentes Sonnet/Haiku com skills; coordenador revisa e integra.
