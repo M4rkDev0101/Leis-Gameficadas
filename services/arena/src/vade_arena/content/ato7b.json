@@ -1,0 +1,6436 @@
+{
+ "ato": "ato7",
+ "personagens": {
+  "a7bjosias": {
+   "nome": "Seu Josias",
+   "cargo": "Vigilante do andar do gabinete",
+   "voz": 300,
+   "visual": {
+    "pele": "#8D5524",
+    "cabelo": "careca",
+    "corCabelo": "#9e9e9e",
+    "roupa": "farda",
+    "corRoupa": "#2b3a55",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Vigilante do turno da tarde. Faz doze anos que abre a porta do gabinete e nunca pergunta nada. Hoje se sente cúmplice do que não viu.",
+   "personalidade": "discreto, leal, assustado",
+   "motivacao": "Manter o emprego e a consciência no mesmo lugar."
+  },
+  "a7btales": {
+   "nome": "Tales Quintão",
+   "cargo": "Ex-assessor do Instituto Transparência Viva",
+   "voz": 520,
+   "visual": {
+    "pele": "#E0AC69",
+    "cabelo": "curto",
+    "corCabelo": "#3b2414",
+    "roupa": "casual",
+    "corRoupa": "#3a5a7a",
+    "gravata": null,
+    "oculos": true,
+    "barba": false
+   },
+   "bio": "Ex-assessor financeiro do instituto de Ronan. Foi demitido na véspera de entregar um relatório que ninguém quis ler.",
+   "personalidade": "nervoso, honesto sob pressão, arrependido",
+   "motivacao": "Não ser o único a pagar pelo que o instituto fez."
+  },
+  "a7bvera": {
+   "nome": "Vera Lins",
+   "cargo": "Secretária do Instituto Transparência Viva",
+   "voz": 580,
+   "visual": {
+    "pele": "#C68642",
+    "cabelo": "coque",
+    "corCabelo": "#5a3a1a",
+    "roupa": "blazer",
+    "corRoupa": "#6a3a4a",
+    "gravata": null,
+    "oculos": false,
+    "barba": false
+   },
+   "bio": "Secretária do instituto. Digitou o dossiê contra você sem saber de onde vinha cada página.",
+   "personalidade": "cuidadosa, assustada, precisa",
+   "motivacao": "Sair inteira, e sem ser cúmplice."
+  }
+ },
+ "episodios": [
+  {
+   "id": "a7-token",
+   "ato": "ato7",
+   "ordem": 3,
+   "numero": 63,
+   "titulo": "A Assinatura",
+   "papel": "investigado",
+   "nivel": "impossivel",
+   "sinopse": "Quatro petições com a sua assinatura digital foram protocoladas em horários em que você presidia audiência no Supremo. Sem toga e sem poder advogar, você precisa descobrir quem usou o seu token, sem acusar a pessoa errada. Todas as pistas apontam para Helena. Todas, menos uma.",
+   "posicoes": {
+    "voce": "defesa",
+    "rafael": "escritorio",
+    "sofia": "escritorio",
+    "helena": "escritorio",
+    "dani": "escritorio",
+    "kenji": "testemunha",
+    "a6yperito": "testemunha",
+    "a7saulo": "acusacao",
+    "a7marina": "juiz",
+    "a7edgar": "juiz",
+    "a7joana": "cena",
+    "a7bjosias": "testemunha"
+   },
+   "placas": {
+    "defesa": "Defesa pessoal (você)",
+    "acusacao": "Reclamante (Saulo)"
+   },
+   "provas": [
+    {
+     "id": "peticoes",
+     "tipo": "prova",
+     "icone": "📑",
+     "nome": "As quatro petições assinadas",
+     "descricao": "Quatro peças protocoladas no inquérito de Brasília sob a sua assinatura digital (ICP-Brasil): terça 14h02, terça 15h40, quinta 16h11 e sexta 09h07. O certificado é válido; o conteúdo declara que o signatário «atua simultaneamente como juiz e como patrono da assistência»."
+    },
+    {
+     "id": "ata_stf",
+     "tipo": "prova",
+     "icone": "🏛️",
+     "nome": "Atas do Supremo (instrução)",
+     "descricao": "Registro oficial: terça, 13h30 às 17h45, instrução do deputado Lauro, presidida por você; quinta, 15h00 às 18h00, oitiva dos peritos; sexta, 08h30 às 11h30, acareação. Você não saiu da sala em nenhum desses períodos."
+    },
+    {
+     "id": "laudo_val",
+     "tipo": "prova",
+     "icone": "📄",
+     "nome": "Laudo do perito Valério Ambrósio",
+     "descricao": "Laudo particular do reclamante: a assinatura é criptograficamente válida, «logo, só o titular poderia tê-la feito». Diz que o log do servidor de assinatura indica o notebook NB-HV-02, do escritório de Helena. Sem termo de coleta anexo.",
+     "detalhe": "O laudo existe de verdade, assinado por um perito registrado. Ele é frágil na conclusão, não falso como documento."
+    },
+    {
+     "id": "log_srv",
+     "tipo": "prova",
+     "icone": "💾",
+     "nome": "Log do servidor de assinatura (pen drive)",
+     "descricao": "Arquivo de texto achado num pen drive sem remetente. Cada assinatura aparece com o host «NB-HV-02» e o IP 10.8.0.14, da VPN do escritório Vasconcelos & Duarte.",
+     "autentica": false,
+     "indicios": [
+      "O arquivo é uma cópia solta, sem termo de coleta nem hash registrado.",
+      "Três linhas têm espaçamento diferente das demais: foram digitadas depois da exportação.",
+      "O fuso do carimbo de tempo muda de UTC para horário de Brasília justo nas quatro linhas do host."
+     ]
+    },
+    {
+     "id": "email_hel",
+     "tipo": "prova",
+     "icone": "✉️",
+     "nome": "E-mail de Helena a Dani",
+     "descricao": "E-mail impresso: «Dani, preciso do token na quinta, tenho prazo fechando e ele não pode saber. H.» A impressão veio da caixa de correio do gabinete.",
+     "autentica": false,
+     "indicios": [
+      "O cabeçalho cita o domínio do escritório, mas o servidor de origem é externo e anônimo.",
+      "A data de criação do arquivo é posterior à data de envio que o e-mail declara.",
+      "Helena sempre assina «Helena V.»; este termina apenas em «H.»."
+     ]
+    },
+    {
+     "id": "print_zap",
+     "tipo": "prova",
+     "icone": "💬",
+     "nome": "Print de conversa Helena × Dani",
+     "descricao": "Captura de tela: Helena escreve «apaga os registros do cofre depois» e Dani responde «apago». A imagem não mostra o número, só o nome «Helena Adv.».",
+     "autentica": false,
+     "indicios": [
+      "O nome «Helena Adv.» não corresponde ao contato real, que é só «Helena».",
+      "Os balões repetem pixel a pixel um trecho da própria imagem: foi colado.",
+      "A hora do status do celular (23h59) é incompatível com as mensagens, marcadas às 14h."
+     ]
+    },
+    {
+     "id": "recibo_token",
+     "tipo": "prova",
+     "icone": "🧾",
+     "nome": "Recibo de entrega do token",
+     "descricao": "Recibo antigo: o token do seu certificado foi entregue a Helena Vasconcelos em março, «para protocolo de peças do caso das famílias». No verso, devolvido e conferido por Dani na mesma tarde.",
+     "detalhe": "O recibo tem carimbo do Tribunal e rubrica de Dani no verso. É autêntico, e mostra uso do token em março, não nos quatro horários."
+    },
+    {
+     "id": "catraca",
+     "tipo": "prova",
+     "icone": "🚪",
+     "nome": "Relatório da catraca do escritório",
+     "descricao": "Rafael imprimiu o relatório do prédio: na sexta, a primeira entrada de Helena foi às 10h12. Na terça e na quinta ela entrou às 8h e só saiu depois das 18h30."
+    },
+    {
+     "id": "termo_coleta",
+     "tipo": "prova",
+     "icone": "📋",
+     "nome": "Termo de coleta e hash do log original",
+     "descricao": "Termo assinado por Kenji e pelo técnico do STI: o log foi extraído direto do servidor de assinatura do Tribunal, lacrado e identificado pelo hash SHA-256 que termina em «…a91c». Cada passagem de mão está registrada."
+    },
+    {
+     "id": "log_sti",
+     "tipo": "prova",
+     "icone": "🖥️",
+     "nome": "Log original do servidor (STI)",
+     "descricao": "O log autêntico mostra as quatro assinaturas com o host GAB-214-WS, a estação do gabinete, e com sequência 118, 119, 121 e 124. O seu diário só registra 117, 120, 122 e 123. As outras quatro não são suas.",
+     "detalhe": "Extraído do servidor com termo de coleta e hash registrado. É o original."
+    },
+    {
+     "id": "laudo_kenji",
+     "tipo": "prova",
+     "icone": "🔬",
+     "nome": "Laudo do Dr. Kenji Sato",
+     "descricao": "Conclusão: o hash do log de Valério não confere com o original (…a91c); a cópia dele teve 3 linhas editadas; as quatro assinaturas partiram da estação do gabinete, com o token plugado fisicamente ali."
+    },
+    {
+     "id": "protocolo_corr",
+     "tipo": "prova",
+     "icone": "📬",
+     "nome": "Protocolo da Corregedoria",
+     "descricao": "Recibo de entrega de documento à Corregedoria Nacional, sexta às 09h05, por Helena Vasconcelos. Assunto: «declaração espontânea sobre os fatos do caso das famílias»."
+    },
+    {
+     "id": "livro_cofre",
+     "tipo": "prova",
+     "icone": "📒",
+     "nome": "Livro do cofre do gabinete",
+     "descricao": "Folha de controle do cofre do gabinete: em quatro datas há retirada do token às 13h50, 14h55, 15h58 e 08h50, sempre com a rubrica «D.» e devolução algumas horas depois."
+    },
+    {
+     "id": "acesso",
+     "tipo": "prova",
+     "icone": "🪪",
+     "nome": "Registro de acesso ao andar",
+     "descricao": "Crachá no corredor do gabinete: nos quatro horários as únicas entradas na sala 214 são de duas pessoas, e uma delas é você, só às 8h10. No mais, só o crachá de Dani."
+    }
+   ],
+   "inicio": "c1",
+   "cenas": {
+    "c1": {
+     "tipo": "titulo",
+     "texto": "Ato 7 · Caso 3",
+     "subtitulo": "A Assinatura",
+     "proxima": "c2"
+    },
+    "c2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Quatro assinaturas digitais. O seu nome, o seu CPF, a sua cadeia de certificados. Nenhuma saiu da sua mão."
+      },
+      {
+       "q": "narrador",
+       "t": "Quinta-feira, 6h40, na cozinha de Rafael. Você, afastado(a), de moletom, sem toga, sem carteira e, desde ontem, sem sono."
+      },
+      {
+       "q": "rafael",
+       "t": "A Corregedoria mandou isto de madrugada. Quatro petições no inquérito de Brasília. Todas com a sua assinatura digital, certificado válido, tudo em ordem.",
+       "e": "triste",
+       "recebe": [
+        "peticoes"
+       ]
+      },
+      {
+       "q": "voce",
+       "t": "Petições minhas? Eu não protocolo nada, Rafael. Não posso protocolar nada. Estou afastado(a), e advogar é justamente o que me derrubou.",
+       "e": "chocado"
+      },
+      {
+       "q": "rafael",
+       "t": "Olhe os horários. Terça, 14h02 e 15h40. Quinta, 16h11. Sexta, 09h07.",
+       "e": "pensativo"
+      },
+      {
+       "q": "voce",
+       "t": "Terça à tarde eu presidia a instrução do deputado Lauro. Quinta, a oitiva dos peritos. Sexta cedo, a acareação. Eu estava na sala, e está em ata.",
+       "e": "pensativo"
+      },
+      {
+       "q": "rafael",
+       "t": "É isso que torna pior. Para Saulo, só há duas hipóteses: ou você assinava peças enquanto julgava, acumulando as duas funções sem licença nenhuma, ou alguém usou o seu token.",
+       "e": "nervoso"
+      },
+      {
+       "q": "sofia",
+       "t": "Tio(a), sua capa preta sumiu e agora o pai está de cara de segunda-feira. Quer suco?",
+       "e": "feliz"
+      },
+      {
+       "q": "voce",
+       "t": "Quero, Sofia. Obrigado(a). Hoje eu só tenho o suco.",
+       "e": "triste"
+      },
+      {
+       "q": "rafael",
+       "t": "A primeira hipótese é um crime contra você. A segunda é um crime contra o processo. Qualquer das duas, alguém precisa responder.",
+       "e": "triste"
+      }
+     ],
+     "local": "casa",
+     "proxima": "c3"
+    },
+    "c3": {
+     "tipo": "celular",
+     "local": "casa",
+     "contato": "Dani",
+     "status": "online",
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Eu vi a notícia. Estou com o coração na boca."
+      },
+      {
+       "de": "ele",
+       "t": "Achei um pen drive na caixa do gabinete, no seu nome. Não abri sozinha. Vou levar ao Rafael agora."
+      },
+      {
+       "de": "ele",
+       "t": "Eu não queria acreditar no que tem nele."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Agradecer: «Obrigado(a), Dani. Leve logo ao Rafael.»",
+       "envia": "Obrigado(a), Dani. Leve logo ao Rafael.",
+       "marca": "a7b_agradeceu_dani",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Já estou saindo. Você não está sozinho(a)."
+        }
+       ]
+      },
+      {
+       "t": "Perguntar: «Quem mais mexe nessa caixa?»",
+       "envia": "Quem mais mexe nessa caixa?",
+       "marca": "a7b_perguntou_caixa",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Eu abro de manhã. A portaria também. Sei lá, qualquer um que passe."
+        },
+        {
+         "de": "ele",
+         "t": "Por quê? Você acha que fui eu?"
+        }
+       ]
+      }
+     ],
+     "depois": [
+      {
+       "q": "narrador",
+       "t": "A resposta chegou depressa demais para quem diz estar de coração na boca. Você ainda não sabe por que isso incomoda."
+      }
+     ],
+     "proxima": "c4"
+    },
+    "c4": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "rafael",
+       "t": "Dani está chegando. Enquanto isso, a regra do jogo: você não peticiona, não representa ninguém e não assina nada. Nem a sua defesa.",
+       "e": "normal"
+      },
+      {
+       "q": "voce",
+       "t": "No PAD eu posso me defender sozinho(a), a lei permite. Mas defender-se não é passar por cima das regras, nem acusar quem eu não consigo provar.",
+       "e": "pensativo"
+      },
+      {
+       "q": "rafael",
+       "t": "Então comece pelo certo: qual é o caminho legal para provar que você não assinou?",
+       "e": "confiante"
+      }
+     ],
+     "local": "casa",
+     "proxima": "c5"
+    },
+    "c5": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "rafael",
+       "t": "Três jeitos de começar. Só um deles não vira outro problema.",
+       "e": "normal"
+      }
+     ],
+     "pergunta": "Como você prova, sem advogar, que não foi quem assinou?",
+     "opcoes": [
+      {
+       "t": "Pedir ao Supremo, por conta própria, o desentranhamento das quatro petições.",
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "Você acabou de ser afastado(a) por atuar sem poder. Peticionar de novo é o pior convite para Saulo.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "Requerer, no próprio PAD, perícia técnica e a juntada dos registros originais do servidor, antes da decisão.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O interessado pode juntar documentos e requerer diligências e perícias na fase de instrução.",
+         "e": "confiante"
+        },
+        {
+         "q": "rafael",
+         "t": "Exato. É a sua defesa, sem sair da sua posição.",
+         "e": "feliz"
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "L9784#art-38",
+         "trecho": "O interessado poderá, na fase instrutória e antes da tomada da decisão, juntar documentos e pareceres, requerer diligências e perícias"
+        }
+       ]
+      },
+      {
+       "t": "Pedir a Dani que apague as contas do gabinete para evitar que mexam nelas.",
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "Isso seria fraude. E apagar rastro é a primeira coisa que um inocente nunca faz.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "t": "Divulgar à imprensa os horários das atas e deixar o público julgar.",
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "Joana já escreveu a primeira versão da sua queda. Dar a ela a segunda sem prova é entregar o ouro.",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "local": "casa",
+     "dica": [
+      "O processo disciplinar tem a sua própria fase de instrução.",
+      "O art. 38 da Lei 9.784 abre a fase para juntar documentos e requerer perícias."
+     ],
+     "tempo": 45,
+     "proxima": "c6"
+    },
+    "c6": {
+     "tipo": "investigar",
+     "local": "casa",
+     "titulo": "A cozinha de Rafael: a pasta do dia",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "A mesa vira escritório. Rafael espalhou o que tinha, Sofia espalhou lápis de cor. Dani deixou o pen drive e foi embora antes de você chegar."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "p_pet",
+       "nome": "As quatro petições impressas",
+       "x": 6,
+       "y": 24,
+       "w": 18,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O texto diz que o signatário «atua simultaneamente como juiz e como patrono». Quem escreveu isso sabia exatamente o que a Altavista queria ler.",
+         "e": "pensativo",
+         "recebe": [
+          "peticoes"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "E a assinatura está perfeita. Perfeita demais para quem tentou me incriminar de qualquer jeito.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "id": "p_ata",
+       "nome": "Atas do Supremo",
+       "x": 30,
+       "y": 44,
+       "w": 15,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Terça 13h30 às 17h45. Quinta 15h às 18h. Sexta 8h30 às 11h30. Em todos os quatro horários eu estava presidindo, com uma sala inteira de testemunhas.",
+         "e": "confiante",
+         "recebe": [
+          "ata_stf"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Isso prova que eu não estava no teclado. Não prova que o token não estava.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "p_laudo",
+       "nome": "O laudo de Valério",
+       "x": 52,
+       "y": 26,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "«Só o titular poderia assinar.» Isso é falso por natureza: a chave é de quem tem a posse do token e o PIN.",
+         "e": "nervoso",
+         "recebe": [
+          "laudo_val"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "E ele cita um log de servidor que não anexou. Como se a gente fosse acreditar na palavra do perito de quem paga.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "p_pendrive",
+       "nome": "O pen drive que Dani entregou",
+       "x": 72,
+       "y": 46,
+       "w": 14,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Um log de texto. Quatro assinaturas, todas com o host NB-HV-02 e o IP da VPN do escritório.",
+         "e": "normal",
+         "recebe": [
+          "log_srv"
+         ]
+        },
+        {
+         "q": "rafael",
+         "t": "NB-HV-02 é o notebook da Helena. Eu conheço a etiqueta de patrimônio de cor.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "id": "p_email",
+       "nome": "A pasta de e-mails impressos",
+       "x": 12,
+       "y": 60,
+       "w": 17,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "«Dani, preciso do token na quinta, tenho prazo fechando e ele não pode saber. H.»",
+         "e": "chocado",
+         "recebe": [
+          "email_hel"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "«Ele não pode saber.» Ele sou eu.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "id": "p_zap",
+       "nome": "Print da conversa",
+       "x": 54,
+       "y": 62,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "«Apaga os registros do cofre depois.» E Dani respondeu «apago».",
+         "e": "triste",
+         "recebe": [
+          "print_zap"
+         ]
+        },
+        {
+         "q": "rafael",
+         "t": "Eu não consigo respirar olhando isso.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "id": "p_desenho",
+       "nome": "O desenho de Sofia",
+       "x": 80,
+       "y": 70,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "sofia",
+         "t": "É a tia Dani na sala do gabinete. Ela levou a gente lá no domingo, lembra? Ela sempre leva a chavinha pendurada no pescoço.",
+         "e": "feliz"
+        },
+        {
+         "q": "voce",
+         "t": "(Uma chavinha de cabo prateado, dentro da camisa. O desenho é de criança, mas a chave tem o formato de um token.)",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "rafael",
+       "titulo": "Rafael, na janela",
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "Eu fui o primeiro a dizer «ajude só desta vez». Eu e Helena. Eu sei o que a gente fez.",
+         "e": "triste"
+        },
+        {
+         "q": "rafael",
+         "t": "Em março ela pegou o seu token para protocolar peças das famílias. Eu tenho o recibo. Tudo claro e devolvido.",
+         "e": "normal",
+         "recebe": [
+          "recibo_token"
+         ]
+        },
+        {
+         "q": "rafael",
+         "t": "Peguei também o relatório da catraca do prédio. Terça e quinta, ela entrou às 8h e só saiu depois das 18h30. Sexta, só às 10h12.",
+         "e": "pensativo",
+         "recebe": [
+          "catraca"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Sexta, 10h12, e a assinatura saiu às 9h07. Rafael, se isso for verdade, na sexta ela não estava onde disse que estava.",
+         "e": "nervoso"
+        },
+        {
+         "q": "rafael",
+         "t": "Não conclua. Por favor, não conclua.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "q": "sofia",
+       "titulo": "Sofia, de lápis na mão",
+       "falas": [
+        {
+         "q": "sofia",
+         "t": "Tio(a), por que o pai ficou quieto? O pai fica quieto só quando alguém mentiu pra ele.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Porque ele gosta de quem pode ter mentido, Sofia.",
+         "e": "triste"
+        },
+        {
+         "q": "sofia",
+         "t": "Então a pessoa que mentiu foi ruim ou só estava com medo?",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Essa é a melhor pergunta que me fizeram esta semana.",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "peticoes",
+      "ata_stf",
+      "laudo_val",
+      "log_srv",
+      "email_hel",
+      "print_zap",
+      "recibo_token",
+      "catraca"
+     ],
+     "proxima": "c7"
+    },
+    "c7": {
+     "tipo": "apresentar",
+     "local": "casa",
+     "falas": [
+      {
+       "q": "rafael",
+       "t": "Saulo vai dizer que a validade da assinatura prova a sua autoria. Qual dos nossos papéis mais enfraquece essa tese logo de saída?",
+       "e": "apontando"
+      }
+     ],
+     "pergunta": "Que prova mostra que você estava ocupado(a) em ato oficial nos quatro horários?",
+     "provas": [
+      "ata_stf"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "t": "As atas. Quatro horários, quatro sessões, todas presididas por mim e documentadas por escrito.",
+       "e": "confiante"
+      },
+      {
+       "q": "rafael",
+       "t": "A ata não prova o token. Prova o seu corpo. É o primeiro tijolo.",
+       "e": "feliz"
+      }
+     ],
+     "erro": [
+      {
+       "q": "rafael",
+       "t": "Esse papel não responde ao horário. O que nos diz onde você estava?",
+       "e": "pensativo"
+      }
+     ],
+     "dica": [
+      "Pergunte-se: o que registra, minuto a minuto, o que você fazia?",
+      "A resposta tem carimbo do Supremo, não do escritório."
+     ],
+     "proxima": "c8"
+    },
+    "c8": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "rafael",
+       "t": "Agora, o resto. Eu preciso que você olhe isto sem que eu influencie. O log, o e-mail, o print: tudo aponta para uma só pessoa.",
+       "e": "nervoso"
+      },
+      {
+       "q": "voce",
+       "t": "Helena. O notebook dela, o IP da VPN dela, o e-mail dela. Mesmo que cada peça separada tenha um jeito de ser falsa, juntas elas formam um desenho.",
+       "e": "triste"
+      },
+      {
+       "q": "rafael",
+       "t": "Também aponta para o motivo. Ela foi a primeira a dizer «só desta vez». Se a gente cai, ela cai junto; se a culpa é sua, ela se salva.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "Eu não vou acusar ninguém por desenho. Mas vou perguntar a ela, olho no olho, onde estava e por que o notebook dela aparece nisso.",
+       "e": "bravo"
+      },
+      {
+       "q": "rafael",
+       "t": "Ela te espera no café da esquina. Pediu que você fosse sozinho(a).",
+       "e": "triste"
+      },
+      {
+       "q": "a7joana",
+       "t": "(mensagem de voz) Você vai me ouvir hoje ou vou ter que publicar o horário do jeito que eu tenho? Não é ameaça: é prazo.",
+       "e": "nervoso",
+       "se": "!a7_confiou_joana"
+      },
+      {
+       "q": "a7joana",
+       "t": "(mensagem de voz) Eu segurei o que sabia sobre os horários. Prometo que só publico se você me disser que posso. Mas me diga logo.",
+       "e": "triste",
+       "se": "a7_confiou_joana"
+      }
+     ],
+     "local": "casa",
+     "proxima": "c9"
+    },
+    "c9": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "O café da esquina cheira a pão queimado. Helena escolheu a mesa do fundo, de costas para a vitrine, como quem ensaiou ficar de lado."
+      },
+      {
+       "q": "helena",
+       "t": "Obrigada por vir sozinho(a). Eu soube dos horários antes de você. Tentei te ligar três vezes ontem.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "Eu não vim ouvir desculpas, Helena. Vim ouvir fatos. Depois que tudo isso começou, você tocou no meu token?",
+       "e": "normal"
+      },
+      {
+       "q": "helena",
+       "t": "Vamos devagar. Pergunte do jeito que quiser. Eu respondo.",
+       "e": "nervoso"
+      },
+      {
+       "q": "voce",
+       "t": "(Ela está inteira de blazer, cabelo no lugar, mãos sob a mesa. Quem não tem nada a esconder costuma deixar as mãos à vista.)",
+       "e": "pensativo"
+      }
+     ],
+     "local": "cafe",
+     "proxima": "d_helena"
+    },
+    "d_helena": {
+     "tipo": "depoimento",
+     "testemunha": "helena",
+     "titulo": "Helena Vasconcelos, no café",
+     "intro": [
+      {
+       "q": "helena",
+       "t": "Pode começar. Eu juro não tentar enrolar. Só peço que você me deixe terminar a frase.",
+       "e": "normal"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Eu nunca mais peguei o seu token depois que a sua licença começou. Nunca.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Nunca mais? Nem uma vez?",
+         "e": "normal"
+        },
+        {
+         "q": "helena",
+         "t": "Nunca. Eu mexo em muita coisa, mas nisso não.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "Na sexta de manhã, às nove, eu estava no escritório, com a cabeça nos prazos.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Onde exatamente, Helena? Na sua sala, na sala de reunião?",
+         "e": "normal"
+        },
+        {
+         "q": "helena",
+         "t": "Na minha mesa. Sozinha, com o café frio. Posso garantir.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "O NB-HV-02 nunca sai da minha mesa. Ninguém encosta nele sem eu saber.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Nem a estagiária, nem o técnico?",
+         "e": "pensativo"
+        },
+        {
+         "q": "helena",
+         "t": "Nem eles. Tem senha minha e disco criptografado.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "Eu só queria que você ficasse bem. Foi sempre só isso.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Eu sei que você acredita nisso.",
+         "e": "triste"
+        },
+        {
+         "q": "helena",
+         "t": "Eu acredito. E dói que você precise perguntar.",
+         "e": "triste"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "t": "Essa prova não contradiz essa afirmação. Preciso do papel certo para a frase certa.",
+       "e": "pensativo"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "helena",
+       "t": "Está bem. Peguei o token em março e menti agora porque tive medo do que você ia pensar. Não assinei nada nestas quatro petições, juro.",
+       "e": "triste"
+      },
+      {
+       "q": "helena",
+       "t": "E na sexta eu estava na Corregedoria Nacional. Não vou dizer o que fui fazer lá. Ainda não.",
+       "e": "nervoso"
+      },
+      {
+       "q": "voce",
+       "t": "Você foi à Corregedoria Nacional sem me avisar, às nove da manhã, no dia em que um documento com a minha assinatura foi protocolado.",
+       "e": "triste"
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "recibo_token"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "t": "Este recibo é de março. A licença começou em janeiro. Você retirou o token, assinou na linha de baixo, e Dani conferiu a devolução.",
+         "e": "apontando",
+         "fx": "protesto"
+        },
+        {
+         "q": "helena",
+         "t": "Isso... foi para as peças das famílias. Era legal na época. Quer dizer, eu achava que era.",
+         "e": "chocado"
+        }
+       ]
+      },
+      {
+       "afirmacao": 1,
+       "provas": [
+        "catraca"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "t": "O relatório da catraca do prédio: a sua primeira entrada na sexta foi às 10h12. A assinatura é das 9h07. Onde você estava?",
+         "e": "apontando",
+         "fx": "protesto"
+        },
+        {
+         "q": "helena",
+         "t": "O relatório é... eu pensei que ninguém olharia isso.",
+         "e": "chocado"
+        }
+       ]
+      }
+     ],
+     "exige": 2,
+     "dica": [
+      "Duas afirmações dela podem ser derrubadas por papéis que você já tem.",
+      "O recibo mostra uma data; a catraca mostra um horário."
+     ],
+     "veracidade": {
+      "mente": true,
+      "escala": 4,
+      "revela": [
+       {
+        "q": "narrador",
+        "t": "Os ombros dela descem alguns centímetros. Ela não parece ter vencido, e sim ter se cansado de segurar a mentira."
+       }
+      ],
+      "sinais": [
+       {
+        "afirmacao": 0,
+        "tipo": "evasiva",
+        "pressao": 2
+       },
+       {
+        "afirmacao": 1,
+        "tipo": "nervosismo",
+        "pressao": 2
+       }
+      ]
+     },
+     "proxima": "c10"
+    },
+    "c10": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "helena",
+       "t": "Eu fui lá porque você está sozinho(a) contra uma máquina. Eu pensei que se eu assumisse a ideia daquele «só desta vez», eles seriam mais brandos com você.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "Sem me dizer. Sem me consultar. E agora o seu notebook, o seu IP e o seu e-mail aparecem ligados a quatro assinaturas que eu não dei.",
+       "e": "bravo"
+      },
+      {
+       "q": "helena",
+       "t": "Que e-mail? Que IP? Eu nunca escrevi «ele não pode saber». Eu jamais...",
+       "e": "chocado"
+      },
+      {
+       "q": "voce",
+       "t": "Está impresso. Está no papel. E você acabou de me dizer que mentiu duas vezes na minha frente.",
+       "e": "nervoso"
+      },
+      {
+       "q": "helena",
+       "t": "Duas mentiras de medo não são quatro assinaturas de traição. Por favor. Eu estou implorando para você pensar.",
+       "e": "triste"
+      },
+      {
+       "q": "narrador",
+       "t": "O garçom traz a conta sem ser chamado. Vocês dois olham para ela como se fosse uma prova."
+      }
+     ],
+     "local": "cafe",
+     "proxima": "c11"
+    },
+    "c11": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Você decide o que fazer com a pessoa que mais acompanhou os seus passos nos últimos quatro anos. Não existe resposta certa. Existe a que você consegue defender amanhã."
+      },
+      {
+       "q": "helena",
+       "t": "Diga o que quiser. Eu aguento.",
+       "e": "triste"
+      }
+     ],
+     "pergunta": "O que você diz a Helena?",
+     "opcoes": [
+      {
+       "t": "«Você mentiu na minha cara. Afaste-se do meu caso e de tudo que é meu até a perícia dizer o contrário.»",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Você mentiu duas vezes. Se eu escolho confiar e estou errado(a), caio mais fundo. Afaste-se.",
+         "e": "bravo"
+        },
+        {
+         "q": "helena",
+         "t": "Entendi. Eu... vou devolver as chaves do arquivo hoje.",
+         "e": "triste"
+        },
+        {
+         "q": "narrador",
+         "t": "Ela se levanta sem derrubar a cadeira. Você nota que é a primeira vez que ela sai de um lugar sem se despedir."
+        }
+       ],
+       "marca": "a7_culpou_helena"
+      },
+      {
+       "t": "«Você errou por medo, não por traição. Fique, mas só com a verdade na mesa e a perícia por cima.»",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Você errou, e eu também. Mas errar por medo não é o mesmo que armar contra mim. Fique, e diga tudo que puder.",
+         "e": "triste"
+        },
+        {
+         "q": "helena",
+         "t": "Obrigada. Eu juro que vou merecer isso.",
+         "e": "feliz"
+        },
+        {
+         "q": "narrador",
+         "t": "Pela primeira vez no dia, as mãos dela saem de baixo da mesa."
+        }
+       ],
+       "marca": "a7_perdoou_helena"
+      },
+      {
+       "t": "«Não decido nada agora. A perícia fala primeiro, e você e eu depois.»",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Se eu decidir agora, decido com raiva ou com pena. Nenhuma das duas serve de prova.",
+         "e": "pensativo"
+        },
+        {
+         "q": "helena",
+         "t": "Justo. Odeio, mas é justo.",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "local": "cafe",
+     "livre": true,
+     "proxima": "c12"
+    },
+    "c12": {
+     "tipo": "tensao",
+     "local": "carro",
+     "tempo": 8,
+     "padrao": 1,
+     "pergunta": "Os faróis de um SUV preto, sem placa visível na frente, colam no seu retrovisor desde a terceira esquina. Você está a dois quilômetros da casa de Rafael, onde Sofia dorme. O que faz?",
+     "hesitou": "Você hesitou. O SUV encosta tanto que o retrovisor fica branco.",
+     "opcoes": [
+      {
+       "t": "Entrar no posto iluminado e esperar com o vidro fechado",
+       "cred": 1,
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "O SUV desacelera na entrada do posto, passa devagar e some na avenida. Um frentista olha para você sem entender."
+        },
+        {
+         "q": "voce",
+         "t": "(Eles queriam me assustar, não me alcançar. Deu certo, mas não onde eu moro.)",
+         "e": "nervoso"
+        }
+       ],
+       "marca": "a7b_foi_ao_posto"
+      },
+      {
+       "t": "Acelerar direto para a casa de Rafael",
+       "marca": "a7b_seguido_ate_casa",
+       "cred": -1,
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "Você cruza dois sinais amarelos. O SUV repete os dois, a uma distância absurdamente exata."
+        },
+        {
+         "q": "voce",
+         "t": "(Eu acabei de mostrar a eles onde dorme a Sofia.)",
+         "e": "chocado"
+        },
+        {
+         "q": "narrador",
+         "t": "Na esquina da casa, o SUV pisca os faróis uma vez e dá a ré, como quem fecha uma pergunta."
+        }
+       ]
+      },
+      {
+       "t": "Encostar, destravar o celular e anotar tudo o que der: modelo, cor, horário, rua",
+       "marca": "a7b_anotou_suv",
+       "cred": 0,
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "O SUV passa a milímetros do seu retrovisor e some. A placa traseira está coberta por uma fita."
+        },
+        {
+         "q": "voce",
+         "t": "(Sem placa, mas com um adesivo de condomínio no vidro. Anotei. Pode servir.)",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Ligar para Rafael no viva-voz e manter a linha aberta até chegar",
+       "marca": "a7b_ligou_rafael",
+       "cred": 1,
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "(pelo viva-voz) Estou na porta com a luz acesa. Não pare. Eu estou aqui.",
+         "e": "nervoso"
+        },
+        {
+         "q": "narrador",
+         "t": "O SUV desiste no último quarteirão. Rafael abre o portão antes de você buzinar."
+        }
+       ]
+      }
+     ],
+     "proxima": "c12a"
+    },
+    "c12a": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "A garagem do prédio de Rafael cheira a óleo e a terra molhada. Você estaciona na vaga de visitas e fica dez segundos com as mãos no volante, esperando os dedos pararem de tremer."
+      },
+      {
+       "q": "rafael",
+       "t": "Desce. Não, espera: antes de descer, olha por baixo do carro. Eu aprendi isso com a Sofia, que vive olhando debaixo de tudo.",
+       "e": "nervoso"
+      },
+      {
+       "q": "voce",
+       "t": "(Quem me seguiu tinha pressa de ser visto. Quem tem pressa de ser visto costuma ter deixado algo mais discreto.)",
+       "e": "pensativo"
+      }
+     ],
+     "local": "garagem",
+     "proxima": "c12b"
+    },
+    "c12b": {
+     "tipo": "investigar",
+     "local": "garagem",
+     "titulo": "A garagem: o que o SUV deixou",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Lanterna do celular, joelhos no chão, o concreto frio. Rafael segura a porta do elevador aberta, como se isso protegesse alguém."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "g_gps",
+       "nome": "Sob o para-choque traseiro",
+       "x": 10,
+       "y": 62,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Uma caixinha preta, ímã forte, led verde piscando. Um rastreador de GPS.",
+         "e": "chocado"
+        },
+        {
+         "q": "voce",
+         "t": "Colado há dias, pela poeira que cobre a fita. Não foi o SUV desta noite: eles sabiam onde eu ia desde antes de Helena marcar o café.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "id": "g_adesivo",
+       "nome": "O adesivo do condomínio",
+       "x": 34,
+       "y": 24,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Lembra? O SUV tinha adesivo de condomínio no vidro. Pesquisei: é de um prédio na Asa Norte onde um dos moradores é... Ronan Teles.",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Ou alguém que queria que eu pensasse que é. Adesivo se cola e se descola.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "id": "g_camera",
+       "nome": "A câmera da portaria",
+       "x": 56,
+       "y": 20,
+       "w": 14,
+       "h": 16,
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "A câmera da garagem pegou o SUV na rampa. Sem placa, mas com uma trinca no farol esquerdo.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Trinca no farol esquerdo, adesivo na direita do para-brisa. Dois detalhes. Em perícia, é assim que uma pessoa vira um padrão.",
+         "e": "confiante"
+        }
+       ]
+      },
+      {
+       "id": "g_pneu",
+       "nome": "A marca de pneu no óleo",
+       "x": 74,
+       "y": 56,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Pneu largo, de camionete, com desenho de borracha de trabalho. Não é carro de passeio.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Quem usa isso para seguir juiz afastado? Quem tem verba, não quem tem medo.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "g_bilhete",
+       "nome": "O bilhete no vidro",
+       "x": 14,
+       "y": 36,
+       "w": 14,
+       "h": 12,
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "Preso sob o limpador, um papel dobrado. Letra de forma: «A PRÓXIMA ASSINATURA É A DE VERDADE.»"
+        },
+        {
+         "q": "voce",
+         "t": "Um recado para mim e para quem estiver lendo. Eles querem que eu me assuste, e que eu tenha muito a perder.",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "rafael",
+       "titulo": "Rafael: o que fazer com o rastreador",
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "Eu arranco e jogo no rio. Pronto.",
+         "e": "nervoso"
+        },
+        {
+         "q": "voce",
+         "t": "Não. Arrancar e jogar no rio é a maneira mais rápida de ser acusado de fraude processual. O que está no meu carro é vestígio.",
+         "e": "bravo"
+        },
+        {
+         "q": "rafael",
+         "t": "Você está dizendo que um rastreador ilegal precisa de cadeia de custódia?",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Estou dizendo que quem quer ser levado a sério precisa fotografar, lacrar e entregar a quem tenha atribuição de coletar. Mexer com a mão é dar ao inimigo um presente.",
+         "e": "confiante"
+        }
+       ]
+      },
+      {
+       "q": "sofia",
+       "titulo": "Sofia, na janela do segundo andar",
+       "falas": [
+        {
+         "q": "sofia",
+         "t": "Tio(a)! Você chegou! Eu vi o carro grande atrás de você e fiz um desenho dele pra você não esquecer.",
+         "e": "feliz"
+        },
+        {
+         "q": "voce",
+         "t": "Sofia, entra. Vai dormir. Eu estou aqui.",
+         "e": "triste"
+        },
+        {
+         "q": "sofia",
+         "t": "O carro grande vai voltar?",
+         "e": "triste"
+        },
+        {
+         "q": "voce",
+         "t": "Se voltar, vai encontrar a gente acordado. Prometo.",
+         "e": "triste"
+        }
+       ]
+      }
+     ],
+     "requer": [],
+     "proxima": "c12c"
+    },
+    "c12c": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "rafael",
+       "t": "Então diga: o que fazemos com isso agora, nesta madrugada?",
+       "e": "pensativo"
+      }
+     ],
+     "pergunta": "O que fazer com o rastreador encontrado no seu carro?",
+     "opcoes": [
+      {
+       "t": "Arrancar, desligar e jogar fora para acabar com a vigilância.",
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "Aí quem some com o vestígio é você. A defesa vira a fraude.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "Fotografar no lugar, registrar horário, lacrar com testemunha e entregar à Corregedoria com ofício, sem mexer no que está dentro.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Fotografia, hora, lacre, testemunha, entrega. É a lógica da cadeia de custódia, na versão de garagem.",
+         "e": "confiante"
+        },
+        {
+         "q": "rafael",
+         "t": "Feito. Vou anotar a hora e assinar como testemunha.",
+         "e": "feliz"
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CPP#art-158a",
+         "trecho": "Considera-se cadeia de custódia o conjunto de todos os procedimentos utilizados para manter e documentar a história cronológica do vestígio"
+        }
+       ]
+      },
+      {
+       "t": "Deixar onde está e usar o rastreador para despistar quem segue, enviando falsas rotas.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Uma armadilha de espionagem? Eu viraria o fraudador do meu próprio caso.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "Entregar a Joana, que saberá o que fazer com a notícia.",
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "Uma jornalista com um objeto sem lacre. Imagina a manchete: «Juiz afastado manipula prova».",
+         "e": "bravo"
+        }
+       ]
+      }
+     ],
+     "local": "garagem",
+     "dica": [
+      "Pense no que você mesmo defendeu para o log: de onde veio, quem pegou, quem guardou.",
+      "O art. 158-A pede documentar a história do vestígio."
+     ],
+     "tempo": 30,
+     "proxima": "c13"
+    },
+    "c13": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Dez da noite. Um anexo do Instituto de Criminalística, cedido a Kenji pela porta dos fundos. Monitores acesos, cheiro de café requentado e de plástico quente."
+      },
+      {
+       "q": "kenji",
+       "t": "Você chegou. Eu estava começando a achar que tinha me enganado de caso. Fala baixo: aqui não tem câmera, mas tem um estagiário que ama uma fofoca.",
+       "e": "feliz"
+      },
+      {
+       "q": "voce",
+       "t": "Kenji, eu preciso saber se o log que recebi é verdadeiro. E preciso saber quem usou o meu token. Nessa ordem.",
+       "e": "nervoso"
+      },
+      {
+       "q": "kenji",
+       "t": "Em perícia, a primeira pergunta é sempre de onde veio. Antes de olhar o conteúdo, olho o caminho que o arquivo fez até a mesa.",
+       "e": "normal"
+      },
+      {
+       "q": "kenji",
+       "t": "Cadeia de custódia, art. 158-A do CPP: o conjunto de procedimentos que documenta a história cronológica de um vestígio. Sem história, o vestígio é só uma história.",
+       "e": "pensativo"
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "c14"
+    },
+    "c14": {
+     "tipo": "investigar",
+     "local": "gabinete",
+     "titulo": "O anexo de Kenji: o que o servidor guardou",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Kenji tem dois discos em espelho, uma bancada com lacres e uma regra que vale como religião: ninguém toca no original."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "p_hash",
+       "nome": "O comparador de hash",
+       "x": 8,
+       "y": 22,
+       "w": 18,
+       "h": 18,
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "O pen drive que você recebeu tem hash …3f20. O log que extraí do servidor do STI tem hash …a91c. Dois arquivos que deveriam ser o mesmo, dois nomes de impressão digital.",
+         "e": "apontando",
+         "recebe": [
+          "laudo_kenji"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Então o arquivo que a Dani achou foi alterado depois de nascer.",
+         "e": "chocado"
+        }
+       ]
+      },
+      {
+       "id": "p_lacre",
+       "nome": "Os lacres e as etiquetas",
+       "x": 32,
+       "y": 50,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "Lacre 0447. O técnico do STI, eu e a testemunha rubricamos. Cada passagem de mão registrada: coleta, acondicionamento, transporte, recebimento, processamento.",
+         "e": "normal",
+         "recebe": [
+          "termo_coleta"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "É isso que o CPP chama de etapas da cadeia de custódia. O que não passa por elas vira boato com carimbo.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "p_espelho",
+       "nome": "O espelho do servidor",
+       "x": 56,
+       "y": 24,
+       "w": 17,
+       "h": 18,
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "Aqui está o original. As quatro assinaturas partiram do host GAB-214-WS, a estação do gabinete, com sequência 118, 119, 121 e 124.",
+         "e": "confiante",
+         "recebe": [
+          "log_sti"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "GAB-214-WS é a estação do meu gabinete. A minha sala, o meu computador. Na hora em que eu estava no plenário.",
+         "e": "chocado"
+        }
+       ]
+      },
+      {
+       "id": "p_seq",
+       "nome": "O quadro de sequências",
+       "x": 76,
+       "y": 52,
+       "w": 15,
+       "h": 14,
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "Seu diário de assinaturas registra 117, 120, 122, 123. Faltam 118, 119, 121 e 124. Quatro números que não são seus entre os seus.",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Então alguém assinou entre as minhas assinaturas, usando a mesma chave.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "id": "p_estagiario",
+       "nome": "O estagiário que ama uma fofoca",
+       "x": 40,
+       "y": 74,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "Ele me contou que a conta do STI foi acessada ontem por um IP de fora. Eu avisei o diretor de segurança.",
+         "e": "feliz"
+        },
+        {
+         "q": "voce",
+         "t": "Alguém tentou entrar para trocar o original. O hash e o lacre nos salvaram.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "p_cafeteira",
+       "nome": "A cafeteira de Kenji",
+       "x": 90,
+       "y": 74,
+       "w": 8,
+       "h": 14,
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "Café para quem trabalha às duas. Não é metáfora.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Primeira coisa boa do dia, e é um café ruim.",
+         "e": "feliz"
+        }
+       ]
+      },
+      {
+       "id": "p_token",
+       "nome": "A anotação sobre o token",
+       "x": 10,
+       "y": 66,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "Um token A3 só assina com posse física e PIN. Se a posse é física, o culpado esteve a menos de um metro dele.",
+         "e": "normal"
+        },
+        {
+         "q": "kenji",
+         "t": "Assinatura válida prova uso da chave. Nunca prova quem estava com a mão no teclado.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "É exatamente o erro do laudo de Valério.",
+         "e": "confiante"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "kenji",
+       "titulo": "Kenji: o que um hash diz",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "Um hash é uma impressão digital de arquivo. Mudou uma vírgula, muda o resultado inteiro.",
+         "e": "normal"
+        },
+        {
+         "q": "kenji",
+         "t": "O arquivo do pen drive tem três linhas com espaçamento diferente e o fuso do relógio muda de UTC para Brasília exatamente nas linhas do host. Isso é emenda.",
+         "e": "apontando"
+        },
+        {
+         "q": "voce",
+         "t": "Quem editou o log queria um nome no lugar do GAB-214. E o nome era o da Helena.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "q": "kenji",
+       "titulo": "Kenji: o que um token não diz",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "Eu preciso ser honesto: eu sei onde o token estava. Não sei com quem.",
+         "e": "triste"
+        },
+        {
+         "q": "kenji",
+         "t": "O servidor registra máquina, número de série e momento. Não registra o rosto de quem digitou o PIN.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Então alguém sabia o PIN e tinha o token na mão, dentro do meu gabinete, quatro vezes.",
+         "e": "pensativo"
+        },
+        {
+         "q": "kenji",
+         "t": "O PIN do token tem seis dígitos e três tentativas antes do bloqueio. Quem usou acertou de primeira, quatro vezes seguidas. Isso não é tentativa; é conhecimento.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Quem sabe o meu PIN? Eu, Rafael, Helena em março, e a pessoa a quem eu o confiei para o caso de emergência.",
+         "e": "nervoso"
+        },
+        {
+         "q": "kenji",
+         "t": "Anote esse nome. E não me diga agora qual é.",
+         "e": "triste"
+        },
+        {
+         "q": "kenji",
+         "t": "Foi o que a tabela me disse. Peço desculpas por ter sido eu a ler.",
+         "e": "triste"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "laudo_kenji",
+      "termo_coleta",
+      "log_sti"
+     ],
+     "proxima": "c15"
+    },
+    "c15": {
+     "tipo": "analisar",
+     "local": "gabinete",
+     "falas": [
+      {
+       "q": "kenji",
+       "t": "Agora a parte que dói. Você trouxe seis papéis. Vamos ver quais resistem à perícia. Cuidado: documento autêntico pode ser fraco, e documento fraco não é falso. Falso é o que foi fabricado.",
+       "e": "pensativo"
+      }
+     ],
+     "provas": [
+      "log_srv",
+      "email_hel",
+      "print_zap",
+      "recibo_token",
+      "laudo_val",
+      "log_sti"
+     ],
+     "falsas": [
+      "log_srv",
+      "email_hel",
+      "print_zap"
+     ],
+     "dica": [
+      "O laudo de Valério é fraco, mas existe; o recibo é antigo, mas é verdadeiro. A fraude está nos papéis que se encaixam bem demais.",
+      "Hash que não confere, cabeçalho de outro servidor e nome de contato trocado: três nasceram para o seu bolso."
+     ],
+     "acerto": [
+      {
+       "q": "kenji",
+       "t": "Log editado, e-mail com cabeçalho de outro servidor, print colado. Quem montou isso conhecia o seu medo de perder a Helena.",
+       "e": "confiante"
+      },
+      {
+       "q": "voce",
+       "t": "Foi construído contra ela, não contra mim. Eu serviria de mão armada.",
+       "e": "triste"
+      }
+     ],
+     "erro": [
+      {
+       "q": "kenji",
+       "t": "Algo aí não bate. Autêntico descartado é prova perdida; falso mantido é trampolim para o erro. Revise.",
+       "e": "nervoso"
+      }
+     ],
+     "proxima": "c16"
+    },
+    "c16": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "kenji",
+       "t": "O desenho está claro. O log que apontava para Helena foi fabricado depois. Ele só serve de isca.",
+       "e": "normal"
+      },
+      {
+       "q": "voce",
+       "t": "A isca chegou por Dani, que achou o pen drive. Mas Dani não editaria um log. Ela nem sabe o que é hash.",
+       "e": "pensativo"
+      },
+      {
+       "q": "kenji",
+       "t": "Isso eu não discuto. Só digo que alguém quis que você acusasse a Helena. E que, se acusasse, o seu PAD estaria acabado.",
+       "e": "nervoso"
+      },
+      {
+       "q": "voce",
+       "t": "Se eu acusasse, Saulo diria que eu tentei forjar o culpado. Falsa imputação, tentativa de fraude, e a minha palavra, que é tudo o que me resta, no chão.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "Eu fiz uma escolha com Helena hoje à tarde sem saber disso.",
+       "e": "bravo",
+       "se": "a7_culpou_helena"
+      },
+      {
+       "q": "kenji",
+       "t": "Quer ligar para ela? Eu saio da sala.",
+       "e": "triste",
+       "se": "a7_culpou_helena"
+      },
+      {
+       "q": "voce",
+       "t": "Ainda não. Quero ter a prova na mão quando eu pedir perdão.",
+       "e": "triste",
+       "se": "a7_culpou_helena"
+      },
+      {
+       "q": "voce",
+       "t": "Ainda bem que eu não a afastei. Hoje eu teria perdido a única pessoa que dizia a verdade pela metade.",
+       "e": "feliz",
+       "se": "a7_perdoou_helena"
+      },
+      {
+       "q": "kenji",
+       "t": "Verdade pela metade é a única que quase todo mundo sabe contar. Contanto que a outra metade venha.",
+       "e": "confiante",
+       "se": "a7_perdoou_helena"
+      },
+      {
+       "q": "voce",
+       "t": "Qualquer que fosse a minha escolha de hoje à tarde, a perícia me poupou de uma injustiça maior. Eu quase acusei o culpado errado.",
+       "e": "pensativo"
+      },
+      {
+       "q": "kenji",
+       "t": "Amanhã, às dez, a relatora marca a sessão de esclarecimentos periciais. Valério vai defender o laudo dele. Eu vou defender o meu. Você vai ter de saber conduzir os dois.",
+       "e": "normal"
+      }
+     ],
+     "local": "gabinete",
+     "proxima": "c17"
+    },
+    "c17": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Sala de sessões do Conselho Nacional de Justiça, dez da manhã. A cadeira do investigado fica de frente para a mesa da relatora e de lado para a imprensa."
+      },
+      {
+       "q": "a7marina",
+       "t": "Está aberta a sessão de esclarecimentos periciais, deferida a requerimento do investigado, art. 38 da Lei 9.784. Dr. Saulo, doutor Valério, doutor Kenji, compareceram?",
+       "e": "normal"
+      },
+      {
+       "q": "a7saulo",
+       "t": "Presentes, conselheira. E com a mais profunda confiança de que a perícia do reclamante fala por si.",
+       "e": "confiante"
+      },
+      {
+       "q": "a7marina",
+       "t": "O investigado exerce defesa pessoal, direito que a lei lhe dá. Isso não o transforma em advogado de si mesmo nem lhe dá licença de protocolar peças fora de ordem. Falará quando a palavra lhe for dada.",
+       "e": "bravo"
+      },
+      {
+       "q": "a7edgar",
+       "t": "(do fundo da sala, sem se pronunciar) Registrem a minha presença como observador. Esta Corregedoria não gosta de surpresas.",
+       "e": "pensativo"
+      },
+      {
+       "q": "voce",
+       "t": "Obrigado(a), conselheira. Sem togas e sem pressa.",
+       "e": "normal"
+      },
+      {
+       "q": "a7marina",
+       "t": "Sem pressa não é palavra que eu uso aqui. Dr. Saulo, apresente o seu fato novo, se houver.",
+       "e": "pensativo"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "c18"
+    },
+    "c18": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "Saulo traz um recibo da Corregedoria",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "Há, sim, um fato novo. Sexta-feira, 9h05, dois minutos antes da quarta assinatura, a doutora Helena Vasconcelos protocolou nesta Corregedoria uma declaração espontânea.",
+       "e": "apontando",
+       "recebe": [
+        "protocolo_corr"
+       ]
+      },
+      {
+       "q": "a7saulo",
+       "t": "Nela, assume que a ideia do «só desta vez» foi dela. Ou seja: a defesa tem um álibi de dois minutos, e o álibi é a confissão de que havia um plano a dois.",
+       "e": "confiante"
+      },
+      {
+       "q": "voce",
+       "t": "(Ela foi ali. Ela realmente foi ali.)",
+       "e": "chocado"
+      },
+      {
+       "q": "a7marina",
+       "t": "A declaração será juntada. A conclusão, não. Prossiga, doutor.",
+       "e": "pensativo"
+      },
+      {
+       "q": "narrador",
+       "t": "Atrás de você, uma cadeira range. É Rafael, de olhos fechados. Helena não está na sala, e a ausência pesa mais que a presença."
+      }
+     ],
+     "ajuste": -1,
+     "piso": 2,
+     "musica": "pressao",
+     "proxima": "d_val"
+    },
+    "d_val": {
+     "tipo": "depoimento",
+     "testemunha": "a6yperito",
+     "titulo": "Dr. Valério Ambrósio, perito do reclamante",
+     "intro": [
+      {
+       "q": "a6yperito",
+       "t": "Trinta anos de perícia, conselheira. Minha reputação dispensa apresentações.",
+       "e": "confiante"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Meu laudo foi feito sobre o log original, extraído do servidor, sem qualquer alteração.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "O senhor extraiu o arquivo do servidor ou o recebeu pronto?",
+         "e": "normal"
+        },
+        {
+         "q": "a6yperito",
+         "t": "Recebi um arquivo íntegro. Não vejo diferença.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "O resultado é inequívoco: a assinatura veio do notebook NB-HV-02, do escritório de uma advogada.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Inequívoco por qual método?",
+         "e": "normal"
+        },
+        {
+         "q": "a6yperito",
+         "t": "Pela leitura do campo «host». Não há segredo nisso.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "O token é pessoal e intransferível. A posse física, por definição, nunca sai das mãos do titular.",
+       "e": "apontando",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Nunca? Nem para protocolar uma petição com autorização?",
+         "e": "pensativo"
+        },
+        {
+         "q": "a6yperito",
+         "t": "Isso seria uma irregularidade grave. O token é do titular e ponto.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "Não recebi qualquer pagamento além dos honorários normais pelo laudo.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Normais para quem?",
+         "e": "normal"
+        },
+        {
+         "q": "a6yperito",
+         "t": "Para a minha tabela. Perguntas de natureza pessoal são impertinentes.",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "t": "Essa prova não desmente essa afirmação. Prefiro não gastar a atenção da relatora.",
+       "e": "pensativo"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a6yperito",
+       "t": "Retifico: não conferi o hash do arquivo que me deram. Isso não altera a validade da assinatura.",
+       "e": "nervoso"
+      },
+      {
+       "q": "a7marina",
+       "t": "Altera, doutor, a confiabilidade da sua conclusão. Registre-se.",
+       "e": "bravo",
+       "fx": "martelo"
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "termo_coleta"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "t": "Conselheira, o único termo de coleta deste caso é o de Kenji e o do técnico do STI. O senhor tem o seu?",
+         "e": "apontando",
+         "fx": "protesto"
+        },
+        {
+         "q": "a6yperito",
+         "t": "Eu... recebi o arquivo do próprio doutor Saulo. Não havia termo.",
+         "e": "chocado"
+        }
+       ]
+      },
+      {
+       "afirmacao": 2,
+       "provas": [
+        "recibo_token"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "t": "Este recibo prova que o token saiu das minhas mãos legalmente em março, com devolução conferida. A posse física muda de mãos, doutor. A chave é de quem tem o PIN e o objeto.",
+         "e": "apontando",
+         "fx": "protesto"
+        },
+        {
+         "q": "a6yperito",
+         "t": "Reconheço... que a frase foi categórica demais.",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "exige": 2,
+     "dica": [
+      "Duas das quatro afirmações podem ser derrubadas por papéis que você já tem.",
+      "Termo de coleta responde à origem do arquivo; recibo responde à posse do token."
+     ],
+     "veracidade": {
+      "mente": true,
+      "escala": 4,
+      "revela": [
+       {
+        "q": "a7marina",
+        "t": "A relatora anota algo e olha, por um segundo, para Saulo, não para o perito.",
+        "e": "pensativo"
+       }
+      ],
+      "sinais": [
+       {
+        "afirmacao": 0,
+        "tipo": "detalhe_demais",
+        "pressao": 2
+       },
+       {
+        "afirmacao": 3,
+        "tipo": "evasiva",
+        "pressao": 2
+       }
+      ]
+     },
+     "proxima": "c19"
+    },
+    "c19": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "Conselheira, mesmo desprezando o log, a assinatura continua válida. Quem empresta o token a terceiros responde pelo que ele fizer. O investigado, de novo, assume o risco.",
+       "e": "confiante"
+      },
+      {
+       "q": "a7marina",
+       "t": "A conclusão jurídica é minha, doutor. O perito do investigado também será ouvido. Doutor Kenji, a acareação com o doutor Valério.",
+       "e": "normal"
+      },
+      {
+       "q": "kenji",
+       "t": "Pelo menos desta vez, vamos conversar de peça em peça. Sem adjetivos.",
+       "e": "normal"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "c20"
+    },
+    "ac_kenji": {
+     "tipo": "depoimento",
+     "testemunha": "kenji",
+     "titulo": "Dr. Kenji Sato, perito do investigado",
+     "intro": [
+      {
+       "q": "kenji",
+       "t": "Descrevo o que medi.",
+       "e": "normal"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O hash do arquivo que o doutor Valério usou não confere com o do original do servidor.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "kenji",
+         "t": "Terminam em 3f20 e em a91c.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "As quatro assinaturas partiram do host GAB-214-WS, a estação do gabinete do investigado.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "kenji",
+         "t": "Está no log do STI, com termo de coleta.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "Assinatura válida identifica o token usado, nunca a pessoa que digitou o PIN.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "kenji",
+         "t": "É o que o desenho da tecnologia diz.",
+         "e": "normal"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "kenji",
+       "t": "Essa prova não resolve esse ponto.",
+       "e": "normal"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Anotado.",
+       "e": "pensativo"
+      }
+     ],
+     "veracidade": {
+      "mente": false
+     },
+     "erro_veraz": [
+      {
+       "q": "kenji",
+       "t": "Eu falo a verdade; não precisa pressionar.",
+       "e": "normal"
+      }
+     ]
+    },
+    "ac_val": {
+     "tipo": "depoimento",
+     "testemunha": "a6yperito",
+     "titulo": "Dr. Valério, em acareação",
+     "intro": [
+      {
+       "q": "a6yperito",
+       "t": "Mantenho o que escrevi.",
+       "e": "nervoso"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O hash é um detalhe formal. O conteúdo do log é o mesmo.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "a6yperito",
+         "t": "Uma vírgula não muda um sistema.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "O campo «host» do log mostra o NB-HV-02 e isso basta.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "a6yperito",
+         "t": "Está escrito, ora.",
+         "e": "confiante"
+        }
+       ]
+      },
+      {
+       "t": "Só o titular pode ter assinado, e disso eu não abro mão.",
+       "e": "apontando",
+       "pressionar": [
+        {
+         "q": "a6yperito",
+         "t": "É a minha conclusão final.",
+         "e": "apontando"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "a6yperito",
+       "t": "Esse papel não diz isso.",
+       "e": "nervoso"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a6yperito",
+       "t": "Eu... mantenho com ressalvas.",
+       "e": "nervoso"
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "laudo_kenji"
+       ],
+       "acerto": []
+      },
+      {
+       "afirmacao": 1,
+       "provas": [
+        "log_sti"
+       ],
+       "acerto": []
+      }
+     ]
+    },
+    "c20": {
+     "tipo": "acareacao",
+     "a": "ac_kenji",
+     "b": "ac_val",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Procedo à acareação, art. 229 do CPP, aplicado por analogia. Os senhores divergem sobre fatos relevantes. Investigado, qual prova desfaz cada divergência?",
+       "e": "normal"
+      }
+     ],
+     "pares": [
+      {
+       "a": 0,
+       "b": 0,
+       "prova": "laudo_kenji",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O hash do original termina em a91c; o do arquivo do doutor Valério, em 3f20. Não é vírgula: é outro arquivo.",
+         "e": "apontando"
+        }
+       ]
+      },
+      {
+       "a": 1,
+       "b": 1,
+       "prova": "log_sti",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O log do STI, coletado com termo, nomeia o GAB-214-WS. O NB-HV-02 só aparece na cópia editada.",
+         "e": "apontando"
+        }
+       ]
+      },
+      {
+       "a": 2,
+       "b": 2,
+       "prova": "recibo_token",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Este recibo mostra que o titular entregou o token e o recebeu de volta. A tese de que a posse nunca sai das mãos do titular não passa de dogma.",
+         "e": "confiante"
+        }
+       ]
+      }
+     ],
+     "dica": "Cada divergência tem a sua prova: o laudo de Kenji, o log do STI e o recibo de março.",
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Registro: o laudo do reclamante não resiste à confrontação técnica. As consequências serão pesadas na decisão.",
+       "e": "bravo"
+      },
+      {
+       "q": "a7saulo",
+       "t": "Conselheira, a cadeia de custódia é matéria criminal, não administrativa.",
+       "e": "nervoso"
+      }
+     ],
+     "erro": [
+      {
+       "q": "kenji",
+       "t": "(baixo) Pense qual documento responde à fala do outro lado, e não só a um dos lados.",
+       "e": "nervoso"
+      }
+     ],
+     "proxima": "c21"
+    },
+    "c21": {
+     "tipo": "argumento",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "A cadeia de custódia é instituto do processo penal! Este é um procedimento administrativo, e o laudo traz fundamentação técnica suficiente.",
+       "e": "bravo"
+      }
+     ],
+     "alvo": "«Cadeia de custódia é matéria do processo penal; aqui, o laudo basta.»",
+     "pergunta": "Qual dispositivo mostra por que o laudo de Valério, sem história documentada do arquivo, não merece confiança?",
+     "opcoes": [
+      {
+       "t": "CPP, art. 158-A: a cadeia de custódia documenta a história cronológica do vestígio",
+       "dispositivo": "CPP#art-158a",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A cadeia de custódia é o conjunto de procedimentos para manter e documentar a história cronológica do vestígio. Sem história, não há como saber se é o mesmo arquivo que nasceu no servidor.",
+         "e": "confiante"
+        },
+        {
+         "q": "a7marina",
+         "t": "A lei fala em processo penal. A lógica vale ao procedimento que usa o mesmo tipo de prova.",
+         "e": "pensativo"
+        }
+       ],
+       "certa": true
+      },
+      {
+       "t": "CPP, art. 158-C: a coleta deve ser feita preferencialmente por perito oficial",
+       "dispositivo": "CPP#art-158c",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "(baixo) Isso trata de quem coleta, não de como se documenta o caminho.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "CPP, art. 158-F: o material deve ser devolvido à central de custódia",
+       "dispositivo": "CPP#art-158f",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "(baixo) É o fim da cadeia, não o conceito que você precisa.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "CPP, art. 159: as perícias são realizadas por perito oficial",
+       "dispositivo": "CPP#art-159",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "(baixo) Quem faz o exame é um ponto; como se documenta o vestígio é outro.",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Acolhido o raciocínio. Um laudo que não explica de onde veio o seu objeto é um papel, não uma prova.",
+       "e": "bravo",
+       "fx": "martelo"
+      }
+     ],
+     "local": "tribunal",
+     "dica": [
+      "A palavra-chave é «história cronológica do vestígio».",
+      "O conceito está no primeiro artigo da série sobre cadeia de custódia."
+     ],
+     "tempo": 30,
+     "proxima": "c22"
+    },
+    "c22": {
+     "tipo": "argumento",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "Ainda que a cadeia esteja frouxa, Excelência não pode descartar o laudo. É prova técnica. A relatora está presa a ela.",
+       "e": "confiante"
+      }
+     ],
+     "alvo": "«A relatora não pode afastar o laudo técnico.»",
+     "pergunta": "Que regra mostra que o julgador não é refém do laudo?",
+     "opcoes": [
+      {
+       "t": "CPP, art. 182: o juiz não ficará adstrito ao laudo, podendo aceitá-lo ou rejeitá-lo, no todo ou em parte",
+       "dispositivo": "CPP#art-182",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "Concordo. E, sem a cadeia de custódia, rejeitarei o laudo de Valério no que depender do arquivo.",
+         "e": "normal"
+        }
+       ],
+       "certa": true
+      },
+      {
+       "t": "CPP, art. 155: o juiz forma sua convicção pela livre apreciação da prova produzida em contraditório",
+       "dispositivo": "CPP#art-155",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "(baixo) Fala de convicção livre, mas não responde sobre o laudo.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "CPP, art. 157: são inadmissíveis as provas ilícitas",
+       "dispositivo": "CPP#art-157",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "(baixo) Não é ilicitude: é falta de confiabilidade. Duas coisas diferentes.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "CPP, art. 563: nenhum ato será declarado nulo se da nulidade não resultar prejuízo",
+       "dispositivo": "CPP#art-563",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "(baixo) Isso é nulidade de ato, não valor do laudo.",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "O laudo não me vincula. Passo à pergunta que realmente importa: quem usou o token?",
+       "e": "normal"
+      }
+     ],
+     "local": "tribunal",
+     "dica": [
+      "Há um artigo que diz expressamente que o juiz não está preso ao laudo.",
+      "Procure o verbo «adstrito»."
+     ],
+     "tempo": 30,
+     "proxima": "c23"
+    },
+    "c23": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Se o log foi adulterado depois, e justamente durante este procedimento, que crime isso configura? Responda como investigado, não como advogado.",
+       "e": "pensativo"
+      }
+     ],
+     "pergunta": "Qual crime comete quem altera artificiosamente o log, no curso do procedimento, para induzir a erro o julgador ou o perito?",
+     "opcoes": [
+      {
+       "t": "Falsidade ideológica (CP, art. 299)",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O art. 299 é sobre declaração falsa em documento. Aqui a fraude é no estado da coisa, não só na declaração.",
+         "e": "pensativo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-299",
+         "trecho": "Omitir, em documento público ou particular, declaração que dele devia constar, ou nele inserir ou fazer inserir declaração falsa ou diversa da que devia ser escrita"
+        }
+       ]
+      },
+      {
+       "t": "Fraude processual (CP, art. 347)",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Inovar artificiosamente, na pendência de processo administrativo, o estado de coisa, com o fim de induzir a erro o juiz ou o perito. O log é a coisa; o procedimento está pendente; o perito foi o alvo.",
+         "e": "confiante"
+        },
+        {
+         "q": "a7marina",
+         "t": "Anotado. Cópia ao Ministério Público.",
+         "e": "normal"
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CP#art-347",
+         "trecho": "Inovar artificiosamente, na pendência de processo civil ou administrativo, o estado de lugar, de coisa ou de pessoa, com o fim de induzir a erro o juiz ou o perito"
+        }
+       ]
+      },
+      {
+       "t": "Denunciação caluniosa (CP, art. 339)",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A denunciação exige que se dê causa à instauração de procedimento contra alguém. Aqui o procedimento já existia; o que mudou foi a prova.",
+         "e": "pensativo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-339",
+         "trecho": "Dar causa à instauração de inquérito policial, de procedimento investigatório criminal, de processo judicial, de processo administrativo disciplinar"
+        }
+       ]
+      },
+      {
+       "t": "Invasão de dispositivo informático (CP, art. 154-A)",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Esse seria o crime de quem entrou em máquina alheia. Não é o ponto do log editado.",
+         "e": "pensativo"
+        }
+       ],
+       "fundamentos": [
+        {
+         "chave": "CP#art-154a",
+         "trecho": "Invadir dispositivo informático de uso alheio, conectado ou não à rede de computadores, com o fim de obter, adulterar ou destruir dados"
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
+     "dica": [
+      "O log foi mexido durante o PAD, para enganar o perito.",
+      "O art. 347 fala em processo «civil ou administrativo»."
+     ],
+     "tempo": 35,
+     "proxima": "c24"
+    },
+    "c24": {
+     "tipo": "blefe",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "Então responda, investigado: se não foi a doutora Helena, e não foi o senhor, quem usou o token? Dê o nome, ou admita que não sabe!",
+       "e": "apontando"
+      }
+     ],
+     "pergunta": "Saulo exige um nome. Você ainda não tem prova de quem foi. Como responde?",
+     "opcoes": [
+      {
+       "t": "Blefar: «Tenho a imagem da câmera do corredor mostrando exatamente quem retirou o token.»",
+       "blefe": {
+        "resultado": "descoberto",
+        "falas": [
+         {
+          "q": "a7marina",
+          "t": "Junte a imagem, investigado.",
+          "e": "pensativo"
+         },
+         {
+          "q": "voce",
+          "t": "É... uma questão de formalidade.",
+          "e": "nervoso"
+         }
+        ],
+        "consequencia": [
+         {
+          "q": "a7marina",
+          "t": "Afirmar a existência de prova que o senhor não tem é litigância de má-fé, art. 80, II, do CPC, aplicado subsidiariamente, e deslealdade processual. Advertido, e a ata registra.",
+          "e": "bravo",
+          "fx": "martelo"
+         }
+        ],
+        "cred": -2
+       }
+      },
+      {
+       "t": "Blefar: «Doutor Saulo, quer mesmo que eu leia agora o nome que está no livro do cofre?»",
+       "blefe": {
+        "resultado": "funciona",
+        "falas": [
+         {
+          "q": "a7saulo",
+          "t": "Retiro a pergunta, conselheira.",
+          "e": "nervoso"
+         },
+         {
+          "q": "a7marina",
+          "t": "Estranho recuo, doutor.",
+          "e": "pensativo"
+         },
+         {
+          "q": "voce",
+          "t": "(Eu nem sei o que há no livro do cofre. Só sei como é o recuo de quem teme a pergunta.)",
+          "e": "nervoso"
+         }
+        ]
+       }
+      },
+      {
+       "t": "Requerer à relatora, com base no art. 38, a requisição do livro do cofre e do registro de acesso do andar, sem afirmar o que ainda não sei.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Não sei dar o nome, e não vou inventar. Requeiro a requisição do livro do cofre do gabinete e do registro de crachá do andar, nos quatro horários.",
+         "e": "normal"
+        },
+        {
+         "q": "a7marina",
+         "t": "Deferido, art. 38. O investigado tem até o fim do dia para ver a documentação no local, acompanhado de servidor da Corregedoria.",
+         "e": "normal"
+        },
+        {
+         "q": "a7saulo",
+         "t": "Conselheira, esse pedido é protelatório!",
+         "e": "nervoso"
+        },
+        {
+         "q": "a7marina",
+         "t": "O que é protelatório, doutor, é querer um nome sem prova.",
+         "e": "bravo",
+         "fx": "martelo"
+        }
+       ]
+      }
+     ],
+     "proxima": "c25"
+    },
+    "c25": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Suspendo a sessão por duas horas. Investigado, aproxime-se.",
+       "e": "pensativo"
+      },
+      {
+       "q": "a7marina",
+       "t": "Não vou fingir isenção emocional: cheguei convencida de que o senhor era culpado. O seu perito me incomodou. O de Saulo me incomodou mais.",
+       "e": "normal"
+      },
+      {
+       "q": "voce",
+       "t": "Conselheira, não peço simpatia. Peço o direito de provar.",
+       "e": "pensativo"
+      },
+      {
+       "q": "a7marina",
+       "t": "Simpatia eu não dou a ninguém. Respeito se conquista com documento. Hoje o senhor ganhou um pouco, e nenhuma decisão.",
+       "e": "normal"
+      },
+      {
+       "q": "a7edgar",
+       "t": "(passando por vocês) Cuidado, conselheira. O país não quer ver o Judiciário protegendo um dos seus por tecnicidade.",
+       "e": "bravo"
+      },
+      {
+       "q": "a7marina",
+       "t": "O país quer ver o Judiciário fazendo o que a lei manda, ministro.",
+       "e": "bravo"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "c26"
+    },
+    "c26": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Cinco da tarde. O corredor do andar do gabinete tem o mesmo carpete e o mesmo cheiro de cera. Há uma fita amarela na sua porta, e um servidor da Corregedoria que vai acompanhar tudo."
+      },
+      {
+       "q": "a7bjosias",
+       "t": "Doutor(a)... Excelência... eu ainda não sei como chamar. Faz doze anos que eu abro essa porta pro senhor(a).",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "Josias, hoje basta Josias e o nome. Estou aqui por ordem da relatora, só para olhar.",
+       "e": "triste"
+      }
+     ],
+     "local": "corredor",
+     "proxima": "c27"
+    },
+    "c27": {
+     "tipo": "investigar",
+     "local": "corredor",
+     "titulo": "O corredor da sala 214",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Você é investigado(a) numa sala onde já foi chamado(a) de Excelência. O servidor da Corregedoria cruza os braços. Cada gesto seu fica anotado."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "p_cofre",
+       "nome": "O cofre embutido na parede",
+       "x": 8,
+       "y": 28,
+       "w": 16,
+       "h": 22,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O livro do cofre. Quatro retiradas do token: 13h50, 14h55, 15h58 e 08h50. Todas com a rubrica «D.» e devolução horas depois.",
+         "e": "normal",
+         "recebe": [
+          "livro_cofre"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Um «D.» pode ser mil pessoas. Mas só três têm a chave deste cofre.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "p_catraca",
+       "nome": "A catraca do andar",
+       "x": 34,
+       "y": 46,
+       "w": 14,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Registro de acesso: nos quatro horários só duas pessoas passam pela sala 214. Uma sou eu, às 8h10 de sexta. A outra é o crachá de Dani.",
+         "e": "confiante",
+         "recebe": [
+          "acesso"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Dani. A pessoa que cuidou do meu gabinete por anos.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "id": "p_porta",
+       "nome": "A porta 214 com fita",
+       "x": 60,
+       "y": 30,
+       "w": 14,
+       "h": 26,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A fechadura é nova. Trocaram na segunda. Se havia dúvida sobre quem entrava, resolveram do jeito mais caro.",
+         "e": "pensativo"
+        },
+        {
+         "q": "narrador",
+         "t": "Atrás do vidro fosco, você vê a sombra do seu próprio ex-gabinete. Pela primeira vez, ele parece pequeno."
+        }
+       ]
+      },
+      {
+       "id": "p_quadro",
+       "nome": "O quadro de avisos",
+       "x": 80,
+       "y": 40,
+       "w": 14,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Um aviso do departamento pessoal: «as servidoras Dani e Gláucia estão autorizadas a manter a chave do cofre durante o período de licença do titular».",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Autorizadas. Duas. E a outra de licença desde o dia 3.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "p_lixo",
+       "nome": "A lixeira da copa",
+       "x": 18,
+       "y": 70,
+       "w": 14,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Um guardanapo com um número de telefone anotado, sem nome, e a palavra «sexta».",
+         "e": "nervoso"
+        },
+        {
+         "q": "voce",
+         "t": "Letra apressada. Não é de Dani, nem de Helena. É de alguém que dita.",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a7bjosias",
+       "titulo": "Josias, o vigilante",
+       "falas": [
+        {
+         "q": "a7bjosias",
+         "t": "Eu sou do turno da tarde. Na terça, a dona Dani chegou perto das 13h40. Passou o crachá, levou uma bolsa grande, entrou direto.",
+         "e": "nervoso"
+        },
+        {
+         "q": "a7bjosias",
+         "t": "Na quinta foi igual. Na sexta ela chegou cedinho, antes das oito. Eu estranhei, porque o senhor(a) estava no Supremo.",
+         "e": "triste"
+        },
+        {
+         "q": "voce",
+         "t": "Ela disse alguma coisa?",
+         "e": "pensativo"
+        },
+        {
+         "q": "a7bjosias",
+         "t": "Só que o senhor(a) tinha pedido pra buscar um documento. Eu não perguntei mais. Eu faço doze anos que não pergunto.",
+         "e": "nervoso"
+        },
+        {
+         "q": "a7bjosias",
+         "t": "Se eu falei demais, me desculpe. Ela chorou uma vez no elevador, e eu fingi que não vi.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "q": "a7joana",
+       "titulo": "Joana, na saída do elevador",
+       "falas": [
+        {
+         "q": "a7joana",
+         "t": "Eu cheguei aqui por um recibo de protocolo que alguém me mandou: o da Helena na Corregedoria. Anônimo. Chegou antes de chegar a Saulo.",
+         "e": "nervoso"
+        },
+        {
+         "q": "voce",
+         "t": "Quem mandou?",
+         "e": "pensativo"
+        },
+        {
+         "q": "a7joana",
+         "t": "Se eu soubesse, não estaria aqui perguntando. Tenho a impressão de que alguém me escreve a matéria e eu só assino.",
+         "e": "pensativo"
+        },
+        {
+         "q": "a7joana",
+         "t": "Obrigada por ter me recebido, mesmo com a minha manchete.",
+         "e": "triste",
+         "se": "a7_confiou_joana"
+        },
+        {
+         "q": "a7joana",
+         "t": "Você não me deve nada. Eu também não. Mas vou querer ouvir o que descobriu.",
+         "e": "bravo",
+         "se": "!a7_confiou_joana"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "livro_cofre",
+      "acesso"
+     ],
+     "proxima": "c28"
+    },
+    "c28": {
+     "tipo": "intuicao",
+     "local": "corredor",
+     "falas": [
+      {
+       "q": "voce",
+       "t": "Josias, o senhor é o único que viu a rotina inteira. Preciso saber: o que me contou é a verdade completa?",
+       "e": "pensativo"
+      }
+     ],
+     "pergunta": "Josias está sendo sincero ou escondendo algo?",
+     "pistas": [
+      "Ele repete o mesmo detalhe, a bolsa grande, sem que ninguém peça.",
+      "As mãos tremem, mas o olhar não desvia quando fala do horário.",
+      "Quando o assunto é a chegada de sexta, ele fala sem pausa; quando é o elevador, abaixa a voz."
+     ],
+     "opcoes": [
+      {
+       "t": "Está sendo sincero, mas com medo de ser culpado por não ter perguntado.",
+       "certa": true
+      },
+      {
+       "t": "Está encobrindo Dani e inventando a história do documento."
+      }
+     ],
+     "revelacao": [
+      {
+       "q": "a7bjosias",
+       "t": "Se eu tivesse perguntado... Ela era tão boa pro senhor(a). Eu me sinto cúmplice de uma coisa que nem sei o que é.",
+       "e": "triste"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "t": "O senhor não é cúmplice, Josias. Só viu uma pessoa que carregava o que ninguém podia ver.",
+       "e": "triste"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "t": "Fui duro com um homem de bem. Depois peço desculpas a ele. Devo isso a quem só viu, e não soube o que estava vendo.",
+       "e": "nervoso"
+      }
+     ],
+     "bonus": 1,
+     "proxima": "c29"
+    },
+    "c29": {
+     "tipo": "celular",
+     "local": "corredor",
+     "contato": "Helena",
+     "status": "digitando...",
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Kenji me ligou. O log era falso."
+      },
+      {
+       "de": "ele",
+       "t": "Eu nunca teria feito aquilo com você."
+      },
+      {
+       "de": "ele",
+       "t": "Você me afastou antes de saber. Eu entendo. Mas dói.",
+       "se": "a7_culpou_helena"
+      },
+      {
+       "de": "ele",
+       "t": "Você ficou do meu lado antes de saber. Isso eu nunca vou esquecer.",
+       "se": "a7_perdoou_helena"
+      },
+      {
+       "de": "ele",
+       "t": "Fui à Corregedoria porque queria que eles me punissem no seu lugar. Não consegui. Ficaram só com a minha carta."
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Pedir desculpas: «Eu devia ter esperado a perícia. Me perdoa.»",
+       "envia": "Eu devia ter esperado a perícia. Me perdoa.",
+       "marca": "a7b_pediu_desculpa",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Eu perdoo. Mas não esqueço. Venha jantar quando isso acabar."
+        }
+       ]
+      },
+      {
+       "t": "Cobrar: «Por que você não me contou da Corregedoria?»",
+       "envia": "Por que você não me contou da Corregedoria?",
+       "marca": "a7b_cobrou_helena",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Porque você não deixaria. E eu faria de novo."
+        }
+       ]
+      },
+      {
+       "t": "Guardar o celular sem responder."
+      }
+     ],
+     "depois": [
+      {
+       "q": "narrador",
+       "t": "O corredor volta ao silêncio de cera. Você olha a fita amarela e lembra que a única coisa que perdeu hoje foi o direito de abrir essa porta."
+      }
+     ],
+     "proxima": "c30"
+    },
+    "c30": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Sete da noite. O servidor da Corregedoria já foi embora, e o corredor está vazio, a não ser pelo vigilante do turno da noite, que ainda não aprendeu a sua cara."
+      },
+      {
+       "q": "voce",
+       "t": "(Quem comanda uma coisa dessas precisa de alguém que entre e saia sem causar susto. Alguém com acesso. Alguém que nunca seria suspeita.)",
+       "e": "pensativo"
+      },
+      {
+       "q": "voce",
+       "t": "(E eu que mandei a Dani guardar o token no cofre. Disse: «é de confiança, só você sabe». Eu mesmo escolhi a guardiã.)",
+       "e": "triste"
+      },
+      {
+       "q": "narrador",
+       "t": "No elevador de serviço, a luz do painel pisca. Uma sombra feminina com uma bolsa grande cruza o fundo do corredor e some na curva."
+      }
+     ],
+     "local": "corredor",
+     "proxima": "c31"
+    },
+    "c31": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Você caminha rápido até a curva. A bolsa está no chão, fechada. A mulher ainda está de costas, mexendo na parede, abrindo o cofre embutido com um cartão."
+      },
+      {
+       "q": "voce",
+       "t": "Dani.",
+       "e": "normal"
+      },
+      {
+       "q": "dani",
+       "t": "Ah... Meu Deus. Você não devia estar aqui.",
+       "e": "chocado"
+      },
+      {
+       "q": "narrador",
+       "t": "Ela vira. Sob a gola da camisa, há um cordão prateado. Na mão direita, ainda aberta, ela segura o token do seu certificado."
+      },
+      {
+       "q": "voce",
+       "t": "Foi você que perguntou se eu estava bem. Foi você que achou o pen drive. Eu perguntei quem mais mexia na caixa e você respondeu rápido demais.",
+       "e": "triste",
+       "se": "a7b_perguntou_caixa"
+      },
+      {
+       "q": "voce",
+       "t": "Foi você que me agradeceu, que disse que eu não estava sozinho(a). Eu agradeci de volta.",
+       "e": "triste",
+       "se": "a7b_agradeceu_dani"
+      },
+      {
+       "q": "dani",
+       "t": "Eu ia devolver ao cofre. Eu sempre devolvia.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "O token estava com você. O tempo todo.",
+       "e": "apontando"
+      },
+      {
+       "q": "dani",
+       "t": "Eu posso explicar. Eu preciso que você me deixe explicar. Mas não aqui, e não esta noite. Por favor.",
+       "e": "triste"
+      },
+      {
+       "q": "narrador",
+       "t": "No fundo do corredor, o elevador de serviço abre. Ela não tem mais pressa de escapar. Parece tão cansada quanto você."
+      }
+     ],
+     "local": "corredor",
+     "proxima": "c32"
+    },
+    "c32": {
+     "tipo": "veredicto",
+     "carimbo": "O TOKEN ESTAVA COM DANI",
+     "titulo": "A Assinatura",
+     "texto": "Você provou que o log que acusava Helena era uma montagem, que o laudo de Valério não resistia à cadeia de custódia e que as quatro assinaturas partiram da sua própria estação, com o token na mão de alguém de dentro. Não era a pessoa que as provas apontavam. Era a que você mais protegeu.",
+     "variantes": [
+      {
+       "se": "blefe_descoberto",
+       "carimbo": "O TOKEN ESTAVA COM DANI, MAS...",
+       "titulo": "A Prova que Você Não Tinha",
+       "texto": "Você achou o nome, mas antes disse à relatora que tinha uma imagem que não existia. Marina anotou. A verdade apareceu depois da mentira, e a ordem importa."
+      },
+      {
+       "se": "usou_falsa",
+       "carimbo": "O TOKEN ESTAVA COM DANI, MAS...",
+       "titulo": "O Papel que Você Não Devia Ter Usado",
+       "texto": "Você chegou ao token, mas usou, no meio do caminho, um papel que a perícia desmentia. Numa casa onde cada letra pesa, isso vai pesar."
+      },
+      {
+       "se": "a7_culpou_helena",
+       "carimbo": "O TOKEN ESTAVA COM DANI",
+       "titulo": "A Amiga que Você Afastou",
+       "texto": "A prova inocentou Helena depois de você tê-la afastado. O erro não saiu da ata, mas ficou no silêncio entre vocês dois."
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "a7-pad",
+   "ato": "ato7",
+   "ordem": 4,
+   "numero": 64,
+   "titulo": "Defesa Pessoal",
+   "papel": "investigado",
+   "nivel": "impossivel",
+   "sinopse": "A instrução do processo disciplinar começa. Sem advogado e sem toga, você inquire testemunhas, protesta contra as perguntas de Saulo e enfrenta o homem que assina a reclamação. Marina começa a hesitar, Joana percebe que foi usada, e um depósito revela quem paga a conta.",
+   "posicoes": {
+    "voce": "defesa",
+    "rafael": "escritorio",
+    "helena": "escritorio",
+    "kenji": "testemunha",
+    "dani": "escritorio",
+    "a7marina": "juiz",
+    "a7edgar": "juiz",
+    "a7saulo": "acusacao",
+    "a7ronan": "testemunha",
+    "a7joana": "testemunha",
+    "a7btales": "testemunha",
+    "a7bvera": "testemunha",
+    "a6yhugo": "cena"
+   },
+   "placas": {
+    "defesa": "Defesa pessoal (você)",
+    "acusacao": "Reclamante (Saulo)"
+   },
+   "provas": [
+    {
+     "id": "reclam",
+     "tipo": "prova",
+     "icone": "📨",
+     "nome": "A reclamação do Instituto",
+     "descricao": "Reclamação disciplinar assinada por Ronan Teles, presidente do Instituto Transparência Viva. Alega que o(a) magistrado(a) advogou em causa alheia enquanto ainda era juiz(a), e que continuou a peticionar em horários de audiência."
+    },
+    {
+     "id": "portaria",
+     "tipo": "prova",
+     "icone": "📜",
+     "nome": "Portaria de instauração do PAD",
+     "descricao": "Instaurado após a reclamação e o afastamento cautelar. Reconhece o direito do investigado de se defender sozinho (Lei 9.784, art. 3º, IV), de ter vista dos autos e de produzir provas."
+    },
+    {
+     "id": "dossie",
+     "tipo": "prova",
+     "icone": "📰",
+     "nome": "O dossiê publicado por Joana",
+     "descricao": "Reportagem de capa: «O juiz que advogava». Cita «fontes do Instituto» e traz os horários das quatro petições, sem dizer de onde veio nenhum documento.",
+     "detalhe": "A reportagem existe e foi publicada. O que pesa nela não é a existência: é a origem dos documentos."
+    },
+    {
+     "id": "estatuto_f",
+     "tipo": "prova",
+     "icone": "📕",
+     "nome": "Estatuto do Instituto",
+     "descricao": "Estatuto registrado em cartório, de dois anos atrás, com quatrocentos associados fundadores listados em anexo.",
+     "autentica": false,
+     "indicios": [
+      "O carimbo do cartório usa um modelo de selo que só existe há seis meses.",
+      "O número de matrícula pertence a uma associação de bairro de outro estado.",
+      "As quatrocentas assinaturas repetem a mesma letra em blocos de dez."
+     ]
+    },
+    {
+     "id": "doacoes_f",
+     "tipo": "prova",
+     "icone": "📊",
+     "nome": "Livro de doações",
+     "descricao": "Planilha impressa com mensalidades de quatrocentos associados, de R$ 30 a R$ 200, mês a mês.",
+     "autentica": false,
+     "indicios": [
+      "Os mesmos quarenta nomes se repetem em ordem alfabética a cada mês.",
+      "A planilha foi criada na semana passada, segundo as propriedades do arquivo.",
+      "O total mensal nunca bate com os depósitos reais no extrato."
+     ]
+    },
+    {
+     "id": "print_joana",
+     "tipo": "prova",
+     "icone": "📱",
+     "nome": "Print: «Joana confirma a fonte»",
+     "descricao": "Captura que Saulo diz ser uma mensagem de Joana: «minha fonte é o Instituto, inteira confiança».",
+     "autentica": false,
+     "indicios": [
+      "O nome do contato está certo, mas o número de origem é de operadora diferente da de Joana.",
+      "A fonte da mensagem é uma fonte tipográfica que o aplicativo não usa.",
+      "A hora do balão é incompatível com a ordem das conversas."
+     ]
+    },
+    {
+     "id": "extrato_inst",
+     "tipo": "prova",
+     "icone": "🏦",
+     "nome": "Extrato bancário do Instituto",
+     "descricao": "Em dois anos, quase nenhuma mensalidade. Nos últimos seis meses, três depósitos grandes: R$ 25 mil, R$ 30 mil e R$ 40 mil, todos vindos do mesmo cartão pré-pago, final 4471.",
+     "detalhe": "Emitido pelo banco, com número de autenticação. Autêntico."
+    },
+    {
+     "id": "log_vera",
+     "tipo": "prova",
+     "icone": "🖥️",
+     "nome": "Metadados do dossiê (arquivo de Vera)",
+     "descricao": "O arquivo do dossiê foi criado por um modelo chamado «dossie_v7», com autor inicial «H.F.L.» (as iniciais de Hugo Freitas Lopes), antes de Ronan procurar Joana. Vera só trocou o cabeçalho."
+    },
+    {
+     "id": "contato_fonte",
+     "tipo": "prova",
+     "icone": "☎️",
+     "nome": "Assinatura do e-mail da fonte de Joana",
+     "descricao": "O e-mail anônimo que deu origem ao dossiê traz como contato de retorno o celular final 4471."
+    },
+    {
+     "id": "msg_ronan",
+     "tipo": "prova",
+     "icone": "💬",
+     "nome": "Mensagem de Ronan a Tales",
+     "descricao": "«Assina e cala. O dinheiro entra na sexta, não pergunta de onde. R.» Tales guardou a mensagem fora do aparelho do instituto."
+    },
+    {
+     "id": "carta_demissao",
+     "tipo": "prova",
+     "icone": "✉️",
+     "nome": "Carta de demissão de Tales",
+     "descricao": "Demissão assinada na véspera do relatório sobre depósitos que Tales ia entregar ao conselho fiscal. A carta tem rubrica de Ronan."
+    },
+    {
+     "id": "prepago_altavista",
+     "tipo": "prova",
+     "icone": "🔗",
+     "nome": "Cadastro do pré-pago 4471 (caso Altavista)",
+     "descricao": "Cadastro de linha pré-paga, final 4471, já usada por Fausto e por Pimentel nos casos anteriores e ligada à Altavista. A linha também recebe e emite transferências."
+    }
+   ],
+   "inicio": "c1",
+   "cenas": {
+    "c1": {
+     "tipo": "titulo",
+     "texto": "Ato 7 · Caso 4",
+     "subtitulo": "Defesa Pessoal",
+     "proxima": "c2"
+    },
+    "c2": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Dani não atende. O celular dela está desligado desde a noite do corredor, e ninguém no gabinete sabe onde ela mora. Ou sabe e finge que não."
+      },
+      {
+       "q": "rafael",
+       "t": "Não te chamo pra falar disso. Chamo pra falar de hoje: a instrução do PAD começa às nove. Você vai inquirir testemunhas sozinho(a).",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "A lei me dá esse direito. Nenhum juiz precisa de advogado para se defender num processo administrativo. Precisa de coragem, de papel e de não confundir uma coisa com a outra.",
+       "e": "pensativo"
+      },
+      {
+       "q": "rafael",
+       "t": "Marina mandou um recado: hoje ninguém fala sem a palavra dela. Nem Saulo, nem Edgar, nem você.",
+       "e": "normal"
+      },
+      {
+       "q": "voce",
+       "t": "O SUV de ontem apareceu na esquina da casa de novo, ao amanhecer.",
+       "e": "nervoso",
+       "se": "a7b_seguido_ate_casa"
+      },
+      {
+       "q": "rafael",
+       "t": "Eu coloquei duas fechaduras novas na porta da Sofia. Diz se isso é exagero.",
+       "e": "bravo",
+       "se": "a7b_seguido_ate_casa"
+      },
+      {
+       "q": "rafael",
+       "t": "Aquele rastreador está lacrado e no cofre da Corregedoria, com ofício. A sua ligação de ontem salvou a gente.",
+       "e": "confiante",
+       "se": "a7b_ligou_rafael"
+      },
+      {
+       "q": "helena",
+       "t": "(ao fundo, entrando com a pasta) Eu vim ajudar com a papelada, se você deixar.",
+       "e": "triste",
+       "se": "a7_perdoou_helena"
+      },
+      {
+       "q": "helena",
+       "t": "(do corredor, sem entrar) A pasta está ali. Não vou atrapalhar.",
+       "e": "normal",
+       "se": "a7_culpou_helena"
+      }
+     ],
+     "local": "casa",
+     "proxima": "c3"
+    },
+    "c3": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "rafael",
+       "t": "Tem um problema. O livro do cofre tem a rubrica «D.», e todo mundo sabe que Dani trabalha com você. Se você junta o livro, ela é nomeada. Se você não junta, a sua prova fica incompleta.",
+       "e": "pensativo"
+      }
+     ],
+     "pergunta": "O que você faz com o livro do cofre, que aponta para Dani?",
+     "opcoes": [
+      {
+       "t": "Juntar agora, completo, e deixar que a Corregedoria investigue.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A verdade se prova inteira, ou não se prova.",
+         "e": "bravo"
+        },
+        {
+         "q": "rafael",
+         "t": "Então ela vai ser convocada hoje, antes de poder se explicar.",
+         "e": "triste"
+        }
+       ],
+       "marca": "a7b_juntou_livro"
+      },
+      {
+       "t": "Juntar sob sigilo, com o pedido de que a relatora o abra só depois de ouvir Dani.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Peço prazo, não silêncio. O sigilo protege a pessoa, não o fato.",
+         "e": "pensativo"
+        },
+        {
+         "q": "rafael",
+         "t": "É a saída mais difícil e a mais justa.",
+         "e": "feliz"
+        }
+       ],
+       "marca": "a7b_lacrou_livro"
+      },
+      {
+       "t": "Esperar uns dias antes de juntar qualquer coisa: ainda preciso falar com ela.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Não vou usá-la antes de ouvi-la. Se for um erro, o erro é meu.",
+         "e": "triste"
+        },
+        {
+         "q": "rafael",
+         "t": "O prazo corre, e quem espera, em processo, também se compromete.",
+         "e": "nervoso"
+        }
+       ],
+       "marca": "a7b_esperou_dani"
+      }
+     ],
+     "local": "casa",
+     "livre": true,
+     "proxima": "c4"
+    },
+    "c4": {
+     "tipo": "celular",
+     "local": "carro",
+     "contato": "Joana Ribas",
+     "status": "online",
+     "mensagens": [
+      {
+       "de": "ele",
+       "t": "Eu preciso te dizer uma coisa antes de depor hoje."
+      },
+      {
+       "de": "ele",
+       "t": "O PDF do dossiê que me deram tem uma propriedade escondida: autor «H.F.L.». Eu pesquisei. Pode ser coincidência."
+      },
+      {
+       "de": "ele",
+       "t": "Você me ajudou quando eu errei a primeira vez. Se for armação, eu quero saber primeiro.",
+       "se": "a7_confiou_joana"
+      },
+      {
+       "de": "ele",
+       "t": "Não confio em você. Mas confio menos em quem me deu esse arquivo.",
+       "se": "!a7_confiou_joana"
+      }
+     ],
+     "opcoes": [
+      {
+       "t": "Responder: «Me mande o arquivo original. Eu pago o perito.»",
+       "envia": "Me mande o arquivo original. Eu pago o perito.",
+       "marca": "a7b_pediu_arquivo",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Mando hoje. E se eu tiver sido usada, vou ter que dizer isso em voz alta."
+        }
+       ]
+      },
+      {
+       "t": "Responder: «Não mexa em nada. Vou pedir pela via do PAD.»",
+       "envia": "Não mexa em nada. Vou pedir pela via do PAD.",
+       "marca": "a7b_via_pad",
+       "retorno": [
+        {
+         "de": "ele",
+         "t": "Tudo bem. Mas não me peça para esperar para sempre."
+        }
+       ]
+      },
+      {
+       "t": "Não responder agora."
+      }
+     ],
+     "depois": [
+      {
+       "q": "narrador",
+       "t": "Lá fora, o CNJ parece um bloco de gelo com janelas. Do outro lado da rua, um cinegrafista ajusta a lente quando você desce do carro."
+      }
+     ],
+     "proxima": "c5"
+    },
+    "c5": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Sessão de instrução do processo administrativo disciplinar. Presentes o investigado, em defesa pessoal, e o advogado do reclamante. Registro que o investigado foi cientificado, nos termos do art. 26.",
+       "e": "normal",
+       "recebe": [
+        "portaria",
+        "reclam"
+       ]
+      },
+      {
+       "q": "a7saulo",
+       "t": "Conselheira, o reclamante presume que o investigado fará o que fez nas outras ocasiões: invocar a técnica como escudo.",
+       "e": "confiante"
+      },
+      {
+       "q": "a7marina",
+       "t": "Dr. Saulo, a presunção é do senhor. A minha só se forma com prova.",
+       "e": "bravo"
+      },
+      {
+       "q": "a7edgar",
+       "t": "(sentado ao fundo) Que fique registrado que o Brasil assiste.",
+       "e": "pensativo"
+      },
+      {
+       "q": "voce",
+       "t": "Conselheira, antes de qualquer oitiva, requeiro vista integral dos autos e cópia do dossiê juntado pelo reclamante.",
+       "e": "normal"
+      },
+      {
+       "q": "a7marina",
+       "t": "Fundamente.",
+       "e": "normal"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "c6"
+    },
+    "c6": {
+     "tipo": "argumento",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "O dossiê é matéria jornalística! O investigado não tem direito a cópia de reportagem alguma!",
+       "e": "bravo"
+      }
+     ],
+     "alvo": "«O investigado não tem direito a cópia do dossiê.»",
+     "pergunta": "Que dispositivo da Lei 9.784 garante ao interessado vista do processo e cópias de seus documentos?",
+     "opcoes": [
+      {
+       "t": "Art. 46: os interessados têm direito à vista do processo e a obter certidões ou cópias dos documentos que o integram",
+       "dispositivo": "L9784#art-46",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O dossiê integra o processo porque o reclamante o juntou. Tenho direito à vista e à cópia.",
+         "e": "confiante"
+        },
+        {
+         "q": "a7marina",
+         "t": "Deferido. Cópia integral, hoje.",
+         "e": "normal"
+        }
+       ],
+       "certa": true
+      },
+      {
+       "t": "Art. 44: encerrada a instrução, o interessado tem direito de manifestar-se em dez dias",
+       "dispositivo": "L9784#art-44",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "Esse prazo só corre ao fim da instrução, investigado.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Art. 38: o interessado pode juntar documentos e requerer diligências e perícias",
+       "dispositivo": "L9784#art-38",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "Isso é o seu direito de produzir, não o de acessar o que já está nos autos.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Art. 3º, III: formular alegações e apresentar documentos antes da decisão",
+       "dispositivo": "L9784#art-3/inc-iii",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "É o direito de falar. O de ver vem em outro artigo.",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Os autos estão abertos, doutor Saulo. O senhor tem cópia, e o investigado também.",
+       "e": "normal"
+      }
+     ],
+     "local": "tribunal",
+     "dica": [
+      "O direito de «ver» e de «copiar» está em artigo próprio.",
+      "Procure o verbo «vista» no texto."
+     ],
+     "tempo": 30,
+     "proxima": "c7"
+    },
+    "c7": {
+     "tipo": "investigar",
+     "local": "escritorio",
+     "titulo": "O Instituto Transparência Viva: diligência oficial",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Uma sala comercial de segundo andar, pequena para quatrocentos associados. A Corregedoria autorizou a diligência. Um servidor acompanha, outro anota, e você é o único com o olhar de quem já perdeu algo ali."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "i_estatuto",
+       "nome": "O estatuto emoldurado",
+       "x": 8,
+       "y": 22,
+       "w": 16,
+       "h": 20,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Registro de dois anos, quatrocentos associados fundadores. Um selo de cartório que parece novo demais.",
+         "e": "pensativo",
+         "recebe": [
+          "estatuto_f"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "(Anoto o número de matrícula. Vou conferir com o cartório.)",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "id": "i_mural",
+       "nome": "O livro de doações no mural",
+       "x": 32,
+       "y": 48,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Mensalidades certinhas, de R$ 30 a R$ 200, mês a mês. Quatrocentos nomes em fila.",
+         "e": "normal",
+         "recebe": [
+          "doacoes_f"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Os nomes repetem a ordem alfabética mês após mês. Gente de verdade não paga na ordem do alfabeto.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "i_extrato",
+       "nome": "A conta do instituto, impressa pelo banco",
+       "x": 56,
+       "y": 24,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Em dois anos, quase nenhuma mensalidade. Três depósitos grandes, R$ 25 mil, 30 mil e 40 mil, todos do mesmo cartão pré-pago, final 4471.",
+         "e": "chocado",
+         "recebe": [
+          "extrato_inst"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Um instituto que vive de quatro centenas de pessoas que não existem, e de uma só fonte que não aparece.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "id": "i_pc",
+       "nome": "O computador de Vera",
+       "x": 78,
+       "y": 46,
+       "w": 14,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O arquivo do dossiê tem como modelo um documento chamado «dossie_v7», com autor inicial H.F.L.",
+         "e": "pensativo",
+         "recebe": [
+          "log_vera",
+          "dossie"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "H.F.L. Hugo Freitas Lopes. O advogado de Otto, escrevendo o dossiê de um instituto que acabou de nascer.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "id": "i_impressora",
+       "nome": "A impressora com cabeçalho",
+       "x": 14,
+       "y": 64,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O cabeçalho do papel timbrado do instituto tem a data de criação do arquivo: duas semanas antes da reclamação.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Instituições de dois anos costumam ter papel mais antigo.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "i_cartaz",
+       "nome": "O cartaz da campanha «Justiça Limpa»",
+       "x": 88,
+       "y": 22,
+       "w": 10,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Um cartaz com o meu rosto, em preto e branco, e a palavra «CULPADO» em vermelho. A tinta ainda tem cheiro.",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Impresso na mesma gráfica que fez o selo do estatuto. A gráfica é a mesma do panfleto de quando a Altavista atacou Rafael.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "id": "i_agenda",
+       "nome": "A agenda da sala de reuniões",
+       "x": 6,
+       "y": 48,
+       "w": 14,
+       "h": 12,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Reuniões marcadas todas às quintas, às 17h, com uma única convidada: «Voz». Sem sobrenome.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Quintas, outra vez. Quem se reúne com uma voz sem sobrenome, sempre no mesmo dia?",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "i_cesto",
+       "nome": "O cesto de lixo",
+       "x": 50,
+       "y": 70,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Rascunhos amassados de e-mail. Em um deles, «ele não pode saber que a gente sabe o horário». Assina R.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "A frase da Dani, e da Helena, e de todo mundo que alguém quis me fazer duvidar. Quem reaproveita esse texto sabe das minhas dúvidas.",
+         "e": "triste"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a7bvera",
+       "titulo": "Vera, a secretária",
+       "falas": [
+        {
+         "q": "a7bvera",
+         "t": "Eu só digito. Faço cabeçalho, imprimo e arquivo. O Dr. Ronan me deu o arquivo pronto numa sexta.",
+         "e": "nervoso"
+        },
+        {
+         "q": "a7bvera",
+         "t": "Eu não sabia que era contra um juiz. Pensei que era um relatório de transparência. Quando vi o jornal, quase vomitei.",
+         "e": "triste"
+        },
+        {
+         "q": "voce",
+         "t": "A senhora pode dizer isso na instrução?",
+         "e": "normal"
+        },
+        {
+         "q": "a7bvera",
+         "t": "Se alguém me proteger depois, posso. Eu tenho duas filhas e um aluguel.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "q": "a7ronan",
+       "titulo": "Ronan, no corredor",
+       "falas": [
+        {
+         "q": "a7ronan",
+         "t": "Doutor(a), eu... não tenho nada contra o senhor(a) pessoalmente. É uma causa.",
+         "e": "nervoso"
+        },
+        {
+         "q": "voce",
+         "t": "Uma causa de quatrocentos associados. Que eu não achei.",
+         "e": "normal"
+        },
+        {
+         "q": "a7ronan",
+         "t": "Isso é problema do estatuto, não meu. Prove o contrário em audiência.",
+         "e": "bravo"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "estatuto_f",
+      "doacoes_f",
+      "extrato_inst",
+      "log_vera",
+      "dossie"
+     ],
+     "proxima": "c9"
+    },
+    "c9": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Dr. Saulo, a senhora Joana Ribas é sua testemunha. Inquira.",
+       "e": "normal"
+      },
+      {
+       "q": "narrador",
+       "t": "Você não pode ser advogado, mas pode protestar. A palavra é sua quando alguém comete uma ilegalidade contra a ordem da inquirição."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "Senhora Joana, há quantos anos exerce o jornalismo investigativo?"
+      },
+      {
+       "q": "a7joana",
+       "e": "normal",
+       "t": "Quinze anos. Os últimos oito, só investigação."
+      },
+      {
+       "q": "a7saulo",
+       "e": "apontando",
+       "t": "A senhora concorda que o investigado, como todos sabem, é culpado de ter acumulado as duas funções e que a senhora apenas revelou a verdade?",
+       "incidente": {
+        "pergunta": "Como você protesta contra essa pergunta?",
+        "chamada": "Protesto, conselheira!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "a7joana",
+          "e": "nervoso",
+          "t": "(à meia-voz) Eu não... eu não disse isso."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Pergunta indutiva: já traz a resposta e emite juízo de culpa.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Acolho o protesto. Reformule, doutor, sem conclusões embutidas.",
+            "e": "bravo",
+            "fx": "martelo"
+           }
+          ]
+         },
+         {
+          "t": "A testemunha é parcial e deve ser contraditada.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "A contradita se faz antes do depoimento, art. 214. Indeferido, por extemporâneo.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "A reportagem é prova ilícita, nada do que ela diz vale.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "A reportagem é objeto da pergunta, não prova obtida por meio ilícito. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "A testemunha não presenciou nenhum fato, e a pergunta é irrelevante.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "A pergunta tem relação com a causa; é a forma que a vicia. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a7joana",
+       "e": "pensativo",
+       "t": "Eu apurei, conferi com duas fontes e publiquei o que era de interesse público."
+      },
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "A senhora publicou os horários das quatro petições. De onde vieram esses horários?"
+      },
+      {
+       "q": "a7joana",
+       "e": "nervoso",
+       "t": "De uma fonte do instituto, por e-mail. Eu confirmei com um segundo documento."
+      },
+      {
+       "q": "a7saulo",
+       "e": "apontando",
+       "t": "A senhora já nos disse que a fonte é confiável. Confirme de novo: a fonte é confiável, sim ou não?",
+       "incidente": {
+        "pergunta": "Como você protesta contra essa pergunta?",
+        "chamada": "Protesto, conselheira!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "a7joana",
+          "e": "nervoso",
+          "t": "(irritada) Eu já respondi isso há dois minutos."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Pergunta repetida: a testemunha já respondeu o mesmo ponto.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Acolho. Passe a outro ponto, doutor.",
+            "e": "normal",
+            "fx": "martelo"
+           }
+          ]
+         },
+         {
+          "t": "Pergunta indutiva: sugere que a fonte seja confiável.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Sugere nada. A repetição é o vício aqui. Indeferido nesse fundamento.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "Pergunta impertinente: a confiança em fonte não interessa à causa.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Interessa, e muito. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "Sigilo da fonte: a jornalista não pode ser obrigada a responder.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "A pergunta não pede a identidade da fonte. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a7joana",
+       "e": "bravo",
+       "t": "Confiável o bastante para eu publicar. Hoje, com menos certeza do que ontem."
+      },
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "A senhora reconhece que a data do e-mail da fonte é anterior à reclamação?"
+      },
+      {
+       "q": "a7joana",
+       "e": "pensativo",
+       "t": "Reconheço. Duas semanas anterior. E é isso que me tira o sono."
+      },
+      {
+       "q": "a7saulo",
+       "e": "apontando",
+       "t": "Sabendo que a doutora Helena também participou, a senhora não crê que o investigado agiu em conluio com a advogada, como todo mundo vê?",
+       "incidente": {
+        "pergunta": "Como você protesta contra essa pergunta?",
+        "chamada": "Protesto, conselheira!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "a7joana",
+          "e": "triste",
+          "t": "(baixo) Eu não sei de conluio nenhum."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Pergunta indutiva, que pede opinião de conluio e embute a conclusão.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Acolho. A testemunha depõe sobre fatos, não sobre conluios.",
+            "e": "bravo",
+            "fx": "martelo"
+           }
+          ]
+         },
+         {
+          "t": "A advogada Helena não é parte neste processo e não pode ser citada.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Pode ser citada. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "A pergunta ofende a honra da doutora Helena.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Honra é matéria para outra via. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "A testemunha está cansada e deveria ser dispensada.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Não é fundamento. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "Sem mais perguntas, conselheira."
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "a7marina",
+       "t": "Investigado, não vejo o vício nessa pergunta. Cerceamento de inquirição também é falha, e a ata registra.",
+       "e": "pensativo"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "O investigado conhece a regra da inquirição. Seguiremos.",
+       "e": "normal"
+      },
+      {
+       "q": "a7joana",
+       "t": "(para si mesma) Eu preciso falar com ele, e não é pra ser entrevistada.",
+       "e": "pensativo"
+      }
+     ],
+     "dica": "Perguntas indutivas, repetidas e opinativas ferem o art. 212 do CPP. As regulares seguem sem protesto.",
+     "proxima": "c10"
+    },
+    "c10": {
+     "tipo": "investigar",
+     "local": "cafe",
+     "titulo": "O café em frente ao CNJ: Joana sem gravador",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Joana escolheu a mesa de canto e não ligou o gravador. Ela mexe em um guardanapo como quem não sabe onde pôr as mãos."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "j_pdf",
+       "nome": "O PDF original da fonte",
+       "x": 8,
+       "y": 24,
+       "w": 16,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O arquivo que a fonte mandou a ela tem a mesma propriedade escondida do dossiê: autor H.F.L.",
+         "e": "normal",
+         "recebe": [
+          "contato_fonte"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Quem enviou a Joana o material não se escondeu bem. Queria ser rastreado depois?",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "j_email",
+       "nome": "O e-mail anônimo",
+       "x": 30,
+       "y": 50,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A assinatura do e-mail traz um contato de retorno: celular final 4471.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Final 4471. O mesmo cartão que paga o instituto. A fonte do dossiê e o financiador do instituto são o mesmo número.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "id": "j_notas",
+       "nome": "O caderno de notas dela",
+       "x": 54,
+       "y": 26,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Cada página tem hora, nome e a pergunta que ela não fez. Na última: «por que a fonte só liga às quintas?»",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Alguém se acostuma a falar com a jornalista como quem alimenta um cachorro: sempre no mesmo horário.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "id": "j_print",
+       "nome": "O print que Saulo mostrou",
+       "x": 76,
+       "y": 48,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O print dela, da conversa que ela jamais teve. Ela me mostra a conversa real. O balão é igual, o número é outro.",
+         "e": "normal",
+         "recebe": [
+          "print_joana"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Eles forjaram até o que ela disse que disse.",
+         "e": "chocado"
+        }
+       ]
+      },
+      {
+       "id": "j_cafe",
+       "nome": "A xícara fria dela",
+       "x": 18,
+       "y": 70,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Ela não bebeu. Provavelmente não dormiu.",
+         "e": "triste"
+        },
+        {
+         "q": "voce",
+         "t": "Quem acorda uma manhã descobrindo que foi usada leva uns dias para voltar a ser quem era.",
+         "e": "normal"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a7joana",
+       "titulo": "Joana, a jornalista usada",
+       "falas": [
+        {
+         "q": "a7joana",
+         "t": "Eu publiquei uma coisa que parecia verdadeira porque vinha embrulhada em documentos verdadeiros. Era um embrulho perfeito.",
+         "e": "nervoso"
+        },
+        {
+         "q": "a7joana",
+         "t": "Eu não gosto de ser usada. Eu não gosto de ser a mão de ninguém.",
+         "e": "bravo"
+        },
+        {
+         "q": "voce",
+         "t": "Você pode me dizer o que mais sabe?",
+         "e": "normal"
+        },
+        {
+         "q": "a7joana",
+         "t": "Só que quem me alimentou sempre soube dos seus horários antes de mim. Eu fui só o megafone.",
+         "e": "pensativo"
+        },
+        {
+         "q": "a7joana",
+         "t": "Se você me perdoar, eu falo na audiência. Mas se eu falar, o jornal me demite.",
+         "e": "triste",
+         "se": "a7_confiou_joana"
+        },
+        {
+         "q": "a7joana",
+         "t": "Não vou pedir perdão. Vou pedir que você me deixe consertar.",
+         "e": "bravo",
+         "se": "!a7_confiou_joana"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "contato_fonte",
+      "print_joana"
+     ],
+     "proxima": "c10a"
+    },
+    "c10a": {
+     "tipo": "analisar",
+     "local": "escritorio",
+     "falas": [
+      {
+       "q": "kenji",
+       "t": "(ao telefone, enquanto você mostra as fotos) Seis papéis. Alguns têm cara de verdade e cheiro de forno. Examine tudo antes de descartar.",
+       "e": "pensativo"
+      }
+     ],
+     "provas": [
+      "estatuto_f",
+      "doacoes_f",
+      "print_joana",
+      "extrato_inst",
+      "log_vera",
+      "dossie"
+     ],
+     "falsas": [
+      "estatuto_f",
+      "doacoes_f",
+      "print_joana"
+     ],
+     "dica": [
+      "O extrato é do banco, e o arquivo de Vera tem metadados que ninguém editou: ambos são verdadeiros, ainda que feios para o reclamante.",
+      "O selo de cartório novo, a planilha criada na semana passada e o número da operadora errada são as marcas das fraudes."
+     ],
+     "acerto": [
+      {
+       "q": "kenji",
+       "t": "Estatuto de araque, livro de doações de mentira e um print com número trocado. O que é verdadeiro está nos bancos e nos metadados.",
+       "e": "confiante"
+      },
+      {
+       "q": "voce",
+       "t": "Quem monta papel falso assim sabe que o meu tempo é curto.",
+       "e": "pensativo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "kenji",
+       "t": "Autêntico descartado é prova jogada fora; falso mantido é tiro no pé. Reveja.",
+       "e": "nervoso"
+      }
+     ],
+     "proxima": "c10b"
+    },
+    "c10b": {
+     "tipo": "argumento",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "O print da conversa da jornalista foi juntado por mim e está nos autos. Pertence ao processo, e a relatora não pode ignorá-lo.",
+       "e": "confiante"
+      },
+      {
+       "q": "voce",
+       "t": "(Eu já sei que ele é falso. Preciso do instrumento certo para pedir que a falsidade seja apurada, sem acusar de graça.)",
+       "e": "pensativo"
+      }
+     ],
+     "alvo": "«O print está nos autos; a relatora deve valorá-lo como prova.»",
+     "pergunta": "Que dispositivo permite arguir, por escrito, a falsidade de um documento já juntado?",
+     "opcoes": [
+      {
+       "t": "CPP, art. 145: arguida por escrito a falsidade de documento constante dos autos, o juiz observará o processo do incidente",
+       "dispositivo": "CPP#art-145",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "Instaure-se o incidente. O reclamante será intimado a se manifestar, e o perito oficial examinará o print.",
+         "e": "normal"
+        },
+        {
+         "q": "a7saulo",
+         "t": "Conselheira, é um gesto de pura retaliação.",
+         "e": "nervoso"
+        }
+       ],
+       "certa": true
+      },
+      {
+       "t": "CPP, art. 157: são inadmissíveis as provas ilícitas",
+       "dispositivo": "CPP#art-157",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "O vício aqui é de autenticidade, não de obtenção. O incidente é o caminho.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Lei 9.784, art. 30: são inadmissíveis as provas obtidas por meios ilícitos",
+       "dispositivo": "L9784#art-30",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "De novo, a ilicitude na obtenção. O seu argumento é de falsidade do documento.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Lei 9.784, art. 38, § 2º: só podem ser recusadas provas ilícitas, impertinentes, desnecessárias ou protelatórias",
+       "dispositivo": "L9784#art-38/par-2",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "Essa regra protege quem propõe prova. O senhor quer o contrário: apurar a falsidade de uma.",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Incidente instaurado, e o print fica suspenso até o laudo.",
+       "e": "normal"
+      }
+     ],
+     "local": "tribunal",
+     "dica": [
+      "A falsidade de documento nos autos tem um incidente próprio.",
+      "No CPP, procure o artigo que começa com «Arguida, por escrito, a falsidade»."
+     ],
+     "tempo": 30,
+     "proxima": "c11"
+    },
+    "c11": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Fim da tarde. Um sobrado simples na periferia de Ceilândia. A luz da varanda está acesa, e a cortina, fechada. Quem mora ali não abre a porta a ninguém desde que foi demitido."
+      },
+      {
+       "q": "a7btales",
+       "t": "Eu vi o senhor(a) no jornal, e eu... eu sabia que um dia alguém bateria aqui. Entra, mas fala baixo. A minha mãe dorme.",
+       "e": "nervoso"
+      },
+      {
+       "q": "voce",
+       "t": "Sou investigado(a), não polícia. Não posso prometer proteção. Posso prometer escutar e, se for útil, levar à relatora.",
+       "e": "normal"
+      }
+     ],
+     "local": "casa",
+     "proxima": "c12"
+    },
+    "c12": {
+     "tipo": "investigar",
+     "local": "casa",
+     "titulo": "A sala de Tales: o que guardou",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Uma sala com sofá cobrindo uma mesa, e sobre a mesa, uma pasta azul que parece ter sido aberta e fechada centenas de vezes."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "t_pasta",
+       "nome": "A pasta azul",
+       "x": 8,
+       "y": 24,
+       "w": 16,
+       "h": 18,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A carta de demissão de Tales, assinada na véspera do relatório que ele ia entregar. A rubrica de Ronan está nela.",
+         "e": "normal",
+         "recebe": [
+          "carta_demissao"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Demitido na véspera de contar. O Instituto não perde assessor: perde testemunha.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "id": "t_mensagens",
+       "nome": "Mensagens impressas",
+       "x": 30,
+       "y": 50,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "«Assina e cala. O dinheiro entra na sexta, não pergunta de onde. R.» Impressa de um aparelho antigo, fora do instituto.",
+         "e": "chocado",
+         "recebe": [
+          "msg_ronan"
+         ]
+        },
+        {
+         "q": "voce",
+         "t": "Ronan, escrito por Ronan. O dinheiro entra antes de qualquer pergunta.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "id": "t_planilha",
+       "nome": "A planilha rascunhada à mão",
+       "x": 54,
+       "y": 26,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Três valores circulados: 25, 30, 40. E, ao lado, uma sigla: «pré 4471». Letra apertada, de quem copia o que não pode levar.",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Quem anota à mão tem medo de computador.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "id": "t_foto",
+       "nome": "A foto da mãe na parede",
+       "x": 76,
+       "y": 46,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Uma senhora de lenço, sorrindo. Embaixo, um bilhete com letra de criança: «Vó, a gente vai passar de ano.»",
+         "e": "triste"
+        },
+        {
+         "q": "voce",
+         "t": "Todo mundo tem alguma coisa a perder. Os maus sabem exatamente o quê.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "t_relogio",
+       "nome": "O relógio parado na parede",
+       "x": 40,
+       "y": 12,
+       "w": 12,
+       "h": 12,
+       "falas": [
+        {
+         "q": "a7btales",
+         "t": "Parou no dia em que eu fui demitido. Minha mãe não quer trocar a pilha.",
+         "e": "triste"
+        },
+        {
+         "q": "voce",
+         "t": "Há objetos que viram prova só por terem sido o último a funcionar.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "id": "t_caderno",
+       "nome": "O caderno da neta",
+       "x": 88,
+       "y": 60,
+       "w": 10,
+       "h": 12,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Uma redação da neta: «Meu avô herói é um moço que não mente». O caderno é de escola pública.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Uma letra torta, de criança, ensinando a Ronan o que ele devia ter aprendido.",
+         "e": "feliz"
+        }
+       ]
+      },
+      {
+       "id": "t_janela",
+       "nome": "A janela com grade nova",
+       "x": 18,
+       "y": 66,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A grade foi trocada há dias. A tinta ainda cheira. Alguém mandou pôr, ou alguém deixou aviso de que viria.",
+         "e": "nervoso"
+        },
+        {
+         "q": "narrador",
+         "t": "Na calçada, um carro parado. Sem ninguém dentro. Com o motor, ainda quente."
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "a7btales",
+       "titulo": "Tales, o ex-assessor",
+       "falas": [
+        {
+         "q": "a7btales",
+         "t": "Eu fui lá feliz. Achava que era um instituto pequeno que fazia o bem. Em seis meses, já era outra coisa.",
+         "e": "triste"
+        },
+        {
+         "q": "a7btales",
+         "t": "Os depósitos vinham de um cartão pré-pago. Eu perguntei e me disseram «doação anônima de apoiador».",
+         "e": "nervoso"
+        },
+        {
+         "q": "voce",
+         "t": "E o dossiê?",
+         "e": "normal"
+        },
+        {
+         "q": "a7btales",
+         "t": "Chegou pronto num pen drive. Ronan mandou a Vera trocar o cabeçalho. Quando eu disse que ia contar ao conselho fiscal, ele me demitiu.",
+         "e": "triste"
+        },
+        {
+         "q": "a7btales",
+         "t": "Não sei se tenho coragem de repetir isso numa sala com Saulo. Mas se o senhor(a) me chamar, eu vou.",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "requer": [
+      "carta_demissao",
+      "msg_ronan"
+     ],
+     "proxima": "c13"
+    },
+    "d_vera": {
+     "tipo": "depoimento",
+     "testemunha": "a7bvera",
+     "titulo": "Vera Lins, secretária",
+     "intro": [
+      {
+       "q": "a7bvera",
+       "t": "Eu só quero dizer o que eu vi.",
+       "e": "nervoso"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Recebi o dossiê pronto num pen drive e só troquei o cabeçalho.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "a7bvera",
+         "t": "Foi numa sexta, no fim do dia. Pronto, fechado.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "Nunca vi o Dr. Ronan escrever uma linha do dossiê.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "a7bvera",
+         "t": "Ele nem sabe usar o modelo. Eu que salvo os arquivos dele.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "t": "Fui orientada a dizer, se perguntassem, que o instituto tinha quatrocentos associados.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "a7bvera",
+         "t": "Eu repeti. Eu só conheço onze.",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "a7bvera",
+       "t": "Eu... eu falo a verdade.",
+       "e": "nervoso"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Registre-se. A testemunha está dispensada, com a proteção da relatora.",
+       "e": "normal"
+      },
+      {
+       "q": "a7bvera",
+       "t": "Obrigada. Eu não dormi desde que vi o jornal.",
+       "e": "triste"
+      }
+     ],
+     "veracidade": {
+      "mente": false
+     },
+     "erro_veraz": [
+      {
+       "q": "a7bvera",
+       "t": "Eu já estou falando a verdade.",
+       "e": "nervoso"
+      }
+     ]
+    },
+    "d_helena2": {
+     "tipo": "depoimento",
+     "testemunha": "helena",
+     "titulo": "Helena Vasconcelos, declarante",
+     "intro": [
+      {
+       "q": "helena",
+       "t": "Vim porque a minha carta à Corregedoria foi mal usada. Quero explicá-la inteira.",
+       "e": "normal"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Fui à Corregedoria na sexta, às nove, para assumir a ideia do «só desta vez».",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "helena",
+         "t": "Foi minha, não dele. Eu insisti.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "t": "O investigado não sabia da minha carta nem do que eu ia dizer.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "helena",
+         "t": "Soube pelos jornais, como todo mundo.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "Eu jamais usaria o token sem ordem. Em março havia ordem, e eu devolvi.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "helena",
+         "t": "A Dani conferiu a devolução. Está no verso do recibo.",
+         "e": "confiante"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "helena",
+       "t": "Eu estou falando a verdade.",
+       "e": "nervoso"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "A declaração foi espontânea e favorece o investigado em parte e o prejudica em parte. Anotado.",
+       "e": "pensativo"
+      }
+     ],
+     "veracidade": {
+      "mente": false
+     },
+     "erro_veraz": [
+      {
+       "q": "helena",
+       "t": "Não preciso de prova para dizer o que fiz.",
+       "e": "nervoso"
+      }
+     ]
+    },
+    "d_kenji2": {
+     "tipo": "depoimento",
+     "testemunha": "kenji",
+     "titulo": "Dr. Kenji Sato, perito",
+     "intro": [
+      {
+       "q": "kenji",
+       "t": "Repito o que medi, com as ressalvas de praxe.",
+       "e": "normal"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O arquivo do dossiê traz autoria H.F.L. nas propriedades, e a data de criação precede a reclamação.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "kenji",
+         "t": "Conferi no original, duas vezes.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "Não posso afirmar quem usou o token. Posso dizer onde e quando.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "kenji",
+         "t": "É o limite do meu método.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "O rastreador do carro do investigado é de modelo comercial, comprado por quem tinha cartão corporativo.",
+       "e": "pensativo",
+       "pressionar": [
+        {
+         "q": "kenji",
+         "t": "A série é de um lote vendido a uma empresa de segurança.",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "kenji",
+       "t": "Não preciso ser pressionado, só ouvido.",
+       "e": "nervoso"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Anotado. O perito está dispensado.",
+       "e": "normal"
+      }
+     ],
+     "veracidade": {
+      "mente": false
+     },
+     "erro_veraz": [
+      {
+       "q": "kenji",
+       "t": "Eu já estou dizendo o que sei.",
+       "e": "nervoso"
+      }
+     ]
+    },
+    "c13": {
+     "tipo": "convocar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "O investigado pode requerer a oitiva de até duas testemunhas por hoje. Quem o senhor chama?",
+       "e": "normal"
+      }
+     ],
+     "pergunta": "A quem você pede a palavra nesta manhã?",
+     "limite": 2,
+     "minimo": 1,
+     "opcoes": [
+      {
+       "q": "a7bvera",
+       "rotulo": "Vera Lins, a secretária que digitou o dossiê",
+       "perfil": "verdadeira",
+       "risco": "baixo",
+       "depoimento": "d_vera",
+       "falas": [
+        {
+         "q": "a7bvera",
+         "t": "Vou dizer só o que vi.",
+         "e": "nervoso"
+        }
+       ],
+       "efeito": {
+        "marca": "a7b_ouviu_vera"
+       }
+      },
+      {
+       "q": "helena",
+       "rotulo": "Helena Vasconcelos, que escreveu à Corregedoria",
+       "perfil": "verdadeira",
+       "risco": "medio",
+       "depoimento": "d_helena2",
+       "falas": [
+        {
+         "q": "helena",
+         "t": "Eu vim.",
+         "e": "normal"
+        }
+       ],
+       "efeito": {
+        "marca": "a7b_ouviu_helena",
+        "cred": -1
+       }
+      },
+      {
+       "q": "kenji",
+       "rotulo": "Dr. Kenji Sato, o perito",
+       "perfil": "verdadeira",
+       "risco": "baixo",
+       "depoimento": "d_kenji2",
+       "falas": [
+        {
+         "q": "kenji",
+         "t": "À disposição.",
+         "e": "normal"
+        }
+       ],
+       "efeito": {
+        "marca": "a7b_ouviu_kenji"
+       }
+      }
+     ],
+     "encerrar": "Encerrar a convocação",
+     "proxima": "c14"
+    },
+    "c14": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Chamo o reclamante, Ronan Teles. O investigado inquirirá, como lhe faculta a lei. O senhor Ronan presta o compromisso do art. 203 do CPP, aplicado por analogia.",
+       "e": "normal"
+      },
+      {
+       "q": "a7ronan",
+       "t": "Eu... compareço por livre vontade, conselheira.",
+       "e": "nervoso"
+      },
+      {
+       "q": "a7saulo",
+       "t": "O reclamante é um cidadão. Peço que o investigado respeite a sua condição.",
+       "e": "confiante"
+      },
+      {
+       "q": "a7marina",
+       "t": "A condição de cidadão não o isenta de dizer a verdade, Dr. Saulo.",
+       "e": "bravo"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "d_ronan"
+    },
+    "d_ronan": {
+     "tipo": "depoimento",
+     "testemunha": "a7ronan",
+     "titulo": "Ronan Teles, presidente do Instituto",
+     "intro": [
+      {
+       "q": "a7ronan",
+       "t": "Eu fundei o instituto com as minhas próprias mãos.",
+       "e": "nervoso"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "O Instituto tem dois anos e quatrocentos associados que sustentam a nossa atuação.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Quatrocentos associados pagam mensalidade?",
+         "e": "normal"
+        },
+        {
+         "q": "a7ronan",
+         "t": "Todos, mês a mês.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "t": "Eu mesmo apurei os fatos e redigi o dossiê, madrugadas a fio.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "O senhor escreveu? À mão ou no computador?",
+         "e": "normal"
+        },
+        {
+         "q": "a7ronan",
+         "t": "No computador, claro.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "Jamais recebi um centavo de empresa ou de político para assinar esta reclamação.",
+       "e": "apontando",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Nem de uma só pessoa?",
+         "e": "normal"
+        },
+        {
+         "q": "a7ronan",
+         "t": "Nem de uma só.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "Minha única motivação é a moralidade do Judiciário.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "voce",
+         "t": "Moralidade. E as dívidas pessoais?",
+         "e": "normal"
+        },
+        {
+         "q": "a7ronan",
+         "t": "Não vejo relação.",
+         "e": "bravo"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "t": "Essa prova não desmente essa afirmação. Prefiro pensar mais um instante.",
+       "e": "pensativo"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7ronan",
+       "t": "Eu recebi... apoio. Isso não é crime.",
+       "e": "nervoso"
+      },
+      {
+       "q": "a7marina",
+       "t": "A senhora relatora registra: o reclamante se contradisse sobre a origem do dossiê e sobre os recursos do instituto.",
+       "e": "bravo",
+       "fx": "martelo"
+      },
+      {
+       "q": "a7saulo",
+       "t": "Peço um breve recesso, conselheira.",
+       "e": "nervoso"
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "extrato_inst"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "t": "O extrato do banco: em dois anos, quase nenhuma mensalidade. Três depósitos grandes, do mesmo cartão pré-pago. Onde estão os quatrocentos?",
+         "e": "apontando",
+         "fx": "protesto"
+        },
+        {
+         "q": "a7ronan",
+         "t": "Isso é... uma fase. Alguns pagam em dinheiro.",
+         "e": "chocado"
+        }
+       ]
+      },
+      {
+       "afirmacao": 1,
+       "provas": [
+        "log_vera"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "t": "O arquivo do dossiê tem autor «H.F.L.» e foi criado duas semanas antes de o senhor procurar a imprensa. O senhor escreveu ou assinou?",
+         "e": "apontando",
+         "fx": "protesto"
+        },
+        {
+         "q": "a7ronan",
+         "t": "Eu... revisei. Sim, revisei.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "afirmacao": 2,
+       "provas": [
+        "msg_ronan"
+       ],
+       "acerto": [
+        {
+         "q": "voce",
+         "t": "«Assina e cala. O dinheiro entra na sexta, não pergunta de onde. R.» É sua?",
+         "e": "apontando",
+         "fx": "protesto"
+        },
+        {
+         "q": "a7ronan",
+         "t": "Isso foi tirado de contexto!",
+         "e": "chocado"
+        }
+       ]
+      }
+     ],
+     "exige": 2,
+     "dica": [
+      "Três das quatro afirmações têm prova: conta, arquivo e mensagem.",
+      "Basta derrubar duas para a relatora ver o desenho."
+     ],
+     "veracidade": {
+      "mente": true,
+      "escala": 5,
+      "revela": [
+       {
+        "q": "a7marina",
+        "t": "A relatora risca uma linha inteira do caderno e escreve outra, por cima.",
+        "e": "pensativo"
+       }
+      ],
+      "sinais": [
+       {
+        "afirmacao": 0,
+        "tipo": "evasiva",
+        "pressao": 2
+       },
+       {
+        "afirmacao": 3,
+        "tipo": "nervosismo",
+        "pressao": 3
+       }
+      ]
+     },
+     "proxima": "c15"
+    },
+    "c15": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Concedo cinco minutos. E quero ouvir o ex-assessor, Tales Quintão, em acareação com o reclamante.",
+       "e": "normal"
+      },
+      {
+       "q": "a7saulo",
+       "t": "Conselheira, o ex-assessor foi demitido por justa causa e quer se vingar!",
+       "e": "bravo"
+      },
+      {
+       "q": "a7marina",
+       "t": "Se a causa foi justa, o senhor não terá medo da acareação. Art. 229 do CPP, por analogia.",
+       "e": "bravo"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "c16"
+    },
+    "ac_ronan": {
+     "tipo": "depoimento",
+     "testemunha": "a7ronan",
+     "titulo": "Ronan, em acareação",
+     "intro": [
+      {
+       "q": "a7ronan",
+       "t": "Mantenho a minha versão.",
+       "e": "nervoso"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Tales saiu do instituto por vontade própria.",
+       "e": "confiante",
+       "pressionar": [
+        {
+         "q": "a7ronan",
+         "t": "Pediu demissão, com carta e tudo.",
+         "e": "confiante"
+        }
+       ]
+      },
+      {
+       "t": "Nunca houve depósito fora da contabilidade oficial.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "a7ronan",
+         "t": "Tudo está nos livros.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "O dossiê é do instituto, de A a Z.",
+       "e": "apontando",
+       "pressionar": [
+        {
+         "q": "a7ronan",
+         "t": "Fui eu que mandei redigir.",
+         "e": "apontando"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "a7ronan",
+       "t": "Esse papel não fala disso.",
+       "e": "nervoso"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7ronan",
+       "t": "Eu...",
+       "e": "nervoso"
+      }
+     ],
+     "contradicoes": [
+      {
+       "afirmacao": 0,
+       "provas": [
+        "carta_demissao"
+       ],
+       "acerto": []
+      },
+      {
+       "afirmacao": 1,
+       "provas": [
+        "extrato_inst"
+       ],
+       "acerto": []
+      },
+      {
+       "afirmacao": 2,
+       "provas": [
+        "log_vera"
+       ],
+       "acerto": []
+      }
+     ]
+    },
+    "ac_tales": {
+     "tipo": "depoimento",
+     "testemunha": "a7btales",
+     "titulo": "Tales Quintão, ex-assessor",
+     "intro": [
+      {
+       "q": "a7btales",
+       "t": "Eu vou falar. Já passou da hora.",
+       "e": "nervoso"
+      }
+     ],
+     "afirmacoes": [
+      {
+       "t": "Fui demitido na véspera de entregar o relatório dos depósitos ao conselho fiscal.",
+       "e": "triste",
+       "pressionar": [
+        {
+         "q": "a7btales",
+         "t": "A carta tem a rubrica dele.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "t": "Houve três depósitos do cartão final 4471, o último de R$ 40 mil.",
+       "e": "nervoso",
+       "pressionar": [
+        {
+         "q": "a7btales",
+         "t": "Eu anotei à mão.",
+         "e": "nervoso"
+        }
+       ]
+      },
+      {
+       "t": "O dossiê chegou pronto num pen drive e só mandaram trocar o cabeçalho.",
+       "e": "normal",
+       "pressionar": [
+        {
+         "q": "a7btales",
+         "t": "A Vera sabe.",
+         "e": "normal"
+        }
+       ]
+      }
+     ],
+     "erro": [
+      {
+       "q": "a7btales",
+       "t": "Eu estou falando a verdade.",
+       "e": "nervoso"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Anotado.",
+       "e": "normal"
+      }
+     ],
+     "veracidade": {
+      "mente": false
+     },
+     "erro_veraz": [
+      {
+       "q": "a7btales",
+       "t": "Eu já disse a verdade.",
+       "e": "nervoso"
+      }
+     ]
+    },
+    "c16": {
+     "tipo": "acareacao",
+     "a": "ac_ronan",
+     "b": "ac_tales",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Procedo à acareação. Investigado, indique a prova que desfaz cada divergência.",
+       "e": "normal"
+      }
+     ],
+     "pares": [
+      {
+       "a": 0,
+       "b": 0,
+       "prova": "carta_demissao",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A carta de demissão, com a rubrica de Ronan, foi assinada na véspera do relatório que Tales ia entregar. Não é «vontade própria».",
+         "e": "apontando"
+        }
+       ]
+      },
+      {
+       "a": 1,
+       "b": 1,
+       "prova": "extrato_inst",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "O extrato do banco traz os três depósitos de que Tales fala: 25, 30 e 40 mil, do cartão final 4471. Fora da contabilidade de associados.",
+         "e": "apontando"
+        }
+       ]
+      },
+      {
+       "a": 2,
+       "b": 2,
+       "prova": "log_vera",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Os metadados mostram que o dossiê nasceu de um modelo de H.F.L., antes de Ronan procurar a imprensa. Não é «do instituto, de A a Z».",
+         "e": "apontando"
+        }
+       ]
+      }
+     ],
+     "dica": "Cada divergência tem uma prova: carta, extrato, metadados.",
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Registro: o reclamante não se sustenta diante do ex-assessor e dos documentos.",
+       "e": "bravo"
+      },
+      {
+       "q": "a7ronan",
+       "t": "Eu... preciso de um advogado diferente.",
+       "e": "chocado"
+      }
+     ],
+     "erro": [
+      {
+       "q": "kenji",
+       "t": "(baixo) A prova certa fecha o par. Cada divergência tem a sua.",
+       "e": "nervoso"
+      }
+     ],
+     "proxima": "c17"
+    },
+    "c17": {
+     "tipo": "protesto",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Dr. Saulo, o perito do investigado, Dr. Kenji, está à sua disposição para perguntas.",
+       "e": "normal"
+      },
+      {
+       "q": "narrador",
+       "t": "A inquirição de um perito admite perguntas duras. Mas há perguntas que não são dura: são ilegais."
+      }
+     ],
+     "linhas": [
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "Doutor Kenji, qual a sua formação e há quanto tempo atua em computação forense?"
+      },
+      {
+       "q": "kenji",
+       "e": "normal",
+       "t": "Doutorado em engenharia da computação, quatorze anos de perícia criminal."
+      },
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "O senhor reconhece que não sabe quem digitou o PIN do token nas quatro ocasiões?"
+      },
+      {
+       "q": "kenji",
+       "e": "normal",
+       "t": "Reconheço. Sei onde estava o token e quando. Quem digitou, não."
+      },
+      {
+       "q": "a7saulo",
+       "e": "apontando",
+       "t": "O senhor, como amigo de longa data do investigado, acha que ele é culpado ou inocente?",
+       "incidente": {
+        "pergunta": "Como você protesta contra essa pergunta?",
+        "chamada": "Protesto, conselheira!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "kenji",
+          "e": "nervoso",
+          "t": "Eu sou perito, não juiz. Isso não me compete."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Pergunta sem relação com a perícia: pede juízo de culpa a quem só mede dados.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Acolho. O perito responde sobre método e resultado, não sobre culpa.",
+            "e": "bravo",
+            "fx": "martelo"
+           }
+          ]
+         },
+         {
+          "t": "O perito é suspeito por ser amigo e deveria ser afastado.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Amizade é matéria de contradita prévia. A pergunta é que é viciada. Indeferido nesse fundamento.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é indutiva porque traz a resposta embutida.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Não traz resposta alguma. É de natureza impertinente.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "Sigilo profissional do perito.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Não há sigilo envolvido. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "Voltando ao hash: o senhor garante que a diferença entre …3f20 e …a91c não foi um erro de transcrição?"
+      },
+      {
+       "q": "kenji",
+       "e": "normal",
+       "t": "Garanto. Copiei e colei do terminal, e conferi com o técnico do STI."
+      },
+      {
+       "q": "a7saulo",
+       "e": "apontando",
+       "t": "Repita, pela terceira vez, o que o hash diferente prova sobre o arquivo do doutor Valério.",
+       "incidente": {
+        "pergunta": "Como você protesta contra essa pergunta?",
+        "chamada": "Protesto, conselheira!",
+        "fundamentos": [
+         {
+          "chave": "CPP#art-212",
+          "trecho": "não admitindo o juiz aquelas que puderem induzir a resposta, não tiverem relação com a causa ou importarem na repetição de outra já respondida"
+         }
+        ],
+        "omissao": [
+         {
+          "q": "kenji",
+          "e": "nervoso",
+          "t": "Já respondi duas vezes. A resposta continua a mesma."
+         }
+        ],
+        "opcoes": [
+         {
+          "t": "Repetição de pergunta já respondida duas vezes.",
+          "certa": true,
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Acolho. Já constou na ata, doutor.",
+            "e": "normal",
+            "fx": "martelo"
+           }
+          ]
+         },
+         {
+          "t": "Pergunta indutiva: sugere que o hash prova tudo.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Pede apenas repetição. O vício é outro.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "O perito não pode explicar o hash, que é matéria de direito.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "É matéria técnica. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         },
+         {
+          "t": "A pergunta é ofensiva ao perito.",
+          "falas": [
+           {
+            "q": "a7marina",
+            "t": "Não ofende. Indeferido.",
+            "e": "pensativo"
+           }
+          ]
+         }
+        ]
+       }
+      },
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "O senhor concorda que o rastreador encontrado no carro pode ter sido colocado por qualquer pessoa?"
+      },
+      {
+       "q": "kenji",
+       "e": "pensativo",
+       "t": "Concordo. Posso dizer apenas de qual lote e para qual cliente a série foi vendida."
+      },
+      {
+       "q": "a7saulo",
+       "e": "normal",
+       "t": "Sem mais perguntas."
+      }
+     ],
+     "erro_interromper": [
+      {
+       "q": "a7marina",
+       "t": "A pergunta era regular, investigado. A ata registra o protesto infundado.",
+       "e": "pensativo"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Os protestos foram bem fundamentados. Seguimos.",
+       "e": "normal"
+      }
+     ],
+     "dica": "Opinião sobre culpa e repetição de pergunta já respondida ferem o art. 212. Perguntas duras sobre método são regulares.",
+     "proxima": "c18"
+    },
+    "c18": {
+     "tipo": "reviravolta",
+     "banner": "REVIRAVOLTA!",
+     "sub": "O reclamante desiste da reclamação",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "Conselheira, diante do desgaste, o Instituto Transparência Viva desiste, por escrito, da reclamação. Com isso, requeiro o arquivamento imediato.",
+       "e": "apontando"
+      },
+      {
+       "q": "a7ronan",
+       "t": "Eu... é isso. Eu desisto. Quero ir embora.",
+       "e": "nervoso"
+      },
+      {
+       "q": "a7edgar",
+       "t": "(de pé, ao fundo) A desistência de um reclamante cheio de dúvidas não apaga a vergonha do Judiciário!",
+       "e": "bravo"
+      },
+      {
+       "q": "narrador",
+       "t": "Por um segundo, a sala inteira respira. Depois, todos olham para Marina."
+      }
+     ],
+     "ajuste": -1,
+     "piso": 2,
+     "musica": "pressao",
+     "proxima": "c19"
+    },
+    "c19": {
+     "tipo": "argumento",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "A desistência do reclamante extingue o processo. Sem interessado, não há Administração a instruir.",
+       "e": "confiante"
+      }
+     ],
+     "alvo": "«Desistido o pedido, o processo se extingue automaticamente.»",
+     "pergunta": "Que dispositivo mostra que a desistência não impede o prosseguimento do PAD?",
+     "opcoes": [
+      {
+       "t": "Lei 9.784, art. 51, § 2º: a desistência não prejudica o prosseguimento se o interesse público exigir",
+       "dispositivo": "L9784#art-51/par-2",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "O processo disciplinar protege o interesse público, não o desejo do reclamante. Segue de ofício. E isso vale também para a defesa do investigado: a verdade será apurada inteira.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "(Eu torci para acabar. Agora preciso que acabe pelo caminho certo.)",
+         "e": "triste"
+        }
+       ],
+       "certa": true
+      },
+      {
+       "t": "Lei 9.784, art. 51, § 1º: com vários interessados, a desistência atinge só quem a formulou",
+       "dispositivo": "L9784#art-51/par-1",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "Isso trata de vários interessados. O ponto aqui é o interesse público.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Lei 9.784, art. 29: a instrução se faz de ofício ou por impulso do órgão responsável",
+       "dispositivo": "L9784#art-29",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "Verdade, mas o dispositivo específico sobre desistência é outro.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Lei 9.784, art. 2º, par. único, XII: impulsão de ofício do processo",
+       "dispositivo": "L9784#art-2/par-unico/inc-xii",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "É princípio geral. A norma específica sobre desistência é mais precisa.",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "acerto": [
+      {
+       "q": "a7marina",
+       "t": "Desistência indeferida. O processo prossegue.",
+       "e": "bravo",
+       "fx": "martelo"
+      }
+     ],
+     "local": "tribunal",
+     "dica": [
+      "Procure o artigo que trata de desistência e interesse público.",
+      "Está no art. 51."
+     ],
+     "tempo": 25,
+     "proxima": "c20"
+    },
+    "c20": {
+     "tipo": "escolha",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "O reclamante tinha o dever de expor os fatos conforme a verdade. Se ele sabia que parte era falsa, há consequência penal. Investigado, o senhor concorda?",
+       "e": "pensativo"
+      }
+     ],
+     "pergunta": "Ronan pode responder por denunciação caluniosa (CP, art. 339)? Qual é o limite honesto da sua tese?",
+     "opcoes": [
+      {
+       "t": "Sim, por tudo: a reclamação inteira é falsa e ele sabia.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Não posso afirmar isso. Eu realmente advoguei em causa alheia enquanto juiz. Essa parte é verdadeira, e não vou negá-la.",
+         "e": "nervoso"
+        },
+        {
+         "q": "a7marina",
+         "t": "Ainda bem que o senhor percebeu a diferença, investigado.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "t": "Só quanto aos fatos que ele sabia falsos: as assinaturas atribuídas a mim e a montagem do instituto. O resto, que é verdadeiro, eu respondo.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A denunciação exige que o autor saiba inocente quem acusa. Eu não sou inocente da incompatibilidade: sou inocente das quatro petições. Dessas, ele sabia.",
+         "e": "confiante"
+        },
+        {
+         "q": "a7marina",
+         "t": "Anotado. E registro a honestidade do investigado: poucos defendem a sua parte culpada.",
+         "e": "normal"
+        }
+       ],
+       "certa": true,
+       "fundamentos": [
+        {
+         "chave": "CP#art-339",
+         "trecho": "Dar causa à instauração de inquérito policial, de procedimento investigatório criminal, de processo judicial, de processo administrativo disciplinar"
+        }
+       ]
+      },
+      {
+       "t": "Não: reclamar ao CNJ é direito de qualquer um e nunca se pune.",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "Reclamar é direito. Mentir sabendo é crime. A diferença existe.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Sim, e a pena aumenta por ele ter usado nome suposto no instituto.",
+       "falas": [
+        {
+         "q": "a7marina",
+         "t": "O instituto existe, ainda que de papel. Não houve nome suposto na reclamação.",
+         "e": "pensativo"
+        }
+       ]
+      }
+     ],
+     "local": "tribunal",
+     "dica": [
+      "Seja honesto sobre o que você de fato fez.",
+      "A denunciação exige que o autor SAIBA inocente quem acusa."
+     ],
+     "tempo": 40,
+     "proxima": "c21"
+    },
+    "c21": {
+     "tipo": "blefe",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7saulo",
+       "t": "Então que o investigado diga quem paga o instituto! Se ele sabe, que diga!",
+       "e": "bravo"
+      },
+      {
+       "q": "a6yhugo",
+       "t": "(sentado na última fila, sem se levantar) Tenho certeza de que o investigado só tem insinuações.",
+       "e": "normal"
+      }
+     ],
+     "pergunta": "Saulo exige que você diga quem financia o instituto. Você tem o cartão final 4471, mas não sabe de quem é.",
+     "opcoes": [
+      {
+       "t": "Blefar: «O cartão 4471 pertence à Construtora Altavista, e tenho o cadastro completo.»",
+       "blefe": {
+        "resultado": "descoberto",
+        "falas": [
+         {
+          "q": "a7marina",
+          "t": "Junte o cadastro, investigado.",
+          "e": "pensativo"
+         },
+         {
+          "q": "voce",
+          "t": "É... questão de formalidade.",
+          "e": "nervoso"
+         }
+        ],
+        "consequencia": [
+         {
+          "q": "a7marina",
+          "t": "Afirmar posse de documento que o senhor não tem é falta de lealdade processual. Advertido. A ata registra.",
+          "e": "bravo",
+          "fx": "martelo"
+         }
+        ],
+        "cred": -2
+       }
+      },
+      {
+       "t": "Blefar: «Doutor Hugo, quer que eu leia em voz alta de quem é o cartão 4471?»",
+       "blefe": {
+        "resultado": "funciona",
+        "falas": [
+         {
+          "q": "a6yhugo",
+          "t": "O doutor Saulo conduzirá a causa. Eu apenas assisto.",
+          "e": "nervoso"
+         },
+         {
+          "q": "a7saulo",
+          "t": "Retiro a pergunta.",
+          "e": "nervoso"
+         },
+         {
+          "q": "voce",
+          "t": "(Eu não sei de quem é o cartão. Só sei como é o recuo de quem teme a pergunta.)",
+          "e": "nervoso"
+         }
+        ]
+       }
+      },
+      {
+       "t": "Requerer a quebra do sigilo cadastral do cartão final 4471, via Corregedoria, e esperar a resposta oficial.",
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Não afirmo o que não sei. Requeiro a requisição do cadastro do cartão final 4471 à operadora e ao banco.",
+         "e": "normal"
+        },
+        {
+         "q": "a7marina",
+         "t": "Deferido. A resposta virá até o fim da semana.",
+         "e": "normal"
+        },
+        {
+         "q": "a7saulo",
+         "t": "Conselheira, é pesca!",
+         "e": "nervoso"
+        },
+        {
+         "q": "a7marina",
+         "t": "É diligência, doutor. Pesca seria dar o nome sem prova.",
+         "e": "bravo",
+         "fx": "martelo"
+        }
+       ]
+      }
+     ],
+     "proxima": "c22"
+    },
+    "c22": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "A sessão terminou ao entardecer. No corredor do CNJ, a luz fluorescente dá a todos a mesma cara de doente."
+      },
+      {
+       "q": "a7marina",
+       "t": "Investigado. Um minuto, sem ata.",
+       "e": "normal"
+      },
+      {
+       "q": "a7marina",
+       "t": "Cheguei a esta relatoria convencida de que o senhor fez o que a imprensa diz. Fez parte. E nessa parte, o senhor não negou.",
+       "e": "pensativo"
+      },
+      {
+       "q": "a7marina",
+       "t": "O que me incomoda é o resto: um instituto de papel, um arquivo com iniciais de advogado, um depósito atrás do outro. Eu fui defensora pública vinte anos. Conheço o cheiro de quem monta uma condenação.",
+       "e": "normal"
+      },
+      {
+       "q": "voce",
+       "t": "A senhora está dizendo que me absolve?",
+       "e": "pensativo"
+      },
+      {
+       "q": "a7marina",
+       "t": "Estou dizendo que hesito. E hesitar, para mim, é raro e caro. Não confunda hesitação com simpatia.",
+       "e": "bravo"
+      },
+      {
+       "q": "a7edgar",
+       "t": "(chegando, de terno escuro) Conselheira, a imprensa já anunciou a sua dúvida. Vai ser difícil explicar ao país.",
+       "e": "bravo"
+      },
+      {
+       "q": "a7marina",
+       "t": "Eu explico ao país com a ata, ministro. Não com o cansaço dele.",
+       "e": "normal"
+      },
+      {
+       "q": "narrador",
+       "t": "Edgar não responde. Olha para você uma vez, longamente, como quem lê uma conta que não fecha, e sai."
+      }
+     ],
+     "local": "corredor",
+     "proxima": "c23"
+    },
+    "c23": {
+     "tipo": "tensao",
+     "local": "garagem",
+     "tempo": 9,
+     "padrao": 0,
+     "pergunta": "Subsolo da garagem do CNJ. Um homem de capa de chuva, sem crachá, se aproxima do seu carro e estende um envelope: «Amigo seu manda dizer: assina isto, que a Altavista cuida do resto. Basta dizer que a Dani agiu sozinha, e que o senhor sabia.» O que você faz?",
+     "hesitou": "Você hesitou. O homem coloca o envelope no capô e dá um passo atrás, sorrindo.",
+     "opcoes": [
+      {
+       "t": "Recusar sem tocar no envelope e sair em seguida",
+       "marca": "a7b_recusou_acordo",
+       "cred": 1,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Diga a quem mandou que eu só assino o que é verdade.",
+         "e": "bravo"
+        },
+        {
+         "q": "narrador",
+         "t": "O homem sorri como quem já esperava a resposta. O envelope fica no capô, e você o deixa lá."
+        }
+       ]
+      },
+      {
+       "t": "Gravar a conversa no celular, sem avisar",
+       "marca": "a7b_gravou_envoy",
+       "cred": 0,
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "A tela do celular brilha no bolso do casaco. O homem fala demais por tentar parecer calmo."
+        },
+        {
+         "q": "voce",
+         "t": "(Está gravado: ele cita a Dani pelo nome e a Altavista pelo nome.)",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "t": "Pegar o envelope e abrir para ver o que oferecem",
+       "marca": "a7b_abriu_envelope",
+       "cred": -1,
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "Dentro, uma confissão pronta, em seu nome, e um cheque cruzado de seis dígitos."
+        },
+        {
+         "q": "voce",
+         "t": "(Um cheque. Para me calar e para eu culpar Dani. Eles sabem tudo sobre ela.)",
+         "e": "chocado"
+        }
+       ]
+      },
+      {
+       "t": "Agarrar o homem pelo braço e chamar a segurança do prédio",
+       "marca": "a7b_agarrou_envoy",
+       "cred": -2,
+       "falas": [
+        {
+         "q": "narrador",
+         "t": "O homem se solta, empurra você contra o carro e some pela rampa. A segurança chega tarde e olha para você como suspeito(a)."
+        },
+        {
+         "q": "voce",
+         "t": "(Reagi como quem tem culpa. Devia ter lembrado quem me observa.)",
+         "e": "nervoso"
+        }
+       ]
+      }
+     ],
+     "proxima": "c23a"
+    },
+    "c23a": {
+     "tipo": "investigar",
+     "local": "garagem",
+     "titulo": "A garagem do CNJ: o que o homem deixou",
+     "intro": [
+      {
+       "q": "narrador",
+       "t": "Dez minutos depois, a garagem já foi varrida pela segurança. Mas rastro de homem apressado nunca é varrido por inteiro."
+      }
+     ],
+     "pontos": [
+      {
+       "id": "q_cracha",
+       "nome": "O crachá de visitante",
+       "x": 8,
+       "y": 24,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Um crachá de visitante, assinado por um servidor que não existe no quadro do CNJ.",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Alguém entrou por uma porta de papel. Papel que alguém de dentro carimbou.",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "id": "q_cafe",
+       "nome": "O copo na mureta",
+       "x": 32,
+       "y": 52,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Café ainda morno e uma digital nítida na borda. Se a segurança preservar o copo com o lacre certo, é vestígio.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Peço à segurança que não jogue fora. Peço por escrito, com hora e testemunha.",
+         "e": "pensativo"
+        }
+       ]
+      },
+      {
+       "id": "q_camera",
+       "nome": "A câmera do subsolo",
+       "x": 56,
+       "y": 24,
+       "w": 16,
+       "h": 16,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "A câmera aponta para a rampa, não para as vagas. Quem escolheu o ponto cego conhecia a obra.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "A câmera da portaria registra a placa do SUV: coberta com fita, de novo.",
+         "e": "bravo"
+        }
+       ]
+      },
+      {
+       "id": "q_marca",
+       "nome": "A marca de óleo",
+       "x": 78,
+       "y": 50,
+       "w": 14,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Óleo fresco numa vaga de diretoria, a mesma marca do SUV da garagem do Rafael.",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Mesma série, mesmo dono. Quem é dono de um SUV que aparece em duas garagens em duas noites?",
+         "e": "normal"
+        }
+       ]
+      },
+      {
+       "id": "q_guarita",
+       "nome": "O livro da guarita",
+       "x": 16,
+       "y": 68,
+       "w": 16,
+       "h": 14,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Quem entrou depois das 19h aparece com letra torta. Uma linha foi riscada e reescrita, com outra caneta.",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "A linha riscada tinha o horário de saída do SUV: 19h42. A nova diz 19h14, antes de eu descer.",
+         "e": "chocado"
+        }
+       ]
+      },
+      {
+       "id": "q_bilhete",
+       "nome": "O bilhete sob o limpador",
+       "x": 52,
+       "y": 70,
+       "w": 14,
+       "h": 12,
+       "falas": [
+        {
+         "q": "voce",
+         "t": "Preso sob o limpador: «A Dani chora toda noite. Quer ajudá-la? Cale a boca, e ela volta pra casa.»",
+         "e": "triste"
+        },
+        {
+         "q": "voce",
+         "t": "Eles não estão me ameaçando. Estão usando a Dani como refém sem sequestrar ninguém.",
+         "e": "bravo"
+        }
+       ]
+      }
+     ],
+     "conversas": [
+      {
+       "q": "rafael",
+       "titulo": "Rafael, ao telefone",
+       "falas": [
+        {
+         "q": "rafael",
+         "t": "Eu liguei para o hospital, para a mãe dela, para o irmão. A família disse que ela viajou. Que foi para a casa de uma tia.",
+         "e": "nervoso"
+        },
+        {
+         "q": "voce",
+         "t": "Ela não tem tia.",
+         "e": "pensativo"
+        },
+        {
+         "q": "rafael",
+         "t": "Eu sei. Eu fui ao casamento do irmão. Alguém combinou a história por ela.",
+         "e": "triste"
+        }
+       ]
+      },
+      {
+       "q": "a7joana",
+       "titulo": "Joana, no carro ao lado",
+       "falas": [
+        {
+         "q": "a7joana",
+         "t": "Posso gravar o que o vigia viu?",
+         "e": "normal"
+        },
+        {
+         "q": "voce",
+         "t": "Pode. E preserve o original. Fotos, hora, quem disse o quê.",
+         "e": "normal"
+        },
+        {
+         "q": "a7joana",
+         "t": "Você ensina a jornalista a fazer cadeia de custódia?",
+         "e": "pensativo"
+        },
+        {
+         "q": "voce",
+         "t": "Aprendi com um perito chamado Kenji. É a coisa mais útil que alguém me ensinou este mês.",
+         "e": "feliz"
+        }
+       ]
+      }
+     ],
+     "requer": [],
+     "proxima": "c24"
+    },
+    "c24": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "a7joana",
+       "t": "(correndo até você, sem fôlego) Eu vi aquele homem sair da garagem. Era o motorista do SUV. Eu o reconheceria no escuro.",
+       "e": "nervoso"
+      },
+      {
+       "q": "voce",
+       "t": "Você viu?",
+       "e": "chocado"
+      },
+      {
+       "q": "a7joana",
+       "t": "Eu fui usada, e agora tenho certeza. Eles me deram a notícia e o inimigo. Sabe o que é escrever a manchete de alguém que está sendo emboscado?",
+       "e": "bravo"
+      },
+      {
+       "q": "a7joana",
+       "t": "Eu vou publicar a correção hoje. Sozinha, se for preciso. E vou dizer quem me deu o arquivo.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "Se você publicar, o jornal te demite.",
+       "e": "pensativo"
+      },
+      {
+       "q": "a7joana",
+       "t": "Prefiro ser demitida por ter acertado do que elogiada por ter errado.",
+       "e": "normal"
+      },
+      {
+       "q": "voce",
+       "t": "Obrigado(a), Joana. Eu não esqueço isso.",
+       "e": "triste",
+       "se": "a7_confiou_joana"
+      },
+      {
+       "q": "voce",
+       "t": "Eu não te devo nada. Mas não vou esquecer.",
+       "e": "normal",
+       "se": "!a7_confiou_joana"
+      }
+     ],
+     "local": "corredor",
+     "proxima": "c24a"
+    },
+    "c24a": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Meia-noite. A cozinha de Rafael, o mesmo suco, a mesma toalha de plástico. Sofia dorme com a luz do corredor acesa."
+      },
+      {
+       "q": "rafael",
+       "t": "Hoje ela perguntou se você ia perder o emprego e se a gente ia ter que morar em outra casa.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "O que você respondeu?",
+       "e": "triste"
+      },
+      {
+       "q": "rafael",
+       "t": "Que o emprego é do Estado, mas a casa é nossa. E que você não vai embora.",
+       "e": "normal"
+      },
+      {
+       "q": "helena",
+       "t": "(à porta, com uma sacola de papéis) Eu trouxe as cópias de tudo que a Corregedoria me devolveu. Posso entrar?",
+       "e": "normal",
+       "se": "a7_perdoou_helena"
+      },
+      {
+       "q": "helena",
+       "t": "(à porta, sem entrar) Deixei a sacola com o porteiro. Não quero que você se obrigue a me ver.",
+       "e": "triste",
+       "se": "a7_culpou_helena"
+      },
+      {
+       "q": "voce",
+       "t": "Rafael, eu estou deixando de ser juiz. Mas não deixei de ser alguém que lê um processo até o fim.",
+       "e": "pensativo"
+      },
+      {
+       "q": "rafael",
+       "t": "Foi o que me ensinou aquela frase velha: leia o artigo até o fim.",
+       "e": "confiante"
+      },
+      {
+       "q": "voce",
+       "t": "Marina hesitou hoje. Joana mudou de lado. E mesmo assim eu só consigo pensar na Dani, em algum lugar, com medo.",
+       "e": "triste"
+      },
+      {
+       "q": "rafael",
+       "t": "Ela te deve uma explicação. Mas você também deve a ela uma chance.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "Eu sei. Amanhã eu continuo. Hoje eu só quero ficar aqui.",
+       "e": "normal"
+      }
+     ],
+     "local": "casa",
+     "proxima": "c25"
+    },
+    "c25": {
+     "tipo": "intuicao",
+     "local": "corredor",
+     "falas": [
+      {
+       "q": "rafael",
+       "t": "(ao telefone) Dr. Hugo me ligou. Quer um café com você amanhã, «para conversar como colegas». Sem Saulo.",
+       "e": "nervoso"
+      },
+      {
+       "q": "voce",
+       "t": "Quer me comprar ou quer me medir?",
+       "e": "pensativo"
+      }
+     ],
+     "pergunta": "O que Hugo quer com esse convite?",
+     "pistas": [
+      "Ele pede que você vá sozinho(a) e deixa o celular sem resposta por duas horas.",
+      "Menciona que «a Altavista tem apreço» pelo seu trabalho.",
+      "Sugere que o assunto envolva «alguém muito próxima»."
+     ],
+     "opcoes": [
+      {
+       "t": "É uma oferta: ele vai propor um acordo que passa por culpar Dani.",
+       "certa": true
+      },
+      {
+       "t": "É um gesto de respeito entre colegas, sem segundas intenções."
+      }
+     ],
+     "revelacao": [
+      {
+       "q": "rafael",
+       "t": "A secretária dele ligou para o diretor do presídio onde Henrique está, e avisou que o encontro é de «alinhamento».",
+       "e": "bravo"
+      }
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "t": "Não vou. Se for, vou com testemunha e gravador, e não sozinho(a).",
+       "e": "confiante"
+      }
+     ],
+     "erro": [
+      {
+       "q": "voce",
+       "t": "Quase aceitei. O convite tinha todos os cheiros de uma armadilha.",
+       "e": "nervoso"
+      }
+     ],
+     "bonus": 1,
+     "proxima": "c26"
+    },
+    "c26": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Dois dias depois. A resposta oficial da operadora chegou ao protocolo da Corregedoria. Marina convoca uma sessão curta, só com as partes e o reclamante, que voltou a comparecer."
+      },
+      {
+       "q": "a7marina",
+       "t": "Junto aos autos a resposta da operadora e do banco sobre o cartão final 4471.",
+       "e": "normal",
+       "recebe": [
+        "prepago_altavista"
+       ]
+      },
+      {
+       "q": "a7marina",
+       "t": "O cadastro está em nome de pessoa já conhecida de outros processos, vinculada à Construtora Altavista. A linha também emitiu, ontem, uma transferência.",
+       "e": "pensativo"
+      },
+      {
+       "q": "a7saulo",
+       "t": "Conselheira, eu peço vista. Isto é novo.",
+       "e": "nervoso"
+      },
+      {
+       "q": "a7marina",
+       "t": "O senhor terá a vista que a lei dá, doutor. Investigado, o ponto central.",
+       "e": "bravo"
+      }
+     ],
+     "local": "tribunal",
+     "proxima": "c27"
+    },
+    "c27": {
+     "tipo": "apresentar",
+     "local": "tribunal",
+     "falas": [
+      {
+       "q": "a7marina",
+       "t": "Que prova liga o depósito ao grupo que paga o instituto?",
+       "e": "normal"
+      }
+     ],
+     "pergunta": "Que prova liga o cartão que pagou Ronan à Construtora Altavista?",
+     "provas": [
+      "prepago_altavista"
+     ],
+     "acerto": [
+      {
+       "q": "voce",
+       "t": "O cadastro do cartão final 4471: linha pré-paga já usada por Fausto e por Pimentel nos casos anteriores, ligada à Altavista. É o mesmo cartão que pagou o instituto.",
+       "e": "apontando"
+      },
+      {
+       "q": "a7marina",
+       "t": "Registro. O reclamante recebeu recursos de quem tinha interesse direto na sua punição.",
+       "e": "bravo",
+       "fx": "martelo"
+      }
+     ],
+     "erro": [
+      {
+       "q": "rafael",
+       "t": "(sussurrando) Não é o extrato do instituto nem o e-mail. É o cadastro da linha.",
+       "e": "nervoso"
+      }
+     ],
+     "dica": [
+      "Quem usava esse número antes do instituto?",
+      "O cadastro da linha pré-paga é a ponte entre o instituto e a Altavista."
+     ],
+     "proxima": "c28"
+    },
+    "c28": {
+     "tipo": "dialogo",
+     "falas": [
+      {
+       "q": "narrador",
+       "t": "Noite. A praça em frente ao CNJ está quase vazia: vendedor de pipoca, dois seguranças, uma câmera de televisão desmontando o tripé. Joana filma de longe, de dentro de um carro parado."
+      },
+      {
+       "q": "a7ronan",
+       "t": "(sentado num banco, olhando o celular) Eu vim sozinho. Eu... quis respirar.",
+       "e": "nervoso"
+      },
+      {
+       "q": "narrador",
+       "t": "O celular de Ronan vibra na mão. Ele olha, empalidece, e vira a tela para você sem querer: «Depósito recebido: R$ 40.000. Origem: cartão pré-pago final 4471.»"
+      },
+      {
+       "q": "voce",
+       "t": "O mesmo número. O mesmo cartão que a Corregedoria acabou de ligar à Altavista.",
+       "e": "chocado"
+      },
+      {
+       "q": "a7ronan",
+       "t": "Eu nunca soube de onde vinha! Eu só... eu precisava pagar a dívida!",
+       "e": "bravo"
+      },
+      {
+       "q": "a7joana",
+       "t": "(pela janela do carro, filmando) Isso, Ronan. Fala. Eu estou ouvindo.",
+       "e": "apontando"
+      },
+      {
+       "q": "a7ronan",
+       "t": "Eles ligam sempre numa quinta. Sempre do mesmo número. Eu atendo e me dizem o que assinar.",
+       "e": "triste"
+      },
+      {
+       "q": "voce",
+       "t": "Eles quem?",
+       "e": "pensativo"
+      },
+      {
+       "q": "a7ronan",
+       "t": "Não sei o nome. Só sei que a voz fala pausado, e que sempre pergunta pela minha filha.",
+       "e": "nervoso"
+      },
+      {
+       "q": "narrador",
+       "t": "Na esquina, um SUV preto desliga os faróis. Ronan não vê. Você vê, e Joana também."
+      }
+     ],
+     "local": "praca",
+     "proxima": "c29"
+    },
+    "c29": {
+     "tipo": "veredicto",
+     "carimbo": "O MESMO PRÉ-PAGO",
+     "titulo": "Defesa Pessoal",
+     "texto": "Sozinho(a), sem toga e sem advogado, você derrubou o estatuto de papel, protestou onde devia, acareou o reclamante e provou que o dinheiro do instituto vinha do mesmo cartão da Altavista. Marina hesita, Joana mudou de lado, e o SUV continua na esquina.",
+     "variantes": [
+      {
+       "se": "blefe_descoberto",
+       "carimbo": "O MESMO PRÉ-PAGO, MAS...",
+       "titulo": "A Palavra que Você Não Tinha",
+       "texto": "A prova chegou, mas só depois de você afirmar à relatora um documento que não tinha. Marina anotou. A verdade apareceu depois do blefe, e a ordem importa."
+      },
+      {
+       "se": "usou_falsa",
+       "carimbo": "O MESMO PRÉ-PAGO, MAS...",
+       "titulo": "O Papel que Você Não Devia Ter Usado",
+       "texto": "Você chegou ao cartão, mas usou, no meio do caminho, um papel que a perícia desmentia. Isso vai pesar na decisão."
+      },
+      {
+       "se": "a7b_abriu_envelope",
+       "carimbo": "O MESMO PRÉ-PAGO",
+       "titulo": "O Envelope Aberto",
+       "texto": "Você abriu o envelope da Altavista na garagem. Não assinou, mas viu o nome de Dani e o cheque. Quem sabe demais, antes da hora, precisa de mais cuidado."
+      }
+     ]
+    }
+   }
+  }
+ ]
+}
