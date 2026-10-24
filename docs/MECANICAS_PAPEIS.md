@@ -92,3 +92,17 @@ esgotar vale `padrao`. Coração acelerando, vinheta vermelha e música de press
 ## Efeito novo
 `"fx": "ordem"` — balão dourado "ORDEM!" com martelo: a intervenção do juiz. Nas falas do jogador-juiz, `ummomento`
 vira `ordem` e `tomaisso` vira `martelo` automaticamente (juiz não grita "um momento" para a testemunha).
+
+## Música por cena
+Qualquer cena aceita o campo opcional `"musica"` (só o cliente lê; o validador ignora chaves extras):
+```json
+{"tipo": "dialogo", "local": "cemiterio", "musica": "luto", "falas": […]}
+```
+A música troca (crossfade no próximo compasso) ao entrar na cena e vale para tudo que a cena tocar (inclusive o que seria
+"calma", "julgamento" ou "pressao"), até a próxima cena trocar de música. Temas: `perseguicao` (pulsante), `traicao`
+(piano e cordas, lento), `luto` (cemitério), `plenario` (STF, solene), `juri` (grave e tenso), `noite` (casa/carro,
+solitário), `vitoria_amarga` (conquista com custo), `audiencia` (discreto), além de `principal`, `calma`,
+`investigacao`, `julgamento`, `interrogatorio`, `pressao`, `abertura`, `supremo`. Sem o campo valem os padrões:
+`tensao` = perseguicao; `plenario` = plenario (STF) ou juri (`"colegiado": "juri"`); `audiencia`/`protesto` = audiencia;
+`celular` em `casa`/`carro` = noite (a música abaixa a cada vibração). Ambiências de som por `local` (carro: motor e
+chuva; cemiterio: vento e sino distante; praca: multidão; garagem, casa, corredor, cafe, custodia) entram sozinhas.
