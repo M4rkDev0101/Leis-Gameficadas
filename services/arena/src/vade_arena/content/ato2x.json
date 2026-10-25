@@ -311,7 +311,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta os comprovantes de pagamento e os artigos do CDC sobre cobrança abusiva e devolução em dobro.",
        "recebe": [
         "comprov",
         "cdc42",
@@ -637,7 +637,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Essa prova não contradiz esta afirmação."
+       "t": "Essa prova não contradiz o que Denis afirma sobre os lançamentos da Crédito+."
       }
      ],
      "proxima": "a7"
@@ -880,7 +880,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Essa prova não contradiz esta afirmação."
+       "t": "Essa prova não contradiz o que Denis diz sobre a política de cobrança da empresa."
       }
      ],
      "proxima": "a11"
@@ -1359,7 +1359,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta o alvará de funcionamento e os artigos sobre mandado de segurança, contraditório, prazo de 120 dias e motivação do ato.",
        "recebe": [
         "alvara",
         "cf5lv",
@@ -1750,7 +1750,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Essa prova não contradiz esta afirmação."
+       "t": "Essa prova não contradiz o que a autoridade Lauro informou sobre o ato de interdição."
       }
      ],
      "proxima": "b8"
@@ -1998,7 +1998,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Essa prova não contradiz esta afirmação."
+       "t": "Essa prova não contradiz o que Lauro informa sobre o motivo da interdição."
       }
      ],
      "proxima": "b12"
@@ -2311,7 +2311,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta os artigos do Estatuto da Pessoa Idosa sobre contrato, teto de 70% e moradia digna, mais a tutela de urgência.",
        "recebe": [
         "epi35",
         "epi35p2",
@@ -2672,7 +2672,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protestar sem fundamento custa credibilidade."
+       "t": "Indefiro o protesto, doutor(a). A doutora Lívia pergunta à diretora Heloísa sobre o funcionamento da Casa Boa Estação, e a pergunta é regular."
       }
      ],
      "acerto": [
@@ -2801,7 +2801,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Essa prova não contradiz esta afirmação."
+       "t": "Essa prova não contradiz o que a diretora Heloísa diz sobre os contratos da Casa."
       }
      ],
      "proxima": "c7"
@@ -3062,7 +3062,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Essa prova não contradiz esta afirmação."
+       "t": "Essa prova não contradiz o que Heloísa diz sobre o valor cobrado dos residentes."
       }
      ],
      "proxima": "c11"

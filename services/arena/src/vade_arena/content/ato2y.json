@@ -313,7 +313,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta o comprovante de matrícula e os artigos sobre proporção e revisão dos alimentos e dever de verdade.",
        "recebe": [
         "matricula",
         "cc1694p1",
@@ -477,7 +477,7 @@
     },
     "p6": {
      "tipo": "investigar",
-     "local": "casa",
+     "local": "apartamento",
      "titulo": "Apartamento de Gilberto",
      "intro": [
       {
@@ -1002,7 +1002,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Essa prova não contradiz o que a testemunha disse agora."
+       "t": "Essa prova não contradiz o que Marlene acabou de dizer sobre o Gilberto, doutor(a)."
       }
      ],
      "proxima": "p14"
@@ -1153,7 +1153,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protesto sem fundamento custa credibilidade."
+       "t": "Indefiro o protesto, doutor(a). A doutora Vera pergunta ao requerente Gilberto sobre renda e despesas, e a pergunta é regular."
       }
      ],
      "acerto": [
@@ -1481,7 +1481,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta o extrato da conta da sociedade, o e-mail de Anselmo a Cláudio e os artigos sobre tutela de urgência e falsidade ideológica.",
        "recebe": [
         "extrato",
         "email",
@@ -1895,7 +1895,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Indefiro. A pergunta é regular. Protesto sem fundamento custa credibilidade."
+       "t": "Indefiro. A doutora Lívia pergunta ao Seu Cláudio sobre a ida ao banco; a pergunta é regular, e o protesto não tem fundamento."
       }
      ],
      "acerto": [
@@ -2587,7 +2587,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta os boletins anteriores, o áudio do corredor, os laudos de Regina e de Wilson e os artigos sobre legítima defesa, plenário e quesitos.",
        "recebe": [
         "bos",
         "audio",
@@ -2675,7 +2675,7 @@
     },
     "j4": {
      "tipo": "investigar",
-     "local": "casa",
+     "local": "apartamento",
      "titulo": "Casa de Regina",
      "intro": [
       {
@@ -2850,7 +2850,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Indefiro. A fala é regular, doutor(a). Interromper o debate sem fundamento perde a confiança dos jurados."
+       "t": "Indefiro. O doutor Márcio descreve a materialidade e a perícia; a fala é regular, doutor(a). Interromper o debate sem fundamento faz perder a confiança dos jurados."
       }
      ],
      "acerto": [
@@ -3018,7 +3018,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Indefiro. A pergunta é regular. Protesto sem fundamento custa credibilidade."
+       "t": "Indefiro. O doutor Márcio pergunta a dona Zilda o que ela ouviu e viu na casa da ré; a pergunta é regular e o protesto não tem fundamento."
       }
      ],
      "acerto": [
@@ -3148,7 +3148,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz o que a testemunha disse agora."
+       "t": "Essa prova não contradiz o que dona Zilda disse sobre aquela noite, doutor(a)."
       }
      ],
      "proxima": "j9"
@@ -3270,7 +3270,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz o que a testemunha disse agora."
+       "t": "Essa prova não contradiz o que o perito Heraldo afirmou sobre a necropsia, doutor(a)."
       }
      ],
      "proxima": "j10"
@@ -3579,7 +3579,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Indefiro. A fala é regular. Interromper sem fundamento perde a confiança dos jurados."
+       "t": "Indefiro. Na réplica, o doutor Márcio apenas pede a condenação com base na prova; a fala é regular. Interromper sem motivo desgasta a defesa diante dos jurados."
       }
      ],
      "acerto": [
