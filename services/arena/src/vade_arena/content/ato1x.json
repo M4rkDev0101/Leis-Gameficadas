@@ -324,7 +324,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta os artigos sobre receptação dolosa e culposa, o BO da Altavista Tech e o art. 386, III.",
        "recebe": [
         "cp180",
         "cp180p3",
@@ -778,7 +778,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Indefiro o protesto, doutor(a). A pergunta é regular. Protesto sem fundamento custa credibilidade."
+       "t": "Indefiro o protesto, doutor(a). O doutor Lacerda apenas pergunta ao vendedor Diego sobre a venda do notebook, e a pergunta é regular."
       }
      ],
      "acerto": [
@@ -916,7 +916,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Essa prova não contradiz o que Diego diz sobre o lote da TecnoVolta, doutor(a)."
       }
      ],
      "proxima": "a6"
@@ -1117,7 +1117,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Essa prova não contradiz o que o delegado Fausto declarou sobre o inquérito, doutor(a)."
       }
      ],
      "proxima": "a9"
@@ -1466,7 +1466,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta os artigos sobre homicídio culposo no trânsito, sinal vermelho, equipamento da bicicleta e o exame de alcoolemia.",
        "recebe": [
         "cp18ii",
         "cp13",
@@ -1864,7 +1864,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Essa prova não contradiz o que Valmir diz ter visto no cruzamento, doutor(a)."
       }
      ],
      "proxima": "b7"
@@ -2053,7 +2053,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Essa prova não contradiz a versão de Dora sobre a frota da Altavista, doutor(a)."
       }
      ],
      "proxima": "b9"
@@ -2446,7 +2446,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Entram na pasta os artigos do Estatuto da Pessoa Idosa sobre apropriação de bens e indução, mais o estelionato contra idoso.",
        "recebe": [
         "epi102",
         "epi106",
@@ -2919,7 +2919,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Essa prova não contradiz a queixa de Wesley sobre a tia, doutor(a)."
       }
      ],
      "proxima": "c7"
@@ -3090,7 +3090,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Essa prova não contradiz o que o gerente Otávio informou sobre a conta da senhora Hortênsia, doutor(a)."
       }
      ],
      "proxima": "c9"
@@ -3212,7 +3212,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Essa prova não contradiz o que Wesley diz sobre o empréstimo, doutor(a)."
       }
      ],
      "proxima": "c10"
