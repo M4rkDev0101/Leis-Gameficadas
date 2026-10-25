@@ -2340,7 +2340,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Esse documento não toca no que Tales Nogueira jurou sobre o ofício de 2019 e o gabinete. Preciso de um diploma, uma agenda ou um protocolo que o desminta.",
        "e": "pensativo"
       }
      ],
@@ -2492,7 +2492,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Marilda diz que nunca viu carro nenhum nem soube de ofício retroagido. Essa peça não fala de carro nem de placa. Procuro a que mostre o carro preto.",
        "e": "pensativo"
       }
      ],
@@ -2637,7 +2637,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "O Deputado jura que já exercia mandato em 2019 e que nunca conheceu ninguém da Altavista. Esse papel não contraria nenhuma das duas coisas. Procuro o Diário Oficial ou a agenda da Prefeitura.",
        "e": "pensativo"
       }
      ],
@@ -3211,7 +3211,7 @@
       },
       {
        "q": "a6teresa",
-       "t": "O Ministério Público não se opõe, Excelência.",
+       "t": "O Ministério Público não faz oposição ao desentranhamento, Excelência.",
        "e": "normal"
       }
      ],
@@ -3568,7 +3568,7 @@
     },
     "c11": {
      "tipo": "escolha",
-     "local": "tribunal",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -3642,7 +3642,7 @@
     },
     "c12": {
      "tipo": "dialogo",
-     "local": "tribunal",
+     "local": "gabinete",
      "falas": [
       {
        "q": "a6helga",
@@ -3941,7 +3941,7 @@
     },
     "c16": {
      "tipo": "intuicao",
-     "local": "tribunal",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -4396,7 +4396,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Os onze pagamentos e a coincidência com as etapas da emenda são o ponto fraco do contador. Essa peça não os atinge. Preciso do extrato ou do relatório da Polícia Federal.",
        "e": "pensativo"
       }
      ],
@@ -4548,7 +4548,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Armando jura que falou à Polícia Federal de livre vontade. Esse papel não desmente o jeito como ele depôs. O livro de entrada de documentos da PF é o que mexe com essa versão.",
        "e": "pensativo"
       }
      ],
@@ -5674,7 +5674,7 @@
     },
     "c10": {
      "tipo": "intuicao",
-     "local": "tribunal",
+     "local": "corredor",
      "falas": [
       {
        "q": "narrador",
@@ -6037,7 +6037,7 @@
     },
     "c15": {
      "tipo": "escolha",
-     "local": "tribunal",
+     "local": "corredor",
      "falas": [
       {
        "q": "narrador",
@@ -6453,7 +6453,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "O delegado Nery jura ofício, zelador sozinho e nenhum policial na sala da Ministra. Essa peça não desmonta nenhum dos três. O ofício 14/22, a escala do zelador e a câmera falam por mim.",
        "e": "pensativo"
       }
      ],
@@ -6600,7 +6600,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Dona Lídia diz que serviu o café e que todos saíram da sala. Isso não contradiz o que ela falou. As imagens do corredor do quarto andar mostram quem entrou depois.",
        "e": "pensativo"
       }
      ],
@@ -7823,7 +7823,8 @@
      "ajuste": -1,
      "piso": 2,
      "musica": "pressao",
-     "proxima": "c14"
+     "proxima": "c14",
+     "local": "gabinete"
     },
     "c14": {
      "tipo": "depoimento",
@@ -7960,7 +7961,8 @@
        "e": "nervoso"
       }
      ],
-     "proxima": "c15"
+     "proxima": "c15",
+     "local": "gabinete"
     },
     "c15": {
      "tipo": "blefe",
@@ -8118,7 +8120,7 @@
     },
     "c17": {
      "tipo": "dialogo",
-     "local": "rua",
+     "local": "gabinete",
      "falas": [
       {
        "q": "a6helga",
@@ -8389,11 +8391,12 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Adalberto garante que operou os pagamentos sem tirar um real para si. Esse documento não contraria a conta. Preciso dos extratos para mostrar para onde o dinheiro foi.",
        "e": "pensativo"
       }
      ],
-     "proxima": "c7"
+     "proxima": "c7",
+     "local": "gabinete"
     },
     "d_cecilia": {
      "tipo": "depoimento",
@@ -8555,11 +8558,12 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Cecília alega três dias sem dormir e ameaça do delegado. Essa peça não contraria nada disso. O livro de acesso à sala e a gravação das tratativas é que dizem como foi.",
        "e": "pensativo"
       }
      ],
-     "proxima": "c7"
+     "proxima": "c7",
+     "local": "gabinete"
     },
     "d_rui": {
      "tipo": "depoimento",
@@ -8727,11 +8731,12 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "O doutor Rui insiste que o acordo foi livre e que nunca ficou a sós com o cliente. Esse papel não desfaz isso. Preciso da gravação, do livro de acesso ou dos metadados da planilha.",
        "e": "pensativo"
       }
      ],
-     "proxima": "c7"
+     "proxima": "c7",
+     "local": "gabinete"
     }
    }
   },
@@ -10138,7 +10143,7 @@
     },
     "c17": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "apartamento",
      "falas": [
       {
        "q": "narrador",
@@ -10437,7 +10442,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Hélio nega ter falado com a doutora Renata e ter visto Gilson. Essa peça não o põe nem diante da escola nem no bar. Procuro as imagens da escola, o boletim de ocorrência ou a câmera do bar.",
        "e": "pensativo"
       }
      ],
@@ -10603,7 +10608,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa peça não derruba o que a testemunha acabou de dizer. Preciso de algo que diga o contrário.",
+       "t": "Gilson jura que nunca recebeu dinheiro e que recusou a oferta. Esse documento não mexe nisso. O extrato da conta dele e a câmera do bar mostram o que ele escondeu.",
        "e": "pensativo"
       }
      ],

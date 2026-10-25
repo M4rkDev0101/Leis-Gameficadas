@@ -257,7 +257,7 @@
         },
         "c4": {
           "tipo": "tensao",
-          "local": "carro",
+          "local": "garagem",
           "tempo": 8,
           "padrao": 1,
           "pergunta": "O utilitário preto cola, depois afasta, depois cola de novo. Quem dirige sabe seu destino. A via L2 está vazia. O que você faz?",
@@ -733,7 +733,8 @@
               "t": "Uma da manhã. No carro, de volta, o celular vibra uma última vez."
             }
           ],
-          "proxima": "c13"
+          "proxima": "c13",
+          "local": "carro"
         },
         "c13": {
           "tipo": "dialogo",
@@ -1497,7 +1498,8 @@
               "e": "pensativo",
               "t": "Diante de nova manifestação do MPF, peço a palavra para rever o meu voto. Não posso decidir de olhos fechados."
             }
-          ]
+          ],
+          "local": "stf"
         },
         "c9a": {
           "tipo": "celular",
@@ -1538,7 +1540,8 @@
               "t": "O celular vibra sobre a tribuna, três vezes seguidas, protegido pela pasta."
             }
           ],
-          "proxima": "c10"
+          "proxima": "c10",
+          "local": "stf"
         },
         "c10": {
           "tipo": "plenario",

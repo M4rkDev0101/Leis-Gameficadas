@@ -931,7 +931,7 @@
       {
        "q": "a7emurilo",
        "e": "nervoso",
-       "t": "Algo ficou de fora, ou entrou onde não devia. Examine de novo, com o índice de datas."
+       "t": "Excelência, a seleção não fecha: ou um dos papéis de véspera continua na pilha, ou um dos mais antigos foi descartado sem razão. O índice de datas mostra qual."
       }
      ],
      "proxima": "c7"
@@ -2038,14 +2038,14 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa peça dos autos não confere com essa afirmação. O juízo precisa de mais cuidado."
+       "t": "Ronaldo jura que o vigia guardava a chave e que não viu ninguém entrar. Essa peça dos autos não confere com o que ele disse. O juízo precisa de mais cuidado."
       }
      ],
      "acerto": [
       {
        "q": "lacerda",
        "e": "normal",
-       "t": "O Ministério Público não tem mais perguntas."
+       "t": "Sem perguntas ao mestre de obras, Excelência."
       },
       {
        "q": "a6yhugo",
@@ -2221,14 +2221,14 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa peça dos autos não confere com essa afirmação. Nada a esclarecer por ela."
+       "t": "Gilmar jura Santos, herança do tio e que nunca pisou no canteiro. Essa peça não confere com nenhuma dessas afirmações. Nada a esclarecer por ela."
       }
      ],
      "acerto": [
       {
        "q": "lacerda",
        "e": "normal",
-       "t": "O Ministério Público não tem mais perguntas ao acusado."
+       "t": "O Ministério Público encerra aqui o interrogatório de Gilmar."
       },
       {
        "q": "a6yhugo",
@@ -4372,7 +4372,7 @@
         {
          "q": "narrador",
          "e": "normal",
-         "t": "O homem corre. Nélio recua, encosta no carro e fica olhando o envelope no capô como quem olha uma cobra. O vigia chega pela escada."
+         "t": "O homem corre pela rampa. Nílio recua e fica olhando o envelope sobre o capô, como quem olha uma cobra. O vigia chega da escada."
         }
        ]
       },
@@ -4396,7 +4396,7 @@
         {
          "q": "narrador",
          "e": "nervoso",
-         "t": "Você fala com um jurado em sessão, mesmo sem querer. Nélio vai relatar isso ao oficial, e a defesa vai chamar de contato."
+         "t": "Você fala com um jurado em plena sessão, mesmo sem querer. Nílio vai relatar ao oficial, e a defesa vai chamar isso de contato."
         }
        ]
       },
@@ -4606,7 +4606,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa peça dos autos não confere com essa afirmação."
+       "t": "Gilmar põe a culpa em Tiago e diz que o portão vivia aberto. Essa peça não tira nenhuma das duas. Procuro o registro do portão de serviço ou o livro de chaves."
       }
      ],
      "acerto": [
@@ -5902,7 +5902,7 @@
       {
        "q": "a7emurilo",
        "e": "nervoso",
-       "t": "Algo ficou de fora ou entrou onde não devia. Examine de novo com o índice de datas."
+       "t": "Excelência, a lista de três não fecha: ou ficou um papel da defesa na pilha, ou saiu um do inquérito. Confira de novo o carimbo de cada um."
       }
      ],
      "proxima": "r12"
@@ -7881,7 +7881,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa peça dos autos não confere com essa afirmação."
+       "t": "Ronan Teles diz que o instituto era real e que nunca recebeu um centavo de Altavista. Esse documento não mexe nisso. Preciso dos depósitos ou dos metadados do arquivo-mestre."
       }
      ],
      "acerto": [
@@ -7945,14 +7945,14 @@
       {
        "q": "a7joana",
        "e": "nervoso",
-       "t": "Eu estou dizendo a verdade, Excelência."
+       "t": "Fui eu que recebi o e-mail anônimo e publiquei. O que o senhor mostra não muda o que eu disse."
       }
      ],
      "erro_veraz": [
       {
        "q": "a7joana",
        "e": "nervoso",
-       "t": "Eu estou dizendo a verdade, Excelência."
+       "t": "Recebi o e-mail anônimo com a ordem de publicar em 48 horas. Essa peça não fala do que recebi."
       }
      ],
      "acerto": [
@@ -8075,14 +8075,14 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa peça dos autos não confere com essa afirmação."
+       "t": "Nery nega ter visto o escrivão Bento com Hugo e atribui o dossiê ao Corregedor. Essa peça não confere com nada disso. Preciso do recibo ou do laudo grafotécnico."
       }
      ],
      "acerto": [
       {
        "q": "a6teresa",
        "e": "normal",
-       "t": "O Ministério Público não tem mais perguntas."
+       "t": "Sem mais perguntas ao delegado Nery."
       }
      ]
     },
@@ -8175,7 +8175,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa peça dos autos não confere com essa afirmação."
+       "t": "Pimentel diz que o envelope chegou sem ligação com Hugo e que o pré-pago era de um primo. Isso não o desmente. Procuro a cadeia de custódia ou os depósitos."
       }
      ],
      "acerto": [
@@ -8194,7 +8194,7 @@
       {
        "q": "bento",
        "e": "triste",
-       "t": "Eu repito, perante ele, o que escrevi."
+       "t": "Eu repito diante de Henrique o que anotei no caderno."
       }
      ],
      "afirmacoes": [
@@ -8324,7 +8324,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa peça dos autos não confere com essa afirmação."
+       "t": "Henrique nega conhecer o homem e diz que o doutor Hugo o visitava só por afeto. Essa peça não o atinge. Procuro os depósitos ou o livro de visitas do presídio."
       }
      ],
      "acerto": [

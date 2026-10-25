@@ -2280,7 +2280,7 @@
      "erro": [
       {
        "q": "a7edgar",
-       "t": "Essa peça não desmente a afirmação, doutor(a). A Presidência adverte.",
+       "t": "Doutor(a), essa peça não desmente o que Ronan disse sobre o Instituto, a reclamação ou o Dr. Saulo. A Presidência adverte.",
        "e": "bravo"
       }
      ],
@@ -4933,7 +4933,7 @@
      "erro": [
       {
        "q": "a7marina",
-       "t": "Essa peça não desmente a afirmação indicada, investigado(a).",
+       "t": "Investigado(a), essa peça não desmente o que Valmir disse sobre a lista de perguntas, a habilitação do assistente ou a conversa com os ministros.",
        "e": "normal"
       }
      ],
@@ -5061,7 +5061,7 @@
      "erro": [
       {
        "q": "a7marina",
-       "t": "Essa prova não contraria a depoente.",
+       "t": "Essa prova não contraria Cleide Barros: ela relata o que o livro e a câmera da secretaria registram.",
        "e": "normal"
       }
      ]
@@ -5137,7 +5137,7 @@
      "erro": [
       {
        "q": "a7marina",
-       "t": "Essa prova não resolve o conflito apontado. Tente de novo, investigado(a).",
+       "t": "Essa prova não resolve o conflito entre Valmir e Cleide sobre quem estava na secretaria nas duas datas. Tente de novo, investigado(a).",
        "e": "normal"
       }
      ],
@@ -5560,7 +5560,7 @@
     },
     "c21": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "corredor",
      "falas": [
       {
        "q": "narrador",

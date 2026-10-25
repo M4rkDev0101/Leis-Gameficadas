@@ -1593,7 +1593,8 @@
      "ajuste": -1,
      "piso": 2,
      "musica": "pressao",
-     "proxima": "c21"
+     "proxima": "c21",
+     "local": "corredor"
     },
     "c21": {
      "tipo": "dialogo",
@@ -1851,7 +1852,7 @@
     },
     "c25": {
      "tipo": "dialogo",
-     "local": "rua",
+     "local": "escritorio",
      "falas": [
       {
        "q": "narrador",
@@ -2112,7 +2113,8 @@
      "ajuste": -1,
      "piso": 2,
      "musica": "pressao",
-     "proxima": "c29"
+     "proxima": "c29",
+     "local": "casa"
     },
     "c29": {
      "tipo": "argumento",
