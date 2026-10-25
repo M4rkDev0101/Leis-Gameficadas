@@ -861,7 +861,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não contradiz essa afirmação. Preciso do papel certo para a frase certa.",
+       "t": "Helena jura que não pegou o token depois da licença e que estava no escritório na sexta, às nove. Essa prova não toca nisso. Preciso do papel certo para essa frase, como o relatório da catraca.",
        "e": "pensativo"
       }
      ],
@@ -1430,12 +1430,12 @@
        "e": "pensativo"
       }
      ],
-     "local": "gabinete",
+     "local": "delegacia",
      "proxima": "c14"
     },
     "c14": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "delegacia",
      "titulo": "O anexo de Kenji: o que o servidor guardou",
      "intro": [
       {
@@ -1672,7 +1672,7 @@
     },
     "c15": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "delegacia",
      "falas": [
       {
        "q": "kenji",
@@ -1712,7 +1712,7 @@
      "erro": [
       {
        "q": "kenji",
-       "t": "Algo aí não bate. Autêntico descartado é prova perdida; falso mantido é trampolim para o erro. Revise.",
+       "t": "Reveja o log do pen drive, o e-mail e o print de Helena a Dani. Autêntico descartado é prova perdida; falso mantido é trampolim para o erro.",
        "e": "nervoso"
       }
      ],
@@ -1782,7 +1782,7 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "delegacia",
      "proxima": "c17"
     },
     "c17": {
@@ -1945,7 +1945,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não desmente essa afirmação. Prefiro não gastar a atenção da relatora.",
+       "t": "O perito Valério jura que o laudo partiu do log original e que o token nunca sai das mãos do titular. Essa prova não o desmente; prefiro não gastar a atenção da relatora.",
        "e": "pensativo"
       }
      ],
@@ -2103,7 +2103,7 @@
      "erro": [
       {
        "q": "kenji",
-       "t": "Essa prova não resolve esse ponto.",
+       "t": "Meu laudo trata do hash divergente e do host GAB-214-WS. Essa prova não toca em nenhum dos dois pontos.",
        "e": "normal"
       }
      ],
@@ -4247,7 +4247,7 @@
      "erro": [
       {
        "q": "kenji",
-       "t": "Autêntico descartado é prova jogada fora; falso mantido é tiro no pé. Reveja.",
+       "t": "Entre o estatuto, o livro de doações e o print de Joana, um não se sustenta. Autêntico descartado é prova jogada fora; falso mantido é tiro no pé. Reveja.",
        "e": "nervoso"
       }
      ],
@@ -4602,7 +4602,7 @@
      "erro": [
       {
        "q": "a7bvera",
-       "t": "Eu... eu falo a verdade.",
+       "t": "Eu só disse que recebi o dossiê pronto, num pen drive. O que o senhor mostra não é sobre isso.",
        "e": "nervoso"
       }
      ],
@@ -4624,7 +4624,7 @@
      "erro_veraz": [
       {
        "q": "a7bvera",
-       "t": "Eu já estou falando a verdade.",
+       "t": "O pen drive chegou pronto e eu só troquei o cabeçalho. Esse papel não diz outra coisa.",
        "e": "nervoso"
       }
      ]
@@ -4678,7 +4678,7 @@
      "erro": [
       {
        "q": "helena",
-       "t": "Eu estou falando a verdade.",
+       "t": "Fui à Corregedoria numa sexta, às nove, por conta própria. Essa prova não diz o contrário do que contei.",
        "e": "nervoso"
       }
      ],
@@ -4948,7 +4948,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não desmente essa afirmação. Prefiro pensar mais um instante.",
+       "t": "Ronan afirma dois anos de instituto, quatrocentos associados e que redigiu o dossiê. Essa prova não desmente nenhuma das quatro afirmações. Prefiro pensar mais um instante.",
        "e": "pensativo"
       }
      ],
@@ -5214,7 +5214,7 @@
      "erro": [
       {
        "q": "a7btales",
-       "t": "Eu estou falando a verdade.",
+       "t": "Já falei do relatório dos depósitos, do cartão 4471 e do pen drive. Isso que me mostra não tem a ver com nada do que eu disse.",
        "e": "nervoso"
       }
      ],

@@ -788,7 +788,7 @@
             {
               "q": "helena",
               "e": "nervoso",
-              "t": "Prova autêntica descartada é prova perdida, e falsa mantida é crédito jogado fora. Examine de novo."
+              "t": "Examine de novo, doutor(a): a pasta de Nery tem papéis feitos depois do fato para justificar a invasão. Veja quem produziu o termo de consentimento, o laudo e o e-mail de Jair."
             }
           ],
           "proxima": "c8",
@@ -858,7 +858,7 @@
             }
           ],
           "proxima": "c9",
-          "local": "tribunal",
+          "local": "escritorio",
           "dica": [
             "Delegado federal, serviço da União: pense no art. 109, IV.",
             "A competência vem da natureza do agente e do serviço, não do endereço."
@@ -1310,7 +1310,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O delegado Nery sustenta o chamado das 4h02, a autorização por interfone e que não trocou mensagens. Isso aí não desmente nenhum dos três. Preciso do registro da denúncia, do crachá do STF ou dos prints."
             }
           ],
           "acerto": [
@@ -1425,7 +1425,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "Valadares diz que Nery é zeloso e que a investigação foi pedida por escrito. Essa prova não toca nisso. Procuro o relatório da Corregedoria."
             }
           ],
           "acerto": [
@@ -1830,7 +1830,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "Edvaldo diz que só anotou os nomes dos quatro amigos e que a chave ficou com a vizinha. Esse papel não contraria isso. Preciso do livro da portaria ou do registro do crachá."
             }
           ],
           "acerto": [
@@ -2440,7 +2440,7 @@
             {
               "q": "dani",
               "e": "nervoso",
-              "t": "Algo sobrou. Examine de novo cada documento: quais deles têm um sinal objetivo de fabricação?"
+              "t": "Algo não fecha, Excelência. Releia a certidão de nomeação, a declaração de Silva e a agenda do Deputado: qual deles tem sinal objetivo de fabricação?"
             }
           ],
           "proxima": "c7",
@@ -2892,7 +2892,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O Coronel Aurélio jura que dormia na chácara e que nunca falou de eleição com o Deputado. Essa peça não o desmente. Preciso do rastreador do carro ou da planilha de ligações."
             }
           ],
           "acerto": [
@@ -3008,7 +3008,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O Deputado jura culto em outra cidade e que nunca falou com o Coronel. Esse papel não toca nisso. Falta a planilha de ligações e os registros do sistema de totalização."
             }
           ],
           "acerto": [
@@ -3377,7 +3377,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O \"Secretário Silva\" jura que agiu sozinho e com a própria senha. Esse documento não muda isso. Preciso da certidão do TRE ou dos registros do sistema."
             }
           ],
           "acerto": [
@@ -3731,7 +3731,7 @@
             }
           ],
           "proxima": "c3",
-          "local": "escritorio"
+          "local": "stf"
         },
         "c3": {
           "tipo": "dialogo",
@@ -4105,7 +4105,7 @@
             {
               "q": "rafael",
               "e": "nervoso",
-              "t": "Algum dos que você manteve pode ser a farsa. Examine de novo."
+              "t": "Reveja a fita de \"Otto\", o extrato com o meu nome e o termo de retratação. Se um dos que você manteve é farsa, ou se deixou de fora um dos três, a Corte vai perceber."
             }
           ],
           "proxima": "c7",
@@ -4627,7 +4627,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "Brandão acusa Rafael de esconder o dono do pré-pago e nega visita do escritório de Hugo. Essa peça não responde a nenhuma das duas. Procuro o termo aditivo ou o livro de visitas."
             }
           ],
           "acerto": [
@@ -4736,7 +4736,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "Henrique diz que Rafael escondeu da juíza um intermediário do Senador. Esse papel não toca nisso. Preciso do termo aditivo para contrariá-lo."
             }
           ],
           "acerto": [
@@ -5068,7 +5068,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "Edmundo narra o encontro de 14 de março e o envelope pesado que Rafael recebeu. A peça que mostrei não toca nessa data. Procuro o prontuário do hospital ou o recibo de transferência."
             }
           ],
           "acerto": [
@@ -5629,7 +5629,7 @@
             {
               "q": "dani",
               "e": "nervoso",
-              "t": "Algo não bate. Examine novamente: o que a defesa juntou foi feito às pressas."
+              "t": "Os dois papéis que a defesa juntou à meia-noite, o salvo-conduto e o bilhete de Clara, são os que têm pressa. Reveja o que ficou e o que saiu."
             }
           ],
           "proxima": "c7",
@@ -6222,7 +6222,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O assessor Gerson Paré jura visita de cortesia e que a ligação de Paulo foi obra de Clara. Esse documento não afeta nenhuma das duas. Preciso da câmera da casa de Clara ou do registro da ligação."
             }
           ],
           "acerto": [
@@ -6356,14 +6356,14 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O Senador diz que foi convidado por Clara e que a pistola era do segurança. Essa peça não o contradiz. Preciso do laudo da pistola ou da planilha original de Paulo."
             }
           ],
           "acerto": [
             {
               "q": "a6otto",
               "e": "nervoso",
-              "t": "Eu exijo falar com meu advogado."
+              "t": "Quero meu advogado ao lado antes de responder mais."
             }
           ],
           "dica": [
@@ -6759,7 +6759,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O doutor Fausto fala de infarto, desorientação e atestado emitido na noite dos fatos. Esse papel não contraria o diagnóstico. Procuro o exame no pronto-socorro ou a câmera de Clara."
             }
           ],
           "acerto": [
@@ -7353,7 +7353,7 @@
             {
               "q": "dani",
               "e": "nervoso",
-              "t": "Algo sobrou ou algo se perdeu. Examine novamente."
+              "t": "Três papéis da defesa e quatro nossos: reveja a fita, o salvo-conduto e o atestado de infarto. Se ficou algum deles, ou se saiu um dos nossos, a Turma percebe."
             }
           ],
           "proxima": "c7",
@@ -7507,7 +7507,7 @@
             {
               "q": "voce",
               "e": "nervoso",
-              "t": "Subestimei o homem. Vou ter de ouvir com mais humildade."
+              "t": "Subestimei Ataulfo: depois de perder Pimentel, ele quer a verdade mais do que quer vencer. Vou ter de ouvi-lo com humildade."
             }
           ],
           "bonus": 1,
@@ -7767,7 +7767,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O Ministro Ataulfo nega ligação do gabinete com o pré-pago e diz que votou sem pedido de ninguém. Isso não o contradiz. Preciso do cadastro do pré-pago ou da visita de Pimentel."
             }
           ],
           "acerto": [
@@ -7912,7 +7912,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O Senador nega conhecer Paulo, nega a pistola e põe tudo nas costas de Pimentel. Essa prova não fecha com nenhuma dessas negativas. Procuro a planilha, a câmera ou o cadastro."
             }
           ],
           "acerto": [
@@ -8049,7 +8049,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "Na acareação, Otto repete que não viu a carta e que Pimentel agiu só. A prova que apresentei não alcança essas duas frases. A planilha original e o cadastro do pré-pago alcançam."
             }
           ],
           "acerto": [
@@ -8271,7 +8271,7 @@
             {
               "q": "voce",
               "e": "pensativo",
-              "t": "Essa prova não contradiz essa afirmação."
+              "t": "O doutor Valério afirma tinta recente, ausência de registro dos Correios e registro profissional regular. Essa peça não os desmente. Procuro a perícia de Kenji, a imagem dos Correios ou a certidão do conselho."
             }
           ],
           "acerto": [
@@ -8864,7 +8864,7 @@
             }
           ],
           "proxima": "e2",
-          "local": "escritorio"
+          "local": "gabinete"
         },
         "e2": {
           "tipo": "escolha",

@@ -782,7 +782,7 @@
       {
        "q": "rafael",
        "e": "nervoso",
-       "t": "Se você levar um documento falso ao plenário, ou descartar um verdadeiro, quem perde não sou eu. Examine de novo, com calma."
+       "t": "Entre o recibo de R$ 120.000, o print de Helena e o comprovante na conta da sua mãe, o falso está entre os recentes. Se levar um documento falso ao plenário, ou descartar um verdadeiro, quem perde não sou eu."
       }
      ],
      "proxima": "c7",
@@ -1841,7 +1841,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa prova não derruba o que ele acabou de dizer. Preciso de algo que desminta a data, o dinheiro ou o advogado."
+       "t": "Ronan diz que o Instituto é tradicional, que ninguém o orientou e que o recibo veio de um servidor anônimo. Essa prova não desmente a data, o dinheiro nem o advogado."
       }
      ],
      "acerto": [
@@ -2461,7 +2461,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Essa prova não desmente essa afirmação."
+       "t": "Ronan jura que nunca viu a jornalista e que o dossiê saiu do computador do Instituto. Essa prova não desmente isso. Procuro o comprovante do café da Rua do Ouvidor."
       }
      ],
      "acerto": [
@@ -3678,7 +3678,7 @@
       }
      ],
      "proxima": "c33",
-     "local": "gabinete"
+     "local": "rua"
     },
     "c33": {
      "tipo": "veredicto",

@@ -1589,7 +1589,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não derruba esta afirmação. Procuro o documento que mostre o contrário do que ele disse.",
+       "t": "Veloso jura que seguiu o parecer e que ninguém o avisou de nada. Essa peça não toca nisso. Procuro a ata de 3 de março, o parecer da Consultoria ou o ofício da engenheira fiscal.",
        "e": "pensativo"
       }
      ],
@@ -2324,7 +2324,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Isso não contradiz o que ele disse. Procuro o documento que desfaça a história do \"só eu\".",
+       "t": "Murilo diz que a ideia das catorze pontes foi só dele e que a Cinco Rios nunca pagou partido. Esse papel não desfaz o \"só eu\". Procuro a ata, o diário de obra ou o extrato da Cinco Rios.",
        "e": "pensativo"
       }
      ],
@@ -2436,7 +2436,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Esse documento não põe os dois no mesmo ato. Procuro o que lavrou a reunião.",
+       "t": "Esse documento não põe os dois no mesmo ato. Procuro o que lavrou a reunião em que Veloso e Murilo aparecem juntos.",
        "e": "pensativo"
       }
      ],
@@ -2756,7 +2756,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Esta testemunha não está contradizendo nada. Não devo confundi-la com quem mente.",
+       "t": "A engenheira Cíntia mediu o aço, lacrou e fotografou, e nenhuma peça dos autos a desmente. Se eu a confrontar, enfraqueço a minha própria acusação.",
        "e": "pensativo"
       }
      ],
@@ -2849,7 +2849,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Isso não contradiz o que ele disse. Procuro a prova que mostre o ofício rubricado ou as visitas.",
+       "t": "Gustavo assume que escondeu o ofício da engenheira e jura que não vê Brandão desde que saiu do ministério. Isso não o contradiz. Procuro o ofício rubricado ou o livro de visitas do presídio.",
        "e": "pensativo"
       }
      ],
@@ -2999,7 +2999,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Isso não contradiz o que ele disse. A assinatura dele está no parecer da auditoria.",
+       "t": "Osvaldo chama de rascunho o parecer da auditoria e diz que nunca assinou a versão final. Essa peça não o atinge, e a assinatura dele está justamente no parecer técnico.",
        "e": "pensativo"
       }
      ],
@@ -4199,7 +4199,7 @@
        "falas": [
         {
          "q": "a6xwagner",
-         "t": "Eu só cumpro chamado, Excelência.",
+         "t": "Chamado de TI, Excelência. Atendi só o que entrou no sistema.",
          "e": "nervoso"
         }
        ],
@@ -4462,7 +4462,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não derruba o que ele afirmou. Procuro o documento que mostre a data do certificado ou o estado do lacre.",
+       "t": "O perito Plínio garante certificado válido, lacre intacto e chamado partido da assessora. Essa peça não o abala. Procuro a certidão da autoridade certificadora ou o termo de cadeia de custódia.",
        "e": "pensativo"
       }
      ],
@@ -4596,7 +4596,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Esse documento não resolve esse par. Procuro o que desmente o perito.",
+       "t": "Esse documento não resolve o par entre o perito e Dani sobre o lacre do pen drive. Procuro o termo que mostra o estado do lacre na primeira vistoria.",
        "e": "pensativo"
       }
      ],
@@ -4821,7 +4821,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "O agente não contradiz nada. Procuro não o confundir com quem mente.",
+       "t": "Gouveia só lê o livro e o monitor da portaria, e essa peça não contradiz horário nenhum. Não é contra ele que devo apresentar prova.",
        "e": "pensativo"
       }
      ],
@@ -4935,7 +4935,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Isso não contradiz o que ela disse. Procuro o ponto ou a escala.",
+       "t": "Ivone jura que usou o próprio crachá até as dez da noite. Essa peça não a desmente. O ponto biométrico e a escala de limpeza é que fixam a hora de saída.",
        "e": "pensativo"
       }
      ],
@@ -5085,7 +5085,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Isso não contradiz o que ele disse. A catraca mostra a saída de Dani.",
+       "t": "Wagner diz que o chamado 8812 veio da assessora e que só atualizou o leitor. Essa peça não o toca. A catraca é que mostra a saída de Dani antes das 20h10.",
        "e": "pensativo"
       }
      ],
@@ -5933,7 +5933,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "A Presidente não contradiz nada. Procuro não a confundir com quem mente.",
+       "t": "A doutora Marlene só informa o que está nos registros da Ordem: nenhuma representação anterior e um Núcleo de Ética que nunca existiu. Não há o que contradizer nela.",
        "e": "pensativo"
       }
      ],
@@ -6302,7 +6302,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não desfaz o que ele disse. Procuro a certidão de procurações ou a certidão de conduta.",
+       "t": "Vítor diz que perdeu a casa por negligência do representado e que a reclamação de 2020 foi arquivada sem motivo. Esse papel não desfaz nada disso. Procuro a certidão de procurações ou a de conduta da OAB.",
        "e": "pensativo"
       }
      ],
@@ -6413,7 +6413,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não resolve a divergência. Procuro a certidão da Seccional.",
+       "t": "Essa prova não resolve a divergência entre a doutora Marlene e Vítor sobre a reclamação de 2020. Procuro a certidão da Seccional.",
        "e": "pensativo"
       }
      ],
@@ -6716,7 +6716,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não derruba o que ele afirmou. Procuro o recibo da loja ou a imagem da câmera.",
+       "t": "Jorge jura que imprimiu o e-mail em casa e que não conhece ninguém do Supremo. Isso não o contradiz. Procuro o recibo da lan house ou a imagem da câmera da loja.",
        "e": "pensativo"
       }
      ],
@@ -6872,7 +6872,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não derruba o que ele afirmou. A ata de Goiânia é a que o desmente.",
+       "t": "Cassiano diz que ouviu o representado no corredor do fórum no dia 12 de março. Esse papel não o desmente. A ata da audiência em Goiânia, nesse mesmo dia, é que o desmente.",
        "e": "pensativo"
       }
      ],
@@ -7005,7 +7005,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "A Dra. Helena não está contradizendo nada. Não devo confundi-la com quem mente.",
+       "t": "A doutora Helena diz que Rafael escondeu a carta por conta própria e que o representado nunca usou meio fraudulento. Nenhuma peça a contradiz, e confrontá-la não ajuda ninguém.",
        "e": "pensativo"
       }
      ],
@@ -7269,7 +7269,7 @@
        "e": "normal"
       }
      ],
-     "local": "rua",
+     "local": "escritorio",
      "proxima": "c3"
     },
     "c3": {
@@ -7905,7 +7905,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Helena não contradiz nada. Procuro não a confundir com quem mente.",
+       "t": "Helena conta a chegada às 6h31, a algema às 6h52 e as câmeras levadas pela PF. Nada do que mostrei contradiz isso, e ela não é quem devo confrontar.",
        "e": "pensativo"
       }
      ],
@@ -8531,7 +8531,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não desmente o que ele disse. Procuro o registro da portaria ou das câmeras.",
+       "t": "Anselmo jura que viu Helena queimar papéis na garagem às cinco da manhã. Essa peça não o contradiz. Procuro o registro da portaria, que mostra a hora em que Helena entrou.",
        "e": "pensativo"
       }
      ],
@@ -8628,7 +8628,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não resolve a divergência. Procuro o registro de entrada do edifício.",
+       "t": "Essa prova não resolve a divergência entre Anselmo e Helena sobre a madrugada na garagem. Procuro o registro de entrada do edifício.",
        "e": "pensativo"
       }
      ],
@@ -8849,7 +8849,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não desmente o que ele disse. O vídeo e o mandado são os que o contradizem.",
+       "t": "O agente Marcos diz que o mandado foi lido e que Helena assinou o termo às 6h58. Essa peça não o desmente. O vídeo da busca e o mandado é que o contradizem.",
        "e": "pensativo"
       }
      ],
@@ -9001,7 +9001,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não derruba o que ele afirmou. O livro de saídas é o que o desmente.",
+       "t": "O juiz Ézio afirma que o endereço errado do mandado é detalhe e que nunca falou com Nery. Essa peça não o atinge. O livro de saídas da PF é o que o desmente.",
        "e": "pensativo"
       }
      ],
@@ -9150,7 +9150,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Bruna não contradiz nada. Procuro não a confundir com quem mente.",
+       "t": "Bruna descreve o que filmou: os sete agentes, a algema às 6h52 e o celular levado sem recibo. Essa peça não desmente o vídeo. Não vou confrontar quem filmou.",
        "e": "pensativo"
       }
      ],
@@ -9772,7 +9772,7 @@
        "e": "normal"
       }
      ],
-     "local": "tribunal",
+     "local": "gabinete",
      "proxima": "c7"
     },
     "c7": {
@@ -9829,7 +9829,7 @@
     "c8": {
      "tipo": "escolha",
      "livre": true,
-     "local": "tribunal",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -10186,7 +10186,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não desmente o que ele disse. Procuro a ata da designação, a agenda ou a gravação original.",
+       "t": "O Ministro Ataulfo diz que sempre teve reservas sobre a designação e que a gravação do bar é íntegra. Essa peça não o desmente. Procuro a ata da designação, a agenda ou a gravação original.",
        "e": "pensativo"
       }
      ],
@@ -10436,7 +10436,7 @@
        "falas": [
         {
          "q": "a6helga",
-         "t": "Presidente, deponho sobre o que consta dos autos e sobre o que presenciei.",
+         "t": "Presidente, vim a pedido do arguido para falar da designação do instrutor.",
          "e": "normal"
         }
        ],
@@ -10668,7 +10668,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não derruba o que ele disse. A agenda e o áudio original são os que o desmentem.",
+       "t": "Gilberto jura que o dossiê veio de um assessor e que nunca falou com o gabinete de Ataulfo. Essa peça não o abala. A agenda do gabinete e o áudio original é que o desmentem.",
        "e": "pensativo"
       }
      ],
@@ -10779,7 +10779,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não resolve a divergência. Procuro a agenda pública do gabinete.",
+       "t": "Esse documento não resolve a divergência entre Gilberto e o gabinete sobre os encontros. Procuro a agenda pública do gabinete do Ministro Ataulfo.",
        "e": "pensativo"
       }
      ],
@@ -11336,7 +11336,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "A Ministra não contradiz nada. Procuro não a confundir com quem mente.",
+       "t": "A Ministra explica a designação do instrutor e a ata da Subprocuradora, e nada nos autos a desmente. Confrontá-la só enfraquece a defesa do instrutor.",
        "e": "pensativo"
       }
      ],
@@ -11428,7 +11428,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Essa prova não resolve a afirmação. O recibo do empréstimo é o que a explica.",
+       "t": "Dani diz que a ata do café foi só para ajustar a pauta e que nunca recebeu favor de ninguém. Essa peça não a explica. O empréstimo de Helena é o que precisa de explicação.",
        "e": "pensativo"
       }
      ],
@@ -11560,7 +11560,7 @@
      "erro": [
       {
        "q": "voce",
-       "t": "Rafael não contradiz nada. Procuro não o confundir com quem mente.",
+       "t": "Rafael diz que o instrutor o prendeu em casa, por ordem judicial, e que nunca o ouviu falar mal de político. Essa peça não o contradiz, e confrontá-lo seria injusto.",
        "e": "pensativo"
       }
      ],

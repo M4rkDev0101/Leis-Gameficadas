@@ -1366,7 +1366,7 @@
           "erro": [
             {
               "q": "dani",
-              "t": "Algo sobrou ou algo se perdeu. Examine de novo, Excelência.",
+              "t": "Excelência, os papéis do envelope do assessor do Senador Jordão precisam de protocolo e de assinatura de quem estava no cargo. Algo sobrou ou algo se perdeu. Examine de novo.",
               "e": "nervoso"
             }
           ],
@@ -1418,7 +1418,7 @@
           "erro": [
             {
               "q": "voce",
-              "t": "Subestimei o homem. Vou ter de ouvir com mais cuidado.",
+              "t": "Subestimei Cantalice: ele leu o meu acórdão três vezes e vai perguntar com documento na mão. Vou ter de ouvir com mais cuidado.",
               "e": "nervoso"
             }
           ],
@@ -2406,7 +2406,7 @@
         },
         "intu2": {
           "tipo": "intuicao",
-          "local": "tribunal",
+          "local": "corredor",
           "falas": [
             {
               "q": "narrador",
@@ -2451,7 +2451,7 @@
           "erro": [
             {
               "q": "voce",
-              "t": "Errei a leitura. Aprenderei com a sessão.",
+              "t": "Errei a leitura de Bartolomeu: a tensão viria de um aparte mal escolhido, não de tumulto. Aprenderei com a sessão.",
               "e": "nervoso"
             }
           ],
@@ -4045,7 +4045,7 @@
           "erro": [
             {
               "q": "a8cecilia",
-              "t": "Algo não bate, Presidente. Releia a origem de cada papel.",
+              "t": "Algo não bate, Presidente. A nota oficial e a minuta de acordo só se conferem pela origem: domínio, assinatura e data dos metadados.",
               "e": "nervoso"
             }
           ],
@@ -4094,7 +4094,7 @@
           "erro": [
             {
               "q": "voce",
-              "t": "Subestimei a organização. Vamos reforçar a garagem.",
+              "t": "Subestimei a organização: o grupo da garagem veio de fora, em ônibus fretados, e não era o mesmo da Praça. Vamos reforçar a garagem.",
               "e": "nervoso"
             }
           ],
@@ -5079,7 +5079,7 @@
           "erro": [
             {
               "q": "a8cecilia",
-              "t": "Algo sobrou ou algo se perdeu. Examine os horários, Presidente.",
+              "t": "Algo sobrou ou algo se perdeu. Compare o recibo de R$ 3.000 e o print com os horários de Pedro: UTI, celular desligado, assinatura distinta.",
               "e": "nervoso"
             }
           ],
@@ -5421,7 +5421,7 @@
           "erro": [
             {
               "q": "voce",
-              "t": "Julguei o homem antes de julgar o fato. Corrijo.",
+              "t": "Julguei Pedro antes de julgar o fato: ele se denunciou antes de qualquer reclamação. Corrijo.",
               "e": "nervoso"
             }
           ],
@@ -6280,7 +6280,7 @@
         "liv2": {
           "tipo": "escolha",
           "livre": true,
-          "local": "stf",
+          "local": "gabinete",
           "falas": [
             {
               "q": "narrador",
