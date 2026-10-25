@@ -2848,7 +2848,7 @@ function speedLines() { if (!fxOn()) return; const fx = $("#fx"), a = el("div", 
 // contradição/prova certa: linhas de velocidade, rosto do depoente em zoom com expressão de choque, tremida e flash
 async function contradictionFx(q) {
   if (!fxOn()) return;
-  if (q && q !== "narrador") { await camera(posOf(q), q, "chocado"); }
+  if (q && q !== "narrador") { await camera(posOf(q), q, "chocado", sceneLocal()); }
   const a = $("#actor"); Sound.whoosh(); speedLines(); flash("whiteflash"); shake();
   a.classList.add("zoomface"); a.classList.remove("shock"); void a.offsetWidth; a.classList.add("shock");
   await sleep(900); a.classList.remove("zoomface"); await sleep(140);
@@ -2922,8 +2922,12 @@ function markedHTML(text, marks, n) {
 const isJuiz = () => !!(EP && EP.papel === "juiz");
 // juiz não grita "um momento" nem "aqui está" para a testemunha: o efeito vira "ordem" (intervenção) ou o martelo
 const JUIZ_FX = {ummomento:"ordem", tomaisso:"martelo"};
+// local da cena em andamento: toda fala (depoimento, protesto, decisão...) acontece no cenário da cena
+const COURT_TIPOS = new Set(["depoimento", "protesto", "acareacao", "audiencia", "plenario"]);   // sem local, acontecem no tribunal
+const sceneLocal = () => { const c = G && G.scene && EP.cenas[G.scene] || {}; return c.local || (COURT_TIPOS.has(c.tipo) ? "tribunal" : undefined); };
 async function say(line, opts = {}) {
   if (!cond(line.se)) return;
+  if (opts.local == null) opts = {...opts, local:sceneLocal()};
   if (isJuiz() && line.q === "voce" && JUIZ_FX[line.fx]) line = {...line, fx:JUIZ_FX[line.fx]};
   const q = line.q || "narrador";
   const pos = q === "narrador" ? curPos : posOf(q);
