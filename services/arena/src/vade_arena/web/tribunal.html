@@ -2813,6 +2813,8 @@ async function camera(pos, q, expr, local) {
   // fora do tribunal, todos aparecem no próprio local; "cena" sem local fica onde a câmera está
   const isLoc = local && local !== "tribunal" && local !== "escritorio";
   if (pos === "cena" && !local) pos = curPos && curPos.startsWith("L:") ? curPos : "testemunha";
+  // mentor/assessor (posição "escritorio") em audiência senta ao lado do jogador: nada de fundo de escritório no tribunal
+  if (pos === "escritorio" && (local === "tribunal" || (!local && curPos && sceneGroup(curPos) === "T"))) pos = ROLE_PLAQUE[EP.papel] || "defesa";
   const target = isLoc ? "L:" + local : local === "escritorio" ? "escritorio" : pos;
   const curPosBefore = curPos;
   if (target !== curPos) {
