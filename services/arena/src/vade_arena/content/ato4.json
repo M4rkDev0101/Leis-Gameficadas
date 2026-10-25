@@ -726,7 +726,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "O Inspetor Gilson Maia foi inquirido sem pergunta indutiva e sem repetição, e a defesa pôde perguntar sobre a arma."
             }
           ],
           "proxima": "s6",
@@ -858,7 +858,7 @@
                 {
                   "q": "a4tulio",
                   "e": "pensativo",
-                  "t": "O Ministério Público apura, Excelência."
+                  "t": "O Ministério Público apura a conduta do Inspetor, Excelência, se houver indício de crime."
                 },
                 {
                   "q": "a4rita",
@@ -1001,7 +1001,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "As perguntas finais ao Inspetor terminaram sem que o juízo assumisse a busca pelo segundo homem, tarefa do Ministério Público."
             }
           ],
           "proxima": "s8"
@@ -1871,7 +1871,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "O Cabo Anselmo Reis falou sem ter a resposta soprada, e a sala voltou à ordem depois do destempero de Brandão."
             }
           ],
           "proxima": "s7",
@@ -2867,7 +2867,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "Everton foi ouvido com defensor e sem pergunta indutiva sobre o vazamento, com o direito ao silêncio preservado."
             }
           ],
           "proxima": "s6"
@@ -2990,7 +2990,7 @@
                 {
                   "q": "a4tulio",
                   "e": "pensativo",
-                  "t": "O Ministério Público apura, Excelência."
+                  "t": "Remeta-se ao Ministério Público, Excelência: cabe a ele apurar a omissão do Delegado."
                 },
                 {
                   "q": "a4rita",
@@ -3113,7 +3113,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "O Delegado respondeu à defesa sobre a prisão sem mandado, e o protesto do Ministério Público recebeu decisão fundamentada."
             }
           ],
           "proxima": "s8"
@@ -4015,7 +4015,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "O Sr. Heraldo foi contido na exaltação e ouvido sem pergunta indutiva sobre trauma; o laudo do prejuízo continuou por conta da acusação."
             }
           ],
           "proxima": "s6"
@@ -4251,7 +4251,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "As perguntas da defesa ao Sr. Heraldo sobre o auto de devolução e as desculpas no corredor foram decididas sem atropelo."
             }
           ],
           "proxima": "s8"
@@ -5216,7 +5216,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "O Sargento Barreto descreveu a diligência na casa do réu sem que lhe sugerissem que o morador consentira."
             }
           ],
           "proxima": "s6"
@@ -5452,7 +5452,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "O Sargento Barreto respondeu sobre o mandado de busca, e o protesto contra a repetição da pergunta foi decidido com equilíbrio."
             }
           ],
           "proxima": "s8"
@@ -5626,7 +5626,7 @@
             },
             {
               "q": "narrador",
-              "t": "Os autos do processo foram atualizados.",
+              "t": "O nome do porteiro Evandro Lima entra nos autos como testemunha da acusação, apresentada só depois de a defesa pedir o desentranhamento da prova.",
               "recebe": [
                 "cp342",
                 "cpp209"
@@ -5800,7 +5800,7 @@
             {
               "q": "voce",
               "e": "bravo",
-              "t": "Esse documento não contradiz essa afirmação."
+              "t": "Esse documento não contradiz que o senhor Evandro tenha subido com os policiais como testemunha civil."
             }
           ],
           "proxima": "b4",
@@ -5927,7 +5927,7 @@
             {
               "q": "voce",
               "e": "bravo",
-              "t": "Esses documentos não contradizem essa afirmação."
+              "t": "Esses documentos não contradizem a versão de que o doutor Elias abriu a porta com a própria mão."
             }
           ],
           "proxima": "b6",
@@ -6729,7 +6729,7 @@
             {
               "q": "narrador",
               "e": "normal",
-              "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+              "t": "O silêncio de Jorge não virou confissão, e ele não foi levado a admitir que seria Henrique Altavista."
             }
           ],
           "proxima": "s6"
@@ -7233,7 +7233,7 @@
             },
             {
               "q": "narrador",
-              "t": "Os autos do processo foram atualizados.",
+              "t": "O pedido de prisão domiciliar do preso, com o nome do cardiologista Aurélio Matos, entra nos autos antes da assinatura.",
               "recebe": [
                 "cp342",
                 "cpp209",

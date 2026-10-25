@@ -742,7 +742,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "Maicon foi ouvido na custódia sobre a prisão e a escoriação no punho, sem ser levado ao mérito do furto."
       }
      ],
      "proxima": "c6",
@@ -1299,7 +1299,8 @@
      "proxima": "v5",
      "dica": [
       "A primeira escolha é a videoconferência; a retirada do réu é a segunda, e o defensor sempre fica."
-     ]
+     ],
+     "local": "gabinete"
     },
     "v5": {
      "tipo": "dialogo",
@@ -1529,7 +1530,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "Mariana foi ouvida no seu tempo, sem a pergunta sobre a roupa de treino e sem que os gritos de Osmar chegassem a ela."
       }
      ],
      "proxima": "v8",
@@ -2286,7 +2287,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "O Conselho de Sentença foi formado com as recusas legais, sem os jurados cunhados sentados juntos."
       }
      ],
      "proxima": "j4",
@@ -2381,7 +2382,7 @@
         {
          "q": "a4tulio",
          "e": "pensativo",
-         "t": "O Ministério Público não se opõe, Excelência."
+         "t": "O Ministério Público não vê oposição à permanência da jurada, Excelência."
         },
         {
          "q": "a4rita",
@@ -2586,7 +2587,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "O perito, a viúva e o acusado foram ouvidos sem conclusão soprada, e o juízo não mandou refazer o exame da faca."
       }
      ],
      "proxima": "j7"
@@ -2778,7 +2779,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "Os debates seguiram sem a pronúncia como argumento de autoridade e sem o silêncio de Jonas voltado contra ele."
       }
      ],
      "proxima": "j9",

@@ -439,7 +439,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Lacerda abre sobre a mesa nova a pasta de Rogério Pacheco: o primeiro processo da sua carreira no Ministério Público.",
        "recebe": [
         "bo",
         "termo",
@@ -1877,7 +1877,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "A agenda do gabinete fecha com a vistoria de quinta anotada a lápis, longe dos olhos do resto da Promotoria.",
        "recebe": [
         "lca54",
         "lca54v",
@@ -2196,7 +2196,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Na ata da audiência fica lançado o indeferimento da oitiva dos pescadores, assinado pelo juiz substituto Sérgio Quadros.",
        "recebe": [
         "qcpp400",
         "qcf5lv",
@@ -3397,7 +3397,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Na pasta de Eduardo Pimentel entram três alvarás sem vistoria e uma anotação sua sobre a pergunta repetida do doutor Valadares.",
        "recebe": [
         "lia9",
         "lia9i",
@@ -4156,7 +4156,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Na ata, a oitiva de Ildefonso Torres, sócio da Pimentel & Torres, fica registrada como requerimento da defesa.",
        "recebe": [
         "cp342",
         "cpc370"
@@ -4180,7 +4180,7 @@
       {
        "q": "voce",
        "e": "nervoso",
-       "t": "(Quando o réu sorri depois de perder, alguém prometeu uma revanche.)"
+       "t": "(O sorriso de Fábio é o de quem ainda tem uma testemunha na manga.)"
       }
      ],
      "local": "tribunal",
@@ -4283,7 +4283,7 @@
       {
        "q": "heitor",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Esse documento, doutor(a), não desmente que os R$ 380 mil foram pagos antes dos alvarás. Falta a data do pagamento."
       }
      ],
      "proxima": "w3",
@@ -4940,7 +4940,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Na capa do inquérito de Davi e Bianca, a assinatura apressada de Valadares e o carimbo da delegacia de Fausto Rangel.",
        "recebe": [
         "laudo",
         "apreensao",
@@ -5236,7 +5236,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "A audiência de Davi Moreira e Bianca Sales passa para amanhã, com o prazo encurtado pelo juiz Quadros.",
        "recebe": [
         "qcf5lv",
         "qcpp405",
@@ -5688,7 +5688,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz a afirmação, promotor(a)."
+       "t": "Essa prova não contradiz a balança e o caderno que o cabo diz ter encontrado, promotor(a)."
       }
      ],
      "proxima": "x9"
@@ -6162,7 +6162,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Você circula a sexta-feira na agenda e se pergunta quantas pessoas, de fato, sabem da data.",
        "recebe": [
         "lorc1",
         "lorc2",
@@ -6679,7 +6679,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz a afirmação, promotor(a)."
+       "t": "Essa prova não contradiz a afirmação de Débora de que só atende telefone, promotor(a)."
       }
      ],
      "proxima": "x9"
@@ -7656,7 +7656,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Dani imprime os registros da sala 3, processo por processo, e os deixa sobre a mesa vazia do gabinete.",
        "recebe": [
         "cp325",
         "cp317",
@@ -8318,7 +8318,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Na pauta, o nome de Wilson Camargo é incluído a caneta, fora da ordem das testemunhas.",
        "recebe": [
         "cp342",
         "cpp209"
@@ -8492,7 +8492,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Doutor(a), essa prova não afasta a afirmação de que a conta de dona Heloísa foi aberta há seis meses."
       }
      ],
      "proxima": "w3",
@@ -8635,7 +8635,7 @@
       {
        "q": "beatriz",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação, doutor(a)."
+       "t": "Essa prova não desmente a designação verbal que o senhor Wilson alega, doutor(a)."
       }
      ],
      "proxima": "w5",

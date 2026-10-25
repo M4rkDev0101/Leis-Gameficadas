@@ -1215,7 +1215,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "A caixa com a pizza e o inquérito do assalto à farmácia ficam sobre a sua mesa, ainda mornos.",
        "recebe": [
         "cp157",
         "cp157a",
@@ -2230,7 +2230,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "As quatro regras do art. 478 ficam anotadas no roteiro do plenário de amanhã, com o nome do doutor Ubirajara ao lado.",
        "recebe": [
         "cp121",
         "cp121f",
