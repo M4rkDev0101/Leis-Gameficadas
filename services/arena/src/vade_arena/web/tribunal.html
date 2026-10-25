@@ -3969,6 +3969,13 @@ async function verdict(c) {
   const r = await finish(true);
   renderVerdict(c, r);
 }
+// próximo episódio da campanha (avulsos ficam de fora); null se for o último ou ainda estiver bloqueado
+async function nextEpisode() {
+  try { CAR = await api("/api/arena/carreira"); } catch (e) { return null; }
+  const eps = CAR.atos.flatMap(a => a.episodios), i = eps.findIndex(e => e.id === EP.id);
+  const nx = i >= 0 ? eps[i + 1] : null;
+  return nx && nx.status !== "bloqueado" ? nx : null;
+}
 function renderVerdict(c, r) {
   [...$("#stage").querySelectorAll(".full, .modal, .lawpop, .inv-title")].forEach(n => n.remove()); clearOverlay(); hideDialog();
   const rc = r.recompensas || {}, rec = rc.recorde || {}, prog = r.progresso || {};
@@ -3990,6 +3997,12 @@ function renderVerdict(c, r) {
   const bigbtns = el("div", {class:"bigbtns"}, EP.final ? el("button", {class:"bigbtn", textContent:"🎬 Epílogo e créditos", onclick:credits}) : null,
     el("button", {class:EP.final ? "bigbtn sec" : "bigbtn", textContent:"Voltar à carreira", onclick:quitGame}),
     el("button", {class:"bigbtn sec", textContent:"Jogar de novo", onclick:() => startEpisode(EP.id)}));
+  if (!EP.final) nextEpisode().then(nx => {   // a carreira é relida: o episódio seguinte acabou de ser liberado
+    if (!nx || !bigbtns.isConnected) return;
+    const b = el("button", {class:"bigbtn", textContent:"Próximo episódio ▶", onclick:() => startEpisode(nx.id, !!nx.salvo)});
+    bigbtns.querySelector(".bigbtn:not(.sec)")?.classList.add("sec");
+    bigbtns.prepend(b); b.focus({preventScroll:true});
+  });
   const box = el("div", {class:"full verdict"},
     el("div", {class:"stamp " + cls, textContent:c.carimbo, style:{fontSize:stampSize(c.carimbo)}}),
     rc.nota ? el("div", {class:"grade g" + rc.nota, role:"img", "aria-label":"Nota " + rc.nota}, rc.nota, el("small", {textContent:"NOTA"})) : null,
