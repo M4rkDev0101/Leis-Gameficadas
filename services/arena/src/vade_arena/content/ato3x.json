@@ -414,7 +414,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Lacerda pega o telefone da Corregedoria e deixa o auto de flagrante aberto sobre o ofício da Defensoria.",
        "recebe": [
         "cf129",
         "cpp157",
@@ -423,7 +423,7 @@
       }
      ],
      "proxima": "x3",
-     "local": "escritorio"
+     "local": "promotoria"
     },
     "x3": {
      "tipo": "investigar",
@@ -762,7 +762,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "No quadro de provas, a coluna do furto fica separada da coluna da tortura, cada uma com as suas próprias fontes.",
        "recebe": [
         "camerarua",
         "apreensao",
@@ -791,7 +791,7 @@
       }
      ],
      "proxima": "x6",
-     "local": "escritorio"
+     "local": "promotoria"
     },
     "x6": {
      "tipo": "apresentar",
@@ -1675,7 +1675,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Lacerda anota o nome do delegado e o horário da transmissão na capa do procedimento.",
        "recebe": [
         "flagrante",
         "l38",
@@ -1685,7 +1685,7 @@
       }
      ],
      "proxima": "x3",
-     "local": "escritorio"
+     "local": "promotoria"
     },
     "x3": {
      "tipo": "investigar",
@@ -1982,7 +1982,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Lacerda desliza a página da perícia sobre a mesa, com uma das mensagens sublinhada em vermelho.",
        "recebe": [
         "mensagem",
         "l13",
@@ -2032,7 +2032,7 @@
       }
      ],
      "proxima": "im1",
-     "local": "escritorio"
+     "local": "promotoria"
     },
     "x6": {
      "tipo": "apresentar",
@@ -3022,7 +3022,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "Você abre a pasta do inquérito na página da pistola .380 e marca os nomes de Ivan, Edgar e da doutora Lívia.",
        "recebe": [
         "apreensao",
         "registro",
@@ -3033,7 +3033,7 @@
       }
      ],
      "proxima": "x3",
-     "local": "escritorio"
+     "local": "promotoria"
     },
     "x3": {
      "tipo": "investigar",
@@ -3319,7 +3319,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "Os autos foram atualizados.",
+       "t": "O ofício da Polícia Federal é grampeado à capa do inquérito, e o nome de Fausto Rangel é sublinhado duas vezes.",
        "recebe": [
         "l10",
         "l16",
@@ -3355,7 +3355,7 @@
       }
      ],
      "proxima": "x6",
-     "local": "escritorio"
+     "local": "promotoria"
     },
     "x6": {
      "tipo": "apresentar",

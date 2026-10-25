@@ -189,7 +189,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -1432,7 +1432,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -1485,7 +1485,7 @@
     },
     "c3": {
      "tipo": "escolha",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -1814,7 +1814,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "t": "Um instante, doutor Rafael: o juízo tem uma dúvida sobre a data da entrega do pen drive.",
        "fx": "ordem"
       },
       {
@@ -2330,7 +2330,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "t": "Um instante, doutora Lívia: o juízo precisa esclarecer a sua assinatura na alteração contratual.",
        "fx": "ordem"
       },
       {
@@ -2360,7 +2360,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Esse documento não contradiz essa afirmação."
+       "t": "Esse documento não contradiz o que a doutora Lívia diz sobre nunca ter assinado documento da Altavista Serviços."
       }
      ],
      "proxima": "c16"
@@ -2455,7 +2455,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "Edson Valle, preso por estelionato, é registrado nos autos como testemunha não arrolada da defesa de Henrique.",
        "recebe": [
         "cp342",
         "cpp209",
@@ -2652,7 +2652,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "t": "Um instante, senhor Edson: o juízo quer saber quem montou a planilha de pagamentos.",
        "fx": "ordem"
       },
       {
@@ -2678,7 +2678,7 @@
       {
        "q": "voce",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação."
+       "t": "Essa prova não contradiz que Rafael tenha montado a planilha no computador dele para incriminar o doutor Brandão."
       }
      ],
      "proxima": "e5",
@@ -2786,7 +2786,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "t": "Um instante, senhor Edson: o juízo quer esclarecer a data da alteração do contrato social.",
        "fx": "ordem"
       },
       {
@@ -2811,7 +2811,7 @@
       {
        "q": "voce",
        "e": "bravo",
-       "t": "Esse documento não contradiz essa afirmação."
+       "t": "Esse documento não contradiz que o contrato social tenha sido falsificado por ordem de Rafael."
       }
      ],
      "proxima": "e7",
@@ -3198,7 +3198,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -3236,7 +3236,7 @@
     },
     "c3": {
      "tipo": "escolha",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -3937,7 +3937,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "t": "Um instante, senhor Ronaldo: o juízo precisa esclarecer o seu contato com o doutor Brandão.",
        "fx": "ordem"
       },
       {
@@ -4008,7 +4008,7 @@
       },
       {
        "q": "narrador",
-       "t": "Os autos do processo foram atualizados.",
+       "t": "O nome de Humberto Salles, engenheiro metalúrgico, é registrado como testemunha não arrolada da defesa de Henrique Altavista.",
        "recebe": [
         "cp342",
         "cpp209"
@@ -4198,7 +4198,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "t": "Um instante, doutor Humberto: o juízo quer ver o termo de coleta sobre a contraprova.",
        "fx": "ordem"
       },
       {
@@ -4224,7 +4224,7 @@
       {
        "q": "voce",
        "e": "bravo",
-       "t": "Essa prova não contradiz essa afirmação."
+       "t": "Essa prova não contradiz a afirmação de que não existe contraprova lacrada."
       }
      ],
      "proxima": "k5",
@@ -4331,7 +4331,7 @@
       {
        "q": "voce",
        "e": "pensativo",
-       "t": "Um instante: o juízo tem uma pergunta a fazer.",
+       "t": "Um instante, doutor Humberto: o juízo quer conferir a nota fiscal e o romaneio do aço.",
        "fx": "ordem"
       },
       {
@@ -4356,7 +4356,7 @@
       {
        "q": "voce",
        "e": "bravo",
-       "t": "Esses documentos não contradizem essa afirmação."
+       "t": "Esses documentos não contradizem que a nota fiscal e o romaneio sejam idênticos, doutor Humberto."
       }
      ],
      "proxima": "k7",
@@ -4488,7 +4488,7 @@
       {
        "q": "lacerda",
        "e": "feliz",
-       "t": "O Ministério Público concorda, Excelência."
+       "t": "O Ministério Público concorda com a separação dos processos, Excelência."
       }
      ],
      "proxima": "c14p"
@@ -4822,7 +4822,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -4876,7 +4876,7 @@
     },
     "c2c": {
      "tipo": "celular",
-     "local": "escritorio",
+     "local": "gabinete",
      "contato": "Clara Seixas",
      "status": "online às 6h02",
      "falas": [
@@ -6147,7 +6147,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -6890,7 +6890,7 @@
     },
     "c13": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -7054,7 +7054,7 @@
     },
     "c13x": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "gabinete",
      "falas": [
       {
        "q": "narrador",
@@ -7102,7 +7102,7 @@
     },
     "c13y": {
      "tipo": "celular",
-     "local": "escritorio",
+     "local": "gabinete",
      "contato": "Número oculto",
      "status": "digitando…",
      "falas": [

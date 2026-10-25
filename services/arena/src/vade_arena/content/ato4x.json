@@ -551,7 +551,8 @@
        ]
       }
      ],
-     "proxima": "s5"
+     "proxima": "s5",
+     "local": "gabinete"
     },
     "s5": {
      "tipo": "investigar",
@@ -801,7 +802,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "Beto contou sobre a oficina de marcenaria e o celular sem que a pergunta já respondida fosse repetida contra ele."
       }
      ],
      "proxima": "s8"
@@ -1101,7 +1102,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "O Diretor respondeu sobre a conduta ruim atestada, e os almoços com a Altavista Serviços foram decididos como incidente, sem o juízo suprir a prova do MP."
       }
      ],
      "proxima": "s10"
@@ -1283,7 +1284,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "A agente Sônia relatou a revista no corredor sem que lhe soprassem de quem era o armário."
       }
      ],
      "proxima": "s12"
@@ -1618,7 +1619,8 @@
       }
      ],
      "livre": true,
-     "proxima": "s17"
+     "proxima": "s17",
+     "local": "gabinete"
     },
     "s17": {
      "tipo": "dialogo",
@@ -2193,7 +2195,8 @@
        "certa": false
       }
      ],
-     "proxima": "cf"
+     "proxima": "cf",
+     "local": "gabinete"
     },
     "cf": {
      "tipo": "dialogo",
@@ -2414,7 +2417,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "O Sr. Cícero falou da noite no bar sem ofensa à sua dignidade e sem repetir a pergunta sobre as cervejas."
       }
      ],
      "proxima": "s8"
@@ -2675,7 +2678,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "Wagner respondeu sobre o emprego na empresa, e o protesto sobre o recado ao repórter foi decidido com fundamento."
       }
      ],
      "proxima": "s10"
@@ -2958,7 +2961,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "O Sr. Cícero relatou o medo sentido com o recado sobre o repórter, sem que a pergunta lhe sugerisse a resposta."
       }
      ],
      "proxima": "s15"
@@ -3650,7 +3653,8 @@
        "certa": false
       }
      ],
-     "proxima": "s6"
+     "proxima": "s6",
+     "local": "gabinete"
     },
     "s6": {
      "tipo": "dialogo",
@@ -3761,7 +3765,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "A Sra. Lorena contou o carro sob a janela, e a pergunta sobre os seus relacionamentos, alheia à causa, foi barrada."
       }
      ],
      "proxima": "s8"
@@ -4101,7 +4105,7 @@
       {
        "q": "narrador",
        "e": "normal",
-       "t": "A inquirição seguiu em ordem, sem cerceamento e sem excesso."
+       "t": "A Sra. Lorena disse que o chaveiro não era dela, sem que o rastreador do Márcio lhe fosse apresentado como fato provado."
       }
      ],
      "proxima": "s12"
