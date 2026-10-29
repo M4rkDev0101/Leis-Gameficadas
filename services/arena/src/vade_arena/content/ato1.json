@@ -913,11 +913,11 @@
           ],
           "requer": ["registro", "termo"],
           "proxima": "r4"},
-        "r4": {"tipo": "dialogo", "local": "tribunal", "falas": [
+        "r4": {"tipo": "dialogo", "local": "custodia", "falas": [
           {"q": "beatriz", "e": "normal", "t": "Audiência de custódia. Presa: Joana Lima. Ouço a autoridade policial.", "fx": "martelo"},
           {"q": "joana", "e": "triste", "t": "(baixinho) Eu não roubei nada. Eu só queria ver a minha mãe."}
         ], "proxima": "r5"},
-        "r5": {"tipo": "depoimento", "testemunha": "fausto", "titulo": "A versão do delegado",
+        "r5": {"tipo": "depoimento", "local": "custodia", "testemunha": "fausto", "titulo": "A versão do delegado",
           "intro": [{"q": "fausto", "e": "confiante", "t": "Vinte e dois anos de polícia, Excelência. Tudo dentro da lei."}],
           "afirmacoes": [
             {"t": "A presa foi autuada em flagrante na noite do dia 12.", "e": "normal",
@@ -936,7 +936,7 @@
           ],
           "erro": [{"q": "beatriz", "e": "bravo", "t": "Nada disso contradiz o que o delegado Fausto declarou sobre a prisão, doutor(a)."}],
           "proxima": "r6"},
-        "r6": {"tipo": "apresentar", "local": "tribunal", "falas": [
+        "r6": {"tipo": "apresentar", "local": "custodia", "falas": [
           {"q": "lacerda", "e": "pensativo", "t": "Excelência, ainda que haja atraso na comunicação, existe a confissão assinada. Ela basta para manter a prisão."}
         ], "pergunta": "Que garantia foi desrespeitada na 'confissão'?",
           "provas": ["cf5lxiii"],
@@ -947,7 +947,7 @@
           ],
           "erro": [{"q": "beatriz", "e": "bravo", "t": "Essa norma não trata da confissão, doutor(a)."}],
           "proxima": "r7"},
-        "r7": {"tipo": "escolha", "local": "tribunal", "falas": [
+        "r7": {"tipo": "escolha", "local": "custodia", "falas": [
           {"q": "beatriz", "e": "normal", "t": "Defesa, seu requerimento."}
         ], "pergunta": "O que você pede?",
           "opcoes": [
@@ -960,7 +960,7 @@
              "falas": [{"q": "joana", "e": "chocado", "t": "Doutor(a)?!"}, {"q": "beatriz", "e": "bravo", "t": "A defesa pedindo preventiva da própria cliente? Pense de novo."}]}
           ],
           "proxima": "r8"},
-        "r8": {"tipo": "dialogo", "local": "tribunal", "falas": [
+        "r8": {"tipo": "dialogo", "local": "custodia", "falas": [
           {"q": "beatriz", "e": "bravo", "t": "Relaxo a prisão de Joana Lima, por ilegal. Oficie-se à Corregedoria da Polícia Civil quanto à conduta da autoridade policial.", "fx": "martelo"},
           {"q": "joana", "e": "feliz", "t": "Mãe… eu vou ver a minha mãe!"},
           {"q": "fausto", "e": "bravo", "t": "(saindo, ao celular) …Doutor Brandão? Deu errado. O estagiário do Duarte."},

@@ -6615,12 +6615,12 @@
               "t": "Dra. Lívia, a senhora foi constituída há uma hora e já está aqui. Interessante. Mas a defesa técnica é um direito, e o senhor Jorge terá a sua, com entrevista prévia e reservada (CPP, art. 310, § 9º)."
             }
           ],
-          "local": "tribunal",
+          "local": "custodia",
           "proxima": "s5"
         },
         "s5": {
           "tipo": "audiencia",
-          "local": "tribunal",
+          "local": "custodia",
           "titulo": "Perguntas na custódia",
           "falas": [],
           "linhas": [
@@ -6837,7 +6837,8 @@
               "t": "Esse documento não esclarece o ponto. A afirmação sobre o nome só se confronta com a prova da identidade civil."
             }
           ],
-          "proxima": "s7"
+          "proxima": "s7",
+          "local": "custodia"
         },
         "s7": {
           "tipo": "decidir",
@@ -6882,7 +6883,8 @@
               "t": "(sussurrando) Excelência, o direito ao silêncio não impede a identificação datiloscópica quando há dúvida sobre a identidade civil."
             }
           ],
-          "proxima": "s8"
+          "proxima": "s8",
+          "local": "custodia"
         },
         "s8": {
           "tipo": "dialogo",
@@ -6914,7 +6916,7 @@
               "fx": "martelo"
             }
           ],
-          "local": "tribunal",
+          "local": "custodia",
           "proxima": "s9"
         },
         "s9": {
@@ -6949,7 +6951,7 @@
               "t": "(sussurrando) É o art. 313, § 1º, do CPP: soltar após identificar, salvo se outra hipótese recomendar a manutenção."
             }
           ],
-          "local": "tribunal",
+          "local": "custodia",
           "proxima": "s10"
         },
         "s10": {
