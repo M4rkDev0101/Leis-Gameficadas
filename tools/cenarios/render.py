@@ -1,4 +1,4 @@
-"""Renderiza tools/cenarios/*.svg (ou os nomes passados) para web/cenarios/<nome>.webp (1920x1080) via Edge headless + Pillow.
+"""Renderiza tools/cenarios/*.svg (ou os nomes passados) para web/cenarios/<nome>.webp (1920x1200, 16:10 como o palco do jogo) via Edge headless + Pillow.
 
 Uso: python tools/cenarios/render.py [nome ...] [--qualidade 88]
 O SVG é mostrado em 100vw x 100vh com preserveAspectRatio="xMidYMid slice" (igual ao jogo, que usa object-fit: cover).
@@ -13,7 +13,7 @@ from PIL import Image
 EDGE = r"C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
 AQUI = Path(__file__).resolve().parent
 SAIDA = AQUI.parents[1] / "services/arena/src/vade_arena/web/cenarios"
-L, A = 1920, 1080
+L, A = 1920, 1200
 
 
 def renderizar(svg: Path, qualidade: int) -> Path:
