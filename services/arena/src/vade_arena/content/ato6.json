@@ -3252,7 +3252,7 @@
     },
     "c7": {
      "tipo": "investigar",
-     "local": "delegacia",
+     "local": "protocolo_pf",
      "titulo": "Sede da Polícia Federal: de onde veio o laudo",
      "intro": [
       {
@@ -5067,7 +5067,7 @@
     },
     "c6": {
      "tipo": "investigar",
-     "local": "parlatorio",
+     "local": "carceragem",
      "titulo": "Parlatório: o cliente fala",
      "intro": [
       {

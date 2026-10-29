@@ -427,7 +427,7 @@
     },
     "x3": {
      "tipo": "investigar",
-     "local": "delegacia",
+     "local": "delegacia_sala3",
      "titulo": "Delegacia de plantão",
      "intro": [
       {
@@ -3191,7 +3191,7 @@
     },
     "x4": {
      "tipo": "investigar",
-     "local": "delegacia",
+     "local": "sala_armas",
      "titulo": "Depósito de armas da delegacia",
      "intro": [
       {

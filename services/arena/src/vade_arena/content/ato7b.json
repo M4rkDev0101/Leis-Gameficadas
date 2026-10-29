@@ -2662,12 +2662,12 @@
        "e": "triste"
       }
      ],
-     "local": "corredor",
+     "local": "corredor_gabinete_juiz",
      "proxima": "c27"
     },
     "c27": {
      "tipo": "investigar",
-     "local": "corredor",
+     "local": "corredor_gabinete_juiz",
      "titulo": "O corredor da sala 214",
      "intro": [
       {
@@ -2856,7 +2856,7 @@
     },
     "c28": {
      "tipo": "intuicao",
-     "local": "corredor",
+     "local": "corredor_gabinete_juiz",
      "falas": [
       {
        "q": "voce",
@@ -2905,7 +2905,7 @@
     },
     "c29": {
      "tipo": "celular",
-     "local": "corredor",
+     "local": "corredor_gabinete_juiz",
      "contato": "Helena",
      "status": "digitando...",
      "mensagens": [
@@ -2989,7 +2989,7 @@
        "t": "No elevador de serviço, a luz do painel pisca. Uma sombra feminina com uma bolsa grande cruza o fundo do corredor e some na curva."
       }
      ],
-     "local": "corredor",
+     "local": "corredor_gabinete_juiz",
      "proxima": "c31"
     },
     "c31": {
@@ -3045,7 +3045,7 @@
        "t": "No fundo do corredor, o elevador de serviço abre. Ela não tem mais pressa de escapar. Parece tão cansada quanto você."
       }
      ],
-     "local": "corredor",
+     "local": "corredor_gabinete_juiz",
      "proxima": "c32"
     },
     "c32": {
@@ -5848,12 +5848,12 @@
        "t": "Edgar não responde. Olha para você uma vez, longamente, como quem lê uma conta que não fecha, e sai."
       }
      ],
-     "local": "corredor",
+     "local": "corredor_cnj",
      "proxima": "c23"
     },
     "c23": {
      "tipo": "tensao",
-     "local": "garagem",
+     "local": "garagem_cnj",
      "tempo": 9,
      "padrao": 0,
      "pergunta": "Subsolo da garagem do CNJ. Um homem de capa de chuva, sem crachá, se aproxima do seu carro e estende um envelope: «Amigo seu manda dizer: assina isto, que a Altavista cuida do resto. Basta dizer que a Dani agiu sozinha, e que o senhor sabia.» O que você faz?",
@@ -5928,7 +5928,7 @@
     },
     "c23a": {
      "tipo": "investigar",
-     "local": "garagem",
+     "local": "garagem_cnj",
      "titulo": "A garagem do CNJ: o que o homem deixou",
      "intro": [
       {
@@ -6156,7 +6156,7 @@
        "se": "!a7_confiou_joana"
       }
      ],
-     "local": "corredor",
+     "local": "corredor_cnj",
      "proxima": "c24a"
     },
     "c24a": {
@@ -6224,7 +6224,7 @@
     },
     "c25": {
      "tipo": "intuicao",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "rafael",
@@ -6401,7 +6401,7 @@
        "t": "Na esquina, um SUV preto desliga os faróis. Ronan não vê. Você vê, e Joana também."
       }
      ],
-     "local": "praca",
+     "local": "praca_frente_cnj",
      "proxima": "c29"
     },
     "c29": {

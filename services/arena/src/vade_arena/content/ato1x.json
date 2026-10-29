@@ -2203,7 +2203,7 @@
     },
     "b12": {
      "tipo": "escolha",
-     "local": "rua",
+     "local": "calcada_forum",
      "falas": [
       {
        "q": "narrador",

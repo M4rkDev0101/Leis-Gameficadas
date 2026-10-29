@@ -2222,7 +2222,7 @@
        "t": "Rita, a tela virou sozinha?"
       }
      ],
-     "local": "cafe",
+     "local": "copa_juizado",
      "proxima": "cf2"
     },
     "cf2": {
@@ -2269,7 +2269,7 @@
        ]
       }
      ],
-     "local": "cafe",
+     "local": "copa_juizado",
      "livre": true,
      "proxima": "s6"
     },

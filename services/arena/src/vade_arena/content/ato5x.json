@@ -377,7 +377,7 @@
     },
     "c4": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "secretaria_vara",
      "falas": [
       {
        "q": "voce",

@@ -4825,7 +4825,7 @@
         },
         "cor4": {
           "tipo": "dialogo",
-          "local": "corredor",
+          "local": "corredor_cnj",
           "falas": [
             {
               "q": "narrador",
@@ -5087,7 +5087,7 @@
         },
         "tai": {
           "tipo": "dialogo",
-          "local": "corredor",
+          "local": "corredor_cnj",
           "falas": [
             {
               "q": "narrador",
@@ -5112,7 +5112,7 @@
         },
         "esc_tai": {
           "tipo": "escolha",
-          "local": "corredor",
+          "local": "corredor_cnj",
           "tempo": 35,
           "falas": [
             {
@@ -6022,7 +6022,7 @@
         "liv": {
           "tipo": "escolha",
           "livre": true,
-          "local": "corredor",
+          "local": "corredor_cnj",
           "falas": [
             {
               "q": "narrador",

@@ -1116,7 +1116,7 @@
     },
     "c11": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "biblioteca_cnj",
      "titulo": "Biblioteca do CNJ: os três precedentes",
      "intro": [
       {
@@ -1222,7 +1222,7 @@
     },
     "c12": {
      "tipo": "tensao",
-     "local": "garagem",
+     "local": "garagem_cnj",
      "tempo": 7,
      "padrao": 1,
      "pergunta": "Pergunta no susto: «O(a) senhor(a) vai confessar hoje? É verdade que recebeu R$ 120 mil?»",
@@ -2787,7 +2787,7 @@
       }
      ],
      "proxima": "t2",
-     "local": "corredor"
+     "local": "corredor_cnj"
     },
     "t2": {
      "tipo": "escolha",
@@ -2851,7 +2851,7 @@
      ],
      "proxima": "c25",
      "livre": true,
-     "local": "corredor"
+     "local": "corredor_cnj"
     },
     "c25": {
      "tipo": "dialogo",
@@ -2882,7 +2882,7 @@
       }
      ],
      "proxima": "c26",
-     "local": "corredor"
+     "local": "corredor_cnj"
     },
     "c26": {
      "tipo": "escolha",
@@ -2946,7 +2946,7 @@
      ],
      "proxima": "c27",
      "livre": true,
-     "local": "corredor"
+     "local": "corredor_cnj"
     },
     "c27": {
      "tipo": "celular",
@@ -2986,7 +2986,7 @@
       }
      ],
      "proxima": "c28",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "opcoes": [
       {
        "t": "Responder: «Eu também errei. Não é só sua».",
@@ -3648,7 +3648,7 @@
       }
      ],
      "proxima": "c32",
-     "local": "corredor"
+     "local": "corredor_cnj"
     },
     "c32": {
      "tipo": "dialogo",
@@ -3678,7 +3678,7 @@
       }
      ],
      "proxima": "c33",
-     "local": "rua"
+     "local": "calcada_forum"
     },
     "c33": {
      "tipo": "veredicto",

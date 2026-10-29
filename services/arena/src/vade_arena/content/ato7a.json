@@ -3109,7 +3109,7 @@
     },
     "c31": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "narrador",
@@ -3145,7 +3145,7 @@
     "c32": {
      "tipo": "escolha",
      "livre": true,
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "a7joana",
@@ -3208,7 +3208,7 @@
     },
     "c33": {
      "tipo": "celular",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "contato": "Teresa Albuquerque",
      "status": "online",
      "mensagens": [
@@ -3275,7 +3275,7 @@
     },
     "c34": {
      "tipo": "intuicao",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "voce",
@@ -3326,7 +3326,7 @@
     },
     "c35": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "rafael",
@@ -4644,7 +4644,7 @@
     },
     "c11": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "falas": [
       {
        "q": "narrador",
@@ -4679,7 +4679,7 @@
     },
     "c12": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "falas": [
       {
        "q": "a7marina",
@@ -4698,7 +4698,7 @@
     },
     "d_valmir": {
      "tipo": "depoimento",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "testemunha": "a7avalmir",
      "titulo": "Valmir Teixeira, secretário da Turma",
      "intro": [
@@ -4945,7 +4945,7 @@
     },
     "c13": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "falas": [
       {
        "q": "a7marina",
@@ -4979,7 +4979,7 @@
     },
     "c13i": {
      "tipo": "intuicao",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "falas": [
       {
        "q": "voce",
@@ -5027,7 +5027,7 @@
     },
     "d_cleide": {
      "tipo": "depoimento",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "testemunha": "a7acleide",
      "titulo": "Cleide Barros, técnica judiciária",
      "afirmacoes": [
@@ -5068,7 +5068,7 @@
     },
     "c14": {
      "tipo": "acareacao",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "a": "d_valmir",
      "b": "d_cleide",
      "falas": [
@@ -5145,7 +5145,7 @@
     },
     "c15": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "falas": [
       {
        "q": "a7avalmir",
@@ -5177,7 +5177,7 @@
     "c16": {
      "tipo": "escolha",
      "livre": true,
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "falas": [
       {
        "q": "a7marina",
@@ -5246,7 +5246,7 @@
     },
     "c17": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "falas": [
       {
        "q": "a7marina",
@@ -5263,7 +5263,7 @@
     },
     "c18": {
      "tipo": "argumento",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "tempo": 70,
      "alvo": "A habilitação do assistente por quem era impedido contamina todo o processo e anula a condenação, ainda que ninguém tenha sido prejudicado.",
      "pergunta": "Que dispositivo impede declarar nulo um ato quando dele não resulta prejuízo para a acusação ou para a defesa?",
@@ -5336,7 +5336,7 @@
     },
     "c19": {
      "tipo": "argumento",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "tempo": 70,
      "alvo": "As perguntas e a perícia requeridas pelo assistente formaram a convicção da Turma e, portanto, a condenação depende de atos viciados.",
      "pergunta": "Que dispositivo veda declarar nulo ato que não influiu na apuração da verdade substancial ou na decisão da causa?",
@@ -5409,7 +5409,7 @@
     },
     "c20": {
      "tipo": "argumento",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "tempo": 70,
      "alvo": "A defesa de Otto pode alegar a nulidade da participação do assistente, ainda que tenha pedido a palavra dele na audiência e nada tenha oposto à habilitação.",
      "pergunta": "Que dispositivo impede a parte de arguir nulidade a que haja dado causa ou para que tenha concorrido?",
@@ -5482,7 +5482,7 @@
     },
     "c20b": {
      "tipo": "argumento",
-     "local": "gabinete",
+     "local": "gabinete_cnj_relatora",
      "tempo": 70,
      "alvo": "Se o assistente da acusação agiu de modo irregular, quem acusou na verdade foi ele, e não o Ministério Público.",
      "pergunta": "Que dispositivo mostra que a ação penal pública é promovida privativamente pelo Ministério Público, e não pelo assistente?",
@@ -5560,7 +5560,7 @@
     },
     "c21": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "narrador",

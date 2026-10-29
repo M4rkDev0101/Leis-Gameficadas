@@ -1560,7 +1560,7 @@
           {"q": "lacerda", "e": "bravo", "t": "A carta nunca apareceu em lugar nenhum. Quem a recebeu sumiu com ela."},
           {"q": "voce", "e": "pensativo", "t": "(Ronaldo. Rangel. Há R demais neste caso.)"}
         ], "fundamentos": [{"chave": "CP#art-343", "trecho": "Dar, oferecer ou prometer dinheiro ou qualquer outra vantagem a testemunha"}], "proxima": "t10a"},
-        "t10a": {"tipo": "dialogo", "local": "rua", "falas": [
+        "t10a": {"tipo": "dialogo", "local": "calcada_forum", "falas": [
           {"q": "narrador", "t": "Na calçada do fórum, entre repórteres e curiosos, alguém acena para você. É um rapaz de moletom, com um boné nas mãos."},
           {"q": "lucas", "e": "feliz", "t": "Doutor(a)! Eu vi o júri da galeria. Eu sabia que o Tiago ia sair, pelo jeito que a juíza Beatriz olhou pra aquele mestre de obras…"},
           {"q": "voce", "e": "feliz", "t": "Lucas! Como você está? Faz tempo que o seu caso acabou."},
@@ -1568,7 +1568,7 @@
           {"q": "lucas", "e": "pensativo", "t": "Eu pensei… o escritório não precisa de um office boy? Eu levo petição no fórum, tiro cópia, pego café. Aprendo rápido. Eu só queria uma chance."},
           {"q": "voce", "e": "pensativo", "t": "(Ele é inocente, tem a ficha limpa e muita vontade. Mas o escritório está no centro de uma guerra com a Altavista, e Helena é quem decide quem entra.)"}
         ], "proxima": "t10b"},
-        "t10b": {"tipo": "escolha", "livre": true, "local": "rua", "falas": [
+        "t10b": {"tipo": "escolha", "livre": true, "local": "calcada_forum", "falas": [
           {"q": "lucas", "e": "normal", "t": "Se não puder, eu entendo, doutor(a). De verdade."}
         ], "pergunta": "O que você responde a Lucas?",
           "opcoes": [
@@ -1585,7 +1585,7 @@
                {"q": "voce", "e": "pensativo", "t": "(Fiz a escolha prudente. Mesmo assim, ele caminha pela calçada com os ombros baixos, e eu fico com um aperto no peito.)"}
              ]}
           ], "proxima": "t10c"},
-        "t10c": {"tipo": "dialogo", "local": "rua", "falas": [
+        "t10c": {"tipo": "dialogo", "local": "calcada_forum", "falas": [
           {"q": "helena", "e": "triste", "t": "(ao telefone, na saída) …Você precisa vir ao escritório. É sobre o Rafael. Ele foi levado pela Polícia Federal."},
           {"q": "voce", "e": "chocado", "t": "O quê?!", "fx": "tremor"}
         ], "proxima": "zj1"},

@@ -452,7 +452,7 @@
       }
      ],
      "proxima": "cf1",
-     "local": "gabinete"
+     "local": "sala_posse_mp"
     },
     "x3": {
      "tipo": "investigar",
@@ -7786,7 +7786,7 @@
     },
     "x4": {
      "tipo": "investigar",
-     "local": "delegacia",
+     "local": "corregedoria",
      "titulo": "Delegacia (Corregedoria)",
      "intro": [
       {

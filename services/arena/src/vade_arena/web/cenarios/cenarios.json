@@ -154,5 +154,69 @@
   "casa_bento": {
     "nome": "Casa de Bento",
     "som": "casa"
+  },
+  "corredor_cnj": {
+    "nome": "Corredor do CNJ",
+    "som": "corredor"
+  },
+  "gabinete_cnj_relatora": {
+    "nome": "Gabinete da relatora no CNJ",
+    "som": "gabinete"
+  },
+  "garagem_cnj": {
+    "nome": "Garagem do CNJ",
+    "som": "garagem"
+  },
+  "biblioteca_cnj": {
+    "nome": "Biblioteca do CNJ",
+    "som": "gabinete"
+  },
+  "praca_frente_cnj": {
+    "nome": "Praça do CNJ",
+    "som": "praca"
+  },
+  "corregedoria": {
+    "nome": "Corregedoria",
+    "som": "delegacia"
+  },
+  "protocolo_pf": {
+    "nome": "Protocolo da Polícia Federal",
+    "som": "delegacia"
+  },
+  "carceragem": {
+    "nome": "Carceragem",
+    "som": "delegacia"
+  },
+  "sala_armas": {
+    "nome": "Depósito de armas",
+    "som": "delegacia"
+  },
+  "delegacia_sala3": {
+    "nome": "Sala 3 da delegacia",
+    "som": "delegacia"
+  },
+  "corredor_gabinete_juiz": {
+    "nome": "Corredor do gabinete",
+    "som": "corredor"
+  },
+  "calcada_forum": {
+    "nome": "Calçada do fórum",
+    "som": "rua"
+  },
+  "secretaria_vara": {
+    "nome": "Secretaria da vara",
+    "som": "escritorio"
+  },
+  "sala_posse_mp": {
+    "nome": "Sala de posse",
+    "som": "delegacia"
+  },
+  "sala_depoimento_especial": {
+    "nome": "Sala de depoimento especial",
+    "som": "clinica"
+  },
+  "copa_juizado": {
+    "nome": "Copa do juizado",
+    "som": "cafe"
   }
 }

@@ -251,7 +251,7 @@ class Arena:
         return out
 
 
-_CENARIO_RE = re.compile(r"[a-z_]+\.(?:webp|png|jpg)")
+_CENARIO_RE = re.compile(r"[a-z0-9_]+\.(?:webp|png|jpg)")
 _CENARIO_TIPO = {"webp": "image/webp", "png": "image/png", "jpg": "image/jpeg"}
 
 

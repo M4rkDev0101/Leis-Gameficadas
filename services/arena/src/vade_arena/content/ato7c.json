@@ -4016,7 +4016,7 @@
     },
     "c11b": {
      "tipo": "investigar",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "titulo": "Corredor do CNJ: os últimos minutos antes da audiência",
      "intro": [
       {
@@ -4724,7 +4724,7 @@
     },
     "c17b": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "narrador",
@@ -4760,7 +4760,7 @@
     },
     "c17c": {
      "tipo": "intuicao",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "pergunta": "Saulo diz que não sabia da falsidade dos papéis. Ele está sendo sincero?",
      "pistas": [
       "Ele retirou os documentos antes que a perícia pedisse.",
@@ -5397,7 +5397,7 @@
     },
     "c22": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "narrador",
@@ -5466,7 +5466,7 @@
     },
     "c22b": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "corredor_cnj",
      "falas": [
       {
        "q": "narrador",
@@ -5535,7 +5535,7 @@
     "c23": {
      "tipo": "escolha",
      "livre": true,
-     "local": "corredor",
+     "local": "corredor_cnj",
      "pergunta": "A defesa pode escolher como tratar Dani no processo. O que você decide?",
      "opcoes": [
       {
@@ -5678,7 +5678,7 @@
     },
     "c25": {
      "tipo": "dialogo",
-     "local": "garagem",
+     "local": "garagem_cnj",
      "falas": [
       {
        "q": "narrador",
@@ -5693,7 +5693,7 @@
     },
     "c26": {
      "tipo": "tensao",
-     "local": "garagem",
+     "local": "garagem_cnj",
      "tempo": 8,
      "padrao": 0,
      "falas": [
@@ -5764,7 +5764,7 @@
     },
     "c27": {
      "tipo": "dialogo",
-     "local": "garagem",
+     "local": "garagem_cnj",
      "falas": [
       {
        "q": "a6nery",

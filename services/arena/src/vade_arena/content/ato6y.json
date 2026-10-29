@@ -649,11 +649,11 @@
             }
           ],
           "proxima": "c6",
-          "local": "delegacia"
+          "local": "corregedoria"
         },
         "c6": {
           "tipo": "investigar",
-          "local": "delegacia",
+          "local": "corregedoria",
           "titulo": "Corregedoria da PF",
           "intro": [
             {
@@ -792,7 +792,7 @@
             }
           ],
           "proxima": "c8",
-          "local": "delegacia"
+          "local": "corregedoria"
         },
         "c8": {
           "tipo": "escolha",
