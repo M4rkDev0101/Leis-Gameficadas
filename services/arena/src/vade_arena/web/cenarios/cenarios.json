@@ -1,0 +1,13 @@
+{
+  "presidio": {"nome": "Galeria do presídio", "som": "parlatorio"},
+  "hospital": {"nome": "Quarto de hospital", "som": "clinica"},
+  "senado": {"nome": "Comissão do Senado", "som": "stf"},
+  "imprensa": {"nome": "Sala de imprensa", "som": "praca"},
+  "hotel": {"nome": "Quarto de hotel", "som": "casa"},
+  "elevador": {"nome": "Elevador", "som": "corredor"},
+  "cartorio": {"nome": "Cartório", "som": "gabinete"},
+  "aeroporto": {"nome": "Saguão do aeroporto", "som": "praca"},
+  "sala_de_aula": {"nome": "Sala de aula", "som": "corredor"},
+  "defensoria": {"nome": "Defensoria Pública", "som": "gabinete"},
+  "laboratorio": {"nome": "Laboratório de perícia", "som": "clinica"}
+}

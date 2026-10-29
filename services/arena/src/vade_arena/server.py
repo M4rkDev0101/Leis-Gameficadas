@@ -267,6 +267,12 @@ def _cenarios() -> dict[str, str]:
     return out
 
 
+def _cenarios_info() -> dict:
+    """Manifesto web/cenarios/cenarios.json: {local: {"nome": título na tela, "som": ambiência de um local parecido}}."""
+    arq = resources.files(__package__).joinpath("web/cenarios/cenarios.json")
+    return json.loads(arq.read_text(encoding="utf-8")) if arq.is_file() else {}
+
+
 class ArenaHandler(ingest_server._Handler):
     arena: Arena
 
@@ -280,7 +286,7 @@ class ArenaHandler(ingest_server._Handler):
                 html = resources.files(__package__).joinpath("web/tribunal.html").read_bytes()
                 return self._send(200, html, "text/html; charset=utf-8")
             if path == "/api/arena/cenarios":
-                return self._json(_cenarios())
+                return self._json({"imagens": _cenarios(), "info": _cenarios_info()})
             if path.startswith("/cenarios/"):
                 nome = path.rsplit("/", 1)[-1]
                 arq = resources.files(__package__).joinpath("web/cenarios", nome)

@@ -1262,7 +1262,7 @@ const Sound = {
   },
   // ---- ambiência por local (bem baixa): forum (burburinho), rua (tráfego), bar (conversa e copos)
   ambiencia(local, force) {
-    const kind = AMB_KIND[local] || null;
+    const kind = AMB_KIND[somDe(local)] || null;
     if (!force && kind === this.ambK && this.amb) return;
     if (!force && kind === this.ambK && !kind) return;
     this.ambK = kind; this.ambLocal = local; this._ambOff();
@@ -1443,7 +1443,7 @@ const Sound = {
     this._noise(d, t, .02, {type:"highpass", f:2500, v:.15}); this._n(d, 900, t, .03, {type:"triangle", v:.05, a:.001, s:.05});
     this._n(d, 170, t + .05, .4, {type:"sawtooth", v:.03, lp:700, lp2:1400, slide:90, a:.08, s:.8, r:.1});
     this._n(d, 70, t + .5, .3, {type:"sine", v:.3, slide:-25, a:.002, s:.01, send:.25}); this._noise(d, t + .5, .1, {type:"lowpass", f:900, v:.2}); },
-  entrar(local) { if (local === "carro") { this.portaBate(); return; } this.porta(); this.passos(3, .7); },    // porta + passos ao chegar num local de investigação
+  entrar(local) { if (somDe(local) === "carro") { this.portaBate(); return; } this.porta(); this.passos(3, .7); },    // porta + passos ao chegar num local de investigação
   vitoria() { const c = this._ok(); if (!c) return;   // fanfarra curta (tema "vitoria", uma vez); no Ato 6 abre o tema solene "supremo"
     if (this._act() >= 6) { this._duck(9); this._seq("supremo", this.sfx, false, {bars:2}); } else { this._duck(3.8); this._seq("vitoria", this.sfx, false); } },
   revelar() { const c = this._ok(); if (!c) return; const t = c.currentTime, d = this.sfx; this._duck(1);   // stinger de revelação: varredura + 3 notas vítreas subindo
@@ -1641,7 +1641,9 @@ const BGS = {
 };
 let UID = 0;  // ids de gradiente únicos: ids repetidos apontariam para SVGs ocultos (e sairiam pretos)
 // cenários: imagens em web/cenarios/<nome>.webp|png|jpg (fontes SVG em tools/cenarios; render.py gera o WebP); sem arquivo, fundo neutro
-let CENARIOS = {};
+let CENARIOS = {}, CEN_INFO = {};   // CEN_INFO: nome e ambiência de cada local (web/cenarios/cenarios.json)
+const localNome = l => (CEN_INFO[l] || {}).nome || LOCAL_NOME[l] || "";
+const somDe = l => AMB_KIND[l] ? l : (CEN_INFO[l] || {}).som || l;
 const imgBG = n => CENARIOS[n] ? `<img class="bgimg" src="${CENARIOS[n]}" alt="" draggable="false">` : `<div class="bgimg" style="background:radial-gradient(ellipse at 50% 40%,#2a2f3a,#0d1016)"></div>`;
 const locationBG = imgBG;
 const background = imgBG;
@@ -2064,7 +2066,7 @@ async function investigate(c) {
   Sound.startMusic("investigacao"); Sound.entrar(c.local); Sound.ambiencia(c.local);
   await camera(null, null, null, c.local);
   $("#actor").innerHTML = ""; curChar = null; $("#scene").style.removeProperty("--ax");
-  const title = el("div", {class:"inv-title", textContent:"🔎 " + (c.titulo || LOCAL_NOME[c.local] || "")});
+  const title = el("div", {class:"inv-title", textContent:"🔎 " + (c.titulo || localNome(c.local))});
   $("#stage").append(title);
   await sayAll(c.intro, opts);
   const seen = new Set(), talked = new Set();
@@ -2077,7 +2079,7 @@ async function investigate(c) {
           style:{left:p.x + "%", top:p.y + "%", width:p.w + "%", height:p.h + "%"}, onclick:() => resolve({ponto:p})}, el("span", {textContent:p.nome})));
         const falta = missing().length;
         const panel = el("div", {class:"inv-panel"},
-          el("h4", {textContent:"Investigação" + (c.titulo || LOCAL_NOME[c.local] ? ": " + (c.titulo || LOCAL_NOME[c.local]) : "")}),
+          el("h4", {textContent:"Investigação" + (c.titulo || localNome(c.local) ? ": " + (c.titulo || localNome(c.local)) : "")}),
           el("small", {textContent:`Examinados: ${seen.size} de ${c.pontos.length}. Clique nos pontos brilhantes da cena.`}),
           ...(c.conversas || []).map((cv, i) => el("button", {class:talked.has(i) ? "done" : "", onclick:() => resolve({conversa:i})},
             "💬 ", cv.titulo || ("Conversar com " + nameOf(cv.q)))),
@@ -2491,7 +2493,7 @@ async function tensaoScene(c) {
   await sayAll(c.falas, {local:c.local});
   const tempo = Math.max(3, c.tempo || 8) * 1000, stage = $("#stage");
   stage.classList.add("tense"); Sound.startMusic("perseguicao");
-  if (c.local === "carro") Sound.carroAcelera(); else if (c.local !== "casa") Sound.passosCorrer(8, .2);
+  if (somDe(c.local) === "carro") Sound.carroAcelera(); else if (somDe(c.local) !== "casa") Sound.passosCorrer(8, .2);
   await say({q:"narrador", e:"nervoso", t:c.pergunta}, {noWait:true, local:c.local});
   const t0 = performance.now();
   let beat = 0;
@@ -2526,7 +2528,7 @@ async function tensaoScene(c) {
 }
 // celular: mensagens chegam uma a uma (provocações, ameaças, recados). Opcionalmente o jogador responde.
 async function celularScene(c) {
-  const noite = c.local === "casa" || c.local === "carro";
+  const noite = ["casa", "carro"].includes(somDe(c.local));
   if (noite) Sound.startMusic("noite");
   await sayAll(c.falas, {local:c.local});
   hideDialog();
@@ -3609,10 +3611,10 @@ async function galeriaCenarios(P, root) {
     for (const c of Object.values(ep.cenas || {})) { if (!c.pontos || !c.local) continue;
       const m = porLocal[c.local] = porLocal[c.local] || {};
       for (const p of c.pontos) { const k = [p.x, p.y, p.w, p.h].join(","); (m[k] = m[k] || {x:p.x, y:p.y, w:p.w, h:p.h, nomes:new Set()}).nomes.add(p.nome); } } }
-  for (const loc of Object.keys(LOCAL_NOME)) {
+  for (const loc of Object.keys(CENARIOS).filter(k => !BGS[k])) {
     if (filtro && !loc.includes(filtro)) continue;
     const spots = Object.values(porLocal[loc] || {}).map(s => ({...s, nomes:[...s.nomes].join(" / ")}));
-    root.append(el("div", {class:"who"}, el("b", {textContent:`Local: ${loc} (${LOCAL_NOME[loc]})`}), " ", el("code", {textContent:spots.length + " pontos distintos"})));
+    root.append(el("div", {class:"who"}, el("b", {textContent:`Local: ${loc} (${localNome(loc)})`}), " ", el("code", {textContent:spots.length + " pontos distintos"})));
     for (const ri of refs) {
       const bx = mk(" loc", locationBG(loc), "", REFS[ri], "apontando", spots);
       if (painel) bx.append(el("div", {class:"inv-panel"}, el("h4", {textContent:"Investigação"}), el("small", {textContent:"Examinados: 0 de " + spots.length}), el("button", {textContent:"💬 Conversar"}), el("button", {textContent:"Seguir ▶"})));
@@ -3700,7 +3702,7 @@ async function galeriaQA(P) {
 const QP = new URLSearchParams(location.search);
 $("#brand-mk").innerHTML = logoMark(false);
 document.querySelectorAll(".navlinks [data-go]").forEach(b => b.onclick = () => { const t = document.getElementById(b.dataset.go); if (t) t.scrollIntoView({behavior:REDUCED() ? "auto" : "smooth", block:"start"}); });
-const cenariosProntos = api("/api/arena/cenarios").then(c => { CENARIOS = c; Object.values(c).forEach(u => { new Image().src = u; }); }).catch(() => {});
+const cenariosProntos = api("/api/arena/cenarios").then(c => { CENARIOS = c.imagens; CEN_INFO = c.info; Object.values(CENARIOS).forEach(u => { new Image().src = u; }); }).catch(() => {});
 if (QP.get("galeria")) cenariosProntos.then(() => galeriaQA(QP));
 else {
   cenariosProntos.then(loadMenu);

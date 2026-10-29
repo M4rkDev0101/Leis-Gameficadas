@@ -51,13 +51,14 @@ SCENE_TYPES = {"titulo", "dialogo", "depoimento", "apresentar", "escolha", "deci
                "audiencia", "palavra", "sentenca", "protesto", "denuncia", "plenario", "tensao", "celular"}
 EXPRESSIONS = {"normal", "feliz", "bravo", "nervoso", "chocado", "pensativo", "triste", "confiante", "apontando"}
 EFFECTS = {"protesto", "martelo", "tremor", "bater", "flash", "ummomento", "tomaisso", "ordem"}
-LOCAIS = {"tribunal", "escritorio", "rua", "bar", "delegacia", "parlatorio", "apartamento", "gabinete", "obra",
-          "mercado", "ponto", "juri", "loja", "clinica",
-          # cenários novos (frente "cada papel no seu papel"): até a arte chegar, usam o fundo genérico
-          "custodia", "stf", "promotoria", "garagem", "carro", "casa", "corredor", "praca", "cafe", "cemiterio",
-          # sem desenho próprio ainda: usam a imagem web/cenarios/<local> ou um desenho parecido (CENARIO_RESERVA)
-          "presidio", "hospital", "senado", "imprensa", "hotel", "elevador", "cartorio", "aeroporto", "sala_de_aula",
-          "defensoria", "laboratorio"}
+def _locais() -> frozenset[str]:
+    """Locais válidos: tribunal e escritório (fundos das bancadas) + todo cenário com imagem em web/cenarios/."""
+    pasta = resources.files(__package__).joinpath("web/cenarios")
+    nomes = {a.name.rsplit(".", 1)[0] for a in pasta.iterdir() if a.name.rsplit(".", 1)[-1] in ("webp", "png", "jpg")} if pasta.is_dir() else set()
+    return frozenset({"tribunal", "escritorio"} | nomes)
+
+
+LOCAIS = _locais()
 POSICOES = {"defesa", "acusacao", "juiz", "testemunha", "escritorio", "cena"}
 XP_BASE = {"basico": 80, "intermediario": 120, "avancado": 170, "especialista": 230, "impossivel": 300}
 # Ajuste de XP pela duração estimada: o XP base do nível vale para um caso de DUR_REF minutos; cada minuto a mais
