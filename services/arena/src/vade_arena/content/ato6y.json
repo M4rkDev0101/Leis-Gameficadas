@@ -3816,7 +3816,7 @@
               "t": "Cinco da manhã. O celular vibra no criado-mudo do hotel, e a tela acende o quarto."
             }
           ],
-          "local": "cafe",
+          "local": "hotel",
           "proxima": "c4"
         },
         "c4": {
@@ -6890,7 +6890,7 @@
             }
           ],
           "proxima": "c19",
-          "local": "tribunal"
+          "local": "senado"
         },
         "c19": {
           "tipo": "veredicto",

@@ -4100,7 +4100,7 @@
     },
     "c18": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "elevador",
      "falas": [
       {
        "q": "narrador",

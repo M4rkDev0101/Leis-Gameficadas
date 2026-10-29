@@ -2387,7 +2387,7 @@
     },
     "c20": {
      "tipo": "escolha",
-     "local": "corredor",
+     "local": "elevador",
      "livre": true,
      "falas": [
       {

@@ -1374,7 +1374,7 @@
         },
         "intu1": {
           "tipo": "intuicao",
-          "local": "tribunal",
+          "local": "senado",
           "falas": [
             {
               "q": "narrador",
@@ -1427,7 +1427,7 @@
         },
         "abertura": {
           "tipo": "escolha",
-          "local": "tribunal",
+          "local": "senado",
           "tempo": 40,
           "falas": [
             {
@@ -1506,7 +1506,7 @@
         },
         "cant1": {
           "tipo": "dialogo",
-          "local": "tribunal",
+          "local": "senado",
           "falas": [
             {
               "q": "a8cantalice",
@@ -1526,7 +1526,7 @@
         },
         "blefe1": {
           "tipo": "blefe",
-          "local": "tribunal",
+          "local": "senado",
           "falas": [
             {
               "q": "dani",
@@ -1606,7 +1606,7 @@
         "sabat": {
           "tipo": "plenario",
           "colegiado": "stf",
-          "local": "tribunal",
+          "local": "senado",
           "titulo": "Comissão de Constituição e Justiça: sabatina",
           "total": 27,
           "maioria": 14,
@@ -2128,7 +2128,7 @@
         },
         "rev1": {
           "tipo": "reviravolta",
-          "local": "tribunal",
+          "local": "senado",
           "banner": "REVIRAVOLTA!",
           "sub": "Uma carta da cela de Henrique chega à mesa",
           "falas": [
@@ -2158,7 +2158,7 @@
         },
         "aprov": {
           "tipo": "dialogo",
-          "local": "tribunal",
+          "local": "senado",
           "falas": [
             {
               "q": "a8euripedes",
@@ -4213,7 +4213,7 @@
         },
         "cel3": {
           "tipo": "celular",
-          "local": "gabinete",
+          "local": "hospital",
           "contato": "Sofia Duarte",
           "status": "online",
           "falas": [
@@ -6081,7 +6081,7 @@
         },
         "hosp": {
           "tipo": "dialogo",
-          "local": "casa",
+          "local": "hospital",
           "falas": [
             {
               "q": "narrador",

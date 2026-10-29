@@ -1430,12 +1430,12 @@
        "e": "pensativo"
       }
      ],
-     "local": "delegacia",
+     "local": "laboratorio",
      "proxima": "c14"
     },
     "c14": {
      "tipo": "investigar",
-     "local": "delegacia",
+     "local": "laboratorio",
      "titulo": "O anexo de Kenji: o que o servidor guardou",
      "intro": [
       {
@@ -1672,7 +1672,7 @@
     },
     "c15": {
      "tipo": "analisar",
-     "local": "delegacia",
+     "local": "laboratorio",
      "falas": [
       {
        "q": "kenji",
@@ -1782,7 +1782,7 @@
        "e": "normal"
       }
      ],
-     "local": "delegacia",
+     "local": "laboratorio",
      "proxima": "c17"
     },
     "c17": {

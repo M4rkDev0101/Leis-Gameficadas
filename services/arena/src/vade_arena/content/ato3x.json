@@ -569,7 +569,7 @@
     },
     "x4": {
      "tipo": "investigar",
-     "local": "clinica",
+     "local": "hospital",
      "titulo": "Pronto-socorro municipal",
      "intro": [
       {
@@ -2755,7 +2755,7 @@
     },
     "im1": {
      "tipo": "tensao",
-     "local": "praca",
+     "local": "imprensa",
      "tempo": 9,
      "padrao": 2,
      "proxima": "x6",

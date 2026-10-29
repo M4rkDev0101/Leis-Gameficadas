@@ -1174,7 +1174,7 @@
         ], "proxima": "zl1"},
         "zl1": {
           "tipo": "dialogo",
-          "local": "corredor",
+          "local": "elevador",
           "falas": [
             {
               "q": "narrador",
@@ -1199,7 +1199,7 @@
         "zl2": {
           "tipo": "escolha",
           "livre": true,
-          "local": "corredor",
+          "local": "elevador",
           "falas": [
             {
               "q": "livia",
