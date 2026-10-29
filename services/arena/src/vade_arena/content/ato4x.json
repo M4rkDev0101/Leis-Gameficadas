@@ -3361,7 +3361,7 @@
     },
     "s3": {
      "tipo": "investigar",
-     "local": "apartamento",
+     "local": "apartamento_lorena",
      "titulo": "Apartamento de Lorena",
      "intro": [
       {

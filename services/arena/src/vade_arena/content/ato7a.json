@@ -784,7 +784,7 @@
     },
     "c9": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -800,7 +800,7 @@
     },
     "c10": {
      "tipo": "investigar",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "titulo": "Sexta, 6h10: o que a reclamação e a imprensa dizem",
      "intro": [
       {
@@ -1051,7 +1051,7 @@
     },
     "c11": {
      "tipo": "analisar",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "rafael",
@@ -1103,7 +1103,7 @@
     },
     "c12": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "rafael",
@@ -1131,7 +1131,7 @@
     "c13": {
      "tipo": "escolha",
      "livre": true,
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "dani",
@@ -1677,7 +1677,7 @@
     },
     "c20": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -1693,7 +1693,7 @@
     },
     "c21": {
      "tipo": "argumento",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "tempo": 60,
      "alvo": "O investigado não pode falar por si: só um advogado constituído pode defendê-lo perante o CNJ.",
      "pergunta": "Qual dispositivo garante ao interessado fazer-se assistir por advogado apenas se quiser?",
@@ -1766,7 +1766,7 @@
     },
     "c22": {
      "tipo": "escolha",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "tempo": 45,
      "falas": [
       {
@@ -3615,7 +3615,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "narrador",
@@ -3661,7 +3661,7 @@
     },
     "c3": {
      "tipo": "celular",
-     "local": "casa",
+     "local": "casa_rafael",
      "contato": "Dr. Hugo Freitas Lopes",
      "status": "online",
      "mensagens": [
@@ -3741,7 +3741,7 @@
     },
     "c4": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "narrador",
@@ -3782,7 +3782,7 @@
     },
     "c4b": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "voce",
@@ -3826,7 +3826,7 @@
     "c4c": {
      "tipo": "escolha",
      "livre": true,
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "a6teresa",
@@ -3896,7 +3896,7 @@
     },
     "c5": {
      "tipo": "escolha",
-     "local": "casa",
+     "local": "casa_rafael",
      "tempo": 40,
      "falas": [
       {
@@ -3974,7 +3974,7 @@
     },
     "c6": {
      "tipo": "investigar",
-     "local": "casa",
+     "local": "casa_rafael",
      "titulo": "Autos da AP e anexos da revisão",
      "intro": [
       {
@@ -4242,7 +4242,7 @@
     },
     "c7": {
      "tipo": "analisar",
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "a6teresa",
@@ -4290,7 +4290,7 @@
     },
     "c8": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "a6teresa",
@@ -4391,7 +4391,7 @@
     },
     "c10b": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "narrador",
@@ -4428,7 +4428,7 @@
     "c10c": {
      "tipo": "escolha",
      "livre": true,
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "sofia",
@@ -6491,7 +6491,7 @@
     },
     "c29": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "narrador",

@@ -365,7 +365,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -1852,7 +1852,7 @@
     },
     "c25": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -1887,7 +1887,7 @@
     },
     "c26": {
      "tipo": "tensao",
-     "local": "rua",
+     "local": "viela_casa_taina",
      "tempo": 8,
      "padrao": 2,
      "falas": [
@@ -1952,7 +1952,7 @@
     },
     "c27": {
      "tipo": "investigar",
-     "local": "casa",
+     "local": "casa_taina",
      "titulo": "A casa de Tainá: o que a pedra deixou",
      "intro": [
       {
@@ -2114,11 +2114,11 @@
      "piso": 2,
      "musica": "pressao",
      "proxima": "c29",
-     "local": "casa"
+     "local": "casa_taina"
     },
     "c29": {
      "tipo": "argumento",
-     "local": "casa",
+     "local": "casa_taina",
      "tempo": 30,
      "falas": [
       {
@@ -2199,7 +2199,7 @@
     },
     "c30": {
      "tipo": "escolha",
-     "local": "casa",
+     "local": "casa_taina",
      "tempo": 25,
      "pergunta": "O sargento pergunta o que fazer com a pedra e o bilhete. O que você orienta?",
      "opcoes": [
@@ -2946,7 +2946,7 @@
     },
     "c41": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -3208,7 +3208,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -3262,7 +3262,7 @@
     },
     "c3": {
      "tipo": "intuicao",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -3320,7 +3320,7 @@
     },
     "c4": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "dani",
@@ -3404,7 +3404,7 @@
     "c4b": {
      "tipo": "escolha",
      "livre": true,
-     "local": "casa",
+     "local": "apartamento_juiz",
      "pergunta": "Dani terminou de contar. O que você diz primeiro?",
      "opcoes": [
       {
@@ -3503,7 +3503,7 @@
     },
     "c6": {
      "tipo": "argumento",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "tempo": 30,
      "falas": [
       {
@@ -3586,7 +3586,7 @@
     },
     "c7": {
      "tipo": "escolha",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "tempo": 35,
      "falas": [
       {
@@ -3672,7 +3672,7 @@
     },
     "c8": {
      "tipo": "investigar",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "titulo": "A bolsa de Dani e a pasta do roteiro",
      "intro": [
       {
@@ -3854,7 +3854,7 @@
     },
     "c9": {
      "tipo": "analisar",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "voce",
@@ -3909,7 +3909,7 @@
     },
     "c10": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -5805,7 +5805,7 @@
     },
     "c27b": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",
@@ -5834,7 +5834,7 @@
     },
     "c27c": {
      "tipo": "escolha",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "tempo": 35,
      "pergunta": "Nery disse que 'o arquivista' anotava a sua vida. O que você faz com essa informação?",
      "opcoes": [

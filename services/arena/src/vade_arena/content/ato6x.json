@@ -5444,7 +5444,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "apartamento",
+     "local": "apartamento_juiz",
      "titulo": "Seu apartamento: o arquivo de uma vida",
      "intro": [
       {

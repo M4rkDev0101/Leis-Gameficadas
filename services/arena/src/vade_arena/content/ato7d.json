@@ -393,7 +393,7 @@
       }
      ],
      "proxima": "c3",
-     "local": "casa"
+     "local": "apartamento_juiz"
     },
     "c3": {
      "tipo": "celular",
@@ -420,7 +420,7 @@
       }
      ],
      "proxima": "c4",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "opcoes": [
       {
        "t": "Não responder. A defesa será feita em plenário.",
@@ -466,7 +466,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "escritorio",
+     "local": "apartamento_juiz",
      "titulo": "A sala de defesa: o que está nos autos",
      "intro": [
       {
@@ -661,7 +661,7 @@
     },
     "c5": {
      "tipo": "investigar",
-     "local": "escritorio",
+     "local": "apartamento_juiz",
      "titulo": "O pen drive sem remetente",
      "intro": [
       {
@@ -786,7 +786,7 @@
       }
      ],
      "proxima": "c7",
-     "local": "escritorio"
+     "local": "apartamento_juiz"
     },
     "c7": {
      "tipo": "escolha",
@@ -855,7 +855,7 @@
       }
      ],
      "proxima": "c8",
-     "local": "escritorio",
+     "local": "apartamento_juiz",
      "dica": [
       "A defesa que dá certo reconhece o fato e discute a medida.",
       "A infração é objetiva (CF, art. 95, parágrafo único, I); a pena precisa ser proporcional (Lei 9.784, art. 2º, parágrafo único, VI)."
@@ -1074,7 +1074,7 @@
       }
      ],
      "proxima": "c10",
-     "local": "escritorio",
+     "local": "apartamento_juiz",
      "dica": [
       "O interessado, na fase instrutória, pode requerer diligências (Lei 9.784, art. 38).",
       "Prova de origem duvidosa é inadmissível (CF, art. 5º, LVI)."
@@ -4720,7 +4720,7 @@
       }
      ],
      "proxima": "r2",
-     "local": "casa"
+     "local": "apartamento_juiz"
     },
     "r2": {
      "tipo": "argumento",
@@ -4793,7 +4793,7 @@
       }
      ],
      "proxima": "c7",
-     "local": "casa",
+     "local": "apartamento_juiz",
      "dica": [
       "A parte que criou o motivo de propósito não pode invocá-lo.",
       "CPP, art. 256."

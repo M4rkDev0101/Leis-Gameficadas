@@ -268,12 +268,12 @@
        "e": "triste"
       }
      ],
-     "local": "casa",
+     "local": "casa_rafael",
      "proxima": "c3"
     },
     "c3": {
      "tipo": "celular",
-     "local": "casa",
+     "local": "casa_rafael",
      "contato": "Dani",
      "status": "online",
      "mensagens": [
@@ -345,7 +345,7 @@
        "e": "confiante"
       }
      ],
-     "local": "casa",
+     "local": "casa_rafael",
      "proxima": "c5"
     },
     "c5": {
@@ -412,7 +412,7 @@
        ]
       }
      ],
-     "local": "casa",
+     "local": "casa_rafael",
      "dica": [
       "O processo disciplinar tem a sua própria fase de instrução.",
       "O art. 38 da Lei 9.784 abre a fase para juntar documentos e requerer perícias."
@@ -422,7 +422,7 @@
     },
     "c6": {
      "tipo": "investigar",
-     "local": "casa",
+     "local": "casa_rafael",
      "titulo": "A cozinha de Rafael: a pasta do dia",
      "intro": [
       {
@@ -669,7 +669,7 @@
     },
     "c7": {
      "tipo": "apresentar",
-     "local": "casa",
+     "local": "casa_rafael",
      "falas": [
       {
        "q": "rafael",
@@ -747,7 +747,7 @@
        "se": "a7_confiou_joana"
       }
      ],
-     "local": "casa",
+     "local": "casa_rafael",
      "proxima": "c9"
     },
     "c9": {
@@ -3271,7 +3271,7 @@
        "se": "a7_culpou_helena"
       }
      ],
-     "local": "casa",
+     "local": "casa_rafael",
      "proxima": "c3"
     },
     "c3": {
@@ -3334,7 +3334,7 @@
        "marca": "a7b_esperou_dani"
       }
      ],
-     "local": "casa",
+     "local": "casa_rafael",
      "livre": true,
      "proxima": "c4"
     },
@@ -6219,7 +6219,7 @@
        "e": "normal"
       }
      ],
-     "local": "casa",
+     "local": "casa_rafael",
      "proxima": "c25"
     },
     "c25": {

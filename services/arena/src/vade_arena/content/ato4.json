@@ -5010,7 +5010,7 @@
         },
         "s3": {
           "tipo": "investigar",
-          "local": "apartamento",
+          "local": "apartamento_periciado",
           "titulo": "Apartamento de Elias Moura · Inspeção judicial",
           "intro": [
             {

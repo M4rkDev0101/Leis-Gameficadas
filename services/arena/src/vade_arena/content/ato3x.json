@@ -1831,7 +1831,7 @@
     },
     "x4": {
      "tipo": "investigar",
-     "local": "apartamento",
+     "local": "apartamento_pobre",
      "titulo": "Casa de Rui Gentil",
      "intro": [
       {

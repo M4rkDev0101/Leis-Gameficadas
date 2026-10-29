@@ -1378,7 +1378,7 @@
           ],
           "requer": ["bilhete", "visitas"],
           "proxima": "x4"},
-        "x4": {"tipo": "investigar", "local": "apartamento", "titulo": "Apartamento de Rafael",
+        "x4": {"tipo": "investigar", "local": "apartamento_vazio", "titulo": "Apartamento de Rafael",
           "intro": [{"q": "narrador", "t": "Poeira, porta-retratos de uma menina sorrindo e uma gaveta que alguém já revirou."}],
           "pontos": [
             {"id": "comoda", "nome": "Cômoda", "x": 63.5, "y": 49, "w": 16.5, "h": 33, "falas": [

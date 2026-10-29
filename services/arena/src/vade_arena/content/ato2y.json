@@ -477,7 +477,7 @@
     },
     "p6": {
      "tipo": "investigar",
-     "local": "apartamento",
+     "local": "apartamento_classe_media",
      "titulo": "Apartamento de Gilberto",
      "intro": [
       {

@@ -6236,7 +6236,7 @@
         },
         "fim_rafael": {
           "tipo": "dialogo",
-          "local": "casa",
+          "local": "casa_rafael",
           "falas": [
             {
               "q": "narrador",

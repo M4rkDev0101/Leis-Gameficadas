@@ -511,7 +511,7 @@
             }
           ],
           "proxima": "c3",
-          "local": "apartamento"
+          "local": "apartamento_juiz"
         },
         "c3": {
           "tipo": "dialogo",
@@ -541,7 +541,7 @@
         },
         "c4": {
           "tipo": "investigar",
-          "local": "apartamento",
+          "local": "apartamento_juiz",
           "titulo": "Seu apartamento: a cena da invasão",
           "intro": [
             {
@@ -5410,7 +5410,7 @@
             }
           ],
           "proxima": "c3",
-          "local": "apartamento"
+          "local": "apartamento_clara"
         },
         "c3": {
           "tipo": "dialogo",
@@ -5445,7 +5445,7 @@
         },
         "c4": {
           "tipo": "investigar",
-          "local": "apartamento",
+          "local": "apartamento_clara",
           "titulo": "A casa de Clara",
           "intro": [
             {

@@ -2389,7 +2389,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "apartamento",
+     "local": "apartamento_idoso",
      "titulo": "Apartamento de Dona Lurdes",
      "intro": [
       {

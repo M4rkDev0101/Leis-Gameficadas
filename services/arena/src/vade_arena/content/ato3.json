@@ -1626,7 +1626,7 @@
     },
     "ce1": {
      "tipo": "celular",
-     "local": "casa",
+     "local": "apartamento_protagonista",
      "contato": "Camila Furtado",
      "status": "online",
      "falas": [

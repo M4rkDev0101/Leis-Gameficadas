@@ -1382,7 +1382,7 @@
     },
     "a4": {
      "tipo": "celular",
-     "local": "casa",
+     "local": "apartamento_protagonista",
      "contato": "Dr. Renato Valadares",
      "status": "online",
      "proxima": "a5",
@@ -3384,7 +3384,7 @@
     },
     "j14": {
      "tipo": "celular",
-     "local": "casa",
+     "local": "apartamento_protagonista",
      "contato": "Dona Marlene",
      "status": "online",
      "proxima": "j15",

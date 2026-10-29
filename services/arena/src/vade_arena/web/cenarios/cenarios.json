@@ -98,5 +98,61 @@
   "fachada_tre": {
     "nome": "Fachada do TRE",
     "som": "rua"
+  },
+  "apartamento_juiz": {
+    "nome": "Apartamento do juiz",
+    "som": "apartamento"
+  },
+  "casa_rafael": {
+    "nome": "Casa de Rafael",
+    "som": "casa"
+  },
+  "casa_taina": {
+    "nome": "Casa de Taina",
+    "som": "casa"
+  },
+  "viela_casa_taina": {
+    "nome": "Viela da casa de Taina",
+    "som": "rua"
+  },
+  "apartamento_idoso": {
+    "nome": "Apartamento de idosa",
+    "som": "casa"
+  },
+  "apartamento_protagonista": {
+    "nome": "Seu apartamento",
+    "som": "casa"
+  },
+  "apartamento_clara": {
+    "nome": "Apartamento de Clara",
+    "som": "apartamento"
+  },
+  "apartamento_refugio": {
+    "nome": "Apartamento-refúgio",
+    "som": "apartamento"
+  },
+  "apartamento_classe_media": {
+    "nome": "Apartamento de classe média",
+    "som": "casa"
+  },
+  "apartamento_lorena": {
+    "nome": "Apartamento de Lorena",
+    "som": "apartamento"
+  },
+  "apartamento_periciado": {
+    "nome": "Apartamento periciado",
+    "som": "apartamento"
+  },
+  "apartamento_pobre": {
+    "nome": "Casa humilde",
+    "som": "casa"
+  },
+  "apartamento_vazio": {
+    "nome": "Apartamento de Rafael",
+    "som": "casa"
+  },
+  "casa_bento": {
+    "nome": "Casa de Bento",
+    "som": "casa"
   }
 }

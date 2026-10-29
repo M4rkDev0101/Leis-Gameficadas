@@ -8959,7 +8959,7 @@
     },
     "c3": {
      "tipo": "investigar",
-     "local": "apartamento",
+     "local": "apartamento_refugio",
      "titulo": "Apartamento provisório de Renata",
      "intro": [
       {
@@ -9136,7 +9136,7 @@
     },
     "c4": {
      "tipo": "analisar",
-     "local": "apartamento",
+     "local": "apartamento_refugio",
      "pergunta": "Quais destas peças não resistem a um exame e devem ser descartadas?",
      "provas": [
       "audio1",
@@ -10143,7 +10143,7 @@
     },
     "c17": {
      "tipo": "dialogo",
-     "local": "apartamento",
+     "local": "apartamento_juiz",
      "falas": [
       {
        "q": "narrador",

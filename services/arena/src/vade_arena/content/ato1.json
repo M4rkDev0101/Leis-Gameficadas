@@ -1129,7 +1129,7 @@
           {"q": "rafael", "e": "confiante", "t": "Isso. Se o Ivo também foi usado, não há dolo. Vá à casa dele. Ache o que ele mesmo não sabe que tem."},
           {"q": "narrador", "t": "Entram na pasta os artigos sobre fraude eletrônica e dolo: é com eles que se vai defender o seu Ivo.", "recebe": ["cp171", "cp18", "cpp386iv"]}
         ], "proxima": "s3"},
-        "s3": {"tipo": "investigar", "local": "apartamento", "titulo": "Apartamento de Seu Ivo",
+        "s3": {"tipo": "investigar", "local": "apartamento_idoso", "titulo": "Apartamento de Seu Ivo",
           "intro": [{"q": "ivo", "e": "triste", "t": "Fica à vontade, doutor(a). Desculpe a bagunça. Desde que a Lurdes morreu, eu não ligo muito pra arrumação."}],
           "pontos": [
             {"id": "gaveta", "nome": "Gaveta de documentos", "x": 63.5, "y": 49, "w": 16.5, "h": 33, "falas": [
@@ -1592,7 +1592,7 @@
         "zj1": {
           "tipo": "escolha",
           "livre": true,
-          "local": "casa",
+          "local": "casa_rafael",
           "falas": [
             {
               "q": "narrador",
