@@ -839,7 +839,7 @@
         },
         "c_joana": {
           "tipo": "celular",
-          "local": "corredor",
+          "local": "corredor_senado_ccj",
           "contato": "Joana Ribas",
           "status": "digitando…",
           "falas": [
@@ -914,7 +914,7 @@
         },
         "corr": {
           "tipo": "dialogo",
-          "local": "corredor",
+          "local": "corredor_senado_ccj",
           "falas": [
             {
               "q": "narrador",
@@ -986,7 +986,7 @@
         },
         "inv_ala": {
           "tipo": "investigar",
-          "local": "corredor",
+          "local": "corredor_senado_ccj",
           "titulo": "Senado: a ala da Comissão antes da sabatina",
           "intro": [
             {
@@ -1105,7 +1105,7 @@
         },
         "arg_prep": {
           "tipo": "argumento",
-          "local": "corredor",
+          "local": "corredor_senado_ccj",
           "tempo": 45,
           "falas": [
             {
@@ -1178,7 +1178,7 @@
         },
         "inv_pasta": {
           "tipo": "investigar",
-          "local": "corredor",
+          "local": "corredor_senado_ccj",
           "titulo": "Sala de espera: a pasta da sabatina",
           "intro": [
             {
@@ -1327,7 +1327,7 @@
         },
         "an_pasta": {
           "tipo": "analisar",
-          "local": "corredor",
+          "local": "corredor_senado_ccj",
           "falas": [
             {
               "q": "dani",
@@ -2185,7 +2185,7 @@
         },
         "tens1": {
           "tipo": "tensao",
-          "local": "praca",
+          "local": "saida_lateral_senado",
           "tempo": 7,
           "padrao": 2,
           "falas": [
@@ -2311,7 +2311,7 @@
         },
         "g1": {
           "tipo": "dialogo",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "narrador",
@@ -2355,7 +2355,7 @@
         },
         "cor2": {
           "tipo": "dialogo",
-          "local": "corredor",
+          "local": "corredor_stf",
           "falas": [
             {
               "q": "narrador",
@@ -2406,7 +2406,7 @@
         },
         "intu2": {
           "tipo": "intuicao",
-          "local": "corredor",
+          "local": "corredor_stf",
           "falas": [
             {
               "q": "narrador",
@@ -2460,7 +2460,7 @@
         },
         "inv_pauta": {
           "tipo": "investigar",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "titulo": "Gabinete da Presidência: a pauta do dia",
           "intro": [
             {
@@ -2635,7 +2635,7 @@
         },
         "esc_pauta": {
           "tipo": "escolha",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "tempo": 40,
           "falas": [
             {
@@ -2702,7 +2702,7 @@
         },
         "dec_mesa": {
           "tipo": "decidir",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "correta": "indeferir",
           "tempo": 40,
           "falas": [
@@ -2749,7 +2749,7 @@
         },
         "esc_audiencia": {
           "tipo": "escolha",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "tempo": 40,
           "falas": [
             {
@@ -3723,7 +3723,7 @@
         },
         "g3": {
           "tipo": "dialogo",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "narrador",
@@ -3762,7 +3762,7 @@
         },
         "inv_praca": {
           "tipo": "investigar",
-          "local": "praca",
+          "local": "praca_tres_poderes",
           "titulo": "A janela do gabinete e a Praça",
           "intro": [
             {
@@ -3882,7 +3882,7 @@
         },
         "inv3": {
           "tipo": "investigar",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "titulo": "Gabinete de crise: o que é real",
           "intro": [
             {
@@ -4007,7 +4007,7 @@
         },
         "an3": {
           "tipo": "analisar",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "a8cecilia",
@@ -4053,7 +4053,7 @@
         },
         "intu3": {
           "tipo": "intuicao",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "a8monica",
@@ -4103,7 +4103,7 @@
         },
         "dec3": {
           "tipo": "decidir",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "correta": "indeferir",
           "tempo": 45,
           "falas": [
@@ -4150,7 +4150,7 @@
         },
         "tens3": {
           "tipo": "tensao",
-          "local": "garagem",
+          "local": "garagem_stf",
           "tempo": 6,
           "padrao": 2,
           "falas": [
@@ -4313,7 +4313,7 @@
         },
         "esc_sala": {
           "tipo": "escolha",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "tempo": 35,
           "falas": [
             {
@@ -4383,7 +4383,7 @@
         },
         "d_madrugada": {
           "tipo": "dialogo",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "narrador",
@@ -4423,7 +4423,7 @@
         },
         "blefe3": {
           "tipo": "blefe",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "narrador",
@@ -4497,7 +4497,7 @@
         },
         "arg3": {
           "tipo": "argumento",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "tempo": 45,
           "falas": [
             {
@@ -4576,7 +4576,7 @@
         },
         "esc3": {
           "tipo": "escolha",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "tempo": 40,
           "falas": [
             {
@@ -4783,7 +4783,7 @@
         },
         "g4": {
           "tipo": "dialogo",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "narrador",
@@ -4865,7 +4865,7 @@
         },
         "inv4": {
           "tipo": "investigar",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "titulo": "Os autos do PAD de Pedro Andrade",
           "intro": [
             {
@@ -5040,7 +5040,7 @@
         },
         "an4": {
           "tipo": "analisar",
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "a8cecilia",
@@ -6280,7 +6280,7 @@
         "liv2": {
           "tipo": "escolha",
           "livre": true,
-          "local": "gabinete",
+          "local": "gabinete_presidencia_stf",
           "falas": [
             {
               "q": "narrador",

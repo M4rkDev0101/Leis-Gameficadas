@@ -1033,7 +1033,7 @@
         },
         "c4": {
           "tipo": "dialogo",
-          "local": "corredor",
+          "local": "corredor_stf",
           "proxima": "c5",
           "falas": [
             {
@@ -1783,7 +1783,7 @@
         },
         "c12": {
           "tipo": "tensao",
-          "local": "corredor",
+          "local": "corredor_stf",
           "tempo": 8,
           "padrao": 2,
           "pergunta": "Teresa é a pessoa que você mais admirou em Brasília. Ela se aproxima. Você tem o log do cofre, o extrato e a mão ainda tremendo. O que você faz?",
@@ -1856,7 +1856,7 @@
         },
         "c13": {
           "tipo": "dialogo",
-          "local": "corredor",
+          "local": "corredor_stf",
           "proxima": "c14",
           "falas": [
             {
@@ -1906,7 +1906,7 @@
         "c14": {
           "tipo": "escolha",
           "livre": true,
-          "local": "corredor",
+          "local": "corredor_stf",
           "proxima": "c15",
           "falas": [
             {

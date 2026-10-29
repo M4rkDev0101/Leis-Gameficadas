@@ -977,7 +977,7 @@
         },
         "c10t": {
           "tipo": "tensao",
-          "local": "praca",
+          "local": "praca_tres_poderes",
           "tempo": 7,
           "padrao": 0,
           "pergunta": "Os microfones se fecham em círculo. A imprensa quer uma frase, qualquer uma. O que você diz?",
@@ -2188,7 +2188,7 @@
             }
           ],
           "proxima": "c3",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c3": {
           "tipo": "dialogo",
@@ -2210,7 +2210,7 @@
             }
           ],
           "proxima": "c4",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c4": {
           "tipo": "investigar",
@@ -2306,7 +2306,7 @@
         },
         "c5": {
           "tipo": "investigar",
-          "local": "rua",
+          "local": "fachada_tre",
           "titulo": "Em frente ao Tribunal Eleitoral",
           "intro": [
             {
@@ -2444,7 +2444,7 @@
             }
           ],
           "proxima": "c7",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c7": {
           "tipo": "argumento",
@@ -2522,7 +2522,7 @@
             }
           ],
           "proxima": "c8",
-          "local": "gabinete",
+          "local": "gabinete_instrutor_stf",
           "dica": [
             "O tipo exige 'violação indevida de mecanismos de segurança do sistema eletrônico'.",
             "Violência ou grave ameaça faltam: sobra o art. 359-N, não o 359-L ou 359-M."
@@ -2530,7 +2530,7 @@
         },
         "c8": {
           "tipo": "audiencia",
-          "local": "gabinete",
+          "local": "gabinete_instrutor_stf",
           "titulo": "Audiência de apresentação",
           "falas": [
             {
@@ -2704,7 +2704,7 @@
           "encerrar": "c10",
           "proxima": "c10",
           "minimo": 1,
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "d_motor": {
           "tipo": "depoimento",
@@ -3056,7 +3056,7 @@
             }
           ],
           "proxima": "c11",
-          "local": "gabinete",
+          "local": "gabinete_instrutor_stf",
           "dica": [
             "O que mostra a rede de telefonemas?",
             "A planilha de ligações de 48 horas."
@@ -3101,7 +3101,7 @@
             }
           ],
           "proxima": "c12",
-          "local": "gabinete",
+          "local": "gabinete_instrutor_stf",
           "dica": [
             "Doze juízes que nada viram não ajudam a instrução."
           ]
@@ -3158,7 +3158,7 @@
           ],
           "bonus": 1,
           "proxima": "c13",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c13": {
           "tipo": "blefe",
@@ -3248,7 +3248,7 @@
             }
           ],
           "proxima": "c14",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c14": {
           "tipo": "reviravolta",
@@ -3274,7 +3274,7 @@
           "piso": 2,
           "musica": "pressao",
           "proxima": "c15",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c15": {
           "tipo": "depoimento",
@@ -3476,7 +3476,7 @@
             }
           ],
           "proxima": "c17",
-          "local": "gabinete",
+          "local": "gabinete_instrutor_stf",
           "dica": [
             "Preventiva precisa de motivo concreto, não só de gravidade.",
             "Entre a prisão e nada há as medidas cautelares do art. 319."
@@ -3507,7 +3507,7 @@
             }
           ],
           "proxima": "c18",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c18": {
           "tipo": "veredicto",
@@ -3731,7 +3731,7 @@
             }
           ],
           "proxima": "c3",
-          "local": "stf"
+          "local": "corredor_stf"
         },
         "c3": {
           "tipo": "dialogo",
@@ -3930,7 +3930,7 @@
         },
         "c5": {
           "tipo": "investigar",
-          "local": "gabinete",
+          "local": "gabinete_instrutor_stf",
           "titulo": "Gabinete da relatora",
           "intro": [
             {
@@ -4109,7 +4109,7 @@
             }
           ],
           "proxima": "c7",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c7": {
           "tipo": "plenario",
@@ -7123,7 +7123,7 @@
             }
           ],
           "proxima": "c3",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c3": {
           "tipo": "dialogo",
@@ -7157,11 +7157,11 @@
             }
           ],
           "proxima": "c4",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c4": {
           "tipo": "investigar",
-          "local": "gabinete",
+          "local": "gabinete_instrutor_stf",
           "titulo": "Gabinete: os volumes finais",
           "intro": [
             {
@@ -7357,7 +7357,7 @@
             }
           ],
           "proxima": "c7",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "c7": {
           "tipo": "argumento",
@@ -8864,7 +8864,7 @@
             }
           ],
           "proxima": "e2",
-          "local": "gabinete"
+          "local": "gabinete_instrutor_stf"
         },
         "e2": {
           "tipo": "escolha",

@@ -655,7 +655,7 @@
     },
     "c3": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "sala_das_partes_stf",
      "titulo": "Sala das partes no STF: os 14 volumes",
      "intro": [
       {
@@ -875,7 +875,7 @@
     },
     "c4": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "sala_das_partes_stf",
      "pergunta": "Quais destas peças não resistem a um exame e devem ser descartadas?",
      "provas": [
       "den",
@@ -975,7 +975,7 @@
     },
     "c6": {
      "tipo": "investigar",
-     "local": "rua",
+     "local": "esplanada_ministerios",
      "titulo": "Esplanada: protocolo e carro preto",
      "intro": [
       {
@@ -1960,7 +1960,7 @@
     },
     "c16": {
      "tipo": "dialogo",
-     "local": "rua",
+     "local": "esplanada_ministerios",
      "falas": [
       {
        "q": "a6helga",
@@ -2810,7 +2810,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -2855,7 +2855,7 @@
     },
     "c3": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "titulo": "Gabinete do juiz instrutor: os autos da denúncia",
      "intro": [
       {
@@ -3039,7 +3039,7 @@
     },
     "c4": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "pergunta": "Quais destas peças não resistem a um exame e devem ser descartadas?",
      "provas": [
       "den2",
@@ -3568,7 +3568,7 @@
     },
     "c11": {
      "tipo": "escolha",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -3642,7 +3642,7 @@
     },
     "c12": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a6helga",
@@ -3941,7 +3941,7 @@
     },
     "c16": {
      "tipo": "intuicao",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -4004,7 +4004,7 @@
     },
     "c17": {
      "tipo": "escolha",
-     "local": "rua",
+     "local": "praca_tres_poderes",
      "falas": [
       {
        "q": "narrador",
@@ -4721,7 +4721,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "sala_reunioes_ministra",
      "falas": [
       {
        "q": "narrador",
@@ -4777,7 +4777,7 @@
     },
     "c3": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "sala_reunioes_ministra",
      "titulo": "Sala de reuniões: onde o microfone dormiu 40 dias",
      "intro": [
       {
@@ -4975,7 +4975,7 @@
     },
     "c4": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "sala_reunioes_ministra",
      "pergunta": "Quais destas peças não resistem a um exame e devem ser descartadas?",
      "provas": [
       "relvar",
@@ -5190,7 +5190,7 @@
     },
     "c6g": {
      "tipo": "tensao",
-     "local": "garagem",
+     "local": "garagem_stf",
      "tempo": 7,
      "padrao": 0,
      "pergunta": "Seu carro não está na oficina. Nery sabe disso, e sabe onde você estaciona. A porta do carro dele está aberta. O que faz?",
@@ -5674,7 +5674,7 @@
     },
     "c10": {
      "tipo": "intuicao",
-     "local": "corredor",
+     "local": "corredor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -6037,7 +6037,7 @@
     },
     "c15": {
      "tipo": "escolha",
-     "local": "corredor",
+     "local": "corredor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -6785,7 +6785,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -6826,7 +6826,7 @@
     },
     "c3": {
      "tipo": "argumento",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a6adalberto",
@@ -6909,7 +6909,7 @@
     },
     "c3a": {
      "tipo": "audiencia",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "titulo": "Oitiva sigilosa do colaborador",
      "falas": [
       {
@@ -7078,7 +7078,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "titulo": "Gabinete: o acordo, os extratos e o pedido de retratação",
      "intro": [
       {
@@ -7271,7 +7271,7 @@
     },
     "c5": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "pergunta": "Quais destas peças não resistem a um exame e devem ser descartadas?",
      "provas": [
       "termo",
@@ -7319,7 +7319,7 @@
     },
     "c6": {
      "tipo": "investigar",
-     "local": "delegacia",
+     "local": "sala_negociacao_delacao",
      "titulo": "Sede da PF: a sala de negociações",
      "intro": [
       {
@@ -7446,7 +7446,7 @@
     },
     "c7": {
      "tipo": "convocar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a6helga",
@@ -7509,7 +7509,7 @@
     },
     "c8": {
      "tipo": "acareacao",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "a": "d_rui",
      "b": "d_cecilia",
      "falas": [
@@ -7565,7 +7565,7 @@
     },
     "c9": {
      "tipo": "intuicao",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -7624,7 +7624,7 @@
     },
     "c10": {
      "tipo": "argumento",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a6nery",
@@ -7707,7 +7707,7 @@
     },
     "c11": {
      "tipo": "escolha",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -7785,7 +7785,7 @@
     },
     "c12": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a6helga",
@@ -7824,7 +7824,7 @@
      "piso": 2,
      "musica": "pressao",
      "proxima": "c14",
-     "local": "gabinete"
+     "local": "gabinete_instrutor_stf"
     },
     "c14": {
      "tipo": "depoimento",
@@ -7962,11 +7962,11 @@
       }
      ],
      "proxima": "c15",
-     "local": "gabinete"
+     "local": "gabinete_instrutor_stf"
     },
     "c15": {
      "tipo": "blefe",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -8063,7 +8063,7 @@
     },
     "c16": {
      "tipo": "escolha",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -8120,7 +8120,7 @@
     },
     "c17": {
      "tipo": "dialogo",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a6helga",
@@ -8396,7 +8396,7 @@
       }
      ],
      "proxima": "c7",
-     "local": "gabinete"
+     "local": "gabinete_instrutor_stf"
     },
     "d_cecilia": {
      "tipo": "depoimento",
@@ -8563,7 +8563,7 @@
       }
      ],
      "proxima": "c7",
-     "local": "gabinete"
+     "local": "gabinete_instrutor_stf"
     },
     "d_rui": {
      "tipo": "depoimento",
@@ -8736,7 +8736,7 @@
       }
      ],
      "proxima": "c7",
-     "local": "gabinete"
+     "local": "gabinete_instrutor_stf"
     }
    }
   },
@@ -10064,7 +10064,7 @@
     },
     "c15": {
      "tipo": "escolha",
-     "local": "rua",
+     "local": "praca_tres_poderes",
      "falas": [
       {
        "q": "narrador",

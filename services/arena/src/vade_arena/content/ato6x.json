@@ -662,12 +662,12 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "c3"
     },
     "c3": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "titulo": "Gabinete: os nove volumes",
      "intro": [
       {
@@ -930,7 +930,7 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "c5"
     },
     "c5": {
@@ -990,7 +990,7 @@
        ]
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "dica": [
       "Decisão de outro ministro se cumpre, mas só no que ela diz.",
       "Cumpra o que foi suspenso, avise a relatora e continue o que não foi suspenso."
@@ -1266,7 +1266,7 @@
     },
     "c9": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -2008,12 +2008,12 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "c17"
     },
     "c17": {
      "tipo": "argumento",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a6ataulfo",
@@ -2077,7 +2077,7 @@
     },
     "c18": {
      "tipo": "argumento",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a6helga",
@@ -2630,7 +2630,7 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "c27"
     },
     "c27": {
@@ -3272,7 +3272,7 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "c3"
     },
     "c3": {
@@ -3332,7 +3332,7 @@
        ]
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "dica": [
       "Prova que pode ser contra você precisa ser preservada, não examinada.",
       "Preserve com lacre, registre e avise a relatora."
@@ -3341,7 +3341,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "titulo": "Gabinete: a mesa e as máquinas",
      "intro": [
       {
@@ -3576,7 +3576,7 @@
        ]
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "dica": [
       "Preservar a prova é urgente; julgar a si mesmo é proibido.",
       "Instrua, mas deixe a decisão para a relatora."
@@ -3734,12 +3734,12 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "c8"
     },
     "c8": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -4705,7 +4705,7 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "c21"
     },
     "c21": {
@@ -9469,7 +9469,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "sala_das_partes_stf",
      "titulo": "Gabinete provisório: o dossiê",
      "intro": [
       {
@@ -9772,12 +9772,12 @@
        "e": "normal"
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "c7"
     },
     "c7": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -9829,7 +9829,7 @@
     "c8": {
      "tipo": "escolha",
      "livre": true,
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "narrador",

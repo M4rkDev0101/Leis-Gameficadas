@@ -4479,7 +4479,7 @@
     },
     "c10d": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "secretaria_turma",
      "falas": [
       {
        "q": "narrador",
@@ -4495,7 +4495,7 @@
     },
     "c10e": {
      "tipo": "investigar",
-     "local": "corredor",
+     "local": "secretaria_turma",
      "titulo": "Secretaria da Turma, sexta, 8h30",
      "intro": [
       {
@@ -5601,7 +5601,7 @@
     },
     "c21b": {
      "tipo": "dialogo",
-     "local": "cafe",
+     "local": "cafe_stf",
      "falas": [
       {
        "q": "narrador",
@@ -5631,7 +5631,7 @@
     },
     "c21c": {
      "tipo": "escolha",
-     "local": "cafe",
+     "local": "cafe_stf",
      "tempo": 30,
      "falas": [
       {
@@ -5846,7 +5846,7 @@
     },
     "c25": {
      "tipo": "analisar",
-     "local": "corredor",
+     "local": "corredor_stf",
      "falas": [
       {
        "q": "narrador",
@@ -5902,7 +5902,7 @@
     },
     "c26": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "corredor_stf",
      "falas": [
       {
        "q": "a6teresa",

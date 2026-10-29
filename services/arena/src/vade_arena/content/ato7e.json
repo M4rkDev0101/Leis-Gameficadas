@@ -4953,14 +4953,14 @@
        "t": "Teresa está esperando no café do térreo. Ela quer falar antes de assinar. Eu não vou exigir nada do senhor, mas eu a conheço: ela não vai pedir perdão por mensagem."
       }
      ],
-     "local": "stf",
+     "local": "corredor_stf",
      "proxima": "r3"
     },
     "r3": {
      "tipo": "celular",
      "contato": "Teresa Albuquerque",
      "status": "digitando…",
-     "local": "stf",
+     "local": "corredor_stf",
      "mensagens": [
       {
        "de": "ele",
@@ -5085,13 +5085,13 @@
        "t": "Não posso dizer que não escolhi. Escolhi a Júlia. Escolheria de novo. Mas a Altavista, o Otto, o Hugo: foi com a minha escolha que eles ganharam uma semana. Eu sei o preço disso."
       }
      ],
-     "local": "cafe",
+     "local": "cafe_stf",
      "proxima": "r5"
     },
     "r5": {
      "tipo": "escolha",
      "livre": true,
-     "local": "cafe",
+     "local": "cafe_stf",
      "pergunta": "Teresa vai assinar a denúncia contra o homem que ameaçou a filha dela. O que você faz com a confiança nela?",
      "falas": [
       {
@@ -5154,7 +5154,7 @@
     },
     "r6": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "titulo": "Gabinete: o dossiê e o arquivo-mestre",
      "intro": [
       {
@@ -5858,7 +5858,7 @@
     },
     "r11": {
      "tipo": "analisar",
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "falas": [
       {
        "q": "a7emurilo",
@@ -6937,7 +6937,7 @@
      "tipo": "celular",
      "contato": "Número desconhecido",
      "status": "online",
-     "local": "corredor",
+     "local": "corredor_stf",
      "mensagens": [
       {
        "de": "ele",
@@ -7521,7 +7521,7 @@
     "r26": {
      "tipo": "escolha",
      "livre": true,
-     "local": "corredor",
+     "local": "corredor_stf",
      "pergunta": "Teresa e você, no corredor, depois da sessão. O que você diz a ela?",
      "falas": [
       {
@@ -7676,7 +7676,7 @@
        "t": "Cumpro o que a Justiça me deu. Se perguntarem, diga que fui um bom colega até o dia em que não fui."
       }
      ],
-     "local": "praca",
+     "local": "praca_tres_poderes",
      "proxima": "r28"
     },
     "r28": {
@@ -7769,7 +7769,7 @@
        "t": "Pela janela do gabinete, a Praça dos Três Poderes acende os postes. Em algum lugar do prédio, um escrivão novo bate um carimbo e, pela primeira vez, alguém lembra de perguntar o nome dele."
       }
      ],
-     "local": "gabinete",
+     "local": "gabinete_instrutor_stf",
      "proxima": "r30"
     },
     "r30": {

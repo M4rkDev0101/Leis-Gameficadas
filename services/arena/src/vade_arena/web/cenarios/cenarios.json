@@ -1,13 +1,102 @@
 {
-  "presidio": {"nome": "Galeria do presídio", "som": "parlatorio"},
-  "hospital": {"nome": "Quarto de hospital", "som": "clinica"},
-  "senado": {"nome": "Comissão do Senado", "som": "stf"},
-  "imprensa": {"nome": "Sala de imprensa", "som": "praca"},
-  "hotel": {"nome": "Quarto de hotel", "som": "casa"},
-  "elevador": {"nome": "Elevador", "som": "corredor"},
-  "cartorio": {"nome": "Cartório", "som": "gabinete"},
-  "aeroporto": {"nome": "Saguão do aeroporto", "som": "praca"},
-  "sala_de_aula": {"nome": "Sala de aula", "som": "corredor"},
-  "defensoria": {"nome": "Defensoria Pública", "som": "gabinete"},
-  "laboratorio": {"nome": "Laboratório de perícia", "som": "clinica"}
+  "presidio": {
+    "nome": "Galeria do presídio",
+    "som": "parlatorio"
+  },
+  "hospital": {
+    "nome": "Quarto de hospital",
+    "som": "clinica"
+  },
+  "senado": {
+    "nome": "Comissão do Senado",
+    "som": "stf"
+  },
+  "imprensa": {
+    "nome": "Sala de imprensa",
+    "som": "praca"
+  },
+  "hotel": {
+    "nome": "Quarto de hotel",
+    "som": "casa"
+  },
+  "elevador": {
+    "nome": "Elevador",
+    "som": "corredor"
+  },
+  "cartorio": {
+    "nome": "Cartório",
+    "som": "gabinete"
+  },
+  "aeroporto": {
+    "nome": "Saguão do aeroporto",
+    "som": "praca"
+  },
+  "sala_de_aula": {
+    "nome": "Sala de aula",
+    "som": "corredor"
+  },
+  "defensoria": {
+    "nome": "Defensoria Pública",
+    "som": "gabinete"
+  },
+  "laboratorio": {
+    "nome": "Laboratório de perícia",
+    "som": "clinica"
+  },
+  "gabinete_instrutor_stf": {
+    "nome": "Gabinete do instrutor (STF)",
+    "som": "gabinete"
+  },
+  "gabinete_presidencia_stf": {
+    "nome": "Gabinete da Presidência do STF",
+    "som": "gabinete"
+  },
+  "corredor_stf": {
+    "nome": "Corredor do Supremo",
+    "som": "corredor"
+  },
+  "cafe_stf": {
+    "nome": "Café do Supremo",
+    "som": "cafe"
+  },
+  "praca_tres_poderes": {
+    "nome": "Praça dos Três Poderes",
+    "som": "praca"
+  },
+  "sala_das_partes_stf": {
+    "nome": "Sala das partes (STF)",
+    "som": "escritorio"
+  },
+  "sala_reunioes_ministra": {
+    "nome": "Sala de reuniões da ministra",
+    "som": "escritorio"
+  },
+  "garagem_stf": {
+    "nome": "Garagem do STF",
+    "som": "garagem"
+  },
+  "esplanada_ministerios": {
+    "nome": "Esplanada dos Ministérios",
+    "som": "rua"
+  },
+  "secretaria_turma": {
+    "nome": "Secretaria da Turma",
+    "som": "escritorio"
+  },
+  "corredor_senado_ccj": {
+    "nome": "Corredor da CCJ do Senado",
+    "som": "corredor"
+  },
+  "saida_lateral_senado": {
+    "nome": "Saída lateral do Senado",
+    "som": "rua"
+  },
+  "sala_negociacao_delacao": {
+    "nome": "Sala de negociação da delação",
+    "som": "delegacia"
+  },
+  "fachada_tre": {
+    "nome": "Fachada do TRE",
+    "som": "rua"
+  }
 }
