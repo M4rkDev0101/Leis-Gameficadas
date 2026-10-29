@@ -755,7 +755,17 @@
   .verdict.opened p:not(.lvup) { display:none; }
   .verdict .cards { font-size:.95cqw; } .verdict.opened .stats { display:none; }
   .verdict .bigbtns { margin-top:.8cqw; }
-  .grade { top:12cqw; width:12.5cqw; height:12.5cqw; font-size:9.4cqw; }
+  /* nota no canto superior direito (nunca sobre o título); carimbo e título com folga entre si */
+  /* fora do tribunal a caixa de diálogo tapava o queixo/boca do ator: com a caixa aberta ele sobe, e o corpo (cortado) fica atrás dela */
+  .stage:has(#dialog:not(.hidden)) .scene.loc .actor { bottom:7.5%; transition:transform .25s, bottom .25s; }
+  .grade { top:2cqw; right:2.4cqw; width:10.5cqw; height:10.5cqw; font-size:8cqw; }
+  .verdict .stamp { margin-top:.8cqw; margin-bottom:.4cqw; }
+  .verdict h2 { max-width:76cqw; margin-top:2.2cqw; }
+  /* menu de escolhas: ocupa a metade direita e o ator vai para a esquerda, para não tapar o rosto de quem fala */
+  .stage:not(:has(.lawpop)):has(#overlay .menu:not(.judge)) .scene .actor { left:26%; transition:left .25s, transform .25s; }
+  .stage:not(:has(.lawpop)):has(#overlay .menu:not(.judge)) .menu { left:46%; width:52%; transform:none; top:9%; bottom:30%; align-content:safe center; gap:.55cqw; }
+  .stage:not(:has(.lawpop)):has(#overlay .menu:not(.judge)) .menu .opt { padding:.6cqw 1.2cqw; }
+  .stage:not(:has(.lawpop)):has(#overlay .menu:not(.judge)) .menu .q { font-size:max(14px, 1.7cqw); padding:.6cqw 1.2cqw; }
   body.nofx .grade, body.nofx .rchip, body.nofx .lcard.flip, body.nofx .lcard.gold::after, body.nofx .grade.gS::after, body.nofx .combo.pulse, body.nofx .combobreak,
   body.nofx .chest .cs, body.nofx .patente *, body.nofx .chest .lid { animation:none !important; transition:none !important; }
   .placar { display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:.4cqw; background:rgba(11,13,17,.85); border:1px solid var(--v-line); border-radius:var(--v-r); padding:.6cqw 1cqw; }
@@ -796,6 +806,9 @@
   .menu .mini { width:3cqw; min-width:28px; height:3cqw; min-height:28px; border-radius:.6cqw; border:1px solid var(--v-line); background:var(--v-surface); color:var(--v-text); font-weight:900; font-size:max(13px, 1.5cqw); cursor:pointer; }
   .menu .mini:hover:not(:disabled), .menu .mini:focus-visible { border-color:var(--v-gold); outline:none; } .menu .mini:disabled { opacity:.35; cursor:not-allowed; }
   .menu.judge > .pbtn { justify-self:center; margin-top:.4cqw; }
+  .menu.judge.sentenca { max-height:64%; padding:.8cqw 1.4cqw; gap:.5cqw; } .menu.sentenca .opt { padding:.4cqw 1cqw; font-size:max(12px, 1.35cqw); } .menu.sentenca .parte { gap:.3cqw; padding-bottom:.5cqw; } .menu.sentenca .q { font-size:max(14px, 1.7cqw); }
+  .sigbar { position:sticky; bottom:-1.2cqw; z-index:2; display:grid; gap:.5cqw; justify-items:center; margin:0 -1.6cqw -1.2cqw; padding:.8cqw 1.6cqw 1.2cqw; background:linear-gradient(to bottom, rgba(11,13,17,0), rgba(11,13,17,.98) 30%); }
+  .pbtn-why { justify-self:center; text-align:center; color:#ffd9a0; background:rgba(0,0,0,.45); border:1px dashed rgba(255,217,160,.55); border-radius:.8cqw; padding:.4cqw 1.2cqw; font-size:max(12px, 1.25cqw); font-weight:700; }
   .sentenca .parte { border:1px solid var(--v-line); border-radius:var(--v-r); padding:.4cqw .8cqw .8cqw; margin:0; display:grid; gap:.5cqw; }
   .sentenca .parte.bad { border-color:var(--v-bad); box-shadow:0 0 0 .15cqw var(--v-bad); }
   .sentenca legend { color:var(--v-gold); font-weight:900; letter-spacing:.08em; text-transform:uppercase; font-size:max(11px, 1.2cqw); padding:0 .4cqw; }
@@ -1977,7 +1990,7 @@ function openAutos(mode) {
         p.indicios && ((G.examinadas || []).includes(p.id) || (G.descartadas || []).includes(p.id)) ? el("ul", {class:"pistas"}, ...p.indicios.map(t => el("li", {textContent:"Indício: " + t}))) : null,
         p.tipo === "lei" ? el("div", {class:"ref", textContent:(p.texto ? "Texto vigente do catálogo · " : "Trecho citado · ") + p.chave}) : null].filter(Boolean)
         : [el("p", {textContent: mode ? "Escolha a prova ou a lei que você quer apresentar." : "Selecione um item para ver os detalhes."})]));
-      if (presentBtn) presentBtn.disabled = !sel;
+      if (presentBtn) { presentBtn.disabled = !sel; presentBtn.title = sel ? "" : "Selecione uma prova ou lei na lista para apresentar"; }
     }
     m.append(el("div", {class:"mcard"}, el("header", {}, el("h2", {textContent:"📁 Autos do processo"}), tabsEl, el("span", {class:"sp"}), el("button", {class:"x", "aria-label":"Fechar", textContent:"×", onclick:() => close(null)})),
       mbody,
@@ -2408,7 +2421,11 @@ async function pecaScene(c) {
                 if (id) { sel[k] = id; errada.delete(k); } draw(); }}, el("span", {textContent:label(pt, k)}))]
               : pt.opcoes.map((o, j) => el("button", {class:"opt" + (sel[k] === j ? " on" : ""), "aria-pressed":String(sel[k] === j),
                 onclick:() => { sel[k] = j; errada.delete(k); Sound.select(); draw(); }}, el("span", {textContent:o.t})))))),
-          el("button", {class:"pbtn", textContent:denun ? "🏛️ Oferecer a denúncia" : "✍️ Assinar a sentença", disabled:sel.some(x => x === null), onclick:() => resolve()}));
+          ...(() => {  // botão desligado diz o motivo: quais partes ainda faltam
+            const falta = c.partes.filter((pt, k) => sel[k] === null).map(pt => pt.nome);
+            return [el("div", {class:"sigbar"}, el("button", {class:"pbtn", textContent:denun ? "🏛️ Oferecer a denúncia" : "✍️ Assinar a sentença", disabled:falta.length > 0, onclick:() => resolve()}),
+              falta.length ? el("div", {class:"pbtn-why", role:"status", textContent:`Para ${denun ? "oferecer" : "assinar"}, falta preencher: ${falta.join(", ")}.`}) : null)];
+          })());
         const bs = [...box.querySelectorAll("button")];
         if (fi >= 0 && bs[fi]) bs[fi].focus({preventScroll:true});
       };
@@ -2758,6 +2775,13 @@ function countUp(node, to) {
   const step = () => { k++; node.textContent = `+${Math.round(to * k / n)} XP`; if (k < n) setTimeout(step, 40); else Sound.acerto(); };
   setTimeout(step, 900);
 }
+// se o conteúdo do veredicto passar da altura do palco, encolhe tudo (menos a nota) em vez de cortar o fim ou obrigar a rolar
+function fitVerdict(box) {
+  const kids = [...box.children].filter(n => !n.classList.contains("grade"));
+  kids.forEach(n => { n.style.zoom = ""; });
+  const need = box.scrollHeight, have = box.clientHeight;
+  if (need > have + 1) { const z = Math.max(.55, (have / need) * .97); kids.forEach(n => { n.style.zoom = z.toFixed(3); }); }
+}
 function stampSize(t) { return Math.min(6, 62 / Math.max(6, t.length)) + "cqw"; }  // cabe em qualquer carimbo
 function confetti() {
   if (!fxOn()) return;
@@ -2875,7 +2899,7 @@ function renderVerdict(c, r) {
     if (!nx || !bigbtns.isConnected) return;
     const b = el("button", {class:"bigbtn", textContent:"Próximo episódio ▶", onclick:() => startEpisode(nx.id, !!nx.salvo)});
     bigbtns.querySelector(".bigbtn:not(.sec)")?.classList.add("sec");
-    bigbtns.prepend(b); b.focus({preventScroll:true});
+    bigbtns.prepend(b); b.focus({preventScroll:true}); const vb = bigbtns.closest(".verdict"); if (vb) fitVerdict(vb);
   });
   const box = el("div", {class:"full verdict"},
     el("div", {class:"stamp " + cls, textContent:c.carimbo, style:{fontSize:stampSize(c.carimbo)}}),
@@ -2889,7 +2913,7 @@ function renderVerdict(c, r) {
     xpEl, rew,
     prog.subiu_de_nivel ? el("p", {class:"lvup", textContent:`⬆️ Nível ${prog.nivel}: ${prog.titulo}!`}) : null,
     bigbtns);
-  $("#stage").append(box); setTimeout(() => Sound.carimbo(), 450);
+  $("#stage").append(box); fitVerdict(box); setTimeout(() => Sound.carimbo(), 450);
   stampLetters(box.querySelector(".stamp"), c.carimbo); countUp(xpEl, xpFinal - xpBau);
   if (rc.nota) setTimeout(() => { if (box.isConnected) (rc.nota === "S" ? Sound.notaS() : Sound.carimbo()); }, fxOn() ? 1300 : 200);
   const patente = async () => { if (prog.patente_nova && box.isConnected) { await sleep(fxOn() ? 1700 : 100); if (box.isConnected) await patenteScene(prog.titulo, prog.nivel); } };
@@ -2918,6 +2942,7 @@ function renderVerdict(c, r) {
       if (novas.length > show.length) row.append(el("span", {class:"rchip", textContent:`+${novas.length - show.length} cartas`}));
       rew.prepend(el("small", {class:"cap", textContent:`${novas.length} carta${novas.length > 1 ? "s" : ""} nova${novas.length > 1 ? "s" : ""} no álbum`}));
     } else rew.append(el("small", {class:"cap", textContent:"Nenhuma carta nova desta vez"}));
+    fitVerdict(box);
     const b = bigbtns.querySelector("button"); if (b) b.focus({preventScroll:true});
     patente();
   };
