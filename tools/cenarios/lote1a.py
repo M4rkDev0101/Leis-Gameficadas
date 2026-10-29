@@ -24,7 +24,7 @@ def gabinete_instrutor_stf():
     ex = (R(wx, wy + wh * .62, ww, wh * .38, "#4a5560") + R(wx, wy + wh * .62, ww, .5, "#9aa8b4") +
           R(wx + 2, wy + wh * .3, 7, wh * .32, "#586878") + R(wx + 11, wy + wh * .18, 8, wh * .44, "#667688") + R(wx + 30, wy + wh * .35, 8, wh * .27, "#586878"))
     for k in range(5): ex += R(wx + 12.5, wy + wh * .22 + k * 2.4, 1.6, 1.1, "#e8f0f8", .35)
-    ex += car_side(wx + ww * .6, wy + wh * .82, 1.0, "#0d1014")
+    ex += PATH(f"M{f(wx+ww*.45)} {f(wy+wh*.62)} Q{f(wx+ww*.6)} {f(wy+wh*.42)} {f(wx+ww*.75)} {f(wy+wh*.62)}Z", fill="#6a7a8c") + R(wx + ww * .42, wy + wh * .62, ww * .36, wh * .05, "#7a8a9a")
     b.append(R(wx - 2.4, wy - 3, ww + 4.8, 1.8, "#1c2832"))
     b.append(R(wx - 2, wy + wh + 1, ww + 4, 1.4, "#9ab0c4", .8))
     b.append(window(wx, wy, ww, wh, "sk" + s, frame="#16202a", mull=(1, 1), extra=ex))
