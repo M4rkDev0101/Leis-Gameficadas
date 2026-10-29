@@ -12,6 +12,7 @@ from __future__ import annotations
 
 import datetime as dt
 import json
+import re
 import sqlite3
 import threading
 import time
@@ -250,6 +251,22 @@ class Arena:
         return out
 
 
+_CENARIO_RE = re.compile(r"[a-z_]+\.(?:webp|png|jpg)")
+_CENARIO_TIPO = {"webp": "image/webp", "png": "image/png", "jpg": "image/jpeg"}
+
+
+def _cenarios() -> dict[str, str]:
+    """Imagens de cenário disponíveis (web/cenarios/<local>.webp|png|jpg) -> URL; a primeira extensão encontrada vale."""
+    pasta = resources.files(__package__).joinpath("web/cenarios")
+    if not pasta.is_dir():
+        return {}
+    out: dict[str, str] = {}
+    for arq in sorted(pasta.iterdir(), key=lambda a: a.name):
+        if _CENARIO_RE.fullmatch(arq.name):
+            out.setdefault(arq.name.rsplit(".", 1)[0], "/cenarios/" + arq.name)
+    return out
+
+
 class ArenaHandler(ingest_server._Handler):
     arena: Arena
 
@@ -262,6 +279,14 @@ class ArenaHandler(ingest_server._Handler):
             if path == "/tribunal":
                 html = resources.files(__package__).joinpath("web/tribunal.html").read_bytes()
                 return self._send(200, html, "text/html; charset=utf-8")
+            if path == "/api/arena/cenarios":
+                return self._json(_cenarios())
+            if path.startswith("/cenarios/"):
+                nome = path.rsplit("/", 1)[-1]
+                arq = resources.files(__package__).joinpath("web/cenarios", nome)
+                if _CENARIO_RE.fullmatch(nome) and arq.is_file():
+                    return self._send(200, arq.read_bytes(), _CENARIO_TIPO[nome.rsplit(".", 1)[-1]])
+                return self._json({"erro": "cenário não encontrado"}, 404)
             if path == "/api/arena/tribunal":
                 return self._json(self.arena.episodios())
             if path == "/api/arena/album":

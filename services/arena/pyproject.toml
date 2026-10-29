@@ -13,4 +13,4 @@ build-backend = "setuptools.build_meta"
 where = ["src"]
 
 [tool.setuptools.package-data]
-vade_arena = ["content/*.json", "web/*.html"]
+vade_arena = ["content/*.json", "web/*.html", "web/cenarios/*"]

@@ -36,6 +36,7 @@
   .scene { position:absolute; inset:0; transition:transform .35s cubic-bezier(.2,.8,.2,1), opacity .35s; }
   .scene.enter-l { transform:translateX(-30%); opacity:0; } .scene.enter-r { transform:translateX(30%); opacity:0; }
   .bg { position:absolute; inset:0; }
+  .bg .bgimg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block; user-select:none; }
   .actor { position:absolute; left:50%; bottom:26%; width:38%; transform:translateX(-50%); transition:transform .25s; }
   .actor svg { width:100%; height:auto; display:block; overflow:visible; }
   .actor.idle svg { animation:bob 3.2s ease-in-out infinite; }
@@ -1626,7 +1627,14 @@ const BGS = {
   escritorio: {wall:"#2b3a4a", tint:"#0f1824", plaque:""},
 };
 let UID = 0;  // ids de gradiente únicos: ids repetidos apontariam para SVGs ocultos (e sairiam pretos)
-function background(pos) {
+// cenários em imagem: web/cenarios/<nome>.webp|png|jpg (prompts em docs/PROMPTS_CENARIOS.md); sem arquivo, vale o desenho em código
+let CENARIOS = {};
+const CENARIO_RESERVA = {presidio:"parlatorio", hospital:"clinica", senado:"stf", imprensa:"praca", hotel:"apartamento", elevador:"corredor",
+  cartorio:"gabinete", aeroporto:"rua", sala_de_aula:"gabinete", defensoria:"promotoria", laboratorio:"clinica"};   // locais ainda sem desenho próprio
+const imgBG = n => `<img class="bgimg" src="${CENARIOS[n]}" alt="" draggable="false">`;
+function locationBG(local) { return CENARIOS[local] ? imgBG(local) : locationSVG(CENARIO_RESERVA[local] || local); }
+function background(pos) { return CENARIOS[pos] ? imgBG(pos) : backgroundSVG(pos); }
+function backgroundSVG(pos) {
   const b = BGS[pos] || BGS.testemunha, u = "g" + (++UID);
   const svg = inner => `<svg viewBox="0 0 160 100" preserveAspectRatio="xMidYMid slice" width="100%" height="100%">${inner}</svg>`;
   const lin = (id, c0, c1, o0 = 1, o1 = 1) => `<linearGradient id="${id}${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${c0}" stop-opacity="${o0}"/><stop offset="1" stop-color="${c1}" stop-opacity="${o1}"/></linearGradient>`;
@@ -1721,7 +1729,7 @@ const LOCAL_NOME = {bar:"Bar", mercado:"Supermercado", ponto:"Ponto de ônibus",
   obra:"Canteiro de obras", rua:"Rua", parlatorio:"Parlatório", gabinete:"Gabinete", juri:"Plenário do Júri", loja:"Loja", clinica:"Clínica",
   custodia:"Audiência de custódia", stf:"Plenário do STF", promotoria:"Promotoria", garagem:"Garagem subterrânea", carro:"Dentro do carro",
   casa:"Sala de casa", corredor:"Corredor do fórum", praca:"Praça do fórum", cafe:"Cafeteria", cemiterio:"Cemitério"};
-function locationBG(local) {
+function locationSVG(local) {
   const u = "l" + (++UID);
   const F = n => `url(#${n}${u})`;
   const R = (x, y, w, h, f, ex = "") => `<rect x="${x}" y="${y}" width="${w}" height="${h}" fill="${f}" ${ex}/>`;
@@ -4805,11 +4813,12 @@ async function galeriaQA(P) {
 const QP = new URLSearchParams(location.search);
 $("#brand-mk").innerHTML = logoMark(false);
 document.querySelectorAll(".navlinks [data-go]").forEach(b => b.onclick = () => { const t = document.getElementById(b.dataset.go); if (t) t.scrollIntoView({behavior:REDUCED() ? "auto" : "smooth", block:"start"}); });
-if (QP.get("galeria")) galeriaQA(QP);
+const cenariosProntos = api("/api/arena/cenarios").then(c => { CENARIOS = c; }).catch(() => {});
+if (QP.get("galeria")) cenariosProntos.then(() => galeriaQA(QP));
 else {
-  loadMenu();
+  cenariosProntos.then(loadMenu);
   const qp = QP.get("ep");
-  if (qp) startEpisode(qp); else if (!QP.get("semintro")) playIntro();
+  if (qp) cenariosProntos.then(() => startEpisode(qp)); else if (!QP.get("semintro")) playIntro();
 }
 </script>
 </body>
