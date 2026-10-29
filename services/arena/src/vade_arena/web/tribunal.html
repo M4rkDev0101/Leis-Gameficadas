@@ -4029,7 +4029,7 @@ function renderVerdict(c, r) {
     if (!nx || !bigbtns.isConnected) return;
     const b = el("button", {class:"bigbtn", textContent:"Próximo episódio ▶", onclick:() => startEpisode(nx.id, !!nx.salvo)});
     bigbtns.querySelector(".bigbtn:not(.sec)")?.classList.add("sec");
-    bigbtns.prepend(b); b.focus({preventScroll:true});
+    bigbtns.prepend(b); b.focus({preventScroll:true}); const vb = bigbtns.closest(".verdict"); if (vb) fitVerdict(vb);
   });
   const box = el("div", {class:"full verdict"},
     el("div", {class:"stamp " + cls, textContent:c.carimbo, style:{fontSize:stampSize(c.carimbo)}}),
