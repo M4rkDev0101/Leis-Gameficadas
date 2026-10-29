@@ -3675,7 +3675,7 @@ async function galeriaQA(P) {
 const QP = new URLSearchParams(location.search);
 $("#brand-mk").innerHTML = logoMark(false);
 document.querySelectorAll(".navlinks [data-go]").forEach(b => b.onclick = () => { const t = document.getElementById(b.dataset.go); if (t) t.scrollIntoView({behavior:REDUCED() ? "auto" : "smooth", block:"start"}); });
-const cenariosProntos = api("/api/arena/cenarios").then(c => { CENARIOS = c; }).catch(() => {});
+const cenariosProntos = api("/api/arena/cenarios").then(c => { CENARIOS = c; Object.values(c).forEach(u => { new Image().src = u; }); }).catch(() => {});
 if (QP.get("galeria")) cenariosProntos.then(() => galeriaQA(QP));
 else {
   cenariosProntos.then(loadMenu);
