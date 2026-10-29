@@ -6,7 +6,7 @@ Quando os 42 arquivos estiverem na pasta, o código de desenho dos cenários é 
 
 ## Regras para todas as imagens
 
-- **Formato:** 16:9, 1920×1080 (mínimo 1280×720), `.webp`, `.png` ou `.jpg`, nome exatamente como na tabela.
+- **Formato:** 16:10, 1920×1200 (mínimo 1280×800; o palco do jogo é 16:10), `.webp`, `.png` ou `.jpg`, nome exatamente como na tabela.
 - **Enquadramento:** câmera na altura dos olhos, de frente. O personagem é desenhado por cima, em pé no **centro**,
   da cintura para cima, com a cabeça entre 25 % e 55 % da altura: deixe o **terço central livre** (sem poste, planta,
   luminária ou objeto na frente). O chão aparece nos 20 % de baixo.
@@ -18,7 +18,7 @@ Quando os 42 arquivos estiverem na pasta, o código de desenho dos cenários é 
 **Bloco de estilo (colar no início de todos os prompts):**
 
 > 2D visual novel background, hand-painted anime illustration, clean lineart, soft cel shading, rich warm cinematic
-> lighting, detailed but uncluttered, eye-level straight-on camera, 16:9, empty space in the center for a character,
+> lighting, detailed but uncluttered, eye-level straight-on camera, 16:10, empty space in the center for a character,
 > visible floor at the bottom, no people, no text, no logos, no watermark
 
 **Negativo (se a ferramenta aceitar):** people, person, face, text, letters, logo, watermark, signature, flag, blurry,
