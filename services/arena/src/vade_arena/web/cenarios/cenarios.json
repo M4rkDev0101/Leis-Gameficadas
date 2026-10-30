@@ -314,5 +314,57 @@
   "associacao_jardim_esperanca": {
     "nome": "Associação Jardim Esperança",
     "som": "rua"
+  },
+  "sala_curso_popular": {
+    "nome": "Curso popular de direito",
+    "som": "sala_de_aula"
+  },
+  "cemiterio_jardim_da_paz": {
+    "nome": "Cemitério Jardim da Paz",
+    "som": "cemiterio"
+  },
+  "quarto_hospital_oncologico": {
+    "nome": "Quarto do Oncológico",
+    "som": "hospital"
+  },
+  "corredor_hospital_oncologico": {
+    "nome": "Corredor do Oncológico",
+    "som": "hospital"
+  },
+  "asilo_corredor": {
+    "nome": "Casa de repouso",
+    "som": "clinica"
+  },
+  "obra_horizonte": {
+    "nome": "Obra Residencial Horizonte",
+    "som": "obra"
+  },
+  "canteiro_industrial": {
+    "nome": "Canteiro industrial",
+    "som": "obra"
+  },
+  "muro_obra_rachado": {
+    "nome": "Muro da obra",
+    "som": "rua"
+  },
+  "patio_obra_noite": {
+    "nome": "Pátio de manobras",
+    "som": "obra"
+  },
+  "grafica": {
+    "nome": "Gráfica",
+    "som": "loja"
+  },
+  "rio_margem": {
+    "nome": "Margem do rio",
+    "som": "rua"
+  },
+  "carro_estrada_terra": {
+    "nome": "Carro na estrada de terra",
+    "som": "carro"
+  },
+  "festa_junina": {
+    "nome": "Festa junina",
+    "som": "praca"
   }
 }

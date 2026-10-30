@@ -490,7 +490,7 @@
     },
     "c5": {
      "tipo": "argumento",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "tempo": 35,
      "falas": [
       {
@@ -571,7 +571,7 @@
     },
     "c6": {
      "tipo": "dialogo",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "falas": [
       {
        "q": "voce",
@@ -612,7 +612,7 @@
     },
     "c7": {
      "tipo": "argumento",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "tempo": 30,
      "falas": [
       {
@@ -694,7 +694,7 @@
     },
     "c7b": {
      "tipo": "argumento",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "tempo": 30,
      "falas": [
       {
@@ -781,7 +781,7 @@
     },
     "c8": {
      "tipo": "dialogo",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "falas": [
       {
        "q": "narrador",
@@ -821,7 +821,7 @@
     },
     "c9": {
      "tipo": "escolha",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "tempo": 40,
      "pergunta": "O que você responde a Tainá?",
      "opcoes": [
@@ -913,7 +913,7 @@
     },
     "c10": {
      "tipo": "dialogo",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "falas": [
       {
        "q": "a7taina",
@@ -940,7 +940,7 @@
     },
     "c11": {
      "tipo": "investigar",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "titulo": "A pasta de Tainá: o que ela tem e o que o outro lado pode desmentir",
      "intro": [
       {
@@ -1114,7 +1114,7 @@
     },
     "c12": {
      "tipo": "analisar",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "falas": [
       {
        "q": "voce",
@@ -2850,7 +2850,7 @@
     },
     "c39": {
      "tipo": "dialogo",
-     "local": "sala_de_aula",
+     "local": "sala_curso_popular",
      "falas": [
       {
        "q": "narrador",

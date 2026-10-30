@@ -532,7 +532,7 @@
           {"q": "helena", "e": "confiante", "t": "Isso. E para a indenização, precisamos mostrar culpa da empresa no acidente. Vá à obra."},
           {"q": "narrador", "t": "Entram na pasta os artigos da CLT sobre quem é empregado, dever de segurança e ônus da reclamada, mais o inciso constitucional do acidente de trabalho.", "recebe": ["clt3", "clt157", "cf7", "clt818"]}
         ], "proxima": "n3"},
-        "n3": {"tipo": "investigar", "local": "obra", "titulo": "Residencial Horizonte · Torre B",
+        "n3": {"tipo": "investigar", "local": "obra_horizonte", "titulo": "Residencial Horizonte · Torre B",
           "intro": [{"q": "narrador", "t": "A mesma obra onde Paulo Seixas morreu. O andaime B continua de pé, com uma fita zebrada mal amarrada."}],
           "pontos": [
             {"id": "andaime", "nome": "Andaime B", "x": 63, "y": 3, "w": 34, "h": 34, "falas": [
@@ -959,7 +959,7 @@
           {"q": "helena", "e": "feliz", "t": "Agora você pensa como advogado(a). Confirme as datas e descubra se o muro já dava sinais. Vá até a rua."},
           {"q": "narrador", "t": "Entram na pasta os artigos do Código Civil sobre prescrição de três anos, incapazes, ruína de construção e extensão do dano.", "recebe": ["cc206", "cc198", "cc3", "cc937", "cc944"]}
         ], "proxima": "m3"},
-        "m3": {"tipo": "investigar", "local": "rua", "titulo": "Rua da obra antiga",
+        "m3": {"tipo": "investigar", "local": "muro_obra_rachado", "titulo": "Rua da obra antiga",
           "intro": [{"q": "narrador", "t": "O muro foi reconstruído às pressas, mas um pedaço antigo continua de pé, rachado."}],
           "pontos": [
             {"id": "muro", "nome": "Pedaço do muro antigo", "x": 4, "y": 46, "w": 30, "h": 27, "falas": [

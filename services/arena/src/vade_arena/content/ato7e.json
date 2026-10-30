@@ -5640,7 +5640,7 @@
        "t": "Eu não vou fugir, doutor(a). A Alma acordou duas vezes perguntando se o senhor(a) ia me tirar daqui. Eu disse que o senhor(a) é o único que nunca me tirou de lugar nenhum."
       }
      ],
-     "local": "hospital",
+     "local": "corredor_hospital_oncologico",
      "proxima": "r9c"
     },
     "r9c": {
@@ -5721,7 +5721,7 @@
       "Algemas exigem justificativa concreta.",
       "Dignidade do preso: CF, art. 5º, XLIX."
      ],
-     "local": "hospital",
+     "local": "corredor_hospital_oncologico",
      "proxima": "r10"
     },
     "r10": {
@@ -7057,13 +7057,13 @@
        "t": "O Gil Seabra me perguntou, uma vez, se eu anotava mesmo. Eu disse que sim. Ele disse que ninguém nunca iria mexer com ele enquanto o arquivo fosse meu. Foi a única vez que me senti importante. E foi a pior de todas."
       }
      ],
-     "local": "hospital",
+     "local": "quarto_hospital_oncologico",
      "proxima": "r19"
     },
     "r19": {
      "tipo": "escolha",
      "livre": true,
-     "local": "hospital",
+     "local": "quarto_hospital_oncologico",
      "pergunta": "Bento quer colaborar. O que você, como juiz, faz com a proposta de acordo?",
      "falas": [
       {
@@ -7110,7 +7110,7 @@
     },
     "r20": {
      "tipo": "sentenca",
-     "local": "hospital",
+     "local": "quarto_hospital_oncologico",
      "titulo": "Decisão sobre o acordo de colaboração de Bento (Lei 12.850, art. 4º)",
      "falas": [
       {
@@ -7351,7 +7351,7 @@
      "tipo": "acareacao",
      "a": "ac_henrique",
      "b": "ac_bento",
-     "local": "hospital",
+     "local": "quarto_hospital_oncologico",
      "falas": [
       {
        "q": "a6helga",

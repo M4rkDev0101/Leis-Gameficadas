@@ -1892,7 +1892,7 @@
     },
     "x3": {
      "tipo": "investigar",
-     "local": "rua",
+     "local": "rio_margem",
      "titulo": "Vila do Cinzento",
      "intro": [
       {
@@ -2033,11 +2033,11 @@
       }
      ],
      "proxima": "x5",
-     "local": "obra"
+     "local": "canteiro_industrial"
     },
     "x5": {
      "tipo": "investigar",
-     "local": "obra",
+     "local": "canteiro_industrial",
      "titulo": "Canteiro da Altavista Serviços",
      "intro": [
       {

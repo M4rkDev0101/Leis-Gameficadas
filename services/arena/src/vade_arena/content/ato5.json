@@ -3294,7 +3294,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "obra",
+     "local": "obra_horizonte",
      "titulo": "Canteiro do Residencial Horizonte",
      "intro": [
       {
@@ -3420,7 +3420,7 @@
     },
     "c4t": {
      "tipo": "tensao",
-     "local": "carro",
+     "local": "carro_estrada_terra",
      "tempo": 8,
      "padrao": 0,
      "falas": [

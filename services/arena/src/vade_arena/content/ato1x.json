@@ -1607,7 +1607,7 @@
     },
     "b4": {
      "tipo": "investigar",
-     "local": "obra",
+     "local": "patio_obra_noite",
      "titulo": "Canteiro da Altavista",
      "intro": [
       {
@@ -3390,7 +3390,7 @@
     },
     "zf1": {
      "tipo": "dialogo",
-     "local": "praca",
+     "local": "festa_junina",
      "falas": [
       {
        "q": "narrador",

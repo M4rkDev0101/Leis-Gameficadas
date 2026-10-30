@@ -1287,7 +1287,7 @@
           {"q": "helena", "e": "normal", "t": "E lembrem: no júri, sustentar é ato de advogado. Estagiário só atua em conjunto, e quem assina sou eu ou o Rafael."},
           {"q": "narrador", "t": "Entram na pasta a garantia constitucional do júri, os artigos sobre silêncio no plenário e contradita e o suborno de testemunha.", "recebe": ["cf5juri", "cpp478", "cpp214", "cp343"]}
         ], "proxima": "t3"},
-        "t3": {"tipo": "investigar", "local": "obra", "titulo": "Canteiro do Residencial Horizonte",
+        "t3": {"tipo": "investigar", "local": "obra_horizonte", "titulo": "Canteiro do Residencial Horizonte",
           "intro": [{"q": "narrador", "t": "Andaimes, vergalhões e uma placa enorme: 'CONSTRUTORA ALTAVISTA — Construindo o seu futuro'."}],
           "pontos": [
             {"id": "catraca", "nome": "Catraca da portaria", "x": 8, "y": 40, "w": 16, "h": 22, "falas": [

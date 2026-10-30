@@ -309,7 +309,7 @@
         },
         "c5": {
           "tipo": "dialogo",
-          "local": "cemiterio",
+          "local": "cemiterio_jardim_da_paz",
           "proxima": "c6",
           "falas": [
             {
@@ -335,7 +335,7 @@
         },
         "c6": {
           "tipo": "investigar",
-          "local": "cemiterio",
+          "local": "cemiterio_jardim_da_paz",
           "titulo": "Cemitério Jardim da Paz",
           "requer": [
             "orb",
@@ -456,7 +456,7 @@
         },
         "c7": {
           "tipo": "analisar",
-          "local": "cemiterio",
+          "local": "cemiterio_jardim_da_paz",
           "proxima": "c8",
           "falas": [
             {
@@ -500,7 +500,7 @@
         },
         "c8": {
           "tipo": "intuicao",
-          "local": "cemiterio",
+          "local": "cemiterio_jardim_da_paz",
           "proxima": "c9",
           "falas": [
             {
@@ -550,7 +550,7 @@
         },
         "c9": {
           "tipo": "dialogo",
-          "local": "cemiterio",
+          "local": "cemiterio_jardim_da_paz",
           "proxima": "c10",
           "falas": [
             {
@@ -589,7 +589,7 @@
         },
         "c10": {
           "tipo": "tensao",
-          "local": "cemiterio",
+          "local": "cemiterio_jardim_da_paz",
           "tempo": 7,
           "padrao": 0,
           "pergunta": "As lanternas estão a trinta metros. Nery sussurra: “São os homens do utilitário”. O envelope está na sua mão. O que você faz?",
@@ -648,7 +648,7 @@
         "c11": {
           "tipo": "escolha",
           "livre": true,
-          "local": "cemiterio",
+          "local": "cemiterio_jardim_da_paz",
           "proxima": "c12",
           "falas": [
             {

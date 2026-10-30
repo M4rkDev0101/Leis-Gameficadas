@@ -2835,7 +2835,7 @@
     },
     "c8": {
      "tipo": "investigar",
-     "local": "clinica",
+     "local": "asilo_corredor",
      "titulo": "Casa Boa Estação · Recepção e enfermaria",
      "intro": [
       {
