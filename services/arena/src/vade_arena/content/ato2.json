@@ -659,7 +659,7 @@
           {"q": "larissa", "e": "bravo", "t": "Ele estaciona na frente da minha casa com um carro novo toda vez que vem buscar o Theo. Quando vem."},
           {"q": "narrador", "t": "Entram na pasta os artigos do Código Civil sobre guarda compartilhada, convívio equilibrado e proporção dos alimentos.", "recebe": ["cc1584", "cc1583", "cc1694"]}
         ], "proxima": "f3"},
-        "f3": {"tipo": "investigar", "local": "rua", "titulo": "Rua de Larissa, sábado à tarde",
+        "f3": {"tipo": "investigar", "local": "rua_bairro", "titulo": "Rua de Larissa, sábado à tarde",
           "intro": [{"q": "narrador", "t": "Uma rua tranquila de bairro. Uma SUV preta, impecável, estacionada em frente à padaria."}],
           "pontos": [
             {"id": "suv", "nome": "SUV preta", "x": 40, "y": 62, "w": 29, "h": 22, "falas": [

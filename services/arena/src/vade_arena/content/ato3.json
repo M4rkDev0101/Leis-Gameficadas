@@ -3523,7 +3523,7 @@
     },
     "x4": {
      "tipo": "investigar",
-     "local": "bar",
+     "local": "cantina_xadrez",
      "titulo": "Cantina do Porto",
      "intro": [
       {

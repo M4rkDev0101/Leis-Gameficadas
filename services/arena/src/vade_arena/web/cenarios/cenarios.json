@@ -218,5 +218,45 @@
   "copa_juizado": {
     "nome": "Copa do juizado",
     "som": "cafe"
+  },
+  "loja_cafeteiras": {
+    "nome": "Loja de cafeteiras",
+    "som": "loja"
+  },
+  "loja_informatica_usados": {
+    "nome": "Loja de notebooks usados",
+    "som": "loja"
+  },
+  "padaria_forno": {
+    "nome": "Padaria",
+    "som": "loja"
+  },
+  "restaurante_lacrado": {
+    "nome": "Restaurante lacrado",
+    "som": "bar"
+  },
+  "cozinha_interditada": {
+    "nome": "Cozinha interditada",
+    "som": "casa"
+  },
+  "cantina_xadrez": {
+    "nome": "Cantina italiana",
+    "som": "cafe"
+  },
+  "rua_bairro": {
+    "nome": "Rua do bairro",
+    "som": "rua"
+  },
+  "rua_comercial": {
+    "nome": "Rua comercial",
+    "som": "rua"
+  },
+  "avenida_noite": {
+    "nome": "Avenida à noite",
+    "som": "rua"
+  },
+  "predio_fachada": {
+    "nome": "Prédio do devedor",
+    "som": "rua"
   }
 }

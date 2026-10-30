@@ -1555,7 +1555,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "loja",
+     "local": "padaria_forno",
      "titulo": "Padaria Trigo Real",
      "intro": [
       {
@@ -2675,7 +2675,7 @@
     },
     "j4": {
      "tipo": "investigar",
-     "local": "apartamento",
+     "local": "cozinha_interditada",
      "titulo": "Casa de Regina",
      "intro": [
       {

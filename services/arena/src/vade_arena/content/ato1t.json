@@ -272,7 +272,7 @@
     },
     "t4": {
      "tipo": "investigar",
-     "local": "loja",
+     "local": "loja_cafeteiras",
      "titulo": "Assistência técnica Cafeína",
      "intro": [
       {

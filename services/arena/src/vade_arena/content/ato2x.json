@@ -671,7 +671,7 @@
     },
     "a8": {
      "tipo": "investigar",
-     "local": "rua",
+     "local": "predio_fachada",
      "titulo": "Rua do prédio de Seu Amaro",
      "intro": [
       {
@@ -1493,7 +1493,7 @@
     },
     "b5": {
      "tipo": "investigar",
-     "local": "bar",
+     "local": "restaurante_lacrado",
      "titulo": "Bar Sabor de Casa · Porta lacrada",
      "intro": [
       {

@@ -480,7 +480,7 @@
     },
     "a3b": {
      "tipo": "investigar",
-     "local": "loja",
+     "local": "loja_informatica_usados",
      "titulo": "TecnoVolta Recondicionados",
      "intro": [
       {
@@ -1482,7 +1482,7 @@
     },
     "b3": {
      "tipo": "investigar",
-     "local": "rua",
+     "local": "avenida_noite",
      "titulo": "Cruzamento da Avenida Itapuã",
      "intro": [
       {

@@ -1689,7 +1689,7 @@
     },
     "x3": {
      "tipo": "investigar",
-     "local": "rua",
+     "local": "rua_comercial",
      "titulo": "Local da prisão",
      "intro": [
       {
