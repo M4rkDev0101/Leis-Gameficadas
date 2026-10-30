@@ -4365,7 +4365,7 @@
     },
     "c10": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "carro",
      "falas": [
       {
        "q": "sofia",
