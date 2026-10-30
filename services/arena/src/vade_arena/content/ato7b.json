@@ -3519,7 +3519,7 @@
     },
     "c7": {
      "tipo": "investigar",
-     "local": "escritorio",
+     "local": "sede_instituto_transparencia",
      "titulo": "O Instituto Transparência Viva: diligência oficial",
      "intro": [
       {
@@ -4207,7 +4207,7 @@
     },
     "c10a": {
      "tipo": "analisar",
-     "local": "escritorio",
+     "local": "sede_instituto_transparencia",
      "falas": [
       {
        "q": "kenji",
@@ -4354,12 +4354,12 @@
        "e": "normal"
       }
      ],
-     "local": "casa",
+     "local": "sobrado_tales",
      "proxima": "c12"
     },
     "c12": {
      "tipo": "investigar",
-     "local": "casa",
+     "local": "sobrado_tales",
      "titulo": "A sala de Tales: o que guardou",
      "intro": [
       {

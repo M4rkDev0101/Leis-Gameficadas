@@ -7329,7 +7329,7 @@
        ]
       }
      ],
-     "local": "rua",
+     "local": "fachada_escritorio_helena",
      "dica": [
       "A decisão do juiz federal viola súmula vinculante do Supremo.",
       "A ferramenta própria é a reclamação, com liminar."
@@ -7338,7 +7338,7 @@
     },
     "c4": {
      "tipo": "investigar",
-     "local": "rua",
+     "local": "fachada_escritorio_helena",
      "titulo": "Calçada em frente ao prédio de Helena",
      "intro": [
       {

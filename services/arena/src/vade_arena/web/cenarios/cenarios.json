@@ -258,5 +258,61 @@
   "predio_fachada": {
     "nome": "Prédio do devedor",
     "som": "rua"
+  },
+  "casa_helena": {
+    "nome": "Casa de Helena",
+    "som": "casa"
+  },
+  "casa_juiz": {
+    "nome": "Casa do juiz",
+    "som": "casa"
+  },
+  "sobrado_tales": {
+    "nome": "Sobrado de Tales",
+    "som": "casa"
+  },
+  "quarto_estudante": {
+    "nome": "Quarto de estudante",
+    "som": "casa"
+  },
+  "fachada_escritorio_helena": {
+    "nome": "Fachada do escritório de Helena",
+    "som": "rua"
+  },
+  "escritorio_vasconcelos": {
+    "nome": "Escritório Vasconcelos & Duarte",
+    "som": "escritorio"
+  },
+  "escritorio_contabil": {
+    "nome": "Escritório contábil",
+    "som": "clinica"
+  },
+  "consultorio_psiquiatra": {
+    "nome": "Consultório psiquiátrico",
+    "som": "clinica"
+  },
+  "financeira_credito": {
+    "nome": "Financeira",
+    "som": "loja"
+  },
+  "gabinete_secretario": {
+    "nome": "Gabinete do secretário",
+    "som": "delegacia"
+  },
+  "reparticao_municipal": {
+    "nome": "Repartição municipal",
+    "som": "delegacia"
+  },
+  "sede_instituto_transparencia": {
+    "nome": "Sede do Instituto",
+    "som": "rua"
+  },
+  "sede_associacao_familias": {
+    "nome": "Sede da Associação das Famílias",
+    "som": "escritorio"
+  },
+  "associacao_jardim_esperanca": {
+    "nome": "Associação Jardim Esperança",
+    "som": "rua"
   }
 }

@@ -2086,7 +2086,7 @@
     },
     "c14": {
      "tipo": "investigar",
-     "local": "escritorio",
+     "local": "escritorio_contabil",
      "titulo": "Escritório de contabilidade de Rute",
      "intro": [
       {

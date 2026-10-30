@@ -454,7 +454,7 @@
     },
     "c4": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "associacao_jardim_esperanca",
      "falas": [
       {
        "q": "narrador",
@@ -1173,7 +1173,7 @@
     },
     "c13": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "associacao_jardim_esperanca",
      "falas": [
       {
        "q": "narrador",
@@ -1594,7 +1594,7 @@
      "piso": 2,
      "musica": "pressao",
      "proxima": "c21",
-     "local": "corredor"
+     "local": "associacao_jardim_esperanca"
     },
     "c21": {
      "tipo": "dialogo",
@@ -2372,7 +2372,7 @@
     },
     "c34": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "associacao_jardim_esperanca",
      "falas": [
       {
        "q": "narrador",
@@ -2416,7 +2416,7 @@
     },
     "c35": {
      "tipo": "depoimento",
-     "local": "corredor",
+     "local": "associacao_jardim_esperanca",
      "testemunha": "a7cwesley",
      "titulo": "Wesley Santos, 17 anos (conversa na presença da mãe)",
      "intro": [
@@ -2632,7 +2632,7 @@
     },
     "c36": {
      "tipo": "escolha",
-     "local": "corredor",
+     "local": "associacao_jardim_esperanca",
      "tempo": 40,
      "falas": [
       {
@@ -2712,7 +2712,7 @@
     },
     "c37": {
      "tipo": "dialogo",
-     "local": "corredor",
+     "local": "associacao_jardim_esperanca",
      "falas": [
       {
        "q": "narrador",
@@ -2752,7 +2752,7 @@
     },
     "c38": {
      "tipo": "blefe",
-     "local": "corredor",
+     "local": "associacao_jardim_esperanca",
      "pergunta": "Como você responde a Aurélio?",
      "opcoes": [
       {

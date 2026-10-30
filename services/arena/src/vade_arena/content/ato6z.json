@@ -903,7 +903,7 @@
         },
         "c2": {
           "tipo": "dialogo",
-          "local": "escritorio",
+          "local": "sede_associacao_familias",
           "proxima": "c3",
           "falas": [
             {
@@ -1739,7 +1739,7 @@
         },
         "c11": {
           "tipo": "analisar",
-          "local": "escritorio",
+          "local": "sede_associacao_familias",
           "proxima": "c12",
           "falas": [
             {
@@ -1969,7 +1969,7 @@
         },
         "c15": {
           "tipo": "dialogo",
-          "local": "casa",
+          "local": "casa_helena",
           "proxima": "c16",
           "falas": [
             {

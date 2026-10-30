@@ -403,7 +403,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "escritorio_vasconcelos",
      "falas": [
       {
        "q": "narrador",
@@ -461,7 +461,7 @@
     },
     "c3": {
      "tipo": "celular",
-     "local": "escritorio",
+     "local": "escritorio_vasconcelos",
      "contato": "Joana Ribas · Gazeta da Capital",
      "status": "digitando…",
      "mensagens": [
@@ -545,7 +545,7 @@
     },
     "c4": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "escritorio_vasconcelos",
      "falas": [
       {
        "q": "a6teresa",
@@ -592,7 +592,7 @@
     "c5": {
      "tipo": "escolha",
      "livre": true,
-     "local": "escritorio",
+     "local": "escritorio_vasconcelos",
      "falas": [
       {
        "q": "helena",
@@ -671,7 +671,7 @@
     },
     "c6": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "escritorio_vasconcelos",
      "falas": [
       {
        "q": "narrador",
@@ -1198,7 +1198,7 @@
     },
     "c14": {
      "tipo": "dialogo",
-     "local": "casa",
+     "local": "sede_instituto_transparencia",
      "falas": [
       {
        "q": "narrador",
@@ -1224,7 +1224,7 @@
     },
     "c15": {
      "tipo": "investigar",
-     "local": "rua",
+     "local": "sede_instituto_transparencia",
      "titulo": "Sábado, 14h: a sede do Instituto",
      "intro": [
       {
@@ -1384,7 +1384,7 @@
     },
     "c16": {
      "tipo": "dialogo",
-     "local": "rua",
+     "local": "sede_instituto_transparencia",
      "falas": [
       {
        "q": "voce",

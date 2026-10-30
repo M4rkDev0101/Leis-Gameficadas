@@ -1847,7 +1847,7 @@
     },
     "c10": {
      "tipo": "investigar",
-     "local": "clinica",
+     "local": "consultorio_psiquiatra",
      "titulo": "Consultório do Dr. Lima: a diligência",
      "intro": [
       {

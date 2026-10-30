@@ -384,7 +384,7 @@
     },
     "a4": {
      "tipo": "investigar",
-     "local": "loja",
+     "local": "financeira_credito",
      "titulo": "Crédito+ Financeira · Loja da Avenida",
      "intro": [
       {
@@ -1779,7 +1779,7 @@
     },
     "b9": {
      "tipo": "investigar",
-     "local": "gabinete",
+     "local": "reparticao_municipal",
      "titulo": "Secretaria de Fiscalização · Protocolo",
      "intro": [
       {

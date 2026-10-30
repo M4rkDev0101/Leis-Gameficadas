@@ -605,7 +605,7 @@
     },
     "c2": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "sede_associacao_familias",
      "falas": [
       {
        "q": "narrador",
@@ -6121,7 +6121,7 @@
     },
     "c17": {
      "tipo": "dialogo",
-     "local": "escritorio",
+     "local": "sede_associacao_familias",
      "falas": [
       {
        "q": "narrador",
